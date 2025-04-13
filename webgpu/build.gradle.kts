@@ -5,12 +5,14 @@ import java.io.File
 
 plugins {
     id("de.undercouch.download") version("5.4.0")
+    id("java")
 }
 
 val buildDir = layout.buildDirectory.get().asFile
 val zippedPath = "${buildDir}/dawn.tar.gz"
 val sourcePath = "${buildDir}/dawn"
 val sourceDestination = "${buildDir}/dawn/"
+val libsDir = "${buildDir}/libs"
 
 tasks.register<Download>("download_source") {
     group = "webgpu"
@@ -43,111 +45,142 @@ tasks.register<Download>("download_source") {
 
             // Clean up
             delete(zippedPath)
+
+            // Fetch dependencies
+            exec {
+                commandLine("python", "tools/fetch_dawn_dependencies.py", "--use-test-deps")
+                workingDir = file(sourceDestination)
+            }
         } catch (e: Exception) {
             throw GradleException("Failed to process tar.gz: ${e.message}. Ensure 'tar' is installed and the file is valid.", e)
         }
     }
 }
 
-// Helper function to create configure and build tasks for a platform and architecture
-fun createBuildTasks(platform: String, arch: String, cmakeArgs: List<String>, buildDir: String) {
-    // Ensure the build directory exists
-    val buildDirFile = File(buildDir)
-    buildDirFile.mkdirs()
+// Define platforms and their target architectures
+val platforms = mapOf(
+    "windows" to listOf("x64", "arm64"),
+    "mac" to listOf("x64", "arm64"),
+    "linux" to listOf("x64", "arm64"),
+    "ios" to listOf("arm64", "x64"), // arm64 for devices, x64 for simulator
+    "android" to listOf("arm64", "armv7", "x64", "x86"),
+    "emscripten" to listOf("wasm")
+)
 
-    // Task to configure the build with CMake
-    val configureTaskName = "configure${platform.capitalize()}${arch.replace("-", "_").capitalize()}"
-    tasks.register<Exec>(configureTaskName) {
-        workingDir = buildDirFile
-        // Explicitly point to the project root where CMakeLists.txt resides
-        commandLine("cmake", *cmakeArgs.toTypedArray(), "-DBUILD_STATIC_LIB=ON", project.projectDir.absolutePath)
+// Function to get library file patterns based on platform and build type
+fun getLibPatterns(platform: String, buildType: String): List<String> {
+    return when (buildType) {
+        "static" -> when (platform) {
+            "windows" -> listOf("**/*.lib")
+            else -> listOf("**/*.a")
+        }
+        "shared" -> when (platform) {
+            "windows" -> listOf("**/*.dll")
+            "mac" -> listOf("**/*.dylib")
+            "linux", "android" -> listOf("**/*.so")
+            "ios" -> listOf("**/*.dylib") // Possible for simulator or frameworks
+            "emscripten" -> listOf("**/*.wasm") // WebAssembly as a shared-like output
+            else -> throw GradleException("Unsupported platform for shared libraries: $platform")
+        }
+        else -> throw GradleException("Invalid build type: $buildType")
     }
+}
 
-    // Task to build the static library
-    val buildTaskName = "build${platform.capitalize()}${arch.replace("-", "_").capitalize()}"
-    tasks.register<Exec>(buildTaskName) {
-        dependsOn(configureTaskName)
-        workingDir = buildDirFile
+// Function to create CMake generation tasks
+fun createGenerateCMakeTask(platform: String, arch: String, buildType: String) {
+    val taskName = "generateCMake_${buildType}_${platform}_$arch"
+    tasks.register<Exec>(taskName) {
+        description = "Generates CMake build files for $buildType libraries on $platform $arch."
+        workingDir(sourcePath)
+        val buildDirForArch = "${sourcePath}/build_${buildType}_${platform}_$arch"
+        val cmakeArgs = mutableListOf(
+            "-B", buildDirForArch,
+            "-S", ".",
+            "-DBUILD_SHARED_LIBS=${if (buildType == "shared") "ON" else "OFF"}"
+        )
+        when (platform) {
+            "windows" -> {
+                val cmakeArch = if (arch == "x64") "x64" else "ARM64"
+                cmakeArgs.addAll(listOf("-A", cmakeArch))
+            }
+            "mac" -> {
+                cmakeArgs.addAll(listOf("-DCMAKE_OSX_ARCHITECTURES=$arch"))
+            }
+            "linux" -> {
+                val cmakeProcessor = if (arch == "x64") "x86_64" else "aarch64"
+                cmakeArgs.addAll(listOf("-DCMAKE_SYSTEM_PROCESSOR=$cmakeProcessor"))
+            }
+            "ios" -> {
+                val cmakeArch = if (arch == "x64") "x86_64" else "arm64"
+                cmakeArgs.addAll(listOf(
+                    "-DCMAKE_SYSTEM_NAME=iOS",
+                    "-DCMAKE_OSX_ARCHITECTURES=$cmakeArch",
+                    "-DCMAKE_OSX_SYSROOT=iphoneos"
+                ))
+            }
+            "android" -> {
+                val abi = when (arch) {
+                    "arm64" -> "arm64-v8a"
+                    "armv7" -> "armeabi-v7a"
+                    "x64" -> "x86_64"
+                    "x86" -> "x86"
+                    else -> throw GradleException("Unsupported Android architecture: $arch")
+                }
+                val ndkHome = System.getenv("ANDROID_NDK_HOME") ?: throw GradleException("ANDROID_NDK_HOME not set")
+                cmakeArgs.addAll(listOf(
+                    "-DCMAKE_SYSTEM_NAME=Android",
+                    "-CMAKE_ANDROID_NDK=$ndkHome",
+                    "-DCMAKE_ANDROID_ARCH_ABI=$abi",
+                    "-DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=clang",
+                    "-DCMAKE_ANDROID_STL_TYPE=c++_static"
+                ))
+            }
+            "emscripten" -> {
+                val emsdkHome = System.getenv("EMSDK") ?: throw GradleException("EMSDK not set")
+                cmakeArgs.addAll(listOf(
+                    "-DCMAKE_TOOLCHAIN_FILE=$emsdkHome/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+                    "-DCMAKE_BUILD_TYPE=Release"
+                ))
+            }
+        }
+        commandLine("cmake", *cmakeArgs.toTypedArray())
+    }
+}
+
+// Function to create build tasks
+fun createBuildTask(platform: String, arch: String, buildType: String) {
+    val taskName = "build_${buildType}_${platform}_$arch"
+    tasks.register<Exec>(taskName) {
+        description = "Builds the $buildType libraries for $platform on $arch."
+        dependsOn("generateCMake_${buildType}_${platform}_$arch")
+        workingDir("${sourcePath}/build_${buildType}_${platform}_$arch")
         commandLine("cmake", "--build", ".", "--config", "Release")
     }
 }
 
-// Windows: x86_64 and ARM64
-createBuildTasks(
-    "windows", "x64",
-    listOf("-G", "Visual Studio 17 2022", "-A", "x64", "-DCMAKE_BUILD_TYPE=Release"),
-    "build/windows_x64"
-)
-createBuildTasks(
-    "windows", "arm64",
-    listOf("-G", "Visual Studio 17 2022", "-A", "ARM64", "-DCMAKE_BUILD_TYPE=Release"),
-    "build/windows_arm64"
-)
-
-// Mac: x86_64, ARM64, and universal binary
-val macArchs = listOf("x86_64", "arm64")
-macArchs.forEach { arch ->
-    createBuildTasks(
-        "mac", arch,
-        listOf("-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_OSX_ARCHITECTURES=$arch"),
-        "build/mac_$arch"
-    )
+// Function to create copy tasks for built libraries
+fun createCopyLibsTask(platform: String, arch: String, buildType: String) {
+    val taskName = "copyLibs_${buildType}_${platform}_$arch"
+    tasks.register<Copy>(taskName) {
+        description = "Copies $buildType libraries for $platform on $arch."
+        dependsOn("build_${buildType}_${platform}_$arch")
+        val patterns = getLibPatterns(platform, buildType)
+        from(fileTree("${sourcePath}/build_${buildType}_${platform}_$arch").matching { include(*patterns.toTypedArray()) }.files)
+        into("$libsDir/$platform/$arch")
+    }
 }
 
-// Task to create a universal binary for Mac
-tasks.register<Exec>("buildMacUniversal") {
-    dependsOn("buildMacX86_64", "buildMacArm64")
-    val libX64 = File("build/mac_x86_64/libwebgpu_static.a")
-    val libArm64 = File("build/mac_arm64/libwebgpu_static.a")
-    val universalLib = File("build/mac_universal/libwebgpu_static.a")
-    universalLib.parentFile.mkdirs()
-    workingDir = universalLib.parentFile
-    commandLine("lipo", "-create", "-output", universalLib.absolutePath, libX64.absolutePath, libArm64.absolutePath)
+// Generate tasks for all platforms and architectures
+platforms.forEach { (platform, archs) ->
+    archs.forEach { arch ->
+        // Create static library tasks for all platforms
+        createGenerateCMakeTask(platform, arch, "static")
+        createBuildTask(platform, arch, "static")
+        createCopyLibsTask(platform, arch, "static")
+
+        // Create shared library tasks for all platforms
+        createGenerateCMakeTask(platform, arch, "shared")
+        createBuildTask(platform, arch, "shared")
+        createCopyLibsTask(platform, arch, "shared")
+    }
 }
-
-// Linux: x86_64 and ARM64
-createBuildTasks(
-    "linux", "x64",
-    listOf("-DCMAKE_BUILD_TYPE=Release"),
-    "build/linux_x64"
-)
-createBuildTasks(
-    "linux", "arm64",
-    listOf("-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc", "-DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++"),
-    "build/linux_arm64"
-)
-
-// Android: armeabi-v7a, arm64-v8a, x86, x86_64
-val androidAbis = listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
-androidAbis.forEach { abi ->
-    val ndkHome = System.getenv("ANDROID_NDK_HOME") ?: throw GradleException("ANDROID_NDK_HOME not set")
-    createBuildTasks(
-        "android", abi,
-        listOf(
-            "-DCMAKE_TOOLCHAIN_FILE=${ndkHome}/build/cmake/android.toolchain.cmake",
-            "-DANDROID_ABI=$abi",
-            "-DANDROID_PLATFORM=android-29",
-            "-DCMAKE_BUILD_TYPE=Release"
-        ),
-        "build/android_$abi"
-    )
-}
-
-// iOS: ARM64 (devices) and x86_64 (simulator)
-createBuildTasks(
-    "ios", "arm64",
-    listOf("-DCMAKE_SYSTEM_NAME=iOS", "-DCMAKE_OSX_ARCHITECTURES=arm64", "-DCMAKE_BUILD_TYPE=Release"),
-    "build/ios_arm64"
-)
-createBuildTasks(
-    "ios", "x86_64",
-    listOf("-DCMAKE_SYSTEM_NAME=iOS", "-CMAKE_OSX_ARCHITECTURES=x86_64", "-CMAKE_IOS_SIMULATOR=YES", "-DCMAKE_BUILD_TYPE=Release"),
-    "build/ios_x86_64"
-)
-
-// Emscripten: WebAssembly
-createBuildTasks(
-    "emscripten", "wasm",
-    listOf("-DCMAKE_BUILD_TYPE=Release"),
-    "build/emscripten"
-)
