@@ -1,1 +1,5 @@
-include(":webgpu")
+include(":webgpu:webgpu-base")
+include(":webgpu:webgpu-build")
+include(":webgpu:webgpu-core")
+include(":webgpu:webgpu-desktop")
+include(":webgpu:webgpu-teavm")
