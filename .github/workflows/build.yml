@@ -1,13 +1,13 @@
 name: Build Libraries for All Platforms
 
 # Trigger the workflow on pushes or pull requests to the main branch
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+#on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches:
+#      - main
 
 # Define the jobs for each platform
 jobs:
