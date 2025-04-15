@@ -44,21 +44,14 @@ val buildTypes = mapOf(
 )
 
 // Library file patterns by platform and build type
-fun getLibPatterns(platform: String, buildType: String): List<String> {
-    return when (buildType) {
-        "static" -> when (platform) {
-            "windows" -> listOf("**/*.lib")
-            else -> listOf("**/*.a")
-        }
-        "shared" -> when (platform) {
-            "windows" -> listOf("**/*.dll")
-            "mac" -> listOf("**/*.dylib")
-            "linux", "android" -> listOf("**/*.so")
-            "ios" -> listOf("**/*.dylib")
-            "emscripten" -> listOf("**/*.wasm")
-            else -> throw GradleException("Unsupported platform: $platform")
-        }
-        else -> throw GradleException("Invalid build type: $buildType")
+fun getLibPatterns(platform: String): List<String> {
+    return when (platform) {
+        "windows" -> listOf("**/*.dll", "**/*.lib")
+        "mac" -> listOf("**/*.dylib", "**/*.a")
+        "linux", "android" -> listOf("**/*.so", "**/*.a")
+        "ios" -> listOf("**/*.dylib", "**/*.a")
+        "emscripten" -> listOf("**/*.wasm", "**/*.a")
+        else -> throw GradleException("Unsupported platform: $platform")
     }
 }
 
@@ -119,8 +112,6 @@ fun createGenerateCMakeTask(platform: String, arch: String) {
 //            "-DDAWN_DXC_ENABLE_ASSERTS_IN_NDEBUG=OFF",
             "-DDAWN_BUILD_MONOLITHIC_LIBRARY=ON",
 //            "-DTINT_BUILD_TESTS=OFF"
-//            "-DBUILD_SHARED_LIBS=${if (buildType == "static") "OFF" else "ON"}"
-            "-DBUILD_SHARED_LIBS=OFF"
         )
         when (platform) {
             "windows" -> cmakeArgs.addAll(listOf("-A", if (arch == "x64") "x64" else "ARM64"))
@@ -169,9 +160,7 @@ fun createCopyLibsTask(platform: String, arch: String) {
     tasks.register<Copy>(taskName) {
         description = "Copies libraries for $platform $arch."
         group = "webgpu"
-        dependsOn("build_${platform}_$arch")
-        val buildType = buildTypes[platform] ?: throw GradleException("Unknown platform: $platform")
-        val patterns = getLibPatterns(platform, buildType)
+        val patterns = getLibPatterns(platform)
         from(fileTree("${sourcePath}/build_${platform}_$arch").matching { include(*patterns.toTypedArray()) }.files)
         into("$libsDir/${platform}_$arch")
         onlyIf {

@@ -1,10 +1,10 @@
 val moduleName = "webgpu-desktop"
 
 val libDir = "${rootProject.projectDir}/webgpu"
-val windowsFile = "$libDir/webgpu-build/build/c++/libs/windows/vc/webgpu64.dll"
-val linuxFile = "$libDir/webgpu-build/build/c++/libs/linux/libwebgpu64.so"
-val macArmFile = "$libDir/webgpu-build/build/c++/libs/mac/arm/libwebgpu64.dylib"
-val macFile = "$libDir/webgpu-build/build/c++/libs/mac/libwebgpu64.dylib"
+val windowsFile = "$libDir/webgpu-build/build/c++/libs/windows/vc/jWebGPU64.dll"
+val linuxFile = "$libDir/webgpu-build/build/c++/libs/linux/libjWebGPU64.so"
+val macArmFile = "$libDir/webgpu-build/build/c++/libs/mac/arm/libjWebGPU64.dylib"
+val macFile = "$libDir/webgpu-build/build/c++/libs/mac/libjWebGPU64.dylib"
 
 tasks.jar {
     from(windowsFile)

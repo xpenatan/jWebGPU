@@ -1,0 +1,1243 @@
+//// webgpu.webidl
+//// Generated from webgpu_cpp.h for Emscripten WebIDL compatibility with updated enum item names
+//
+
+//// Constants (global namespace for simplicity)
+//[NoInterfaceObject]
+//interface WebGPUConstants {
+//  const unsigned long kArrayLayerCountUndefined = 0xFFFFFFFF; // WGPU_ARRAY_LAYER_COUNT_UNDEFINED
+//  const unsigned long kCopyStrideUndefined = 0xFFFFFFFF; // WGPU_COPY_STRIDE_UNDEFINED
+//  const unsigned long kDepthSliceUndefined = 0xFFFFFFFF; // WGPU_DEPTH_SLICE_UNDEFINED
+//  const unsigned long kLimitU32Undefined = 0xFFFFFFFF; // WGPU_LIMIT_U32_UNDEFINED
+//  const unsigned long long kLimitU64Undefined = 0xFFFFFFFFFFFFFFFF; // WGPU_LIMIT_U64_UNDEFINED
+//  const unsigned long kMipLevelCountUndefined = 0xFFFFFFFF; // WGPU_MIP_LEVEL_COUNT_UNDEFINED
+//  const unsigned long kQuerySetIndexUndefined = 0xFFFFFFFF; // WGPU_QUERY_SET_INDEX_UNDEFINED
+//  const unsigned long kWholeMapSize = 0xFFFFFFFFFFFFFFFF; // WGPU_WHOLE_MAP_SIZE
+//  const unsigned long long kWholeSize = 0xFFFFFFFFFFFFFFFF; // WGPU_WHOLE_SIZE
+//};
+
+// Enums with updated item names
+enum WGSLFeatureName {
+    "WGSLFeatureName::ReadonlyAndReadwriteStorageTextures",
+    "WGSLFeatureName::Packed4x8IntegerDotProduct",
+    "WGSLFeatureName::UnrestrictedPointerParameters",
+    "WGSLFeatureName::PointerCompositeAccess",
+    "WGSLFeatureName::ChromiumTestingUnimplemented",
+    "WGSLFeatureName::ChromiumTestingUnsafeExperimental",
+    "WGSLFeatureName::ChromiumTestingExperimental",
+    "WGSLFeatureName::ChromiumTestingShippedWithKillswitch",
+    "WGSLFeatureName::ChromiumTestingShipped"
+};
+
+enum AdapterType {
+    "AdapterType::DiscreteGPU",
+    "AdapterType::IntegratedGPU",
+    "AdapterType::CPU",
+    "AdapterType::Unknown"
+};
+
+enum AddressMode {
+    "AddressMode::Undefined",
+    "AddressMode::ClampToEdge",
+    "AddressMode::Repeat",
+    "AddressMode::MirrorRepeat"
+};
+
+enum AlphaMode {
+    "AlphaMode::Opaque",
+    "AlphaMode::Premultiplied",
+    "AlphaMode::Unpremultiplied"
+};
+
+enum BackendType {
+    "BackendType::Undefined",
+    "BackendType::Null",
+    "BackendType::WebGPU",
+    "BackendType::D3D11",
+    "BackendType::D3D12",
+    "BackendType::Metal",
+    "BackendType::Vulkan",
+    "BackendType::OpenGL",
+    "BackendType::OpenGLES"
+};
+
+enum BlendFactor {
+    "BlendFactor::Undefined",
+    "BlendFactor::Zero",
+    "BlendFactor::One",
+    "BlendFactor::Src",
+    "BlendFactor::OneMinusSrc",
+    "BlendFactor::SrcAlpha",
+    "BlendFactor::OneMinusSrcAlpha",
+    "BlendFactor::Dst",
+    "BlendFactor::OneMinusDst",
+    "BlendFactor::DstAlpha",
+    "BlendFactor::OneMinusDstAlpha",
+    "BlendFactor::SrcAlphaSaturated",
+    "BlendFactor::Constant",
+    "BlendFactor::OneMinusConstant",
+    "BlendFactor::Src1",
+    "BlendFactor::OneMinusSrc1",
+    "BlendFactor::Src1Alpha",
+    "BlendFactor::OneMinusSrc1Alpha"
+};
+
+enum BlendOperation {
+    "BlendOperation::Undefined",
+    "BlendOperation::Add",
+    "BlendOperation::Subtract",
+    "BlendOperation::ReverseSubtract",
+    "BlendOperation::Min",
+    "BlendOperation::Max"
+};
+
+enum BufferBindingType {
+    "BufferBindingType::Undefined",
+    "BufferBindingType::Uniform",
+    "BufferBindingType::Storage",
+    "BufferBindingType::ReadOnlyStorage"
+};
+
+enum BufferMapAsyncStatus {
+    "BufferMapAsyncStatus::Success",
+    "BufferMapAsyncStatus::InstanceDropped",
+    "BufferMapAsyncStatus::ValidationError",
+    "BufferMapAsyncStatus::Unknown",
+    "BufferMapAsyncStatus::DeviceLost",
+    "BufferMapAsyncStatus::DestroyedBeforeCallback",
+    "BufferMapAsyncStatus::UnmappedBeforeCallback",
+    "BufferMapAsyncStatus::MappingAlreadyPending",
+    "BufferMapAsyncStatus::OffsetOutOfRange",
+    "BufferMapAsyncStatus::SizeOutOfRange"
+};
+
+enum BufferMapState {
+    "BufferMapState::Unmapped",
+    "BufferMapState::Pending",
+    "BufferMapState::Mapped"
+};
+
+enum CallbackMode {
+    "CallbackMode::WaitAnyOnly",
+    "CallbackMode::AllowProcessEvents",
+    "CallbackMode::AllowSpontaneous"
+};
+
+enum CompareFunction {
+    "CompareFunction::Undefined",
+    "CompareFunction::Never",
+    "CompareFunction::Less",
+    "CompareFunction::Equal",
+    "CompareFunction::LessEqual",
+    "CompareFunction::Greater",
+    "CompareFunction::NotEqual",
+    "CompareFunction::GreaterEqual",
+    "CompareFunction::Always"
+};
+
+enum CompilationInfoRequestStatus {
+    "CompilationInfoRequestStatus::Success",
+    "CompilationInfoRequestStatus::InstanceDropped",
+    "CompilationInfoRequestStatus::Error",
+    "CompilationInfoRequestStatus::DeviceLost",
+    "CompilationInfoRequestStatus::Unknown"
+};
+
+enum CompilationMessageType {
+    "CompilationMessageType::Error",
+    "CompilationMessageType::Warning",
+    "CompilationMessageType::Info"
+};
+
+enum CompositeAlphaMode {
+    "CompositeAlphaMode::Auto",
+    "CompositeAlphaMode::Opaque",
+    "CompositeAlphaMode::Premultiplied",
+    "CompositeAlphaMode::Unpremultiplied",
+    "CompositeAlphaMode::Inherit"
+};
+
+enum CreatePipelineAsyncStatus {
+    "CreatePipelineAsyncStatus::Success",
+    "CreatePipelineAsyncStatus::InstanceDropped",
+    "CreatePipelineAsyncStatus::ValidationError",
+    "CreatePipelineAsyncStatus::InternalError",
+    "CreatePipelineAsyncStatus::DeviceLost",
+    "CreatePipelineAsyncStatus::DeviceDestroyed",
+    "CreatePipelineAsyncStatus::Unknown"
+};
+
+enum CullMode {
+    "CullMode::Undefined",
+    "CullMode::None",
+    "CullMode::Front",
+    "CullMode::Back"
+};
+
+enum DeviceLostReason {
+    "DeviceLostReason::Unknown",
+    "DeviceLostReason::Destroyed",
+    "DeviceLostReason::InstanceDropped",
+    "DeviceLostReason::FailedCreation"
+};
+
+enum ErrorFilter {
+    "ErrorFilter::Validation",
+    "ErrorFilter::OutOfMemory",
+    "ErrorFilter::Internal"
+};
+
+enum ErrorType {
+    "ErrorType::NoError",
+    "ErrorType::Validation",
+    "ErrorType::OutOfMemory",
+    "ErrorType::Internal",
+    "ErrorType::Unknown",
+    "ErrorType::DeviceLost"
+};
+
+enum ExternalTextureRotation {
+    "ExternalTextureRotation::Rotate0Degrees",
+    "ExternalTextureRotation::Rotate90Degrees",
+    "ExternalTextureRotation::Rotate180Degrees",
+    "ExternalTextureRotation::Rotate270Degrees"
+};
+
+enum FeatureName {
+    "FeatureName::DepthClipControl",
+    "FeatureName::Depth32FloatStencil8",
+    "FeatureName::TimestampQuery",
+    "FeatureName::TextureCompressionBC",
+    "FeatureName::TextureCompressionETC2",
+    "FeatureName::TextureCompressionASTC",
+    "FeatureName::IndirectFirstInstance",
+    "FeatureName::ShaderF16",
+    "FeatureName::RG11B10UfloatRenderable",
+    "FeatureName::BGRA8UnormStorage",
+    "FeatureName::Float32Filterable",
+    "FeatureName::Subgroups",
+    "FeatureName::SubgroupsF16",
+    "FeatureName::DawnInternalUsages",
+    "FeatureName::DawnMultiPlanarFormats",
+    "FeatureName::DawnNative",
+    "FeatureName::ChromiumExperimentalTimestampQueryInsidePasses",
+    "FeatureName::ImplicitDeviceSynchronization",
+    "FeatureName::SurfaceCapabilities",
+    "FeatureName::TransientAttachments",
+    "FeatureName::MSAARenderToSingleSampled",
+    "FeatureName::DualSourceBlending",
+    "FeatureName::D3D11MultithreadProtected",
+    "FeatureName::ANGLETextureSharing",
+    "FeatureName::ChromiumExperimentalSubgroups",
+    "FeatureName::ChromiumExperimentalSubgroupUniformControlFlow",
+    "FeatureName::PixelLocalStorageCoherent",
+    "FeatureName::PixelLocalStorageNonCoherent",
+    "FeatureName::Unorm16TextureFormats",
+    "FeatureName::Snorm16TextureFormats",
+    "FeatureName::MultiPlanarFormatExtendedUsages",
+    "FeatureName::MultiPlanarFormatP010",
+    "FeatureName::HostMappedPointer",
+    "FeatureName::MultiPlanarRenderTargets",
+    "FeatureName::MultiPlanarFormatNv12a",
+    "FeatureName::FramebufferFetch",
+    "FeatureName::BufferMapExtendedUsages",
+    "FeatureName::AdapterPropertiesMemoryHeaps",
+    "FeatureName::AdapterPropertiesD3D",
+    "FeatureName::AdapterPropertiesVk",
+    "FeatureName::R8UnormStorage",
+    "FeatureName::FormatCapabilities",
+    "FeatureName::DrmFormatCapabilities",
+    "FeatureName::Norm16TextureFormats",
+    "FeatureName::MultiPlanarFormatNv16",
+    "FeatureName::MultiPlanarFormatNv24",
+    "FeatureName::MultiPlanarFormatP210",
+    "FeatureName::MultiPlanarFormatP410",
+    "FeatureName::SharedTextureMemoryVkDedicatedAllocation",
+    "FeatureName::SharedTextureMemoryAHardwareBuffer",
+    "FeatureName::SharedTextureMemoryDmaBuf",
+    "FeatureName::SharedTextureMemoryOpaqueFD",
+    "FeatureName::SharedTextureMemoryZirconHandle",
+    "FeatureName::SharedTextureMemoryDXGISharedHandle",
+    "FeatureName::SharedTextureMemoryD3D11Texture2D",
+    "FeatureName::SharedTextureMemoryIOSurface",
+    "FeatureName::SharedTextureMemoryEGLImage",
+    "FeatureName::SharedFenceVkSemaphoreOpaqueFD",
+    "FeatureName::SharedFenceVkSemaphoreSyncFD",
+    "FeatureName::SharedFenceVkSemaphoreZirconHandle",
+    "FeatureName::SharedFenceDXGISharedHandle",
+    "FeatureName::SharedFenceMTLSharedEvent",
+    "FeatureName::SharedBufferMemoryD3D12Resource",
+    "FeatureName::StaticSamplers",
+    "FeatureName::YCbCrVulkanSamplers",
+    "FeatureName::ShaderModuleCompilationOptions",
+    "FeatureName::DawnLoadResolveTexture"
+};
+
+enum FilterMode {
+    "FilterMode::Undefined",
+    "FilterMode::Nearest",
+    "FilterMode::Linear"
+};
+
+enum FrontFace {
+    "FrontFace::Undefined",
+    "FrontFace::CCW",
+    "FrontFace::CW"
+};
+
+enum IndexFormat {
+    "IndexFormat::Undefined",
+    "IndexFormat::Uint16",
+    "IndexFormat::Uint32"
+};
+
+enum LoadOp {
+    "LoadOp::Undefined",
+    "LoadOp::Clear",
+    "LoadOp::Load",
+    "LoadOp::ExpandResolveTexture"
+};
+
+enum LoggingType {
+    "LoggingType::Verbose",
+    "LoggingType::Info",
+    "LoggingType::Warning",
+    "LoggingType::Error"
+};
+
+enum MapAsyncStatus {
+    "MapAsyncStatus::Success",
+    "MapAsyncStatus::InstanceDropped",
+    "MapAsyncStatus::Error",
+    "MapAsyncStatus::Aborted",
+    "MapAsyncStatus::Unknown"
+};
+
+enum MipmapFilterMode {
+    "MipmapFilterMode::Undefined",
+    "MipmapFilterMode::Nearest",
+    "MipmapFilterMode::Linear"
+};
+
+enum PopErrorScopeStatus {
+    "PopErrorScopeStatus::Success",
+    "PopErrorScopeStatus::InstanceDropped"
+};
+
+enum PowerPreference {
+    "PowerPreference::Undefined",
+    "PowerPreference::LowPower",
+    "PowerPreference::HighPerformance"
+};
+
+enum PresentMode {
+    "PresentMode::Fifo",
+    "PresentMode::FifoRelaxed",
+    "PresentMode::Immediate",
+    "PresentMode::Mailbox"
+};
+
+enum PrimitiveTopology {
+    "PrimitiveTopology::Undefined",
+    "PrimitiveTopology::PointList",
+    "PrimitiveTopology::LineList",
+    "PrimitiveTopology::LineStrip",
+    "PrimitiveTopology::TriangleList",
+    "PrimitiveTopology::TriangleStrip"
+};
+
+enum QueryType {
+    "QueryType::Occlusion",
+    "QueryType::Timestamp"
+};
+
+enum QueueWorkDoneStatus {
+    "QueueWorkDoneStatus::Success",
+    "QueueWorkDoneStatus::InstanceDropped",
+    "QueueWorkDoneStatus::Error",
+    "QueueWorkDoneStatus::Unknown",
+    "QueueWorkDoneStatus::DeviceLost"
+};
+
+enum RequestAdapterStatus {
+    "RequestAdapterStatus::Success",
+    "RequestAdapterStatus::InstanceDropped",
+    "RequestAdapterStatus::Unavailable",
+    "RequestAdapterStatus::Error",
+    "RequestAdapterStatus::Unknown"
+};
+
+enum RequestDeviceStatus {
+    "RequestDeviceStatus::Success",
+    "RequestDeviceStatus::InstanceDropped",
+    "RequestDeviceStatus::Error",
+    "RequestDeviceStatus::Unknown"
+};
+
+enum SType {
+    "SType::ShaderModuleSPIRVDescriptor",
+    "SType::ShaderModuleWGSLDescriptor",
+    "SType::PrimitiveDepthClipControl",
+    "SType::RenderPassDescriptorMaxDrawCount",
+    "SType::TextureBindingViewDimensionDescriptor",
+    "SType::SurfaceDescriptorFromCanvasHTMLSelector",
+    "SType::SurfaceDescriptorFromMetalLayer",
+    "SType::SurfaceDescriptorFromWindowsHWND",
+    "SType::SurfaceDescriptorFromXlibWindow",
+    "SType::SurfaceDescriptorFromWaylandSurface",
+    "SType::SurfaceDescriptorFromAndroidNativeWindow",
+    "SType::SurfaceDescriptorFromXcbWindow",
+    "SType::SurfaceDescriptorFromWindowsCoreWindow",
+    "SType::ExternalTextureBindingEntry",
+    "SType::ExternalTextureBindingLayout",
+    "SType::SurfaceDescriptorFromWindowsSwapChainPanel",
+    "SType::DepthStencilStateDepthWriteDefinedDawn",
+    "SType::DawnTextureInternalUsageDescriptor",
+    "SType::DawnEncoderInternalUsageDescriptor",
+    "SType::DawnInstanceDescriptor",
+    "SType::DawnCacheDeviceDescriptor",
+    "SType::DawnAdapterPropertiesPowerPreference",
+    "SType::DawnBufferDescriptorErrorInfoFromWireClient",
+    "SType::DawnTogglesDescriptor",
+    "SType::DawnShaderModuleSPIRVOptionsDescriptor",
+    "SType::RequestAdapterOptionsLUID",
+    "SType::RequestAdapterOptionsGetGLProc",
+    "SType::RequestAdapterOptionsD3D11Device",
+    "SType::DawnRenderPassColorAttachmentRenderToSingleSampled",
+    "SType::RenderPassPixelLocalStorage",
+    "SType::PipelineLayoutPixelLocalStorage",
+    "SType::BufferHostMappedPointer",
+    "SType::DawnExperimentalSubgroupLimits",
+    "SType::AdapterPropertiesMemoryHeaps",
+    "SType::AdapterPropertiesD3D",
+    "SType::AdapterPropertiesVk",
+    "SType::DawnComputePipelineFullSubgroups",
+    "SType::DawnWireWGSLControl",
+    "SType::DawnWGSLBlocklist",
+    "SType::DrmFormatCapabilities",
+    "SType::ShaderModuleCompilationOptions",
+    "SType::ColorTargetStateExpandResolveTextureDawn",
+    "SType::SharedTextureMemoryVkDedicatedAllocationDescriptor",
+    "SType::SharedTextureMemoryAHardwareBufferDescriptor",
+    "SType::SharedTextureMemoryDmaBufDescriptor",
+    "SType::SharedTextureMemoryOpaqueFDDescriptor",
+    "SType::SharedTextureMemoryZirconHandleDescriptor",
+    "SType::SharedTextureMemoryDXGISharedHandleDescriptor",
+    "SType::SharedTextureMemoryD3D11Texture2DDescriptor",
+    "SType::SharedTextureMemoryIOSurfaceDescriptor",
+    "SType::SharedTextureMemoryEGLImageDescriptor",
+    "SType::SharedTextureMemoryInitializedBeginState",
+    "SType::SharedTextureMemoryInitializedEndState",
+    "SType::SharedTextureMemoryVkImageLayoutBeginState",
+    "SType::SharedTextureMemoryVkImageLayoutEndState",
+    "SType::SharedTextureMemoryD3DSwapchainBeginState",
+    "SType::SharedFenceVkSemaphoreOpaqueFDDescriptor",
+    "SType::SharedFenceVkSemaphoreOpaqueFDExportInfo",
+    "SType::SharedFenceVkSemaphoreSyncFDDescriptor",
+    "SType::SharedFenceVkSemaphoreSyncFDExportInfo",
+    "SType::SharedFenceVkSemaphoreZirconHandleDescriptor",
+    "SType::SharedFenceVkSemaphoreZirconHandleExportInfo",
+    "SType::SharedFenceDXGISharedHandleDescriptor",
+    "SType::SharedFenceDXGISharedHandleExportInfo",
+    "SType::SharedFenceMTLSharedEventDescriptor",
+    "SType::SharedFenceMTLSharedEventExportInfo",
+    "SType::SharedBufferMemoryD3D12ResourceDescriptor",
+    "SType::StaticSamplerBindingLayout",
+    "SType::YCbCrVkDescriptor",
+    "SType::SharedTextureMemoryAHardwareBufferProperties",
+    "SType::AHardwareBufferProperties"
+};
+
+enum SamplerBindingType {
+    "SamplerBindingType::Undefined",
+    "SamplerBindingType::Filtering",
+    "SamplerBindingType::NonFiltering",
+    "SamplerBindingType::Comparison"
+};
+
+enum SharedFenceType {
+    "SharedFenceType::VkSemaphoreOpaqueFD",
+    "SharedFenceType::VkSemaphoreSyncFD",
+    "SharedFenceType::VkSemaphoreZirconHandle",
+    "SharedFenceType::DXGISharedHandle",
+    "SharedFenceType::MTLSharedEvent"
+};
+
+enum Status {
+    "Status::Success",
+    "Status::Error"
+};
+
+enum StencilOperation {
+    "StencilOperation::Undefined",
+    "StencilOperation::Keep",
+    "StencilOperation::Zero",
+    "StencilOperation::Replace",
+    "StencilOperation::Invert",
+    "StencilOperation::IncrementClamp",
+    "StencilOperation::DecrementClamp",
+    "StencilOperation::IncrementWrap",
+    "StencilOperation::DecrementWrap"
+};
+
+enum StorageTextureAccess {
+    "StorageTextureAccess::Undefined",
+    "StorageTextureAccess::WriteOnly",
+    "StorageTextureAccess::ReadOnly",
+    "StorageTextureAccess::ReadWrite"
+};
+
+enum StoreOp {
+    "StoreOp::Undefined",
+    "StoreOp::Store",
+    "StoreOp::Discard"
+};
+
+enum SurfaceGetCurrentTextureStatus {
+    "SurfaceGetCurrentTextureStatus::Success",
+    "SurfaceGetCurrentTextureStatus::Timeout",
+    "SurfaceGetCurrentTextureStatus::Outdated",
+    "SurfaceGetCurrentTextureStatus::Lost",
+    "SurfaceGetCurrentTextureStatus::OutOfMemory",
+    "SurfaceGetCurrentTextureStatus::DeviceLost",
+    "SurfaceGetCurrentTextureStatus::Error"
+};
+
+enum TextureAspect {
+    "TextureAspect::Undefined",
+    "TextureAspect::All",
+    "TextureAspect::StencilOnly",
+    "TextureAspect::DepthOnly",
+    "TextureAspect::Plane0Only",
+    "TextureAspect::Plane1Only",
+    "TextureAspect::Plane2Only"
+};
+
+enum TextureDimension {
+    "TextureDimension::Undefined",
+    "TextureDimension::e1D",
+    "TextureDimension::e2D",
+    "TextureDimension::e3D"
+};
+
+enum TextureFormat {
+    "TextureFormat::Undefined",
+    "TextureFormat::R8Unorm",
+    "TextureFormat::R8Snorm",
+    "TextureFormat::R8Uint",
+    "TextureFormat::R8Sint",
+    "TextureFormat::R16Uint",
+    "TextureFormat::R16Sint",
+    "TextureFormat::R16Float",
+    "TextureFormat::RG8Unorm",
+    "TextureFormat::RG8Snorm",
+    "TextureFormat::RG8Uint",
+    "TextureFormat::RG8Sint",
+    "TextureFormat::R32Float",
+    "TextureFormat::R32Uint",
+    "TextureFormat::R32Sint",
+    "TextureFormat::RG16Uint",
+    "TextureFormat::RG16Sint",
+    "TextureFormat::RG16Float",
+    "TextureFormat::RGBA8Unorm",
+    "TextureFormat::RGBA8UnormSrgb",
+    "TextureFormat::RGBA8Snorm",
+    "TextureFormat::RGBA8Uint",
+    "TextureFormat::RGBA8Sint",
+    "TextureFormat::BGRA8Unorm",
+    "TextureFormat::BGRA8UnormSrgb",
+    "TextureFormat::RGB10A2Uint",
+    "TextureFormat::RGB10A2Unorm",
+    "TextureFormat::RG11B10Ufloat",
+    "TextureFormat::RGB9E5Ufloat",
+    "TextureFormat::RG32Float",
+    "TextureFormat::RG32Uint",
+    "TextureFormat::RG32Sint",
+    "TextureFormat::RGBA16Uint",
+    "TextureFormat::RGBA16Sint",
+    "TextureFormat::RGBA16Float",
+    "TextureFormat::RGBA32Float",
+    "TextureFormat::RGBA32Uint",
+    "TextureFormat::RGBA32Sint",
+    "TextureFormat::Stencil8",
+    "TextureFormat::Depth16Unorm",
+    "TextureFormat::Depth24Plus",
+    "TextureFormat::Depth24PlusStencil8",
+    "TextureFormat::Depth32Float",
+    "TextureFormat::Depth32FloatStencil8",
+    "TextureFormat::BC1RGBAUnorm",
+    "TextureFormat::BC1RGBAUnormSrgb",
+    "TextureFormat::BC2RGBAUnorm",
+    "TextureFormat::BC2RGBAUnormSrgb",
+    "TextureFormat::BC3RGBAUnorm",
+    "TextureFormat::BC3RGBAUnormSrgb",
+    "TextureFormat::BC4RUnorm",
+    "TextureFormat::BC4RSnorm",
+    "TextureFormat::BC5RGUnorm",
+    "TextureFormat::BC5RGSnorm",
+    "TextureFormat::BC6HRGBUfloat",
+    "TextureFormat::BC6HRGBFloat",
+    "TextureFormat::BC7RGBAUnorm",
+    "TextureFormat::BC7RGBAUnormSrgb",
+    "TextureFormat::ETC2RGB8Unorm",
+    "TextureFormat::ETC2RGB8UnormSrgb",
+    "TextureFormat::ETC2RGB8A1Unorm",
+    "TextureFormat::ETC2RGB8A1UnormSrgb",
+    "TextureFormat::ETC2RGBA8Unorm",
+    "TextureFormat::ETC2RGBA8UnormSrgb",
+    "TextureFormat::EACR11Unorm",
+    "TextureFormat::EACR11Snorm",
+    "TextureFormat::EACRG11Unorm",
+    "TextureFormat::EACRG11Snorm",
+    "TextureFormat::ASTC4x4Unorm",
+    "TextureFormat::ASTC4x4UnormSrgb",
+    "TextureFormat::ASTC5x4Unorm",
+    "TextureFormat::ASTC5x4UnormSrgb",
+    "TextureFormat::ASTC5x5Unorm",
+    "TextureFormat::ASTC5x5UnormSrgb",
+    "TextureFormat::ASTC6x5Unorm",
+    "TextureFormat::ASTC6x5UnormSrgb",
+    "TextureFormat::ASTC6x6Unorm",
+    "TextureFormat::ASTC6x6UnormSrgb",
+    "TextureFormat::ASTC8x5Unorm",
+    "TextureFormat::ASTC8x5UnormSrgb",
+    "TextureFormat::ASTC8x6Unorm",
+    "TextureFormat::ASTC8x6UnormSrgb",
+    "TextureFormat::ASTC8x8Unorm",
+    "TextureFormat::ASTC8x8UnormSrgb",
+    "TextureFormat::ASTC10x5Unorm",
+    "TextureFormat::ASTC10x5UnormSrgb",
+    "TextureFormat::ASTC10x6Unorm",
+    "TextureFormat::ASTC10x6UnormSrgb",
+    "TextureFormat::ASTC10x8Unorm",
+    "TextureFormat::ASTC10x8UnormSrgb",
+    "TextureFormat::ASTC10x10Unorm",
+    "TextureFormat::ASTC10x10UnormSrgb",
+    "TextureFormat::ASTC12x10Unorm",
+    "TextureFormat::ASTC12x10UnormSrgb",
+    "TextureFormat::ASTC12x12Unorm",
+    "TextureFormat::ASTC12x12UnormSrgb",
+    "TextureFormat::R16Unorm",
+    "TextureFormat::RG16Unorm",
+    "TextureFormat::RGBA16Unorm",
+    "TextureFormat::R16Snorm",
+    "TextureFormat::RG16Snorm",
+    "TextureFormat::RGBA16Snorm",
+    "TextureFormat::R8BG8Biplanar420Unorm",
+    "TextureFormat::R10X6BG10X6Biplanar420Unorm",
+    "TextureFormat::R8BG8A8Triplanar420Unorm",
+    "TextureFormat::R8BG8Biplanar422Unorm",
+    "TextureFormat::R8BG8Biplanar444Unorm",
+    "TextureFormat::R10X6BG10X6Biplanar422Unorm",
+    "TextureFormat::R10X6BG10X6Biplanar444Unorm",
+    "TextureFormat::External"
+};
+
+enum TextureSampleType {
+    "TextureSampleType::Undefined",
+    "TextureSampleType::Float",
+    "TextureSampleType::UnfilterableFloat",
+    "TextureSampleType::Depth",
+    "TextureSampleType::Sint",
+    "TextureSampleType::Uint"
+};
+
+enum TextureViewDimension {
+    "TextureViewDimension::Undefined",
+    "TextureViewDimension::e1D",
+    "TextureViewDimension::e2D",
+    "TextureViewDimension::e2DArray",
+    "TextureViewDimension::Cube",
+    "TextureViewDimension::CubeArray",
+    "TextureViewDimension::e3D"
+};
+
+enum VertexFormat {
+    "VertexFormat::Uint8x2",
+    "VertexFormat::Uint8x4",
+    "VertexFormat::Sint8x2",
+    "VertexFormat::Sint8x4",
+    "VertexFormat::Unorm8x2",
+    "VertexFormat::Unorm8x4",
+    "VertexFormat::Snorm8x2",
+    "VertexFormat::Snorm8x4",
+    "VertexFormat::Uint16x2",
+    "VertexFormat::Uint16x4",
+    "VertexFormat::Sint16x2",
+    "VertexFormat::Sint16x4",
+    "VertexFormat::Unorm16x2",
+    "VertexFormat::Unorm16x4",
+    "VertexFormat::Snorm16x2",
+    "VertexFormat::Snorm16x4",
+    "VertexFormat::Float16x2",
+    "VertexFormat::Float16x4",
+    "VertexFormat::Float32",
+    "VertexFormat::Float32x2",
+    "VertexFormat::Float32x3",
+    "VertexFormat::Float32x4",
+    "VertexFormat::Uint32",
+    "VertexFormat::Uint32x2",
+    "VertexFormat::Uint32x3",
+    "VertexFormat::Uint32x4",
+    "VertexFormat::Sint32",
+    "VertexFormat::Sint32x2",
+    "VertexFormat::Sint32x3",
+    "VertexFormat::Sint32x4",
+    "VertexFormat::Unorm10_10_10_2"
+};
+
+enum VertexStepMode {
+    "VertexStepMode::Undefined",
+    "VertexStepMode::VertexBufferNotUsed",
+    "VertexStepMode::Vertex",
+    "VertexStepMode::Instance"
+};
+
+enum WaitStatus {
+    "WaitStatus::Success",
+    "WaitStatus::TimedOut",
+    "WaitStatus::UnsupportedTimeout",
+    "WaitStatus::UnsupportedCount",
+    "WaitStatus::UnsupportedMixedSources",
+    "WaitStatus::Unknown"
+};
+
+enum BufferUsage {
+    "BufferUsage::None",
+    "BufferUsage::MapRead",
+    "BufferUsage::MapWrite",
+    "BufferUsage::CopySrc",
+    "BufferUsage::CopyDst",
+    "BufferUsage::Index",
+    "BufferUsage::Vertex",
+    "BufferUsage::Uniform",
+    "BufferUsage::Storage",
+    "BufferUsage::Indirect",
+    "BufferUsage::QueryResolve"
+};
+
+enum ColorWriteMask {
+    "ColorWriteMask::None",
+    "ColorWriteMask::Red",
+    "ColorWriteMask::Green",
+    "ColorWriteMask::Blue",
+    "ColorWriteMask::Alpha",
+    "ColorWriteMask::All"
+};
+
+enum HeapProperty {
+    "HeapProperty::DeviceLocal",
+    "HeapProperty::HostVisible",
+    "HeapProperty::HostCoherent",
+    "HeapProperty::HostUncached",
+    "HeapProperty::HostCached"
+};
+
+enum MapMode {
+    "MapMode::None",
+    "MapMode::Read",
+    "MapMode::Write"
+};
+
+enum ShaderStage {
+    "ShaderStage::None",
+    "ShaderStage::Vertex",
+    "ShaderStage::Fragment",
+    "ShaderStage::Compute"
+};
+
+enum TextureUsage {
+    "TextureUsage::None",
+    "TextureUsage::CopySrc",
+    "TextureUsage::CopyDst",
+    "TextureUsage::TextureBinding",
+    "TextureUsage::StorageBinding",
+    "TextureUsage::RenderAttachment",
+    "TextureUsage::TransientAttachment",
+    "TextureUsage::StorageAttachment"
+};
+
+interface AdapterInfo {
+};
+
+interface BindGroupDescriptor {
+};
+
+interface BindGroupEntry {
+};
+
+interface BindGroupLayoutDescriptor {
+};
+
+interface BindGroupLayoutEntry {
+};
+
+interface BufferDescriptor {
+};
+
+interface Color {
+};
+
+interface CommandBufferDescriptor {
+};
+
+interface CommandEncoderDescriptor {
+};
+
+interface CompilationInfo {
+};
+
+interface ComputePassDescriptor {
+};
+
+interface ComputePipelineDescriptor {
+};
+
+interface Extent3D {
+};
+
+interface ExternalTextureDescriptor {
+};
+
+interface ImageCopyExternalTexture {
+};
+
+interface ImageCopyTexture {
+};
+
+interface InstanceDescriptor {
+};
+
+interface InstanceFeatures {
+};
+
+interface PipelineLayoutDescriptor {
+};
+
+interface QuerySetDescriptor {
+};
+
+interface RenderBundleDescriptor {
+};
+
+interface RenderBundleEncoderDescriptor {
+};
+
+interface RenderPassDescriptor {
+};
+
+interface RenderPipelineDescriptor {
+};
+
+interface RequestAdapterOptions {
+};
+
+interface DeviceDescriptor {
+};
+
+interface SamplerDescriptor {
+};
+
+interface ShaderModuleDescriptor {
+};
+
+interface SharedBufferMemoryBeginAccessDescriptor {
+};
+
+interface SharedBufferMemoryDescriptor {
+};
+
+interface SharedBufferMemoryEndAccessState {
+};
+
+interface SharedBufferMemoryProperties {
+};
+
+interface SharedFenceDescriptor {
+};
+
+interface SharedFenceExportInfo {
+};
+
+interface SharedTextureMemoryBeginAccessDescriptor {
+};
+
+interface SharedTextureMemoryDescriptor {
+};
+
+interface SharedTextureMemoryEndAccessState {
+};
+
+interface SharedTextureMemoryProperties {
+};
+
+interface SurfaceCapabilities {
+    void SurfaceCapabilities();
+
+};
+
+interface SurfaceConfiguration {
+};
+
+interface SurfaceDescriptor {
+};
+
+interface SurfaceTexture {
+};
+
+interface SwapChainDescriptor {
+};
+
+interface TextureDataLayout {
+};
+
+interface TextureDescriptor {
+};
+
+interface TextureViewDescriptor {
+};
+
+interface AHardwareBufferProperties {
+};
+
+interface CopyTextureForBrowserOptions {
+};
+
+interface SupportedLimits {
+};
+
+interface CreateComputePipelineAsyncCallbackInfo {
+};
+
+interface CreateRenderPipelineAsyncCallbackInfo {
+};
+
+interface PopErrorScopeCallbackInfo {
+};
+
+interface CompilationInfoCallbackInfo {
+};
+
+interface QueueWorkDoneCallbackInfo {
+};
+
+interface RequestAdapterCallbackInfo {
+};
+
+interface FutureWaitInfo {
+};
+
+// Bool class (maps to boolean)
+interface Bool {
+//  // Implicit conversion to boolean
+//  boolean valueOf(); // TODO Not work
+};
+
+// ConvertibleStatus class
+interface ConvertibleStatus {
+//  attribute Status status;
+//  boolean valueOf(); // For implicit conversion to boolean
+};
+
+// Interfaces for WebGPU objects
+interface Adapter {
+    void Adapter();
+//  void EnumerateFeatures([AllowShared] FeatureName[] features, out unsigned long count);
+//  ConvertibleStatus GetInfo(out AdapterInfo info);
+//  ConvertibleStatus GetLimits(out SupportedLimits limits);
+//  ConvertibleStatus GetProperties(out AdapterProperties properties);
+//  boolean HasFeature(FeatureName feature);
+//  void RequestDevice(DeviceDescriptor options, RequestDeviceCallback callback, any userdata);
+//  Promise<void> RequestDevice(DeviceDescriptor options, CallbackMode callbackMode, RequestDeviceCallback callback, any userdata);
+//  Promise<void> RequestDevice(DeviceDescriptor options, RequestDeviceCallbackInfo callbackInfo);
+};
+
+interface BindGroup {
+//  void SetLabel(DOMString label);
+};
+
+interface BindGroupLayout {
+//  void SetLabel(DOMString label);
+};
+
+interface Buffer {
+//  void Destroy();
+//  any GetConstMappedRange(unsigned long long offset, unsigned long size);
+//  unsigned long long GetMappedRange(unsigned long long offset, unsigned long size);
+//  unsigned long long GetSize();
+//  BufferUsage GetUsage();
+//  void MapAsync(MapMode mode, unsigned long long offset, unsigned long long size, BufferMapCallback callback, any userdata);
+//  Promise<void> MapAsync(MapMode mode, unsigned long long offset, unsigned long long size, CallbackMode callbackMode, BufferMapCallback callback, any userdata);
+//  Promise<void> MapAsync(MapMode mode, unsigned long long offset, unsigned long long size, BufferMapCallbackInfo callbackInfo);
+//  void SetLabel(DOMString label);
+//  void Unmap();
+};
+
+interface CommandBuffer {
+//  void SetLabel(DOMString label);
+};
+
+interface CommandEncoder {
+//  ComputePassEncoder BeginComputePass(ComputePassDescriptor? descriptor);
+//  RenderPassEncoder BeginRenderPass(RenderPassDescriptor descriptor);
+//  void ClearBuffer(Buffer buffer, unsigned long long offset, unsigned long long size);
+//  void CopyBufferToBuffer(Buffer source, unsigned long long sourceOffset, Buffer destination, unsigned long long destinationOffset, unsigned long long size);
+//  void CopyBufferToTexture(ImageCopyBuffer source, ImageCopyTexture destination, Extent3D copySize);
+//  void CopyTextureToBuffer(ImageCopyTexture source, ImageCopyBuffer destination, Extent3D copySize);
+//  void CopyTextureToTexture(ImageCopyTexture source, ImageCopyTexture destination, Extent3D copySize);
+//  CommandBuffer Finish(CommandBufferDescriptor? descriptor);
+//  void InsertDebugMarker(DOMString markerLabel);
+//  void PopDebugGroup();
+//  void PushDebugGroup(DOMString groupLabel);
+//  void ResolveQuerySet(QuerySet querySet, unsigned long firstQuery, unsigned long queryCount, Buffer destination, unsigned long long destinationOffset);
+//  void SetLabel(DOMString label);
+//  void WriteBuffer(Buffer buffer, unsigned long long bufferOffset, ArrayBuffer data, unsigned long dataOffset, unsigned long size);
+//  void WriteTimestamp(QuerySet querySet, unsigned long queryIndex);
+};
+
+interface ComputePassEncoder {
+//  void DispatchWorkgroups(unsigned long workgroupCountX, unsigned long workgroupCountY, unsigned long workgroupCountZ);
+//  void DispatchWorkgroupsIndirect(Buffer indirectBuffer, unsigned long long indirectOffset);
+//  void End();
+//  void InsertDebugMarker(DOMString markerLabel);
+//  void PopDebugGroup();
+//  void PushDebugGroup(DOMString groupLabel);
+//  void SetBindGroup(unsigned long groupIndex, BindGroup group, unsigned long dynamicOffsetCount, unsigned long[] dynamicOffsets);
+//  void SetLabel(DOMString label);
+//  void SetPipeline(ComputePipeline pipeline);
+//  void WriteTimestamp(QuerySet querySet, unsigned long queryIndex);
+};
+
+interface ComputePipeline {
+//  BindGroupLayout GetBindGroupLayout(unsigned long groupIndex);
+//  void SetLabel(DOMString label);
+};
+
+interface Device {
+//  BindGroup CreateBindGroup(BindGroupDescriptor descriptor);
+//  BindGroupLayout CreateBindGroupLayout(BindGroupLayoutDescriptor descriptor);
+//  Buffer CreateBuffer(BufferDescriptor descriptor);
+//  CommandEncoder CreateCommandEncoder(CommandEncoderDescriptor? descriptor);
+//  ComputePipeline CreateComputePipeline(ComputePipelineDescriptor descriptor);
+//  void CreateComputePipelineAsync(ComputePipelineDescriptor descriptor, CreateComputePipelineAsyncCallback callback, any userdata);
+//  Promise<void> CreateComputePipelineAsync(ComputePipelineDescriptor descriptor, CallbackMode callbackMode, CreateComputePipelineAsyncCallback callback, any userdata);
+//  Promise<void> CreateComputePipelineAsync(ComputePipelineDescriptor descriptor, CreateComputePipelineAsyncCallbackInfo callbackInfo);
+//  Buffer CreateErrorBuffer(BufferDescriptor descriptor);
+//  ExternalTexture CreateErrorExternalTexture();
+//  ShaderModule CreateErrorShaderModule(ShaderModuleDescriptor descriptor, DOMString errorMessage);
+//  Texture CreateErrorTexture(TextureDescriptor descriptor);
+//  ExternalTexture CreateExternalTexture(ExternalTextureDescriptor descriptor);
+//  PipelineLayout CreatePipelineLayout(PipelineLayoutDescriptor descriptor);
+//  QuerySet CreateQuerySet(QuerySetDescriptor descriptor);
+//  RenderBundleEncoder CreateRenderBundleEncoder(RenderBundleEncoderDescriptor descriptor);
+//  RenderPipeline CreateRenderPipeline(RenderPipelineDescriptor descriptor);
+//  void CreateRenderPipelineAsync(RenderPipelineDescriptor descriptor, CreateRenderPipelineAsyncCallback callback, any userdata);
+//  Promise<void> CreateRenderPipelineAsync(RenderPipelineDescriptor descriptor, CallbackMode callbackMode, CreateRenderPipelineAsyncCallback callback, any userdata);
+//  Promise<void> CreateRenderPipelineAsync(RenderPipelineDescriptor descriptor, CreateRenderPipelineAsyncCallbackInfo callbackInfo);
+//  Sampler CreateSampler(SamplerDescriptor? descriptor);
+//  ShaderModule CreateShaderModule(ShaderModuleDescriptor descriptor);
+//  SwapChain CreateSwapChain(Surface surface, SwapChainDescriptor descriptor);
+//  Texture CreateTexture(TextureDescriptor descriptor);
+//  void Destroy();
+//  unsigned long EnumerateFeatures([AllowShared] FeatureName[] features);
+//  void ForceLoss(DeviceLostReason type, DOMString message);
+//  ConvertibleStatus GetAHardwareBufferProperties(any handle, out AHardwareBufferProperties properties);
+//  Adapter GetAdapter();
+//  ConvertibleStatus GetLimits(out SupportedLimits limits);
+//  Queue GetQueue();
+//  TextureUsage GetSupportedSurfaceUsage(Surface surface);
+//  boolean HasFeature(FeatureName feature);
+//  SharedBufferMemory ImportSharedBufferMemory(SharedBufferMemoryDescriptor descriptor);
+//  SharedFence ImportSharedFence(SharedFenceDescriptor descriptor);
+//  SharedTextureMemory ImportSharedTextureMemory(SharedTextureMemoryDescriptor descriptor);
+//  void InjectError(ErrorType type, DOMString message);
+//  void PopErrorScope(ErrorCallback callback, any userdata);
+//  Promise<void> PopErrorScope(CallbackMode callbackMode, PopErrorScopeCallback callback, any userdata);
+//  Promise<void> PopErrorScope(PopErrorScopeCallbackInfo callbackInfo);
+//  void PushErrorScope(ErrorFilter filter);
+//  void SetDeviceLostCallback(DeviceLostCallback callback, any userdata);
+//  void SetLabel(DOMString label);
+//  void SetLoggingCallback(LoggingCallback callback, any userdata);
+//  void SetUncapturedErrorCallback(ErrorCallback callback, any userdata);
+//  void Tick();
+//  void ValidateTextureDescriptor(TextureDescriptor descriptor);
+};
+
+interface ExternalTexture {
+//  void Destroy();
+//  void Expire();
+//  void Refresh();
+//  void SetLabel(DOMString label);
+};
+
+interface Instance {
+//  Surface CreateSurface(SurfaceDescriptor? descriptor);
+//  unsigned long EnumerateWGSLLanguageFeatures([AllowShared] WGSLFeatureName[] features);
+//  boolean HasWGSLLanguageFeature(WGSLFeatureName feature);
+//  void ProcessEvents();
+//  void RequestAdapter(RequestAdapterOptions? options, RequestAdapterCallback callback, any userdata);
+//  Promise<void> RequestAdapter(RequestAdapterOptions? options, CallbackMode callbackMode, RequestAdapterCallback callback, any userdata);
+//  Promise<void> RequestAdapter(RequestAdapterOptions? options, RequestAdapterCallbackInfo callbackInfo);
+//  WaitStatus WaitAny(unsigned long futureCount, [AllowShared] FutureWaitInfo[] futures, unsigned long long timeoutNS);
+//  WaitStatus WaitAny(Future f, unsigned long long timeout);
+};
+
+interface PipelineLayout {
+//  void SetLabel(DOMString label);
+//};
+//
+//interface QuerySet {
+//  void Destroy();
+//  unsigned long GetCount();
+//  QueryType GetType();
+//  void SetLabel(DOMString label);
+};
+
+interface Queue {
+//  void CopyExternalTextureForBrowser(ImageCopyExternalTexture source, ImageCopyTexture destination, Extent3D copySize, CopyTextureForBrowserOptions options);
+//  void CopyTextureForBrowser(ImageCopyTexture source, ImageCopyTexture destination, Extent3D copySize, CopyTextureForBrowserOptions options);
+//  void OnSubmittedWorkDone(QueueWorkDoneCallback callback, any userdata);
+//  Promise<void> OnSubmittedWorkDone(CallbackMode callbackMode, QueueWorkDoneCallback callback, any userdata);
+//  Promise<void> OnSubmittedWorkDone(QueueWorkDoneCallbackInfo callbackInfo);
+//  void SetLabel(DOMString label);
+//  void Submit(unsigned long commandCount, [AllowShared] CommandBuffer[] commands);
+//  void WriteBuffer(Buffer buffer, unsigned long long bufferOffset, ArrayBuffer data, unsigned long size);
+//  void WriteTexture(ImageCopyTexture destination, ArrayBuffer data, unsigned long dataSize, TextureDataLayout dataLayout, Extent3D writeSize);
+};
+
+interface RenderBundle {
+//  void SetLabel(DOMString label);
+};
+
+interface RenderBundleEncoder {
+//  void Draw(unsigned long vertexCount, unsigned long instanceCount, unsigned long firstVertex, unsigned long firstInstance);
+//  void DrawIndexed(unsigned long indexCount, unsigned long instanceCount, unsigned long firstIndex, long baseVertex, unsigned long firstInstance);
+//  void DrawIndexedIndirect(Buffer indirectBuffer, unsigned long long indirectOffset);
+//  void DrawIndirect(Buffer indirectBuffer, unsigned long long indirectOffset);
+//  RenderBundle Finish(RenderBundleDescriptor? descriptor);
+//  void InsertDebugMarker(DOMString markerLabel);
+//  void PopDebugGroup();
+//  void PushDebugGroup(DOMString groupLabel);
+//  void SetBindGroup(unsigned long groupIndex, BindGroup group, unsigned long dynamicOffsetCount, unsigned long[] dynamicOffsets);
+//  void SetIndexBuffer(Buffer buffer, IndexFormat format, unsigned long long offset, unsigned long long size);
+//  void SetLabel(DOMString label);
+//  void SetPipeline(RenderPipeline pipeline);
+//  void SetVertexBuffer(unsigned long slot, Buffer buffer, unsigned long long offset, unsigned long long size);
+};
+
+interface RenderPassEncoder {
+//  void BeginOcclusionQuery(unsigned long queryIndex);
+//  void Draw(unsigned long vertexCount, unsigned long instanceCount, unsigned long firstVertex, unsigned long firstInstance);
+//  void DrawIndexed(unsigned long indexCount, unsigned long instanceCount, unsigned long firstIndex, long baseVertex, unsigned long firstInstance);
+//  void DrawIndexedIndirect(Buffer indirectBuffer, unsigned long long indirectOffset);
+//  void DrawIndirect(Buffer indirectBuffer, unsigned long long indirectOffset);
+//  void End();
+//  void EndOcclusionQuery();
+//  void ExecuteBundles(unsigned long bundleCount, [AllowShared] RenderBundle[] bundles);
+//  void InsertDebugMarker(DOMString markerLabel);
+//  void PixelLocalStorageBarrier();
+//  void PopDebugGroup();
+//  void PushDebugGroup(DOMString groupLabel);
+//  void SetBindGroup(unsigned long groupIndex, BindGroup group, unsigned long dynamicOffsetCount, unsigned long[] dynamicOffsets);
+//  void SetBlendConstant(Color color);
+//  void SetIndexBuffer(Buffer buffer, IndexFormat format, unsigned long long offset, unsigned long long size);
+//  void SetLabel(DOMString label);
+//  void SetPipeline(RenderPipeline pipeline);
+//  void SetScissorRect(unsigned long x, unsigned long y, unsigned long width, unsigned long height);
+//  void SetStencilReference(unsigned long reference);
+//  void SetVertexBuffer(unsigned long slot, Buffer buffer, unsigned long long offset, unsigned long long size);
+//  void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth);
+//  void WriteTimestamp(QuerySet querySet, unsigned long queryIndex);
+};
+
+interface RenderPipeline {
+//  BindGroupLayout GetBindGroupLayout(unsigned long groupIndex);
+//  void SetLabel(DOMString label);
+};
+
+interface Sampler {
+//  void SetLabel(DOMString label);
+};
+
+interface ShaderModule {
+//  void GetCompilationInfo(CompilationInfoCallback callback, any userdata);
+//  Promise<void> GetCompilationInfo(CallbackMode callbackMode, CompilationInfoCallback callback, any userdata);
+//  Promise<void> GetCompilationInfo(CompilationInfoCallbackInfo callbackInfo);
+//  void SetLabel(DOMString label);
+};
+
+interface SharedBufferMemory {
+//  ConvertibleStatus BeginAccess(Buffer buffer, SharedBufferMemoryBeginAccessDescriptor descriptor);
+//  Buffer CreateBuffer(BufferDescriptor descriptor);
+//  ConvertibleStatus EndAccess(Buffer buffer, out SharedBufferMemoryEndAccessState descriptor);
+//  ConvertibleStatus GetProperties(out SharedBufferMemoryProperties properties);
+//  boolean IsDeviceLost();
+//  void SetLabel(DOMString label);
+};
+
+interface SharedFence {
+//  void ExportInfo(out SharedFenceExportInfo info);
+};
+
+interface SharedTextureMemory {
+//  ConvertibleStatus BeginAccess(Texture texture, SharedTextureMemoryBeginAccessDescriptor descriptor);
+//  Texture CreateTexture(TextureDescriptor descriptor);
+//  ConvertibleStatus EndAccess(Texture texture, out SharedTextureMemoryEndAccessState descriptor);
+//  ConvertibleStatus GetProperties(out SharedTextureMemoryProperties properties);
+//  boolean IsDeviceLost();
+//  void SetLabel(DOMString label);
+};
+
+interface Surface {
+    void Surface();
+    void Configure([Const] SurfaceConfiguration config);
+    [Ref] ConvertibleStatus GetCapabilities([Const, Ref] Adapter adapter, SurfaceCapabilities capabilities); // TODO no appropriate default constructor available
+    TextureFormat GetPreferredFormat([Const, Ref] Adapter adapter);
+    void Present();
+    void Unconfigure();
+};
+
+interface SwapChain {
+    [Value] Texture GetCurrentTexture();
+    [Value] TextureView GetCurrentTextureView();
+    void Present();
+};
+
+interface Texture {
+    [Value] TextureView CreateErrorView([Const] optional TextureViewDescriptor descriptor);
+    [Value] TextureView CreateView([Const] optional TextureViewDescriptor descriptor);
+    void Destroy();
+    unsigned long GetDepthOrArrayLayers();
+    TextureDimension GetDimension();
+    TextureFormat GetFormat();
+    unsigned long GetHeight();
+    unsigned long GetMipLevelCount();
+    unsigned long GetSampleCount();
+    TextureUsage GetUsage();
+    unsigned long GetWidth();
+    void SetLabel([Const] DOMString label);
+};
+
+interface TextureView {
+    void SetLabel([Const] DOMString label);
+};
+
+interface TextureView {
+//  void SetLabel(DOMString label);
+};
+
+//// Free functions (in a global interface)
+//[NoInterfaceObject]
+//interface WebGPU {
+//  Instance CreateInstance(InstanceDescriptor? descriptor);
+//  Status GetInstanceFeatures(out InstanceFeatures features);
+//  Proc GetProcAddress(Device device, DOMString procName);
+//};
+//
+//// Placeholder for Proc (function pointer)
+//callback Proc = void ();
+//
+//// Placeholder for Future (simplified as unsigned long for id)
+//interface Future {
+//  attribute unsigned long id;
+//};

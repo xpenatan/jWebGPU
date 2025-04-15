@@ -13,6 +13,6 @@ public class WebGPULoader {
     */
 
     public static void init(JParserLibraryLoaderListener listener) {
-        JParserLibraryLoader.load("webgpu", listener);
+        JParserLibraryLoader.load("jWebGPU", listener);
     }
 }

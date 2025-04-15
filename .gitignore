@@ -32,3 +32,5 @@ libs/
 *.ini
 
 **/webapp/**
+**/webgpu-core/src/main/**
+**/webgpu-teavm/src/main/**

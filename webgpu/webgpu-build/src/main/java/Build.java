@@ -1,34 +1,20 @@
 import com.github.xpenatan.jparser.builder.BuildMultiTarget;
-import com.github.xpenatan.jparser.builder.targets.AndroidTarget;
-import com.github.xpenatan.jparser.builder.targets.EmscriptenTarget;
-import com.github.xpenatan.jparser.builder.targets.LinuxTarget;
-import com.github.xpenatan.jparser.builder.targets.MacTarget;
 import com.github.xpenatan.jparser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jparser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jparser.builder.tool.BuilderTool;
-import com.github.xpenatan.jparser.idl.IDLHelper;
-import com.github.xpenatan.jparser.idl.IDLPackageRenaming;
 import com.github.xpenatan.jparser.idl.IDLReader;
 import java.util.ArrayList;
 
 public class Build {
 
     public static void main(String[] args) {
-        String libName = "webgpu";
+        String libName = "jWebGPU";
         String modulePrefix = "webgpu";
         String basePackage = "com.github.xpenatan.webgpu";
-        String sourcePath =  "/build/webgpu";
 //        WindowsMSVCTarget.DEBUG_BUILD = true;
 
-        IDLHelper.cppConverter = idlType -> {
-            if(idlType.equals("unsigned long long")) {
-                return "uint64";
-            }
-            return null;
-        };
-
-        BuildToolOptions op = new BuildToolOptions(modulePrefix, libName, basePackage, sourcePath, args);
+        BuildToolOptions op = new BuildToolOptions(libName, basePackage, modulePrefix, null, args);
         BuilderTool.build(op, new BuildToolListener() {
             @Override
             public void onAddTarget(BuildToolOptions op, IDLReader idlReader, ArrayList<BuildMultiTarget> targets) {
@@ -60,15 +46,20 @@ public class Build {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-        String sourceDir = op.getSourceDir();
+        String buildPath = op.getModuleBuildPath() + "/build";
+        String buildDawnPath = op.getModuleBuildPath() + "/build/dawn";
+        String libsPath = buildPath + "/libs";
+        String dawnGenPathInclude = buildDawnPath + "/build_windows_x64/gen/include";
+        String dawnPathInclude = buildDawnPath + "/include";
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
         linkTarget.addJNIHeaders();
-        linkTarget.headerDirs.add("-I" + sourceDir);
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + dawnGenPathInclude);
+        linkTarget.headerDirs.add("-I" + dawnPathInclude);
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
-        linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/windows/vc/webgpu64_.lib");
+        linkTarget.linkerFlags.add(libsPath + "/windows_x64/webgpu_dawn.lib");
         multiTarget.add(linkTarget);
 
         return multiTarget;
