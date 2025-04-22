@@ -1,3 +1,7 @@
+interface WebGPU {
+    static void set();
+};
+
 //// webgpu.webidl
 //// Generated from webgpu_cpp.h for Emscripten WebIDL compatibility with updated enum item names
 //

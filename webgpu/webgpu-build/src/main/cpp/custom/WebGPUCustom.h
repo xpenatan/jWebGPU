@@ -153,13 +153,13 @@ using AHardwareBufferProperties = wgpu::AHardwareBufferProperties;
 
 //using IDLArrayTextureFormat = IDLArray<TextureFormat*>;
 
-//
-//class WebGPU {
-//
-//    public:
-//        static void set() {
-//            std::cout << "HELLO 1" << std::endl;
-//            wgpu::SurfaceCapabilities capabilities;
-//            std::cout << "HELLO 2" << std::endl;
-//        }
-//};
+
+class WebGPU {
+
+    public:
+        static void set() {
+            std::cout << "HELLO 1" << std::endl;
+            wgpu::SurfaceCapabilities capabilities;
+            std::cout << "HELLO 2" << std::endl;
+        }
+};

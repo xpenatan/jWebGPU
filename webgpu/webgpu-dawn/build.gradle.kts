@@ -151,7 +151,7 @@ fun createGenerateCMakeTask(platform: String, arch: String) {
             "-DCMAKE_CXX_STANDARD=17",
             "-DDAWN_BUILD_MONOLITHIC_LIBRARY=ON",
             "-DBUILD_SHARED_LIBS=OFF",
-            "-DDAWN_BUILD_SAMPLES=OFF",
+            "-DDAWN_BUILD_SAMPLES=ON",
             "-DDAWN_BUILD_TESTS=OFF",
             "-DDAWN_USE_GLFW=OFF"
         )
