@@ -10,7 +10,6 @@ plugins {
 val buildDir = layout.buildDirectory.get().asFile
 val zippedPath = "${buildDir}/dawn.tar.gz"
 val sourcePath = "${buildDir}/dawn"
-val sourceDestination = "${buildDir}/dawn/"
 val libsDir = "${buildDir}/libs"
 
 // Define platforms and their architectures
@@ -43,18 +42,6 @@ val buildTypes = mapOf(
     "emscripten" to "shared"
 )
 
-// Library file patterns by platform and build type
-fun getLibPatterns(platform: String): List<String> {
-    return when (platform) {
-        "windows" -> listOf("**/*.dll", "**/*.lib")
-        "mac" -> listOf("**/*.dylib", "**/*.a")
-        "linux", "android" -> listOf("**/*.so", "**/*.a")
-        "ios" -> listOf("**/*.dylib", "**/*.a")
-        "emscripten" -> listOf("**/*.wasm", "**/*.a")
-        else -> throw GradleException("Unsupported platform: $platform")
-    }
-}
-
 // Task to download and extract Dawn source
 tasks.register<Download>("download_source") {
     group = "webgpu"
@@ -64,16 +51,16 @@ tasks.register<Download>("download_source") {
     onlyIfModified(true)
     doLast {
         try {
-            File(sourceDestination).mkdirs()
+            File(sourcePath).mkdirs()
             exec {
-                commandLine = listOf("tar", "-xzf", zippedPath, "-C", sourceDestination)
+                commandLine = listOf("tar", "-xzf", zippedPath, "-C", sourcePath)
                 workingDir = buildDir
             }
-            File(sourceDestination).walk().forEach { file ->
+            File(sourcePath).walk().forEach { file ->
                 if (file.extension == "tar") {
                     println("Found nested tar file: ${file.name}")
                     exec {
-                        commandLine = listOf("tar", "-xf", file.absolutePath, "-C", sourceDestination)
+                        commandLine = listOf("tar", "-xf", file.absolutePath, "-C", sourcePath)
                         workingDir = buildDir
                     }
                     file.delete()
@@ -86,6 +73,67 @@ tasks.register<Download>("download_source") {
     }
 }
 
+tasks.register("patch_dawn") {
+    group = "webgpu"
+    doLast {
+
+        val bundleLibrariesFile = File(sourcePath, "/src/cmake/BundleLibraries.cmake")
+        val cmakeListsFile = File(sourcePath, "/src/dawn/native/CMakeLists.txt")
+
+        if (!bundleLibrariesFile.exists()) {
+            throw IllegalStateException("BundleLibraries.cmake not found at ${bundleLibrariesFile.absolutePath}")
+        }
+        if (!cmakeListsFile.exists()) {
+            throw IllegalStateException("CMakeLists.txt not found at ${cmakeListsFile.absolutePath}")
+        }
+
+        val bundleContent = bundleLibrariesFile.readText()
+        val patchedBundleContent = bundleContent.replace(
+            "add_library(\${output_target} SHARED",
+            "add_library(\${output_target} STATIC"
+        )
+
+        if (patchedBundleContent != bundleContent) {
+            bundleLibrariesFile.writeText(patchedBundleContent)
+            println("Patched ${bundleLibrariesFile.absolutePath}: Changed SHARED to STATIC")
+        }
+        else {
+            println("${bundleLibrariesFile.absolutePath} already patched or no change needed")
+        }
+
+        val cmakeContent = cmakeListsFile.readText()
+        var patchedCmakeContent = cmakeContent
+        patchedCmakeContent = patchedCmakeContent.replace(
+            Regex("PUBLIC\\s+\"WGPU_SHARED_LIBRARY\"\\s+\"DAWN_NATIVE_SHARED_LIBRARY\""),
+            ""
+        )
+
+//        install(TARGETS webgpu_dawn ARCHIVE DESTINATION lib )
+//        install(DIRECTORY "${CMAKE_BINARY_DIR}/gen/include/dawn/" DESTINATION include/dawn FILES_MATCHING PATTERN "*.h")
+//        install(DIRECTORY "${CMAKE_BINARY_DIR}/gen/include/webgpu/" DESTINATION include/webgpu FILES_MATCHING PATTERN "*.h")
+//        install(DIRECTORY "${CMAKE_SOURCE_DIR}/include/webgpu/" DESTINATION include/webgpu FILES_MATCHING PATTERN "*.h")
+
+        val oldText = "dawn_install_target\\(webgpu_dawn\\s+HEADERS\\s+\\\$\\{webgpu_dawn_public_headers}\\)"
+        val newText = "install(TARGETS webgpu_dawn ARCHIVE DESTINATION lib )\n" +
+                "\t\tinstall(DIRECTORY \"\\$\\{CMAKE_BINARY_DIR\\}/gen/include/dawn/\" DESTINATION include/dawn FILES_MATCHING PATTERN \"*.h\")\n" +
+                "\t\tinstall(DIRECTORY \"\\$\\{CMAKE_BINARY_DIR\\}/gen/include/webgpu/\" DESTINATION include/webgpu FILES_MATCHING PATTERN \"*.h\")\n" +
+                "\t\tinstall(DIRECTORY \"\\$\\{CMAKE_SOURCE_DIR\\}/include/webgpu/\" DESTINATION include/webgpu FILES_MATCHING PATTERN \"*.h\")"
+        patchedCmakeContent = patchedCmakeContent.replace(Regex(oldText), newText)
+
+        println(patchedCmakeContent)
+        if (patchedCmakeContent != cmakeContent) {
+            cmakeListsFile.writeText(patchedCmakeContent)
+            println("Patched ${cmakeListsFile.absolutePath}: Commented out shared library definitions")
+        } else {
+            println("${cmakeListsFile.absolutePath} already patched or no change needed")
+        }
+    }
+}
+
+tasks.named("download_source") {
+    finalizedBy("patch_dawn")
+}
+
 // Generate CMake build files for a platform and architecture
 fun createGenerateCMakeTask(platform: String, arch: String) {
     val taskName = "generateCMake_${platform}_$arch"
@@ -94,24 +142,18 @@ fun createGenerateCMakeTask(platform: String, arch: String) {
         group = "webgpu"
         workingDir(sourcePath)
         val buildDir = "${sourcePath}/build_${platform}_$arch"
-        val buildType = buildTypes[platform] ?: throw GradleException("Unknown platform: $platform")
         val cmakeArgs = mutableListOf(
             "-B", buildDir,
             "-S", ".",
             "-DDAWN_FETCH_DEPENDENCIES=ON",
+            "-DDAWN_ENABLE_INSTALL=ON",
             "-DCMAKE_BUILD_TYPE=Release",
-//            "-DDAWN_BUILD_SAMPLES=OFF",
-//            "-DDAWN_BUILD_TESTS=OFF",
-//            "-DDAWN_ENABLE_D3D12=ON",
-//            "-DDAWN_ENABLE_D3D11=OFF",
-//            "-DDAWN_ENABLE_DESKTOP_GL=OFF",
-//            "-DDAWN_ENABLE_OPENGLES=OFF",
-//            "-DDAWN_ENABLE_VULKAN=OFF",
-//            "-DDAWN_USE_GLFW=OFF",
-//            "-DDAWN_ENABLE_SPIRV_VALIDATION=OFF",
-//            "-DDAWN_DXC_ENABLE_ASSERTS_IN_NDEBUG=OFF",
+            "-DCMAKE_CXX_STANDARD=17",
             "-DDAWN_BUILD_MONOLITHIC_LIBRARY=ON",
-//            "-DTINT_BUILD_TESTS=OFF"
+            "-DBUILD_SHARED_LIBS=OFF",
+            "-DDAWN_BUILD_SAMPLES=OFF",
+            "-DDAWN_BUILD_TESTS=OFF",
+            "-DDAWN_USE_GLFW=OFF"
         )
         when (platform) {
             "windows" -> cmakeArgs.addAll(listOf("-A", if (arch == "x64") "x64" else "ARM64"))
@@ -152,48 +194,23 @@ fun createBuildTask(platform: String, arch: String) {
         workingDir("${sourcePath}/build_${platform}_$arch")
         commandLine("cmake", "--build", ".", "--config", "Release", "--target",  "webgpu_dawn", "--parallel")
     }
-}
-
-// Copy the built libraries to the output directory
-fun createCopyLibsTask(platform: String, arch: String) {
-    val taskName = "copyLibs_${platform}_$arch"
-    tasks.register<Copy>(taskName) {
-        description = "Copies libraries for $platform $arch."
+    val taskNameInstall = taskName + "_install"
+    tasks.register<Exec>(taskNameInstall) {
         group = "webgpu"
-        val patterns = getLibPatterns(platform)
-        from(fileTree("${sourcePath}/build_${platform}_$arch").matching { include(*patterns.toTypedArray()) }.files)
-        into("$libsDir/${platform}_$arch")
-        onlyIf {
-            val files = fileTree("${sourcePath}/build_${platform}_$arch").matching { include(*patterns.toTypedArray()) }.files
-            !files.isEmpty()
+        workingDir(sourcePath)
+        val primaryTaskState = project.tasks.getByName(taskName).state
+        val runCommand = if (primaryTaskState.executed) {
+            primaryTaskState.failure == null
+        }
+        else {
+            true
+        }
+        if(runCommand) {
+            commandLine("cmake", "--install", taskName, "--prefix", "install/${taskName}")
         }
     }
-}
-
-// Combine selected libraries for a platform and architecture
-fun createCombineLibsTask(platform: String, arch: String) {
-    val taskName = "combineLibs_${platform}_$arch"
-    val libs = libsToCombine[platform] ?: listOf()
-    if (platform == "emscripten" || libs.isEmpty()) {
-        return // Skip combination for Emscripten or if no libs are specified
-    }
-    tasks.register<Exec>(taskName) {
-        description = "Combines selected static libraries for $platform $arch into a single library."
-        group = "webgpu"
-        dependsOn("copyLibs_${platform}_$arch")
-        workingDir("$libsDir/${platform}_$arch")
-        val combinedLibName = if (platform == "windows") "combined.lib" else "combined.a"
-        when (platform) {
-            "windows" -> {
-                commandLine("cmd", "/c", "lib /OUT:$combinedLibName ${libs.joinToString(" ")}")
-            }
-            "mac", "ios" -> {
-                commandLine("libtool", "-static", "-o", combinedLibName, *libs.toTypedArray())
-            }
-            "linux", "android" -> {
-                commandLine("sh", "-c", "mkdir temp && cd temp && for lib in ${libs.joinToString(" ")}; do ar x \$lib; done && ar rcs ../$combinedLibName *.o && cd .. && rm -rf temp")
-            }
-        }
+    tasks.named(taskName) {
+        finalizedBy(taskNameInstall)
     }
 }
 
@@ -202,8 +219,6 @@ platforms.forEach { (platform, archs) ->
     archs.forEach { arch ->
         createGenerateCMakeTask(platform, arch)
         createBuildTask(platform, arch)
-        createCopyLibsTask(platform, arch)
-        createCombineLibsTask(platform, arch)
     }
 }
 
