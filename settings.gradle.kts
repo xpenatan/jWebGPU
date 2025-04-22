@@ -1,3 +1,4 @@
+include(":webgpu:webgpu-dawn")
 include(":webgpu:webgpu-base")
 include(":webgpu:webgpu-build")
 include(":webgpu:webgpu-core")
