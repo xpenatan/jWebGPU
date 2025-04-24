@@ -59,8 +59,12 @@ public class Build {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String dawnPath) throws IOException {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-        String dawnIncludePath = dawnPath + "/install/build_windows_x64/include";
-        String dawnLibPath = dawnPath + "/install/build_windows_x64/lib";
+        String dawnIncludePath = dawnPath + "/install/Release/include";
+        String dawnLibPath = dawnPath + "/install/Release/lib/webgpu_dawn.lib";
+//        String dawnIncludePath = dawnPath + "/install//webgpu/include";
+//        String dawnLibPath = dawnPath + "/install/webgpu/lib/dawn.lib";
+
+        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
@@ -69,9 +73,9 @@ public class Build {
         linkTarget.headerDirs.add("-I" + dawnIncludePath);
         linkTarget.cppCompiler.add("/MD");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
-        linkTarget.linkerFlags.add(dawnLibPath + "/webgpu_dawn.lib");
+        linkTarget.linkerFlags.add(dawnLibPath);
         linkTarget.linkerFlags.add("dxguid.lib");
-        linkTarget.linkerFlags.add("advapi32.lib");
+//        linkTarget.linkerFlags.add("advapi32.lib");
 //        linkTarget.linkerFlags.add("kernel32.lib");
 //        linkTarget.linkerFlags.add("user32.lib");
 //        linkTarget.linkerFlags.add("gdi32.lib");

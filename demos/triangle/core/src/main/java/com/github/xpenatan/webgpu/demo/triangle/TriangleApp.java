@@ -1,9 +1,6 @@
 package com.github.xpenatan.webgpu.demo.triangle;
 
-import com.github.xpenatan.webgpu.Adapter;
-import com.github.xpenatan.webgpu.ConvertibleStatus;
-import com.github.xpenatan.webgpu.Surface;
-import com.github.xpenatan.webgpu.SurfaceCapabilities;
+import com.github.xpenatan.webgpu.Instance;
 import com.github.xpenatan.webgpu.WebGPU;
 import com.github.xpenatan.webgpu.WebGPULoader;
 
@@ -18,13 +15,20 @@ public class TriangleApp {
     }
 
     private void init() {
-        Surface surface = new Surface();
-        Adapter adapter = new Adapter();
-        SurfaceCapabilities capabilities = new SurfaceCapabilities();
-        ConvertibleStatus convertibleStatus = surface.GetCapabilities(adapter, capabilities);
 
+//        WebGPU.Set();
 
-        WebGPU.native_set();
+        Instance instance = WebGPU.CreateInstance();
+        System.out.println("PASS");
+//        WGPURequestAdapterOptions options = new WGPURequestAdapterOptions();
+//        int mode = WGPUCallbackMode.WGPUCallbackMode_WaitAnyOnly;
+//        RequestAdapterCallback callback = new RequestAdapterCallback() {
+//            @Override
+//            protected void OnCallback(int status, Adapter adapter) {
+//                System.out.println("Status: " + status);
+//            }
+//        };
+//        instance.RequestAdapter(options, mode, callback);
     }
 
     public void render() {

@@ -46,7 +46,7 @@ val buildTypes = mapOf(
 tasks.register<Download>("download_source") {
     group = "webgpu"
     description = "Download WebGPU Dawn source"
-    src("https://dawn.googlesource.com/dawn/+archive/refs/heads/chromium/6613.tar.gz")
+    src("https://dawn.googlesource.com/dawn/+archive/refs/heads/chromium/7142.tar.gz")
     dest(File(zippedPath))
     onlyIfModified(true)
     doLast {
@@ -130,9 +130,9 @@ tasks.register("patch_dawn") {
     }
 }
 
-tasks.named("download_source") {
-    finalizedBy("patch_dawn")
-}
+//tasks.named("download_source") {
+//    finalizedBy("patch_dawn")
+//}
 
 // Generate CMake build files for a platform and architecture
 fun createGenerateCMakeTask(platform: String, arch: String) {
@@ -153,7 +153,7 @@ fun createGenerateCMakeTask(platform: String, arch: String) {
             "-DBUILD_SHARED_LIBS=OFF",
             "-DDAWN_BUILD_SAMPLES=ON",
             "-DDAWN_BUILD_TESTS=OFF",
-            "-DDAWN_USE_GLFW=OFF"
+            "-DDAWN_USE_GLFW=ON"
         )
         when (platform) {
             "windows" -> cmakeArgs.addAll(listOf("-A", if (arch == "x64") "x64" else "ARM64"))

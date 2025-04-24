@@ -1,8 +1,20 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 
+val lwjglVersion = "3.3.3"
+val lwjglNatives = "natives-windows"
+
+
 dependencies {
     implementation(project(":demos:triangle:core"))
     implementation(project(":webgpu:webgpu-desktop"))
+
+    implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
+    implementation("org.lwjgl:lwjgl")
+    implementation("org.lwjgl:lwjgl-glfw")
+    implementation("org.lwjgl:lwjgl-opengl")
+    runtimeOnly("org.lwjgl:lwjgl::$lwjglNatives")
+    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglNatives")
+    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglNatives")
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.Main"
