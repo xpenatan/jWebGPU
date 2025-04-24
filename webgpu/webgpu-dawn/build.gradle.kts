@@ -44,7 +44,7 @@ val buildTypes = mapOf(
 
 // Task to download and extract Dawn source
 tasks.register<Download>("download_source") {
-    group = "webgpu"
+    group = "dawn"
     description = "Download WebGPU Dawn source"
     src("https://dawn.googlesource.com/dawn/+archive/refs/heads/chromium/7142.tar.gz")
     dest(File(zippedPath))
@@ -74,7 +74,7 @@ tasks.register<Download>("download_source") {
 }
 
 tasks.register("patch_dawn") {
-    group = "webgpu"
+    group = "dawn"
     doLast {
 
         val bundleLibrariesFile = File(sourcePath, "/src/cmake/BundleLibraries.cmake")
@@ -139,7 +139,7 @@ fun createGenerateCMakeTask(platform: String, arch: String) {
     val taskName = "generateCMake_${platform}_$arch"
     tasks.register<Exec>(taskName) {
         description = "Generates CMake build files for $platform $arch."
-        group = "webgpu"
+        group = "dawn"
         workingDir(sourcePath)
         val buildDir = "${sourcePath}/build_${platform}_$arch"
         val cmakeArgs = mutableListOf(
@@ -189,14 +189,14 @@ fun createBuildTask(platform: String, arch: String) {
     val taskName = "build_${platform}_$arch"
     tasks.register<Exec>(taskName) {
         description = "Builds the library for $platform on $arch."
-        group = "webgpu"
+        group = "dawn"
         dependsOn("generateCMake_${platform}_$arch")
         workingDir("${sourcePath}/build_${platform}_$arch")
         commandLine("cmake", "--build", ".", "--config", "Release", "--target",  "webgpu_dawn", "--parallel")
     }
     val taskNameInstall = taskName + "_install"
     tasks.register<Exec>(taskNameInstall) {
-        group = "webgpu"
+        group = "dawn"
         workingDir(sourcePath)
         val primaryTaskState = project.tasks.getByName(taskName).state
         val runCommand = if (primaryTaskState.executed) {
