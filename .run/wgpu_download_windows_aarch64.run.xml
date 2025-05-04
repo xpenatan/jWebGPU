@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="webgpu_demo_triangle_desktop" type="GradleRunConfiguration" factoryName="Gradle" folderName="Demos">
+  <configuration default="false" name="wgpu_download_windows_aarch64" type="GradleRunConfiguration" factoryName="Gradle" folderName="WGPU">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/demos/triangle/desktop" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-wgpu" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="" />
       <option name="taskDescriptions">
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="webgpu_demo_triangle_desktop" />
+          <option value="download_windows_aarch64" />
         </list>
       </option>
       <option name="vmOptions" />

@@ -1,6 +1,6 @@
 val moduleName = "webgpu-teavm"
 
-val emscriptenFile = "$projectDir/../webgpu-build/build/c++/libs/emscripten/webgpu.wasm.js"
+val emscriptenFile = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGPU.wasm.js"
 
 tasks.jar {
     from(emscriptenFile)

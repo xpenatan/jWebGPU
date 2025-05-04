@@ -19,7 +19,7 @@ dependencies {
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.Main"
 
-tasks.register<JavaExec>("demo_triangle_desktop") {
+tasks.register<JavaExec>("webgpu_demo_triangle_desktop") {
     group = "demos"
     mainClass.set(mainClassName)
     classpath = sourceSets["main"].runtimeClasspath

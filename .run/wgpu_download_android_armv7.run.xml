@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="webgpu_build_project_windows64" type="GradleRunConfiguration" factoryName="Gradle" folderName="Build">
+  <configuration default="false" name="wgpu_download_android_armv7" type="GradleRunConfiguration" factoryName="Gradle" folderName="WGPU">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-build" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-wgpu" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="" />
       <option name="taskDescriptions">
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="build_project_windows64" />
+          <option value="download_android_armv7" />
         </list>
       </option>
       <option name="vmOptions" />

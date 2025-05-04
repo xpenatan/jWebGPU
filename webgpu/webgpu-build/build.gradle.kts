@@ -1,4 +1,4 @@
-val mainClassName = "Build"
+val mainWGPUClassName = "WGPUBuild"
 
 dependencies {
     implementation(project(":webgpu:webgpu-base"))
@@ -10,10 +10,18 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
 }
 
-tasks.register<JavaExec>("build_project_windows64") {
+tasks.register<JavaExec>("wgpu_build_project_windows64") {
     group = "webgpu"
     description = "Generate native project"
-    mainClass.set(mainClassName)
+    mainClass.set(mainWGPUClassName)
     args = mutableListOf("windows64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("wgpu_build_project_teavm") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("teavm")
     classpath = sourceSets["main"].runtimeClasspath
 }

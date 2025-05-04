@@ -9,6 +9,9 @@ object LibExt {
     const val jParserVersion = "-SNAPSHOT"
     const val teaVMVersion = "0.11.0"
 
+    const val gdxTeaVMVersion = "-SNAPSHOT"
+    const val gdxVersion = "1.13.1"
+
     //Example dependencies
     const val jUnitVersion = "4.12"
 

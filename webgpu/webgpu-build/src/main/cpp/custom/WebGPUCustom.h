@@ -1,11 +1,8 @@
 #pragma once
 
 #include "IDLHelper.h"
-//#include "dawn/webgpu.h"
 #include "webgpu/webgpu.h"
-//#include "webgpu/webgpu_cpp.h"
 #include <iostream>
-
 
 //
 //using AdapterType = wgpu::AdapterType;
@@ -171,23 +168,50 @@ public:
     virtual void OnCallback(WGPURequestAdapterStatus status, Adapter* adapter) = 0;
 
 };
+class Future {
+    public:
+        WGPUFuture future;
+};
 
 class Instance {
+    private:
+        static void onAdapterReceived(WGPURequestAdapterStatus status, WGPUAdapter adapter, WGPUStringView message, void* callback_param, void*) {
+            std::cout << "onAdapterReceived" << std::endl;
+//            WGPUInitializer* self = static_cast<WGPUInitializer*>(userdata);
+//            self->handleAdapterReceived(status, adapter, message);
+        }
+
     public:
         WGPUInstance instance;
 
-//        WGPUFuture RequestAdapter(WGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
+        Future* RequestAdapter(WGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
+            WGPURequestAdapterOptions adapterOpts = {};
+            adapterOpts.nextInChain = nullptr;
+            adapterOpts.powerPreference = WGPUPowerPreference_Undefined;
+            adapterOpts.forceFallbackAdapter = false;
+            adapterOpts.backendType = WGPUBackendType_Undefined;
+
+            WGPURequestAdapterCallbackInfo callbackInfo = {};
+            callbackInfo.callback = onAdapterReceived;
+//            callbackInfo.userdata = callback;
+
 //            WGPURequestAdapterCallbackInfo callbackInfo = {};
 //            callbackInfo.mode = mode;
+//            callbackInfo.nextInChain = NULL;
 //            callbackInfo.callback = [](WGPURequestAdapterStatus status, WGPUAdapter adapter, WGPUStringView message, void* callback_param, void*) {
+
+
 //                auto cb = reinterpret_cast<RequestAdapterCallback*>(callback_param);
 //                Adapter* adp = new Adapter();
 //                adp->adapter = adapter;
 //                cb->OnCallback(status, adp);
 //            };
 //            callbackInfo.userdata1 = reinterpret_cast<void*>(+callback);
-//            return wgpuInstanceRequestAdapter(instance, options, callbackInfo);
-//        }
+
+            Future* future = new Future();
+            future->future = wgpuInstanceRequestAdapter(instance, &adapterOpts, callbackInfo);
+            return future;
+        }
 };
 
 class InstanceDescriptor {
@@ -196,23 +220,34 @@ class InstanceDescriptor {
         WGPUInstanceDescriptor * descriptor;
 };
 
-class WebGPU {
+class JWebGPU {
 
     public:
         static void Set() {
-//                dawnProcSetProcs(&dawn::native::GetProcs());
-//                wgpu::InstanceDescriptor instanceDescriptor = {};
-//                instanceDescriptor.nextInChain = nullptr;
-//                instanceDescriptor.capabilities.timedWaitAnyEnable = true;
-//                wgpu::Instance instance = wgpu::CreateInstance(&instanceDescriptor);
+            std::cout << "HELLO" << std::endl;
+            WGPUInstance wgpuInstance = wgpuCreateInstance(NULL);
+
+            WGPURequestAdapterCallbackInfo callbackInfo = {};
+            callbackInfo.nextInChain = NULL;
+            callbackInfo.callback = [](WGPURequestAdapterStatus status, WGPUAdapter adapter, WGPUStringView message, void* callback_param, void*) {
+                std::cout << "CallBack: " << status << std::endl;
+            };
+
+            WGPURequestAdapterOptions adapterOpts = {};
+            adapterOpts.nextInChain = nullptr;
+            adapterOpts.powerPreference = WGPUPowerPreference_Undefined;
+            adapterOpts.forceFallbackAdapter = false;
+            adapterOpts.backendType = WGPUBackendType_Undefined;
+            wgpuInstanceRequestAdapter(wgpuInstance, &adapterOpts, callbackInfo);
+
+//            WGPUInstanceDescriptor instanceDesc = {  };
+//            instanceDesc.nextInChain = NULL;
+//            WGPUInstance wgpuInstance = wgpuCreateInstance(&instanceDesc);
         }
 
-        static Instance* CreateInstance(InstanceDescriptor* descriptor = NULL) {
+        static Instance* CreateInstance() {
             Instance* instance = new Instance();
-            WGPUInstanceDescriptor* wgpuDescriptor = descriptor != NULL ? descriptor->descriptor : NULL;
-            WGPUInstanceDescriptor instanceDesc = {  };
-            instanceDesc.nextInChain = NULL;
-            WGPUInstance wgpuInstance = wgpuCreateInstance(&instanceDesc);
+            WGPUInstance wgpuInstance = wgpuCreateInstance(NULL);
             instance->instance = wgpuInstance;
             return instance;
         }
