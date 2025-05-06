@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="wgpu_download_emscripten" type="GradleRunConfiguration" factoryName="Gradle" folderName="WGPU">
+  <configuration default="false" name="wgpu_download_emdawnwebgpu" type="GradleRunConfiguration" factoryName="Gradle" folderName="WGPU">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-wgpu" />
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="download_emscripten" />
+          <option value="download_emdawnwebgpu" />
         </list>
       </option>
       <option name="vmOptions" />

@@ -61,7 +61,8 @@ public class WGPUBuild {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) throws IOException {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-        String includePath = buildPath + "/windows_x86_64/include";
+        String webgpuIncludePath = buildPath + "/emdawnwebgpu_pkg/webgpu/include";
+        String webgpuCPPIncludePath = buildPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
         String libPath = buildPath + "/windows_x86_64/lib/wgpu_native.lib";
 
         WindowsMSVCTarget.DEBUG_BUILD = false;
@@ -70,7 +71,8 @@ public class WGPUBuild {
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
         linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
-        linkTarget.headerDirs.add("-I" + includePath);
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + webgpuCPPIncludePath);
         linkTarget.cppCompiler.add("/MD");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.linkerFlags.add(libPath);
@@ -92,11 +94,12 @@ public class WGPUBuild {
 
     private static BuildMultiTarget getTeaVMTarget(BuildToolOptions op, IDLReader idlReader, String buildPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
-        String includePath = buildPath + "/emdawnwebgpu/webgpu/include";
+        String includePath = buildPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
+//        String includePath = buildPath + "/windows_x86_64/include";
         String customSourceDir = op.getCustomSourceDir();
 
-        String port = buildPath + "/emdawnwebgpu/emdawnwebgpu.port.py";
-        String jsLib = buildPath + "/emdawnwebgpu/webgpu/src/webgpu-externs.js";
+        String port = buildPath + "/emdawnwebgpu_pkg/emdawnwebgpu.port.py";
+        String jsLib = buildPath + "/emdawnwebgpu_pkg/webgpu/src/webgpu-externs.js";
 
         EmscriptenTarget.DEBUG_BUILD = false;
 

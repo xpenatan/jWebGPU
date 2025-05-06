@@ -14,10 +14,16 @@ public class Launcher {
         config.height = 0;
         config.useGL30 = true;
         new TeaApplication(new ApplicationAdapter() {
+            TriangleApp triangleApp;
             @Override
             public void create() {
-                TriangleApp triangleApp = new TriangleApp();
+                triangleApp = new TriangleApp();
                 triangleApp.create();
+            }
+
+            @Override
+            public void render() {
+                triangleApp.render();
             }
         }, config);
     }

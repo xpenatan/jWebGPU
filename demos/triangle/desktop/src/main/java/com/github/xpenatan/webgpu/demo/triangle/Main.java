@@ -54,6 +54,7 @@ public class Main {
         // Set the clear color (black)
         GL11.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
+        TriangleApp triangleApp = new TriangleApp();
         boolean init = true;
 
         // Run the rendering loop until the window is closed
@@ -62,9 +63,9 @@ public class Main {
             GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
             if(init) {
                 init = false;
-                TriangleApp triangleApp = new TriangleApp();
                 triangleApp.create();
             }
+            triangleApp.render();
 
             // Swap the color buffers
             glfwSwapBuffers(window);

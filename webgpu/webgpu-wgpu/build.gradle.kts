@@ -31,8 +31,32 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
     }
 }
 
+val emdawnVersion = "v20250505.211659"
+
+tasks.register("download_emdawnwebgpu") {
+    group = "wgpu"
+    description = "Download emdawnwebgpu headers"
+    doLast {
+        var url = "https://github.com/google/dawn/releases/download/${emdawnVersion}/emdawnwebgpu_pkg-${emdawnVersion}.zip"
+        println("URL: $url")
+        val tmpDir = project.buildDir.resolve("tmp")
+        tmpDir.mkdirs()
+        val zipFile = tmpDir.resolve("emdawnwebgpu.zip")
+        // Download the file
+        URL(url).openStream().use { input ->
+            Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
+        }
+        // Extract to build/bin_release64
+        val nativesDir = project.buildDir.resolve("")
+        nativesDir.mkdirs()
+        project.copy {
+            from(project.zipTree(zipFile))
+            into(nativesDir)
+        }
+    }
+}
+
 val platforms = mapOf(
-    "emscripten" to Pair("windows", "x86_64-msvc"), // Used to obtain headers only
     "windows_x86_64" to Pair("windows", "x86_64-msvc"),
     "windows_aarch64" to Pair("windows", "aarch64-msvc"),
     "linux_x86_64" to Pair("linux", "x86_64"),
