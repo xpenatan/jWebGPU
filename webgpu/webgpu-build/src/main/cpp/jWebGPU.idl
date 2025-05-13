@@ -5,10 +5,28 @@ interface JWebGPU {
 
 interface JInstance {
     void JInstance();
-    void RequestAdapter(RequestAdapterOptions options, CallbackMode mode, RequestAdapterCallback callbackInfo);
+    [Ref] WInstance Get();
+    void RequestAdapter(WRequestAdapterOptions options, CallbackMode mode, RequestAdapterCallback callbackInfo);
 };
 
-interface Instance {
+interface JAdapter {
+    [Ref] WAdapter Get();
+    void RequestDevice(WDeviceDescriptor options, CallbackMode mode, RequestDeviceCallback callbackInfo);
+};
+
+interface JDevice {
+    [Ref] WDevice Get();
+};
+
+interface WDeviceDescriptor {
+    void WDeviceDescriptor();
+};
+
+interface WInstance {
+    void ProcessEvents();
+};
+
+interface WQueue {
 
 };
 
@@ -18,19 +36,32 @@ interface RequestAdapterCallback {
 [JSImplementation="RequestAdapterCallback"]
 interface RequestAdapterCallbackImpl {
     void RequestAdapterCallbackImpl();
-    void OnCallback(RequestAdapterStatus status, Adapter adapter);
+    void OnCallback(RequestAdapterStatus status, JAdapter adapter);
 };
 
-interface Future {
+interface RequestDeviceCallback {
+};
+
+[JSImplementation="RequestDeviceCallback"]
+interface RequestDeviceCallbackImpl {
+    void RequestDeviceCallbackImpl();
+    void OnCallback(RequestDeviceStatus status, JDevice device);
+};
+
+interface WFuture {
 
 };
 
-interface Adapter {
+interface WAdapter {
 
 };
 
-interface RequestAdapterOptions {
-    void RequestAdapterOptions();
+interface WDevice {
+    [Value] WQueue GetQueue();
+};
+
+interface WRequestAdapterOptions {
+    void WRequestAdapterOptions();
 
 };
 

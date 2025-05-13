@@ -31,7 +31,7 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
     }
 }
 
-val emdawnVersion = "v20250505.211659"
+val emdawnVersion = "v20250509.171557"
 
 tasks.register("download_emdawnwebgpu") {
     group = "wgpu"

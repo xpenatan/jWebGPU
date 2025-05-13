@@ -15,7 +15,6 @@ public class WGPUBuild {
         String libName = "jWebGPU";
         String modulePrefix = "webgpu";
         String basePackage = "com.github.xpenatan.webgpu";
-//        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         BuildToolOptions op = new BuildToolOptions(libName, basePackage, modulePrefix, null, args);
 
@@ -103,17 +102,6 @@ public class WGPUBuild {
 
         EmscriptenTarget.DEBUG_BUILD = false;
 
-
-        // Make a static library
-//        EmscriptenTarget libTarget = new EmscriptenTarget(idlReader);
-//        libTarget.additionalSourceDirs.add(customSourceDir);
-//        libTarget.isStatic = true;
-//        libTarget.compileGlueCode = false;
-//        libTarget.headerDirs.add("-I" + includePath);
-//        libTarget.headerDirs.add("-I" + customSourceDir);
-//        libTarget.cppInclude.add(customSourceDir + "/*.cpp");
-//        multiTarget.add(libTarget);
-
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget(idlReader);
         linkTarget.headerDirs.add("-I" + includePath);
@@ -122,7 +110,6 @@ public class WGPUBuild {
         linkTarget.cppFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--use-port=" + port);
         linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "WebGPUCustom.h");
-        linkTarget.linkerFlags.add("-sASYNCIFY=1");
         linkTarget.linkerFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--closure-args=--externs=" + jsLib);
         multiTarget.add(linkTarget);

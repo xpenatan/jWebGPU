@@ -65,49 +65,101 @@ using MapMode = wgpu::MapMode;
 using ShaderStage = wgpu::ShaderStage;
 using TextureUsage = wgpu::TextureUsage;
 
-using Instance = wgpu::Instance;
-using Future = wgpu::Future;
-using Adapter = wgpu::Adapter;
-using RequestAdapterOptions = wgpu::RequestAdapterOptions;
+using WInstance = wgpu::Instance;
+using WFuture = wgpu::Future;
+using WAdapter = wgpu::Adapter;
+using WRequestAdapterOptions = wgpu::RequestAdapterOptions;
+using WDeviceDescriptor = wgpu::DeviceDescriptor;
+using WDevice = wgpu::Device;
+using WQueue = wgpu::Queue;
+
+class JAdapter;
+class JDevice;
 
 class RequestAdapterCallback {
 public:
-    virtual void OnCallback(RequestAdapterStatus status, Adapter* adapter) = 0;
+    virtual void OnCallback(RequestAdapterStatus status, JAdapter* adapter) = 0;
 
 };
+
+class RequestDeviceCallback {
+public:
+    virtual void OnCallback(RequestDeviceStatus status, JDevice* device) = 0;
+
+};
+
+class JDevice {
+
+    private:
+
+    public:
+        WDevice device;
+
+        JDevice() {
+        }
+
+        WDevice& Get() {
+            return device;
+        }
+};
+
+class JAdapter {
+
+    private:
+        RequestDeviceCallback* callback;
+
+        static void onDeviceRequest(RequestDeviceStatus status, WDevice dev, wgpu::StringView message, JAdapter* userdata) {
+            JDevice* device = new JDevice();
+            device->device = std::move(dev);
+            userdata->callback->OnCallback(status, device);
+            userdata->callback = NULL;
+        }
+
+    public:
+        WAdapter adapter;
+
+        JAdapter() {
+        }
+
+        WAdapter& Get() {
+            return adapter;
+        }
+
+        void RequestDevice(WDeviceDescriptor* options, CallbackMode mode, RequestDeviceCallback* callback) {
+            this->callback = callback;
+            adapter.RequestDevice(options, mode, onDeviceRequest, this);
+        }
+};
+
 
 class JInstance {
 
-    public:
-        wgpu::Instance instance_;
+    private:
+        WInstance instance;
+        RequestAdapterCallback* callback;
 
+        static void onAdapterRequest(RequestAdapterStatus status, WAdapter ad, wgpu::StringView message, JInstance* userdata) {
+            JAdapter* adapter = new JAdapter();
+            adapter->adapter = std::move(ad);
+            userdata->callback->OnCallback(status, adapter);
+            userdata->callback = NULL;
+        }
+
+    public:
         JInstance() {
-             instance_ = wgpu::CreateInstance();
+             instance = wgpu::CreateInstance();
         }
 
-        void RequestAdapter(RequestAdapterOptions* options, CallbackMode mode, RequestAdapterCallback* callback) {
-            // There is a problem here can keeping instance reference the callback is not working
-
-            wgpu::Instance result = wgpu::CreateInstance();
-            Future future = result.RequestAdapter(options, mode,
-                    [&](wgpu::RequestAdapterStatus status, wgpu::Adapter ad, wgpu::StringView message) {
-                         std::cout << "CallBack 1: " << std::endl;
-                    });
-//            instance_.WaitAny(future, UINT64_MAX);
-
-//            wgpu::Instance instance = wgpu::CreateInstance();
-//            wgpu::RequestAdapterOptions op = {};
-//            instance.RequestAdapter(&op, wgpu::CallbackMode::WaitAnyOnly,
-//                    [&](wgpu::RequestAdapterStatus status, wgpu::Adapter ad, wgpu::StringView message) {
-//                         std::cout << "CallBack Set111: " << std::endl;
-//                    });
+        WInstance& Get() {
+            return instance;
         }
-};
 
-class InstanceDescriptor {
-
-    public:
-        WGPUInstanceDescriptor * descriptor;
+        void RequestAdapter(WRequestAdapterOptions* options, CallbackMode mode, RequestAdapterCallback* callback) {
+            if(instance) {
+                this->callback = callback;
+                WFuture future = instance.RequestAdapter(options, mode, onAdapterRequest, this);
+            }
+        }
 };
 
 class JWebGPU {
