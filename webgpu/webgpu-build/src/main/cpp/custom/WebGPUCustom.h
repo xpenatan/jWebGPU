@@ -72,6 +72,13 @@ using WRequestAdapterOptions = wgpu::RequestAdapterOptions;
 using WDeviceDescriptor = wgpu::DeviceDescriptor;
 using WDevice = wgpu::Device;
 using WQueue = wgpu::Queue;
+using EmscriptenSurfaceSourceCanvasHTMLSelector = wgpu::EmscriptenSurfaceSourceCanvasHTMLSelector;
+using SurfaceDescriptor = wgpu::SurfaceDescriptor;
+using ChainedStruct = wgpu::ChainedStruct;
+using StringView = wgpu::StringView;
+using Surface = wgpu::Surface;
+using AdapterInfo = wgpu::AdapterInfo;
+using ConvertibleStatus = wgpu::ConvertibleStatus;
 
 class JAdapter;
 class JDevice;
@@ -100,6 +107,11 @@ class JDevice {
 
         WDevice& Get() {
             return device;
+        }
+
+        Status GetAdapterInfo(AdapterInfo* adapterInfo) {
+            ConvertibleStatus convStatus = device.GetAdapterInfo(adapterInfo);
+            return convStatus.status;
         }
 };
 

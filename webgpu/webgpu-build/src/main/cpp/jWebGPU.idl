@@ -16,21 +16,8 @@ interface JAdapter {
 
 interface JDevice {
     [Ref] WDevice Get();
-};
 
-interface WDeviceDescriptor {
-    void WDeviceDescriptor();
-};
-
-interface WInstance {
-    void ProcessEvents();
-};
-
-interface WQueue {
-
-};
-
-interface RequestAdapterCallback {
+    Status GetAdapterInfo(AdapterInfo adapterInfo);
 };
 
 [JSImplementation="RequestAdapterCallback"]
@@ -48,6 +35,22 @@ interface RequestDeviceCallbackImpl {
     void OnCallback(RequestDeviceStatus status, JDevice device);
 };
 
+interface WDeviceDescriptor {
+    void WDeviceDescriptor();
+};
+
+interface WInstance {
+    void ProcessEvents();
+    [Value] Surface CreateSurface([Const] SurfaceDescriptor descriptor);
+};
+
+interface WQueue {
+
+};
+
+interface RequestAdapterCallback {
+};
+
 interface WFuture {
 
 };
@@ -60,10 +63,58 @@ interface WDevice {
     [Value] WQueue GetQueue();
 };
 
+interface ConvertibleStatus {
+};
+
 interface WRequestAdapterOptions {
     void WRequestAdapterOptions();
 
 };
+
+interface AdapterInfo {
+    void AdapterInfo();
+
+    [Const, Value] readonly attribute StringView vendor;
+    [Const, Value] readonly attribute StringView architecture;
+    [Const, Value] readonly attribute StringView device;
+    [Const, Value] readonly attribute StringView description;
+    [Const] readonly attribute BackendType backendType;
+
+//    StringView const vendor = {};
+//    StringView const architecture = {};
+//    StringView const device = {};
+//    StringView const description = {};
+//    BackendType const backendType = BackendType::Undefined;
+//    AdapterType const adapterType = {};
+//    uint32_t const vendorID = {};
+//    uint32_t const deviceID = {};
+//    uint32_t const subgroupMinSize = {};
+//    uint32_t const subgroupMaxSize = {};
+};
+
+interface EmscriptenSurfaceSourceCanvasHTMLSelector {
+    void EmscriptenSurfaceSourceCanvasHTMLSelector();
+
+    [Value] attribute StringView selector;
+};
+
+interface SurfaceDescriptor {
+    void SurfaceDescriptor();
+
+    [Const] attribute ChainedStruct nextInChain;
+};
+
+interface Surface {
+};
+
+interface ChainedStruct {
+};
+
+interface StringView {
+    void StringView([Const] DOMString label);
+
+};
+StringView implements ChainedStruct;
 
 
 //interface InstanceDescriptor {
