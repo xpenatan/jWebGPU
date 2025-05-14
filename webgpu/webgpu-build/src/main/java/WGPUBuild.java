@@ -60,8 +60,7 @@ public class WGPUBuild {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) throws IOException {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-        String webgpuIncludePath = buildPath + "/emdawnwebgpu_pkg/webgpu/include";
-        String webgpuCPPIncludePath = buildPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
+        String webgpuIncludePath = buildPath + "/windows_x86_64/include";
         String libPath = buildPath + "/windows_x86_64/lib/wgpu_native.lib";
 
         WindowsMSVCTarget.DEBUG_BUILD = false;
@@ -71,7 +70,6 @@ public class WGPUBuild {
         linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
-        linkTarget.headerDirs.add("-I" + webgpuCPPIncludePath);
         linkTarget.cppCompiler.add("/MD");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.linkerFlags.add(libPath);

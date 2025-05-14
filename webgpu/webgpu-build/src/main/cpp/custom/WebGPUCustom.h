@@ -1,98 +1,97 @@
 #pragma once
 
 #include "IDLHelper.h"
-//#include "webgpu/webgpu.h"
-#include "webgpu/webgpu_cpp.h"
+#include "webgpu/webgpu.h"
 #include <iostream>
 
 // ENUM
 
-using WGSLLanguageFeatureName = wgpu::WGSLLanguageFeatureName;
-using AdapterType = wgpu::AdapterType;
-using AddressMode = wgpu::AddressMode;
-using BackendType = wgpu::BackendType;
-using BlendFactor = wgpu::BlendFactor;
-using BlendOperation = wgpu::BlendOperation;
-using BufferBindingType = wgpu::BufferBindingType;
-using BufferMapState = wgpu::BufferMapState;
-using CallbackMode = wgpu::CallbackMode;
-using CompareFunction = wgpu::CompareFunction;
-using CompilationInfoRequestStatus = wgpu::CompilationInfoRequestStatus;
-using CompilationMessageType = wgpu::CompilationMessageType;
-using CompositeAlphaMode = wgpu::CompositeAlphaMode;
-using CreatePipelineAsyncStatus = wgpu::CreatePipelineAsyncStatus;
-using CullMode = wgpu::CullMode;
-using DeviceLostReason = wgpu::DeviceLostReason;
-using ErrorFilter = wgpu::ErrorFilter;
-using ErrorType = wgpu::ErrorType;
-using FeatureLevel = wgpu::FeatureLevel;
-using FeatureName = wgpu::FeatureName;
-using FilterMode = wgpu::FilterMode;
-using FrontFace = wgpu::FrontFace;
-using IndexFormat = wgpu::IndexFormat;
-using LoadOp = wgpu::LoadOp;
-using MapAsyncStatus = wgpu::MapAsyncStatus;
-using MipmapFilterMode = wgpu::MipmapFilterMode;
-using PopErrorScopeStatus = wgpu::PopErrorScopeStatus;
-using PowerPreference = wgpu::PowerPreference;
-using PredefinedColorSpace = wgpu::PredefinedColorSpace;
-using PresentMode = wgpu::PresentMode;
-using PrimitiveTopology = wgpu::PrimitiveTopology;
-using QueryType = wgpu::QueryType;
-using QueueWorkDoneStatus = wgpu::QueueWorkDoneStatus;
-using RequestAdapterStatus = wgpu::RequestAdapterStatus;
-using RequestDeviceStatus = wgpu::RequestDeviceStatus;
-using SType = wgpu::SType;
-using SamplerBindingType = wgpu::SamplerBindingType;
-using Status = wgpu::Status;
-using StencilOperation = wgpu::StencilOperation;
-using StorageTextureAccess = wgpu::StorageTextureAccess;
-using StoreOp = wgpu::StoreOp;
-using SubgroupMatrixComponentType = wgpu::SubgroupMatrixComponentType;
-using SurfaceGetCurrentTextureStatus = wgpu::SurfaceGetCurrentTextureStatus;
-using TextureAspect = wgpu::TextureAspect;
-using TextureDimension = wgpu::TextureDimension;
-using TextureFormat = wgpu::TextureFormat;
-using TextureSampleType = wgpu::TextureSampleType;
-using TextureViewDimension = wgpu::TextureViewDimension;
-using ToneMappingMode = wgpu::ToneMappingMode;
-using VertexFormat = wgpu::VertexFormat;
-using VertexStepMode = wgpu::VertexStepMode;
-using WaitStatus = wgpu::WaitStatus;
-using BufferUsage = wgpu::BufferUsage;
-using ColorWriteMask = wgpu::ColorWriteMask;
-using MapMode = wgpu::MapMode;
-using ShaderStage = wgpu::ShaderStage;
-using TextureUsage = wgpu::TextureUsage;
-
-using WInstance = wgpu::Instance;
-using WFuture = wgpu::Future;
-using WAdapter = wgpu::Adapter;
-using WRequestAdapterOptions = wgpu::RequestAdapterOptions;
-using WDeviceDescriptor = wgpu::DeviceDescriptor;
-using WDevice = wgpu::Device;
-using WQueue = wgpu::Queue;
-using EmscriptenSurfaceSourceCanvasHTMLSelector = wgpu::EmscriptenSurfaceSourceCanvasHTMLSelector;
-using SurfaceDescriptor = wgpu::SurfaceDescriptor;
-using ChainedStruct = wgpu::ChainedStruct;
-using StringView = wgpu::StringView;
-using Surface = wgpu::Surface;
-using AdapterInfo = wgpu::AdapterInfo;
-using ConvertibleStatus = wgpu::ConvertibleStatus;
+//using WGSLLanguageFeatureName = wgpu::WGSLLanguageFeatureName;
 
 class JAdapter;
 class JDevice;
+class JDeviceDescriptor;
+class JSurface;
+class JQueue;
+class JStringView;
 
 class RequestAdapterCallback {
 public:
-    virtual void OnCallback(RequestAdapterStatus status, JAdapter* adapter) = 0;
+    virtual void OnCallback(WGPURequestAdapterStatus status, JAdapter* adapter) = 0;
 
 };
 
 class RequestDeviceCallback {
 public:
-    virtual void OnCallback(RequestDeviceStatus status, JDevice* device) = 0;
+    virtual void OnCallback(WGPURequestDeviceStatus status, JDevice* device) = 0;
 
+};
+
+class JQueue {
+    private:
+
+    public:
+        WGPUQueue queue;
+};
+
+class JChainedStruct {
+    private:
+
+    public:
+        WGPUChainedStruct chainedStruct;
+};
+
+class JStringView : public JChainedStruct{
+    private:
+
+    public:
+        WGPUStringView stringView;
+};
+
+class JDeviceDescriptor {
+    private:
+
+    public:
+        WGPUDeviceDescriptor descriptor;
+};
+
+class JRequestAdapterOptions {
+    private:
+
+    public:
+        WGPURequestAdapterOptions options;
+};
+
+class JAdapterInfo {
+    private:
+
+    public:
+        WGPUAdapterInfo adapterInfo;
+
+        WGPUBackendType GetBackendType() {
+            return adapterInfo.backendType;
+        }
+};
+
+class JSurface {
+    private:
+
+    public:
+        WGPUSurface surface;
+};
+
+class JSurfaceConfiguration {
+    private:
+
+    public:
+        WGPUSurfaceConfiguration surfaceConfiguration;
+};
+
+class JSurfaceDescriptor {
+    private:
+
+    public:
+        WGPUSurfaceDescriptor surfaceDescriptor;
 };
 
 class JDevice {
@@ -100,77 +99,89 @@ class JDevice {
     private:
 
     public:
-        WDevice device;
+        WGPUDevice device;
 
         JDevice() {
         }
 
-        WDevice& Get() {
-            return device;
-        }
+//        bool GetAdapterInfo(JAdapterInfo* adapterInfo) {
+//            #ifdef __EMSCRIPTEN__
+//                WGPUStatus status = wgpuDeviceGetAdapterInfo(device, &(adapterInfo->adapterInfo));
+//            #else
+//                wgpuDeviceGetAdapterInfo(device); // Not implemented
+//                WGPUStatus status = WGPUStatus_Error;
+//            #endif
+//            return status == WGPUStatus_Success;
+//        }
 
-        Status GetAdapterInfo(AdapterInfo* adapterInfo) {
-            ConvertibleStatus convStatus = device.GetAdapterInfo(adapterInfo);
-            return convStatus.status;
+        JQueue* GetQueue() {
+            JQueue* queue = new JQueue();
+            queue->queue = wgpuDeviceGetQueue(device);
+            return queue;
         }
 };
 
 class JAdapter {
-
     private:
-        RequestDeviceCallback* callback;
-
-        static void onDeviceRequest(RequestDeviceStatus status, WDevice dev, wgpu::StringView message, JAdapter* userdata) {
-            JDevice* device = new JDevice();
-            device->device = std::move(dev);
-            userdata->callback->OnCallback(status, device);
-            userdata->callback = NULL;
-        }
 
     public:
-        WAdapter adapter;
+        WGPUAdapter adapter;
 
         JAdapter() {
         }
 
-        WAdapter& Get() {
-            return adapter;
+        void RequestDevice(JDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback) {
+            WGPURequestDeviceCallbackInfo callbackInfo = {};
+            callbackInfo.mode = mode;
+            callbackInfo.callback = [](WGPURequestDeviceStatus status, WGPUDevice dev, WGPUStringView message, void* callback_param, void* userdata_param) {
+                RequestDeviceCallback* cback = reinterpret_cast<RequestDeviceCallback*>(callback_param);
+                JDevice* device = new JDevice();
+                device->device = dev;
+                cback->OnCallback(status, device);
+            };
+            callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
+            callbackInfo.userdata2 = NULL;
+            auto result = wgpuAdapterRequestDevice(adapter, &(descriptor->descriptor), callbackInfo);
         }
 
-        void RequestDevice(WDeviceDescriptor* options, CallbackMode mode, RequestDeviceCallback* callback) {
-            this->callback = callback;
-            adapter.RequestDevice(options, mode, onDeviceRequest, this);
+        bool GetInfo(JAdapterInfo* adapterInfo) {
+            WGPUStatus status = wgpuAdapterGetInfo(adapter, &(adapterInfo->adapterInfo));
+            return status == WGPUStatus_Success;
         }
 };
 
-
 class JInstance {
-
     private:
-        WInstance instance;
-        RequestAdapterCallback* callback;
-
-        static void onAdapterRequest(RequestAdapterStatus status, WAdapter ad, wgpu::StringView message, JInstance* userdata) {
-            JAdapter* adapter = new JAdapter();
-            adapter->adapter = std::move(ad);
-            userdata->callback->OnCallback(status, adapter);
-            userdata->callback = NULL;
-        }
 
     public:
+        WGPUInstance instance;
+
         JInstance() {
-             instance = wgpu::CreateInstance();
+            instance = wgpuCreateInstance(NULL);
         }
 
-        WInstance& Get() {
-            return instance;
+        void RequestAdapter(JRequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
+            WGPURequestAdapterCallbackInfo callbackInfo = {};
+            callbackInfo.mode = mode;
+            callbackInfo.callback = [](WGPURequestAdapterStatus status, WGPUAdapter ad, WGPUStringView message, void* callback_param, void*) {
+                RequestAdapterCallback* cback = reinterpret_cast<RequestAdapterCallback*>(callback_param);
+                JAdapter* adapter = new JAdapter();
+                adapter->adapter = ad;
+                cback->OnCallback(status, adapter);
+            };
+            callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
+            callbackInfo.userdata2 = NULL;
+            auto result = wgpuInstanceRequestAdapter(instance, &(options->options), callbackInfo);
         }
 
-        void RequestAdapter(WRequestAdapterOptions* options, CallbackMode mode, RequestAdapterCallback* callback) {
-            if(instance) {
-                this->callback = callback;
-                WFuture future = instance.RequestAdapter(options, mode, onAdapterRequest, this);
-            }
+        JSurface* CreateSurface(JSurfaceDescriptor* descriptor) {
+            JSurface* surface = new JSurface();
+            surface->surface = wgpuInstanceCreateSurface(instance, &(descriptor->surfaceDescriptor));
+            return surface;
+        }
+
+        void ProcessEvents() {
+            wgpuInstanceProcessEvents(instance);
         }
 };
 
@@ -179,12 +190,12 @@ class JWebGPU {
 
     public:
         static void Set() {
-            wgpu::Instance instance = wgpu::CreateInstance();
-            wgpu::RequestAdapterOptions options = {};
-            instance.RequestAdapter(&options, wgpu::CallbackMode::WaitAnyOnly,
-                    [&](wgpu::RequestAdapterStatus status, wgpu::Adapter ad, wgpu::StringView message) {
-                         std::cout << "CallBack Set: " << std::endl;
-                    });
+//            wgpu::Instance instance = wgpu::CreateInstance();
+//            wgpu::RequestAdapterOptions options = {};
+//            instance.RequestAdapter(&options, wgpu::CallbackMode::WaitAnyOnly,
+//                    [&](wgpu::RequestAdapterStatus status, wgpu::Adapter ad, wgpu::StringView message) {
+//                         std::cout << "CallBack Set: " << std::endl;
+//                    });
         }
 
 //        static JInstance* CreateInstance() {
