@@ -68,8 +68,32 @@ class JAdapterInfo {
     public:
         WGPUAdapterInfo adapterInfo;
 
+        std::string GetVendor() {
+            WGPUStringView stringView = adapterInfo.vendor;
+            return stringView.data == NULL ? "" : stringView.data;
+        }
+
+        std::string GetArchitecture() {
+            WGPUStringView stringView = adapterInfo.architecture;
+            return stringView.data == NULL ? "" : stringView.data;
+        }
+
+        std::string GetDevice() {
+            WGPUStringView stringView = adapterInfo.device;
+            return stringView.data == NULL ? "" : stringView.data;
+        }
+
+        std::string GetDescription() {
+            WGPUStringView stringView = adapterInfo.description;
+            return stringView.data == NULL ? "" : stringView.data;
+        }
+
         WGPUBackendType GetBackendType() {
             return adapterInfo.backendType;
+        }
+
+        WGPUAdapterType GetAdapterType() {
+            return adapterInfo.adapterType;
         }
 };
 

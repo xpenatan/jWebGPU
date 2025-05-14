@@ -40,25 +40,12 @@ interface JAdapter {
 
 interface JAdapterInfo {
     void JAdapterInfo();
-
+    [Value] IDLString GetVendor();
+    [Value] IDLString GetArchitecture();
+    [Value] IDLString GetDevice();
+    [Value] IDLString GetDescription();
     WGPUBackendType GetBackendType();
-
-    //    [Const, Value] readonly attribute StringView vendor;
-    //    [Const, Value] readonly attribute StringView architecture;
-    //    [Const, Value] readonly attribute StringView device;
-    //    [Const, Value] readonly attribute StringView description;
-    //    [Const] readonly attribute BackendType backendType;
-    //
-    ////    StringView const vendor = {};
-    ////    StringView const architecture = {};
-    ////    StringView const device = {};
-    ////    StringView const description = {};
-    ////    BackendType const backendType = BackendType::Undefined;
-    ////    AdapterType const adapterType = {};
-    ////    uint32_t const vendorID = {};
-    ////    uint32_t const deviceID = {};
-    ////    uint32_t const subgroupMinSize = {};
-    ////    uint32_t const subgroupMaxSize = {};
+    WGPUAdapterType GetAdapterType();
 };
 
 interface JDeviceDescriptor {

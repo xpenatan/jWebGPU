@@ -8,6 +8,7 @@ import com.github.xpenatan.webgpu.JInstance;
 import com.github.xpenatan.webgpu.JRequestAdapterOptions;
 import com.github.xpenatan.webgpu.RequestAdapterCallback;
 import com.github.xpenatan.webgpu.RequestDeviceCallback;
+import com.github.xpenatan.webgpu.WGPUAdapterType;
 import com.github.xpenatan.webgpu.WGPUBackendType;
 import com.github.xpenatan.webgpu.WGPUCallbackMode;
 import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
@@ -39,7 +40,17 @@ public class TriangleApp {
                 JAdapterInfo info = new JAdapterInfo();
                 if(adapter.GetInfo(info)) {
                     WGPUBackendType backendType = info.GetBackendType();
-                    System.out.println("backendType: " + backendType);
+                    System.out.println("BackendType: " + backendType);
+                    WGPUAdapterType adapterType = info.GetAdapterType();
+                    System.out.println("AdapterType: " + adapterType);
+                    String vendor = info.GetVendor().c_str();
+                    System.out.println("Vendor: " + vendor);
+                    String architecture = info.GetArchitecture().c_str();
+                    System.out.println("Architecture: " + architecture);
+                    String description = info.GetDescription().c_str();
+                    System.out.println("Description: " + description);
+                    String device = info.GetDevice().c_str();
+                    System.out.println("Device: " + device);
                 }
 
                 JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
