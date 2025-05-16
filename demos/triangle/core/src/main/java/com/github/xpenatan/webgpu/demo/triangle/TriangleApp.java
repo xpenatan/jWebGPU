@@ -6,6 +6,8 @@ import com.github.xpenatan.webgpu.JDevice;
 import com.github.xpenatan.webgpu.JDeviceDescriptor;
 import com.github.xpenatan.webgpu.JInstance;
 import com.github.xpenatan.webgpu.JRequestAdapterOptions;
+import com.github.xpenatan.webgpu.JSurface;
+import com.github.xpenatan.webgpu.JWebGPU;
 import com.github.xpenatan.webgpu.RequestAdapterCallback;
 import com.github.xpenatan.webgpu.RequestDeviceCallback;
 import com.github.xpenatan.webgpu.WGPUAdapterType;
@@ -21,10 +23,17 @@ public class TriangleApp {
     private JInstance instance;
     private JAdapter adapter;
     private JDevice device;
+    private JSurface surface;
 
     public void create() {
         WebGPULoader.init((isSuccess, e) -> {
-            init();
+            System.out.println("WebGPU Success: " + isSuccess);
+            if(isSuccess) {
+                init();
+            }
+            else {
+                e.printStackTrace();
+            }
         });
     }
 
@@ -59,7 +68,12 @@ public class TriangleApp {
                     protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
                         TriangleApp.this.device = device;
                         System.out.println("RequestDevice: " + status);
+                        System.out.println("GetPlatform: " + JWebGPU.GetPlatformType());
+
+                        surface = instance.CreateWebSurface("#webgpuCanvas");
+
                         init = true;
+                        System.out.println("Init: " + init);
                     }
                 });
             }

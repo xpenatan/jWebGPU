@@ -1,6 +1,19 @@
+// ##### CUSTOM CLASSES / ENUMS ######
+
 interface JWebGPU {
     static void Set();
+    static JPlatformType GetPlatformType();
 //    static JInstance CreateInstance();
+};
+
+enum JPlatformType {
+    "WGPU_Windows",
+    "WGPU_Mac",
+    "WGPU_Linux",
+    "WGPU_iOS",
+    "WGPU_Android",
+    "WGPU_Web",
+    "WGPU_Unknown",
 };
 
 // ##### CALLBACKS #####
@@ -28,7 +41,8 @@ interface RequestDeviceCallbackImpl {
 interface JInstance {
     void JInstance();
     void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callbackInfo);
-    JSurface CreateSurface(JSurfaceDescriptor descriptor);
+    JSurface CreateWebSurface([Const] DOMString canvas);
+    JSurface CreateWindowsSurface(any hwnd);
     void ProcessEvents();
 };
 
@@ -64,10 +78,6 @@ interface JSurface {
 };
 
 interface JSurfaceConfiguration {
-};
-
-interface JSurfaceDescriptor {
-// [Const] attribute ChainedStruct nextInChain;
 };
 
 interface JQueue {

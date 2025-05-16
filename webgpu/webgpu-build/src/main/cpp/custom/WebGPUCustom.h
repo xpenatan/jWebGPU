@@ -15,6 +15,16 @@ class JSurface;
 class JQueue;
 class JStringView;
 
+enum JPlatformType : int {
+    WGPU_Windows = 0,
+    WGPU_Mac,
+    WGPU_Linux,
+    WGPU_iOS,
+    WGPU_Android,
+    WGPU_Web,
+    WGPU_Unknown
+};
+
 class RequestAdapterCallback {
 public:
     virtual void OnCallback(WGPURequestAdapterStatus status, JAdapter* adapter) = 0;
@@ -111,13 +121,6 @@ class JSurfaceConfiguration {
         WGPUSurfaceConfiguration surfaceConfiguration;
 };
 
-class JSurfaceDescriptor {
-    private:
-
-    public:
-        WGPUSurfaceDescriptor surfaceDescriptor;
-};
-
 class JDevice {
 
     private:
@@ -198,10 +201,27 @@ class JInstance {
             auto result = wgpuInstanceRequestAdapter(instance, &(options->options), callbackInfo);
         }
 
-        JSurface* CreateSurface(JSurfaceDescriptor* descriptor) {
-            JSurface* surface = new JSurface();
-            surface->surface = wgpuInstanceCreateSurface(instance, &(descriptor->surfaceDescriptor));
+        JSurface* CreateWebSurface(const char* canvas) {
+            #ifdef __EMSCRIPTEN__
+                WGPUEmscriptenSurfaceSourceCanvasHTMLSelector canvasDesc {};
+                WGPUStringView stringView = {
+                    .data = canvas,
+                    .length = strlen(canvas)
+                };
+                canvasDesc.chain.sType = WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector;
+                canvasDesc.selector = stringView;
+                WGPUSurfaceDescriptor surfDesc{};
+                surfDesc.nextInChain = (WGPUChainedStruct*)&canvasDesc;
+                JSurface* surface = new JSurface();
+                surface->surface = wgpuInstanceCreateSurface(instance, &surfDesc);
+            #else
+                Surface* surface = NULL;
+            #endif
             return surface;
+        }
+
+        JSurface* CreateWindowsSurface(void * hwnd) {
+            return NULL;
         }
 
         void ProcessEvents() {
@@ -213,6 +233,33 @@ class JWebGPU {
     private:
 
     public:
+        static JPlatformType GetPlatformType() {
+
+            #ifdef _WIN32
+                #ifdef _WIN64
+                    return JPlatformType::WGPU_Windows;
+                #else
+                    return JPlatformType::WGPU_Windows;
+                #endif
+            #elif defined(__linux__)
+                return JPlatformType::WGPU_Linux;
+            #elif defined(__APPLE__)
+                #if defined(TARGET_OS_IPHONE) && TARGET_OS_IPHONE
+                    return JPlatformType::WGPU_iOS;
+                #elif defined(TARGET_OS_MAC) && TARGET_OS_MAC
+                    return JPlatformType::WGPU_Mac;
+                #else
+                    return JPlatformType::WGPU_Unknown;
+                #endif
+            #elif defined(__ANDROID__)
+                 return JPlatformType::WGPU_Android;
+            #elif defined(__EMSCRIPTEN__)
+                return JPlatformType::WGPU_Web;
+            #else
+                return JPlatformType::WGPU_Unknown;
+            #endif
+        }
+
         static void Set() {
 //            wgpu::Instance instance = wgpu::CreateInstance();
 //            wgpu::RequestAdapterOptions options = {};
