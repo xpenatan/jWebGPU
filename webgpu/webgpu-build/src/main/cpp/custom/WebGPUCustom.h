@@ -234,26 +234,17 @@ class JWebGPU {
 
     public:
         static JPlatformType GetPlatformType() {
-
-            #ifdef _WIN32
-                #ifdef _WIN64
-                    return JPlatformType::WGPU_Windows;
-                #else
-                    return JPlatformType::WGPU_Windows;
-                #endif
-            #elif defined(__linux__)
+            #if _WIN32
+                return JPlatformType::WGPU_Windows;
+            #elif __linux__
                 return JPlatformType::WGPU_Linux;
-            #elif defined(__APPLE__)
-                #if defined(TARGET_OS_IPHONE) && TARGET_OS_IPHONE
-                    return JPlatformType::WGPU_iOS;
-                #elif defined(TARGET_OS_MAC) && TARGET_OS_MAC
-                    return JPlatformType::WGPU_Mac;
-                #else
-                    return JPlatformType::WGPU_Unknown;
-                #endif
-            #elif defined(__ANDROID__)
+            #elif TARGET_OS_IPHONE
+                return JPlatformType::WGPU_iOS;
+            #elif TARGET_OS_MAC
+                return JPlatformType::WGPU_Mac;
+            #elif __ANDROID__
                  return JPlatformType::WGPU_Android;
-            #elif defined(__EMSCRIPTEN__)
+            #elif __EMSCRIPTEN__
                 return JPlatformType::WGPU_Web;
             #else
                 return JPlatformType::WGPU_Unknown;

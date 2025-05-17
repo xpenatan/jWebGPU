@@ -7,6 +7,7 @@ import com.github.xpenatan.webgpu.JDeviceDescriptor;
 import com.github.xpenatan.webgpu.JInstance;
 import com.github.xpenatan.webgpu.JRequestAdapterOptions;
 import com.github.xpenatan.webgpu.JSurface;
+import com.github.xpenatan.webgpu.JWebGPU;
 import com.github.xpenatan.webgpu.RequestAdapterCallback;
 import com.github.xpenatan.webgpu.RequestDeviceCallback;
 import com.github.xpenatan.webgpu.WGPUAdapterType;
@@ -54,6 +55,7 @@ public class WGPUApp {
                     protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
                         WGPUApp.this.device = device;
                         System.out.println("isReady: " + status);
+                        System.out.println("Platform: " + JWebGPU.GetPlatformType());
                         isReady = true;
                     }
                 });

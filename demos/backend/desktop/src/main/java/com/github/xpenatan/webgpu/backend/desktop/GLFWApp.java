@@ -29,9 +29,11 @@ public class GLFWApp {
             }
         });
 
-
         while(!glfwWindowShouldClose(window)) {
-            if(wGPUInit > 0) {
+            if(wGPUInit == 3) {
+                applicationInterface.render(wgpu);
+            }
+            else if(wGPUInit > 0) {
                 if(wGPUInit == 1) {
                     wGPUInit = 2;
                     wgpu = new WGPUApp();
@@ -41,9 +43,6 @@ public class GLFWApp {
                     wGPUInit = 3;
                     createSurface();
                     applicationInterface.create(wgpu);
-                }
-                if(wGPUInit == 3) {
-                    applicationInterface.render(wgpu);
                 }
                 wgpu.update();
             }
@@ -86,13 +85,11 @@ public class GLFWApp {
                 (vidMode.height() - windowHeight) / 2
         );
 
-
         // Make the window visible
         glfwShowWindow(window);
     }
 
     public void closeWindow () {
-
         // Free the window callbacks and destroy the window
         glfwFreeCallbacks(window);
         glfwDestroyWindow(window);
@@ -103,6 +100,6 @@ public class GLFWApp {
     }
 
     private void createSurface() {
-//        wgpu.surface = wgpu.instance.CreateWebSurface(TeaVMApp.canvasWGPU);
+        wgpu.surface = wgpu.instance.CreateWindowsSurface(windowHandle);
     }
 }
