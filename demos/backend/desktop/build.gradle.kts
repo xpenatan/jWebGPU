@@ -1,0 +1,31 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
+val lwjglVersion = "3.3.3"
+val lwjglNatives = "natives-windows"
+
+
+dependencies {
+    api(project(":demos:backend:core"))
+    implementation(project(":webgpu:webgpu-core"))
+    implementation(project(":webgpu:webgpu-desktop"))
+
+    implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
+    implementation("org.lwjgl:lwjgl")
+    implementation("org.lwjgl:lwjgl-glfw")
+    implementation("org.lwjgl:lwjgl-opengl")
+    runtimeOnly("org.lwjgl:lwjgl::$lwjglNatives")
+    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglNatives")
+    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglNatives")
+}
+
+val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.GLFWApp"
+
+tasks.register<JavaExec>("webgpu_demo_triangle_desktop") {
+    group = "demos"
+    mainClass.set(mainClassName)
+    classpath = sourceSets["main"].runtimeClasspath
+
+    if(DefaultNativePlatform.getCurrentOperatingSystem().isMacOsX) {
+        jvmArgs("-XstartOnFirstThread")
+    }
+}

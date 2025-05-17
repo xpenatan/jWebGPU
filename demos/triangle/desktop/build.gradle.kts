@@ -6,18 +6,10 @@ val lwjglNatives = "natives-windows"
 
 dependencies {
     implementation(project(":demos:triangle:core"))
-    implementation(project(":webgpu:webgpu-desktop"))
-
-    implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
-    implementation("org.lwjgl:lwjgl")
-    implementation("org.lwjgl:lwjgl-glfw")
-    implementation("org.lwjgl:lwjgl-opengl")
-    runtimeOnly("org.lwjgl:lwjgl::$lwjglNatives")
-    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglNatives")
-    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglNatives")
+    implementation(project(":demos:backend:desktop"))
 }
 
-val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.Main"
+val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.MainDesktop"
 
 tasks.register<JavaExec>("webgpu_demo_triangle_desktop") {
     group = "demos"

@@ -15,15 +15,7 @@ gretty {
 
 dependencies {
     implementation(project(":demos:triangle:core"))
-    implementation(project(":webgpu:webgpu-teavm"))
-    implementation("com.github.xpenatan:jMultiplatform:0.1.2")
-
-    api("org.teavm:teavm-tooling:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-core:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-classlib:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-jso-apis:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-jso-impl:${LibExt.teaVMVersion}")
+    implementation(project(":demos:backend:teavm"))
 }
 
 teavm {
@@ -35,7 +27,7 @@ teavm {
         obfuscated = false
         debugInformation = false
         addedToWebApp = true
-        mainClass = "com.github.xpenatan.webgpu.demo.triangle.Launcher"
+        mainClass = "com.github.xpenatan.webgpu.demo.triangle.MainTeaVM"
     }
 
 }

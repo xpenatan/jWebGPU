@@ -215,7 +215,7 @@ class JInstance {
                 JSurface* surface = new JSurface();
                 surface->surface = wgpuInstanceCreateSurface(instance, &surfDesc);
             #else
-                Surface* surface = NULL;
+                JSurface* surface = NULL;
             #endif
             return surface;
         }

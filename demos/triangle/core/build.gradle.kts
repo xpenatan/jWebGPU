@@ -1,3 +1,3 @@
 dependencies {
-    implementation(project(":webgpu:webgpu-core"))
+    implementation(project(":demos:backend:core"))
 }

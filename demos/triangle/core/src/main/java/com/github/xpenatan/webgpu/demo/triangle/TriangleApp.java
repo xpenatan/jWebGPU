@@ -1,92 +1,21 @@
 package com.github.xpenatan.webgpu.demo.triangle;
 
-import com.github.xpenatan.webgpu.JAdapter;
-import com.github.xpenatan.webgpu.JAdapterInfo;
-import com.github.xpenatan.webgpu.JDevice;
-import com.github.xpenatan.webgpu.JDeviceDescriptor;
-import com.github.xpenatan.webgpu.JInstance;
-import com.github.xpenatan.webgpu.JRequestAdapterOptions;
-import com.github.xpenatan.webgpu.JSurface;
-import com.github.xpenatan.webgpu.JWebGPU;
-import com.github.xpenatan.webgpu.RequestAdapterCallback;
-import com.github.xpenatan.webgpu.RequestDeviceCallback;
-import com.github.xpenatan.webgpu.WGPUAdapterType;
-import com.github.xpenatan.webgpu.WGPUBackendType;
-import com.github.xpenatan.webgpu.WGPUCallbackMode;
-import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
-import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
-import com.github.xpenatan.webgpu.WebGPULoader;
+import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
+import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
-public class TriangleApp {
-    private boolean init = false;
-
-    private JInstance instance;
-    private JAdapter adapter;
-    private JDevice device;
-    private JSurface surface;
-
-    public void create() {
-        WebGPULoader.init((isSuccess, e) -> {
-            System.out.println("WebGPU Success: " + isSuccess);
-            if(isSuccess) {
-                init();
-            }
-            else {
-                e.printStackTrace();
-            }
-        });
+public class TriangleApp implements ApplicationListener {
+    @Override
+    public void create(WGPUApp wgpu) {
+        if(wgpu.surface != null) {
+            System.out.println("Surface created");
+        }
+        else {
+            System.out.println("Surface not created");
+        }
     }
 
-    private void init() {
-        instance = new JInstance();
-        JRequestAdapterOptions op = new JRequestAdapterOptions();
-        WGPUCallbackMode mode = WGPUCallbackMode.WGPUCallbackMode_AllowProcessEvents;
-        RequestAdapterCallback callback = new RequestAdapterCallback() {
-            @Override
-            protected void OnCallback(WGPURequestAdapterStatus status, JAdapter adapter) {
-                TriangleApp.this.adapter = adapter;
-                System.out.println("Callback Java: " + status);
-                JAdapterInfo info = new JAdapterInfo();
-                if(adapter.GetInfo(info)) {
-                    WGPUBackendType backendType = info.GetBackendType();
-                    System.out.println("BackendType: " + backendType);
-                    WGPUAdapterType adapterType = info.GetAdapterType();
-                    System.out.println("AdapterType: " + adapterType);
-                    String vendor = info.GetVendor().c_str();
-                    System.out.println("Vendor: " + vendor);
-                    String architecture = info.GetArchitecture().c_str();
-                    System.out.println("Architecture: " + architecture);
-                    String description = info.GetDescription().c_str();
-                    System.out.println("Description: " + description);
-                    String device = info.GetDevice().c_str();
-                    System.out.println("Device: " + device);
-                }
+    @Override
+    public void render(WGPUApp wgpu) {
 
-                JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
-                adapter.RequestDevice(deviceDescriptor, mode, new RequestDeviceCallback() {
-                    @Override
-                    protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
-                        TriangleApp.this.device = device;
-                        System.out.println("RequestDevice: " + status);
-                        System.out.println("GetPlatform: " + JWebGPU.GetPlatformType());
-
-                        surface = instance.CreateWebSurface("#webgpuCanvas");
-
-                        init = true;
-                        System.out.println("Init: " + init);
-                    }
-                });
-            }
-        };
-        instance.RequestAdapter(op, mode, callback);
-    }
-
-    public void render() {
-        if(init) {
-
-        }
-        if(instance != null) {
-            instance.ProcessEvents();
-        }
     }
 }
