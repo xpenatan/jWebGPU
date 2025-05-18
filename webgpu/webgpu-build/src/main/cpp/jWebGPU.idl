@@ -75,9 +75,29 @@ interface JDevice {
 };
 
 interface JSurface {
+    void Configure(JSurfaceConfiguration config);
+    void GetCapabilities(JAdapter adapter, JSurfaceCapabilities surfaceCapabilities);
+};
+
+interface JSurfaceCapabilities {
+    void JSurfaceCapabilities();
+
+    WGPUTextureFormat GetFormats(long index);
 };
 
 interface JSurfaceConfiguration {
+    void JSurfaceConfiguration();
+
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetWidth(long width);
+    void SetHeight(long height);
+    void SetFormat(WGPUTextureFormat format);
+    void SetViewFormatCount(long value);
+    void SetViewFormats(any viewFormat);
+    void SetUsage(WGPUTextureUsage usage);
+    void SetDevice(JDevice device);
+    void SetPresentMode(WGPUPresentMode presentMode);
+    void SetAlphaMode(WGPUCompositeAlphaMode alphaMode);
 };
 
 interface JQueue {
@@ -94,6 +114,51 @@ interface JStringView {
 JStringView implements JChainedStruct;
 
 // ##### ENUMS #####
+
+enum WGPUBufferUsage {
+    "WGPUBufferUsage_None",
+    "WGPUBufferUsage_MapRead",
+    "WGPUBufferUsage_MapWrite",
+    "WGPUBufferUsage_CopySrc",
+    "WGPUBufferUsage_CopyDst",
+    "WGPUBufferUsage_Index",
+    "WGPUBufferUsage_Vertex",
+    "WGPUBufferUsage_Uniform",
+    "WGPUBufferUsage_Storage",
+    "WGPUBufferUsage_Indirect",
+    "WGPUBufferUsage_QueryResolve"
+};
+
+enum WGPUColorWriteMask {
+    "WGPUColorWriteMask_None",
+    "WGPUColorWriteMask_Red",
+    "WGPUColorWriteMask_Green",
+    "WGPUColorWriteMask_Blue",
+    "WGPUColorWriteMask_Alpha",
+    "WGPUColorWriteMask_All"
+};
+
+enum WGPUMapMode {
+    "WGPUMapMode_None",
+    "WGPUMapMode_Read",
+    "WGPUMapMode_Write"
+};
+
+enum WGPUShaderStage {
+    "WGPUShaderStage_None",
+    "WGPUShaderStage_Vertex",
+    "WGPUShaderStage_Fragment",
+    "WGPUShaderStage_Compute"
+};
+
+enum WGPUTextureUsage {
+    "WGPUTextureUsage_None",
+    "WGPUTextureUsage_CopySrc",
+    "WGPUTextureUsage_CopyDst",
+    "WGPUTextureUsage_TextureBinding",
+    "WGPUTextureUsage_StorageBinding",
+    "WGPUTextureUsage_RenderAttachment"
+};
 
 enum WGPUAdapterType {
     "WGPUAdapterType_DiscreteGPU",

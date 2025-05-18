@@ -1,8 +1,7 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 
-val lwjglVersion = "3.3.3"
+val lwjglVersion = "3.3.4"
 val lwjglNatives = "natives-windows"
-
 
 dependencies {
     api(project(":demos:backend:core"))

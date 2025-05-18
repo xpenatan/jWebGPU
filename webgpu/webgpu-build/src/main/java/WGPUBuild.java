@@ -62,6 +62,7 @@ public class WGPUBuild {
         String libBuildCPPPath = op.getModuleBuildCPPPath();
         String webgpuIncludePath = buildPath + "/windows_x86_64/include";
         String libPath = buildPath + "/windows_x86_64/lib/wgpu_native.lib";
+        String glfwIncludePath = buildPath + "/GLFW";
 
         WindowsMSVCTarget.DEBUG_BUILD = false;
 
@@ -70,6 +71,7 @@ public class WGPUBuild {
         linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
         linkTarget.cppCompiler.add("/MD");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.linkerFlags.add(libPath);

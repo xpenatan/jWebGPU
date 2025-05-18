@@ -5,6 +5,7 @@ import com.github.xpenatan.webgpu.JAdapterInfo;
 import com.github.xpenatan.webgpu.JDevice;
 import com.github.xpenatan.webgpu.JDeviceDescriptor;
 import com.github.xpenatan.webgpu.JInstance;
+import com.github.xpenatan.webgpu.JQueue;
 import com.github.xpenatan.webgpu.JRequestAdapterOptions;
 import com.github.xpenatan.webgpu.JSurface;
 import com.github.xpenatan.webgpu.JWebGPU;
@@ -17,11 +18,13 @@ import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
 import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
 
 public class WGPUApp {
-
+    public int width;
+    public int height;
     public JInstance instance;
     public JAdapter adapter;
     public JDevice device;
     public JSurface surface;
+    public JQueue queue;
 
     private boolean isReady;
 
@@ -54,6 +57,7 @@ public class WGPUApp {
                     @Override
                     protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
                         WGPUApp.this.device = device;
+                        queue = device.GetQueue();
                         System.out.println("isReady: " + status);
                         System.out.println("Platform: " + JWebGPU.GetPlatformType());
                         isReady = true;

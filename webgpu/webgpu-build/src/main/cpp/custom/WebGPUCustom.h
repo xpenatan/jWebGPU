@@ -4,6 +4,12 @@
 #include "webgpu/webgpu.h"
 #include <iostream>
 
+#if _WIN32
+    #include <windows.h>
+    #include <glfw3.h>
+    #include <glfw3native.h>
+#endif
+
 // ENUM
 
 //using WGSLLanguageFeatureName = wgpu::WGSLLanguageFeatureName;
@@ -14,6 +20,7 @@ class JDeviceDescriptor;
 class JSurface;
 class JQueue;
 class JStringView;
+class JSurfaceConfiguration;
 
 enum JPlatformType : int {
     WGPU_Windows = 0,
@@ -107,20 +114,6 @@ class JAdapterInfo {
         }
 };
 
-class JSurface {
-    private:
-
-    public:
-        WGPUSurface surface;
-};
-
-class JSurfaceConfiguration {
-    private:
-
-    public:
-        WGPUSurfaceConfiguration surfaceConfiguration;
-};
-
 class JDevice {
 
     private:
@@ -145,6 +138,72 @@ class JDevice {
             JQueue* queue = new JQueue();
             queue->queue = wgpuDeviceGetQueue(device);
             return queue;
+        }
+};
+
+class JSurfaceConfiguration {
+    private:
+
+    public:
+        WGPUSurfaceConfiguration surfaceConfiguration;
+
+        JSurfaceConfiguration() {
+            surfaceConfiguration = WGPUSurfaceConfiguration{};
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            surfaceConfiguration.nextInChain = chainedStruct != NULL ? &(chainedStruct->chainedStruct) : NULL;
+        }
+
+        void SetWidth(long width) {
+            surfaceConfiguration.width = width;
+        }
+
+        void SetHeight(long height) {
+            surfaceConfiguration.height = height;
+        }
+
+        void SetFormat(WGPUTextureFormat format) {
+            surfaceConfiguration.format = format;
+        }
+
+        void SetViewFormatCount(long value) {
+            surfaceConfiguration.viewFormatCount = value;
+        }
+
+        void SetViewFormats(void* viewFormats) {
+            surfaceConfiguration.viewFormats = (WGPUTextureFormat*)viewFormats;
+        }
+
+        void SetUsage(WGPUTextureUsage usage) {
+            surfaceConfiguration.usage = usage;
+        }
+
+        void SetDevice(JDevice* device) {
+            surfaceConfiguration.device = device != NULL ? device->device : NULL;
+        }
+
+        void SetPresentMode(WGPUPresentMode presentMode) {
+            surfaceConfiguration.presentMode = presentMode;
+        }
+
+        void SetAlphaMode(WGPUCompositeAlphaMode alphaMode) {
+            surfaceConfiguration.alphaMode = alphaMode;
+        }
+};
+
+class JSurfaceCapabilities {
+    private:
+
+    public:
+        WGPUSurfaceCapabilities surfaceCapabilities;
+
+        JSurfaceCapabilities() {
+            surfaceCapabilities = WGPUSurfaceCapabilities{};
+        }
+
+        WGPUTextureFormat GetFormats(int index) {
+            return surfaceCapabilities.formats[index];
         }
 };
 
@@ -174,6 +233,21 @@ class JAdapter {
         bool GetInfo(JAdapterInfo* adapterInfo) {
             WGPUStatus status = wgpuAdapterGetInfo(adapter, &(adapterInfo->adapterInfo));
             return status == WGPUStatus_Success;
+        }
+};
+
+class JSurface {
+    private:
+
+    public:
+        WGPUSurface surface;
+
+        void Configure(JSurfaceConfiguration* config) {
+            wgpuSurfaceConfigure(surface, &(config->surfaceConfiguration));
+        }
+
+        void GetCapabilities(JAdapter* adapter, JSurfaceCapabilities* surfaceCapabilities) {
+            wgpuSurfaceGetCapabilities(surface, adapter->adapter, &(surfaceCapabilities->surfaceCapabilities));
         }
 };
 
@@ -221,7 +295,20 @@ class JInstance {
         }
 
         JSurface* CreateWindowsSurface(void * hwnd) {
-            return NULL;
+            JSurface* surface = NULL;
+            #if _WIN32
+                surface = new JSurface();
+                HINSTANCE hinstance = GetModuleHandle(NULL);
+                WGPUSurfaceSourceWindowsHWND fromWindowsHWND;
+                fromWindowsHWND.chain.next = NULL;
+                fromWindowsHWND.chain.sType = WGPUSType_SurfaceSourceWindowsHWND;
+                fromWindowsHWND.hinstance = hinstance;
+                fromWindowsHWND.hwnd = hwnd;
+                WGPUSurfaceDescriptor surfaceDescriptor{};
+                surfaceDescriptor.nextInChain = &fromWindowsHWND.chain;
+                surface->surface = wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
+            #endif
+            return surface;
         }
 
         void ProcessEvents() {
