@@ -60,11 +60,12 @@ public class WGPUBuild {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) throws IOException {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-        String webgpuIncludePath = buildPath + "/windows_x86_64/include";
-        String libPath = buildPath + "/windows_x86_64/lib/wgpu_native.lib";
+        String wgpuPath = buildPath + "/windows_x86_64_debug";
+        String webgpuIncludePath = wgpuPath + "/include";
+        String libPath = wgpuPath + "/lib/wgpu_native.lib";
         String glfwIncludePath = buildPath + "/GLFW";
 
-        WindowsMSVCTarget.DEBUG_BUILD = false;
+        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();

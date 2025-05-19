@@ -16,6 +16,9 @@ public class GLFWApp {
     private WGPUApp wgpu;
     private int wGPUInit = 0;
 
+    int windowWidth = 800;
+    int windowHeight = 600;
+
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
@@ -37,6 +40,8 @@ public class GLFWApp {
                 if(wGPUInit == 1) {
                     wGPUInit = 2;
                     wgpu = new WGPUApp();
+                    wgpu.width = windowWidth;
+                    wgpu.height = windowHeight;
                     wgpu.init();
                 }
                 if(wGPUInit == 2 && wgpu.isReady()) {
@@ -67,8 +72,6 @@ public class GLFWApp {
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API); // because we will use webgpu
 
         // Create the window
-        int windowWidth = 800;
-        int windowHeight = 600;
         window = glfwCreateWindow(windowWidth, windowHeight, "LWJGL Window", NULL, NULL);
         if (window == NULL) {
             glfwTerminate();

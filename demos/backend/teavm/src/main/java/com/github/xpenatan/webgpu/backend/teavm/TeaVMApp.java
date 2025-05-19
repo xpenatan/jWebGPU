@@ -19,6 +19,9 @@ public class TeaVMApp {
 
     private int wGPUInit = 0;
 
+    private int width = 800;
+    private int height = 600;
+
     public TeaVMApp(ApplicationListener applicationInterface) {
 
         System.out.println("START");
@@ -30,9 +33,10 @@ public class TeaVMApp {
         HTMLDocument document = Window.current().getDocument();
         HTMLCanvasElement canvas = (HTMLCanvasElement)document.createElement("canvas");
 
+
         canvas.setId(TeaVMApp.canvas);
-        canvas.setWidth(800);
-        canvas.setHeight(600);
+        canvas.setWidth(width);
+        canvas.setHeight(height);
         document.getBody().appendChild(canvas);
 
         System.out.println("CANVAS CREATED");
@@ -57,6 +61,8 @@ public class TeaVMApp {
                     if(wGPUInit == 1) {
                         wGPUInit = 2;
                         wgpu = new WGPUApp();
+                        wgpu.width = width;
+                        wgpu.height = height;
                         wgpu.init();
                     }
                     if(wGPUInit == 2 && wgpu.isReady()) {

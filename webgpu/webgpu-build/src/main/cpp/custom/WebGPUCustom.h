@@ -21,6 +21,7 @@ class JSurface;
 class JQueue;
 class JStringView;
 class JSurfaceConfiguration;
+class JBlendState;
 
 enum JPlatformType : int {
     WGPU_Windows = 0,
@@ -49,6 +50,10 @@ class JQueue {
 
     public:
         WGPUQueue queue;
+
+        ~JQueue() {
+            wgpuQueueRelease(queue);
+        }
 };
 
 class JChainedStruct {
@@ -56,13 +61,26 @@ class JChainedStruct {
 
     public:
         WGPUChainedStruct chainedStruct;
+        WGPUChainedStruct* chainedStructPtr = NULL;
+
+        JChainedStruct() {
+            chainedStructPtr = &chainedStruct;
+        }
+
+        void SetNext(JChainedStruct* value) {
+            chainedStructPtr->next = value != NULL ? &(value->chainedStruct) : NULL;
+        }
+
+        void SetSType(WGPUSType type) {
+            chainedStructPtr->sType = type;
+        }
 };
 
-class JStringView : public JChainedStruct{
+class JStringView : public JChainedStruct {
     private:
 
     public:
-        WGPUStringView stringView;
+
 };
 
 class JDeviceDescriptor {
@@ -114,6 +132,282 @@ class JAdapterInfo {
         }
 };
 
+class JShaderModule {
+    private:
+
+    public:
+        WGPUShaderModule shaderModule;
+
+        ~JShaderModule() {
+            wgpuShaderModuleRelease(shaderModule);
+        }
+};
+
+class JVertexState {
+
+    private:
+
+    public:
+        WGPUVertexState vertexState;
+        WGPUVertexState* vertexStatePtr = NULL;
+
+        JVertexState() {
+            vertexStatePtr = &vertexState;
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            vertexStatePtr->nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        }
+
+        void SetModule(JShaderModule* shaderModule) {
+            vertexStatePtr->module = shaderModule != NULL ? shaderModule->shaderModule : NULL;
+        }
+
+        void SetEntryPoint(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            vertexStatePtr->entryPoint = stringView;
+        }
+
+        void SetConstantCount(int value) {
+            vertexStatePtr->constantCount = value;
+        }
+
+//        void SetConstants(WGPUConstantEntry* value) {
+//            vertexState.constants = value;
+//        }
+
+        void SetBufferCount(int value) {
+            vertexStatePtr->bufferCount = value;
+        }
+
+//        void SetBuffers(WGPUVertexBufferLayout* value) {
+//            vertexState.buffers = value;
+//        }
+};
+
+class JShaderSourceWGSL : public JChainedStruct {
+
+    private:
+
+    public:
+        WGPUShaderSourceWGSL shaderSourceWGSL;
+        JChainedStruct chainedCopy;
+
+        JShaderSourceWGSL() {
+            shaderSourceWGSL = WGPUShaderSourceWGSL{};
+            chainedStructPtr = reinterpret_cast<WGPUChainedStruct*>(&shaderSourceWGSL);
+        }
+
+        JChainedStruct& GetChain() {
+            // Obtain chain pointer from source to the copied struct.
+            // This way I can return the Java object and it will update the original chain data
+            chainedCopy.chainedStructPtr = &(shaderSourceWGSL.chain);
+            return chainedCopy;
+        }
+
+        void SetCode(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            shaderSourceWGSL.code = stringView;
+        }
+};
+
+class JShaderModuleDescriptor {
+
+    private:
+
+    public:
+        WGPUShaderModuleDescriptor shaderModuleDescriptor;
+
+        JShaderModuleDescriptor() {
+            shaderModuleDescriptor = WGPUShaderModuleDescriptor{};
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            shaderModuleDescriptor.nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            shaderModuleDescriptor.label = stringView;
+        }
+};
+
+class JBlendComponent {
+
+    private:
+
+    public:
+        WGPUBlendComponent blendComponent;
+
+        JBlendComponent() {
+            blendComponent = WGPUBlendComponent{};
+        }
+
+        void SetBlendOperation(WGPUBlendOperation operation) {
+            blendComponent.operation = operation;
+        }
+
+        WGPUBlendOperation GetBlendOperation() {
+            return blendComponent.operation;
+        }
+
+        void SetSrcFactor(WGPUBlendFactor factor) {
+            blendComponent.srcFactor = factor;
+        }
+
+        WGPUBlendFactor GetSrcFactor() {
+            return blendComponent.srcFactor;
+        }
+
+        void SetDstFactor(WGPUBlendFactor factor) {
+            blendComponent.dstFactor = factor;
+        }
+
+        WGPUBlendFactor GetDstFactor() {
+            return blendComponent.dstFactor;
+        }
+};
+
+class JBlendState {
+
+    private:
+
+    public:
+        WGPUBlendState blendState;
+
+        JBlendState() {
+            blendState = WGPUBlendState{};
+        }
+
+        void SetColor(JBlendComponent* color) {
+            blendState.color = color->blendComponent;
+        }
+
+        void SetAlpha(JBlendComponent* alpha) {
+            blendState.alpha = alpha->blendComponent;
+        }
+};
+
+class JPrimitiveState {
+
+    private:
+
+    public:
+        WGPUPrimitiveState primitiveState;
+        WGPUPrimitiveState* primitiveStatePtr = NULL;
+
+        JPrimitiveState() {
+            primitiveStatePtr = &primitiveState;
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            primitiveStatePtr->nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        }
+
+        void SetTopology(WGPUPrimitiveTopology value) {
+            primitiveStatePtr->topology = value;
+        }
+
+        void SetStripIndexFormat(WGPUIndexFormat value) {
+            primitiveStatePtr->stripIndexFormat = value;
+        }
+
+        void SetFrontFace(WGPUFrontFace value) {
+            primitiveStatePtr->frontFace = value;
+        }
+
+        void SetCullMode(WGPUCullMode value) {
+            primitiveStatePtr->cullMode = value;
+        }
+};
+
+class JColorTargetState {
+
+    private:
+
+    public:
+        WGPUColorTargetState colorTargetState;
+
+        JColorTargetState() {
+            colorTargetState = WGPUColorTargetState{};
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            colorTargetState.nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        }
+
+        void SetFormat(WGPUTextureFormat format) {
+            colorTargetState.format = format;
+        }
+
+        void SetBlend(JBlendState* blendState) {
+            colorTargetState.blend = &(blendState->blendState);
+        }
+
+        void SetWriteMask(WGPUColorWriteMask writeMask) {
+            colorTargetState.writeMask = writeMask;
+        }
+};
+
+class JRenderPipelineDescriptor {
+
+    private:
+
+    public:
+        WGPURenderPipelineDescriptor pipelineDescription;
+        JVertexState vertexStateCopy;
+        JPrimitiveState primitiveStateCopy;
+
+        JRenderPipelineDescriptor() {
+            pipelineDescription = WGPURenderPipelineDescriptor{};
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            pipelineDescription.nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            pipelineDescription.label = stringView;
+        }
+
+        JVertexState& GetVertex() {
+            vertexStateCopy.vertexStatePtr = &pipelineDescription.vertex;
+            return vertexStateCopy;
+        }
+
+        JPrimitiveState& GetPrimitive() {
+            primitiveStateCopy.primitiveStatePtr = &pipelineDescription.primitive;
+            return primitiveStateCopy;
+        }
+//            WGPU_NULLABLE WGPUPipelineLayout layout;
+//            WGPUPrimitiveState primitive;
+//            WGPU_NULLABLE WGPUDepthStencilState const * depthStencil;
+//            WGPUMultisampleState multisample;
+//            WGPU_NULLABLE WGPUFragmentState const * fragment;
+
+};
+
+class JRenderPipeline {
+
+    private:
+
+    public:
+        WGPURenderPipeline renderPipeline;
+
+        ~JRenderPipeline() {
+            wgpuRenderPipelineRelease(renderPipeline);
+        }
+};
+
 class JDevice {
 
     private:
@@ -122,6 +416,10 @@ class JDevice {
         WGPUDevice device;
 
         JDevice() {
+        }
+
+        ~JDevice() {
+            wgpuDeviceRelease(device);
         }
 
 //        bool GetAdapterInfo(JAdapterInfo* adapterInfo) {
@@ -139,6 +437,18 @@ class JDevice {
             queue->queue = wgpuDeviceGetQueue(device);
             return queue;
         }
+
+        JRenderPipeline* CreateRenderPipeline(JRenderPipelineDescriptor* pipelineDescriptor) {
+            JRenderPipeline* renderPipeline = new JRenderPipeline();
+            renderPipeline->renderPipeline = wgpuDeviceCreateRenderPipeline(device, &(pipelineDescriptor->pipelineDescription));
+            return renderPipeline;
+        }
+
+        JShaderModule* CreateShaderModule(JShaderModuleDescriptor* shaderModuleDescriptor) {
+            JShaderModule* shaderModule = new JShaderModule();
+            shaderModule->shaderModule = wgpuDeviceCreateShaderModule(device, &(shaderModuleDescriptor->shaderModuleDescriptor));
+            return shaderModule;
+        }
 };
 
 class JSurfaceConfiguration {
@@ -152,7 +462,7 @@ class JSurfaceConfiguration {
         }
 
         void SetNextInChain(JChainedStruct* chainedStruct) {
-            surfaceConfiguration.nextInChain = chainedStruct != NULL ? &(chainedStruct->chainedStruct) : NULL;
+            surfaceConfiguration.nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
         }
 
         void SetWidth(long width) {
@@ -216,6 +526,10 @@ class JAdapter {
         JAdapter() {
         }
 
+        ~JAdapter() {
+            wgpuAdapterRelease(adapter);
+        }
+
         void RequestDevice(JDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback) {
             WGPURequestDeviceCallbackInfo callbackInfo = {};
             callbackInfo.mode = mode;
@@ -242,6 +556,11 @@ class JSurface {
     public:
         WGPUSurface surface;
 
+        ~JSurface() {
+            wgpuSurfaceUnconfigure(surface);
+            wgpuSurfaceRelease(surface);
+        }
+
         void Configure(JSurfaceConfiguration* config) {
             wgpuSurfaceConfigure(surface, &(config->surfaceConfiguration));
         }
@@ -261,6 +580,10 @@ class JInstance {
             instance = wgpuCreateInstance(NULL);
         }
 
+        ~JInstance() {
+            wgpuInstanceRelease(instance);
+        }
+
         void RequestAdapter(JRequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
             WGPURequestAdapterCallbackInfo callbackInfo = {};
             callbackInfo.mode = mode;
@@ -278,10 +601,9 @@ class JInstance {
         JSurface* CreateWebSurface(const char* canvas) {
             #ifdef __EMSCRIPTEN__
                 WGPUEmscriptenSurfaceSourceCanvasHTMLSelector canvasDesc {};
-                WGPUStringView stringView = {
-                    .data = canvas,
-                    .length = strlen(canvas)
-                };
+                WGPUStringView stringView = {};
+                stringView.data = strdup(canvas);
+                stringView.length = strlen(canvas);
                 canvasDesc.chain.sType = WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector;
                 canvasDesc.selector = stringView;
                 WGPUSurfaceDescriptor surfDesc{};

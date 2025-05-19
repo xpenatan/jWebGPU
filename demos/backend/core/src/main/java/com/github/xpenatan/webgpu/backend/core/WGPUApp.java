@@ -6,6 +6,7 @@ import com.github.xpenatan.webgpu.JDevice;
 import com.github.xpenatan.webgpu.JDeviceDescriptor;
 import com.github.xpenatan.webgpu.JInstance;
 import com.github.xpenatan.webgpu.JQueue;
+import com.github.xpenatan.webgpu.JRenderPipeline;
 import com.github.xpenatan.webgpu.JRequestAdapterOptions;
 import com.github.xpenatan.webgpu.JSurface;
 import com.github.xpenatan.webgpu.JWebGPU;
@@ -24,6 +25,7 @@ public class WGPUApp {
     public JAdapter adapter;
     public JDevice device;
     public JSurface surface;
+    public JRenderPipeline pipeline;
     public JQueue queue;
 
     private boolean isReady;
@@ -31,7 +33,7 @@ public class WGPUApp {
     public void init() {
         instance = new JInstance();
         JRequestAdapterOptions op = new JRequestAdapterOptions();
-        WGPUCallbackMode mode = WGPUCallbackMode.WGPUCallbackMode_AllowProcessEvents;
+        WGPUCallbackMode mode = WGPUCallbackMode.AllowProcessEvents;
         RequestAdapterCallback callback = new RequestAdapterCallback() {
             @Override
             protected void OnCallback(WGPURequestAdapterStatus status, JAdapter adapter) {

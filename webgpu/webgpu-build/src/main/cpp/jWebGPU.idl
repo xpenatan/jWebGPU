@@ -70,8 +70,78 @@ interface JRequestAdapterOptions {
     void JRequestAdapterOptions();
 };
 
+interface JShaderSourceWGSL {
+    void JShaderSourceWGSL();
+    [Ref] JChainedStruct GetChain();
+    void SetCode([Const] DOMString code);
+};
+JShaderSourceWGSL implements JChainedStruct;
+
+interface JShaderModuleDescriptor {
+    void JShaderModuleDescriptor();
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString value);
+};
+
 interface JDevice {
     JQueue GetQueue();
+    JRenderPipeline CreateRenderPipeline(JRenderPipelineDescriptor renderPipeline);
+    JShaderModule CreateShaderModule(JShaderModuleDescriptor shaderModuleDescriptor);
+};
+
+interface JBlendComponent {
+    void JBlendComponent();
+    void SetBlendOperation(WGPUBlendOperation operation);
+    WGPUBlendOperation GetBlendOperation();
+    void SetSrcFactor(WGPUBlendFactor factor);
+    WGPUBlendFactor GetSrcFactor();
+    void SetDstFactor(WGPUBlendFactor factor);
+    WGPUBlendFactor GetDstFactor();
+};
+
+interface JBlendState {
+    void JBlendState();
+    void SetColor(JBlendComponent color);
+    void SetAlpha(JBlendComponent alpha);
+};
+
+interface JShaderModule {
+};
+
+interface JVertexState {
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetModule(JShaderModule shaderModule);
+    void SetEntryPoint([Const] DOMString entryPoint);
+    void SetConstantCount(long value);
+    void SetBufferCount(long value);
+};
+
+interface JColorTargetState {
+    void JColorTargetState();
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetFormat(WGPUTextureFormat format);
+    void SetBlend(JBlendState blendState);
+    void SetWriteMask(WGPUColorWriteMask writeMask);
+};
+
+interface JRenderPipelineDescriptor {
+    void JRenderPipelineDescriptor();
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString value);
+    [Ref] JVertexState GetVertex();
+    [Ref] JPrimitiveState GetPrimitive();
+};
+
+interface JPrimitiveState {
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetTopology(WGPUPrimitiveTopology value);
+    void SetStripIndexFormat(WGPUIndexFormat value);
+    void SetFrontFace(WGPUFrontFace value);
+    void SetCullMode(WGPUCullMode value);
+};
+
+interface JRenderPipeline {
+
 };
 
 interface JSurface {
@@ -106,6 +176,8 @@ interface JQueue {
 
 interface JChainedStruct {
 
+    void SetNext(JChainedStruct value);
+    void SetSType(WGPUSType type);
 };
 
 interface JStringView {
@@ -116,648 +188,648 @@ JStringView implements JChainedStruct;
 // ##### ENUMS #####
 
 enum WGPUBufferUsage {
-    "WGPUBufferUsage_None",
-    "WGPUBufferUsage_MapRead",
-    "WGPUBufferUsage_MapWrite",
-    "WGPUBufferUsage_CopySrc",
-    "WGPUBufferUsage_CopyDst",
-    "WGPUBufferUsage_Index",
-    "WGPUBufferUsage_Vertex",
-    "WGPUBufferUsage_Uniform",
-    "WGPUBufferUsage_Storage",
-    "WGPUBufferUsage_Indirect",
-    "WGPUBufferUsage_QueryResolve"
+    "WGPUBufferUsage_None",            //[-RENAME=None]
+    "WGPUBufferUsage_MapRead",         //[-RENAME=MapRead]
+    "WGPUBufferUsage_MapWrite",        //[-RENAME=MapWrite]
+    "WGPUBufferUsage_CopySrc",         //[-RENAME=CopySrc]
+    "WGPUBufferUsage_CopyDst",         //[-RENAME=CopyDst]
+    "WGPUBufferUsage_Index",           //[-RENAME=Index]
+    "WGPUBufferUsage_Vertex",          //[-RENAME=Vertex]
+    "WGPUBufferUsage_Uniform",         //[-RENAME=Uniform]
+    "WGPUBufferUsage_Storage",         //[-RENAME=Storage]
+    "WGPUBufferUsage_Indirect",        //[-RENAME=Indirect]
+    "WGPUBufferUsage_QueryResolve"     //[-RENAME=QueryResolve]
 };
 
 enum WGPUColorWriteMask {
-    "WGPUColorWriteMask_None",
-    "WGPUColorWriteMask_Red",
-    "WGPUColorWriteMask_Green",
-    "WGPUColorWriteMask_Blue",
-    "WGPUColorWriteMask_Alpha",
-    "WGPUColorWriteMask_All"
+    "WGPUColorWriteMask_None",         //[-RENAME=None]
+    "WGPUColorWriteMask_Red",          //[-RENAME=Red]
+    "WGPUColorWriteMask_Green",        //[-RENAME=Green]
+    "WGPUColorWriteMask_Blue",         //[-RENAME=Blue]
+    "WGPUColorWriteMask_Alpha",        //[-RENAME=Alpha]
+    "WGPUColorWriteMask_All"           //[-RENAME=All]
 };
 
 enum WGPUMapMode {
-    "WGPUMapMode_None",
-    "WGPUMapMode_Read",
-    "WGPUMapMode_Write"
+    "WGPUMapMode_None",                //[-RENAME=None]
+    "WGPUMapMode_Read",                //[-RENAME=Read]
+    "WGPUMapMode_Write"                //[-RENAME=Write]
 };
 
 enum WGPUShaderStage {
-    "WGPUShaderStage_None",
-    "WGPUShaderStage_Vertex",
-    "WGPUShaderStage_Fragment",
-    "WGPUShaderStage_Compute"
+    "WGPUShaderStage_None",            //[-RENAME=None]
+    "WGPUShaderStage_Vertex",          //[-RENAME=Vertex]
+    "WGPUShaderStage_Fragment",        //[-RENAME=Fragment]
+    "WGPUShaderStage_Compute"          //[-RENAME=Compute]
 };
 
 enum WGPUTextureUsage {
-    "WGPUTextureUsage_None",
-    "WGPUTextureUsage_CopySrc",
-    "WGPUTextureUsage_CopyDst",
-    "WGPUTextureUsage_TextureBinding",
-    "WGPUTextureUsage_StorageBinding",
-    "WGPUTextureUsage_RenderAttachment"
+    "WGPUTextureUsage_None",           //[-RENAME=None]
+    "WGPUTextureUsage_CopySrc",        //[-RENAME=CopySrc]
+    "WGPUTextureUsage_CopyDst",        //[-RENAME=CopyDst]
+    "WGPUTextureUsage_TextureBinding", //[-RENAME=TextureBinding]
+    "WGPUTextureUsage_StorageBinding", //[-RENAME=StorageBinding]
+    "WGPUTextureUsage_RenderAttachment" //[-RENAME=RenderAttachment]
 };
 
 enum WGPUAdapterType {
-    "WGPUAdapterType_DiscreteGPU",
-    "WGPUAdapterType_IntegratedGPU",
-    "WGPUAdapterType_CPU",
-    "WGPUAdapterType_Unknown",
-    "WGPUAdapterType_Force32"
+    "WGPUAdapterType_DiscreteGPU",     //[-RENAME=DiscreteGPU]
+    "WGPUAdapterType_IntegratedGPU",   //[-RENAME=IntegratedGPU]
+    "WGPUAdapterType_CPU",             //[-RENAME=CPU]
+    "WGPUAdapterType_Unknown",         //[-RENAME=Unknown]
+    "WGPUAdapterType_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUAddressMode {
-    "WGPUAddressMode_Undefined",
-    "WGPUAddressMode_ClampToEdge",
-    "WGPUAddressMode_Repeat",
-    "WGPUAddressMode_MirrorRepeat",
-    "WGPUAddressMode_Force32"
+    "WGPUAddressMode_Undefined",       //[-RENAME=Undefined]
+    "WGPUAddressMode_ClampToEdge",     //[-RENAME=ClampToEdge]
+    "WGPUAddressMode_Repeat",          //[-RENAME=Repeat]
+    "WGPUAddressMode_MirrorRepeat",    //[-RENAME=MirrorRepeat]
+    "WGPUAddressMode_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUBackendType {
-    "WGPUBackendType_Undefined",
-    "WGPUBackendType_Null",
-    "WGPUBackendType_WebGPU",
-    "WGPUBackendType_D3D11",
-    "WGPUBackendType_D3D12",
-    "WGPUBackendType_Metal",
-    "WGPUBackendType_Vulkan",
-    "WGPUBackendType_OpenGL",
-    "WGPUBackendType_OpenGLES",
-    "WGPUBackendType_Force32"
+    "WGPUBackendType_Undefined",       //[-RENAME=Undefined]
+    "WGPUBackendType_Null",            //[-RENAME=Null]
+    "WGPUBackendType_WebGPU",          //[-RENAME=WebGPU]
+    "WGPUBackendType_D3D11",           //[-RENAME=D3D11]
+    "WGPUBackendType_D3D12",           //[-RENAME=D3D12]
+    "WGPUBackendType_Metal",           //[-RENAME=Metal]
+    "WGPUBackendType_Vulkan",          //[-RENAME=Vulkan]
+    "WGPUBackendType_OpenGL",          //[-RENAME=OpenGL]
+    "WGPUBackendType_OpenGLES",        //[-RENAME=OpenGLES]
+    "WGPUBackendType_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUBlendFactor {
-    "WGPUBlendFactor_Undefined",
-    "WGPUBlendFactor_Zero",
-    "WGPUBlendFactor_One",
-    "WGPUBlendFactor_Src",
-    "WGPUBlendFactor_OneMinusSrc",
-    "WGPUBlendFactor_SrcAlpha",
-    "WGPUBlendFactor_OneMinusSrcAlpha",
-    "WGPUBlendFactor_Dst",
-    "WGPUBlendFactor_OneMinusDst",
-    "WGPUBlendFactor_DstAlpha",
-    "WGPUBlendFactor_OneMinusDstAlpha",
-    "WGPUBlendFactor_SrcAlphaSaturated",
-    "WGPUBlendFactor_Constant",
-    "WGPUBlendFactor_OneMinusConstant",
-    "WGPUBlendFactor_Src1",
-    "WGPUBlendFactor_OneMinusSrc1",
-    "WGPUBlendFactor_Src1Alpha",
-    "WGPUBlendFactor_OneMinusSrc1Alpha",
-    "WGPUBlendFactor_Force32"
+    "WGPUBlendFactor_Undefined",       //[-RENAME=Undefined]
+    "WGPUBlendFactor_Zero",            //[-RENAME=Zero]
+    "WGPUBlendFactor_One",             //[-RENAME=One]
+    "WGPUBlendFactor_Src",             //[-RENAME=Src]
+    "WGPUBlendFactor_OneMinusSrc",     //[-RENAME=OneMinusSrc]
+    "WGPUBlendFactor_SrcAlpha",        //[-RENAME=SrcAlpha]
+    "WGPUBlendFactor_OneMinusSrcAlpha", //[-RENAME=OneMinusSrcAlpha]
+    "WGPUBlendFactor_Dst",             //[-RENAME=Dst]
+    "WGPUBlendFactor_OneMinusDst",     //[-RENAME=OneMinusDst]
+    "WGPUBlendFactor_DstAlpha",        //[-RENAME=DstAlpha]
+    "WGPUBlendFactor_OneMinusDstAlpha", //[-RENAME=OneMinusDstAlpha]
+    "WGPUBlendFactor_SrcAlphaSaturated", //[-RENAME=SrcAlphaSaturated]
+    "WGPUBlendFactor_Constant",        //[-RENAME=Constant]
+    "WGPUBlendFactor_OneMinusConstant", //[-RENAME=OneMinusConstant]
+    "WGPUBlendFactor_Src1",            //[-RENAME=Src1]
+    "WGPUBlendFactor_OneMinusSrc1",    //[-RENAME=OneMinusSrc1]
+    "WGPUBlendFactor_Src1Alpha",       //[-RENAME=Src1Alpha]
+    "WGPUBlendFactor_OneMinusSrc1Alpha", //[-RENAME=OneMinusSrc1Alpha]
+    "WGPUBlendFactor_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUBlendOperation {
-    "WGPUBlendOperation_Undefined",
-    "WGPUBlendOperation_Add",
-    "WGPUBlendOperation_Subtract",
-    "WGPUBlendOperation_ReverseSubtract",
-    "WGPUBlendOperation_Min",
-    "WGPUBlendOperation_Max",
-    "WGPUBlendOperation_Force32"
+    "WGPUBlendOperation_Undefined",    //[-RENAME=Undefined]
+    "WGPUBlendOperation_Add",          //[-RENAME=Add]
+    "WGPUBlendOperation_Subtract",     //[-RENAME=Subtract]
+    "WGPUBlendOperation_ReverseSubtract", //[-RENAME=ReverseSubtract]
+    "WGPUBlendOperation_Min",          //[-RENAME=Min]
+    "WGPUBlendOperation_Max",          //[-RENAME=Max]
+    "WGPUBlendOperation_Force32"       //[-RENAME=Force32]
 };
 
 enum WGPUBufferBindingType {
-    "WGPUBufferBindingType_BindingNotUsed",
-    "WGPUBufferBindingType_Undefined",
-    "WGPUBufferBindingType_Uniform",
-    "WGPUBufferBindingType_Storage",
-    "WGPUBufferBindingType_ReadOnlyStorage",
-    "WGPUBufferBindingType_Force32"
+    "WGPUBufferBindingType_BindingNotUsed", //[-RENAME=BindingNotUsed]
+    "WGPUBufferBindingType_Undefined", //[-RENAME=Undefined]
+    "WGPUBufferBindingType_Uniform",   //[-RENAME=Uniform]
+    "WGPUBufferBindingType_Storage",   //[-RENAME=Storage]
+    "WGPUBufferBindingType_ReadOnlyStorage", //[-RENAME=ReadOnlyStorage]
+    "WGPUBufferBindingType_Force32"    //[-RENAME=Force32]
 };
 
 enum WGPUBufferMapState {
-    "WGPUBufferMapState_Unmapped",
-    "WGPUBufferMapState_Pending",
-    "WGPUBufferMapState_Mapped",
-    "WGPUBufferMapState_Force32"
+    "WGPUBufferMapState_Unmapped",     //[-RENAME=Unmapped]
+    "WGPUBufferMapState_Pending",      //[-RENAME=Pending]
+    "WGPUBufferMapState_Mapped",       //[-RENAME=Mapped]
+    "WGPUBufferMapState_Force32"       //[-RENAME=Force32]
 };
 
 enum WGPUCallbackMode {
-    "WGPUCallbackMode_WaitAnyOnly",
-    "WGPUCallbackMode_AllowProcessEvents",
-    "WGPUCallbackMode_AllowSpontaneous",
-    "WGPUCallbackMode_Force32"
+    "WGPUCallbackMode_WaitAnyOnly",    //[-RENAME=WaitAnyOnly]
+    "WGPUCallbackMode_AllowProcessEvents", //[-RENAME=AllowProcessEvents]
+    "WGPUCallbackMode_AllowSpontaneous", //[-RENAME=AllowSpontaneous]
+    "WGPUCallbackMode_Force32"         //[-RENAME=Force32]
 };
 
 enum WGPUCompareFunction {
-    "WGPUCompareFunction_Undefined",
-    "WGPUCompareFunction_Never",
-    "WGPUCompareFunction_Less",
-    "WGPUCompareFunction_Equal",
-    "WGPUCompareFunction_LessEqual",
-    "WGPUCompareFunction_Greater",
-    "WGPUCompareFunction_NotEqual",
-    "WGPUCompareFunction_GreaterEqual",
-    "WGPUCompareFunction_Always",
-    "WGPUCompareFunction_Force32"
+    "WGPUCompareFunction_Undefined",   //[-RENAME=Undefined]
+    "WGPUCompareFunction_Never",       //[-RENAME=Never]
+    "WGPUCompareFunction_Less",        //[-RENAME=Less]
+    "WGPUCompareFunction_Equal",       //[-RENAME=Equal]
+    "WGPUCompareFunction_LessEqual",   //[-RENAME=LessEqual]
+    "WGPUCompareFunction_Greater",     //[-RENAME=Greater]
+    "WGPUCompareFunction_NotEqual",    //[-RENAME=NotEqual]
+    "WGPUCompareFunction_GreaterEqual", //[-RENAME=GreaterEqual]
+    "WGPUCompareFunction_Always",      //[-RENAME=Always]
+    "WGPUCompareFunction_Force32"      //[-RENAME=Force32]
 };
 
 enum WGPUCompilationInfoRequestStatus {
-    "WGPUCompilationInfoRequestStatus_Success",
-//    "WGPUCompilationInfoRequestStatus_CallbackCancelled", // TODO missing in wgpu-native header
-    "WGPUCompilationInfoRequestStatus_Force32"
+    "WGPUCompilationInfoRequestStatus_Success", //[-RENAME=Success]
+    // "WGPUCompilationInfoRequestStatus_CallbackCancelled", // TODO missing in wgpu-native header
+    "WGPUCompilationInfoRequestStatus_Force32" //[-RENAME=Force32]
 };
 
 enum WGPUCompilationMessageType {
-    "WGPUCompilationMessageType_Error",
-    "WGPUCompilationMessageType_Warning",
-    "WGPUCompilationMessageType_Info",
-    "WGPUCompilationMessageType_Force32"
+    "WGPUCompilationMessageType_Error", //[-RENAME=Error]
+    "WGPUCompilationMessageType_Warning", //[-RENAME=Warning]
+    "WGPUCompilationMessageType_Info",  //[-RENAME=Info]
+    "WGPUCompilationMessageType_Force32" //[-RENAME=Force32]
 };
 
 enum WGPUCompositeAlphaMode {
-    "WGPUCompositeAlphaMode_Auto",
-    "WGPUCompositeAlphaMode_Opaque",
-    "WGPUCompositeAlphaMode_Premultiplied",
-    "WGPUCompositeAlphaMode_Unpremultiplied",
-    "WGPUCompositeAlphaMode_Inherit",
-    "WGPUCompositeAlphaMode_Force32"
+    "WGPUCompositeAlphaMode_Auto",     //[-RENAME=Auto]
+    "WGPUCompositeAlphaMode_Opaque",   //[-RENAME=Opaque]
+    "WGPUCompositeAlphaMode_Premultiplied", //[-RENAME=Premultiplied]
+    "WGPUCompositeAlphaMode_Unpremultiplied", //[-RENAME=Unpremultiplied]
+    "WGPUCompositeAlphaMode_Inherit",  //[-RENAME=Inherit]
+    "WGPUCompositeAlphaMode_Force32"   //[-RENAME=Force32]
 };
 
 enum WGPUCreatePipelineAsyncStatus {
-    "WGPUCreatePipelineAsyncStatus_Success",
-//    "WGPUCreatePipelineAsyncStatus_CallbackCancelled", // TODO missing in wgpu-native header
-    "WGPUCreatePipelineAsyncStatus_ValidationError",
-    "WGPUCreatePipelineAsyncStatus_InternalError",
-    "WGPUCreatePipelineAsyncStatus_Force32"
+    "WGPUCreatePipelineAsyncStatus_Success", //[-RENAME=Success]
+    // "WGPUCreatePipelineAsyncStatus_CallbackCancelled", // TODO missing in wgpu-native header
+    "WGPUCreatePipelineAsyncStatus_ValidationError", //[-RENAME=ValidationError]
+    "WGPUCreatePipelineAsyncStatus_InternalError", //[-RENAME=InternalError]
+    "WGPUCreatePipelineAsyncStatus_Force32" //[-RENAME=Force32]
 };
 
 enum WGPUCullMode {
-    "WGPUCullMode_Undefined",
-    "WGPUCullMode_None",
-    "WGPUCullMode_Front",
-    "WGPUCullMode_Back",
-    "WGPUCullMode_Force32"
+    "WGPUCullMode_Undefined",          //[-RENAME=Undefined]
+    "WGPUCullMode_None",               //[-RENAME=None]
+    "WGPUCullMode_Front",              //[-RENAME=Front]
+    "WGPUCullMode_Back",               //[-RENAME=Back]
+    "WGPUCullMode_Force32"             //[-RENAME=Force32]
 };
 
 enum WGPUDeviceLostReason {
-    "WGPUDeviceLostReason_Unknown",
-    "WGPUDeviceLostReason_Destroyed",
-//    "WGPUDeviceLostReason_CallbackCancelled", // TODO missing in wgpu-native header
-    "WGPUDeviceLostReason_FailedCreation",
-    "WGPUDeviceLostReason_Force32"
+    "WGPUDeviceLostReason_Unknown",    //[-RENAME=Unknown]
+    "WGPUDeviceLostReason_Destroyed",  //[-RENAME=Destroyed]
+    // "WGPUDeviceLostReason_CallbackCancelled", // TODO missing in wgpu-native header
+    "WGPUDeviceLostReason_FailedCreation", //[-RENAME=FailedCreation]
+    "WGPUDeviceLostReason_Force32"     //[-RENAME=Force32]
 };
 
 enum WGPUErrorFilter {
-    "WGPUErrorFilter_Validation",
-    "WGPUErrorFilter_OutOfMemory",
-    "WGPUErrorFilter_Internal",
-    "WGPUErrorFilter_Force32"
+    "WGPUErrorFilter_Validation",      //[-RENAME=Validation]
+    "WGPUErrorFilter_OutOfMemory",     //[-RENAME=OutOfMemory]
+    "WGPUErrorFilter_Internal",        //[-RENAME=Internal]
+    "WGPUErrorFilter_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUErrorType {
-    "WGPUErrorType_NoError",
-    "WGPUErrorType_Validation",
-    "WGPUErrorType_OutOfMemory",
-    "WGPUErrorType_Internal",
-    "WGPUErrorType_Unknown",
-    "WGPUErrorType_Force32"
+    "WGPUErrorType_NoError",           //[-RENAME=NoError]
+    "WGPUErrorType_Validation",        //[-RENAME=Validation]
+    "WGPUErrorType_OutOfMemory",       //[-RENAME=OutOfMemory]
+    "WGPUErrorType_Internal",          //[-RENAME=Internal]
+    "WGPUErrorType_Unknown",           //[-RENAME=Unknown]
+    "WGPUErrorType_Force32"            //[-RENAME=Force32]
 };
 
 enum WGPUFeatureLevel {
-//    "WGPUFeatureLevel_Undefined", // TODO missing in wgpu-native header
-    "WGPUFeatureLevel_Compatibility",
-    "WGPUFeatureLevel_Core",
-    "WGPUFeatureLevel_Force32"
+    // "WGPUFeatureLevel_Undefined", // TODO missing in wgpu-native header
+    "WGPUFeatureLevel_Compatibility",  //[-RENAME=Compatibility]
+    "WGPUFeatureLevel_Core",           //[-RENAME=Core]
+    "WGPUFeatureLevel_Force32"         //[-RENAME=Force32]
 };
 
 enum WGPUFeatureName {
-    "WGPUFeatureName_DepthClipControl",
-    "WGPUFeatureName_Depth32FloatStencil8",
-    "WGPUFeatureName_TimestampQuery",
-    "WGPUFeatureName_TextureCompressionBC",
-    "WGPUFeatureName_TextureCompressionBCSliced3D",
-    "WGPUFeatureName_TextureCompressionETC2",
-    "WGPUFeatureName_TextureCompressionASTC",
-    "WGPUFeatureName_TextureCompressionASTCSliced3D",
-    "WGPUFeatureName_IndirectFirstInstance",
-    "WGPUFeatureName_ShaderF16",
-    "WGPUFeatureName_RG11B10UfloatRenderable",
-    "WGPUFeatureName_BGRA8UnormStorage",
-    "WGPUFeatureName_Float32Filterable",
-    "WGPUFeatureName_Float32Blendable",
-    "WGPUFeatureName_ClipDistances",
-    "WGPUFeatureName_DualSourceBlending",
-//    "WGPUFeatureName_Subgroups",  // TODO missing in wgpu-native header
-//    "WGPUFeatureName_CoreFeaturesAndLimits",  // TODO missing in wgpu-native header
-//    "WGPUFeatureName_Unorm16TextureFormats",  // TODO missing in wgpu-native header
-//    "WGPUFeatureName_Snorm16TextureFormats",  // TODO missing in wgpu-native header
-//    "WGPUFeatureName_MultiDrawIndirect",      // TODO missing in wgpu-native header
-    "WGPUFeatureName_Force32"
+    "WGPUFeatureName_DepthClipControl", //[-RENAME=DepthClipControl]
+    "WGPUFeatureName_Depth32FloatStencil8", //[-RENAME=Depth32FloatStencil8]
+    "WGPUFeatureName_TimestampQuery",  //[-RENAME=TimestampQuery]
+    "WGPUFeatureName_TextureCompressionBC", //[-RENAME=TextureCompressionBC]
+    "WGPUFeatureName_TextureCompressionBCSliced3D", //[-RENAME=TextureCompressionBCSliced3D]
+    "WGPUFeatureName_TextureCompressionETC2", //[-RENAME=TextureCompressionETC2]
+    "WGPUFeatureName_TextureCompressionASTC", //[-RENAME=TextureCompressionASTC]
+    "WGPUFeatureName_TextureCompressionASTCSliced3D", //[-RENAME=TextureCompressionASTCSliced3D]
+    "WGPUFeatureName_IndirectFirstInstance", //[-RENAME=IndirectFirstInstance]
+    "WGPUFeatureName_ShaderF16",       //[-RENAME=ShaderF16]
+    "WGPUFeatureName_RG11B10UfloatRenderable", //[-RENAME=RG11B10UfloatRenderable]
+    "WGPUFeatureName_BGRA8UnormStorage", //[-RENAME=BGRA8UnormStorage]
+    "WGPUFeatureName_Float32Filterable", //[-RENAME=Float32Filterable]
+    "WGPUFeatureName_Float32Blendable", //[-RENAME=Float32Blendable]
+    "WGPUFeatureName_ClipDistances",   //[-RENAME=ClipDistances]
+    "WGPUFeatureName_DualSourceBlending", //[-RENAME=DualSourceBlending]
+    // "WGPUFeatureName_Subgroups",  // TODO missing in wgpu-native header
+    // "WGPUFeatureName_CoreFeaturesAndLimits",  // TODO missing in wgpu-native header
+    // "WGPUFeatureName_Unorm16TextureFormats",  // TODO missing in wgpu-native header
+    // "WGPUFeatureName_Snorm16TextureFormats",  // TODO missing in wgpu-native header
+    // "WGPUFeatureName_MultiDrawIndirect",      // TODO missing in wgpu-native header
+    "WGPUFeatureName_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUFilterMode {
-    "WGPUFilterMode_Undefined",
-    "WGPUFilterMode_Nearest",
-    "WGPUFilterMode_Linear",
-    "WGPUFilterMode_Force32"
+    "WGPUFilterMode_Undefined",        //[-RENAME=Undefined]
+    "WGPUFilterMode_Nearest",          //[-RENAME=Nearest]
+    "WGPUFilterMode_Linear",           //[-RENAME=Linear]
+    "WGPUFilterMode_Force32"           //[-RENAME=Force32]
 };
 
 enum WGPUFrontFace {
-    "WGPUFrontFace_Undefined",
-    "WGPUFrontFace_CCW",
-    "WGPUFrontFace_CW",
-    "WGPUFrontFace_Force32"
+    "WGPUFrontFace_Undefined",         //[-RENAME=Undefined]
+    "WGPUFrontFace_CCW",               //[-RENAME=CCW]
+    "WGPUFrontFace_CW",                //[-RENAME=CW]
+    "WGPUFrontFace_Force32"            //[-RENAME=Force32]
 };
 
 enum WGPUIndexFormat {
-    "WGPUIndexFormat_Undefined",
-    "WGPUIndexFormat_Uint16",
-    "WGPUIndexFormat_Uint32",
-    "WGPUIndexFormat_Force32"
+    "WGPUIndexFormat_Undefined",       //[-RENAME=Undefined]
+    "WGPUIndexFormat_Uint16",          //[-RENAME=Uint16]
+    "WGPUIndexFormat_Uint32",          //[-RENAME=Uint32]
+    "WGPUIndexFormat_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPULoadOp {
-    "WGPULoadOp_Undefined",
-    "WGPULoadOp_Load",
-    "WGPULoadOp_Clear",
-    "WGPULoadOp_Force32"
+    "WGPULoadOp_Undefined",            //[-RENAME=Undefined]
+    "WGPULoadOp_Load",                 //[-RENAME=Load]
+    "WGPULoadOp_Clear",                //[-RENAME=Clear]
+    "WGPULoadOp_Force32"               //[-RENAME=Force32]
 };
 
 enum WGPUMapAsyncStatus {
-    "WGPUMapAsyncStatus_Success",
-//    "WGPUMapAsyncStatus_CallbackCancelled",   // TODO missing in wgpu-native header
-    "WGPUMapAsyncStatus_Error",
-    "WGPUMapAsyncStatus_Aborted",
-    "WGPUMapAsyncStatus_Force32"
+    "WGPUMapAsyncStatus_Success",      //[-RENAME=Success]
+    // "WGPUMapAsyncStatus_CallbackCancelled",   // TODO missing in wgpu-native header
+    "WGPUMapAsyncStatus_Error",        //[-RENAME=Error]
+    "WGPUMapAsyncStatus_Aborted",      //[-RENAME=Aborted]
+    "WGPUMapAsyncStatus_Force32"       //[-RENAME=Force32]
 };
 
 enum WGPUMipmapFilterMode {
-    "WGPUMipmapFilterMode_Undefined",
-    "WGPUMipmapFilterMode_Nearest",
-    "WGPUMipmapFilterMode_Linear",
-    "WGPUMipmapFilterMode_Force32"
+    "WGPUMipmapFilterMode_Undefined",  //[-RENAME=Undefined]
+    "WGPUMipmapFilterMode_Nearest",    //[-RENAME=Nearest]
+    "WGPUMipmapFilterMode_Linear",     //[-RENAME=Linear]
+    "WGPUMipmapFilterMode_Force32"     //[-RENAME=Force32]
 };
 
 enum WGPUOptionalBool {
-    "WGPUOptionalBool_False",
-    "WGPUOptionalBool_True",
-    "WGPUOptionalBool_Undefined",
-    "WGPUOptionalBool_Force32"
+    "WGPUOptionalBool_False",          //[-RENAME=False]
+    "WGPUOptionalBool_True",           //[-RENAME=True]
+    "WGPUOptionalBool_Undefined",      //[-RENAME=Undefined]
+    "WGPUOptionalBool_Force32"         //[-RENAME=Force32]
 };
 
 enum WGPUPopErrorScopeStatus {
-    "WGPUPopErrorScopeStatus_Success",
-//    "WGPUPopErrorScopeStatus_CallbackCancelled",   // TODO missing in wgpu-native header
-//    "WGPUPopErrorScopeStatus_Error",            // TODO missing in wgpu-native header
-    "WGPUPopErrorScopeStatus_Force32"
+    "WGPUPopErrorScopeStatus_Success", //[-RENAME=Success]
+    // "WGPUPopErrorScopeStatus_CallbackCancelled",   // TODO missing in wgpu-native header
+    // "WGPUPopErrorScopeStatus_Error",            // TODO missing in wgpu-native header
+    "WGPUPopErrorScopeStatus_Force32"  //[-RENAME=Force32]
 };
 
 enum WGPUPowerPreference {
-    "WGPUPowerPreference_Undefined",
-    "WGPUPowerPreference_LowPower",
-    "WGPUPowerPreference_HighPerformance",
-    "WGPUPowerPreference_Force32"
+    "WGPUPowerPreference_Undefined",   //[-RENAME=Undefined]
+    "WGPUPowerPreference_LowPower",    //[-RENAME=LowPower]
+    "WGPUPowerPreference_HighPerformance", //[-RENAME=HighPerformance]
+    "WGPUPowerPreference_Force32"      //[-RENAME=Force32]
 };
 
-//enum WGPUPredefinedColorSpace {    // TODO missing in wgpu-native header
-//    "WGPUPredefinedColorSpace_SRGB",
-//    "WGPUPredefinedColorSpace_DisplayP3",
-//    "WGPUPredefinedColorSpace_Force32"
-//};
+// enum WGPUPredefinedColorSpace {    // TODO missing in wgpu-native header
+//     "WGPUPredefinedColorSpace_SRGB", //[-RENAME=SRGB]
+//     "WGPUPredefinedColorSpace_DisplayP3", //[-RENAME=DisplayP3]
+//     "WGPUPredefinedColorSpace_Force32" //[-RENAME=Force32]
+// };
 
 enum WGPUPresentMode {
-    "WGPUPresentMode_Undefined",
-    "WGPUPresentMode_Fifo",
-    "WGPUPresentMode_FifoRelaxed",
-    "WGPUPresentMode_Immediate",
-    "WGPUPresentMode_Mailbox",
-    "WGPUPresentMode_Force32"
+    "WGPUPresentMode_Undefined",       //[-RENAME=Undefined]
+    "WGPUPresentMode_Fifo",            //[-RENAME=Fifo]
+    "WGPUPresentMode_FifoRelaxed",     //[-RENAME=FifoRelaxed]
+    "WGPUPresentMode_Immediate",       //[-RENAME=Immediate]
+    "WGPUPresentMode_Mailbox",         //[-RENAME=Mailbox]
+    "WGPUPresentMode_Force32"          //[-RENAME=Force32]
 };
 
 enum WGPUPrimitiveTopology {
-    "WGPUPrimitiveTopology_Undefined",
-    "WGPUPrimitiveTopology_PointList",
-    "WGPUPrimitiveTopology_LineList",
-    "WGPUPrimitiveTopology_LineStrip",
-    "WGPUPrimitiveTopology_TriangleList",
-    "WGPUPrimitiveTopology_TriangleStrip",
-    "WGPUPrimitiveTopology_Force32"
+    "WGPUPrimitiveTopology_Undefined", //[-RENAME=Undefined]
+    "WGPUPrimitiveTopology_PointList", //[-RENAME=PointList]
+    "WGPUPrimitiveTopology_LineList",  //[-RENAME=LineList]
+    "WGPUPrimitiveTopology_LineStrip", //[-RENAME=LineStrip]
+    "WGPUPrimitiveTopology_TriangleList", //[-RENAME=TriangleList]
+    "WGPUPrimitiveTopology_TriangleStrip", //[-RENAME=TriangleStrip]
+    "WGPUPrimitiveTopology_Force32"    //[-RENAME=Force32]
 };
 
 enum WGPUQueryType {
-    "WGPUQueryType_Occlusion",
-    "WGPUQueryType_Timestamp",
-    "WGPUQueryType_Force32"
+    "WGPUQueryType_Occlusion",         //[-RENAME=Occlusion]
+    "WGPUQueryType_Timestamp",         //[-RENAME=Timestamp]
+    "WGPUQueryType_Force32"            //[-RENAME=Force32]
 };
 
 enum WGPUQueueWorkDoneStatus {
-    "WGPUQueueWorkDoneStatus_Success",
-//    "WGPUQueueWorkDoneStatus_CallbackCancelled",   // TODO missing in wgpu-native header
-    "WGPUQueueWorkDoneStatus_Error",
-    "WGPUQueueWorkDoneStatus_Force32"
+    "WGPUQueueWorkDoneStatus_Success", //[-RENAME=Success]
+    // "WGPUQueueWorkDoneStatus_CallbackCancelled",   // TODO missing in wgpu-native header
+    "WGPUQueueWorkDoneStatus_Error",   //[-RENAME=Error]
+    "WGPUQueueWorkDoneStatus_Force32"  //[-RENAME=Force32]
 };
 
 enum WGPURequestAdapterStatus {
-    "WGPURequestAdapterStatus_Success",
-//    "WGPURequestAdapterStatus_CallbackCancelled",   // TODO missing in wgpu-native header
-    "WGPURequestAdapterStatus_Unavailable",
-    "WGPURequestAdapterStatus_Error",
-    "WGPURequestAdapterStatus_Force32"
+    "WGPURequestAdapterStatus_Success", //[-RENAME=Success]
+    // "WGPURequestAdapterStatus_CallbackCancelled",   // TODO missing in wgpu-native header
+    "WGPURequestAdapterStatus_Unavailable", //[-RENAME=Unavailable]
+    "WGPURequestAdapterStatus_Error",  //[-RENAME=Error]
+    "WGPURequestAdapterStatus_Force32" //[-RENAME=Force32]
 };
 
 enum WGPURequestDeviceStatus {
-    "WGPURequestDeviceStatus_Success",
-//    "WGPURequestDeviceStatus_CallbackCancelled",   // TODO missing in wgpu-native header
-    "WGPURequestDeviceStatus_Error",
-    "WGPURequestDeviceStatus_Force32"
+    "WGPURequestDeviceStatus_Success", //[-RENAME=Success]
+    // "WGPURequestDeviceStatus_CallbackCancelled",   // TODO missing in wgpu-native header
+    "WGPURequestDeviceStatus_Error",   //[-RENAME=Error]
+    "WGPURequestDeviceStatus_Force32"  //[-RENAME=Force32]
 };
 
 enum WGPUSamplerBindingType {
-    "WGPUSamplerBindingType_BindingNotUsed",
-    "WGPUSamplerBindingType_Undefined",
-    "WGPUSamplerBindingType_Filtering",
-    "WGPUSamplerBindingType_NonFiltering",
-    "WGPUSamplerBindingType_Comparison",
-    "WGPUSamplerBindingType_Force32"
+    "WGPUSamplerBindingType_BindingNotUsed", //[-RENAME=BindingNotUsed]
+    "WGPUSamplerBindingType_Undefined", //[-RENAME=Undefined]
+    "WGPUSamplerBindingType_Filtering", //[-RENAME=Filtering]
+    "WGPUSamplerBindingType_NonFiltering", //[-RENAME=NonFiltering]
+    "WGPUSamplerBindingType_Comparison", //[-RENAME=Comparison]
+    "WGPUSamplerBindingType_Force32"   //[-RENAME=Force32]
 };
 
 enum WGPUStatus {
-    "WGPUStatus_Success",
-    "WGPUStatus_Error",
-    "WGPUStatus_Force32"
+    "WGPUStatus_Success",              //[-RENAME=Success]
+    "WGPUStatus_Error",                //[-RENAME=Error]
+    "WGPUStatus_Force32"               //[-RENAME=Force32]
 };
 
 enum WGPUStencilOperation {
-    "WGPUStencilOperation_Undefined",
-    "WGPUStencilOperation_Keep",
-    "WGPUStencilOperation_Zero",
-    "WGPUStencilOperation_Replace",
-    "WGPUStencilOperation_Invert",
-    "WGPUStencilOperation_IncrementClamp",
-    "WGPUStencilOperation_DecrementClamp",
-    "WGPUStencilOperation_IncrementWrap",
-    "WGPUStencilOperation_DecrementWrap",
-    "WGPUStencilOperation_Force32"
+    "WGPUStencilOperation_Undefined",  //[-RENAME=Undefined]
+    "WGPUStencilOperation_Keep",       //[-RENAME=Keep]
+    "WGPUStencilOperation_Zero",       //[-RENAME=Zero]
+    "WGPUStencilOperation_Replace",    //[-RENAME=Replace]
+    "WGPUStencilOperation_Invert",     //[-RENAME=Invert]
+    "WGPUStencilOperation_IncrementClamp", //[-RENAME=IncrementClamp]
+    "WGPUStencilOperation_DecrementClamp", //[-RENAME=DecrementClamp]
+    "WGPUStencilOperation_IncrementWrap", //[-RENAME=IncrementWrap]
+    "WGPUStencilOperation_DecrementWrap", //[-RENAME=DecrementWrap]
+    "WGPUStencilOperation_Force32"     //[-RENAME=Force32]
 };
 
 enum WGPUStorageTextureAccess {
-    "WGPUStorageTextureAccess_BindingNotUsed",
-    "WGPUStorageTextureAccess_Undefined",
-    "WGPUStorageTextureAccess_WriteOnly",
-    "WGPUStorageTextureAccess_ReadOnly",
-    "WGPUStorageTextureAccess_ReadWrite",
-    "WGPUStorageTextureAccess_Force32"
+    "WGPUStorageTextureAccess_BindingNotUsed", //[-RENAME=BindingNotUsed]
+    "WGPUStorageTextureAccess_Undefined", //[-RENAME=Undefined]
+    "WGPUStorageTextureAccess_WriteOnly", //[-RENAME=WriteOnly]
+    "WGPUStorageTextureAccess_ReadOnly", //[-RENAME=ReadOnly]
+    "WGPUStorageTextureAccess_ReadWrite", //[-RENAME=ReadWrite]
+    "WGPUStorageTextureAccess_Force32" //[-RENAME=Force32]
 };
 
 enum WGPUStoreOp {
-    "WGPUStoreOp_Undefined",
-    "WGPUStoreOp_Store",
-    "WGPUStoreOp_Discard",
-    "WGPUStoreOp_Force32"
+    "WGPUStoreOp_Undefined",           //[-RENAME=Undefined]
+    "WGPUStoreOp_Store",               //[-RENAME=Store]
+    "WGPUStoreOp_Discard",             //[-RENAME=Discard]
+    "WGPUStoreOp_Force32"              //[-RENAME=Force32]
 };
 
 enum WGPUSType {
-    "WGPUSType_ShaderSourceSPIRV",
-    "WGPUSType_ShaderSourceWGSL",
-    "WGPUSType_RenderPassMaxDrawCount",
-    "WGPUSType_SurfaceSourceMetalLayer",
-    "WGPUSType_SurfaceSourceWindowsHWND",
-    "WGPUSType_SurfaceSourceXlibWindow",
-    "WGPUSType_SurfaceSourceWaylandSurface",
-    "WGPUSType_SurfaceSourceAndroidNativeWindow",
-    "WGPUSType_SurfaceSourceXCBWindow",
-//    "WGPUSType_SurfaceColorManagement",    // TODO missing in wgpu-native header
-//    "WGPUSType_RequestAdapterWebXROptions", // TODO missing in wgpu-native header
-//    "WGPUSType_AdapterPropertiesSubgroups", // TODO missing in wgpu-native header
-//    "WGPUSType_BindGroupLayoutEntryArraySize", // TODO missing in wgpu-native header
-//    "WGPUSType_TextureBindingViewDimensionDescriptor",   // TODO missing in wgpu-native header
-//    "WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector",  // TODO missing in wgpu-native header
-//    "WGPUSType_DawnCompilationMessageUtf16",  // TODO missing in wgpu-native header
-    "WGPUSType_Force32"
+    "WGPUSType_ShaderSourceSPIRV",     //[-RENAME=ShaderSourceSPIRV]
+    "WGPUSType_ShaderSourceWGSL",      //[-RENAME=ShaderSourceWGSL]
+    "WGPUSType_RenderPassMaxDrawCount", //[-RENAME=RenderPassMaxDrawCount]
+    "WGPUSType_SurfaceSourceMetalLayer", //[-RENAME=SurfaceSourceMetalLayer]
+    "WGPUSType_SurfaceSourceWindowsHWND", //[-RENAME=SurfaceSourceWindowsHWND]
+    "WGPUSType_SurfaceSourceXlibWindow", //[-RENAME=SurfaceSourceXlibWindow]
+    "WGPUSType_SurfaceSourceWaylandSurface", //[-RENAME=SurfaceSourceWaylandSurface]
+    "WGPUSType_SurfaceSourceAndroidNativeWindow", //[-RENAME=SurfaceSourceAndroidNativeWindow]
+    "WGPUSType_SurfaceSourceXCBWindow", //[-RENAME=SurfaceSourceXCBWindow]
+    // "WGPUSType_SurfaceColorManagement",    // TODO missing in wgpu-native header
+    // "WGPUSType_RequestAdapterWebXROptions", // TODO missing in wgpu-native header
+    // "WGPUSType_AdapterPropertiesSubgroups", // TODO missing in wgpu-native header
+    // "WGPUSType_BindGroupLayoutEntryArraySize", // TODO missing in wgpu-native header
+    // "WGPUSType_TextureBindingViewDimensionDescriptor",   // TODO missing in wgpu-native header
+    // "WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector",  // TODO missing in wgpu-native header
+    // "WGPUSType_DawnCompilationMessageUtf16",  // TODO missing in wgpu-native header
+    "WGPUSType_Force32"                //[-RENAME=Force32]
 };
 
-//enum WGPUSubgroupMatrixComponentType {     // TODO missing in wgpu-native header
-//    "WGPUSubgroupMatrixComponentType_F32",
-//    "WGPUSubgroupMatrixComponentType_F16",
-//    "WGPUSubgroupMatrixComponentType_U32",
-//    "WGPUSubgroupMatrixComponentType_I32",
-//    "WGPUSubgroupMatrixComponentType_Force32"
-//};
+// enum WGPUSubgroupMatrixComponentType {     // TODO missing in wgpu-native header
+//     "WGPUSubgroupMatrixComponentType_F32", //[-RENAME=F32]
+//     "WGPUSubgroupMatrixComponentType_F16", //[-RENAME=F16]
+//     "WGPUSubgroupMatrixComponentType_U32", //[-RENAME=U32]
+//     "WGPUSubgroupMatrixComponentType_I32", //[-RENAME=I32]
+//     "WGPUSubgroupMatrixComponentType_Force32" //[-RENAME=Force32]
+// };
 
 enum WGPUSurfaceGetCurrentTextureStatus {
-    "WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal",
-    "WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal",
-    "WGPUSurfaceGetCurrentTextureStatus_Timeout",
-    "WGPUSurfaceGetCurrentTextureStatus_Outdated",
-    "WGPUSurfaceGetCurrentTextureStatus_Lost",
-    "WGPUSurfaceGetCurrentTextureStatus_Error",
-    "WGPUSurfaceGetCurrentTextureStatus_Force32"
+    "WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal", //[-RENAME=SuccessOptimal]
+    "WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal", //[-RENAME=SuccessSuboptimal]
+    "WGPUSurfaceGetCurrentTextureStatus_Timeout", //[-RENAME=Timeout]
+    "WGPUSurfaceGetCurrentTextureStatus_Outdated", //[-RENAME=Outdated]
+    "WGPUSurfaceGetCurrentTextureStatus_Lost", //[-RENAME=Lost]
+    "WGPUSurfaceGetCurrentTextureStatus_Error", //[-RENAME=Error]
+    "WGPUSurfaceGetCurrentTextureStatus_Force32" //[-RENAME=Force32]
 };
 
 enum WGPUTextureAspect {
-    "WGPUTextureAspect_Undefined",
-    "WGPUTextureAspect_All",
-    "WGPUTextureAspect_StencilOnly",
-    "WGPUTextureAspect_DepthOnly",
-    "WGPUTextureAspect_Force32"
+    "WGPUTextureAspect_Undefined",     //[-RENAME=Undefined]
+    "WGPUTextureAspect_All",           //[-RENAME=All]
+    "WGPUTextureAspect_StencilOnly",   //[-RENAME=StencilOnly]
+    "WGPUTextureAspect_DepthOnly",     //[-RENAME=DepthOnly]
+    "WGPUTextureAspect_Force32"        //[-RENAME=Force32]
 };
 
 enum WGPUTextureDimension {
-    "WGPUTextureDimension_Undefined",
-    "WGPUTextureDimension_1D",
-    "WGPUTextureDimension_2D",
-    "WGPUTextureDimension_3D",
-    "WGPUTextureDimension_Force32"
+    "WGPUTextureDimension_Undefined",  //[-RENAME=Undefined]
+    "WGPUTextureDimension_1D",         //[-RENAME=_1D]
+    "WGPUTextureDimension_2D",         //[-RENAME=_2D]
+    "WGPUTextureDimension_3D",         //[-RENAME=_3D]
+    "WGPUTextureDimension_Force32"     //[-RENAME=Force32]
 };
 
 enum WGPUTextureFormat {
-    "WGPUTextureFormat_Undefined",
-    "WGPUTextureFormat_R8Unorm",
-    "WGPUTextureFormat_R8Snorm",
-    "WGPUTextureFormat_R8Uint",
-    "WGPUTextureFormat_R8Sint",
-    "WGPUTextureFormat_R16Uint",
-    "WGPUTextureFormat_R16Sint",
-    "WGPUTextureFormat_R16Float",
-    "WGPUTextureFormat_RG8Unorm",
-    "WGPUTextureFormat_RG8Snorm",
-    "WGPUTextureFormat_RG8Uint",
-    "WGPUTextureFormat_RG8Sint",
-    "WGPUTextureFormat_R32Float",
-    "WGPUTextureFormat_R32Uint",
-    "WGPUTextureFormat_R32Sint",
-    "WGPUTextureFormat_RG16Uint",
-    "WGPUTextureFormat_RG16Sint",
-    "WGPUTextureFormat_RG16Float",
-    "WGPUTextureFormat_RGBA8Unorm",
-    "WGPUTextureFormat_RGBA8UnormSrgb",
-    "WGPUTextureFormat_RGBA8Snorm",
-    "WGPUTextureFormat_RGBA8Uint",
-    "WGPUTextureFormat_RGBA8Sint",
-    "WGPUTextureFormat_BGRA8Unorm",
-    "WGPUTextureFormat_BGRA8UnormSrgb",
-    "WGPUTextureFormat_RGB10A2Uint",
-    "WGPUTextureFormat_RGB10A2Unorm",
-    "WGPUTextureFormat_RG11B10Ufloat",
-    "WGPUTextureFormat_RGB9E5Ufloat",
-    "WGPUTextureFormat_RG32Float",
-    "WGPUTextureFormat_RG32Uint",
-    "WGPUTextureFormat_RG32Sint",
-    "WGPUTextureFormat_RGBA16Uint",
-    "WGPUTextureFormat_RGBA16Sint",
-    "WGPUTextureFormat_RGBA16Float",
-    "WGPUTextureFormat_RGBA32Float",
-    "WGPUTextureFormat_RGBA32Uint",
-    "WGPUTextureFormat_RGBA32Sint",
-    "WGPUTextureFormat_Stencil8",
-    "WGPUTextureFormat_Depth16Unorm",
-    "WGPUTextureFormat_Depth24Plus",
-    "WGPUTextureFormat_Depth24PlusStencil8",
-    "WGPUTextureFormat_Depth32Float",
-    "WGPUTextureFormat_Depth32FloatStencil8",
-    "WGPUTextureFormat_BC1RGBAUnorm",
-    "WGPUTextureFormat_BC1RGBAUnormSrgb",
-    "WGPUTextureFormat_BC2RGBAUnorm",
-    "WGPUTextureFormat_BC2RGBAUnormSrgb",
-    "WGPUTextureFormat_BC3RGBAUnorm",
-    "WGPUTextureFormat_BC3RGBAUnormSrgb",
-    "WGPUTextureFormat_BC4RUnorm",
-    "WGPUTextureFormat_BC4RSnorm",
-    "WGPUTextureFormat_BC5RGUnorm",
-    "WGPUTextureFormat_BC5RGSnorm",
-    "WGPUTextureFormat_BC6HRGBUfloat",
-    "WGPUTextureFormat_BC6HRGBFloat",
-    "WGPUTextureFormat_BC7RGBAUnorm",
-    "WGPUTextureFormat_BC7RGBAUnormSrgb",
-    "WGPUTextureFormat_ETC2RGB8Unorm",
-    "WGPUTextureFormat_ETC2RGB8UnormSrgb",
-    "WGPUTextureFormat_ETC2RGB8A1Unorm",
-    "WGPUTextureFormat_ETC2RGB8A1UnormSrgb",
-    "WGPUTextureFormat_ETC2RGBA8Unorm",
-    "WGPUTextureFormat_ETC2RGBA8UnormSrgb",
-    "WGPUTextureFormat_EACR11Unorm",
-    "WGPUTextureFormat_EACR11Snorm",
-    "WGPUTextureFormat_EACRG11Unorm",
-    "WGPUTextureFormat_EACRG11Snorm",
-    "WGPUTextureFormat_ASTC4x4Unorm",
-    "WGPUTextureFormat_ASTC4x4UnormSrgb",
-    "WGPUTextureFormat_ASTC5x4Unorm",
-    "WGPUTextureFormat_ASTC5x4UnormSrgb",
-    "WGPUTextureFormat_ASTC5x5Unorm",
-    "WGPUTextureFormat_ASTC5x5UnormSrgb",
-    "WGPUTextureFormat_ASTC6x5Unorm",
-    "WGPUTextureFormat_ASTC6x5UnormSrgb",
-    "WGPUTextureFormat_ASTC6x6Unorm",
-    "WGPUTextureFormat_ASTC6x6UnormSrgb",
-    "WGPUTextureFormat_ASTC8x5Unorm",
-    "WGPUTextureFormat_ASTC8x5UnormSrgb",
-    "WGPUTextureFormat_ASTC8x6Unorm",
-    "WGPUTextureFormat_ASTC8x6UnormSrgb",
-    "WGPUTextureFormat_ASTC8x8Unorm",
-    "WGPUTextureFormat_ASTC8x8UnormSrgb",
-    "WGPUTextureFormat_ASTC10x5Unorm",
-    "WGPUTextureFormat_ASTC10x5UnormSrgb",
-    "WGPUTextureFormat_ASTC10x6Unorm",
-    "WGPUTextureFormat_ASTC10x6UnormSrgb",
-    "WGPUTextureFormat_ASTC10x8Unorm",
-    "WGPUTextureFormat_ASTC10x8UnormSrgb",
-    "WGPUTextureFormat_ASTC10x10Unorm",
-    "WGPUTextureFormat_ASTC10x10UnormSrgb",
-    "WGPUTextureFormat_ASTC12x10Unorm",
-    "WGPUTextureFormat_ASTC12x10UnormSrgb",
-    "WGPUTextureFormat_ASTC12x12Unorm",
-    "WGPUTextureFormat_ASTC12x12UnormSrgb",
-    "WGPUTextureFormat_Force32"
+    "WGPUTextureFormat_Undefined",     //[-RENAME=Undefined]
+    "WGPUTextureFormat_R8Unorm",       //[-RENAME=R8Unorm]
+    "WGPUTextureFormat_R8Snorm",       //[-RENAME=R8Snorm]
+    "WGPUTextureFormat_R8Uint",        //[-RENAME=R8Uint]
+    "WGPUTextureFormat_R8Sint",        //[-RENAME=R8Sint]
+    "WGPUTextureFormat_R16Uint",       //[-RENAME=R16Uint]
+    "WGPUTextureFormat_R16Sint",       //[-RENAME=R16Sint]
+    "WGPUTextureFormat_R16Float",      //[-RENAME=R16Float]
+    "WGPUTextureFormat_RG8Unorm",      //[-RENAME=RG8Unorm]
+    "WGPUTextureFormat_RG8Snorm",      //[-RENAME=RG8Snorm]
+    "WGPUTextureFormat_RG8Uint",       //[-RENAME=RG8Uint]
+    "WGPUTextureFormat_RG8Sint",       //[-RENAME=RG8Sint]
+    "WGPUTextureFormat_R32Float",      //[-RENAME=R32Float]
+    "WGPUTextureFormat_R32Uint",       //[-RENAME=R32Uint]
+    "WGPUTextureFormat_R32Sint",       //[-RENAME=R32Sint]
+    "WGPUTextureFormat_RG16Uint",      //[-RENAME=RG16Uint]
+    "WGPUTextureFormat_RG16Sint",      //[-RENAME=RG16Sint]
+    "WGPUTextureFormat_RG16Float",     //[-RENAME=RG16Float]
+    "WGPUTextureFormat_RGBA8Unorm",    //[-RENAME=RGBA8Unorm]
+    "WGPUTextureFormat_RGBA8UnormSrgb", //[-RENAME=RGBA8UnormSrgb]
+    "WGPUTextureFormat_RGBA8Snorm",    //[-RENAME=RGBA8Snorm]
+    "WGPUTextureFormat_RGBA8Uint",     //[-RENAME=RGBA8Uint]
+    "WGPUTextureFormat_RGBA8Sint",     //[-RENAME=RGBA8Sint]
+    "WGPUTextureFormat_BGRA8Unorm",    //[-RENAME=BGRA8Unorm]
+    "WGPUTextureFormat_BGRA8UnormSrgb", //[-RENAME=BGRA8UnormSrgb]
+    "WGPUTextureFormat_RGB10A2Uint",   //[-RENAME=RGB10A2Uint]
+    "WGPUTextureFormat_RGB10A2Unorm",  //[-RENAME=RGB10A2Unorm]
+    "WGPUTextureFormat_RG11B10Ufloat", //[-RENAME=RG11B10Ufloat]
+    "WGPUTextureFormat_RGB9E5Ufloat",  //[-RENAME=RGB9E5Ufloat]
+    "WGPUTextureFormat_RG32Float",     //[-RENAME=RG32Float]
+    "WGPUTextureFormat_RG32Uint",      //[-RENAME=RG32Uint]
+    "WGPUTextureFormat_RG32Sint",      //[-RENAME=RG32Sint]
+    "WGPUTextureFormat_RGBA16Uint",    //[-RENAME=RGBA16Uint]
+    "WGPUTextureFormat_RGBA16Sint",    //[-RENAME=RGBA16Sint]
+    "WGPUTextureFormat_RGBA16Float",   //[-RENAME=RGBA16Float]
+    "WGPUTextureFormat_RGBA32Float",   //[-RENAME=RGBA32Float]
+    "WGPUTextureFormat_RGBA32Uint",    //[-RENAME=RGBA32Uint]
+    "WGPUTextureFormat_RGBA32Sint",    //[-RENAME=RGBA32Sint]
+    "WGPUTextureFormat_Stencil8",      //[-RENAME=Stencil8]
+    "WGPUTextureFormat_Depth16Unorm",  //[-RENAME=Depth16Unorm]
+    "WGPUTextureFormat_Depth24Plus",   //[-RENAME=Depth24Plus]
+    "WGPUTextureFormat_Depth24PlusStencil8", //[-RENAME=Depth24PlusStencil8]
+    "WGPUTextureFormat_Depth32Float",  //[-RENAME=Depth32Float]
+    "WGPUTextureFormat_Depth32FloatStencil8", //[-RENAME=Depth32FloatStencil8]
+    "WGPUTextureFormat_BC1RGBAUnorm",  //[-RENAME=BC1RGBAUnorm]
+    "WGPUTextureFormat_BC1RGBAUnormSrgb", //[-RENAME=BC1RGBAUnormSrgb]
+    "WGPUTextureFormat_BC2RGBAUnorm",  //[-RENAME=BC2RGBAUnorm]
+    "WGPUTextureFormat_BC2RGBAUnormSrgb", //[-RENAME=BC2RGBAUnormSrgb]
+    "WGPUTextureFormat_BC3RGBAUnorm",  //[-RENAME=BC3RGBAUnorm]
+    "WGPUTextureFormat_BC3RGBAUnormSrgb", //[-RENAME=BC3RGBAUnormSrgb]
+    "WGPUTextureFormat_BC4RUnorm",     //[-RENAME=BC4RUnorm]
+    "WGPUTextureFormat_BC4RSnorm",     //[-RENAME=BC4RSnorm]
+    "WGPUTextureFormat_BC5RGUnorm",    //[-RENAME=BC5RGUnorm]
+    "WGPUTextureFormat_BC5RGSnorm",    //[-RENAME=BC5RGSnorm]
+    "WGPUTextureFormat_BC6HRGBUfloat", //[-RENAME=BC6HRGBUfloat]
+    "WGPUTextureFormat_BC6HRGBFloat",  //[-RENAME=BC6HRGBFloat]
+    "WGPUTextureFormat_BC7RGBAUnorm",  //[-RENAME=BC7RGBAUnorm]
+    "WGPUTextureFormat_BC7RGBAUnormSrgb", //[-RENAME=BC7RGBAUnormSrgb]
+    "WGPUTextureFormat_ETC2RGB8Unorm", //[-RENAME=ETC2RGB8Unorm]
+    "WGPUTextureFormat_ETC2RGB8UnormSrgb", //[-RENAME=ETC2RGB8UnormSrgb]
+    "WGPUTextureFormat_ETC2RGB8A1Unorm", //[-RENAME=ETC2RGB8A1Unorm]
+    "WGPUTextureFormat_ETC2RGB8A1UnormSrgb", //[-RENAME=ETC2RGB8A1UnormSrgb]
+    "WGPUTextureFormat_ETC2RGBA8Unorm", //[-RENAME=ETC2RGBA8Unorm]
+    "WGPUTextureFormat_ETC2RGBA8UnormSrgb", //[-RENAME=ETC2RGBA8UnormSrgb]
+    "WGPUTextureFormat_EACR11Unorm",   //[-RENAME=EACR11Unorm]
+    "WGPUTextureFormat_EACR11Snorm",   //[-RENAME=EACR11Snorm]
+    "WGPUTextureFormat_EACRG11Unorm",  //[-RENAME=EACRG11Unorm]
+    "WGPUTextureFormat_EACRG11Snorm",  //[-RENAME=EACRG11Snorm]
+    "WGPUTextureFormat_ASTC4x4Unorm",  //[-RENAME=ASTC4x4Unorm]
+    "WGPUTextureFormat_ASTC4x4UnormSrgb", //[-RENAME=ASTC4x4UnormSrgb]
+    "WGPUTextureFormat_ASTC5x4Unorm",  //[-RENAME=ASTC5x4Unorm]
+    "WGPUTextureFormat_ASTC5x4UnormSrgb", //[-RENAME=ASTC5x4UnormSrgb]
+    "WGPUTextureFormat_ASTC5x5Unorm",  //[-RENAME=ASTC5x5Unorm]
+    "WGPUTextureFormat_ASTC5x5UnormSrgb", //[-RENAME=ASTC5x5UnormSrgb]
+    "WGPUTextureFormat_ASTC6x5Unorm",  //[-RENAME=ASTC6x5Unorm]
+    "WGPUTextureFormat_ASTC6x5UnormSrgb", //[-RENAME=ASTC6x5UnormSrgb]
+    "WGPUTextureFormat_ASTC6x6Unorm",  //[-RENAME=ASTC6x6Unorm]
+    "WGPUTextureFormat_ASTC6x6UnormSrgb", //[-RENAME=ASTC6x6UnormSrgb]
+    "WGPUTextureFormat_ASTC8x5Unorm",  //[-RENAME=ASTC8x5Unorm]
+    "WGPUTextureFormat_ASTC8x5UnormSrgb", //[-RENAME=ASTC8x5UnormSrgb]
+    "WGPUTextureFormat_ASTC8x6Unorm",  //[-RENAME=ASTC8x6Unorm]
+    "WGPUTextureFormat_ASTC8x6UnormSrgb", //[-RENAME=ASTC8x6UnormSrgb]
+    "WGPUTextureFormat_ASTC8x8Unorm",  //[-RENAME=ASTC8x8Unorm]
+    "WGPUTextureFormat_ASTC8x8UnormSrgb", //[-RENAME=ASTC8x8UnormSrgb]
+    "WGPUTextureFormat_ASTC10x5Unorm", //[-RENAME=ASTC10x5Unorm]
+    "WGPUTextureFormat_ASTC10x5UnormSrgb", //[-RENAME=ASTC10x5UnormSrgb]
+    "WGPUTextureFormat_ASTC10x6Unorm", //[-RENAME=ASTC10x6Unorm]
+    "WGPUTextureFormat_ASTC10x6UnormSrgb", //[-RENAME=ASTC10x6UnormSrgb]
+    "WGPUTextureFormat_ASTC10x8Unorm", //[-RENAME=ASTC10x8Unorm]
+    "WGPUTextureFormat_ASTC10x8UnormSrgb", //[-RENAME=ASTC10x8UnormSrgb]
+    "WGPUTextureFormat_ASTC10x10Unorm", //[-RENAME=ASTC10x10Unorm]
+    "WGPUTextureFormat_ASTC10x10UnormSrgb", //[-RENAME=ASTC10x10UnormSrgb]
+    "WGPUTextureFormat_ASTC12x10Unorm", //[-RENAME=ASTC12x10Unorm]
+    "WGPUTextureFormat_ASTC12x10UnormSrgb", //[-RENAME=ASTC12x10UnormSrgb]
+    "WGPUTextureFormat_ASTC12x12Unorm", //[-RENAME=ASTC12x12Unorm]
+    "WGPUTextureFormat_ASTC12x12UnormSrgb", //[-RENAME=ASTC12x12UnormSrgb]
+    "WGPUTextureFormat_Force32"        //[-RENAME=Force32]
 };
 
 enum WGPUTextureSampleType {
-    "WGPUTextureSampleType_BindingNotUsed",
-    "WGPUTextureSampleType_Undefined",
-    "WGPUTextureSampleType_Float",
-    "WGPUTextureSampleType_UnfilterableFloat",
-    "WGPUTextureSampleType_Depth",
-    "WGPUTextureSampleType_Sint",
-    "WGPUTextureSampleType_Uint",
-    "WGPUTextureSampleType_Force32"
+    "WGPUTextureSampleType_BindingNotUsed", //[-RENAME=BindingNotUsed]
+    "WGPUTextureSampleType_Undefined", //[-RENAME=Undefined]
+    "WGPUTextureSampleType_Float",     //[-RENAME=Float]
+    "WGPUTextureSampleType_UnfilterableFloat", //[-RENAME=UnfilterableFloat]
+    "WGPUTextureSampleType_Depth",     //[-RENAME=Depth]
+    "WGPUTextureSampleType_Sint",      //[-RENAME=Sint]
+    "WGPUTextureSampleType_Uint",      //[-RENAME=Uint]
+    "WGPUTextureSampleType_Force32"    //[-RENAME=Force32]
 };
 
 enum WGPUTextureViewDimension {
-    "WGPUTextureViewDimension_Undefined",
-    "WGPUTextureViewDimension_1D",
-    "WGPUTextureViewDimension_2D",
-    "WGPUTextureViewDimension_2DArray",
-    "WGPUTextureViewDimension_Cube",
-    "WGPUTextureViewDimension_CubeArray",
-    "WGPUTextureViewDimension_3D",
-    "WGPUTextureViewDimension_Force32"
+    "WGPUTextureViewDimension_Undefined", //[-RENAME=Undefined]
+    "WGPUTextureViewDimension_1D",     //[-RENAME=_1D]
+    "WGPUTextureViewDimension_2D",     //[-RENAME=_2D]
+    "WGPUTextureViewDimension_2DArray", //[-RENAME=_2DArray]
+    "WGPUTextureViewDimension_Cube",   //[-RENAME=Cube]
+    "WGPUTextureViewDimension_CubeArray", //[-RENAME=CubeArray]
+    "WGPUTextureViewDimension_3D",     //[-RENAME=_3D]
+    "WGPUTextureViewDimension_Force32" //[-RENAME=Force32]
 };
 
-//enum WGPUToneMappingMode {    // TODO missing in wgpu-native header
-//    "WGPUToneMappingMode_Standard",
-//    "WGPUToneMappingMode_Extended",
-//    "WGPUToneMappingMode_Force32"
-//};
+// enum WGPUToneMappingMode {    // TODO missing in wgpu-native header
+//     "WGPUToneMappingMode_Standard", //[-RENAME=Standard]
+//     "WGPUToneMappingMode_Extended", //[-RENAME=Extended]
+//     "WGPUToneMappingMode_Force32" //[-RENAME=Force32]
+// };
 
 enum WGPUVertexFormat {
-    "WGPUVertexFormat_Uint8",
-    "WGPUVertexFormat_Uint8x2",
-    "WGPUVertexFormat_Uint8x4",
-    "WGPUVertexFormat_Sint8",
-    "WGPUVertexFormat_Sint8x2",
-    "WGPUVertexFormat_Sint8x4",
-    "WGPUVertexFormat_Unorm8",
-    "WGPUVertexFormat_Unorm8x2",
-    "WGPUVertexFormat_Unorm8x4",
-    "WGPUVertexFormat_Snorm8",
-    "WGPUVertexFormat_Snorm8x2",
-    "WGPUVertexFormat_Snorm8x4",
-    "WGPUVertexFormat_Uint16",
-    "WGPUVertexFormat_Uint16x2",
-    "WGPUVertexFormat_Uint16x4",
-    "WGPUVertexFormat_Sint16",
-    "WGPUVertexFormat_Sint16x2",
-    "WGPUVertexFormat_Sint16x4",
-    "WGPUVertexFormat_Unorm16",
-    "WGPUVertexFormat_Unorm16x2",
-    "WGPUVertexFormat_Unorm16x4",
-    "WGPUVertexFormat_Snorm16",
-    "WGPUVertexFormat_Snorm16x2",
-    "WGPUVertexFormat_Snorm16x4",
-    "WGPUVertexFormat_Float16",
-    "WGPUVertexFormat_Float16x2",
-    "WGPUVertexFormat_Float16x4",
-    "WGPUVertexFormat_Float32",
-    "WGPUVertexFormat_Float32x2",
-    "WGPUVertexFormat_Float32x3",
-    "WGPUVertexFormat_Float32x4",
-    "WGPUVertexFormat_Uint32",
-    "WGPUVertexFormat_Uint32x2",
-    "WGPUVertexFormat_Uint32x3",
-    "WGPUVertexFormat_Uint32x4",
-    "WGPUVertexFormat_Sint32",
-    "WGPUVertexFormat_Sint32x2",
-    "WGPUVertexFormat_Sint32x3",
-    "WGPUVertexFormat_Sint32x4",
-    "WGPUVertexFormat_Unorm10_10_10_2",
-    "WGPUVertexFormat_Unorm8x4BGRA",
-    "WGPUVertexFormat_Force32"
+    "WGPUVertexFormat_Uint8",          //[-RENAME=Uint8]
+    "WGPUVertexFormat_Uint8x2",        //[-RENAME=Uint8x2]
+    "WGPUVertexFormat_Uint8x4",        //[-RENAME=Uint8x4]
+    "WGPUVertexFormat_Sint8",          //[-RENAME=Sint8]
+    "WGPUVertexFormat_Sint8x2",        //[-RENAME=Sint8x2]
+    "WGPUVertexFormat_Sint8x4",        //[-RENAME=Sint8x4]
+    "WGPUVertexFormat_Unorm8",         //[-RENAME=Unorm8]
+    "WGPUVertexFormat_Unorm8x2",       //[-RENAME=Unorm8x2]
+    "WGPUVertexFormat_Unorm8x4",       //[-RENAME=Unorm8x4]
+    "WGPUVertexFormat_Snorm8",         //[-RENAME=Snorm8]
+    "WGPUVertexFormat_Snorm8x2",       //[-RENAME=Snorm8x2]
+    "WGPUVertexFormat_Snorm8x4",       //[-RENAME=Snorm8x4]
+    "WGPUVertexFormat_Uint16",         //[-RENAME=Uint16]
+    "WGPUVertexFormat_Uint16x2",       //[-RENAME=Uint16x2]
+    "WGPUVertexFormat_Uint16x4",       //[-RENAME=Uint16x4]
+    "WGPUVertexFormat_Sint16",         //[-RENAME=Sint16]
+    "WGPUVertexFormat_Sint16x2",       //[-RENAME=Sint16x2]
+    "WGPUVertexFormat_Sint16x4",       //[-RENAME=Sint16x4]
+    "WGPUVertexFormat_Unorm16",        //[-RENAME=Unorm16]
+    "WGPUVertexFormat_Unorm16x2",      //[-RENAME=Unorm16x2]
+    "WGPUVertexFormat_Unorm16x4",      //[-RENAME=Unorm16x4]
+    "WGPUVertexFormat_Snorm16",        //[-RENAME=Snorm16]
+    "WGPUVertexFormat_Snorm16x2",      //[-RENAME=Snorm16x2]
+    "WGPUVertexFormat_Snorm16x4",      //[-RENAME=Snorm16x4]
+    "WGPUVertexFormat_Float16",        //[-RENAME=Float16]
+    "WGPUVertexFormat_Float16x2",      //[-RENAME=Float16x2]
+    "WGPUVertexFormat_Float16x4",      //[-RENAME=Float16x4]
+    "WGPUVertexFormat_Float32",        //[-RENAME=Float32]
+    "WGPUVertexFormat_Float32x2",      //[-RENAME=Float32x2]
+    "WGPUVertexFormat_Float32x3",      //[-RENAME=Float32x3]
+    "WGPUVertexFormat_Float32x4",      //[-RENAME=Float32x4]
+    "WGPUVertexFormat_Uint32",         //[-RENAME=Uint32]
+    "WGPUVertexFormat_Uint32x2",       //[-RENAME=Uint32x2]
+    "WGPUVertexFormat_Uint32x3",       //[-RENAME=Uint32x3]
+    "WGPUVertexFormat_Uint32x4",       //[-RENAME=Uint32x4]
+    "WGPUVertexFormat_Sint32",         //[-RENAME=Sint32]
+    "WGPUVertexFormat_Sint32x2",       //[-RENAME=Sint32x2]
+    "WGPUVertexFormat_Sint32x3",       //[-RENAME=Sint32x3]
+    "WGPUVertexFormat_Sint32x4",       //[-RENAME=Sint32x4]
+    "WGPUVertexFormat_Unorm10_10_10_2", //[-RENAME=Unorm10_10_10_2]
+    "WGPUVertexFormat_Unorm8x4BGRA",   //[-RENAME=Unorm8x4BGRA]
+    "WGPUVertexFormat_Force32"         //[-RENAME=Force32]
 };
 
 enum WGPUVertexStepMode {
-    "WGPUVertexStepMode_Undefined",
-    "WGPUVertexStepMode_Vertex",
-    "WGPUVertexStepMode_Instance",
-    "WGPUVertexStepMode_Force32"
+    "WGPUVertexStepMode_Undefined",    //[-RENAME=Undefined]
+    "WGPUVertexStepMode_Vertex",       //[-RENAME=Vertex]
+    "WGPUVertexStepMode_Instance",    //[-RENAME=Instance]
+    "WGPUVertexStepMode_Force32"       //[-RENAME=Force32]
 };
 
 enum WGPUWaitStatus {
-    "WGPUWaitStatus_Success",
-    "WGPUWaitStatus_TimedOut",
-//    "WGPUWaitStatus_Error",    // TODO missing in wgpu-native header
-    "WGPUWaitStatus_Force32"
+    "WGPUWaitStatus_Success",          //[-RENAME=Success]
+    "WGPUWaitStatus_TimedOut",         //[-RENAME=TimedOut]
+    // "WGPUWaitStatus_Error",    // TODO missing in wgpu-native header
+    "WGPUWaitStatus_Force32"           //[-RENAME=Force32]
 };
 
 enum WGPUWGSLLanguageFeatureName {
-    "WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures",
-    "WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct",
-    "WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters",
-    "WGPUWGSLLanguageFeatureName_PointerCompositeAccess",
-//    "WGPUWGSLLanguageFeatureName_SizedBindingArray",   // TODO missing in wgpu-native header
-    "WGPUWGSLLanguageFeatureName_Force32"
+    "WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures", //[-RENAME=ReadonlyAndReadwriteStorageTextures]
+    "WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct", //[-RENAME=Packed4x8IntegerDotProduct]
+    "WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters", //[-RENAME=UnrestrictedPointerParameters]
+    "WGPUWGSLLanguageFeatureName_PointerCompositeAccess", //[-RENAME=PointerCompositeAccess]
+    // "WGPUWGSLLanguageFeatureName_SizedBindingArray",   // TODO missing in wgpu-native header
+    "WGPUWGSLLanguageFeatureName_Force32" //[-RENAME=Force32]
 };
