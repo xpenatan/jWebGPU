@@ -6,6 +6,26 @@ interface JWebGPU {
 //    static JInstance CreateInstance();
 };
 
+interface IDLArrayJColorTargetState {
+    void IDLArrayJColorTargetState(long size);
+    void resize(long size);
+    void clear();
+//    JColorTargetState getValue(long index);
+    void setValuePtr(long index, JColorTargetState value);
+    long getSize();
+    any getPointer();
+};
+
+interface IDLArrayJDepthStencilState {
+    void IDLArrayJDepthStencilState(long size);
+    void resize(long size);
+    void clear();
+//    JDepthStencilState getValue(long index);
+    void setValuePtr(long index, JDepthStencilState value);
+    long getSize();
+    any getPointer();
+};
+
 enum JPlatformType {
     "WGPU_Windows",
     "WGPU_Mac",
@@ -36,18 +56,27 @@ interface RequestDeviceCallbackImpl {
     void OnCallback(WGPURequestDeviceStatus status, JDevice device);
 };
 
+interface UncapturedErrorCallback {
+};
+
+[JSImplementation="UncapturedErrorCallback"]
+interface UncapturedErrorCallbackImpl {
+    void UncapturedErrorCallbackImpl();
+    void OnCallback(WGPUErrorType errorType, [Const] DOMString message);
+};
+
 // ##### CLASSES #####
 
 interface JInstance {
     void JInstance();
-    void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callbackInfo);
+    void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
     JSurface CreateWebSurface([Const] DOMString canvas);
     JSurface CreateWindowsSurface(any hwnd);
     void ProcessEvents();
 };
 
 interface JAdapter {
-    void RequestDevice(JDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callbackInfo);
+    void RequestDevice(JDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
 
     boolean GetInfo(JAdapterInfo adapterInfo);
 };
@@ -91,8 +120,8 @@ interface JDevice {
 
 interface JBlendComponent {
     void JBlendComponent();
-    void SetBlendOperation(WGPUBlendOperation operation);
-    WGPUBlendOperation GetBlendOperation();
+    void SetOperation(WGPUBlendOperation operation);
+    WGPUBlendOperation GetOperation();
     void SetSrcFactor(WGPUBlendFactor factor);
     WGPUBlendFactor GetSrcFactor();
     void SetDstFactor(WGPUBlendFactor factor);
@@ -103,9 +132,27 @@ interface JBlendState {
     void JBlendState();
     void SetColor(JBlendComponent color);
     void SetAlpha(JBlendComponent alpha);
+    [Ref] JBlendComponent GetColor();
+    [Ref] JBlendComponent GetAlpha();
 };
 
 interface JShaderModule {
+};
+
+interface JConstantEntry {
+    void JConstantEntry();
+};
+
+interface JFragmentState {
+    void JFragmentState();
+
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetEntryPoint([Const] DOMString entryPoint);
+    void SetConstantCount(long value);
+    void SetTargetCount(long value);
+    void SetTargets([Ref] JColorTargetState[] targetArray);
+    void SetModule(JShaderModule shaderModule);
+    void SetConstants(JConstantEntry constantEntry);
 };
 
 interface JVertexState {
@@ -130,6 +177,32 @@ interface JRenderPipelineDescriptor {
     void SetLabel([Const] DOMString value);
     [Ref] JVertexState GetVertex();
     [Ref] JPrimitiveState GetPrimitive();
+    void SetFragment(JFragmentState fragmentState);
+    void SetDepthStencil([Ref] JDepthStencilState[] depthStencilStateArray);
+    [Ref] JMultisampleState GetMultisample();
+    void SetLayout(JPipelineLayout pipelineLayout);
+};
+
+interface JDepthStencilState {
+    void JDepthStencilState();
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetFormat(WGPUTextureFormat format);
+    void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled);
+    void SetDepthCompare(WGPUCompareFunction depthCompare);
+    void SetDepthBiasSlopeScale(float depthBiasSlopeScale);
+    void SetDepthBiasClamp(float depthBiasClamp);
+    //TODO add missing methods
+};
+
+interface JPipelineLayout {
+};
+
+interface JMultisampleState {
+    void JMultisampleState();
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetCount(long count);
+    void SetMask(long mask);
+    void SetAlphaToCoverageEnabled(long alphaToCoverageEnabled);
 };
 
 interface JPrimitiveState {

@@ -12,9 +12,11 @@ import com.github.xpenatan.webgpu.JSurface;
 import com.github.xpenatan.webgpu.JWebGPU;
 import com.github.xpenatan.webgpu.RequestAdapterCallback;
 import com.github.xpenatan.webgpu.RequestDeviceCallback;
+import com.github.xpenatan.webgpu.UncapturedErrorCallback;
 import com.github.xpenatan.webgpu.WGPUAdapterType;
 import com.github.xpenatan.webgpu.WGPUBackendType;
 import com.github.xpenatan.webgpu.WGPUCallbackMode;
+import com.github.xpenatan.webgpu.WGPUErrorType;
 import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
 import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
 
@@ -25,7 +27,7 @@ public class WGPUApp {
     public JAdapter adapter;
     public JDevice device;
     public JSurface surface;
-    public JRenderPipeline pipeline;
+    public JRenderPipeline renderPipeline;
     public JQueue queue;
 
     private boolean isReady;
@@ -63,6 +65,11 @@ public class WGPUApp {
                         System.out.println("isReady: " + status);
                         System.out.println("Platform: " + JWebGPU.GetPlatformType());
                         isReady = true;
+                    }
+                }, new UncapturedErrorCallback() {
+                    @Override
+                    protected void OnCallback(WGPUErrorType errorType, String message) {
+                        System.out.println("errorType: " + errorType + " " + message);
                     }
                 });
             }

@@ -1,11 +1,19 @@
 package com.github.xpenatan.webgpu.demo.triangle;
 
+import com.github.xpenatan.webgpu.IDLArrayJColorTargetState;
+import com.github.xpenatan.webgpu.JBlendState;
+import com.github.xpenatan.webgpu.JColorTargetState;
+import com.github.xpenatan.webgpu.JFragmentState;
+import com.github.xpenatan.webgpu.JRenderPipeline;
 import com.github.xpenatan.webgpu.JRenderPipelineDescriptor;
 import com.github.xpenatan.webgpu.JShaderModule;
 import com.github.xpenatan.webgpu.JShaderModuleDescriptor;
 import com.github.xpenatan.webgpu.JShaderSourceWGSL;
 import com.github.xpenatan.webgpu.JSurfaceCapabilities;
 import com.github.xpenatan.webgpu.JSurfaceConfiguration;
+import com.github.xpenatan.webgpu.WGPUBlendFactor;
+import com.github.xpenatan.webgpu.WGPUBlendOperation;
+import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
 import com.github.xpenatan.webgpu.WGPUCullMode;
 import com.github.xpenatan.webgpu.WGPUFrontFace;
@@ -79,6 +87,45 @@ public class TriangleApp implements ApplicationListener {
         pipelineDesc.GetPrimitive().SetFrontFace(WGPUFrontFace.CCW);
         pipelineDesc.GetPrimitive().SetCullMode(WGPUCullMode.None);
 
+        JFragmentState fragmentState = new JFragmentState();
+        fragmentState.SetNextInChain(null);
+        fragmentState.SetModule(shaderModule);
+        fragmentState.SetEntryPoint("fs_main");
+        fragmentState.SetConstantCount(0);
+        fragmentState.SetConstants(null);
+
+        // blending
+        JBlendState blendState = new JBlendState();
+        blendState.GetColor().SetSrcFactor(WGPUBlendFactor.SrcAlpha);
+        blendState.GetColor().SetDstFactor(WGPUBlendFactor.OneMinusSrcAlpha);
+        blendState.GetColor().SetOperation(WGPUBlendOperation.Add);
+        blendState.GetAlpha().SetSrcFactor(WGPUBlendFactor.One);
+        blendState.GetAlpha().SetDstFactor(WGPUBlendFactor.Zero);
+        blendState.GetAlpha().SetOperation(WGPUBlendOperation.Add);
+
+        JColorTargetState colorTarget = new JColorTargetState();
+        colorTarget.SetFormat(surfaceFormat); // match output surface
+        colorTarget.SetBlend(blendState);
+        colorTarget.SetWriteMask(WGPUColorWriteMask.All);
+
+        fragmentState.SetTargetCount(2);
+        IDLArrayJColorTargetState array = new IDLArrayJColorTargetState(1);
+        array.setValuePtr(0, colorTarget);
+        fragmentState.SetTargets(array);
+
+        pipelineDesc.SetFragment(fragmentState);
+
+        pipelineDesc.SetDepthStencil(null); // no depth or stencil buffer
+
+        pipelineDesc.GetMultisample().SetCount(1);
+        pipelineDesc.GetMultisample().SetMask(-1);
+        pipelineDesc.GetMultisample().SetAlphaToCoverageEnabled(0);
+
+        pipelineDesc.SetLayout(null);
+
+        wgpu.renderPipeline = wgpu.device.CreateRenderPipeline(pipelineDesc);
+
+        System.out.println("RenderPipeline created");
     }
 
     public JShaderModule makeShaderModule(WGPUApp wgpu) {
