@@ -67,25 +67,27 @@ class JQueue {
         }
 };
 
-class JChainedStruct {
-    private:
+struct JChainedStruct {
+    JChainedStruct const * nextInChain = nullptr;
+    WGPUSType sType = (WGPUSType)0;
 
-    public:
-        WGPUChainedStruct chainedStruct;
-        WGPUChainedStruct* chainedStructPtr = NULL;
+    void SetNext(JChainedStruct* value) {
+        nextInChain = value;
+    }
 
-        JChainedStruct() {
-            chainedStructPtr = &chainedStruct;
-        }
-
-        void SetNext(JChainedStruct* value) {
-            chainedStructPtr->next = value != NULL ? &(value->chainedStruct) : NULL;
-        }
-
-        void SetSType(WGPUSType type) {
-            chainedStructPtr->sType = type;
-        }
+    void SetSType(WGPUSType type) {
+        sType = type;
+    }
 };
+
+// ChainedStruct
+static_assert(sizeof(JChainedStruct) == sizeof(WGPUChainedStruct),
+    "sizeof mismatch for JChainedStruct");
+static_assert(alignof(JChainedStruct) == alignof(WGPUChainedStruct),
+    "alignof mismatch for JChainedStruct");
+static_assert(offsetof(JChainedStruct, nextInChain) == offsetof(WGPUChainedStruct, next),
+    "offsetof mismatch for JChainedStruct::nextInChain");
+
 
 class JStringView : public JChainedStruct {
     private:
@@ -94,23 +96,327 @@ class JStringView : public JChainedStruct {
 
 };
 
-class JDeviceDescriptor {
-    private:
+struct JLimits {
+    WGPUChainedStruct * nextInChain;
+    uint32_t maxTextureDimension1D;
+    uint32_t maxTextureDimension2D;
+    uint32_t maxTextureDimension3D;
+    uint32_t maxTextureArrayLayers;
+    uint32_t maxBindGroups;
+    uint32_t maxBindGroupsPlusVertexBuffers;
+    uint32_t maxBindingsPerBindGroup;
+    uint32_t maxDynamicUniformBuffersPerPipelineLayout;
+    uint32_t maxDynamicStorageBuffersPerPipelineLayout;
+    uint32_t maxSampledTexturesPerShaderStage;
+    uint32_t maxSamplersPerShaderStage;
+    uint32_t maxStorageBuffersPerShaderStage;
+    uint32_t maxStorageTexturesPerShaderStage;
+    uint32_t maxUniformBuffersPerShaderStage;
+    uint64_t maxUniformBufferBindingSize;
+    uint64_t maxStorageBufferBindingSize;
+    uint32_t minUniformBufferOffsetAlignment;
+    uint32_t minStorageBufferOffsetAlignment;
+    uint32_t maxVertexBuffers;
+    uint64_t maxBufferSize;
+    uint32_t maxVertexAttributes;
+    uint32_t maxVertexBufferArrayStride;
+    uint32_t maxInterStageShaderVariables;
+    uint32_t maxColorAttachments;
+    uint32_t maxColorAttachmentBytesPerSample;
+    uint32_t maxComputeWorkgroupStorageSize;
+    uint32_t maxComputeInvocationsPerWorkgroup;
+    uint32_t maxComputeWorkgroupSizeX;
+    uint32_t maxComputeWorkgroupSizeY;
+    uint32_t maxComputeWorkgroupSizeZ;
+    uint32_t maxComputeWorkgroupsPerDimension;
 
-    public:
-        WGPUDeviceDescriptor descriptor;
+    inline operator const WGPULimits&() const noexcept {
+        return *reinterpret_cast<const WGPULimits*>(this);
+    }
 
+    void SetMaxTextureDimension1D(int value) {
+        maxTextureDimension1D = value;
+    }
+    int GetMaxTextureDimension1D() const {
+        return static_cast<int>(maxTextureDimension1D);
+    }
 
+    void SetMaxTextureDimension2D(int value) {
+        maxTextureDimension2D = value;
+    }
+    int GetMaxTextureDimension2D() const {
+        return static_cast<int>(maxTextureDimension2D);
+    }
+
+    void SetMaxTextureDimension3D(int value) {
+        maxTextureDimension3D = value;
+    }
+    int GetMaxTextureDimension3D() const {
+        return static_cast<int>(maxTextureDimension3D);
+    }
+
+    void SetMaxTextureArrayLayers(int value) {
+        maxTextureArrayLayers = value;
+    }
+    int GetMaxTextureArrayLayers() const {
+        return static_cast<int>(maxTextureArrayLayers);
+    }
+
+    void SetMaxBindGroups(int value) {
+        maxBindGroups = value;
+    }
+    int GetMaxBindGroups() const {
+        return static_cast<int>(maxBindGroups);
+    }
+
+    void SetMaxBindGroupsPlusVertexBuffers(int value) {
+        maxBindGroupsPlusVertexBuffers = value;
+    }
+    int GetMaxBindGroupsPlusVertexBuffers() const {
+        return static_cast<int>(maxBindGroupsPlusVertexBuffers);
+    }
+
+    void SetMaxBindingsPerBindGroup(int value) {
+        maxBindingsPerBindGroup = value;
+    }
+    int GetMaxBindingsPerBindGroup() const {
+        return static_cast<int>(maxBindingsPerBindGroup);
+    }
+
+    void SetMaxDynamicUniformBuffersPerPipelineLayout(int value) {
+        maxDynamicUniformBuffersPerPipelineLayout = value;
+    }
+    int GetMaxDynamicUniformBuffersPerPipelineLayout() const {
+        return static_cast<int>(maxDynamicUniformBuffersPerPipelineLayout);
+    }
+
+    void SetMaxDynamicStorageBuffersPerPipelineLayout(int value) {
+        maxDynamicStorageBuffersPerPipelineLayout = value;
+    }
+    int GetMaxDynamicStorageBuffersPerPipelineLayout() const {
+        return static_cast<int>(maxDynamicStorageBuffersPerPipelineLayout);
+    }
+
+    void SetMaxSampledTexturesPerShaderStage(int value) {
+        maxSampledTexturesPerShaderStage = value;
+    }
+    int GetMaxSampledTexturesPerShaderStage() const {
+        return static_cast<int>(maxSampledTexturesPerShaderStage);
+    }
+
+    void SetMaxSamplersPerShaderStage(int value) {
+        maxSamplersPerShaderStage = value;
+    }
+    int GetMaxSamplersPerShaderStage() const {
+        return static_cast<int>(maxSamplersPerShaderStage);
+    }
+
+    void SetMaxStorageBuffersPerShaderStage(int value) {
+        maxStorageBuffersPerShaderStage = value;
+    }
+    int GetMaxStorageBuffersPerShaderStage() const {
+        return static_cast<int>(maxStorageBuffersPerShaderStage);
+    }
+
+    void SetMaxStorageTexturesPerShaderStage(int value) {
+        maxStorageTexturesPerShaderStage = value;
+    }
+    int GetMaxStorageTexturesPerShaderStage() const {
+        return static_cast<int>(maxStorageTexturesPerShaderStage);
+    }
+
+    void SetMaxUniformBuffersPerShaderStage(int value) {
+        maxUniformBuffersPerShaderStage = value;
+    }
+    int GetMaxUniformBuffersPerShaderStage() const {
+        return static_cast<int>(maxUniformBuffersPerShaderStage);
+    }
+
+    void SetMaxUniformBufferBindingSize(int value) {
+        maxUniformBufferBindingSize = value;
+    }
+    int GetMaxUniformBufferBindingSize() const {
+        return static_cast<int>(maxUniformBufferBindingSize);
+    }
+
+    void SetMaxStorageBufferBindingSize(int value) {
+        maxStorageBufferBindingSize = value;
+    }
+    int GetMaxStorageBufferBindingSize() const {
+        return static_cast<int>(maxStorageBufferBindingSize);
+    }
+
+    void SetMinUniformBufferOffsetAlignment(int value) {
+        minUniformBufferOffsetAlignment = value;
+    }
+    int GetMinUniformBufferOffsetAlignment() const {
+        return static_cast<int>(minUniformBufferOffsetAlignment);
+    }
+
+    void SetMinStorageBufferOffsetAlignment(int value) {
+        minStorageBufferOffsetAlignment = value;
+    }
+    int GetMinStorageBufferOffsetAlignment() const {
+        return static_cast<int>(minStorageBufferOffsetAlignment);
+    }
+
+    void SetMaxVertexBuffers(int value) {
+        maxVertexBuffers = value;
+    }
+    int GetMaxVertexBuffers() const {
+        return static_cast<int>(maxVertexBuffers);
+    }
+
+    void SetMaxBufferSize(int value) {
+        maxBufferSize = value;
+    }
+    int GetMaxBufferSize() const {
+        return static_cast<int>(maxBufferSize);
+    }
+
+    void SetMaxVertexAttributes(int value) {
+        maxVertexAttributes = value;
+    }
+    int GetMaxVertexAttributes() const {
+        return static_cast<int>(maxVertexAttributes);
+    }
+
+    void SetMaxVertexBufferArrayStride(int value) {
+        maxVertexBufferArrayStride = value;
+    }
+    int GetMaxVertexBufferArrayStride() const {
+        return static_cast<int>(maxVertexBufferArrayStride);
+    }
+
+    void SetMaxInterStageShaderVariables(int value) {
+        maxInterStageShaderVariables = value;
+    }
+    int GetMaxInterStageShaderVariables() const {
+        return static_cast<int>(maxInterStageShaderVariables);
+    }
+
+    void SetMaxColorAttachments(int value) {
+        maxColorAttachments = value;
+    }
+    int GetMaxColorAttachments() const {
+        return static_cast<int>(maxColorAttachments);
+    }
+
+    void SetMaxColorAttachmentBytesPerSample(int value) {
+        maxColorAttachmentBytesPerSample = value;
+    }
+    int GetMaxColorAttachmentBytesPerSample() const {
+        return static_cast<int>(maxColorAttachmentBytesPerSample);
+    }
+
+    void SetMaxComputeWorkgroupStorageSize(int value) {
+        maxComputeWorkgroupStorageSize = value;
+    }
+    int GetMaxComputeWorkgroupStorageSize() const {
+        return static_cast<int>(maxComputeWorkgroupStorageSize);
+    }
+
+    void SetMaxComputeInvocationsPerWorkgroup(int value) {
+        maxComputeInvocationsPerWorkgroup = value;
+    }
+    int GetMaxComputeInvocationsPerWorkgroup() const {
+        return static_cast<int>(maxComputeInvocationsPerWorkgroup);
+    }
+
+    void SetMaxComputeWorkgroupSizeX(int value) {
+        maxComputeWorkgroupSizeX = value;
+    }
+    int GetMaxComputeWorkgroupSizeX() const {
+        return static_cast<int>(maxComputeWorkgroupSizeX);
+    }
+
+    void SetMaxComputeWorkgroupSizeY(int value) {
+        maxComputeWorkgroupSizeY = value;
+    }
+    int GetMaxComputeWorkgroupSizeY() const {
+        return static_cast<int>(maxComputeWorkgroupSizeY);
+    }
+
+    void SetMaxComputeWorkgroupSizeZ(int value) {
+        maxComputeWorkgroupSizeZ = value;
+    }
+    int GetMaxComputeWorkgroupSizeZ() const {
+        return static_cast<int>(maxComputeWorkgroupSizeZ);
+    }
+
+    void SetMaxComputeWorkgroupsPerDimension(int value) {
+        maxComputeWorkgroupsPerDimension = value;
+    }
+    int GetMaxComputeWorkgroupsPerDimension() const {
+        return static_cast<int>(maxComputeWorkgroupsPerDimension);
+    }
 };
 
-class JRequestAdapterOptions {
+// TODO wgpu-native limits is different from emscripten dawn limits. Need to change back to reference
+
+//static_assert(sizeof(JLimits) == sizeof(WGPULimits), "sizeof mismatch for JLimits");
+//static_assert(alignof(JLimits) == alignof(WGPULimits), "alignof mismatch for JLimits");
+//static_assert(offsetof(JLimits, nextInChain) == offsetof(WGPULimits, nextInChain), "offsetof mismatch for JLimits::nextInChain");
+
+struct JQueueDescriptor {
+    JChainedStruct const * nextInChain;
+    WGPUStringView label;
+
+    inline operator const WGPUQueueDescriptor&() const noexcept {
+        return *reinterpret_cast<const WGPUQueueDescriptor*>(this);
+    }
+
+    void SetLabel(const char* value) {
+        WGPUStringView stringView = {};
+        stringView.data = strdup(value);
+        stringView.length = strlen(value);
+        label = stringView;
+    }
+};
+
+struct JDeviceDescriptor {
+
+    JChainedStruct const * nextInChain = NULL;
+    WGPUStringView label;
+    size_t requiredFeatureCount = 0;
+    WGPUFeatureName const * requiredFeatures = NULL;
+    JLimits const * requiredLimits = NULL;
+    JQueueDescriptor defaultQueue;
+    WGPUDeviceLostCallbackInfo deviceLostCallbackInfo;
+    WGPUUncapturedErrorCallbackInfo uncapturedErrorCallbackInfo;
+
+    inline operator const WGPUDeviceDescriptor&() const noexcept {
+        return *reinterpret_cast<const WGPUDeviceDescriptor*>(this);
+    }
+
+    void SetLabel(const char* value) {
+        WGPUStringView stringView = {};
+        stringView.data = strdup(value);
+        stringView.length = strlen(value);
+        label = stringView;
+    }
+
+    void SetRequiredLimits(JLimits* limits) {
+        requiredLimits = limits;
+    }
+
+    void SetRequiredFeatureCount(int count) {
+        requiredFeatureCount = count;
+    }
+
+    JQueueDescriptor& GetDefaultQueue() {
+        return defaultQueue;
+    }
+};
+
+class JRequestAdapterOptions { // TODO change to struct
     private:
 
     public:
         WGPURequestAdapterOptions options;
 };
 
-class JAdapterInfo {
+class JAdapterInfo { // TODO change to struct
     private:
 
     public:
@@ -157,7 +463,7 @@ class JShaderModule {
 };
 
 struct JConstantEntry {
-    WGPUChainedStruct const * nextInChain;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUStringView key;
     double value;
 
@@ -166,21 +472,33 @@ struct JConstantEntry {
     }
 };
 
+struct JVertexBufferLayout {
+    WGPUVertexStepMode stepMode;
+    uint64_t arrayStride;
+    size_t attributeCount;
+    WGPUVertexAttribute const * attributes;
+
+    inline operator const WGPUVertexBufferLayout&() const noexcept {
+        return *reinterpret_cast<const WGPUVertexBufferLayout*>(this);
+    }
+};
+
+
 struct JVertexState {
-    WGPUChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     WGPUShaderModule module;
     WGPUStringView entryPoint;
     size_t constantCount;
-    JConstantEntry const * constants;
+    JConstantEntry const * constants = NULL;
     size_t bufferCount;
-    WGPUVertexBufferLayout const * buffers;
+    JVertexBufferLayout const * buffers = NULL;
 
     inline operator const WGPUVertexState&() const noexcept {
         return *reinterpret_cast<const WGPUVertexState*>(this);
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetModule(JShaderModule* shaderModule) {
@@ -206,60 +524,46 @@ struct JVertexState {
         bufferCount = value;
     }
 
-//        void SetBuffers(WGPUVertexBufferLayout* value) {
-//            vertexState.buffers = value;
-//        }
+    void SetBuffers(JVertexBufferLayout* value) {
+        buffers = value;
+    }
 };
 
-class JShaderSourceWGSL : public JChainedStruct {
+struct JShaderSourceWGSL : JChainedStruct {
 
-    private:
+    WGPUStringView code;
 
-    public:
-        WGPUShaderSourceWGSL shaderSourceWGSL;
-        JChainedStruct chainedCopy;
+    inline operator const WGPUShaderSourceWGSL&() const noexcept {
+        return *reinterpret_cast<const WGPUShaderSourceWGSL*>(this);
+    }
 
-        JShaderSourceWGSL() {
-            shaderSourceWGSL = WGPUShaderSourceWGSL{};
-            chainedStructPtr = reinterpret_cast<WGPUChainedStruct*>(&shaderSourceWGSL);
-        }
-
-        JChainedStruct& GetChain() {
-            // Obtain chain pointer from source to the copied struct.
-            // This way I can return the Java object and it will update the original chain data
-            chainedCopy.chainedStructPtr = &(shaderSourceWGSL.chain);
-            return chainedCopy;
-        }
-
-        void SetCode(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            shaderSourceWGSL.code = stringView;
-        }
+    void SetCode(const char* value) {
+        WGPUStringView stringView = {};
+        stringView.data = strdup(value);
+        stringView.length = strlen(value);
+        code = stringView;
+    }
 };
 
-class JShaderModuleDescriptor {
+struct JShaderModuleDescriptor {
 
-    private:
+    JChainedStruct const * nextInChain = NULL;
+    WGPUStringView label;
 
-    public:
-        WGPUShaderModuleDescriptor shaderModuleDescriptor;
+    inline operator const WGPUShaderModuleDescriptor&() const noexcept {
+        return *reinterpret_cast<const WGPUShaderModuleDescriptor*>(this);
+    }
 
-        JShaderModuleDescriptor() {
-            shaderModuleDescriptor = WGPUShaderModuleDescriptor{};
-        }
+    void SetNextInChain(JChainedStruct* chainedStruct) {
+        nextInChain = chainedStruct;
+    }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
-            shaderModuleDescriptor.nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            shaderModuleDescriptor.label = stringView;
-        }
+    void SetLabel(const char* value) {
+        WGPUStringView stringView = {};
+        stringView.data = strdup(value);
+        stringView.length = strlen(value);
+        label = stringView;
+    }
 };
 
 struct JBlendComponent {
@@ -323,7 +627,7 @@ struct JBlendState {
 };
 
 struct JColorTargetState {
-    WGPUChainedStruct const * nextInChain = nullptr;
+    JChainedStruct const * nextInChain = nullptr;
     WGPUTextureFormat format = WGPUTextureFormat_Undefined;
     JBlendState const * blend = nullptr;
     WGPUColorWriteMask writeMask = WGPUColorWriteMask_All;
@@ -333,7 +637,7 @@ struct JColorTargetState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetFormat(WGPUTextureFormat format) {
@@ -350,11 +654,11 @@ struct JColorTargetState {
 };
 
 struct JFragmentState {
-    WGPUChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     WGPUShaderModule module;
     WGPUStringView entryPoint;
     size_t constantCount;
-    JConstantEntry const * constants;
+    JConstantEntry const * constants = NULL;
     size_t targetCount;
     JColorTargetState const * targets = nullptr;
 
@@ -363,7 +667,7 @@ struct JFragmentState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetEntryPoint(const char* value) {
@@ -396,7 +700,7 @@ struct JFragmentState {
 
 struct JPrimitiveState {
 
-    WGPUChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     WGPUPrimitiveTopology topology;
     WGPUIndexFormat stripIndexFormat;
     WGPUFrontFace frontFace;
@@ -408,7 +712,7 @@ struct JPrimitiveState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetTopology(WGPUPrimitiveTopology value) {
@@ -430,7 +734,7 @@ struct JPrimitiveState {
 
 struct JDepthStencilState {
 
-    WGPUChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     WGPUTextureFormat format;
     WGPUOptionalBool depthWriteEnabled;
     WGPUCompareFunction depthCompare;
@@ -447,7 +751,7 @@ struct JDepthStencilState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetFormat(WGPUTextureFormat format) {
@@ -473,7 +777,7 @@ struct JDepthStencilState {
 
 struct JMultisampleState {
 
-    WGPUChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     uint32_t count;
     uint32_t mask;
     WGPUBool alphaToCoverageEnabled;
@@ -483,7 +787,7 @@ struct JMultisampleState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetCount(int count) {
@@ -512,21 +816,21 @@ class JPipelineLayout {
 
 struct JRenderPipelineDescriptor {
 
-    WGPUChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     WGPUStringView label;
     WGPU_NULLABLE WGPUPipelineLayout layout;
     JVertexState vertex;
     JPrimitiveState primitive;
-    JDepthStencilState const * depthStencil;
+    JDepthStencilState const * depthStencil = NULL;
     JMultisampleState multisample;
-    JFragmentState const * fragment;
+    JFragmentState const * fragment = NULL;
 
     inline operator const WGPURenderPipelineDescriptor&() const noexcept {
         return *reinterpret_cast<const WGPURenderPipelineDescriptor*>(this);
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
+        nextInChain = chainedStruct;
     }
 
     void SetLabel(const char* value) {
@@ -574,6 +878,157 @@ class JRenderPipeline {
         }
 };
 
+struct JColor {
+    double r;
+    double g;
+    double b;
+    double a;
+
+    inline operator const WGPUColor&() const noexcept {
+        return *reinterpret_cast<const WGPUColor*>(this);
+    }
+
+    void SetColor(float r, float g, float b, float a) {
+        this->r = r;
+        this->g = g;
+        this->b = b;
+        this->a = a;
+    }
+
+    float GetR() {
+        return r;
+    }
+    float GetG() {
+        return g;
+    }
+    float GetB() {
+        return b;
+    }
+    float GetA() {
+        return a;
+    }
+};
+
+struct JSupportedFeatures {
+    size_t featureCount;
+    WGPUFeatureName const * features;
+
+    inline operator const WGPUSupportedFeatures&() const noexcept {
+        return *reinterpret_cast<const WGPUSupportedFeatures*>(this);
+    }
+
+    int GetFeatureCount() {
+        return featureCount;
+    }
+
+    WGPUFeatureName GetFeatureAt(long index) {
+        return features[index];
+    }
+
+};
+
+class JBuffer {
+    private:
+
+    public:
+        WGPUBuffer buffer;
+};
+
+struct JRenderPassColorAttachment {
+    JChainedStruct const * nextInChain;
+    WGPUTextureView view;
+    uint32_t depthSlice;
+    WGPUTextureView resolveTarget;
+    WGPULoadOp loadOp;
+    WGPUStoreOp storeOp;
+    JColor clearValue;
+
+    inline operator const WGPURenderPassColorAttachment&() const noexcept {
+        return *reinterpret_cast<const WGPURenderPassColorAttachment*>(this);
+    }
+
+    JColor& GetClearValue() {
+        return clearValue;
+    }
+
+    WGPUStoreOp GetStoreOp() {
+        return storeOp;
+    }
+};
+
+class JRenderPassEncoder {
+    private:
+
+    public:
+        WGPURenderPassEncoder renderPassEncoder;
+
+        void Release() {
+            wgpuRenderPassEncoderRelease(renderPassEncoder);
+        }
+
+        void End() {
+            wgpuRenderPassEncoderEnd(renderPassEncoder);
+        }
+};
+
+class JComputePassEncoder {
+    private:
+
+    public:
+        WGPUComputePassEncoder computePassEncoder;
+};
+
+class JCommandBuffer {
+    private:
+
+    public:
+        WGPUCommandBuffer commandBuffer;
+
+        void Release() {
+            wgpuCommandBufferRelease(commandBuffer);
+        }
+};
+
+class JCommandEncoder {
+    private:
+
+    public:
+        WGPUCommandEncoder commandEncoder;
+
+        void Release() {
+            wgpuCommandEncoderRelease(commandEncoder);
+        }
+
+        JRenderPassEncoder BeginRenderPass() {
+            WGPURenderPassDescriptor renderPassDescriptor;
+            JRenderPassEncoder encoder;
+            encoder.renderPassEncoder = wgpuCommandEncoderBeginRenderPass(commandEncoder, &renderPassDescriptor);
+            return encoder;
+        }
+
+        JComputePassEncoder BeginComputePass() {
+            WGPUComputePassDescriptor computePassDescriptor;
+            JComputePassEncoder encoder;
+            encoder.computePassEncoder = wgpuCommandEncoderBeginComputePass(commandEncoder, &computePassDescriptor);
+            return encoder;
+        }
+
+        void ClearBuffer(JBuffer* buffer, int offset, int size) {
+            wgpuCommandEncoderClearBuffer(commandEncoder, buffer->buffer, offset, size);
+        }
+
+        JCommandBuffer Finish(const char* label) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(label);
+            stringView.length = strlen(label);
+            WGPUCommandBufferDescriptor commandBufferDescriptor;
+            commandBufferDescriptor.label = stringView;
+            JCommandBuffer commandBuffer;
+            commandBuffer.commandBuffer = wgpuCommandEncoderFinish(commandEncoder, &commandBufferDescriptor);
+            return commandBuffer;
+        }
+};
+
 class JDevice {
 
     private:
@@ -612,60 +1067,87 @@ class JDevice {
 
         JShaderModule* CreateShaderModule(JShaderModuleDescriptor* shaderModuleDescriptor) {
             JShaderModule* shaderModule = new JShaderModule();
-            shaderModule->shaderModule = wgpuDeviceCreateShaderModule(device, &(shaderModuleDescriptor->shaderModuleDescriptor));
+            shaderModule->shaderModule = wgpuDeviceCreateShaderModule(device, reinterpret_cast<WGPUShaderModuleDescriptor const * >(shaderModuleDescriptor));
             return shaderModule;
+        }
+
+        void GetFeatures(JSupportedFeatures* features) {
+            wgpuDeviceGetFeatures(device, reinterpret_cast<WGPUSupportedFeatures * >(features));
+        }
+
+        void GetLimits(JLimits* limits) {
+            wgpuDeviceGetLimits(device, reinterpret_cast<WGPULimits * >(limits));
+        }
+
+        JCommandEncoder CreateCommandEncoder(const char* label) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(label);
+            stringView.length = strlen(label);
+
+            WGPUCommandEncoderDescriptor encoderDescriptor;
+            encoderDescriptor.label = stringView;
+            JCommandEncoder encoder;
+            encoder.commandEncoder = wgpuDeviceCreateCommandEncoder(device, &encoderDescriptor);
+            return encoder;
         }
 };
 
-class JSurfaceConfiguration {
-    private:
+struct JSurfaceConfiguration {
 
-    public:
-        WGPUSurfaceConfiguration surfaceConfiguration;
+    JChainedStruct const * nextInChain = NULL;
+    WGPUDevice device;
+    WGPUTextureFormat format;
+    WGPUTextureUsage usage;
+    uint32_t width;
+    uint32_t height;
+    size_t viewFormatCount;
+    WGPUTextureFormat const * viewFormats = NULL;
+    WGPUCompositeAlphaMode alphaMode;
+    WGPUPresentMode presentMode;
 
-        JSurfaceConfiguration() {
-            surfaceConfiguration = WGPUSurfaceConfiguration{};
-        }
+    inline operator const WGPUSurfaceConfiguration&() const noexcept {
+        return *reinterpret_cast<const WGPUSurfaceConfiguration*>(this);
+    }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
-            surfaceConfiguration.nextInChain = chainedStruct != NULL ? (chainedStruct->chainedStructPtr) : NULL;
-        }
+    void SetNextInChain(JChainedStruct* chainedStruct) {
+        nextInChain = chainedStruct;
+    }
 
-        void SetWidth(long width) {
-            surfaceConfiguration.width = width;
-        }
+    void SetWidth(long width) {
+        this->width = width;
+    }
 
-        void SetHeight(long height) {
-            surfaceConfiguration.height = height;
-        }
+    void SetHeight(long height) {
+        this->height = height;
+    }
 
-        void SetFormat(WGPUTextureFormat format) {
-            surfaceConfiguration.format = format;
-        }
+    void SetFormat(WGPUTextureFormat format) {
+        this->format = format;
+    }
 
-        void SetViewFormatCount(long value) {
-            surfaceConfiguration.viewFormatCount = value;
-        }
+    void SetViewFormatCount(long value) {
+        viewFormatCount = value;
+    }
 
-        void SetViewFormats(void* viewFormats) {
-            surfaceConfiguration.viewFormats = (WGPUTextureFormat*)viewFormats;
-        }
+    void SetViewFormats(void* viewFormats) {
+        this->viewFormats = (WGPUTextureFormat*)viewFormats;
+    }
 
-        void SetUsage(WGPUTextureUsage usage) {
-            surfaceConfiguration.usage = usage;
-        }
+    void SetUsage(WGPUTextureUsage usage) {
+        this->usage = usage;
+    }
 
-        void SetDevice(JDevice* device) {
-            surfaceConfiguration.device = device != NULL ? device->device : NULL;
-        }
+    void SetDevice(JDevice* device) {
+        this->device = device != NULL ? device->device : NULL;
+    }
 
-        void SetPresentMode(WGPUPresentMode presentMode) {
-            surfaceConfiguration.presentMode = presentMode;
-        }
+    void SetPresentMode(WGPUPresentMode presentMode) {
+        this->presentMode = presentMode;
+    }
 
-        void SetAlphaMode(WGPUCompositeAlphaMode alphaMode) {
-            surfaceConfiguration.alphaMode = alphaMode;
-        }
+    void SetAlphaMode(WGPUCompositeAlphaMode alphaMode) {
+        this->alphaMode = alphaMode;
+    }
 };
 
 class JSurfaceCapabilities {
@@ -696,9 +1178,7 @@ class JAdapter {
             wgpuAdapterRelease(adapter);
         }
 
-        void RequestDevice(JDeviceDescriptor* desc, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
-            WGPUDeviceDescriptor* descriptor = &desc->descriptor;
-
+        void RequestDevice(JDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
             descriptor->uncapturedErrorCallbackInfo.callback = [](const WGPUDevice* device, WGPUErrorType type, WGPUStringView message, void* callback_param, void* userdata_param) {
                 UncapturedErrorCallback* cback = reinterpret_cast<UncapturedErrorCallback*>(callback_param);
                 cback->OnCallback(type, message.data);
@@ -716,13 +1196,116 @@ class JAdapter {
             };
             callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
             callbackInfo.userdata2 = NULL;
-            auto result = wgpuAdapterRequestDevice(adapter, descriptor, callbackInfo);
+            const WGPUDeviceDescriptor* desc = reinterpret_cast<WGPUDeviceDescriptor const*>(descriptor);
+            auto result = wgpuAdapterRequestDevice(adapter, desc, callbackInfo);
         }
 
         bool GetInfo(JAdapterInfo* adapterInfo) {
             WGPUStatus status = wgpuAdapterGetInfo(adapter, &(adapterInfo->adapterInfo));
             return status == WGPUStatus_Success;
         }
+
+        bool HasFeature(WGPUFeatureName featureName) {
+            return wgpuAdapterHasFeature(adapter, featureName);
+        }
+};
+
+struct JTextureViewDescriptor {
+    WGPUChainedStruct const * nextInChain;
+    WGPUStringView label;
+    WGPUTextureFormat format;
+    WGPUTextureViewDimension dimension;
+    uint32_t baseMipLevel;
+    uint32_t mipLevelCount;
+    uint32_t baseArrayLayer;
+    uint32_t arrayLayerCount;
+    WGPUTextureAspect aspect;
+    WGPUTextureUsage usage;
+
+    inline operator const WGPUTextureViewDescriptor&() const noexcept {
+        return *reinterpret_cast<const WGPUTextureViewDescriptor*>(this);
+    }
+
+    void SetLabel(const char* value) {
+        WGPUStringView stringView = {};
+        stringView.data = strdup(value);
+        stringView.length = strlen(value);
+        label = stringView;
+    }
+
+    void SetFormat(WGPUTextureFormat format) {
+        this->format = format;
+    }
+
+    void SetDimension(WGPUTextureViewDimension dimension) {
+        this->dimension = dimension;
+    }
+
+    void SetBaseMipLevel(int baseMipLevel) {
+        this->baseMipLevel = baseMipLevel;
+    }
+
+    void SetMipLevelCount(int mipLevelCount) {
+        this->mipLevelCount = mipLevelCount;
+    }
+
+    void SetBaseArrayLayer(int baseArrayLayer) {
+        this->baseArrayLayer = baseArrayLayer;
+    }
+
+    void SetArrayLayerCount(int arrayLayerCount) {
+        this->arrayLayerCount = arrayLayerCount;
+    }
+
+    void SetAspect(WGPUTextureAspect aspect) {
+        this->aspect = aspect;
+    }
+
+    void SetUsage(WGPUTextureUsage usage) {
+        this->usage = usage;
+    }
+};
+
+class JTextureView {
+    private:
+
+    public:
+        WGPUTextureView textureView;
+
+};
+
+class JTexture {
+    private:
+
+    public:
+        WGPUTexture texture;
+
+        JTextureView CreateView(JTextureViewDescriptor* textureViewDescriptor) {
+            JTextureView textureView;
+            textureView.textureView = wgpuTextureCreateView(texture, reinterpret_cast<WGPUTextureViewDescriptor const * >(textureViewDescriptor));
+            return textureView;
+        }
+};
+
+struct JSurfaceTexture {
+
+    WGPUChainedStruct * nextInChain;
+    WGPUTexture texture;
+    WGPUSurfaceGetCurrentTextureStatus status;
+
+    inline operator const WGPUSurfaceTexture&() const noexcept {
+        return *reinterpret_cast<const WGPUSurfaceTexture*>(this);
+    }
+
+    JTexture GetTexture() {
+        JTexture tex;
+        tex.texture = texture;
+        return tex;
+    }
+
+    WGPUSurfaceGetCurrentTextureStatus GetStatus() {
+        return status;
+    }
 };
 
 class JSurface {
@@ -737,11 +1320,15 @@ class JSurface {
         }
 
         void Configure(JSurfaceConfiguration* config) {
-            wgpuSurfaceConfigure(surface, &(config->surfaceConfiguration));
+            wgpuSurfaceConfigure(surface, reinterpret_cast<WGPUSurfaceConfiguration const * >(config));
         }
 
         void GetCapabilities(JAdapter* adapter, JSurfaceCapabilities* surfaceCapabilities) {
             wgpuSurfaceGetCapabilities(surface, adapter->adapter, &(surfaceCapabilities->surfaceCapabilities));
+        }
+
+        void GetCurrentTexture(JSurfaceTexture* surfaceTexture) {
+            wgpuSurfaceGetCurrentTexture(surface, reinterpret_cast<WGPUSurfaceTexture * >(surfaceTexture));
         }
 };
 
@@ -833,6 +1420,77 @@ class JWebGPU {
             #else
                 return JPlatformType::WGPU_Unknown;
             #endif
+        }
+
+        static JRenderPipeline* CreateRenderPipeline(JDevice* device, const char* shaderSource, WGPUTextureFormat surfaceFormat) {
+
+            JShaderModuleDescriptor shaderDesc;
+            shaderDesc.SetLabel("triangle shader");
+
+            JShaderSourceWGSL shaderCodeDesc;
+            shaderCodeDesc.SetNext(NULL);
+            shaderCodeDesc.SetSType(WGPUSType_ShaderSourceWGSL);
+            shaderCodeDesc.SetCode(shaderSource);
+
+            shaderDesc.SetNextInChain(&shaderCodeDesc);
+            JShaderModule* shaderModule = device->CreateShaderModule(&shaderDesc);
+
+            JRenderPipelineDescriptor pipelineDesc;
+            pipelineDesc.SetLabel("my pipeline");
+
+            pipelineDesc.GetVertex().SetBufferCount(0); // no vertex buffer, because we define it in the shader
+            pipelineDesc.GetVertex().SetBuffers(NULL);
+
+            pipelineDesc.GetVertex().SetModule(shaderModule);
+            pipelineDesc.GetVertex().SetEntryPoint("vs_main");
+            pipelineDesc.GetVertex().SetConstantCount(0);
+            pipelineDesc.GetVertex().SetConstants(NULL);
+
+            pipelineDesc.GetPrimitive().SetTopology(WGPUPrimitiveTopology_TriangleList);
+            pipelineDesc.GetPrimitive().SetStripIndexFormat(WGPUIndexFormat_Undefined);
+            pipelineDesc.GetPrimitive().SetFrontFace(WGPUFrontFace_CCW);
+            pipelineDesc.GetPrimitive().SetCullMode(WGPUCullMode_None);
+
+            JFragmentState fragmentState;
+            fragmentState.SetNextInChain(NULL);
+            fragmentState.SetModule(shaderModule);
+            fragmentState.SetEntryPoint("fs_main");
+            fragmentState.SetConstantCount(0);
+            fragmentState.SetConstants(NULL);
+
+            // blending
+            JBlendState blendState;
+            blendState.GetColor().SetSrcFactor(WGPUBlendFactor_SrcAlpha);
+            blendState.GetColor().SetDstFactor(WGPUBlendFactor_OneMinusSrcAlpha);
+            blendState.GetColor().SetOperation(WGPUBlendOperation_Add);
+            blendState.GetAlpha().SetSrcFactor(WGPUBlendFactor_One);
+            blendState.GetAlpha().SetDstFactor(WGPUBlendFactor_Zero);
+            blendState.GetAlpha().SetOperation(WGPUBlendOperation_Add);
+
+            JColorTargetState colorTarget;
+            colorTarget.SetFormat(surfaceFormat); // match output surface
+            colorTarget.SetBlend(&blendState);
+            colorTarget.SetWriteMask(WGPUColorWriteMask_All);
+
+            fragmentState.SetTargetCount(1);
+
+            fragmentState.SetTargets(&colorTarget);
+
+            pipelineDesc.SetFragment(&fragmentState);
+
+            pipelineDesc.SetDepthStencil(NULL); // no depth or stencil buffer
+
+            pipelineDesc.GetMultisample().SetCount(1);
+            pipelineDesc.GetMultisample().SetMask(-1);
+            pipelineDesc.GetMultisample().SetAlphaToCoverageEnabled(0);
+
+            pipelineDesc.SetLayout(NULL);
+
+            JRenderPipeline* renderPipeline = new JRenderPipeline();
+
+            const WGPURenderPipelineDescriptor* desc = reinterpret_cast<WGPURenderPipelineDescriptor const * >(&pipelineDesc);
+            renderPipeline->renderPipeline = wgpuDeviceCreateRenderPipeline(device->device, desc);
+            return renderPipeline;
         }
 
         static void Set() {

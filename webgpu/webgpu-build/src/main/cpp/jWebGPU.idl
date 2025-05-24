@@ -1,6 +1,7 @@
 // ##### CUSTOM CLASSES / ENUMS ######
 
 interface JWebGPU {
+    static JRenderPipeline CreateRenderPipeline(JDevice device, [Const] DOMString shaderSource, WGPUTextureFormat surfaceFormat);
     static void Set();
     static JPlatformType GetPlatformType();
 //    static JInstance CreateInstance();
@@ -79,6 +80,7 @@ interface JAdapter {
     void RequestDevice(JDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
 
     boolean GetInfo(JAdapterInfo adapterInfo);
+    boolean HasFeature(WGPUFeatureName featureName);
 };
 
 interface JAdapterInfo {
@@ -91,8 +93,105 @@ interface JAdapterInfo {
     WGPUAdapterType GetAdapterType();
 };
 
-interface JDeviceDescriptor {
-    void JDeviceDescriptor();
+interface JQueueDescriptor {
+    void JQueueDescriptor();
+    void SetLabel([Const] DOMString code);
+};
+
+interface JLimits {
+    void JLimits();
+    void SetMaxTextureDimension1D(long value);
+    long GetMaxTextureDimension1D();
+
+    void SetMaxTextureDimension2D(long value);
+    long GetMaxTextureDimension2D();
+
+    void SetMaxTextureDimension3D(long value);
+    long GetMaxTextureDimension3D();
+
+    void SetMaxTextureArrayLayers(long value);
+    long GetMaxTextureArrayLayers();
+
+    void SetMaxBindGroups(long value);
+    long GetMaxBindGroups();
+
+    void SetMaxBindGroupsPlusVertexBuffers(long value);
+    long GetMaxBindGroupsPlusVertexBuffers();
+
+    void SetMaxBindingsPerBindGroup(long value);
+    long GetMaxBindingsPerBindGroup();
+
+    void SetMaxDynamicUniformBuffersPerPipelineLayout(long value);
+    long GetMaxDynamicUniformBuffersPerPipelineLayout();
+
+    void SetMaxDynamicStorageBuffersPerPipelineLayout(long value);
+    long GetMaxDynamicStorageBuffersPerPipelineLayout();
+
+    void SetMaxSampledTexturesPerShaderStage(long value);
+    long GetMaxSampledTexturesPerShaderStage();
+
+    void SetMaxSamplersPerShaderStage(long value);
+    long GetMaxSamplersPerShaderStage();
+
+    void SetMaxStorageBuffersPerShaderStage(long value);
+    long GetMaxStorageBuffersPerShaderStage();
+
+    void SetMaxStorageTexturesPerShaderStage(long value);
+    long GetMaxStorageTexturesPerShaderStage();
+
+    void SetMaxUniformBuffersPerShaderStage(long value);
+    long GetMaxUniformBuffersPerShaderStage();
+
+    void SetMaxUniformBufferBindingSize(long value);
+    long GetMaxUniformBufferBindingSize();
+
+    void SetMaxStorageBufferBindingSize(long value);
+    long GetMaxStorageBufferBindingSize();
+
+    void SetMinUniformBufferOffsetAlignment(long value);
+    long GetMinUniformBufferOffsetAlignment();
+
+    void SetMinStorageBufferOffsetAlignment(long value);
+    long GetMinStorageBufferOffsetAlignment();
+
+    void SetMaxVertexBuffers(long value);
+    long GetMaxVertexBuffers();
+
+    void SetMaxBufferSize(long long value);
+    long GetMaxBufferSize();
+
+    void SetMaxVertexAttributes(long value);
+    long GetMaxVertexAttributes();
+
+    void SetMaxVertexBufferArrayStride(long value);
+    long GetMaxVertexBufferArrayStride();
+
+    void SetMaxInterStageShaderVariables(long value);
+    long GetMaxInterStageShaderVariables();
+
+    void SetMaxColorAttachments(long value);
+    long GetMaxColorAttachments();
+
+    void SetMaxColorAttachmentBytesPerSample(long value);
+    long GetMaxColorAttachmentBytesPerSample();
+
+    void SetMaxComputeWorkgroupStorageSize(long value);
+    long GetMaxComputeWorkgroupStorageSize();
+
+    void SetMaxComputeInvocationsPerWorkgroup(long value);
+    long GetMaxComputeInvocationsPerWorkgroup();
+
+    void SetMaxComputeWorkgroupSizeX(long value);
+    long GetMaxComputeWorkgroupSizeX();
+
+    void SetMaxComputeWorkgroupSizeY(long value);
+    long GetMaxComputeWorkgroupSizeY();
+
+    void SetMaxComputeWorkgroupSizeZ(long value);
+    long GetMaxComputeWorkgroupSizeZ();
+
+    void SetMaxComputeWorkgroupsPerDimension(long value);
+    long GetMaxComputeWorkgroupsPerDimension();
 };
 
 interface JRequestAdapterOptions {
@@ -101,7 +200,6 @@ interface JRequestAdapterOptions {
 
 interface JShaderSourceWGSL {
     void JShaderSourceWGSL();
-    [Ref] JChainedStruct GetChain();
     void SetCode([Const] DOMString code);
 };
 JShaderSourceWGSL implements JChainedStruct;
@@ -112,10 +210,27 @@ interface JShaderModuleDescriptor {
     void SetLabel([Const] DOMString value);
 };
 
+interface JSupportedFeatures {
+    void JSupportedFeatures();
+    long GetFeatureCount();
+    WGPUFeatureName GetFeatureAt(long index);
+};
+
+interface JDeviceDescriptor {
+    void JDeviceDescriptor();
+    void SetLabel([Const] DOMString code);
+    void SetRequiredLimits(JLimits limits);
+    void SetRequiredFeatureCount(long count);
+    [Ref] JQueueDescriptor GetDefaultQueue();
+};
+
 interface JDevice {
     JQueue GetQueue();
     JRenderPipeline CreateRenderPipeline(JRenderPipelineDescriptor renderPipeline);
     JShaderModule CreateShaderModule(JShaderModuleDescriptor shaderModuleDescriptor);
+    void GetFeatures(JSupportedFeatures features);
+    void GetLimits(JLimits limits);
+    [Value] JCommandEncoder CreateCommandEncoder([Const] DOMString label);
 };
 
 interface JBlendComponent {
@@ -155,12 +270,17 @@ interface JFragmentState {
     void SetConstants(JConstantEntry constantEntry);
 };
 
+interface JVertexBufferLayout {
+    void JVertexBufferLayout();
+};
+
 interface JVertexState {
     void SetNextInChain(JChainedStruct chainedStruct);
     void SetModule(JShaderModule shaderModule);
     void SetEntryPoint([Const] DOMString entryPoint);
     void SetConstantCount(long value);
     void SetBufferCount(long value);
+    void SetBuffers(JVertexBufferLayout value);
 };
 
 interface JColorTargetState {
@@ -217,9 +337,82 @@ interface JRenderPipeline {
 
 };
 
+[NoDelete]
+interface JTextureView {
+
+};
+
+interface JTextureViewDescriptor {
+    void JTextureViewDescriptor();
+
+    void SetLabel([Const] DOMString value);
+    void SetFormat(WGPUTextureFormat format);
+    void SetDimension(WGPUTextureViewDimension dimension);
+    void SetBaseMipLevel(long baseMipLevel);
+    void SetMipLevelCount(long mipLevelCount);
+    void SetBaseArrayLayer(long baseArrayLayer);
+    void SetArrayLayerCount(long arrayLayerCount);
+    void SetAspect(WGPUTextureAspect aspect);
+    void SetUsage(WGPUTextureUsage usage);
+};
+
+[NoDelete]
+interface JTexture {
+
+    [Value] JTextureView CreateView(JTextureViewDescriptor textureViewDescriptor);
+};
+
+[NoDelete]
+interface JCommandBuffer {
+    void Release();
+};
+
+[NoDelete]
+interface JCommandEncoder {
+    void Release();
+
+    [Value] JRenderPassEncoder BeginRenderPass();
+    [Value] JComputePassEncoder BeginComputePass();
+    void ClearBuffer(JBuffer buffer, long offset, long size);
+    [Value] JCommandBuffer Finish([Const] DOMString label);
+};
+
+interface JBuffer {
+    void JBuffer();
+};
+
+interface JColor {
+    void JColor();
+    void SetColor(float r, float g, float b, float a);
+    float GetR();
+    float GetG();
+    float GetB();
+    float GetA();
+};
+
+interface JRenderPassColorAttachment {
+};
+
+[NoDelete]
+interface JRenderPassEncoder {
+   void Release();
+   void End();
+};
+
+[NoDelete]
+interface JComputePassEncoder {
+};
+
+interface JSurfaceTexture {
+    void JSurfaceTexture();
+    [Value] JTexture GetTexture();
+    WGPUSurfaceGetCurrentTextureStatus GetStatus();
+};
+
 interface JSurface {
     void Configure(JSurfaceConfiguration config);
     void GetCapabilities(JAdapter adapter, JSurfaceCapabilities surfaceCapabilities);
+    void GetCurrentTexture(JSurfaceTexture surfaceTexture);
 };
 
 interface JSurfaceCapabilities {
@@ -244,7 +437,9 @@ interface JSurfaceConfiguration {
 };
 
 interface JQueue {
-
+//    void OnSubmittedWorkDone();
+//    void SetLabel([Const] DOMString value);
+//    void Submit();
 };
 
 interface JChainedStruct {
