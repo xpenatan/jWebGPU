@@ -1,5 +1,13 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 
+plugins {
+    id("java")
+    id("java-library")
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
+
 val lwjglVersion = "3.3.4"
 val lwjglNatives = "natives-windows"
 

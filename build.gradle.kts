@@ -13,6 +13,7 @@ buildscript {
     val kotlinVersion = "2.1.10"
 
     dependencies {
+        classpath("com.android.tools.build:gradle:8.0.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
@@ -37,12 +38,7 @@ allprojects()  {
 }
 
 configure(allprojects) {
-    apply {
-        plugin("java")
-        plugin("java-library")
-    }
-    java.sourceCompatibility = JavaVersion.VERSION_11
-    java.targetCompatibility = JavaVersion.VERSION_11
+
 }
 
 var libProjects = mutableSetOf(

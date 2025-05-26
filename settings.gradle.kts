@@ -12,6 +12,7 @@ include(":demos:backend:teavm")
 include(":demos:triangle:core")
 include(":demos:triangle:desktop")
 include(":demos:triangle:teavm")
+include(":demos:triangle:android")
 
 //includeBuild("E:\\Dev\\Projects\\java\\jParser") {
 //    dependencySubstitution {

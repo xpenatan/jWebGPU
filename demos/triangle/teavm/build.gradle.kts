@@ -5,9 +5,14 @@ import java.util.jar.JarFile
 import kotlin.sequences.forEach
 
 plugins {
+    id("java")
+    id("java-library")
     id("org.gretty") version("3.1.0")
     id("org.teavm") version("0.12.0")
 }
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
 
 gretty {
     contextPath = "/"

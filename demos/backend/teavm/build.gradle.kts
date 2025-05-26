@@ -1,17 +1,10 @@
-import java.nio.file.Files
-import java.nio.file.StandardCopyOption
-import java.util.jar.JarFile
-import kotlin.sequences.forEach
-
 plugins {
-    id("org.gretty") version("3.1.0")
-    id("org.teavm") version("0.12.0")
+    id("java")
+    id("java-library")
 }
 
-gretty {
-    contextPath = "/"
-    extraResourceBase("build/dist/webapp")
-}
+java.sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
 
 dependencies {
     api(project(":demos:backend:core"))

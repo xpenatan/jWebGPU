@@ -1,3 +1,11 @@
+plugins {
+    id("java")
+    id("java-library")
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
+
 val moduleName = "webgpu-desktop"
 
 val libDir = "${rootProject.projectDir}/webgpu"
