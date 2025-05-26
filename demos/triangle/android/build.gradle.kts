@@ -39,7 +39,8 @@ android {
 val natives: Configuration by configurations.creating
 
 dependencies {
-
+    implementation(project(":demos:triangle:core"))
+    implementation(project(":demos:backend:android"))
 }
 
 tasks.register("copyAndroidNatives") {
