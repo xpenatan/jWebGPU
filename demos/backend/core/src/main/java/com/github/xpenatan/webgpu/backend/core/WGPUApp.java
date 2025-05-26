@@ -93,7 +93,6 @@ public class WGPUApp {
                         System.out.println("MaxTextureDimension2D: " + limits.GetMaxTextureDimension2D());
                         System.out.println("MaxTextureDimension3D: " + limits.GetMaxTextureDimension3D());
                         System.out.println("MaxTextureArrayLayers: " + limits.GetMaxTextureArrayLayers());
-                        device.dispose();
 
                         isReady = true;
                     }
@@ -102,6 +101,8 @@ public class WGPUApp {
                     protected void OnCallback(WGPUErrorType errorType, String message) {
                         System.err.println("ErrorType: " + errorType);
                         System.err.println("Error Message: " + message);
+
+                        throw new RuntimeException("ERRORRR");
                     }
                 });
             }

@@ -24,6 +24,7 @@ class JSurfaceConfiguration;
 class JBlendState;
 class JColorTargetState;
 class JDepthStencilState;
+class JRenderPassColorAttachment;
 
 using IDLArrayJColorTargetState = IDLArray<JColorTargetState>;
 using IDLArrayJDepthStencilState = IDLArray<JDepthStencilState>;
@@ -56,13 +57,40 @@ public:
 
 };
 
+class JCommandBuffer {
+    private:
+
+    public:
+        WGPUCommandBuffer commandBuffer;
+
+        static JCommandBuffer Obtain() {
+            JCommandBuffer obj;
+            return obj;
+        }
+
+        void Release() {
+            wgpuCommandBufferRelease(commandBuffer);
+        }
+};
+
 class JQueue {
     private:
 
     public:
         WGPUQueue queue;
 
-        ~JQueue() {
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            wgpuQueueSetLabel(queue, stringView);
+        }
+
+        void Submit(int commandCount, JCommandBuffer* commandBuffer) {
+            wgpuQueueSubmit(queue, commandCount, &(commandBuffer->commandBuffer));
+        }
+
+        void Release() {
             wgpuQueueRelease(queue);
         }
 };
@@ -96,270 +124,233 @@ class JStringView : public JChainedStruct {
 
 };
 
-struct JLimits {
-    WGPUChainedStruct * nextInChain;
-    uint32_t maxTextureDimension1D;
-    uint32_t maxTextureDimension2D;
-    uint32_t maxTextureDimension3D;
-    uint32_t maxTextureArrayLayers;
-    uint32_t maxBindGroups;
-    uint32_t maxBindGroupsPlusVertexBuffers;
-    uint32_t maxBindingsPerBindGroup;
-    uint32_t maxDynamicUniformBuffersPerPipelineLayout;
-    uint32_t maxDynamicStorageBuffersPerPipelineLayout;
-    uint32_t maxSampledTexturesPerShaderStage;
-    uint32_t maxSamplersPerShaderStage;
-    uint32_t maxStorageBuffersPerShaderStage;
-    uint32_t maxStorageTexturesPerShaderStage;
-    uint32_t maxUniformBuffersPerShaderStage;
-    uint64_t maxUniformBufferBindingSize;
-    uint64_t maxStorageBufferBindingSize;
-    uint32_t minUniformBufferOffsetAlignment;
-    uint32_t minStorageBufferOffsetAlignment;
-    uint32_t maxVertexBuffers;
-    uint64_t maxBufferSize;
-    uint32_t maxVertexAttributes;
-    uint32_t maxVertexBufferArrayStride;
-    uint32_t maxInterStageShaderVariables;
-    uint32_t maxColorAttachments;
-    uint32_t maxColorAttachmentBytesPerSample;
-    uint32_t maxComputeWorkgroupStorageSize;
-    uint32_t maxComputeInvocationsPerWorkgroup;
-    uint32_t maxComputeWorkgroupSizeX;
-    uint32_t maxComputeWorkgroupSizeY;
-    uint32_t maxComputeWorkgroupSizeZ;
-    uint32_t maxComputeWorkgroupsPerDimension;
+class JLimits {
+// TODO wgpu-native limits is different from emscripten dawn limits so it cannot align with C header
+    private:
 
-    inline operator const WGPULimits&() const noexcept {
-        return *reinterpret_cast<const WGPULimits*>(this);
-    }
+    public:
+        WGPULimits limits;
 
-    void SetMaxTextureDimension1D(int value) {
-        maxTextureDimension1D = value;
-    }
-    int GetMaxTextureDimension1D() const {
-        return static_cast<int>(maxTextureDimension1D);
-    }
+        void SetMaxTextureDimension1D(int value) {
+            limits.maxTextureDimension1D = value;
+        }
+        int GetMaxTextureDimension1D() const {
+            return static_cast<int>(limits.maxTextureDimension1D);
+        }
 
-    void SetMaxTextureDimension2D(int value) {
-        maxTextureDimension2D = value;
-    }
-    int GetMaxTextureDimension2D() const {
-        return static_cast<int>(maxTextureDimension2D);
-    }
+        void SetMaxTextureDimension2D(int value) {
+            limits.maxTextureDimension2D = value;
+        }
+        int GetMaxTextureDimension2D() const {
+            return static_cast<int>(limits.maxTextureDimension2D);
+        }
 
-    void SetMaxTextureDimension3D(int value) {
-        maxTextureDimension3D = value;
-    }
-    int GetMaxTextureDimension3D() const {
-        return static_cast<int>(maxTextureDimension3D);
-    }
+        void SetMaxTextureDimension3D(int value) {
+            limits.maxTextureDimension3D = value;
+        }
+        int GetMaxTextureDimension3D() const {
+            return static_cast<int>(limits.maxTextureDimension3D);
+        }
 
-    void SetMaxTextureArrayLayers(int value) {
-        maxTextureArrayLayers = value;
-    }
-    int GetMaxTextureArrayLayers() const {
-        return static_cast<int>(maxTextureArrayLayers);
-    }
+        void SetMaxTextureArrayLayers(int value) {
+            limits.maxTextureArrayLayers = value;
+        }
+        int GetMaxTextureArrayLayers() const {
+            return static_cast<int>(limits.maxTextureArrayLayers);
+        }
 
-    void SetMaxBindGroups(int value) {
-        maxBindGroups = value;
-    }
-    int GetMaxBindGroups() const {
-        return static_cast<int>(maxBindGroups);
-    }
+        void SetMaxBindGroups(int value) {
+            limits.maxBindGroups = value;
+        }
+        int GetMaxBindGroups() const {
+            return static_cast<int>(limits.maxBindGroups);
+        }
 
-    void SetMaxBindGroupsPlusVertexBuffers(int value) {
-        maxBindGroupsPlusVertexBuffers = value;
-    }
-    int GetMaxBindGroupsPlusVertexBuffers() const {
-        return static_cast<int>(maxBindGroupsPlusVertexBuffers);
-    }
+        void SetMaxBindGroupsPlusVertexBuffers(int value) {
+            limits.maxBindGroupsPlusVertexBuffers = value;
+        }
+        int GetMaxBindGroupsPlusVertexBuffers() const {
+            return static_cast<int>(limits.maxBindGroupsPlusVertexBuffers);
+        }
 
-    void SetMaxBindingsPerBindGroup(int value) {
-        maxBindingsPerBindGroup = value;
-    }
-    int GetMaxBindingsPerBindGroup() const {
-        return static_cast<int>(maxBindingsPerBindGroup);
-    }
+        void SetMaxBindingsPerBindGroup(int value) {
+            limits.maxBindingsPerBindGroup = value;
+        }
+        int GetMaxBindingsPerBindGroup() const {
+            return static_cast<int>(limits.maxBindingsPerBindGroup);
+        }
 
-    void SetMaxDynamicUniformBuffersPerPipelineLayout(int value) {
-        maxDynamicUniformBuffersPerPipelineLayout = value;
-    }
-    int GetMaxDynamicUniformBuffersPerPipelineLayout() const {
-        return static_cast<int>(maxDynamicUniformBuffersPerPipelineLayout);
-    }
+        void SetMaxDynamicUniformBuffersPerPipelineLayout(int value) {
+            limits.maxDynamicUniformBuffersPerPipelineLayout = value;
+        }
+        int GetMaxDynamicUniformBuffersPerPipelineLayout() const {
+            return static_cast<int>(limits.maxDynamicUniformBuffersPerPipelineLayout);
+        }
 
-    void SetMaxDynamicStorageBuffersPerPipelineLayout(int value) {
-        maxDynamicStorageBuffersPerPipelineLayout = value;
-    }
-    int GetMaxDynamicStorageBuffersPerPipelineLayout() const {
-        return static_cast<int>(maxDynamicStorageBuffersPerPipelineLayout);
-    }
+        void SetMaxDynamicStorageBuffersPerPipelineLayout(int value) {
+            limits.maxDynamicStorageBuffersPerPipelineLayout = value;
+        }
+        int GetMaxDynamicStorageBuffersPerPipelineLayout() const {
+            return static_cast<int>(limits.maxDynamicStorageBuffersPerPipelineLayout);
+        }
 
-    void SetMaxSampledTexturesPerShaderStage(int value) {
-        maxSampledTexturesPerShaderStage = value;
-    }
-    int GetMaxSampledTexturesPerShaderStage() const {
-        return static_cast<int>(maxSampledTexturesPerShaderStage);
-    }
+        void SetMaxSampledTexturesPerShaderStage(int value) {
+            limits.maxSampledTexturesPerShaderStage = value;
+        }
+        int GetMaxSampledTexturesPerShaderStage() const {
+            return static_cast<int>(limits.maxSampledTexturesPerShaderStage);
+        }
 
-    void SetMaxSamplersPerShaderStage(int value) {
-        maxSamplersPerShaderStage = value;
-    }
-    int GetMaxSamplersPerShaderStage() const {
-        return static_cast<int>(maxSamplersPerShaderStage);
-    }
+        void SetMaxSamplersPerShaderStage(int value) {
+            limits.maxSamplersPerShaderStage = value;
+        }
+        int GetMaxSamplersPerShaderStage() const {
+            return static_cast<int>(limits.maxSamplersPerShaderStage);
+        }
 
-    void SetMaxStorageBuffersPerShaderStage(int value) {
-        maxStorageBuffersPerShaderStage = value;
-    }
-    int GetMaxStorageBuffersPerShaderStage() const {
-        return static_cast<int>(maxStorageBuffersPerShaderStage);
-    }
+        void SetMaxStorageBuffersPerShaderStage(int value) {
+            limits.maxStorageBuffersPerShaderStage = value;
+        }
+        int GetMaxStorageBuffersPerShaderStage() const {
+            return static_cast<int>(limits.maxStorageBuffersPerShaderStage);
+        }
 
-    void SetMaxStorageTexturesPerShaderStage(int value) {
-        maxStorageTexturesPerShaderStage = value;
-    }
-    int GetMaxStorageTexturesPerShaderStage() const {
-        return static_cast<int>(maxStorageTexturesPerShaderStage);
-    }
+        void SetMaxStorageTexturesPerShaderStage(int value) {
+            limits.maxStorageTexturesPerShaderStage = value;
+        }
+        int GetMaxStorageTexturesPerShaderStage() const {
+            return static_cast<int>(limits.maxStorageTexturesPerShaderStage);
+        }
 
-    void SetMaxUniformBuffersPerShaderStage(int value) {
-        maxUniformBuffersPerShaderStage = value;
-    }
-    int GetMaxUniformBuffersPerShaderStage() const {
-        return static_cast<int>(maxUniformBuffersPerShaderStage);
-    }
+        void SetMaxUniformBuffersPerShaderStage(int value) {
+            limits.maxUniformBuffersPerShaderStage = value;
+        }
+        int GetMaxUniformBuffersPerShaderStage() const {
+            return static_cast<int>(limits.maxUniformBuffersPerShaderStage);
+        }
 
-    void SetMaxUniformBufferBindingSize(int value) {
-        maxUniformBufferBindingSize = value;
-    }
-    int GetMaxUniformBufferBindingSize() const {
-        return static_cast<int>(maxUniformBufferBindingSize);
-    }
+        void SetMaxUniformBufferBindingSize(int value) {
+            limits.maxUniformBufferBindingSize = value;
+        }
+        int GetMaxUniformBufferBindingSize() const {
+            return static_cast<int>(limits.maxUniformBufferBindingSize);
+        }
 
-    void SetMaxStorageBufferBindingSize(int value) {
-        maxStorageBufferBindingSize = value;
-    }
-    int GetMaxStorageBufferBindingSize() const {
-        return static_cast<int>(maxStorageBufferBindingSize);
-    }
+        void SetMaxStorageBufferBindingSize(int value) {
+            limits.maxStorageBufferBindingSize = value;
+        }
+        int GetMaxStorageBufferBindingSize() const {
+            return static_cast<int>(limits.maxStorageBufferBindingSize);
+        }
 
-    void SetMinUniformBufferOffsetAlignment(int value) {
-        minUniformBufferOffsetAlignment = value;
-    }
-    int GetMinUniformBufferOffsetAlignment() const {
-        return static_cast<int>(minUniformBufferOffsetAlignment);
-    }
+        void SetMinUniformBufferOffsetAlignment(int value) {
+            limits.minUniformBufferOffsetAlignment = value;
+        }
+        int GetMinUniformBufferOffsetAlignment() const {
+            return static_cast<int>(limits.minUniformBufferOffsetAlignment);
+        }
 
-    void SetMinStorageBufferOffsetAlignment(int value) {
-        minStorageBufferOffsetAlignment = value;
-    }
-    int GetMinStorageBufferOffsetAlignment() const {
-        return static_cast<int>(minStorageBufferOffsetAlignment);
-    }
+        void SetMinStorageBufferOffsetAlignment(int value) {
+            limits.minStorageBufferOffsetAlignment = value;
+        }
+        int GetMinStorageBufferOffsetAlignment() const {
+            return static_cast<int>(limits.minStorageBufferOffsetAlignment);
+        }
 
-    void SetMaxVertexBuffers(int value) {
-        maxVertexBuffers = value;
-    }
-    int GetMaxVertexBuffers() const {
-        return static_cast<int>(maxVertexBuffers);
-    }
+        void SetMaxVertexBuffers(int value) {
+            limits.maxVertexBuffers = value;
+        }
+        int GetMaxVertexBuffers() const {
+            return static_cast<int>(limits.maxVertexBuffers);
+        }
 
-    void SetMaxBufferSize(int value) {
-        maxBufferSize = value;
-    }
-    int GetMaxBufferSize() const {
-        return static_cast<int>(maxBufferSize);
-    }
+        void SetMaxBufferSize(int value) {
+            limits.maxBufferSize = value;
+        }
+        int GetMaxBufferSize() const {
+            return static_cast<int>(limits.maxBufferSize);
+        }
 
-    void SetMaxVertexAttributes(int value) {
-        maxVertexAttributes = value;
-    }
-    int GetMaxVertexAttributes() const {
-        return static_cast<int>(maxVertexAttributes);
-    }
+        void SetMaxVertexAttributes(int value) {
+            limits.maxVertexAttributes = value;
+        }
+        int GetMaxVertexAttributes() const {
+            return static_cast<int>(limits.maxVertexAttributes);
+        }
 
-    void SetMaxVertexBufferArrayStride(int value) {
-        maxVertexBufferArrayStride = value;
-    }
-    int GetMaxVertexBufferArrayStride() const {
-        return static_cast<int>(maxVertexBufferArrayStride);
-    }
+        void SetMaxVertexBufferArrayStride(int value) {
+            limits.maxVertexBufferArrayStride = value;
+        }
+        int GetMaxVertexBufferArrayStride() const {
+            return static_cast<int>(limits.maxVertexBufferArrayStride);
+        }
 
-    void SetMaxInterStageShaderVariables(int value) {
-        maxInterStageShaderVariables = value;
-    }
-    int GetMaxInterStageShaderVariables() const {
-        return static_cast<int>(maxInterStageShaderVariables);
-    }
+        void SetMaxInterStageShaderVariables(int value) {
+            limits.maxInterStageShaderVariables = value;
+        }
+        int GetMaxInterStageShaderVariables() const {
+            return static_cast<int>(limits.maxInterStageShaderVariables);
+        }
 
-    void SetMaxColorAttachments(int value) {
-        maxColorAttachments = value;
-    }
-    int GetMaxColorAttachments() const {
-        return static_cast<int>(maxColorAttachments);
-    }
+        void SetMaxColorAttachments(int value) {
+            limits.maxColorAttachments = value;
+        }
+        int GetMaxColorAttachments() const {
+            return static_cast<int>(limits.maxColorAttachments);
+        }
 
-    void SetMaxColorAttachmentBytesPerSample(int value) {
-        maxColorAttachmentBytesPerSample = value;
-    }
-    int GetMaxColorAttachmentBytesPerSample() const {
-        return static_cast<int>(maxColorAttachmentBytesPerSample);
-    }
+        void SetMaxColorAttachmentBytesPerSample(int value) {
+            limits.maxColorAttachmentBytesPerSample = value;
+        }
+        int GetMaxColorAttachmentBytesPerSample() const {
+            return static_cast<int>(limits.maxColorAttachmentBytesPerSample);
+        }
 
-    void SetMaxComputeWorkgroupStorageSize(int value) {
-        maxComputeWorkgroupStorageSize = value;
-    }
-    int GetMaxComputeWorkgroupStorageSize() const {
-        return static_cast<int>(maxComputeWorkgroupStorageSize);
-    }
+        void SetMaxComputeWorkgroupStorageSize(int value) {
+            limits.maxComputeWorkgroupStorageSize = value;
+        }
+        int GetMaxComputeWorkgroupStorageSize() const {
+            return static_cast<int>(limits.maxComputeWorkgroupStorageSize);
+        }
 
-    void SetMaxComputeInvocationsPerWorkgroup(int value) {
-        maxComputeInvocationsPerWorkgroup = value;
-    }
-    int GetMaxComputeInvocationsPerWorkgroup() const {
-        return static_cast<int>(maxComputeInvocationsPerWorkgroup);
-    }
+        void SetMaxComputeInvocationsPerWorkgroup(int value) {
+            limits.maxComputeInvocationsPerWorkgroup = value;
+        }
+        int GetMaxComputeInvocationsPerWorkgroup() const {
+            return static_cast<int>(limits.maxComputeInvocationsPerWorkgroup);
+        }
 
-    void SetMaxComputeWorkgroupSizeX(int value) {
-        maxComputeWorkgroupSizeX = value;
-    }
-    int GetMaxComputeWorkgroupSizeX() const {
-        return static_cast<int>(maxComputeWorkgroupSizeX);
-    }
+        void SetMaxComputeWorkgroupSizeX(int value) {
+            limits.maxComputeWorkgroupSizeX = value;
+        }
+        int GetMaxComputeWorkgroupSizeX() const {
+            return static_cast<int>(limits.maxComputeWorkgroupSizeX);
+        }
 
-    void SetMaxComputeWorkgroupSizeY(int value) {
-        maxComputeWorkgroupSizeY = value;
-    }
-    int GetMaxComputeWorkgroupSizeY() const {
-        return static_cast<int>(maxComputeWorkgroupSizeY);
-    }
+        void SetMaxComputeWorkgroupSizeY(int value) {
+            limits.maxComputeWorkgroupSizeY = value;
+        }
+        int GetMaxComputeWorkgroupSizeY() const {
+            return static_cast<int>(limits.maxComputeWorkgroupSizeY);
+        }
 
-    void SetMaxComputeWorkgroupSizeZ(int value) {
-        maxComputeWorkgroupSizeZ = value;
-    }
-    int GetMaxComputeWorkgroupSizeZ() const {
-        return static_cast<int>(maxComputeWorkgroupSizeZ);
-    }
+        void SetMaxComputeWorkgroupSizeZ(int value) {
+            limits.maxComputeWorkgroupSizeZ = value;
+        }
+        int GetMaxComputeWorkgroupSizeZ() const {
+            return static_cast<int>(limits.maxComputeWorkgroupSizeZ);
+        }
 
-    void SetMaxComputeWorkgroupsPerDimension(int value) {
-        maxComputeWorkgroupsPerDimension = value;
-    }
-    int GetMaxComputeWorkgroupsPerDimension() const {
-        return static_cast<int>(maxComputeWorkgroupsPerDimension);
-    }
+        void SetMaxComputeWorkgroupsPerDimension(int value) {
+            limits.maxComputeWorkgroupsPerDimension = value;
+        }
+        int GetMaxComputeWorkgroupsPerDimension() const {
+            return static_cast<int>(limits.maxComputeWorkgroupsPerDimension);
+        }
 };
 
-// TODO wgpu-native limits is different from emscripten dawn limits. Need to change back to reference
-
-//static_assert(sizeof(JLimits) == sizeof(WGPULimits), "sizeof mismatch for JLimits");
-//static_assert(alignof(JLimits) == alignof(WGPULimits), "alignof mismatch for JLimits");
-//static_assert(offsetof(JLimits, nextInChain) == offsetof(WGPULimits, nextInChain), "offsetof mismatch for JLimits::nextInChain");
-
 struct JQueueDescriptor {
-    JChainedStruct const * nextInChain;
+    JChainedStruct const * nextInChain = NULL;
     WGPUStringView label;
 
     inline operator const WGPUQueueDescriptor&() const noexcept {
@@ -380,7 +371,7 @@ struct JDeviceDescriptor {
     WGPUStringView label;
     size_t requiredFeatureCount = 0;
     WGPUFeatureName const * requiredFeatures = NULL;
-    JLimits const * requiredLimits = NULL;
+    WGPULimits const * requiredLimits = NULL;
     JQueueDescriptor defaultQueue;
     WGPUDeviceLostCallbackInfo deviceLostCallbackInfo;
     WGPUUncapturedErrorCallbackInfo uncapturedErrorCallbackInfo;
@@ -397,7 +388,7 @@ struct JDeviceDescriptor {
     }
 
     void SetRequiredLimits(JLimits* limits) {
-        requiredLimits = limits;
+        requiredLimits = &(limits->limits);
     }
 
     void SetRequiredFeatureCount(int count) {
@@ -457,7 +448,12 @@ class JShaderModule {
     public:
         WGPUShaderModule shaderModule;
 
-        ~JShaderModule() {
+        static JShaderModule Obtain() {
+            JShaderModule obj;
+            return obj;
+        }
+
+        void Release() {
             wgpuShaderModuleRelease(shaderModule);
         }
 };
@@ -873,7 +869,12 @@ class JRenderPipeline {
     public:
         WGPURenderPipeline renderPipeline;
 
-        ~JRenderPipeline() {
+        static JRenderPipeline Obtain() {
+            JRenderPipeline obj;
+            return obj;
+        }
+
+        void Release() {
             wgpuRenderPipelineRelease(renderPipeline);
         }
 };
@@ -934,33 +935,16 @@ class JBuffer {
         WGPUBuffer buffer;
 };
 
-struct JRenderPassColorAttachment {
-    JChainedStruct const * nextInChain;
-    WGPUTextureView view;
-    uint32_t depthSlice;
-    WGPUTextureView resolveTarget;
-    WGPULoadOp loadOp;
-    WGPUStoreOp storeOp;
-    JColor clearValue;
-
-    inline operator const WGPURenderPassColorAttachment&() const noexcept {
-        return *reinterpret_cast<const WGPURenderPassColorAttachment*>(this);
-    }
-
-    JColor& GetClearValue() {
-        return clearValue;
-    }
-
-    WGPUStoreOp GetStoreOp() {
-        return storeOp;
-    }
-};
-
 class JRenderPassEncoder {
     private:
 
     public:
         WGPURenderPassEncoder renderPassEncoder;
+
+        static JRenderPassEncoder Obtain() {
+            JRenderPassEncoder obj;
+            return obj;
+        }
 
         void Release() {
             wgpuRenderPassEncoderRelease(renderPassEncoder);
@@ -976,16 +960,136 @@ class JComputePassEncoder {
 
     public:
         WGPUComputePassEncoder computePassEncoder;
+
+        static JComputePassEncoder Obtain() {
+            JComputePassEncoder obj;
+            return obj;
+        }
+
+        void Release() {
+            wgpuComputePassEncoderRelease(computePassEncoder);
+        }
 };
 
-class JCommandBuffer {
+class JRenderPassDepthStencilAttachment {
     private:
 
     public:
-        WGPUCommandBuffer commandBuffer;
+        WGPURenderPassDepthStencilAttachment attachment;
+};
 
-        void Release() {
-            wgpuCommandBufferRelease(commandBuffer);
+class JRenderPassTimestampWrites {
+    private:
+
+    public:
+//        WGPURenderPassTimestampWrites timestampWrites; // TODO not in emscripten
+};
+
+class JCommandEncoderDescriptor {
+    private:
+
+    public:
+        WGPUCommandEncoderDescriptor descriptor;
+
+        static JCommandEncoderDescriptor Obtain() {
+            JCommandEncoderDescriptor obj;
+            return obj;
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            descriptor.label = stringView;
+        }
+};
+
+class JCommandBufferDescriptor  {
+    private:
+
+    public:
+        WGPUCommandBufferDescriptor descriptor;
+
+        static JCommandBufferDescriptor Obtain() {
+            JCommandBufferDescriptor obj;
+            return obj;
+        }
+
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            #ifdef __EMSCRIPTEN__
+                descriptor.nextInChain = reinterpret_cast<WGPUChainedStruct * >(chainedStruct);
+            #else
+                descriptor.nextInChain = reinterpret_cast<WGPUChainedStruct const * >(chainedStruct);
+            #endif
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            descriptor.label = stringView;
+        }
+};
+
+class JRenderPassDescriptor {
+    private:
+
+    public:
+        WGPURenderPassDescriptor descriptor;
+
+//            size_t colorAttachmentCount;
+//            WGPURenderPassColorAttachment const * colorAttachments;
+//            WGPU_NULLABLE WGPURenderPassDepthStencilAttachment const * depthStencilAttachment;
+//            WGPU_NULLABLE WGPUQuerySet occlusionQuerySet;
+//            WGPU_NULLABLE WGPURenderPassTimestampWrites const * timestampWrites;
+
+        static JRenderPassDescriptor Obtain() {
+            JRenderPassDescriptor descriptor;
+            return descriptor;
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            descriptor.label = stringView;
+        }
+
+        void SetColorAttachmentCount(int size) {
+            descriptor.colorAttachmentCount = size;
+        }
+
+        void SetColorAttachments(JRenderPassColorAttachment* colorAttachment) {
+            // TODO Must be an array
+            descriptor.colorAttachments = reinterpret_cast<WGPURenderPassColorAttachment const * >(colorAttachment);
+        }
+
+        void SetDepthStencilAttachment(JRenderPassDepthStencilAttachment* attachment) {
+            descriptor.depthStencilAttachment = attachment == NULL ? NULL : &(attachment->attachment);
+        }
+
+        void SetTimestampWrites(JRenderPassTimestampWrites* timestampWrites) {
+            // TODO emscripten does not have this class
+//            descriptor.timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->timestampWrites);
+        }
+};
+
+class JComputePassDescriptor {
+    private:
+
+    public:
+        WGPUComputePassDescriptor descriptor;
+
+        static JComputePassDescriptor Obtain() {
+            JComputePassDescriptor descriptor;
+            return descriptor;
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            descriptor.label = stringView;
         }
 };
 
@@ -995,37 +1099,30 @@ class JCommandEncoder {
     public:
         WGPUCommandEncoder commandEncoder;
 
+        static JCommandEncoder Obtain() {
+            JCommandEncoder obj;
+            return obj;
+        }
+
         void Release() {
             wgpuCommandEncoderRelease(commandEncoder);
         }
 
-        JRenderPassEncoder BeginRenderPass() {
-            WGPURenderPassDescriptor renderPassDescriptor;
-            JRenderPassEncoder encoder;
-            encoder.renderPassEncoder = wgpuCommandEncoderBeginRenderPass(commandEncoder, &renderPassDescriptor);
-            return encoder;
+        void BeginRenderPass(JRenderPassDescriptor* renderPassDescriptor, JRenderPassEncoder* encoder) {
+            encoder->renderPassEncoder = wgpuCommandEncoderBeginRenderPass(commandEncoder, &(renderPassDescriptor->descriptor));
         }
 
-        JComputePassEncoder BeginComputePass() {
+        void BeginComputePass(JComputePassEncoder* encoder) {
             WGPUComputePassDescriptor computePassDescriptor;
-            JComputePassEncoder encoder;
-            encoder.computePassEncoder = wgpuCommandEncoderBeginComputePass(commandEncoder, &computePassDescriptor);
-            return encoder;
+            encoder->computePassEncoder = wgpuCommandEncoderBeginComputePass(commandEncoder, &computePassDescriptor);
         }
 
         void ClearBuffer(JBuffer* buffer, int offset, int size) {
             wgpuCommandEncoderClearBuffer(commandEncoder, buffer->buffer, offset, size);
         }
 
-        JCommandBuffer Finish(const char* label) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(label);
-            stringView.length = strlen(label);
-            WGPUCommandBufferDescriptor commandBufferDescriptor;
-            commandBufferDescriptor.label = stringView;
-            JCommandBuffer commandBuffer;
-            commandBuffer.commandBuffer = wgpuCommandEncoderFinish(commandEncoder, &commandBufferDescriptor);
-            return commandBuffer;
+        void Finish(JCommandBufferDescriptor* commandBufferDescriptor, JCommandBuffer* commandBuffer) {
+            commandBuffer->commandBuffer = wgpuCommandEncoderFinish(commandEncoder, &(commandBufferDescriptor->descriptor));
         }
 };
 
@@ -1036,10 +1133,7 @@ class JDevice {
     public:
         WGPUDevice device;
 
-        JDevice() {
-        }
-
-        ~JDevice() {
+        void Release() {
             wgpuDeviceRelease(device);
         }
 
@@ -1059,16 +1153,12 @@ class JDevice {
             return queue;
         }
 
-        JRenderPipeline* CreateRenderPipeline(JRenderPipelineDescriptor* pipelineDescriptor) {
-            JRenderPipeline* renderPipeline = new JRenderPipeline();
+        void CreateRenderPipeline(JRenderPipelineDescriptor* pipelineDescriptor, JRenderPipeline* renderPipeline) {
             renderPipeline->renderPipeline = wgpuDeviceCreateRenderPipeline(device, reinterpret_cast<WGPURenderPipelineDescriptor const * >(pipelineDescriptor));
-            return renderPipeline;
         }
 
-        JShaderModule* CreateShaderModule(JShaderModuleDescriptor* shaderModuleDescriptor) {
-            JShaderModule* shaderModule = new JShaderModule();
+        void CreateShaderModule(JShaderModuleDescriptor* shaderModuleDescriptor, JShaderModule* shaderModule) {
             shaderModule->shaderModule = wgpuDeviceCreateShaderModule(device, reinterpret_cast<WGPUShaderModuleDescriptor const * >(shaderModuleDescriptor));
-            return shaderModule;
         }
 
         void GetFeatures(JSupportedFeatures* features) {
@@ -1076,19 +1166,11 @@ class JDevice {
         }
 
         void GetLimits(JLimits* limits) {
-            wgpuDeviceGetLimits(device, reinterpret_cast<WGPULimits * >(limits));
+            wgpuDeviceGetLimits(device, reinterpret_cast<WGPULimits * >(&(limits->limits)));
         }
 
-        JCommandEncoder CreateCommandEncoder(const char* label) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(label);
-            stringView.length = strlen(label);
-
-            WGPUCommandEncoderDescriptor encoderDescriptor;
-            encoderDescriptor.label = stringView;
-            JCommandEncoder encoder;
-            encoder.commandEncoder = wgpuDeviceCreateCommandEncoder(device, &encoderDescriptor);
-            return encoder;
+        void CreateCommandEncoder(JCommandEncoderDescriptor* encoderDescriptor, JCommandEncoder* encoder) {
+            encoder->commandEncoder = wgpuDeviceCreateCommandEncoder(device, &(encoderDescriptor->descriptor));
         }
 };
 
@@ -1171,10 +1253,7 @@ class JAdapter {
     public:
         WGPUAdapter adapter;
 
-        JAdapter() {
-        }
-
-        ~JAdapter() {
+        void Release() {
             wgpuAdapterRelease(adapter);
         }
 
@@ -1210,59 +1289,71 @@ class JAdapter {
         }
 };
 
-struct JTextureViewDescriptor {
-    WGPUChainedStruct const * nextInChain;
-    WGPUStringView label;
-    WGPUTextureFormat format;
-    WGPUTextureViewDimension dimension;
-    uint32_t baseMipLevel;
-    uint32_t mipLevelCount;
-    uint32_t baseArrayLayer;
-    uint32_t arrayLayerCount;
-    WGPUTextureAspect aspect;
-    WGPUTextureUsage usage;
+//struct JTextureViewDescriptor {
+//    JChainedStruct const * nextInChain = NULL;
+//    WGPUStringView label;
+//    WGPUTextureFormat format;
+//    WGPUTextureViewDimension dimension;
+//    uint32_t baseMipLevel;
+//    uint32_t mipLevelCount;
+//    uint32_t baseArrayLayer;
+//    uint32_t arrayLayerCount;
+//    WGPUTextureAspect aspect;
+//    WGPUTextureUsage usage;
 
-    inline operator const WGPUTextureViewDescriptor&() const noexcept {
-        return *reinterpret_cast<const WGPUTextureViewDescriptor*>(this);
+//    inline operator const WGPUTextureViewDescriptor&() const noexcept {
+//        return *reinterpret_cast<const WGPUTextureViewDescriptor*>(this);
+//    }
+//}
+
+class JTextureViewDescriptor {
+    private:
+
+    public:
+        WGPUTextureViewDescriptor descriptor;
+
+    static JTextureViewDescriptor Obtain() {
+        JTextureViewDescriptor textureViewDescriptor;
+        return textureViewDescriptor;
     }
 
     void SetLabel(const char* value) {
         WGPUStringView stringView = {};
         stringView.data = strdup(value);
         stringView.length = strlen(value);
-        label = stringView;
+        descriptor.label = stringView;
     }
 
     void SetFormat(WGPUTextureFormat format) {
-        this->format = format;
+        descriptor.format = format;
     }
 
     void SetDimension(WGPUTextureViewDimension dimension) {
-        this->dimension = dimension;
+        descriptor.dimension = dimension;
     }
 
     void SetBaseMipLevel(int baseMipLevel) {
-        this->baseMipLevel = baseMipLevel;
+        descriptor.baseMipLevel = baseMipLevel;
     }
 
     void SetMipLevelCount(int mipLevelCount) {
-        this->mipLevelCount = mipLevelCount;
+        descriptor.mipLevelCount = mipLevelCount;
     }
 
     void SetBaseArrayLayer(int baseArrayLayer) {
-        this->baseArrayLayer = baseArrayLayer;
+        descriptor.baseArrayLayer = baseArrayLayer;
     }
 
     void SetArrayLayerCount(int arrayLayerCount) {
-        this->arrayLayerCount = arrayLayerCount;
+        descriptor.arrayLayerCount = arrayLayerCount;
     }
 
     void SetAspect(WGPUTextureAspect aspect) {
-        this->aspect = aspect;
+        descriptor.aspect = aspect;
     }
 
     void SetUsage(WGPUTextureUsage usage) {
-        this->usage = usage;
+        descriptor.usage = usage;
     }
 };
 
@@ -1272,6 +1363,14 @@ class JTextureView {
     public:
         WGPUTextureView textureView;
 
+    static JTextureView Obtain() {
+        JTextureView obj;
+        return obj;
+    }
+
+    void Release() {
+        wgpuTextureViewRelease(textureView);
+    }
 };
 
 class JTexture {
@@ -1280,16 +1379,70 @@ class JTexture {
     public:
         WGPUTexture texture;
 
-        JTextureView CreateView(JTextureViewDescriptor* textureViewDescriptor) {
-            JTextureView textureView;
-            textureView.textureView = wgpuTextureCreateView(texture, reinterpret_cast<WGPUTextureViewDescriptor const * >(textureViewDescriptor));
-            return textureView;
+        static JTexture Obtain() {
+            JTexture obj;
+            return obj;
         }
+
+        void CreateView(JTextureViewDescriptor* textureViewDescriptor, JTextureView* textureView) {
+            textureView->textureView = wgpuTextureCreateView(texture, &(textureViewDescriptor->descriptor));
+        }
+
+        WGPUTextureFormat GetFormat() {
+            return wgpuTextureGetFormat(texture);
+        }
+
+        void Release() {
+            wgpuTextureRelease(texture);
+        }
+};
+
+struct JRenderPassColorAttachment {
+    JChainedStruct const * nextInChain = NULL;
+    WGPU_NULLABLE WGPUTextureView view;
+    uint32_t depthSlice = WGPU_DEPTH_SLICE_UNDEFINED;
+    WGPU_NULLABLE WGPUTextureView resolveTarget;
+    WGPULoadOp loadOp;
+    WGPUStoreOp storeOp;
+    JColor clearValue;
+
+    inline operator const WGPURenderPassColorAttachment&() const noexcept {
+        return *reinterpret_cast<const WGPURenderPassColorAttachment*>(this);
+    }
+
+    static JRenderPassColorAttachment Obtain() {
+        JRenderPassColorAttachment renderPassColorAttachment;
+        return renderPassColorAttachment;
+    }
+
+    void SetResolveTarget(JTextureView* textureView) {
+        this->resolveTarget = textureView == NULL ? NULL : textureView->textureView;
+    }
+
+    void SetView(JTextureView* textureView) {
+        this->view = textureView == NULL ? NULL : textureView->textureView;
+    }
+
+    void SetLoadOp(WGPULoadOp loadOp) {
+        this->loadOp = loadOp;
+    }
+
+    void SetStoreOp(WGPUStoreOp storeOp) {
+        this->storeOp = storeOp;
+    }
+
+    void SetDepthSlice(int depthSlice) {
+        this->depthSlice = depthSlice;
+    }
+
+    JColor& GetClearValue() {
+        return clearValue;
+    }
 };
 
 struct JSurfaceTexture {
 
-    WGPUChainedStruct * nextInChain;
+    JChainedStruct * nextInChain = NULL;
     WGPUTexture texture;
     WGPUSurfaceGetCurrentTextureStatus status;
 
@@ -1297,10 +1450,13 @@ struct JSurfaceTexture {
         return *reinterpret_cast<const WGPUSurfaceTexture*>(this);
     }
 
-    JTexture GetTexture() {
-        JTexture tex;
-        tex.texture = texture;
-        return tex;
+    static JSurfaceTexture Obtain() {
+        JSurfaceTexture obj;
+        return obj;
+    }
+
+    void GetTexture(JTexture* tex) {
+        tex->texture = texture;
     }
 
     WGPUSurfaceGetCurrentTextureStatus GetStatus() {
@@ -1314,8 +1470,11 @@ class JSurface {
     public:
         WGPUSurface surface;
 
-        ~JSurface() {
+        void Unconfigure() {
             wgpuSurfaceUnconfigure(surface);
+        }
+
+        void Release() {
             wgpuSurfaceRelease(surface);
         }
 
@@ -1327,8 +1486,12 @@ class JSurface {
             wgpuSurfaceGetCapabilities(surface, adapter->adapter, &(surfaceCapabilities->surfaceCapabilities));
         }
 
-        void GetCurrentTexture(JSurfaceTexture* surfaceTexture) {
-            wgpuSurfaceGetCurrentTexture(surface, reinterpret_cast<WGPUSurfaceTexture * >(surfaceTexture));
+        void GetCurrentTexture(JSurfaceTexture* tex) {
+            wgpuSurfaceGetCurrentTexture(surface, reinterpret_cast<WGPUSurfaceTexture * >(tex));
+        }
+
+        void Present() {
+            wgpuSurfacePresent(surface);
         }
 };
 
@@ -1342,7 +1505,7 @@ class JInstance {
             instance = wgpuCreateInstance(NULL);
         }
 
-        ~JInstance() {
+        void Release() {
             wgpuInstanceRelease(instance);
         }
 
@@ -1433,7 +1596,8 @@ class JWebGPU {
             shaderCodeDesc.SetCode(shaderSource);
 
             shaderDesc.SetNextInChain(&shaderCodeDesc);
-            JShaderModule* shaderModule = device->CreateShaderModule(&shaderDesc);
+            JShaderModule* shaderModule = new JShaderModule();
+            device->CreateShaderModule(&shaderDesc, shaderModule);
 
             JRenderPipelineDescriptor pipelineDesc;
             pipelineDesc.SetLabel("my pipeline");

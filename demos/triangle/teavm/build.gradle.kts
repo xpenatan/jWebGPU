@@ -1,3 +1,4 @@
+import org.teavm.gradle.api.SourceFilePolicy
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.util.jar.JarFile
@@ -23,9 +24,10 @@ teavm {
         outputDir = layout.buildDirectory.dir("dist/webapp").get().asFile
         relativePathInOutputDir = ""
         targetFileName = "app.js"
-        sourceMap = false
+        sourceMap = true
+        sourceFilePolicy = SourceFilePolicy.COPY
         obfuscated = false
-        debugInformation = false
+        debugInformation = true
         addedToWebApp = true
         mainClass = "com.github.xpenatan.webgpu.demo.triangle.MainTeaVM"
     }

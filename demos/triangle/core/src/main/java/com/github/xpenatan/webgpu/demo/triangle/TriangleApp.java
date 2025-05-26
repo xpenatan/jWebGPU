@@ -1,32 +1,32 @@
 package com.github.xpenatan.webgpu.demo.triangle;
 
-import com.github.xpenatan.webgpu.IDLArrayJColorTargetState;
-import com.github.xpenatan.webgpu.JBlendState;
-import com.github.xpenatan.webgpu.JColorTargetState;
+import com.github.xpenatan.webgpu.JCommandBuffer;
+import com.github.xpenatan.webgpu.JCommandBufferDescriptor;
 import com.github.xpenatan.webgpu.JCommandEncoder;
-import com.github.xpenatan.webgpu.JFragmentState;
+import com.github.xpenatan.webgpu.JCommandEncoderDescriptor;
+import com.github.xpenatan.webgpu.JPlatformType;
+import com.github.xpenatan.webgpu.JRenderPassColorAttachment;
+import com.github.xpenatan.webgpu.JRenderPassDescriptor;
 import com.github.xpenatan.webgpu.JRenderPassEncoder;
-import com.github.xpenatan.webgpu.JRenderPipeline;
-import com.github.xpenatan.webgpu.JRenderPipelineDescriptor;
 import com.github.xpenatan.webgpu.JShaderModule;
 import com.github.xpenatan.webgpu.JShaderModuleDescriptor;
 import com.github.xpenatan.webgpu.JShaderSourceWGSL;
 import com.github.xpenatan.webgpu.JSurfaceCapabilities;
 import com.github.xpenatan.webgpu.JSurfaceConfiguration;
+import com.github.xpenatan.webgpu.JSurfaceTexture;
+import com.github.xpenatan.webgpu.JTexture;
 import com.github.xpenatan.webgpu.JTextureView;
+import com.github.xpenatan.webgpu.JTextureViewDescriptor;
 import com.github.xpenatan.webgpu.JWebGPU;
-import com.github.xpenatan.webgpu.WGPUBlendFactor;
-import com.github.xpenatan.webgpu.WGPUBlendOperation;
-import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
-import com.github.xpenatan.webgpu.WGPUCullMode;
-import com.github.xpenatan.webgpu.WGPUFrontFace;
-import com.github.xpenatan.webgpu.WGPUIndexFormat;
+import com.github.xpenatan.webgpu.WGPULoadOp;
 import com.github.xpenatan.webgpu.WGPUPresentMode;
-import com.github.xpenatan.webgpu.WGPUPrimitiveTopology;
 import com.github.xpenatan.webgpu.WGPUSType;
+import com.github.xpenatan.webgpu.WGPUStoreOp;
+import com.github.xpenatan.webgpu.WGPUTextureAspect;
 import com.github.xpenatan.webgpu.WGPUTextureFormat;
 import com.github.xpenatan.webgpu.WGPUTextureUsage;
+import com.github.xpenatan.webgpu.WGPUTextureViewDimension;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
@@ -34,8 +34,22 @@ public class TriangleApp implements ApplicationListener {
 
     private WGPUTextureFormat surfaceFormat;
 
+    private JSurfaceTexture surfaceTexture;
+    private JTexture texture;
+    private JTextureView textureView;
+    private JCommandEncoder encoder;
+    private JRenderPassEncoder renderPass;
+    private JCommandBuffer command;
+
     @Override
     public void create(WGPUApp wgpu) {
+        surfaceTexture = new JSurfaceTexture();
+        texture = new JTexture();
+        textureView = new JTextureView();
+        encoder = new JCommandEncoder();
+        renderPass = new JRenderPassEncoder();
+        command = new JCommandBuffer();
+
         if(wgpu.surface != null) {
             System.out.println("Surface created");
 
@@ -54,20 +68,64 @@ public class TriangleApp implements ApplicationListener {
     @Override
     public void render(WGPUApp wgpu) {
 
-        JTextureView textureView = GetNextSurfaceTextureView(wgpu);
+        GetNextSurfaceTextureView(wgpu, surfaceTexture, texture, textureView);
 
-    }
+        JCommandEncoderDescriptor encoderDesc = new JCommandEncoderDescriptor();
+        encoderDesc.SetLabel("My command encoder");
+        wgpu.device.CreateCommandEncoder(encoderDesc, encoder);
 
-    private JTextureView GetNextSurfaceTextureView(WGPUApp wgpu) {
+        JRenderPassDescriptor renderPassDesc  = new JRenderPassDescriptor();
 
-        JCommandEncoder encoder = wgpu.device.CreateCommandEncoder("My command encoder");
+        JRenderPassColorAttachment renderPassColorAttachment = new JRenderPassColorAttachment();
+        renderPassColorAttachment.SetView(textureView);
+        renderPassColorAttachment.SetResolveTarget(null);
+        renderPassColorAttachment.SetLoadOp(WGPULoadOp.Clear);
+        renderPassColorAttachment.SetStoreOp(WGPUStoreOp.Store);
+        renderPassColorAttachment.GetClearValue().SetColor(1.0f, 0.0f, 0.0f, 1.0f);
 
-        JRenderPassEncoder renderPass = encoder.BeginRenderPass();
+//        renderPassColorAttachment.SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED);
+
+        renderPassDesc.SetColorAttachmentCount(1);
+        renderPassDesc.SetColorAttachments(renderPassColorAttachment);
+        renderPassDesc.SetDepthStencilAttachment(null);
+        renderPassDesc.SetTimestampWrites(null);
+
+        encoder.BeginRenderPass(renderPassDesc, renderPass);
         renderPass.End();
         renderPass.Release();
 
-
+        JCommandBufferDescriptor cmdBufferDescriptor = new JCommandBufferDescriptor();
+        cmdBufferDescriptor.SetNextInChain(null);
+        cmdBufferDescriptor.SetLabel("Command buffer");
+        encoder.Finish(cmdBufferDescriptor, command);
         encoder.Release();
+
+        wgpu.queue.Submit(1, command);
+        command.Release();
+
+        textureView.Release();
+
+        if(JWebGPU.GetPlatformType() != JPlatformType.WGPU_Web) {
+            wgpu.surface.Present();
+        }
+    }
+
+    private void GetNextSurfaceTextureView(WGPUApp wgpu, JSurfaceTexture surfaceTextureOut, JTexture textureOut, JTextureView textureViewOut) {
+        wgpu.surface.GetCurrentTexture(surfaceTextureOut);
+        surfaceTextureOut.GetTexture(textureOut);
+        WGPUTextureFormat textureFormat = textureOut.GetFormat();
+//        JTextureViewDescriptor viewDescriptor = JTextureViewDescriptor.Obtain();
+        JTextureViewDescriptor viewDescriptor = new JTextureViewDescriptor();
+        viewDescriptor.SetLabel("Surface texture view");
+        viewDescriptor.SetFormat(textureFormat);
+        viewDescriptor.SetDimension(WGPUTextureViewDimension._2D);
+        viewDescriptor.SetBaseMipLevel(0);
+        viewDescriptor.SetMipLevelCount(1);
+        viewDescriptor.SetBaseArrayLayer(0);
+        viewDescriptor.SetArrayLayerCount(1);
+        viewDescriptor.SetAspect(WGPUTextureAspect.All);
+        textureOut.CreateView(viewDescriptor, textureViewOut);
+//        textureOut.Release();
     }
 
     private void initSwapChain(WGPUApp wgpu) {
@@ -160,7 +218,8 @@ public class TriangleApp implements ApplicationListener {
         shaderCodeDesc.SetCode(shaderSource);
 
         shaderDesc.SetNextInChain(shaderCodeDesc);
-        JShaderModule shaderModule = wgpu.device.CreateShaderModule(shaderDesc);
+        JShaderModule shaderModule = new JShaderModule();
+        wgpu.device.CreateShaderModule(shaderDesc, shaderModule);
         return shaderModule;
     }
 
