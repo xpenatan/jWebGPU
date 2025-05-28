@@ -1,4 +1,5 @@
 import com.github.xpenatan.jparser.builder.BuildMultiTarget;
+import com.github.xpenatan.jparser.builder.targets.AndroidTarget;
 import com.github.xpenatan.jparser.builder.targets.EmscriptenTarget;
 import com.github.xpenatan.jparser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
@@ -38,6 +39,9 @@ public class WGPUBuild {
                 if(op.teavm) {
                     targets.add(getTeaVMTarget(op, idlReader, buildPath));
                 }
+                if(op.android) {
+                    targets.add(getAndroidTarget(op, buildPath));
+                }
 //                if(op.linux64) {
 //                    targets.add(getLinuxTarget(op));
 //                }
@@ -46,9 +50,6 @@ public class WGPUBuild {
 //                }
 //                if(op.macArm) {
 //                    targets.add(getMacTarget(op, true));
-//                }
-//                if(op.android) {
-//                    targets.add(getAndroidTarget(op));
 //                }
 //                if(op.iOS) {
 //                    targets.add(getIOSTarget(op));
@@ -114,6 +115,88 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--closure-args=--externs=" + jsLib);
         multiTarget.add(linkTarget);
+
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getAndroidTarget(BuildToolOptions op, String buildPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        AndroidTarget.ApiLevel apiLevel = AndroidTarget.ApiLevel.Android_10_29;
+
+        {
+            // x86_64
+            String wgpuPath = buildPath + "/android_x86_64";
+            String webgpuIncludePath = wgpuPath + "/include";
+            String libPath = wgpuPath + "/lib/libwgpu_native.a";
+
+            AndroidTarget.Target target = AndroidTarget.Target.x86_64;
+
+            AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+            linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
+            linkTarget.linkerFlags.add(libPath);
+            linkTarget.linkerFlags.add("-landroid");
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            multiTarget.add(linkTarget);
+        }
+        {
+            // arm64_v8a
+            String wgpuPath = buildPath + "/android_aarch64";
+            String webgpuIncludePath = wgpuPath + "/include";
+            String libPath = wgpuPath + "/lib/libwgpu_native.a";
+
+            AndroidTarget.Target target = AndroidTarget.Target.arm64_v8a;
+
+            AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+            linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
+            linkTarget.linkerFlags.add(libPath);
+            linkTarget.linkerFlags.add("-landroid");
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            multiTarget.add(linkTarget);
+        }
+        {
+            // armeabi_v7a
+            String wgpuPath = buildPath + "/android_armv7";
+            String webgpuIncludePath = wgpuPath + "/include";
+            String libPath = wgpuPath + "/lib/libwgpu_native.a";
+
+            AndroidTarget.Target target = AndroidTarget.Target.armeabi_v7a;
+
+            AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+            linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
+            linkTarget.linkerFlags.add(libPath);
+            linkTarget.linkerFlags.add("-landroid");
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            multiTarget.add(linkTarget);
+        }
+        {
+            // x86
+            String wgpuPath = buildPath + "/android_i686";
+            String webgpuIncludePath = wgpuPath + "/include";
+            String libPath = wgpuPath + "/lib/libwgpu_native.a";
+
+            AndroidTarget.Target target = AndroidTarget.Target.x86;
+
+            AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+            linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
+            linkTarget.linkerFlags.add(libPath);
+            linkTarget.linkerFlags.add("-landroid");
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            multiTarget.add(linkTarget);
+        }
 
         return multiTarget;
     }

@@ -39,6 +39,35 @@ enum JPlatformType : int {
     WGPU_Web
 };
 
+class JAndroidWindow {
+    public:
+        #ifdef __ANDROID__
+            ANativeWindow* g_window = nullptr;
+        #endif
+
+        ~JAndroidWindow() {
+            #ifdef __ANDROID__
+                if(g_window != nullptr) {
+                    ANativeWindow_release(g_window);
+                }
+            #endif
+        }
+
+        void SetWindow(void * window) {
+            #ifdef __ANDROID__
+                g_window = reinterpret_cast<ANativeWindow * >(window);
+            #endif
+        }
+
+        void* GetWindow() {
+            #ifdef __ANDROID__
+                return g_window;
+            #else
+                return NULL;
+            #endif
+        }
+};
+
 class RequestAdapterCallback {
 public:
     virtual void OnCallback(WGPURequestAdapterStatus status, JAdapter* adapter) = 0;
@@ -1553,6 +1582,22 @@ class JInstance {
                 fromWindowsHWND.hwnd = hwnd;
                 WGPUSurfaceDescriptor surfaceDescriptor{};
                 surfaceDescriptor.nextInChain = &fromWindowsHWND.chain;
+                surface->surface = wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
+            #endif
+            return surface;
+        }
+
+        JSurface* CreateAndroidSurface(JAndroidWindow * window) {
+            JSurface* surface = NULL;
+            #if __ANDROID__
+                void* androidWindow = window->GetWindow();
+                surface = new JSurface();
+                WGPUSurfaceSourceAndroidNativeWindow androidSurfaceWindow;
+                androidSurfaceWindow.chain.next = NULL;
+                androidSurfaceWindow.chain.sType = WGPUSType_SurfaceSourceAndroidNativeWindow;
+                androidSurfaceWindow.window = androidWindow;
+                WGPUSurfaceDescriptor surfaceDescriptor{};
+                surfaceDescriptor.nextInChain = &androidSurfaceWindow.chain;
                 surface->surface = wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
             #endif
             return surface;

@@ -65,6 +65,7 @@ val platforms = mapOf(
     "macos_aarch64" to Pair("macos", "aarch64"),
     "android_x86_64" to Pair("android", "x86_64"),
     "android_aarch64" to Pair("android", "aarch64"),
+    "android_i686" to Pair("android", "i686"),
     "android_armv7" to Pair("android", "armv7")
 )
 

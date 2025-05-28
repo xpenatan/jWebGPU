@@ -7,6 +7,11 @@ interface JWebGPU {
 //    static JInstance CreateInstance();
 };
 
+interface JAndroidWindow {
+    void JAndroidWindow();
+
+};
+
 interface IDLArrayJColorTargetState {
     void IDLArrayJColorTargetState(long size);
     void resize(long size);
@@ -74,6 +79,7 @@ interface JInstance {
     void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
     JSurface CreateWebSurface([Const] DOMString canvas);
     JSurface CreateWindowsSurface(any hwnd);
+    JSurface CreateAndroidSurface(JAndroidWindow surface);
     void ProcessEvents();
 };
 

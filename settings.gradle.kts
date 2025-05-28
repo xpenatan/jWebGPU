@@ -5,6 +5,7 @@ include(":webgpu:webgpu-build")
 include(":webgpu:webgpu-core")
 include(":webgpu:webgpu-desktop")
 include(":webgpu:webgpu-teavm")
+include(":webgpu:webgpu-android")
 
 include(":demos:backend:core")
 include(":demos:backend:desktop")

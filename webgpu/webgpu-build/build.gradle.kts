@@ -33,3 +33,11 @@ tasks.register<JavaExec>("wgpu_build_project_teavm") {
     args = mutableListOf("teavm")
     classpath = sourceSets["main"].runtimeClasspath
 }
+
+tasks.register<JavaExec>("wgpu_build_project_android") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("android")
+    classpath = sourceSets["main"].runtimeClasspath
+}

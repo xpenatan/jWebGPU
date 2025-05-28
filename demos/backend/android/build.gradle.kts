@@ -28,4 +28,6 @@ android {
 
 dependencies {
     api(project(":demos:backend:core"))
+    implementation(project(":webgpu:webgpu-core"))
+    api(project(":webgpu:webgpu-android"))
 }
