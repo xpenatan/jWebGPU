@@ -2,7 +2,7 @@ import java.net.URL
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 
-val WGPU_VERSION = "24.0.3.1"
+val WGPU_VERSION = "25.0.2.1"
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
     val taskName = "download_$platform"

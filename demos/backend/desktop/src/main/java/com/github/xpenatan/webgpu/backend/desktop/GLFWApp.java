@@ -1,5 +1,6 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
+import com.github.xpenatan.webgpu.JInstance;
 import com.github.xpenatan.webgpu.WebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;

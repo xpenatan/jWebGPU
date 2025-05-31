@@ -33,89 +33,121 @@ public class WGPUApp {
     public JRenderPipeline renderPipeline;
     public JQueue queue;
 
-    private boolean isReady;
+    private InitState initState = InitState.NOT_INITIALIZED;
 
     public void init() {
-        instance = new JInstance();
+        JInstance instance = new JInstance();
+        if(instance.IsValid()) {
+            initState = InitState.INSTANCE_VALID;
+            this.instance = instance;
+            requestAdapter();
+        }
+        else {
+            initState = InitState.INSTANCE_NOT_VALID;
+            instance.dispose();
+        }
+    }
+
+    private void requestAdapter() {
         JRequestAdapterOptions op = new JRequestAdapterOptions();
-        WGPUCallbackMode mode = WGPUCallbackMode.AllowProcessEvents;
         RequestAdapterCallback callback = new RequestAdapterCallback() {
             @Override
             protected void OnCallback(WGPURequestAdapterStatus status, JAdapter adapter) {
-                WGPUApp.this.adapter = adapter;
-                JAdapterInfo info = new JAdapterInfo();
-                if(adapter.GetInfo(info)) {
-                    WGPUBackendType backendType = info.GetBackendType();
-                    System.out.println("BackendType: " + backendType);
-                    WGPUAdapterType adapterType = info.GetAdapterType();
-                    System.out.println("AdapterType: " + adapterType);
-                    String vendor = info.GetVendor().c_str();
-                    System.out.println("Vendor: " + vendor);
-                    String architecture = info.GetArchitecture().c_str();
-                    System.out.println("Architecture: " + architecture);
-                    String description = info.GetDescription().c_str();
-                    System.out.println("Description: " + description);
-                    String device = info.GetDevice().c_str();
-                    System.out.println("Device: " + device);
-                    System.out.println("Has Feature DepthClipControl: " + adapter.HasFeature(WGPUFeatureName.DepthClipControl));
+                System.out.println("Adapter Status: " + status);
+                if(status == WGPURequestAdapterStatus.Success) {
+                    initState = InitState.ADAPTER_VALID;
+                    WGPUApp.this.adapter = adapter;
+                    requestDevice();
                 }
-
-                JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
-//                JLimits limits = new JLimits();
-//                setDefaultLimits(limits);
-                deviceDescriptor.SetLabel("My Device");
-                deviceDescriptor.SetRequiredLimits(null);
-                deviceDescriptor.SetRequiredFeatureCount(0);
-                deviceDescriptor.GetDefaultQueue().SetLabel("The default queue");
-
-                adapter.RequestDevice(deviceDescriptor, mode, new RequestDeviceCallback() {
-                    @Override
-                    protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
-                        WGPUApp.this.device = device;
-                        queue = device.GetQueue();
-                        System.out.println("isReady: " + status);
-                        System.out.println("Platform: " + JWebGPU.GetPlatformType());
-
-                        JSupportedFeatures features = new JSupportedFeatures();
-                        device.GetFeatures(features);
-                        int featureCount = features.GetFeatureCount();
-                        System.out.println("Total Features: " + featureCount);
-                        for(int i = 0; i < featureCount; i++) {
-                            WGPUFeatureName featureName = features.GetFeatureAt(i);
-                            System.out.println("Feature name: " + featureName);
-                        }
-                        features.dispose();
-
-                        JLimits limits = new JLimits();
-                        device.GetLimits(limits);
-                        System.out.println("Device limits: " + featureCount);
-                        System.out.println("MaxTextureDimension1D: " + limits.GetMaxTextureDimension1D());
-                        System.out.println("MaxTextureDimension2D: " + limits.GetMaxTextureDimension2D());
-                        System.out.println("MaxTextureDimension3D: " + limits.GetMaxTextureDimension3D());
-                        System.out.println("MaxTextureArrayLayers: " + limits.GetMaxTextureArrayLayers());
-
-                        isReady = true;
-                    }
-                }, new UncapturedErrorCallback() {
-                    @Override
-                    protected void OnCallback(WGPUErrorType errorType, String message) {
-                        System.err.println("ErrorType: " + errorType);
-                        System.err.println("Error Message: " + message);
-
-                        throw new RuntimeException("ERRORRR");
-                    }
-                });
+                else {
+                    initState = InitState.ADAPTER_NOT_VALID;
+                }
             }
         };
-        instance.RequestAdapter(op, mode, callback);
+        instance.RequestAdapter(op, WGPUCallbackMode.AllowProcessEvents, callback);
+    }
+
+    private void requestDevice() {
+        JAdapterInfo info = new JAdapterInfo();
+        if(adapter.GetInfo(info)) {
+            WGPUBackendType backendType = info.GetBackendType();
+            System.out.println("BackendType: " + backendType);
+            WGPUAdapterType adapterType = info.GetAdapterType();
+            System.out.println("AdapterType: " + adapterType);
+            String vendor = info.GetVendor().c_str();
+            System.out.println("Vendor: " + vendor);
+            String architecture = info.GetArchitecture().c_str();
+            System.out.println("Architecture: " + architecture);
+            String description = info.GetDescription().c_str();
+            System.out.println("Description: " + description);
+            String device = info.GetDevice().c_str();
+            System.out.println("Device: " + device);
+            System.out.println("Has Feature DepthClipControl: " + adapter.HasFeature(WGPUFeatureName.DepthClipControl));
+        }
+
+        JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
+//                JLimits limits = new JLimits();
+//                setDefaultLimits(limits);
+        deviceDescriptor.SetLabel("My Device");
+        deviceDescriptor.SetRequiredLimits(null);
+        deviceDescriptor.SetRequiredFeatureCount(0);
+        deviceDescriptor.GetDefaultQueue().SetLabel("The default queue");
+
+        adapter.RequestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new RequestDeviceCallback() {
+            @Override
+            protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
+                System.out.println("Device Status: " + status);
+                if(status == WGPURequestDeviceStatus.Success) {
+                    initState = InitState.DEVICE_VALID;
+                    WGPUApp.this.device = device;
+                    queue = device.GetQueue();
+                    System.out.println("Platform: " + JWebGPU.GetPlatformType());
+
+                    JSupportedFeatures features = new JSupportedFeatures();
+                    device.GetFeatures(features);
+                    int featureCount = features.GetFeatureCount();
+                    System.out.println("Total Features: " + featureCount);
+                    for(int i = 0; i < featureCount; i++) {
+                        WGPUFeatureName featureName = features.GetFeatureAt(i);
+                        System.out.println("Feature name: " + featureName);
+                    }
+                    features.dispose();
+
+                    JLimits limits = new JLimits();
+                    device.GetLimits(limits);
+                    System.out.println("Device limits: " + featureCount);
+                    System.out.println("MaxTextureDimension1D: " + limits.GetMaxTextureDimension1D());
+                    System.out.println("MaxTextureDimension2D: " + limits.GetMaxTextureDimension2D());
+                    System.out.println("MaxTextureDimension3D: " + limits.GetMaxTextureDimension3D());
+                    System.out.println("MaxTextureArrayLayers: " + limits.GetMaxTextureArrayLayers());
+                }
+                else {
+                    initState = InitState.DEVICE_NOT_VALID;
+                }
+            }
+        }, new UncapturedErrorCallback() {
+            @Override
+            protected void OnCallback(WGPUErrorType errorType, String message) {
+                System.err.println("ErrorType: " + errorType);
+                System.err.println("Error Message: " + message);
+
+                throw new RuntimeException("ERRORRR");
+            }
+        });
     }
 
     public void update() {
-        instance.ProcessEvents();
+        if(instance != null) {
+            instance.ProcessEvents();
+        }
     }
 
     public boolean isReady() {
-        return isReady;
+        return initState == InitState.DEVICE_VALID;
+    }
+
+    public boolean isNotSupport() {
+        return initState.status < 0;
     }
 
     final static int WGPU_LIMIT_U32_UNDEFINED = -1;
@@ -156,4 +188,19 @@ public class WGPUApp {
         limits.SetMaxComputeWorkgroupsPerDimension(WGPU_LIMIT_U32_UNDEFINED);
     }
 
+    enum InitState {
+        NOT_INITIALIZED(0),
+        INSTANCE_VALID(1),
+        ADAPTER_VALID(2),
+        DEVICE_VALID(3),
+        INSTANCE_NOT_VALID(-1),
+        ADAPTER_NOT_VALID(-2),
+        DEVICE_NOT_VALID(-3);
+
+        int status;
+
+        InitState(int status) {
+            this.status = status;
+        }
+    }
 }

@@ -61,7 +61,8 @@ public class WGPUBuild {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) throws IOException {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-        String wgpuPath = buildPath + "/windows_x86_64_debug";
+//        String wgpuPath = buildPath + "/windows_x86_64_debug";
+        String wgpuPath = buildPath + "/windows_x86_64";
         String webgpuIncludePath = wgpuPath + "/include";
         String libPath = wgpuPath + "/lib/wgpu_native.lib";
         String glfwIncludePath = buildPath + "/GLFW";
@@ -140,6 +141,7 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
             linkTarget.linkerFlags.add(libPath);
             linkTarget.linkerFlags.add("-landroid");
+            linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             multiTarget.add(linkTarget);
         }
@@ -158,6 +160,7 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
             linkTarget.linkerFlags.add(libPath);
             linkTarget.linkerFlags.add("-landroid");
+            linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             multiTarget.add(linkTarget);
         }
@@ -176,6 +179,7 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
             linkTarget.linkerFlags.add(libPath);
             linkTarget.linkerFlags.add("-landroid");
+            linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             multiTarget.add(linkTarget);
         }
@@ -194,6 +198,7 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
             linkTarget.linkerFlags.add(libPath);
             linkTarget.linkerFlags.add("-landroid");
+            linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             multiTarget.add(linkTarget);
         }

@@ -52,7 +52,6 @@ public class TriangleApp implements ApplicationListener {
 
         if(wgpu.surface != null) {
             System.out.println("Surface created");
-
             JSurfaceCapabilities surfaceCapabilities = new JSurfaceCapabilities();
             wgpu.surface.GetCapabilities(wgpu.adapter, surfaceCapabilities);
             surfaceFormat = surfaceCapabilities.GetFormats(0);

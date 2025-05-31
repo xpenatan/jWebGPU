@@ -9,7 +9,7 @@ interface JWebGPU {
 
 interface JAndroidWindow {
     void JAndroidWindow();
-
+    void InitLogcat();
 };
 
 interface IDLArrayJColorTargetState {
@@ -75,6 +75,7 @@ interface UncapturedErrorCallbackImpl {
 
 interface JInstance {
     void JInstance();
+    boolean IsValid();
     void Release();
     void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
     JSurface CreateWebSurface([Const] DOMString canvas);
@@ -521,9 +522,8 @@ interface JChainedStruct {
 };
 
 interface JStringView {
-
+    [Const, Value] IDLString GetString();
 };
-JStringView implements JChainedStruct;
 
 // ##### ENUMS #####
 

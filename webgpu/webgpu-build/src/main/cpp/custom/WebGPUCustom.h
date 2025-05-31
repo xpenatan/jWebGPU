@@ -10,6 +10,74 @@
     #include <glfw3native.h>
 #endif
 
+#ifdef __ANDROID__
+
+#include <android/log.h>
+#include <sstream>
+#include <streambuf>
+
+#define LOG_TAG "MyApp"
+
+// Custom streambuf to redirect std::cout to Logcat
+class LogcatStreamBuf : public std::streambuf {
+protected:
+    std::string buffer;
+
+    int overflow(int c) override {
+        if (c == EOF) {
+            return !EOF;
+        }
+        buffer += static_cast<char>(c);
+        if (c == '\n') {
+            sync();
+        }
+        return c;
+    }
+
+    int sync() override {
+        if (!buffer.empty()) {
+            if (buffer.back() == '\n') {
+                buffer.pop_back();
+            }
+            __android_log_print(ANDROID_LOG_INFO, LOG_TAG, "%s", buffer.c_str());
+            buffer.clear();
+        }
+        return 0;
+    }
+};
+
+// Singleton to manage Logcat redirection
+class LogcatRedirector {
+public:
+    static void initialize() {
+        static LogcatRedirector instance; // Lazy initialization
+        if (!instance.isInitialized) {
+            instance.original_buffer = std::cout.rdbuf();
+            std::cout.rdbuf(&instance.logcat_buffer);
+            instance.isInitialized = true;
+        }
+    }
+
+private:
+    LogcatRedirector() : original_buffer(nullptr), isInitialized(false) {}
+    ~LogcatRedirector() {
+        if (isInitialized) {
+            std::cout.rdbuf(original_buffer);
+        }
+    }
+
+    LogcatStreamBuf logcat_buffer;
+    std::streambuf* original_buffer;
+    bool isInitialized;
+
+    // Prevent copying
+    LogcatRedirector(const LogcatRedirector&) = delete;
+    LogcatRedirector& operator=(const LogcatRedirector&) = delete;
+};
+
+#endif
+
+
 // ENUM
 
 //using WGSLLanguageFeatureName = wgpu::WGSLLanguageFeatureName;
@@ -65,6 +133,14 @@ class JAndroidWindow {
             #else
                 return NULL;
             #endif
+        }
+
+        void InitLogcat() {
+            #ifdef __ANDROID__
+                __android_log_print(ANDROID_LOG_INFO, LOG_TAG, "Initializing Logcat redirection");
+                LogcatRedirector::initialize();
+            #endif
+
         }
 };
 
@@ -146,11 +222,20 @@ static_assert(offsetof(JChainedStruct, nextInChain) == offsetof(WGPUChainedStruc
     "offsetof mismatch for JChainedStruct::nextInChain");
 
 
-class JStringView : public JChainedStruct {
+class JStringView {
     private:
 
     public:
+        WGPUStringView stringView;
 
+        JStringView() {}
+        JStringView(WGPUStringView stringView) {
+            this->stringView = stringView;
+        }
+
+        const std::string GetString() {
+            return std::string(stringView.data, stringView.length);
+        }
 };
 
 class JLimits {
@@ -443,23 +528,23 @@ class JAdapterInfo { // TODO change to struct
         WGPUAdapterInfo adapterInfo;
 
         std::string GetVendor() {
-            WGPUStringView stringView = adapterInfo.vendor;
-            return stringView.data == NULL ? "" : stringView.data;
+            JStringView stringView(adapterInfo.vendor);
+            return stringView.GetString();
         }
 
         std::string GetArchitecture() {
-            WGPUStringView stringView = adapterInfo.architecture;
-            return stringView.data == NULL ? "" : stringView.data;
+            JStringView stringView(adapterInfo.architecture);
+            return stringView.GetString();
         }
 
         std::string GetDevice() {
-            WGPUStringView stringView = adapterInfo.device;
-            return stringView.data == NULL ? "" : stringView.data;
+            JStringView stringView(adapterInfo.device);
+            return stringView.GetString();
         }
 
         std::string GetDescription() {
-            WGPUStringView stringView = adapterInfo.description;
-            return stringView.data == NULL ? "" : stringView.data;
+            JStringView stringView(adapterInfo.description);
+            return stringView.GetString();
         }
 
         WGPUBackendType GetBackendType() {
@@ -1529,13 +1614,27 @@ class JInstance {
 
     public:
         WGPUInstance instance;
+        bool isValid = false;
 
         JInstance() {
             instance = wgpuCreateInstance(NULL);
+            if (!instance) {
+                isValid = false;
+            }
+            else {
+                isValid = true;
+            }
+        }
+
+        bool IsValid() {
+            return isValid;
         }
 
         void Release() {
-            wgpuInstanceRelease(instance);
+            if(isValid) {
+                isValid = false;
+                wgpuInstanceRelease(instance);
+            }
         }
 
         void RequestAdapter(JRequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
@@ -1587,7 +1686,7 @@ class JInstance {
             return surface;
         }
 
-        JSurface* CreateAndroidSurface(JAndroidWindow * window) {
+        JSurface* CreateAndroidSurface(JAndroidWindow* window) {
             JSurface* surface = NULL;
             #if __ANDROID__
                 void* androidWindow = window->GetWindow();
@@ -1613,18 +1712,18 @@ class JWebGPU {
 
     public:
         static JPlatformType GetPlatformType() {
-            #if _WIN32
+            #if __EMSCRIPTEN__
+                return JPlatformType::WGPU_Web;
+            #elif __ANDROID__
+                 return JPlatformType::WGPU_Android;
+            #elif TARGET_OS_IPHONE
+                return JPlatformType::WGPU_iOS;
+            #elif _WIN32
                 return JPlatformType::WGPU_Windows;
             #elif __linux__
                 return JPlatformType::WGPU_Linux;
-            #elif TARGET_OS_IPHONE
-                return JPlatformType::WGPU_iOS;
             #elif TARGET_OS_MAC
                 return JPlatformType::WGPU_Mac;
-            #elif __ANDROID__
-                 return JPlatformType::WGPU_Android;
-            #elif __EMSCRIPTEN__
-                return JPlatformType::WGPU_Web;
             #else
                 return JPlatformType::WGPU_Unknown;
             #endif
