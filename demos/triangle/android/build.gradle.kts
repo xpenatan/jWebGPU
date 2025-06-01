@@ -4,23 +4,16 @@ plugins {
 }
 
 android {
-    namespace = "com.github.xpenatan.webgpu.demo.triangle.android"
+    namespace = "com.github.xpenatan.webgpu.demo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.github.xpenatan.webgpu.demo.triangle.android"
-        minSdk = 24
+        applicationId = "com.escplay.webgpu.demo"
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.0.1"
     }
-
-//    sourceSets {
-//        named("main") {
-////            assets.srcDirs(project.file("../assets"))
-//            jniLibs.srcDirs("libs")
-//        }
-//    }
 
     buildTypes {
         release {
