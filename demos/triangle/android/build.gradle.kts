@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.github.xpenatan.webgpu.demo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.github.xpenatan.webgpu.demo"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 2
         versionName = "0.0.2"
     }
@@ -32,30 +32,8 @@ android {
         viewBinding = true
     }
 }
-val natives: Configuration by configurations.creating
 
 dependencies {
     implementation(project(":demos:triangle:core"))
     implementation(project(":demos:backend:android"))
-}
-
-tasks.register("copyAndroidNatives") {
-    group = "basic-android"
-    doFirst {
-        natives.files.forEach { jar ->
-            val outputDir = file("libs/" + jar.nameWithoutExtension.substringAfterLast("natives-"))
-            outputDir.mkdirs()
-            copy {
-                from(zipTree(jar))
-                into(outputDir)
-                include("*.so")
-            }
-        }
-    }
-}
-
-tasks.whenTaskAdded {
-    if ("package" in name) {
-        dependsOn("copyAndroidNatives")
-    }
 }
