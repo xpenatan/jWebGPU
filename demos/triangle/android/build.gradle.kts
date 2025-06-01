@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.escplay.webgpu.demo"
+        applicationId = "com.github.xpenatan.webgpu.demo"
         minSdk = 26
         targetSdk = 34
         versionCode = 2
