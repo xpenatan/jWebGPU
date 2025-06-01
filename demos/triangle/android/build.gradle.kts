@@ -28,6 +28,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 val natives: Configuration by configurations.creating
 

@@ -7,8 +7,9 @@ import android.view.Display;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
-import com.github.xpenatan.jparser.loader.JParserLibraryLoaderListener;
 import com.github.xpenatan.webgpu.JAndroidWindow;
 import com.github.xpenatan.webgpu.WebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
@@ -25,8 +26,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SurfaceView surfaceView = new SurfaceView(this);
-        setContentView(surfaceView);
+        setupFullScreen();
 
         WebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Success: " + isSuccess);
@@ -34,23 +34,6 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
                 wGPUInit = 1;
             } else {
                 e.printStackTrace();
-            }
-        });
-
-        surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
-
-            @Override
-            public void surfaceCreated(SurfaceHolder holder) {
-                surface = holder.getSurface();
-                Choreographer.getInstance().postFrameCallback(AndroidApplication.this);
-            }
-
-            @Override
-            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-            }
-
-            @Override
-            public void surfaceDestroyed(SurfaceHolder holder) {
             }
         });
     }
@@ -84,11 +67,59 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     }
 
     protected void initialize(ApplicationListener applicationListener) {
+        SurfaceView surfaceView = new SurfaceView(this);
+        initialize(applicationListener, surfaceView, surfaceView);
+    }
+
+    protected void initialize(ApplicationListener applicationListener, SurfaceView surfaceView, View root) {
         this.applicationListener = applicationListener;
+        setupSurface(surfaceView);
+        setContentView(root);
     }
 
     private void createSurface(Surface surface) {
         androidWindow.createAndroidSurface(surface);
         wgpu.surface = wgpu.instance.CreateAndroidSurface(androidWindow);
+    }
+
+    private void setupFullScreen() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // Enable immersive fullscreen
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        );
+        decorView.setOnApplyWindowInsetsListener((v, insets) -> {
+            // Remove insets so content goes edge-to-edge
+            return insets.consumeSystemWindowInsets();
+        });
+
+        // Allow drawing into the display cutout area (notch/hole-punch) for API 28+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            WindowManager.LayoutParams lp = getWindow().getAttributes();
+            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            getWindow().setAttributes(lp);
+        }
+    }
+
+    private void setupSurface(SurfaceView surfaceView) {
+        surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
+
+            @Override
+            public void surfaceCreated(SurfaceHolder holder) {
+                surface = holder.getSurface();
+                Choreographer.getInstance().postFrameCallback(AndroidApplication.this);
+            }
+
+            @Override
+            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+            }
+
+            @Override
+            public void surfaceDestroyed(SurfaceHolder holder) {
+            }
+        });
     }
 }

@@ -41,6 +41,10 @@ public class TriangleApp implements ApplicationListener {
     private JRenderPassEncoder renderPass;
     private JCommandBuffer command;
 
+    private float r = 1.0f;
+    private float g = 1.0f;
+    private float b = 1.0f;
+
     @Override
     public void create(WGPUApp wgpu) {
         surfaceTexture = new JSurfaceTexture();
@@ -80,7 +84,7 @@ public class TriangleApp implements ApplicationListener {
         renderPassColorAttachment.SetResolveTarget(null);
         renderPassColorAttachment.SetLoadOp(WGPULoadOp.Clear);
         renderPassColorAttachment.SetStoreOp(WGPUStoreOp.Store);
-        renderPassColorAttachment.GetClearValue().SetColor(1.0f, 0.0f, 0.0f, 1.0f);
+        renderPassColorAttachment.GetClearValue().SetColor(r, g, b, 1.0f);
 
 //        renderPassColorAttachment.SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED);
 
@@ -107,6 +111,12 @@ public class TriangleApp implements ApplicationListener {
         if(JWebGPU.GetPlatformType() != JPlatformType.WGPU_Web) {
             wgpu.surface.Present();
         }
+    }
+
+    public void setColor(float r, float g, float b) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
     }
 
     private void GetNextSurfaceTextureView(WGPUApp wgpu, JSurfaceTexture surfaceTextureOut, JTexture textureOut, JTextureView textureViewOut) {
