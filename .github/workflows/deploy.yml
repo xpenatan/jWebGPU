@@ -1,0 +1,54 @@
+name: Deploy to Google Play
+on:
+  workflow_dispatch:
+    inputs:
+      description:
+        description: "Release description"
+        default: "Generate release build"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Set up Java
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Set up Android SDK
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      # Decode Keystore from Base64
+      - name: Decode Keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          echo $KEYSTORE_BASE64 > keystore-b64.txt
+          base64 -d keystore-b64.txt > keystore.jks
+
+      # Build Release Bundle
+      - name: Build Release Bundle
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          ./gradlew bundleRelease --stacktrace
+          echo "KEYSTORE_FILE=$(pwd)/keystore.jks" >> $GITHUB_ENV
+
+      # Upload to Google Play
+      - name: Upload to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: com.github.xpenatan.webgpu.demo
+          releaseFiles: demos/app/android/build/outputs/bundle/release/app-release.aab
+          track: internal
+          status: completed
