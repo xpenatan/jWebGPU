@@ -61,13 +61,14 @@ public class WGPUBuild {
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) throws IOException {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+//        WindowsMSVCTarget.DEBUG_BUILD = true;
 //        String wgpuPath = buildPath + "/windows_x86_64_debug";
+
         String wgpuPath = buildPath + "/windows_x86_64";
         String webgpuIncludePath = wgpuPath + "/include";
         String libPath = wgpuPath + "/lib/wgpu_native.lib";
         String glfwIncludePath = buildPath + "/GLFW";
-
-        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
@@ -97,7 +98,6 @@ public class WGPUBuild {
     private static BuildMultiTarget getTeaVMTarget(BuildToolOptions op, IDLReader idlReader, String buildPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String includePath = buildPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
-//        String includePath = buildPath + "/windows_x86_64/include";
         String customSourceDir = op.getCustomSourceDir();
 
         String port = buildPath + "/emdawnwebgpu_pkg/emdawnwebgpu.port.py";

@@ -41,8 +41,8 @@ public class TriangleApp implements ApplicationListener {
     private JRenderPassEncoder renderPass;
     private JCommandBuffer command;
 
-    private float r = 1.0f;
-    private float g = 1.0f;
+    private float r = 0.0f;
+    private float g = 0.0f;
     private float b = 1.0f;
 
     @Override

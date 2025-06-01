@@ -2,6 +2,10 @@ import java.net.URL
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 
+plugins {
+    id("java")
+}
+
 val WGPU_VERSION = "25.0.2.1"
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
@@ -51,6 +55,42 @@ tasks.register("download_emdawnwebgpu") {
         nativesDir.mkdirs()
         project.copy {
             from(project.zipTree(zipFile))
+            into(nativesDir)
+        }
+    }
+}
+
+tasks.register("download_glfw_windows") {
+    group = "wgpu"
+    description = "Download GLFW 3.4 binaries for Windows and extract only the include folder contents to glfw-windows"
+    doLast {
+        val glfwVersion = "3.4"
+        val zipName = "glfw-$glfwVersion.bin.WIN64.zip"
+        val url = "https://github.com/glfw/glfw/releases/download/$glfwVersion/$zipName"
+        println("URL: $url")
+        val tmpDir = project.buildDir.resolve("tmp")
+        tmpDir.mkdirs()
+        val zipFile = tmpDir.resolve("glfw-windows.zip")
+        // Download the file
+        URL(url).openStream().use { input ->
+            Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
+        }
+        val nativesDir = project.buildDir.resolve("")
+        nativesDir.mkdirs()
+        project.copy {
+            from(project.zipTree(zipFile)) {
+                include("*/include/GLFW/**")
+                // Remove the leading directory (e.g., glfw-3.4.bin.WIN64/include/GLFW/...)
+                eachFile {
+                    val segments = relativePath.segments
+                    // segments[0] = glfw-3.4.bin.WIN64, segments[1] = include, segments[2] = GLFW, ...
+                    if (segments.size >= 3 && segments[1] == "include" && segments[2] == "GLFW") {
+                        // Remove the first two segments (the zip's root folder and "include")
+                        relativePath = org.gradle.api.file.RelativePath(true, *segments.copyOfRange(2, segments.size))
+                    }
+                }
+                includeEmptyDirs = false
+            }
             into(nativesDir)
         }
     }
