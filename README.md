@@ -35,8 +35,8 @@ The native files will be located at webgpu/webgpu-build/build/C++/libs
 
 3) Run/Install the app demo like this:
 ```
-./gradlew :webgpu:demos:triangle:desktop:webgpu_demo_triangle_desktop
-./gradlew :webgpu:demos:triangle:teavm:webgpu_demo_triangle_run_teavm
-./gradlew :demos:triangle:android:installDebug
+./gradlew :demos:app:desktop:webgpu_demo_app_desktop
+./gradlew :demos:app:teavm:webgpu_demo_app_run_teavm
+./gradlew :demos:app:android:installDebug
 
 ```

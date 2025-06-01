@@ -11,10 +11,11 @@ include(":demos:backend:core")
 include(":demos:backend:desktop")
 include(":demos:backend:teavm")
 include(":demos:backend:android")
-include(":demos:triangle:core")
-include(":demos:triangle:desktop")
-include(":demos:triangle:teavm")
-include(":demos:triangle:android")
+
+include(":demos:app:core")
+include(":demos:app:desktop")
+include(":demos:app:teavm")
+include(":demos:app:android")
 
 //includeBuild("E:\\Dev\\Projects\\java\\jParser") {
 //    dependencySubstitution {
