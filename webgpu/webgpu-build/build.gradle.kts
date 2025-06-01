@@ -18,6 +18,15 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
 }
 
+tasks.register<JavaExec>("wgpu_build_project") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf()
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+
 tasks.register<JavaExec>("wgpu_build_project_windows64") {
     group = "webgpu"
     description = "Generate native project"

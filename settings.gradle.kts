@@ -1,12 +1,15 @@
-include(":webgpu:webgpu-dawn")
-include(":webgpu:webgpu-wgpu")
-include(":webgpu:webgpu-base")
+//include(":webgpu:webgpu-dawn") // Experimental module to build dawn source
+
+include(":webgpu:webgpu-wgpu") // Module to download the sources
+
 include(":webgpu:webgpu-build")
+include(":webgpu:webgpu-base")
 include(":webgpu:webgpu-core")
 include(":webgpu:webgpu-desktop")
 include(":webgpu:webgpu-teavm")
 include(":webgpu:webgpu-android")
 
+// A temp backend code for testing
 include(":demos:backend:core")
 include(":demos:backend:desktop")
 include(":demos:backend:teavm")

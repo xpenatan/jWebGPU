@@ -45,6 +45,7 @@ var libProjects = mutableSetOf(
     project(":webgpu:webgpu-core"),
     project(":webgpu:webgpu-desktop"),
     project(":webgpu:webgpu-teavm"),
+    project(":webgpu:webgpu-android"),
 )
 
 configure(libProjects) {

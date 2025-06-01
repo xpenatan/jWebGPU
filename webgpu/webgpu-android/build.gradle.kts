@@ -2,8 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
 }
-
-group = "jparser.lib.android"
+val moduleName = "webgpu-android"
 
 android {
     namespace = "com.github.xpenatan.webgpu.android"
@@ -28,4 +27,15 @@ android {
 }
 
 dependencies {
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            artifactId = moduleName
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }

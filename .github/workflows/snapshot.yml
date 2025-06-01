@@ -1,0 +1,18 @@
+name: Build Snapshot
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build-and-upload:
+    uses: ./.github/workflows/build_and_upload.yml
+    with:
+      isRelease: false
+      shouldUpload: true
+    secrets: inherit
+  upload-examples:
+    needs: build-and-upload
+    uses: ./.github/workflows/workflow_call_upload_demos_pages.yml
+    secrets: inherit
