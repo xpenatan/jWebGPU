@@ -12,6 +12,7 @@
 
 #ifdef __ANDROID__
 
+#include <android/native_window.h>
 #include <android/log.h>
 #include <sstream>
 #include <streambuf>
