@@ -61,16 +61,17 @@ configure(libProjects) {
     publishing {
         repositories {
             maven {
-                url = uri {
-                    val ver = project.version.toString()
-                    val isSnapshot = ver.uppercase().contains("SNAPSHOT")
-                    val repoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-                    val repoUrlSnapshot = "https://oss.sonatype.org/content/repositories/snapshots/"
-                    if (isSnapshot) repoUrlSnapshot else repoUrl
+                val isSnapshot = LibExt.libVersion.endsWith("-SNAPSHOT")
+                url = if (isSnapshot) {
+                    uri("https://central.sonatype.com/repository/maven-snapshots/")
+                } else {
+                    uri(rootProject.layout.buildDirectory.dir("staging-deploy"))
                 }
-                credentials {
-                    username = System.getenv("USER")
-                    password = System.getenv("PASSWORD")
+                if(isSnapshot) {
+                    credentials {
+                        username = System.getenv("CENTRAL_PORTAL_USERNAME")
+                        password = System.getenv("CENTRAL_PORTAL_PASSWORD")
+                    }
                 }
             }
         }
