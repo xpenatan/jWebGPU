@@ -6,7 +6,7 @@ import com.github.xpenatan.jparser.loader.JParserLibraryLoaderListener;
 /**
  * @author xpenatan
  */
-public class WebGPULoader {
+public class JWebGPULoader {
 
     /*[-JNI;-NATIVE]
         #include "WebGPUCustom.h"
