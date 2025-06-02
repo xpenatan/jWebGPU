@@ -5,11 +5,12 @@
 [![Maven Central Version](https://img.shields.io/maven-central/v/com.github.xpenatan.jWebGPU/webgpu-core)](https://central.sonatype.com/artifact/com.github.xpenatan.jWebGPU/webgpu-core)
 [![Static Badge](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/com/github/xpenatan/jWebGPU/)
 
-A multi-platform WebGPU binding for Desktop, Mobile and Web using Java. 
+A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms.
 
 ## Build steps
 
-1) Download all dependencies files. They will be located at webgpu/webgpu-wgpu/build
+1) **Download Dependencies**  
+   Grab all the dependency files. They'll be saved in `webgpu/webgpu-wgpu/build`.
 ```
 ./gradlew :webgpu:webgpu-wgpu:download_glfw_windows
 ./gradlew :webgpu:webgpu-wgpu:download_emdawnwebgpu
@@ -25,8 +26,9 @@ A multi-platform WebGPU binding for Desktop, Mobile and Web using Java.
 ./gradlew :webgpu:webgpu-wgpu:download_android_aarch64
 ```
 
-2) Build the bindings for all platforms. Your PC must be configured to be able to build it. <br>
-The native files will be located at webgpu/webgpu-build/build/C++/libs
+2) **Build Bindings for All Platforms**  
+   Make sure your PC is set up to build for each platform.  
+   The native files will end up in `webgpu/webgpu-build/build/C++/libs`.
 ```
 // Windows requires Visual studio 2022 C++
 ./gradlew :webgpu:webgpu-build:wgpu_build_project_windows64
@@ -38,10 +40,10 @@ The native files will be located at webgpu/webgpu-build/build/C++/libs
 ./gradlew :webgpu:webgpu-build:wgpu_build_project_android
 ```
 
-3) Run/Install the app demo like this:
+3) **Run or Install the Demo App**  
+   Try out the demo with these commands:
 ```
-./gradlew :demos:app:desktop:webgpu_demo_app_desktop
+./gradlew :demos:app:desktop:webgpu_demo_app_run_desktop
 ./gradlew :demos:app:teavm:webgpu_demo_app_run_teavm
 ./gradlew :demos:app:android:installDebug
-
 ```
