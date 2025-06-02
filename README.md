@@ -1,5 +1,10 @@
 # jWebGPU
 
+![Build](https://github.com/xpenatan/jWebGPU/actions/workflows/snapshot.yml/badge.svg)
+
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.github.xpenatan.jWebGPU/webgpu-core)](https://central.sonatype.com/artifact/com.github.xpenatan.jWebGPU/webgpu-core)
+[![Static Badge](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/com/github/xpenatan/jWebGPU/)
+
 A multi-platform WebGPU binding for Desktop, Mobile and Web using Java. 
 
 ## Build steps
