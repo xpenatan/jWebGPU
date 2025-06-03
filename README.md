@@ -9,6 +9,8 @@ A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms
 
 ## Build steps
 
+Change `LibExt.exampleUseRepoLibs` to false. Set to true only if you want to try the demo without building.
+
 1) **Download Dependencies**  
    Grab all the dependency files. They'll be saved in `webgpu/webgpu-wgpu/build`.
 ```

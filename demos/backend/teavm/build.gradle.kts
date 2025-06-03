@@ -8,8 +8,15 @@ java.targetCompatibility = JavaVersion.VERSION_11
 
 dependencies {
     api(project(":demos:backend:core"))
-    implementation(project(":webgpu:webgpu-core"))
-    implementation(project(":webgpu:webgpu-teavm"))
+
+    if(LibExt.exampleUseRepoLibs) {
+        api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-teavm:-SNAPSHOT")
+    }
+    else {
+        api(project(":webgpu:webgpu-core"))
+        api(project(":webgpu:webgpu-teavm"))
+    }
     implementation("com.github.xpenatan:jMultiplatform:0.1.2")
 
     api("org.teavm:teavm-tooling:${LibExt.teaVMVersion}")

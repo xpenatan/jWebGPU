@@ -49,12 +49,6 @@ var libProjects = mutableSetOf(
 )
 
 configure(libProjects) {
-    apply(plugin = "maven-publish")
-    group = LibExt.groupId
-    version = LibExt.libVersion
-}
-
-configure(libProjects) {
     apply(plugin = "signing")
     apply(plugin = "maven-publish")
 

@@ -7,5 +7,10 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11
 
 dependencies {
-    api(project(":webgpu:webgpu-core"))
+    if(LibExt.exampleUseRepoLibs) {
+        api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+    }
+    else {
+        api(project(":webgpu:webgpu-core"))
+    }
 }

@@ -13,8 +13,15 @@ val lwjglNatives = "natives-windows"
 
 dependencies {
     api(project(":demos:backend:core"))
-    implementation(project(":webgpu:webgpu-core"))
-    implementation(project(":webgpu:webgpu-desktop"))
+
+    if(LibExt.exampleUseRepoLibs) {
+        api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT")
+    }
+    else {
+        api(project(":webgpu:webgpu-core"))
+        api(project(":webgpu:webgpu-desktop"))
+    }
 
     implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
     implementation("org.lwjgl:lwjgl")

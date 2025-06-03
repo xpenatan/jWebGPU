@@ -1,7 +1,6 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
-import com.github.xpenatan.webgpu.JInstance;
-import com.github.xpenatan.webgpu.WebGPULoader;
+import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 import org.lwjgl.glfw.GLFWErrorCallback;
@@ -23,7 +22,7 @@ public class GLFWApp {
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
-        WebGPULoader.init((isSuccess, e) -> {
+        JWebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;

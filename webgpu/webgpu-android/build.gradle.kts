@@ -33,6 +33,8 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             artifactId = moduleName
+            group = LibExt.groupId
+            version = LibExt.libVersion
             afterEvaluate {
                 from(components["release"])
             }

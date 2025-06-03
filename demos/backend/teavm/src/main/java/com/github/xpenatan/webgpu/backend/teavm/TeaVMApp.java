@@ -2,8 +2,7 @@ package com.github.xpenatan.webgpu.backend.teavm;
 
 
 import com.github.xpenatan.jmultiplatform.core.JMultiplatform;
-import com.github.xpenatan.webgpu.JInstance;
-import com.github.xpenatan.webgpu.WebGPULoader;
+import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 import org.teavm.jso.browser.AnimationFrameCallback;
@@ -42,7 +41,7 @@ public class TeaVMApp {
 
         System.out.println("CANVAS CREATED");
 
-        WebGPULoader.init((isSuccess, e) -> {
+        JWebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;

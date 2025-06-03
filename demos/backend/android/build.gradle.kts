@@ -38,6 +38,13 @@ android {
 
 dependencies {
     api(project(":demos:backend:core"))
-    implementation(project(":webgpu:webgpu-core"))
-    api(project(":webgpu:webgpu-android"))
+
+    if(LibExt.exampleUseRepoLibs) {
+        api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-android:-SNAPSHOT")
+    }
+    else {
+        api(project(":webgpu:webgpu-core"))
+        api(project(":webgpu:webgpu-android"))
+    }
 }

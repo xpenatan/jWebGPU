@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import com.github.xpenatan.webgpu.JAndroidWindow;
-import com.github.xpenatan.webgpu.WebGPULoader;
+import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
@@ -28,7 +28,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
         super.onCreate(savedInstanceState);
         setupFullScreen();
 
-        WebGPULoader.init((isSuccess, e) -> {
+        JWebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Success: " + isSuccess);
             if (isSuccess) {
                 wGPUInit = 1;
