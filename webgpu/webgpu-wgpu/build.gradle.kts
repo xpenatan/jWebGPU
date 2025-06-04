@@ -14,7 +14,7 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
         group = "wgpu"
         description = "Download wgpu-native binaries for $platform"
         doLast {
-            val zipName = "wgpu-$os-$arch-release.zip"
+            val zipName = "wgpu-$os-$arch.zip"
             val url = "https://github.com/gfx-rs/wgpu-native/releases/download/v$WGPU_VERSION/$zipName"
             println("URL: $url")
             val tmpDir = project.buildDir.resolve("tmp")
@@ -97,16 +97,17 @@ tasks.register("download_glfw_windows") {
 }
 
 val platforms = mapOf(
-    "windows_x86_64" to Pair("windows", "x86_64-msvc"),
-    "windows_aarch64" to Pair("windows", "aarch64-msvc"),
-    "linux_x86_64" to Pair("linux", "x86_64"),
-    "linux_aarch64" to Pair("linux", "aarch64"),
-    "macos_x86_64" to Pair("macos", "x86_64"),
-    "macos_aarch64" to Pair("macos", "aarch64"),
-    "android_x86_64" to Pair("android", "x86_64"),
-    "android_aarch64" to Pair("android", "aarch64"),
-    "android_i686" to Pair("android", "i686"),
-    "android_armv7" to Pair("android", "armv7")
+    "windows_x86_64_debug" to Pair("windows", "x86_64-msvc-debug"),
+    "windows_x86_64" to Pair("windows", "x86_64-msvc-release"),
+    "windows_aarch64" to Pair("windows", "aarch64-msvc-release"),
+    "linux_x86_64" to Pair("linux", "x86_64-release"),
+    "linux_aarch64" to Pair("linux", "aarch64-release"),
+    "macos_x86_64" to Pair("macos", "x86_64-release"),
+    "macos_aarch64" to Pair("macos", "aarch64-release"),
+    "android_x86_64" to Pair("android", "x86_64-release"),
+    "android_aarch64" to Pair("android", "aarch64-release"),
+    "android_i686" to Pair("android", "i686-release"),
+    "android_armv7" to Pair("android", "armv7-release")
 )
 
 platforms.forEach { (platform, pair) ->
