@@ -463,6 +463,32 @@ interface JRenderPassEncoder {
     [Value] static JRenderPassEncoder Obtain();
     void Release();
     void End();
+    void SetPipeline(JRenderPipeline renderPipeline);
+    void BeginOcclusionQuery(long queryIndex);
+    void Draw(long vertexCount, long instanceCount, long firstVertex, long firstInstance);
+    void DrawIndexed(long indexCount,long instanceCount, long firstIndex, long baseVertex, long firstInstance);
+    void DrawIndexedIndirect(JBuffer indirectBuffer, long indirectOffset);
+    void DrawIndirect(JBuffer indirectBuffer, long indirectOffset);
+    void EndOcclusionQuery();
+    void ExecuteBundles([Const] DOMString value);
+    void PopDebugGroup();
+    void PushDebugGroup([Const] DOMString value);
+    void SetBlendConstant(JColor color);
+    void SetIndexBuffer(JBuffer buffer, WGPUIndexFormat format, long offset, long size);
+    void SetLabel([Const] DOMString value);
+    void SetScissorRect(long x, long y, long width, long height);
+    void SetStencilReference(long reference);
+    void SetVertexBuffer(long slot, JBuffer buffer, long offset, long size);
+    void SetViewport(long x, long y, long width, long height, float minDepth, float maxDepth);
+    void AddRef();
+};
+
+interface JBindGroup {
+
+};
+
+interface JRenderBundle {
+
 };
 
 interface JComputePassEncoder {

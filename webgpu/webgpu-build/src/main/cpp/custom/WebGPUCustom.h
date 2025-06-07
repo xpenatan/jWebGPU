@@ -163,6 +163,79 @@ public:
 
 };
 
+template<typename Derived, typename CType>
+class JObjectBase {
+  public:
+    JObjectBase() = default;
+    JObjectBase(CType handle): mHandle(handle) {
+    }
+    ~JObjectBase() {
+    }
+
+    JObjectBase(JObjectBase const& other)
+        : JObjectBase(other.Get()) {
+    }
+    Derived& operator=(JObjectBase const& other) {
+        if (&other != this) {
+            if (mHandle) Derived::WGPURelease(mHandle);
+            mHandle = other.mHandle;
+            if (mHandle) Derived::WGPUAddRef(mHandle);
+        }
+
+        return static_cast<Derived&>(*this);
+    }
+
+    JObjectBase(JObjectBase&& other) {
+        mHandle = other.mHandle;
+        other.mHandle = 0;
+    }
+    Derived& operator=(JObjectBase&& other) {
+        if (&other != this) {
+            if (mHandle) Derived::WGPURelease(mHandle);
+            mHandle = other.mHandle;
+            other.mHandle = 0;
+        }
+
+        return static_cast<Derived&>(*this);
+    }
+
+    JObjectBase(std::nullptr_t) {}
+    Derived& operator=(std::nullptr_t) {
+        if (mHandle != nullptr) {
+            Derived::WGPURelease(mHandle);
+            mHandle = nullptr;
+        }
+        return static_cast<Derived&>(*this);
+    }
+
+    bool operator==(std::nullptr_t) const {
+        return mHandle == nullptr;
+    }
+    bool operator!=(std::nullptr_t) const {
+        return mHandle != nullptr;
+    }
+
+    explicit operator bool() const {
+        return mHandle != nullptr;
+    }
+    CType Get() const {
+        return mHandle;
+    }
+    CType MoveToCHandle() {
+        CType result = mHandle;
+        mHandle = 0;
+        return result;
+    }
+    static Derived Acquire(CType handle) {
+        Derived result;
+        result.mHandle = handle;
+        return result;
+    }
+
+  protected:
+    CType mHandle = nullptr;
+};
+
 class JCommandBuffer {
     private:
 
@@ -232,6 +305,10 @@ class JStringView {
         JStringView() {}
         JStringView(WGPUStringView stringView) {
             this->stringView = stringView;
+        }
+        JStringView(const char* value) {
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
         }
 
         const std::string GetString() {
@@ -520,6 +597,23 @@ class JRequestAdapterOptions { // TODO change to struct
 
     public:
         WGPURequestAdapterOptions options;
+};
+
+class JBindGroup : public JObjectBase<JBindGroup, WGPUBindGroup> {
+    private:
+
+    public:
+        using JObjectBase::JObjectBase;
+        using JObjectBase::operator=;
+};
+
+class JRenderBundle : public JObjectBase<JRenderBundle, WGPURenderBundle> {
+    private:
+
+    public:
+        using JObjectBase::JObjectBase;
+        using JObjectBase::operator=;
+
 };
 
 class JAdapterInfo { // TODO change to struct
@@ -1067,6 +1161,91 @@ class JRenderPassEncoder {
 
         void End() {
             wgpuRenderPassEncoderEnd(renderPassEncoder);
+        }
+
+        void SetPipeline(JRenderPipeline* renderPipeline) {
+            wgpuRenderPassEncoderSetPipeline(renderPassEncoder, renderPipeline->renderPipeline);
+        }
+
+        void BeginOcclusionQuery(int queryIndex) {
+            wgpuRenderPassEncoderBeginOcclusionQuery(renderPassEncoder, queryIndex);
+        }
+
+        void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
+            wgpuRenderPassEncoderDraw(renderPassEncoder, vertexCount, instanceCount, firstVertex, firstInstance);
+        }
+
+        void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
+            wgpuRenderPassEncoderDrawIndexed(renderPassEncoder, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
+        }
+
+        void DrawIndexedIndirect(JBuffer* indirectBuffer, int indirectOffset) {
+            wgpuRenderPassEncoderDrawIndexedIndirect(renderPassEncoder, indirectBuffer->buffer, indirectOffset);
+        }
+
+        void DrawIndirect(JBuffer* indirectBuffer, int indirectOffset) {
+            wgpuRenderPassEncoderDrawIndirect(renderPassEncoder, indirectBuffer->buffer, indirectOffset);
+        }
+
+        void EndOcclusionQuery() {
+            wgpuRenderPassEncoderEndOcclusionQuery(renderPassEncoder);
+        }
+
+        void ExecuteBundles(int bundleCount, JRenderBundle* bundles) {
+            // TODO change to array class
+            wgpuRenderPassEncoderExecuteBundles(renderPassEncoder, bundleCount,  reinterpret_cast<WGPURenderBundle const * >(bundles));
+        }
+
+        void ExecuteBundles(const char* label) {
+            JStringView stringView(label);
+            wgpuRenderPassEncoderInsertDebugMarker(renderPassEncoder, stringView.stringView);
+        }
+
+        void PopDebugGroup() {
+            wgpuRenderPassEncoderPopDebugGroup(renderPassEncoder);
+        }
+
+        void PushDebugGroup(const char* label) {
+            JStringView stringView(label);
+            wgpuRenderPassEncoderPushDebugGroup(renderPassEncoder, stringView.stringView);
+        }
+
+        void SetBindGrou(int groupIndex, JBindGroup* group, int dynamicOffsetCount, const uint32_t* dynamicOffsets) {
+            // TODO change to array class
+            wgpuRenderPassEncoderSetBindGroup(renderPassEncoder, groupIndex, *reinterpret_cast<WGPUBindGroup *>(group), dynamicOffsetCount, dynamicOffsets);
+        }
+
+        void SetBlendConstant(JColor* color) {
+            wgpuRenderPassEncoderSetBlendConstant(renderPassEncoder, reinterpret_cast<WGPUColor *>(color));
+        }
+
+        void SetIndexBuffer(JBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
+            wgpuRenderPassEncoderSetIndexBuffer(renderPassEncoder, buffer->buffer, format, offset, size);
+        }
+
+        void SetLabel(const char* label) {
+            JStringView stringView(label);
+            wgpuRenderPassEncoderSetLabel(renderPassEncoder, stringView.stringView);
+        }
+
+        void SetScissorRect(int x, int y, int width, int height) {
+            wgpuRenderPassEncoderSetScissorRect(renderPassEncoder, x, y, width, height);
+        }
+
+        void SetStencilReference(int reference) {
+            wgpuRenderPassEncoderSetStencilReference(renderPassEncoder, reference);
+        }
+
+        void SetVertexBuffer(int slot, JBuffer* buffer, int offset, int size) {
+            wgpuRenderPassEncoderSetVertexBuffer(renderPassEncoder, slot, buffer->buffer, offset, size);
+        }
+
+        void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
+            wgpuRenderPassEncoderSetViewport(renderPassEncoder, x, y, width, height, minDepth, maxDepth);
+        }
+
+        void AddRef() {
+            wgpuRenderPassEncoderAddRef(renderPassEncoder);
         }
 };
 
