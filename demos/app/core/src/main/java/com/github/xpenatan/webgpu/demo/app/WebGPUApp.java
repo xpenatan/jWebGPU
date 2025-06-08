@@ -153,8 +153,7 @@ public class WebGPUApp implements ApplicationListener {
         config.SetWidth(wgpu.width);
         config.SetHeight(wgpu.height);
         config.SetFormat(surfaceFormat);
-        config.SetViewFormatCount(0);
-        config.SetViewFormats(0); // TODO change to array
+        config.SetViewFormats(null);
         config.SetUsage(WGPUTextureUsage.RenderAttachment);
         config.SetDevice(wgpu.device);
         config.SetPresentMode(vsyncEnabled ? WGPUPresentMode.Fifo : WGPUPresentMode.Immediate);

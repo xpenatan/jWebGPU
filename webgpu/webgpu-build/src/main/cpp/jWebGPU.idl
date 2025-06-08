@@ -34,6 +34,11 @@ interface JVectorVertexBufferLayout {
     void push_back([Ref] JVertexBufferLayout vertexBufferLayout);
 };
 
+interface JVectorTextureFormat {
+    void JVectorTextureFormat();
+    void push_back(WGPUTextureFormat textureFormat);
+};
+
 enum JPlatformType {
     "WGPU_Windows",
     "WGPU_Mac",
@@ -219,7 +224,7 @@ interface JSupportedFeatures {
 
 interface JDevice {
     void Release();
-    JQueue GetQueue();
+    [Value] JQueue GetQueue();
     void CreateRenderPipeline(JRenderPipelineDescriptor descriptor, JRenderPipeline renderPipeline);
     void CreateShaderModule(JShaderModuleDescriptor descriptor, JShaderModule shaderModule);
     void GetFeatures(JSupportedFeatures features);
@@ -228,7 +233,6 @@ interface JDevice {
 };
 
 interface JBlendComponent {
-    void JBlendComponent();
     void SetOperation(WGPUBlendOperation operation);
     WGPUBlendOperation GetOperation();
     void SetSrcFactor(WGPUBlendFactor factor);
@@ -239,10 +243,8 @@ interface JBlendComponent {
 
 interface JBlendState {
     void JBlendState();
-    void SetColor(JBlendComponent color);
-    void SetAlpha(JBlendComponent alpha);
-    [Ref] JBlendComponent GetColor();
-    [Ref] JBlendComponent GetAlpha();
+    [Value] JBlendComponent GetColor();
+    [Value] JBlendComponent GetAlpha();
 };
 
 interface JShaderModule {
@@ -324,7 +326,6 @@ interface JRenderPipeline {
 // #### Descriptors ####
 
 interface JQueueDescriptor {
-    void JQueueDescriptor();
     void SetLabel([Const] DOMString code);
 };
 
@@ -338,9 +339,8 @@ interface JDeviceDescriptor {
     void JDeviceDescriptor();
     void SetLabel([Const] DOMString code);
     void SetRequiredLimits(JLimits limits);
-    void SetRequiredFeatureCount(long count);
     void SetRequiredFeatures(JVectorRequiredFeatures features);
-    [Ref] JQueueDescriptor GetDefaultQueue();
+    [Value] JQueueDescriptor GetDefaultQueue();
 };
 
 interface JRenderPipelineDescriptor {
@@ -456,7 +456,7 @@ interface JRenderPassColorAttachment {
     void SetResolveTarget(JTextureView textureView);
     void SetLoadOp(WGPULoadOp loadOp);
     void SetStoreOp(WGPUStoreOp storeOp);
-    [Ref] JColor GetClearValue();
+    [Value] JColor GetClearValue();
     void SetDepthSlice(long depthSlice);
 };
 
@@ -528,8 +528,7 @@ interface JSurfaceConfiguration {
     void SetWidth(long width);
     void SetHeight(long height);
     void SetFormat(WGPUTextureFormat format);
-    void SetViewFormatCount(long value);
-    void SetViewFormats(any viewFormat);
+    void SetViewFormats(JVectorTextureFormat formats);
     void SetUsage(WGPUTextureUsage usage);
     void SetDevice(JDevice device);
     void SetPresentMode(WGPUPresentMode presentMode);
