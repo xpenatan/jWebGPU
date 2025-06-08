@@ -97,6 +97,7 @@ class JRenderPassColorAttachment;
 
 using IDLArrayJColorTargetState = IDLArray<JColorTargetState>;
 using IDLArrayJDepthStencilState = IDLArray<JDepthStencilState>;
+using JVectorRequiredFeatures = std::vector<WGPUFeatureName>;
 
 enum JPlatformType : int {
     WGPU_Unknown = 0,
@@ -165,75 +166,54 @@ public:
 
 template<typename Derived, typename CType>
 class JObjectBase {
-  public:
-    JObjectBase() = default;
-    JObjectBase(CType handle): mHandle(handle) {
-    }
-    ~JObjectBase() {
-    }
+    private:
+        template<typename T>
+        static T InitializeHandle() {
+            if constexpr (std::is_pointer<T>::value) {
+                return nullptr;
+            } else {
+                return T{};
+            }
+        }
+    protected:
+        CType mHandle = InitializeHandle<CType>();
 
-    JObjectBase(JObjectBase const& other)
-        : JObjectBase(other.Get()) {
-    }
-    Derived& operator=(JObjectBase const& other) {
-        if (&other != this) {
-            if (mHandle) Derived::WGPURelease(mHandle);
-            mHandle = other.mHandle;
-            if (mHandle) Derived::WGPUAddRef(mHandle);
+        void AddRefInternal() {
+            // MUST BE IMPLEMENTED if needed
         }
 
-        return static_cast<Derived&>(*this);
-    }
-
-    JObjectBase(JObjectBase&& other) {
-        mHandle = other.mHandle;
-        other.mHandle = 0;
-    }
-    Derived& operator=(JObjectBase&& other) {
-        if (&other != this) {
-            if (mHandle) Derived::WGPURelease(mHandle);
-            mHandle = other.mHandle;
-            other.mHandle = 0;
+        void ReleaseInternal() {
+             // MUST BE IMPLEMENTED if needed
         }
 
-        return static_cast<Derived&>(*this);
+    public:
+
+    using ReturnType = CType&;
+
+    void AddRef() {
+        if constexpr (std::is_pointer<CType>::value) {
+            if (mHandle != nullptr) AddRefInternal();
+        }
     }
 
-    JObjectBase(std::nullptr_t) {}
-    Derived& operator=(std::nullptr_t) {
-        if (mHandle != nullptr) {
-            Derived::WGPURelease(mHandle);
+    void Release() {
+        if constexpr (std::is_pointer<CType>::value) {
+            if (mHandle != nullptr) ReleaseInternal();
             mHandle = nullptr;
         }
-        return static_cast<Derived&>(*this);
     }
 
-    bool operator==(std::nullptr_t) const {
-        return mHandle == nullptr;
-    }
-    bool operator!=(std::nullptr_t) const {
-        return mHandle != nullptr;
-    }
-
-    explicit operator bool() const {
-        return mHandle != nullptr;
-    }
-    CType Get() const {
+    ReturnType Get() {
         return mHandle;
     }
-    CType MoveToCHandle() {
-        CType result = mHandle;
-        mHandle = 0;
-        return result;
-    }
-    static Derived Acquire(CType handle) {
-        Derived result;
-        result.mHandle = handle;
-        return result;
+
+    void Set(CType handle) {
+        mHandle = handle;
     }
 
-  protected:
-    CType mHandle = nullptr;
+    void Set(Derived& other) {
+        mHandle = other.mHandle;
+    }
 };
 
 class JCommandBuffer {
@@ -274,27 +254,18 @@ class JQueue {
         }
 };
 
-struct JChainedStruct {
-    JChainedStruct const * nextInChain = nullptr;
-    WGPUSType sType = (WGPUSType)0;
+class JChainedStruct : public JObjectBase<JChainedStruct, WGPUChainedStruct*> {
+    private:
 
-    void SetNext(JChainedStruct* value) {
-        nextInChain = value;
-    }
+    public:
+        void SetNext(JChainedStruct* value) {
+            Get()->next = value->Get();
+        }
 
-    void SetSType(WGPUSType type) {
-        sType = type;
-    }
+        void SetSType(WGPUSType type) {
+            Get()->sType = type;
+        }
 };
-
-// ChainedStruct
-static_assert(sizeof(JChainedStruct) == sizeof(WGPUChainedStruct),
-    "sizeof mismatch for JChainedStruct");
-static_assert(alignof(JChainedStruct) == alignof(WGPUChainedStruct),
-    "alignof mismatch for JChainedStruct");
-static_assert(offsetof(JChainedStruct, nextInChain) == offsetof(WGPUChainedStruct, next),
-    "offsetof mismatch for JChainedStruct::nextInChain");
-
 
 class JStringView {
     private:
@@ -542,7 +513,7 @@ class JLimits {
 };
 
 struct JQueueDescriptor {
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUStringView label;
 
     inline operator const WGPUQueueDescriptor&() const noexcept {
@@ -559,7 +530,7 @@ struct JQueueDescriptor {
 
 struct JDeviceDescriptor {
 
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUStringView label;
     size_t requiredFeatureCount = 0;
     WGPUFeatureName const * requiredFeatures = NULL;
@@ -587,6 +558,17 @@ struct JDeviceDescriptor {
         requiredFeatureCount = count;
     }
 
+    void SetRequiredFeatures(JVectorRequiredFeatures* features) {
+        if(features != NULL) {
+            requiredFeatureCount = features->size();
+            requiredFeatures = features->data();
+        }
+        else {
+            requiredFeatureCount = 0;
+            requiredFeatures = NULL;
+        }
+    }
+
     JQueueDescriptor& GetDefaultQueue() {
         return defaultQueue;
     }
@@ -603,16 +585,12 @@ class JBindGroup : public JObjectBase<JBindGroup, WGPUBindGroup> {
     private:
 
     public:
-        using JObjectBase::JObjectBase;
-        using JObjectBase::operator=;
 };
 
 class JRenderBundle : public JObjectBase<JRenderBundle, WGPURenderBundle> {
     private:
 
     public:
-        using JObjectBase::JObjectBase;
-        using JObjectBase::operator=;
 
 };
 
@@ -690,7 +668,7 @@ struct JVertexBufferLayout {
 
 
 struct JVertexState {
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUShaderModule module;
     WGPUStringView entryPoint;
     size_t constantCount;
@@ -703,7 +681,7 @@ struct JVertexState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetModule(JShaderModule* shaderModule) {
@@ -734,41 +712,45 @@ struct JVertexState {
     }
 };
 
-struct JShaderSourceWGSL : JChainedStruct {
+class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSourceWGSL> {
 
-    WGPUStringView code;
+    public:
+        void SetCode(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            Get().code = stringView;
+        }
 
-    inline operator const WGPUShaderSourceWGSL&() const noexcept {
-        return *reinterpret_cast<const WGPUShaderSourceWGSL*>(this);
-    }
+        void SetNext(JChainedStruct* value) {
+            Get().chain.next = value != NULL ? value->Get() : NULL;
+        }
 
-    void SetCode(const char* value) {
-        WGPUStringView stringView = {};
-        stringView.data = strdup(value);
-        stringView.length = strlen(value);
-        code = stringView;
-    }
+        void SetSType(WGPUSType type) {
+            Get().chain.sType = type;
+        }
+
+        JChainedStruct GetChain() {
+            WGPUChainedStruct* wgpuChain = &Get().chain;
+            JChainedStruct chain;
+            chain.Set(wgpuChain);
+            return chain;
+        }
 };
 
-struct JShaderModuleDescriptor {
+class JShaderModuleDescriptor : public JObjectBase<JShaderModuleDescriptor, WGPUShaderModuleDescriptor> {
 
-    JChainedStruct const * nextInChain = NULL;
-    WGPUStringView label;
+    public:
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
 
-    inline operator const WGPUShaderModuleDescriptor&() const noexcept {
-        return *reinterpret_cast<const WGPUShaderModuleDescriptor*>(this);
-    }
-
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
-    }
-
-    void SetLabel(const char* value) {
-        WGPUStringView stringView = {};
-        stringView.data = strdup(value);
-        stringView.length = strlen(value);
-        label = stringView;
-    }
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            Get().label = stringView;
+        }
 };
 
 struct JBlendComponent {
@@ -832,7 +814,7 @@ struct JBlendState {
 };
 
 struct JColorTargetState {
-    JChainedStruct const * nextInChain = nullptr;
+    WGPUChainedStruct const * nextInChain = nullptr;
     WGPUTextureFormat format = WGPUTextureFormat_Undefined;
     JBlendState const * blend = nullptr;
     WGPUColorWriteMask writeMask = WGPUColorWriteMask_All;
@@ -842,7 +824,7 @@ struct JColorTargetState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetFormat(WGPUTextureFormat format) {
@@ -859,7 +841,7 @@ struct JColorTargetState {
 };
 
 struct JFragmentState {
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUShaderModule module;
     WGPUStringView entryPoint;
     size_t constantCount;
@@ -872,7 +854,7 @@ struct JFragmentState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetEntryPoint(const char* value) {
@@ -905,7 +887,7 @@ struct JFragmentState {
 
 struct JPrimitiveState {
 
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUPrimitiveTopology topology;
     WGPUIndexFormat stripIndexFormat;
     WGPUFrontFace frontFace;
@@ -917,7 +899,7 @@ struct JPrimitiveState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetTopology(WGPUPrimitiveTopology value) {
@@ -939,7 +921,7 @@ struct JPrimitiveState {
 
 struct JDepthStencilState {
 
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUTextureFormat format;
     WGPUOptionalBool depthWriteEnabled;
     WGPUCompareFunction depthCompare;
@@ -956,7 +938,7 @@ struct JDepthStencilState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetFormat(WGPUTextureFormat format) {
@@ -982,7 +964,7 @@ struct JDepthStencilState {
 
 struct JMultisampleState {
 
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     uint32_t count;
     uint32_t mask;
     WGPUBool alphaToCoverageEnabled;
@@ -992,7 +974,7 @@ struct JMultisampleState {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetCount(int count) {
@@ -1021,7 +1003,7 @@ class JPipelineLayout {
 
 struct JRenderPipelineDescriptor {
 
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUStringView label;
     WGPU_NULLABLE WGPUPipelineLayout layout;
     JVertexState vertex;
@@ -1035,7 +1017,7 @@ struct JRenderPipelineDescriptor {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetLabel(const char* value) {
@@ -1071,20 +1053,21 @@ struct JRenderPipelineDescriptor {
 
 };
 
-class JRenderPipeline {
+class JRenderPipeline : public JObjectBase<JRenderPipeline, WGPURenderPipeline> {
 
-    private:
+    protected:
+        void AddRefInternal() {
+            wgpuRenderPipelineAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuRenderPipelineRelease(Get());
+        }
 
     public:
-        WGPURenderPipeline renderPipeline;
-
         static JRenderPipeline Obtain() {
             JRenderPipeline obj;
             return obj;
-        }
-
-        void Release() {
-            wgpuRenderPipelineRelease(renderPipeline);
         }
 };
 
@@ -1164,7 +1147,7 @@ class JRenderPassEncoder {
         }
 
         void SetPipeline(JRenderPipeline* renderPipeline) {
-            wgpuRenderPassEncoderSetPipeline(renderPassEncoder, renderPipeline->renderPipeline);
+            wgpuRenderPassEncoderSetPipeline(renderPassEncoder, renderPipeline->Get());
         }
 
         void BeginOcclusionQuery(int queryIndex) {
@@ -1310,11 +1293,7 @@ class JCommandBufferDescriptor  {
         }
 
         void SetNextInChain(JChainedStruct* chainedStruct) {
-            #ifdef __EMSCRIPTEN__
-                descriptor.nextInChain = reinterpret_cast<WGPUChainedStruct * >(chainedStruct);
-            #else
-                descriptor.nextInChain = reinterpret_cast<WGPUChainedStruct const * >(chainedStruct);
-            #endif
+            descriptor.nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
         void SetLabel(const char* value) {
@@ -1448,11 +1427,12 @@ class JDevice {
         }
 
         void CreateRenderPipeline(JRenderPipelineDescriptor* pipelineDescriptor, JRenderPipeline* renderPipeline) {
-            renderPipeline->renderPipeline = wgpuDeviceCreateRenderPipeline(device, reinterpret_cast<WGPURenderPipelineDescriptor const * >(pipelineDescriptor));
+            renderPipeline->Set(wgpuDeviceCreateRenderPipeline(device, reinterpret_cast<WGPURenderPipelineDescriptor const * >(pipelineDescriptor)));
         }
 
         void CreateShaderModule(JShaderModuleDescriptor* shaderModuleDescriptor, JShaderModule* shaderModule) {
-            shaderModule->shaderModule = wgpuDeviceCreateShaderModule(device, reinterpret_cast<WGPUShaderModuleDescriptor const * >(shaderModuleDescriptor));
+            WGPUShaderModuleDescriptor& descriptor = shaderModuleDescriptor->Get();
+            shaderModule->shaderModule = wgpuDeviceCreateShaderModule(device, &descriptor);
         }
 
         void GetFeatures(JSupportedFeatures* features) {
@@ -1470,7 +1450,7 @@ class JDevice {
 
 struct JSurfaceConfiguration {
 
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPUDevice device;
     WGPUTextureFormat format;
     WGPUTextureUsage usage;
@@ -1486,7 +1466,7 @@ struct JSurfaceConfiguration {
     }
 
     void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct;
+        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
     }
 
     void SetWidth(long width) {
@@ -1692,7 +1672,7 @@ class JTexture {
 };
 
 struct JRenderPassColorAttachment {
-    JChainedStruct const * nextInChain = NULL;
+    WGPUChainedStruct const * nextInChain = NULL;
     WGPU_NULLABLE WGPUTextureView view;
     uint32_t depthSlice = WGPU_DEPTH_SLICE_UNDEFINED;
     WGPU_NULLABLE WGPUTextureView resolveTarget;
@@ -1736,7 +1716,7 @@ struct JRenderPassColorAttachment {
 
 struct JSurfaceTexture {
 
-    JChainedStruct * nextInChain = NULL;
+    WGPUChainedStruct * nextInChain = NULL;
     WGPUTexture texture;
     WGPUSurfaceGetCurrentTextureStatus status;
 
@@ -1919,7 +1899,16 @@ class JWebGPU {
             shaderCodeDesc.SetSType(WGPUSType_ShaderSourceWGSL);
             shaderCodeDesc.SetCode(shaderSource);
 
-            shaderDesc.SetNextInChain(&shaderCodeDesc);
+//            WGPUShaderSourceWGSL* wgpuShaderSource = &shaderCodeDesc.GetRef();
+//            WGPUChainedStruct* chainedStruct01 = &wgpuShaderSource->chain;
+//            JChainedStruct tempChainedStruct;
+//            tempChainedStruct.Set(&wgpuShaderSource->chain);
+//            WGPUChainedStruct* chainedStruct02 = tempChainedStruct.GetRef();
+//            shaderDesc.GetRef().nextInChain = chainedStruct02;
+
+            JChainedStruct chainedStruct = shaderCodeDesc.GetChain();
+            shaderDesc.SetNextInChain(&chainedStruct);
+
             JShaderModule* shaderModule = new JShaderModule();
             device->CreateShaderModule(&shaderDesc, shaderModule);
 
@@ -1977,7 +1966,7 @@ class JWebGPU {
             JRenderPipeline* renderPipeline = new JRenderPipeline();
 
             const WGPURenderPipelineDescriptor* desc = reinterpret_cast<WGPURenderPipelineDescriptor const * >(&pipelineDesc);
-            renderPipeline->renderPipeline = wgpuDeviceCreateRenderPipeline(device->device, desc);
+            renderPipeline->Set(wgpuDeviceCreateRenderPipeline(device->device, desc));
             return renderPipeline;
         }
 

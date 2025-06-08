@@ -32,6 +32,11 @@ interface IDLArrayJDepthStencilState {
     any getPointer();
 };
 
+interface JVectorRequiredFeatures {
+    void JVectorRequiredFeatures();
+    void push_back(WGPUFeatureName featureName);
+};
+
 enum JPlatformType {
     "WGPU_Windows",
     "WGPU_Mac",
@@ -204,8 +209,10 @@ interface JRequestAdapterOptions {
 interface JShaderSourceWGSL {
     void JShaderSourceWGSL();
     void SetCode([Const] DOMString code);
+    void SetNext(JChainedStruct value);
+    void SetSType(WGPUSType type);
+    [Value] JChainedStruct GetChain();
 };
-JShaderSourceWGSL implements JChainedStruct;
 
 interface JSupportedFeatures {
     void JSupportedFeatures();
@@ -316,7 +323,7 @@ interface JPrimitiveState {
 
 interface JRenderPipeline {
     void JRenderPipeline();
-    [Value] static JRenderPipeline Obtain();
+//    [Value] static JRenderPipeline Obtain();
     void Release();
 };
 
@@ -338,6 +345,7 @@ interface JDeviceDescriptor {
     void SetLabel([Const] DOMString code);
     void SetRequiredLimits(JLimits limits);
     void SetRequiredFeatureCount(long count);
+    void SetRequiredFeatures(JVectorRequiredFeatures features);
     [Ref] JQueueDescriptor GetDefaultQueue();
 };
 

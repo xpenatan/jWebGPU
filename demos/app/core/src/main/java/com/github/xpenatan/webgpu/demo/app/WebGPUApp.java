@@ -61,7 +61,12 @@ public class WebGPUApp implements ApplicationListener {
             surfaceFormat = surfaceCapabilities.GetFormats(0);
             System.out.println("surfaceFormat: " + surfaceFormat);
             initSwapChain(wgpu);
-//            initPipeline(wgpu);
+
+            // Release the adapter only after it has been fully utilized
+//            wgpu.adapter.Release();
+//            wgpu.adapter.dispose();
+//            wgpu.adapter = null;
+            initPipeline(wgpu);
         }
         else {
             System.out.println("Surface not created");
@@ -94,6 +99,10 @@ public class WebGPUApp implements ApplicationListener {
         renderPassDesc.SetTimestampWrites(null);
 
         encoder.BeginRenderPass(renderPassDesc, renderPass);
+
+        renderPass.SetPipeline(wgpu.renderPipeline);
+        renderPass.Draw(3, 1, 0, 0);
+
         renderPass.End();
         renderPass.Release();
 
@@ -207,8 +216,10 @@ public class WebGPUApp implements ApplicationListener {
 //        pipelineDesc.GetMultisample().SetAlphaToCoverageEnabled(0);
 //
 //        pipelineDesc.SetLayout(null);
+//        JRenderPipeline renderPipeline = new JRenderPipeline();
 //
-//        wgpu.renderPipeline = wgpu.device.CreateRenderPipeline(pipelineDesc);
+//         wgpu.device.CreateRenderPipeline(pipelineDesc, renderPipeline);
+//         wgpu.renderPipeline = renderPipeline;
 
         String shaderSource = readShaderSource();
         wgpu.renderPipeline = JWebGPU.CreateRenderPipeline(wgpu.device, shaderSource, surfaceFormat);
@@ -226,7 +237,7 @@ public class WebGPUApp implements ApplicationListener {
         shaderCodeDesc.SetSType(WGPUSType.ShaderSourceWGSL);
         shaderCodeDesc.SetCode(shaderSource);
 
-        shaderDesc.SetNextInChain(shaderCodeDesc);
+        shaderDesc.SetNextInChain(shaderCodeDesc.GetChain());
         JShaderModule shaderModule = new JShaderModule();
         wgpu.device.CreateShaderModule(shaderDesc, shaderModule);
         return shaderModule;

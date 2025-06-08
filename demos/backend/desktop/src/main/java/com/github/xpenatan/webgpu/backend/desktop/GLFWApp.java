@@ -32,6 +32,8 @@ public class GLFWApp {
             }
         });
 
+        wgpu = new WGPUApp();
+
         while(!glfwWindowShouldClose(window)) {
             if(wGPUInit == 3) {
                 applicationInterface.render(wgpu);
@@ -39,7 +41,6 @@ public class GLFWApp {
             else if(wGPUInit > 0) {
                 if(wGPUInit == 1) {
                     wGPUInit = 2;
-                    wgpu = new WGPUApp();
                     wgpu.width = windowWidth;
                     wgpu.height = windowHeight;
                     wgpu.init();
@@ -49,8 +50,8 @@ public class GLFWApp {
                     createSurface();
                     applicationInterface.create(wgpu);
                 }
-                wgpu.update();
             }
+            wgpu.update();
             glfwPollEvents();
         }
         closeWindow();

@@ -22,8 +22,12 @@ public class TeaVMApp {
     private int width = 800;
     private int height = 600;
 
-    public TeaVMApp(ApplicationListener applicationInterface) {
+    private ApplicationListener applicationInterface;
 
+    private boolean loop = true;
+
+    public TeaVMApp(ApplicationListener applicationInterface) {
+        this.applicationInterface = applicationInterface;
         System.out.println("START");
 
         Location location = Window.current().getLocation();
@@ -51,31 +55,44 @@ public class TeaVMApp {
             }
         });
 
+        wgpu = new WGPUApp();
+
         Window.requestAnimationFrame(new AnimationFrameCallback() {
             @Override
             public void onAnimationFrame(double timestamp) {
-                if(wGPUInit == 3) {
-                    applicationInterface.render(wgpu);
+                try {
+                    tick();
                 }
-                else if(wGPUInit > 0) {
-                    if(wGPUInit == 1) {
-                        wGPUInit = 2;
-                        wgpu = new WGPUApp();
-                        wgpu.width = width;
-                        wgpu.height = height;
-                        wgpu.init();
-                    }
-                    if(wGPUInit == 2 && wgpu.isReady()) {
-                        wGPUInit = 3;
-                        createSurface();
-                        applicationInterface.create(wgpu);
-                    }
-                    wgpu.update();
+                catch(Throwable t) {
+                    t.printStackTrace();
+                    loop = false;
                 }
-                Window.requestAnimationFrame(this);
+                if(loop) {
+                    Window.requestAnimationFrame(this);
+                }
             }
         });
         System.out.println("END");
+    }
+
+    private void tick() {
+        if(wGPUInit == 3) {
+            applicationInterface.render(wgpu);
+        }
+        else if(wGPUInit > 0) {
+            if(wGPUInit == 1) {
+                wGPUInit = 2;
+                wgpu.width = width;
+                wgpu.height = height;
+                wgpu.init();
+            }
+            if(wGPUInit == 2 && wgpu.isReady()) {
+                wGPUInit = 3;
+                createSurface();
+                applicationInterface.create(wgpu);
+            }
+        }
+        wgpu.update();
     }
 
     private void createSurface() {

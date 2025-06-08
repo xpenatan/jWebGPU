@@ -22,6 +22,7 @@ import com.github.xpenatan.webgpu.WGPUErrorType;
 import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
 import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
+import com.github.xpenatan.webgpu.JVectorRequiredFeatures;
 
 public class WGPUApp {
     public int width;
@@ -86,11 +87,14 @@ public class WGPUApp {
         }
 
         JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
-//                JLimits limits = new JLimits();
-//                setDefaultLimits(limits);
+//        JLimits limits = new JLimits();
+//        setDefaultLimits(limits);
         deviceDescriptor.SetLabel("My Device");
-        deviceDescriptor.SetRequiredLimits(null);
-        deviceDescriptor.SetRequiredFeatureCount(0);
+
+        JVectorRequiredFeatures features = new JVectorRequiredFeatures();
+        features.push_back(WGPUFeatureName.DepthClipControl);
+        deviceDescriptor.SetRequiredFeatures(features);
+
         deviceDescriptor.GetDefaultQueue().SetLabel("The default queue");
 
         adapter.RequestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new RequestDeviceCallback() {
@@ -130,8 +134,7 @@ public class WGPUApp {
             protected void OnCallback(WGPUErrorType errorType, String message) {
                 System.err.println("ErrorType: " + errorType);
                 System.err.println("Error Message: " + message);
-
-                throw new RuntimeException("ERRORRR");
+                initState = InitState.ERROR;
             }
         });
     }
@@ -139,6 +142,9 @@ public class WGPUApp {
     public void update() {
         if(instance != null) {
             instance.ProcessEvents();
+        }
+        if(initState == InitState.ERROR) {
+            throw new RuntimeException("WebGPU Error");
         }
     }
 
@@ -190,9 +196,10 @@ public class WGPUApp {
 
     enum InitState {
         NOT_INITIALIZED(0),
-        INSTANCE_VALID(1),
-        ADAPTER_VALID(2),
-        DEVICE_VALID(3),
+        ERROR(1),
+        INSTANCE_VALID(2),
+        ADAPTER_VALID(3),
+        DEVICE_VALID(4),
         INSTANCE_NOT_VALID(-1),
         ADAPTER_NOT_VALID(-2),
         DEVICE_NOT_VALID(-3);

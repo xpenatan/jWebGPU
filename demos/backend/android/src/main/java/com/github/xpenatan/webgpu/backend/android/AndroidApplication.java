@@ -28,6 +28,8 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
         super.onCreate(savedInstanceState);
         setupFullScreen();
 
+        wgpu = new WGPUApp();
+
         JWebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Success: " + isSuccess);
             if (isSuccess) {
@@ -50,7 +52,6 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
                     androidWindow.InitLogcat();
                     WindowManager windowManager = (WindowManager)getApplicationContext().getSystemService(WINDOW_SERVICE);
                     Display display = windowManager.getDefaultDisplay();
-                    wgpu = new WGPUApp();
                     wgpu.width = display.getWidth();
                     wgpu.height = display.getHeight();
                     wgpu.init();
@@ -60,8 +61,8 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
                     applicationListener.create(wgpu);
                     wGPUInit = 3;
                 }
-                wgpu.update();
             }
+            wgpu.update();
         }
         Choreographer.getInstance().postFrameCallback(this);
     }
