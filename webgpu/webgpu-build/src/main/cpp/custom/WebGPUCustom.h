@@ -78,11 +78,6 @@ private:
 
 #endif
 
-
-// ENUM
-
-//using WGSLLanguageFeatureName = wgpu::WGSLLanguageFeatureName;
-
 class JAdapter;
 class JDevice;
 class JDeviceDescriptor;
@@ -94,10 +89,13 @@ class JBlendState;
 class JColorTargetState;
 class JDepthStencilState;
 class JRenderPassColorAttachment;
+class JConstantEntry;
+class JVertexBufferLayout;
 
-using IDLArrayJColorTargetState = IDLArray<JColorTargetState>;
-using IDLArrayJDepthStencilState = IDLArray<JDepthStencilState>;
+using JVectorColorTargetState = std::vector<JColorTargetState>;
 using JVectorRequiredFeatures = std::vector<WGPUFeatureName>;
+using JVectorConstantEntry = std::vector<JConstantEntry>;
+using JVectorVertexBufferLayout = std::vector<JVertexBufferLayout>;
 
 enum JPlatformType : int {
     WGPU_Unknown = 0,
@@ -645,71 +643,53 @@ class JShaderModule {
         }
 };
 
-struct JConstantEntry {
-    WGPUChainedStruct const * nextInChain = NULL;
-    WGPUStringView key;
-    double value;
-
-    inline operator const WGPUConstantEntry&() const noexcept {
-        return *reinterpret_cast<const WGPUConstantEntry*>(this);
-    }
+class JConstantEntry : public JObjectBase<JConstantEntry, WGPUConstantEntry> {
+    public:
 };
 
-struct JVertexBufferLayout {
-    WGPUVertexStepMode stepMode;
-    uint64_t arrayStride;
-    size_t attributeCount;
-    WGPUVertexAttribute const * attributes;
-
-    inline operator const WGPUVertexBufferLayout&() const noexcept {
-        return *reinterpret_cast<const WGPUVertexBufferLayout*>(this);
-    }
+class JVertexBufferLayout : public JObjectBase<JVertexBufferLayout, WGPUVertexBufferLayout> {
+    public:
 };
 
 
-struct JVertexState {
-    WGPUChainedStruct const * nextInChain = NULL;
-    WGPUShaderModule module;
-    WGPUStringView entryPoint;
-    size_t constantCount;
-    JConstantEntry const * constants = NULL;
-    size_t bufferCount;
-    JVertexBufferLayout const * buffers = NULL;
+class JVertexState : public JObjectBase<JVertexState, WGPUVertexState*> {
+    public:
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
 
-    inline operator const WGPUVertexState&() const noexcept {
-        return *reinterpret_cast<const WGPUVertexState*>(this);
-    }
+        void SetModule(JShaderModule* shaderModule) {
+            Get()->module = shaderModule != NULL ? shaderModule->shaderModule : NULL;
+        }
 
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
+        void SetEntryPoint(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            Get()->entryPoint = stringView;
+        }
 
-    void SetModule(JShaderModule* shaderModule) {
-        module = shaderModule != NULL ? shaderModule->shaderModule : NULL;
-    }
+        void SetConstants(JVectorConstantEntry* values) {
+            if(values != NULL) {
+                Get()->constantCount = values->size();
+                Get()->constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
+            }
+            else {
+                Get()->constantCount = 0;
+                Get()->constants = NULL;
+            }
+        }
 
-    void SetEntryPoint(const char* value) {
-        WGPUStringView stringView = {};
-        stringView.data = strdup(value);
-        stringView.length = strlen(value);
-        entryPoint = stringView;
-    }
-
-    void SetConstantCount(int value) {
-        constantCount = value;
-    }
-
-    void SetConstants(JConstantEntry* value) {
-        constants = value;
-    }
-
-    void SetBufferCount(int value) {
-        bufferCount = value;
-    }
-
-    void SetBuffers(JVertexBufferLayout* value) {
-        buffers = value;
-    }
+        void SetBuffers(JVectorVertexBufferLayout* values) {
+            if(values != NULL) {
+                Get()->bufferCount = values->size();
+                Get()->buffers = reinterpret_cast<const WGPUVertexBufferLayout*>(values->data());
+            }
+            else {
+                Get()->bufferCount = 0;
+                Get()->buffers = NULL;
+            }
+        }
 };
 
 class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSourceWGSL> {
@@ -813,244 +793,183 @@ struct JBlendState {
     }
 };
 
-struct JColorTargetState {
-    WGPUChainedStruct const * nextInChain = nullptr;
-    WGPUTextureFormat format = WGPUTextureFormat_Undefined;
-    JBlendState const * blend = nullptr;
-    WGPUColorWriteMask writeMask = WGPUColorWriteMask_All;
-
-    inline operator const WGPUColorTargetState&() const noexcept {
-        return *reinterpret_cast<const WGPUColorTargetState*>(this);
-    }
-
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
-
-    void SetFormat(WGPUTextureFormat format) {
-        this->format = format;
-    }
-
-    void SetBlend(JBlendState* blendState) {
-        this->blend = blendState;
-    }
-
-    void SetWriteMask(WGPUColorWriteMask writeMask) {
-        this->writeMask = writeMask;
-    }
-};
-
-struct JFragmentState {
-    WGPUChainedStruct const * nextInChain = NULL;
-    WGPUShaderModule module;
-    WGPUStringView entryPoint;
-    size_t constantCount;
-    JConstantEntry const * constants = NULL;
-    size_t targetCount;
-    JColorTargetState const * targets = nullptr;
-
-    inline operator const WGPUFragmentState&() const noexcept {
-        return *reinterpret_cast<const WGPUFragmentState*>(this);
-    }
-
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
-
-    void SetEntryPoint(const char* value) {
-        WGPUStringView stringView = {};
-        stringView.data = strdup(value);
-        stringView.length = strlen(value);
-        entryPoint = stringView;
-    }
-
-    void SetConstantCount(int value) {
-        constantCount = value;
-    }
-
-    void SetTargetCount(int value) {
-        targetCount = value;
-    }
-
-    void SetTargets(JColorTargetState* targets) {
-        this->targets = targets;
-    }
-
-    void SetModule(JShaderModule* shaderModule) {
-        this->module = shaderModule != NULL ? shaderModule->shaderModule : NULL;
-    }
-
-    void SetConstants(JConstantEntry* constant) {
-        this->constants = constant;
-    }
-};
-
-struct JPrimitiveState {
-
-    WGPUChainedStruct const * nextInChain = NULL;
-    WGPUPrimitiveTopology topology;
-    WGPUIndexFormat stripIndexFormat;
-    WGPUFrontFace frontFace;
-    WGPUCullMode cullMode;
-    WGPUBool unclippedDepth;
-
-    inline operator const WGPUPrimitiveState&() const noexcept {
-        return *reinterpret_cast<const WGPUPrimitiveState*>(this);
-    }
-
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
-
-    void SetTopology(WGPUPrimitiveTopology value) {
-        topology = value;
-    }
-
-    void SetStripIndexFormat(WGPUIndexFormat value) {
-        stripIndexFormat = value;
-    }
-
-    void SetFrontFace(WGPUFrontFace value) {
-        frontFace = value;
-    }
-
-    void SetCullMode(WGPUCullMode value) {
-        cullMode = value;
-    }
-};
-
-struct JDepthStencilState {
-
-    WGPUChainedStruct const * nextInChain = NULL;
-    WGPUTextureFormat format;
-    WGPUOptionalBool depthWriteEnabled;
-    WGPUCompareFunction depthCompare;
-    WGPUStencilFaceState stencilFront;
-    WGPUStencilFaceState stencilBack;
-    uint32_t stencilReadMask;
-    uint32_t stencilWriteMask;
-    int32_t depthBias;
-    float depthBiasSlopeScale;
-    float depthBiasClamp;
-
-    inline operator const WGPUDepthStencilState&() const noexcept {
-        return *reinterpret_cast<const WGPUDepthStencilState*>(this);
-    }
-
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
-
-    void SetFormat(WGPUTextureFormat format) {
-        this->format = format;
-    }
-
-    void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
-        this->depthWriteEnabled = depthWriteEnabled;
-    }
-
-    void SetDepthCompare(WGPUCompareFunction depthCompare) {
-        this->depthCompare = depthCompare;
-    }
-
-    void SetDepthBiasSlopeScale(float depthBiasSlopeScale) {
-        this->depthBiasSlopeScale = depthBiasSlopeScale;
-    }
-
-    void SetDepthBiasClamp(float depthBiasClamp) {
-        this->depthBiasClamp = depthBiasClamp;
-    }
-};
-
-struct JMultisampleState {
-
-    WGPUChainedStruct const * nextInChain = NULL;
-    uint32_t count;
-    uint32_t mask;
-    WGPUBool alphaToCoverageEnabled;
-
-    inline operator const WGPUMultisampleState&() const noexcept {
-        return *reinterpret_cast<const WGPUMultisampleState*>(this);
-    }
-
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
-
-    void SetCount(int count) {
-        this->count = count;
-    }
-
-    void SetMask(int mask) {
-        this->mask = mask;
-    }
-
-    void SetAlphaToCoverageEnabled(int alphaToCoverageEnabled) {
-        this->alphaToCoverageEnabled = alphaToCoverageEnabled;
-    }
-};
-
-class JPipelineLayout {
-
-    private:
-
+class JColorTargetState : public JObjectBase<JColorTargetState, WGPUColorTargetState> {
     public:
-        WGPUPipelineLayout pipelineLayout;
 
-        JPipelineLayout() {
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
+        void SetFormat(WGPUTextureFormat format) {
+            Get().format = format;
+        }
+
+        void SetBlend(JBlendState* blendState) {
+            Get().blend = reinterpret_cast<const WGPUBlendState*>(blendState);
+        }
+
+        void SetWriteMask(WGPUColorWriteMask writeMask) {
+            Get().writeMask = writeMask;
         }
 };
 
-struct JRenderPipelineDescriptor {
+class JFragmentState : public JObjectBase<JFragmentState, WGPUFragmentState> {
+    public:
 
-    WGPUChainedStruct const * nextInChain = NULL;
-    WGPUStringView label;
-    WGPU_NULLABLE WGPUPipelineLayout layout;
-    JVertexState vertex;
-    JPrimitiveState primitive;
-    JDepthStencilState const * depthStencil = NULL;
-    JMultisampleState multisample;
-    JFragmentState const * fragment = NULL;
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
 
-    inline operator const WGPURenderPipelineDescriptor&() const noexcept {
-        return *reinterpret_cast<const WGPURenderPipelineDescriptor*>(this);
-    }
+        void SetEntryPoint(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            Get().entryPoint = stringView;
+        }
 
-    void SetNextInChain(JChainedStruct* chainedStruct) {
-        nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-    }
+        void SetTargets(JVectorColorTargetState* values) {
+            if(values != NULL) {
+                Get().targetCount = values->size();
+                Get().targets = reinterpret_cast<const WGPUColorTargetState*>(values->data());
+            }
+            else {
+                Get().targetCount = 0;
+                Get().targets = NULL;
+            }
+        }
 
-    void SetLabel(const char* value) {
-        WGPUStringView stringView = {};
-        stringView.data = strdup(value);
-        stringView.length = strlen(value);
-        label = stringView;
-    }
+        void SetModule(JShaderModule* shaderModule) {
+            Get().module = shaderModule != NULL ? shaderModule->shaderModule : NULL;
+        }
 
-    JVertexState& GetVertex() {
-        return vertex;
-    }
+        void SetConstants(JVectorConstantEntry* values) {
+            if(values != NULL) {
+                Get().constantCount = values->size();
+                Get().constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
+            }
+            else {
+                Get().constantCount = 0;
+                Get().constants = NULL;
+            }
+        }
+};
 
-    JPrimitiveState& GetPrimitive() {
-        return primitive;
-    }
+class JPrimitiveState : public JObjectBase<JPrimitiveState, WGPUPrimitiveState*> {
+    public:
 
-    void SetFragment(JFragmentState* fragment) {
-        this->fragment = fragment;
-    }
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
 
-    void SetDepthStencil(JDepthStencilState* depthStencilState) {
-        depthStencil = depthStencilState;
-    }
+        void SetTopology(WGPUPrimitiveTopology value) {
+            Get()->topology = value;
+        }
 
-    JMultisampleState& GetMultisample() {
-        return multisample;
-    }
+        void SetStripIndexFormat(WGPUIndexFormat value) {
+            Get()->stripIndexFormat = value;
+        }
 
-    void SetLayout(JPipelineLayout* pipelineLayout) {
-        layout = pipelineLayout != NULL ? pipelineLayout->pipelineLayout : NULL;
-    }
+        void SetFrontFace(WGPUFrontFace value) {
+            Get()->frontFace = value;
+        }
 
+        void SetCullMode(WGPUCullMode value) {
+            Get()->cullMode = value;
+        }
+};
+
+class JDepthStencilState : public JObjectBase<JDepthStencilState, WGPUDepthStencilState> {
+    public:
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
+        void SetFormat(WGPUTextureFormat format) {
+            Get().format = format;
+        }
+
+        void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
+            Get().depthWriteEnabled = depthWriteEnabled;
+        }
+
+        void SetDepthCompare(WGPUCompareFunction depthCompare) {
+            Get().depthCompare = depthCompare;
+        }
+
+        void SetDepthBiasSlopeScale(float depthBiasSlopeScale) {
+            Get().depthBiasSlopeScale = depthBiasSlopeScale;
+        }
+
+        void SetDepthBiasClamp(float depthBiasClamp) {
+            Get().depthBiasClamp = depthBiasClamp;
+        }
+};
+
+class JMultisampleState : public JObjectBase<JMultisampleState, WGPUMultisampleState*> {
+    public:
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
+        void SetCount(int count) {
+            Get()->count = count;
+        }
+
+        void SetMask(int mask) {
+            Get()->mask = mask;
+        }
+
+        void SetAlphaToCoverageEnabled(int alphaToCoverageEnabled) {
+            Get()->alphaToCoverageEnabled = alphaToCoverageEnabled;
+        }
+};
+
+class JPipelineLayout : public JObjectBase<JPipelineLayout, WGPUPipelineLayout> {
+    public:
+};
+
+class JRenderPipelineDescriptor : public JObjectBase<JRenderPipelineDescriptor, WGPURenderPipelineDescriptor> {
+    public:
+        void SetNextInChain(JChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
+        void SetLabel(const char* value) {
+            WGPUStringView stringView = {};
+            stringView.data = strdup(value);
+            stringView.length = strlen(value);
+            Get().label = stringView;
+        }
+
+        JVertexState GetVertex() {
+            JVertexState temp;
+            temp.Set(&Get().vertex);
+            return temp;
+        }
+
+        JPrimitiveState GetPrimitive() {
+            JPrimitiveState temp;
+            temp.Set(&Get().primitive);
+            return temp;
+        }
+
+        void SetFragment(JFragmentState* fragment) {
+            Get().fragment = &fragment->Get();
+        }
+
+        void SetDepthStencil(JDepthStencilState* depthStencilState) {
+            Get().depthStencil = depthStencilState != NULL ? &depthStencilState->Get() : NULL;
+        }
+
+        JMultisampleState GetMultisample() {
+            JMultisampleState temp;
+            temp.Set(&Get().multisample);
+            return temp;
+        }
+
+        void SetLayout(JPipelineLayout* pipelineLayout) {
+            Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
+        }
 };
 
 class JRenderPipeline : public JObjectBase<JRenderPipeline, WGPURenderPipeline> {
@@ -1899,13 +1818,6 @@ class JWebGPU {
             shaderCodeDesc.SetSType(WGPUSType_ShaderSourceWGSL);
             shaderCodeDesc.SetCode(shaderSource);
 
-//            WGPUShaderSourceWGSL* wgpuShaderSource = &shaderCodeDesc.GetRef();
-//            WGPUChainedStruct* chainedStruct01 = &wgpuShaderSource->chain;
-//            JChainedStruct tempChainedStruct;
-//            tempChainedStruct.Set(&wgpuShaderSource->chain);
-//            WGPUChainedStruct* chainedStruct02 = tempChainedStruct.GetRef();
-//            shaderDesc.GetRef().nextInChain = chainedStruct02;
-
             JChainedStruct chainedStruct = shaderCodeDesc.GetChain();
             shaderDesc.SetNextInChain(&chainedStruct);
 
@@ -1915,12 +1827,10 @@ class JWebGPU {
             JRenderPipelineDescriptor pipelineDesc;
             pipelineDesc.SetLabel("my pipeline");
 
-            pipelineDesc.GetVertex().SetBufferCount(0); // no vertex buffer, because we define it in the shader
-            pipelineDesc.GetVertex().SetBuffers(NULL);
+            pipelineDesc.GetVertex().SetBuffers(NULL);  // no vertex buffer, because we define it in the shader
 
             pipelineDesc.GetVertex().SetModule(shaderModule);
             pipelineDesc.GetVertex().SetEntryPoint("vs_main");
-            pipelineDesc.GetVertex().SetConstantCount(0);
             pipelineDesc.GetVertex().SetConstants(NULL);
 
             pipelineDesc.GetPrimitive().SetTopology(WGPUPrimitiveTopology_TriangleList);
@@ -1932,7 +1842,6 @@ class JWebGPU {
             fragmentState.SetNextInChain(NULL);
             fragmentState.SetModule(shaderModule);
             fragmentState.SetEntryPoint("fs_main");
-            fragmentState.SetConstantCount(0);
             fragmentState.SetConstants(NULL);
 
             // blending
@@ -1944,14 +1853,14 @@ class JWebGPU {
             blendState.GetAlpha().SetDstFactor(WGPUBlendFactor_Zero);
             blendState.GetAlpha().SetOperation(WGPUBlendOperation_Add);
 
+            JVectorColorTargetState targetStateVector;
             JColorTargetState colorTarget;
             colorTarget.SetFormat(surfaceFormat); // match output surface
             colorTarget.SetBlend(&blendState);
             colorTarget.SetWriteMask(WGPUColorWriteMask_All);
+            targetStateVector.push_back(colorTarget);
 
-            fragmentState.SetTargetCount(1);
-
-            fragmentState.SetTargets(&colorTarget);
+            fragmentState.SetTargets(&targetStateVector);
 
             pipelineDesc.SetFragment(&fragmentState);
 
