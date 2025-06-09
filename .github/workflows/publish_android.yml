@@ -52,6 +52,6 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.github.xpenatan.webgpu.demo
-          releaseFiles: demos/app/android/build/outputs/bundle/release/app-release.aab
+          releaseFiles: demos/app/android/build/outputs/bundle/release/android-release.aab
           track: internal
           status: completed
