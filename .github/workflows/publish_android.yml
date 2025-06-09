@@ -34,7 +34,7 @@ jobs:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
           echo $KEYSTORE_BASE64 > keystore-b64.txt
-          base64 -d keystore-b64.txt > keystore.jks
+          base64 -d keystore-b64.txt > demos/app/android/keystore.jks
 
       # Build Release Bundle
       - name: Build Release Bundle
