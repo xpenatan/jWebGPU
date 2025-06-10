@@ -76,7 +76,7 @@ private:
     LogcatRedirector& operator=(const LogcatRedirector&) = delete;
 };
 
-#endif
+#endif // __ANDROID__
 
 class JAdapter;
 class JDevice;
@@ -97,6 +97,16 @@ using JVectorRequiredFeatures = std::vector<WGPUFeatureName>;
 using JVectorConstantEntry = std::vector<JConstantEntry>;
 using JVectorVertexBufferLayout = std::vector<JVertexBufferLayout>;
 using JVectorTextureFormat = std::vector<WGPUTextureFormat>;
+
+#ifdef __EMSCRIPTEN__
+
+using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
+
+#else
+
+using WGPURenderPassTimestampWrites = WGPURenderPassTimestampWrites;  // wgpu-native version TODO remove when both are the same
+
+#endif //__EMSCRIPTEN__
 
 enum JPlatformType : int {
     WGPU_Unknown = 0,
@@ -216,6 +226,16 @@ class JObjectBase {
 };
 
 class JCommandBuffer : public JObjectBase<JCommandBuffer, WGPUCommandBuffer> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuCommandBufferAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuCommandBufferRelease(Get());
+        }
+
     public:
 
         static JCommandBuffer Obtain() {
@@ -223,12 +243,19 @@ class JCommandBuffer : public JObjectBase<JCommandBuffer, WGPUCommandBuffer> {
             return obj;
         }
 
-        void Release() {
-            wgpuCommandBufferRelease(Get());
-        }
 };
 
 class JQueue : public JObjectBase<JQueue, WGPUQueue> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuQueueAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuQueueRelease(Get());
+        }
+
     public:
 
         void SetLabel(const char* value) {
@@ -240,10 +267,6 @@ class JQueue : public JObjectBase<JQueue, WGPUQueue> {
 
         void Submit(int commandCount, JCommandBuffer* commandBuffer) {
             wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
-        }
-
-        void Release() {
-            wgpuQueueRelease(Get());
         }
 };
 
@@ -593,15 +616,21 @@ class JAdapterInfo : public JObjectBase<JAdapterInfo, WGPUAdapterInfo> {
 };
 
 class JShaderModule : public JObjectBase<JShaderModule, WGPUShaderModule> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuShaderModuleAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuShaderModuleRelease(Get());
+        }
+
     public:
 
         static JShaderModule Obtain() {
             JShaderModule obj;
             return obj;
-        }
-
-        void Release() {
-            wgpuShaderModuleRelease(Get());
         }
 };
 
@@ -996,15 +1025,21 @@ class JBuffer : public JObjectBase<JBuffer, WGPUBuffer> {
 };
 
 class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPassEncoder> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuRenderPassEncoderAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuRenderPassEncoderRelease(Get());
+        }
+
     public:
 
         static JRenderPassEncoder Obtain() {
             JRenderPassEncoder obj;
             return obj;
-        }
-
-        void Release() {
-            wgpuRenderPassEncoderRelease(Get());
         }
 
         void End() {
@@ -1099,15 +1134,21 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
 };
 
 class JComputePassEncoder : public JObjectBase<JComputePassEncoder, WGPUComputePassEncoder> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuComputePassEncoderAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuComputePassEncoderRelease(Get());
+        }
+
     public:
 
         static JComputePassEncoder Obtain() {
             JComputePassEncoder obj;
             return obj;
-        }
-
-        void Release() {
-            wgpuComputePassEncoderRelease(Get());
         }
 };
 
@@ -1116,11 +1157,52 @@ class JRenderPassDepthStencilAttachment : public JObjectBase<JRenderPassDepthSte
 
 };
 
-class JRenderPassTimestampWrites {
-    private:
+// Opaque pointer
+class JQuerySet : public JObjectBase<JQuerySet, WGPUQuerySet> {
+    protected:
+        void AddRefInternal() {
+            wgpuQuerySetAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuQuerySetRelease(Get());
+        }
 
     public:
-//        WGPURenderPassTimestampWrites timestampWrites; // TODO not in emscripten
+
+        void SetDestroy() {
+            wgpuQuerySetDestroy(Get());
+        }
+
+        int GetCount() {
+            return wgpuQuerySetGetCount(Get());
+        }
+
+        WGPUQueryType GetType() {
+            return wgpuQuerySetGetType(Get());
+        }
+
+        void SetLabel(const char* label) {
+            JStringView stringView(label);
+            wgpuQuerySetSetLabel(Get(), stringView.Get());
+        }
+};
+
+// TODO The class name differs from those in Dawn and wgpu-native.
+class JRenderPassTimestampWrites : public JObjectBase<JRenderPassTimestampWrites, WGPURenderPassTimestampWrites> {
+    public:
+
+        void SetQuerySet(JQuerySet* value) {
+            Get().querySet = value->Get();
+        }
+
+        void SetBeginningOfPassWriteIndex(int value) {
+            Get().beginningOfPassWriteIndex = value;
+        }
+
+        void SetEndOfPassWriteIndex(int value) {
+            Get().endOfPassWriteIndex = value;
+        }
 };
 
 class JCommandEncoderDescriptor : public JObjectBase<JCommandEncoderDescriptor, WGPUCommandEncoderDescriptor> {
@@ -1161,12 +1243,6 @@ class JCommandBufferDescriptor : public JObjectBase<JCommandBufferDescriptor, WG
 
 class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURenderPassDescriptor> {
     public:
-
-//            size_t colorAttachmentCount;
-//            WGPURenderPassColorAttachment const * colorAttachments;
-//            WGPU_NULLABLE WGPURenderPassDepthStencilAttachment const * depthStencilAttachment;
-//            WGPU_NULLABLE WGPUQuerySet occlusionQuerySet;
-//            WGPU_NULLABLE WGPURenderPassTimestampWrites const * timestampWrites;
 
         static JRenderPassDescriptor Obtain() {
             JRenderPassDescriptor descriptor;
@@ -1216,15 +1292,21 @@ class JComputePassDescriptor : public JObjectBase<JComputePassDescriptor, WGPUCo
 };
 
 class JCommandEncoder : public JObjectBase<JCommandEncoder, WGPUCommandEncoder> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuCommandEncoderAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuCommandEncoderRelease(Get());
+        }
+
     public:
 
         static JCommandEncoder Obtain() {
             JCommandEncoder obj;
             return obj;
-        }
-
-        void Release() {
-            wgpuCommandEncoderRelease(Get());
         }
 
         void BeginRenderPass(JRenderPassDescriptor* renderPassDescriptor, JRenderPassEncoder* encoder) {
@@ -1246,11 +1328,17 @@ class JCommandEncoder : public JObjectBase<JCommandEncoder, WGPUCommandEncoder> 
 };
 
 class JDevice : public JObjectBase<JDevice, WGPUDevice> {
-    public:
+    protected:
 
-        void Release() {
+        void AddRefInternal() {
+            wgpuDeviceAddRef(Get());
+        }
+
+        void ReleaseInternal() {
             wgpuDeviceRelease(Get());
         }
+
+    public:
 
 //        bool GetAdapterInfo(JAdapterInfo* adapterInfo) {
 //            #ifdef __EMSCRIPTEN__
@@ -1349,11 +1437,17 @@ class JSurfaceCapabilities : public JObjectBase<JSurfaceCapabilities, WGPUSurfac
 };
 
 class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
-    public:
+    protected:
 
-        void Release() {
+        void AddRefInternal() {
+            wgpuAdapterAddRef(Get());
+        }
+
+        void ReleaseInternal() {
             wgpuAdapterRelease(Get());
         }
+
+    public:
 
         void RequestDevice(JDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
             descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const WGPUDevice* device, WGPUErrorType type, WGPUStringView message, void* callback_param, void* userdata_param) {
@@ -1453,19 +1547,35 @@ class JTextureViewDescriptor : public JObjectBase<JTextureViewDescriptor, WGPUTe
 };
 
 class JTextureView : public JObjectBase<JTextureView, WGPUTextureView> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuTextureViewAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuTextureViewRelease(Get());
+        }
+
     public:
 
         static JTextureView Obtain() {
             JTextureView obj;
             return obj;
         }
-
-        void Release() {
-            wgpuTextureViewRelease(Get());
-        }
 };
 
 class JTexture : public JObjectBase<JTexture, WGPUTexture> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuTextureAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuTextureRelease(Get());
+        }
+
     public:
 
         static JTexture Obtain() {
@@ -1479,10 +1589,6 @@ class JTexture : public JObjectBase<JTexture, WGPUTexture> {
 
         WGPUTextureFormat GetFormat() {
             return wgpuTextureGetFormat(Get());
-        }
-
-        void Release() {
-            wgpuTextureRelease(Get());
         }
 };
 
@@ -1540,16 +1646,20 @@ class JSurfaceTexture : public JObjectBase<JSurfaceTexture, WGPUSurfaceTexture> 
 };
 
 class JSurface : public JObjectBase<JSurface, WGPUSurface> {
-    private:
+    protected:
+
+        void AddRefInternal() {
+            wgpuSurfaceAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuSurfaceRelease(Get());
+        }
 
     public:
 
         void Unconfigure() {
             wgpuSurfaceUnconfigure(Get());
-        }
-
-        void Release() {
-            wgpuSurfaceRelease(Get());
         }
 
         void Configure(JSurfaceConfiguration* config) {

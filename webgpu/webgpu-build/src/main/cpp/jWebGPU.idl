@@ -364,7 +364,21 @@ interface JCommandEncoderDescriptor {
 interface JRenderPassDepthStencilAttachment {
 };
 
+interface JQuerySet {
+    // Opaque pointer
+
+    void SetDestroy();
+    long GetCount();
+    WGPUQueryType GetType();
+    void SetLabel([Const] DOMString value);
+    void Release();
+    void AddRef();
+};
+
 interface JRenderPassTimestampWrites {
+     void SetQuerySet(JQuerySet value);
+     void SetBeginningOfPassWriteIndex(long value);
+     void SetEndOfPassWriteIndex(long value);
 };
 
 interface JRenderPassDescriptor {
