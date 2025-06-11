@@ -23,7 +23,7 @@ import com.github.xpenatan.webgpu.JTexture;
 import com.github.xpenatan.webgpu.JTextureView;
 import com.github.xpenatan.webgpu.JTextureViewDescriptor;
 import com.github.xpenatan.webgpu.JVectorColorTargetState;
-import com.github.xpenatan.webgpu.JWebGPU;
+import com.github.xpenatan.webgpu.JWGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
 import com.github.xpenatan.webgpu.WGPUColorWriteMask;
@@ -128,7 +128,7 @@ public class WebGPUApp implements ApplicationListener {
 
         textureView.Release();
 
-        if(JWebGPU.GetPlatformType() != JPlatformType.WGPU_Web) {
+        if(JWGPU.GetPlatformType() != JPlatformType.WGPU_Web) {
             wgpu.surface.Present();
         }
     }

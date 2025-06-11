@@ -1811,7 +1811,7 @@ class JInstance : public JObjectBase<JInstance, WGPUInstance> {
         }
 };
 
-class JWebGPU {
+class JWGPU {
     private:
 
     public:

@@ -11,7 +11,7 @@ import com.github.xpenatan.webgpu.JRenderPipeline;
 import com.github.xpenatan.webgpu.JRequestAdapterOptions;
 import com.github.xpenatan.webgpu.JSupportedFeatures;
 import com.github.xpenatan.webgpu.JSurface;
-import com.github.xpenatan.webgpu.JWebGPU;
+import com.github.xpenatan.webgpu.JWGPU;
 import com.github.xpenatan.webgpu.RequestAdapterCallback;
 import com.github.xpenatan.webgpu.RequestDeviceCallback;
 import com.github.xpenatan.webgpu.UncapturedErrorCallback;
@@ -37,7 +37,7 @@ public class WGPUApp {
     private InitState initState = InitState.NOT_INITIALIZED;
 
     public void init() {
-        JInstance instance = JWebGPU.CreateInstance();
+        JInstance instance = JWGPU.CreateInstance();
         if(instance.IsValid()) {
             initState = InitState.INSTANCE_VALID;
             this.instance = instance;
@@ -105,7 +105,7 @@ public class WGPUApp {
                     initState = InitState.DEVICE_VALID;
                     WGPUApp.this.device = device;
                     queue = device.GetQueue();
-                    System.out.println("Platform: " + JWebGPU.GetPlatformType());
+                    System.out.println("Platform: " + JWGPU.GetPlatformType());
 
                     JSupportedFeatures features = new JSupportedFeatures();
                     device.GetFeatures(features);

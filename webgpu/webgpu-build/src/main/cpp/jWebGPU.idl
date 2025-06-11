@@ -1,6 +1,6 @@
 // ################################### CUSTOM CODE ###################################
 
-interface JWebGPU {
+interface JWGPU {
     static JPlatformType GetPlatformType();
     [Value] static JInstance CreateInstance();
 };
