@@ -93,15 +93,6 @@ class JConstantEntry;
 class JVertexBufferLayout;
 class JRenderBundle;
 
-using JVectorColorTargetState = std::vector<JColorTargetState>;
-using JVectorRequiredFeatures = std::vector<WGPUFeatureName>;
-using JVectorConstantEntry = std::vector<JConstantEntry>;
-using JVectorVertexBufferLayout = std::vector<JVertexBufferLayout>;
-using JVectorTextureFormat = std::vector<WGPUTextureFormat>;
-using JVectorRenderBundle = std::vector<JRenderBundle>;
-using JVectorInt = std::vector<int>;
-using JVectorRenderPassColorAttachment = std::vector<JRenderPassColorAttachment>;
-
 #ifdef __EMSCRIPTEN__
 
 using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
@@ -120,6 +111,110 @@ enum JPlatformType : int {
     WGPU_iOS,
     WGPU_Android,
     WGPU_Web
+};
+
+class JVectorColorTargetState {
+    private:
+        std::vector<JColorTargetState> vector;
+    public:
+        static JVectorColorTargetState Obtain() {
+            JVectorColorTargetState obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const JColorTargetState& attachment) { vector.push_back(attachment); }
+        const JColorTargetState* data() { return vector.data(); }
+};
+
+class JVectorRequiredFeatures {
+    private:
+        std::vector<WGPUFeatureName> vector;
+    public:
+        static JVectorRequiredFeatures Obtain() {
+            JVectorRequiredFeatures obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const WGPUFeatureName& attachment) { vector.push_back(attachment); }
+        const WGPUFeatureName* data() { return vector.data(); }
+};
+
+class JVectorConstantEntry {
+    private:
+        std::vector<JConstantEntry> vector;
+    public:
+        static JVectorConstantEntry Obtain() {
+            JVectorConstantEntry obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const JConstantEntry& attachment) { vector.push_back(attachment); }
+        const JConstantEntry* data() { return vector.data(); }
+};
+
+class JVectorVertexBufferLayout {
+    private:
+        std::vector<JVertexBufferLayout> vector;
+    public:
+        static JVectorVertexBufferLayout Obtain() {
+            JVectorVertexBufferLayout obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const JVertexBufferLayout& attachment) { vector.push_back(attachment); }
+        const JVertexBufferLayout* data() { return vector.data(); }
+};
+
+class JVectorTextureFormat {
+    private:
+        std::vector<WGPUTextureFormat> vector;
+    public:
+        static JVectorTextureFormat Obtain() {
+            JVectorTextureFormat obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const WGPUTextureFormat& attachment) { vector.push_back(attachment); }
+        const WGPUTextureFormat* data() { return vector.data(); }
+};
+
+class JVectorRenderBundle {
+    private:
+        std::vector<JRenderBundle> vector;
+    public:
+        static JVectorRenderBundle Obtain() {
+            JVectorRenderBundle obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const JRenderBundle& attachment) { vector.push_back(attachment); }
+        const JRenderBundle* data() { return vector.data(); }
+};
+
+class JVectorInt {
+    private:
+        std::vector<int> vector;
+    public:
+        static JVectorInt Obtain() {
+            JVectorInt obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(int attachment) { vector.push_back(attachment); }
+        const int* data() { return vector.data(); }
+};
+
+class JVectorRenderPassColorAttachment {
+    private:
+        std::vector<JRenderPassColorAttachment> vector;
+    public:
+        static JVectorRenderPassColorAttachment Obtain() {
+            JVectorRenderPassColorAttachment obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const JRenderPassColorAttachment& attachment) { vector.push_back(attachment); }
+        const JRenderPassColorAttachment* data() { return vector.data(); }
 };
 
 class JAndroidWindow {
@@ -308,6 +403,11 @@ class JStringView : public JObjectBase<JStringView, WGPUStringView> {
 
 class JLimits : public JObjectBase<JLimits, WGPULimits> {
     public: // TODO wgpu-native limits is different from emscripten dawn limits
+
+        static JLimits Obtain() {
+            JLimits obj;
+            return obj;
+        }
 
         void SetMaxTextureDimension1D(int value) {
             Get().maxTextureDimension1D = value;
@@ -577,6 +677,11 @@ class JDeviceDescriptor : public JObjectBase<JDeviceDescriptor, WGPUDeviceDescri
 
 class JRequestAdapterOptions : public JObjectBase<JRequestAdapterOptions, WGPURequestAdapterOptions> {
     public:
+
+        static JRequestAdapterOptions Obtain() {
+            JRequestAdapterOptions obj;
+            return obj;
+        }
 };
 
 class JBindGroup : public JObjectBase<JBindGroup, WGPUBindGroup> {
@@ -594,6 +699,11 @@ class JRenderBundle : public JObjectBase<JRenderBundle, WGPURenderBundle> {
 
 class JAdapterInfo : public JObjectBase<JAdapterInfo, WGPUAdapterInfo> {
     public:
+
+        static JAdapterInfo Obtain() {
+            JAdapterInfo obj;
+            return obj;
+        }
 
         std::string GetVendor() {
             JStringView stringView(Get().vendor);
@@ -695,6 +805,11 @@ class JVertexState : public JObjectBase<JVertexState, WGPUVertexState*> {
 
 class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSourceWGSL> {
     public:
+
+        static JShaderSourceWGSL Obtain() {
+            JShaderSourceWGSL obj;
+            return obj;
+        }
 
         void SetCode(const char* value) {
             WGPUStringView stringView = {};
@@ -1056,6 +1171,11 @@ class JColor : public JObjectBase<JColor, WGPUColor*> {
 
 class JSupportedFeatures : public JObjectBase<JSupportedFeatures, WGPUSupportedFeatures> {
     public:
+
+        static JSupportedFeatures Obtain() {
+            JSupportedFeatures obj;
+            return obj;
+        }
 
         int GetFeatureCount() {
             return Get().featureCount;

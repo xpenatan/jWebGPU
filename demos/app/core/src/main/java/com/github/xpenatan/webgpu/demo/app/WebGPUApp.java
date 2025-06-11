@@ -97,7 +97,7 @@ public class WebGPUApp implements ApplicationListener {
         renderPassColorAttachment.SetStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.GetClearValue().SetColor(r, g, b, 1.0f);
 
-        JVectorRenderPassColorAttachment colorAttachmentVector = new JVectorRenderPassColorAttachment();
+        JVectorRenderPassColorAttachment colorAttachmentVector = JVectorRenderPassColorAttachment.Obtain();
         colorAttachmentVector.push_back(renderPassColorAttachment);
 
         JRenderPassDescriptor renderPassDesc  = JRenderPassDescriptor.Obtain();
@@ -155,7 +155,7 @@ public class WebGPUApp implements ApplicationListener {
 
     private void initSwapChain(WGPUApp wgpu) {
         boolean vsyncEnabled = true;
-        JSurfaceConfiguration config = new JSurfaceConfiguration();
+        JSurfaceConfiguration config = JSurfaceConfiguration.Obtain();
         config.SetWidth(wgpu.width);
         config.SetHeight(wgpu.height);
         config.SetFormat(surfaceFormat);
@@ -203,7 +203,7 @@ public class WebGPUApp implements ApplicationListener {
         colorTarget.SetBlend(blendState);
         colorTarget.SetWriteMask(WGPUColorWriteMask.All);
 
-        JVectorColorTargetState colorStateTargets = new JVectorColorTargetState();
+        JVectorColorTargetState colorStateTargets = JVectorColorTargetState.Obtain();
         colorStateTargets.push_back(colorTarget);
         fragmentState.SetTargets(colorStateTargets);
 
@@ -218,22 +218,24 @@ public class WebGPUApp implements ApplicationListener {
         wgpu.device.CreateRenderPipeline(pipelineDesc, renderPipeline);
         wgpu.renderPipeline = renderPipeline;
 
+        shaderModule.Release();
+
         System.out.println("RenderPipeline created");
     }
 
     public JShaderModule makeShaderModule(WGPUApp wgpu) {
         String shaderSource = readShaderSource();
 
-        JShaderModuleDescriptor shaderDesc = new JShaderModuleDescriptor();
+        JShaderModuleDescriptor shaderDesc = JShaderModuleDescriptor.Obtain();
         shaderDesc.SetLabel("triangle shader");
 
-        JShaderSourceWGSL shaderCodeDesc = new JShaderSourceWGSL();
+        JShaderSourceWGSL shaderCodeDesc = JShaderSourceWGSL.Obtain();
         shaderCodeDesc.SetNext(null);
         shaderCodeDesc.SetSType(WGPUSType.ShaderSourceWGSL);
         shaderCodeDesc.SetCode(shaderSource);
 
         shaderDesc.SetNextInChain(shaderCodeDesc.GetChain());
-        JShaderModule shaderModule = new JShaderModule();
+        JShaderModule shaderModule = JShaderModule.Obtain();
         wgpu.device.CreateShaderModule(shaderDesc, shaderModule);
         return shaderModule;
     }

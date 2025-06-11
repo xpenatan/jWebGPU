@@ -50,7 +50,7 @@ public class WGPUApp {
     }
 
     private void requestAdapter() {
-        JRequestAdapterOptions op = new JRequestAdapterOptions();
+        JRequestAdapterOptions op = JRequestAdapterOptions.Obtain();
         RequestAdapterCallback callback = new RequestAdapterCallback() {
             @Override
             protected void OnCallback(WGPURequestAdapterStatus status, JAdapter adapter) {
@@ -69,7 +69,7 @@ public class WGPUApp {
     }
 
     private void requestDevice() {
-        JAdapterInfo info = new JAdapterInfo();
+        JAdapterInfo info = JAdapterInfo.Obtain();
         if(adapter.GetInfo(info)) {
             WGPUBackendType backendType = info.GetBackendType();
             System.out.println("BackendType: " + backendType);
@@ -86,13 +86,13 @@ public class WGPUApp {
             System.out.println("Has Feature DepthClipControl: " + adapter.HasFeature(WGPUFeatureName.DepthClipControl));
         }
 
-        JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
-        JLimits limits = new JLimits();
+        JDeviceDescriptor deviceDescriptor = JDeviceDescriptor.Obtain();
+        JLimits limits = JLimits.Obtain();
         setDefaultLimits(limits);
         deviceDescriptor.SetRequiredLimits(limits);
         deviceDescriptor.SetLabel("My Device");
 
-        JVectorRequiredFeatures features = new JVectorRequiredFeatures();
+        JVectorRequiredFeatures features = JVectorRequiredFeatures.Obtain();
         features.push_back(WGPUFeatureName.DepthClipControl);
         deviceDescriptor.SetRequiredFeatures(features);
 
@@ -108,7 +108,7 @@ public class WGPUApp {
                     queue = device.GetQueue();
                     System.out.println("Platform: " + JWGPU.GetPlatformType());
 
-                    JSupportedFeatures features = new JSupportedFeatures();
+                    JSupportedFeatures features = JSupportedFeatures.Obtain();
                     device.GetFeatures(features);
                     int featureCount = features.GetFeatureCount();
                     System.out.println("Total Features: " + featureCount);
@@ -118,7 +118,7 @@ public class WGPUApp {
                     }
                     features.dispose();
 
-                    JLimits limits = new JLimits();
+                    JLimits limits = JLimits.Obtain();
                     device.GetLimits(limits);
                     System.out.println("Device limits: " + featureCount);
                     System.out.println("MaxTextureDimension1D: " + limits.GetMaxTextureDimension1D());

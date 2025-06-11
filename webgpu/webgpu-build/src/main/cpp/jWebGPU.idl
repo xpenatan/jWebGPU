@@ -24,41 +24,49 @@ enum JPlatformType {
 
 interface JVectorColorTargetState {
     void JVectorColorTargetState();
+    [Value] static JVectorColorTargetState Obtain();
     void push_back([Ref] JColorTargetState colorTargetState);
 };
 
 interface JVectorRequiredFeatures {
     void JVectorRequiredFeatures();
+    [Value] static JVectorRequiredFeatures Obtain();
     void push_back(WGPUFeatureName featureName);
 };
 
 interface JVectorConstantEntry {
     void JVectorConstantEntry();
+    [Value] static JVectorConstantEntry Obtain();
     void push_back([Ref] JConstantEntry constantEntry);
 };
 
 interface JVectorVertexBufferLayout {
     void JVectorVertexBufferLayout();
+    [Value] static JVectorVertexBufferLayout Obtain();
     void push_back([Ref] JVertexBufferLayout vertexBufferLayout);
 };
 
 interface JVectorTextureFormat {
     void JVectorTextureFormat();
+    [Value] static JVectorTextureFormat Obtain();
     void push_back(WGPUTextureFormat textureFormat);
 };
 
 interface JVectorRenderBundle {
     void JVectorRenderBundle();
+    [Value] static JVectorRenderBundle Obtain();
     void push_back([Ref] JRenderBundle renderBundle);
 };
 
 interface JVectorInt {
     void JVectorInt();
+    [Value] static JVectorInt Obtain();
     void push_back(long value);
 };
 
 interface JVectorRenderPassColorAttachment {
     void JVectorRenderPassColorAttachment();
+    [Value] static JVectorRenderPassColorAttachment Obtain();
     void push_back([Ref] JRenderPassColorAttachment colorAttachment);
 };
 
@@ -95,6 +103,7 @@ interface UncapturedErrorCallbackImpl {
 
 interface JAdapterInfo {
     void JAdapterInfo();
+    [Value] static JAdapterInfo Obtain();
     [Value] IDLString GetVendor();
     [Value] IDLString GetArchitecture();
     [Value] IDLString GetDevice();
@@ -105,6 +114,8 @@ interface JAdapterInfo {
 
 interface JLimits {
     void JLimits();
+    [Value] static JLimits Obtain();
+
     void SetMaxTextureDimension1D(long value);
     long GetMaxTextureDimension1D();
 
@@ -201,10 +212,12 @@ interface JLimits {
 
 interface JRequestAdapterOptions {
     void JRequestAdapterOptions();
+    [Value] static JRequestAdapterOptions Obtain();
 };
 
 interface JShaderSourceWGSL {
     void JShaderSourceWGSL();
+    [Value] static JShaderSourceWGSL Obtain();
     void SetCode([Const] DOMString code);
     void SetNext(JChainedStruct value);
     void SetSType(WGPUSType type);
@@ -213,6 +226,7 @@ interface JShaderSourceWGSL {
 
 interface JSupportedFeatures {
     void JSupportedFeatures();
+    [Value] static JSupportedFeatures Obtain();
     long GetFeatureCount();
     WGPUFeatureName GetFeatureAt(long index);
 };
