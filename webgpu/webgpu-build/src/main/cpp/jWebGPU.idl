@@ -1,4 +1,4 @@
-// ##### CUSTOM CLASSES / VECTORS / ENUMS ######
+// ################################### CUSTOM CODE ###################################
 
 interface JWebGPU {
     static JRenderPipeline CreateRenderPipeline(JDevice device, [Const] DOMString shaderSource, WGPUTextureFormat surfaceFormat);
@@ -12,7 +12,17 @@ interface JAndroidWindow {
     void InitLogcat();
 };
 
-// ##### VECTORS ######
+enum JPlatformType {
+    "WGPU_Windows",
+    "WGPU_Mac",
+    "WGPU_Linux",
+    "WGPU_iOS",
+    "WGPU_Android",
+    "WGPU_Web",
+    "WGPU_Unknown",
+};
+
+// ################################### VECTORS ###################################
 
 interface JVectorColorTargetState {
     void JVectorColorTargetState();
@@ -39,17 +49,7 @@ interface JVectorTextureFormat {
     void push_back(WGPUTextureFormat textureFormat);
 };
 
-enum JPlatformType {
-    "WGPU_Windows",
-    "WGPU_Mac",
-    "WGPU_Linux",
-    "WGPU_iOS",
-    "WGPU_Android",
-    "WGPU_Web",
-    "WGPU_Unknown",
-};
-
-// ##### CALLBACKS #####
+// ################################### CALLBACKS ###################################
 
 interface RequestAdapterCallback {
 };
@@ -78,25 +78,7 @@ interface UncapturedErrorCallbackImpl {
     void OnCallback(WGPUErrorType errorType, [Const] DOMString message);
 };
 
-// ##### CLASSES #####
-
-interface JInstance {
-    void JInstance();
-    boolean IsValid();
-    void Release();
-    void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
-    JSurface CreateWebSurface([Const] DOMString canvas);
-    JSurface CreateWindowsSurface(any hwnd);
-    JSurface CreateAndroidSurface(JAndroidWindow surface);
-    void ProcessEvents();
-};
-
-interface JAdapter {
-    void Release();
-    void RequestDevice(JDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
-    boolean GetInfo(JAdapterInfo adapterInfo);
-    boolean HasFeature(WGPUFeatureName featureName);
-};
+// ################################### STRUCTS ###################################
 
 interface JAdapterInfo {
     void JAdapterInfo();
@@ -222,16 +204,6 @@ interface JSupportedFeatures {
     WGPUFeatureName GetFeatureAt(long index);
 };
 
-interface JDevice {
-    void Release();
-    [Value] JQueue GetQueue();
-    void CreateRenderPipeline(JRenderPipelineDescriptor descriptor, JRenderPipeline renderPipeline);
-    void CreateShaderModule(JShaderModuleDescriptor descriptor, JShaderModule shaderModule);
-    void GetFeatures(JSupportedFeatures features);
-    void GetLimits(JLimits limits);
-    void CreateCommandEncoder(JCommandEncoderDescriptor encoderDescriptor, JCommandEncoder commandEncoder);
-};
-
 interface JBlendComponent {
     void SetOperation(WGPUBlendOperation operation);
     WGPUBlendOperation GetOperation();
@@ -245,12 +217,6 @@ interface JBlendState {
     void JBlendState();
     [Value] JBlendComponent GetColor();
     [Value] JBlendComponent GetAlpha();
-};
-
-interface JShaderModule {
-    void JShaderModule();
-    [Value] static JShaderModule Obtain();
-    void Release();
 };
 
 interface JConstantEntry {
@@ -298,9 +264,6 @@ interface JDepthStencilState {
     //TODO add missing methods
 };
 
-interface JPipelineLayout {
-};
-
 interface JMultisampleState {
     void JMultisampleState();
     void SetNextInChain(JChainedStruct chainedStruct);
@@ -317,13 +280,78 @@ interface JPrimitiveState {
     void SetCullMode(WGPUCullMode value);
 };
 
-interface JRenderPipeline {
-    void JRenderPipeline();
-//    [Value] static JRenderPipeline Obtain();
-    void Release();
+interface JRenderPassDepthStencilAttachment {
+    void JRenderPassDepthStencilAttachment();
+    [Value] static JRenderPassDepthStencilAttachment Obtain();
 };
 
-// #### Descriptors ####
+interface JRenderPassTimestampWrites {
+    [Value] static JRenderPassTimestampWrites Obtain();
+    void SetQuerySet(JQuerySet value);
+    void SetBeginningOfPassWriteIndex(long value);
+    void SetEndOfPassWriteIndex(long value);
+};
+
+interface JColor {
+    void JColor();
+    [Value] static JColor Obtain();
+    void SetColor(float r, float g, float b, float a);
+    float GetR();
+    float GetG();
+    float GetB();
+    float GetA();
+};
+
+interface JRenderPassColorAttachment {
+    void JRenderPassColorAttachment();
+    [Value] static JRenderPassColorAttachment Obtain();
+
+    void SetView(JTextureView textureView);
+    void SetResolveTarget(JTextureView textureView);
+    void SetLoadOp(WGPULoadOp loadOp);
+    void SetStoreOp(WGPUStoreOp storeOp);
+    [Value] JColor GetClearValue();
+    void SetDepthSlice(long depthSlice);
+};
+
+interface JSurfaceTexture {
+    void JSurfaceTexture();
+    [Value] static JSurfaceTexture Obtain();
+    void GetTexture(JTexture texture);
+    WGPUSurfaceGetCurrentTextureStatus GetStatus();
+};
+
+interface JSurfaceCapabilities {
+    void JSurfaceCapabilities();
+    [Value] static JSurfaceCapabilities Obtain();
+    WGPUTextureFormat GetFormats(long index);
+};
+
+interface JSurfaceConfiguration {
+    void JSurfaceConfiguration();
+    [Value] static JSurfaceConfiguration Obtain();
+    void SetNextInChain(JChainedStruct chainedStruct);
+    void SetWidth(long width);
+    void SetHeight(long height);
+    void SetFormat(WGPUTextureFormat format);
+    void SetViewFormats(JVectorTextureFormat formats);
+    void SetUsage(WGPUTextureUsage usage);
+    void SetDevice(JDevice device);
+    void SetPresentMode(WGPUPresentMode presentMode);
+    void SetAlphaMode(WGPUCompositeAlphaMode alphaMode);
+};
+
+interface JChainedStruct {
+
+    void SetNext(JChainedStruct value);
+    void SetSType(WGPUSType type);
+};
+
+interface JStringView {
+    [Const, Value] IDLString GetString();
+};
+
+// ################################### DESCRIPTOR STRUCTS ###################################
 
 interface JQueueDescriptor {
     void SetLabel([Const] DOMString code);
@@ -331,12 +359,14 @@ interface JQueueDescriptor {
 
 interface JShaderModuleDescriptor {
     void JShaderModuleDescriptor();
+    [Value] static JShaderModuleDescriptor Obtain();
     void SetNextInChain(JChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
 interface JDeviceDescriptor {
     void JDeviceDescriptor();
+    [Value] static JDeviceDescriptor Obtain();
     void SetLabel([Const] DOMString code);
     void SetRequiredLimits(JLimits limits);
     void SetRequiredFeatures(JVectorRequiredFeatures features);
@@ -345,6 +375,7 @@ interface JDeviceDescriptor {
 
 interface JRenderPipelineDescriptor {
     void JRenderPipelineDescriptor();
+    [Value] static JRenderPipelineDescriptor Obtain();
     void SetNextInChain(JChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     [Value] JVertexState GetVertex();
@@ -359,26 +390,6 @@ interface JCommandEncoderDescriptor {
     void JCommandEncoderDescriptor();
     [Value] static JCommandEncoderDescriptor Obtain();
     void SetLabel([Const] DOMString value);
-};
-
-interface JRenderPassDepthStencilAttachment {
-};
-
-interface JQuerySet {
-    // Opaque pointer
-
-    void SetDestroy();
-    long GetCount();
-    WGPUQueryType GetType();
-    void SetLabel([Const] DOMString value);
-    void Release();
-    void AddRef();
-};
-
-interface JRenderPassTimestampWrites {
-     void SetQuerySet(JQuerySet value);
-     void SetBeginningOfPassWriteIndex(long value);
-     void SetEndOfPassWriteIndex(long value);
 };
 
 interface JRenderPassDescriptor {
@@ -407,7 +418,6 @@ interface JComputePassDescriptor {
 interface JTextureViewDescriptor {
     void JTextureViewDescriptor();
     [Value] static JTextureViewDescriptor Obtain();
-
     void SetLabel([Const] DOMString value);
     void SetFormat(WGPUTextureFormat format);
     void SetDimension(WGPUTextureViewDimension dimension);
@@ -418,6 +428,8 @@ interface JTextureViewDescriptor {
     void SetAspect(WGPUTextureAspect aspect);
     void SetUsage(WGPUTextureUsage usage);
 };
+
+// ################################### OPAQUE POINTER ###################################
 
 interface JTextureView {
     void JTextureView();
@@ -433,45 +445,16 @@ interface JTexture {
     void Release();
 };
 
-interface JCommandBuffer {
-    void JCommandBuffer();
-    [Value] static JCommandBuffer Obtain();
+interface JShaderModule {
+    void JShaderModule();
+    [Value] static JShaderModule Obtain();
     void Release();
 };
 
-interface JCommandEncoder {
-    void JCommandEncoder();
-    [Value] static JCommandEncoder Obtain();
+interface JRenderPipeline {
+    void JRenderPipeline();
+//    [Value] static JRenderPipeline Obtain();
     void Release();
-    void BeginRenderPass(JRenderPassDescriptor renderPassDescriptor, JRenderPassEncoder renderPassEncoder);
-    void BeginComputePass(JComputePassEncoder computePassEncoder);
-    void ClearBuffer(JBuffer buffer, long offset, long size);
-    void Finish(JCommandBufferDescriptor descriptor, JCommandBuffer commandBuffer);
-};
-
-interface JBuffer {
-    void JBuffer();
-};
-
-interface JColor {
-    void JColor();
-    void SetColor(float r, float g, float b, float a);
-    float GetR();
-    float GetG();
-    float GetB();
-    float GetA();
-};
-
-interface JRenderPassColorAttachment {
-    void JRenderPassColorAttachment();
-    [Value] static JRenderPassColorAttachment Obtain();
-
-    void SetView(JTextureView textureView);
-    void SetResolveTarget(JTextureView textureView);
-    void SetLoadOp(WGPULoadOp loadOp);
-    void SetStoreOp(WGPUStoreOp storeOp);
-    [Value] JColor GetClearValue();
-    void SetDepthSlice(long depthSlice);
 };
 
 interface JRenderPassEncoder {
@@ -499,6 +482,75 @@ interface JRenderPassEncoder {
     void AddRef();
 };
 
+interface JQuerySet {
+    // Opaque pointer
+
+    void SetDestroy();
+    long GetCount();
+    WGPUQueryType GetType();
+    void SetLabel([Const] DOMString value);
+    void Release();
+    void AddRef();
+};
+
+interface JPipelineLayout {
+};
+
+interface JInstance {
+    void JInstance();
+    boolean IsValid();
+    void Release();
+    void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
+    JSurface CreateWebSurface([Const] DOMString canvas);
+    JSurface CreateWindowsSurface(any hwnd);
+    JSurface CreateAndroidSurface(JAndroidWindow surface);
+    void ProcessEvents();
+};
+
+interface JDevice {
+    void Release();
+    [Value] JQueue GetQueue();
+    void CreateRenderPipeline(JRenderPipelineDescriptor descriptor, JRenderPipeline renderPipeline);
+    void CreateShaderModule(JShaderModuleDescriptor descriptor, JShaderModule shaderModule);
+    void GetFeatures(JSupportedFeatures features);
+    void GetLimits(JLimits limits);
+    void CreateCommandEncoder(JCommandEncoderDescriptor encoderDescriptor, JCommandEncoder commandEncoder);
+};
+
+//interface JComputePipeline {
+//
+//}
+
+//interface JSampler {
+//
+//}
+
+interface JComputePassEncoder {
+    void JComputePassEncoder();
+    [Value] static JComputePassEncoder Obtain();
+    void Release();
+};
+
+interface JCommandBuffer {
+    void JCommandBuffer();
+    [Value] static JCommandBuffer Obtain();
+    void Release();
+};
+
+interface JCommandEncoder {
+    void JCommandEncoder();
+    [Value] static JCommandEncoder Obtain();
+    void Release();
+    void BeginRenderPass(JRenderPassDescriptor renderPassDescriptor, JRenderPassEncoder renderPassEncoder);
+    void BeginComputePass(JComputePassEncoder computePassEncoder);
+    void ClearBuffer(JBuffer buffer, long offset, long size);
+    void Finish(JCommandBufferDescriptor descriptor, JCommandBuffer commandBuffer);
+};
+
+interface JBuffer {
+    void JBuffer();
+};
+
 interface JBindGroup {
 
 };
@@ -507,17 +559,11 @@ interface JRenderBundle {
 
 };
 
-interface JComputePassEncoder {
-    void JComputePassEncoder();
-    [Value] static JComputePassEncoder Obtain();
+interface JAdapter {
     void Release();
-};
-
-interface JSurfaceTexture {
-    void JSurfaceTexture();
-    [Value] static JSurfaceTexture Obtain();
-    void GetTexture(JTexture texture);
-    WGPUSurfaceGetCurrentTextureStatus GetStatus();
+    void RequestDevice(JDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
+    boolean GetInfo(JAdapterInfo adapterInfo);
+    boolean HasFeature(WGPUFeatureName featureName);
 };
 
 interface JSurface {
@@ -529,26 +575,6 @@ interface JSurface {
     void Present();
 };
 
-interface JSurfaceCapabilities {
-    void JSurfaceCapabilities();
-
-    WGPUTextureFormat GetFormats(long index);
-};
-
-interface JSurfaceConfiguration {
-    void JSurfaceConfiguration();
-
-    void SetNextInChain(JChainedStruct chainedStruct);
-    void SetWidth(long width);
-    void SetHeight(long height);
-    void SetFormat(WGPUTextureFormat format);
-    void SetViewFormats(JVectorTextureFormat formats);
-    void SetUsage(WGPUTextureUsage usage);
-    void SetDevice(JDevice device);
-    void SetPresentMode(WGPUPresentMode presentMode);
-    void SetAlphaMode(WGPUCompositeAlphaMode alphaMode);
-};
-
 interface JQueue {
 //    void OnSubmittedWorkDone();
     void SetLabel([Const] DOMString value);
@@ -556,17 +582,7 @@ interface JQueue {
     void Release();
 };
 
-interface JChainedStruct {
-
-    void SetNext(JChainedStruct value);
-    void SetSType(WGPUSType type);
-};
-
-interface JStringView {
-    [Const, Value] IDLString GetString();
-};
-
-// ##### ENUMS #####
+// ################################### ENUMS ###################################
 
 enum WGPUBufferUsage {
     "WGPUBufferUsage_None",            //[-RENAME=None]

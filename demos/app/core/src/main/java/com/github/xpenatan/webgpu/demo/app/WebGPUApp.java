@@ -63,9 +63,9 @@ public class WebGPUApp implements ApplicationListener {
             initSwapChain(wgpu);
 
             // Release the adapter only after it has been fully utilized
-//            wgpu.adapter.Release();
-//            wgpu.adapter.dispose();
-//            wgpu.adapter = null;
+            wgpu.adapter.Release();
+            wgpu.adapter.dispose();
+            wgpu.adapter = null;
             initPipeline(wgpu);
         }
         else {
@@ -90,8 +90,6 @@ public class WebGPUApp implements ApplicationListener {
         renderPassColorAttachment.SetLoadOp(WGPULoadOp.Clear);
         renderPassColorAttachment.SetStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.GetClearValue().SetColor(r, g, b, 1.0f);
-
-//        renderPassColorAttachment.SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED);
 
         renderPassDesc.SetColorAttachmentCount(1);
         renderPassDesc.SetColorAttachments(renderPassColorAttachment);
@@ -132,8 +130,7 @@ public class WebGPUApp implements ApplicationListener {
         wgpu.surface.GetCurrentTexture(surfaceTextureOut);
         surfaceTextureOut.GetTexture(textureOut);
         WGPUTextureFormat textureFormat = textureOut.GetFormat();
-//        JTextureViewDescriptor viewDescriptor = JTextureViewDescriptor.Obtain();
-        JTextureViewDescriptor viewDescriptor = new JTextureViewDescriptor();
+        JTextureViewDescriptor viewDescriptor = JTextureViewDescriptor.Obtain();
         viewDescriptor.SetLabel("Surface texture view");
         viewDescriptor.SetFormat(textureFormat);
         viewDescriptor.SetDimension(WGPUTextureViewDimension._2D);
@@ -143,7 +140,7 @@ public class WebGPUApp implements ApplicationListener {
         viewDescriptor.SetArrayLayerCount(1);
         viewDescriptor.SetAspect(WGPUTextureAspect.All);
         textureOut.CreateView(viewDescriptor, textureViewOut);
-//        textureOut.Release();
+        textureOut.Release();
     }
 
     private void initSwapChain(WGPUApp wgpu) {

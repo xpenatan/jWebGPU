@@ -537,6 +537,11 @@ class JQueueDescriptor : public JObjectBase<JQueueDescriptor, WGPUQueueDescripto
 class JDeviceDescriptor : public JObjectBase<JDeviceDescriptor, WGPUDeviceDescriptor> {
     public:
 
+        static JDeviceDescriptor Obtain() {
+            JDeviceDescriptor obj;
+            return obj;
+        }
+
         void SetLabel(const char* value) {
             WGPUStringView stringView = {};
             stringView.data = strdup(value);
@@ -713,6 +718,11 @@ class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSource
 class JShaderModuleDescriptor : public JObjectBase<JShaderModuleDescriptor, WGPUShaderModuleDescriptor> {
     public:
 
+        static JShaderModuleDescriptor Obtain() {
+            JShaderModuleDescriptor obj;
+            return obj;
+        }
+
         void SetNextInChain(JChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
@@ -856,6 +866,12 @@ class JPrimitiveState : public JObjectBase<JPrimitiveState, WGPUPrimitiveState*>
 
 class JDepthStencilState : public JObjectBase<JDepthStencilState, WGPUDepthStencilState> {
     public:
+
+        static JDepthStencilState Obtain() {
+            JDepthStencilState obj;
+            return obj;
+        }
+
         void SetNextInChain(JChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
@@ -906,6 +922,12 @@ class JPipelineLayout : public JObjectBase<JPipelineLayout, WGPUPipelineLayout> 
 
 class JRenderPipelineDescriptor : public JObjectBase<JRenderPipelineDescriptor, WGPURenderPipelineDescriptor> {
     public:
+
+        static JRenderPipelineDescriptor Obtain() {
+            JRenderPipelineDescriptor obj;
+            return obj;
+        }
+
         void SetNextInChain(JChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
@@ -985,6 +1007,11 @@ class JColor : public JObjectBase<JColor, WGPUColor*> {
             if(deleteObject) {
                 delete Get();
             }
+        }
+
+        static JColor Obtain() {
+            JColor obj;
+            return obj;
         }
 
         void SetColor(float r, float g, float b, float a) {
@@ -1154,6 +1181,10 @@ class JComputePassEncoder : public JObjectBase<JComputePassEncoder, WGPUComputeP
 
 class JRenderPassDepthStencilAttachment : public JObjectBase<JRenderPassDepthStencilAttachment, WGPURenderPassDepthStencilAttachment> {
     public:
+        static JRenderPassDepthStencilAttachment Obtain() {
+            JRenderPassDepthStencilAttachment obj;
+            return obj;
+        }
 
 };
 
@@ -1191,6 +1222,11 @@ class JQuerySet : public JObjectBase<JQuerySet, WGPUQuerySet> {
 // TODO The class name differs from those in Dawn and wgpu-native.
 class JRenderPassTimestampWrites : public JObjectBase<JRenderPassTimestampWrites, WGPURenderPassTimestampWrites> {
     public:
+
+        static JRenderPassTimestampWrites Obtain() {
+            JRenderPassTimestampWrites obj;
+            return obj;
+        }
 
         void SetQuerySet(JQuerySet* value) {
             Get().querySet = value->Get();
@@ -1245,8 +1281,8 @@ class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURend
     public:
 
         static JRenderPassDescriptor Obtain() {
-            JRenderPassDescriptor descriptor;
-            return descriptor;
+            JRenderPassDescriptor obj;
+            return obj;
         }
 
         void SetLabel(const char* value) {
@@ -1279,8 +1315,8 @@ class JComputePassDescriptor : public JObjectBase<JComputePassDescriptor, WGPUCo
     public:
 
         static JComputePassDescriptor Obtain() {
-            JComputePassDescriptor descriptor;
-            return descriptor;
+            JComputePassDescriptor obj;
+            return obj;
         }
 
         void SetLabel(const char* value) {
@@ -1380,6 +1416,11 @@ class JDevice : public JObjectBase<JDevice, WGPUDevice> {
 class JSurfaceConfiguration : public JObjectBase<JSurfaceConfiguration, WGPUSurfaceConfiguration> {
     public:
 
+        static JSurfaceConfiguration Obtain() {
+            JSurfaceConfiguration temp;
+            return temp;
+        }
+
         void SetNextInChain(JChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
@@ -1430,6 +1471,11 @@ class JSurfaceConfiguration : public JObjectBase<JSurfaceConfiguration, WGPUSurf
 
 class JSurfaceCapabilities : public JObjectBase<JSurfaceCapabilities, WGPUSurfaceCapabilities> {
     public:
+
+        static JSurfaceCapabilities Obtain() {
+            JSurfaceCapabilities obj;
+            return obj;
+        }
 
         WGPUTextureFormat GetFormats(int index) {
             return Get().formats[index];
@@ -1502,8 +1548,8 @@ class JTextureViewDescriptor : public JObjectBase<JTextureViewDescriptor, WGPUTe
     public:
 
     static JTextureViewDescriptor Obtain() {
-        JTextureViewDescriptor textureViewDescriptor;
-        return textureViewDescriptor;
+        JTextureViewDescriptor obj;
+        return obj;
     }
 
     void SetLabel(const char* value) {
