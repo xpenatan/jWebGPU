@@ -1727,30 +1727,18 @@ class JSurface : public JObjectBase<JSurface, WGPUSurface> {
 
 class JInstance : public JObjectBase<JInstance, WGPUInstance> {
     private:
+        void AddRefInternal() {
+            wgpuInstanceAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuInstanceRelease(Get());
+        }
 
     public:
-        bool isValid = false;
-
-        JInstance() {
-            WGPUInstance instance = wgpuCreateInstance(NULL);
-            if (!instance) {
-                isValid = false;
-            }
-            else {
-                Set(instance);
-                isValid = true;
-            }
-        }
 
         bool IsValid() {
-            return isValid;
-        }
-
-        void Release() {
-            if(isValid) {
-                isValid = false;
-                wgpuInstanceRelease(Get());
-            }
+            return Get() ? true : false;
         }
 
         void RequestAdapter(JRequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
@@ -1845,91 +1833,10 @@ class JWebGPU {
             #endif
         }
 
-        static JRenderPipeline* CreateRenderPipeline(JDevice* device, const char* shaderSource, WGPUTextureFormat surfaceFormat) {
-
-            JShaderModuleDescriptor shaderDesc;
-            shaderDesc.SetLabel("triangle shader");
-
-            JShaderSourceWGSL shaderCodeDesc;
-            shaderCodeDesc.SetNext(NULL);
-            shaderCodeDesc.SetSType(WGPUSType_ShaderSourceWGSL);
-            shaderCodeDesc.SetCode(shaderSource);
-
-            JChainedStruct chainedStruct = shaderCodeDesc.GetChain();
-            shaderDesc.SetNextInChain(&chainedStruct);
-
-            JShaderModule* shaderModule = new JShaderModule();
-            device->CreateShaderModule(&shaderDesc, shaderModule);
-
-            JRenderPipelineDescriptor pipelineDesc;
-            pipelineDesc.SetLabel("my pipeline");
-
-            pipelineDesc.GetVertex().SetBuffers(NULL);  // no vertex buffer, because we define it in the shader
-
-            pipelineDesc.GetVertex().SetModule(shaderModule);
-            pipelineDesc.GetVertex().SetEntryPoint("vs_main");
-            pipelineDesc.GetVertex().SetConstants(NULL);
-
-            pipelineDesc.GetPrimitive().SetTopology(WGPUPrimitiveTopology_TriangleList);
-            pipelineDesc.GetPrimitive().SetStripIndexFormat(WGPUIndexFormat_Undefined);
-            pipelineDesc.GetPrimitive().SetFrontFace(WGPUFrontFace_CCW);
-            pipelineDesc.GetPrimitive().SetCullMode(WGPUCullMode_None);
-
-            JFragmentState fragmentState;
-            fragmentState.SetNextInChain(NULL);
-            fragmentState.SetModule(shaderModule);
-            fragmentState.SetEntryPoint("fs_main");
-            fragmentState.SetConstants(NULL);
-
-            // blending
-            JBlendState blendState;
-            blendState.GetColor().SetSrcFactor(WGPUBlendFactor_SrcAlpha);
-            blendState.GetColor().SetDstFactor(WGPUBlendFactor_OneMinusSrcAlpha);
-            blendState.GetColor().SetOperation(WGPUBlendOperation_Add);
-            blendState.GetAlpha().SetSrcFactor(WGPUBlendFactor_One);
-            blendState.GetAlpha().SetDstFactor(WGPUBlendFactor_Zero);
-            blendState.GetAlpha().SetOperation(WGPUBlendOperation_Add);
-
-            JVectorColorTargetState targetStateVector;
-            JColorTargetState colorTarget;
-            colorTarget.SetFormat(surfaceFormat); // match output surface
-            colorTarget.SetBlend(&blendState);
-            colorTarget.SetWriteMask(WGPUColorWriteMask_All);
-            targetStateVector.push_back(colorTarget);
-
-            fragmentState.SetTargets(&targetStateVector);
-
-            pipelineDesc.SetFragment(&fragmentState);
-
-            pipelineDesc.SetDepthStencil(NULL); // no depth or stencil buffer
-
-            pipelineDesc.GetMultisample().SetCount(1);
-            pipelineDesc.GetMultisample().SetMask(-1);
-            pipelineDesc.GetMultisample().SetAlphaToCoverageEnabled(0);
-
-            pipelineDesc.SetLayout(NULL);
-
-            JRenderPipeline* renderPipeline = new JRenderPipeline();
-
-            const WGPURenderPipelineDescriptor* desc = reinterpret_cast<WGPURenderPipelineDescriptor const * >(&pipelineDesc);
-            renderPipeline->Set(wgpuDeviceCreateRenderPipeline(device->Get(), desc));
-            return renderPipeline;
+        static JInstance CreateInstance() {
+            JInstance instance;
+            instance.Set(wgpuCreateInstance(NULL));
+            return instance;
         }
-
-        static void Set() {
-//            wgpu::Instance instance = wgpu::CreateInstance();
-//            wgpu::RequestAdapterOptions options = {};
-//            instance.RequestAdapter(&options, wgpu::CallbackMode::WaitAnyOnly,
-//                    [&](wgpu::RequestAdapterStatus status, wgpu::Adapter ad, wgpu::StringView message) {
-//                         std::cout << "CallBack Set: " << std::endl;
-//                    });
-        }
-
-//        static JInstance* CreateInstance() {
-//            JInstance* instance = new JInstance();
-//            auto result = wgpu::CreateInstance();
-//            instance->instance_ = result;
-//            return instance;
-//        }
 };
 

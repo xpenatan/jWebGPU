@@ -1,10 +1,8 @@
 // ################################### CUSTOM CODE ###################################
 
 interface JWebGPU {
-    static JRenderPipeline CreateRenderPipeline(JDevice device, [Const] DOMString shaderSource, WGPUTextureFormat surfaceFormat);
-    static void Set();
     static JPlatformType GetPlatformType();
-//    static JInstance CreateInstance();
+    [Value] static JInstance CreateInstance();
 };
 
 interface JAndroidWindow {
@@ -497,7 +495,6 @@ interface JPipelineLayout {
 };
 
 interface JInstance {
-    void JInstance();
     boolean IsValid();
     void Release();
     void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);

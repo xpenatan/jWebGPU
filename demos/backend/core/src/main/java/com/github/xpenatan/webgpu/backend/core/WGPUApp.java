@@ -37,7 +37,7 @@ public class WGPUApp {
     private InitState initState = InitState.NOT_INITIALIZED;
 
     public void init() {
-        JInstance instance = new JInstance();
+        JInstance instance = JWebGPU.CreateInstance();
         if(instance.IsValid()) {
             initState = InitState.INSTANCE_VALID;
             this.instance = instance;
