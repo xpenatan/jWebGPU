@@ -91,12 +91,16 @@ class JDepthStencilState;
 class JRenderPassColorAttachment;
 class JConstantEntry;
 class JVertexBufferLayout;
+class JRenderBundle;
 
 using JVectorColorTargetState = std::vector<JColorTargetState>;
 using JVectorRequiredFeatures = std::vector<WGPUFeatureName>;
 using JVectorConstantEntry = std::vector<JConstantEntry>;
 using JVectorVertexBufferLayout = std::vector<JVertexBufferLayout>;
 using JVectorTextureFormat = std::vector<WGPUTextureFormat>;
+using JVectorRenderBundle = std::vector<JRenderBundle>;
+using JVectorInt = std::vector<int>;
+using JVectorRenderPassColorAttachment = std::vector<JRenderPassColorAttachment>;
 
 #ifdef __EMSCRIPTEN__
 
@@ -1116,12 +1120,17 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
             wgpuRenderPassEncoderEndOcclusionQuery(Get());
         }
 
-        void ExecuteBundles(int bundleCount, JRenderBundle* bundles) {
-            // TODO change to array class
-            wgpuRenderPassEncoderExecuteBundles(Get(), bundleCount,  reinterpret_cast<WGPURenderBundle const * >(bundles));
+        void ExecuteBundles(JVectorRenderBundle* values) {
+            if(values != NULL) {
+                int size = values->size();
+                wgpuRenderPassEncoderExecuteBundles(Get(), size,  reinterpret_cast<WGPURenderBundle const * >(values->data()));
+            }
+            else {
+                wgpuRenderPassEncoderExecuteBundles(Get(), 0,  NULL);
+            }
         }
 
-        void ExecuteBundles(const char* label) {
+        void InsertDebugMarker(const char* label) {
             JStringView stringView(label);
             wgpuRenderPassEncoderInsertDebugMarker(Get(), stringView.Get());
         }
@@ -1135,9 +1144,10 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
             wgpuRenderPassEncoderPushDebugGroup(Get(), stringView.Get());
         }
 
-        void SetBindGrou(int groupIndex, JBindGroup* group, int dynamicOffsetCount, const uint32_t* dynamicOffsets) {
-            // TODO change to array class
-            wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, *reinterpret_cast<WGPUBindGroup *>(group), dynamicOffsetCount, dynamicOffsets);
+        void SetBindGroup(int groupIndex, JBindGroup* group, JVectorInt* dynamicOffsets) {
+            // TODO test. May not work if Int to uint32_t fails
+            int dynamicOffsetCount = dynamicOffsets->size();
+            wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, reinterpret_cast<uint32_t const *>(dynamicOffsets->data()));
         }
 
         void SetBlendConstant(JColor* color) {
@@ -1168,10 +1178,6 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
 
         void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
             wgpuRenderPassEncoderSetViewport(Get(), x, y, width, height, minDepth, maxDepth);
-        }
-
-        void AddRef() {
-            wgpuRenderPassEncoderAddRef(Get());
         }
 };
 
@@ -1307,13 +1313,15 @@ class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURend
             Get().label = stringView;
         }
 
-        void SetColorAttachmentCount(int size) {
-            Get().colorAttachmentCount = size;
-        }
-
-        void SetColorAttachments(JRenderPassColorAttachment* colorAttachment) {
-            // TODO Must be an array
-            Get().colorAttachments = reinterpret_cast<WGPURenderPassColorAttachment const * >(colorAttachment);
+        void SetColorAttachments(JVectorRenderPassColorAttachment* values) {
+            if(values != NULL) {
+                Get().colorAttachmentCount = values->size();
+                Get().colorAttachments = reinterpret_cast<const WGPURenderPassColorAttachment*>(values->data());
+            }
+            else {
+                Get().colorAttachmentCount = 0;
+                Get().colorAttachments = NULL;
+            }
         }
 
         void SetDepthStencilAttachment(JRenderPassDepthStencilAttachment* attachment) {
@@ -1321,8 +1329,7 @@ class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURend
         }
 
         void SetTimestampWrites(JRenderPassTimestampWrites* timestampWrites) {
-            // TODO emscripten does not have this class
-//            Get().timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->timestampWrites);
+            Get().timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->Get());
         }
 };
 

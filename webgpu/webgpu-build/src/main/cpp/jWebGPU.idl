@@ -47,6 +47,21 @@ interface JVectorTextureFormat {
     void push_back(WGPUTextureFormat textureFormat);
 };
 
+interface JVectorRenderBundle {
+    void JVectorRenderBundle();
+    void push_back([Ref] JRenderBundle renderBundle);
+};
+
+interface JVectorInt {
+    void JVectorInt();
+    void push_back(long value);
+};
+
+interface JVectorRenderPassColorAttachment {
+    void JVectorRenderPassColorAttachment();
+    void push_back([Ref] JRenderPassColorAttachment colorAttachment);
+};
+
 // ################################### CALLBACKS ###################################
 
 interface RequestAdapterCallback {
@@ -396,8 +411,7 @@ interface JRenderPassDescriptor {
     void JRenderPassDescriptor();
     [Value] static JRenderPassDescriptor Obtain();
     void SetLabel([Const] DOMString value);
-    void SetColorAttachmentCount(long size);
-    void SetColorAttachments(JRenderPassColorAttachment colorAttachment);
+    void SetColorAttachments(JVectorRenderPassColorAttachment colorAttachments);
     void SetDepthStencilAttachment(JRenderPassDepthStencilAttachment attachment);
     void SetTimestampWrites(JRenderPassTimestampWrites timestampWrites);
 };
@@ -469,9 +483,11 @@ interface JRenderPassEncoder {
     void DrawIndexedIndirect(JBuffer indirectBuffer, long indirectOffset);
     void DrawIndirect(JBuffer indirectBuffer, long indirectOffset);
     void EndOcclusionQuery();
-    void ExecuteBundles([Const] DOMString value);
+    void ExecuteBundles(JVectorRenderBundle bundles);
+    void InsertDebugMarker([Const] DOMString value);
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString value);
+    void SetBindGroup(long groupIndex, JBindGroup group, JVectorInt dynamicOffsets);
     void SetBlendConstant(JColor color);
     void SetIndexBuffer(JBuffer buffer, WGPUIndexFormat format, long offset, long size);
     void SetLabel([Const] DOMString value);
@@ -555,7 +571,7 @@ interface JBindGroup {
 };
 
 interface JRenderBundle {
-
+    void JRenderBundle();
 };
 
 interface JAdapter {

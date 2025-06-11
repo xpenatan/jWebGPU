@@ -23,6 +23,7 @@ import com.github.xpenatan.webgpu.JTexture;
 import com.github.xpenatan.webgpu.JTextureView;
 import com.github.xpenatan.webgpu.JTextureViewDescriptor;
 import com.github.xpenatan.webgpu.JVectorColorTargetState;
+import com.github.xpenatan.webgpu.JVectorRenderPassColorAttachment;
 import com.github.xpenatan.webgpu.JWGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
@@ -85,24 +86,24 @@ public class WebGPUApp implements ApplicationListener {
         JTextureView textureView = JTextureView.Obtain();
         GetNextSurfaceTextureView(wgpu, textureView);
 
-        JCommandEncoderDescriptor encoderDesc = new JCommandEncoderDescriptor();
+        JCommandEncoderDescriptor encoderDesc = JCommandEncoderDescriptor.Obtain();
         encoderDesc.SetLabel("My command encoder");
         wgpu.device.CreateCommandEncoder(encoderDesc, encoder);
 
-        JRenderPassDescriptor renderPassDesc  = new JRenderPassDescriptor();
-
-        JRenderPassColorAttachment renderPassColorAttachment = new JRenderPassColorAttachment();
+        JRenderPassColorAttachment renderPassColorAttachment = JRenderPassColorAttachment.Obtain();
         renderPassColorAttachment.SetView(textureView);
         renderPassColorAttachment.SetResolveTarget(null);
         renderPassColorAttachment.SetLoadOp(WGPULoadOp.Clear);
         renderPassColorAttachment.SetStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.GetClearValue().SetColor(r, g, b, 1.0f);
 
-        renderPassDesc.SetColorAttachmentCount(1);
-        renderPassDesc.SetColorAttachments(renderPassColorAttachment);
+        JVectorRenderPassColorAttachment colorAttachmentVector = new JVectorRenderPassColorAttachment();
+        colorAttachmentVector.push_back(renderPassColorAttachment);
+
+        JRenderPassDescriptor renderPassDesc  = JRenderPassDescriptor.Obtain();
+        renderPassDesc.SetColorAttachments(colorAttachmentVector);
         renderPassDesc.SetDepthStencilAttachment(null);
         renderPassDesc.SetTimestampWrites(null);
-
         encoder.BeginRenderPass(renderPassDesc, renderPass);
 
         renderPass.SetPipeline(wgpu.renderPipeline);
@@ -111,7 +112,7 @@ public class WebGPUApp implements ApplicationListener {
         renderPass.End();
         renderPass.Release();
 
-        JCommandBufferDescriptor cmdBufferDescriptor = new JCommandBufferDescriptor();
+        JCommandBufferDescriptor cmdBufferDescriptor = JCommandBufferDescriptor.Obtain();
         cmdBufferDescriptor.SetNextInChain(null);
         cmdBufferDescriptor.SetLabel("Command buffer");
         encoder.Finish(cmdBufferDescriptor, command);
