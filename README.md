@@ -7,6 +7,9 @@
 
 A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms.
 
+## Demo
+[Android](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
+
 ## Build steps
 
 Change `LibExt.exampleUseRepoLibs` to false. Set to true only if you want to try the demo without building.
