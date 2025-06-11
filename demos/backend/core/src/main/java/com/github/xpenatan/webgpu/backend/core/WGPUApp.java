@@ -87,8 +87,9 @@ public class WGPUApp {
         }
 
         JDeviceDescriptor deviceDescriptor = new JDeviceDescriptor();
-//        JLimits limits = new JLimits();
-//        setDefaultLimits(limits);
+        JLimits limits = new JLimits();
+        setDefaultLimits(limits);
+        deviceDescriptor.SetRequiredLimits(limits);
         deviceDescriptor.SetLabel("My Device");
 
         JVectorRequiredFeatures features = new JVectorRequiredFeatures();

@@ -766,6 +766,11 @@ class JBlendComponent : public JObjectBase<JBlendComponent, WGPUBlendComponent*>
 class JBlendState : public JObjectBase<JBlendState, WGPUBlendState> {
     public:
 
+        static JBlendState Obtain() {
+            JBlendState obj;
+            return obj;
+        }
+
         JBlendComponent GetColor() {
             JBlendComponent temp;
             temp.Set(&Get().color);
@@ -781,6 +786,11 @@ class JBlendState : public JObjectBase<JBlendState, WGPUBlendState> {
 
 class JColorTargetState : public JObjectBase<JColorTargetState, WGPUColorTargetState> {
     public:
+
+        static JColorTargetState Obtain() {
+            JColorTargetState obj;
+            return obj;
+        }
 
         void SetNextInChain(JChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
@@ -801,6 +811,11 @@ class JColorTargetState : public JObjectBase<JColorTargetState, WGPUColorTargetS
 
 class JFragmentState : public JObjectBase<JFragmentState, WGPUFragmentState> {
     public:
+
+        static JFragmentState Obtain() {
+            JFragmentState obj;
+            return obj;
+        }
 
         void SetNextInChain(JChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;

@@ -213,6 +213,7 @@ interface JBlendComponent {
 
 interface JBlendState {
     void JBlendState();
+    [Value] static JBlendState Obtain();
     [Value] JBlendComponent GetColor();
     [Value] JBlendComponent GetAlpha();
 };
@@ -223,7 +224,7 @@ interface JConstantEntry {
 
 interface JFragmentState {
     void JFragmentState();
-
+    [Value] static JFragmentState Obtain();
     void SetNextInChain(JChainedStruct chainedStruct);
     void SetEntryPoint([Const] DOMString entryPoint);
     void SetTargets(JVectorColorTargetState targets);
@@ -245,6 +246,7 @@ interface JVertexState {
 
 interface JColorTargetState {
     void JColorTargetState();
+    [Value] static JColorTargetState Obtain();
     void SetNextInChain(JChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
     void SetBlend(JBlendState blendState);

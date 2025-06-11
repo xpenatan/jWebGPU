@@ -47,9 +47,6 @@ public class WebGPUApp implements ApplicationListener {
 
     private WGPUTextureFormat surfaceFormat;
 
-    private JSurfaceTexture surfaceTexture;
-    private JTexture texture;
-    private JTextureView textureView;
     private JCommandEncoder encoder;
     private JRenderPassEncoder renderPass;
     private JCommandBuffer command;
@@ -60,9 +57,6 @@ public class WebGPUApp implements ApplicationListener {
 
     @Override
     public void create(WGPUApp wgpu) {
-        surfaceTexture = new JSurfaceTexture();
-        texture = new JTexture();
-        textureView = new JTextureView();
         encoder = new JCommandEncoder();
         renderPass = new JRenderPassEncoder();
         command = new JCommandBuffer();
@@ -88,8 +82,8 @@ public class WebGPUApp implements ApplicationListener {
 
     @Override
     public void render(WGPUApp wgpu) {
-
-        GetNextSurfaceTextureView(wgpu, surfaceTexture, texture, textureView);
+        JTextureView textureView = JTextureView.Obtain();
+        GetNextSurfaceTextureView(wgpu, textureView);
 
         JCommandEncoderDescriptor encoderDesc = new JCommandEncoderDescriptor();
         encoderDesc.SetLabel("My command encoder");
@@ -139,8 +133,10 @@ public class WebGPUApp implements ApplicationListener {
         this.b = b;
     }
 
-    private void GetNextSurfaceTextureView(WGPUApp wgpu, JSurfaceTexture surfaceTextureOut, JTexture textureOut, JTextureView textureViewOut) {
+    private void GetNextSurfaceTextureView(WGPUApp wgpu, JTextureView textureViewOut) {
+        JSurfaceTexture surfaceTextureOut = JSurfaceTexture.Obtain();
         wgpu.surface.GetCurrentTexture(surfaceTextureOut);
+        JTexture textureOut = JTexture.Obtain();
         surfaceTextureOut.GetTexture(textureOut);
         WGPUTextureFormat textureFormat = textureOut.GetFormat();
         JTextureViewDescriptor viewDescriptor = JTextureViewDescriptor.Obtain();
@@ -159,7 +155,6 @@ public class WebGPUApp implements ApplicationListener {
     private void initSwapChain(WGPUApp wgpu) {
         boolean vsyncEnabled = true;
         JSurfaceConfiguration config = new JSurfaceConfiguration();
-//            config.SetNextInChain();
         config.SetWidth(wgpu.width);
         config.SetHeight(wgpu.height);
         config.SetFormat(surfaceFormat);
@@ -174,7 +169,7 @@ public class WebGPUApp implements ApplicationListener {
     public void initPipeline(WGPUApp wgpu) {
         JShaderModule shaderModule = makeShaderModule(wgpu);
 
-        JRenderPipelineDescriptor pipelineDesc = new JRenderPipelineDescriptor();
+        JRenderPipelineDescriptor pipelineDesc = JRenderPipelineDescriptor.Obtain();
         pipelineDesc.SetLabel("my pipeline");
 
         pipelineDesc.GetVertex().SetBuffers(null);
@@ -187,14 +182,14 @@ public class WebGPUApp implements ApplicationListener {
         pipelineDesc.GetPrimitive().SetFrontFace(WGPUFrontFace.CCW);
         pipelineDesc.GetPrimitive().SetCullMode(WGPUCullMode.None);
 
-        JFragmentState fragmentState = new JFragmentState();
+        JFragmentState fragmentState = JFragmentState.Obtain();
         fragmentState.SetNextInChain(null);
         fragmentState.SetModule(shaderModule);
         fragmentState.SetEntryPoint("fs_main");
         fragmentState.SetConstants(null);
 
         // blending
-        JBlendState blendState = new JBlendState();
+        JBlendState blendState = JBlendState.Obtain();
         blendState.GetColor().SetSrcFactor(WGPUBlendFactor.SrcAlpha);
         blendState.GetColor().SetDstFactor(WGPUBlendFactor.OneMinusSrcAlpha);
         blendState.GetColor().SetOperation(WGPUBlendOperation.Add);
@@ -202,7 +197,7 @@ public class WebGPUApp implements ApplicationListener {
         blendState.GetAlpha().SetDstFactor(WGPUBlendFactor.Zero);
         blendState.GetAlpha().SetOperation(WGPUBlendOperation.Add);
 
-        JColorTargetState colorTarget = new JColorTargetState();
+        JColorTargetState colorTarget = JColorTargetState.Obtain();
         colorTarget.SetFormat(surfaceFormat); // match output surface
         colorTarget.SetBlend(blendState);
         colorTarget.SetWriteMask(WGPUColorWriteMask.All);
@@ -212,16 +207,13 @@ public class WebGPUApp implements ApplicationListener {
         fragmentState.SetTargets(colorStateTargets);
 
         pipelineDesc.SetFragment(fragmentState);
-
         pipelineDesc.SetDepthStencil(null); // no depth or stencil buffer
-
         pipelineDesc.GetMultisample().SetCount(1);
         pipelineDesc.GetMultisample().SetMask(-1);
         pipelineDesc.GetMultisample().SetAlphaToCoverageEnabled(0);
-
         pipelineDesc.SetLayout(null);
-        JRenderPipeline renderPipeline = new JRenderPipeline();
 
+        JRenderPipeline renderPipeline = new JRenderPipeline();
         wgpu.device.CreateRenderPipeline(pipelineDesc, renderPipeline);
         wgpu.renderPipeline = renderPipeline;
 
