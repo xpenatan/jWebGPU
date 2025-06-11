@@ -6,13 +6,13 @@ on:
         description: "Release description"
         default: "Generate release build"
       track:
-        description: "Release track (internal or open)"
+        description: "Release track (internal or beta)"
         required: true
         default: "internal"
         type: choice
         options:
           - internal
-          - open
+          - beta
 
 jobs:
   build-and-deploy:
