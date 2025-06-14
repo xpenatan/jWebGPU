@@ -28,9 +28,9 @@ interface WebGPUVectorColorTargetState {
     void push_back([Ref] WebGPUColorTargetState colorTargetState);
 };
 
-interface WebGPUVectorRequiredFeatures {
-    void WebGPUVectorRequiredFeatures();
-    [Value] static WebGPUVectorRequiredFeatures Obtain();
+interface WebGPUVectorFeatureName {
+    void WebGPUVectorFeatureName();
+    [Value] static WebGPUVectorFeatureName Obtain();
     void push_back(WGPUFeatureName featureName);
 };
 
@@ -397,7 +397,7 @@ interface WebGPUDeviceDescriptor {
     [Value] static WebGPUDeviceDescriptor Obtain();
     void SetLabel([Const] DOMString code);
     void SetRequiredLimits(WebGPULimits limits);
-    void SetRequiredFeatures(WebGPUVectorRequiredFeatures features);
+    void SetRequiredFeatures(WebGPUVectorFeatureName features);
     [Value] WebGPUQueueDescriptor GetDefaultQueue();
 };
 

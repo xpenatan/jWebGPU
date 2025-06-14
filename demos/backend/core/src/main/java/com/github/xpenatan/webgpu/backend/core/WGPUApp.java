@@ -22,7 +22,7 @@ import com.github.xpenatan.webgpu.WebGPURenderPipeline;
 import com.github.xpenatan.webgpu.WebGPURequestAdapterOptions;
 import com.github.xpenatan.webgpu.WebGPUSupportedFeatures;
 import com.github.xpenatan.webgpu.WebGPUSurface;
-import com.github.xpenatan.webgpu.WebGPUVectorRequiredFeatures;
+import com.github.xpenatan.webgpu.WebGPUVectorFeatureName;
 
 public class WGPUApp {
     public int width;
@@ -92,7 +92,7 @@ public class WGPUApp {
         deviceDescriptor.setRequiredLimits(limits);
         deviceDescriptor.setLabel("My Device");
 
-        WebGPUVectorRequiredFeatures features = WebGPUVectorRequiredFeatures.obtain();
+        WebGPUVectorFeatureName features = WebGPUVectorFeatureName.obtain();
         features.push_back(WGPUFeatureName.DepthClipControl);
         deviceDescriptor.setRequiredFeatures(features);
 

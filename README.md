@@ -16,7 +16,7 @@ To help you navigate the jWebGPU library, here are the naming conventions used f
 - **Custom Classes**: Start with `WGPU` (e.g., `WGPU`, `WGPUAndroidWindow`).
 - **WebGPU Classes**: Start with `WebGPU` (e.g., `WebGPUAdapter`, `WebGPUDevice`).
 - **WebGPU Enums**: Start with `WGPU` (e.g., `WGPUTextureFormat`, `WGPUPowerPreference`).
-- **Methods Requiring Arrays**: Start with `WebGPUVector` (e.g., `WebGPUVectorFloat`, `WebGPUVectorInt`).
+- **Methods Requiring Arrays**: Start with `WebGPUVector` (e.g., `WebGPUVectorTextureFormat`, `WebGPUVectorInt`).
 
 ## Memory Management and Static Obtain Methods
 Most classes in jWebGPU, except for opaque pointer classes, provide a static `obtain` method. 

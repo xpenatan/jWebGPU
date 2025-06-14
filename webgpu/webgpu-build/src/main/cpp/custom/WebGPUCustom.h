@@ -126,12 +126,12 @@ class WebGPUVectorColorTargetState {
         const WebGPUColorTargetState* data() { return vector.data(); }
 };
 
-class WebGPUVectorRequiredFeatures {
+class WebGPUVectorFeatureName {
     private:
         std::vector<WGPUFeatureName> vector;
     public:
-        static WebGPUVectorRequiredFeatures Obtain() {
-            WebGPUVectorRequiredFeatures obj;
+        static WebGPUVectorFeatureName Obtain() {
+            WebGPUVectorFeatureName obj;
             return obj;
         }
         int size() { return vector.size(); }
@@ -657,7 +657,7 @@ class WebGPUDeviceDescriptor : public WebGPUObjectBase<WebGPUDeviceDescriptor, W
             Get().requiredLimits = &(limits->Get());
         }
 
-        void SetRequiredFeatures(WebGPUVectorRequiredFeatures* features) {
+        void SetRequiredFeatures(WebGPUVectorFeatureName* features) {
             if(features != NULL) {
                 Get().requiredFeatureCount = features->size();
                 Get().requiredFeatures = features->data();
