@@ -1,14 +1,9 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
 import com.github.xpenatan.webgpu.JWebGPULoader;
-import com.github.xpenatan.webgpu.WGPU;
-import com.github.xpenatan.webgpu.WGPUPlatformType;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 import org.lwjgl.glfw.GLFWErrorCallback;
-import org.lwjgl.glfw.GLFWNativeCocoa;
-import org.lwjgl.glfw.GLFWNativeWGL;
-import org.lwjgl.glfw.GLFWNativeWin32;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFWNativeCocoa.glfwGetCocoaWindow;
