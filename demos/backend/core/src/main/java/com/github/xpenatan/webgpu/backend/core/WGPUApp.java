@@ -1,17 +1,5 @@
 package com.github.xpenatan.webgpu.backend.core;
 
-import com.github.xpenatan.webgpu.JAdapter;
-import com.github.xpenatan.webgpu.JAdapterInfo;
-import com.github.xpenatan.webgpu.JDevice;
-import com.github.xpenatan.webgpu.JDeviceDescriptor;
-import com.github.xpenatan.webgpu.JInstance;
-import com.github.xpenatan.webgpu.JLimits;
-import com.github.xpenatan.webgpu.JQueue;
-import com.github.xpenatan.webgpu.JRenderPipeline;
-import com.github.xpenatan.webgpu.JRequestAdapterOptions;
-import com.github.xpenatan.webgpu.JSupportedFeatures;
-import com.github.xpenatan.webgpu.JSurface;
-import com.github.xpenatan.webgpu.JWGPU;
 import com.github.xpenatan.webgpu.RequestAdapterCallback;
 import com.github.xpenatan.webgpu.RequestDeviceCallback;
 import com.github.xpenatan.webgpu.UncapturedErrorCallback;
@@ -22,23 +10,35 @@ import com.github.xpenatan.webgpu.WGPUErrorType;
 import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
 import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
-import com.github.xpenatan.webgpu.JVectorRequiredFeatures;
+import com.github.xpenatan.webgpu.WGPU;
+import com.github.xpenatan.webgpu.WebGPUAdapter;
+import com.github.xpenatan.webgpu.WebGPUAdapterInfo;
+import com.github.xpenatan.webgpu.WebGPUDevice;
+import com.github.xpenatan.webgpu.WebGPUDeviceDescriptor;
+import com.github.xpenatan.webgpu.WebGPUInstance;
+import com.github.xpenatan.webgpu.WebGPULimits;
+import com.github.xpenatan.webgpu.WebGPUQueue;
+import com.github.xpenatan.webgpu.WebGPURenderPipeline;
+import com.github.xpenatan.webgpu.WebGPURequestAdapterOptions;
+import com.github.xpenatan.webgpu.WebGPUSupportedFeatures;
+import com.github.xpenatan.webgpu.WebGPUSurface;
+import com.github.xpenatan.webgpu.WebGPUVectorRequiredFeatures;
 
 public class WGPUApp {
     public int width;
     public int height;
-    public JInstance instance;
-    public JAdapter adapter;
-    public JDevice device;
-    public JSurface surface;
-    public JRenderPipeline renderPipeline;
-    public JQueue queue;
+    public WebGPUInstance instance;
+    public WebGPUAdapter adapter;
+    public WebGPUDevice device;
+    public WebGPUSurface surface;
+    public WebGPURenderPipeline renderPipeline;
+    public WebGPUQueue queue;
 
     private InitState initState = InitState.NOT_INITIALIZED;
 
     public void init() {
-        JInstance instance = JWGPU.CreateInstance();
-        if(instance.IsValid()) {
+        WebGPUInstance instance = WGPU.createInstance();
+        if(instance.isValid()) {
             initState = InitState.INSTANCE_VALID;
             this.instance = instance;
             requestAdapter();
@@ -50,10 +50,10 @@ public class WGPUApp {
     }
 
     private void requestAdapter() {
-        JRequestAdapterOptions op = JRequestAdapterOptions.Obtain();
+        WebGPURequestAdapterOptions op = WebGPURequestAdapterOptions.obtain();
         RequestAdapterCallback callback = new RequestAdapterCallback() {
             @Override
-            protected void OnCallback(WGPURequestAdapterStatus status, JAdapter adapter) {
+            protected void onCallback(WGPURequestAdapterStatus status, WebGPUAdapter adapter) {
                 System.out.println("Adapter Status: " + status);
                 if(status == WGPURequestAdapterStatus.Success) {
                     initState = InitState.ADAPTER_VALID;
@@ -65,66 +65,66 @@ public class WGPUApp {
                 }
             }
         };
-        instance.RequestAdapter(op, WGPUCallbackMode.AllowProcessEvents, callback);
+        instance.requestAdapter(op, WGPUCallbackMode.AllowProcessEvents, callback);
     }
 
     private void requestDevice() {
-        JAdapterInfo info = JAdapterInfo.Obtain();
-        if(adapter.GetInfo(info)) {
-            WGPUBackendType backendType = info.GetBackendType();
+        WebGPUAdapterInfo info = WebGPUAdapterInfo.obtain();
+        if(adapter.getInfo(info)) {
+            WGPUBackendType backendType = info.getBackendType();
             System.out.println("BackendType: " + backendType);
-            WGPUAdapterType adapterType = info.GetAdapterType();
+            WGPUAdapterType adapterType = info.getAdapterType();
             System.out.println("AdapterType: " + adapterType);
-            String vendor = info.GetVendor().c_str();
+            String vendor = info.getVendor().c_str();
             System.out.println("Vendor: " + vendor);
-            String architecture = info.GetArchitecture().c_str();
+            String architecture = info.getArchitecture().c_str();
             System.out.println("Architecture: " + architecture);
-            String description = info.GetDescription().c_str();
+            String description = info.getDescription().c_str();
             System.out.println("Description: " + description);
-            String device = info.GetDevice().c_str();
+            String device = info.getDevice().c_str();
             System.out.println("Device: " + device);
-            System.out.println("Has Feature DepthClipControl: " + adapter.HasFeature(WGPUFeatureName.DepthClipControl));
+            System.out.println("Has Feature DepthClipControl: " + adapter.hasFeature(WGPUFeatureName.DepthClipControl));
         }
 
-        JDeviceDescriptor deviceDescriptor = JDeviceDescriptor.Obtain();
-        JLimits limits = JLimits.Obtain();
+        WebGPUDeviceDescriptor deviceDescriptor = WebGPUDeviceDescriptor.obtain();
+        WebGPULimits limits = WebGPULimits.obtain();
         setDefaultLimits(limits);
-        deviceDescriptor.SetRequiredLimits(limits);
-        deviceDescriptor.SetLabel("My Device");
+        deviceDescriptor.setRequiredLimits(limits);
+        deviceDescriptor.setLabel("My Device");
 
-        JVectorRequiredFeatures features = JVectorRequiredFeatures.Obtain();
+        WebGPUVectorRequiredFeatures features = WebGPUVectorRequiredFeatures.obtain();
         features.push_back(WGPUFeatureName.DepthClipControl);
-        deviceDescriptor.SetRequiredFeatures(features);
+        deviceDescriptor.setRequiredFeatures(features);
 
-        deviceDescriptor.GetDefaultQueue().SetLabel("The default queue");
+        deviceDescriptor.getDefaultQueue().setLabel("The default queue");
 
-        adapter.RequestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new RequestDeviceCallback() {
+        adapter.requestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new RequestDeviceCallback() {
             @Override
-            protected void OnCallback(WGPURequestDeviceStatus status, JDevice device) {
+            protected void onCallback(WGPURequestDeviceStatus status, WebGPUDevice device) {
                 System.out.println("Device Status: " + status);
                 if(status == WGPURequestDeviceStatus.Success) {
                     initState = InitState.DEVICE_VALID;
                     WGPUApp.this.device = device;
-                    queue = device.GetQueue();
-                    System.out.println("Platform: " + JWGPU.GetPlatformType());
+                    queue = device.getQueue();
+                    System.out.println("Platform: " + WGPU.getPlatformType());
 
-                    JSupportedFeatures features = JSupportedFeatures.Obtain();
-                    device.GetFeatures(features);
-                    int featureCount = features.GetFeatureCount();
+                    WebGPUSupportedFeatures features = WebGPUSupportedFeatures.obtain();
+                    device.getFeatures(features);
+                    int featureCount = features.getFeatureCount();
                     System.out.println("Total Features: " + featureCount);
                     for(int i = 0; i < featureCount; i++) {
-                        WGPUFeatureName featureName = features.GetFeatureAt(i);
+                        WGPUFeatureName featureName = features.getFeatureAt(i);
                         System.out.println("Feature name: " + featureName);
                     }
                     features.dispose();
 
-                    JLimits limits = JLimits.Obtain();
-                    device.GetLimits(limits);
+                    WebGPULimits limits = WebGPULimits.obtain();
+                    device.getLimits(limits);
                     System.out.println("Device limits: " + featureCount);
-                    System.out.println("MaxTextureDimension1D: " + limits.GetMaxTextureDimension1D());
-                    System.out.println("MaxTextureDimension2D: " + limits.GetMaxTextureDimension2D());
-                    System.out.println("MaxTextureDimension3D: " + limits.GetMaxTextureDimension3D());
-                    System.out.println("MaxTextureArrayLayers: " + limits.GetMaxTextureArrayLayers());
+                    System.out.println("MaxTextureDimension1D: " + limits.getMaxTextureDimension1D());
+                    System.out.println("MaxTextureDimension2D: " + limits.getMaxTextureDimension2D());
+                    System.out.println("MaxTextureDimension3D: " + limits.getMaxTextureDimension3D());
+                    System.out.println("MaxTextureArrayLayers: " + limits.getMaxTextureArrayLayers());
                 }
                 else {
                     initState = InitState.DEVICE_NOT_VALID;
@@ -132,7 +132,7 @@ public class WGPUApp {
             }
         }, new UncapturedErrorCallback() {
             @Override
-            protected void OnCallback(WGPUErrorType errorType, String message) {
+            protected void onCallback(WGPUErrorType errorType, String message) {
                 System.err.println("ErrorType: " + errorType);
                 System.err.println("Error Message: " + message);
                 initState = InitState.ERROR;
@@ -142,7 +142,7 @@ public class WGPUApp {
 
     public void update() {
         if(instance != null) {
-            instance.ProcessEvents();
+            instance.processEvents();
         }
         if(initState == InitState.ERROR) {
             throw new RuntimeException("WebGPU Error");
@@ -160,39 +160,39 @@ public class WGPUApp {
     final static int WGPU_LIMIT_U32_UNDEFINED = -1;
     final static int WGPU_LIMIT_U64_UNDEFINED = -1;
 
-    public void setDefaultLimits (JLimits limits) {
-        limits.SetMaxTextureDimension1D(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxTextureDimension2D(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxTextureDimension3D(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxTextureArrayLayers(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxBindGroups(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxBindGroupsPlusVertexBuffers(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxBindingsPerBindGroup(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxDynamicUniformBuffersPerPipelineLayout(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxDynamicStorageBuffersPerPipelineLayout(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxSampledTexturesPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxSamplersPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxStorageBuffersPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxStorageTexturesPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxUniformBuffersPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxUniformBufferBindingSize(WGPU_LIMIT_U64_UNDEFINED);
-        limits.SetMaxStorageBufferBindingSize(WGPU_LIMIT_U64_UNDEFINED);
-        limits.SetMinUniformBufferOffsetAlignment(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMinStorageBufferOffsetAlignment(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxVertexBuffers(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxBufferSize(WGPU_LIMIT_U64_UNDEFINED);
-        limits.SetMaxVertexAttributes(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxVertexBufferArrayStride(WGPU_LIMIT_U32_UNDEFINED);
-//        limits.SetMaxInterStageShaderComponents(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxInterStageShaderVariables(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxColorAttachments(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxColorAttachmentBytesPerSample(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxComputeWorkgroupStorageSize(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxComputeInvocationsPerWorkgroup(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxComputeWorkgroupSizeX(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxComputeWorkgroupSizeY(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxComputeWorkgroupSizeZ(WGPU_LIMIT_U32_UNDEFINED);
-        limits.SetMaxComputeWorkgroupsPerDimension(WGPU_LIMIT_U32_UNDEFINED);
+    public void setDefaultLimits (WebGPULimits limits) {
+        limits.setMaxTextureDimension1D(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxTextureDimension2D(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxTextureDimension3D(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxTextureArrayLayers(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxBindGroups(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxBindGroupsPlusVertexBuffers(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxBindingsPerBindGroup(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxDynamicUniformBuffersPerPipelineLayout(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxDynamicStorageBuffersPerPipelineLayout(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxSampledTexturesPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxSamplersPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxStorageBuffersPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxStorageTexturesPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxUniformBuffersPerShaderStage(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxUniformBufferBindingSize(WGPU_LIMIT_U64_UNDEFINED);
+        limits.setMaxStorageBufferBindingSize(WGPU_LIMIT_U64_UNDEFINED);
+        limits.setMinUniformBufferOffsetAlignment(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMinStorageBufferOffsetAlignment(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxVertexBuffers(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxBufferSize(WGPU_LIMIT_U64_UNDEFINED);
+        limits.setMaxVertexAttributes(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxVertexBufferArrayStride(WGPU_LIMIT_U32_UNDEFINED);
+//        limits.setMaxInterStageShaderComponents(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxInterStageShaderVariables(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxColorAttachments(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxColorAttachmentBytesPerSample(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxComputeWorkgroupStorageSize(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxComputeInvocationsPerWorkgroup(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxComputeWorkgroupSizeX(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxComputeWorkgroupSizeY(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxComputeWorkgroupSizeZ(WGPU_LIMIT_U32_UNDEFINED);
+        limits.setMaxComputeWorkgroupsPerDimension(WGPU_LIMIT_U32_UNDEFINED);
     }
 
     enum InitState {

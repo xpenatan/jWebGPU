@@ -2,7 +2,7 @@ package com.github.xpenatan.webgpu;
 
 import idl.IDLBase;
 
-public class JAndroidWindow extends IDLBase {
+public class WGPUAndroidWindow extends IDLBase {
 
     /*[-JNI;-NATIVE]
         #ifdef __ANDROID__
@@ -32,7 +32,7 @@ public class JAndroidWindow extends IDLBase {
     /*[-TEAVM;-NATIVE]
     */
     /*[-JNI;-NATIVE]
-        JAndroidWindow* nativeObject = (JAndroidWindow*)this_addr;
+        WGPUAndroidWindow* nativeObject = (WGPUAndroidWindow*)this_addr;
         nativeObject->SetWindow((void*)surfaceAddr);
     */
     private static native void internal_native_SetWindow(long this_addr, long surfaceAddr);

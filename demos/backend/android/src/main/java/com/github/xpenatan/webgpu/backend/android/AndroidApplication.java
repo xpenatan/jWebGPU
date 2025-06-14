@@ -10,7 +10,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import com.github.xpenatan.webgpu.JAndroidWindow;
+import com.github.xpenatan.webgpu.WGPUAndroidWindow;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
@@ -21,7 +21,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     private WGPUApp wgpu;
     private ApplicationListener applicationListener;
     private Surface surface;
-    private JAndroidWindow androidWindow;
+    private WGPUAndroidWindow androidWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
         wgpu = new WGPUApp();
 
         JWebGPULoader.init((isSuccess, e) -> {
-            System.out.println("WebGPU Success: " + isSuccess);
+            System.out.println("WebGPU Init Success: " + isSuccess);
             if (isSuccess) {
                 wGPUInit = 1;
             } else {
@@ -48,8 +48,8 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
             } else if (wGPUInit > 0) {
                 if (wGPUInit == 1) {
                     wGPUInit = 2;
-                    androidWindow = new JAndroidWindow();
-                    androidWindow.InitLogcat();
+                    androidWindow = new WGPUAndroidWindow();
+                    androidWindow.initLogcat();
                     WindowManager windowManager = (WindowManager)getApplicationContext().getSystemService(WINDOW_SERVICE);
                     Display display = windowManager.getDefaultDisplay();
                     wgpu.width = display.getWidth();
@@ -80,7 +80,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
     private void createSurface(Surface surface) {
         androidWindow.createAndroidSurface(surface);
-        wgpu.surface = wgpu.instance.CreateAndroidSurface(androidWindow);
+        wgpu.surface = wgpu.instance.createAndroidSurface(androidWindow);
     }
 
     private void setupFullScreen() {

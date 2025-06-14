@@ -6,6 +6,7 @@ import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jparser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jparser.builder.tool.BuilderTool;
 import com.github.xpenatan.jparser.idl.IDLReader;
+import com.github.xpenatan.jparser.idl.IDLRenaming;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,6 +55,14 @@ public class WGPUBuild {
 //                if(op.iOS) {
 //                    targets.add(getIOSTarget(op));
 //                }
+            }
+        }, new IDLRenaming() {
+            @Override
+            public String getIDLMethodName(String methodName) {
+                char[] c = methodName.toCharArray();
+                c[0] = Character.toLowerCase(c[0]);
+                methodName = new String(c);
+                return methodName;
             }
         });
     }

@@ -10,7 +10,20 @@ A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms
 ## Demo
 [Android](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
 
-## Build steps
+## Naming Conventions
+To help you navigate the jWebGPU library, here are the naming conventions used for classes, enums, and methods:
+
+- **Custom Classes**: Start with `WGPU` (e.g., `WGPU`, `WGPUAndroidWindow`).
+- **WebGPU Classes**: Start with `WebGPU` (e.g., `WebGPUAdapter`, `WebGPUDevice`).
+- **WebGPU Enums**: Start with `WGPU` (e.g., `WGPUTextureFormat`, `WGPUPowerPreference`).
+- **Methods Requiring Arrays**: Start with `WebGPUVector` (e.g., `WebGPUVectorFloat`, `WebGPUVectorInt`).
+
+## Memory Management and Static Obtain Methods
+Most classes in jWebGPU, except for opaque pointer classes, provide a static `obtain` method. 
+This method returns a global, reusable object to minimize allocations in both Java and native memory, eliminating the need for disposal. 
+Developers should use the `obtain` method whenever possible to reuse these global instances. However, if a unique class instance with a separate memory address is required, developers must create a new instance explicitly.
+
+## Build Steps
 
 Change `LibExt.exampleUseRepoLibs` to false. Set to true only if you want to try the demo without building.
 
@@ -35,7 +48,7 @@ Change `LibExt.exampleUseRepoLibs` to false. Set to true only if you want to try
    Make sure your PC is set up to build for each platform.  
    The native files will end up in `webgpu/webgpu-build/build/C++/libs`.
 ```
-// Windows requires Visual studio 2022 C++
+// Windows requires Visual Studio 2022 C++
 ./gradlew :webgpu:webgpu-build:wgpu_build_project_windows64
 
 // TeaVM requires Emscripten

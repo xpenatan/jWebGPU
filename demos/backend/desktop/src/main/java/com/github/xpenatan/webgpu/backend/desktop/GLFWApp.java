@@ -23,7 +23,7 @@ public class GLFWApp {
         openWindow();
 
         JWebGPULoader.init((isSuccess, e) -> {
-            System.out.println("WebGPU Success: " + isSuccess);
+            System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;
             }
@@ -104,6 +104,6 @@ public class GLFWApp {
     }
 
     private void createSurface() {
-        wgpu.surface = wgpu.instance.CreateWindowsSurface(windowHandle);
+        wgpu.surface = wgpu.instance.createWindowsSurface(windowHandle);
     }
 }

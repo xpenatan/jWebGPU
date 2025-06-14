@@ -1,16 +1,16 @@
 // ################################### CUSTOM CODE ###################################
 
-interface JWGPU {
-    static JPlatformType GetPlatformType();
-    [Value] static JInstance CreateInstance();
+interface WGPU {
+    static WGPUPlatformType GetPlatformType();
+    [Value] static WebGPUInstance CreateInstance();
 };
 
-interface JAndroidWindow {
-    void JAndroidWindow();
+interface WGPUAndroidWindow {
+    void WGPUAndroidWindow();
     void InitLogcat();
 };
 
-enum JPlatformType {
+enum WGPUPlatformType {
     "WGPU_Windows",
     "WGPU_Mac",
     "WGPU_Linux",
@@ -22,52 +22,52 @@ enum JPlatformType {
 
 // ################################### VECTORS ###################################
 
-interface JVectorColorTargetState {
-    void JVectorColorTargetState();
-    [Value] static JVectorColorTargetState Obtain();
-    void push_back([Ref] JColorTargetState colorTargetState);
+interface WebGPUVectorColorTargetState {
+    void WebGPUVectorColorTargetState();
+    [Value] static WebGPUVectorColorTargetState Obtain();
+    void push_back([Ref] WebGPUColorTargetState colorTargetState);
 };
 
-interface JVectorRequiredFeatures {
-    void JVectorRequiredFeatures();
-    [Value] static JVectorRequiredFeatures Obtain();
+interface WebGPUVectorRequiredFeatures {
+    void WebGPUVectorRequiredFeatures();
+    [Value] static WebGPUVectorRequiredFeatures Obtain();
     void push_back(WGPUFeatureName featureName);
 };
 
-interface JVectorConstantEntry {
-    void JVectorConstantEntry();
-    [Value] static JVectorConstantEntry Obtain();
-    void push_back([Ref] JConstantEntry constantEntry);
+interface WebGPUVectorConstantEntry {
+    void WebGPUVectorConstantEntry();
+    [Value] static WebGPUVectorConstantEntry Obtain();
+    void push_back([Ref] WebGPUConstantEntry constantEntry);
 };
 
-interface JVectorVertexBufferLayout {
-    void JVectorVertexBufferLayout();
-    [Value] static JVectorVertexBufferLayout Obtain();
-    void push_back([Ref] JVertexBufferLayout vertexBufferLayout);
+interface WebGPUVectorVertexBufferLayout {
+    void WebGPUVectorVertexBufferLayout();
+    [Value] static WebGPUVectorVertexBufferLayout Obtain();
+    void push_back([Ref] WebGPUVertexBufferLayout vertexBufferLayout);
 };
 
-interface JVectorTextureFormat {
-    void JVectorTextureFormat();
-    [Value] static JVectorTextureFormat Obtain();
+interface WebGPUVectorTextureFormat {
+    void WebGPUVectorTextureFormat();
+    [Value] static WebGPUVectorTextureFormat Obtain();
     void push_back(WGPUTextureFormat textureFormat);
 };
 
-interface JVectorRenderBundle {
-    void JVectorRenderBundle();
-    [Value] static JVectorRenderBundle Obtain();
-    void push_back([Ref] JRenderBundle renderBundle);
+interface WebGPUVectorRenderBundle {
+    void WebGPUVectorRenderBundle();
+    [Value] static WebGPUVectorRenderBundle Obtain();
+    void push_back([Ref] WebGPURenderBundle renderBundle);
 };
 
-interface JVectorInt {
-    void JVectorInt();
-    [Value] static JVectorInt Obtain();
+interface WebGPUVectorInt {
+    void WebGPUVectorInt();
+    [Value] static WebGPUVectorInt Obtain();
     void push_back(long value);
 };
 
-interface JVectorRenderPassColorAttachment {
-    void JVectorRenderPassColorAttachment();
-    [Value] static JVectorRenderPassColorAttachment Obtain();
-    void push_back([Ref] JRenderPassColorAttachment colorAttachment);
+interface WebGPUVectorRenderPassColorAttachment {
+    void WebGPUVectorRenderPassColorAttachment();
+    [Value] static WebGPUVectorRenderPassColorAttachment Obtain();
+    void push_back([Ref] WebGPURenderPassColorAttachment colorAttachment);
 };
 
 // ################################### CALLBACKS ###################################
@@ -78,7 +78,7 @@ interface RequestAdapterCallback {
 [JSImplementation="RequestAdapterCallback"]
 interface RequestAdapterCallbackImpl {
     void RequestAdapterCallbackImpl();
-    void OnCallback(WGPURequestAdapterStatus status, JAdapter adapter);
+    void OnCallback(WGPURequestAdapterStatus status, WebGPUAdapter adapter);
 };
 
 interface RequestDeviceCallback {
@@ -87,7 +87,7 @@ interface RequestDeviceCallback {
 [JSImplementation="RequestDeviceCallback"]
 interface RequestDeviceCallbackImpl {
     void RequestDeviceCallbackImpl();
-    void OnCallback(WGPURequestDeviceStatus status, JDevice device);
+    void OnCallback(WGPURequestDeviceStatus status, WebGPUDevice device);
 };
 
 interface UncapturedErrorCallback {
@@ -101,9 +101,9 @@ interface UncapturedErrorCallbackImpl {
 
 // ################################### STRUCTS ###################################
 
-interface JAdapterInfo {
-    void JAdapterInfo();
-    [Value] static JAdapterInfo Obtain();
+interface WebGPUAdapterInfo {
+    void WebGPUAdapterInfo();
+    [Value] static WebGPUAdapterInfo Obtain();
     [Value] IDLString GetVendor();
     [Value] IDLString GetArchitecture();
     [Value] IDLString GetDevice();
@@ -112,9 +112,9 @@ interface JAdapterInfo {
     WGPUAdapterType GetAdapterType();
 };
 
-interface JLimits {
-    void JLimits();
-    [Value] static JLimits Obtain();
+interface WebGPULimits {
+    void WebGPULimits();
+    [Value] static WebGPULimits Obtain();
 
     void SetMaxTextureDimension1D(long value);
     long GetMaxTextureDimension1D();
@@ -210,28 +210,28 @@ interface JLimits {
     long GetMaxComputeWorkgroupsPerDimension();
 };
 
-interface JRequestAdapterOptions {
-    void JRequestAdapterOptions();
-    [Value] static JRequestAdapterOptions Obtain();
+interface WebGPURequestAdapterOptions {
+    void WebGPURequestAdapterOptions();
+    [Value] static WebGPURequestAdapterOptions Obtain();
 };
 
-interface JShaderSourceWGSL {
-    void JShaderSourceWGSL();
-    [Value] static JShaderSourceWGSL Obtain();
+interface WebGPUShaderSourceWGSL {
+    void WebGPUShaderSourceWGSL();
+    [Value] static WebGPUShaderSourceWGSL Obtain();
     void SetCode([Const] DOMString code);
-    void SetNext(JChainedStruct value);
+    void SetNext(WebGPUChainedStruct value);
     void SetSType(WGPUSType type);
-    [Value] JChainedStruct GetChain();
+    [Value] WebGPUChainedStruct GetChain();
 };
 
-interface JSupportedFeatures {
-    void JSupportedFeatures();
-    [Value] static JSupportedFeatures Obtain();
+interface WebGPUSupportedFeatures {
+    void WebGPUSupportedFeatures();
+    [Value] static WebGPUSupportedFeatures Obtain();
     long GetFeatureCount();
     WGPUFeatureName GetFeatureAt(long index);
 };
 
-interface JBlendComponent {
+interface WebGPUBlendComponent {
     void SetOperation(WGPUBlendOperation operation);
     WGPUBlendOperation GetOperation();
     void SetSrcFactor(WGPUBlendFactor factor);
@@ -240,51 +240,51 @@ interface JBlendComponent {
     WGPUBlendFactor GetDstFactor();
 };
 
-interface JBlendState {
-    void JBlendState();
-    [Value] static JBlendState Obtain();
-    [Value] JBlendComponent GetColor();
-    [Value] JBlendComponent GetAlpha();
+interface WebGPUBlendState {
+    void WebGPUBlendState();
+    [Value] static WebGPUBlendState Obtain();
+    [Value] WebGPUBlendComponent GetColor();
+    [Value] WebGPUBlendComponent GetAlpha();
 };
 
-interface JConstantEntry {
-    void JConstantEntry();
+interface WebGPUConstantEntry {
+    void WebGPUConstantEntry();
 };
 
-interface JFragmentState {
-    void JFragmentState();
-    [Value] static JFragmentState Obtain();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUFragmentState {
+    void WebGPUFragmentState();
+    [Value] static WebGPUFragmentState Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetEntryPoint([Const] DOMString entryPoint);
-    void SetTargets(JVectorColorTargetState targets);
-    void SetModule(JShaderModule shaderModule);
-    void SetConstants(JVectorConstantEntry constants);
+    void SetTargets(WebGPUVectorColorTargetState targets);
+    void SetModule(WebGPUShaderModule shaderModule);
+    void SetConstants(WebGPUVectorConstantEntry constants);
 };
 
-interface JVertexBufferLayout {
-    void JVertexBufferLayout();
+interface WebGPUVertexBufferLayout {
+    void WebGPUVertexBufferLayout();
 };
 
-interface JVertexState {
-    void SetNextInChain(JChainedStruct chainedStruct);
-    void SetModule(JShaderModule shaderModule);
+interface WebGPUVertexState {
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetModule(WebGPUShaderModule shaderModule);
     void SetEntryPoint([Const] DOMString entryPoint);
-    void SetConstants(JVectorConstantEntry constants);
-    void SetBuffers(JVectorVertexBufferLayout buffers);
+    void SetConstants(WebGPUVectorConstantEntry constants);
+    void SetBuffers(WebGPUVectorVertexBufferLayout buffers);
 };
 
-interface JColorTargetState {
-    void JColorTargetState();
-    [Value] static JColorTargetState Obtain();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUColorTargetState {
+    void WebGPUColorTargetState();
+    [Value] static WebGPUColorTargetState Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
-    void SetBlend(JBlendState blendState);
+    void SetBlend(WebGPUBlendState blendState);
     void SetWriteMask(WGPUColorWriteMask writeMask);
 };
 
-interface JDepthStencilState {
-    void JDepthStencilState();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUDepthStencilState {
+    void WebGPUDepthStencilState();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
     void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled);
     void SetDepthCompare(WGPUCompareFunction depthCompare);
@@ -293,37 +293,37 @@ interface JDepthStencilState {
     //TODO add missing methods
 };
 
-interface JMultisampleState {
-    void JMultisampleState();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUMultisampleState {
+    void WebGPUMultisampleState();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetCount(long count);
     void SetMask(long mask);
     void SetAlphaToCoverageEnabled(long alphaToCoverageEnabled);
 };
 
-interface JPrimitiveState {
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUPrimitiveState {
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetTopology(WGPUPrimitiveTopology value);
     void SetStripIndexFormat(WGPUIndexFormat value);
     void SetFrontFace(WGPUFrontFace value);
     void SetCullMode(WGPUCullMode value);
 };
 
-interface JRenderPassDepthStencilAttachment {
-    void JRenderPassDepthStencilAttachment();
-    [Value] static JRenderPassDepthStencilAttachment Obtain();
+interface WebGPURenderPassDepthStencilAttachment {
+    void WebGPURenderPassDepthStencilAttachment();
+    [Value] static WebGPURenderPassDepthStencilAttachment Obtain();
 };
 
-interface JRenderPassTimestampWrites {
-    [Value] static JRenderPassTimestampWrites Obtain();
-    void SetQuerySet(JQuerySet value);
+interface WebGPURenderPassTimestampWrites {
+    [Value] static WebGPURenderPassTimestampWrites Obtain();
+    void SetQuerySet(WebGPUQuerySet value);
     void SetBeginningOfPassWriteIndex(long value);
     void SetEndOfPassWriteIndex(long value);
 };
 
-interface JColor {
-    void JColor();
-    [Value] static JColor Obtain();
+interface WebGPUColor {
+    void WebGPUColor();
+    [Value] static WebGPUColor Obtain();
     void SetColor(float r, float g, float b, float a);
     float GetR();
     float GetG();
@@ -331,121 +331,120 @@ interface JColor {
     float GetA();
 };
 
-interface JRenderPassColorAttachment {
-    void JRenderPassColorAttachment();
-    [Value] static JRenderPassColorAttachment Obtain();
+interface WebGPURenderPassColorAttachment {
+    void WebGPURenderPassColorAttachment();
+    [Value] static WebGPURenderPassColorAttachment Obtain();
 
-    void SetView(JTextureView textureView);
-    void SetResolveTarget(JTextureView textureView);
+    void SetView(WebGPUTextureView textureView);
+    void SetResolveTarget(WebGPUTextureView textureView);
     void SetLoadOp(WGPULoadOp loadOp);
     void SetStoreOp(WGPUStoreOp storeOp);
-    [Value] JColor GetClearValue();
+    [Value] WebGPUColor GetClearValue();
     void SetDepthSlice(long depthSlice);
 };
 
-interface JSurfaceTexture {
-    void JSurfaceTexture();
-    [Value] static JSurfaceTexture Obtain();
-    void GetTexture(JTexture texture);
+interface WebGPUSurfaceTexture {
+    void WebGPUSurfaceTexture();
+    [Value] static WebGPUSurfaceTexture Obtain();
+    void GetTexture(WebGPUTexture texture);
     WGPUSurfaceGetCurrentTextureStatus GetStatus();
 };
 
-interface JSurfaceCapabilities {
-    void JSurfaceCapabilities();
-    [Value] static JSurfaceCapabilities Obtain();
+interface WebGPUSurfaceCapabilities {
+    void WebGPUSurfaceCapabilities();
+    [Value] static WebGPUSurfaceCapabilities Obtain();
     WGPUTextureFormat GetFormats(long index);
 };
 
-interface JSurfaceConfiguration {
-    void JSurfaceConfiguration();
-    [Value] static JSurfaceConfiguration Obtain();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUSurfaceConfiguration {
+    void WebGPUSurfaceConfiguration();
+    [Value] static WebGPUSurfaceConfiguration Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetWidth(long width);
     void SetHeight(long height);
     void SetFormat(WGPUTextureFormat format);
-    void SetViewFormats(JVectorTextureFormat formats);
+    void SetViewFormats(WebGPUVectorTextureFormat formats);
     void SetUsage(WGPUTextureUsage usage);
-    void SetDevice(JDevice device);
+    void SetDevice(WebGPUDevice device);
     void SetPresentMode(WGPUPresentMode presentMode);
     void SetAlphaMode(WGPUCompositeAlphaMode alphaMode);
 };
 
-interface JChainedStruct {
-
-    void SetNext(JChainedStruct value);
+interface WebGPUChainedStruct {
+    void SetNext(WebGPUChainedStruct value);
     void SetSType(WGPUSType type);
 };
 
-interface JStringView {
+interface WebGPUStringView {
     [Const, Value] IDLString GetString();
 };
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
-interface JQueueDescriptor {
+interface WebGPUQueueDescriptor {
     void SetLabel([Const] DOMString code);
 };
 
-interface JShaderModuleDescriptor {
-    void JShaderModuleDescriptor();
-    [Value] static JShaderModuleDescriptor Obtain();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUShaderModuleDescriptor {
+    void WebGPUShaderModuleDescriptor();
+    [Value] static WebGPUShaderModuleDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
-interface JDeviceDescriptor {
-    void JDeviceDescriptor();
-    [Value] static JDeviceDescriptor Obtain();
+interface WebGPUDeviceDescriptor {
+    void WebGPUDeviceDescriptor();
+    [Value] static WebGPUDeviceDescriptor Obtain();
     void SetLabel([Const] DOMString code);
-    void SetRequiredLimits(JLimits limits);
-    void SetRequiredFeatures(JVectorRequiredFeatures features);
-    [Value] JQueueDescriptor GetDefaultQueue();
+    void SetRequiredLimits(WebGPULimits limits);
+    void SetRequiredFeatures(WebGPUVectorRequiredFeatures features);
+    [Value] WebGPUQueueDescriptor GetDefaultQueue();
 };
 
-interface JRenderPipelineDescriptor {
-    void JRenderPipelineDescriptor();
-    [Value] static JRenderPipelineDescriptor Obtain();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPURenderPipelineDescriptor {
+    void WebGPURenderPipelineDescriptor();
+    [Value] static WebGPURenderPipelineDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
-    [Value] JVertexState GetVertex();
-    [Value] JPrimitiveState GetPrimitive();
-    void SetFragment(JFragmentState fragmentState);
-    void SetDepthStencil(JDepthStencilState depthStencilState);
-    [Value] JMultisampleState GetMultisample();
-    void SetLayout(JPipelineLayout pipelineLayout);
+    [Value] WebGPUVertexState GetVertex();
+    [Value] WebGPUPrimitiveState GetPrimitive();
+    void SetFragment(WebGPUFragmentState fragmentState);
+    void SetDepthStencil(WebGPUDepthStencilState depthStencilState);
+    [Value] WebGPUMultisampleState GetMultisample();
+    void SetLayout(WebGPUPipelineLayout pipelineLayout);
 };
 
-interface JCommandEncoderDescriptor {
-    void JCommandEncoderDescriptor();
-    [Value] static JCommandEncoderDescriptor Obtain();
-    void SetLabel([Const] DOMString value);
-};
-
-interface JRenderPassDescriptor {
-    void JRenderPassDescriptor();
-    [Value] static JRenderPassDescriptor Obtain();
-    void SetLabel([Const] DOMString value);
-    void SetColorAttachments(JVectorRenderPassColorAttachment colorAttachments);
-    void SetDepthStencilAttachment(JRenderPassDepthStencilAttachment attachment);
-    void SetTimestampWrites(JRenderPassTimestampWrites timestampWrites);
-};
-
-interface JCommandBufferDescriptor  {
-    void JCommandBufferDescriptor();
-    [Value] static JCommandBufferDescriptor Obtain();
-    void SetNextInChain(JChainedStruct chainedStruct);
+interface WebGPUCommandEncoderDescriptor {
+    void WebGPUCommandEncoderDescriptor();
+    [Value] static WebGPUCommandEncoderDescriptor Obtain();
     void SetLabel([Const] DOMString value);
 };
 
-interface JComputePassDescriptor {
-    void JComputePassDescriptor();
-    [Value] static JComputePassDescriptor Obtain();
+interface WebGPURenderPassDescriptor {
+    void WebGPURenderPassDescriptor();
+    [Value] static WebGPURenderPassDescriptor Obtain();
+    void SetLabel([Const] DOMString value);
+    void SetColorAttachments(WebGPUVectorRenderPassColorAttachment colorAttachments);
+    void SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment attachment);
+    void SetTimestampWrites(WebGPURenderPassTimestampWrites timestampWrites);
+};
+
+interface WebGPUCommandBufferDescriptor  {
+    void WebGPUCommandBufferDescriptor();
+    [Value] static WebGPUCommandBufferDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
-interface JTextureViewDescriptor {
-    void JTextureViewDescriptor();
-    [Value] static JTextureViewDescriptor Obtain();
+interface WebGPUComputePassDescriptor {
+    void WebGPUComputePassDescriptor();
+    [Value] static WebGPUComputePassDescriptor Obtain();
+    void SetLabel([Const] DOMString value);
+};
+
+interface WebGPUTextureViewDescriptor {
+    void WebGPUTextureViewDescriptor();
+    [Value] static WebGPUTextureViewDescriptor Obtain();
     void SetLabel([Const] DOMString value);
     void SetFormat(WGPUTextureFormat format);
     void SetDimension(WGPUTextureViewDimension dimension);
@@ -459,62 +458,59 @@ interface JTextureViewDescriptor {
 
 // ################################### OPAQUE POINTER ###################################
 
-interface JTextureView {
-    void JTextureView();
-    [Value] static JTextureView Obtain();
+interface WebGPUTextureView {
+    void WebGPUTextureView();
+    [Value] static WebGPUTextureView Obtain();
     void Release();
 };
 
-interface JTexture {
-    void JTexture();
-    [Value] static JTexture Obtain();
-    void CreateView(JTextureViewDescriptor textureViewDescriptor, JTextureView textureView);
+interface WebGPUTexture {
+    void WebGPUTexture();
+    [Value] static WebGPUTexture Obtain();
+    void CreateView(WebGPUTextureViewDescriptor textureViewDescriptor, WebGPUTextureView textureView);
     WGPUTextureFormat GetFormat();
     void Release();
 };
 
-interface JShaderModule {
-    void JShaderModule();
-    [Value] static JShaderModule Obtain();
+interface WebGPUShaderModule {
+    void WebGPUShaderModule();
+    [Value] static WebGPUShaderModule Obtain();
     void Release();
 };
 
-interface JRenderPipeline {
-    void JRenderPipeline();
-//    [Value] static JRenderPipeline Obtain();
+interface WebGPURenderPipeline {
+    void WebGPURenderPipeline();
     void Release();
 };
 
-interface JRenderPassEncoder {
-    void JRenderPassEncoder();
-    [Value] static JRenderPassEncoder Obtain();
+interface WebGPURenderPassEncoder {
+    void WebGPURenderPassEncoder();
+    [Value] static WebGPURenderPassEncoder Obtain();
     void Release();
     void End();
-    void SetPipeline(JRenderPipeline renderPipeline);
+    void SetPipeline(WebGPURenderPipeline renderPipeline);
     void BeginOcclusionQuery(long queryIndex);
     void Draw(long vertexCount, long instanceCount, long firstVertex, long firstInstance);
-    void DrawIndexed(long indexCount,long instanceCount, long firstIndex, long baseVertex, long firstInstance);
-    void DrawIndexedIndirect(JBuffer indirectBuffer, long indirectOffset);
-    void DrawIndirect(JBuffer indirectBuffer, long indirectOffset);
+    void DrawIndexed(long indexCount, long instanceCount, long firstIndex, long baseVertex, long firstInstance);
+    void DrawIndexedIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
+    void DrawIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
     void EndOcclusionQuery();
-    void ExecuteBundles(JVectorRenderBundle bundles);
+    void ExecuteBundles(WebGPUVectorRenderBundle bundles);
     void InsertDebugMarker([Const] DOMString value);
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString value);
-    void SetBindGroup(long groupIndex, JBindGroup group, JVectorInt dynamicOffsets);
-    void SetBlendConstant(JColor color);
-    void SetIndexBuffer(JBuffer buffer, WGPUIndexFormat format, long offset, long size);
+    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WebGPUVectorInt dynamicOffsets);
+    void SetBlendConstant(WebGPUColor color);
+    void SetIndexBuffer(WebGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
     void SetLabel([Const] DOMString value);
     void SetScissorRect(long x, long y, long width, long height);
     void SetStencilReference(long reference);
-    void SetVertexBuffer(long slot, JBuffer buffer, long offset, long size);
+    void SetVertexBuffer(long slot, WebGPUBuffer buffer, long offset, long size);
     void SetViewport(long x, long y, long width, long height, float minDepth, float maxDepth);
     void AddRef();
 };
 
-interface JQuerySet {
-    // Opaque pointer
-
+interface WebGPUQuerySet {
     void SetDestroy();
     long GetCount();
     WGPUQueryType GetType();
@@ -523,93 +519,87 @@ interface JQuerySet {
     void AddRef();
 };
 
-interface JPipelineLayout {
+interface WebGPUPipelineLayout {
 };
 
-interface JInstance {
+interface WebGPUInstance {
     boolean IsValid();
     void Release();
-    void RequestAdapter(JRequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
-    JSurface CreateWebSurface([Const] DOMString canvas);
-    JSurface CreateWindowsSurface(any hwnd);
-    JSurface CreateAndroidSurface(JAndroidWindow surface);
+    void RequestAdapter(WebGPURequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
+    WebGPUSurface CreateWebSurface([Const] DOMString canvas);
+    WebGPUSurface CreateWindowsSurface(any hwnd);
+    WebGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);
     void ProcessEvents();
 };
 
-interface JDevice {
+interface WebGPUDevice {
     void Release();
-    [Value] JQueue GetQueue();
-    void CreateRenderPipeline(JRenderPipelineDescriptor descriptor, JRenderPipeline renderPipeline);
-    void CreateShaderModule(JShaderModuleDescriptor descriptor, JShaderModule shaderModule);
-    void GetFeatures(JSupportedFeatures features);
-    void GetLimits(JLimits limits);
-    void CreateCommandEncoder(JCommandEncoderDescriptor encoderDescriptor, JCommandEncoder commandEncoder);
+    [Value] WebGPUQueue GetQueue();
+    void CreateRenderPipeline(WebGPURenderPipelineDescriptor descriptor, WebGPURenderPipeline renderPipeline);
+    void CreateShaderModule(WebGPUShaderModuleDescriptor descriptor, WebGPUShaderModule shaderModule);
+    void GetFeatures(WebGPUSupportedFeatures features);
+    void GetLimits(WebGPULimits limits);
+    void CreateCommandEncoder(WebGPUCommandEncoderDescriptor encoderDescriptor, WebGPUCommandEncoder commandEncoder);
 };
 
-//interface JComputePipeline {
-//
-//}
-
-//interface JSampler {
-//
-//}
-
-interface JComputePassEncoder {
-    void JComputePassEncoder();
-    [Value] static JComputePassEncoder Obtain();
+interface WebGPUComputePassEncoder {
+    void WebGPUComputePassEncoder();
+    [Value] static WebGPUComputePassEncoder Obtain();
     void Release();
 };
 
-interface JCommandBuffer {
-    void JCommandBuffer();
-    [Value] static JCommandBuffer Obtain();
+interface WebGPUCommandBuffer {
+    void WebGPUCommandBuffer();
+    [Value] static WebGPUCommandBuffer Obtain();
     void Release();
 };
 
-interface JCommandEncoder {
-    void JCommandEncoder();
-    [Value] static JCommandEncoder Obtain();
+interface WebGPUCommandEncoder {
+    void WebGPUCommandEncoder();
+    [Value] static WebGPUCommandEncoder Obtain();
     void Release();
-    void BeginRenderPass(JRenderPassDescriptor renderPassDescriptor, JRenderPassEncoder renderPassEncoder);
-    void BeginComputePass(JComputePassEncoder computePassEncoder);
-    void ClearBuffer(JBuffer buffer, long offset, long size);
-    void Finish(JCommandBufferDescriptor descriptor, JCommandBuffer commandBuffer);
+    void BeginRenderPass(WebGPURenderPassDescriptor renderPassDescriptor, WebGPURenderPassEncoder renderPassEncoder);
+    void BeginComputePass(WebGPUComputePassEncoder computePassEncoder);
+    void ClearBuffer(WebGPUBuffer buffer, long offset, long size);
+    void Finish(WebGPUCommandBufferDescriptor descriptor, WebGPUCommandBuffer commandBuffer);
 };
 
-interface JBuffer {
-    void JBuffer();
+interface WebGPUBuffer {
+    void WebGPUBuffer();
 };
 
-interface JBindGroup {
-
+interface WebGPUBindGroup {
 };
 
-interface JRenderBundle {
-    void JRenderBundle();
+interface WebGPURenderBundle {
+    void WebGPURenderBundle();
 };
 
-interface JAdapter {
+interface WebGPUAdapter {
     void Release();
-    void RequestDevice(JDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
-    boolean GetInfo(JAdapterInfo adapterInfo);
+    void RequestDevice(WebGPUDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
+    boolean GetInfo(WebGPUAdapterInfo adapterInfo);
     boolean HasFeature(WGPUFeatureName featureName);
 };
 
-interface JSurface {
+interface WebGPUSurface {
     void Unconfigure();
     void Release();
-    void Configure(JSurfaceConfiguration config);
-    void GetCapabilities(JAdapter adapter, JSurfaceCapabilities surfaceCapabilities);
-    void GetCurrentTexture(JSurfaceTexture surfaceTexture);
+    void Configure(WebGPUSurfaceConfiguration config);
+    void GetCapabilities(WebGPUAdapter adapter, WebGPUSurfaceCapabilities surfaceCapabilities);
+    void GetCurrentTexture(WebGPUSurfaceTexture surfaceTexture);
     void Present();
 };
 
-interface JQueue {
-//    void OnSubmittedWorkDone();
+interface WebGPUQueue {
     void SetLabel([Const] DOMString value);
-    void Submit(long commandCount, JCommandBuffer commandBuffer);
+    void Submit(long commandCount, WebGPUCommandBuffer commandBuffer);
     void Release();
 };
+
+// ################################### ENUMS ###################################
+
+// [Enums remain unchanged as per request]
 
 // ################################### ENUMS ###################################
 

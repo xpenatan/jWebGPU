@@ -78,20 +78,20 @@ private:
 
 #endif // __ANDROID__
 
-class JAdapter;
-class JDevice;
-class JDeviceDescriptor;
-class JSurface;
-class JQueue;
-class JStringView;
-class JSurfaceConfiguration;
-class JBlendState;
-class JColorTargetState;
-class JDepthStencilState;
-class JRenderPassColorAttachment;
-class JConstantEntry;
-class JVertexBufferLayout;
-class JRenderBundle;
+class WebGPUAdapter;
+class WebGPUDevice;
+class WebGPUDeviceDescriptor;
+class WebGPUSurface;
+class WebGPUQueue;
+class WebGPUStringView;
+class WebGPUSurfaceConfiguration;
+class WebGPUBlendState;
+class WebGPUColorTargetState;
+class WebGPUDepthStencilState;
+class WebGPURenderPassColorAttachment;
+class WebGPUConstantEntry;
+class WebGPUVertexBufferLayout;
+class WebGPURenderBundle;
 
 #ifdef __EMSCRIPTEN__
 
@@ -103,7 +103,7 @@ using WGPURenderPassTimestampWrites = WGPURenderPassTimestampWrites;  // wgpu-na
 
 #endif //__EMSCRIPTEN__
 
-enum JPlatformType : int {
+enum WGPUPlatformType : int {
     WGPU_Unknown = 0,
     WGPU_Windows,
     WGPU_Mac,
@@ -113,25 +113,25 @@ enum JPlatformType : int {
     WGPU_Web
 };
 
-class JVectorColorTargetState {
+class WebGPUVectorColorTargetState {
     private:
-        std::vector<JColorTargetState> vector;
+        std::vector<WebGPUColorTargetState> vector;
     public:
-        static JVectorColorTargetState Obtain() {
-            JVectorColorTargetState obj;
+        static WebGPUVectorColorTargetState Obtain() {
+            WebGPUVectorColorTargetState obj;
             return obj;
         }
         int size() { return vector.size(); }
-        void push_back(const JColorTargetState& attachment) { vector.push_back(attachment); }
-        const JColorTargetState* data() { return vector.data(); }
+        void push_back(const WebGPUColorTargetState& attachment) { vector.push_back(attachment); }
+        const WebGPUColorTargetState* data() { return vector.data(); }
 };
 
-class JVectorRequiredFeatures {
+class WebGPUVectorRequiredFeatures {
     private:
         std::vector<WGPUFeatureName> vector;
     public:
-        static JVectorRequiredFeatures Obtain() {
-            JVectorRequiredFeatures obj;
+        static WebGPUVectorRequiredFeatures Obtain() {
+            WebGPUVectorRequiredFeatures obj;
             return obj;
         }
         int size() { return vector.size(); }
@@ -139,38 +139,38 @@ class JVectorRequiredFeatures {
         const WGPUFeatureName* data() { return vector.data(); }
 };
 
-class JVectorConstantEntry {
+class WebGPUVectorConstantEntry {
     private:
-        std::vector<JConstantEntry> vector;
+        std::vector<WebGPUConstantEntry> vector;
     public:
-        static JVectorConstantEntry Obtain() {
-            JVectorConstantEntry obj;
+        static WebGPUVectorConstantEntry Obtain() {
+            WebGPUVectorConstantEntry obj;
             return obj;
         }
         int size() { return vector.size(); }
-        void push_back(const JConstantEntry& attachment) { vector.push_back(attachment); }
-        const JConstantEntry* data() { return vector.data(); }
+        void push_back(const WebGPUConstantEntry& attachment) { vector.push_back(attachment); }
+        const WebGPUConstantEntry* data() { return vector.data(); }
 };
 
-class JVectorVertexBufferLayout {
+class WebGPUVectorVertexBufferLayout {
     private:
-        std::vector<JVertexBufferLayout> vector;
+        std::vector<WebGPUVertexBufferLayout> vector;
     public:
-        static JVectorVertexBufferLayout Obtain() {
-            JVectorVertexBufferLayout obj;
+        static WebGPUVectorVertexBufferLayout Obtain() {
+            WebGPUVectorVertexBufferLayout obj;
             return obj;
         }
         int size() { return vector.size(); }
-        void push_back(const JVertexBufferLayout& attachment) { vector.push_back(attachment); }
-        const JVertexBufferLayout* data() { return vector.data(); }
+        void push_back(const WebGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
+        const WebGPUVertexBufferLayout* data() { return vector.data(); }
 };
 
-class JVectorTextureFormat {
+class WebGPUVectorTextureFormat {
     private:
         std::vector<WGPUTextureFormat> vector;
     public:
-        static JVectorTextureFormat Obtain() {
-            JVectorTextureFormat obj;
+        static WebGPUVectorTextureFormat Obtain() {
+            WebGPUVectorTextureFormat obj;
             return obj;
         }
         int size() { return vector.size(); }
@@ -178,25 +178,25 @@ class JVectorTextureFormat {
         const WGPUTextureFormat* data() { return vector.data(); }
 };
 
-class JVectorRenderBundle {
+class WebGPUVectorRenderBundle {
     private:
-        std::vector<JRenderBundle> vector;
+        std::vector<WebGPURenderBundle> vector;
     public:
-        static JVectorRenderBundle Obtain() {
-            JVectorRenderBundle obj;
+        static WebGPUVectorRenderBundle Obtain() {
+            WebGPUVectorRenderBundle obj;
             return obj;
         }
         int size() { return vector.size(); }
-        void push_back(const JRenderBundle& attachment) { vector.push_back(attachment); }
-        const JRenderBundle* data() { return vector.data(); }
+        void push_back(const WebGPURenderBundle& attachment) { vector.push_back(attachment); }
+        const WebGPURenderBundle* data() { return vector.data(); }
 };
 
-class JVectorInt {
+class WebGPUVectorInt {
     private:
         std::vector<int> vector;
     public:
-        static JVectorInt Obtain() {
-            JVectorInt obj;
+        static WebGPUVectorInt Obtain() {
+            WebGPUVectorInt obj;
             return obj;
         }
         int size() { return vector.size(); }
@@ -204,26 +204,26 @@ class JVectorInt {
         const int* data() { return vector.data(); }
 };
 
-class JVectorRenderPassColorAttachment {
+class WebGPUVectorRenderPassColorAttachment {
     private:
-        std::vector<JRenderPassColorAttachment> vector;
+        std::vector<WebGPURenderPassColorAttachment> vector;
     public:
-        static JVectorRenderPassColorAttachment Obtain() {
-            JVectorRenderPassColorAttachment obj;
+        static WebGPUVectorRenderPassColorAttachment Obtain() {
+            WebGPUVectorRenderPassColorAttachment obj;
             return obj;
         }
         int size() { return vector.size(); }
-        void push_back(const JRenderPassColorAttachment& attachment) { vector.push_back(attachment); }
-        const JRenderPassColorAttachment* data() { return vector.data(); }
+        void push_back(const WebGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
+        const WebGPURenderPassColorAttachment* data() { return vector.data(); }
 };
 
-class JAndroidWindow {
+class WGPUAndroidWindow {
     public:
         #ifdef __ANDROID__
             ANativeWindow* g_window = nullptr;
         #endif
 
-        ~JAndroidWindow() {
+        ~WGPUAndroidWindow() {
             #ifdef __ANDROID__
                 if(g_window != nullptr) {
                     ANativeWindow_release(g_window);
@@ -256,13 +256,13 @@ class JAndroidWindow {
 
 class RequestAdapterCallback {
 public:
-    virtual void OnCallback(WGPURequestAdapterStatus status, JAdapter* adapter) = 0;
+    virtual void OnCallback(WGPURequestAdapterStatus status, WebGPUAdapter* adapter) = 0;
 
 };
 
 class RequestDeviceCallback {
 public:
-    virtual void OnCallback(WGPURequestDeviceStatus status, JDevice* device) = 0;
+    virtual void OnCallback(WGPURequestDeviceStatus status, WebGPUDevice* device) = 0;
 
 };
 
@@ -273,7 +273,7 @@ public:
 };
 
 template<typename Derived, typename CType>
-class JObjectBase {
+class WebGPUObjectBase {
     private:
         template<typename T>
         static T InitializeHandle() {
@@ -324,7 +324,7 @@ class JObjectBase {
     }
 };
 
-class JCommandBuffer : public JObjectBase<JCommandBuffer, WGPUCommandBuffer> {
+class WebGPUCommandBuffer : public WebGPUObjectBase<WebGPUCommandBuffer, WGPUCommandBuffer> {
     protected:
 
         void AddRefInternal() {
@@ -337,14 +337,14 @@ class JCommandBuffer : public JObjectBase<JCommandBuffer, WGPUCommandBuffer> {
 
     public:
 
-        static JCommandBuffer Obtain() {
-            JCommandBuffer obj;
+        static WebGPUCommandBuffer Obtain() {
+            WebGPUCommandBuffer obj;
             return obj;
         }
 
 };
 
-class JQueue : public JObjectBase<JQueue, WGPUQueue> {
+class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
     protected:
 
         void AddRefInternal() {
@@ -364,16 +364,16 @@ class JQueue : public JObjectBase<JQueue, WGPUQueue> {
             wgpuQueueSetLabel(Get(), stringView);
         }
 
-        void Submit(int commandCount, JCommandBuffer* commandBuffer) {
+        void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer) {
             wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
         }
 };
 
-class JChainedStruct : public JObjectBase<JChainedStruct, WGPUChainedStruct*> {
+class WebGPUChainedStruct : public WebGPUObjectBase<WebGPUChainedStruct, WGPUChainedStruct*> {
     private:
 
     public:
-        void SetNext(JChainedStruct* value) {
+        void SetNext(WebGPUChainedStruct* value) {
             Get()->next = value->Get();
         }
 
@@ -382,16 +382,16 @@ class JChainedStruct : public JObjectBase<JChainedStruct, WGPUChainedStruct*> {
         }
 };
 
-class JStringView : public JObjectBase<JStringView, WGPUStringView> {
+class WebGPUStringView : public WebGPUObjectBase<WebGPUStringView, WGPUStringView> {
     public:
 
-        JStringView() {
+        WebGPUStringView() {
         }
 
-        JStringView(WGPUStringView stringView) {
+        WebGPUStringView(WGPUStringView stringView) {
             Set(stringView);
         }
-        JStringView(const char* value) {
+        WebGPUStringView(const char* value) {
             Get().data = strdup(value);
             Get().length = strlen(value);
         }
@@ -401,11 +401,11 @@ class JStringView : public JObjectBase<JStringView, WGPUStringView> {
         }
 };
 
-class JLimits : public JObjectBase<JLimits, WGPULimits> {
+class WebGPULimits : public WebGPUObjectBase<WebGPULimits, WGPULimits> {
     public: // TODO wgpu-native limits is different from emscripten dawn limits
 
-        static JLimits Obtain() {
-            JLimits obj;
+        static WebGPULimits Obtain() {
+            WebGPULimits obj;
             return obj;
         }
 
@@ -627,7 +627,7 @@ class JLimits : public JObjectBase<JLimits, WGPULimits> {
         }
 };
 
-class JQueueDescriptor : public JObjectBase<JQueueDescriptor, WGPUQueueDescriptor*> {
+class WebGPUQueueDescriptor : public WebGPUObjectBase<WebGPUQueueDescriptor, WGPUQueueDescriptor*> {
         public:
 
         void SetLabel(const char* value) {
@@ -638,11 +638,11 @@ class JQueueDescriptor : public JObjectBase<JQueueDescriptor, WGPUQueueDescripto
         }
 };
 
-class JDeviceDescriptor : public JObjectBase<JDeviceDescriptor, WGPUDeviceDescriptor> {
+class WebGPUDeviceDescriptor : public WebGPUObjectBase<WebGPUDeviceDescriptor, WGPUDeviceDescriptor> {
     public:
 
-        static JDeviceDescriptor Obtain() {
-            JDeviceDescriptor obj;
+        static WebGPUDeviceDescriptor Obtain() {
+            WebGPUDeviceDescriptor obj;
             return obj;
         }
 
@@ -653,11 +653,11 @@ class JDeviceDescriptor : public JObjectBase<JDeviceDescriptor, WGPUDeviceDescri
             Get().label = stringView;
         }
 
-        void SetRequiredLimits(JLimits* limits) {
+        void SetRequiredLimits(WebGPULimits* limits) {
             Get().requiredLimits = &(limits->Get());
         }
 
-        void SetRequiredFeatures(JVectorRequiredFeatures* features) {
+        void SetRequiredFeatures(WebGPUVectorRequiredFeatures* features) {
             if(features != NULL) {
                 Get().requiredFeatureCount = features->size();
                 Get().requiredFeatures = features->data();
@@ -668,60 +668,60 @@ class JDeviceDescriptor : public JObjectBase<JDeviceDescriptor, WGPUDeviceDescri
             }
         }
 
-        JQueueDescriptor GetDefaultQueue() {
-            JQueueDescriptor temp;
+        WebGPUQueueDescriptor GetDefaultQueue() {
+            WebGPUQueueDescriptor temp;
             temp.Set(&Get().defaultQueue);
             return temp;
         }
 };
 
-class JRequestAdapterOptions : public JObjectBase<JRequestAdapterOptions, WGPURequestAdapterOptions> {
+class WebGPURequestAdapterOptions : public WebGPUObjectBase<WebGPURequestAdapterOptions, WGPURequestAdapterOptions> {
     public:
 
-        static JRequestAdapterOptions Obtain() {
-            JRequestAdapterOptions obj;
+        static WebGPURequestAdapterOptions Obtain() {
+            WebGPURequestAdapterOptions obj;
             return obj;
         }
 };
 
-class JBindGroup : public JObjectBase<JBindGroup, WGPUBindGroup> {
+class WebGPUBindGroup : public WebGPUObjectBase<WebGPUBindGroup, WGPUBindGroup> {
     private:
 
     public:
 };
 
-class JRenderBundle : public JObjectBase<JRenderBundle, WGPURenderBundle> {
+class WebGPURenderBundle : public WebGPUObjectBase<WebGPURenderBundle, WGPURenderBundle> {
     private:
 
     public:
 
 };
 
-class JAdapterInfo : public JObjectBase<JAdapterInfo, WGPUAdapterInfo> {
+class WebGPUAdapterInfo : public WebGPUObjectBase<WebGPUAdapterInfo, WGPUAdapterInfo> {
     public:
 
-        static JAdapterInfo Obtain() {
-            JAdapterInfo obj;
+        static WebGPUAdapterInfo Obtain() {
+            WebGPUAdapterInfo obj;
             return obj;
         }
 
         std::string GetVendor() {
-            JStringView stringView(Get().vendor);
+            WebGPUStringView stringView(Get().vendor);
             return stringView.GetString();
         }
 
         std::string GetArchitecture() {
-            JStringView stringView(Get().architecture);
+            WebGPUStringView stringView(Get().architecture);
             return stringView.GetString();
         }
 
         std::string GetDevice() {
-            JStringView stringView(Get().device);
+            WebGPUStringView stringView(Get().device);
             return stringView.GetString();
         }
 
         std::string GetDescription() {
-            JStringView stringView(Get().description);
+            WebGPUStringView stringView(Get().description);
             return stringView.GetString();
         }
 
@@ -734,7 +734,7 @@ class JAdapterInfo : public JObjectBase<JAdapterInfo, WGPUAdapterInfo> {
         }
 };
 
-class JShaderModule : public JObjectBase<JShaderModule, WGPUShaderModule> {
+class WebGPUShaderModule : public WebGPUObjectBase<WebGPUShaderModule, WGPUShaderModule> {
     protected:
 
         void AddRefInternal() {
@@ -747,29 +747,28 @@ class JShaderModule : public JObjectBase<JShaderModule, WGPUShaderModule> {
 
     public:
 
-        static JShaderModule Obtain() {
-            JShaderModule obj;
+        static WebGPUShaderModule Obtain() {
+            WebGPUShaderModule obj;
             return obj;
         }
 };
 
-class JConstantEntry : public JObjectBase<JConstantEntry, WGPUConstantEntry> {
+class WebGPUConstantEntry : public WebGPUObjectBase<WebGPUConstantEntry, WGPUConstantEntry> {
     public:
 };
 
-class JVertexBufferLayout : public JObjectBase<JVertexBufferLayout, WGPUVertexBufferLayout> {
+class WebGPUVertexBufferLayout : public WebGPUObjectBase<WebGPUVertexBufferLayout, WGPUVertexBufferLayout> {
     public:
 };
 
-
-class JVertexState : public JObjectBase<JVertexState, WGPUVertexState*> {
+class WebGPUVertexState : public WebGPUObjectBase<WebGPUVertexState, WGPUVertexState*> {
     public:
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
-        void SetModule(JShaderModule* shaderModule) {
+        void SetModule(WebGPUShaderModule* shaderModule) {
             Get()->module = shaderModule != NULL ? shaderModule->Get() : NULL;
         }
 
@@ -780,7 +779,7 @@ class JVertexState : public JObjectBase<JVertexState, WGPUVertexState*> {
             Get()->entryPoint = stringView;
         }
 
-        void SetConstants(JVectorConstantEntry* values) {
+        void SetConstants(WebGPUVectorConstantEntry* values) {
             if(values != NULL) {
                 Get()->constantCount = values->size();
                 Get()->constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
@@ -791,7 +790,7 @@ class JVertexState : public JObjectBase<JVertexState, WGPUVertexState*> {
             }
         }
 
-        void SetBuffers(JVectorVertexBufferLayout* values) {
+        void SetBuffers(WebGPUVectorVertexBufferLayout* values) {
             if(values != NULL) {
                 Get()->bufferCount = values->size();
                 Get()->buffers = reinterpret_cast<const WGPUVertexBufferLayout*>(values->data());
@@ -803,11 +802,11 @@ class JVertexState : public JObjectBase<JVertexState, WGPUVertexState*> {
         }
 };
 
-class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSourceWGSL> {
+class WebGPUShaderSourceWGSL : public WebGPUObjectBase<WebGPUShaderSourceWGSL, WGPUShaderSourceWGSL> {
     public:
 
-        static JShaderSourceWGSL Obtain() {
-            JShaderSourceWGSL obj;
+        static WebGPUShaderSourceWGSL Obtain() {
+            WebGPUShaderSourceWGSL obj;
             return obj;
         }
 
@@ -818,7 +817,7 @@ class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSource
             Get().code = stringView;
         }
 
-        void SetNext(JChainedStruct* value) {
+        void SetNext(WebGPUChainedStruct* value) {
             Get().chain.next = value != NULL ? value->Get() : NULL;
         }
 
@@ -826,23 +825,23 @@ class JShaderSourceWGSL : public JObjectBase<JShaderSourceWGSL, WGPUShaderSource
             Get().chain.sType = type;
         }
 
-        JChainedStruct GetChain() {
+        WebGPUChainedStruct GetChain() {
             WGPUChainedStruct* wgpuChain = &Get().chain;
-            JChainedStruct chain;
+            WebGPUChainedStruct chain;
             chain.Set(wgpuChain);
             return chain;
         }
 };
 
-class JShaderModuleDescriptor : public JObjectBase<JShaderModuleDescriptor, WGPUShaderModuleDescriptor> {
+class WebGPUShaderModuleDescriptor : public WebGPUObjectBase<WebGPUShaderModuleDescriptor, WGPUShaderModuleDescriptor> {
     public:
 
-        static JShaderModuleDescriptor Obtain() {
-            JShaderModuleDescriptor obj;
+        static WebGPUShaderModuleDescriptor Obtain() {
+            WebGPUShaderModuleDescriptor obj;
             return obj;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -854,7 +853,7 @@ class JShaderModuleDescriptor : public JObjectBase<JShaderModuleDescriptor, WGPU
         }
 };
 
-class JBlendComponent : public JObjectBase<JBlendComponent, WGPUBlendComponent*> {
+class WebGPUBlendComponent : public WebGPUObjectBase<WebGPUBlendComponent, WGPUBlendComponent*> {
     public:
 
         void SetOperation(WGPUBlendOperation operation) {
@@ -882,36 +881,36 @@ class JBlendComponent : public JObjectBase<JBlendComponent, WGPUBlendComponent*>
         }
 };
 
-class JBlendState : public JObjectBase<JBlendState, WGPUBlendState> {
+class WebGPUBlendState : public WebGPUObjectBase<WebGPUBlendState, WGPUBlendState> {
     public:
 
-        static JBlendState Obtain() {
-            JBlendState obj;
+        static WebGPUBlendState Obtain() {
+            WebGPUBlendState obj;
             return obj;
         }
 
-        JBlendComponent GetColor() {
-            JBlendComponent temp;
+        WebGPUBlendComponent GetColor() {
+            WebGPUBlendComponent temp;
             temp.Set(&Get().color);
             return temp;
         }
 
-        JBlendComponent GetAlpha() {
-            JBlendComponent temp;
+        WebGPUBlendComponent GetAlpha() {
+            WebGPUBlendComponent temp;
             temp.Set(&Get().alpha);
             return temp;
         }
 };
 
-class JColorTargetState : public JObjectBase<JColorTargetState, WGPUColorTargetState> {
+class WebGPUColorTargetState : public WebGPUObjectBase<WebGPUColorTargetState, WGPUColorTargetState> {
     public:
 
-        static JColorTargetState Obtain() {
-            JColorTargetState obj;
+        static WebGPUColorTargetState Obtain() {
+            WebGPUColorTargetState obj;
             return obj;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -919,7 +918,7 @@ class JColorTargetState : public JObjectBase<JColorTargetState, WGPUColorTargetS
             Get().format = format;
         }
 
-        void SetBlend(JBlendState* blendState) {
+        void SetBlend(WebGPUBlendState* blendState) {
             Get().blend = reinterpret_cast<const WGPUBlendState*>(blendState);
         }
 
@@ -928,15 +927,15 @@ class JColorTargetState : public JObjectBase<JColorTargetState, WGPUColorTargetS
         }
 };
 
-class JFragmentState : public JObjectBase<JFragmentState, WGPUFragmentState> {
+class WebGPUFragmentState : public WebGPUObjectBase<WebGPUFragmentState, WGPUFragmentState> {
     public:
 
-        static JFragmentState Obtain() {
-            JFragmentState obj;
+        static WebGPUFragmentState Obtain() {
+            WebGPUFragmentState obj;
             return obj;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -947,7 +946,7 @@ class JFragmentState : public JObjectBase<JFragmentState, WGPUFragmentState> {
             Get().entryPoint = stringView;
         }
 
-        void SetTargets(JVectorColorTargetState* values) {
+        void SetTargets(WebGPUVectorColorTargetState* values) {
             if(values != NULL) {
                 Get().targetCount = values->size();
                 Get().targets = reinterpret_cast<const WGPUColorTargetState*>(values->data());
@@ -958,11 +957,11 @@ class JFragmentState : public JObjectBase<JFragmentState, WGPUFragmentState> {
             }
         }
 
-        void SetModule(JShaderModule* shaderModule) {
+        void SetModule(WebGPUShaderModule* shaderModule) {
             Get().module = shaderModule != NULL ? shaderModule->Get() : NULL;
         }
 
-        void SetConstants(JVectorConstantEntry* values) {
+        void SetConstants(WebGPUVectorConstantEntry* values) {
             if(values != NULL) {
                 Get().constantCount = values->size();
                 Get().constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
@@ -974,10 +973,10 @@ class JFragmentState : public JObjectBase<JFragmentState, WGPUFragmentState> {
         }
 };
 
-class JPrimitiveState : public JObjectBase<JPrimitiveState, WGPUPrimitiveState*> {
+class WebGPUPrimitiveState : public WebGPUObjectBase<WebGPUPrimitiveState, WGPUPrimitiveState*> {
     public:
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -998,15 +997,15 @@ class JPrimitiveState : public JObjectBase<JPrimitiveState, WGPUPrimitiveState*>
         }
 };
 
-class JDepthStencilState : public JObjectBase<JDepthStencilState, WGPUDepthStencilState> {
+class WebGPUDepthStencilState : public WebGPUObjectBase<WebGPUDepthStencilState, WGPUDepthStencilState> {
     public:
 
-        static JDepthStencilState Obtain() {
-            JDepthStencilState obj;
+        static WebGPUDepthStencilState Obtain() {
+            WebGPUDepthStencilState obj;
             return obj;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -1031,9 +1030,9 @@ class JDepthStencilState : public JObjectBase<JDepthStencilState, WGPUDepthStenc
         }
 };
 
-class JMultisampleState : public JObjectBase<JMultisampleState, WGPUMultisampleState*> {
+class WebGPUMultisampleState : public WebGPUObjectBase<WebGPUMultisampleState, WGPUMultisampleState*> {
     public:
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -1050,19 +1049,19 @@ class JMultisampleState : public JObjectBase<JMultisampleState, WGPUMultisampleS
         }
 };
 
-class JPipelineLayout : public JObjectBase<JPipelineLayout, WGPUPipelineLayout> {
+class WebGPUPipelineLayout : public WebGPUObjectBase<WebGPUPipelineLayout, WGPUPipelineLayout> {
     public:
 };
 
-class JRenderPipelineDescriptor : public JObjectBase<JRenderPipelineDescriptor, WGPURenderPipelineDescriptor> {
+class WebGPURenderPipelineDescriptor : public WebGPUObjectBase<WebGPURenderPipelineDescriptor, WGPURenderPipelineDescriptor> {
     public:
 
-        static JRenderPipelineDescriptor Obtain() {
-            JRenderPipelineDescriptor obj;
+        static WebGPURenderPipelineDescriptor Obtain() {
+            WebGPURenderPipelineDescriptor obj;
             return obj;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -1073,38 +1072,38 @@ class JRenderPipelineDescriptor : public JObjectBase<JRenderPipelineDescriptor, 
             Get().label = stringView;
         }
 
-        JVertexState GetVertex() {
-            JVertexState temp;
+        WebGPUVertexState GetVertex() {
+            WebGPUVertexState temp;
             temp.Set(&Get().vertex);
             return temp;
         }
 
-        JPrimitiveState GetPrimitive() {
-            JPrimitiveState temp;
+        WebGPUPrimitiveState GetPrimitive() {
+            WebGPUPrimitiveState temp;
             temp.Set(&Get().primitive);
             return temp;
         }
 
-        void SetFragment(JFragmentState* fragment) {
+        void SetFragment(WebGPUFragmentState* fragment) {
             Get().fragment = &fragment->Get();
         }
 
-        void SetDepthStencil(JDepthStencilState* depthStencilState) {
+        void SetDepthStencil(WebGPUDepthStencilState* depthStencilState) {
             Get().depthStencil = depthStencilState != NULL ? &depthStencilState->Get() : NULL;
         }
 
-        JMultisampleState GetMultisample() {
-            JMultisampleState temp;
+        WebGPUMultisampleState GetMultisample() {
+            WebGPUMultisampleState temp;
             temp.Set(&Get().multisample);
             return temp;
         }
 
-        void SetLayout(JPipelineLayout* pipelineLayout) {
+        void SetLayout(WebGPUPipelineLayout* pipelineLayout) {
             Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
         }
 };
 
-class JRenderPipeline : public JObjectBase<JRenderPipeline, WGPURenderPipeline> {
+class WebGPURenderPipeline : public WebGPUObjectBase<WebGPURenderPipeline, WGPURenderPipeline> {
 
     protected:
         void AddRefInternal() {
@@ -1116,35 +1115,35 @@ class JRenderPipeline : public JObjectBase<JRenderPipeline, WGPURenderPipeline> 
         }
 
     public:
-        static JRenderPipeline Obtain() {
-            JRenderPipeline obj;
+        static WebGPURenderPipeline Obtain() {
+            WebGPURenderPipeline obj;
             return obj;
         }
 };
 
-class JColor : public JObjectBase<JColor, WGPUColor*> {
+class WebGPUColor : public WebGPUObjectBase<WebGPUColor, WGPUColor*> {
     private:
         bool deleteObject;
 
     public:
-        JColor() {
+        WebGPUColor() {
             deleteObject = true;
             Set(new WGPUColor());
         }
 
-        JColor(WGPUColor* color) {
+        WebGPUColor(WGPUColor* color) {
             deleteObject = false;
             Set(color);
         }
 
-        ~JColor() {
+        ~WebGPUColor() {
             if(deleteObject) {
                 delete Get();
             }
         }
 
-        static JColor Obtain() {
-            JColor obj;
+        static WebGPUColor Obtain() {
+            WebGPUColor obj;
             return obj;
         }
 
@@ -1169,11 +1168,11 @@ class JColor : public JObjectBase<JColor, WGPUColor*> {
         }
 };
 
-class JSupportedFeatures : public JObjectBase<JSupportedFeatures, WGPUSupportedFeatures> {
+class WebGPUSupportedFeatures : public WebGPUObjectBase<WebGPUSupportedFeatures, WGPUSupportedFeatures> {
     public:
 
-        static JSupportedFeatures Obtain() {
-            JSupportedFeatures obj;
+        static WebGPUSupportedFeatures Obtain() {
+            WebGPUSupportedFeatures obj;
             return obj;
         }
 
@@ -1186,11 +1185,11 @@ class JSupportedFeatures : public JObjectBase<JSupportedFeatures, WGPUSupportedF
         }
 };
 
-class JBuffer : public JObjectBase<JBuffer, WGPUBuffer> {
+class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
     public:
 };
 
-class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPassEncoder> {
+class WebGPURenderPassEncoder : public WebGPUObjectBase<WebGPURenderPassEncoder, WGPURenderPassEncoder> {
     protected:
 
         void AddRefInternal() {
@@ -1203,8 +1202,8 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
 
     public:
 
-        static JRenderPassEncoder Obtain() {
-            JRenderPassEncoder obj;
+        static WebGPURenderPassEncoder Obtain() {
+            WebGPURenderPassEncoder obj;
             return obj;
         }
 
@@ -1212,7 +1211,7 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
             wgpuRenderPassEncoderEnd(Get());
         }
 
-        void SetPipeline(JRenderPipeline* renderPipeline) {
+        void SetPipeline(WebGPURenderPipeline* renderPipeline) {
             wgpuRenderPassEncoderSetPipeline(Get(), renderPipeline->Get());
         }
 
@@ -1228,11 +1227,11 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
             wgpuRenderPassEncoderDrawIndexed(Get(), indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
         }
 
-        void DrawIndexedIndirect(JBuffer* indirectBuffer, int indirectOffset) {
+        void DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
             wgpuRenderPassEncoderDrawIndexedIndirect(Get(), indirectBuffer->Get(), indirectOffset);
         }
 
-        void DrawIndirect(JBuffer* indirectBuffer, int indirectOffset) {
+        void DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
             wgpuRenderPassEncoderDrawIndirect(Get(), indirectBuffer->Get(), indirectOffset);
         }
 
@@ -1240,7 +1239,7 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
             wgpuRenderPassEncoderEndOcclusionQuery(Get());
         }
 
-        void ExecuteBundles(JVectorRenderBundle* values) {
+        void ExecuteBundles(WebGPUVectorRenderBundle* values) {
             if(values != NULL) {
                 int size = values->size();
                 wgpuRenderPassEncoderExecuteBundles(Get(), size,  reinterpret_cast<WGPURenderBundle const * >(values->data()));
@@ -1251,7 +1250,7 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
         }
 
         void InsertDebugMarker(const char* label) {
-            JStringView stringView(label);
+            WebGPUStringView stringView(label);
             wgpuRenderPassEncoderInsertDebugMarker(Get(), stringView.Get());
         }
 
@@ -1260,27 +1259,27 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
         }
 
         void PushDebugGroup(const char* label) {
-            JStringView stringView(label);
+            WebGPUStringView stringView(label);
             wgpuRenderPassEncoderPushDebugGroup(Get(), stringView.Get());
         }
 
-        void SetBindGroup(int groupIndex, JBindGroup* group, JVectorInt* dynamicOffsets) {
+        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* dynamicOffsets) {
             // TODO test. May not work if Int to uint32_t fails
             int dynamicOffsetCount = dynamicOffsets->size();
             wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, reinterpret_cast<uint32_t const *>(dynamicOffsets->data()));
         }
 
-        void SetBlendConstant(JColor* color) {
+        void SetBlendConstant(WebGPUColor* color) {
             // TODO need to test if this is working
             wgpuRenderPassEncoderSetBlendConstant(Get(), reinterpret_cast<WGPUColor *>(color));
         }
 
-        void SetIndexBuffer(JBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
+        void SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
             wgpuRenderPassEncoderSetIndexBuffer(Get(), buffer->Get(), format, offset, size);
         }
 
         void SetLabel(const char* label) {
-            JStringView stringView(label);
+            WebGPUStringView stringView(label);
             wgpuRenderPassEncoderSetLabel(Get(), stringView.Get());
         }
 
@@ -1292,7 +1291,7 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
             wgpuRenderPassEncoderSetStencilReference(Get(), reference);
         }
 
-        void SetVertexBuffer(int slot, JBuffer* buffer, int offset, int size) {
+        void SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size) {
             wgpuRenderPassEncoderSetVertexBuffer(Get(), slot, buffer->Get(), offset, size);
         }
 
@@ -1301,7 +1300,7 @@ class JRenderPassEncoder : public JObjectBase<JRenderPassEncoder, WGPURenderPass
         }
 };
 
-class JComputePassEncoder : public JObjectBase<JComputePassEncoder, WGPUComputePassEncoder> {
+class WebGPUComputePassEncoder : public WebGPUObjectBase<WebGPUComputePassEncoder, WGPUComputePassEncoder> {
     protected:
 
         void AddRefInternal() {
@@ -1314,23 +1313,23 @@ class JComputePassEncoder : public JObjectBase<JComputePassEncoder, WGPUComputeP
 
     public:
 
-        static JComputePassEncoder Obtain() {
-            JComputePassEncoder obj;
+        static WebGPUComputePassEncoder Obtain() {
+            WebGPUComputePassEncoder obj;
             return obj;
         }
 };
 
-class JRenderPassDepthStencilAttachment : public JObjectBase<JRenderPassDepthStencilAttachment, WGPURenderPassDepthStencilAttachment> {
+class WebGPURenderPassDepthStencilAttachment : public WebGPUObjectBase<WebGPURenderPassDepthStencilAttachment, WGPURenderPassDepthStencilAttachment> {
     public:
-        static JRenderPassDepthStencilAttachment Obtain() {
-            JRenderPassDepthStencilAttachment obj;
+        static WebGPURenderPassDepthStencilAttachment Obtain() {
+            WebGPURenderPassDepthStencilAttachment obj;
             return obj;
         }
 
 };
 
 // Opaque pointer
-class JQuerySet : public JObjectBase<JQuerySet, WGPUQuerySet> {
+class WebGPUQuerySet : public WebGPUObjectBase<WebGPUQuerySet, WGPUQuerySet> {
     protected:
         void AddRefInternal() {
             wgpuQuerySetAddRef(Get());
@@ -1355,21 +1354,21 @@ class JQuerySet : public JObjectBase<JQuerySet, WGPUQuerySet> {
         }
 
         void SetLabel(const char* label) {
-            JStringView stringView(label);
+            WebGPUStringView stringView(label);
             wgpuQuerySetSetLabel(Get(), stringView.Get());
         }
 };
 
 // TODO The class name differs from those in Dawn and wgpu-native.
-class JRenderPassTimestampWrites : public JObjectBase<JRenderPassTimestampWrites, WGPURenderPassTimestampWrites> {
+class WebGPURenderPassTimestampWrites : public WebGPUObjectBase<WebGPURenderPassTimestampWrites, WGPURenderPassTimestampWrites> {
     public:
 
-        static JRenderPassTimestampWrites Obtain() {
-            JRenderPassTimestampWrites obj;
+        static WebGPURenderPassTimestampWrites Obtain() {
+            WebGPURenderPassTimestampWrites obj;
             return obj;
         }
 
-        void SetQuerySet(JQuerySet* value) {
+        void SetQuerySet(WebGPUQuerySet* value) {
             Get().querySet = value->Get();
         }
 
@@ -1382,11 +1381,11 @@ class JRenderPassTimestampWrites : public JObjectBase<JRenderPassTimestampWrites
         }
 };
 
-class JCommandEncoderDescriptor : public JObjectBase<JCommandEncoderDescriptor, WGPUCommandEncoderDescriptor> {
+class WebGPUCommandEncoderDescriptor : public WebGPUObjectBase<WebGPUCommandEncoderDescriptor, WGPUCommandEncoderDescriptor> {
     public:
 
-        static JCommandEncoderDescriptor Obtain() {
-            JCommandEncoderDescriptor obj;
+        static WebGPUCommandEncoderDescriptor Obtain() {
+            WebGPUCommandEncoderDescriptor obj;
             return obj;
         }
 
@@ -1398,15 +1397,15 @@ class JCommandEncoderDescriptor : public JObjectBase<JCommandEncoderDescriptor, 
         }
 };
 
-class JCommandBufferDescriptor : public JObjectBase<JCommandBufferDescriptor, WGPUCommandBufferDescriptor> {
+class WebGPUCommandBufferDescriptor : public WebGPUObjectBase<WebGPUCommandBufferDescriptor, WGPUCommandBufferDescriptor> {
     public:
 
-        static JCommandBufferDescriptor Obtain() {
-            JCommandBufferDescriptor obj;
+        static WebGPUCommandBufferDescriptor Obtain() {
+            WebGPUCommandBufferDescriptor obj;
             return obj;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -1418,11 +1417,11 @@ class JCommandBufferDescriptor : public JObjectBase<JCommandBufferDescriptor, WG
         }
 };
 
-class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURenderPassDescriptor> {
+class WebGPURenderPassDescriptor : public WebGPUObjectBase<WebGPURenderPassDescriptor, WGPURenderPassDescriptor> {
     public:
 
-        static JRenderPassDescriptor Obtain() {
-            JRenderPassDescriptor obj;
+        static WebGPURenderPassDescriptor Obtain() {
+            WebGPURenderPassDescriptor obj;
             return obj;
         }
 
@@ -1433,7 +1432,7 @@ class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURend
             Get().label = stringView;
         }
 
-        void SetColorAttachments(JVectorRenderPassColorAttachment* values) {
+        void SetColorAttachments(WebGPUVectorRenderPassColorAttachment* values) {
             if(values != NULL) {
                 Get().colorAttachmentCount = values->size();
                 Get().colorAttachments = reinterpret_cast<const WGPURenderPassColorAttachment*>(values->data());
@@ -1444,20 +1443,20 @@ class JRenderPassDescriptor : public JObjectBase<JRenderPassDescriptor, WGPURend
             }
         }
 
-        void SetDepthStencilAttachment(JRenderPassDepthStencilAttachment* attachment) {
+        void SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment* attachment) {
             Get().depthStencilAttachment = attachment == NULL ? NULL : &(attachment->Get());
         }
 
-        void SetTimestampWrites(JRenderPassTimestampWrites* timestampWrites) {
+        void SetTimestampWrites(WebGPURenderPassTimestampWrites* timestampWrites) {
             Get().timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->Get());
         }
 };
 
-class JComputePassDescriptor : public JObjectBase<JComputePassDescriptor, WGPUComputePassDescriptor> {
+class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDescriptor, WGPUComputePassDescriptor> {
     public:
 
-        static JComputePassDescriptor Obtain() {
-            JComputePassDescriptor obj;
+        static WebGPUComputePassDescriptor Obtain() {
+            WebGPUComputePassDescriptor obj;
             return obj;
         }
 
@@ -1469,7 +1468,7 @@ class JComputePassDescriptor : public JObjectBase<JComputePassDescriptor, WGPUCo
         }
 };
 
-class JCommandEncoder : public JObjectBase<JCommandEncoder, WGPUCommandEncoder> {
+class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUCommandEncoder> {
     protected:
 
         void AddRefInternal() {
@@ -1482,30 +1481,30 @@ class JCommandEncoder : public JObjectBase<JCommandEncoder, WGPUCommandEncoder> 
 
     public:
 
-        static JCommandEncoder Obtain() {
-            JCommandEncoder obj;
+        static WebGPUCommandEncoder Obtain() {
+            WebGPUCommandEncoder obj;
             return obj;
         }
 
-        void BeginRenderPass(JRenderPassDescriptor* renderPassDescriptor, JRenderPassEncoder* encoder) {
+        void BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder) {
             encoder->Set(wgpuCommandEncoderBeginRenderPass(Get(), &(renderPassDescriptor->Get())));
         }
 
-        void BeginComputePass(JComputePassEncoder* encoder) {
+        void BeginComputePass(WebGPUComputePassEncoder* encoder) {
             WGPUComputePassDescriptor computePassDescriptor;
             encoder->Set(wgpuCommandEncoderBeginComputePass(Get(), &computePassDescriptor));
         }
 
-        void ClearBuffer(JBuffer* buffer, int offset, int size) {
+        void ClearBuffer(WebGPUBuffer* buffer, int offset, int size) {
             wgpuCommandEncoderClearBuffer(Get(), buffer->Get(), offset, size);
         }
 
-        void Finish(JCommandBufferDescriptor* commandBufferDescriptor, JCommandBuffer* commandBuffer) {
+        void Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer) {
             commandBuffer->Set(wgpuCommandEncoderFinish(Get(), &(commandBufferDescriptor->Get())));
         }
 };
 
-class JDevice : public JObjectBase<JDevice, WGPUDevice> {
+class WebGPUDevice : public WebGPUObjectBase<WebGPUDevice, WGPUDevice> {
     protected:
 
         void AddRefInternal() {
@@ -1518,7 +1517,7 @@ class JDevice : public JObjectBase<JDevice, WGPUDevice> {
 
     public:
 
-//        bool GetAdapterInfo(JAdapterInfo* adapterInfo) {
+//        bool GetAdapterInfo(WebGPUAdapterInfo* adapterInfo) {
 //            #ifdef __EMSCRIPTEN__
 //                WGPUStatus status = wgpuDeviceGetAdapterInfo(device, &(adapterInfo->adapterInfo));
 //            #else
@@ -1528,42 +1527,42 @@ class JDevice : public JObjectBase<JDevice, WGPUDevice> {
 //            return status == WGPUStatus_Success;
 //        }
 
-        JQueue GetQueue() {
-            JQueue temp;
+        WebGPUQueue GetQueue() {
+            WebGPUQueue temp;
             temp.Set(wgpuDeviceGetQueue(Get()));
             return temp;
         }
 
-        void CreateRenderPipeline(JRenderPipelineDescriptor* pipelineDescriptor, JRenderPipeline* renderPipeline) {
+        void CreateRenderPipeline(WebGPURenderPipelineDescriptor* pipelineDescriptor, WebGPURenderPipeline* renderPipeline) {
             renderPipeline->Set(wgpuDeviceCreateRenderPipeline(Get(), reinterpret_cast<WGPURenderPipelineDescriptor const * >(pipelineDescriptor)));
         }
 
-        void CreateShaderModule(JShaderModuleDescriptor* shaderModuleDescriptor, JShaderModule* shaderModule) {
+        void CreateShaderModule(WebGPUShaderModuleDescriptor* shaderModuleDescriptor, WebGPUShaderModule* shaderModule) {
             shaderModule->Set(wgpuDeviceCreateShaderModule(Get(), &shaderModuleDescriptor->Get()));
         }
 
-        void GetFeatures(JSupportedFeatures* features) {
+        void GetFeatures(WebGPUSupportedFeatures* features) {
             wgpuDeviceGetFeatures(Get(), reinterpret_cast<WGPUSupportedFeatures * >(features));
         }
 
-        void GetLimits(JLimits* limits) {
+        void GetLimits(WebGPULimits* limits) {
             wgpuDeviceGetLimits(Get(), reinterpret_cast<WGPULimits * >(&(limits->Get())));
         }
 
-        void CreateCommandEncoder(JCommandEncoderDescriptor* encoderDescriptor, JCommandEncoder* encoder) {
+        void CreateCommandEncoder(WebGPUCommandEncoderDescriptor* encoderDescriptor, WebGPUCommandEncoder* encoder) {
             encoder->Set(wgpuDeviceCreateCommandEncoder(Get(), &(encoderDescriptor->Get())));
         }
 };
 
-class JSurfaceConfiguration : public JObjectBase<JSurfaceConfiguration, WGPUSurfaceConfiguration> {
+class WebGPUSurfaceConfiguration : public WebGPUObjectBase<WebGPUSurfaceConfiguration, WGPUSurfaceConfiguration> {
     public:
 
-        static JSurfaceConfiguration Obtain() {
-            JSurfaceConfiguration temp;
+        static WebGPUSurfaceConfiguration Obtain() {
+            WebGPUSurfaceConfiguration temp;
             return temp;
         }
 
-        void SetNextInChain(JChainedStruct* chainedStruct) {
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
             Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
@@ -1583,7 +1582,7 @@ class JSurfaceConfiguration : public JObjectBase<JSurfaceConfiguration, WGPUSurf
             Get().viewFormatCount = value;
         }
 
-        void SetViewFormats(JVectorTextureFormat* values) {
+        void SetViewFormats(WebGPUVectorTextureFormat* values) {
             if(values != NULL) {
                 Get().viewFormatCount = values->size();
                 Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(values->data());
@@ -1598,7 +1597,7 @@ class JSurfaceConfiguration : public JObjectBase<JSurfaceConfiguration, WGPUSurf
             Get().usage = usage;
         }
 
-        void SetDevice(JDevice* device) {
+        void SetDevice(WebGPUDevice* device) {
             Get().device = device != NULL ? device->Get() : NULL;
         }
 
@@ -1611,11 +1610,11 @@ class JSurfaceConfiguration : public JObjectBase<JSurfaceConfiguration, WGPUSurf
         }
 };
 
-class JSurfaceCapabilities : public JObjectBase<JSurfaceCapabilities, WGPUSurfaceCapabilities> {
+class WebGPUSurfaceCapabilities : public WebGPUObjectBase<WebGPUSurfaceCapabilities, WGPUSurfaceCapabilities> {
     public:
 
-        static JSurfaceCapabilities Obtain() {
-            JSurfaceCapabilities obj;
+        static WebGPUSurfaceCapabilities Obtain() {
+            WebGPUSurfaceCapabilities obj;
             return obj;
         }
 
@@ -1624,7 +1623,7 @@ class JSurfaceCapabilities : public JObjectBase<JSurfaceCapabilities, WGPUSurfac
         }
 };
 
-class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
+class WebGPUAdapter : public WebGPUObjectBase<WebGPUAdapter, WGPUAdapter> {
     protected:
 
         void AddRefInternal() {
@@ -1637,7 +1636,7 @@ class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
 
     public:
 
-        void RequestDevice(JDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
+        void RequestDevice(WebGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
             descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const WGPUDevice* device, WGPUErrorType type, WGPUStringView message, void* callback_param, void* userdata_param) {
                 UncapturedErrorCallback* cback = reinterpret_cast<UncapturedErrorCallback*>(callback_param);
                 cback->OnCallback(type, message.data);
@@ -1649,7 +1648,7 @@ class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
             callbackInfo.mode = mode;
             callbackInfo.callback = [](WGPURequestDeviceStatus status, WGPUDevice dev, WGPUStringView message, void* callback_param, void* userdata_param) {
                 RequestDeviceCallback* cback = reinterpret_cast<RequestDeviceCallback*>(callback_param);
-                JDevice* device = new JDevice();
+                WebGPUDevice* device = new WebGPUDevice();
                 device->Set(dev);
                 cback->OnCallback(status, device);
             };
@@ -1659,7 +1658,7 @@ class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
             auto result = wgpuAdapterRequestDevice(Get(), desc, callbackInfo);
         }
 
-        bool GetInfo(JAdapterInfo* adapterInfo) {
+        bool GetInfo(WebGPUAdapterInfo* adapterInfo) {
             WGPUStatus status = wgpuAdapterGetInfo(Get(), &(adapterInfo->Get()));
             return status == WGPUStatus_Success;
         }
@@ -1669,8 +1668,8 @@ class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
         }
 };
 
-//struct JTextureViewDescriptor {
-//    JChainedStruct const * nextInChain = NULL;
+//struct WebGPUTextureViewDescriptor {
+//    WebGPUChainedStruct const * nextInChain = NULL;
 //    WGPUStringView label;
 //    WGPUTextureFormat format;
 //    WGPUTextureViewDimension dimension;
@@ -1686,11 +1685,11 @@ class JAdapter : public JObjectBase<JAdapter, WGPUAdapter> {
 //    }
 //}
 
-class JTextureViewDescriptor : public JObjectBase<JTextureViewDescriptor, WGPUTextureViewDescriptor> {
+class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDescriptor, WGPUTextureViewDescriptor> {
     public:
 
-    static JTextureViewDescriptor Obtain() {
-        JTextureViewDescriptor obj;
+    static WebGPUTextureViewDescriptor Obtain() {
+        WebGPUTextureViewDescriptor obj;
         return obj;
     }
 
@@ -1734,7 +1733,7 @@ class JTextureViewDescriptor : public JObjectBase<JTextureViewDescriptor, WGPUTe
     }
 };
 
-class JTextureView : public JObjectBase<JTextureView, WGPUTextureView> {
+class WebGPUTextureView : public WebGPUObjectBase<WebGPUTextureView, WGPUTextureView> {
     protected:
 
         void AddRefInternal() {
@@ -1747,13 +1746,13 @@ class JTextureView : public JObjectBase<JTextureView, WGPUTextureView> {
 
     public:
 
-        static JTextureView Obtain() {
-            JTextureView obj;
+        static WebGPUTextureView Obtain() {
+            WebGPUTextureView obj;
             return obj;
         }
 };
 
-class JTexture : public JObjectBase<JTexture, WGPUTexture> {
+class WebGPUTexture : public WebGPUObjectBase<WebGPUTexture, WGPUTexture> {
     protected:
 
         void AddRefInternal() {
@@ -1766,12 +1765,12 @@ class JTexture : public JObjectBase<JTexture, WGPUTexture> {
 
     public:
 
-        static JTexture Obtain() {
-            JTexture obj;
+        static WebGPUTexture Obtain() {
+            WebGPUTexture obj;
             return obj;
         }
 
-        void CreateView(JTextureViewDescriptor* textureViewDescriptor, JTextureView* textureView) {
+        void CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView) {
             textureView->Set(wgpuTextureCreateView(Get(), &(textureViewDescriptor->Get())));
         }
 
@@ -1780,22 +1779,22 @@ class JTexture : public JObjectBase<JTexture, WGPUTexture> {
         }
 };
 
-class JRenderPassColorAttachment : public JObjectBase<JRenderPassColorAttachment, WGPURenderPassColorAttachment> {
+class WebGPURenderPassColorAttachment : public WebGPUObjectBase<WebGPURenderPassColorAttachment, WGPURenderPassColorAttachment> {
     public:
-        JRenderPassColorAttachment() {
+        WebGPURenderPassColorAttachment() {
             SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
         }
 
-        static JRenderPassColorAttachment Obtain() {
-            JRenderPassColorAttachment renderPassColorAttachment;
+        static WebGPURenderPassColorAttachment Obtain() {
+            WebGPURenderPassColorAttachment renderPassColorAttachment;
             return renderPassColorAttachment;
         }
 
-        void SetResolveTarget(JTextureView* textureView) {
+        void SetResolveTarget(WebGPUTextureView* textureView) {
             Get().resolveTarget = textureView == NULL ? NULL : textureView->Get();
         }
 
-        void SetView(JTextureView* textureView) {
+        void SetView(WebGPUTextureView* textureView) {
             Get().view = textureView == NULL ? NULL : textureView->Get();
         }
 
@@ -1811,20 +1810,20 @@ class JRenderPassColorAttachment : public JObjectBase<JRenderPassColorAttachment
             Get().depthSlice = depthSlice;
         }
 
-        JColor GetClearValue() {
-            JColor temp(&Get().clearValue);
+        WebGPUColor GetClearValue() {
+            WebGPUColor temp(&Get().clearValue);
             return temp;
         }
 };
 
-class JSurfaceTexture : public JObjectBase<JSurfaceTexture, WGPUSurfaceTexture> {
+class WebGPUSurfaceTexture : public WebGPUObjectBase<WebGPUSurfaceTexture, WGPUSurfaceTexture> {
     public:
-        static JSurfaceTexture Obtain() {
-            JSurfaceTexture obj;
+        static WebGPUSurfaceTexture Obtain() {
+            WebGPUSurfaceTexture obj;
             return obj;
         }
 
-        void GetTexture(JTexture* tex) {
+        void GetTexture(WebGPUTexture* tex) {
             tex->Set(Get().texture);
         }
 
@@ -1833,7 +1832,7 @@ class JSurfaceTexture : public JObjectBase<JSurfaceTexture, WGPUSurfaceTexture> 
         }
 };
 
-class JSurface : public JObjectBase<JSurface, WGPUSurface> {
+class WebGPUSurface : public WebGPUObjectBase<WebGPUSurface, WGPUSurface> {
     protected:
 
         void AddRefInternal() {
@@ -1850,15 +1849,15 @@ class JSurface : public JObjectBase<JSurface, WGPUSurface> {
             wgpuSurfaceUnconfigure(Get());
         }
 
-        void Configure(JSurfaceConfiguration* config) {
+        void Configure(WebGPUSurfaceConfiguration* config) {
             wgpuSurfaceConfigure(Get(), reinterpret_cast<WGPUSurfaceConfiguration const * >(config));
         }
 
-        void GetCapabilities(JAdapter* adapter, JSurfaceCapabilities* surfaceCapabilities) {
+        void GetCapabilities(WebGPUAdapter* adapter, WebGPUSurfaceCapabilities* surfaceCapabilities) {
             wgpuSurfaceGetCapabilities(Get(), adapter->Get(), &(surfaceCapabilities->Get()));
         }
 
-        void GetCurrentTexture(JSurfaceTexture* tex) {
+        void GetCurrentTexture(WebGPUSurfaceTexture* tex) {
             wgpuSurfaceGetCurrentTexture(Get(), &tex->Get());
         }
 
@@ -1867,7 +1866,7 @@ class JSurface : public JObjectBase<JSurface, WGPUSurface> {
         }
 };
 
-class JInstance : public JObjectBase<JInstance, WGPUInstance> {
+class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
     private:
         void AddRefInternal() {
             wgpuInstanceAddRef(Get());
@@ -1883,12 +1882,12 @@ class JInstance : public JObjectBase<JInstance, WGPUInstance> {
             return Get() ? true : false;
         }
 
-        void RequestAdapter(JRequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
+        void RequestAdapter(WebGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
             WGPURequestAdapterCallbackInfo callbackInfo = {};
             callbackInfo.mode = mode;
             callbackInfo.callback = [](WGPURequestAdapterStatus status, WGPUAdapter ad, WGPUStringView message, void* callback_param, void*) {
                 RequestAdapterCallback* cback = reinterpret_cast<RequestAdapterCallback*>(callback_param);
-                JAdapter* adapter = new JAdapter();
+                WebGPUAdapter* adapter = new WebGPUAdapter();
                 adapter->Set(ad);
                 cback->OnCallback(status, adapter);
             };
@@ -1897,7 +1896,7 @@ class JInstance : public JObjectBase<JInstance, WGPUInstance> {
             auto result = wgpuInstanceRequestAdapter(Get(), &(options->Get()), callbackInfo);
         }
 
-        JSurface* CreateWebSurface(const char* canvas) {
+        WebGPUSurface* CreateWebSurface(const char* canvas) {
             #ifdef __EMSCRIPTEN__
                 WGPUEmscriptenSurfaceSourceCanvasHTMLSelector canvasDesc {};
                 WGPUStringView stringView = {};
@@ -1907,18 +1906,18 @@ class JInstance : public JObjectBase<JInstance, WGPUInstance> {
                 canvasDesc.selector = stringView;
                 WGPUSurfaceDescriptor surfDesc{};
                 surfDesc.nextInChain = (WGPUChainedStruct*)&canvasDesc;
-                JSurface* surface = new JSurface();
+                WebGPUSurface* surface = new WebGPUSurface();
                 surface->Set(wgpuInstanceCreateSurface(Get(), &surfDesc));
             #else
-                JSurface* surface = NULL;
+                WebGPUSurface* surface = NULL;
             #endif
             return surface;
         }
 
-        JSurface* CreateWindowsSurface(void * hwnd) {
-            JSurface* surface = NULL;
+        WebGPUSurface* CreateWindowsSurface(void * hwnd) {
+            WebGPUSurface* surface = NULL;
             #if _WIN32
-                surface = new JSurface();
+                surface = new WebGPUSurface();
                 HINSTANCE hinstance = GetModuleHandle(NULL);
                 WGPUSurfaceSourceWindowsHWND fromWindowsHWND;
                 fromWindowsHWND.chain.next = NULL;
@@ -1932,11 +1931,11 @@ class JInstance : public JObjectBase<JInstance, WGPUInstance> {
             return surface;
         }
 
-        JSurface* CreateAndroidSurface(JAndroidWindow* window) {
-            JSurface* surface = NULL;
+        WebGPUSurface* CreateAndroidSurface(WGPUAndroidWindow* window) {
+            WebGPUSurface* surface = NULL;
             #if __ANDROID__
                 void* androidWindow = window->GetWindow();
-                surface = new JSurface();
+                surface = new WebGPUSurface();
                 WGPUSurfaceSourceAndroidNativeWindow androidSurfaceWindow;
                 androidSurfaceWindow.chain.next = NULL;
                 androidSurfaceWindow.chain.sType = WGPUSType_SurfaceSourceAndroidNativeWindow;
@@ -1953,32 +1952,31 @@ class JInstance : public JObjectBase<JInstance, WGPUInstance> {
         }
 };
 
-class JWGPU {
+class WGPU {
     private:
 
     public:
-        static JPlatformType GetPlatformType() {
+        static WGPUPlatformType GetPlatformType() {
             #if __EMSCRIPTEN__
-                return JPlatformType::WGPU_Web;
+                return WGPUPlatformType::WGPU_Web;
             #elif __ANDROID__
-                 return JPlatformType::WGPU_Android;
+                 return WGPUPlatformType::WGPU_Android;
             #elif TARGET_OS_IPHONE
-                return JPlatformType::WGPU_iOS;
+                return WGPUPlatformType::WGPU_iOS;
             #elif _WIN32
-                return JPlatformType::WGPU_Windows;
+                return WGPUPlatformType::WGPU_Windows;
             #elif __linux__
-                return JPlatformType::WGPU_Linux;
+                return WGPUPlatformType::WGPU_Linux;
             #elif TARGET_OS_MAC
-                return JPlatformType::WGPU_Mac;
+                return WGPUPlatformType::WGPU_Mac;
             #else
-                return JPlatformType::WGPU_Unknown;
+                return WGPUPlatformType::WGPU_Unknown;
             #endif
         }
 
-        static JInstance CreateInstance() {
-            JInstance instance;
+        static WebGPUInstance CreateInstance() {
+            WebGPUInstance instance;
             instance.Set(wgpuCreateInstance(NULL));
             return instance;
         }
 };
-

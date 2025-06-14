@@ -29,7 +29,7 @@ teavm {
         outputDir = layout.buildDirectory.dir("dist/webapp").get().asFile
         relativePathInOutputDir = ""
         targetFileName = "app.js"
-        sourceMap = true
+        sourceMap = false
         sourceFilePolicy = SourceFilePolicy.COPY
         obfuscated = false
         debugInformation = true
