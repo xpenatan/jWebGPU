@@ -1,6 +1,8 @@
 import com.github.xpenatan.jparser.builder.BuildMultiTarget;
 import com.github.xpenatan.jparser.builder.targets.AndroidTarget;
 import com.github.xpenatan.jparser.builder.targets.EmscriptenTarget;
+import com.github.xpenatan.jparser.builder.targets.LinuxTarget;
+import com.github.xpenatan.jparser.builder.targets.MacTarget;
 import com.github.xpenatan.jparser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jparser.builder.tool.BuildToolOptions;
@@ -31,11 +33,7 @@ public class WGPUBuild {
                 }
 
                 if(op.windows64) {
-                    try {
-                        targets.add(getWindowTarget(op, buildPath));
-                    } catch(IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                    targets.add(getWindowTarget(op, buildPath));
                 }
                 if(op.teavm) {
                     targets.add(getTeaVMTarget(op, idlReader, buildPath));
@@ -43,15 +41,15 @@ public class WGPUBuild {
                 if(op.android) {
                     targets.add(getAndroidTarget(op, buildPath));
                 }
-//                if(op.linux64) {
-//                    targets.add(getLinuxTarget(op));
-//                }
-//                if(op.mac64) {
-//                    targets.add(getMacTarget(op, false));
-//                }
-//                if(op.macArm) {
-//                    targets.add(getMacTarget(op, true));
-//                }
+                if(op.linux64) {
+                    targets.add(getLinuxTarget(op, buildPath));
+                }
+                if(op.mac64) {
+                    targets.add(getMacTarget(op, buildPath, false));
+                }
+                if(op.macArm) {
+                    targets.add(getMacTarget(op, buildPath, true));
+                }
 //                if(op.iOS) {
 //                    targets.add(getIOSTarget(op));
 //                }
@@ -67,7 +65,7 @@ public class WGPUBuild {
         });
     }
 
-    private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) throws IOException {
+    private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
@@ -100,6 +98,68 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("gdi32.lib");
         linkTarget.linkerFlags.add("oleaut32.lib");
         multiTarget.add(linkTarget);
+
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getLinuxTarget(BuildToolOptions op, String buildPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        String wgpuPath = buildPath + "/linux_x86_64";
+        String webgpuIncludePath = wgpuPath + "/include";
+        String libPath = wgpuPath + "/lib/libwgpu_native.a";
+        String glfwIncludePath = buildPath + "/GLFW";
+
+        // Compile glue code and link
+        LinuxTarget linkTarget = new LinuxTarget();
+        linkTarget.addJNIHeaders();
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+        linkTarget.linkerFlags.add(libPath);
+        multiTarget.add(linkTarget);
+
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getMacTarget(BuildToolOptions op, String buildPath, boolean isArm) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        if(isArm) {
+            String wgpuPath = buildPath + "/macos_aarch64";
+            String webgpuIncludePath = wgpuPath + "/include";
+            String libPath = wgpuPath + "/lib/libwgpu_native.a";
+            String glfwIncludePath = buildPath + "/GLFW";
+
+            // Compile glue code and link
+            MacTarget linkTarget = new MacTarget(true);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+            linkTarget.headerDirs.add("-I" + glfwIncludePath);
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.linkerFlags.add(libPath);
+            multiTarget.add(linkTarget);
+        }
+        else {
+            String wgpuPath = buildPath + "/macos_x86_64";
+            String webgpuIncludePath = wgpuPath + "/include";
+            String libPath = wgpuPath + "/lib/wgpu_native.a";
+            String glfwIncludePath = buildPath + "/GLFW";
+
+            // Compile glue code and link
+            MacTarget linkTarget = new MacTarget(false);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+            linkTarget.headerDirs.add("-I" + glfwIncludePath);
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.linkerFlags.add(libPath);
+            multiTarget.add(linkTarget);
+        }
 
         return multiTarget;
     }

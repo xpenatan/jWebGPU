@@ -26,12 +26,35 @@ tasks.register<JavaExec>("wgpu_build_project") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-
 tasks.register<JavaExec>("wgpu_build_project_windows64") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
     args = mutableListOf("windows64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("wgpu_build_project_linux64") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("linux64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("wgpu_build_project_mac64") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("mac64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("wgpu_build_project_macArm") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("macArm")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
