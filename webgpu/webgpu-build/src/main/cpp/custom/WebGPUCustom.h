@@ -3,6 +3,7 @@
 #include "IDLHelper.h"
 #include "webgpu/webgpu.h"
 #include <iostream>
+#include <cstring>
 
 #if _WIN32
     #include <windows.h>
@@ -324,6 +325,25 @@ class WebGPUObjectBase {
     }
 };
 
+class WebGPUStringView : public WebGPUObjectBase<WebGPUStringView, WGPUStringView> {
+    public:
+
+        WebGPUStringView() {
+        }
+
+        WebGPUStringView(WGPUStringView stringView) {
+            Set(stringView);
+        }
+        WebGPUStringView(const char* value) {
+            Get().data = strdup(value);
+            Get().length = strlen(value);
+        }
+
+        const std::string GetString() {
+            return std::string(Get().data, Get().length);
+        }
+};
+
 class WebGPUCommandBuffer : public WebGPUObjectBase<WebGPUCommandBuffer, WGPUCommandBuffer> {
     protected:
 
@@ -358,10 +378,8 @@ class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
     public:
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            wgpuQueueSetLabel(Get(), stringView);
+            WebGPUStringView stringView(value);
+            wgpuQueueSetLabel(Get(), stringView.Get());
         }
 
         void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer) {
@@ -379,25 +397,6 @@ class WebGPUChainedStruct : public WebGPUObjectBase<WebGPUChainedStruct, WGPUCha
 
         void SetSType(WGPUSType type) {
             Get()->sType = type;
-        }
-};
-
-class WebGPUStringView : public WebGPUObjectBase<WebGPUStringView, WGPUStringView> {
-    public:
-
-        WebGPUStringView() {
-        }
-
-        WebGPUStringView(WGPUStringView stringView) {
-            Set(stringView);
-        }
-        WebGPUStringView(const char* value) {
-            Get().data = strdup(value);
-            Get().length = strlen(value);
-        }
-
-        const std::string GetString() {
-            return std::string(Get().data, Get().length);
         }
 };
 
@@ -631,10 +630,8 @@ class WebGPUQueueDescriptor : public WebGPUObjectBase<WebGPUQueueDescriptor, WGP
         public:
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get()->label = stringView;
+            WebGPUStringView stringView(value);
+            Get()->label = stringView.Get();
         }
 };
 
@@ -647,10 +644,8 @@ class WebGPUDeviceDescriptor : public WebGPUObjectBase<WebGPUDeviceDescriptor, W
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 
         void SetRequiredLimits(WebGPULimits* limits) {
@@ -773,10 +768,8 @@ class WebGPUVertexState : public WebGPUObjectBase<WebGPUVertexState, WGPUVertexS
         }
 
         void SetEntryPoint(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get()->entryPoint = stringView;
+            WebGPUStringView stringView(value);
+            Get()->entryPoint = stringView.Get();
         }
 
         void SetConstants(WebGPUVectorConstantEntry* values) {
@@ -811,10 +804,8 @@ class WebGPUShaderSourceWGSL : public WebGPUObjectBase<WebGPUShaderSourceWGSL, W
         }
 
         void SetCode(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().code = stringView;
+            WebGPUStringView stringView(value);
+            Get().code = stringView.Get();
         }
 
         void SetNext(WebGPUChainedStruct* value) {
@@ -846,10 +837,8 @@ class WebGPUShaderModuleDescriptor : public WebGPUObjectBase<WebGPUShaderModuleD
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 };
 
@@ -940,10 +929,8 @@ class WebGPUFragmentState : public WebGPUObjectBase<WebGPUFragmentState, WGPUFra
         }
 
         void SetEntryPoint(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().entryPoint = stringView;
+            WebGPUStringView stringView(value);
+            Get().entryPoint = stringView.Get();
         }
 
         void SetTargets(WebGPUVectorColorTargetState* values) {
@@ -1066,10 +1053,8 @@ class WebGPURenderPipelineDescriptor : public WebGPUObjectBase<WebGPURenderPipel
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 
         WebGPUVertexState GetVertex() {
@@ -1390,10 +1375,8 @@ class WebGPUCommandEncoderDescriptor : public WebGPUObjectBase<WebGPUCommandEnco
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 };
 
@@ -1410,10 +1393,8 @@ class WebGPUCommandBufferDescriptor : public WebGPUObjectBase<WebGPUCommandBuffe
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 };
 
@@ -1426,10 +1407,8 @@ class WebGPURenderPassDescriptor : public WebGPUObjectBase<WebGPURenderPassDescr
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 
         void SetColorAttachments(WebGPUVectorRenderPassColorAttachment* values) {
@@ -1461,10 +1440,8 @@ class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDes
         }
 
         void SetLabel(const char* value) {
-            WGPUStringView stringView = {};
-            stringView.data = strdup(value);
-            stringView.length = strlen(value);
-            Get().label = stringView;
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
         }
 };
 
@@ -1694,10 +1671,8 @@ class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDes
     }
 
     void SetLabel(const char* value) {
-        WGPUStringView stringView = {};
-        stringView.data = strdup(value);
-        stringView.length = strlen(value);
-        Get().label = stringView;
+        WebGPUStringView stringView(value);
+        Get().label = stringView.Get();
     }
 
     void SetFormat(WGPUTextureFormat format) {
@@ -1899,11 +1874,9 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
         WebGPUSurface* CreateWebSurface(const char* canvas) {
             #ifdef __EMSCRIPTEN__
                 WGPUEmscriptenSurfaceSourceCanvasHTMLSelector canvasDesc {};
-                WGPUStringView stringView = {};
-                stringView.data = strdup(canvas);
-                stringView.length = strlen(canvas);
+                WebGPUStringView stringView(canvas);
                 canvasDesc.chain.sType = WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector;
-                canvasDesc.selector = stringView;
+                canvasDesc.selector = stringView.Get();
                 WGPUSurfaceDescriptor surfDesc{};
                 surfDesc.nextInChain = (WGPUChainedStruct*)&canvasDesc;
                 WebGPUSurface* surface = new WebGPUSurface();
