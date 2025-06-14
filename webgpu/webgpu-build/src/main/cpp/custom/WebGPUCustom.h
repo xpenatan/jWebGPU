@@ -1913,7 +1913,9 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
                 fromLinux.chain.sType = WGPUSType_SurfaceSourceXlibWindow;
                 fromLinux.display = display;
                 fromLinux.window = (uint64_t)window;
-
+                WGPUSurfaceDescriptor surfaceDescriptor{};
+                surfaceDescriptor.nextInChain = &fromLinux.chain;
+                surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
             #endif
             return surface;
         }
