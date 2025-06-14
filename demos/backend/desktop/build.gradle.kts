@@ -9,7 +9,9 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = JavaVersion.VERSION_11
 
 val lwjglVersion = "3.3.4"
-val lwjglNatives = "natives-windows"
+val lwjglWindowsNatives = "natives-windows"
+val lwjglLinuxNatives = "natives-linux"
+val lwjglMacNatives = "natives-macos"
 
 dependencies {
     api(project(":demos:backend:core"))
@@ -27,9 +29,15 @@ dependencies {
     implementation("org.lwjgl:lwjgl")
     implementation("org.lwjgl:lwjgl-glfw")
     implementation("org.lwjgl:lwjgl-opengl")
-    runtimeOnly("org.lwjgl:lwjgl::$lwjglNatives")
-    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglNatives")
-    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglNatives")
+    runtimeOnly("org.lwjgl:lwjgl::$lwjglWindowsNatives")
+    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglWindowsNatives")
+    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglWindowsNatives")
+    runtimeOnly("org.lwjgl:lwjgl::$lwjglLinuxNatives")
+    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglLinuxNatives")
+    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglLinuxNatives")
+    runtimeOnly("org.lwjgl:lwjgl::$lwjglMacNatives")
+    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglMacNatives")
+    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglMacNatives")
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.GLFWApp"

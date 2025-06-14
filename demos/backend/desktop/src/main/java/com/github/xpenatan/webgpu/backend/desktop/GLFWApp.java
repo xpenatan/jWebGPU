@@ -1,12 +1,19 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
 import com.github.xpenatan.webgpu.JWebGPULoader;
+import com.github.xpenatan.webgpu.WGPU;
+import com.github.xpenatan.webgpu.WGPUPlatformType;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.glfw.GLFWNativeCocoa;
+import org.lwjgl.glfw.GLFWNativeWGL;
 import org.lwjgl.glfw.GLFWNativeWin32;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.glfw.GLFWNativeCocoa.glfwGetCocoaWindow;
+import static org.lwjgl.glfw.GLFWNativeWin32.glfwGetWin32Window;
+import static org.lwjgl.glfw.GLFWNativeX11.glfwGetX11Window;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class GLFWApp {
@@ -79,7 +86,21 @@ public class GLFWApp {
             throw new RuntimeException("Failed to create GLFW window");
         }
 
-        windowHandle = GLFWNativeWin32.glfwGetWin32Window(window);
+        String osName = System.getProperty("os.name").toLowerCase();
+        if(osName.contains("win")) {
+            windowHandle = glfwGetWin32Window(window);
+        }
+        else if(osName.contains("linux")) {
+            if (glfwGetX11Window(window) != 0) {
+                windowHandle = glfwGetX11Window(window);
+            } else {
+                // Check for Wayland (less common, requires additional handling)
+                System.out.println("Wayland handle not directly supported in this example.");
+            }
+        }
+        else if(osName.contains("mac")) {
+            windowHandle = glfwGetCocoaWindow(window);
+        }
 
         // Center the window
         var vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
