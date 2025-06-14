@@ -8,6 +8,7 @@ import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFWNativeCocoa.glfwGetCocoaWindow;
 import static org.lwjgl.glfw.GLFWNativeWin32.glfwGetWin32Window;
+import static org.lwjgl.glfw.GLFWNativeX11.glfwGetX11Display;
 import static org.lwjgl.glfw.GLFWNativeX11.glfwGetX11Window;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
@@ -86,12 +87,7 @@ public class GLFWApp {
             windowHandle = glfwGetWin32Window(window);
         }
         else if(osName.contains("linux")) {
-            if (glfwGetX11Window(window) != 0) {
-                windowHandle = glfwGetX11Window(window);
-            } else {
-                // Check for Wayland (less common, requires additional handling)
-                System.out.println("Wayland handle not directly supported in this example.");
-            }
+            windowHandle = glfwGetX11Window(window);
         }
         else if(osName.contains("mac")) {
             windowHandle = glfwGetCocoaWindow(window);
@@ -120,6 +116,18 @@ public class GLFWApp {
     }
 
     private void createSurface() {
-        wgpu.surface = wgpu.instance.createWindowsSurface(windowHandle);
+
+
+        String osName = System.getProperty("os.name").toLowerCase();
+        if(osName.contains("win")) {
+            wgpu.surface = wgpu.instance.createWindowsSurface(windowHandle);
+        }
+        else if(osName.contains("linux")) {
+            long display = glfwGetX11Display();
+            wgpu.surface = wgpu.instance.createLinuxSurface(windowHandle, display);
+        }
+        else if(osName.contains("mac")) {
+        }
+
     }
 }

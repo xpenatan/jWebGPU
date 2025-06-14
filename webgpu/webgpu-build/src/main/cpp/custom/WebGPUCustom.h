@@ -1900,6 +1900,28 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
                 WGPUSurfaceDescriptor surfaceDescriptor{};
                 surfaceDescriptor.nextInChain = &fromWindowsHWND.chain;
                 surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
+            #elif __linux__
+                surface = new WebGPUSurface();
+                WGPUSurfaceSourceXlibWindow fromLinux;
+                fromLinux.chain.next = NULL;
+                fromLinux.chain.sType = WGPUSType_SurfaceSourceXlibWindow;
+                fromLinux.hinstance = hinstance;
+                fromLinux.hwnd = hwnd;
+
+            #endif
+            return surface;
+        }
+
+        WebGPUSurface* CreateLinuxSurface(void * window, void* display) {
+            WebGPUSurface* surface = NULL;
+            #if __linux__
+                surface = new WebGPUSurface();
+                WGPUSurfaceSourceXlibWindow fromLinux;
+                fromLinux.chain.next = NULL;
+                fromLinux.chain.sType = WGPUSType_SurfaceSourceXlibWindow;
+                fromLinux.display = display;
+                fromLinux.window = (uint64_t)window;
+
             #endif
             return surface;
         }

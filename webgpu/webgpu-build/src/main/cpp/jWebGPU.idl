@@ -528,6 +528,7 @@ interface WebGPUInstance {
     void RequestAdapter(WebGPURequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
     WebGPUSurface CreateWebSurface([Const] DOMString canvas);
     WebGPUSurface CreateWindowsSurface(any hwnd);
+    WebGPUSurface CreateLinuxSurface(any window, any display);
     WebGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);
     void ProcessEvents();
 };
