@@ -100,13 +100,14 @@ public class GLFWApp {
             windowHandle = glfwGetCocoaWindow(window);
         }
 
-        // Center the window
-        var vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-        glfwSetWindowPos(
-                window,
-                (vidMode.width() - windowWidth) / 2,
-                (vidMode.height() - windowHeight) / 2
-        );
+        if(glfwGetPlatform() != GLFW_PLATFORM_WAYLAND) {
+            var vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+            glfwSetWindowPos(
+                    window,
+                    (vidMode.width() - windowWidth) / 2,
+                    (vidMode.height() - windowHeight) / 2
+            );
+        }
 
         // Make the window visible
         glfwShowWindow(window);
@@ -128,7 +129,6 @@ public class GLFWApp {
             wgpu.surface = wgpu.instance.createWindowsSurface(windowHandle);
         }
         else if(osName.contains("linux")) {
-
             if(glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
                 long display = glfwGetWaylandDisplay();
                 wgpu.surface = wgpu.instance.createLinuxSurface(true, windowHandle, display);
