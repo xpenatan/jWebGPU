@@ -7,6 +7,8 @@ import org.lwjgl.glfw.GLFWErrorCallback;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFWNativeCocoa.glfwGetCocoaWindow;
+import static org.lwjgl.glfw.GLFWNativeWayland.glfwGetWaylandDisplay;
+import static org.lwjgl.glfw.GLFWNativeWayland.glfwGetWaylandWindow;
 import static org.lwjgl.glfw.GLFWNativeWin32.glfwGetWin32Window;
 import static org.lwjgl.glfw.GLFWNativeX11.glfwGetX11Display;
 import static org.lwjgl.glfw.GLFWNativeX11.glfwGetX11Window;
@@ -87,7 +89,12 @@ public class GLFWApp {
             windowHandle = glfwGetWin32Window(window);
         }
         else if(osName.contains("linux")) {
-            windowHandle = glfwGetX11Window(window);
+            if(glfwGetPlatform() == org.lwjgl.glfw.GLFW.GLFW_PLATFORM_WAYLAND) {
+                windowHandle = glfwGetWaylandWindow(window);
+            }
+            else {
+                windowHandle = glfwGetX11Window(window);
+            }
         }
         else if(osName.contains("mac")) {
             windowHandle = glfwGetCocoaWindow(window);
@@ -116,15 +123,20 @@ public class GLFWApp {
     }
 
     private void createSurface() {
-
-
         String osName = System.getProperty("os.name").toLowerCase();
         if(osName.contains("win")) {
             wgpu.surface = wgpu.instance.createWindowsSurface(windowHandle);
         }
         else if(osName.contains("linux")) {
-            long display = glfwGetX11Display();
-            wgpu.surface = wgpu.instance.createLinuxSurface(windowHandle, display);
+
+            if(glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
+                long display = glfwGetWaylandDisplay();
+                wgpu.surface = wgpu.instance.createLinuxSurface(true, windowHandle, display);
+            }
+            else {
+                long display = glfwGetX11Display();
+                wgpu.surface = wgpu.instance.createLinuxSurface(false, windowHandle, display);
+            }
         }
         else if(osName.contains("mac")) {
         }

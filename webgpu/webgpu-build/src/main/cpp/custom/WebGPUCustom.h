@@ -1904,18 +1904,30 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
             return surface;
         }
 
-        WebGPUSurface* CreateLinuxSurface(void * window, void* display) {
+        WebGPUSurface* CreateLinuxSurface(bool isWayland, void * windowOrSurface, void* display) {
             WebGPUSurface* surface = NULL;
             #if __linux__
                 surface = new WebGPUSurface();
-                WGPUSurfaceSourceXlibWindow fromLinux;
-                fromLinux.chain.next = NULL;
-                fromLinux.chain.sType = WGPUSType_SurfaceSourceXlibWindow;
-                fromLinux.display = display;
-                fromLinux.window = (uint64_t)window;
-                WGPUSurfaceDescriptor surfaceDescriptor{};
-                surfaceDescriptor.nextInChain = &fromLinux.chain;
-                surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
+                if(isWayland) {
+                    WGPUSurfaceSourceWaylandSurface fromLinux;
+                    fromLinux.chain.next = NULL;
+                    fromLinux.chain.sType = WGPUSType_SurfaceSourceWaylandSurface;
+                    fromLinux.display = display;
+                    fromLinux.surface = windowOrSurface;
+                    WGPUSurfaceDescriptor surfaceDescriptor{};
+                    surfaceDescriptor.nextInChain = &fromLinux.chain;
+                    surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
+                }
+                else {
+                    WGPUSurfaceSourceXlibWindow fromLinux;
+                    fromLinux.chain.next = NULL;
+                    fromLinux.chain.sType = WGPUSType_SurfaceSourceXlibWindow;
+                    fromLinux.display = display;
+                    fromLinux.window = (uint64_t)windowOrSurface;
+                    WGPUSurfaceDescriptor surfaceDescriptor{};
+                    surfaceDescriptor.nextInChain = &fromLinux.chain;
+                    surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
+                }
             #endif
             return surface;
         }
