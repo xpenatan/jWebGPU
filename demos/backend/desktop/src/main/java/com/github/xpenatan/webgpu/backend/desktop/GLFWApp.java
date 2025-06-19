@@ -139,7 +139,7 @@ public class GLFWApp {
             }
         }
         else if(osName.contains("mac")) {
+            wgpu.surface = wgpu.instance.createMacSurface(windowHandle);
         }
-
     }
 }

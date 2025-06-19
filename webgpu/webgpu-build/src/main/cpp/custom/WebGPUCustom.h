@@ -1932,6 +1932,21 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
             return surface;
         }
 
+        WebGPUSurface* CreateMacSurface(void * metalLayer) {
+            WebGPUSurface* surface = NULL;
+            #if TARGET_OS_MAC
+                surface = new WebGPUSurface();
+                WGPUSurfaceSourceMetalLayer fromMac;
+                fromMac.chain.next = NULL;
+                fromMac.chain.sType = WGPUSType_SurfaceSourceWaylandSurface;
+                fromMac.layer = metalLayer;
+                WGPUSurfaceDescriptor surfaceDescriptor{};
+                surfaceDescriptor.nextInChain = &fromMac.chain;
+                surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
+            #endif
+            return surface;
+        }
+
         WebGPUSurface* CreateAndroidSurface(WGPUAndroidWindow* window) {
             WebGPUSurface* surface = NULL;
             #if __ANDROID__
