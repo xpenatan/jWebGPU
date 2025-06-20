@@ -11,6 +11,10 @@
     #include <glfw3native.h>
 #endif
 
+#ifdef __APPLE__
+    #include <TargetConditionals.h>
+#endif
+
 #ifdef __ANDROID__
 
 #include <android/native_window.h>
