@@ -59,77 +59,77 @@ jobs:
           name: windows-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
 
-#  build_linux:
-#    name: Build Linux
-#    runs-on: ubuntu-22.04
-#
-#    steps:
-#      - name: Cancel Previous Runs
-#        uses: styfle/cancel-workflow-action@0.12.1
-#        with:
-#          access_token: ${{ github.token }}
-#
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up JDK 17
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: "corretto"
-#          java-version: 17
-#
-#      - name: Set up MinGW
-#        run: |
-#          sudo apt install -y --force-yes mingw-w64 lib32z1
-#
-#      - name: Change wrapper permissions
-#        run: chmod +x ./gradlew
-#
-#      - name: Download sources
-#        run: ./gradlew :webgpu:webgpu-wgpu:download_linux_x86
-#
-#      - name: Build project
-#        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_linux64
-#
-#      - name: Upload natives
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: linux-natives
-#          path: ./webgpu/webgpu-build/build/c++/libs/
-#
-#  build_mac:
-#    name: Build Mac
-#    runs-on: macos-latest
-#
-#    steps:
-#      - name: Cancel Previous Runs
-#        uses: styfle/cancel-workflow-action@0.12.1
-#        with:
-#          access_token: ${{ github.token }}
-#
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up JDK 17
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: "corretto"
-#          java-version: 17
-#
-#      - name: Change wrapper permissions
-#        run: chmod +x ./gradlew
-#
-#      - name: Download sources
-#        run: ./gradlew :webgpu:webgpu-wgpu:download_macos_x86_64 :webgpu:webgpu-wgpu:download_macos_aarch64
-#
-#      - name: Build project
-#        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_mac64 :webgpu:webgpu-build:wgpu_build_project_macArm
-#
-#      - name: Upload natives
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: mac-natives
-#          path: ./webgpu/webgpu-build/build/c++/libs/
+  build_linux:
+    name: Build Linux
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "corretto"
+          java-version: 17
+
+      - name: Set up MinGW
+        run: |
+          sudo apt install -y --force-yes mingw-w64 lib32z1
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Download sources
+        run: ./gradlew :webgpu:webgpu-wgpu:download_linux_x86_64 :webgpu:webgpu-wgpu:download_glfw_windows
+
+      - name: Build project
+        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_linux64
+
+      - name: Upload natives
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-natives
+          path: ./webgpu/webgpu-build/build/c++/libs/
+
+  build_mac:
+    name: Build Mac
+    runs-on: macos-latest
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "corretto"
+          java-version: 17
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Download sources
+        run: ./gradlew :webgpu:webgpu-wgpu:download_macos_x86_64 :webgpu:webgpu-wgpu:download_macos_aarch64
+
+      - name: Build project
+        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_mac64 :webgpu:webgpu-build:wgpu_build_project_macArm
+
+      - name: Upload natives
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-natives
+          path: ./webgpu/webgpu-build/build/c++/libs/
 
   build_teavm:
     name: Build TeaVM
@@ -266,17 +266,17 @@ jobs:
           name: windows-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
 
-#      - name: Download linux natives
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: linux-natives
-#          path: ./webgpu/webgpu-build/build/c++/libs/
-#
-#      - name: Download mac natives
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: mac-natives
-#          path: ./webgpu/webgpu-build/build/c++/libs/
+      - name: Download linux natives
+        uses: actions/download-artifact@v4
+        with:
+          name: linux-natives
+          path: ./webgpu/webgpu-build/build/c++/libs/
+
+      - name: Download mac natives
+        uses: actions/download-artifact@v4
+        with:
+          name: mac-natives
+          path: ./webgpu/webgpu-build/build/c++/libs/
 
       - name: Download android natives
         uses: actions/download-artifact@v4
