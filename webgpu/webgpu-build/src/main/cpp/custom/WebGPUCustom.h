@@ -1942,7 +1942,7 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
                 surface = new WebGPUSurface();
                 WGPUSurfaceSourceMetalLayer fromMac;
                 fromMac.chain.next = NULL;
-                fromMac.chain.sType = WGPUSType_SurfaceSourceWaylandSurface;
+                fromMac.chain.sType = WGPUSType_SurfaceSourceMetalLayer;
                 fromMac.layer = metalLayer;
                 WGPUSurfaceDescriptor surfaceDescriptor{};
                 surfaceDescriptor.nextInChain = &fromMac.chain;
