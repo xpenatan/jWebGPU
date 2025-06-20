@@ -141,6 +141,12 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.linkerFlags.add("-frameworkMetal");
+            linkTarget.linkerFlags.add("-frameworkFoundation");
+            linkTarget.linkerFlags.add("-frameworkCocoa");
+            linkTarget.linkerFlags.add("-frameworkQuartzCore");
+            linkTarget.linkerFlags.add("-frameworkCoreFoundation");
+            linkTarget.linkerFlags.add("-frameworkIOKit");
             linkTarget.linkerFlags.add(libPath);
             multiTarget.add(linkTarget);
         }
@@ -157,6 +163,12 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.linkerFlags.add("-frameworkMetal");
+            linkTarget.linkerFlags.add("-frameworkFoundation");
+            linkTarget.linkerFlags.add("-frameworkCocoa");
+            linkTarget.linkerFlags.add("-frameworkQuartzCore");
+            linkTarget.linkerFlags.add("-frameworkCoreFoundation");
+            linkTarget.linkerFlags.add("-frameworkIOKit");
             linkTarget.linkerFlags.add(libPath);
             multiTarget.add(linkTarget);
         }
