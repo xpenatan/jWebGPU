@@ -120,7 +120,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-wgpu:download_macos_x86_64 :webgpu:webgpu-wgpu:download_macos_aarch64
+        run: ./gradlew :webgpu:webgpu-wgpu:download_macos_x86_64 :webgpu:webgpu-wgpu:download_macos_aarch64 :webgpu:webgpu-wgpu:download_glfw_windows
 
       - name: Build project
         run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_mac64 :webgpu:webgpu-build:wgpu_build_project_macArm
