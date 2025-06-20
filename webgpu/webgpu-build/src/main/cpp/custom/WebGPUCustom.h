@@ -13,6 +13,10 @@
 
 #ifdef __APPLE__
     #include <TargetConditionals.h>
+    #if TARGET_OS_MAC
+        include <Foundation/Foundation.h>
+        include <QuartzCore/CAMetalLayer.h>
+    #endif
 #endif
 
 #ifdef __ANDROID__
@@ -1936,14 +1940,20 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
             return surface;
         }
 
-        WebGPUSurface* CreateMacSurface(void * metalLayer) {
+        WebGPUSurface* CreateMacSurface(void * windowHandle) {
             WebGPUSurface* surface = NULL;
             #if TARGET_OS_MAC
                 surface = new WebGPUSurface();
+                id metal_layer = [CAMetalLayer layer];
+
+                NSWindow* ns_window = (NSWindow*)windowHandle;
+                [ns_window.contentView setWantsLayer : YES];
+                [ns_window.contentView setLayer : metal_layer];
+
                 WGPUSurfaceSourceMetalLayer fromMac;
                 fromMac.chain.next = NULL;
                 fromMac.chain.sType = WGPUSType_SurfaceSourceMetalLayer;
-                fromMac.layer = metalLayer;
+                fromMac.layer = metal_layer;
                 WGPUSurfaceDescriptor surfaceDescriptor{};
                 surfaceDescriptor.nextInChain = &fromMac.chain;
                 surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
