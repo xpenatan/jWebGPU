@@ -147,7 +147,7 @@ public class WGPUBuild {
         else {
             String wgpuPath = buildPath + "/macos_x86_64";
             String webgpuIncludePath = wgpuPath + "/include";
-            String libPath = wgpuPath + "/lib/wgpu_native.a";
+            String libPath = wgpuPath + "/lib/libwgpu_native.a";
             String glfwIncludePath = buildPath + "/GLFW";
 
             // Compile glue code and link
