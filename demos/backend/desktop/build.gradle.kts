@@ -12,6 +12,7 @@ val lwjglVersion = "3.3.4"
 val lwjglWindowsNatives = "natives-windows"
 val lwjglLinuxNatives = "natives-linux"
 val lwjglMacNatives = "natives-macos"
+val lwjglMacArmNatives = "natives-macos-arm64"
 
 dependencies {
     api(project(":demos:backend:core"))
@@ -38,6 +39,9 @@ dependencies {
     runtimeOnly("org.lwjgl:lwjgl::$lwjglMacNatives")
     runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglMacNatives")
     runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglMacNatives")
+    runtimeOnly("org.lwjgl:lwjgl::$lwjglMacArmNatives")
+    runtimeOnly("org.lwjgl:lwjgl-glfw::$lwjglMacArmNatives")
+    runtimeOnly("org.lwjgl:lwjgl-opengl::$lwjglMacArmNatives")
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.triangle.GLFWApp"
