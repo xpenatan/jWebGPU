@@ -13,9 +13,11 @@
 
 #ifdef __APPLE__
     #include <TargetConditionals.h>
-    #if TARGET_OS_MAC
-        include <Foundation/Foundation.h>
-        include <QuartzCore/CAMetalLayer.h>
+    #ifdef TARGET_OS_MAC
+        #include <glfw3.h>
+        #include <glfw3native.h>
+        #include <QuartzCore/CAMetalLayer.h>
+        #include <Cocoa/Cocoa.h>
     #endif
 #endif
 

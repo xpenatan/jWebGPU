@@ -136,6 +136,8 @@ public class WGPUBuild {
 
             // Compile glue code and link
             MacTarget linkTarget = new MacTarget(true);
+            linkTarget.cppCompiler.add("-x");
+            linkTarget.cppCompiler.add("objective-c++");
             linkTarget.addJNIHeaders();
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
@@ -164,6 +166,8 @@ public class WGPUBuild {
 
             // Compile glue code and link
             MacTarget linkTarget = new MacTarget(false);
+            linkTarget.cppCompiler.add("-x");
+            linkTarget.cppCompiler.add("objective-c++");
             linkTarget.addJNIHeaders();
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
