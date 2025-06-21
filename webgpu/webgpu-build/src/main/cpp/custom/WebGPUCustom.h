@@ -103,6 +103,7 @@ class WebGPURenderPassColorAttachment;
 class WebGPUConstantEntry;
 class WebGPUVertexBufferLayout;
 class WebGPURenderBundle;
+class WebGPUVertexAttribute;
 
 #ifdef __EMSCRIPTEN__
 
@@ -226,6 +227,19 @@ class WebGPUVectorRenderPassColorAttachment {
         int size() { return vector.size(); }
         void push_back(const WebGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
         const WebGPURenderPassColorAttachment* data() { return vector.data(); }
+};
+
+class WebGPUVectorVertexAttribute {
+    private:
+        std::vector<WebGPUVertexAttribute> vector;
+    public:
+        static WebGPUVectorVertexAttribute Obtain() {
+            WebGPUVectorVertexAttribute obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
+        const WebGPUVertexAttribute* data() { return vector.data(); }
 };
 
 class WGPUAndroidWindow {
@@ -762,8 +776,43 @@ class WebGPUConstantEntry : public WebGPUObjectBase<WebGPUConstantEntry, WGPUCon
     public:
 };
 
+class WebGPUVertexAttribute : public WebGPUObjectBase<WebGPUVertexAttribute, WGPUVertexAttribute> {
+    public:
+
+        void SetFormat(WGPUVertexFormat format) {
+            Get().format = format;
+        }
+
+        void SetOffset(int offset) {
+            Get().offset = offset;
+        }
+
+        void SetShaderLocation(int shaderLocation) {
+            Get().shaderLocation = shaderLocation;
+        }
+};
+
 class WebGPUVertexBufferLayout : public WebGPUObjectBase<WebGPUVertexBufferLayout, WGPUVertexBufferLayout> {
     public:
+
+        void SetAttributes(WebGPUVectorVertexAttribute* values) {
+            if(values != NULL) {
+                Get().attributeCount = values->size();
+                Get().attributes = reinterpret_cast<const WGPUVertexAttribute*>(values->data());
+            }
+            else {
+                Get().attributeCount = 0;
+                Get().attributes = NULL;
+            }
+        }
+
+        void SetArrayStride(int offset) {
+            Get().arrayStride = offset;
+        }
+
+        void SetStepMode(WGPUVertexStepMode stepMode) {
+            Get().stepMode = stepMode;
+        }
 };
 
 class WebGPUVertexState : public WebGPUObjectBase<WebGPUVertexState, WGPUVertexState*> {

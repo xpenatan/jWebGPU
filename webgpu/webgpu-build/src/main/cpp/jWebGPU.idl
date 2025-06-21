@@ -70,6 +70,12 @@ interface WebGPUVectorRenderPassColorAttachment {
     void push_back([Ref] WebGPURenderPassColorAttachment colorAttachment);
 };
 
+interface WebGPUVectorVertexAttribute {
+    void WebGPUVectorVertexAttribute();
+    [Value] static WebGPUVectorVertexAttribute Obtain();
+    void push_back([Ref] WebGPUVertexAttribute colorAttachment);
+};
+
 // ################################### CALLBACKS ###################################
 
 interface RequestAdapterCallback {
@@ -261,8 +267,18 @@ interface WebGPUFragmentState {
     void SetConstants(WebGPUVectorConstantEntry constants);
 };
 
+interface WebGPUVertexAttribute {
+    void WebGPUVertexAttribute();
+    void SetFormat(WGPUVertexFormat format);
+    void SetOffset(long offset);
+    void SetShaderLocation(long shaderLocation);
+};
+
 interface WebGPUVertexBufferLayout {
     void WebGPUVertexBufferLayout();
+    void SetAttributes(WebGPUVectorVertexAttribute values);
+    void SetArrayStride(long offset);
+    void SetStepMode(WGPUVertexStepMode stepMode);
 };
 
 interface WebGPUVertexState {
