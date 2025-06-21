@@ -779,6 +779,11 @@ class WebGPUConstantEntry : public WebGPUObjectBase<WebGPUConstantEntry, WGPUCon
 class WebGPUVertexAttribute : public WebGPUObjectBase<WebGPUVertexAttribute, WGPUVertexAttribute> {
     public:
 
+        static WebGPUVertexAttribute Obtain() {
+            WebGPUVertexAttribute obj;
+            return obj;
+        }
+
         void SetFormat(WGPUVertexFormat format) {
             Get().format = format;
         }
@@ -794,6 +799,11 @@ class WebGPUVertexAttribute : public WebGPUObjectBase<WebGPUVertexAttribute, WGP
 
 class WebGPUVertexBufferLayout : public WebGPUObjectBase<WebGPUVertexBufferLayout, WGPUVertexBufferLayout> {
     public:
+
+        static WebGPUVertexBufferLayout Obtain() {
+            WebGPUVertexBufferLayout obj;
+            return obj;
+        }
 
         void SetAttributes(WebGPUVectorVertexAttribute* values) {
             if(values != NULL) {

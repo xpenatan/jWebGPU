@@ -269,6 +269,7 @@ interface WebGPUFragmentState {
 
 interface WebGPUVertexAttribute {
     void WebGPUVertexAttribute();
+    [Value] static WebGPUVertexAttribute Obtain();
     void SetFormat(WGPUVertexFormat format);
     void SetOffset(long offset);
     void SetShaderLocation(long shaderLocation);
@@ -276,6 +277,7 @@ interface WebGPUVertexAttribute {
 
 interface WebGPUVertexBufferLayout {
     void WebGPUVertexBufferLayout();
+    [Value] static WebGPUVertexBufferLayout Obtain();
     void SetAttributes(WebGPUVectorVertexAttribute values);
     void SetArrayStride(long offset);
     void SetStepMode(WGPUVertexStepMode stepMode);
