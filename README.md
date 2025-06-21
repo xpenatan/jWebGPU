@@ -12,10 +12,10 @@ A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms
 
 ### Platform status:
 
-| Emscripten | Windows | Linux |     Mac     |                   Android                   | iOS  |
-|:----------:|:-------:|:-----:|:-----------:|:-------------------------------------------:|:----:|
-|     ✅      |    ✅    |   ✅   |      ✅      |                      ✅                      |  ❌   |
-|    wasm    |   x86_64   |  x86_64  | x86_64<br>Arm64 |  x86<br>x86_64<br>arm64_v8a<br>armeabi_v7a  | TODO |
+| Emscripten | Windows | Linux |       Mac       |                   Android                   | iOS  |
+|:----------:|:-------:|:-----:|:---------------:|:-------------------------------------------:|:----:|
+|     ✅      |    ✅    |   ✅   |        ✅        |                      ✅                      |  ❌   |
+|    wasm    |   x86_64   |  x86_64  | x86_64<br>arm64 |  x86<br>x86_64<br>arm64_v8a<br>armeabi_v7a  | TODO |
 
 
 ## Naming Conventions
