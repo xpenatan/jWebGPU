@@ -302,6 +302,7 @@ interface WebGPUColorTargetState {
 
 interface WebGPUDepthStencilState {
     void WebGPUDepthStencilState();
+    [Value] static WebGPUDepthStencilState Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
     void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled);
