@@ -105,6 +105,9 @@ class WebGPUVertexBufferLayout;
 class WebGPURenderBundle;
 class WebGPUVertexAttribute;
 
+class WGPUFloatBuffer;
+class WGPUShortBuffer;
+
 #ifdef __EMSCRIPTEN__
 
 using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
@@ -203,19 +206,6 @@ class WebGPUVectorRenderBundle {
         const WebGPURenderBundle* data() { return vector.data(); }
 };
 
-class WebGPUVectorInt {
-    private:
-        std::vector<int> vector;
-    public:
-        static WebGPUVectorInt Obtain() {
-            WebGPUVectorInt obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(int attachment) { vector.push_back(attachment); }
-        const int* data() { return vector.data(); }
-};
-
 class WebGPUVectorRenderPassColorAttachment {
     private:
         std::vector<WebGPURenderPassColorAttachment> vector;
@@ -241,6 +231,312 @@ class WebGPUVectorVertexAttribute {
         void push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
         const WebGPUVertexAttribute* data() { return vector.data(); }
 };
+
+class WebGPUVectorInt {
+    private:
+        std::vector<int> vector;
+    public:
+        static WebGPUVectorInt Obtain() {
+            WebGPUVectorInt obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(int attachment) { vector.push_back(attachment); }
+        int get(int index) { return vector[index]; }
+        const int* data() { return vector.data(); }
+};
+
+class WGPUByteBuffer {
+    private:
+        // Detect host endianness at compile time
+        static bool isLittleEndianHost() {
+            uint16_t test = 0x0001;
+            return reinterpret_cast<const uint8_t*>(&test)[0] == 0x01;
+        }
+
+        // Portable byte-swapping functions
+        static uint16_t swapBytes(uint16_t value) {
+            return (value >> 8) | (value << 8);
+        }
+
+        static uint32_t swapBytes(uint32_t value) {
+            return ((value >> 24) & 0x000000FF) |
+                   ((value >> 8)  & 0x0000FF00) |
+                   ((value << 8)  & 0x00FF0000) |
+                   ((value << 24) & 0xFF000000);
+        }
+
+        static uint64_t swapBytes(uint64_t value) {
+            return ((value >> 56) & 0x00000000000000FFULL) |
+                   ((value >> 40) & 0x000000000000FF00ULL) |
+                   ((value >> 24) & 0x0000000000FF0000ULL) |
+                   ((value >> 8)  & 0x00000000FF000000ULL) |
+                   ((value << 8)  & 0x000000FF00000000ULL) |
+                   ((value << 24) & 0x0000FF0000000000ULL) |
+                   ((value << 40) & 0x00FF000000000000ULL) |
+                   ((value << 56) & 0xFF00000000000000ULL);
+        }
+
+    public:
+        enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
+
+    private:
+        std::vector<uint8_t> buffer;
+        size_t _position = 0;
+        size_t _limit;
+        WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
+        std::unique_ptr<WGPUFloatBuffer> floatBuffer;
+        std::unique_ptr<WGPUShortBuffer> shortBuffer;
+        bool isClearing = false;
+
+    public:
+        static WGPUByteBuffer Obtain() {
+            WGPUByteBuffer obj;
+            return obj;
+        }
+
+        explicit WGPUByteBuffer() : buffer(0), _limit(0), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
+        explicit WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
+
+        int size() { return buffer.size(); }
+        void push_back(char value) { buffer.push_back(value); }
+        const uint8_t* data() { return buffer.data(); }
+        void order(WGPUByteOrder order) { byteOrder = order; }
+
+        void put(char value) {
+            if (_position >= _limit) {
+                throw std::out_of_range("Buffer overflow");
+            }
+            buffer[_position++] = value;
+        }
+        char get(int index) { return buffer[index]; }
+
+        int remaining() const {
+            return _limit - _position;
+        }
+
+        void position(int newPosition) {
+            if (newPosition > _limit) {
+                throw std::out_of_range("Invalid position");
+            }
+            _position = newPosition;
+        }
+
+        int getPosition() {
+            return _position;
+        }
+
+        void limit(int newLimit) {
+            if (newLimit > buffer.size()) {
+                throw std::out_of_range("Invalid limit");
+            }
+            _limit = newLimit;
+            if (_position > _limit) {
+                _position = _limit;
+            }
+        }
+
+        size_t getLimit() const {
+            return _limit;
+        }
+
+        void clear();
+
+        template<typename T>
+        void putNumeric(int index, T value) {
+            if (_position + sizeof(T) > _limit) {
+                throw std::out_of_range("Buffer overflow");
+            }
+            bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
+            if (needsSwap) {
+                if constexpr (sizeof(T) == 2) {
+                    value = swapBytes(static_cast<uint16_t>(value));
+                } else if constexpr (sizeof(T) == 4) {
+                    value = swapBytes(static_cast<uint32_t>(value));
+                } else if constexpr (sizeof(T) == 8) {
+                    value = swapBytes(static_cast<uint64_t>(value));
+                }
+            }
+            std::memcpy(&buffer[index], &value, sizeof(T));
+        }
+
+        template<typename T>
+        T getNumeric(int index) {
+            if (index + sizeof(T) > _limit) {
+                throw std::out_of_range("Buffer underflow");
+            }
+            T value;
+            std::memcpy(&value, &buffer[index], sizeof(T));
+            bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
+            if (needsSwap) {
+                if constexpr (sizeof(T) == 2) {
+                    value = swapBytes(static_cast<uint16_t>(value));
+                } else if constexpr (sizeof(T) == 4) {
+                    value = swapBytes(static_cast<uint32_t>(value));
+                } else if constexpr (sizeof(T) == 8) {
+                    value = swapBytes(static_cast<uint64_t>(value));
+                }
+            }
+            return value;
+        }
+
+        WGPUFloatBuffer& asFloatBuffer();
+        WGPUShortBuffer& asShortBuffer();
+
+    friend class WGPUFloatBuffer;
+    friend class WGPUShortBuffer;
+};
+
+using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;
+
+class WGPUFloatBuffer {
+    private:
+        WGPUByteBuffer& parent;
+
+    public:
+
+        size_t startPosition;
+        size_t floatLimit;
+
+        WGPUFloatBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), floatLimit(bb.remaining() / sizeof(float)) {}
+
+        void put(float value) {
+            if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
+                throw std::out_of_range("FloatBuffer overflow");
+            }
+            parent.putNumeric(parent._position, value);
+            parent._position += sizeof(value);
+        }
+
+        float get() {
+            if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
+                throw std::out_of_range("FloatBuffer underflow");
+            }
+            float value = parent.getNumeric<float>(parent._position);
+            parent._position += sizeof(float);
+            return value;
+        }
+
+        long remaining() const {
+            return floatLimit - (parent.getPosition() - startPosition) / sizeof(float);
+        }
+
+        void position(int newPosition) {
+            if (newPosition > floatLimit) {
+                throw std::out_of_range("Invalid position for FloatBuffer");
+            }
+            parent.position(startPosition + newPosition * sizeof(float));
+        }
+
+        int getPosition() const {
+            return (parent.getPosition() - startPosition) / sizeof(float);
+        }
+
+        void clear() {
+            parent.clear();
+            startPosition = 0;
+            floatLimit = parent.getLimit() / sizeof(float);
+        }
+
+        void limit(int newLimit) {
+            size_t maxLimit = (parent.getLimit() - startPosition) / sizeof(float);
+            if (newLimit > maxLimit) {
+                throw std::out_of_range("Invalid limit for FloatBuffer");
+            }
+            floatLimit = newLimit;
+        }
+
+        int getLimit() const {
+            return floatLimit;
+        }
+};
+
+class WGPUShortBuffer {
+    private:
+        WGPUByteBuffer& parent;
+
+    public:
+
+        size_t startPosition;
+        size_t shortLimit;
+
+        WGPUShortBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), shortLimit(bb.remaining() / sizeof(int16_t)) {}
+
+        WGPUShortBuffer& put(int16_t value) {
+            if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
+                throw std::out_of_range("ShortBuffer overflow");
+            }
+            parent.putNumeric(parent._position, value);
+            parent._position += sizeof(value);
+        }
+
+        int16_t get() {
+            if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
+                throw std::out_of_range("ShortBuffer underflow");
+            }
+
+            int16_t value = parent.getNumeric<int16_t>(parent._position);
+            parent._position += sizeof(int16_t);
+            return value;
+        }
+
+        void clear() {
+            parent.clear();
+            startPosition = 0;
+            shortLimit = parent.getLimit() / sizeof(int16_t);
+        }
+
+        void limit(int newLimit) {
+            size_t maxLimit = (parent.getLimit() - startPosition) / sizeof(int16_t);
+            if (newLimit > maxLimit) {
+                throw std::out_of_range("Invalid limit for ShortBuffer");
+            }
+            shortLimit = newLimit;
+        }
+
+        int getLimit() const {
+            return shortLimit;
+        }
+
+        void position(size_t newPosition) {
+            if (newPosition > shortLimit) {
+                throw std::out_of_range("Invalid position for ShortBuffer");
+            }
+            parent.position(startPosition + newPosition * sizeof(int16_t));
+        }
+
+        int getPosition() const {
+            return (parent.getPosition() - startPosition) / sizeof(int16_t);
+        }
+
+        int remaining() const {
+            return shortLimit - (parent.getPosition() - startPosition) / sizeof(int16_t);
+        }
+};
+
+inline void WGPUByteBuffer::clear() {
+    if (isClearing) {
+        return;
+    }
+    isClearing = true;
+    _position = 0;
+    _limit = buffer.size();
+    floatBuffer->clear();
+    shortBuffer->clear();
+    isClearing = false;
+}
+
+inline WGPUFloatBuffer& WGPUByteBuffer::asFloatBuffer() {
+    floatBuffer->startPosition = _position;
+    floatBuffer->floatLimit = remaining() / sizeof(float);
+    return *floatBuffer;
+}
+
+inline WGPUShortBuffer& WGPUByteBuffer::asShortBuffer() {
+    shortBuffer->startPosition = _position;
+    shortBuffer->shortLimit = remaining() / sizeof(int16_t);
+    return *shortBuffer;
+}
 
 class WGPUAndroidWindow {
     public:
@@ -388,6 +684,36 @@ class WebGPUCommandBuffer : public WebGPUObjectBase<WebGPUCommandBuffer, WGPUCom
 
 };
 
+class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuBufferAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuBufferRelease(Get());
+        }
+
+    public:
+
+        void Unmap() {
+            wgpuBufferUnmap(Get());
+        }
+
+        int GetSize() {
+            return wgpuBufferGetSize(Get());
+        }
+
+        WGPUBufferUsage GetUsage() {
+            return wgpuBufferGetUsage(Get());
+        }
+
+        void Destroy() {
+            wgpuBufferDestroy(Get());
+        }
+};
+
 class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
     protected:
 
@@ -408,6 +734,16 @@ class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
 
         void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer) {
             wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
+        }
+
+        void WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes) {
+            int size = 0;
+            void* data = NULL;
+            if(bytes != NULL) {
+                size = bytes->size();
+                data = (void*)bytes->data();
+            }
+            wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
         }
 };
 
@@ -659,12 +995,47 @@ class WebGPUQueueDescriptor : public WebGPUObjectBase<WebGPUQueueDescriptor, WGP
         }
 };
 
+
+class WebGPUBufferDescriptor : public WebGPUObjectBase<WebGPUBufferDescriptor, WGPUBufferDescriptor> {
+    public:
+
+        static WebGPUBufferDescriptor Obtain() {
+            WebGPUBufferDescriptor obj;
+            return obj;
+        }
+
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
+        }
+
+        void SetUsage(WGPUBufferUsage usage) {
+            Get().usage = usage;
+        }
+
+        void SetSize(int size) {
+            Get().size = size;
+        }
+
+        void SetMappedAtCreation(int mappedAtCreation) {
+            Get().mappedAtCreation = mappedAtCreation;
+        }
+};
+
 class WebGPUDeviceDescriptor : public WebGPUObjectBase<WebGPUDeviceDescriptor, WGPUDeviceDescriptor> {
     public:
 
         static WebGPUDeviceDescriptor Obtain() {
             WebGPUDeviceDescriptor obj;
             return obj;
+        }
+
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
         }
 
         void SetLabel(const char* value) {
@@ -1053,28 +1424,28 @@ class WebGPUPrimitiveState : public WebGPUObjectBase<WebGPUPrimitiveState, WGPUP
         }
 };
 
-class WebGPUStencilFaceState : public WebGPUObjectBase<WebGPUStencilFaceState, WGPUStencilFaceState> {
+class WebGPUStencilFaceState : public WebGPUObjectBase<WebGPUStencilFaceState, WGPUStencilFaceState*> {
     public:
 
-        static WebGPUStencilFaceState Obtain() {
-            WebGPUStencilFaceState obj;
-            return obj;
-        }
+//        static WebGPUStencilFaceState Obtain() {
+//            WebGPUStencilFaceState obj;
+//            return obj;
+//        }
 
         void SetCompare(WGPUCompareFunction compare) {
-            Get().compare = compare;
+            Get()->compare = compare;
         }
 
         void SetFailOp(WGPUStencilOperation failOp) {
-            Get().failOp = failOp;
+            Get()->failOp = failOp;
         }
 
         void SetDepthFailOp(WGPUStencilOperation depthFailOp) {
-            Get().depthFailOp = depthFailOp;
+            Get()->depthFailOp = depthFailOp;
         }
 
         void SetPassOp(WGPUStencilOperation passOp) {
-            Get().passOp = passOp;
+            Get()->passOp = passOp;
         }
 };
 
@@ -1109,6 +1480,31 @@ class WebGPUDepthStencilState : public WebGPUObjectBase<WebGPUDepthStencilState,
         void SetDepthBiasClamp(float depthBiasClamp) {
             Get().depthBiasClamp = depthBiasClamp;
         }
+
+        void SetStencilReadMask(int stencilReadMask) {
+            Get().stencilReadMask = stencilReadMask;
+        }
+
+        void SetStencilWriteMask(int stencilWriteMask) {
+            Get().stencilWriteMask = stencilWriteMask;
+        }
+
+        void SetDepthBias(int depthBias) {
+            Get().depthBias = depthBias;
+        }
+
+        WebGPUStencilFaceState GetStencilFront() {
+            WebGPUStencilFaceState temp;
+            temp.Set(&Get().stencilFront);
+            return temp;
+        }
+
+        WebGPUStencilFaceState GetStencilBack() {
+            WebGPUStencilFaceState temp;
+            temp.Set(&Get().stencilBack);
+            return temp;
+        }
+
 };
 
 class WebGPUMultisampleState : public WebGPUObjectBase<WebGPUMultisampleState, WGPUMultisampleState*> {
@@ -1264,9 +1660,6 @@ class WebGPUSupportedFeatures : public WebGPUObjectBase<WebGPUSupportedFeatures,
         }
 };
 
-class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
-    public:
-};
 
 class WebGPURenderPassEncoder : public WebGPUObjectBase<WebGPURenderPassEncoder, WGPURenderPassEncoder> {
     protected:
@@ -1622,6 +2015,12 @@ class WebGPUDevice : public WebGPUObjectBase<WebGPUDevice, WGPUDevice> {
 
         void CreateCommandEncoder(WebGPUCommandEncoderDescriptor* encoderDescriptor, WebGPUCommandEncoder* encoder) {
             encoder->Set(wgpuDeviceCreateCommandEncoder(Get(), &(encoderDescriptor->Get())));
+        }
+
+        WebGPUBuffer CreateBuffer(WebGPUBufferDescriptor* descriptor) {
+            WebGPUBuffer temp;
+            temp.Set(wgpuDeviceCreateBuffer(Get(), &descriptor->Get()));
+            return temp;
         }
 };
 

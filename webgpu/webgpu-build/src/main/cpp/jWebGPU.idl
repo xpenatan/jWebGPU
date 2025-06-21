@@ -10,6 +10,50 @@ interface WGPUAndroidWindow {
     void InitLogcat();
 };
 
+interface WGPUByteBuffer {
+    void WGPUByteBuffer();
+    [Value] static WGPUByteBuffer Obtain();
+//    long size();
+//    void push_back(byte value);
+//    byte get(long index);
+
+    void order(WGPUByteOrder order);
+    void put(byte value);
+    long remaining();
+    void position(long newPosition);
+    long getPosition();
+    void limit(long newLimit);
+    long getLimit();
+    void clear();
+    [Ref] WGPUFloatBuffer asFloatBuffer();
+    [Ref] WGPUShortBuffer asShortBuffer();
+};
+
+interface WGPUFloatBuffer {
+    void put(float value);
+    long remaining();
+    void clear();
+    void limit(long newLimit);
+    long getLimit();
+    void position(long newPosition);
+    long getPosition();
+};
+
+interface WGPUShortBuffer {
+    void put(short value);
+    long remaining();
+    void clear();
+    void limit(long newLimit);
+    long getLimit();
+    void position(long newPosition);
+    long getPosition();
+};
+
+enum WGPUByteOrder {
+    "WGPUByteBuffer::BigEndian", //[-RENAME=BigEndian]
+    "WGPUByteBuffer::LittleEndian" //[-RENAME=LittleEndian]
+};
+
 enum WGPUPlatformType {
     "WGPU_Windows",
     "WGPU_Mac",
@@ -58,12 +102,6 @@ interface WebGPUVectorRenderBundle {
     void push_back([Ref] WebGPURenderBundle renderBundle);
 };
 
-interface WebGPUVectorInt {
-    void WebGPUVectorInt();
-    [Value] static WebGPUVectorInt Obtain();
-    void push_back(long value);
-};
-
 interface WebGPUVectorRenderPassColorAttachment {
     void WebGPUVectorRenderPassColorAttachment();
     [Value] static WebGPUVectorRenderPassColorAttachment Obtain();
@@ -74,6 +112,14 @@ interface WebGPUVectorVertexAttribute {
     void WebGPUVectorVertexAttribute();
     [Value] static WebGPUVectorVertexAttribute Obtain();
     void push_back([Ref] WebGPUVertexAttribute colorAttachment);
+};
+
+interface WebGPUVectorInt {
+    void WebGPUVectorInt();
+    [Value] static WebGPUVectorInt Obtain();
+    long size();
+    void push_back(long value);
+    long get(long index);
 };
 
 // ################################### CALLBACKS ###################################
@@ -301,8 +347,8 @@ interface WebGPUColorTargetState {
 };
 
 interface WebGPUStencilFaceState {
-    void WebGPUStencilFaceState();
-    [Value] static WebGPUStencilFaceState Obtain();
+//    void WebGPUStencilFaceState();
+//    [Value] static WebGPUStencilFaceState Obtain();
     void SetCompare(WGPUCompareFunction compare);
     void SetFailOp(WGPUStencilOperation failOp);
     void SetDepthFailOp(WGPUStencilOperation depthFailOp);
@@ -318,7 +364,11 @@ interface WebGPUDepthStencilState {
     void SetDepthCompare(WGPUCompareFunction depthCompare);
     void SetDepthBiasSlopeScale(float depthBiasSlopeScale);
     void SetDepthBiasClamp(float depthBiasClamp);
-    //TODO add missing methods
+    void SetStencilReadMask(long stencilReadMask);
+    void SetStencilWriteMask(long stencilWriteMask);
+    void SetDepthBias(long depthBias);
+    [Value] WebGPUStencilFaceState GetStencilFront();
+    [Value] WebGPUStencilFaceState GetStencilBack();
 };
 
 interface WebGPUMultisampleState {
@@ -420,9 +470,20 @@ interface WebGPUShaderModuleDescriptor {
     void SetLabel([Const] DOMString value);
 };
 
+interface WebGPUBufferDescriptor {
+    void WebGPUBufferDescriptor();
+    [Value] static WebGPUBufferDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString code);
+    void SetUsage(WGPUBufferUsage usage);
+    void SetSize(long size);
+    void SetMappedAtCreation(long mappedAtCreation);
+};
+
 interface WebGPUDeviceDescriptor {
     void WebGPUDeviceDescriptor();
     [Value] static WebGPUDeviceDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString code);
     void SetRequiredLimits(WebGPULimits limits);
     void SetRequiredFeatures(WebGPUVectorFeatureName features);
@@ -570,6 +631,7 @@ interface WebGPUDevice {
     void GetFeatures(WebGPUSupportedFeatures features);
     void GetLimits(WebGPULimits limits);
     void CreateCommandEncoder(WebGPUCommandEncoderDescriptor encoderDescriptor, WebGPUCommandEncoder commandEncoder);
+    [Value] WebGPUBuffer CreateBuffer(WebGPUBufferDescriptor descriptor);
 };
 
 interface WebGPUComputePassEncoder {
@@ -595,7 +657,11 @@ interface WebGPUCommandEncoder {
 };
 
 interface WebGPUBuffer {
-    void WebGPUBuffer();
+    void Release();
+    void Destroy();
+    void Unmap();
+    long GetSize();
+    WGPUBufferUsage GetUsage();
 };
 
 interface WebGPUBindGroup {
@@ -625,6 +691,7 @@ interface WebGPUQueue {
     void SetLabel([Const] DOMString value);
     void Submit(long commandCount, WebGPUCommandBuffer commandBuffer);
     void Release();
+    void WriteBuffer(WebGPUBuffer buffer, long bufferOffset, WGPUByteBuffer bytes);
 };
 
 // ################################### ENUMS ###################################
