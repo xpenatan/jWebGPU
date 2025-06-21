@@ -4,6 +4,7 @@
 #include "webgpu/webgpu.h"
 #include <iostream>
 #include <cstring>
+#include <memory>
 
 #if _WIN32
     #include <windows.h>
