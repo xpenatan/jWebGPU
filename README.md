@@ -10,6 +10,14 @@ A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms
 ## Demo
 [Android](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
 
+### Platform status:
+
+| Emscripten | Windows | Linux |     Mac     |                   Android                   | iOS  |
+|:----------:|:-------:|:-----:|:-----------:|:-------------------------------------------:|:----:|
+|     ✅      |    ✅    |   ✅   |      ✅      |                      ✅                      |  ❌   |
+|    wasm    |   x86_64   |  x86_64  | x86_64<br>Arm64 |  x86<br>x86_64<br>arm64_v8a<br>armeabi_v7a  | TODO |
+
+
 ## Naming Conventions
 To help you navigate the jWebGPU library, here are the naming conventions used for classes, enums, and methods:
 
