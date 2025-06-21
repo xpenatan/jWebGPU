@@ -506,6 +506,7 @@ interface WebGPURenderPipelineDescriptor {
 interface WebGPUCommandEncoderDescriptor {
     void WebGPUCommandEncoderDescriptor();
     [Value] static WebGPUCommandEncoderDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
@@ -646,14 +647,45 @@ interface WebGPUCommandBuffer {
     void Release();
 };
 
+interface WebGPUTexelCopyTextureInfo {
+    void WebGPUTexelCopyTextureInfo();
+    [Value] static WebGPUTexelCopyTextureInfo Obtain();
+};
+
+interface WebGPUExtent3D {
+    void WebGPUExtent3D();
+    [Value] static WebGPUExtent3D Obtain();
+    void SetWidth(long width);
+    void SetHeight(long height);
+    void SetDepthOrArrayLayers(long depthOrArrayLayers);
+};
+
+interface WebGPUTexelCopyBufferLayout {
+    void SetOffset(long offset);
+    void SetBytesPerRow(long bytesPerRow);
+    void SetRowsPerImage(long rowsPerImage);
+};
+
+interface WebGPUTexelCopyBufferInfo {
+    void WebGPUTexelCopyBufferInfo();
+    [Value] static WebGPUTexelCopyBufferInfo Obtain();
+    [Value] WebGPUTexelCopyBufferLayout GetLayout();
+    [Value] WebGPUBuffer GetBuffer();
+};
+
 interface WebGPUCommandEncoder {
     void WebGPUCommandEncoder();
     [Value] static WebGPUCommandEncoder Obtain();
     void Release();
-    void BeginRenderPass(WebGPURenderPassDescriptor renderPassDescriptor, WebGPURenderPassEncoder renderPassEncoder);
     void BeginComputePass(WebGPUComputePassEncoder computePassEncoder);
+    void BeginRenderPass(WebGPURenderPassDescriptor renderPassDescriptor, WebGPURenderPassEncoder renderPassEncoder);
     void ClearBuffer(WebGPUBuffer buffer, long offset, long size);
+    void CopyBufferToBuffer(WebGPUBuffer source, long sourceOffset, WebGPUBuffer destination, long destinationOffset, long size);
+    void CopyBufferToTexture(WebGPUTexelCopyBufferInfo source, WebGPUTexelCopyTextureInfo destination, WebGPUExtent3D copySize);
+    void TextureToBuffer(WebGPUTexelCopyTextureInfo source, WebGPUTexelCopyBufferInfo destination, WebGPUExtent3D copySize);
+    void CopyTextureToTexture(WebGPUTexelCopyTextureInfo source, WebGPUTexelCopyTextureInfo destination, WebGPUExtent3D copySize);
     void Finish(WebGPUCommandBufferDescriptor descriptor, WebGPUCommandBuffer commandBuffer);
+    void ResolveQuerySet(WebGPUQuerySet querySet, long firstQuery, long queryCount, WebGPUBuffer destination, long destinationOffset);
 };
 
 interface WebGPUBuffer {

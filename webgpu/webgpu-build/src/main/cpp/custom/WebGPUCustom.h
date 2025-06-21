@@ -1861,6 +1861,10 @@ class WebGPUCommandEncoderDescriptor : public WebGPUObjectBase<WebGPUCommandEnco
             return obj;
         }
 
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
         void SetLabel(const char* value) {
             WebGPUStringView stringView(value);
             Get().label = stringView.Get();
@@ -1932,6 +1936,79 @@ class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDes
         }
 };
 
+class WebGPUTexelCopyTextureInfo : public WebGPUObjectBase<WebGPUTexelCopyTextureInfo, WGPUTexelCopyTextureInfo> {
+    public:
+
+        static WebGPUTexelCopyTextureInfo Obtain() {
+            WebGPUTexelCopyTextureInfo obj;
+            return obj;
+        }
+
+};
+
+class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D> {
+    public:
+
+        static WebGPUExtent3D Obtain() {
+            WebGPUExtent3D obj;
+            return obj;
+        }
+
+        void SetWidth(int width) {
+            Get().width = width;
+        }
+
+        void SetHeight(int height) {
+            Get().height = height;
+        }
+
+        void SetDepthOrArrayLayers(int depthOrArrayLayers) {
+            Get().depthOrArrayLayers = depthOrArrayLayers;
+        }
+};
+
+class WebGPUTexelCopyBufferLayout : public WebGPUObjectBase<WebGPUTexelCopyBufferLayout, WGPUTexelCopyBufferLayout*> {
+    public:
+
+        static WebGPUTexelCopyBufferLayout Obtain() {
+            WebGPUTexelCopyBufferLayout obj;
+            return obj;
+        }
+
+        void SetOffset(int offset) {
+            Get()->offset = offset;
+        }
+
+        void SetBytesPerRow(int bytesPerRow) {
+            Get()->bytesPerRow = bytesPerRow;
+        }
+
+        void SetRowsPerImage(int rowsPerImage) {
+            Get()->rowsPerImage = rowsPerImage;
+        }
+};
+
+class WebGPUTexelCopyBufferInfo : public WebGPUObjectBase<WebGPUTexelCopyBufferInfo, WGPUTexelCopyBufferInfo> {
+    public:
+
+        static WebGPUTexelCopyBufferInfo Obtain() {
+            WebGPUTexelCopyBufferInfo obj;
+            return obj;
+        }
+
+        WebGPUTexelCopyBufferLayout GetLayout() {
+            WebGPUTexelCopyBufferLayout temp;
+            temp.Set(&Get().layout);
+            return temp;
+        }
+
+        WebGPUBuffer GetBuffer() {
+            WebGPUBuffer temp;
+            temp.Set(Get().buffer);
+            return temp;
+        }
+};
+
 class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUCommandEncoder> {
     protected:
 
@@ -1950,21 +2027,41 @@ class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUC
             return obj;
         }
 
-        void BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder) {
-            encoder->Set(wgpuCommandEncoderBeginRenderPass(Get(), &(renderPassDescriptor->Get())));
-        }
-
         void BeginComputePass(WebGPUComputePassEncoder* encoder) {
             WGPUComputePassDescriptor computePassDescriptor;
             encoder->Set(wgpuCommandEncoderBeginComputePass(Get(), &computePassDescriptor));
+        }
+
+        void BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder) {
+            encoder->Set(wgpuCommandEncoderBeginRenderPass(Get(), &(renderPassDescriptor->Get())));
         }
 
         void ClearBuffer(WebGPUBuffer* buffer, int offset, int size) {
             wgpuCommandEncoderClearBuffer(Get(), buffer->Get(), offset, size);
         }
 
+        void CopyBufferToBuffer(WebGPUBuffer* source, int sourceOffset, WebGPUBuffer* destination, int destinationOffset, int size) {
+            wgpuCommandEncoderCopyBufferToBuffer(Get(), source->Get(), sourceOffset, destination->Get(), destinationOffset, size);
+        }
+
+        void CopyBufferToTexture(WebGPUTexelCopyBufferInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
+            wgpuCommandEncoderCopyBufferToTexture(Get(), &source->Get(), &destination->Get(), &copySize->Get());
+        }
+
+        void TextureToBuffer(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyBufferInfo* destination, WebGPUExtent3D* copySize) {
+            wgpuCommandEncoderCopyTextureToBuffer(Get(), &source->Get(), &destination->Get(), &copySize->Get());
+        }
+
+        void CopyTextureToTexture(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
+            wgpuCommandEncoderCopyTextureToTexture(Get(), &source->Get(), &destination->Get(), &copySize->Get());
+        }
+
         void Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer) {
             commandBuffer->Set(wgpuCommandEncoderFinish(Get(), &(commandBufferDescriptor->Get())));
+        }
+
+        void ResolveQuerySet(WebGPUQuerySet* querySet, int firstQuery, int queryCount, WebGPUBuffer* destination, int destinationOffset) {
+            wgpuCommandEncoderResolveQuerySet(Get(), querySet->Get(), firstQuery, queryCount, destination->Get(), destinationOffset);
         }
 };
 
