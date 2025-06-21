@@ -1053,6 +1053,31 @@ class WebGPUPrimitiveState : public WebGPUObjectBase<WebGPUPrimitiveState, WGPUP
         }
 };
 
+class WebGPUStencilFaceState : public WebGPUObjectBase<WebGPUStencilFaceState, WGPUStencilFaceState> {
+    public:
+
+        static WebGPUStencilFaceState Obtain() {
+            WebGPUStencilFaceState obj;
+            return obj;
+        }
+
+        void SetCompare(WGPUCompareFunction compare) {
+            Get().compare = compare;
+        }
+
+        void SetFailOp(WGPUStencilOperation failOp) {
+            Get().failOp = failOp;
+        }
+
+        void SetDepthFailOp(WGPUStencilOperation depthFailOp) {
+            Get().depthFailOp = depthFailOp;
+        }
+
+        void SetPassOp(WGPUStencilOperation passOp) {
+            Get().passOp = passOp;
+        }
+};
+
 class WebGPUDepthStencilState : public WebGPUObjectBase<WebGPUDepthStencilState, WGPUDepthStencilState> {
     public:
 

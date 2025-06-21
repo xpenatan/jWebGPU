@@ -300,6 +300,15 @@ interface WebGPUColorTargetState {
     void SetWriteMask(WGPUColorWriteMask writeMask);
 };
 
+interface WebGPUStencilFaceState {
+    void WebGPUStencilFaceState();
+    [Value] static WebGPUStencilFaceState Obtain();
+    void SetCompare(WGPUCompareFunction compare);
+    void SetFailOp(WGPUStencilOperation failOp);
+    void SetDepthFailOp(WGPUStencilOperation depthFailOp);
+    void SetPassOp(WGPUStencilOperation passOp);
+};
+
 interface WebGPUDepthStencilState {
     void WebGPUDepthStencilState();
     [Value] static WebGPUDepthStencilState Obtain();
