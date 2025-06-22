@@ -176,6 +176,7 @@ class WGPUFloatBuffer {
         size_t startPosition;
         size_t floatLimit;
         WGPUFloatBuffer(WGPUByteBuffer& bb);
+        WGPUByteBuffer& getByteBuffer();
         void put(float value);
         float get();
         long remaining() const;
@@ -193,6 +194,7 @@ class WGPUShortBuffer {
         size_t startPosition;
         size_t shortLimit;
         WGPUShortBuffer(WGPUByteBuffer& bb);
+        WGPUByteBuffer& getByteBuffer();
         WGPUShortBuffer& put(int16_t value);
         int16_t get();
         void clear();
@@ -713,8 +715,25 @@ class WebGPUTexelCopyTextureInfo : public WebGPUObjectBase<WebGPUTexelCopyTextur
         void SetAspect(WGPUTextureAspect aspect);
 };
 
-class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D> {
+class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D*> {
+    private:
+        bool deleteObject;
+
     public:
+        WebGPUExtent3D() {
+            deleteObject = true;
+            Set(new WGPUExtent3D());
+        }
+        WebGPUExtent3D(WGPUExtent3D* ptr) {
+            deleteObject = false;
+            Set(ptr);
+        }
+        ~WebGPUExtent3D() {
+            if(deleteObject) {
+                delete Get();
+            }
+        }
+
         static WebGPUExtent3D Obtain();
         void SetWidth(int width);
         void SetHeight(int height);
@@ -901,7 +920,7 @@ class WebGPUTextureDescriptor : public WebGPUObjectBase<WebGPUTextureDescriptor,
         void SetLabel(const char* value);
         void SetUsage(WGPUTextureUsage usage);
         void SetDimension(WGPUTextureDimension dimension);
-        void SetSize(WebGPUExtent3D* size);
+        WebGPUExtent3D GetSize();
         void SetFormat(WGPUTextureFormat format);
         void SetMipLevelCount(int mipLevelCount);
         void SetSampleCount(int sampleCount);

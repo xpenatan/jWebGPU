@@ -30,6 +30,7 @@ interface WGPUByteBuffer {
 };
 
 interface WGPUFloatBuffer {
+    [Ref] WGPUByteBuffer getByteBuffer();
     void put(float value);
     long remaining();
     void clear();
@@ -40,6 +41,7 @@ interface WGPUFloatBuffer {
 };
 
 interface WGPUShortBuffer {
+    [Ref] WGPUByteBuffer getByteBuffer();
     void put(short value);
     long remaining();
     void clear();
@@ -676,8 +678,9 @@ interface WebGPUTextureDescriptor {
     [Value] static WebGPUTextureDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
+    void SetUsage(WGPUTextureUsage usage);
     void SetDimension(WGPUTextureDimension dimension);
-    void SetSize(WebGPUExtent3D size);
+    [Value] WebGPUExtent3D GetSize();
     void SetFormat(WGPUTextureFormat format);
     void SetMipLevelCount(long mipLevelCount);
     void SetSampleCount(long sampleCount);

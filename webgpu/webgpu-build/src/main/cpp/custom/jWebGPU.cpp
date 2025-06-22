@@ -354,6 +354,10 @@ WGPUShortBuffer& WGPUByteBuffer::asShortBuffer() {
 // WGPUFloatBuffer
 WGPUFloatBuffer::WGPUFloatBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), floatLimit(bb.remaining() / sizeof(float)) {}
 
+WGPUByteBuffer& WGPUFloatBuffer::getByteBuffer() {
+    return parent;
+}
+
 void WGPUFloatBuffer::put(float value) {
     if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
         throw std::out_of_range("FloatBuffer overflow");
@@ -406,6 +410,10 @@ int WGPUFloatBuffer::getLimit() const {
 
 // WGPUShortBuffer
 WGPUShortBuffer::WGPUShortBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), shortLimit(bb.remaining() / sizeof(int16_t)) {}
+
+WGPUByteBuffer& WGPUShortBuffer::getByteBuffer() {
+    return parent;
+}
 
 WGPUShortBuffer& WGPUShortBuffer::put(int16_t value) {
     if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
@@ -1395,15 +1403,15 @@ WebGPUExtent3D WebGPUExtent3D::Obtain() {
 }
 
 void WebGPUExtent3D::SetWidth(int width) {
-    Get().width = width;
+    Get()->width = width;
 }
 
 void WebGPUExtent3D::SetHeight(int height) {
-    Get().height = height;
+    Get()->height = height;
 }
 
 void WebGPUExtent3D::SetDepthOrArrayLayers(int depthOrArrayLayers) {
-    Get().depthOrArrayLayers = depthOrArrayLayers;
+    Get()->depthOrArrayLayers = depthOrArrayLayers;
 }
 
 // WebGPUTexelCopyBufferLayout
@@ -1666,8 +1674,9 @@ void WebGPUTextureDescriptor::SetDimension(WGPUTextureDimension dimension) {
     Get().dimension = dimension;
 }
 
-void WebGPUTextureDescriptor::SetSize(WebGPUExtent3D* size) {
-    Get().size = size->Get();
+WebGPUExtent3D WebGPUTextureDescriptor::GetSize() {
+    WebGPUExtent3D temp(&Get().size);
+    return temp;
 }
 
 void WebGPUTextureDescriptor::SetFormat(WGPUTextureFormat format) {
@@ -2489,15 +2498,15 @@ void WebGPUCommandEncoder::CopyBufferToBuffer(WebGPUBuffer* source, int sourceOf
 }
 
 void WebGPUCommandEncoder::CopyBufferToTexture(WebGPUTexelCopyBufferInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
-    wgpuCommandEncoderCopyBufferToTexture(Get(), &source->Get(), &destination->Get(), &copySize->Get());
+    wgpuCommandEncoderCopyBufferToTexture(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
 void WebGPUCommandEncoder::TextureToBuffer(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyBufferInfo* destination, WebGPUExtent3D* copySize) {
-    wgpuCommandEncoderCopyTextureToBuffer(Get(), &source->Get(), &destination->Get(), &copySize->Get());
+    wgpuCommandEncoderCopyTextureToBuffer(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
 void WebGPUCommandEncoder::CopyTextureToTexture(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
-    wgpuCommandEncoderCopyTextureToTexture(Get(), &source->Get(), &destination->Get(), &copySize->Get());
+    wgpuCommandEncoderCopyTextureToTexture(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
 void WebGPUCommandEncoder::Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer) {
