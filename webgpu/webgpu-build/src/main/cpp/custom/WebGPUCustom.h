@@ -750,6 +750,51 @@ class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
         }
 };
 
+class WebGPUBindGroupLayout : public WebGPUObjectBase<WebGPUBindGroupLayout, WGPUBindGroupLayout> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuBindGroupLayoutAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuBindGroupLayoutRelease(Get());
+        }
+
+    public:
+
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            wgpuBindGroupLayoutSetLabel(Get(), stringView.Get());
+        }
+};
+
+class WebGPUComputePipeline : public WebGPUObjectBase<WebGPUComputePipeline, WGPUComputePipeline> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuComputePipelineAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuComputePipelineRelease(Get());
+        }
+
+    public:
+
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            wgpuComputePipelineSetLabel(Get(), stringView.Get());
+        }
+
+        WebGPUBindGroupLayout GetBindGroupLayout(int groupIndex) {
+            WebGPUBindGroupLayout temp;
+            temp.Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
+            return temp;
+        }
+
+};
+
 class WebGPUChainedStruct : public WebGPUObjectBase<WebGPUChainedStruct, WGPUChainedStruct*> {
     private:
 
@@ -1832,6 +1877,51 @@ class WebGPUComputePassEncoder : public WebGPUObjectBase<WebGPUComputePassEncode
             WebGPUComputePassEncoder obj;
             return obj;
         }
+
+        void SetDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
+            wgpuComputePassEncoderDispatchWorkgroups(Get(), workgroupCountX, workgroupCountY, workgroupCountZ);
+        }
+
+        void DispatchWorkgroupsIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+            wgpuComputePassEncoderDispatchWorkgroupsIndirect(Get(), indirectBuffer->Get(), indirectOffset);
+        }
+
+        void End() {
+            wgpuComputePassEncoderEnd(Get());
+        }
+
+        void InsertDebugMarker(const char* markerLabel) {
+            WebGPUStringView stringView(markerLabel);
+            wgpuComputePassEncoderInsertDebugMarker(Get(), stringView.Get());
+        }
+
+        void PopDebugGroup() {
+            wgpuComputePassEncoderPopDebugGroup(Get());
+        }
+
+        void PushDebugGroup(const char* groupLabel) {
+            WebGPUStringView stringView(groupLabel);
+            wgpuComputePassEncoderPushDebugGroup(Get(), stringView.Get());
+        }
+
+        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* offsets) {
+            int dynamicOffsetCount = 0;
+            uint32_t* dynamicOffsets = NULL;
+            if(offsets != NULL) {
+                dynamicOffsetCount = offsets->size();
+                dynamicOffsets = (uint32_t*)offsets->data();
+            }
+            wgpuComputePassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
+        }
+
+        void SetLabel(const char* label) {
+            WebGPUStringView stringView(label);
+            wgpuComputePassEncoderSetLabel(Get(), stringView.Get());
+        }
+
+        void SetPipeline(WebGPUComputePipeline* pipeline) {
+            wgpuComputePassEncoderSetPipeline(Get(), pipeline->Get());
+        }
 };
 
 class WebGPURenderPassDepthStencilAttachment : public WebGPUObjectBase<WebGPURenderPassDepthStencilAttachment, WGPURenderPassDepthStencilAttachment> {
@@ -2234,9 +2324,8 @@ class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUC
             return obj;
         }
 
-        void BeginComputePass(WebGPUComputePassEncoder* encoder) {
-            WGPUComputePassDescriptor computePassDescriptor;
-            encoder->Set(wgpuCommandEncoderBeginComputePass(Get(), &computePassDescriptor));
+        void BeginComputePass(WebGPUComputePassDescriptor* descriptor, WebGPUComputePassEncoder* encoder) {
+            encoder->Set(wgpuCommandEncoderBeginComputePass(Get(), &descriptor->Get()));
         }
 
         void BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder) {
@@ -2285,8 +2374,8 @@ class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUC
             wgpuCommandEncoderResolveQuerySet(Get(), querySet->Get(), firstQuery, queryCount, destination->Get(), destinationOffset);
         }
 
-        void SetLabel(const char* groupLabel) {
-            WebGPUStringView stringView(groupLabel);
+        void SetLabel(const char* label) {
+            WebGPUStringView stringView(label);
             wgpuCommandEncoderSetLabel(Get(), stringView.Get());
         }
 

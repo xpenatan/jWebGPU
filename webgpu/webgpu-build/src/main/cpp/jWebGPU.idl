@@ -688,6 +688,15 @@ interface WebGPUComputePassEncoder {
     void WebGPUComputePassEncoder();
     [Value] static WebGPUComputePassEncoder Obtain();
     void Release();
+    void SetDispatchWorkgroups(long workgroupCountX, long workgroupCountY, long workgroupCountZ);
+    void DispatchWorkgroupsIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
+    void End();
+    void InsertDebugMarker([Const] DOMString value);
+    void PopDebugGroup();
+    void PushDebugGroup([Const] DOMString groupLabel);
+    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WebGPUVectorInt offsets);
+    void SetLabel([Const] DOMString label);
+    void SetPipeline(WebGPUComputePipeline pipeline);
 };
 
 interface WebGPUCommandBuffer {
@@ -700,7 +709,7 @@ interface WebGPUCommandEncoder {
     void WebGPUCommandEncoder();
     [Value] static WebGPUCommandEncoder Obtain();
     void Release();
-    void BeginComputePass(WebGPUComputePassEncoder computePassEncoder);
+    void BeginComputePass(WebGPUComputePassDescriptor descriptor, WebGPUComputePassEncoder computePassEncoder);
     void BeginRenderPass(WebGPURenderPassDescriptor renderPassDescriptor, WebGPURenderPassEncoder renderPassEncoder);
     void ClearBuffer(WebGPUBuffer buffer, long offset, long size);
     void CopyBufferToBuffer(WebGPUBuffer source, long sourceOffset, WebGPUBuffer destination, long destinationOffset, long size);
@@ -727,6 +736,17 @@ interface WebGPUBuffer {
 interface WebGPUBindGroup {
     void Release();
     void SetLabel([Const] DOMString value);
+};
+
+interface WebGPUBindGroupLayout {
+    void Release();
+    void SetLabel([Const] DOMString value);
+};
+
+interface WebGPUComputePipeline {
+    void Release();
+    void SetLabel([Const] DOMString value);
+    [Value] WebGPUBindGroupLayout GetBindGroupLayout(long groupIndex);
 };
 
 interface WebGPURenderBundle {
