@@ -114,6 +114,12 @@ interface WebGPUVectorVertexAttribute {
     void push_back([Ref] WebGPUVertexAttribute colorAttachment);
 };
 
+interface WebGPUVectorBindGroupLayout {
+    void WebGPUVectorBindGroupLayout();
+    [Value] static WebGPUVectorBindGroupLayout Obtain();
+    void push_back([Ref] WebGPUBindGroupLayout groupLayout);
+};
+
 interface WebGPUVectorInt {
     void WebGPUVectorInt();
     [Value] static WebGPUVectorInt Obtain();
@@ -523,6 +529,14 @@ interface WebGPUBufferDescriptor {
     void SetUsage(WGPUBufferUsage usage);
     void SetSize(long size);
     void SetMappedAtCreation(long mappedAtCreation);
+};
+
+interface WebGPUPipelineLayoutDescriptor {
+    void WebGPUPipelineLayoutDescriptor();
+    [Value] static WebGPUPipelineLayoutDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString code);
+    void SetBindGroupLayoutCount(WebGPUVectorBindGroupLayout bindGroupLayouts);
 };
 
 interface WebGPUDeviceDescriptor {

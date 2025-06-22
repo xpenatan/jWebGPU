@@ -105,6 +105,7 @@ class WebGPUConstantEntry;
 class WebGPUVertexBufferLayout;
 class WebGPURenderBundle;
 class WebGPUVertexAttribute;
+class WebGPUBindGroupLayout;
 
 class WGPUFloatBuffer;
 class WGPUShortBuffer;
@@ -233,6 +234,19 @@ class WebGPUVectorVertexAttribute {
         int size() { return vector.size(); }
         void push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
         const WebGPUVertexAttribute* data() { return vector.data(); }
+};
+
+class WebGPUVectorBindGroupLayout {
+    private:
+        std::vector<WebGPUBindGroupLayout> vector;
+    public:
+        static WebGPUVectorBindGroupLayout Obtain() {
+            WebGPUVectorBindGroupLayout obj;
+            return obj;
+        }
+        int size() { return vector.size(); }
+        void push_back(const WebGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
+        const WebGPUBindGroupLayout* data() { return vector.data(); }
 };
 
 class WebGPUVectorInt {
@@ -1043,7 +1057,6 @@ class WebGPUQueueDescriptor : public WebGPUObjectBase<WebGPUQueueDescriptor, WGP
         }
 };
 
-
 class WebGPUBufferDescriptor : public WebGPUObjectBase<WebGPUBufferDescriptor, WGPUBufferDescriptor> {
     public:
 
@@ -1071,6 +1084,35 @@ class WebGPUBufferDescriptor : public WebGPUObjectBase<WebGPUBufferDescriptor, W
 
         void SetMappedAtCreation(int mappedAtCreation) {
             Get().mappedAtCreation = mappedAtCreation;
+        }
+};
+
+class WebGPUPipelineLayoutDescriptor : public WebGPUObjectBase<WebGPUPipelineLayoutDescriptor, WGPUPipelineLayoutDescriptor> {
+    public:
+
+        static WebGPUPipelineLayoutDescriptor Obtain() {
+            WebGPUPipelineLayoutDescriptor obj;
+            return obj;
+        }
+
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            Get().label = stringView.Get();
+        }
+
+        void SetBindGroupLayoutCount(WebGPUVectorBindGroupLayout* bindGroupLayouts) {
+            if(bindGroupLayouts != NULL) {
+                Get().bindGroupLayoutCount = bindGroupLayouts->size();
+                Get().bindGroupLayouts = reinterpret_cast<const WGPUBindGroupLayout*>(bindGroupLayouts->data());
+            }
+            else {
+                Get().bindGroupLayoutCount = 0;
+                Get().bindGroupLayouts = NULL;
+            }
         }
 };
 
