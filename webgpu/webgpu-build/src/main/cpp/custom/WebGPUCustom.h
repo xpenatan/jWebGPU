@@ -1528,7 +1528,22 @@ class WebGPUMultisampleState : public WebGPUObjectBase<WebGPUMultisampleState, W
 };
 
 class WebGPUPipelineLayout : public WebGPUObjectBase<WebGPUPipelineLayout, WGPUPipelineLayout> {
+
+    protected:
+        void AddRefInternal() {
+            wgpuPipelineLayoutAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuPipelineLayoutRelease(Get());
+        }
+
     public:
+
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            wgpuPipelineLayoutSetLabel(Get(), stringView.Get());
+        }
 };
 
 class WebGPURenderPipelineDescriptor : public WebGPUObjectBase<WebGPURenderPipelineDescriptor, WGPURenderPipelineDescriptor> {

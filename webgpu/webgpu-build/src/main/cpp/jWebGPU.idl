@@ -648,6 +648,8 @@ interface WebGPUQuerySet {
 };
 
 interface WebGPUPipelineLayout {
+    void Release();
+    void SetLabel([Const] DOMString value);
 };
 
 interface WebGPUInstance {
