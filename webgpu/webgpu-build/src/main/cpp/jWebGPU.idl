@@ -888,10 +888,6 @@ interface WebGPUQueue {
 
 // ################################### ENUMS ###################################
 
-// [Enums remain unchanged as per request]
-
-// ################################### ENUMS ###################################
-
 enum WGPUBufferUsage {
     "WGPUBufferUsage_None",            //[-RENAME=None]
     "WGPUBufferUsage_MapRead",         //[-RENAME=MapRead]
