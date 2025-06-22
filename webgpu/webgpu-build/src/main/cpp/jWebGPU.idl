@@ -399,6 +399,13 @@ interface WebGPURenderPassTimestampWrites {
     void SetEndOfPassWriteIndex(long value);
 };
 
+interface WebGPUComputePassTimestampWrites {
+    [Value] static WebGPUComputePassTimestampWrites Obtain();
+    void SetQuerySet(WebGPUQuerySet value);
+    void SetBeginningOfPassWriteIndex(long value);
+    void SetEndOfPassWriteIndex(long value);
+};
+
 interface WebGPUColor {
     void WebGPUColor();
     [Value] static WebGPUColor Obtain();
@@ -569,6 +576,7 @@ interface WebGPUComputePassDescriptor {
     [Value] static WebGPUComputePassDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
+    void SetTimestampWrites(WebGPUComputePassTimestampWrites timestampWrites);
 };
 
 interface WebGPUTextureViewDescriptor {
