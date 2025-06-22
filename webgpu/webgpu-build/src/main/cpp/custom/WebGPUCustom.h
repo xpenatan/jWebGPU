@@ -1076,16 +1076,41 @@ class WebGPURequestAdapterOptions : public WebGPUObjectBase<WebGPURequestAdapter
 };
 
 class WebGPUBindGroup : public WebGPUObjectBase<WebGPUBindGroup, WGPUBindGroup> {
-    private:
+    protected:
+
+        void AddRefInternal() {
+            wgpuBindGroupAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuBindGroupRelease(Get());
+        }
 
     public:
+
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            wgpuBindGroupSetLabel(Get(), stringView.Get());
+        }
 };
 
 class WebGPURenderBundle : public WebGPUObjectBase<WebGPURenderBundle, WGPURenderBundle> {
-    private:
+    protected:
+
+        void AddRefInternal() {
+            wgpuRenderBundleAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuRenderBundleRelease(Get());
+        }
 
     public:
 
+        void SetLabel(const char* value) {
+            WebGPUStringView stringView(value);
+            wgpuRenderBundleSetLabel(Get(), stringView.Get());
+        }
 };
 
 class WebGPUAdapterInfo : public WebGPUObjectBase<WebGPUAdapterInfo, WGPUAdapterInfo> {

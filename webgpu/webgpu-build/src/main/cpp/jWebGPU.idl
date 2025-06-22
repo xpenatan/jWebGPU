@@ -457,6 +457,44 @@ interface WebGPUStringView {
     [Const, Value] IDLString GetString();
 };
 
+interface WebGPUOrigin3D {
+    void WebGPUOrigin3D();
+    [Value] static WebGPUOrigin3D Obtain();
+    void Set(long x, long y, long z);
+    void SetX(long value);
+    void SetY(long value);
+    void SetZ(long value);
+};
+
+interface WebGPUTexelCopyTextureInfo {
+    void WebGPUTexelCopyTextureInfo();
+    [Value] static WebGPUTexelCopyTextureInfo Obtain();
+    void SetTexture(WebGPUTexture texture);
+    void SetMipLevel(long mipLevel);
+    void SetAspect(WGPUTextureAspect aspect);
+};
+
+interface WebGPUExtent3D {
+    void WebGPUExtent3D();
+    [Value] static WebGPUExtent3D Obtain();
+    void SetWidth(long width);
+    void SetHeight(long height);
+    void SetDepthOrArrayLayers(long depthOrArrayLayers);
+};
+
+interface WebGPUTexelCopyBufferLayout {
+    void SetOffset(long offset);
+    void SetBytesPerRow(long bytesPerRow);
+    void SetRowsPerImage(long rowsPerImage);
+};
+
+interface WebGPUTexelCopyBufferInfo {
+    void WebGPUTexelCopyBufferInfo();
+    [Value] static WebGPUTexelCopyBufferInfo Obtain();
+    [Value] WebGPUTexelCopyBufferLayout GetLayout();
+    [Value] WebGPUBuffer GetBuffer();
+};
+
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 interface WebGPUQueueDescriptor {
@@ -544,44 +582,6 @@ interface WebGPUTextureViewDescriptor {
     void SetArrayLayerCount(long arrayLayerCount);
     void SetAspect(WGPUTextureAspect aspect);
     void SetUsage(WGPUTextureUsage usage);
-};
-
-interface WebGPUOrigin3D {
-    void WebGPUOrigin3D();
-    [Value] static WebGPUOrigin3D Obtain();
-    void Set(long x, long y, long z);
-    void SetX(long value);
-    void SetY(long value);
-    void SetZ(long value);
-};
-
-interface WebGPUTexelCopyTextureInfo {
-    void WebGPUTexelCopyTextureInfo();
-    [Value] static WebGPUTexelCopyTextureInfo Obtain();
-    void SetTexture(WebGPUTexture texture);
-    void SetMipLevel(long mipLevel);
-    void SetAspect(WGPUTextureAspect aspect);
-};
-
-interface WebGPUExtent3D {
-    void WebGPUExtent3D();
-    [Value] static WebGPUExtent3D Obtain();
-    void SetWidth(long width);
-    void SetHeight(long height);
-    void SetDepthOrArrayLayers(long depthOrArrayLayers);
-};
-
-interface WebGPUTexelCopyBufferLayout {
-    void SetOffset(long offset);
-    void SetBytesPerRow(long bytesPerRow);
-    void SetRowsPerImage(long rowsPerImage);
-};
-
-interface WebGPUTexelCopyBufferInfo {
-    void WebGPUTexelCopyBufferInfo();
-    [Value] static WebGPUTexelCopyBufferInfo Obtain();
-    [Value] WebGPUTexelCopyBufferLayout GetLayout();
-    [Value] WebGPUBuffer GetBuffer();
 };
 
 // ################################### OPAQUE POINTER ###################################
@@ -716,10 +716,13 @@ interface WebGPUBuffer {
 };
 
 interface WebGPUBindGroup {
+    void Release();
+    void SetLabel([Const] DOMString value);
 };
 
 interface WebGPURenderBundle {
-    void WebGPURenderBundle();
+    void Release();
+    void SetLabel([Const] DOMString value);
 };
 
 interface WebGPUAdapter {
