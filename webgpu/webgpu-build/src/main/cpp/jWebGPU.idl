@@ -508,10 +508,80 @@ interface WebGPUTexelCopyBufferInfo {
     [Value] WebGPUBuffer GetBuffer();
 };
 
+interface WebGPUBindGroupLayoutEntry {
+    void WebGPUBindGroupLayoutEntry();
+    [Value] static WebGPUBindGroupLayoutEntry Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetBinding(long binding);
+    void SetVisibility(WGPUShaderStage visibility);
+    void SetBuffer(WebGPUBufferBindingLayout buffer);
+    void SetSampler(WebGPUSamplerBindingLayout sampler);
+    void SetTexture(WebGPUTextureBindingLayout texture);
+    void SetStorageTexture(WebGPUStorageTextureBindingLayout storageTexture);
+};
+
+interface WebGPUBufferBindingLayout {
+    void WebGPUBufferBindingLayout();
+    [Value] static WebGPUBufferBindingLayout Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetType(WGPUBufferBindingType type);
+    void SetHasDynamicOffset(long hasDynamicOffset);
+    void SetMinBindingSize(long minBindingSize);
+};
+
+interface WebGPUSamplerBindingLayout {
+    void WebGPUSamplerBindingLayout();
+    [Value] static WebGPUSamplerBindingLayout Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetType(WGPUSamplerBindingType type);
+};
+
+interface WebGPUTextureBindingLayout {
+    void WebGPUTextureBindingLayout();
+    [Value] static WebGPUTextureBindingLayout Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetSampleType(WGPUTextureSampleType sampleType);
+    void SetViewDimension(WGPUTextureViewDimension viewDimension);
+    void SetMultisampled(long multisampled);
+};
+
+interface WebGPUStorageTextureBindingLayout {
+    void WebGPUStorageTextureBindingLayout();
+    [Value] static WebGPUStorageTextureBindingLayout Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetAccess(WGPUStorageTextureAccess access);
+    void SetFormat(WGPUTextureFormat format);
+    void SetViewDimension(WGPUTextureViewDimension viewDimension);
+};
+
 // ################################### DESCRIPTOR STRUCTS ###################################
 
-interface WebGPUQueueDescriptor {
+interface WebGPUBindGroupLayoutDescriptor {
+    void WebGPUBindGroupLayoutDescriptor();
+    [Value] static WebGPUBindGroupLayoutDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+};
+
+interface WebGPUProgrammableStageDescriptor { // Pointer descriptor
+//    void WebGPUProgrammableStageDescriptor();
+//    [Value] static WebGPUProgrammableStageDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+};
+
+interface WebGPUComputePipelineDescriptor {
+    void WebGPUComputePipelineDescriptor();
+    [Value] static WebGPUComputePipelineDescriptor Obtain();
     void SetLabel([Const] DOMString code);
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+//    void SetLayout(WebGPUPipelineLayout layout);
+    [Value] WebGPUProgrammableStageDescriptor GetCompute();
+};
+
+interface WebGPUQueueDescriptor {  // Pointer descriptor
+//    void WebGPUQueueDescriptor();
+//    [Value] static WebGPUQueueDescriptor Obtain();
+    void SetLabel([Const] DOMString code);
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
 };
 
 interface WebGPUShaderModuleDescriptor {
@@ -519,6 +589,14 @@ interface WebGPUShaderModuleDescriptor {
     [Value] static WebGPUShaderModuleDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
+};
+
+interface WebGPUBindGroupDescriptor {
+    void WebGPUBindGroupDescriptor();
+    [Value] static WebGPUBindGroupDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString value);
+    void SetLayout(WebGPUBindGroupLayout layout);
 };
 
 interface WebGPUBufferDescriptor {
@@ -689,13 +767,17 @@ interface WebGPUInstance {
 
 interface WebGPUDevice {
     void Release();
+    void CreateBindGroup(WebGPUBindGroupDescriptor descriptor, WebGPUBindGroup valueOut);
+    void CreateBindGroupLayout(WebGPUBindGroupLayoutDescriptor descriptor, WebGPUBindGroupLayout valueOut);
+    void CreateBuffer(WebGPUBufferDescriptor descriptor, WebGPUBuffer valueOut);
+    void CreateCommandEncoder(WebGPUCommandEncoderDescriptor descriptor, WebGPUCommandEncoder valueOut);
+    void CreateComputePipeline(WebGPUComputePipelineDescriptor descriptor, WebGPUComputePipeline valueOut);
+
     [Value] WebGPUQueue GetQueue();
-    void CreateRenderPipeline(WebGPURenderPipelineDescriptor descriptor, WebGPURenderPipeline renderPipeline);
+    void CreateRenderPipeline(WebGPURenderPipelineDescriptor descriptor, WebGPURenderPipeline valueOut);
     void CreateShaderModule(WebGPUShaderModuleDescriptor descriptor, WebGPUShaderModule shaderModule);
     void GetFeatures(WebGPUSupportedFeatures features);
     void GetLimits(WebGPULimits limits);
-    void CreateCommandEncoder(WebGPUCommandEncoderDescriptor encoderDescriptor, WebGPUCommandEncoder commandEncoder);
-    [Value] WebGPUBuffer CreateBuffer(WebGPUBufferDescriptor descriptor);
 };
 
 interface WebGPUComputePassEncoder {
