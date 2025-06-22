@@ -85,6 +85,8 @@ public class WGPUBuild {
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
         linkTarget.cppCompiler.add("/MD");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libPath);
         linkTarget.linkerFlags.add("ws2_32.lib");
         linkTarget.linkerFlags.add("userenv.lib");
@@ -118,6 +120,8 @@ public class WGPUBuild {
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libPath);
         multiTarget.add(linkTarget);
 
@@ -143,6 +147,8 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             linkTarget.linkerFlags.add("-framework");
             linkTarget.linkerFlags.add("Metal");
             linkTarget.linkerFlags.add("-framework");
@@ -173,6 +179,8 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             linkTarget.linkerFlags.add("-framework");
             linkTarget.linkerFlags.add("Metal");
             linkTarget.linkerFlags.add("-framework");
@@ -210,6 +218,8 @@ public class WGPUBuild {
         linkTarget.cppFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--use-port=" + port);
         linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "jWebGPU.h");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--closure-args=--externs=" + jsLib);
         multiTarget.add(linkTarget);
@@ -240,6 +250,8 @@ public class WGPUBuild {
             linkTarget.linkerFlags.add("-landroid");
             linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             multiTarget.add(linkTarget);
         }
         {
@@ -259,6 +271,8 @@ public class WGPUBuild {
             linkTarget.linkerFlags.add("-landroid");
             linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             multiTarget.add(linkTarget);
         }
         {
@@ -278,6 +292,8 @@ public class WGPUBuild {
             linkTarget.linkerFlags.add("-landroid");
             linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             multiTarget.add(linkTarget);
         }
         {
@@ -297,6 +313,8 @@ public class WGPUBuild {
             linkTarget.linkerFlags.add("-landroid");
             linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             multiTarget.add(linkTarget);
         }
 

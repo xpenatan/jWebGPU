@@ -23,7 +23,6 @@
 #endif
 
 #ifdef __ANDROID__
-
 #include <android/native_window.h>
 #include <android/log.h>
 #include <sstream>
@@ -36,48 +35,18 @@ class LogcatStreamBuf : public std::streambuf {
 protected:
     std::string buffer;
 
-    int overflow(int c) override {
-        if (c == EOF) {
-            return !EOF;
-        }
-        buffer += static_cast<char>(c);
-        if (c == '\n') {
-            sync();
-        }
-        return c;
-    }
-
-    int sync() override {
-        if (!buffer.empty()) {
-            if (buffer.back() == '\n') {
-                buffer.pop_back();
-            }
-            __android_log_print(ANDROID_LOG_INFO, LOG_TAG, "%s", buffer.c_str());
-            buffer.clear();
-        }
-        return 0;
-    }
+    int overflow(int c) override;
+    int sync() override;
 };
 
 // Singleton to manage Logcat redirection
 class LogcatRedirector {
 public:
-    static void initialize() {
-        static LogcatRedirector instance; // Lazy initialization
-        if (!instance.isInitialized) {
-            instance.original_buffer = std::cout.rdbuf();
-            std::cout.rdbuf(&instance.logcat_buffer);
-            instance.isInitialized = true;
-        }
-    }
+    static void initialize();
 
 private:
-    LogcatRedirector() : original_buffer(nullptr), isInitialized(false) {}
-    ~LogcatRedirector() {
-        if (isInitialized) {
-            std::cout.rdbuf(original_buffer);
-        }
-    }
+    LogcatRedirector();
+    ~LogcatRedirector();
 
     LogcatStreamBuf logcat_buffer;
     std::streambuf* original_buffer;
@@ -112,17 +81,13 @@ class WGPUFloatBuffer;
 class WGPUShortBuffer;
 
 #ifdef __EMSCRIPTEN__
-
 using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
 using WGPUComputePassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
 using WGPUProgrammableStageDescriptor = WGPUComputeState; // dawn version TODO remove when both are the same
-
 #else
-
 using WGPURenderPassTimestampWrites = WGPURenderPassTimestampWrites;  // wgpu-native version TODO remove when both are the same
 using WGPUComputePassTimestampWrites = WGPUComputePassTimestampWrites;  // wgpu-native version TODO remove when both are the same
 using WGPUProgrammableStageDescriptor = WGPUProgrammableStageDescriptor;  // wgpu-native version TODO remove when both are the same
-
 #endif //__EMSCRIPTEN__
 
 enum WGPUPlatformType : int {
@@ -139,176 +104,121 @@ class WebGPUVectorColorTargetState {
     private:
         std::vector<WebGPUColorTargetState> vector;
     public:
-        static WebGPUVectorColorTargetState Obtain() {
-            WebGPUVectorColorTargetState obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPUColorTargetState& attachment) { vector.push_back(attachment); }
-        const WebGPUColorTargetState* data() { return vector.data(); }
+        static WebGPUVectorColorTargetState Obtain();
+        int size();
+        void push_back(const WebGPUColorTargetState& attachment);
+        const WebGPUColorTargetState* data();
 };
 
 class WebGPUVectorFeatureName {
     private:
         std::vector<WGPUFeatureName> vector;
     public:
-        static WebGPUVectorFeatureName Obtain() {
-            WebGPUVectorFeatureName obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WGPUFeatureName& attachment) { vector.push_back(attachment); }
-        const WGPUFeatureName* data() { return vector.data(); }
+        static WebGPUVectorFeatureName Obtain();
+        int size();
+        void push_back(const WGPUFeatureName& attachment);
+        const WGPUFeatureName* data();
 };
 
 class WebGPUVectorConstantEntry {
     private:
         std::vector<WebGPUConstantEntry> vector;
     public:
-        static WebGPUVectorConstantEntry Obtain() {
-            WebGPUVectorConstantEntry obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPUConstantEntry& attachment) { vector.push_back(attachment); }
-        const WebGPUConstantEntry* data() { return vector.data(); }
+        static WebGPUVectorConstantEntry Obtain();
+        int size();
+        void push_back(const WebGPUConstantEntry& attachment);
+        const WebGPUConstantEntry* data();
 };
 
 class WebGPUVectorVertexBufferLayout {
     private:
         std::vector<WebGPUVertexBufferLayout> vector;
     public:
-        static WebGPUVectorVertexBufferLayout Obtain() {
-            WebGPUVectorVertexBufferLayout obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
-        const WebGPUVertexBufferLayout* data() { return vector.data(); }
+        static WebGPUVectorVertexBufferLayout Obtain();
+        int size();
+        void push_back(const WebGPUVertexBufferLayout& attachment);
+        const WebGPUVertexBufferLayout* data();
 };
 
 class WebGPUVectorTextureFormat {
     private:
         std::vector<WGPUTextureFormat> vector;
     public:
-        static WebGPUVectorTextureFormat Obtain() {
-            WebGPUVectorTextureFormat obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WGPUTextureFormat& attachment) { vector.push_back(attachment); }
-        const WGPUTextureFormat* data() { return vector.data(); }
+        static WebGPUVectorTextureFormat Obtain();
+        int size();
+        void push_back(const WGPUTextureFormat& attachment);
+        const WGPUTextureFormat* data();
 };
 
 class WebGPUVectorRenderBundle {
     private:
         std::vector<WebGPURenderBundle> vector;
     public:
-        static WebGPUVectorRenderBundle Obtain() {
-            WebGPUVectorRenderBundle obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPURenderBundle& attachment) { vector.push_back(attachment); }
-        const WebGPURenderBundle* data() { return vector.data(); }
+        static WebGPUVectorRenderBundle Obtain();
+        int size();
+        void push_back(const WebGPURenderBundle& attachment);
+        const WebGPURenderBundle* data();
 };
 
 class WebGPUVectorRenderPassColorAttachment {
     private:
         std::vector<WebGPURenderPassColorAttachment> vector;
     public:
-        static WebGPUVectorRenderPassColorAttachment Obtain() {
-            WebGPUVectorRenderPassColorAttachment obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
-        const WebGPURenderPassColorAttachment* data() { return vector.data(); }
+        static WebGPUVectorRenderPassColorAttachment Obtain();
+        int size();
+        void push_back(const WebGPURenderPassColorAttachment& attachment);
+        const WebGPURenderPassColorAttachment* data();
 };
 
 class WebGPUVectorVertexAttribute {
     private:
         std::vector<WebGPUVertexAttribute> vector;
     public:
-        static WebGPUVectorVertexAttribute Obtain() {
-            WebGPUVectorVertexAttribute obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
-        const WebGPUVertexAttribute* data() { return vector.data(); }
+        static WebGPUVectorVertexAttribute Obtain();
+        int size();
+        void push_back(const WebGPUVertexAttribute& attribute);
+        const WebGPUVertexAttribute* data();
 };
 
 class WebGPUVectorBindGroupLayout {
     private:
         std::vector<WebGPUBindGroupLayout> vector;
     public:
-        static WebGPUVectorBindGroupLayout Obtain() {
-            WebGPUVectorBindGroupLayout obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
-        const WebGPUBindGroupLayout* data() { return vector.data(); }
+        static WebGPUVectorBindGroupLayout Obtain();
+        int size();
+        void push_back(const WebGPUBindGroupLayout& groupLayout);
+        const WebGPUBindGroupLayout* data();
 };
 
 class WebGPUVectorBindGroupLayoutEntry {
     private:
         std::vector<WebGPUBindGroupLayoutEntry> vector;
     public:
-        static WebGPUVectorBindGroupLayoutEntry Obtain() {
-            WebGPUVectorBindGroupLayoutEntry obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(const WebGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
-        const WebGPUBindGroupLayoutEntry* data() { return vector.data(); }
+        static WebGPUVectorBindGroupLayoutEntry Obtain();
+        int size();
+        void push_back(const WebGPUBindGroupLayoutEntry& entry);
+        const WebGPUBindGroupLayoutEntry* data();
 };
 
 class WebGPUVectorInt {
     private:
         std::vector<int> vector;
     public:
-        static WebGPUVectorInt Obtain() {
-            WebGPUVectorInt obj;
-            return obj;
-        }
-        int size() { return vector.size(); }
-        void push_back(int attachment) { vector.push_back(attachment); }
-        int get(int index) { return vector[index]; }
-        const int* data() { return vector.data(); }
+        static WebGPUVectorInt Obtain();
+        int size();
+        void push_back(int attachment);
+        int get(int index);
+        const int* data();
 };
 
 class WGPUByteBuffer {
     private:
         // Detect host endianness at compile time
-        static bool isLittleEndianHost() {
-            uint16_t test = 0x0001;
-            return reinterpret_cast<const uint8_t*>(&test)[0] == 0x01;
-        }
-
+        static bool isLittleEndianHost();
         // Portable byte-swapping functions
-        static uint16_t swapBytes(uint16_t value) {
-            return (value >> 8) | (value << 8);
-        }
-
-        static uint32_t swapBytes(uint32_t value) {
-            return ((value >> 24) & 0x000000FF) |
-                   ((value >> 8)  & 0x0000FF00) |
-                   ((value << 8)  & 0x00FF0000) |
-                   ((value << 24) & 0xFF000000);
-        }
-
-        static uint64_t swapBytes(uint64_t value) {
-            return ((value >> 56) & 0x00000000000000FFULL) |
-                   ((value >> 40) & 0x000000000000FF00ULL) |
-                   ((value >> 24) & 0x0000000000FF0000ULL) |
-                   ((value >> 8)  & 0x00000000FF000000ULL) |
-                   ((value << 8)  & 0x000000FF00000000ULL) |
-                   ((value << 24) & 0x0000FF0000000000ULL) |
-                   ((value << 40) & 0x00FF000000000000ULL) |
-                   ((value << 56) & 0xFF00000000000000ULL);
-        }
+        static uint16_t swapBytes(uint16_t value);
+        static uint32_t swapBytes(uint32_t value);
+        static uint64_t swapBytes(uint64_t value);
 
     public:
         enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
@@ -323,96 +233,25 @@ class WGPUByteBuffer {
         bool isClearing = false;
 
     public:
-        static WGPUByteBuffer Obtain() {
-            WGPUByteBuffer obj;
-            return obj;
-        }
-
-        explicit WGPUByteBuffer() : buffer(0), _limit(0), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
-        explicit WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
-
-        int size() { return buffer.size(); }
-        void push_back(char value) { buffer.push_back(value); }
-        const uint8_t* data() { return buffer.data(); }
-        void order(WGPUByteOrder order) { byteOrder = order; }
-
-        void put(char value) {
-            if (_position >= _limit) {
-                throw std::out_of_range("Buffer overflow");
-            }
-            buffer[_position++] = value;
-        }
-        char get(int index) { return buffer[index]; }
-
-        int remaining() const {
-            return _limit - _position;
-        }
-
-        void position(int newPosition) {
-            if (newPosition > _limit) {
-                throw std::out_of_range("Invalid position");
-            }
-            _position = newPosition;
-        }
-
-        int getPosition() {
-            return _position;
-        }
-
-        void limit(int newLimit) {
-            if (newLimit > buffer.size()) {
-                throw std::out_of_range("Invalid limit");
-            }
-            _limit = newLimit;
-            if (_position > _limit) {
-                _position = _limit;
-            }
-        }
-
-        size_t getLimit() const {
-            return _limit;
-        }
-
+        static WGPUByteBuffer Obtain();
+        explicit WGPUByteBuffer();
+        explicit WGPUByteBuffer(int capacity);
+        int size();
+        void push_back(char value);
+        const uint8_t* data();
+        void order(WGPUByteOrder order);
+        void put(char value);
+        char get(int index);
+        int remaining() const;
+        void position(int newPosition);
+        int getPosition();
+        void limit(int newLimit);
+        size_t getLimit() const;
         void clear();
-
         template<typename T>
-        void putNumeric(int index, T value) {
-            if (_position + sizeof(T) > _limit) {
-                throw std::out_of_range("Buffer overflow");
-            }
-            bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
-            if (needsSwap) {
-                if constexpr (sizeof(T) == 2) {
-                    value = swapBytes(static_cast<uint16_t>(value));
-                } else if constexpr (sizeof(T) == 4) {
-                    value = swapBytes(static_cast<uint32_t>(value));
-                } else if constexpr (sizeof(T) == 8) {
-                    value = swapBytes(static_cast<uint64_t>(value));
-                }
-            }
-            std::memcpy(&buffer[index], &value, sizeof(T));
-        }
-
+        void putNumeric(int index, T value);
         template<typename T>
-        T getNumeric(int index) {
-            if (index + sizeof(T) > _limit) {
-                throw std::out_of_range("Buffer underflow");
-            }
-            T value;
-            std::memcpy(&value, &buffer[index], sizeof(T));
-            bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
-            if (needsSwap) {
-                if constexpr (sizeof(T) == 2) {
-                    value = swapBytes(static_cast<uint16_t>(value));
-                } else if constexpr (sizeof(T) == 4) {
-                    value = swapBytes(static_cast<uint32_t>(value));
-                } else if constexpr (sizeof(T) == 8) {
-                    value = swapBytes(static_cast<uint64_t>(value));
-                }
-            }
-            return value;
-        }
-
+        T getNumeric(int index);
         WGPUFloatBuffer& asFloatBuffer();
         WGPUShortBuffer& asShortBuffer();
 
@@ -425,205 +264,61 @@ using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;
 class WGPUFloatBuffer {
     private:
         WGPUByteBuffer& parent;
-
     public:
-
         size_t startPosition;
         size_t floatLimit;
-
-        WGPUFloatBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), floatLimit(bb.remaining() / sizeof(float)) {}
-
-        void put(float value) {
-            if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
-                throw std::out_of_range("FloatBuffer overflow");
-            }
-            parent.putNumeric(parent._position, value);
-            parent._position += sizeof(value);
-        }
-
-        float get() {
-            if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
-                throw std::out_of_range("FloatBuffer underflow");
-            }
-            float value = parent.getNumeric<float>(parent._position);
-            parent._position += sizeof(float);
-            return value;
-        }
-
-        long remaining() const {
-            return floatLimit - (parent.getPosition() - startPosition) / sizeof(float);
-        }
-
-        void position(int newPosition) {
-            if (newPosition > floatLimit) {
-                throw std::out_of_range("Invalid position for FloatBuffer");
-            }
-            parent.position(startPosition + newPosition * sizeof(float));
-        }
-
-        int getPosition() const {
-            return (parent.getPosition() - startPosition) / sizeof(float);
-        }
-
-        void clear() {
-            parent.clear();
-            startPosition = 0;
-            floatLimit = parent.getLimit() / sizeof(float);
-        }
-
-        void limit(int newLimit) {
-            size_t maxLimit = (parent.getLimit() - startPosition) / sizeof(float);
-            if (newLimit > maxLimit) {
-                throw std::out_of_range("Invalid limit for FloatBuffer");
-            }
-            floatLimit = newLimit;
-        }
-
-        int getLimit() const {
-            return floatLimit;
-        }
+        WGPUFloatBuffer(WGPUByteBuffer& bb);
+        void put(float value);
+        float get();
+        long remaining() const;
+        void position(int newPosition);
+        int getPosition() const;
+        void clear();
+        void limit(int newLimit);
+        int getLimit() const;
 };
 
 class WGPUShortBuffer {
     private:
         WGPUByteBuffer& parent;
-
     public:
-
         size_t startPosition;
         size_t shortLimit;
-
-        WGPUShortBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), shortLimit(bb.remaining() / sizeof(int16_t)) {}
-
-        WGPUShortBuffer& put(int16_t value) {
-            if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
-                throw std::out_of_range("ShortBuffer overflow");
-            }
-            parent.putNumeric(parent._position, value);
-            parent._position += sizeof(value);
-        }
-
-        int16_t get() {
-            if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
-                throw std::out_of_range("ShortBuffer underflow");
-            }
-
-            int16_t value = parent.getNumeric<int16_t>(parent._position);
-            parent._position += sizeof(int16_t);
-            return value;
-        }
-
-        void clear() {
-            parent.clear();
-            startPosition = 0;
-            shortLimit = parent.getLimit() / sizeof(int16_t);
-        }
-
-        void limit(int newLimit) {
-            size_t maxLimit = (parent.getLimit() - startPosition) / sizeof(int16_t);
-            if (newLimit > maxLimit) {
-                throw std::out_of_range("Invalid limit for ShortBuffer");
-            }
-            shortLimit = newLimit;
-        }
-
-        int getLimit() const {
-            return shortLimit;
-        }
-
-        void position(size_t newPosition) {
-            if (newPosition > shortLimit) {
-                throw std::out_of_range("Invalid position for ShortBuffer");
-            }
-            parent.position(startPosition + newPosition * sizeof(int16_t));
-        }
-
-        int getPosition() const {
-            return (parent.getPosition() - startPosition) / sizeof(int16_t);
-        }
-
-        int remaining() const {
-            return shortLimit - (parent.getPosition() - startPosition) / sizeof(int16_t);
-        }
+        WGPUShortBuffer(WGPUByteBuffer& bb);
+        WGPUShortBuffer& put(int16_t value);
+        int16_t get();
+        void clear();
+        void limit(int newLimit);
+        int getLimit() const;
+        void position(size_t newPosition);
+        int getPosition() const;
+        int remaining() const;
 };
-
-inline void WGPUByteBuffer::clear() {
-    if (isClearing) {
-        return;
-    }
-    isClearing = true;
-    _position = 0;
-    _limit = buffer.size();
-    floatBuffer->clear();
-    shortBuffer->clear();
-    isClearing = false;
-}
-
-inline WGPUFloatBuffer& WGPUByteBuffer::asFloatBuffer() {
-    floatBuffer->startPosition = _position;
-    floatBuffer->floatLimit = remaining() / sizeof(float);
-    return *floatBuffer;
-}
-
-inline WGPUShortBuffer& WGPUByteBuffer::asShortBuffer() {
-    shortBuffer->startPosition = _position;
-    shortBuffer->shortLimit = remaining() / sizeof(int16_t);
-    return *shortBuffer;
-}
 
 class WGPUAndroidWindow {
     public:
         #ifdef __ANDROID__
             ANativeWindow* g_window = nullptr;
         #endif
-
-        ~WGPUAndroidWindow() {
-            #ifdef __ANDROID__
-                if(g_window != nullptr) {
-                    ANativeWindow_release(g_window);
-                }
-            #endif
-        }
-
-        void SetWindow(void * window) {
-            #ifdef __ANDROID__
-                g_window = reinterpret_cast<ANativeWindow * >(window);
-            #endif
-        }
-
-        void* GetWindow() {
-            #ifdef __ANDROID__
-                return g_window;
-            #else
-                return NULL;
-            #endif
-        }
-
-        void InitLogcat() {
-            #ifdef __ANDROID__
-                __android_log_print(ANDROID_LOG_INFO, LOG_TAG, "Initializing Logcat redirection");
-                LogcatRedirector::initialize();
-            #endif
-
-        }
+        ~WGPUAndroidWindow();
+        void SetWindow(void * window);
+        void* GetWindow();
+        void InitLogcat();
 };
 
 class RequestAdapterCallback {
 public:
     virtual void OnCallback(WGPURequestAdapterStatus status, WebGPUAdapter* adapter) = 0;
-
 };
 
 class RequestDeviceCallback {
 public:
     virtual void OnCallback(WGPURequestDeviceStatus status, WebGPUDevice* device) = 0;
-
 };
 
 class UncapturedErrorCallback {
 public:
     virtual void OnCallback(WGPUErrorType errorType, const char* message) = 0;
-
 };
 
 template<typename Derived, typename CType>
@@ -680,835 +375,280 @@ class WebGPUObjectBase {
 
 class WebGPUStringView : public WebGPUObjectBase<WebGPUStringView, WGPUStringView> {
     public:
-
-        WebGPUStringView() {
-        }
-
-        WebGPUStringView(WGPUStringView stringView) {
-            Set(stringView);
-        }
-        WebGPUStringView(const char* value) {
-            Get().data = strdup(value);
-            Get().length = strlen(value);
-        }
-
-        const std::string GetString() {
-            return std::string(Get().data, Get().length);
-        }
+        WebGPUStringView();
+        WebGPUStringView(WGPUStringView stringView);
+        WebGPUStringView(const char* value);
+        const std::string GetString();
 };
 
 class WebGPUCommandBuffer : public WebGPUObjectBase<WebGPUCommandBuffer, WGPUCommandBuffer> {
     protected:
-
-        void AddRefInternal() {
-            wgpuCommandBufferAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuCommandBufferRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPUCommandBuffer Obtain() {
-            WebGPUCommandBuffer obj;
-            return obj;
-        }
-
+        static WebGPUCommandBuffer Obtain();
 };
 
 class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
     protected:
-
-        void AddRefInternal() {
-            wgpuBufferAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuBufferRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void Unmap() {
-            wgpuBufferUnmap(Get());
-        }
-
-        int GetSize() {
-            return wgpuBufferGetSize(Get());
-        }
-
-        WGPUBufferUsage GetUsage() {
-            return wgpuBufferGetUsage(Get());
-        }
-
-        void Destroy() {
-            wgpuBufferDestroy(Get());
-        }
+        void Unmap();
+        int GetSize();
+        WGPUBufferUsage GetUsage();
+        void Destroy();
 };
 
 class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
     protected:
-
-        void AddRefInternal() {
-            wgpuQueueAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuQueueRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            wgpuQueueSetLabel(Get(), stringView.Get());
-        }
-
-        void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer) {
-            wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
-        }
-
-        void WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes) {
-            int size = 0;
-            void* data = NULL;
-            if(bytes != NULL) {
-                size = bytes->size();
-                data = (void*)bytes->data();
-            }
-            wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
-        }
+        void SetLabel(const char* value);
+        void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer);
+        void WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes);
 };
 
 class WebGPUBindGroupLayout : public WebGPUObjectBase<WebGPUBindGroupLayout, WGPUBindGroupLayout> {
     protected:
-
-        void AddRefInternal() {
-            wgpuBindGroupLayoutAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuBindGroupLayoutRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            wgpuBindGroupLayoutSetLabel(Get(), stringView.Get());
-        }
+        void SetLabel(const char* value);
 };
 
 class WebGPUComputePipeline : public WebGPUObjectBase<WebGPUComputePipeline, WGPUComputePipeline> {
     protected:
-
-        void AddRefInternal() {
-            wgpuComputePipelineAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuComputePipelineRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            wgpuComputePipelineSetLabel(Get(), stringView.Get());
-        }
-
-        WebGPUBindGroupLayout GetBindGroupLayout(int groupIndex) {
-            WebGPUBindGroupLayout temp;
-            temp.Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
-            return temp;
-        }
-
+        void SetLabel(const char* value);
+        WebGPUBindGroupLayout GetBindGroupLayout(int groupIndex);
 };
 
 class WebGPUChainedStruct : public WebGPUObjectBase<WebGPUChainedStruct, WGPUChainedStruct*> {
-    private:
-
     public:
-        void SetNext(WebGPUChainedStruct* value) {
-            Get()->next = value->Get();
-        }
-
-        void SetSType(WGPUSType type) {
-            Get()->sType = type;
-        }
+        void SetNext(WebGPUChainedStruct* value);
+        void SetSType(WGPUSType type);
 };
 
 class WebGPULimits : public WebGPUObjectBase<WebGPULimits, WGPULimits> {
-    public: // TODO wgpu-native limits is different from emscripten dawn limits
-
-        static WebGPULimits Obtain() {
-            WebGPULimits obj;
-            return obj;
-        }
-
-        void SetMaxTextureDimension1D(int value) {
-            Get().maxTextureDimension1D = value;
-        }
-        int GetMaxTextureDimension1D() {
-            return static_cast<int>(Get().maxTextureDimension1D);
-        }
-
-        void SetMaxTextureDimension2D(int value) {
-            Get().maxTextureDimension2D = value;
-        }
-        int GetMaxTextureDimension2D() {
-            return static_cast<int>(Get().maxTextureDimension2D);
-        }
-
-        void SetMaxTextureDimension3D(int value) {
-            Get().maxTextureDimension3D = value;
-        }
-        int GetMaxTextureDimension3D() {
-            return static_cast<int>(Get().maxTextureDimension3D);
-        }
-
-        void SetMaxTextureArrayLayers(int value) {
-            Get().maxTextureArrayLayers = value;
-        }
-        int GetMaxTextureArrayLayers() {
-            return static_cast<int>(Get().maxTextureArrayLayers);
-        }
-
-        void SetMaxBindGroups(int value) {
-            Get().maxBindGroups = value;
-        }
-        int GetMaxBindGroups() {
-            return static_cast<int>(Get().maxBindGroups);
-        }
-
-        void SetMaxBindGroupsPlusVertexBuffers(int value) {
-            Get().maxBindGroupsPlusVertexBuffers = value;
-        }
-        int GetMaxBindGroupsPlusVertexBuffers() {
-            return static_cast<int>(Get().maxBindGroupsPlusVertexBuffers);
-        }
-
-        void SetMaxBindingsPerBindGroup(int value) {
-            Get().maxBindingsPerBindGroup = value;
-        }
-        int GetMaxBindingsPerBindGroup() {
-            return static_cast<int>(Get().maxBindingsPerBindGroup);
-        }
-
-        void SetMaxDynamicUniformBuffersPerPipelineLayout(int value) {
-            Get().maxDynamicUniformBuffersPerPipelineLayout = value;
-        }
-        int GetMaxDynamicUniformBuffersPerPipelineLayout() {
-            return static_cast<int>(Get().maxDynamicUniformBuffersPerPipelineLayout);
-        }
-
-        void SetMaxDynamicStorageBuffersPerPipelineLayout(int value) {
-            Get().maxDynamicStorageBuffersPerPipelineLayout = value;
-        }
-        int GetMaxDynamicStorageBuffersPerPipelineLayout() {
-            return static_cast<int>(Get().maxDynamicStorageBuffersPerPipelineLayout);
-        }
-
-        void SetMaxSampledTexturesPerShaderStage(int value) {
-            Get().maxSampledTexturesPerShaderStage = value;
-        }
-        int GetMaxSampledTexturesPerShaderStage() {
-            return static_cast<int>(Get().maxSampledTexturesPerShaderStage);
-        }
-
-        void SetMaxSamplersPerShaderStage(int value) {
-            Get().maxSamplersPerShaderStage = value;
-        }
-        int GetMaxSamplersPerShaderStage() {
-            return static_cast<int>(Get().maxSamplersPerShaderStage);
-        }
-
-        void SetMaxStorageBuffersPerShaderStage(int value) {
-            Get().maxStorageBuffersPerShaderStage = value;
-        }
-        int GetMaxStorageBuffersPerShaderStage() {
-            return static_cast<int>(Get().maxStorageBuffersPerShaderStage);
-        }
-
-        void SetMaxStorageTexturesPerShaderStage(int value) {
-            Get().maxStorageTexturesPerShaderStage = value;
-        }
-        int GetMaxStorageTexturesPerShaderStage() {
-            return static_cast<int>(Get().maxStorageTexturesPerShaderStage);
-        }
-
-        void SetMaxUniformBuffersPerShaderStage(int value) {
-            Get().maxUniformBuffersPerShaderStage = value;
-        }
-        int GetMaxUniformBuffersPerShaderStage() {
-            return static_cast<int>(Get().maxUniformBuffersPerShaderStage);
-        }
-
-        void SetMaxUniformBufferBindingSize(int value) {
-            Get().maxUniformBufferBindingSize = value;
-        }
-        int GetMaxUniformBufferBindingSize() {
-            return static_cast<int>(Get().maxUniformBufferBindingSize);
-        }
-
-        void SetMaxStorageBufferBindingSize(int value) {
-            Get().maxStorageBufferBindingSize = value;
-        }
-        int GetMaxStorageBufferBindingSize() {
-            return static_cast<int>(Get().maxStorageBufferBindingSize);
-        }
-
-        void SetMinUniformBufferOffsetAlignment(int value) {
-            Get().minUniformBufferOffsetAlignment = value;
-        }
-        int GetMinUniformBufferOffsetAlignment() {
-            return static_cast<int>(Get().minUniformBufferOffsetAlignment);
-        }
-
-        void SetMinStorageBufferOffsetAlignment(int value) {
-            Get().minStorageBufferOffsetAlignment = value;
-        }
-        int GetMinStorageBufferOffsetAlignment() {
-            return static_cast<int>(Get().minStorageBufferOffsetAlignment);
-        }
-
-        void SetMaxVertexBuffers(int value) {
-            Get().maxVertexBuffers = value;
-        }
-        int GetMaxVertexBuffers() {
-            return static_cast<int>(Get().maxVertexBuffers);
-        }
-
-        void SetMaxBufferSize(int value) {
-            Get().maxBufferSize = value;
-        }
-        int GetMaxBufferSize() {
-            return static_cast<int>(Get().maxBufferSize);
-        }
-
-        void SetMaxVertexAttributes(int value) {
-            Get().maxVertexAttributes = value;
-        }
-        int GetMaxVertexAttributes() {
-            return static_cast<int>(Get().maxVertexAttributes);
-        }
-
-        void SetMaxVertexBufferArrayStride(int value) {
-            Get().maxVertexBufferArrayStride = value;
-        }
-        int GetMaxVertexBufferArrayStride() {
-            return static_cast<int>(Get().maxVertexBufferArrayStride);
-        }
-
-        void SetMaxInterStageShaderVariables(int value) {
-            Get().maxInterStageShaderVariables = value;
-        }
-        int GetMaxInterStageShaderVariables() {
-            return static_cast<int>(Get().maxInterStageShaderVariables);
-        }
-
-        void SetMaxColorAttachments(int value) {
-            Get().maxColorAttachments = value;
-        }
-        int GetMaxColorAttachments() {
-            return static_cast<int>(Get().maxColorAttachments);
-        }
-
-        void SetMaxColorAttachmentBytesPerSample(int value) {
-            Get().maxColorAttachmentBytesPerSample = value;
-        }
-        int GetMaxColorAttachmentBytesPerSample() {
-            return static_cast<int>(Get().maxColorAttachmentBytesPerSample);
-        }
-
-        void SetMaxComputeWorkgroupStorageSize(int value) {
-            Get().maxComputeWorkgroupStorageSize = value;
-        }
-        int GetMaxComputeWorkgroupStorageSize() {
-            return static_cast<int>(Get().maxComputeWorkgroupStorageSize);
-        }
-
-        void SetMaxComputeInvocationsPerWorkgroup(int value) {
-            Get().maxComputeInvocationsPerWorkgroup = value;
-        }
-        int GetMaxComputeInvocationsPerWorkgroup() {
-            return static_cast<int>(Get().maxComputeInvocationsPerWorkgroup);
-        }
-
-        void SetMaxComputeWorkgroupSizeX(int value) {
-            Get().maxComputeWorkgroupSizeX = value;
-        }
-        int GetMaxComputeWorkgroupSizeX() {
-            return static_cast<int>(Get().maxComputeWorkgroupSizeX);
-        }
-
-        void SetMaxComputeWorkgroupSizeY(int value) {
-            Get().maxComputeWorkgroupSizeY = value;
-        }
-        int GetMaxComputeWorkgroupSizeY() {
-            return static_cast<int>(Get().maxComputeWorkgroupSizeY);
-        }
-
-        void SetMaxComputeWorkgroupSizeZ(int value) {
-            Get().maxComputeWorkgroupSizeZ = value;
-        }
-        int GetMaxComputeWorkgroupSizeZ() {
-            return static_cast<int>(Get().maxComputeWorkgroupSizeZ);
-        }
-
-        void SetMaxComputeWorkgroupsPerDimension(int value) {
-            Get().maxComputeWorkgroupsPerDimension = value;
-        }
-        int GetMaxComputeWorkgroupsPerDimension() {
-            return static_cast<int>(Get().maxComputeWorkgroupsPerDimension);
-        }
+    public:
+        static WebGPULimits Obtain();
+        void SetMaxTextureDimension1D(int value);
+        int GetMaxTextureDimension1D();
+        void SetMaxTextureDimension2D(int value);
+        int GetMaxTextureDimension2D();
+        void SetMaxTextureDimension3D(int value);
+        int GetMaxTextureDimension3D();
+        void SetMaxTextureArrayLayers(int value);
+        int GetMaxTextureArrayLayers();
+        void SetMaxBindGroups(int value);
+        int GetMaxBindGroups();
+        void SetMaxBindGroupsPlusVertexBuffers(int value);
+        int GetMaxBindGroupsPlusVertexBuffers();
+        void SetMaxBindingsPerBindGroup(int value);
+        int GetMaxBindingsPerBindGroup();
+        void SetMaxDynamicUniformBuffersPerPipelineLayout(int value);
+        int GetMaxDynamicUniformBuffersPerPipelineLayout();
+        void SetMaxDynamicStorageBuffersPerPipelineLayout(int value);
+        int GetMaxDynamicStorageBuffersPerPipelineLayout();
+        void SetMaxSampledTexturesPerShaderStage(int value);
+        int GetMaxSampledTexturesPerShaderStage();
+        void SetMaxSamplersPerShaderStage(int value);
+        int GetMaxSamplersPerShaderStage();
+        void SetMaxStorageBuffersPerShaderStage(int value);
+        int GetMaxStorageBuffersPerShaderStage();
+        void SetMaxStorageTexturesPerShaderStage(int value);
+        int GetMaxStorageTexturesPerShaderStage();
+        void SetMaxUniformBuffersPerShaderStage(int value);
+        int GetMaxUniformBuffersPerShaderStage();
+        void SetMaxUniformBufferBindingSize(int value);
+        int GetMaxUniformBufferBindingSize();
+        void SetMaxStorageBufferBindingSize(int value);
+        int GetMaxStorageBufferBindingSize();
+        void SetMinUniformBufferOffsetAlignment(int value);
+        int GetMinUniformBufferOffsetAlignment();
+        void SetMinStorageBufferOffsetAlignment(int value);
+        int GetMinStorageBufferOffsetAlignment();
+        void SetMaxVertexBuffers(int value);
+        int GetMaxVertexBuffers();
+        void SetMaxBufferSize(int value);
+        int GetMaxBufferSize();
+        void SetMaxVertexAttributes(int value);
+        int GetMaxVertexAttributes();
+        void SetMaxVertexBufferArrayStride(int value);
+        int GetMaxVertexBufferArrayStride();
+        void SetMaxInterStageShaderVariables(int value);
+        int GetMaxInterStageShaderVariables();
+        void SetMaxColorAttachments(int value);
+        int GetMaxColorAttachments();
+        void SetMaxColorAttachmentBytesPerSample(int value);
+        int GetMaxColorAttachmentBytesPerSample();
+        void SetMaxComputeWorkgroupStorageSize(int value);
+        int GetMaxComputeWorkgroupStorageSize();
+        void SetMaxComputeInvocationsPerWorkgroup(int value);
+        int GetMaxComputeInvocationsPerWorkgroup();
+        void SetMaxComputeWorkgroupSizeX(int value);
+        int GetMaxComputeWorkgroupSizeX();
+        void SetMaxComputeWorkgroupSizeY(int value);
+        int GetMaxComputeWorkgroupSizeY();
+        void SetMaxComputeWorkgroupSizeZ(int value);
+        int GetMaxComputeWorkgroupSizeZ();
+        void SetMaxComputeWorkgroupsPerDimension(int value);
+        int GetMaxComputeWorkgroupsPerDimension();
 };
 
 class WebGPUBufferBindingLayout : public WebGPUObjectBase<WebGPUBufferBindingLayout, WGPUBufferBindingLayout> {
     public:
-
-        static WebGPUBufferBindingLayout Obtain() {
-            WebGPUBufferBindingLayout obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetType(WGPUBufferBindingType type) {
-            Get().type = type;
-        }
-
-        void SetHasDynamicOffset(int hasDynamicOffset) {
-            Get().hasDynamicOffset = hasDynamicOffset;
-        }
-
-        void SetMinBindingSize(int minBindingSize) {
-            Get().minBindingSize = minBindingSize;
-        }
+        static WebGPUBufferBindingLayout Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetType(WGPUBufferBindingType type);
+        void SetHasDynamicOffset(int hasDynamicOffset);
+        void SetMinBindingSize(int minBindingSize);
 };
 
 class WebGPUSamplerBindingLayout : public WebGPUObjectBase<WebGPUSamplerBindingLayout, WGPUSamplerBindingLayout> {
     public:
-
-        static WebGPUSamplerBindingLayout Obtain() {
-            WebGPUSamplerBindingLayout obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetType(WGPUSamplerBindingType type) {
-            Get().type = type;
-        }
+        static WebGPUSamplerBindingLayout Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetType(WGPUSamplerBindingType type);
 };
 
 class WebGPUTextureBindingLayout : public WebGPUObjectBase<WebGPUTextureBindingLayout, WGPUTextureBindingLayout> {
     public:
-
-        static WebGPUTextureBindingLayout Obtain() {
-            WebGPUTextureBindingLayout obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetSampleType(WGPUTextureSampleType sampleType) {
-            Get().sampleType = sampleType;
-        }
-
-        void SetViewDimension(WGPUTextureViewDimension viewDimension) {
-            Get().viewDimension = viewDimension;
-        }
-
-        void SetMultisampled(int multisampled) {
-            Get().multisampled = multisampled;
-        }
+        static WebGPUTextureBindingLayout Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetSampleType(WGPUTextureSampleType sampleType);
+        void SetViewDimension(WGPUTextureViewDimension viewDimension);
+        void SetMultisampled(int multisampled);
 };
 
 class WebGPUStorageTextureBindingLayout : public WebGPUObjectBase<WebGPUStorageTextureBindingLayout, WGPUStorageTextureBindingLayout> {
     public:
-
-        static WebGPUStorageTextureBindingLayout Obtain() {
-            WebGPUStorageTextureBindingLayout obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetAccess(WGPUStorageTextureAccess access) {
-            Get().access = access;
-        }
-
-        void SetFormat(WGPUTextureFormat format) {
-            Get().format = format;
-        }
-
-        void SetViewDimension(WGPUTextureViewDimension viewDimension) {
-            Get().viewDimension = viewDimension;
-        }
+        static WebGPUStorageTextureBindingLayout Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetAccess(WGPUStorageTextureAccess access);
+        void SetFormat(WGPUTextureFormat format);
+        void SetViewDimension(WGPUTextureViewDimension viewDimension);
 };
 
 class WebGPUBindGroupLayoutEntry : public WebGPUObjectBase<WebGPUBindGroupLayoutEntry, WGPUBindGroupLayoutEntry> {
     public:
-
-        static WebGPUBindGroupLayoutEntry Obtain() {
-            WebGPUBindGroupLayoutEntry obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetBinding(int binding) {
-            Get().binding = binding;
-        }
-
-        void SetVisibility(WGPUShaderStage visibility) {
-            Get().visibility = visibility;
-        }
-
-        void SetBuffer(WebGPUBufferBindingLayout* buffer) {
-            Get().buffer = buffer->Get();
-        }
-
-        void SetSampler(WebGPUSamplerBindingLayout* sampler) {
-            Get().sampler = sampler->Get();
-        }
-
-        void SetTexture(WebGPUTextureBindingLayout* texture) {
-            Get().texture = texture->Get();
-        }
-
-        void SetStorageTexture(WebGPUStorageTextureBindingLayout* storageTexture) {
-            Get().storageTexture = storageTexture->Get();
-        }
+        static WebGPUBindGroupLayoutEntry Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetBinding(int binding);
+        void SetVisibility(WGPUShaderStage visibility);
+        void SetBuffer(WebGPUBufferBindingLayout* buffer);
+        void SetSampler(WebGPUSamplerBindingLayout* sampler);
+        void SetTexture(WebGPUTextureBindingLayout* texture);
+        void SetStorageTexture(WebGPUStorageTextureBindingLayout* storageTexture);
 };
 
 class WebGPUBindGroupLayoutDescriptor : public WebGPUObjectBase<WebGPUBindGroupLayoutDescriptor, WGPUBindGroupLayoutDescriptor> {
-        public:
-
-        static WebGPUBindGroupLayoutDescriptor Obtain() {
-            WebGPUBindGroupLayoutDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetEntries(WebGPUVectorBindGroupLayoutEntry* entries) {
-            if(entries != NULL) {
-                Get().entryCount = entries->size();
-                Get().entries = reinterpret_cast<const WGPUBindGroupLayoutEntry*>(entries->data());
-            }
-            else {
-                Get().entryCount = 0;
-                Get().entries = NULL;
-            }
-        }
+    public:
+        static WebGPUBindGroupLayoutDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetEntries(WebGPUVectorBindGroupLayoutEntry* entries);
 };
 
-// TODO The class name differs from those in Dawn and wgpu-native.
 class WebGPUProgrammableStageDescriptor : public WebGPUObjectBase<WebGPUProgrammableStageDescriptor, WGPUProgrammableStageDescriptor*> {
-        public:
-
-        static WebGPUProgrammableStageDescriptor Obtain() {
-            WebGPUProgrammableStageDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-//        void SetModule(WebGPUShaderModule* module) {
-//            Get()->module = module->Get();
-//        }
+    public:
+        static WebGPUProgrammableStageDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
 };
 
 class WebGPUComputePipelineDescriptor : public WebGPUObjectBase<WebGPUComputePipelineDescriptor, WGPUComputePipelineDescriptor> {
-        public:
-
-        static WebGPUComputePipelineDescriptor Obtain() {
-            WebGPUComputePipelineDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-// TODO fix this
-//        void SetLayout(WebGPUPipelineLayout* layout) {
-//            Get().layout = layout->Get();
-//        }
-
-        WebGPUProgrammableStageDescriptor GetCompute() {
-            WebGPUProgrammableStageDescriptor temp;
-            temp.Set(&Get().compute);
-            return temp;
-        }
+    public:
+        static WebGPUComputePipelineDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        WebGPUProgrammableStageDescriptor GetCompute();
 };
 
-
 class WebGPUQueueDescriptor : public WebGPUObjectBase<WebGPUQueueDescriptor, WGPUQueueDescriptor*> {
-        public:
-
-        static WebGPUQueueDescriptor Obtain() {
-            WebGPUQueueDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get()->label = stringView.Get();
-        }
+    public:
+        static WebGPUQueueDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
 };
 
 class WebGPUBufferDescriptor : public WebGPUObjectBase<WebGPUBufferDescriptor, WGPUBufferDescriptor> {
     public:
-
-        static WebGPUBufferDescriptor Obtain() {
-            WebGPUBufferDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetUsage(WGPUBufferUsage usage) {
-            Get().usage = usage;
-        }
-
-        void SetSize(int size) {
-            Get().size = size;
-        }
-
-        void SetMappedAtCreation(int mappedAtCreation) {
-            Get().mappedAtCreation = mappedAtCreation;
-        }
+        static WebGPUBufferDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetUsage(WGPUBufferUsage usage);
+        void SetSize(int size);
+        void SetMappedAtCreation(int mappedAtCreation);
 };
 
 class WebGPUBindGroupDescriptor : public WebGPUObjectBase<WebGPUBindGroupDescriptor, WGPUBindGroupDescriptor> {
     public:
-
-        static WebGPUBindGroupDescriptor Obtain() {
-            WebGPUBindGroupDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetLayout(WebGPUBindGroupLayout* layout) {
-            Get().layout = layout->Get();
-        }
+        static WebGPUBindGroupDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetLayout(WebGPUBindGroupLayout* layout);
 };
 
 class WebGPUPipelineLayoutDescriptor : public WebGPUObjectBase<WebGPUPipelineLayoutDescriptor, WGPUPipelineLayoutDescriptor> {
     public:
-
-        static WebGPUPipelineLayoutDescriptor Obtain() {
-            WebGPUPipelineLayoutDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetBindGroupLayouts(WebGPUVectorBindGroupLayout* bindGroupLayouts) {
-            if(bindGroupLayouts != NULL) {
-                Get().bindGroupLayoutCount = bindGroupLayouts->size();
-                Get().bindGroupLayouts = reinterpret_cast<const WGPUBindGroupLayout*>(bindGroupLayouts->data());
-            }
-            else {
-                Get().bindGroupLayoutCount = 0;
-                Get().bindGroupLayouts = NULL;
-            }
-        }
+        static WebGPUPipelineLayoutDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetBindGroupLayouts(WebGPUVectorBindGroupLayout* bindGroupLayouts);
 };
 
 class WebGPUDeviceDescriptor : public WebGPUObjectBase<WebGPUDeviceDescriptor, WGPUDeviceDescriptor> {
     public:
-
-        static WebGPUDeviceDescriptor Obtain() {
-            WebGPUDeviceDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetRequiredLimits(WebGPULimits* limits) {
-            Get().requiredLimits = &(limits->Get());
-        }
-
-        void SetRequiredFeatures(WebGPUVectorFeatureName* features) {
-            if(features != NULL) {
-                Get().requiredFeatureCount = features->size();
-                Get().requiredFeatures = features->data();
-            }
-            else {
-                Get().requiredFeatureCount = 0;
-                Get().requiredFeatures = NULL;
-            }
-        }
-
-        WebGPUQueueDescriptor GetDefaultQueue() {
-            WebGPUQueueDescriptor temp;
-            temp.Set(&Get().defaultQueue);
-            return temp;
-        }
+        static WebGPUDeviceDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetRequiredLimits(WebGPULimits* limits);
+        void SetRequiredFeatures(WebGPUVectorFeatureName* features);
+        WebGPUQueueDescriptor GetDefaultQueue();
 };
 
 class WebGPURequestAdapterOptions : public WebGPUObjectBase<WebGPURequestAdapterOptions, WGPURequestAdapterOptions> {
     public:
-
-        static WebGPURequestAdapterOptions Obtain() {
-            WebGPURequestAdapterOptions obj;
-            return obj;
-        }
+        static WebGPURequestAdapterOptions Obtain();
 };
 
 class WebGPUBindGroup : public WebGPUObjectBase<WebGPUBindGroup, WGPUBindGroup> {
     protected:
-
-        void AddRefInternal() {
-            wgpuBindGroupAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuBindGroupRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            wgpuBindGroupSetLabel(Get(), stringView.Get());
-        }
+        void SetLabel(const char* value);
 };
 
 class WebGPURenderBundle : public WebGPUObjectBase<WebGPURenderBundle, WGPURenderBundle> {
     protected:
-
-        void AddRefInternal() {
-            wgpuRenderBundleAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuRenderBundleRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            wgpuRenderBundleSetLabel(Get(), stringView.Get());
-        }
+        void SetLabel(const char* value);
 };
 
 class WebGPUAdapterInfo : public WebGPUObjectBase<WebGPUAdapterInfo, WGPUAdapterInfo> {
     public:
-
-        static WebGPUAdapterInfo Obtain() {
-            WebGPUAdapterInfo obj;
-            return obj;
-        }
-
-        std::string GetVendor() {
-            WebGPUStringView stringView(Get().vendor);
-            return stringView.GetString();
-        }
-
-        std::string GetArchitecture() {
-            WebGPUStringView stringView(Get().architecture);
-            return stringView.GetString();
-        }
-
-        std::string GetDevice() {
-            WebGPUStringView stringView(Get().device);
-            return stringView.GetString();
-        }
-
-        std::string GetDescription() {
-            WebGPUStringView stringView(Get().description);
-            return stringView.GetString();
-        }
-
-        WGPUBackendType GetBackendType() {
-            return Get().backendType;
-        }
-
-        WGPUAdapterType GetAdapterType() {
-            return Get().adapterType;
-        }
+        static WebGPUAdapterInfo Obtain();
+        std::string GetVendor();
+        std::string GetArchitecture();
+        std::string GetDevice();
+        std::string GetDescription();
+        WGPUBackendType GetBackendType();
+        WGPUAdapterType GetAdapterType();
 };
 
 class WebGPUShaderModule : public WebGPUObjectBase<WebGPUShaderModule, WGPUShaderModule> {
     protected:
-
-        void AddRefInternal() {
-            wgpuShaderModuleAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuShaderModuleRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPUShaderModule Obtain() {
-            WebGPUShaderModule obj;
-            return obj;
-        }
+        static WebGPUShaderModule Obtain();
 };
 
 class WebGPUConstantEntry : public WebGPUObjectBase<WebGPUConstantEntry, WGPUConstantEntry> {
@@ -1517,1594 +657,472 @@ class WebGPUConstantEntry : public WebGPUObjectBase<WebGPUConstantEntry, WGPUCon
 
 class WebGPUVertexAttribute : public WebGPUObjectBase<WebGPUVertexAttribute, WGPUVertexAttribute> {
     public:
-
-        static WebGPUVertexAttribute Obtain() {
-            WebGPUVertexAttribute obj;
-            return obj;
-        }
-
-        void SetFormat(WGPUVertexFormat format) {
-            Get().format = format;
-        }
-
-        void SetOffset(int offset) {
-            Get().offset = offset;
-        }
-
-        void SetShaderLocation(int shaderLocation) {
-            Get().shaderLocation = shaderLocation;
-        }
+        static WebGPUVertexAttribute Obtain();
+        void SetFormat(WGPUVertexFormat format);
+        void SetOffset(int offset);
+        void SetShaderLocation(int shaderLocation);
 };
 
 class WebGPUVertexBufferLayout : public WebGPUObjectBase<WebGPUVertexBufferLayout, WGPUVertexBufferLayout> {
     public:
-
-        static WebGPUVertexBufferLayout Obtain() {
-            WebGPUVertexBufferLayout obj;
-            return obj;
-        }
-
-        void SetAttributes(WebGPUVectorVertexAttribute* values) {
-            if(values != NULL) {
-                Get().attributeCount = values->size();
-                Get().attributes = reinterpret_cast<const WGPUVertexAttribute*>(values->data());
-            }
-            else {
-                Get().attributeCount = 0;
-                Get().attributes = NULL;
-            }
-        }
-
-        void SetArrayStride(int offset) {
-            Get().arrayStride = offset;
-        }
-
-        void SetStepMode(WGPUVertexStepMode stepMode) {
-            Get().stepMode = stepMode;
-        }
+        static WebGPUVertexBufferLayout Obtain();
+        void SetAttributes(WebGPUVectorVertexAttribute* values);
+        void SetArrayStride(int offset);
+        void SetStepMode(WGPUVertexStepMode stepMode);
 };
 
 class WebGPUVertexState : public WebGPUObjectBase<WebGPUVertexState, WGPUVertexState*> {
     public:
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetModule(WebGPUShaderModule* shaderModule) {
-            Get()->module = shaderModule != NULL ? shaderModule->Get() : NULL;
-        }
-
-        void SetEntryPoint(const char* value) {
-            WebGPUStringView stringView(value);
-            Get()->entryPoint = stringView.Get();
-        }
-
-        void SetConstants(WebGPUVectorConstantEntry* values) {
-            if(values != NULL) {
-                Get()->constantCount = values->size();
-                Get()->constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
-            }
-            else {
-                Get()->constantCount = 0;
-                Get()->constants = NULL;
-            }
-        }
-
-        void SetBuffers(WebGPUVectorVertexBufferLayout* values) {
-            if(values != NULL) {
-                Get()->bufferCount = values->size();
-                Get()->buffers = reinterpret_cast<const WGPUVertexBufferLayout*>(values->data());
-            }
-            else {
-                Get()->bufferCount = 0;
-                Get()->buffers = NULL;
-            }
-        }
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetModule(WebGPUShaderModule* shaderModule);
+        void SetEntryPoint(const char* value);
+        void SetConstants(WebGPUVectorConstantEntry* values);
+        void SetBuffers(WebGPUVectorVertexBufferLayout* values);
 };
 
 class WebGPUShaderSourceWGSL : public WebGPUObjectBase<WebGPUShaderSourceWGSL, WGPUShaderSourceWGSL> {
     public:
-
-        static WebGPUShaderSourceWGSL Obtain() {
-            WebGPUShaderSourceWGSL obj;
-            return obj;
-        }
-
-        void SetCode(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().code = stringView.Get();
-        }
-
-        void SetNext(WebGPUChainedStruct* value) {
-            Get().chain.next = value != NULL ? value->Get() : NULL;
-        }
-
-        void SetSType(WGPUSType type) {
-            Get().chain.sType = type;
-        }
-
-        WebGPUChainedStruct GetChain() {
-            WGPUChainedStruct* wgpuChain = &Get().chain;
-            WebGPUChainedStruct chain;
-            chain.Set(wgpuChain);
-            return chain;
-        }
+        static WebGPUShaderSourceWGSL Obtain();
+        void SetCode(const char* value);
+        void SetNext(WebGPUChainedStruct* value);
+        void SetSType(WGPUSType type);
+        WebGPUChainedStruct GetChain();
 };
 
 class WebGPUShaderModuleDescriptor : public WebGPUObjectBase<WebGPUShaderModuleDescriptor, WGPUShaderModuleDescriptor> {
     public:
-
-        static WebGPUShaderModuleDescriptor Obtain() {
-            WebGPUShaderModuleDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
+        static WebGPUShaderModuleDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
 };
 
 class WebGPUBlendComponent : public WebGPUObjectBase<WebGPUBlendComponent, WGPUBlendComponent*> {
     public:
-
-        void SetOperation(WGPUBlendOperation operation) {
-            Get()->operation = operation;
-        }
-
-        WGPUBlendOperation GetOperation() {
-            return Get()->operation;
-        }
-
-        void SetSrcFactor(WGPUBlendFactor factor) {
-            Get()->srcFactor = factor;
-        }
-
-        WGPUBlendFactor GetSrcFactor() {
-            return Get()->srcFactor;
-        }
-
-        void SetDstFactor(WGPUBlendFactor factor) {
-            Get()->dstFactor = factor;
-        }
-
-        WGPUBlendFactor GetDstFactor() {
-            return Get()->dstFactor;
-        }
+        void SetOperation(WGPUBlendOperation operation);
+        WGPUBlendOperation GetOperation();
+        void SetSrcFactor(WGPUBlendFactor factor);
+        WGPUBlendFactor GetSrcFactor();
+        void SetDstFactor(WGPUBlendFactor factor);
+        WGPUBlendFactor GetDstFactor();
 };
 
 class WebGPUBlendState : public WebGPUObjectBase<WebGPUBlendState, WGPUBlendState> {
     public:
-
-        static WebGPUBlendState Obtain() {
-            WebGPUBlendState obj;
-            return obj;
-        }
-
-        WebGPUBlendComponent GetColor() {
-            WebGPUBlendComponent temp;
-            temp.Set(&Get().color);
-            return temp;
-        }
-
-        WebGPUBlendComponent GetAlpha() {
-            WebGPUBlendComponent temp;
-            temp.Set(&Get().alpha);
-            return temp;
-        }
+        static WebGPUBlendState Obtain();
+        WebGPUBlendComponent GetColor();
+        WebGPUBlendComponent GetAlpha();
 };
 
 class WebGPUColorTargetState : public WebGPUObjectBase<WebGPUColorTargetState, WGPUColorTargetState> {
     public:
-
-        static WebGPUColorTargetState Obtain() {
-            WebGPUColorTargetState obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetFormat(WGPUTextureFormat format) {
-            Get().format = format;
-        }
-
-        void SetBlend(WebGPUBlendState* blendState) {
-            Get().blend = reinterpret_cast<const WGPUBlendState*>(blendState);
-        }
-
-        void SetWriteMask(WGPUColorWriteMask writeMask) {
-            Get().writeMask = writeMask;
-        }
+        static WebGPUColorTargetState Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetFormat(WGPUTextureFormat format);
+        void SetBlend(WebGPUBlendState* blendState);
+        void SetWriteMask(WGPUColorWriteMask writeMask);
 };
 
 class WebGPUFragmentState : public WebGPUObjectBase<WebGPUFragmentState, WGPUFragmentState> {
     public:
-
-        static WebGPUFragmentState Obtain() {
-            WebGPUFragmentState obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetEntryPoint(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().entryPoint = stringView.Get();
-        }
-
-        void SetTargets(WebGPUVectorColorTargetState* values) {
-            if(values != NULL) {
-                Get().targetCount = values->size();
-                Get().targets = reinterpret_cast<const WGPUColorTargetState*>(values->data());
-            }
-            else {
-                Get().targetCount = 0;
-                Get().targets = NULL;
-            }
-        }
-
-        void SetModule(WebGPUShaderModule* shaderModule) {
-            Get().module = shaderModule != NULL ? shaderModule->Get() : NULL;
-        }
-
-        void SetConstants(WebGPUVectorConstantEntry* values) {
-            if(values != NULL) {
-                Get().constantCount = values->size();
-                Get().constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
-            }
-            else {
-                Get().constantCount = 0;
-                Get().constants = NULL;
-            }
-        }
+        static WebGPUFragmentState Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetEntryPoint(const char* value);
+        void SetTargets(WebGPUVectorColorTargetState* values);
+        void SetModule(WebGPUShaderModule* shaderModule);
+        void SetConstants(WebGPUVectorConstantEntry* values);
 };
 
 class WebGPUPrimitiveState : public WebGPUObjectBase<WebGPUPrimitiveState, WGPUPrimitiveState*> {
     public:
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetTopology(WGPUPrimitiveTopology value) {
-            Get()->topology = value;
-        }
-
-        void SetStripIndexFormat(WGPUIndexFormat value) {
-            Get()->stripIndexFormat = value;
-        }
-
-        void SetFrontFace(WGPUFrontFace value) {
-            Get()->frontFace = value;
-        }
-
-        void SetCullMode(WGPUCullMode value) {
-            Get()->cullMode = value;
-        }
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetTopology(WGPUPrimitiveTopology value);
+        void SetStripIndexFormat(WGPUIndexFormat value);
+        void SetFrontFace(WGPUFrontFace value);
+        void SetCullMode(WGPUCullMode value);
 };
 
 class WebGPUStencilFaceState : public WebGPUObjectBase<WebGPUStencilFaceState, WGPUStencilFaceState*> {
     public:
-
-//        static WebGPUStencilFaceState Obtain() {
-//            WebGPUStencilFaceState obj;
-//            return obj;
-//        }
-
-        void SetCompare(WGPUCompareFunction compare) {
-            Get()->compare = compare;
-        }
-
-        void SetFailOp(WGPUStencilOperation failOp) {
-            Get()->failOp = failOp;
-        }
-
-        void SetDepthFailOp(WGPUStencilOperation depthFailOp) {
-            Get()->depthFailOp = depthFailOp;
-        }
-
-        void SetPassOp(WGPUStencilOperation passOp) {
-            Get()->passOp = passOp;
-        }
+        void SetCompare(WGPUCompareFunction compare);
+        void SetFailOp(WGPUStencilOperation failOp);
+        void SetDepthFailOp(WGPUStencilOperation depthFailOp);
+        void SetPassOp(WGPUStencilOperation passOp);
 };
 
 class WebGPUDepthStencilState : public WebGPUObjectBase<WebGPUDepthStencilState, WGPUDepthStencilState> {
     public:
-
-        static WebGPUDepthStencilState Obtain() {
-            WebGPUDepthStencilState obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetFormat(WGPUTextureFormat format) {
-            Get().format = format;
-        }
-
-        void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
-            Get().depthWriteEnabled = depthWriteEnabled;
-        }
-
-        void SetDepthCompare(WGPUCompareFunction depthCompare) {
-            Get().depthCompare = depthCompare;
-        }
-
-        void SetDepthBiasSlopeScale(float depthBiasSlopeScale) {
-            Get().depthBiasSlopeScale = depthBiasSlopeScale;
-        }
-
-        void SetDepthBiasClamp(float depthBiasClamp) {
-            Get().depthBiasClamp = depthBiasClamp;
-        }
-
-        void SetStencilReadMask(int stencilReadMask) {
-            Get().stencilReadMask = stencilReadMask;
-        }
-
-        void SetStencilWriteMask(int stencilWriteMask) {
-            Get().stencilWriteMask = stencilWriteMask;
-        }
-
-        void SetDepthBias(int depthBias) {
-            Get().depthBias = depthBias;
-        }
-
-        WebGPUStencilFaceState GetStencilFront() {
-            WebGPUStencilFaceState temp;
-            temp.Set(&Get().stencilFront);
-            return temp;
-        }
-
-        WebGPUStencilFaceState GetStencilBack() {
-            WebGPUStencilFaceState temp;
-            temp.Set(&Get().stencilBack);
-            return temp;
-        }
-
+        static WebGPUDepthStencilState Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetFormat(WGPUTextureFormat format);
+        void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled);
+        void SetDepthCompare(WGPUCompareFunction depthCompare);
+        void SetDepthBiasSlopeScale(float depthBiasSlopeScale);
+        void SetDepthBiasClamp(float depthBiasClamp);
+        void SetStencilReadMask(int stencilReadMask);
+        void SetStencilWriteMask(int stencilWriteMask);
+        void SetDepthBias(int depthBias);
+        WebGPUStencilFaceState GetStencilFront();
+        WebGPUStencilFaceState GetStencilBack();
 };
 
 class WebGPUMultisampleState : public WebGPUObjectBase<WebGPUMultisampleState, WGPUMultisampleState*> {
     public:
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetCount(int count) {
-            Get()->count = count;
-        }
-
-        void SetMask(int mask) {
-            Get()->mask = mask;
-        }
-
-        void SetAlphaToCoverageEnabled(int alphaToCoverageEnabled) {
-            Get()->alphaToCoverageEnabled = alphaToCoverageEnabled;
-        }
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetCount(int count);
+        void SetMask(int mask);
+        void SetAlphaToCoverageEnabled(int alphaToCoverageEnabled);
 };
 
 class WebGPUPipelineLayout : public WebGPUObjectBase<WebGPUPipelineLayout, WGPUPipelineLayout> {
-
     protected:
-        void AddRefInternal() {
-            wgpuPipelineLayoutAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuPipelineLayoutRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            wgpuPipelineLayoutSetLabel(Get(), stringView.Get());
-        }
+        void SetLabel(const char* value);
 };
 
 class WebGPURenderPipelineDescriptor : public WebGPUObjectBase<WebGPURenderPipelineDescriptor, WGPURenderPipelineDescriptor> {
     public:
-
-        static WebGPURenderPipelineDescriptor Obtain() {
-            WebGPURenderPipelineDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        WebGPUVertexState GetVertex() {
-            WebGPUVertexState temp;
-            temp.Set(&Get().vertex);
-            return temp;
-        }
-
-        WebGPUPrimitiveState GetPrimitive() {
-            WebGPUPrimitiveState temp;
-            temp.Set(&Get().primitive);
-            return temp;
-        }
-
-        void SetFragment(WebGPUFragmentState* fragment) {
-            Get().fragment = &fragment->Get();
-        }
-
-        void SetDepthStencil(WebGPUDepthStencilState* depthStencilState) {
-            Get().depthStencil = depthStencilState != NULL ? &depthStencilState->Get() : NULL;
-        }
-
-        WebGPUMultisampleState GetMultisample() {
-            WebGPUMultisampleState temp;
-            temp.Set(&Get().multisample);
-            return temp;
-        }
-
-        void SetLayout(WebGPUPipelineLayout* pipelineLayout) {
-            Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
-        }
+        static WebGPURenderPipelineDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        WebGPUVertexState GetVertex();
+        WebGPUPrimitiveState GetPrimitive();
+        void SetFragment(WebGPUFragmentState* fragment);
+        void SetDepthStencil(WebGPUDepthStencilState* depthStencilState);
+        WebGPUMultisampleState GetMultisample();
+        void SetLayout(WebGPUPipelineLayout* pipelineLayout);
 };
 
 class WebGPURenderPipeline : public WebGPUObjectBase<WebGPURenderPipeline, WGPURenderPipeline> {
-
     protected:
-        void AddRefInternal() {
-            wgpuRenderPipelineAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuRenderPipelineRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-        static WebGPURenderPipeline Obtain() {
-            WebGPURenderPipeline obj;
-            return obj;
-        }
+        static WebGPURenderPipeline Obtain();
 };
 
 class WebGPUColor : public WebGPUObjectBase<WebGPUColor, WGPUColor*> {
     private:
         bool deleteObject;
-
     public:
-        WebGPUColor() {
-            deleteObject = true;
-            Set(new WGPUColor());
-        }
-
-        WebGPUColor(WGPUColor* color) {
-            deleteObject = false;
-            Set(color);
-        }
-
-        ~WebGPUColor() {
-            if(deleteObject) {
-                delete Get();
-            }
-        }
-
-        static WebGPUColor Obtain() {
-            WebGPUColor obj;
-            return obj;
-        }
-
-        void SetColor(float r, float g, float b, float a) {
-            Get()->r = r;
-            Get()->g = g;
-            Get()->b = b;
-            Get()->a = a;
-        }
-
-        float GetR() {
-            return Get()->r;
-        }
-        float GetG() {
-            return Get()->g;
-        }
-        float GetB() {
-            return Get()->b;
-        }
-        float GetA() {
-            return Get()->a;
-        }
+        WebGPUColor();
+        WebGPUColor(WGPUColor* color);
+        ~WebGPUColor();
+        static WebGPUColor Obtain();
+        void SetColor(float r, float g, float b, float a);
+        float GetR();
+        float GetG();
+        float GetB();
+        float GetA();
 };
 
 class WebGPUSupportedFeatures : public WebGPUObjectBase<WebGPUSupportedFeatures, WGPUSupportedFeatures> {
     public:
-
-        static WebGPUSupportedFeatures Obtain() {
-            WebGPUSupportedFeatures obj;
-            return obj;
-        }
-
-        int GetFeatureCount() {
-            return Get().featureCount;
-        }
-
-        WGPUFeatureName GetFeatureAt(long index) {
-            return Get().features[index];
-        }
+        static WebGPUSupportedFeatures Obtain();
+        int GetFeatureCount();
+        WGPUFeatureName GetFeatureAt(long index);
 };
-
 
 class WebGPURenderPassEncoder : public WebGPUObjectBase<WebGPURenderPassEncoder, WGPURenderPassEncoder> {
     protected:
-
-        void AddRefInternal() {
-            wgpuRenderPassEncoderAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuRenderPassEncoderRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPURenderPassEncoder Obtain() {
-            WebGPURenderPassEncoder obj;
-            return obj;
-        }
-
-        void End() {
-            wgpuRenderPassEncoderEnd(Get());
-        }
-
-        void SetPipeline(WebGPURenderPipeline* renderPipeline) {
-            wgpuRenderPassEncoderSetPipeline(Get(), renderPipeline->Get());
-        }
-
-        void BeginOcclusionQuery(int queryIndex) {
-            wgpuRenderPassEncoderBeginOcclusionQuery(Get(), queryIndex);
-        }
-
-        void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
-            wgpuRenderPassEncoderDraw(Get(), vertexCount, instanceCount, firstVertex, firstInstance);
-        }
-
-        void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
-            wgpuRenderPassEncoderDrawIndexed(Get(), indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
-        }
-
-        void DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
-            wgpuRenderPassEncoderDrawIndexedIndirect(Get(), indirectBuffer->Get(), indirectOffset);
-        }
-
-        void DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
-            wgpuRenderPassEncoderDrawIndirect(Get(), indirectBuffer->Get(), indirectOffset);
-        }
-
-        void EndOcclusionQuery() {
-            wgpuRenderPassEncoderEndOcclusionQuery(Get());
-        }
-
-        void ExecuteBundles(WebGPUVectorRenderBundle* values) {
-            if(values != NULL) {
-                int size = values->size();
-                wgpuRenderPassEncoderExecuteBundles(Get(), size,  reinterpret_cast<WGPURenderBundle const * >(values->data()));
-            }
-            else {
-                wgpuRenderPassEncoderExecuteBundles(Get(), 0,  NULL);
-            }
-        }
-
-        void InsertDebugMarker(const char* label) {
-            WebGPUStringView stringView(label);
-            wgpuRenderPassEncoderInsertDebugMarker(Get(), stringView.Get());
-        }
-
-        void PopDebugGroup() {
-            wgpuRenderPassEncoderPopDebugGroup(Get());
-        }
-
-        void PushDebugGroup(const char* label) {
-            WebGPUStringView stringView(label);
-            wgpuRenderPassEncoderPushDebugGroup(Get(), stringView.Get());
-        }
-
-        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* dynamicOffsets) {
-            // TODO test. May not work if Int to uint32_t fails
-            int dynamicOffsetCount = dynamicOffsets->size();
-            wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, reinterpret_cast<uint32_t const *>(dynamicOffsets->data()));
-        }
-
-        void SetBlendConstant(WebGPUColor* color) {
-            // TODO need to test if this is working
-            wgpuRenderPassEncoderSetBlendConstant(Get(), reinterpret_cast<WGPUColor *>(color));
-        }
-
-        void SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
-            wgpuRenderPassEncoderSetIndexBuffer(Get(), buffer->Get(), format, offset, size);
-        }
-
-        void SetLabel(const char* label) {
-            WebGPUStringView stringView(label);
-            wgpuRenderPassEncoderSetLabel(Get(), stringView.Get());
-        }
-
-        void SetScissorRect(int x, int y, int width, int height) {
-            wgpuRenderPassEncoderSetScissorRect(Get(), x, y, width, height);
-        }
-
-        void SetStencilReference(int reference) {
-            wgpuRenderPassEncoderSetStencilReference(Get(), reference);
-        }
-
-        void SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size) {
-            wgpuRenderPassEncoderSetVertexBuffer(Get(), slot, buffer->Get(), offset, size);
-        }
-
-        void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
-            wgpuRenderPassEncoderSetViewport(Get(), x, y, width, height, minDepth, maxDepth);
-        }
+        static WebGPURenderPassEncoder Obtain();
+        void End();
+        void SetPipeline(WebGPURenderPipeline* renderPipeline);
+        void BeginOcclusionQuery(int queryIndex);
+        void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance);
+        void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance);
+        void DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset);
+        void DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset);
+        void EndOcclusionQuery();
+        void ExecuteBundles(WebGPUVectorRenderBundle* values);
+        void InsertDebugMarker(const char* label);
+        void PopDebugGroup();
+        void PushDebugGroup(const char* label);
+        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* dynamicOffsets);
+        void SetBlendConstant(WebGPUColor* color);
+        void SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
+        void SetLabel(const char* label);
+        void SetScissorRect(int x, int y, int width, int height);
+        void SetStencilReference(int reference);
+        void SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size);
+        void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth);
 };
 
 class WebGPUComputePassEncoder : public WebGPUObjectBase<WebGPUComputePassEncoder, WGPUComputePassEncoder> {
     protected:
-
-        void AddRefInternal() {
-            wgpuComputePassEncoderAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuComputePassEncoderRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPUComputePassEncoder Obtain() {
-            WebGPUComputePassEncoder obj;
-            return obj;
-        }
-
-        void SetDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
-            wgpuComputePassEncoderDispatchWorkgroups(Get(), workgroupCountX, workgroupCountY, workgroupCountZ);
-        }
-
-        void DispatchWorkgroupsIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
-            wgpuComputePassEncoderDispatchWorkgroupsIndirect(Get(), indirectBuffer->Get(), indirectOffset);
-        }
-
-        void End() {
-            wgpuComputePassEncoderEnd(Get());
-        }
-
-        void InsertDebugMarker(const char* markerLabel) {
-            WebGPUStringView stringView(markerLabel);
-            wgpuComputePassEncoderInsertDebugMarker(Get(), stringView.Get());
-        }
-
-        void PopDebugGroup() {
-            wgpuComputePassEncoderPopDebugGroup(Get());
-        }
-
-        void PushDebugGroup(const char* groupLabel) {
-            WebGPUStringView stringView(groupLabel);
-            wgpuComputePassEncoderPushDebugGroup(Get(), stringView.Get());
-        }
-
-        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* offsets) {
-            int dynamicOffsetCount = 0;
-            uint32_t* dynamicOffsets = NULL;
-            if(offsets != NULL) {
-                dynamicOffsetCount = offsets->size();
-                dynamicOffsets = (uint32_t*)offsets->data();
-            }
-            wgpuComputePassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
-        }
-
-        void SetLabel(const char* label) {
-            WebGPUStringView stringView(label);
-            wgpuComputePassEncoderSetLabel(Get(), stringView.Get());
-        }
-
-        void SetPipeline(WebGPUComputePipeline* pipeline) {
-            wgpuComputePassEncoderSetPipeline(Get(), pipeline->Get());
-        }
+        static WebGPUComputePassEncoder Obtain();
+        void SetDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ);
+        void DispatchWorkgroupsIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset);
+        void End();
+        void InsertDebugMarker(const char* markerLabel);
+        void PopDebugGroup();
+        void PushDebugGroup(const char* groupLabel);
+        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* offsets);
+        void SetLabel(const char* label);
+        void SetPipeline(WebGPUComputePipeline* pipeline);
 };
 
 class WebGPURenderPassDepthStencilAttachment : public WebGPUObjectBase<WebGPURenderPassDepthStencilAttachment, WGPURenderPassDepthStencilAttachment> {
     public:
-        static WebGPURenderPassDepthStencilAttachment Obtain() {
-            WebGPURenderPassDepthStencilAttachment obj;
-            return obj;
-        }
-
+        static WebGPURenderPassDepthStencilAttachment Obtain();
 };
 
-// Opaque pointer
 class WebGPUQuerySet : public WebGPUObjectBase<WebGPUQuerySet, WGPUQuerySet> {
     protected:
-        void AddRefInternal() {
-            wgpuQuerySetAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuQuerySetRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void SetDestroy() {
-            wgpuQuerySetDestroy(Get());
-        }
-
-        int GetCount() {
-            return wgpuQuerySetGetCount(Get());
-        }
-
-        WGPUQueryType GetType() {
-            return wgpuQuerySetGetType(Get());
-        }
-
-        void SetLabel(const char* label) {
-            WebGPUStringView stringView(label);
-            wgpuQuerySetSetLabel(Get(), stringView.Get());
-        }
+        void SetDestroy();
+        int GetCount();
+        WGPUQueryType GetType();
+        void SetLabel(const char* label);
 };
 
-// TODO The class name differs from those in Dawn and wgpu-native.
 class WebGPURenderPassTimestampWrites : public WebGPUObjectBase<WebGPURenderPassTimestampWrites, WGPURenderPassTimestampWrites> {
     public:
-
-        static WebGPURenderPassTimestampWrites Obtain() {
-            WebGPURenderPassTimestampWrites obj;
-            return obj;
-        }
-
-        void SetQuerySet(WebGPUQuerySet* value) {
-            Get().querySet = value->Get();
-        }
-
-        void SetBeginningOfPassWriteIndex(int value) {
-            Get().beginningOfPassWriteIndex = value;
-        }
-
-        void SetEndOfPassWriteIndex(int value) {
-            Get().endOfPassWriteIndex = value;
-        }
+        static WebGPURenderPassTimestampWrites Obtain();
+        void SetQuerySet(WebGPUQuerySet* value);
+        void SetBeginningOfPassWriteIndex(int value);
+        void SetEndOfPassWriteIndex(int value);
 };
 
-// TODO The class name differs from those in Dawn and wgpu-native.
 class WebGPUComputePassTimestampWrites : public WebGPUObjectBase<WebGPUComputePassTimestampWrites, WGPUComputePassTimestampWrites> {
     public:
-
-        static WebGPUComputePassTimestampWrites Obtain() {
-            WebGPUComputePassTimestampWrites obj;
-            return obj;
-        }
-
-        void SetQuerySet(WebGPUQuerySet* value) {
-            Get().querySet = value->Get();
-        }
-
-        void SetBeginningOfPassWriteIndex(int value) {
-            Get().beginningOfPassWriteIndex = value;
-        }
-
-        void SetEndOfPassWriteIndex(int value) {
-            Get().endOfPassWriteIndex = value;
-        }
+        static WebGPUComputePassTimestampWrites Obtain();
+        void SetQuerySet(WebGPUQuerySet* value);
+        void SetBeginningOfPassWriteIndex(int value);
+        void SetEndOfPassWriteIndex(int value);
 };
 
 class WebGPUCommandEncoderDescriptor : public WebGPUObjectBase<WebGPUCommandEncoderDescriptor, WGPUCommandEncoderDescriptor> {
     public:
-
-        static WebGPUCommandEncoderDescriptor Obtain() {
-            WebGPUCommandEncoderDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
+        static WebGPUCommandEncoderDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
 };
 
 class WebGPUCommandBufferDescriptor : public WebGPUObjectBase<WebGPUCommandBufferDescriptor, WGPUCommandBufferDescriptor> {
     public:
-
-        static WebGPUCommandBufferDescriptor Obtain() {
-            WebGPUCommandBufferDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
+        static WebGPUCommandBufferDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
 };
 
 class WebGPURenderPassDescriptor : public WebGPUObjectBase<WebGPURenderPassDescriptor, WGPURenderPassDescriptor> {
     public:
-
-        static WebGPURenderPassDescriptor Obtain() {
-            WebGPURenderPassDescriptor obj;
-            return obj;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetColorAttachments(WebGPUVectorRenderPassColorAttachment* values) {
-            if(values != NULL) {
-                Get().colorAttachmentCount = values->size();
-                Get().colorAttachments = reinterpret_cast<const WGPURenderPassColorAttachment*>(values->data());
-            }
-            else {
-                Get().colorAttachmentCount = 0;
-                Get().colorAttachments = NULL;
-            }
-        }
-
-        void SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment* attachment) {
-            Get().depthStencilAttachment = attachment == NULL ? NULL : &(attachment->Get());
-        }
-
-        void SetTimestampWrites(WebGPURenderPassTimestampWrites* timestampWrites) {
-            Get().timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->Get());
-        }
+        static WebGPURenderPassDescriptor Obtain();
+        void SetLabel(const char* value);
+        void SetColorAttachments(WebGPUVectorRenderPassColorAttachment* values);
+        void SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment* attachment);
+        void SetTimestampWrites(WebGPURenderPassTimestampWrites* timestampWrites);
 };
 
 class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDescriptor, WGPUComputePassDescriptor> {
     public:
-
-        static WebGPUComputePassDescriptor Obtain() {
-            WebGPUComputePassDescriptor obj;
-            return obj;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetLabel(const char* value) {
-            WebGPUStringView stringView(value);
-            Get().label = stringView.Get();
-        }
-
-        void SetTimestampWrites(WebGPUComputePassTimestampWrites* timestampWrites) {
-            Get().timestampWrites = timestampWrites != NULL ? &timestampWrites->Get() : NULL;
-        }
+        static WebGPUComputePassDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetTimestampWrites(WebGPUComputePassTimestampWrites* timestampWrites);
 };
 
 class WebGPUOrigin3D : public WebGPUObjectBase<WebGPUOrigin3D, WGPUOrigin3D> {
     public:
-
-        static WebGPUOrigin3D Obtain() {
-            WebGPUOrigin3D obj;
-            return obj;
-        }
-
-        void Set(int x, int y, int z) {
-            Get().x = x;
-            Get().y = y;
-            Get().z = z;
-        }
-
-        void SetX(int value) {
-            Get().x = value;
-        }
-
-        void SetY(int value) {
-            Get().y = value;
-        }
-
-        void SetZ(int value) {
-            Get().z = value;
-        }
+        static WebGPUOrigin3D Obtain();
+        void Set(int x, int y, int z);
+        void SetX(int value);
+        void SetY(int value);
+        void SetZ(int value);
 };
 
 class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDescriptor, WGPUTextureViewDescriptor> {
     public:
-
-    static WebGPUTextureViewDescriptor Obtain() {
-        WebGPUTextureViewDescriptor obj;
-        return obj;
-    }
-
-    void SetLabel(const char* value) {
-        WebGPUStringView stringView(value);
-        Get().label = stringView.Get();
-    }
-
-    void SetFormat(WGPUTextureFormat format) {
-        Get().format = format;
-    }
-
-    void SetDimension(WGPUTextureViewDimension dimension) {
-        Get().dimension = dimension;
-    }
-
-    void SetBaseMipLevel(int baseMipLevel) {
-        Get().baseMipLevel = baseMipLevel;
-    }
-
-    void SetMipLevelCount(int mipLevelCount) {
-        Get().mipLevelCount = mipLevelCount;
-    }
-
-    void SetBaseArrayLayer(int baseArrayLayer) {
-        Get().baseArrayLayer = baseArrayLayer;
-    }
-
-    void SetArrayLayerCount(int arrayLayerCount) {
-        Get().arrayLayerCount = arrayLayerCount;
-    }
-
-    void SetAspect(WGPUTextureAspect aspect) {
-        Get().aspect = aspect;
-    }
-
-    void SetUsage(WGPUTextureUsage usage) {
-        Get().usage = usage;
-    }
+        static WebGPUTextureViewDescriptor Obtain();
+        void SetLabel(const char* value);
+        void SetFormat(WGPUTextureFormat format);
+        void SetDimension(WGPUTextureViewDimension dimension);
+        void SetBaseMipLevel(int baseMipLevel);
+        void SetMipLevelCount(int mipLevelCount);
+        void SetBaseArrayLayer(int baseArrayLayer);
+        void SetArrayLayerCount(int arrayLayerCount);
+        void SetAspect(WGPUTextureAspect aspect);
+        void SetUsage(WGPUTextureUsage usage);
 };
 
 class WebGPUTextureView : public WebGPUObjectBase<WebGPUTextureView, WGPUTextureView> {
     protected:
-
-        void AddRefInternal() {
-            wgpuTextureViewAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuTextureViewRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPUTextureView Obtain() {
-            WebGPUTextureView obj;
-            return obj;
-        }
+        static WebGPUTextureView Obtain();
 };
 
 class WebGPUTexture : public WebGPUObjectBase<WebGPUTexture, WGPUTexture> {
     protected:
-
-        void AddRefInternal() {
-            wgpuTextureAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuTextureRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPUTexture Obtain() {
-            WebGPUTexture obj;
-            return obj;
-        }
-
-        void CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView) {
-            textureView->Set(wgpuTextureCreateView(Get(), &(textureViewDescriptor->Get())));
-        }
-
-        WGPUTextureFormat GetFormat() {
-            return wgpuTextureGetFormat(Get());
-        }
+        static WebGPUTexture Obtain();
+        void CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView);
+        WGPUTextureFormat GetFormat();
 };
 
 class WebGPUTexelCopyTextureInfo : public WebGPUObjectBase<WebGPUTexelCopyTextureInfo, WGPUTexelCopyTextureInfo> {
     public:
-
-        static WebGPUTexelCopyTextureInfo Obtain() {
-            WebGPUTexelCopyTextureInfo obj;
-            return obj;
-        }
-
-        void SetTexture(WebGPUTexture* texture) {
-            Get().texture = texture->Get();
-        }
-
-        void SetMipLevel(int mipLevel) {
-            Get().mipLevel = mipLevel;
-        }
-
-        void SetOrigin(WebGPUOrigin3D origin) {
-            Get().origin = origin.Get();
-        }
-
-        void SetAspect(WGPUTextureAspect aspect) {
-            Get().aspect = aspect;
-        }
+        static WebGPUTexelCopyTextureInfo Obtain();
+        void SetTexture(WebGPUTexture* texture);
+        void SetMipLevel(int mipLevel);
+        void SetOrigin(WebGPUOrigin3D origin);
+        void SetAspect(WGPUTextureAspect aspect);
 };
 
 class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D> {
     public:
-
-        static WebGPUExtent3D Obtain() {
-            WebGPUExtent3D obj;
-            return obj;
-        }
-
-        void SetWidth(int width) {
-            Get().width = width;
-        }
-
-        void SetHeight(int height) {
-            Get().height = height;
-        }
-
-        void SetDepthOrArrayLayers(int depthOrArrayLayers) {
-            Get().depthOrArrayLayers = depthOrArrayLayers;
-        }
+        static WebGPUExtent3D Obtain();
+        void SetWidth(int width);
+        void SetHeight(int height);
+        void SetDepthOrArrayLayers(int depthOrArrayLayers);
 };
 
 class WebGPUTexelCopyBufferLayout : public WebGPUObjectBase<WebGPUTexelCopyBufferLayout, WGPUTexelCopyBufferLayout*> {
     public:
-
-        static WebGPUTexelCopyBufferLayout Obtain() {
-            WebGPUTexelCopyBufferLayout obj;
-            return obj;
-        }
-
-        void SetOffset(int offset) {
-            Get()->offset = offset;
-        }
-
-        void SetBytesPerRow(int bytesPerRow) {
-            Get()->bytesPerRow = bytesPerRow;
-        }
-
-        void SetRowsPerImage(int rowsPerImage) {
-            Get()->rowsPerImage = rowsPerImage;
-        }
+        static WebGPUTexelCopyBufferLayout Obtain();
+        void SetOffset(int offset);
+        void SetBytesPerRow(int bytesPerRow);
+        void SetRowsPerImage(int rowsPerImage);
 };
 
 class WebGPUTexelCopyBufferInfo : public WebGPUObjectBase<WebGPUTexelCopyBufferInfo, WGPUTexelCopyBufferInfo> {
     public:
-
-        static WebGPUTexelCopyBufferInfo Obtain() {
-            WebGPUTexelCopyBufferInfo obj;
-            return obj;
-        }
-
-        WebGPUTexelCopyBufferLayout GetLayout() {
-            WebGPUTexelCopyBufferLayout temp;
-            temp.Set(&Get().layout);
-            return temp;
-        }
-
-        WebGPUBuffer GetBuffer() {
-            WebGPUBuffer temp;
-            temp.Set(Get().buffer);
-            return temp;
-        }
+        static WebGPUTexelCopyBufferInfo Obtain();
+        WebGPUTexelCopyBufferLayout GetLayout();
+        WebGPUBuffer GetBuffer();
 };
 
 class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUCommandEncoder> {
     protected:
-
-        void AddRefInternal() {
-            wgpuCommandEncoderAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuCommandEncoderRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        static WebGPUCommandEncoder Obtain() {
-            WebGPUCommandEncoder obj;
-            return obj;
-        }
-
-        void BeginComputePass(WebGPUComputePassDescriptor* descriptor, WebGPUComputePassEncoder* encoder) {
-            encoder->Set(wgpuCommandEncoderBeginComputePass(Get(), &descriptor->Get()));
-        }
-
-        void BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder) {
-            encoder->Set(wgpuCommandEncoderBeginRenderPass(Get(), &(renderPassDescriptor->Get())));
-        }
-
-        void ClearBuffer(WebGPUBuffer* buffer, int offset, int size) {
-            wgpuCommandEncoderClearBuffer(Get(), buffer->Get(), offset, size);
-        }
-
-        void CopyBufferToBuffer(WebGPUBuffer* source, int sourceOffset, WebGPUBuffer* destination, int destinationOffset, int size) {
-            wgpuCommandEncoderCopyBufferToBuffer(Get(), source->Get(), sourceOffset, destination->Get(), destinationOffset, size);
-        }
-
-        void CopyBufferToTexture(WebGPUTexelCopyBufferInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
-            wgpuCommandEncoderCopyBufferToTexture(Get(), &source->Get(), &destination->Get(), &copySize->Get());
-        }
-
-        void TextureToBuffer(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyBufferInfo* destination, WebGPUExtent3D* copySize) {
-            wgpuCommandEncoderCopyTextureToBuffer(Get(), &source->Get(), &destination->Get(), &copySize->Get());
-        }
-
-        void CopyTextureToTexture(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
-            wgpuCommandEncoderCopyTextureToTexture(Get(), &source->Get(), &destination->Get(), &copySize->Get());
-        }
-
-        void Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer) {
-            commandBuffer->Set(wgpuCommandEncoderFinish(Get(), &(commandBufferDescriptor->Get())));
-        }
-
-        void InsertDebugMarker(const char* markerLabel) {
-            WebGPUStringView stringView(markerLabel);
-            wgpuCommandEncoderInsertDebugMarker(Get(), stringView.Get());
-        }
-
-        void PopDebugGroup() {
-            wgpuCommandEncoderPopDebugGroup(Get());
-        }
-
-        void PushDebugGroup(const char* groupLabel) {
-            WebGPUStringView stringView(groupLabel);
-            wgpuCommandEncoderPushDebugGroup(Get(), stringView.Get());
-        }
-
-        void ResolveQuerySet(WebGPUQuerySet* querySet, int firstQuery, int queryCount, WebGPUBuffer* destination, int destinationOffset) {
-            wgpuCommandEncoderResolveQuerySet(Get(), querySet->Get(), firstQuery, queryCount, destination->Get(), destinationOffset);
-        }
-
-        void SetLabel(const char* label) {
-            WebGPUStringView stringView(label);
-            wgpuCommandEncoderSetLabel(Get(), stringView.Get());
-        }
-
-        void WriteTimestamp(WebGPUQuerySet* querySet, int queryIndex) {
-            wgpuCommandEncoderWriteTimestamp(Get(), querySet->Get(), queryIndex);
-        }
+        static WebGPUCommandEncoder Obtain();
+        void BeginComputePass(WebGPUComputePassDescriptor* descriptor, WebGPUComputePassEncoder* encoder);
+        void BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder);
+        void ClearBuffer(WebGPUBuffer* buffer, int offset, int size);
+        void CopyBufferToBuffer(WebGPUBuffer* source, int sourceOffset, WebGPUBuffer* destination, int destinationOffset, int size);
+        void CopyBufferToTexture(WebGPUTexelCopyBufferInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize);
+        void TextureToBuffer(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyBufferInfo* destination, WebGPUExtent3D* copySize);
+        void CopyTextureToTexture(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize);
+        void Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer);
+        void InsertDebugMarker(const char* markerLabel);
+        void PopDebugGroup();
+        void PushDebugGroup(const char* groupLabel);
+        void ResolveQuerySet(WebGPUQuerySet* querySet, int firstQuery, int queryCount, WebGPUBuffer* destination, int destinationOffset);
+        void SetLabel(const char* label);
+        void WriteTimestamp(WebGPUQuerySet* querySet, int queryIndex);
 };
 
 class WebGPUDevice : public WebGPUObjectBase<WebGPUDevice, WGPUDevice> {
     protected:
-
-        void AddRefInternal() {
-            wgpuDeviceAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuDeviceRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-//        bool GetAdapterInfo(WebGPUAdapterInfo* adapterInfo) {
-//            #ifdef __EMSCRIPTEN__
-//                WGPUStatus status = wgpuDeviceGetAdapterInfo(device, &(adapterInfo->adapterInfo));
-//            #else
-//                wgpuDeviceGetAdapterInfo(device); // Not implemented
-//                WGPUStatus status = WGPUStatus_Error;
-//            #endif
-//            return status == WGPUStatus_Success;
-//        }
-
-        void CreateBindGroup(WebGPUBindGroupDescriptor* descriptor, WebGPUBindGroup* valueOut) {
-            valueOut->Set(wgpuDeviceCreateBindGroup(Get(), &descriptor->Get()));
-        }
-
-        void CreateBindGroupLayout(WebGPUBindGroupLayoutDescriptor* descriptor, WebGPUBindGroupLayout* valueOut) {
-            valueOut->Set(wgpuDeviceCreateBindGroupLayout(Get(), &descriptor->Get()));
-        }
-
-        void CreateBuffer(WebGPUBufferDescriptor* descriptor, WebGPUBuffer* valueOut) {
-            valueOut->Set(wgpuDeviceCreateBuffer(Get(), &descriptor->Get()));
-        }
-
-        void CreateCommandEncoder(WebGPUCommandEncoderDescriptor* descriptor, WebGPUCommandEncoder* valueOut) {
-            valueOut->Set(wgpuDeviceCreateCommandEncoder(Get(), &(descriptor->Get())));
-        }
-
-        void CreateComputePipeline(WebGPUComputePipelineDescriptor* descriptor, WebGPUComputePipeline* valueOut) {
-            valueOut->Set(wgpuDeviceCreateComputePipeline(Get(), &(descriptor->Get())));
-        }
-
-        WebGPUQueue GetQueue() {
-            WebGPUQueue temp;
-            temp.Set(wgpuDeviceGetQueue(Get()));
-            return temp;
-        }
-
-        void CreateRenderPipeline(WebGPURenderPipelineDescriptor* pipelineDescriptor, WebGPURenderPipeline* valueOut) {
-            valueOut->Set(wgpuDeviceCreateRenderPipeline(Get(), reinterpret_cast<WGPURenderPipelineDescriptor const * >(pipelineDescriptor)));
-        }
-
-        void CreateShaderModule(WebGPUShaderModuleDescriptor* shaderModuleDescriptor, WebGPUShaderModule* valueOut) {
-            valueOut->Set(wgpuDeviceCreateShaderModule(Get(), &shaderModuleDescriptor->Get()));
-        }
-
-        void GetFeatures(WebGPUSupportedFeatures* features) {
-            wgpuDeviceGetFeatures(Get(), reinterpret_cast<WGPUSupportedFeatures * >(features));
-        }
-
-        void GetLimits(WebGPULimits* limits) {
-            wgpuDeviceGetLimits(Get(), reinterpret_cast<WGPULimits * >(&(limits->Get())));
-        }
-
+        void CreateBindGroup(WebGPUBindGroupDescriptor* descriptor, WebGPUBindGroup* valueOut);
+        void CreateBindGroupLayout(WebGPUBindGroupLayoutDescriptor* descriptor, WebGPUBindGroupLayout* valueOut);
+        void CreateBuffer(WebGPUBufferDescriptor* descriptor, WebGPUBuffer* valueOut);
+        void CreateCommandEncoder(WebGPUCommandEncoderDescriptor* descriptor, WebGPUCommandEncoder* valueOut);
+        void CreateComputePipeline(WebGPUComputePipelineDescriptor* descriptor, WebGPUComputePipeline* valueOut);
+        WebGPUQueue GetQueue();
+        void CreateRenderPipeline(WebGPURenderPipelineDescriptor* pipelineDescriptor, WebGPURenderPipeline* valueOut);
+        void CreateShaderModule(WebGPUShaderModuleDescriptor* shaderModuleDescriptor, WebGPUShaderModule* valueOut);
+        void GetFeatures(WebGPUSupportedFeatures* features);
+        void GetLimits(WebGPULimits* limits);
 };
 
 class WebGPUSurfaceConfiguration : public WebGPUObjectBase<WebGPUSurfaceConfiguration, WGPUSurfaceConfiguration> {
     public:
-
-        static WebGPUSurfaceConfiguration Obtain() {
-            WebGPUSurfaceConfiguration temp;
-            return temp;
-        }
-
-        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
-        }
-
-        void SetWidth(long width) {
-            Get().width = width;
-        }
-
-        void SetHeight(long height) {
-            Get().height = height;
-        }
-
-        void SetFormat(WGPUTextureFormat format) {
-            Get().format = format;
-        }
-
-        void SetViewFormatCount(long value) {
-            Get().viewFormatCount = value;
-        }
-
-        void SetViewFormats(WebGPUVectorTextureFormat* values) {
-            if(values != NULL) {
-                Get().viewFormatCount = values->size();
-                Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(values->data());
-            }
-            else {
-                Get().viewFormatCount = 0;
-                Get().viewFormats = NULL;
-            }
-        }
-
-        void SetUsage(WGPUTextureUsage usage) {
-            Get().usage = usage;
-        }
-
-        void SetDevice(WebGPUDevice* device) {
-            Get().device = device != NULL ? device->Get() : NULL;
-        }
-
-        void SetPresentMode(WGPUPresentMode presentMode) {
-            Get().presentMode = presentMode;
-        }
-
-        void SetAlphaMode(WGPUCompositeAlphaMode alphaMode) {
-            Get().alphaMode = alphaMode;
-        }
+        static WebGPUSurfaceConfiguration Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetWidth(long width);
+        void SetHeight(long height);
+        void SetFormat(WGPUTextureFormat format);
+        void SetViewFormatCount(long value);
+        void SetViewFormats(WebGPUVectorTextureFormat* values);
+        void SetUsage(WGPUTextureUsage usage);
+        void SetDevice(WebGPUDevice* device);
+        void SetPresentMode(WGPUPresentMode presentMode);
+        void SetAlphaMode(WGPUCompositeAlphaMode alphaMode);
 };
 
 class WebGPUSurfaceCapabilities : public WebGPUObjectBase<WebGPUSurfaceCapabilities, WGPUSurfaceCapabilities> {
     public:
-
-        static WebGPUSurfaceCapabilities Obtain() {
-            WebGPUSurfaceCapabilities obj;
-            return obj;
-        }
-
-        WGPUTextureFormat GetFormats(int index) {
-            return Get().formats[index];
-        }
+        static WebGPUSurfaceCapabilities Obtain();
+        WGPUTextureFormat GetFormats(int index);
 };
 
 class WebGPUAdapter : public WebGPUObjectBase<WebGPUAdapter, WGPUAdapter> {
     protected:
-
-        void AddRefInternal() {
-            wgpuAdapterAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuAdapterRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void RequestDevice(WebGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
-            descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const WGPUDevice* device, WGPUErrorType type, WGPUStringView message, void* callback_param, void* userdata_param) {
-                UncapturedErrorCallback* cback = reinterpret_cast<UncapturedErrorCallback*>(callback_param);
-                cback->OnCallback(type, message.data);
-           };
-           descriptor->Get().uncapturedErrorCallbackInfo.userdata1 = reinterpret_cast<void*>(errorCallback);
-           descriptor->Get().uncapturedErrorCallbackInfo.userdata2 = NULL;
-
-            WGPURequestDeviceCallbackInfo callbackInfo = {};
-            callbackInfo.mode = mode;
-            callbackInfo.callback = [](WGPURequestDeviceStatus status, WGPUDevice dev, WGPUStringView message, void* callback_param, void* userdata_param) {
-                RequestDeviceCallback* cback = reinterpret_cast<RequestDeviceCallback*>(callback_param);
-                WebGPUDevice* device = new WebGPUDevice();
-                device->Set(dev);
-                cback->OnCallback(status, device);
-            };
-            callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
-            callbackInfo.userdata2 = NULL;
-            const WGPUDeviceDescriptor* desc = reinterpret_cast<WGPUDeviceDescriptor const*>(descriptor);
-            auto result = wgpuAdapterRequestDevice(Get(), desc, callbackInfo);
-        }
-
-        bool GetInfo(WebGPUAdapterInfo* adapterInfo) {
-            WGPUStatus status = wgpuAdapterGetInfo(Get(), &(adapterInfo->Get()));
-            return status == WGPUStatus_Success;
-        }
-
-        bool HasFeature(WGPUFeatureName featureName) {
-            return wgpuAdapterHasFeature(Get(), featureName);
-        }
+        void RequestDevice(WebGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback);
+        bool GetInfo(WebGPUAdapterInfo* adapterInfo);
+        bool HasFeature(WGPUFeatureName featureName);
 };
 
 class WebGPURenderPassColorAttachment : public WebGPUObjectBase<WebGPURenderPassColorAttachment, WGPURenderPassColorAttachment> {
     public:
-        WebGPURenderPassColorAttachment() {
-            SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
-        }
-
-        static WebGPURenderPassColorAttachment Obtain() {
-            WebGPURenderPassColorAttachment renderPassColorAttachment;
-            return renderPassColorAttachment;
-        }
-
-        void SetResolveTarget(WebGPUTextureView* textureView) {
-            Get().resolveTarget = textureView == NULL ? NULL : textureView->Get();
-        }
-
-        void SetView(WebGPUTextureView* textureView) {
-            Get().view = textureView == NULL ? NULL : textureView->Get();
-        }
-
-        void SetLoadOp(WGPULoadOp loadOp) {
-            Get().loadOp = loadOp;
-        }
-
-        void SetStoreOp(WGPUStoreOp storeOp) {
-            Get().storeOp = storeOp;
-        }
-
-        void SetDepthSlice(int depthSlice) {
-            Get().depthSlice = depthSlice;
-        }
-
-        WebGPUColor GetClearValue() {
-            WebGPUColor temp(&Get().clearValue);
-            return temp;
-        }
+        WebGPURenderPassColorAttachment();
+        static WebGPURenderPassColorAttachment Obtain();
+        void SetResolveTarget(WebGPUTextureView* textureView);
+        void SetView(WebGPUTextureView* textureView);
+        void SetLoadOp(WGPULoadOp loadOp);
+        void SetStoreOp(WGPUStoreOp storeOp);
+        void SetDepthSlice(int depthSlice);
+        WebGPUColor GetClearValue();
 };
 
 class WebGPUSurfaceTexture : public WebGPUObjectBase<WebGPUSurfaceTexture, WGPUSurfaceTexture> {
     public:
-        static WebGPUSurfaceTexture Obtain() {
-            WebGPUSurfaceTexture obj;
-            return obj;
-        }
-
-        void GetTexture(WebGPUTexture* tex) {
-            tex->Set(Get().texture);
-        }
-
-        WGPUSurfaceGetCurrentTextureStatus GetStatus() {
-            return Get().status;
-        }
+        static WebGPUSurfaceTexture Obtain();
+        void GetTexture(WebGPUTexture* tex);
+        WGPUSurfaceGetCurrentTextureStatus GetStatus();
 };
 
 class WebGPUSurface : public WebGPUObjectBase<WebGPUSurface, WGPUSurface> {
     protected:
-
-        void AddRefInternal() {
-            wgpuSurfaceAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuSurfaceRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        void Unconfigure() {
-            wgpuSurfaceUnconfigure(Get());
-        }
-
-        void Configure(WebGPUSurfaceConfiguration* config) {
-            wgpuSurfaceConfigure(Get(), reinterpret_cast<WGPUSurfaceConfiguration const * >(config));
-        }
-
-        void GetCapabilities(WebGPUAdapter* adapter, WebGPUSurfaceCapabilities* surfaceCapabilities) {
-            wgpuSurfaceGetCapabilities(Get(), adapter->Get(), &(surfaceCapabilities->Get()));
-        }
-
-        void GetCurrentTexture(WebGPUSurfaceTexture* tex) {
-            wgpuSurfaceGetCurrentTexture(Get(), &tex->Get());
-        }
-
-        void Present() {
-            wgpuSurfacePresent(Get());
-        }
+        void Unconfigure();
+        void Configure(WebGPUSurfaceConfiguration* config);
+        void GetCapabilities(WebGPUAdapter* adapter, WebGPUSurfaceCapabilities* surfaceCapabilities);
+        void GetCurrentTexture(WebGPUSurfaceTexture* tex);
+        void Present();
 };
 
 class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
     private:
-        void AddRefInternal() {
-            wgpuInstanceAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuInstanceRelease(Get());
-        }
-
+        void AddRefInternal();
+        void ReleaseInternal();
     public:
-
-        bool IsValid() {
-            return Get() ? true : false;
-        }
-
-        void RequestAdapter(WebGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
-            WGPURequestAdapterCallbackInfo callbackInfo = {};
-            callbackInfo.mode = mode;
-            callbackInfo.callback = [](WGPURequestAdapterStatus status, WGPUAdapter ad, WGPUStringView message, void* callback_param, void*) {
-                RequestAdapterCallback* cback = reinterpret_cast<RequestAdapterCallback*>(callback_param);
-                WebGPUAdapter* adapter = new WebGPUAdapter();
-                adapter->Set(ad);
-                cback->OnCallback(status, adapter);
-            };
-            callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
-            callbackInfo.userdata2 = NULL;
-            auto result = wgpuInstanceRequestAdapter(Get(), &(options->Get()), callbackInfo);
-        }
-
-        WebGPUSurface* CreateWebSurface(const char* canvas) {
-            #ifdef __EMSCRIPTEN__
-                WGPUEmscriptenSurfaceSourceCanvasHTMLSelector canvasDesc {};
-                WebGPUStringView stringView(canvas);
-                canvasDesc.chain.sType = WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector;
-                canvasDesc.selector = stringView.Get();
-                WGPUSurfaceDescriptor surfDesc{};
-                surfDesc.nextInChain = (WGPUChainedStruct*)&canvasDesc;
-                WebGPUSurface* surface = new WebGPUSurface();
-                surface->Set(wgpuInstanceCreateSurface(Get(), &surfDesc));
-            #else
-                WebGPUSurface* surface = NULL;
-            #endif
-            return surface;
-        }
-
-        WebGPUSurface* CreateWindowsSurface(void * hwnd) {
-            WebGPUSurface* surface = NULL;
-            #if _WIN32
-                surface = new WebGPUSurface();
-                HINSTANCE hinstance = GetModuleHandle(NULL);
-                WGPUSurfaceSourceWindowsHWND fromWindowsHWND;
-                fromWindowsHWND.chain.next = NULL;
-                fromWindowsHWND.chain.sType = WGPUSType_SurfaceSourceWindowsHWND;
-                fromWindowsHWND.hinstance = hinstance;
-                fromWindowsHWND.hwnd = hwnd;
-                WGPUSurfaceDescriptor surfaceDescriptor{};
-                surfaceDescriptor.nextInChain = &fromWindowsHWND.chain;
-                surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
-            #endif
-            return surface;
-        }
-
-        WebGPUSurface* CreateLinuxSurface(bool isWayland, void * windowOrSurface, void* display) {
-            WebGPUSurface* surface = NULL;
-            #if __linux__
-                surface = new WebGPUSurface();
-                if(isWayland) {
-                    WGPUSurfaceSourceWaylandSurface fromLinux;
-                    fromLinux.chain.next = NULL;
-                    fromLinux.chain.sType = WGPUSType_SurfaceSourceWaylandSurface;
-                    fromLinux.display = display;
-                    fromLinux.surface = windowOrSurface;
-                    WGPUSurfaceDescriptor surfaceDescriptor{};
-                    surfaceDescriptor.nextInChain = &fromLinux.chain;
-                    surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
-                }
-                else {
-                    WGPUSurfaceSourceXlibWindow fromLinux;
-                    fromLinux.chain.next = NULL;
-                    fromLinux.chain.sType = WGPUSType_SurfaceSourceXlibWindow;
-                    fromLinux.display = display;
-                    fromLinux.window = (uint64_t)windowOrSurface;
-                    WGPUSurfaceDescriptor surfaceDescriptor{};
-                    surfaceDescriptor.nextInChain = &fromLinux.chain;
-                    surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
-                }
-            #endif
-            return surface;
-        }
-
-        WebGPUSurface* CreateMacSurface(void * windowHandle) {
-            WebGPUSurface* surface = NULL;
-            #if TARGET_OS_MAC
-                surface = new WebGPUSurface();
-                id metal_layer = [CAMetalLayer layer];
-
-                NSWindow* ns_window = (NSWindow*)windowHandle;
-                [ns_window.contentView setWantsLayer : YES];
-                [ns_window.contentView setLayer : metal_layer];
-
-                WGPUSurfaceSourceMetalLayer fromMac;
-                fromMac.chain.next = NULL;
-                fromMac.chain.sType = WGPUSType_SurfaceSourceMetalLayer;
-                fromMac.layer = metal_layer;
-                WGPUSurfaceDescriptor surfaceDescriptor{};
-                surfaceDescriptor.nextInChain = &fromMac.chain;
-                surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
-            #endif
-            return surface;
-        }
-
-        WebGPUSurface* CreateAndroidSurface(WGPUAndroidWindow* window) {
-            WebGPUSurface* surface = NULL;
-            #if __ANDROID__
-                void* androidWindow = window->GetWindow();
-                surface = new WebGPUSurface();
-                WGPUSurfaceSourceAndroidNativeWindow androidSurfaceWindow;
-                androidSurfaceWindow.chain.next = NULL;
-                androidSurfaceWindow.chain.sType = WGPUSType_SurfaceSourceAndroidNativeWindow;
-                androidSurfaceWindow.window = androidWindow;
-                WGPUSurfaceDescriptor surfaceDescriptor{};
-                surfaceDescriptor.nextInChain = &androidSurfaceWindow.chain;
-                surface->Set(wgpuInstanceCreateSurface(Get(), &surfaceDescriptor));
-            #endif
-            return surface;
-        }
-
-        void ProcessEvents() {
-            wgpuInstanceProcessEvents(Get());
-        }
+        bool IsValid();
+        void RequestAdapter(WebGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback);
+        WebGPUSurface* CreateWebSurface(const char* canvas);
+        WebGPUSurface* CreateWindowsSurface(void * hwnd);
+        WebGPUSurface* CreateLinuxSurface(bool isWayland, void * windowOrSurface, void* display);
+        WebGPUSurface* CreateMacSurface(void * windowHandle);
+        WebGPUSurface* CreateAndroidSurface(WGPUAndroidWindow* window);
+        void ProcessEvents();
 };
 
 class WGPU {
-    private:
-
     public:
-        static WGPUPlatformType GetPlatformType() {
-            #if __EMSCRIPTEN__
-                return WGPUPlatformType::WGPU_Web;
-            #elif __ANDROID__
-                 return WGPUPlatformType::WGPU_Android;
-            #elif TARGET_OS_IPHONE
-                return WGPUPlatformType::WGPU_iOS;
-            #elif _WIN32
-                return WGPUPlatformType::WGPU_Windows;
-            #elif __linux__
-                return WGPUPlatformType::WGPU_Linux;
-            #elif TARGET_OS_MAC
-                return WGPUPlatformType::WGPU_Mac;
-            #else
-                return WGPUPlatformType::WGPU_Unknown;
-            #endif
-        }
-
-        static WebGPUInstance CreateInstance() {
-            WebGPUInstance instance;
-            instance.Set(wgpuCreateInstance(NULL));
-            return instance;
-        }
+        static WGPUPlatformType GetPlatformType();
+        static WebGPUInstance CreateInstance();
 };
