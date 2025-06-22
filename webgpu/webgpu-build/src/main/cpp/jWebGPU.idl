@@ -671,6 +671,19 @@ interface WebGPUComputePassDescriptor {
     void SetTimestampWrites(WebGPUComputePassTimestampWrites timestampWrites);
 };
 
+interface WebGPUTextureDescriptor {
+    void WebGPUTextureDescriptor();
+    [Value] static WebGPUTextureDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString value);
+    void SetDimension(WGPUTextureDimension dimension);
+    void SetSize(WebGPUExtent3D size);
+    void SetFormat(WGPUTextureFormat format);
+    void SetMipLevelCount(long mipLevelCount);
+    void SetSampleCount(long sampleCount);
+    void SetViewFormats(WebGPUVectorTextureFormat viewFormats);
+};
+
 interface WebGPUTextureViewDescriptor {
     void WebGPUTextureViewDescriptor();
     [Value] static WebGPUTextureViewDescriptor Obtain();

@@ -894,6 +894,20 @@ class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDes
         void SetTimestampWrites(WebGPUComputePassTimestampWrites* timestampWrites);
 };
 
+class WebGPUTextureDescriptor : public WebGPUObjectBase<WebGPUTextureDescriptor, WGPUTextureDescriptor> {
+    public:
+        static WebGPUTextureDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetUsage(WGPUTextureUsage usage);
+        void SetDimension(WGPUTextureDimension dimension);
+        void SetSize(WebGPUExtent3D* size);
+        void SetFormat(WGPUTextureFormat format);
+        void SetMipLevelCount(int mipLevelCount);
+        void SetSampleCount(int sampleCount);
+        void SetViewFormats(WebGPUVectorTextureFormat* viewFormats);
+};
+
 class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDescriptor, WGPUTextureViewDescriptor> {
     public:
         static WebGPUTextureViewDescriptor Obtain();

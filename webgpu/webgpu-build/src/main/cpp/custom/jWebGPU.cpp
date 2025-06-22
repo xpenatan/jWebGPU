@@ -1643,6 +1643,56 @@ void WebGPUComputePassDescriptor::SetTimestampWrites(WebGPUComputePassTimestampW
     Get().timestampWrites = timestampWrites != NULL ? &timestampWrites->Get() : NULL;
 }
 
+// WebGPUTextureDescriptor
+WebGPUTextureDescriptor WebGPUTextureDescriptor::Obtain() {
+    WebGPUTextureDescriptor obj;
+    return obj;
+}
+
+void WebGPUTextureDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
+void WebGPUTextureDescriptor::SetLabel(const char* value) {
+    WebGPUStringView stringView(value);
+    Get().label = stringView.Get();
+}
+
+void WebGPUTextureDescriptor::SetUsage(WGPUTextureUsage usage) {
+    Get().usage = usage;
+}
+
+void WebGPUTextureDescriptor::SetDimension(WGPUTextureDimension dimension) {
+    Get().dimension = dimension;
+}
+
+void WebGPUTextureDescriptor::SetSize(WebGPUExtent3D* size) {
+    Get().size = size->Get();
+}
+
+void WebGPUTextureDescriptor::SetFormat(WGPUTextureFormat format) {
+    Get().format = format;
+}
+
+void WebGPUTextureDescriptor::SetMipLevelCount(int mipLevelCount) {
+    Get().mipLevelCount = mipLevelCount;
+}
+
+void WebGPUTextureDescriptor::SetSampleCount(int sampleCount) {
+    Get().sampleCount = sampleCount;
+}
+
+void WebGPUTextureDescriptor::SetViewFormats(WebGPUVectorTextureFormat* viewFormats) {
+    if(viewFormats != NULL) {
+        Get().viewFormatCount = viewFormats->size();
+        Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(viewFormats->data());
+    }
+    else {
+        Get().viewFormatCount = 0;
+        Get().viewFormats = NULL;
+    }
+}
+
 // WebGPURenderPassDescriptor
 WebGPURenderPassDescriptor WebGPURenderPassDescriptor::Obtain() {
     WebGPURenderPassDescriptor obj;
