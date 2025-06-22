@@ -1104,7 +1104,7 @@ class WebGPUPipelineLayoutDescriptor : public WebGPUObjectBase<WebGPUPipelineLay
             Get().label = stringView.Get();
         }
 
-        void SetBindGroupLayoutCount(WebGPUVectorBindGroupLayout* bindGroupLayouts) {
+        void SetBindGroupLayouts(WebGPUVectorBindGroupLayout* bindGroupLayouts) {
             if(bindGroupLayouts != NULL) {
                 Get().bindGroupLayoutCount = bindGroupLayouts->size();
                 Get().bindGroupLayouts = reinterpret_cast<const WGPUBindGroupLayout*>(bindGroupLayouts->data());

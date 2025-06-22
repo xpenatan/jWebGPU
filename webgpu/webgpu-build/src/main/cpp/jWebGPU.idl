@@ -536,7 +536,7 @@ interface WebGPUPipelineLayoutDescriptor {
     [Value] static WebGPUPipelineLayoutDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString code);
-    void SetBindGroupLayoutCount(WebGPUVectorBindGroupLayout bindGroupLayouts);
+    void SetBindGroupLayouts(WebGPUVectorBindGroupLayout bindGroupLayouts);
 };
 
 interface WebGPUDeviceDescriptor {
