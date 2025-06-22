@@ -647,9 +647,21 @@ interface WebGPUCommandBuffer {
     void Release();
 };
 
+interface WebGPUOrigin3D {
+    void WebGPUOrigin3D();
+    [Value] static WebGPUOrigin3D Obtain();
+    void Set(long x, long y, long z);
+    void SetX(long value);
+    void SetY(long value);
+    void SetZ(long value);
+};
+
 interface WebGPUTexelCopyTextureInfo {
     void WebGPUTexelCopyTextureInfo();
     [Value] static WebGPUTexelCopyTextureInfo Obtain();
+    void SetTexture(WebGPUTexture texture);
+    void SetMipLevel(long mipLevel);
+    void SetAspect(WGPUTextureAspect aspect);
 };
 
 interface WebGPUExtent3D {

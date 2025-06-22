@@ -1937,6 +1937,125 @@ class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDes
         }
 };
 
+class WebGPUOrigin3D : public WebGPUObjectBase<WebGPUOrigin3D, WGPUOrigin3D> {
+    public:
+
+        static WebGPUOrigin3D Obtain() {
+            WebGPUOrigin3D obj;
+            return obj;
+        }
+
+        void Set(int x, int y, int z) {
+            Get().x = x;
+            Get().y = y;
+            Get().z = z;
+        }
+
+        void SetX(int value) {
+            Get().x = value;
+        }
+
+        void SetY(int value) {
+            Get().y = value;
+        }
+
+        void SetZ(int value) {
+            Get().z = value;
+        }
+};
+
+class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDescriptor, WGPUTextureViewDescriptor> {
+    public:
+
+    static WebGPUTextureViewDescriptor Obtain() {
+        WebGPUTextureViewDescriptor obj;
+        return obj;
+    }
+
+    void SetLabel(const char* value) {
+        WebGPUStringView stringView(value);
+        Get().label = stringView.Get();
+    }
+
+    void SetFormat(WGPUTextureFormat format) {
+        Get().format = format;
+    }
+
+    void SetDimension(WGPUTextureViewDimension dimension) {
+        Get().dimension = dimension;
+    }
+
+    void SetBaseMipLevel(int baseMipLevel) {
+        Get().baseMipLevel = baseMipLevel;
+    }
+
+    void SetMipLevelCount(int mipLevelCount) {
+        Get().mipLevelCount = mipLevelCount;
+    }
+
+    void SetBaseArrayLayer(int baseArrayLayer) {
+        Get().baseArrayLayer = baseArrayLayer;
+    }
+
+    void SetArrayLayerCount(int arrayLayerCount) {
+        Get().arrayLayerCount = arrayLayerCount;
+    }
+
+    void SetAspect(WGPUTextureAspect aspect) {
+        Get().aspect = aspect;
+    }
+
+    void SetUsage(WGPUTextureUsage usage) {
+        Get().usage = usage;
+    }
+};
+
+class WebGPUTextureView : public WebGPUObjectBase<WebGPUTextureView, WGPUTextureView> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuTextureViewAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuTextureViewRelease(Get());
+        }
+
+    public:
+
+        static WebGPUTextureView Obtain() {
+            WebGPUTextureView obj;
+            return obj;
+        }
+};
+
+class WebGPUTexture : public WebGPUObjectBase<WebGPUTexture, WGPUTexture> {
+    protected:
+
+        void AddRefInternal() {
+            wgpuTextureAddRef(Get());
+        }
+
+        void ReleaseInternal() {
+            wgpuTextureRelease(Get());
+        }
+
+    public:
+
+        static WebGPUTexture Obtain() {
+            WebGPUTexture obj;
+            return obj;
+        }
+
+        void CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView) {
+            textureView->Set(wgpuTextureCreateView(Get(), &(textureViewDescriptor->Get())));
+        }
+
+        WGPUTextureFormat GetFormat() {
+            return wgpuTextureGetFormat(Get());
+        }
+};
+
 class WebGPUTexelCopyTextureInfo : public WebGPUObjectBase<WebGPUTexelCopyTextureInfo, WGPUTexelCopyTextureInfo> {
     public:
 
@@ -1945,6 +2064,21 @@ class WebGPUTexelCopyTextureInfo : public WebGPUObjectBase<WebGPUTexelCopyTextur
             return obj;
         }
 
+        void SetTexture(WebGPUTexture* texture) {
+            Get().texture = texture->Get();
+        }
+
+        void SetMipLevel(int mipLevel) {
+            Get().mipLevel = mipLevel;
+        }
+
+        void SetOrigin(WebGPUOrigin3D origin) {
+            Get().origin = origin.Get();
+        }
+
+        void SetAspect(WGPUTextureAspect aspect) {
+            Get().aspect = aspect;
+        }
 };
 
 class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D> {
@@ -2256,115 +2390,6 @@ class WebGPUAdapter : public WebGPUObjectBase<WebGPUAdapter, WGPUAdapter> {
 
         bool HasFeature(WGPUFeatureName featureName) {
             return wgpuAdapterHasFeature(Get(), featureName);
-        }
-};
-
-//struct WebGPUTextureViewDescriptor {
-//    WebGPUChainedStruct const * nextInChain = NULL;
-//    WGPUStringView label;
-//    WGPUTextureFormat format;
-//    WGPUTextureViewDimension dimension;
-//    uint32_t baseMipLevel;
-//    uint32_t mipLevelCount;
-//    uint32_t baseArrayLayer;
-//    uint32_t arrayLayerCount;
-//    WGPUTextureAspect aspect;
-//    WGPUTextureUsage usage;
-
-//    inline operator const WGPUTextureViewDescriptor&() const noexcept {
-//        return *reinterpret_cast<const WGPUTextureViewDescriptor*>(this);
-//    }
-//}
-
-class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDescriptor, WGPUTextureViewDescriptor> {
-    public:
-
-    static WebGPUTextureViewDescriptor Obtain() {
-        WebGPUTextureViewDescriptor obj;
-        return obj;
-    }
-
-    void SetLabel(const char* value) {
-        WebGPUStringView stringView(value);
-        Get().label = stringView.Get();
-    }
-
-    void SetFormat(WGPUTextureFormat format) {
-        Get().format = format;
-    }
-
-    void SetDimension(WGPUTextureViewDimension dimension) {
-        Get().dimension = dimension;
-    }
-
-    void SetBaseMipLevel(int baseMipLevel) {
-        Get().baseMipLevel = baseMipLevel;
-    }
-
-    void SetMipLevelCount(int mipLevelCount) {
-        Get().mipLevelCount = mipLevelCount;
-    }
-
-    void SetBaseArrayLayer(int baseArrayLayer) {
-        Get().baseArrayLayer = baseArrayLayer;
-    }
-
-    void SetArrayLayerCount(int arrayLayerCount) {
-        Get().arrayLayerCount = arrayLayerCount;
-    }
-
-    void SetAspect(WGPUTextureAspect aspect) {
-        Get().aspect = aspect;
-    }
-
-    void SetUsage(WGPUTextureUsage usage) {
-        Get().usage = usage;
-    }
-};
-
-class WebGPUTextureView : public WebGPUObjectBase<WebGPUTextureView, WGPUTextureView> {
-    protected:
-
-        void AddRefInternal() {
-            wgpuTextureViewAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuTextureViewRelease(Get());
-        }
-
-    public:
-
-        static WebGPUTextureView Obtain() {
-            WebGPUTextureView obj;
-            return obj;
-        }
-};
-
-class WebGPUTexture : public WebGPUObjectBase<WebGPUTexture, WGPUTexture> {
-    protected:
-
-        void AddRefInternal() {
-            wgpuTextureAddRef(Get());
-        }
-
-        void ReleaseInternal() {
-            wgpuTextureRelease(Get());
-        }
-
-    public:
-
-        static WebGPUTexture Obtain() {
-            WebGPUTexture obj;
-            return obj;
-        }
-
-        void CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView) {
-            textureView->Set(wgpuTextureCreateView(Get(), &(textureViewDescriptor->Get())));
-        }
-
-        WGPUTextureFormat GetFormat() {
-            return wgpuTextureGetFormat(Get());
         }
 };
 
