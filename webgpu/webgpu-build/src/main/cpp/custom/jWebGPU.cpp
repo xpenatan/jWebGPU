@@ -366,6 +366,10 @@ void WGPUFloatBuffer::put(float value) {
     parent._position += sizeof(value);
 }
 
+void WGPUFloatBuffer::put(int index, float value) {
+    parent.putNumeric(index, value);
+}
+
 float WGPUFloatBuffer::get() {
     if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
         throw std::out_of_range("FloatBuffer underflow");
@@ -415,13 +419,16 @@ WGPUByteBuffer& WGPUShortBuffer::getByteBuffer() {
     return parent;
 }
 
-WGPUShortBuffer& WGPUShortBuffer::put(int16_t value) {
+void WGPUShortBuffer::put(int16_t value) {
     if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
         throw std::out_of_range("ShortBuffer overflow");
     }
     parent.putNumeric(parent._position, value);
     parent._position += sizeof(value);
-    return *this;
+}
+
+void WGPUShortBuffer::put(int index, int16_t value) {
+    parent.putNumeric(index, value);
 }
 
 int16_t WGPUShortBuffer::get() {
@@ -1588,6 +1595,61 @@ WebGPUInstance WGPU::CreateInstance() {
 }
 
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+// WebGPUSamplerDescriptor
+WebGPUSamplerDescriptor WebGPUSamplerDescriptor::Obtain() {
+    WebGPUSamplerDescriptor obj;
+    return obj;
+}
+
+void WebGPUSamplerDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
+void WebGPUSamplerDescriptor::SetLabel(const char* value) {
+    WebGPUStringView stringView(value);
+    Get().label = stringView.Get();
+}
+
+void WebGPUSamplerDescriptor::SetAddressModeU(WGPUAddressMode addressModeU) {
+    Get().addressModeU = addressModeU;
+}
+
+void WebGPUSamplerDescriptor::SetAddressModeV(WGPUAddressMode addressModeV) {
+    Get().addressModeV = addressModeV;
+}
+
+void WebGPUSamplerDescriptor::SetAddressModeW(WGPUAddressMode addressModeW) {
+    Get().addressModeW = addressModeW;
+}
+
+void WebGPUSamplerDescriptor::SetMagFilter(WGPUFilterMode magFilter) {
+    Get().magFilter = magFilter;
+}
+
+void WebGPUSamplerDescriptor::SetMinFilter(WGPUFilterMode minFilter) {
+    Get().minFilter = minFilter;
+}
+
+void WebGPUSamplerDescriptor::SetMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
+    Get().mipmapFilter = mipmapFilter;
+}
+
+void WebGPUSamplerDescriptor::SetLodMinClamp(float lodMinClamp) {
+    Get().lodMinClamp = lodMinClamp;
+}
+
+void WebGPUSamplerDescriptor::SetLodMaxClamp(float lodMaxClamp) {
+    Get().lodMaxClamp = lodMaxClamp;
+}
+
+void WebGPUSamplerDescriptor::SetCompare(WGPUCompareFunction compare) {
+    Get().compare = compare;
+}
+
+void WebGPUSamplerDescriptor::SetMaxAnisotropy(int maxAnisotropy) {
+    Get().maxAnisotropy = maxAnisotropy;
+}
 
 // WebGPUTextureViewDescriptor
 WebGPUTextureViewDescriptor WebGPUTextureViewDescriptor::Obtain() {

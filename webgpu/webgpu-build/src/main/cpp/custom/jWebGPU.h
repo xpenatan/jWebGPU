@@ -178,6 +178,7 @@ class WGPUFloatBuffer {
         WGPUFloatBuffer(WGPUByteBuffer& bb);
         WGPUByteBuffer& getByteBuffer();
         void put(float value);
+        void put(int index, float value);
         float get();
         long remaining() const;
         void position(int newPosition);
@@ -195,7 +196,8 @@ class WGPUShortBuffer {
         size_t shortLimit;
         WGPUShortBuffer(WGPUByteBuffer& bb);
         WGPUByteBuffer& getByteBuffer();
-        WGPUShortBuffer& put(int16_t value);
+        void put(int16_t value);
+        void put(int index, int16_t value);
         int16_t get();
         void clear();
         void limit(int newLimit);
@@ -796,6 +798,23 @@ class WebGPUSurfaceTexture : public WebGPUObjectBase<WebGPUSurfaceTexture, WGPUS
 };
 
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+class WebGPUSamplerDescriptor : public WebGPUObjectBase<WebGPUSamplerDescriptor, WGPUSamplerDescriptor> {
+    public:
+        static WebGPUSamplerDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetAddressModeU(WGPUAddressMode addressModeU);
+        void SetAddressModeV(WGPUAddressMode addressModeV);
+        void SetAddressModeW(WGPUAddressMode addressModeW);
+        void SetMagFilter(WGPUFilterMode magFilter);
+        void SetMinFilter(WGPUFilterMode minFilter);
+        void SetMipmapFilter(WGPUMipmapFilterMode mipmapFilter);
+        void SetLodMinClamp(float lodMinClamp);
+        void SetLodMaxClamp(float lodMaxClamp);
+        void SetCompare(WGPUCompareFunction compare);
+        void SetMaxAnisotropy(int maxAnisotropy);
+};
 
 class WebGPUBindGroupLayoutDescriptor : public WebGPUObjectBase<WebGPUBindGroupLayoutDescriptor, WGPUBindGroupLayoutDescriptor> {
     public:

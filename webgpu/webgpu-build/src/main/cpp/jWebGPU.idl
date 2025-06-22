@@ -31,7 +31,8 @@ interface WGPUByteBuffer {
 
 interface WGPUFloatBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
-    void put(float value);
+    [BindTo="put"] void put_0(float value);
+    [BindTo="put"] void put_1(long index, float value);
     long remaining();
     void clear();
     void limit(long newLimit);
@@ -42,7 +43,8 @@ interface WGPUFloatBuffer {
 
 interface WGPUShortBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
-    void put(short value);
+    [BindTo="put"] void put_0(short value);
+    [BindTo="put"] void put_1(long index, short value);
     long remaining();
     void clear();
     void limit(long newLimit);
@@ -558,6 +560,23 @@ interface WebGPUStorageTextureBindingLayout {
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
+interface WebGPUSamplerDescriptor {
+    void WebGPUSamplerDescriptor();
+    [Value] static WebGPUSamplerDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString code);
+    void SetAddressModeU(WGPUAddressMode addressModeU);
+    void SetAddressModeV(WGPUAddressMode addressModeV);
+    void SetAddressModeW(WGPUAddressMode addressModeW);
+    void SetMagFilter(WGPUFilterMode magFilter);
+    void SetMinFilter(WGPUFilterMode minFilter);
+    void SetMipmapFilter(WGPUMipmapFilterMode mipmapFilter);
+    void SetLodMinClamp(float lodMinClamp);
+    void SetLodMaxClamp(float lodMaxClamp);
+    void SetCompare(WGPUCompareFunction compare);
+    void SetMaxAnisotropy(long maxAnisotropy);
+};
+
 interface WebGPUBindGroupLayoutDescriptor {
     void WebGPUBindGroupLayoutDescriptor();
     [Value] static WebGPUBindGroupLayoutDescriptor Obtain();
@@ -838,6 +857,7 @@ interface WebGPUCommandEncoder {
 };
 
 interface WebGPUBuffer {
+    void WebGPUBuffer();
     void Release();
     void Destroy();
     void Unmap();
