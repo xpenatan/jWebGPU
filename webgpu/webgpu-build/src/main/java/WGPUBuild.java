@@ -209,7 +209,7 @@ public class WGPUBuild {
         linkTarget.cppFlags.add("--use-port=" + port);
         linkTarget.cppFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--use-port=" + port);
-        linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "WebGPUCustom.h");
+        linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "jWebGPU.h");
         linkTarget.linkerFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--closure-args=--externs=" + jsLib);
         multiTarget.add(linkTarget);

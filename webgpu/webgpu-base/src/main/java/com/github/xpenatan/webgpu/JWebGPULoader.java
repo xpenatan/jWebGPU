@@ -9,7 +9,7 @@ import com.github.xpenatan.jparser.loader.JParserLibraryLoaderListener;
 public class JWebGPULoader {
 
     /*[-JNI;-NATIVE]
-        #include "WebGPUCustom.h"
+        #include "jWebGPU.h"
     */
 
     public static void init(JParserLibraryLoaderListener listener) {
