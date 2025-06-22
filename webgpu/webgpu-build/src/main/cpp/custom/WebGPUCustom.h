@@ -112,10 +112,12 @@ class WGPUShortBuffer;
 #ifdef __EMSCRIPTEN__
 
 using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
+using WGPUComputePassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
 
 #else
 
 using WGPURenderPassTimestampWrites = WGPURenderPassTimestampWrites;  // wgpu-native version TODO remove when both are the same
+using WGPUComputePassTimestampWrites = WGPUComputePassTimestampWrites;  // wgpu-native version TODO remove when both are the same
 
 #endif //__EMSCRIPTEN__
 
@@ -1894,6 +1896,28 @@ class WebGPURenderPassTimestampWrites : public WebGPUObjectBase<WebGPURenderPass
         }
 };
 
+// TODO The class name differs from those in Dawn and wgpu-native.
+class WebGPUComputePassTimestampWrites : public WebGPUObjectBase<WebGPUComputePassTimestampWrites, WGPUComputePassTimestampWrites> {
+    public:
+
+        static WebGPUComputePassTimestampWrites Obtain() {
+            WebGPUComputePassTimestampWrites obj;
+            return obj;
+        }
+
+        void SetQuerySet(WebGPUQuerySet* value) {
+            Get().querySet = value->Get();
+        }
+
+        void SetBeginningOfPassWriteIndex(int value) {
+            Get().beginningOfPassWriteIndex = value;
+        }
+
+        void SetEndOfPassWriteIndex(int value) {
+            Get().endOfPassWriteIndex = value;
+        }
+};
+
 class WebGPUCommandEncoderDescriptor : public WebGPUObjectBase<WebGPUCommandEncoderDescriptor, WGPUCommandEncoderDescriptor> {
     public:
 
@@ -1971,9 +1995,17 @@ class WebGPUComputePassDescriptor : public WebGPUObjectBase<WebGPUComputePassDes
             return obj;
         }
 
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+            Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+        }
+
         void SetLabel(const char* value) {
             WebGPUStringView stringView(value);
             Get().label = stringView.Get();
+        }
+
+        void SetTimestampWrites(WebGPUComputePassTimestampWrites* timestampWrites) {
+            Get().timestampWrites = timestampWrites != NULL ? &timestampWrites->Get() : NULL;
         }
 };
 

@@ -567,6 +567,7 @@ interface WebGPUCommandBufferDescriptor  {
 interface WebGPUComputePassDescriptor {
     void WebGPUComputePassDescriptor();
     [Value] static WebGPUComputePassDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
