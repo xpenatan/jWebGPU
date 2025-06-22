@@ -2061,8 +2061,31 @@ class WebGPUCommandEncoder : public WebGPUObjectBase<WebGPUCommandEncoder, WGPUC
             commandBuffer->Set(wgpuCommandEncoderFinish(Get(), &(commandBufferDescriptor->Get())));
         }
 
+        void InsertDebugMarker(const char* markerLabel) {
+            WebGPUStringView stringView(markerLabel);
+            wgpuCommandEncoderInsertDebugMarker(Get(), stringView.Get());
+        }
+
+        void PopDebugGroup() {
+            wgpuCommandEncoderPopDebugGroup(Get());
+        }
+
+        void PushDebugGroup(const char* groupLabel) {
+            WebGPUStringView stringView(groupLabel);
+            wgpuCommandEncoderPushDebugGroup(Get(), stringView.Get());
+        }
+
         void ResolveQuerySet(WebGPUQuerySet* querySet, int firstQuery, int queryCount, WebGPUBuffer* destination, int destinationOffset) {
             wgpuCommandEncoderResolveQuerySet(Get(), querySet->Get(), firstQuery, queryCount, destination->Get(), destinationOffset);
+        }
+
+        void SetLabel(const char* groupLabel) {
+            WebGPUStringView stringView(groupLabel);
+            wgpuCommandEncoderSetLabel(Get(), stringView.Get());
+        }
+
+        void WriteTimestamp(WebGPUQuerySet* querySet, int queryIndex) {
+            wgpuCommandEncoderWriteTimestamp(Get(), querySet->Get(), queryIndex);
         }
 };
 

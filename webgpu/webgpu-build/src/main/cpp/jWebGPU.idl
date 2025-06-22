@@ -685,7 +685,12 @@ interface WebGPUCommandEncoder {
     void TextureToBuffer(WebGPUTexelCopyTextureInfo source, WebGPUTexelCopyBufferInfo destination, WebGPUExtent3D copySize);
     void CopyTextureToTexture(WebGPUTexelCopyTextureInfo source, WebGPUTexelCopyTextureInfo destination, WebGPUExtent3D copySize);
     void Finish(WebGPUCommandBufferDescriptor descriptor, WebGPUCommandBuffer commandBuffer);
+    void InsertDebugMarker([Const] DOMString value);
+    void PopDebugGroup();
+    void PushDebugGroup([Const] DOMString value);
     void ResolveQuerySet(WebGPUQuerySet querySet, long firstQuery, long queryCount, WebGPUBuffer destination, long destinationOffset);
+    void SetLabel([Const] DOMString value);
+    void WriteTimestamp(WebGPUQuerySet querySet, long queryIndex);
 };
 
 interface WebGPUBuffer {
