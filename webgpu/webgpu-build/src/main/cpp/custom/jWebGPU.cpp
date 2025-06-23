@@ -1622,6 +1622,103 @@ void WebGPUBindGroupEntry::SetTextureView(WebGPUTextureView* textureView) {
     Get().textureView = textureView ? textureView->Get() : nullptr;
 }
 
+// WebGPUInstanceCapabilities
+WebGPUInstanceCapabilities WebGPUInstanceCapabilities::Obtain() {
+    WebGPUInstanceCapabilities obj;
+    return obj;
+}
+
+// WebGPURenderPassMaxDrawCount
+WebGPURenderPassMaxDrawCount WebGPURenderPassMaxDrawCount::Obtain() {
+    WebGPURenderPassMaxDrawCount obj;
+    return obj;
+}
+
+void WebGPURenderPassMaxDrawCount::SetMaxDrawCount(int maxDrawCount) {
+    Get().maxDrawCount = maxDrawCount;
+}
+
+int WebGPURenderPassMaxDrawCount::GetMaxDrawCount() {
+    return Get().maxDrawCount;
+}
+
+// WebGPUShaderSourceSPIRV
+WebGPUShaderSourceSPIRV WebGPUShaderSourceSPIRV::Obtain() {
+    WebGPUShaderSourceSPIRV obj;
+    return obj;
+}
+
+//void WebGPUShaderSourceSPIRV::SetCode(const uint32_t* code, size_t codeSize) {
+//    this->code.assign(code, code + codeSize);
+//    Get().codeSize = codeSize;
+//    Get().code = this->code.data();
+//}
+//
+//WebGPUChainedStruct WebGPUShaderSourceSPIRV::GetChain() {
+//    WebGPUChainedStruct chain;
+//    chain.Set(&Get().chain);
+//    return chain;
+//}
+
+// WebGPUShaderSourceSPIRV
+WebGPUSupportedWGSLLanguageFeatures WebGPUSupportedWGSLLanguageFeatures::Obtain() {
+    WebGPUSupportedWGSLLanguageFeatures obj;
+    return obj;
+}
+
+int WebGPUSupportedWGSLLanguageFeatures::GetFeatureCount() {
+    return Get().featureCount;
+}
+
+WGPUWGSLLanguageFeatureName WebGPUSupportedWGSLLanguageFeatures::GetFeatureAt(int index) {
+    return (index < Get().featureCount) ? Get().features[index] : WGPUWGSLLanguageFeatureName(0);
+}
+
+// WebGPUCompilationMessage
+WebGPUCompilationMessage WebGPUCompilationMessage::Obtain() {
+    WebGPUCompilationMessage obj;
+    return obj;
+}
+
+std::string WebGPUCompilationMessage::GetMessage() {
+    return std::string(Get().message.data, Get().message.length);
+}
+
+WGPUCompilationMessageType WebGPUCompilationMessage::GetType() {
+    return Get().type;
+}
+
+int WebGPUCompilationMessage::GetLineNum() {
+    return Get().lineNum;
+}
+
+int WebGPUCompilationMessage::GetLinePos() {
+    return Get().linePos;
+}
+
+int WebGPUCompilationMessage::GetOffset() {
+    return Get().offset;
+}
+
+int WebGPUCompilationMessage::GetLength() {
+    return Get().length;
+}
+
+// WebGPUCompilationInfo
+int WebGPUCompilationInfo::GetMessageCount() {
+    return Get().messageCount;
+}
+
+WebGPUCompilationMessage WebGPUCompilationInfo::GetMessage(int index) {
+    int size = GetMessageCount();
+    if(index >= 0 && index < size) {
+        WebGPUCompilationMessage temp;
+        temp.Set(Get().messages[index]);
+        return temp;
+    }
+    return WebGPUCompilationMessage::Obtain();
+}
+
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 // WebGPURenderBundleDescriptor

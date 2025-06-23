@@ -88,6 +88,7 @@ class WebGPUCommandEncoder;
 class WebGPUComputePipeline;
 class WebGPURenderPipeline;
 class WebGPUSampler;
+class WebGPUCompilationMessage;
 
 class WGPUFloatBuffer;
 class WGPUShortBuffer;
@@ -818,7 +819,6 @@ class WebGPUSurfaceTexture : public WebGPUObjectBase<WebGPUSurfaceTexture, WGPUS
 class WebGPUBindGroupEntry : public WebGPUObjectBase<WebGPUBindGroupEntry, WGPUBindGroupEntry> {
 public:
     static WebGPUBindGroupEntry Obtain();
-
     void SetNextInChain(WebGPUChainedStruct* chainedStruct);
     void SetBinding(int binding);
     void SetBuffer(WebGPUBuffer* buffer);
@@ -826,6 +826,51 @@ public:
     void SetSize(int size);
     void SetSampler(WebGPUSampler* sampler);
     void SetTextureView(WebGPUTextureView* textureView);
+};
+
+class WebGPUInstanceCapabilities : public WebGPUObjectBase<WebGPUInstanceCapabilities, WGPUInstanceCapabilities> {
+    public:
+        static WebGPUInstanceCapabilities Obtain();
+        // Additional methods can be added based on WGPUInstanceCapabilities fields
+};
+
+class WebGPURenderPassMaxDrawCount : public WebGPUObjectBase<WebGPURenderPassMaxDrawCount, WGPURenderPassMaxDrawCount> {
+    public:
+        static WebGPURenderPassMaxDrawCount Obtain();
+        void SetMaxDrawCount(int maxDrawCount);
+        int GetMaxDrawCount();
+};
+
+class WebGPUShaderSourceSPIRV : public WebGPUObjectBase<WebGPUShaderSourceSPIRV, WGPUShaderSourceSPIRV> {
+    public:
+    //TODO change to vector
+        static WebGPUShaderSourceSPIRV Obtain();
+//        void SetCode(const int* code, int codeSize);
+//        WebGPUChainedStruct GetChain();
+};
+
+class WebGPUSupportedWGSLLanguageFeatures : public WebGPUObjectBase<WebGPUSupportedWGSLLanguageFeatures, WGPUSupportedWGSLLanguageFeatures> {
+    public:
+        static WebGPUSupportedWGSLLanguageFeatures Obtain();
+        int GetFeatureCount();
+        WGPUWGSLLanguageFeatureName GetFeatureAt(int index);
+};
+
+class WebGPUCompilationInfo : public WebGPUObjectBase<WebGPUCompilationInfo, WGPUCompilationInfo> {
+    public:
+        int GetMessageCount();
+        WebGPUCompilationMessage GetMessage(int index);
+};
+
+class WebGPUCompilationMessage : public WebGPUObjectBase<WebGPUCompilationMessage, WGPUCompilationMessage> {
+    public:
+        static WebGPUCompilationMessage Obtain();
+        std::string GetMessage();
+        WGPUCompilationMessageType GetType();
+        int GetLineNum();
+        int GetLinePos();
+        int GetOffset();
+        int GetLength();
 };
 
 // ################################### DESCRIPTOR STRUCTS ###################################

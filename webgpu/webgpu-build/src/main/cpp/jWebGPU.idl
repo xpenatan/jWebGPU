@@ -558,10 +558,61 @@ interface WebGPUStorageTextureBindingLayout {
     void SetViewDimension(WGPUTextureViewDimension viewDimension);
 };
 
-//interface WGPUTexelCopyBufferLayout  {
-//    void WGPUTexelCopyBufferLayout ();
-//    [Value] static WGPUTexelCopyBufferLayout  Obtain();
-//};
+interface WebGPUBindGroupEntry  {
+    void WebGPUBindGroupEntry ();
+    [Value] static WebGPUBindGroupEntry Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetBinding(long binding);
+    void SetBuffer(WebGPUBuffer buffer);
+    void SetOffset(long offset);
+    void SetSize(long size);
+    void SetSampler(WebGPUSampler sampler);
+    void SetTextureView(WebGPUTextureView textureView);
+};
+
+interface WebGPUInstanceCapabilities  {
+    void WebGPUInstanceCapabilities ();
+    [Value] static WebGPUInstanceCapabilities Obtain();
+
+};
+
+interface WebGPURenderPassMaxDrawCount  {
+    void WebGPURenderPassMaxDrawCount ();
+    [Value] static WebGPURenderPassMaxDrawCount Obtain();
+    void SetMaxDrawCount(long maxDrawCount);
+    long GetMaxDrawCount();
+
+};
+
+interface WebGPUShaderSourceSPIRV  {
+    void WebGPUShaderSourceSPIRV ();
+    [Value] static WebGPUShaderSourceSPIRV Obtain();
+
+};
+
+interface WebGPUSupportedWGSLLanguageFeatures  {
+    void WebGPUSupportedWGSLLanguageFeatures ();
+    [Value] static WebGPUSupportedWGSLLanguageFeatures Obtain();
+    long GetFeatureCount();
+    WGPUWGSLLanguageFeatureName GetFeatureAt(long index);
+};
+
+interface WebGPUCompilationInfo  {
+    void WebGPUCompilationInfo ();
+    long GetMessageCount();
+    [Value] WebGPUCompilationMessage GetMessage(long index);
+};
+
+interface WebGPUCompilationMessage  {
+    void WebGPUCompilationMessage ();
+    [Value] static WebGPUCompilationMessage Obtain();
+    [Const, Value] IDLStringView GetMessage();
+    WGPUCompilationMessageType GetType();
+    long GetLineNum();
+    long GetLinePos();
+    long GetOffset();
+    long GetLength();
+};
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
