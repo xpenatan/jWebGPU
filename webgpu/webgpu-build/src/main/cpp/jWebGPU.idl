@@ -560,6 +560,27 @@ interface WebGPUStorageTextureBindingLayout {
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
+interface WebGPURenderBundleEncoderDescriptor {
+    void WebGPURenderBundleEncoderDescriptor();
+    [Value] static WebGPURenderBundleEncoderDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString code);
+    void SetColorFormats(WebGPUVectorTextureFormat colorFormats);
+    void SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat);
+    void SetSampleCount(long sampleCount);
+    void SetDepthReadOnly(long depthReadOnly);
+    void SetStencilReadOnly(long stencilReadOnly);
+};
+
+interface WebGPUQuerySetDescriptor {
+    void WebGPUQuerySetDescriptor();
+    [Value] static WebGPUQuerySetDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString code);
+    void SetType(WGPUQueryType type);
+    void SetCount(long count);
+};
+
 interface WebGPUSamplerDescriptor {
     void WebGPUSamplerDescriptor();
     [Value] static WebGPUSamplerDescriptor Obtain();
@@ -722,6 +743,16 @@ interface WebGPUTextureViewDescriptor {
 
 // ################################### OPAQUE POINTER ###################################
 
+interface WebGPUSampler {
+    void WebGPUSampler();
+    void Release();
+};
+
+interface WebGPURenderBundleEncoder {
+    void WebGPURenderBundleEncoder();
+    void Release();
+};
+
 interface WebGPUTextureView {
     void WebGPUTextureView();
     [Value] static WebGPUTextureView Obtain();
@@ -784,6 +815,7 @@ interface WebGPUQuerySet {
 };
 
 interface WebGPUPipelineLayout {
+    void WebGPUPipelineLayout();
     void Release();
     void SetLabel([Const] DOMString value);
 };
@@ -807,12 +839,18 @@ interface WebGPUDevice {
     void CreateBuffer(WebGPUBufferDescriptor descriptor, WebGPUBuffer valueOut);
     void CreateCommandEncoder(WebGPUCommandEncoderDescriptor descriptor, WebGPUCommandEncoder valueOut);
     void CreateComputePipeline(WebGPUComputePipelineDescriptor descriptor, WebGPUComputePipeline valueOut);
-
-    [Value] WebGPUQueue GetQueue();
+    void CreatePipelineLayout(WebGPUPipelineLayoutDescriptor descriptor, WebGPUPipelineLayout valueOut);
+    void CreateQuerySet(WebGPUQuerySetDescriptor descriptor, WebGPUQuerySet valueOut);
+    void CreateRenderBundleEncoder(WebGPURenderBundleEncoderDescriptor descriptor, WebGPURenderBundleEncoder valueOut);
     void CreateRenderPipeline(WebGPURenderPipelineDescriptor descriptor, WebGPURenderPipeline valueOut);
+    void CreateSampler(WebGPUSamplerDescriptor descriptor, WebGPUSampler valueOut);
     void CreateShaderModule(WebGPUShaderModuleDescriptor descriptor, WebGPUShaderModule shaderModule);
+    void CreateTexture(WebGPUTextureDescriptor descriptor, WebGPUTexture valueOut);
+    void Destroy();
+
     void GetFeatures(WebGPUSupportedFeatures features);
     void GetLimits(WebGPULimits limits);
+    [Value] WebGPUQueue GetQueue();
 };
 
 interface WebGPUComputePassEncoder {

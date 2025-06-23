@@ -799,6 +799,27 @@ class WebGPUSurfaceTexture : public WebGPUObjectBase<WebGPUSurfaceTexture, WGPUS
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
+class WebGPURenderBundleEncoderDescriptor : public WebGPUObjectBase<WebGPURenderBundleEncoderDescriptor, WGPURenderBundleEncoderDescriptor> {
+    public:
+        static WebGPURenderBundleEncoderDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetColorFormats(WebGPUVectorTextureFormat* colorFormats);
+        void SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat);
+        void SetSampleCount(int sampleCount);
+        void SetDepthReadOnly(int depthReadOnly);
+        void SetStencilReadOnly(int stencilReadOnly);
+};
+
+class WebGPUQuerySetDescriptor : public WebGPUObjectBase<WebGPUQuerySetDescriptor, WGPUQuerySetDescriptor> {
+    public:
+        static WebGPUQuerySetDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+        void SetType(WGPUQueryType type);
+        void SetCount(int count);
+};
+
 class WebGPUSamplerDescriptor : public WebGPUObjectBase<WebGPUSamplerDescriptor, WGPUSamplerDescriptor> {
     public:
         static WebGPUSamplerDescriptor Obtain();
@@ -962,6 +983,24 @@ class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDes
 
 // ################################### OPAQUE POINTER ###################################
 
+class WebGPUSampler : public WebGPUObjectBase<WebGPUSampler, WGPUSampler> {
+// TODO implement methods
+    protected:
+        void AddRefInternal();
+        void ReleaseInternal();
+    public:
+
+};
+
+class WebGPURenderBundleEncoder : public WebGPUObjectBase<WebGPURenderBundleEncoder, WGPURenderBundleEncoder> {
+// TODO implement methods
+    protected:
+        void AddRefInternal();
+        void ReleaseInternal();
+    public:
+
+};
+
 class WebGPUTextureView : public WebGPUObjectBase<WebGPUTextureView, WGPUTextureView> {
     protected:
         void AddRefInternal();
@@ -1068,11 +1107,18 @@ class WebGPUDevice : public WebGPUObjectBase<WebGPUDevice, WGPUDevice> {
         void CreateBuffer(WebGPUBufferDescriptor* descriptor, WebGPUBuffer* valueOut);
         void CreateCommandEncoder(WebGPUCommandEncoderDescriptor* descriptor, WebGPUCommandEncoder* valueOut);
         void CreateComputePipeline(WebGPUComputePipelineDescriptor* descriptor, WebGPUComputePipeline* valueOut);
-        WebGPUQueue GetQueue();
+        void CreatePipelineLayout(WebGPUPipelineLayoutDescriptor* descriptor, WebGPUPipelineLayout* valueOut);
+        void CreateQuerySet(WebGPUQuerySetDescriptor* descriptor, WebGPUQuerySet* valueOut);
+        void CreateRenderBundleEncoder(WebGPURenderBundleEncoderDescriptor* descriptor, WebGPURenderBundleEncoder* valueOut);
         void CreateRenderPipeline(WebGPURenderPipelineDescriptor* pipelineDescriptor, WebGPURenderPipeline* valueOut);
+        void CreateSampler(WebGPUSamplerDescriptor* descriptor, WebGPUSampler* valueOut);
         void CreateShaderModule(WebGPUShaderModuleDescriptor* shaderModuleDescriptor, WebGPUShaderModule* valueOut);
+        void CreateTexture(WebGPUTextureDescriptor* descriptor, WebGPUTexture* valueOut);
+        void Destroy();
+
         void GetFeatures(WebGPUSupportedFeatures* features);
         void GetLimits(WebGPULimits* limits);
+        WebGPUQueue GetQueue();
 };
 
 class WebGPUComputePassEncoder : public WebGPUObjectBase<WebGPUComputePassEncoder, WGPUComputePassEncoder> {

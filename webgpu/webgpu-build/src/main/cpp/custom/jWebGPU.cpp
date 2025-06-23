@@ -1596,6 +1596,71 @@ WebGPUInstance WGPU::CreateInstance() {
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
+// WebGPURenderBundleEncoderDescriptor
+WebGPURenderBundleEncoderDescriptor WebGPURenderBundleEncoderDescriptor::Obtain() {
+    WebGPURenderBundleEncoderDescriptor obj;
+    return obj;
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetLabel(const char* value) {
+    WebGPUStringView stringView(value);
+    Get().label = stringView.Get();
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetColorFormats(WebGPUVectorTextureFormat* colorFormats) {
+    if(colorFormats != NULL) {
+        Get().colorFormatCount = colorFormats->size();
+        Get().colorFormats = reinterpret_cast<const WGPUTextureFormat*>(colorFormats->data());
+    }
+    else {
+        Get().colorFormatCount = 0;
+        Get().colorFormats = NULL;
+    }
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
+    Get().depthStencilFormat = depthStencilFormat;
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetSampleCount(int sampleCount) {
+    Get().sampleCount = sampleCount;
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetDepthReadOnly(int depthReadOnly) {
+    Get().depthReadOnly = depthReadOnly;
+}
+
+void WebGPURenderBundleEncoderDescriptor::SetStencilReadOnly(int stencilReadOnly) {
+    Get().stencilReadOnly = stencilReadOnly;
+}
+
+// WebGPUQuerySetDescriptor
+WebGPUQuerySetDescriptor WebGPUQuerySetDescriptor::Obtain() {
+    WebGPUQuerySetDescriptor obj;
+    return obj;
+}
+
+void WebGPUQuerySetDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
+void WebGPUQuerySetDescriptor::SetLabel(const char* value) {
+    WebGPUStringView stringView(value);
+    Get().label = stringView.Get();
+}
+
+void WebGPUQuerySetDescriptor::SetType(WGPUQueryType type) {
+    Get().type = type;
+}
+
+void WebGPUQuerySetDescriptor::SetCount(int count) {
+    Get().count = count;
+}
+
 // WebGPUSamplerDescriptor
 WebGPUSamplerDescriptor WebGPUSamplerDescriptor::Obtain() {
     WebGPUSamplerDescriptor obj;
@@ -2066,6 +2131,15 @@ WebGPUQueueDescriptor WebGPUDeviceDescriptor::GetDefaultQueue() {
 
 // ################################### OPAQUE POINTER ###################################
 
+// WebGPUSampler
+void WebGPUSampler::AddRefInternal() {
+    wgpuSamplerAddRef(Get());
+}
+
+void WebGPUSampler::ReleaseInternal() {
+    wgpuSamplerRelease(Get());
+}
+
 // WebGPUTextureView
 WebGPUTextureView WebGPUTextureView::Obtain() {
     WebGPUTextureView obj;
@@ -2434,18 +2508,36 @@ void WebGPUDevice::CreateComputePipeline(WebGPUComputePipelineDescriptor* descri
     valueOut->Set(wgpuDeviceCreateComputePipeline(Get(), &(descriptor->Get())));
 }
 
-WebGPUQueue WebGPUDevice::GetQueue() {
-    WebGPUQueue temp;
-    temp.Set(wgpuDeviceGetQueue(Get()));
-    return temp;
+void WebGPUDevice::CreatePipelineLayout(WebGPUPipelineLayoutDescriptor* descriptor, WebGPUPipelineLayout* valueOut) {
+    valueOut->Set(wgpuDeviceCreatePipelineLayout(Get(), &(descriptor->Get())));
 }
 
-void WebGPUDevice::CreateRenderPipeline(WebGPURenderPipelineDescriptor* pipelineDescriptor, WebGPURenderPipeline* valueOut) {
-    valueOut->Set(wgpuDeviceCreateRenderPipeline(Get(), reinterpret_cast<WGPURenderPipelineDescriptor const * >(pipelineDescriptor)));
+void WebGPUDevice::CreateQuerySet(WebGPUQuerySetDescriptor* descriptor, WebGPUQuerySet* valueOut) {
+    valueOut->Set(wgpuDeviceCreateQuerySet(Get(), &(descriptor->Get())));
 }
 
-void WebGPUDevice::CreateShaderModule(WebGPUShaderModuleDescriptor* shaderModuleDescriptor, WebGPUShaderModule* valueOut) {
-    valueOut->Set(wgpuDeviceCreateShaderModule(Get(), &shaderModuleDescriptor->Get()));
+void WebGPUDevice::CreateRenderBundleEncoder(WebGPURenderBundleEncoderDescriptor* descriptor, WebGPURenderBundleEncoder* valueOut) {
+    valueOut->Set(wgpuDeviceCreateRenderBundleEncoder(Get(), &(descriptor->Get())));
+}
+
+void WebGPUDevice::CreateRenderPipeline(WebGPURenderPipelineDescriptor* descriptor, WebGPURenderPipeline* valueOut) {
+    valueOut->Set(wgpuDeviceCreateRenderPipeline(Get(), &descriptor->Get()));
+}
+
+void WebGPUDevice::CreateSampler(WebGPUSamplerDescriptor* descriptor, WebGPUSampler* valueOut) {
+    valueOut->Set(wgpuDeviceCreateSampler(Get(), &descriptor->Get()));
+}
+
+void WebGPUDevice::CreateShaderModule(WebGPUShaderModuleDescriptor* descriptor, WebGPUShaderModule* valueOut) {
+    valueOut->Set(wgpuDeviceCreateShaderModule(Get(), &descriptor->Get()));
+}
+
+void WebGPUDevice::CreateTexture(WebGPUTextureDescriptor* descriptor, WebGPUTexture* valueOut) {
+    valueOut->Set(wgpuDeviceCreateTexture(Get(), &descriptor->Get()));
+}
+
+void WebGPUDevice::Destroy() {
+    wgpuDeviceDestroy(Get());
 }
 
 void WebGPUDevice::GetFeatures(WebGPUSupportedFeatures* features) {
@@ -2454,6 +2546,12 @@ void WebGPUDevice::GetFeatures(WebGPUSupportedFeatures* features) {
 
 void WebGPUDevice::GetLimits(WebGPULimits* limits) {
     wgpuDeviceGetLimits(Get(), reinterpret_cast<WGPULimits * >(&(limits->Get())));
+}
+
+WebGPUQueue WebGPUDevice::GetQueue() {
+    WebGPUQueue temp;
+    temp.Set(wgpuDeviceGetQueue(Get()));
+    return temp;
 }
 
 // WebGPUComputePassEncoder
