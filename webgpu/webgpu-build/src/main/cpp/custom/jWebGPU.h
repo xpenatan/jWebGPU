@@ -86,6 +86,8 @@ class WebGPUTextureView;
 class WebGPUPipelineLayout;
 class WebGPUCommandEncoder;
 class WebGPUComputePipeline;
+class WebGPURenderPipeline;
+class WebGPUSampler;
 
 class WGPUFloatBuffer;
 class WGPUShortBuffer;
@@ -743,8 +745,24 @@ class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D*> {
 };
 
 class WebGPUTexelCopyBufferLayout : public WebGPUObjectBase<WebGPUTexelCopyBufferLayout, WGPUTexelCopyBufferLayout*> {
+    private:
+        bool deleteObject;
+
     public:
-        static WebGPUTexelCopyBufferLayout Obtain();
+        WebGPUTexelCopyBufferLayout() {
+            deleteObject = true;
+            Set(new WGPUTexelCopyBufferLayout());
+        }
+        WebGPUTexelCopyBufferLayout(WGPUTexelCopyBufferLayout* ptr) {
+            deleteObject = false;
+            Set(ptr);
+        }
+        ~WebGPUTexelCopyBufferLayout() {
+            if(deleteObject) {
+                delete Get();
+            }
+        }
+
         void SetOffset(int offset);
         void SetBytesPerRow(int bytesPerRow);
         void SetRowsPerImage(int rowsPerImage);
@@ -797,7 +815,27 @@ class WebGPUSurfaceTexture : public WebGPUObjectBase<WebGPUSurfaceTexture, WGPUS
         WGPUSurfaceGetCurrentTextureStatus GetStatus();
 };
 
+class WebGPUBindGroupEntry : public WebGPUObjectBase<WebGPUBindGroupEntry, WGPUBindGroupEntry> {
+public:
+    static WebGPUBindGroupEntry Obtain();
+
+    void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+    void SetBinding(int binding);
+    void SetBuffer(WebGPUBuffer* buffer);
+    void SetOffset(int offset);
+    void SetSize(int size);
+    void SetSampler(WebGPUSampler* sampler);
+    void SetTextureView(WebGPUTextureView* textureView);
+};
+
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+class WebGPURenderBundleDescriptor : public WebGPUObjectBase<WebGPURenderBundleDescriptor, WGPURenderBundleDescriptor> {
+    public:
+        static WebGPURenderBundleDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetLabel(const char* value);
+};
 
 class WebGPURenderBundleEncoderDescriptor : public WebGPUObjectBase<WebGPURenderBundleEncoderDescriptor, WGPURenderBundleEncoderDescriptor> {
     public:
@@ -988,7 +1026,6 @@ class WebGPUSampler : public WebGPUObjectBase<WebGPUSampler, WGPUSampler> {
         void AddRefInternal();
         void ReleaseInternal();
     public:
-
         void SetLabel(const char* value);
 };
 
@@ -998,7 +1035,20 @@ class WebGPURenderBundleEncoder : public WebGPUObjectBase<WebGPURenderBundleEnco
         void AddRefInternal();
         void ReleaseInternal();
     public:
-
+        static WebGPURenderBundleEncoder Obtain();
+        void SetPipeline(WebGPURenderPipeline* renderPipeline);
+        void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance);
+        void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance);
+        void DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset);
+        void DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset);
+        void SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* dynamicOffsets);
+        void SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size);
+        void SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
+        void InsertDebugMarker(const char* label);
+        void PopDebugGroup();
+        void PushDebugGroup(const char* label);
+        void SetLabel(const char* label);
+        void Finish(WebGPURenderBundleDescriptor* descriptor, WebGPURenderBundle* bundle);
 };
 
 class WebGPUTextureView : public WebGPUObjectBase<WebGPUTextureView, WGPUTextureView> {
@@ -1242,4 +1292,5 @@ class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
         void SetLabel(const char* value);
         void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer);
         void WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes);
+        void WriteTexture(WebGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, WebGPUTexelCopyBufferLayout* dataLayout, WebGPUExtent3D* writeSize);
 };

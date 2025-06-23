@@ -558,7 +558,19 @@ interface WebGPUStorageTextureBindingLayout {
     void SetViewDimension(WGPUTextureViewDimension viewDimension);
 };
 
+//interface WGPUTexelCopyBufferLayout  {
+//    void WGPUTexelCopyBufferLayout ();
+//    [Value] static WGPUTexelCopyBufferLayout  Obtain();
+//};
+
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+interface WebGPURenderBundleDescriptor {
+    void WebGPURenderBundleDescriptor();
+    [Value] static WebGPURenderBundleDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetLabel([Const] DOMString code);
+};
 
 interface WebGPURenderBundleEncoderDescriptor {
     void WebGPURenderBundleEncoderDescriptor();
@@ -752,6 +764,19 @@ interface WebGPUSampler {
 interface WebGPURenderBundleEncoder {
     void WebGPURenderBundleEncoder();
     void Release();
+    void SetPipeline(WebGPURenderPipeline renderPipeline);
+    void SetLabel([Const] DOMString label);
+    void Draw(long vertexCount, long instanceCount, long firstVertex, long firstInstance);
+    void DrawIndexed(long indexCount, long instanceCount, long firstIndex, long baseVertex, long firstInstance);
+    void DrawIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
+    void DrawIndexedIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
+    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WebGPUVectorInt dynamicOffsets);
+    void SetVertexBuffer(long slot, WebGPUBuffer buffer, long offset, long size);
+    void SetIndexBuffer(WebGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
+    void InsertDebugMarker([Const] DOMString label);
+    void PopDebugGroup();
+    void PushDebugGroup([Const] DOMString label);
+    void Finish(WebGPURenderBundleDescriptor descriptor, WebGPURenderBundle bundle);
 };
 
 interface WebGPUTextureView {

@@ -1422,11 +1422,6 @@ void WebGPUExtent3D::SetDepthOrArrayLayers(int depthOrArrayLayers) {
 }
 
 // WebGPUTexelCopyBufferLayout
-WebGPUTexelCopyBufferLayout WebGPUTexelCopyBufferLayout::Obtain() {
-    WebGPUTexelCopyBufferLayout obj;
-    return obj;
-}
-
 void WebGPUTexelCopyBufferLayout::SetOffset(int offset) {
     Get()->offset = offset;
 }
@@ -1446,8 +1441,7 @@ WebGPUTexelCopyBufferInfo WebGPUTexelCopyBufferInfo::Obtain() {
 }
 
 WebGPUTexelCopyBufferLayout WebGPUTexelCopyBufferInfo::GetLayout() {
-    WebGPUTexelCopyBufferLayout temp;
-    temp.Set(&Get().layout);
+    WebGPUTexelCopyBufferLayout temp(&Get().layout);
     return temp;
 }
 
@@ -1594,7 +1588,56 @@ WebGPUInstance WGPU::CreateInstance() {
     return instance;
 }
 
+// WebGPUBindGroupEntry
+WebGPUBindGroupEntry WebGPUBindGroupEntry::Obtain() {
+    WebGPUBindGroupEntry obj;
+    return obj;
+}
+
+void WebGPUBindGroupEntry::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
+}
+
+void WebGPUBindGroupEntry::SetBinding(int binding) {
+    Get().binding = binding;
+}
+
+void WebGPUBindGroupEntry::SetBuffer(WebGPUBuffer* buffer) {
+    Get().buffer = buffer ? buffer->Get() : nullptr;
+}
+
+void WebGPUBindGroupEntry::SetOffset(int offset) {
+    Get().offset = offset;
+}
+
+void WebGPUBindGroupEntry::SetSize(int size) {
+    Get().size = size;
+}
+
+void WebGPUBindGroupEntry::SetSampler(WebGPUSampler* sampler) {
+    Get().sampler = sampler ? sampler->Get() : nullptr;
+}
+
+void WebGPUBindGroupEntry::SetTextureView(WebGPUTextureView* textureView) {
+    Get().textureView = textureView ? textureView->Get() : nullptr;
+}
+
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+// WebGPURenderBundleDescriptor
+WebGPURenderBundleDescriptor WebGPURenderBundleDescriptor::Obtain() {
+    WebGPURenderBundleDescriptor obj;
+    return obj;
+}
+
+void WebGPURenderBundleDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
+}
+
+void WebGPURenderBundleDescriptor::SetLabel(const char* value) {
+    WebGPUStringView stringView(value);
+    Get().label = stringView.Get();
+}
 
 // WebGPURenderBundleEncoderDescriptor
 WebGPURenderBundleEncoderDescriptor WebGPURenderBundleEncoderDescriptor::Obtain() {
@@ -2143,6 +2186,81 @@ void WebGPUSampler::ReleaseInternal() {
 void WebGPUSampler::SetLabel(const char* label) {
     WebGPUStringView stringView(label);
     wgpuSamplerSetLabel(Get(), stringView.Get());
+}
+
+// WebGPURenderBundleEncoder
+WebGPURenderBundleEncoder WebGPURenderBundleEncoder::Obtain() {
+    WebGPURenderBundleEncoder obj;
+    return obj;
+}
+
+void WebGPURenderBundleEncoder::AddRefInternal() {
+    wgpuRenderBundleEncoderAddRef(Get());
+}
+
+void WebGPURenderBundleEncoder::ReleaseInternal() {
+    wgpuRenderBundleEncoderRelease(Get());
+}
+
+void WebGPURenderBundleEncoder::SetPipeline(WebGPURenderPipeline* renderPipeline) {
+    wgpuRenderBundleEncoderSetPipeline(Get(), renderPipeline->Get());
+}
+
+void WebGPURenderBundleEncoder::Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
+    wgpuRenderBundleEncoderDraw(Get(), vertexCount, instanceCount, firstVertex, firstInstance);
+}
+
+void WebGPURenderBundleEncoder::DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
+    wgpuRenderBundleEncoderDrawIndexed(Get(), indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
+}
+
+void WebGPURenderBundleEncoder::DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+    wgpuRenderBundleEncoderDrawIndirect(Get(), indirectBuffer->Get(), indirectOffset);
+}
+
+void WebGPURenderBundleEncoder::DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+    wgpuRenderBundleEncoderDrawIndexedIndirect(Get(), indirectBuffer->Get(), indirectOffset);
+}
+
+void WebGPURenderBundleEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* offsets) {
+    int dynamicOffsetCount = 0;
+    uint32_t* dynamicOffsets = NULL;
+    if(offsets != NULL) {
+        dynamicOffsetCount = offsets->size();
+        dynamicOffsets = (uint32_t*)offsets->data();
+    }
+    wgpuRenderBundleEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
+}
+
+void WebGPURenderBundleEncoder::SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size) {
+    wgpuRenderBundleEncoderSetVertexBuffer(Get(), slot, buffer->Get(), offset, size);
+}
+
+void WebGPURenderBundleEncoder::SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
+    wgpuRenderBundleEncoderSetIndexBuffer(Get(), buffer->Get(), format, offset, size);
+}
+
+void WebGPURenderBundleEncoder::InsertDebugMarker(const char* label) {
+    WebGPUStringView stringView(label);
+    wgpuRenderBundleEncoderInsertDebugMarker(Get(), stringView.Get());
+}
+
+void WebGPURenderBundleEncoder::PopDebugGroup() {
+    wgpuRenderBundleEncoderPopDebugGroup(Get());
+}
+
+void WebGPURenderBundleEncoder::PushDebugGroup(const char* label) {
+    WebGPUStringView stringView(label);
+    wgpuRenderBundleEncoderPushDebugGroup(Get(), stringView.Get());
+}
+
+void WebGPURenderBundleEncoder::SetLabel(const char* label) {
+    WebGPUStringView stringView(label);
+    wgpuRenderBundleEncoderSetLabel(Get(), stringView.Get());
+}
+
+void WebGPURenderBundleEncoder::Finish(WebGPURenderBundleDescriptor* descriptor, WebGPURenderBundle* bundle) {
+    bundle->Set(wgpuRenderBundleEncoderFinish(Get(), &(descriptor->Get())));
 }
 
 // WebGPUTextureView
@@ -2887,4 +3005,14 @@ void WebGPUQueue::WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBu
         data = (void*)bytes->data();
     }
     wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
+}
+
+void WebGPUQueue::WriteTexture(WebGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, WebGPUTexelCopyBufferLayout* dataLayout, WebGPUExtent3D* writeSize) {
+    int size = 0;
+    void* data = NULL;
+    if(bytes != NULL) {
+        size = bytes->size();
+        data = (void*)bytes->data();
+    }
+    wgpuQueueWriteTexture(Get(), &destination->Get(), data, size, dataLayout->Get(), writeSize->Get());
 }
