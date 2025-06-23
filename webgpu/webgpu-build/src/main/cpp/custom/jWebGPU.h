@@ -984,12 +984,12 @@ class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDes
 // ################################### OPAQUE POINTER ###################################
 
 class WebGPUSampler : public WebGPUObjectBase<WebGPUSampler, WGPUSampler> {
-// TODO implement methods
     protected:
         void AddRefInternal();
         void ReleaseInternal();
     public:
 
+        void SetLabel(const char* value);
 };
 
 class WebGPURenderBundleEncoder : public WebGPUObjectBase<WebGPURenderBundleEncoder, WGPURenderBundleEncoder> {

@@ -2140,6 +2140,11 @@ void WebGPUSampler::ReleaseInternal() {
     wgpuSamplerRelease(Get());
 }
 
+void WebGPUSampler::SetLabel(const char* label) {
+    WebGPUStringView stringView(label);
+    wgpuSamplerSetLabel(Get(), stringView.Get());
+}
+
 // WebGPUTextureView
 WebGPUTextureView WebGPUTextureView::Obtain() {
     WebGPUTextureView obj;

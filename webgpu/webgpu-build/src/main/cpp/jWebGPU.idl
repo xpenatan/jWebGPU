@@ -746,6 +746,7 @@ interface WebGPUTextureViewDescriptor {
 interface WebGPUSampler {
     void WebGPUSampler();
     void Release();
+    void SetLabel([Const] DOMString label);
 };
 
 interface WebGPURenderBundleEncoder {
