@@ -16,7 +16,6 @@ interface WGPUByteBuffer {
     [Value] static WGPUByteBuffer Obtain();
     [Value] static WGPUByteBuffer Obtain(long capacity);
     void order(WGPUByteOrder order);
-    void put(long index, byte value);
     byte get(long index);
     [BindTo="put"] void put_0(byte value);
     [BindTo="put"] void put_1(long index, byte value);
