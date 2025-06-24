@@ -660,12 +660,15 @@ class WebGPUMultisampleState : public WebGPUObjectBase<WebGPUMultisampleState, W
 };
 
 class WebGPUColor : public WebGPUObjectBase<WebGPUColor, WGPUColor*> {
-    private:
-        bool deleteObject;
     public:
-        WebGPUColor();
-        WebGPUColor(WGPUColor* color);
-        ~WebGPUColor();
+        WebGPUColor() {
+            static WGPUColor temp;
+            temp = WGPUColor{};
+            Set(&temp);
+        }
+        WebGPUColor(WGPUColor* color) {
+            Set(color);
+        }
         static WebGPUColor Obtain();
         void SetColor(float r, float g, float b, float a);
         float GetR();
@@ -702,8 +705,17 @@ class WebGPUComputePassTimestampWrites : public WebGPUObjectBase<WebGPUComputePa
         void SetEndOfPassWriteIndex(int value);
 };
 
-class WebGPUOrigin3D : public WebGPUObjectBase<WebGPUOrigin3D, WGPUOrigin3D> {
+class WebGPUOrigin3D : public WebGPUObjectBase<WebGPUOrigin3D, WGPUOrigin3D*> {
     public:
+        WebGPUOrigin3D() {
+            static WGPUOrigin3D temp;
+            temp = WGPUOrigin3D{};
+            WebGPUObjectBase::Set(&temp);
+        }
+        WebGPUOrigin3D(WGPUOrigin3D* ptr) {
+            WebGPUObjectBase::Set(ptr);
+        }
+
         static WebGPUOrigin3D Obtain();
         void Set(int x, int y, int z);
         void SetX(int value);
@@ -716,27 +728,19 @@ class WebGPUTexelCopyTextureInfo : public WebGPUObjectBase<WebGPUTexelCopyTextur
         static WebGPUTexelCopyTextureInfo Obtain();
         void SetTexture(WebGPUTexture* texture);
         void SetMipLevel(int mipLevel);
-        void SetOrigin(WebGPUOrigin3D origin);
+        WebGPUOrigin3D GetOrigin();
         void SetAspect(WGPUTextureAspect aspect);
 };
 
 class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D*> {
-    private:
-        bool deleteObject;
-
     public:
         WebGPUExtent3D() {
-            deleteObject = true;
-            Set(new WGPUExtent3D());
+            static WGPUExtent3D temp;
+            temp = WGPUExtent3D{};
+            Set(&temp);
         }
         WebGPUExtent3D(WGPUExtent3D* ptr) {
-            deleteObject = false;
             Set(ptr);
-        }
-        ~WebGPUExtent3D() {
-            if(deleteObject) {
-                delete Get();
-            }
         }
 
         static WebGPUExtent3D Obtain();
@@ -746,24 +750,16 @@ class WebGPUExtent3D : public WebGPUObjectBase<WebGPUExtent3D, WGPUExtent3D*> {
 };
 
 class WebGPUTexelCopyBufferLayout : public WebGPUObjectBase<WebGPUTexelCopyBufferLayout, WGPUTexelCopyBufferLayout*> {
-    private:
-        bool deleteObject;
-
     public:
         WebGPUTexelCopyBufferLayout() {
-            deleteObject = true;
-            Set(new WGPUTexelCopyBufferLayout());
+            static WGPUTexelCopyBufferLayout temp;
+            temp = WGPUTexelCopyBufferLayout{};
+            Set(&temp);
         }
         WebGPUTexelCopyBufferLayout(WGPUTexelCopyBufferLayout* ptr) {
-            deleteObject = false;
             Set(ptr);
         }
-        ~WebGPUTexelCopyBufferLayout() {
-            if(deleteObject) {
-                delete Get();
-            }
-        }
-
+        static WebGPUTexelCopyBufferLayout Obtain();
         void SetOffset(int offset);
         void SetBytesPerRow(int bytesPerRow);
         void SetRowsPerImage(int rowsPerImage);

@@ -1257,22 +1257,6 @@ void WebGPUMultisampleState::SetAlphaToCoverageEnabled(int alphaToCoverageEnable
 }
 
 // WebGPUColor
-WebGPUColor::WebGPUColor() {
-    deleteObject = true;
-    Set(new WGPUColor());
-}
-
-WebGPUColor::WebGPUColor(WGPUColor* color) {
-    deleteObject = false;
-    Set(color);
-}
-
-WebGPUColor::~WebGPUColor() {
-    if(deleteObject) {
-        delete Get();
-    }
-}
-
 WebGPUColor WebGPUColor::Obtain() {
     WebGPUColor obj;
     return obj;
@@ -1364,21 +1348,21 @@ WebGPUOrigin3D WebGPUOrigin3D::Obtain() {
 }
 
 void WebGPUOrigin3D::Set(int x, int y, int z) {
-    Get().x = x;
-    Get().y = y;
-    Get().z = z;
+    Get()->x = x;
+    Get()->y = y;
+    Get()->z = z;
 }
 
 void WebGPUOrigin3D::SetX(int value) {
-    Get().x = value;
+    Get()->x = value;
 }
 
 void WebGPUOrigin3D::SetY(int value) {
-    Get().y = value;
+    Get()->y = value;
 }
 
 void WebGPUOrigin3D::SetZ(int value) {
-    Get().z = value;
+    Get()->z = value;
 }
 
 // WebGPUTexelCopyTextureInfo
@@ -1395,8 +1379,9 @@ void WebGPUTexelCopyTextureInfo::SetMipLevel(int mipLevel) {
     Get().mipLevel = mipLevel;
 }
 
-void WebGPUTexelCopyTextureInfo::SetOrigin(WebGPUOrigin3D origin) {
-    Get().origin = origin.Get();
+WebGPUOrigin3D WebGPUTexelCopyTextureInfo::GetOrigin() {
+    WebGPUOrigin3D temp(&Get().origin);
+    return temp;
 }
 
 void WebGPUTexelCopyTextureInfo::SetAspect(WGPUTextureAspect aspect) {
@@ -1422,6 +1407,11 @@ void WebGPUExtent3D::SetDepthOrArrayLayers(int depthOrArrayLayers) {
 }
 
 // WebGPUTexelCopyBufferLayout
+WebGPUTexelCopyBufferLayout WebGPUTexelCopyBufferLayout::Obtain() {
+    WebGPUTexelCopyBufferLayout obj;
+    return obj;
+}
+
 void WebGPUTexelCopyBufferLayout::SetOffset(int offset) {
     Get()->offset = offset;
 }

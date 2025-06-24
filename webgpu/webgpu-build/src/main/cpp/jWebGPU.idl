@@ -488,6 +488,7 @@ interface WebGPUTexelCopyTextureInfo {
     [Value] static WebGPUTexelCopyTextureInfo Obtain();
     void SetTexture(WebGPUTexture texture);
     void SetMipLevel(long mipLevel);
+    [Value] WebGPUOrigin3D GetOrigin();
     void SetAspect(WGPUTextureAspect aspect);
 };
 
@@ -500,6 +501,8 @@ interface WebGPUExtent3D {
 };
 
 interface WebGPUTexelCopyBufferLayout {
+    void WebGPUTexelCopyBufferLayout();
+    [Value] static WebGPUTexelCopyBufferLayout Obtain();
     void SetOffset(long offset);
     void SetBytesPerRow(long bytesPerRow);
     void SetRowsPerImage(long rowsPerImage);
@@ -1022,6 +1025,7 @@ interface WebGPUQueue {
     void Submit(long commandCount, WebGPUCommandBuffer commandBuffer);
     void Release();
     void WriteBuffer(WebGPUBuffer buffer, long bufferOffset, WGPUByteBuffer bytes);
+    void WriteTexture(WebGPUTexelCopyTextureInfo destination, WGPUByteBuffer bytes, WebGPUTexelCopyBufferLayout dataLayout, WebGPUExtent3D writeSize);
 };
 
 // ################################### ENUMS ###################################
