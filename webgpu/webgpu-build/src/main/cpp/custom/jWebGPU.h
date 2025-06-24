@@ -121,7 +121,6 @@ class WGPU {
         static WebGPUInstance CreateInstance();
 };
 
-
 class WGPUByteBuffer {
     private:
         // Detect host endianness at compile time
@@ -141,49 +140,53 @@ class WGPUByteBuffer {
         WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
         std::unique_ptr<WGPUFloatBuffer> floatBuffer;
         std::unique_ptr<WGPUShortBuffer> shortBuffer;
-        bool isClearing = false;
+
+    public:
+        void push_back(char value);
+        const uint8_t* data();
+        template<typename T>
+        void putNumeric(int index, T value);
+        template<typename T>
+        T getNumeric(int index);
 
     public:
         static WGPUByteBuffer Obtain();
+        static WGPUByteBuffer Obtain(int capacity);
         explicit WGPUByteBuffer();
         explicit WGPUByteBuffer(int capacity);
-        int size();
-        void push_back(char value);
-        const uint8_t* data();
         void order(WGPUByteOrder order);
-        void put(char value);
+        void put(int index, char value);
         char get(int index);
+        void put(char value);
+        char get();
+        void put(const uint8_t* values, int index, int size);
         int remaining() const;
         void position(int newPosition);
         int getPosition();
         void limit(int newLimit);
         size_t getLimit() const;
+        int getCapacity();
         void clear();
-        template<typename T>
-        void putNumeric(int index, T value);
-        template<typename T>
-        T getNumeric(int index);
         WGPUFloatBuffer& asFloatBuffer();
         WGPUShortBuffer& asShortBuffer();
 
-    friend class WGPUFloatBuffer;
-    friend class WGPUShortBuffer;
+        friend class WGPUFloatBuffer;
+        friend class WGPUShortBuffer;
 };
-
-using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;
 
 class WGPUFloatBuffer {
     private:
         WGPUByteBuffer& parent;
     public:
-        size_t startPosition;
-        size_t floatLimit;
-        WGPUFloatBuffer(WGPUByteBuffer& bb);
+        WGPUFloatBuffer(WGPUByteBuffer& bb) : parent(bb) {}
         WGPUByteBuffer& getByteBuffer();
-        void put(float value);
         void put(int index, float value);
+        void put(const float* values, int offset, int size);
+        float get(int index);
+        void put(float value);
         float get();
-        long remaining() const;
+        int remaining() const;
+        int getCapacity();
         void position(int newPosition);
         int getPosition() const;
         void clear();
@@ -195,20 +198,23 @@ class WGPUShortBuffer {
     private:
         WGPUByteBuffer& parent;
     public:
-        size_t startPosition;
-        size_t shortLimit;
-        WGPUShortBuffer(WGPUByteBuffer& bb);
+        WGPUShortBuffer(WGPUByteBuffer& bb) : parent(bb) {}
         WGPUByteBuffer& getByteBuffer();
-        void put(int16_t value);
         void put(int index, int16_t value);
+        int16_t get(int index);
+        void put(int16_t value);
+        void put(const int16_t* values, int offset, int size);
         int16_t get();
+        int remaining() const;
+        int getCapacity();
+        void position(int newPosition);
+        int getPosition() const;
         void clear();
         void limit(int newLimit);
         int getLimit() const;
-        void position(size_t newPosition);
-        int getPosition() const;
-        int remaining() const;
 };
+
+using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;
 
 class WGPUAndroidWindow {
     public:

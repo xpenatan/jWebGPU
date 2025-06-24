@@ -218,20 +218,20 @@ uint16_t WGPUByteBuffer::swapBytes(uint16_t value) {
 
 uint32_t WGPUByteBuffer::swapBytes(uint32_t value) {
     return ((value >> 24) & 0x000000FF) |
-           ((value >> 8)  & 0x0000FF00) |
-           ((value << 8)  & 0x00FF0000) |
-           ((value << 24) & 0xFF000000);
+        ((value >> 8) & 0x0000FF00) |
+        ((value << 8) & 0x00FF0000) |
+        ((value << 24) & 0xFF000000);
 }
 
 uint64_t WGPUByteBuffer::swapBytes(uint64_t value) {
     return ((value >> 56) & 0x00000000000000FFULL) |
-           ((value >> 40) & 0x000000000000FF00ULL) |
-           ((value >> 24) & 0x0000000000FF0000ULL) |
-           ((value >> 8)  & 0x00000000FF000000ULL) |
-           ((value << 8)  & 0x000000FF00000000ULL) |
-           ((value << 24) & 0x0000FF0000000000ULL) |
-           ((value << 40) & 0x00FF000000000000ULL) |
-           ((value << 56) & 0xFF00000000000000ULL);
+        ((value >> 40) & 0x000000000000FF00ULL) |
+        ((value >> 24) & 0x0000000000FF0000ULL) |
+        ((value >> 8) & 0x00000000FF000000ULL) |
+        ((value << 8) & 0x000000FF00000000ULL) |
+        ((value << 24) & 0x0000FF0000000000ULL) |
+        ((value << 40) & 0x00FF000000000000ULL) |
+        ((value << 56) & 0xFF00000000000000ULL);
 }
 
 WGPUByteBuffer WGPUByteBuffer::Obtain() {
@@ -239,17 +239,36 @@ WGPUByteBuffer WGPUByteBuffer::Obtain() {
     return obj;
 }
 
+WGPUByteBuffer WGPUByteBuffer::Obtain(int capacity) {
+    WGPUByteBuffer obj(capacity);
+    return obj;
+}
+
 WGPUByteBuffer::WGPUByteBuffer() : buffer(0), _limit(0), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
 
 WGPUByteBuffer::WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
 
-int WGPUByteBuffer::size() { return buffer.size(); }
+int WGPUByteBuffer::getCapacity() { return buffer.size(); }
 
 void WGPUByteBuffer::push_back(char value) { buffer.push_back(value); }
 
 const uint8_t* WGPUByteBuffer::data() { return buffer.data(); }
 
 void WGPUByteBuffer::order(WGPUByteOrder order) { byteOrder = order; }
+
+void WGPUByteBuffer::put(int index, char value) {
+    if (index >= _limit) {
+        throw std::out_of_range("Buffer overflow");
+    }
+    buffer[index] = value;
+}
+
+char WGPUByteBuffer::get(int index) {
+    if (index < 0 || index >= _limit) {
+        throw std::out_of_range("ByteBuffer index out of bounds");
+    }
+    return buffer[index];
+}
 
 void WGPUByteBuffer::put(char value) {
     if (_position >= _limit) {
@@ -258,7 +277,19 @@ void WGPUByteBuffer::put(char value) {
     buffer[_position++] = value;
 }
 
-char WGPUByteBuffer::get(int index) { return buffer[index]; }
+char WGPUByteBuffer::get() {
+    auto value = get(_position);
+    _position++;
+    return value;
+}
+
+void WGPUByteBuffer::put(const uint8_t* values, int index, int size) {
+    if (index < 0 || size < 0 || index + size > _limit) {
+        throw std::out_of_range("Invalid index or size for ByteBuffer");
+    }
+    if (size == 0) return;
+    std::memcpy(&buffer[index], values, size);
+}
 
 int WGPUByteBuffer::remaining() const {
     return _limit - _position;
@@ -280,9 +311,6 @@ void WGPUByteBuffer::limit(int newLimit) {
         throw std::out_of_range("Invalid limit");
     }
     _limit = newLimit;
-    if (_position > _limit) {
-        _position = _limit;
-    }
 }
 
 size_t WGPUByteBuffer::getLimit() const {
@@ -290,29 +318,24 @@ size_t WGPUByteBuffer::getLimit() const {
 }
 
 void WGPUByteBuffer::clear() {
-    if (isClearing) {
-        return;
-    }
-    isClearing = true;
     _position = 0;
     _limit = buffer.size();
-    floatBuffer->clear();
-    shortBuffer->clear();
-    isClearing = false;
 }
 
 template<typename T>
 void WGPUByteBuffer::putNumeric(int index, T value) {
-    if (_position + sizeof(T) > _limit) {
+    if (index + sizeof(T) > _limit) {
         throw std::out_of_range("Buffer overflow");
     }
     bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
     if (needsSwap) {
         if constexpr (sizeof(T) == 2) {
             value = swapBytes(static_cast<uint16_t>(value));
-        } else if constexpr (sizeof(T) == 4) {
+        }
+        else if constexpr (sizeof(T) == 4) {
             value = swapBytes(static_cast<uint32_t>(value));
-        } else if constexpr (sizeof(T) == 8) {
+        }
+        else if constexpr (sizeof(T) == 8) {
             value = swapBytes(static_cast<uint64_t>(value));
         }
     }
@@ -330,9 +353,11 @@ T WGPUByteBuffer::getNumeric(int index) {
     if (needsSwap) {
         if constexpr (sizeof(T) == 2) {
             value = swapBytes(static_cast<uint16_t>(value));
-        } else if constexpr (sizeof(T) == 4) {
+        }
+        else if constexpr (sizeof(T) == 4) {
             value = swapBytes(static_cast<uint32_t>(value));
-        } else if constexpr (sizeof(T) == 8) {
+        }
+        else if constexpr (sizeof(T) == 8) {
             value = swapBytes(static_cast<uint64_t>(value));
         }
     }
@@ -340,137 +365,194 @@ T WGPUByteBuffer::getNumeric(int index) {
 }
 
 WGPUFloatBuffer& WGPUByteBuffer::asFloatBuffer() {
-    floatBuffer->startPosition = _position;
-    floatBuffer->floatLimit = remaining() / sizeof(float);
+    _position = 0;
     return *floatBuffer;
 }
 
 WGPUShortBuffer& WGPUByteBuffer::asShortBuffer() {
-    shortBuffer->startPosition = _position;
-    shortBuffer->shortLimit = remaining() / sizeof(int16_t);
+    _position = 0;
     return *shortBuffer;
 }
 
 // WGPUFloatBuffer
-WGPUFloatBuffer::WGPUFloatBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), floatLimit(bb.remaining() / sizeof(float)) {}
-
 WGPUByteBuffer& WGPUFloatBuffer::getByteBuffer() {
     return parent;
 }
 
-void WGPUFloatBuffer::put(float value) {
-    if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
+void WGPUFloatBuffer::put(int index, float value) {
+    if (index < 0 || index >= getLimit()) {
         throw std::out_of_range("FloatBuffer overflow");
     }
-    parent.putNumeric(parent._position, value);
-    parent._position += sizeof(value);
+    parent.putNumeric(index * sizeof(float), value);
 }
 
-void WGPUFloatBuffer::put(int index, float value) {
-    parent.putNumeric(index, value);
+float WGPUFloatBuffer::get(int index) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("FloatBuffer index out of bounds");
+    }
+    return parent.getNumeric<float>(index * sizeof(float));
+}
+
+void WGPUFloatBuffer::put(float value) {
+    int floatPosition = getPosition();
+    put(floatPosition, value);
+    floatPosition++;
+    position(floatPosition);
 }
 
 float WGPUFloatBuffer::get() {
-    if (parent.getPosition() / sizeof(float) - startPosition / sizeof(float) >= floatLimit) {
-        throw std::out_of_range("FloatBuffer underflow");
-    }
-    float value = parent.getNumeric<float>(parent._position);
-    parent._position += sizeof(float);
+    int floatPosition = getPosition();
+    auto value = get(floatPosition);
+    floatPosition++;
+    position(floatPosition);
     return value;
 }
 
-long WGPUFloatBuffer::remaining() const {
-    return floatLimit - (parent.getPosition() - startPosition) / sizeof(float);
+void WGPUFloatBuffer::put(const float* values, int offset, int size) {
+    if (offset < 0 || size < 0 || offset + size > getLimit()) {
+        throw std::out_of_range("Invalid offset or size for FloatBuffer");
+    }
+    if (size == 0) return;
+
+    size_t byteOffset = offset * sizeof(float);
+    size_t byteSize = size * sizeof(float);
+    if (byteOffset + byteSize > parent.getLimit()) {
+        throw std::out_of_range("Buffer overflow");
+    }
+
+    bool needsSwap = (parent.byteOrder == WGPUByteBuffer::LittleEndian) != parent.isLittleEndianHost();
+    if (!needsSwap) {
+        // Direct copy if no byte-swapping is needed
+        std::memcpy(&parent.buffer[byteOffset], values, byteSize);
+    }
+    else {
+        // Copy and swap bytes for each float
+        std::vector<float> temp(values, values + size);
+        for (int i = 0; i < size; ++i) {
+            uint32_t* ptr = reinterpret_cast<uint32_t*>(&temp[i]);
+            *ptr = parent.swapBytes(*ptr);
+        }
+        std::memcpy(&parent.buffer[byteOffset], temp.data(), byteSize);
+    }
 }
 
+int WGPUFloatBuffer::remaining() const {
+    return getLimit() - getPosition();
+}
+
+int WGPUFloatBuffer::getCapacity() { return parent.getCapacity() / sizeof(float); }
+
 void WGPUFloatBuffer::position(int newPosition) {
-    if (newPosition > floatLimit) {
+    if (newPosition < 0 || newPosition > getLimit()) {
         throw std::out_of_range("Invalid position for FloatBuffer");
     }
-    parent.position(startPosition + newPosition * sizeof(float));
+    parent.position(newPosition * sizeof(float));
 }
 
 int WGPUFloatBuffer::getPosition() const {
-    return (parent.getPosition() - startPosition) / sizeof(float);
+    return parent.getPosition() / sizeof(float);
 }
 
 void WGPUFloatBuffer::clear() {
     parent.clear();
-    startPosition = 0;
-    floatLimit = parent.getLimit() / sizeof(float);
 }
 
 void WGPUFloatBuffer::limit(int newLimit) {
-    size_t maxLimit = (parent.getLimit() - startPosition) / sizeof(float);
-    if (newLimit > maxLimit) {
-        throw std::out_of_range("Invalid limit for FloatBuffer");
-    }
-    floatLimit = newLimit;
+    parent.limit(newLimit * sizeof(float));
 }
 
 int WGPUFloatBuffer::getLimit() const {
-    return floatLimit;
+    return parent.getLimit() / sizeof(float);
 }
 
 // WGPUShortBuffer
-WGPUShortBuffer::WGPUShortBuffer(WGPUByteBuffer& bb) : parent(bb), startPosition(bb.getPosition()), shortLimit(bb.remaining() / sizeof(int16_t)) {}
-
 WGPUByteBuffer& WGPUShortBuffer::getByteBuffer() {
     return parent;
 }
 
-void WGPUShortBuffer::put(int16_t value) {
-    if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
+void WGPUShortBuffer::put(int index, int16_t value) {
+    if (index < 0 || index >= getLimit()) {
         throw std::out_of_range("ShortBuffer overflow");
     }
-    parent.putNumeric(parent._position, value);
-    parent._position += sizeof(value);
+    parent.putNumeric(index * sizeof(int16_t), value);
 }
 
-void WGPUShortBuffer::put(int index, int16_t value) {
-    parent.putNumeric(index, value);
+int16_t WGPUShortBuffer::get(int index) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("ShortBuffer index out of bounds");
+    }
+    return parent.getNumeric<int16_t>(index * sizeof(int16_t));
+}
+
+void WGPUShortBuffer::put(int16_t value) {
+    int shortPosition = getPosition();
+    put(shortPosition, value);
+    shortPosition++;
+    position(shortPosition);
 }
 
 int16_t WGPUShortBuffer::get() {
-    if (parent.getPosition() / sizeof(int16_t) - startPosition / sizeof(int16_t) >= shortLimit) {
-        throw std::out_of_range("ShortBuffer underflow");
-    }
-    int16_t value = parent.getNumeric<int16_t>(parent._position);
-    parent._position += sizeof(int16_t);
+    int shortPosition = getPosition();
+    auto value = get(shortPosition);
+    shortPosition++;
+    position(shortPosition);
     return value;
+}
+
+void WGPUShortBuffer::put(const int16_t* values, int offset, int size) {
+    if (offset < 0 || size < 0 || offset + size > getLimit()) {
+        throw std::out_of_range("Invalid offset or size for ShortBuffer");
+    }
+    if (size == 0) return;
+
+    size_t byteOffset = offset * sizeof(int16_t);
+    size_t byteSize = size * sizeof(int16_t);
+    if (byteOffset + byteSize > parent.getLimit()) {
+        throw std::out_of_range("Buffer overflow");
+    }
+
+    bool needsSwap = (parent.byteOrder == WGPUByteBuffer::LittleEndian) != parent.isLittleEndianHost();
+    if (!needsSwap) {
+        // Direct copy if no byte-swapping is needed
+        std::memcpy(&parent.buffer[byteOffset], values, byteSize);
+    }
+    else {
+        // Copy and swap bytes for each short
+        std::vector<int16_t> temp(values, values + size);
+        for (int i = 0; i < size; ++i) {
+            temp[i] = parent.swapBytes(static_cast<uint16_t>(temp[i]));
+        }
+        std::memcpy(&parent.buffer[byteOffset], temp.data(), byteSize);
+    }
 }
 
 void WGPUShortBuffer::clear() {
     parent.clear();
-    startPosition = 0;
-    shortLimit = parent.getLimit() / sizeof(int16_t);
 }
 
 void WGPUShortBuffer::limit(int newLimit) {
-    size_t maxLimit = (parent.getLimit() - startPosition) / sizeof(int16_t);
-    if (newLimit > maxLimit) {
-        throw std::out_of_range("Invalid limit for ShortBuffer");
-    }
-    shortLimit = newLimit;
+    parent.limit(newLimit * sizeof(float));
 }
 
 int WGPUShortBuffer::getLimit() const {
-    return shortLimit;
+    return parent.getLimit() / sizeof(int16_t);
 }
 
-void WGPUShortBuffer::position(size_t newPosition) {
-    if (newPosition > shortLimit) {
+int WGPUShortBuffer::getCapacity() { return parent.getCapacity() / sizeof(int16_t); }
+
+void WGPUShortBuffer::position(int newPosition) {
+    if (newPosition < 0 || newPosition > getLimit()) {
         throw std::out_of_range("Invalid position for ShortBuffer");
     }
-    parent.position(startPosition + newPosition * sizeof(int16_t));
+    parent.position(newPosition * sizeof(int16_t));
 }
 
 int WGPUShortBuffer::getPosition() const {
-    return (parent.getPosition() - startPosition) / sizeof(int16_t);
+    return parent.getPosition() / sizeof(int16_t);
 }
 
 int WGPUShortBuffer::remaining() const {
-    return shortLimit - (parent.getPosition() - startPosition) / sizeof(int16_t);
+    return getLimit() - getPosition();
 }
 
 // WGPUAndroidWindow
@@ -3088,7 +3170,7 @@ void WebGPUQueue::WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBu
     int size = 0;
     void* data = NULL;
     if(bytes != NULL) {
-        size = bytes->size();
+        size = bytes->getLimit();
         data = (void*)bytes->data();
     }
     wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
@@ -3098,7 +3180,7 @@ void WebGPUQueue::WriteTexture(WebGPUTexelCopyTextureInfo* destination, WGPUByte
     int size = 0;
     void* data = NULL;
     if(bytes != NULL) {
-        size = bytes->size();
+        size = bytes->getLimit();
         data = (void*)bytes->data();
     }
     wgpuQueueWriteTexture(Get(), &destination->Get(), data, size, dataLayout->Get(), writeSize->Get());

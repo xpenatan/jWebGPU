@@ -12,14 +12,17 @@ interface WGPUAndroidWindow {
 
 interface WGPUByteBuffer {
     void WGPUByteBuffer();
+    void WGPUByteBuffer(long capacity);
     [Value] static WGPUByteBuffer Obtain();
-//    long size();
-//    void push_back(byte value);
-//    byte get(long index);
-
+    [Value] static WGPUByteBuffer Obtain(long capacity);
     void order(WGPUByteOrder order);
-    void put(byte value);
+    void put(long index, byte value);
+    byte get(long index);
+    [BindTo="put"] void put_0(byte value);
+    [BindTo="put"] void put_1(long index, byte value);
+    byte get();
     long remaining();
+    long getCapacity();
     void position(long newPosition);
     long getPosition();
     void limit(long newLimit);
@@ -33,7 +36,10 @@ interface WGPUFloatBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
     [BindTo="put"] void put_0(float value);
     [BindTo="put"] void put_1(long index, float value);
+    float get(long index);
+    float get();
     long remaining();
+    long getCapacity();
     void clear();
     void limit(long newLimit);
     long getLimit();
@@ -45,7 +51,10 @@ interface WGPUShortBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
     [BindTo="put"] void put_0(short value);
     [BindTo="put"] void put_1(long index, short value);
+    short get(long index);
+    short get();
     long remaining();
+    long getCapacity();
     void clear();
     void limit(long newLimit);
     long getLimit();
