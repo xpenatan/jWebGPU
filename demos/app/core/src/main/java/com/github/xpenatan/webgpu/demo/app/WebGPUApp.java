@@ -22,8 +22,8 @@ import com.github.xpenatan.webgpu.WebGPUSurfaceTexture;
 import com.github.xpenatan.webgpu.WebGPUTexture;
 import com.github.xpenatan.webgpu.WebGPUTextureView;
 import com.github.xpenatan.webgpu.WebGPUTextureViewDescriptor;
-import com.github.xpenatan.webgpu.WebGPUVectorColorTargetState;
-import com.github.xpenatan.webgpu.WebGPUVectorRenderPassColorAttachment;
+import com.github.xpenatan.webgpu.WGPUVectorColorTargetState;
+import com.github.xpenatan.webgpu.WGPUVectorRenderPassColorAttachment;
 import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
@@ -97,7 +97,7 @@ public class WebGPUApp implements ApplicationListener {
         renderPassColorAttachment.setStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.getClearValue().setColor(r, g, b, 1.0f);
 
-        WebGPUVectorRenderPassColorAttachment colorAttachmentVector = WebGPUVectorRenderPassColorAttachment.obtain();
+        WGPUVectorRenderPassColorAttachment colorAttachmentVector = WGPUVectorRenderPassColorAttachment.obtain();
         colorAttachmentVector.push_back(renderPassColorAttachment);
 
         WebGPURenderPassDescriptor renderPassDesc  = WebGPURenderPassDescriptor.obtain();
@@ -203,7 +203,7 @@ public class WebGPUApp implements ApplicationListener {
         colorTarget.setBlend(blendState);
         colorTarget.setWriteMask(WGPUColorWriteMask.All);
 
-        WebGPUVectorColorTargetState colorStateTargets = WebGPUVectorColorTargetState.obtain();
+        WGPUVectorColorTargetState colorStateTargets = WGPUVectorColorTargetState.obtain();
         colorStateTargets.push_back(colorTarget);
         fragmentState.setTargets(colorStateTargets);
 

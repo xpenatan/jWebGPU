@@ -11,6 +11,7 @@ import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
 import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
 import com.github.xpenatan.webgpu.WGPU;
+import com.github.xpenatan.webgpu.WGPUVectorFeatureName;
 import com.github.xpenatan.webgpu.WebGPUAdapter;
 import com.github.xpenatan.webgpu.WebGPUAdapterInfo;
 import com.github.xpenatan.webgpu.WebGPUDevice;
@@ -22,7 +23,6 @@ import com.github.xpenatan.webgpu.WebGPURenderPipeline;
 import com.github.xpenatan.webgpu.WebGPURequestAdapterOptions;
 import com.github.xpenatan.webgpu.WebGPUSupportedFeatures;
 import com.github.xpenatan.webgpu.WebGPUSurface;
-import com.github.xpenatan.webgpu.WebGPUVectorFeatureName;
 
 public class WGPUApp {
     public int width;
@@ -92,7 +92,7 @@ public class WGPUApp {
         deviceDescriptor.setRequiredLimits(limits);
         deviceDescriptor.setLabel("My Device");
 
-        WebGPUVectorFeatureName features = WebGPUVectorFeatureName.obtain();
+        WGPUVectorFeatureName features = WGPUVectorFeatureName.obtain();
         features.push_back(WGPUFeatureName.DepthClipControl);
         deviceDescriptor.setRequiredFeatures(features);
 

@@ -70,63 +70,63 @@ enum WGPUPlatformType {
 
 // ################################### VECTORS ###################################
 
-interface WebGPUVectorColorTargetState {
-    void WebGPUVectorColorTargetState();
-    [Value] static WebGPUVectorColorTargetState Obtain();
+interface WGPUVectorColorTargetState {
+    void WGPUVectorColorTargetState();
+    [Value] static WGPUVectorColorTargetState Obtain();
     void push_back([Ref] WebGPUColorTargetState colorTargetState);
 };
 
-interface WebGPUVectorFeatureName {
-    void WebGPUVectorFeatureName();
-    [Value] static WebGPUVectorFeatureName Obtain();
+interface WGPUVectorFeatureName {
+    void WGPUVectorFeatureName();
+    [Value] static WGPUVectorFeatureName Obtain();
     void push_back(WGPUFeatureName featureName);
 };
 
-interface WebGPUVectorConstantEntry {
-    void WebGPUVectorConstantEntry();
-    [Value] static WebGPUVectorConstantEntry Obtain();
+interface WGPUVectorConstantEntry {
+    void WGPUVectorConstantEntry();
+    [Value] static WGPUVectorConstantEntry Obtain();
     void push_back([Ref] WebGPUConstantEntry constantEntry);
 };
 
-interface WebGPUVectorVertexBufferLayout {
-    void WebGPUVectorVertexBufferLayout();
-    [Value] static WebGPUVectorVertexBufferLayout Obtain();
+interface WGPUVectorVertexBufferLayout {
+    void WGPUVectorVertexBufferLayout();
+    [Value] static WGPUVectorVertexBufferLayout Obtain();
     void push_back([Ref] WebGPUVertexBufferLayout vertexBufferLayout);
 };
 
-interface WebGPUVectorTextureFormat {
-    void WebGPUVectorTextureFormat();
-    [Value] static WebGPUVectorTextureFormat Obtain();
+interface WGPUVectorTextureFormat {
+    void WGPUVectorTextureFormat();
+    [Value] static WGPUVectorTextureFormat Obtain();
     void push_back(WGPUTextureFormat textureFormat);
 };
 
-interface WebGPUVectorRenderBundle {
-    void WebGPUVectorRenderBundle();
-    [Value] static WebGPUVectorRenderBundle Obtain();
+interface WGPUVectorRenderBundle {
+    void WGPUVectorRenderBundle();
+    [Value] static WGPUVectorRenderBundle Obtain();
     void push_back([Ref] WebGPURenderBundle renderBundle);
 };
 
-interface WebGPUVectorRenderPassColorAttachment {
-    void WebGPUVectorRenderPassColorAttachment();
-    [Value] static WebGPUVectorRenderPassColorAttachment Obtain();
+interface WGPUVectorRenderPassColorAttachment {
+    void WGPUVectorRenderPassColorAttachment();
+    [Value] static WGPUVectorRenderPassColorAttachment Obtain();
     void push_back([Ref] WebGPURenderPassColorAttachment colorAttachment);
 };
 
-interface WebGPUVectorVertexAttribute {
-    void WebGPUVectorVertexAttribute();
-    [Value] static WebGPUVectorVertexAttribute Obtain();
+interface WGPUVectorVertexAttribute {
+    void WGPUVectorVertexAttribute();
+    [Value] static WGPUVectorVertexAttribute Obtain();
     void push_back([Ref] WebGPUVertexAttribute colorAttachment);
 };
 
-interface WebGPUVectorBindGroupLayout {
-    void WebGPUVectorBindGroupLayout();
-    [Value] static WebGPUVectorBindGroupLayout Obtain();
+interface WGPUVectorBindGroupLayout {
+    void WGPUVectorBindGroupLayout();
+    [Value] static WGPUVectorBindGroupLayout Obtain();
     void push_back([Ref] WebGPUBindGroupLayout groupLayout);
 };
 
-interface WebGPUVectorInt {
-    void WebGPUVectorInt();
-    [Value] static WebGPUVectorInt Obtain();
+interface WGPUVectorInt {
+    void WGPUVectorInt();
+    [Value] static WGPUVectorInt Obtain();
     long size();
     void push_back(long value);
     long get(long index);
@@ -318,9 +318,9 @@ interface WebGPUFragmentState {
     [Value] static WebGPUFragmentState Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetEntryPoint([Const] DOMString entryPoint);
-    void SetTargets(WebGPUVectorColorTargetState targets);
+    void SetTargets(WGPUVectorColorTargetState targets);
     void SetModule(WebGPUShaderModule shaderModule);
-    void SetConstants(WebGPUVectorConstantEntry constants);
+    void SetConstants(WGPUVectorConstantEntry constants);
 };
 
 interface WebGPUVertexAttribute {
@@ -334,7 +334,7 @@ interface WebGPUVertexAttribute {
 interface WebGPUVertexBufferLayout {
     void WebGPUVertexBufferLayout();
     [Value] static WebGPUVertexBufferLayout Obtain();
-    void SetAttributes(WebGPUVectorVertexAttribute values);
+    void SetAttributes(WGPUVectorVertexAttribute values);
     void SetArrayStride(long offset);
     void SetStepMode(WGPUVertexStepMode stepMode);
 };
@@ -343,8 +343,8 @@ interface WebGPUVertexState {
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetModule(WebGPUShaderModule shaderModule);
     void SetEntryPoint([Const] DOMString entryPoint);
-    void SetConstants(WebGPUVectorConstantEntry constants);
-    void SetBuffers(WebGPUVectorVertexBufferLayout buffers);
+    void SetConstants(WGPUVectorConstantEntry constants);
+    void SetBuffers(WGPUVectorVertexBufferLayout buffers);
 };
 
 interface WebGPUColorTargetState {
@@ -458,7 +458,7 @@ interface WebGPUSurfaceConfiguration {
     void SetWidth(long width);
     void SetHeight(long height);
     void SetFormat(WGPUTextureFormat format);
-    void SetViewFormats(WebGPUVectorTextureFormat formats);
+    void SetViewFormats(WGPUVectorTextureFormat formats);
     void SetUsage(WGPUTextureUsage usage);
     void SetDevice(WebGPUDevice device);
     void SetPresentMode(WGPUPresentMode presentMode);
@@ -631,7 +631,7 @@ interface WebGPURenderBundleEncoderDescriptor {
     [Value] static WebGPURenderBundleEncoderDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString code);
-    void SetColorFormats(WebGPUVectorTextureFormat colorFormats);
+    void SetColorFormats(WGPUVectorTextureFormat colorFormats);
     void SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat);
     void SetSampleCount(long sampleCount);
     void SetDepthReadOnly(long depthReadOnly);
@@ -722,7 +722,7 @@ interface WebGPUPipelineLayoutDescriptor {
     [Value] static WebGPUPipelineLayoutDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString code);
-    void SetBindGroupLayouts(WebGPUVectorBindGroupLayout bindGroupLayouts);
+    void SetBindGroupLayouts(WGPUVectorBindGroupLayout bindGroupLayouts);
 };
 
 interface WebGPUDeviceDescriptor {
@@ -731,7 +731,7 @@ interface WebGPUDeviceDescriptor {
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString code);
     void SetRequiredLimits(WebGPULimits limits);
-    void SetRequiredFeatures(WebGPUVectorFeatureName features);
+    void SetRequiredFeatures(WGPUVectorFeatureName features);
     [Value] WebGPUQueueDescriptor GetDefaultQueue();
 };
 
@@ -759,7 +759,7 @@ interface WebGPURenderPassDescriptor {
     void WebGPURenderPassDescriptor();
     [Value] static WebGPURenderPassDescriptor Obtain();
     void SetLabel([Const] DOMString value);
-    void SetColorAttachments(WebGPUVectorRenderPassColorAttachment colorAttachments);
+    void SetColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments);
     void SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment attachment);
     void SetTimestampWrites(WebGPURenderPassTimestampWrites timestampWrites);
 };
@@ -790,7 +790,7 @@ interface WebGPUTextureDescriptor {
     void SetFormat(WGPUTextureFormat format);
     void SetMipLevelCount(long mipLevelCount);
     void SetSampleCount(long sampleCount);
-    void SetViewFormats(WebGPUVectorTextureFormat viewFormats);
+    void SetViewFormats(WGPUVectorTextureFormat viewFormats);
 };
 
 interface WebGPUTextureViewDescriptor {
@@ -824,7 +824,7 @@ interface WebGPURenderBundleEncoder {
     void DrawIndexed(long indexCount, long instanceCount, long firstIndex, long baseVertex, long firstInstance);
     void DrawIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
     void DrawIndexedIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
-    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WebGPUVectorInt dynamicOffsets);
+    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WGPUVectorInt dynamicOffsets);
     void SetVertexBuffer(long slot, WebGPUBuffer buffer, long offset, long size);
     void SetIndexBuffer(WebGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
     void InsertDebugMarker([Const] DOMString label);
@@ -870,11 +870,11 @@ interface WebGPURenderPassEncoder {
     void DrawIndexedIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
     void DrawIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
     void EndOcclusionQuery();
-    void ExecuteBundles(WebGPUVectorRenderBundle bundles);
+    void ExecuteBundles(WGPUVectorRenderBundle bundles);
     void InsertDebugMarker([Const] DOMString value);
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString value);
-    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WebGPUVectorInt dynamicOffsets);
+    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WGPUVectorInt dynamicOffsets);
     void SetBlendConstant(WebGPUColor color);
     void SetIndexBuffer(WebGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
     void SetLabel([Const] DOMString value);
@@ -943,7 +943,7 @@ interface WebGPUComputePassEncoder {
     void InsertDebugMarker([Const] DOMString value);
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString groupLabel);
-    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WebGPUVectorInt offsets);
+    void SetBindGroup(long groupIndex, WebGPUBindGroup group, WGPUVectorInt offsets);
     void SetLabel([Const] DOMString label);
     void SetPipeline(WebGPUComputePipeline pipeline);
 };

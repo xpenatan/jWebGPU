@@ -72,139 +72,139 @@ template class WebGPUObjectBase<WebGPUAdapter, WGPUAdapter>;
 template class WebGPUObjectBase<WebGPUSurface, WGPUSurface>;
 template class WebGPUObjectBase<WebGPUInstance, WGPUInstance>;
 
-// WebGPUVectorColorTargetState
-WebGPUVectorColorTargetState WebGPUVectorColorTargetState::Obtain() {
-    WebGPUVectorColorTargetState obj;
+// WGPUVectorColorTargetState
+WGPUVectorColorTargetState WGPUVectorColorTargetState::Obtain() {
+    WGPUVectorColorTargetState obj;
     return obj;
 }
 
-int WebGPUVectorColorTargetState::size() { return vector.size(); }
+int WGPUVectorColorTargetState::size() { return vector.size(); }
 
-void WebGPUVectorColorTargetState::push_back(const WebGPUColorTargetState& attachment) { vector.push_back(attachment); }
+void WGPUVectorColorTargetState::push_back(const WebGPUColorTargetState& attachment) { vector.push_back(attachment); }
 
-const WebGPUColorTargetState* WebGPUVectorColorTargetState::data() { return vector.data(); }
+const WebGPUColorTargetState* WGPUVectorColorTargetState::data() { return vector.data(); }
 
-// WebGPUVectorFeatureName
-WebGPUVectorFeatureName WebGPUVectorFeatureName::Obtain() {
-    WebGPUVectorFeatureName obj;
+// WGPUVectorFeatureName
+WGPUVectorFeatureName WGPUVectorFeatureName::Obtain() {
+    WGPUVectorFeatureName obj;
     return obj;
 }
 
-int WebGPUVectorFeatureName::size() { return vector.size(); }
+int WGPUVectorFeatureName::size() { return vector.size(); }
 
-void WebGPUVectorFeatureName::push_back(const WGPUFeatureName& attachment) { vector.push_back(attachment); }
+void WGPUVectorFeatureName::push_back(const WGPUFeatureName& attachment) { vector.push_back(attachment); }
 
-const WGPUFeatureName* WebGPUVectorFeatureName::data() { return vector.data(); }
+const WGPUFeatureName* WGPUVectorFeatureName::data() { return vector.data(); }
 
-// WebGPUVectorConstantEntry
-WebGPUVectorConstantEntry WebGPUVectorConstantEntry::Obtain() {
-    WebGPUVectorConstantEntry obj;
+// WGPUVectorConstantEntry
+WGPUVectorConstantEntry WGPUVectorConstantEntry::Obtain() {
+    WGPUVectorConstantEntry obj;
     return obj;
 }
 
-int WebGPUVectorConstantEntry::size() { return vector.size(); }
+int WGPUVectorConstantEntry::size() { return vector.size(); }
 
-void WebGPUVectorConstantEntry::push_back(const WebGPUConstantEntry& attachment) { vector.push_back(attachment); }
+void WGPUVectorConstantEntry::push_back(const WebGPUConstantEntry& attachment) { vector.push_back(attachment); }
 
-const WebGPUConstantEntry* WebGPUVectorConstantEntry::data() { return vector.data(); }
+const WebGPUConstantEntry* WGPUVectorConstantEntry::data() { return vector.data(); }
 
-// WebGPUVectorVertexBufferLayout
-WebGPUVectorVertexBufferLayout WebGPUVectorVertexBufferLayout::Obtain() {
-    WebGPUVectorVertexBufferLayout obj;
+// WGPUVectorVertexBufferLayout
+WGPUVectorVertexBufferLayout WGPUVectorVertexBufferLayout::Obtain() {
+    WGPUVectorVertexBufferLayout obj;
     return obj;
 }
 
-int WebGPUVectorVertexBufferLayout::size() { return vector.size(); }
+int WGPUVectorVertexBufferLayout::size() { return vector.size(); }
 
-void WebGPUVectorVertexBufferLayout::push_back(const WebGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
+void WGPUVectorVertexBufferLayout::push_back(const WebGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
 
-const WebGPUVertexBufferLayout* WebGPUVectorVertexBufferLayout::data() { return vector.data(); }
+const WebGPUVertexBufferLayout* WGPUVectorVertexBufferLayout::data() { return vector.data(); }
 
-// WebGPUVectorTextureFormat
-WebGPUVectorTextureFormat WebGPUVectorTextureFormat::Obtain() {
-    WebGPUVectorTextureFormat obj;
+// WGPUVectorTextureFormat
+WGPUVectorTextureFormat WGPUVectorTextureFormat::Obtain() {
+    WGPUVectorTextureFormat obj;
     return obj;
 }
 
-int WebGPUVectorTextureFormat::size() { return vector.size(); }
+int WGPUVectorTextureFormat::size() { return vector.size(); }
 
-void WebGPUVectorTextureFormat::push_back(const WGPUTextureFormat& attachment) { vector.push_back(attachment); }
+void WGPUVectorTextureFormat::push_back(const WGPUTextureFormat& attachment) { vector.push_back(attachment); }
 
-const WGPUTextureFormat* WebGPUVectorTextureFormat::data() { return vector.data(); }
+const WGPUTextureFormat* WGPUVectorTextureFormat::data() { return vector.data(); }
 
-// WebGPUVectorRenderBundle
-WebGPUVectorRenderBundle WebGPUVectorRenderBundle::Obtain() {
-    WebGPUVectorRenderBundle obj;
+// WGPUVectorRenderBundle
+WGPUVectorRenderBundle WGPUVectorRenderBundle::Obtain() {
+    WGPUVectorRenderBundle obj;
     return obj;
 }
 
-int WebGPUVectorRenderBundle::size() { return vector.size(); }
+int WGPUVectorRenderBundle::size() { return vector.size(); }
 
-void WebGPUVectorRenderBundle::push_back(const WebGPURenderBundle& attachment) { vector.push_back(attachment); }
+void WGPUVectorRenderBundle::push_back(const WebGPURenderBundle& attachment) { vector.push_back(attachment); }
 
-const WebGPURenderBundle* WebGPUVectorRenderBundle::data() { return vector.data(); }
+const WebGPURenderBundle* WGPUVectorRenderBundle::data() { return vector.data(); }
 
-// WebGPUVectorRenderPassColorAttachment
-WebGPUVectorRenderPassColorAttachment WebGPUVectorRenderPassColorAttachment::Obtain() {
-    WebGPUVectorRenderPassColorAttachment obj;
+// WGPUVectorRenderPassColorAttachment
+WGPUVectorRenderPassColorAttachment WGPUVectorRenderPassColorAttachment::Obtain() {
+    WGPUVectorRenderPassColorAttachment obj;
     return obj;
 }
 
-int WebGPUVectorRenderPassColorAttachment::size() { return vector.size(); }
+int WGPUVectorRenderPassColorAttachment::size() { return vector.size(); }
 
-void WebGPUVectorRenderPassColorAttachment::push_back(const WebGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
+void WGPUVectorRenderPassColorAttachment::push_back(const WebGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
 
-const WebGPURenderPassColorAttachment* WebGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
+const WebGPURenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
 
-// WebGPUVectorVertexAttribute
-WebGPUVectorVertexAttribute WebGPUVectorVertexAttribute::Obtain() {
-    WebGPUVectorVertexAttribute obj;
+// WGPUVectorVertexAttribute
+WGPUVectorVertexAttribute WGPUVectorVertexAttribute::Obtain() {
+    WGPUVectorVertexAttribute obj;
     return obj;
 }
 
-int WebGPUVectorVertexAttribute::size() { return vector.size(); }
+int WGPUVectorVertexAttribute::size() { return vector.size(); }
 
-void WebGPUVectorVertexAttribute::push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
+void WGPUVectorVertexAttribute::push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
 
-const WebGPUVertexAttribute* WebGPUVectorVertexAttribute::data() { return vector.data(); }
+const WebGPUVertexAttribute* WGPUVectorVertexAttribute::data() { return vector.data(); }
 
-// WebGPUVectorBindGroupLayout
-WebGPUVectorBindGroupLayout WebGPUVectorBindGroupLayout::Obtain() {
-    WebGPUVectorBindGroupLayout obj;
+// WGPUVectorBindGroupLayout
+WGPUVectorBindGroupLayout WGPUVectorBindGroupLayout::Obtain() {
+    WGPUVectorBindGroupLayout obj;
     return obj;
 }
 
-int WebGPUVectorBindGroupLayout::size() { return vector.size(); }
+int WGPUVectorBindGroupLayout::size() { return vector.size(); }
 
-void WebGPUVectorBindGroupLayout::push_back(const WebGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
+void WGPUVectorBindGroupLayout::push_back(const WebGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
 
-const WebGPUBindGroupLayout* WebGPUVectorBindGroupLayout::data() { return vector.data(); }
+const WebGPUBindGroupLayout* WGPUVectorBindGroupLayout::data() { return vector.data(); }
 
-// WebGPUVectorBindGroupLayoutEntry
-WebGPUVectorBindGroupLayoutEntry WebGPUVectorBindGroupLayoutEntry::Obtain() {
-    WebGPUVectorBindGroupLayoutEntry obj;
+// WGPUVectorBindGroupLayoutEntry
+WGPUVectorBindGroupLayoutEntry WGPUVectorBindGroupLayoutEntry::Obtain() {
+    WGPUVectorBindGroupLayoutEntry obj;
     return obj;
 }
 
-int WebGPUVectorBindGroupLayoutEntry::size() { return vector.size(); }
+int WGPUVectorBindGroupLayoutEntry::size() { return vector.size(); }
 
-void WebGPUVectorBindGroupLayoutEntry::push_back(const WebGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
+void WGPUVectorBindGroupLayoutEntry::push_back(const WebGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
 
-const WebGPUBindGroupLayoutEntry* WebGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
+const WebGPUBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
 
-// WebGPUVectorInt
-WebGPUVectorInt WebGPUVectorInt::Obtain() {
-    WebGPUVectorInt obj;
+// WGPUVectorInt
+WGPUVectorInt WGPUVectorInt::Obtain() {
+    WGPUVectorInt obj;
     return obj;
 }
 
-int WebGPUVectorInt::size() { return vector.size(); }
+int WGPUVectorInt::size() { return vector.size(); }
 
-void WebGPUVectorInt::push_back(int attachment) { vector.push_back(attachment); }
+void WGPUVectorInt::push_back(int attachment) { vector.push_back(attachment); }
 
-int WebGPUVectorInt::get(int index) { return vector[index]; }
+int WGPUVectorInt::get(int index) { return vector[index]; }
 
-const int* WebGPUVectorInt::data() { return vector.data(); }
+const int* WGPUVectorInt::data() { return vector.data(); }
 
 // WGPUByteBuffer
 bool WGPUByteBuffer::isLittleEndianHost() {
@@ -960,7 +960,7 @@ WebGPUVertexBufferLayout WebGPUVertexBufferLayout::Obtain() {
     return obj;
 }
 
-void WebGPUVertexBufferLayout::SetAttributes(WebGPUVectorVertexAttribute* values) {
+void WebGPUVertexBufferLayout::SetAttributes(WGPUVectorVertexAttribute* values) {
     if(values != NULL) {
         Get().attributeCount = values->size();
         Get().attributes = reinterpret_cast<const WGPUVertexAttribute*>(values->data());
@@ -993,7 +993,7 @@ void WebGPUVertexState::SetEntryPoint(const char* value) {
     Get()->entryPoint = stringView.Get();
 }
 
-void WebGPUVertexState::SetConstants(WebGPUVectorConstantEntry* values) {
+void WebGPUVertexState::SetConstants(WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get()->constantCount = values->size();
         Get()->constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
@@ -1004,7 +1004,7 @@ void WebGPUVertexState::SetConstants(WebGPUVectorConstantEntry* values) {
     }
 }
 
-void WebGPUVertexState::SetBuffers(WebGPUVectorVertexBufferLayout* values) {
+void WebGPUVertexState::SetBuffers(WGPUVectorVertexBufferLayout* values) {
     if(values != NULL) {
         Get()->bufferCount = values->size();
         Get()->buffers = reinterpret_cast<const WGPUVertexBufferLayout*>(values->data());
@@ -1121,7 +1121,7 @@ void WebGPUFragmentState::SetEntryPoint(const char* value) {
     Get().entryPoint = stringView.Get();
 }
 
-void WebGPUFragmentState::SetTargets(WebGPUVectorColorTargetState* values) {
+void WebGPUFragmentState::SetTargets(WGPUVectorColorTargetState* values) {
     if(values != NULL) {
         Get().targetCount = values->size();
         Get().targets = reinterpret_cast<const WGPUColorTargetState*>(values->data());
@@ -1136,7 +1136,7 @@ void WebGPUFragmentState::SetModule(WebGPUShaderModule* shaderModule) {
     Get().module = shaderModule != NULL ? shaderModule->Get() : NULL;
 }
 
-void WebGPUFragmentState::SetConstants(WebGPUVectorConstantEntry* values) {
+void WebGPUFragmentState::SetConstants(WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get().constantCount = values->size();
         Get().constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
@@ -1467,7 +1467,7 @@ void WebGPUSurfaceConfiguration::SetViewFormatCount(long value) {
     Get().viewFormatCount = value;
 }
 
-void WebGPUSurfaceConfiguration::SetViewFormats(WebGPUVectorTextureFormat* values) {
+void WebGPUSurfaceConfiguration::SetViewFormats(WGPUVectorTextureFormat* values) {
     if(values != NULL) {
         Get().viewFormatCount = values->size();
         Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(values->data());
@@ -1741,7 +1741,7 @@ void WebGPURenderBundleEncoderDescriptor::SetLabel(const char* value) {
     Get().label = stringView.Get();
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetColorFormats(WebGPUVectorTextureFormat* colorFormats) {
+void WebGPURenderBundleEncoderDescriptor::SetColorFormats(WGPUVectorTextureFormat* colorFormats) {
     if(colorFormats != NULL) {
         Get().colorFormatCount = colorFormats->size();
         Get().colorFormats = reinterpret_cast<const WGPUTextureFormat*>(colorFormats->data());
@@ -1948,7 +1948,7 @@ void WebGPUTextureDescriptor::SetSampleCount(int sampleCount) {
     Get().sampleCount = sampleCount;
 }
 
-void WebGPUTextureDescriptor::SetViewFormats(WebGPUVectorTextureFormat* viewFormats) {
+void WebGPUTextureDescriptor::SetViewFormats(WGPUVectorTextureFormat* viewFormats) {
     if(viewFormats != NULL) {
         Get().viewFormatCount = viewFormats->size();
         Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(viewFormats->data());
@@ -1970,7 +1970,7 @@ void WebGPURenderPassDescriptor::SetLabel(const char* value) {
     Get().label = stringView.Get();
 }
 
-void WebGPURenderPassDescriptor::SetColorAttachments(WebGPUVectorRenderPassColorAttachment* values) {
+void WebGPURenderPassDescriptor::SetColorAttachments(WGPUVectorRenderPassColorAttachment* values) {
     if(values != NULL) {
         Get().colorAttachmentCount = values->size();
         Get().colorAttachments = reinterpret_cast<const WGPURenderPassColorAttachment*>(values->data());
@@ -2094,7 +2094,7 @@ void WebGPUBindGroupLayoutDescriptor::SetLabel(const char* value) {
     Get().label = stringView.Get();
 }
 
-void WebGPUBindGroupLayoutDescriptor::SetEntries(WebGPUVectorBindGroupLayoutEntry* entries) {
+void WebGPUBindGroupLayoutDescriptor::SetEntries(WGPUVectorBindGroupLayoutEntry* entries) {
     if(entries != NULL) {
         Get().entryCount = entries->size();
         Get().entries = reinterpret_cast<const WGPUBindGroupLayoutEntry*>(entries->data());
@@ -2212,7 +2212,7 @@ void WebGPUPipelineLayoutDescriptor::SetLabel(const char* value) {
     Get().label = stringView.Get();
 }
 
-void WebGPUPipelineLayoutDescriptor::SetBindGroupLayouts(WebGPUVectorBindGroupLayout* bindGroupLayouts) {
+void WebGPUPipelineLayoutDescriptor::SetBindGroupLayouts(WGPUVectorBindGroupLayout* bindGroupLayouts) {
     if(bindGroupLayouts != NULL) {
         Get().bindGroupLayoutCount = bindGroupLayouts->size();
         Get().bindGroupLayouts = reinterpret_cast<const WGPUBindGroupLayout*>(bindGroupLayouts->data());
@@ -2242,7 +2242,7 @@ void WebGPUDeviceDescriptor::SetRequiredLimits(WebGPULimits* limits) {
     Get().requiredLimits = &(limits->Get());
 }
 
-void WebGPUDeviceDescriptor::SetRequiredFeatures(WebGPUVectorFeatureName* features) {
+void WebGPUDeviceDescriptor::SetRequiredFeatures(WGPUVectorFeatureName* features) {
     if(features != NULL) {
         Get().requiredFeatureCount = features->size();
         Get().requiredFeatures = features->data();
@@ -2309,7 +2309,7 @@ void WebGPURenderBundleEncoder::DrawIndexedIndirect(WebGPUBuffer* indirectBuffer
     wgpuRenderBundleEncoderDrawIndexedIndirect(Get(), indirectBuffer->Get(), indirectOffset);
 }
 
-void WebGPURenderBundleEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* offsets) {
+void WebGPURenderBundleEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
     uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
@@ -2460,7 +2460,7 @@ void WebGPURenderPassEncoder::EndOcclusionQuery() {
     wgpuRenderPassEncoderEndOcclusionQuery(Get());
 }
 
-void WebGPURenderPassEncoder::ExecuteBundles(WebGPUVectorRenderBundle* values) {
+void WebGPURenderPassEncoder::ExecuteBundles(WGPUVectorRenderBundle* values) {
     if(values != NULL) {
         int size = values->size();
         wgpuRenderPassEncoderExecuteBundles(Get(), size, reinterpret_cast<WGPURenderBundle const * >(values->data()));
@@ -2484,7 +2484,7 @@ void WebGPURenderPassEncoder::PushDebugGroup(const char* label) {
     wgpuRenderPassEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPURenderPassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* dynamicOffsets) {
+void WebGPURenderPassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* dynamicOffsets) {
     // TODO test. May not work if Int to uint32_t fails
     int dynamicOffsetCount = dynamicOffsets->size();
     wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, reinterpret_cast<uint32_t const *>(dynamicOffsets->data()));
@@ -2804,7 +2804,7 @@ void WebGPUComputePassEncoder::PushDebugGroup(const char* groupLabel) {
     wgpuComputePassEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPUComputePassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WebGPUVectorInt* offsets) {
+void WebGPUComputePassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
     uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
