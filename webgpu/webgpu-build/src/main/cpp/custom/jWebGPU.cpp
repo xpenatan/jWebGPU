@@ -234,19 +234,10 @@ uint64_t WGPUByteBuffer::swapBytes(uint64_t value) {
         ((value << 56) & 0xFF00000000000000ULL);
 }
 
-WGPUByteBuffer WGPUByteBuffer::Obtain() {
-    WGPUByteBuffer obj;
-    return obj;
-}
-
 WGPUByteBuffer WGPUByteBuffer::Obtain(int capacity) {
     WGPUByteBuffer obj(capacity);
     return obj;
 }
-
-WGPUByteBuffer::WGPUByteBuffer() : buffer(0), _limit(0), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
-
-WGPUByteBuffer::WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity), floatBuffer(std::make_unique<WGPUFloatBuffer>(*this)), shortBuffer(std::make_unique<WGPUShortBuffer>(*this)) {}
 
 int WGPUByteBuffer::getCapacity() { return buffer.size(); }
 
@@ -366,31 +357,33 @@ T WGPUByteBuffer::getNumeric(int index) {
 
 WGPUFloatBuffer& WGPUByteBuffer::asFloatBuffer() {
     _position = 0;
-    return *floatBuffer;
+    floatBuffer.parent = this;
+    return floatBuffer;
 }
 
 WGPUShortBuffer& WGPUByteBuffer::asShortBuffer() {
     _position = 0;
-    return *shortBuffer;
+    shortBuffer.parent = this;
+    return shortBuffer;
 }
 
 // WGPUFloatBuffer
 WGPUByteBuffer& WGPUFloatBuffer::getByteBuffer() {
-    return parent;
+    return *parent;
 }
 
 void WGPUFloatBuffer::put(int index, float value) {
     if (index < 0 || index >= getLimit()) {
         throw std::out_of_range("FloatBuffer overflow");
     }
-    parent.putNumeric(index * sizeof(float), value);
+    parent->putNumeric(index * sizeof(float), value);
 }
 
 float WGPUFloatBuffer::get(int index) {
     if (index < 0 || index >= getLimit()) {
         throw std::out_of_range("FloatBuffer index out of bounds");
     }
-    return parent.getNumeric<float>(index * sizeof(float));
+    return parent->getNumeric<float>(index * sizeof(float));
 }
 
 void WGPUFloatBuffer::put(float value) {
@@ -416,23 +409,23 @@ void WGPUFloatBuffer::put(const float* values, int offset, int size) {
 
     size_t byteOffset = offset * sizeof(float);
     size_t byteSize = size * sizeof(float);
-    if (byteOffset + byteSize > parent.getLimit()) {
+    if (byteOffset + byteSize > parent->getLimit()) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent.byteOrder == WGPUByteBuffer::LittleEndian) != parent.isLittleEndianHost();
+    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
     if (!needsSwap) {
         // Direct copy if no byte-swapping is needed
-        std::memcpy(&parent.buffer[byteOffset], values, byteSize);
+        std::memcpy(&parent->buffer[byteOffset], values, byteSize);
     }
     else {
         // Copy and swap bytes for each float
         std::vector<float> temp(values, values + size);
         for (int i = 0; i < size; ++i) {
             uint32_t* ptr = reinterpret_cast<uint32_t*>(&temp[i]);
-            *ptr = parent.swapBytes(*ptr);
+            *ptr = parent->swapBytes(*ptr);
         }
-        std::memcpy(&parent.buffer[byteOffset], temp.data(), byteSize);
+        std::memcpy(&parent->buffer[byteOffset], temp.data(), byteSize);
     }
 }
 
@@ -440,48 +433,48 @@ int WGPUFloatBuffer::remaining() const {
     return getLimit() - getPosition();
 }
 
-int WGPUFloatBuffer::getCapacity() { return parent.getCapacity() / sizeof(float); }
+int WGPUFloatBuffer::getCapacity() { return parent->getCapacity() / sizeof(float); }
 
 void WGPUFloatBuffer::position(int newPosition) {
     if (newPosition < 0 || newPosition > getLimit()) {
         throw std::out_of_range("Invalid position for FloatBuffer");
     }
-    parent.position(newPosition * sizeof(float));
+    parent->position(newPosition * sizeof(float));
 }
 
 int WGPUFloatBuffer::getPosition() const {
-    return parent.getPosition() / sizeof(float);
+    return parent->getPosition() / sizeof(float);
 }
 
 void WGPUFloatBuffer::clear() {
-    parent.clear();
+    parent->clear();
 }
 
 void WGPUFloatBuffer::limit(int newLimit) {
-    parent.limit(newLimit * sizeof(float));
+    parent->limit(newLimit * sizeof(float));
 }
 
 int WGPUFloatBuffer::getLimit() const {
-    return parent.getLimit() / sizeof(float);
+    return parent->getLimit() / sizeof(float);
 }
 
 // WGPUShortBuffer
 WGPUByteBuffer& WGPUShortBuffer::getByteBuffer() {
-    return parent;
+    return *parent;
 }
 
 void WGPUShortBuffer::put(int index, int16_t value) {
     if (index < 0 || index >= getLimit()) {
         throw std::out_of_range("ShortBuffer overflow");
     }
-    parent.putNumeric(index * sizeof(int16_t), value);
+    parent->putNumeric(index * sizeof(int16_t), value);
 }
 
 int16_t WGPUShortBuffer::get(int index) {
     if (index < 0 || index >= getLimit()) {
         throw std::out_of_range("ShortBuffer index out of bounds");
     }
-    return parent.getNumeric<int16_t>(index * sizeof(int16_t));
+    return parent->getNumeric<int16_t>(index * sizeof(int16_t));
 }
 
 void WGPUShortBuffer::put(int16_t value) {
@@ -507,53 +500,54 @@ void WGPUShortBuffer::put(const int16_t* values, int offset, int size) {
 
     size_t byteOffset = offset * sizeof(int16_t);
     size_t byteSize = size * sizeof(int16_t);
-    if (byteOffset + byteSize > parent.getLimit()) {
+    if (byteOffset + byteSize > parent->getLimit()) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent.byteOrder == WGPUByteBuffer::LittleEndian) != parent.isLittleEndianHost();
+    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
     if (!needsSwap) {
         // Direct copy if no byte-swapping is needed
-        std::memcpy(&parent.buffer[byteOffset], values, byteSize);
+        std::memcpy(&parent->buffer[byteOffset], values, byteSize);
     }
     else {
         // Copy and swap bytes for each short
         std::vector<int16_t> temp(values, values + size);
         for (int i = 0; i < size; ++i) {
-            temp[i] = parent.swapBytes(static_cast<uint16_t>(temp[i]));
+            temp[i] = parent->swapBytes(static_cast<uint16_t>(temp[i]));
         }
-        std::memcpy(&parent.buffer[byteOffset], temp.data(), byteSize);
+        std::memcpy(&parent->buffer[byteOffset], temp.data(), byteSize);
     }
 }
 
 void WGPUShortBuffer::clear() {
-    parent.clear();
+    parent->clear();
 }
 
 void WGPUShortBuffer::limit(int newLimit) {
-    parent.limit(newLimit * sizeof(float));
+    parent->limit(newLimit * sizeof(float));
 }
 
 int WGPUShortBuffer::getLimit() const {
-    return parent.getLimit() / sizeof(int16_t);
+    return parent->getLimit() / sizeof(int16_t);
 }
 
-int WGPUShortBuffer::getCapacity() { return parent.getCapacity() / sizeof(int16_t); }
+int WGPUShortBuffer::getCapacity() { return parent->getCapacity() / sizeof(int16_t); }
 
 void WGPUShortBuffer::position(int newPosition) {
     if (newPosition < 0 || newPosition > getLimit()) {
         throw std::out_of_range("Invalid position for ShortBuffer");
     }
-    parent.position(newPosition * sizeof(int16_t));
+    parent->position(newPosition * sizeof(int16_t));
 }
 
 int WGPUShortBuffer::getPosition() const {
-    return parent.getPosition() / sizeof(int16_t);
+    return parent->getPosition() / sizeof(int16_t);
 }
 
 int WGPUShortBuffer::remaining() const {
     return getLimit() - getPosition();
 }
+
 
 // WGPUAndroidWindow
 WGPUAndroidWindow::~WGPUAndroidWindow() {

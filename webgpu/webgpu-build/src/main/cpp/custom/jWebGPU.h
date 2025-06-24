@@ -90,8 +90,7 @@ class WebGPURenderPipeline;
 class WebGPUSampler;
 class WebGPUCompilationMessage;
 
-class WGPUFloatBuffer;
-class WGPUShortBuffer;
+class WGPUByteBuffer;
 
 #ifdef __EMSCRIPTEN__
 using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
@@ -121,64 +120,10 @@ class WGPU {
         static WebGPUInstance CreateInstance();
 };
 
-class WGPUByteBuffer {
-    private:
-        // Detect host endianness at compile time
-        static bool isLittleEndianHost();
-        // Portable byte-swapping functions
-        static uint16_t swapBytes(uint16_t value);
-        static uint32_t swapBytes(uint32_t value);
-        static uint64_t swapBytes(uint64_t value);
-
-    public:
-        enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
-
-    private:
-        std::vector<uint8_t> buffer;
-        size_t _position = 0;
-        size_t _limit;
-        WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
-        std::unique_ptr<WGPUFloatBuffer> floatBuffer;
-        std::unique_ptr<WGPUShortBuffer> shortBuffer;
-
-    public:
-        void push_back(char value);
-        const uint8_t* data();
-        template<typename T>
-        void putNumeric(int index, T value);
-        template<typename T>
-        T getNumeric(int index);
-
-    public:
-        static WGPUByteBuffer Obtain();
-        static WGPUByteBuffer Obtain(int capacity);
-        explicit WGPUByteBuffer();
-        explicit WGPUByteBuffer(int capacity);
-        void order(WGPUByteOrder order);
-        void put(int index, char value);
-        char get(int index);
-        void put(char value);
-        char get();
-        void put(const uint8_t* values, int index, int size);
-        int remaining() const;
-        void position(int newPosition);
-        int getPosition();
-        void limit(int newLimit);
-        size_t getLimit() const;
-        int getCapacity();
-        void clear();
-        WGPUFloatBuffer& asFloatBuffer();
-        WGPUShortBuffer& asShortBuffer();
-
-        friend class WGPUFloatBuffer;
-        friend class WGPUShortBuffer;
-};
-
 class WGPUFloatBuffer {
-    private:
-        WGPUByteBuffer& parent;
     public:
-        WGPUFloatBuffer(WGPUByteBuffer& bb) : parent(bb) {}
+        WGPUByteBuffer* parent;
+        WGPUFloatBuffer() : parent(NULL) {}
         WGPUByteBuffer& getByteBuffer();
         void put(int index, float value);
         void put(const float* values, int offset, int size);
@@ -195,10 +140,9 @@ class WGPUFloatBuffer {
 };
 
 class WGPUShortBuffer {
-    private:
-        WGPUByteBuffer& parent;
     public:
-        WGPUShortBuffer(WGPUByteBuffer& bb) : parent(bb) {}
+        WGPUByteBuffer* parent;
+        WGPUShortBuffer() : parent(NULL) {}
         WGPUByteBuffer& getByteBuffer();
         void put(int index, int16_t value);
         int16_t get(int index);
@@ -212,6 +156,58 @@ class WGPUShortBuffer {
         void clear();
         void limit(int newLimit);
         int getLimit() const;
+};
+
+class WGPUByteBuffer {
+private:
+    // Detect host endianness at compile time
+    static bool isLittleEndianHost();
+    // Portable byte-swapping functions
+    static uint16_t swapBytes(uint16_t value);
+    static uint32_t swapBytes(uint32_t value);
+    static uint64_t swapBytes(uint64_t value);
+
+public:
+    enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
+
+private:
+    std::vector<uint8_t> buffer;
+    size_t _position = 0;
+    size_t _limit;
+    WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
+    WGPUFloatBuffer floatBuffer;
+    WGPUShortBuffer shortBuffer;
+
+public:
+    void push_back(char value);
+    const uint8_t* data();
+    template<typename T>
+    void putNumeric(int index, T value);
+    template<typename T>
+    T getNumeric(int index);
+
+public:
+    static WGPUByteBuffer Obtain(int capacity);
+    WGPUByteBuffer() : buffer(0), _limit(0) {}
+    WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {}
+    void order(WGPUByteOrder order);
+    void put(int index, char value);
+    char get(int index);
+    void put(char value);
+    char get();
+    void put(const uint8_t* values, int index, int size);
+    int remaining() const;
+    void position(int newPosition);
+    int getPosition();
+    void limit(int newLimit);
+    size_t getLimit() const;
+    int getCapacity();
+    void clear();
+    WGPUFloatBuffer& asFloatBuffer();
+    WGPUShortBuffer& asShortBuffer();
+
+    friend class WGPUFloatBuffer;
+    friend class WGPUShortBuffer;
 };
 
 using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;

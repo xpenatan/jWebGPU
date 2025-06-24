@@ -11,9 +11,7 @@ interface WGPUAndroidWindow {
 };
 
 interface WGPUByteBuffer {
-    void WGPUByteBuffer();
     void WGPUByteBuffer(long capacity);
-    [Value] static WGPUByteBuffer Obtain();
     [Value] static WGPUByteBuffer Obtain(long capacity);
     void order(WGPUByteOrder order);
     byte get(long index);
