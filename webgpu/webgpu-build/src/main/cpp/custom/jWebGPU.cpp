@@ -1652,7 +1652,8 @@ WebGPURenderPassDepthStencilAttachment WebGPURenderPassDepthStencilAttachment::O
 }
 
 void WebGPURenderPassDepthStencilAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
+// TODO dont exist in wgpu-native
+//    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
 }
 
 void WebGPURenderPassDepthStencilAttachment::SetView(WebGPUTextureView* textureView) {

@@ -455,7 +455,7 @@ interface WebGPUPrimitiveState {
 interface WebGPURenderPassDepthStencilAttachment {
     void WebGPURenderPassDepthStencilAttachment();
     [Value] static WebGPURenderPassDepthStencilAttachment Obtain();
-    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+//    void SetNextInChain(WebGPUChainedStruct chainedStruct); // TODO dont exist in wgpu-native
     void SetView(WebGPUTextureView textureView);
     void SetDepthLoadOp(WGPULoadOp loadOp);
     void SetDepthStoreOp(WGPUStoreOp storeOp);
