@@ -89,6 +89,7 @@ class WebGPUComputePipeline;
 class WebGPURenderPipeline;
 class WebGPUSampler;
 class WebGPUCompilationMessage;
+class WebGPUBindGroupEntry;
 
 class WGPUByteBuffer;
 
@@ -137,6 +138,47 @@ class WGPUFloatBuffer {
         void clear();
         void limit(int newLimit);
         int getLimit() const;
+        void flip();
+};
+
+class WGPUIntBuffer {
+    public:
+        WGPUByteBuffer* parent;
+        WGPUIntBuffer() : parent(NULL) {}
+        WGPUByteBuffer& getByteBuffer();
+        void put(int index, int value);
+        void put(const int* values, int offset, int size);
+        int get(int index);
+        void put(int value);
+        int get();
+        int remaining() const;
+        int getCapacity();
+        void position(int newPosition);
+        int getPosition() const;
+        void clear();
+        void limit(int newLimit);
+        int getLimit() const;
+        void flip();
+};
+
+class WGPULongBuffer {
+    public:
+        WGPUByteBuffer* parent;
+        WGPULongBuffer() : parent(NULL) {}
+        WGPUByteBuffer& getByteBuffer();
+        void put(int index, long long value);
+        void put(const long long* values, int offset, int size);
+        long long get(int index);
+        void put(long long value);
+        long long get();
+        int remaining() const;
+        int getCapacity();
+        void position(int newPosition);
+        int getPosition() const;
+        void clear();
+        void limit(int newLimit);
+        int getLimit() const;
+        void flip();
 };
 
 class WGPUShortBuffer {
@@ -156,6 +198,7 @@ class WGPUShortBuffer {
         void clear();
         void limit(int newLimit);
         int getLimit() const;
+        void flip();
 };
 
 class WGPUByteBuffer {
@@ -176,6 +219,8 @@ private:
     size_t _limit;
     WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
     WGPUFloatBuffer floatBuffer;
+    WGPUIntBuffer intBuffer;
+    WGPULongBuffer longBuffer;
     WGPUShortBuffer shortBuffer;
 
 public:
@@ -203,10 +248,15 @@ public:
     size_t getLimit() const;
     int getCapacity();
     void clear();
+    void flip();
     WGPUFloatBuffer& asFloatBuffer();
+    WGPUIntBuffer& asIntBuffer();
+    WGPULongBuffer& asLongBuffer();
     WGPUShortBuffer& asShortBuffer();
 
     friend class WGPUFloatBuffer;
+    friend class WGPUIntBuffer;
+    friend class WGPULongBuffer;
     friend class WGPUShortBuffer;
 };
 
@@ -224,6 +274,16 @@ class WGPUAndroidWindow {
 };
 
 // ################################### VECTORS ###################################
+
+class WGPUVectorBindGroupEntry {
+    private:
+        std::vector<WebGPUBindGroupEntry> vector;
+    public:
+        static WGPUVectorBindGroupEntry Obtain();
+        int size();
+        void push_back(const WebGPUBindGroupEntry& entry);
+        const WebGPUBindGroupEntry* data();
+};
 
 class WGPUVectorColorTargetState {
     private:
@@ -484,8 +544,16 @@ class WebGPULimits : public WebGPUObjectBase<WebGPULimits, WGPULimits> {
         int GetMaxComputeWorkgroupsPerDimension();
 };
 
-class WebGPUBufferBindingLayout : public WebGPUObjectBase<WebGPUBufferBindingLayout, WGPUBufferBindingLayout> {
+class WebGPUBufferBindingLayout : public WebGPUObjectBase<WebGPUBufferBindingLayout, WGPUBufferBindingLayout*> {
     public:
+        WebGPUBufferBindingLayout() {
+            static WGPUBufferBindingLayout temp;
+            temp = WGPUBufferBindingLayout{};
+            Set(&temp);
+        }
+        WebGPUBufferBindingLayout(WGPUBufferBindingLayout* obj) {
+            Set(obj);
+        }
         static WebGPUBufferBindingLayout Obtain();
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetType(WGPUBufferBindingType type);
@@ -493,15 +561,31 @@ class WebGPUBufferBindingLayout : public WebGPUObjectBase<WebGPUBufferBindingLay
         void SetMinBindingSize(int minBindingSize);
 };
 
-class WebGPUSamplerBindingLayout : public WebGPUObjectBase<WebGPUSamplerBindingLayout, WGPUSamplerBindingLayout> {
+class WebGPUSamplerBindingLayout : public WebGPUObjectBase<WebGPUSamplerBindingLayout, WGPUSamplerBindingLayout*> {
     public:
+        WebGPUSamplerBindingLayout() {
+            static WGPUSamplerBindingLayout temp;
+            temp = WGPUSamplerBindingLayout{};
+            Set(&temp);
+        }
+        WebGPUSamplerBindingLayout(WGPUSamplerBindingLayout* obj) {
+            Set(obj);
+        }
         static WebGPUSamplerBindingLayout Obtain();
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetType(WGPUSamplerBindingType type);
 };
 
-class WebGPUTextureBindingLayout : public WebGPUObjectBase<WebGPUTextureBindingLayout, WGPUTextureBindingLayout> {
+class WebGPUTextureBindingLayout : public WebGPUObjectBase<WebGPUTextureBindingLayout, WGPUTextureBindingLayout*> {
     public:
+        WebGPUTextureBindingLayout() {
+            static WGPUTextureBindingLayout temp;
+            temp = WGPUTextureBindingLayout{};
+            Set(&temp);
+        }
+        WebGPUTextureBindingLayout(WGPUTextureBindingLayout* obj) {
+            Set(obj);
+        }
         static WebGPUTextureBindingLayout Obtain();
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetSampleType(WGPUTextureSampleType sampleType);
@@ -509,8 +593,16 @@ class WebGPUTextureBindingLayout : public WebGPUObjectBase<WebGPUTextureBindingL
         void SetMultisampled(int multisampled);
 };
 
-class WebGPUStorageTextureBindingLayout : public WebGPUObjectBase<WebGPUStorageTextureBindingLayout, WGPUStorageTextureBindingLayout> {
+class WebGPUStorageTextureBindingLayout : public WebGPUObjectBase<WebGPUStorageTextureBindingLayout, WGPUStorageTextureBindingLayout*> {
     public:
+        WebGPUStorageTextureBindingLayout() {
+            static WGPUStorageTextureBindingLayout temp;
+            temp = WGPUStorageTextureBindingLayout{};
+            Set(&temp);
+        }
+        WebGPUStorageTextureBindingLayout(WGPUStorageTextureBindingLayout* obj) {
+            Set(obj);
+        }
         static WebGPUStorageTextureBindingLayout Obtain();
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetAccess(WGPUStorageTextureAccess access);
@@ -528,6 +620,10 @@ class WebGPUBindGroupLayoutEntry : public WebGPUObjectBase<WebGPUBindGroupLayout
         void SetSampler(WebGPUSamplerBindingLayout* sampler);
         void SetTexture(WebGPUTextureBindingLayout* texture);
         void SetStorageTexture(WebGPUStorageTextureBindingLayout* storageTexture);
+        WebGPUBufferBindingLayout GetBuffer();
+        WebGPUSamplerBindingLayout GetSampler();
+        WebGPUStorageTextureBindingLayout GetStorageTexture();
+        WebGPUTextureBindingLayout GetTexture();
 };
 
 class WebGPURequestAdapterOptions : public WebGPUObjectBase<WebGPURequestAdapterOptions, WGPURequestAdapterOptions> {
@@ -677,6 +773,10 @@ class WebGPUColor : public WebGPUObjectBase<WebGPUColor, WGPUColor*> {
         float GetG();
         float GetB();
         float GetA();
+        void SetR(float value);
+        void SetG(float value);
+        void SetB(float value);
+        void SetA(float value);
 };
 
 class WebGPUSupportedFeatures : public WebGPUObjectBase<WebGPUSupportedFeatures, WGPUSupportedFeatures> {
@@ -689,6 +789,16 @@ class WebGPUSupportedFeatures : public WebGPUObjectBase<WebGPUSupportedFeatures,
 class WebGPURenderPassDepthStencilAttachment : public WebGPUObjectBase<WebGPURenderPassDepthStencilAttachment, WGPURenderPassDepthStencilAttachment> {
     public:
         static WebGPURenderPassDepthStencilAttachment Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetView(WebGPUTextureView* textureView);
+        void SetDepthLoadOp(WGPULoadOp loadOp);
+        void SetDepthStoreOp(WGPUStoreOp storeOp);
+        void SetDepthClearValue(float depthClearValue);
+        void SetDepthReadOnly(bool depthReadOnly);
+        void SetStencilLoadOp(WGPULoadOp loadOp);
+        void SetStencilStoreOp(WGPUStoreOp storeOp);
+        void SetStencilClearValue(int stencilClearValue);
+        void SetStencilReadOnly(bool stencilReadOnly);
 };
 
 class WebGPURenderPassTimestampWrites : public WebGPUObjectBase<WebGPURenderPassTimestampWrites, WGPURenderPassTimestampWrites> {
@@ -772,6 +882,7 @@ class WebGPUTexelCopyBufferInfo : public WebGPUObjectBase<WebGPUTexelCopyBufferI
         static WebGPUTexelCopyBufferInfo Obtain();
         WebGPUTexelCopyBufferLayout GetLayout();
         WebGPUBuffer GetBuffer();
+        void SetBuffer(WebGPUBuffer* buffer);
 };
 
 class WebGPUSurfaceConfiguration : public WebGPUObjectBase<WebGPUSurfaceConfiguration, WGPUSurfaceConfiguration> {
@@ -799,6 +910,7 @@ class WebGPURenderPassColorAttachment : public WebGPUObjectBase<WebGPURenderPass
     public:
         WebGPURenderPassColorAttachment();
         static WebGPURenderPassColorAttachment Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetResolveTarget(WebGPUTextureView* textureView);
         void SetView(WebGPUTextureView* textureView);
         void SetLoadOp(WGPULoadOp loadOp);
@@ -963,6 +1075,7 @@ class WebGPUBindGroupDescriptor : public WebGPUObjectBase<WebGPUBindGroupDescrip
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetLayout(WebGPUBindGroupLayout* layout);
+        void SetEntries(WGPUVectorBindGroupEntry* entries);
 };
 
 class WebGPUPipelineLayoutDescriptor : public WebGPUObjectBase<WebGPUPipelineLayoutDescriptor, WGPUPipelineLayoutDescriptor> {
@@ -1020,9 +1133,11 @@ class WebGPUCommandBufferDescriptor : public WebGPUObjectBase<WebGPUCommandBuffe
 class WebGPURenderPassDescriptor : public WebGPUObjectBase<WebGPURenderPassDescriptor, WGPURenderPassDescriptor> {
     public:
         static WebGPURenderPassDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetColorAttachments(WGPUVectorRenderPassColorAttachment* values);
         void SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment* attachment);
+        void SetOcclusionQuerySet(WebGPUQuerySet* occlusionQuerySet);
         void SetTimestampWrites(WebGPURenderPassTimestampWrites* timestampWrites);
 };
 
@@ -1110,6 +1225,7 @@ class WebGPUTexture : public WebGPUObjectBase<WebGPUTexture, WGPUTexture> {
         static WebGPUTexture Obtain();
         void CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView);
         WGPUTextureFormat GetFormat();
+        void Destroy();
 };
 
 class WebGPUShaderModule : public WebGPUObjectBase<WebGPUShaderModule, WGPUShaderModule> {
@@ -1161,7 +1277,7 @@ class WebGPUQuerySet : public WebGPUObjectBase<WebGPUQuerySet, WGPUQuerySet> {
         void AddRefInternal();
         void ReleaseInternal();
     public:
-        void SetDestroy();
+        void Destroy();
         int GetCount();
         WGPUQueryType GetType();
         void SetLabel(const char* label);
@@ -1269,6 +1385,7 @@ class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
         void Unmap();
         int GetSize();
         WGPUBufferUsage GetUsage();
+        void MapAsync();
         void Destroy();
 };
 

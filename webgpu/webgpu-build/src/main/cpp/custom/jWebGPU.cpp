@@ -72,6 +72,18 @@ template class WebGPUObjectBase<WebGPUAdapter, WGPUAdapter>;
 template class WebGPUObjectBase<WebGPUSurface, WGPUSurface>;
 template class WebGPUObjectBase<WebGPUInstance, WGPUInstance>;
 
+// WGPUVectorBindGroupEntry
+WGPUVectorBindGroupEntry WGPUVectorBindGroupEntry::Obtain() {
+    WGPUVectorBindGroupEntry obj;
+    return obj;
+}
+
+int WGPUVectorBindGroupEntry::size() { return vector.size(); }
+
+void WGPUVectorBindGroupEntry::push_back(const WebGPUBindGroupEntry& entry) { vector.push_back(entry); }
+
+const WebGPUBindGroupEntry* WGPUVectorBindGroupEntry::data() { return vector.data(); }
+
 // WGPUVectorColorTargetState
 WGPUVectorColorTargetState WGPUVectorColorTargetState::Obtain() {
     WGPUVectorColorTargetState obj;
@@ -313,6 +325,11 @@ void WGPUByteBuffer::clear() {
     _limit = buffer.size();
 }
 
+void WGPUByteBuffer::flip() {
+    _limit = _position;
+    _position = 0;
+}
+
 template<typename T>
 void WGPUByteBuffer::putNumeric(int index, T value) {
     if (index + sizeof(T) > _limit) {
@@ -359,6 +376,18 @@ WGPUFloatBuffer& WGPUByteBuffer::asFloatBuffer() {
     _position = 0;
     floatBuffer.parent = this;
     return floatBuffer;
+}
+
+WGPUIntBuffer& WGPUByteBuffer::asIntBuffer() {
+    _position = 0;
+    intBuffer.parent = this;
+    return intBuffer;
+}
+
+WGPULongBuffer& WGPUByteBuffer::asLongBuffer() {
+    _position = 0;
+    longBuffer.parent = this;
+    return longBuffer;
 }
 
 WGPUShortBuffer& WGPUByteBuffer::asShortBuffer() {
@@ -458,6 +487,206 @@ int WGPUFloatBuffer::getLimit() const {
     return parent->getLimit() / sizeof(float);
 }
 
+void WGPUFloatBuffer::flip() {
+    int pos = getPosition();
+    limit(pos);
+    position(0);
+}
+
+// WGPUIntBuffer
+WGPUByteBuffer& WGPUIntBuffer::getByteBuffer() {
+    return *parent;
+}
+
+void WGPUIntBuffer::put(int index, int value) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("IntBuffer overflow");
+    }
+    parent->putNumeric(index * sizeof(int), value);
+}
+
+int WGPUIntBuffer::get(int index) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("IntBuffer index out of bounds");
+    }
+    return parent->getNumeric<int>(index * sizeof(int));
+}
+
+void WGPUIntBuffer::put(int value) {
+    int intPosition = getPosition();
+    put(intPosition, value);
+    intPosition++;
+    position(intPosition);
+}
+
+int WGPUIntBuffer::get() {
+    int intPosition = getPosition();
+    auto value = get(intPosition);
+    intPosition++;
+    position(intPosition);
+    return value;
+}
+
+void WGPUIntBuffer::put(const int* values, int offset, int size) {
+    if (offset < 0 || size < 0 || offset + size > getLimit()) {
+        throw std::out_of_range("Invalid offset or size for FloatBuffer");
+    }
+    if (size == 0) return;
+
+    size_t byteOffset = offset * sizeof(int);
+    size_t byteSize = size * sizeof(int);
+    if (byteOffset + byteSize > parent->getLimit()) {
+        throw std::out_of_range("Buffer overflow");
+    }
+
+    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
+    if (!needsSwap) {
+        // Direct copy if no byte-swapping is needed
+        std::memcpy(&parent->buffer[byteOffset], values, byteSize);
+    }
+    else {
+        // Copy and swap bytes for each float
+        std::vector<int> temp(values, values + size);
+        for (int i = 0; i < size; ++i) {
+            uint32_t* ptr = reinterpret_cast<uint32_t*>(&temp[i]);
+            *ptr = parent->swapBytes(*ptr);
+        }
+        std::memcpy(&parent->buffer[byteOffset], temp.data(), byteSize);
+    }
+}
+
+int WGPUIntBuffer::remaining() const {
+    return getLimit() - getPosition();
+}
+
+int WGPUIntBuffer::getCapacity() { return parent->getCapacity() / sizeof(int); }
+
+void WGPUIntBuffer::position(int newPosition) {
+    if (newPosition < 0 || newPosition > getLimit()) {
+        throw std::out_of_range("Invalid position for IntBuffer");
+    }
+    parent->position(newPosition * sizeof(int));
+}
+
+int WGPUIntBuffer::getPosition() const {
+    return parent->getPosition() / sizeof(int);
+}
+
+void WGPUIntBuffer::clear() {
+    parent->clear();
+}
+
+void WGPUIntBuffer::limit(int newLimit) {
+    parent->limit(newLimit * sizeof(int));
+}
+
+int WGPUIntBuffer::getLimit() const {
+    return parent->getLimit() / sizeof(int);
+}
+
+void WGPUIntBuffer::flip() {
+    int pos = getPosition();
+    limit(pos);
+    position(0);
+}
+
+// WGPULongBuffer
+WGPUByteBuffer& WGPULongBuffer::getByteBuffer() {
+    return *parent;
+}
+
+void WGPULongBuffer::put(int index, long long value) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("IntBuffer overflow");
+    }
+    parent->putNumeric(index * sizeof(long long), value);
+}
+
+long long WGPULongBuffer::get(int index) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("IntBuffer index out of bounds");
+    }
+    return parent->getNumeric<long long>(index * sizeof(long long));
+}
+
+void WGPULongBuffer::put(long long value) {
+    int intPosition = getPosition();
+    put(intPosition, value);
+    intPosition++;
+    position(intPosition);
+}
+
+long long WGPULongBuffer::get() {
+    int intPosition = getPosition();
+    auto value = get(intPosition);
+    intPosition++;
+    position(intPosition);
+    return value;
+}
+
+void WGPULongBuffer::put(const long long* values, int offset, int size) {
+    if (offset < 0 || size < 0 || offset + size > getLimit()) {
+        throw std::out_of_range("Invalid offset or size for FloatBuffer");
+    }
+    if (size == 0) return;
+
+    size_t byteOffset = offset * sizeof(long long);
+    size_t byteSize = size * sizeof(long long);
+    if (byteOffset + byteSize > parent->getLimit()) {
+        throw std::out_of_range("Buffer overflow");
+    }
+
+    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
+    if (!needsSwap) {
+        // Direct copy if no byte-swapping is needed
+        std::memcpy(&parent->buffer[byteOffset], values, byteSize);
+    }
+    else {
+        // Copy and swap bytes for each float
+        std::vector<long long> temp(values, values + size);
+        for (int i = 0; i < size; ++i) {
+            uint32_t* ptr = reinterpret_cast<uint32_t*>(&temp[i]);
+            *ptr = parent->swapBytes(*ptr);
+        }
+        std::memcpy(&parent->buffer[byteOffset], temp.data(), byteSize);
+    }
+}
+
+int WGPULongBuffer::remaining() const {
+    return getLimit() - getPosition();
+}
+
+int WGPULongBuffer::getCapacity() { return parent->getCapacity() / sizeof(long long); }
+
+void WGPULongBuffer::position(int newPosition) {
+    if (newPosition < 0 || newPosition > getLimit()) {
+        throw std::out_of_range("Invalid position for IntBuffer");
+    }
+    parent->position(newPosition * sizeof(long long));
+}
+
+int WGPULongBuffer::getPosition() const {
+    return parent->getPosition() / sizeof(long long);
+}
+
+void WGPULongBuffer::clear() {
+    parent->clear();
+}
+
+void WGPULongBuffer::limit(int newLimit) {
+    parent->limit(newLimit * sizeof(long long));
+}
+
+int WGPULongBuffer::getLimit() const {
+    return parent->getLimit() / sizeof(long long);
+}
+
+void WGPULongBuffer::flip() {
+    int pos = getPosition();
+    limit(pos);
+    position(0);
+}
+
 // WGPUShortBuffer
 WGPUByteBuffer& WGPUShortBuffer::getByteBuffer() {
     return *parent;
@@ -548,6 +777,11 @@ int WGPUShortBuffer::remaining() const {
     return getLimit() - getPosition();
 }
 
+void WGPUShortBuffer::flip() {
+    int pos = getPosition();
+    limit(pos);
+    position(0);
+}
 
 // WGPUAndroidWindow
 WGPUAndroidWindow::~WGPUAndroidWindow() {
@@ -865,19 +1099,19 @@ WebGPUBufferBindingLayout WebGPUBufferBindingLayout::Obtain() {
 }
 
 void WebGPUBufferBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+    Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
 void WebGPUBufferBindingLayout::SetType(WGPUBufferBindingType type) {
-    Get().type = type;
+    Get()->type = type;
 }
 
 void WebGPUBufferBindingLayout::SetHasDynamicOffset(int hasDynamicOffset) {
-    Get().hasDynamicOffset = hasDynamicOffset;
+    Get()->hasDynamicOffset = hasDynamicOffset;
 }
 
 void WebGPUBufferBindingLayout::SetMinBindingSize(int minBindingSize) {
-    Get().minBindingSize = minBindingSize;
+    Get()->minBindingSize = minBindingSize;
 }
 
 // WebGPUSamplerBindingLayout
@@ -887,11 +1121,11 @@ WebGPUSamplerBindingLayout WebGPUSamplerBindingLayout::Obtain() {
 }
 
 void WebGPUSamplerBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+    Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
 void WebGPUSamplerBindingLayout::SetType(WGPUSamplerBindingType type) {
-    Get().type = type;
+    Get()->type = type;
 }
 
 // WebGPUTextureBindingLayout
@@ -901,19 +1135,19 @@ WebGPUTextureBindingLayout WebGPUTextureBindingLayout::Obtain() {
 }
 
 void WebGPUTextureBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+    Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
 void WebGPUTextureBindingLayout::SetSampleType(WGPUTextureSampleType sampleType) {
-    Get().sampleType = sampleType;
+    Get()->sampleType = sampleType;
 }
 
 void WebGPUTextureBindingLayout::SetViewDimension(WGPUTextureViewDimension viewDimension) {
-    Get().viewDimension = viewDimension;
+    Get()->viewDimension = viewDimension;
 }
 
 void WebGPUTextureBindingLayout::SetMultisampled(int multisampled) {
-    Get().multisampled = multisampled;
+    Get()->multisampled = multisampled;
 }
 
 // WebGPUStorageTextureBindingLayout
@@ -923,19 +1157,19 @@ WebGPUStorageTextureBindingLayout WebGPUStorageTextureBindingLayout::Obtain() {
 }
 
 void WebGPUStorageTextureBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
-    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+    Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
 void WebGPUStorageTextureBindingLayout::SetAccess(WGPUStorageTextureAccess access) {
-    Get().access = access;
+    Get()->access = access;
 }
 
 void WebGPUStorageTextureBindingLayout::SetFormat(WGPUTextureFormat format) {
-    Get().format = format;
+    Get()->format = format;
 }
 
 void WebGPUStorageTextureBindingLayout::SetViewDimension(WGPUTextureViewDimension viewDimension) {
-    Get().viewDimension = viewDimension;
+    Get()->viewDimension = viewDimension;
 }
 
 // WebGPUBindGroupLayoutEntry
@@ -957,19 +1191,39 @@ void WebGPUBindGroupLayoutEntry::SetVisibility(WGPUShaderStage visibility) {
 }
 
 void WebGPUBindGroupLayoutEntry::SetBuffer(WebGPUBufferBindingLayout* buffer) {
-    Get().buffer = buffer->Get();
+    Get().buffer = *buffer->Get();
 }
 
 void WebGPUBindGroupLayoutEntry::SetSampler(WebGPUSamplerBindingLayout* sampler) {
-    Get().sampler = sampler->Get();
+    Get().sampler = *sampler->Get();
 }
 
 void WebGPUBindGroupLayoutEntry::SetTexture(WebGPUTextureBindingLayout* texture) {
-    Get().texture = texture->Get();
+    Get().texture = *texture->Get();
 }
 
 void WebGPUBindGroupLayoutEntry::SetStorageTexture(WebGPUStorageTextureBindingLayout* storageTexture) {
-    Get().storageTexture = storageTexture->Get();
+    Get().storageTexture = *storageTexture->Get();
+}
+
+WebGPUBufferBindingLayout WebGPUBindGroupLayoutEntry::GetBuffer() {
+    WebGPUBufferBindingLayout temp(&Get().buffer);
+    return temp;
+}
+
+WebGPUSamplerBindingLayout WebGPUBindGroupLayoutEntry::GetSampler() {
+    WebGPUSamplerBindingLayout temp(&Get().sampler);
+    return temp;
+}
+
+WebGPUStorageTextureBindingLayout WebGPUBindGroupLayoutEntry::GetStorageTexture() {
+    WebGPUStorageTextureBindingLayout temp(&Get().storageTexture);
+    return temp;
+}
+
+WebGPUTextureBindingLayout WebGPUBindGroupLayoutEntry::GetTexture() {
+    WebGPUTextureBindingLayout temp(&Get().texture);
+    return temp;
 }
 
 // WebGPURequestAdapterOptions
@@ -1361,6 +1615,22 @@ float WebGPUColor::GetA() {
     return Get()->a;
 }
 
+void WebGPUColor::SetR(float value) {
+    Get()->r = value;
+}
+
+void WebGPUColor::SetG(float value) {
+    Get()->g = value;
+}
+
+void WebGPUColor::SetB(float value) {
+    Get()->b = value;
+}
+
+void WebGPUColor::SetA(float value) {
+    Get()->a = value;
+}
+
 // WebGPUSupportedFeatures
 WebGPUSupportedFeatures WebGPUSupportedFeatures::Obtain() {
     WebGPUSupportedFeatures obj;
@@ -1379,6 +1649,46 @@ WGPUFeatureName WebGPUSupportedFeatures::GetFeatureAt(long index) {
 WebGPURenderPassDepthStencilAttachment WebGPURenderPassDepthStencilAttachment::Obtain() {
     WebGPURenderPassDepthStencilAttachment obj;
     return obj;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetView(WebGPUTextureView* textureView) {
+    Get().view = textureView ? textureView->Get() : nullptr;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetDepthLoadOp(WGPULoadOp loadOp) {
+    Get().depthLoadOp = loadOp;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetDepthStoreOp(WGPUStoreOp storeOp) {
+    Get().depthStoreOp = storeOp;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetDepthClearValue(float depthClearValue) {
+    Get().depthClearValue = depthClearValue;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetDepthReadOnly(bool depthReadOnly) {
+    Get().depthReadOnly = depthReadOnly;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetStencilLoadOp(WGPULoadOp loadOp) {
+    Get().stencilLoadOp = loadOp;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetStencilStoreOp(WGPUStoreOp storeOp) {
+    Get().stencilStoreOp = storeOp;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetStencilClearValue(int stencilClearValue) {
+    Get().stencilClearValue = stencilClearValue;
+}
+
+void WebGPURenderPassDepthStencilAttachment::SetStencilReadOnly(bool stencilReadOnly) {
+    Get().stencilReadOnly = stencilReadOnly;
 }
 
 // WebGPURenderPassTimestampWrites
@@ -1517,6 +1827,10 @@ WebGPUBuffer WebGPUTexelCopyBufferInfo::GetBuffer() {
     return temp;
 }
 
+void WebGPUTexelCopyBufferInfo::SetBuffer(WebGPUBuffer* buffer) {
+    Get().buffer = buffer->Get();
+}
+
 // WebGPUSurfaceConfiguration
 WebGPUSurfaceConfiguration WebGPUSurfaceConfiguration::Obtain() {
     WebGPUSurfaceConfiguration temp;
@@ -1588,6 +1902,10 @@ WebGPURenderPassColorAttachment::WebGPURenderPassColorAttachment() {
 WebGPURenderPassColorAttachment WebGPURenderPassColorAttachment::Obtain() {
     WebGPURenderPassColorAttachment renderPassColorAttachment;
     return renderPassColorAttachment;
+}
+
+void WebGPURenderPassColorAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
 }
 
 void WebGPURenderPassColorAttachment::SetResolveTarget(WebGPUTextureView* textureView) {
@@ -2041,6 +2359,10 @@ WebGPURenderPassDescriptor WebGPURenderPassDescriptor::Obtain() {
     return obj;
 }
 
+void WebGPURenderPassDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
 void WebGPURenderPassDescriptor::SetLabel(const char* value) {
     WebGPUStringView stringView(value);
     Get().label = stringView.Get();
@@ -2059,6 +2381,10 @@ void WebGPURenderPassDescriptor::SetColorAttachments(WGPUVectorRenderPassColorAt
 
 void WebGPURenderPassDescriptor::SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment* attachment) {
     Get().depthStencilAttachment = attachment == NULL ? NULL : &(attachment->Get());
+}
+
+void WebGPURenderPassDescriptor::SetOcclusionQuerySet(WebGPUQuerySet* timestampWrites) {
+    Get().occlusionQuerySet = timestampWrites == NULL ? NULL : timestampWrites->Get();
 }
 
 void WebGPURenderPassDescriptor::SetTimestampWrites(WebGPURenderPassTimestampWrites* timestampWrites) {
@@ -2191,6 +2517,9 @@ void WebGPUProgrammableStageDescriptor::SetNextInChain(WebGPUChainedStruct* chai
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
+
+
+
 // WebGPUComputePipelineDescriptor
 WebGPUComputePipelineDescriptor WebGPUComputePipelineDescriptor::Obtain() {
     WebGPUComputePipelineDescriptor obj;
@@ -2271,6 +2600,17 @@ void WebGPUBindGroupDescriptor::SetLabel(const char* value) {
 
 void WebGPUBindGroupDescriptor::SetLayout(WebGPUBindGroupLayout* layout) {
     Get().layout = layout->Get();
+}
+
+void WebGPUBindGroupDescriptor::SetEntries(WGPUVectorBindGroupEntry* entries) {
+    if(entries != NULL) {
+        Get().entryCount = entries->size();
+        Get().entries = reinterpret_cast<const WGPUBindGroupEntry*>(entries->data());
+    }
+    else {
+        Get().entryCount = 0;
+        Get().entries = NULL;
+    }
 }
 
 // WebGPUPipelineLayoutDescriptor
@@ -2462,6 +2802,11 @@ WGPUTextureFormat WebGPUTexture::GetFormat() {
     return wgpuTextureGetFormat(Get());
 }
 
+
+void WebGPUTexture::Destroy() {
+    wgpuTextureDestroy(Get());
+}
+
 // WebGPUShaderModule
 WebGPUShaderModule WebGPUShaderModule::Obtain() {
     WebGPUShaderModule obj;
@@ -2605,7 +2950,7 @@ void WebGPUQuerySet::ReleaseInternal() {
     wgpuQuerySetRelease(Get());
 }
 
-void WebGPUQuerySet::SetDestroy() {
+void WebGPUQuerySet::Destroy() {
     wgpuQuerySetDestroy(Get());
 }
 
@@ -3005,6 +3350,11 @@ int WebGPUBuffer::GetSize() {
 
 WGPUBufferUsage WebGPUBuffer::GetUsage() {
     return wgpuBufferGetUsage(Get());
+}
+
+void WebGPUBuffer::MapAsync() {
+    //TODO
+//    wgpuBufferMapAsync(Get());
 }
 
 void WebGPUBuffer::Destroy() {
