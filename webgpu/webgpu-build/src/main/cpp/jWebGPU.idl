@@ -216,14 +216,25 @@ interface UncapturedErrorCallbackImpl {
     void OnCallback(WGPUErrorType errorType, [Const] DOMString message);
 };
 
+interface BufferMapCallback {
+};
+
+[JSImplementation="BufferMapCallback"]
+interface BufferMapCallbackImpl {
+    void BufferMapCallbackImpl();
+    void OnCallback(WGPUMapAsyncStatus status, [Const] DOMString message);
+};
+
 // ################################### STRUCTS ###################################
 
 interface WebGPUAdapterInfo {
     void WebGPUAdapterInfo();
     [Value] static WebGPUAdapterInfo Obtain();
     [Value] IDLString GetVendor();
+    long GetVendorID();
     [Value] IDLString GetArchitecture();
     [Value] IDLString GetDevice();
+    long GetDeviceID();
     [Value] IDLString GetDescription();
     WGPUBackendType GetBackendType();
     WGPUAdapterType GetAdapterType();
@@ -330,6 +341,11 @@ interface WebGPULimits {
 interface WebGPURequestAdapterOptions {
     void WebGPURequestAdapterOptions();
     [Value] static WebGPURequestAdapterOptions Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    void SetFeatureLevel(WGPUFeatureLevel featureLevel);
+    void SetPowerPreference(WGPUPowerPreference powerPreference);
+    void SetBackendType(WGPUBackendType backendType);
+    void SetCompatibleSurface(WebGPUSurface compatibleSurface);
 };
 
 interface WebGPUShaderSourceWGSL {
@@ -468,6 +484,7 @@ interface WebGPURenderPassDepthStencilAttachment {
 };
 
 interface WebGPURenderPassTimestampWrites {
+    void WebGPURenderPassTimestampWrites();
     [Value] static WebGPURenderPassTimestampWrites Obtain();
     void SetQuerySet(WebGPUQuerySet value);
     void SetBeginningOfPassWriteIndex(long value);
@@ -875,6 +892,7 @@ interface WebGPUTextureDescriptor {
 interface WebGPUTextureViewDescriptor {
     void WebGPUTextureViewDescriptor();
     [Value] static WebGPUTextureViewDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetFormat(WGPUTextureFormat format);
     void SetDimension(WGPUTextureViewDimension dimension);
@@ -1010,6 +1028,7 @@ interface WebGPUDevice {
     void Destroy();
 
     void GetFeatures(WebGPUSupportedFeatures features);
+    boolean HasFeature(WGPUFeatureName feature);
     void GetLimits(WebGPULimits limits);
     [Value] WebGPUQueue GetQueue();
 };
@@ -1059,6 +1078,8 @@ interface WebGPUBuffer {
     void WebGPUBuffer();
     void Release();
     void Destroy();
+    void MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);
+    [Value] WGPUByteBuffer GetConstMappedRange(long offset, long size);
     void Unmap();
     long GetSize();
     WGPUBufferUsage GetUsage();

@@ -1232,6 +1232,26 @@ WebGPURequestAdapterOptions WebGPURequestAdapterOptions::Obtain() {
     return obj;
 }
 
+void WebGPURequestAdapterOptions::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
+void WebGPURequestAdapterOptions::SetFeatureLevel(WGPUFeatureLevel featureLevel) {
+    Get().featureLevel = featureLevel;
+}
+
+void WebGPURequestAdapterOptions::SetPowerPreference(WGPUPowerPreference powerPreference) {
+    Get().powerPreference = powerPreference;
+}
+
+void WebGPURequestAdapterOptions::SetBackendType(WGPUBackendType backendType) {
+    Get().backendType = backendType;
+}
+
+void WebGPURequestAdapterOptions::SetCompatibleSurface(WebGPUSurface* compatibleSurface) {
+    Get().compatibleSurface = compatibleSurface->Get();
+}
+
 // WebGPUAdapterInfo
 WebGPUAdapterInfo WebGPUAdapterInfo::Obtain() {
     WebGPUAdapterInfo obj;
@@ -1243,6 +1263,10 @@ std::string WebGPUAdapterInfo::GetVendor() {
     return stringView.GetString();
 }
 
+int WebGPUAdapterInfo::GetVendorID() {
+    return Get().vendorID;
+}
+
 std::string WebGPUAdapterInfo::GetArchitecture() {
     WebGPUStringView stringView(Get().architecture);
     return stringView.GetString();
@@ -1251,6 +1275,10 @@ std::string WebGPUAdapterInfo::GetArchitecture() {
 std::string WebGPUAdapterInfo::GetDevice() {
     WebGPUStringView stringView(Get().device);
     return stringView.GetString();
+}
+
+int WebGPUAdapterInfo::GetDeviceID() {
+    return Get().deviceID;
 }
 
 std::string WebGPUAdapterInfo::GetDescription() {
@@ -2247,6 +2275,10 @@ WebGPUTextureViewDescriptor WebGPUTextureViewDescriptor::Obtain() {
     return obj;
 }
 
+void WebGPUTextureViewDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
+}
+
 void WebGPUTextureViewDescriptor::SetLabel(const char* value) {
     WebGPUStringView stringView(value);
     Get().label = stringView.Get();
@@ -3176,6 +3208,10 @@ void WebGPUDevice::GetFeatures(WebGPUSupportedFeatures* features) {
     wgpuDeviceGetFeatures(Get(), reinterpret_cast<WGPUSupportedFeatures * >(features));
 }
 
+bool WebGPUDevice::HasFeature(WGPUFeatureName feature) {
+    return wgpuDeviceHasFeature(Get(), feature);
+}
+
 void WebGPUDevice::GetLimits(WebGPULimits* limits) {
     wgpuDeviceGetLimits(Get(), reinterpret_cast<WGPULimits * >(&(limits->Get())));
 }
@@ -3353,9 +3389,24 @@ WGPUBufferUsage WebGPUBuffer::GetUsage() {
     return wgpuBufferGetUsage(Get());
 }
 
-void WebGPUBuffer::MapAsync() {
-    //TODO
-//    wgpuBufferMapAsync(Get());
+void WebGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
+    WGPUBufferMapCallbackInfo callbackInfo = {};
+    callbackInfo.mode = callbackMode;
+
+    callbackInfo.callback = [](WGPUMapAsyncStatus status, WGPUStringView message, void* callback_param, void*) {
+        BufferMapCallback* cback = reinterpret_cast<BufferMapCallback*>(callback_param);
+        cback->OnCallback(status, message.data);
+    };
+    callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
+    callbackInfo.userdata2 = NULL;
+    wgpuBufferMapAsync(Get(), mode, offset, size, callbackInfo);
+}
+
+WGPUByteBuffer WebGPUBuffer::GetConstMappedRange(int offset, int size) {
+    // TODO need to test
+    uint8_t* bufferData = (uint8_t*) wgpuBufferGetConstMappedRange(Get(), offset, size);
+    WGPUByteBuffer buffer(bufferData, size);
+    return buffer;
 }
 
 void WebGPUBuffer::Destroy() {

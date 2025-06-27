@@ -235,6 +235,9 @@ public:
     static WGPUByteBuffer Obtain(int capacity);
     WGPUByteBuffer() : buffer(0), _limit(0) {}
     WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {}
+    WGPUByteBuffer(uint8_t* bufferData, int dataSize) : _limit(dataSize) {
+        buffer.insert(buffer.end(), bufferData, bufferData + dataSize);
+    }
     void order(WGPUByteOrder order);
     void put(int index, char value);
     char get(int index);
@@ -409,6 +412,11 @@ public:
 class UncapturedErrorCallback {
 public:
     virtual void OnCallback(WGPUErrorType errorType, const char* message) = 0;
+};
+
+class BufferMapCallback {
+public:
+    virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) = 0;
 };
 
 template<typename Derived, typename CType>
@@ -629,14 +637,21 @@ class WebGPUBindGroupLayoutEntry : public WebGPUObjectBase<WebGPUBindGroupLayout
 class WebGPURequestAdapterOptions : public WebGPUObjectBase<WebGPURequestAdapterOptions, WGPURequestAdapterOptions> {
     public:
         static WebGPURequestAdapterOptions Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        void SetFeatureLevel(WGPUFeatureLevel featureLevel);
+        void SetPowerPreference(WGPUPowerPreference powerPreference);
+        void SetBackendType(WGPUBackendType backendType);
+        void SetCompatibleSurface(WebGPUSurface* compatibleSurface);
 };
 
 class WebGPUAdapterInfo : public WebGPUObjectBase<WebGPUAdapterInfo, WGPUAdapterInfo> {
     public:
         static WebGPUAdapterInfo Obtain();
         std::string GetVendor();
+        int GetVendorID();
         std::string GetArchitecture();
         std::string GetDevice();
+        int GetDeviceID();
         std::string GetDescription();
         WGPUBackendType GetBackendType();
         WGPUAdapterType GetAdapterType();
@@ -1166,6 +1181,7 @@ class WebGPUTextureDescriptor : public WebGPUObjectBase<WebGPUTextureDescriptor,
 class WebGPUTextureViewDescriptor : public WebGPUObjectBase<WebGPUTextureViewDescriptor, WGPUTextureViewDescriptor> {
     public:
         static WebGPUTextureViewDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetFormat(WGPUTextureFormat format);
         void SetDimension(WGPUTextureViewDimension dimension);
@@ -1326,6 +1342,7 @@ class WebGPUDevice : public WebGPUObjectBase<WebGPUDevice, WGPUDevice> {
         void Destroy();
 
         void GetFeatures(WebGPUSupportedFeatures* features);
+        bool HasFeature(WGPUFeatureName feature);
         void GetLimits(WebGPULimits* limits);
         WebGPUQueue GetQueue();
 };
@@ -1385,7 +1402,8 @@ class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
         void Unmap();
         int GetSize();
         WGPUBufferUsage GetUsage();
-        void MapAsync();
+        void MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback);
+        WGPUByteBuffer GetConstMappedRange(int offset, int size);
         void Destroy();
 };
 
