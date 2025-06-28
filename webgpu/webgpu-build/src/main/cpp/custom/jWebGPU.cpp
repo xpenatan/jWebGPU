@@ -3510,7 +3510,7 @@ void WebGPUAdapter::ReleaseInternal() {
 void WebGPUAdapter::RequestDevice(WebGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
     descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const WGPUDevice* device, WGPUErrorType type, WGPUStringView message, void* callback_param, void* userdata_param) {
         UncapturedErrorCallback* cback = reinterpret_cast<UncapturedErrorCallback*>(callback_param);
-        cback->OnCallback(type, message.data);
+        cback->OnCallback(type, WebGPUStringView(message).GetString().c_str());
     };
     descriptor->Get().uncapturedErrorCallbackInfo.userdata1 = reinterpret_cast<void*>(errorCallback);
     descriptor->Get().uncapturedErrorCallbackInfo.userdata2 = NULL;
