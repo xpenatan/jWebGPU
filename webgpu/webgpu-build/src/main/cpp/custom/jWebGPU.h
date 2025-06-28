@@ -91,6 +91,8 @@ class WebGPUSampler;
 class WebGPUCompilationMessage;
 class WebGPUBindGroupEntry;
 
+class STBImage;
+
 class WGPUByteBuffer;
 
 #ifdef __EMSCRIPTEN__
@@ -119,6 +121,7 @@ class WGPU {
     public:
         static WGPUPlatformType GetPlatformType();
         static WebGPUInstance CreateInstance();
+        static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
 };
 
 class WGPUFloatBuffer {
@@ -202,68 +205,81 @@ class WGPUShortBuffer {
 };
 
 class WGPUByteBuffer {
-private:
-    // Detect host endianness at compile time
-    static bool isLittleEndianHost();
-    // Portable byte-swapping functions
-    static uint16_t swapBytes(uint16_t value);
-    static uint32_t swapBytes(uint32_t value);
-    static uint64_t swapBytes(uint64_t value);
+    private:
+        // Detect host endianness at compile time
+        static bool isLittleEndianHost();
+        // Portable byte-swapping functions
+        static uint16_t swapBytes(uint16_t value);
+        static uint32_t swapBytes(uint32_t value);
+        static uint64_t swapBytes(uint64_t value);
 
-public:
-    enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
+    public:
+        enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
 
-private:
-    std::vector<uint8_t> buffer;
-    size_t _position = 0;
-    size_t _limit;
-    WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
-    WGPUFloatBuffer floatBuffer;
-    WGPUIntBuffer intBuffer;
-    WGPULongBuffer longBuffer;
-    WGPUShortBuffer shortBuffer;
+    private:
+        std::vector<uint8_t> buffer;
+        size_t _position = 0;
+        size_t _limit;
+        WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
+        WGPUFloatBuffer floatBuffer;
+        WGPUIntBuffer intBuffer;
+        WGPULongBuffer longBuffer;
+        WGPUShortBuffer shortBuffer;
 
-public:
-    void push_back(char value);
-    const uint8_t* data();
-    template<typename T>
-    void putNumeric(int index, T value);
-    template<typename T>
-    T getNumeric(int index);
+    public:
+        void push_back(char value);
+        const uint8_t* data();
+        template<typename T>
+        void putNumeric(int index, T value);
+        template<typename T>
+        T getNumeric(int index);
 
-public:
-    static WGPUByteBuffer Obtain(int capacity);
-    WGPUByteBuffer() : buffer(0), _limit(0) {}
-    WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {}
-    WGPUByteBuffer(uint8_t* bufferData, int dataSize) : _limit(dataSize) {
-        buffer.insert(buffer.end(), bufferData, bufferData + dataSize);
-    }
-    void order(WGPUByteOrder order);
-    void put(int index, char value);
-    char get(int index);
-    void put(char value);
-    char get();
-    void put(const uint8_t* values, int index, int size);
-    int remaining() const;
-    void position(int newPosition);
-    int getPosition();
-    void limit(int newLimit);
-    size_t getLimit() const;
-    int getCapacity();
-    void clear();
-    void flip();
-    WGPUFloatBuffer& asFloatBuffer();
-    WGPUIntBuffer& asIntBuffer();
-    WGPULongBuffer& asLongBuffer();
-    WGPUShortBuffer& asShortBuffer();
+    public:
+        static WGPUByteBuffer Obtain(int capacity);
+        WGPUByteBuffer() : buffer(0), _limit(0) {}
+        WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {}
+        WGPUByteBuffer(uint8_t* bufferData, int dataSize) : _limit(dataSize) {
+            buffer.insert(buffer.end(), bufferData, bufferData + dataSize);
+        }
+        void order(WGPUByteOrder order);
+        void put(int index, char value);
+        char get(int index);
+        void put(char value);
+        char get();
+        void put(const uint8_t* values, int index, int size);
+        int remaining() const;
+        void position(int newPosition);
+        int getPosition();
+        void limit(int newLimit);
+        size_t getLimit() const;
+        int getCapacity();
+        void clear();
+        void flip();
+        WGPUFloatBuffer& asFloatBuffer();
+        WGPUIntBuffer& asIntBuffer();
+        WGPULongBuffer& asLongBuffer();
+        WGPUShortBuffer& asShortBuffer();
 
-    friend class WGPUFloatBuffer;
-    friend class WGPUIntBuffer;
-    friend class WGPULongBuffer;
-    friend class WGPUShortBuffer;
+        friend class WGPUFloatBuffer;
+        friend class WGPUIntBuffer;
+        friend class WGPULongBuffer;
+        friend class WGPUShortBuffer;
 };
 
 using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;
+
+class STBImage {
+    public:
+        uint32_t width;
+        uint32_t height;
+        uint32_t format;
+        WGPUByteBuffer pixel;
+
+        int GetWidth() { return width; }
+        int GetHeight() { return height; }
+        int GetFormat() { return format; }
+        WGPUByteBuffer& GetPixels() { return pixel; }
+};
 
 class WGPUAndroidWindow {
     public:

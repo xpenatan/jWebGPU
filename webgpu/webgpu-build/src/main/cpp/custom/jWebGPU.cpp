@@ -1,5 +1,8 @@
 #include "jWebGPU.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 #ifdef __ANDROID__
 // Custom streambuf to redirect std::cout to Logcat
 int LogcatStreamBuf::overflow(int c) {
@@ -1999,6 +2002,26 @@ WebGPUInstance WGPU::CreateInstance() {
     WebGPUInstance instance;
     instance.Set(wgpuCreateInstance(NULL));
     return instance;
+}
+
+STBImage* WGPU::loadImage(WGPUByteBuffer* buffer, int desiredChannels) {
+    int32_t width, height, format;
+    unsigned char* pixels = stbi_load_from_memory(buffer->data(), buffer->getLimit(), &width, &height, &format, desiredChannels);
+    if (pixels == NULL)
+        return NULL;
+
+    int bufferFormat = format;
+    if(desiredChannels > 0) {
+        bufferFormat = desiredChannels;
+    }
+
+    STBImage* stbImage = new STBImage();
+    stbImage->pixel = WGPUByteBuffer(pixels, width * height * bufferFormat);
+    stbi_image_free(pixels);
+    stbImage->width = width;
+    stbImage->height = height;
+    stbImage->format = format;
+    return stbImage;
 }
 
 // WebGPUBindGroupEntry
