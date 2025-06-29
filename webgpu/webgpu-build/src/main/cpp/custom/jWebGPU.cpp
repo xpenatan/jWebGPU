@@ -219,7 +219,7 @@ void WGPUVectorInt::push_back(int attachment) { vector.push_back(attachment); }
 
 int WGPUVectorInt::get(int index) { return vector[index]; }
 
-const int* WGPUVectorInt::data() { return vector.data(); }
+const uint32_t* WGPUVectorInt::data() { return vector.data(); }
 
 // WGPUByteBuffer
 bool WGPUByteBuffer::isLittleEndianHost() {
@@ -2953,15 +2953,18 @@ void WebGPURenderPassEncoder::PushDebugGroup(const char* label) {
     wgpuRenderPassEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPURenderPassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* dynamicOffsets) {
-    // TODO test. May not work if Int to uint32_t fails
-    int dynamicOffsetCount = dynamicOffsets->size();
-    wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, reinterpret_cast<uint32_t const *>(dynamicOffsets->data()));
+void WebGPURenderPassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* offsets) {
+    int dynamicOffsetCount = 0;
+    uint32_t* dynamicOffsets = NULL;
+    if(offsets != NULL) {
+        dynamicOffsetCount = offsets->size();
+        dynamicOffsets = (uint32_t*)offsets->data();
+    }
+    wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
 
 void WebGPURenderPassEncoder::SetBlendConstant(WebGPUColor* color) {
-    // TODO need to test if this is working
-    wgpuRenderPassEncoderSetBlendConstant(Get(), reinterpret_cast<WGPUColor *>(color));
+    wgpuRenderPassEncoderSetBlendConstant(Get(), color != NULL ? color->Get() : NULL);
 }
 
 void WebGPURenderPassEncoder::SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {

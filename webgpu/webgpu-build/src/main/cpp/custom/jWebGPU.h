@@ -406,13 +406,13 @@ class WGPUVectorBindGroupLayoutEntry {
 
 class WGPUVectorInt {
     private:
-        std::vector<int> vector;
+        std::vector<uint32_t> vector;
     public:
         static WGPUVectorInt Obtain();
         int size();
         void push_back(int attachment);
         int get(int index);
-        const int* data();
+        const uint32_t* data();
 };
 
 class RequestAdapterCallback {
