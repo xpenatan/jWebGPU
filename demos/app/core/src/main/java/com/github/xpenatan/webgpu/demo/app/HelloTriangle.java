@@ -44,7 +44,7 @@ import com.github.xpenatan.webgpu.WGPUTextureViewDimension;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
-public class TriangleDemo implements ApplicationListener {
+public class HelloTriangle implements ApplicationListener {
 
     private WGPUTextureFormat surfaceFormat;
 

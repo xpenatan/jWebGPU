@@ -5,6 +5,6 @@ import com.github.xpenatan.webgpu.backend.teavm.TeaVMApp;
 
 public class MainTeaVM {
     public static void main(String[] args) {
-        new TeaVMApp(new TriangleDemo());
+        new TeaVMApp(new HelloTriangle());
     }
 }

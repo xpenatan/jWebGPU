@@ -10,12 +10,12 @@ public class MainAndroid extends AndroidApplication {
 
     private MainLayoutBinding binding;
 
-    private TriangleDemo webgpuApp;
+    private HelloTriangle webgpuApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        webgpuApp = new TriangleDemo();
+        webgpuApp = new HelloTriangle();
         binding = MainLayoutBinding.inflate(LayoutInflater.from(this));
         SurfaceView surfaceView = binding.viewSurface;
         initialize(webgpuApp, surfaceView, binding.getRoot());
