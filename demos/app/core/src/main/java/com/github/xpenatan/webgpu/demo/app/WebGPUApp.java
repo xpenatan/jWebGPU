@@ -230,8 +230,8 @@ public class WebGPUApp implements ApplicationListener {
         shaderDesc.setLabel("triangle shader");
 
         WebGPUShaderSourceWGSL shaderCodeDesc = WebGPUShaderSourceWGSL.obtain();
-        shaderCodeDesc.setNext(null);
-        shaderCodeDesc.setSType(WGPUSType.ShaderSourceWGSL);
+        shaderCodeDesc.getChain().setNext(null);
+        shaderCodeDesc.getChain().setSType(WGPUSType.ShaderSourceWGSL);
         shaderCodeDesc.setCode(shaderSource);
 
         shaderDesc.setNextInChain(shaderCodeDesc.getChain());

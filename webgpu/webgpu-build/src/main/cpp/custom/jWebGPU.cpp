@@ -834,7 +834,7 @@ const std::string WebGPUStringView::GetString() {
 
 // WebGPUChainedStruct
 void WebGPUChainedStruct::SetNext(WebGPUChainedStruct* value) {
-    Get()->next = value->Get();
+    Get()->next = value != NULL ? value->Get() : NULL;
 }
 
 void WebGPUChainedStruct::SetSType(WGPUSType type) {
@@ -1385,14 +1385,6 @@ WebGPUShaderSourceWGSL WebGPUShaderSourceWGSL::Obtain() {
 void WebGPUShaderSourceWGSL::SetCode(const char* value) {
     WebGPUStringView stringView(value);
     Get().code = stringView.Get();
-}
-
-void WebGPUShaderSourceWGSL::SetNext(WebGPUChainedStruct* value) {
-    Get().chain.next = value != NULL ? value->Get() : NULL;
-}
-
-void WebGPUShaderSourceWGSL::SetSType(WGPUSType type) {
-    Get().chain.sType = type;
 }
 
 WebGPUChainedStruct WebGPUShaderSourceWGSL::GetChain() {

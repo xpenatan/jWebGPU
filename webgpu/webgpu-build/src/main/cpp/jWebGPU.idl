@@ -360,8 +360,6 @@ interface WebGPUShaderSourceWGSL {
     void WebGPUShaderSourceWGSL();
     [Value] static WebGPUShaderSourceWGSL Obtain();
     void SetCode([Const] DOMString code);
-    void SetNext(WebGPUChainedStruct value);
-    void SetSType(WGPUSType type);
     [Value] WebGPUChainedStruct GetChain();
 };
 

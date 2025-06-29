@@ -706,8 +706,6 @@ class WebGPUShaderSourceWGSL : public WebGPUObjectBase<WebGPUShaderSourceWGSL, W
     public:
         static WebGPUShaderSourceWGSL Obtain();
         void SetCode(const char* value);
-        void SetNext(WebGPUChainedStruct* value);
-        void SetSType(WGPUSType type);
         WebGPUChainedStruct GetChain();
 };
 
