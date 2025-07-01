@@ -2,7 +2,7 @@
 
 interface WGPU {
     static WGPUPlatformType GetPlatformType();
-    [Value] static WebGPUInstance CreateInstance();
+    [Value] static WebGPUInstance CreateInstance(optional WebGPUInstanceDescriptor descriptor);
     static STBImage loadImage(WGPUByteBuffer buffer, optional long desiredChannels);
 };
 
@@ -121,6 +121,12 @@ enum WGPUPlatformType {
 
 // ################################### VECTORS ###################################
 
+interface WGPUVectorFutureWaitInfo {
+    void WGPUVectorFutureWaitInfo();
+    [Value] static WGPUVectorFutureWaitInfo Obtain();
+    void push_back([Ref] WebGPUFutureWaitInfo entry);
+};
+
 interface WGPUVectorBindGroupEntry {
     void WGPUVectorBindGroupEntry();
     [Value] static WGPUVectorBindGroupEntry Obtain();
@@ -234,6 +240,16 @@ interface BufferMapCallbackImpl {
 };
 
 // ################################### STRUCTS ###################################
+
+
+interface WebGPUFuture {
+};
+
+interface WebGPUFutureWaitInfo {
+    [Value] static WebGPUFutureWaitInfo Obtain();
+    void SetFuture(WebGPUFuture future);
+};
+
 
 interface WebGPUAdapterInfo {
     void WebGPUAdapterInfo();
@@ -463,7 +479,7 @@ interface WebGPUMultisampleState {
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetCount(long count);
     void SetMask(long mask);
-    void SetAlphaToCoverageEnabled(long alphaToCoverageEnabled);
+    void SetAlphaToCoverageEnabled(boolean alphaToCoverageEnabled);
 };
 
 interface WebGPUPrimitiveState {
@@ -671,9 +687,8 @@ interface WebGPUBindGroupEntry  {
 };
 
 interface WebGPUInstanceCapabilities  {
-    void WebGPUInstanceCapabilities ();
-    [Value] static WebGPUInstanceCapabilities Obtain();
-
+    void SetTimedWaitAnyEnable(boolean enable);
+    void SetTimedWaitAnyMaxCount(long timedWaitAnyMaxCount);
 };
 
 interface WebGPURenderPassMaxDrawCount  {
@@ -715,6 +730,13 @@ interface WebGPUCompilationMessage  {
 };
 
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+interface WebGPUInstanceDescriptor {
+    void WebGPUInstanceDescriptor();
+    [Value] static WebGPUInstanceDescriptor Obtain();
+    void SetNextInChain(WebGPUChainedStruct chainedStruct);
+    [Value] WebGPUInstanceCapabilities GetFeatures();
+};
 
 interface WebGPURenderBundleDescriptor {
     void WebGPURenderBundleDescriptor();
@@ -814,7 +836,7 @@ interface WebGPUBufferDescriptor {
     void SetLabel([Const] DOMString label);
     void SetUsage(WGPUBufferUsage usage);
     void SetSize(long size);
-    void SetMappedAtCreation(long mappedAtCreation);
+    void SetMappedAtCreation(boolean mappedAtCreation);
 };
 
 interface WebGPUPipelineLayoutDescriptor {
@@ -1015,6 +1037,7 @@ interface WebGPUInstance {
     WebGPUSurface CreateMacSurface(any metalLayer);
     WebGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);
     void ProcessEvents();
+    WGPUWaitStatus WaitAny(WGPUVectorFutureWaitInfo futureVector, long timeoutNS);
 };
 
 interface WebGPUDevice {
@@ -1084,7 +1107,7 @@ interface WebGPUBuffer {
     void WebGPUBuffer();
     void Release();
     void Destroy();
-    void MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);
+    [Value] WebGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);
     [Value] WGPUByteBuffer GetConstMappedRange(long offset, long size);
     void Unmap();
     long GetSize();

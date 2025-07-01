@@ -46,6 +46,7 @@ import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
 public class HelloTriangle implements ApplicationListener {
 
+    private WebGPURenderPipeline pipeline;
     private WGPUTextureFormat surfaceFormat;
 
     private WebGPUCommandEncoder encoder;
@@ -83,8 +84,7 @@ public class HelloTriangle implements ApplicationListener {
 
     @Override
     public void render(WGPUApp wgpu) {
-        WebGPUTextureView textureView = WebGPUTextureView.obtain();
-        GetNextSurfaceTextureView(wgpu, textureView);
+        WebGPUTextureView textureView = GetNextSurfaceTextureView(wgpu);
 
         WebGPUCommandEncoderDescriptor encoderDesc = WebGPUCommandEncoderDescriptor.obtain();
         encoderDesc.setLabel("My command encoder");
@@ -106,7 +106,7 @@ public class HelloTriangle implements ApplicationListener {
         renderPassDesc.setTimestampWrites(null);
         encoder.beginRenderPass(renderPassDesc, renderPass);
 
-        renderPass.setPipeline(wgpu.renderPipeline);
+        renderPass.setPipeline(pipeline);
         renderPass.draw(3, 1, 0, 0);
 
         renderPass.end();
@@ -134,7 +134,8 @@ public class HelloTriangle implements ApplicationListener {
         this.b = b;
     }
 
-    private void GetNextSurfaceTextureView(WGPUApp wgpu, WebGPUTextureView textureViewOut) {
+    private WebGPUTextureView GetNextSurfaceTextureView(WGPUApp wgpu) {
+        WebGPUTextureView textureViewOut = WebGPUTextureView.obtain();
         WebGPUSurfaceTexture surfaceTextureOut = WebGPUSurfaceTexture.obtain();
         wgpu.surface.getCurrentTexture(surfaceTextureOut);
         WebGPUTexture textureOut = WebGPUTexture.obtain();
@@ -151,6 +152,7 @@ public class HelloTriangle implements ApplicationListener {
         viewDescriptor.setAspect(WGPUTextureAspect.All);
         textureOut.createView(viewDescriptor, textureViewOut);
         textureOut.release();
+        return textureViewOut;
     }
 
     private void initSwapChain(WGPUApp wgpu) {
@@ -211,12 +213,11 @@ public class HelloTriangle implements ApplicationListener {
         pipelineDesc.setDepthStencil(null); // no depth or stencil buffer
         pipelineDesc.getMultisample().setCount(1);
         pipelineDesc.getMultisample().setMask(-1);
-        pipelineDesc.getMultisample().setAlphaToCoverageEnabled(0);
+        pipelineDesc.getMultisample().setAlphaToCoverageEnabled(false);
         pipelineDesc.setLayout(null);
 
-        WebGPURenderPipeline renderPipeline = new WebGPURenderPipeline();
-        wgpu.device.createRenderPipeline(pipelineDesc, renderPipeline);
-        wgpu.renderPipeline = renderPipeline;
+        pipeline = new WebGPURenderPipeline();
+        wgpu.device.createRenderPipeline(pipelineDesc, pipeline);
 
         shaderModule.release();
 

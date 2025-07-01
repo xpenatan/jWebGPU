@@ -6,6 +6,10 @@
 #include <cstring>
 #include <memory>
 
+#ifdef __EMSCRIPTEN__
+    #include <emscripten.h>
+#endif // __EMSCRIPTEN__
+
 #if _WIN32
     #include <windows.h>
     #include <glfw3.h>
@@ -90,6 +94,9 @@ class WebGPURenderPipeline;
 class WebGPUSampler;
 class WebGPUCompilationMessage;
 class WebGPUBindGroupEntry;
+class WebGPUFuture;
+class WebGPUFutureWaitInfo;
+class WebGPUInstanceDescriptor;
 
 class STBImage;
 
@@ -120,7 +127,7 @@ enum WGPUPlatformType : int {
 class WGPU {
     public:
         static WGPUPlatformType GetPlatformType();
-        static WebGPUInstance CreateInstance();
+        static WebGPUInstance CreateInstance(WebGPUInstanceDescriptor* descriptor = NULL);
         static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
 };
 
@@ -293,6 +300,16 @@ class WGPUAndroidWindow {
 };
 
 // ################################### VECTORS ###################################
+
+class WGPUVectorFutureWaitInfo {
+    private:
+        std::vector<WebGPUFutureWaitInfo> vector;
+    public:
+        static WGPUVectorFutureWaitInfo Obtain();
+        int size();
+        void push_back(const WebGPUFutureWaitInfo& entry);
+        const WebGPUFutureWaitInfo* data();
+};
 
 class WGPUVectorBindGroupEntry {
     private:
@@ -673,6 +690,16 @@ class WebGPUAdapterInfo : public WebGPUObjectBase<WebGPUAdapterInfo, WGPUAdapter
         WGPUAdapterType GetAdapterType();
 };
 
+class WebGPUFuture : public WebGPUObjectBase<WebGPUFuture, WGPUFuture> {
+    public:
+};
+
+class WebGPUFutureWaitInfo : public WebGPUObjectBase<WebGPUFutureWaitInfo, WGPUFutureWaitInfo> {
+    public:
+        static WebGPUFutureWaitInfo Obtain();
+        void SetFuture(WebGPUFuture* future);
+};
+
 class WebGPUConstantEntry : public WebGPUObjectBase<WebGPUConstantEntry, WGPUConstantEntry> {
     public:
 };
@@ -783,7 +810,7 @@ class WebGPUMultisampleState : public WebGPUObjectBase<WebGPUMultisampleState, W
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
         void SetCount(int count);
         void SetMask(int mask);
-        void SetAlphaToCoverageEnabled(int alphaToCoverageEnabled);
+        void SetAlphaToCoverageEnabled(bool alphaToCoverageEnabled);
 };
 
 class WebGPUColor : public WebGPUObjectBase<WebGPUColor, WGPUColor*> {
@@ -967,10 +994,10 @@ public:
     void SetTextureView(WebGPUTextureView* textureView);
 };
 
-class WebGPUInstanceCapabilities : public WebGPUObjectBase<WebGPUInstanceCapabilities, WGPUInstanceCapabilities> {
+class WebGPUInstanceCapabilities : public WebGPUObjectBase<WebGPUInstanceCapabilities, WGPUInstanceCapabilities*> {
     public:
-        static WebGPUInstanceCapabilities Obtain();
-        // Additional methods can be added based on WGPUInstanceCapabilities fields
+        void SetTimedWaitAnyEnable(bool enable);
+        void SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount);
 };
 
 class WebGPURenderPassMaxDrawCount : public WebGPUObjectBase<WebGPURenderPassMaxDrawCount, WGPURenderPassMaxDrawCount> {
@@ -1013,6 +1040,13 @@ class WebGPUCompilationMessage : public WebGPUObjectBase<WebGPUCompilationMessag
 };
 
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+class WebGPUInstanceDescriptor : public WebGPUObjectBase<WebGPUInstanceDescriptor, WGPUInstanceDescriptor> {
+    public:
+        static WebGPUInstanceDescriptor Obtain();
+        void SetNextInChain(WebGPUChainedStruct* chainedStruct);
+        WebGPUInstanceCapabilities GetFeatures();
+};
 
 class WebGPURenderBundleDescriptor : public WebGPUObjectBase<WebGPURenderBundleDescriptor, WGPURenderBundleDescriptor> {
     public:
@@ -1095,7 +1129,7 @@ class WebGPUBufferDescriptor : public WebGPUObjectBase<WebGPUBufferDescriptor, W
         void SetLabel(const char* value);
         void SetUsage(WGPUBufferUsage usage);
         void SetSize(int size);
-        void SetMappedAtCreation(int mappedAtCreation);
+        void SetMappedAtCreation(bool mappedAtCreation);
 };
 
 class WebGPUBindGroupDescriptor : public WebGPUObjectBase<WebGPUBindGroupDescriptor, WGPUBindGroupDescriptor> {
@@ -1334,6 +1368,7 @@ class WebGPUInstance : public WebGPUObjectBase<WebGPUInstance, WGPUInstance> {
         WebGPUSurface* CreateMacSurface(void * windowHandle);
         WebGPUSurface* CreateAndroidSurface(WGPUAndroidWindow* window);
         void ProcessEvents();
+        WGPUWaitStatus WaitAny(WGPUVectorFutureWaitInfo* futureVector, int timeoutNS);
 };
 
 class WebGPUDevice : public WebGPUObjectBase<WebGPUDevice, WGPUDevice> {
@@ -1416,7 +1451,7 @@ class WebGPUBuffer : public WebGPUObjectBase<WebGPUBuffer, WGPUBuffer> {
         void Unmap();
         int GetSize();
         WGPUBufferUsage GetUsage();
-        void MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback);
+        WebGPUFuture MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback);
         WGPUByteBuffer GetConstMappedRange(int offset, int size);
         void Destroy();
 };

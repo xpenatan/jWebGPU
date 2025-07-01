@@ -56,7 +56,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
                     wgpu.height = display.getHeight();
                     wgpu.init();
                 }
-                if (wGPUInit == 2 && wgpu.isReady()) {
+                else if (wGPUInit == 2 && wgpu.isReady()) {
                     createSurface(surface);
                     applicationListener.create(wgpu);
                     wGPUInit = 3;

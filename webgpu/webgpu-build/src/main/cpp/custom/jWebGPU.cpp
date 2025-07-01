@@ -75,6 +75,19 @@ template class WebGPUObjectBase<WebGPUAdapter, WGPUAdapter>;
 template class WebGPUObjectBase<WebGPUSurface, WGPUSurface>;
 template class WebGPUObjectBase<WebGPUInstance, WGPUInstance>;
 
+// WGPUVectorFutureWaitInfo
+WGPUVectorFutureWaitInfo WGPUVectorFutureWaitInfo::Obtain() {
+    WGPUVectorFutureWaitInfo obj;
+    return obj;
+}
+
+int WGPUVectorFutureWaitInfo::size() { return vector.size(); }
+
+void WGPUVectorFutureWaitInfo::push_back(const WebGPUFutureWaitInfo& entry) { vector.push_back(entry); }
+
+const WebGPUFutureWaitInfo* WGPUVectorFutureWaitInfo::data() { return vector.data(); }
+
+
 // WGPUVectorBindGroupEntry
 WGPUVectorBindGroupEntry WGPUVectorBindGroupEntry::Obtain() {
     WGPUVectorBindGroupEntry obj;
@@ -1297,6 +1310,16 @@ WGPUAdapterType WebGPUAdapterInfo::GetAdapterType() {
     return Get().adapterType;
 }
 
+// WebGPUFutureWaitInfo
+WebGPUFutureWaitInfo WebGPUFutureWaitInfo::Obtain() {
+    WebGPUFutureWaitInfo obj;
+    return obj;
+}
+
+void WebGPUFutureWaitInfo::SetFuture(WebGPUFuture* future) {
+    Get().future = future != NULL ? future->Get() : WGPUFuture();
+}
+
 // WebGPUVertexAttribute
 WebGPUVertexAttribute WebGPUVertexAttribute::Obtain() {
     WebGPUVertexAttribute obj;
@@ -1605,7 +1628,7 @@ void WebGPUMultisampleState::SetMask(int mask) {
     Get()->mask = mask;
 }
 
-void WebGPUMultisampleState::SetAlphaToCoverageEnabled(int alphaToCoverageEnabled) {
+void WebGPUMultisampleState::SetAlphaToCoverageEnabled(bool alphaToCoverageEnabled) {
     Get()->alphaToCoverageEnabled = alphaToCoverageEnabled;
 }
 
@@ -1990,9 +2013,9 @@ WGPUPlatformType WGPU::GetPlatformType() {
     #endif
 }
 
-WebGPUInstance WGPU::CreateInstance() {
+WebGPUInstance WGPU::CreateInstance(WebGPUInstanceDescriptor* descriptor) {
     WebGPUInstance instance;
-    instance.Set(wgpuCreateInstance(NULL));
+    instance.Set(wgpuCreateInstance(descriptor != NULL ? &descriptor->Get() : NULL));
     return instance;
 }
 
@@ -2051,9 +2074,12 @@ void WebGPUBindGroupEntry::SetTextureView(WebGPUTextureView* textureView) {
 }
 
 // WebGPUInstanceCapabilities
-WebGPUInstanceCapabilities WebGPUInstanceCapabilities::Obtain() {
-    WebGPUInstanceCapabilities obj;
-    return obj;
+void WebGPUInstanceCapabilities::SetTimedWaitAnyEnable(bool timedWaitAnyEnable) {
+    Get()->timedWaitAnyEnable = timedWaitAnyEnable;
+}
+
+void WebGPUInstanceCapabilities::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
+    Get()->timedWaitAnyMaxCount = timedWaitAnyMaxCount;
 }
 
 // WebGPURenderPassMaxDrawCount
@@ -2148,6 +2174,27 @@ WebGPUCompilationMessage WebGPUCompilationInfo::GetMessage(int index) {
 }
 
 // ################################### DESCRIPTOR STRUCTS ###################################
+
+// WebGPUInstanceDescriptor
+WebGPUInstanceDescriptor WebGPUInstanceDescriptor::Obtain() {
+    WebGPUInstanceDescriptor obj;
+    return obj;
+}
+
+void WebGPUInstanceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
+}
+
+WebGPUInstanceCapabilities WebGPUInstanceDescriptor::GetFeatures() {
+    #ifdef __EMSCRIPTEN__
+        WebGPUInstanceCapabilities temp;
+        temp.Set(&Get().capabilities);
+    #else
+        WebGPUInstanceCapabilities temp;
+        temp.Set(&Get().features);
+    #endif
+    return temp;
+}
 
 // WebGPURenderBundleDescriptor
 WebGPURenderBundleDescriptor WebGPURenderBundleDescriptor::Obtain() {
@@ -2627,7 +2674,7 @@ void WebGPUBufferDescriptor::SetSize(int size) {
     Get().size = size;
 }
 
-void WebGPUBufferDescriptor::SetMappedAtCreation(int mappedAtCreation) {
+void WebGPUBufferDescriptor::SetMappedAtCreation(bool mappedAtCreation) {
     Get().mappedAtCreation = mappedAtCreation;
 }
 
@@ -2811,7 +2858,7 @@ void WebGPURenderBundleEncoder::SetLabel(const char* label) {
 }
 
 void WebGPURenderBundleEncoder::Finish(WebGPURenderBundleDescriptor* descriptor, WebGPURenderBundle* bundle) {
-    bundle->Set(wgpuRenderBundleEncoderFinish(Get(), &(descriptor->Get())));
+    bundle->Set(wgpuRenderBundleEncoderFinish(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }
 
 // WebGPUTextureView
@@ -3158,7 +3205,22 @@ WebGPUSurface* WebGPUInstance::CreateAndroidSurface(WGPUAndroidWindow* window) {
 }
 
 void WebGPUInstance::ProcessEvents() {
-    wgpuInstanceProcessEvents(Get());
+    #ifdef __EMSCRIPTEN__
+        wgpuInstanceProcessEvents(Get());
+//        emscripten_sleep(100);
+    #else // __EMSCRIPTEN__
+        wgpuInstanceProcessEvents(Get());
+    #endif
+}
+
+WGPUWaitStatus WebGPUInstance::WaitAny(WGPUVectorFutureWaitInfo* futureVector, int timeoutNS) {
+    int futureCount = 0;
+    WGPUFutureWaitInfo* futures = NULL;
+    if(futureVector != NULL) {
+        futureCount = futureVector->size();
+        futures = (WGPUFutureWaitInfo*)futureVector->data();
+    }
+    return wgpuInstanceWaitAny(Get(), futureCount, futures, timeoutNS);
 }
 
 // WebGPUDevice
@@ -3183,7 +3245,7 @@ void WebGPUDevice::CreateBuffer(WebGPUBufferDescriptor* descriptor, WebGPUBuffer
 }
 
 void WebGPUDevice::CreateCommandEncoder(WebGPUCommandEncoderDescriptor* descriptor, WebGPUCommandEncoder* valueOut) {
-    valueOut->Set(wgpuDeviceCreateCommandEncoder(Get(), &(descriptor->Get())));
+    valueOut->Set(wgpuDeviceCreateCommandEncoder(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }
 
 void WebGPUDevice::CreateComputePipeline(WebGPUComputePipelineDescriptor* descriptor, WebGPUComputePipeline* valueOut) {
@@ -3356,7 +3418,7 @@ void WebGPUCommandEncoder::CopyTextureToTexture(WebGPUTexelCopyTextureInfo* sour
 }
 
 void WebGPUCommandEncoder::Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer) {
-    commandBuffer->Set(wgpuCommandEncoderFinish(Get(), &(commandBufferDescriptor->Get())));
+    commandBuffer->Set(wgpuCommandEncoderFinish(Get(), commandBufferDescriptor != NULL ? &commandBufferDescriptor->Get() : NULL));
 }
 
 void WebGPUCommandEncoder::InsertDebugMarker(const char* markerLabel) {
@@ -3407,17 +3469,20 @@ WGPUBufferUsage WebGPUBuffer::GetUsage() {
     return wgpuBufferGetUsage(Get());
 }
 
-void WebGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
+WebGPUFuture WebGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
     WGPUBufferMapCallbackInfo callbackInfo = {};
     callbackInfo.mode = callbackMode;
 
     callbackInfo.callback = [](WGPUMapAsyncStatus status, WGPUStringView message, void* callback_param, void*) {
         BufferMapCallback* cback = reinterpret_cast<BufferMapCallback*>(callback_param);
-        cback->OnCallback(status, message.data);
+        cback->OnCallback(status, WebGPUStringView(message).GetString().c_str());
     };
     callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
     callbackInfo.userdata2 = NULL;
-    wgpuBufferMapAsync(Get(), mode, offset, size, callbackInfo);
+
+    WebGPUFuture temp;
+    temp.Set(wgpuBufferMapAsync(Get(), mode, offset, size, callbackInfo));
+    return temp;
 }
 
 WGPUByteBuffer WebGPUBuffer::GetConstMappedRange(int offset, int size) {

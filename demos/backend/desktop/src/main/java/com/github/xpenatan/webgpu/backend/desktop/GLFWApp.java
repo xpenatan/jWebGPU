@@ -50,7 +50,7 @@ public class GLFWApp {
                     wgpu.height = windowHeight;
                     wgpu.init();
                 }
-                if(wGPUInit == 2 && wgpu.isReady()) {
+                else if(wGPUInit == 2 && wgpu.isReady()) {
                     wGPUInit = 3;
                     createSurface();
                     applicationInterface.create(wgpu);
