@@ -7,6 +7,7 @@ plugins {
 }
 
 val WGPU_VERSION = "25.0.2.1"
+val emdawnVersion = "v20250629.124903"
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
     val taskName = "download_$platform"
@@ -34,8 +35,6 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
         }
     }
 }
-
-val emdawnVersion = "v20250509.171557"
 
 tasks.register("download_emdawnwebgpu") {
     group = "wgpu"

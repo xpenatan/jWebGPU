@@ -2074,13 +2074,13 @@ void WebGPUBindGroupEntry::SetTextureView(WebGPUTextureView* textureView) {
 }
 
 // WebGPUInstanceCapabilities
-void WebGPUInstanceCapabilities::SetTimedWaitAnyEnable(bool timedWaitAnyEnable) {
-    Get()->timedWaitAnyEnable = timedWaitAnyEnable;
-}
-
-void WebGPUInstanceCapabilities::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
-    Get()->timedWaitAnyMaxCount = timedWaitAnyMaxCount;
-}
+//void WebGPUInstanceCapabilities::SetTimedWaitAnyEnable(bool timedWaitAnyEnable) {
+//    Get()->timedWaitAnyEnable = timedWaitAnyEnable;
+//}
+//
+//void WebGPUInstanceCapabilities::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
+//    Get()->timedWaitAnyMaxCount = timedWaitAnyMaxCount;
+//}
 
 // WebGPURenderPassMaxDrawCount
 WebGPURenderPassMaxDrawCount WebGPURenderPassMaxDrawCount::Obtain() {
@@ -2185,16 +2185,16 @@ void WebGPUInstanceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct
     Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
 }
 
-WebGPUInstanceCapabilities WebGPUInstanceDescriptor::GetFeatures() {
-    #ifdef __EMSCRIPTEN__
-        WebGPUInstanceCapabilities temp;
-        temp.Set(&Get().capabilities);
-    #else
-        WebGPUInstanceCapabilities temp;
-        temp.Set(&Get().features);
-    #endif
-    return temp;
-}
+//WebGPUInstanceCapabilities WebGPUInstanceDescriptor::GetFeatures() { // TODO dawn have different code
+//    #ifdef __EMSCRIPTEN__
+//        WebGPUInstanceCapabilities temp;
+//        temp.Set(&Get().capabilities);
+//    #else
+//        WebGPUInstanceCapabilities temp;
+//        temp.Set(&Get().features);
+//    #endif
+//    return temp;
+//}
 
 // WebGPURenderBundleDescriptor
 WebGPURenderBundleDescriptor WebGPURenderBundleDescriptor::Obtain() {

@@ -994,11 +994,11 @@ public:
     void SetTextureView(WebGPUTextureView* textureView);
 };
 
-class WebGPUInstanceCapabilities : public WebGPUObjectBase<WebGPUInstanceCapabilities, WGPUInstanceCapabilities*> {
-    public:
-        void SetTimedWaitAnyEnable(bool enable);
-        void SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount);
-};
+//class WebGPUInstanceCapabilities : public WebGPUObjectBase<WebGPUInstanceCapabilities, WGPUInstanceCapabilities*> {
+//    public:
+//        void SetTimedWaitAnyEnable(bool enable);
+//        void SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount);
+//};
 
 class WebGPURenderPassMaxDrawCount : public WebGPUObjectBase<WebGPURenderPassMaxDrawCount, WGPURenderPassMaxDrawCount> {
     public:
@@ -1045,7 +1045,7 @@ class WebGPUInstanceDescriptor : public WebGPUObjectBase<WebGPUInstanceDescripto
     public:
         static WebGPUInstanceDescriptor Obtain();
         void SetNextInChain(WebGPUChainedStruct* chainedStruct);
-        WebGPUInstanceCapabilities GetFeatures();
+//        WebGPUInstanceCapabilities GetFeatures(); // TODO dawn have different code
 };
 
 class WebGPURenderBundleDescriptor : public WebGPUObjectBase<WebGPURenderBundleDescriptor, WGPURenderBundleDescriptor> {

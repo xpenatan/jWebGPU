@@ -686,10 +686,10 @@ interface WebGPUBindGroupEntry  {
     void SetTextureView(WebGPUTextureView textureView);
 };
 
-interface WebGPUInstanceCapabilities  {
-    void SetTimedWaitAnyEnable(boolean enable);
-    void SetTimedWaitAnyMaxCount(long timedWaitAnyMaxCount);
-};
+//interface WebGPUInstanceCapabilities  { // TODO dawn have different code
+//    void SetTimedWaitAnyEnable(boolean enable);
+//    void SetTimedWaitAnyMaxCount(long timedWaitAnyMaxCount);
+//};
 
 interface WebGPURenderPassMaxDrawCount  {
     void WebGPURenderPassMaxDrawCount ();
@@ -735,7 +735,7 @@ interface WebGPUInstanceDescriptor {
     void WebGPUInstanceDescriptor();
     [Value] static WebGPUInstanceDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
-    [Value] WebGPUInstanceCapabilities GetFeatures();
+//    [Value] WebGPUInstanceCapabilities GetFeatures();
 };
 
 interface WebGPURenderBundleDescriptor {
