@@ -1,7 +1,99 @@
 #pragma once
 
 #include "IDLHelper.h"
+
+// WGPUBufferUsage macros
+#define WGPUBufferUsage JWGPUBufferUsage
+#define WGPUBufferUsage_None JWGPUBufferUsage_None
+#define WGPUBufferUsage_MapRead JWGPUBufferUsage_MapRead
+#define WGPUBufferUsage_MapWrite JWGPUBufferUsage_MapWrite
+#define WGPUBufferUsage_CopySrc JWGPUBufferUsage_CopySrc
+#define WGPUBufferUsage_CopyDst JWGPUBufferUsage_CopyDst
+#define WGPUBufferUsage_Index JWGPUBufferUsage_Index
+#define WGPUBufferUsage_Vertex JWGPUBufferUsage_Vertex
+#define WGPUBufferUsage_Uniform JWGPUBufferUsage_Uniform
+#define WGPUBufferUsage_Storage JWGPUBufferUsage_Storage
+#define WGPUBufferUsage_Indirect JWGPUBufferUsage_Indirect
+#define WGPUBufferUsage_QueryResolve JWGPUBufferUsage_QueryResolve
+
+// WGPUColorWriteMask macros
+#define WGPUColorWriteMask JWGPUColorWriteMask
+#define WGPUColorWriteMask_None JWGPUColorWriteMask_None
+#define WGPUColorWriteMask_Red JWGPUColorWriteMask_Red
+#define WGPUColorWriteMask_Green JWGPUColorWriteMask_Green
+#define WGPUColorWriteMask_Blue JWGPUColorWriteMask_Blue
+#define WGPUColorWriteMask_Alpha JWGPUColorWriteMask_Alpha
+#define WGPUColorWriteMask_All JWGPUColorWriteMask_All
+
+// WGPUMapMode macros (already present, included for completeness)
+#define WGPUMapMode JWGPUMapMode
+#define WGPUMapMode_None JWGPUMapMode_None
+#define WGPUMapMode_Read JWGPUMapMode_Read
+#define WGPUMapMode_Write JWGPUMapMode_Write
+
+// WGPUShaderStage macros
+#define WGPUShaderStage JWGPUShaderStage
+#define WGPUShaderStage_None JWGPUShaderStage_None
+#define WGPUShaderStage_Vertex JWGPUShaderStage_Vertex
+#define WGPUShaderStage_Fragment JWGPUShaderStage_Fragment
+#define WGPUShaderStage_Compute JWGPUShaderStage_Compute
+
+// WGPUTextureUsage macros
+#define WGPUTextureUsage JWGPUTextureUsage
+#define WGPUTextureUsage_None JWGPUTextureUsage_None
+#define WGPUTextureUsage_CopySrc JWGPUTextureUsage_CopySrc
+#define WGPUTextureUsage_CopyDst JWGPUTextureUsage_CopyDst
+#define WGPUTextureUsage_TextureBinding JWGPUTextureUsage_TextureBinding
+#define WGPUTextureUsage_StorageBinding JWGPUTextureUsage_StorageBinding
+#define WGPUTextureUsage_RenderAttachment JWGPUTextureUsage_RenderAttachment
+
 #include "webgpu/webgpu.h"
+
+// Undefine WGPUBufferUsage macros
+#undef WGPUBufferUsage
+#undef WGPUBufferUsage_None
+#undef WGPUBufferUsage_MapRead
+#undef WGPUBufferUsage_MapWrite
+#undef WGPUBufferUsage_CopySrc
+#undef WGPUBufferUsage_CopyDst
+#undef WGPUBufferUsage_Index
+#undef WGPUBufferUsage_Vertex
+#undef WGPUBufferUsage_Uniform
+#undef WGPUBufferUsage_Storage
+#undef WGPUBufferUsage_Indirect
+#undef WGPUBufferUsage_QueryResolve
+
+// Undefine WGPUColorWriteMask macros
+#undef WGPUColorWriteMask
+#undef WGPUColorWriteMask_None
+#undef WGPUColorWriteMask_Red
+#undef WGPUColorWriteMask_Green
+#undef WGPUColorWriteMask_Blue
+#undef WGPUColorWriteMask_Alpha
+#undef WGPUColorWriteMask_All
+
+// Undefine WGPUMapMode macros (already present, included for completeness)
+#undef WGPUMapMode
+#undef WGPUMapMode_None
+#undef WGPUMapMode_Read
+#undef WGPUMapMode_Write
+
+// Undefine WGPUShaderStage macros
+#undef WGPUShaderStage
+#undef WGPUShaderStage_None
+#undef WGPUShaderStage_Vertex
+#undef WGPUShaderStage_Fragment
+#undef WGPUShaderStage_Compute
+
+// Undefine WGPUTextureUsage macros
+#undef WGPUTextureUsage
+#undef WGPUTextureUsage_None
+#undef WGPUTextureUsage_CopySrc
+#undef WGPUTextureUsage_CopyDst
+#undef WGPUTextureUsage_TextureBinding
+#undef WGPUTextureUsage_StorageBinding
+#undef WGPUTextureUsage_RenderAttachment
+
 #include <iostream>
 #include <cstring>
 #include <memory>
@@ -113,6 +205,52 @@ using WGPUProgrammableStageDescriptor = WGPUProgrammableStageDescriptor;  // wgp
 #endif //__EMSCRIPTEN__
 
 // ################################### CUSTOM CODE ###################################
+
+// Define 32-bit enums
+enum WGPUBufferUsage : uint32_t {
+    WGPUBufferUsage_None = static_cast<uint32_t>(JWGPUBufferUsage_None),
+    WGPUBufferUsage_MapRead = static_cast<uint32_t>(JWGPUBufferUsage_MapRead),
+    WGPUBufferUsage_MapWrite = static_cast<uint32_t>(JWGPUBufferUsage_MapWrite),
+    WGPUBufferUsage_CopySrc = static_cast<uint32_t>(JWGPUBufferUsage_CopySrc),
+    WGPUBufferUsage_CopyDst = static_cast<uint32_t>(JWGPUBufferUsage_CopyDst),
+    WGPUBufferUsage_Index = static_cast<uint32_t>(JWGPUBufferUsage_Index),
+    WGPUBufferUsage_Vertex = static_cast<uint32_t>(JWGPUBufferUsage_Vertex),
+    WGPUBufferUsage_Uniform = static_cast<uint32_t>(JWGPUBufferUsage_Uniform),
+    WGPUBufferUsage_Storage = static_cast<uint32_t>(JWGPUBufferUsage_Storage),
+    WGPUBufferUsage_Indirect = static_cast<uint32_t>(JWGPUBufferUsage_Indirect),
+    WGPUBufferUsage_QueryResolve = static_cast<uint32_t>(JWGPUBufferUsage_QueryResolve)
+};
+
+enum WGPUColorWriteMask : uint32_t {
+    WGPUColorWriteMask_None = static_cast<uint32_t>(JWGPUColorWriteMask_None),
+    WGPUColorWriteMask_Red = static_cast<uint32_t>(JWGPUColorWriteMask_Red),
+    WGPUColorWriteMask_Green = static_cast<uint32_t>(JWGPUColorWriteMask_Green),
+    WGPUColorWriteMask_Blue = static_cast<uint32_t>(JWGPUColorWriteMask_Blue),
+    WGPUColorWriteMask_Alpha = static_cast<uint32_t>(JWGPUColorWriteMask_Alpha),
+    WGPUColorWriteMask_All = static_cast<uint32_t>(JWGPUColorWriteMask_All)
+};
+
+enum WGPUMapMode : uint32_t {
+    WGPUMapMode_None = static_cast<uint32_t>(JWGPUMapMode_None),
+    WGPUMapMode_Read = static_cast<uint32_t>(JWGPUMapMode_Read),
+    WGPUMapMode_Write = static_cast<uint32_t>(JWGPUMapMode_Write)
+};
+
+enum WGPUShaderStage : uint32_t {
+    WGPUShaderStage_None = static_cast<uint32_t>(JWGPUShaderStage_None),
+    WGPUShaderStage_Vertex = static_cast<uint32_t>(JWGPUShaderStage_Vertex),
+    WGPUShaderStage_Fragment = static_cast<uint32_t>(JWGPUShaderStage_Fragment),
+    WGPUShaderStage_Compute = static_cast<uint32_t>(JWGPUShaderStage_Compute)
+};
+
+enum WGPUTextureUsage : uint32_t {
+    WGPUTextureUsage_None = static_cast<uint32_t>(JWGPUTextureUsage_None),
+    WGPUTextureUsage_CopySrc = static_cast<uint32_t>(JWGPUTextureUsage_CopySrc),
+    WGPUTextureUsage_CopyDst = static_cast<uint32_t>(JWGPUTextureUsage_CopyDst),
+    WGPUTextureUsage_TextureBinding = static_cast<uint32_t>(JWGPUTextureUsage_TextureBinding),
+    WGPUTextureUsage_StorageBinding = static_cast<uint32_t>(JWGPUTextureUsage_StorageBinding),
+    WGPUTextureUsage_RenderAttachment = static_cast<uint32_t>(JWGPUTextureUsage_RenderAttachment)
+};
 
 enum WGPUPlatformType : int {
     WGPU_Unknown = 0,
@@ -366,6 +504,11 @@ class WGPUVectorTextureFormat {
         std::vector<WGPUTextureFormat> vector;
     public:
         static WGPUVectorTextureFormat Obtain();
+        WGPUVectorTextureFormat() {}
+        WGPUVectorTextureFormat(const WGPUTextureFormat* formats, size_t count) {
+            vector.assign(formats, formats + count);
+        }
+        WGPUTextureFormat get(int index);
         int size();
         void push_back(const WGPUTextureFormat& attachment);
         const WGPUTextureFormat* data();
@@ -959,7 +1102,7 @@ class WebGPUSurfaceConfiguration : public WebGPUObjectBase<WebGPUSurfaceConfigur
 class WebGPUSurfaceCapabilities : public WebGPUObjectBase<WebGPUSurfaceCapabilities, WGPUSurfaceCapabilities> {
     public:
         static WebGPUSurfaceCapabilities Obtain();
-        WGPUTextureFormat GetFormats(int index);
+        WGPUVectorTextureFormat GetFormats();
 };
 
 class WebGPURenderPassColorAttachment : public WebGPUObjectBase<WebGPURenderPassColorAttachment, WGPURenderPassColorAttachment> {

@@ -26,6 +26,7 @@ import com.github.xpenatan.webgpu.WGPUTextureUsage;
 import com.github.xpenatan.webgpu.WGPUTextureViewDimension;
 import com.github.xpenatan.webgpu.WGPUVectorColorTargetState;
 import com.github.xpenatan.webgpu.WGPUVectorRenderPassColorAttachment;
+import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
 import com.github.xpenatan.webgpu.WebGPUBlendState;
 import com.github.xpenatan.webgpu.WebGPUBuffer;
 import com.github.xpenatan.webgpu.WebGPUBufferDescriptor;
@@ -64,7 +65,8 @@ public class PlayingWithBuffers implements ApplicationListener {
             System.out.println("Surface created");
             WebGPUSurfaceCapabilities surfaceCapabilities = new WebGPUSurfaceCapabilities();
             wgpu.surface.getCapabilities(wgpu.adapter, surfaceCapabilities);
-            surfaceFormat = surfaceCapabilities.getFormats(0);
+            WGPUVectorTextureFormat formats = surfaceCapabilities.getFormats();
+            surfaceFormat = formats.get(0);
             System.out.println("surfaceFormat: " + surfaceFormat);
             initSwapChain(wgpu);
 
@@ -310,7 +312,7 @@ public class PlayingWithBuffers implements ApplicationListener {
 
         boolean [] ready = new boolean[1];
 
-        WebGPUFuture webGPUFuture = buffer2.mapAsync(WGPUMapMode.Read, 0, 16, WGPUCallbackMode.WaitAnyOnly, new BufferMapCallback() {
+        WebGPUFuture webGPUFuture = buffer2.mapAsync(WGPUMapMode.Read, 0, 16, WGPUCallbackMode.AllowProcessEvents, new BufferMapCallback() {
             @Override
             protected void onCallback(WGPUMapAsyncStatus status, String message) {
                 ready[0] = true;

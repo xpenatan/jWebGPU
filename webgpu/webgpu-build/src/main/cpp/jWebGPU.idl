@@ -161,6 +161,8 @@ interface WGPUVectorTextureFormat {
     void WGPUVectorTextureFormat();
     [Value] static WGPUVectorTextureFormat Obtain();
     void push_back(WGPUTextureFormat textureFormat);
+    long size();
+    WGPUTextureFormat get(long index);
 };
 
 interface WGPUVectorRenderBundle {
@@ -556,7 +558,7 @@ interface WebGPUSurfaceTexture {
 interface WebGPUSurfaceCapabilities {
     void WebGPUSurfaceCapabilities();
     [Value] static WebGPUSurfaceCapabilities Obtain();
-    WGPUTextureFormat GetFormats(long index);
+    [Value] WGPUVectorTextureFormat GetFormats();
 };
 
 interface WebGPUSurfaceConfiguration {

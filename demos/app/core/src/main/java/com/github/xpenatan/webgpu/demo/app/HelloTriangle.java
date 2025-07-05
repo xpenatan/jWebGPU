@@ -1,5 +1,6 @@
 package com.github.xpenatan.webgpu.demo.app;
 
+import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
 import com.github.xpenatan.webgpu.WebGPUBlendState;
 import com.github.xpenatan.webgpu.WebGPUColorTargetState;
 import com.github.xpenatan.webgpu.WebGPUCommandBuffer;
@@ -67,7 +68,8 @@ public class HelloTriangle implements ApplicationListener {
             System.out.println("Surface created");
             WebGPUSurfaceCapabilities surfaceCapabilities = new WebGPUSurfaceCapabilities();
             wgpu.surface.getCapabilities(wgpu.adapter, surfaceCapabilities);
-            surfaceFormat = surfaceCapabilities.getFormats(0);
+            WGPUVectorTextureFormat formats = surfaceCapabilities.getFormats();
+            surfaceFormat = formats.get(0);
             System.out.println("surfaceFormat: " + surfaceFormat);
             initSwapChain(wgpu);
 

@@ -156,6 +156,8 @@ WGPUVectorTextureFormat WGPUVectorTextureFormat::Obtain() {
 
 int WGPUVectorTextureFormat::size() { return vector.size(); }
 
+WGPUTextureFormat WGPUVectorTextureFormat::get(int index) { return vector[index]; }
+
 void WGPUVectorTextureFormat::push_back(const WGPUTextureFormat& attachment) { vector.push_back(attachment); }
 
 const WGPUTextureFormat* WGPUVectorTextureFormat::data() { return vector.data(); }
@@ -1937,8 +1939,9 @@ WebGPUSurfaceCapabilities WebGPUSurfaceCapabilities::Obtain() {
     return obj;
 }
 
-WGPUTextureFormat WebGPUSurfaceCapabilities::GetFormats(int index) {
-    return Get().formats[index];
+WGPUVectorTextureFormat WebGPUSurfaceCapabilities::GetFormats() {
+    WGPUVectorTextureFormat temp(Get().formats, Get().formatCount);
+    return temp;
 }
 
 // WebGPURenderPassColorAttachment
@@ -3466,7 +3469,7 @@ int WebGPUBuffer::GetSize() {
 }
 
 WGPUBufferUsage WebGPUBuffer::GetUsage() {
-    return wgpuBufferGetUsage(Get());
+    return static_cast<WGPUBufferUsage>(wgpuBufferGetUsage(Get()));
 }
 
 WebGPUFuture WebGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
