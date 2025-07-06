@@ -1640,6 +1640,7 @@ class WebGPUAdapter : public WebGPUObjectBase<WebGPUAdapter, WGPUAdapter> {
         void RequestDevice(WebGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback);
         bool GetInfo(WebGPUAdapterInfo* adapterInfo);
         bool HasFeature(WGPUFeatureName featureName);
+        WGPUStatus GetLimits(WebGPULimits* limits);
 };
 
 class WebGPUSurface : public WebGPUObjectBase<WebGPUSurface, WGPUSurface> {

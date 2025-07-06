@@ -1144,6 +1144,7 @@ interface WebGPUAdapter {
     void RequestDevice(WebGPUDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
     boolean GetInfo(WebGPUAdapterInfo adapterInfo);
     boolean HasFeature(WGPUFeatureName featureName);
+    WGPUStatus GetLimits(WebGPULimits limits);
 };
 
 interface WebGPUSurface {

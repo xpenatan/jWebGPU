@@ -3601,6 +3601,10 @@ bool WebGPUAdapter::HasFeature(WGPUFeatureName featureName) {
     return wgpuAdapterHasFeature(Get(), featureName);
 }
 
+WGPUStatus WebGPUAdapter::GetLimits(WebGPULimits* limits) {
+    return wgpuAdapterGetLimits(Get(), &limits->Get());
+}
+
 // WebGPUSurface
 void WebGPUSurface::AddRefInternal() {
     wgpuSurfaceAddRef(Get());
