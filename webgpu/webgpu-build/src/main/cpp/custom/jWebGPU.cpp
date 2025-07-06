@@ -3288,7 +3288,7 @@ void WebGPUDevice::Destroy() {
 }
 
 void WebGPUDevice::GetFeatures(WebGPUSupportedFeatures* features) {
-    wgpuDeviceGetFeatures(Get(), reinterpret_cast<WGPUSupportedFeatures * >(features));
+    wgpuDeviceGetFeatures(Get(), &features->Get());
 }
 
 bool WebGPUDevice::HasFeature(WGPUFeatureName feature) {
@@ -3296,7 +3296,7 @@ bool WebGPUDevice::HasFeature(WGPUFeatureName feature) {
 }
 
 void WebGPUDevice::GetLimits(WebGPULimits* limits) {
-    wgpuDeviceGetLimits(Get(), reinterpret_cast<WGPULimits * >(&(limits->Get())));
+    wgpuDeviceGetLimits(Get(), &limits->Get());
 }
 
 WebGPUQueue WebGPUDevice::GetQueue() {

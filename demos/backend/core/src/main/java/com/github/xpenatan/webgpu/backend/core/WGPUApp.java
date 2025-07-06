@@ -118,7 +118,6 @@ public class WGPUApp {
 
                     WebGPULimits limits = WebGPULimits.obtain();
                     device.getLimits(limits);
-                    System.out.println("Device limits: " + featureCount);
                     System.out.println("MaxTextureDimension1D: " + limits.getMaxTextureDimension1D());
                     System.out.println("MaxTextureDimension2D: " + limits.getMaxTextureDimension2D());
                     System.out.println("MaxTextureDimension3D: " + limits.getMaxTextureDimension3D());
