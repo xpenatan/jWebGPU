@@ -244,12 +244,26 @@ public class HelloTriangle implements ApplicationListener {
     }
 
     private String readShaderSource () {
-
-        return "// triangleShader.wgsl\n" + "\n" + "@vertex\n"
-                + "fn vs_main(@builtin(vertex_index) in_vertex_index: u32) -> @builtin(position) vec4f {\n"
-                + "    var p = vec2f(0.0, 0.0);\n" + "    if (in_vertex_index == 0u) {\n" + "        p = vec2f(-0.5, -0.5);\n"
-                + "    } else if (in_vertex_index == 1u) {\n" + "        p = vec2f(0.5, -0.5);\n" + "    } else {\n"
-                + "        p = vec2f(0.0, 0.5);\n" + "    }\n" + "    return vec4f(p, 0.0, 1.0);\n" + "}\n" + "\n" + "@fragment\n"
-                + "fn fs_main() -> @location(0) vec4f {\n" + "    return vec4f(0.0, 0.4, 1.0, 1.0);\n" + "}";
+        String triangleShader =
+                "// triangleShader.wgsl\n" +
+                "\n" +
+                "@vertex\n" +
+                "fn vs_main(@builtin(vertex_index) in_vertex_index: u32) -> @builtin(position) vec4f {\n" +
+                "    var p = vec2f(0.0, 0.0);\n" +
+                "    if (in_vertex_index == 0u) {\n" +
+                "        p = vec2f(-0.5, -0.5);\n" +
+                "    } else if (in_vertex_index == 1u) {\n" +
+                "        p = vec2f(0.5, -0.5);\n" +
+                "    } else {\n" +
+                "        p = vec2f(0.0, 0.5);\n" +
+                "    }\n" +
+                "    return vec4f(p, 0.0, 1.0);\n" +
+                "}\n" +
+                "\n" +
+                "@fragment\n" +
+                "fn fs_main() -> @location(0) vec4f {\n" +
+                "    return vec4f(0.0, 0.4, 1.0, 1.0);\n" +
+                "}";
+        return triangleShader;
     }
 }
