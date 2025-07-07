@@ -341,7 +341,6 @@ public class AFirstVertexAttribute implements ApplicationListener {
         WebGPUBufferDescriptor bufferDesc = new WebGPUBufferDescriptor();
         bufferDesc.setNextInChain(null);
         bufferDesc.setSize(vertexData.getLimit());
-        int value = WGPUBufferUsage.CopyDst.getValue() | WGPUBufferUsage.Vertex.getValue();
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Vertex)); // Vertex usage here!
         bufferDesc.setMappedAtCreation(false);
         vertexBuffer = new WebGPUBuffer();

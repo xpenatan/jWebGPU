@@ -1983,7 +1983,7 @@ WGPUVectorTextureFormat WebGPUSurfaceCapabilities::GetFormats() {
 
 // WebGPURenderPassColorAttachment
 WebGPURenderPassColorAttachment::WebGPURenderPassColorAttachment() {
-//    SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
+    SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
 }
 
 WebGPURenderPassColorAttachment WebGPURenderPassColorAttachment::Obtain() {
