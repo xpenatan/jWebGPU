@@ -262,6 +262,11 @@ enum WGPUPlatformType : int {
     WGPU_Web
 };
 
+enum WGPUByteOrder : int {
+    BigEndian = 1,
+    LittleEndian = 2
+};
+
 class WGPUFloatBuffer {
     public:
         WGPUByteBuffer* parent;
@@ -351,14 +356,12 @@ class WGPUByteBuffer {
         static uint32_t swapBytes(uint32_t value);
         static uint64_t swapBytes(uint64_t value);
 
-    public:
-        enum WGPUByteOrder : int { BigEndian = 0, LittleEndian };
-
     private:
         std::vector<uint8_t> buffer;
         size_t _position = 0;
         size_t _limit;
-        WGPUByteOrder byteOrder = WGPUByteOrder::LittleEndian;
+        WGPUByteOrder byteOrder;
+        bool needsSwap;
         WGPUFloatBuffer floatBuffer;
         WGPUIntBuffer intBuffer;
         WGPULongBuffer longBuffer;
@@ -374,9 +377,14 @@ class WGPUByteBuffer {
 
     public:
         static WGPUByteBuffer Obtain(int capacity);
-        WGPUByteBuffer() : buffer(0), _limit(0) {}
-        WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {}
+        WGPUByteBuffer() : buffer(0), _limit(0) {
+            order(LittleEndian);
+        }
+        WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {
+            order(LittleEndian);
+        }
         WGPUByteBuffer(uint8_t* bufferData, int dataSize) : _limit(dataSize) {
+            order(LittleEndian);
             buffer.insert(buffer.end(), bufferData, bufferData + dataSize);
         }
         void order(WGPUByteOrder order);
@@ -403,8 +411,6 @@ class WGPUByteBuffer {
         friend class WGPULongBuffer;
         friend class WGPUShortBuffer;
 };
-
-using WGPUByteOrder = WGPUByteBuffer::WGPUByteOrder;
 
 class STBImage {
     public:
@@ -1664,22 +1670,4 @@ class WGPU {
         static WGPUPlatformType GetPlatformType();
         static WebGPUInstance CreateInstance(WebGPUInstanceDescriptor* descriptor = NULL);
         static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
-        static void testWriteBuffer(WebGPUQueue* queue, WebGPUBuffer* buffer) {
-            std::vector<float> vertexData = {
-                // Define a first triangle:
-                -0.5, -0.5,
-                +0.5, -0.5,
-                +0.0, +0.5,
-
-                // Add a second triangle:
-                -0.55f, -0.5,
-                -0.05f, +0.5,
-                -0.55f, +0.5
-            };
-
-            WGPUQueue que = queue->Get();
-            WGPUBuffer buff = buffer->Get();
-
-            wgpuQueueWriteBuffer(que, buff, 0, vertexData.data(), buffer->GetSize());
-        }
 };

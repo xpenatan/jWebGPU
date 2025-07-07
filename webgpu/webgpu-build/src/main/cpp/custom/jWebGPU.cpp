@@ -248,20 +248,20 @@ uint16_t WGPUByteBuffer::swapBytes(uint16_t value) {
 
 uint32_t WGPUByteBuffer::swapBytes(uint32_t value) {
     return ((value >> 24) & 0x000000FF) |
-        ((value >> 8) & 0x0000FF00) |
-        ((value << 8) & 0x00FF0000) |
-        ((value << 24) & 0xFF000000);
+           ((value >> 8) & 0x0000FF00) |
+           ((value << 8) & 0x00FF0000) |
+           ((value << 24) & 0xFF000000);
 }
 
 uint64_t WGPUByteBuffer::swapBytes(uint64_t value) {
     return ((value >> 56) & 0x00000000000000FFULL) |
-        ((value >> 40) & 0x000000000000FF00ULL) |
-        ((value >> 24) & 0x0000000000FF0000ULL) |
-        ((value >> 8) & 0x00000000FF000000ULL) |
-        ((value << 8) & 0x000000FF00000000ULL) |
-        ((value << 24) & 0x0000FF0000000000ULL) |
-        ((value << 40) & 0x00FF000000000000ULL) |
-        ((value << 56) & 0xFF00000000000000ULL);
+           ((value >> 40) & 0x000000000000FF00ULL) |
+           ((value >> 24) & 0x0000000000FF0000ULL) |
+           ((value >> 8) & 0x00000000FF000000ULL) |
+           ((value << 8) & 0x000000FF00000000ULL) |
+           ((value << 24) & 0x0000FF0000000000ULL) |
+           ((value << 40) & 0x00FF000000000000ULL) |
+           ((value << 56) & 0xFF00000000000000ULL);
 }
 
 WGPUByteBuffer WGPUByteBuffer::Obtain(int capacity) {
@@ -275,7 +275,10 @@ void WGPUByteBuffer::push_back(char value) { buffer.push_back(value); }
 
 const uint8_t* WGPUByteBuffer::data() { return buffer.data(); }
 
-void WGPUByteBuffer::order(WGPUByteOrder order) { byteOrder = order; }
+void WGPUByteBuffer::order(WGPUByteOrder order) {
+    byteOrder = order;
+    needsSwap = (order == LittleEndian) != isLittleEndianHost();
+}
 
 void WGPUByteBuffer::put(int index, char value) {
     if (index >= _limit) {
@@ -353,7 +356,6 @@ void WGPUByteBuffer::putNumeric(int index, T value) {
     if (index + sizeof(T) > _limit) {
         throw std::out_of_range("Buffer overflow");
     }
-    bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
     if constexpr (sizeof(T) == 2) {
         uint16_t intValue;
         std::memcpy(&intValue, &value, sizeof(T));
@@ -361,25 +363,21 @@ void WGPUByteBuffer::putNumeric(int index, T value) {
             intValue = swapBytes(intValue);
         }
         std::memcpy(&buffer[index], &intValue, sizeof(T));
-    }
-    else if constexpr (sizeof(T) == 4) {
+    } else if constexpr (sizeof(T) == 4) {
         uint32_t intValue;
         std::memcpy(&intValue, &value, sizeof(T));
         if (needsSwap) {
             intValue = swapBytes(intValue);
         }
         std::memcpy(&buffer[index], &intValue, sizeof(T));
-    }
-    else if constexpr (sizeof(T) == 8) {
+    } else if constexpr (sizeof(T) == 8) {
         uint64_t intValue;
         std::memcpy(&intValue, &value, sizeof(T));
         if (needsSwap) {
             intValue = swapBytes(intValue);
         }
         std::memcpy(&buffer[index], &intValue, sizeof(T));
-    }
-    else {
-        // For unsupported sizes, copy directly without swapping
+    } else {
         std::memcpy(&buffer[index], &value, sizeof(T));
     }
 }
@@ -389,7 +387,6 @@ T WGPUByteBuffer::getNumeric(int index) {
     if (index + sizeof(T) > _limit) {
         throw std::out_of_range("Buffer underflow");
     }
-    bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
     if constexpr (sizeof(T) == 2) {
         uint16_t intValue;
         std::memcpy(&intValue, &buffer[index], sizeof(T));
@@ -399,8 +396,7 @@ T WGPUByteBuffer::getNumeric(int index) {
         T value;
         std::memcpy(&value, &intValue, sizeof(T));
         return value;
-    }
-    else if constexpr (sizeof(T) == 4) {
+    } else if constexpr (sizeof(T) == 4) {
         uint32_t intValue;
         std::memcpy(&intValue, &buffer[index], sizeof(T));
         if (needsSwap) {
@@ -409,8 +405,7 @@ T WGPUByteBuffer::getNumeric(int index) {
         T value;
         std::memcpy(&value, &intValue, sizeof(T));
         return value;
-    }
-    else if constexpr (sizeof(T) == 8) {
+    } else if constexpr (sizeof(T) == 8) {
         uint64_t intValue;
         std::memcpy(&intValue, &buffer[index], sizeof(T));
         if (needsSwap) {
@@ -419,8 +414,7 @@ T WGPUByteBuffer::getNumeric(int index) {
         T value;
         std::memcpy(&value, &intValue, sizeof(T));
         return value;
-    }
-    else {
+    } else {
         T value;
         std::memcpy(&value, &buffer[index], sizeof(T));
         return value;
@@ -497,7 +491,7 @@ void WGPUFloatBuffer::put(const float* values, int offset, int size) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
+    bool needsSwap = (parent->byteOrder == LittleEndian) != parent->isLittleEndianHost();
     if (!needsSwap) {
         // Direct copy if no byte-swapping is needed
         std::memcpy(&parent->buffer[byteOffset], values, byteSize);
@@ -594,7 +588,7 @@ void WGPUIntBuffer::put(const int* values, int offset, int size) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
+    bool needsSwap = (parent->byteOrder == LittleEndian) != parent->isLittleEndianHost();
     if (!needsSwap) {
         // Direct copy if no byte-swapping is needed
         std::memcpy(&parent->buffer[byteOffset], values, byteSize);
@@ -691,7 +685,7 @@ void WGPULongBuffer::put(const long long* values, int offset, int size) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
+    bool needsSwap = (parent->byteOrder == LittleEndian) != parent->isLittleEndianHost();
     if (!needsSwap) {
         // Direct copy if no byte-swapping is needed
         std::memcpy(&parent->buffer[byteOffset], values, byteSize);
@@ -788,7 +782,7 @@ void WGPUShortBuffer::put(const int16_t* values, int offset, int size) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent->byteOrder == WGPUByteBuffer::LittleEndian) != parent->isLittleEndianHost();
+    bool needsSwap = (parent->byteOrder == LittleEndian) != parent->isLittleEndianHost();
     if (!needsSwap) {
         // Direct copy if no byte-swapping is needed
         std::memcpy(&parent->buffer[byteOffset], values, byteSize);
