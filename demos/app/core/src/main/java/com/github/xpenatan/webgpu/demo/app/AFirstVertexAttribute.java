@@ -295,7 +295,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         pipelineDesc.getMultisample().setCount(1);
 
         // Default value for the mask, meaning "all bits on"
-        pipelineDesc.getMultisample().setMask(0);
+        pipelineDesc.getMultisample().setMask(1);
 
         // Default value as well (irrelevant for count = 1 anyways)
         pipelineDesc.getMultisample().setAlphaToCoverageEnabled(false);
@@ -334,6 +334,11 @@ public class AFirstVertexAttribute implements ApplicationListener {
         floatBuffer.put(+0.5f);
         floatBuffer.put(-0.55f);
         floatBuffer.put(+0.5f);
+
+        for(int i = 0; i < floatBuffer.getLimit(); i++) {
+            float v = floatBuffer.get(i);
+            System.out.println(i + " Value: " + v);
+        }
 
         vertexCount = floatBuffer.getLimit() / 2;
 

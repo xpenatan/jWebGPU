@@ -2079,25 +2079,6 @@ STBImage* WGPU::loadImage(WGPUByteBuffer* buffer, int desiredChannels) {
     return stbImage;
 }
 
-void WGPU::testWriteBuffer(WebGPUQueue* queue, WebGPUBuffer* buffer) {
-    std::vector<float> vertexData = {
-        // Define a first triangle:
-        -0.5, -0.5,
-        +0.5, -0.5,
-        +0.0, +0.5,
-
-        // Add a second triangle:
-        -0.55f, -0.5,
-        -0.05f, +0.5,
-        -0.55f, +0.5
-    };
-
-    WGPUQueue que = queue->Get();
-    WGPUBuffer buff = buffer->Get();
-
-    wgpuQueueWriteBuffer(que, buff, 0, vertexData.data(), buffer->GetSize());
-}
-
 // WebGPUBindGroupEntry
 WebGPUBindGroupEntry WebGPUBindGroupEntry::Obtain() {
     WebGPUBindGroupEntry obj;

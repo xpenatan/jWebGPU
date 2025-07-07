@@ -262,7 +262,7 @@ public class PlayingWithBuffers implements ApplicationListener {
         pipelineDesc.getMultisample().setCount(1);
 
         // Default value for the mask, meaning "all bits on"
-        pipelineDesc.getMultisample().setMask(0);
+        pipelineDesc.getMultisample().setMask(1);
 
         // Default value as well (irrelevant for count = 1 anyways)
         pipelineDesc.getMultisample().setAlphaToCoverageEnabled(false);

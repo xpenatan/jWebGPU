@@ -262,14 +262,6 @@ enum WGPUPlatformType : int {
     WGPU_Web
 };
 
-class WGPU {
-    public:
-        static WGPUPlatformType GetPlatformType();
-        static WebGPUInstance CreateInstance(WebGPUInstanceDescriptor* descriptor = NULL);
-        static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
-        static void testWriteBuffer(WebGPUQueue* queue, WebGPUBuffer* buffer);
-};
-
 class WGPUFloatBuffer {
     public:
         WGPUByteBuffer* parent;
@@ -1665,4 +1657,29 @@ class WebGPUQueue : public WebGPUObjectBase<WebGPUQueue, WGPUQueue> {
         void Submit(int commandCount, WebGPUCommandBuffer* commandBuffer);
         void WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes);
         void WriteTexture(WebGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, WebGPUTexelCopyBufferLayout* dataLayout, WebGPUExtent3D* writeSize);
+};
+
+class WGPU {
+    public:
+        static WGPUPlatformType GetPlatformType();
+        static WebGPUInstance CreateInstance(WebGPUInstanceDescriptor* descriptor = NULL);
+        static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
+        static void testWriteBuffer(WebGPUQueue* queue, WebGPUBuffer* buffer) {
+            std::vector<float> vertexData = {
+                // Define a first triangle:
+                -0.5, -0.5,
+                +0.5, -0.5,
+                +0.0, +0.5,
+
+                // Add a second triangle:
+                -0.55f, -0.5,
+                -0.05f, +0.5,
+                -0.55f, +0.5
+            };
+
+            WGPUQueue que = queue->Get();
+            WGPUBuffer buff = buffer->Get();
+
+            wgpuQueueWriteBuffer(que, buff, 0, vertexData.data(), buffer->GetSize());
+        }
 };
