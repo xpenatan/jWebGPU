@@ -345,10 +345,6 @@ public class AFirstVertexAttribute implements ApplicationListener {
         bufferDesc.setMappedAtCreation(false);
         vertexBuffer = new WebGPUBuffer();
         wgpu.device.createBuffer(bufferDesc, vertexBuffer);
-        bufferDesc.setLabel("Output buffer");
-        bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.MapRead));
-        WebGPUBuffer buffer2 = new WebGPUBuffer();
-        wgpu.device.createBuffer(bufferDesc, buffer2);
 
 //        WGPU.testWriteBuffer(wgpu.queue, vertexBuffer);
         // Upload geometry data to the buffer
