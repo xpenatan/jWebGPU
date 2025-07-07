@@ -354,18 +354,34 @@ void WGPUByteBuffer::putNumeric(int index, T value) {
         throw std::out_of_range("Buffer overflow");
     }
     bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
-    if (needsSwap) {
-        if constexpr (sizeof(T) == 2) {
-            value = swapBytes(static_cast<uint16_t>(value));
+    if constexpr (sizeof(T) == 2) {
+        uint16_t intValue;
+        std::memcpy(&intValue, &value, sizeof(T));
+        if (needsSwap) {
+            intValue = swapBytes(intValue);
         }
-        else if constexpr (sizeof(T) == 4) {
-            value = swapBytes(static_cast<uint32_t>(value));
-        }
-        else if constexpr (sizeof(T) == 8) {
-            value = swapBytes(static_cast<uint64_t>(value));
-        }
+        std::memcpy(&buffer[index], &intValue, sizeof(T));
     }
-    std::memcpy(&buffer[index], &value, sizeof(T));
+    else if constexpr (sizeof(T) == 4) {
+        uint32_t intValue;
+        std::memcpy(&intValue, &value, sizeof(T));
+        if (needsSwap) {
+            intValue = swapBytes(intValue);
+        }
+        std::memcpy(&buffer[index], &intValue, sizeof(T));
+    }
+    else if constexpr (sizeof(T) == 8) {
+        uint64_t intValue;
+        std::memcpy(&intValue, &value, sizeof(T));
+        if (needsSwap) {
+            intValue = swapBytes(intValue);
+        }
+        std::memcpy(&buffer[index], &intValue, sizeof(T));
+    }
+    else {
+        // For unsupported sizes, copy directly without swapping
+        std::memcpy(&buffer[index], &value, sizeof(T));
+    }
 }
 
 template<typename T>
@@ -373,21 +389,42 @@ T WGPUByteBuffer::getNumeric(int index) {
     if (index + sizeof(T) > _limit) {
         throw std::out_of_range("Buffer underflow");
     }
-    T value;
-    std::memcpy(&value, &buffer[index], sizeof(T));
     bool needsSwap = (byteOrder == WGPUByteBuffer::LittleEndian) != isLittleEndianHost();
-    if (needsSwap) {
-        if constexpr (sizeof(T) == 2) {
-            value = swapBytes(static_cast<uint16_t>(value));
+    if constexpr (sizeof(T) == 2) {
+        uint16_t intValue;
+        std::memcpy(&intValue, &buffer[index], sizeof(T));
+        if (needsSwap) {
+            intValue = swapBytes(intValue);
         }
-        else if constexpr (sizeof(T) == 4) {
-            value = swapBytes(static_cast<uint32_t>(value));
-        }
-        else if constexpr (sizeof(T) == 8) {
-            value = swapBytes(static_cast<uint64_t>(value));
-        }
+        T value;
+        std::memcpy(&value, &intValue, sizeof(T));
+        return value;
     }
-    return value;
+    else if constexpr (sizeof(T) == 4) {
+        uint32_t intValue;
+        std::memcpy(&intValue, &buffer[index], sizeof(T));
+        if (needsSwap) {
+            intValue = swapBytes(intValue);
+        }
+        T value;
+        std::memcpy(&value, &intValue, sizeof(T));
+        return value;
+    }
+    else if constexpr (sizeof(T) == 8) {
+        uint64_t intValue;
+        std::memcpy(&intValue, &buffer[index], sizeof(T));
+        if (needsSwap) {
+            intValue = swapBytes(intValue);
+        }
+        T value;
+        std::memcpy(&value, &intValue, sizeof(T));
+        return value;
+    }
+    else {
+        T value;
+        std::memcpy(&value, &buffer[index], sizeof(T));
+        return value;
+    }
 }
 
 WGPUFloatBuffer& WGPUByteBuffer::asFloatBuffer() {
@@ -1946,7 +1983,7 @@ WGPUVectorTextureFormat WebGPUSurfaceCapabilities::GetFormats() {
 
 // WebGPURenderPassColorAttachment
 WebGPURenderPassColorAttachment::WebGPURenderPassColorAttachment() {
-    SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
+//    SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
 }
 
 WebGPURenderPassColorAttachment WebGPURenderPassColorAttachment::Obtain() {
@@ -2040,6 +2077,25 @@ STBImage* WGPU::loadImage(WGPUByteBuffer* buffer, int desiredChannels) {
     stbImage->height = height;
     stbImage->format = format;
     return stbImage;
+}
+
+void WGPU::testWriteBuffer(WebGPUQueue* queue, WebGPUBuffer* buffer) {
+    std::vector<float> vertexData = {
+        // Define a first triangle:
+        -0.5, -0.5,
+        +0.5, -0.5,
+        +0.0, +0.5,
+
+        // Add a second triangle:
+        -0.55f, -0.5,
+        -0.05f, +0.5,
+        -0.55f, +0.5
+    };
+
+    WGPUQueue que = queue->Get();
+    WGPUBuffer buff = buffer->Get();
+
+    wgpuQueueWriteBuffer(que, buff, 0, vertexData.data(), buffer->GetSize());
 }
 
 // WebGPUBindGroupEntry

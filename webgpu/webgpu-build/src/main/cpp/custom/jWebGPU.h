@@ -267,6 +267,7 @@ class WGPU {
         static WGPUPlatformType GetPlatformType();
         static WebGPUInstance CreateInstance(WebGPUInstanceDescriptor* descriptor = NULL);
         static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
+        static void testWriteBuffer(WebGPUQueue* queue, WebGPUBuffer* buffer);
 };
 
 class WGPUFloatBuffer {
@@ -365,7 +366,7 @@ class WGPUByteBuffer {
         std::vector<uint8_t> buffer;
         size_t _position = 0;
         size_t _limit;
-        WGPUByteOrder byteOrder = WGPUByteOrder::BigEndian;
+        WGPUByteOrder byteOrder = WGPUByteOrder::LittleEndian;
         WGPUFloatBuffer floatBuffer;
         WGPUIntBuffer intBuffer;
         WGPULongBuffer longBuffer;

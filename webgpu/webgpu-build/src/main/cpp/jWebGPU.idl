@@ -4,6 +4,7 @@ interface WGPU {
     static WGPUPlatformType GetPlatformType();
     [Value] static WebGPUInstance CreateInstance(optional WebGPUInstanceDescriptor descriptor);
     static STBImage loadImage(WGPUByteBuffer buffer, optional long desiredChannels);
+    static void testWriteBuffer(WebGPUQueue queue, WebGPUBuffer buffer);
 };
 
 interface STBImage {
