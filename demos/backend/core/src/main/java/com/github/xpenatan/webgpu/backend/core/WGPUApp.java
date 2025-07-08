@@ -12,30 +12,30 @@ import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
 import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
 import com.github.xpenatan.webgpu.WGPUVectorFeatureName;
-import com.github.xpenatan.webgpu.WebGPUAdapter;
-import com.github.xpenatan.webgpu.WebGPUAdapterInfo;
-import com.github.xpenatan.webgpu.WebGPUDevice;
-import com.github.xpenatan.webgpu.WebGPUDeviceDescriptor;
-import com.github.xpenatan.webgpu.WebGPUInstance;
-import com.github.xpenatan.webgpu.WebGPULimits;
-import com.github.xpenatan.webgpu.WebGPUQueue;
-import com.github.xpenatan.webgpu.WebGPURequestAdapterOptions;
-import com.github.xpenatan.webgpu.WebGPUSupportedFeatures;
-import com.github.xpenatan.webgpu.WebGPUSurface;
+import com.github.xpenatan.webgpu.WGPUAdapter;
+import com.github.xpenatan.webgpu.WGPUAdapterInfo;
+import com.github.xpenatan.webgpu.WGPUDevice;
+import com.github.xpenatan.webgpu.WGPUDeviceDescriptor;
+import com.github.xpenatan.webgpu.WGPUInstance;
+import com.github.xpenatan.webgpu.WGPULimits;
+import com.github.xpenatan.webgpu.WGPUQueue;
+import com.github.xpenatan.webgpu.WGPURequestAdapterOptions;
+import com.github.xpenatan.webgpu.WGPUSupportedFeatures;
+import com.github.xpenatan.webgpu.WGPUSurface;
 
 public class WGPUApp {
     public int width;
     public int height;
-    public WebGPUInstance instance;
-    public WebGPUAdapter adapter;
-    public WebGPUDevice device;
-    public WebGPUSurface surface;
-    public WebGPUQueue queue;
+    public WGPUInstance instance;
+    public WGPUAdapter adapter;
+    public WGPUDevice device;
+    public WGPUSurface surface;
+    public WGPUQueue queue;
 
     private InitState initState = InitState.NOT_INITIALIZED;
 
     public void init() {
-        WebGPUInstance instance = WGPU.createInstance();
+        WGPUInstance instance = WGPU.createInstance();
         if(instance.isValid()) {
             initState = InitState.INSTANCE_VALID;
             this.instance = instance;
@@ -48,10 +48,10 @@ public class WGPUApp {
     }
 
     private void requestAdapter() {
-        WebGPURequestAdapterOptions op = WebGPURequestAdapterOptions.obtain();
+        WGPURequestAdapterOptions op = WGPURequestAdapterOptions.obtain();
         RequestAdapterCallback callback = new RequestAdapterCallback() {
             @Override
-            protected void onCallback(WGPURequestAdapterStatus status, WebGPUAdapter adapter) {
+            protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter) {
                 System.out.println("Adapter Status: " + status);
                 if(status == WGPURequestAdapterStatus.Success) {
                     initState = InitState.ADAPTER_VALID;
@@ -67,7 +67,7 @@ public class WGPUApp {
     }
 
     private void requestDevice() {
-        WebGPUAdapterInfo info = WebGPUAdapterInfo.obtain();
+        WGPUAdapterInfo info = WGPUAdapterInfo.obtain();
         if(adapter.getInfo(info)) {
             WGPUBackendType backendType = info.getBackendType();
             System.out.println("BackendType: " + backendType);
@@ -84,8 +84,8 @@ public class WGPUApp {
             System.out.println("Has Feature DepthClipControl: " + adapter.hasFeature(WGPUFeatureName.DepthClipControl));
         }
 
-        WebGPUDeviceDescriptor deviceDescriptor = WebGPUDeviceDescriptor.obtain();
-        WebGPULimits limits = WebGPULimits.obtain();
+        WGPUDeviceDescriptor deviceDescriptor = WGPUDeviceDescriptor.obtain();
+        WGPULimits limits = WGPULimits.obtain();
         setDefaultLimits(limits);
         deviceDescriptor.setRequiredLimits(limits);
         deviceDescriptor.setLabel("My Device");
@@ -98,7 +98,7 @@ public class WGPUApp {
 
         adapter.requestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new RequestDeviceCallback() {
             @Override
-            protected void onCallback(WGPURequestDeviceStatus status, WebGPUDevice device) {
+            protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device) {
                 System.out.println("Device Status: " + status);
                 if(status == WGPURequestDeviceStatus.Success) {
                     initState = InitState.DEVICE_VALID;
@@ -106,7 +106,7 @@ public class WGPUApp {
                     queue = device.getQueue();
                     System.out.println("Platform: " + WGPU.getPlatformType());
 
-                    WebGPUSupportedFeatures features = WebGPUSupportedFeatures.obtain();
+                    WGPUSupportedFeatures features = WGPUSupportedFeatures.obtain();
                     device.getFeatures(features);
                     int featureCount = features.getFeatureCount();
                     System.out.println("Total Features: " + featureCount);
@@ -116,7 +116,7 @@ public class WGPUApp {
                     }
                     features.dispose();
 
-                    WebGPULimits limits = WebGPULimits.obtain();
+                    WGPULimits limits = WGPULimits.obtain();
                     device.getLimits(limits);
                     System.out.println("MaxTextureDimension1D: " + limits.getMaxTextureDimension1D());
                     System.out.println("MaxTextureDimension2D: " + limits.getMaxTextureDimension2D());
@@ -142,7 +142,7 @@ public class WGPUApp {
             instance.processEvents();
         }
         if(initState == InitState.ERROR) {
-            throw new RuntimeException("WebGPU Error");
+            throw new RuntimeException("WGPU Error");
         }
     }
 
@@ -157,7 +157,7 @@ public class WGPUApp {
     final static int WGPU_LIMIT_U32_UNDEFINED = -1;
     final static int WGPU_LIMIT_U64_UNDEFINED = -1;
 
-    public void setDefaultLimits (WebGPULimits limits) {
+    public void setDefaultLimits (WGPULimits limits) {
         limits.setMaxTextureDimension1D(WGPU_LIMIT_U32_UNDEFINED);
         limits.setMaxTextureDimension2D(WGPU_LIMIT_U32_UNDEFINED);
         limits.setMaxTextureDimension3D(WGPU_LIMIT_U32_UNDEFINED);

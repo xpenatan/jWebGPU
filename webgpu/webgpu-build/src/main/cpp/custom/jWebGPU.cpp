@@ -52,28 +52,28 @@ template void WGPUByteBuffer::putNumeric<int16_t>(int index, int16_t value);
 template float WGPUByteBuffer::getNumeric<float>(int index);
 template int16_t WGPUByteBuffer::getNumeric<int16_t>(int index);
 
-template class WebGPUObjectBase<WebGPUCommandBuffer, WGPUCommandBuffer>;
-template class WebGPUObjectBase<WebGPUBuffer, WGPUBuffer>;
-template class WebGPUObjectBase<WebGPUQueue, WGPUQueue>;
-template class WebGPUObjectBase<WebGPUBindGroupLayout, WGPUBindGroupLayout>;
-template class WebGPUObjectBase<WebGPUComputePipeline, WGPUComputePipeline>;
-template class WebGPUObjectBase<WebGPUStringView, WGPUStringView>;
-template class WebGPUObjectBase<WebGPUChainedStruct, WGPUChainedStruct*>;
-template class WebGPUObjectBase<WebGPUBindGroup, WGPUBindGroup>;
-template class WebGPUObjectBase<WebGPURenderBundle, WGPURenderBundle>;
-template class WebGPUObjectBase<WebGPUShaderModule, WGPUShaderModule>;
-template class WebGPUObjectBase<WebGPUPipelineLayout, WGPUPipelineLayout>;
-template class WebGPUObjectBase<WebGPURenderPipeline, WGPURenderPipeline>;
-template class WebGPUObjectBase<WebGPURenderPassEncoder, WGPURenderPassEncoder>;
-template class WebGPUObjectBase<WebGPUComputePassEncoder, WGPUComputePassEncoder>;
-template class WebGPUObjectBase<WebGPUQuerySet, WGPUQuerySet>;
-template class WebGPUObjectBase<WebGPUTextureView, WGPUTextureView>;
-template class WebGPUObjectBase<WebGPUTexture, WGPUTexture>;
-template class WebGPUObjectBase<WebGPUCommandEncoder, WGPUCommandEncoder>;
-template class WebGPUObjectBase<WebGPUDevice, WGPUDevice>;
-template class WebGPUObjectBase<WebGPUAdapter, WGPUAdapter>;
-template class WebGPUObjectBase<WebGPUSurface, WGPUSurface>;
-template class WebGPUObjectBase<WebGPUInstance, WGPUInstance>;
+template class WGPUObjectBase<JGPU::WGPUCommandBuffer, WGPUCommandBuffer>;
+template class WGPUObjectBase<JGPU::WGPUBuffer, WGPUBuffer>;
+template class WGPUObjectBase<JGPU::WGPUQueue, WGPUQueue>;
+template class WGPUObjectBase<JGPU::WGPUBindGroupLayout, WGPUBindGroupLayout>;
+template class WGPUObjectBase<JGPU::WGPUComputePipeline, WGPUComputePipeline>;
+template class WGPUObjectBase<JGPU::WGPUStringView, WGPUStringView>;
+template class WGPUObjectBase<JGPU::WGPUChainedStruct, WGPUChainedStruct*>;
+template class WGPUObjectBase<JGPU::WGPUBindGroup, WGPUBindGroup>;
+template class WGPUObjectBase<JGPU::WGPURenderBundle, WGPURenderBundle>;
+template class WGPUObjectBase<JGPU::WGPUShaderModule, WGPUShaderModule>;
+template class WGPUObjectBase<JGPU::WGPUPipelineLayout, WGPUPipelineLayout>;
+template class WGPUObjectBase<JGPU::WGPURenderPipeline, WGPURenderPipeline>;
+template class WGPUObjectBase<JGPU::WGPURenderPassEncoder, WGPURenderPassEncoder>;
+template class WGPUObjectBase<JGPU::WGPUComputePassEncoder, WGPUComputePassEncoder>;
+template class WGPUObjectBase<JGPU::WGPUQuerySet, WGPUQuerySet>;
+template class WGPUObjectBase<JGPU::WGPUTextureView, WGPUTextureView>;
+template class WGPUObjectBase<JGPU::WGPUTexture, WGPUTexture>;
+template class WGPUObjectBase<JGPU::WGPUCommandEncoder, WGPUCommandEncoder>;
+template class WGPUObjectBase<JGPU::WGPUDevice, WGPUDevice>;
+template class WGPUObjectBase<JGPU::WGPUAdapter, WGPUAdapter>;
+template class WGPUObjectBase<JGPU::WGPUSurface, WGPUSurface>;
+template class WGPUObjectBase<JGPU::WGPUInstance, WGPUInstance>;
 
 // WGPUVectorFutureWaitInfo
 WGPUVectorFutureWaitInfo* WGPUVectorFutureWaitInfo::Obtain() {
@@ -84,9 +84,9 @@ WGPUVectorFutureWaitInfo* WGPUVectorFutureWaitInfo::Obtain() {
 
 int WGPUVectorFutureWaitInfo::size() { return vector.size(); }
 
-void WGPUVectorFutureWaitInfo::push_back(const WebGPUFutureWaitInfo& entry) { vector.push_back(entry); }
+void WGPUVectorFutureWaitInfo::push_back(const JGPU::WGPUFutureWaitInfo& entry) { vector.push_back(entry); }
 
-const WebGPUFutureWaitInfo* WGPUVectorFutureWaitInfo::data() { return vector.data(); }
+const JGPU::WGPUFutureWaitInfo* WGPUVectorFutureWaitInfo::data() { return vector.data(); }
 
 
 // WGPUVectorBindGroupEntry
@@ -98,9 +98,9 @@ WGPUVectorBindGroupEntry* WGPUVectorBindGroupEntry::Obtain() {
 
 int WGPUVectorBindGroupEntry::size() { return vector.size(); }
 
-void WGPUVectorBindGroupEntry::push_back(const WebGPUBindGroupEntry& entry) { vector.push_back(entry); }
+void WGPUVectorBindGroupEntry::push_back(const JGPU::WGPUBindGroupEntry& entry) { vector.push_back(entry); }
 
-const WebGPUBindGroupEntry* WGPUVectorBindGroupEntry::data() { return vector.data(); }
+const JGPU::WGPUBindGroupEntry* WGPUVectorBindGroupEntry::data() { return vector.data(); }
 
 // WGPUVectorColorTargetState
 WGPUVectorColorTargetState* WGPUVectorColorTargetState::Obtain() {
@@ -111,9 +111,9 @@ WGPUVectorColorTargetState* WGPUVectorColorTargetState::Obtain() {
 
 int WGPUVectorColorTargetState::size() { return vector.size(); }
 
-void WGPUVectorColorTargetState::push_back(const WebGPUColorTargetState& attachment) { vector.push_back(attachment); }
+void WGPUVectorColorTargetState::push_back(const JGPU::WGPUColorTargetState& attachment) { vector.push_back(attachment); }
 
-const WebGPUColorTargetState* WGPUVectorColorTargetState::data() { return vector.data(); }
+const JGPU::WGPUColorTargetState* WGPUVectorColorTargetState::data() { return vector.data(); }
 
 // WGPUVectorFeatureName
 WGPUVectorFeatureName* WGPUVectorFeatureName::Obtain() {
@@ -137,9 +137,9 @@ WGPUVectorConstantEntry* WGPUVectorConstantEntry::Obtain() {
 
 int WGPUVectorConstantEntry::size() { return vector.size(); }
 
-void WGPUVectorConstantEntry::push_back(const WebGPUConstantEntry& attachment) { vector.push_back(attachment); }
+void WGPUVectorConstantEntry::push_back(const JGPU::WGPUConstantEntry& attachment) { vector.push_back(attachment); }
 
-const WebGPUConstantEntry* WGPUVectorConstantEntry::data() { return vector.data(); }
+const JGPU::WGPUConstantEntry* WGPUVectorConstantEntry::data() { return vector.data(); }
 
 // WGPUVectorVertexBufferLayout
 WGPUVectorVertexBufferLayout* WGPUVectorVertexBufferLayout::Obtain() {
@@ -150,9 +150,9 @@ WGPUVectorVertexBufferLayout* WGPUVectorVertexBufferLayout::Obtain() {
 
 int WGPUVectorVertexBufferLayout::size() { return vector.size(); }
 
-void WGPUVectorVertexBufferLayout::push_back(const WebGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
+void WGPUVectorVertexBufferLayout::push_back(const JGPU::WGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
 
-const WebGPUVertexBufferLayout* WGPUVectorVertexBufferLayout::data() { return vector.data(); }
+const JGPU::WGPUVertexBufferLayout* WGPUVectorVertexBufferLayout::data() { return vector.data(); }
 
 // WGPUVectorTextureFormat
 WGPUVectorTextureFormat* WGPUVectorTextureFormat::Obtain() {
@@ -178,9 +178,9 @@ WGPUVectorRenderBundle* WGPUVectorRenderBundle::Obtain() {
 
 int WGPUVectorRenderBundle::size() { return vector.size(); }
 
-void WGPUVectorRenderBundle::push_back(const WebGPURenderBundle& attachment) { vector.push_back(attachment); }
+void WGPUVectorRenderBundle::push_back(const JGPU::WGPURenderBundle& attachment) { vector.push_back(attachment); }
 
-const WebGPURenderBundle* WGPUVectorRenderBundle::data() { return vector.data(); }
+const JGPU::WGPURenderBundle* WGPUVectorRenderBundle::data() { return vector.data(); }
 
 // WGPUVectorRenderPassColorAttachment
 WGPUVectorRenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::Obtain() {
@@ -191,9 +191,9 @@ WGPUVectorRenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::Obtain
 
 int WGPUVectorRenderPassColorAttachment::size() { return vector.size(); }
 
-void WGPUVectorRenderPassColorAttachment::push_back(const WebGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
+void WGPUVectorRenderPassColorAttachment::push_back(const JGPU::WGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
 
-const WebGPURenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
+const JGPU::WGPURenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
 
 // WGPUVectorVertexAttribute
 WGPUVectorVertexAttribute* WGPUVectorVertexAttribute::Obtain() {
@@ -204,9 +204,9 @@ WGPUVectorVertexAttribute* WGPUVectorVertexAttribute::Obtain() {
 
 int WGPUVectorVertexAttribute::size() { return vector.size(); }
 
-void WGPUVectorVertexAttribute::push_back(const WebGPUVertexAttribute& attribute) { vector.push_back(attribute); }
+void WGPUVectorVertexAttribute::push_back(const JGPU::WGPUVertexAttribute& attribute) { vector.push_back(attribute); }
 
-const WebGPUVertexAttribute* WGPUVectorVertexAttribute::data() { return vector.data(); }
+const JGPU::WGPUVertexAttribute* WGPUVectorVertexAttribute::data() { return vector.data(); }
 
 // WGPUVectorBindGroupLayout
 WGPUVectorBindGroupLayout* WGPUVectorBindGroupLayout::Obtain() {
@@ -217,9 +217,9 @@ WGPUVectorBindGroupLayout* WGPUVectorBindGroupLayout::Obtain() {
 
 int WGPUVectorBindGroupLayout::size() { return vector.size(); }
 
-void WGPUVectorBindGroupLayout::push_back(const WebGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
+void WGPUVectorBindGroupLayout::push_back(const JGPU::WGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
 
-const WebGPUBindGroupLayout* WGPUVectorBindGroupLayout::data() { return vector.data(); }
+const JGPU::WGPUBindGroupLayout* WGPUVectorBindGroupLayout::data() { return vector.data(); }
 
 // WGPUVectorBindGroupLayoutEntry
 WGPUVectorBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::Obtain() {
@@ -230,9 +230,9 @@ WGPUVectorBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::Obtain() {
 
 int WGPUVectorBindGroupLayoutEntry::size() { return vector.size(); }
 
-void WGPUVectorBindGroupLayoutEntry::push_back(const WebGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
+void WGPUVectorBindGroupLayoutEntry::push_back(const JGPU::WGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
 
-const WebGPUBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
+const JGPU::WGPUBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
 
 // WGPUVectorInt
 WGPUVectorInt* WGPUVectorInt::Obtain() {
@@ -904,536 +904,525 @@ void WGPUAndroidWindow::InitLogcat() {
     #endif
 }
 
-// WebGPUStringView
-WebGPUStringView::WebGPUStringView() {}
-
-WebGPUStringView::WebGPUStringView(WGPUStringView stringView) {
-    Set(stringView);
-}
-
-WebGPUStringView::WebGPUStringView(const char* value) {
-    Get().data = strdup(value);
-    Get().length = strlen(value);
-}
-
-const std::string WebGPUStringView::GetString() {
+// WGPUStringView
+const std::string JGPU::WGPUStringView::GetString() {
     return std::string(Get().data, Get().length);
 }
 
-// WebGPUChainedStruct
-void WebGPUChainedStruct::SetNext(WebGPUChainedStruct* value) {
+// WGPUChainedStruct
+void JGPU::WGPUChainedStruct::SetNext(JGPU::WGPUChainedStruct* value) {
     Get()->next = value != NULL ? value->Get() : NULL;
 }
 
-void WebGPUChainedStruct::SetSType(WGPUSType type) {
+void JGPU::WGPUChainedStruct::SetSType(WGPUSType type) {
     Get()->sType = type;
 }
 
-// WebGPULimits
-WebGPULimits* WebGPULimits::Obtain() {
-    static WebGPULimits obj;
-    obj = WebGPULimits();
+// WGPULimits
+JGPU::WGPULimits* JGPU::WGPULimits::Obtain() {
+    static JGPU::WGPULimits obj;
+    obj = JGPU::WGPULimits();
     return &obj;
 }
 
-void WebGPULimits::SetMaxTextureDimension1D(int value) {
+void JGPU::WGPULimits::SetMaxTextureDimension1D(int value) {
     Get().maxTextureDimension1D = value;
 }
 
-int WebGPULimits::GetMaxTextureDimension1D() {
+int JGPU::WGPULimits::GetMaxTextureDimension1D() {
     return static_cast<int>(Get().maxTextureDimension1D);
 }
 
-void WebGPULimits::SetMaxTextureDimension2D(int value) {
+void JGPU::WGPULimits::SetMaxTextureDimension2D(int value) {
     Get().maxTextureDimension2D = value;
 }
 
-int WebGPULimits::GetMaxTextureDimension2D() {
+int JGPU::WGPULimits::GetMaxTextureDimension2D() {
     return static_cast<int>(Get().maxTextureDimension2D);
 }
 
-void WebGPULimits::SetMaxTextureDimension3D(int value) {
+void JGPU::WGPULimits::SetMaxTextureDimension3D(int value) {
     Get().maxTextureDimension3D = value;
 }
 
-int WebGPULimits::GetMaxTextureDimension3D() {
+int JGPU::WGPULimits::GetMaxTextureDimension3D() {
     return static_cast<int>(Get().maxTextureDimension3D);
 }
 
-void WebGPULimits::SetMaxTextureArrayLayers(int value) {
+void JGPU::WGPULimits::SetMaxTextureArrayLayers(int value) {
     Get().maxTextureArrayLayers = value;
 }
 
-int WebGPULimits::GetMaxTextureArrayLayers() {
+int JGPU::WGPULimits::GetMaxTextureArrayLayers() {
     return static_cast<int>(Get().maxTextureArrayLayers);
 }
 
-void WebGPULimits::SetMaxBindGroups(int value) {
+void JGPU::WGPULimits::SetMaxBindGroups(int value) {
     Get().maxBindGroups = value;
 }
 
-int WebGPULimits::GetMaxBindGroups() {
+int JGPU::WGPULimits::GetMaxBindGroups() {
     return static_cast<int>(Get().maxBindGroups);
 }
 
-void WebGPULimits::SetMaxBindGroupsPlusVertexBuffers(int value) {
+void JGPU::WGPULimits::SetMaxBindGroupsPlusVertexBuffers(int value) {
     Get().maxBindGroupsPlusVertexBuffers = value;
 }
 
-int WebGPULimits::GetMaxBindGroupsPlusVertexBuffers() {
+int JGPU::WGPULimits::GetMaxBindGroupsPlusVertexBuffers() {
     return static_cast<int>(Get().maxBindGroupsPlusVertexBuffers);
 }
 
-void WebGPULimits::SetMaxBindingsPerBindGroup(int value) {
+void JGPU::WGPULimits::SetMaxBindingsPerBindGroup(int value) {
     Get().maxBindingsPerBindGroup = value;
 }
 
-int WebGPULimits::GetMaxBindingsPerBindGroup() {
+int JGPU::WGPULimits::GetMaxBindingsPerBindGroup() {
     return static_cast<int>(Get().maxBindingsPerBindGroup);
 }
 
-void WebGPULimits::SetMaxDynamicUniformBuffersPerPipelineLayout(int value) {
+void JGPU::WGPULimits::SetMaxDynamicUniformBuffersPerPipelineLayout(int value) {
     Get().maxDynamicUniformBuffersPerPipelineLayout = value;
 }
 
-int WebGPULimits::GetMaxDynamicUniformBuffersPerPipelineLayout() {
+int JGPU::WGPULimits::GetMaxDynamicUniformBuffersPerPipelineLayout() {
     return static_cast<int>(Get().maxDynamicUniformBuffersPerPipelineLayout);
 }
 
-void WebGPULimits::SetMaxDynamicStorageBuffersPerPipelineLayout(int value) {
+void JGPU::WGPULimits::SetMaxDynamicStorageBuffersPerPipelineLayout(int value) {
     Get().maxDynamicStorageBuffersPerPipelineLayout = value;
 }
 
-int WebGPULimits::GetMaxDynamicStorageBuffersPerPipelineLayout() {
+int JGPU::WGPULimits::GetMaxDynamicStorageBuffersPerPipelineLayout() {
     return static_cast<int>(Get().maxDynamicStorageBuffersPerPipelineLayout);
 }
 
-void WebGPULimits::SetMaxSampledTexturesPerShaderStage(int value) {
+void JGPU::WGPULimits::SetMaxSampledTexturesPerShaderStage(int value) {
     Get().maxSampledTexturesPerShaderStage = value;
 }
 
-int WebGPULimits::GetMaxSampledTexturesPerShaderStage() {
+int JGPU::WGPULimits::GetMaxSampledTexturesPerShaderStage() {
     return static_cast<int>(Get().maxSampledTexturesPerShaderStage);
 }
 
-void WebGPULimits::SetMaxSamplersPerShaderStage(int value) {
+void JGPU::WGPULimits::SetMaxSamplersPerShaderStage(int value) {
     Get().maxSamplersPerShaderStage = value;
 }
 
-int WebGPULimits::GetMaxSamplersPerShaderStage() {
+int JGPU::WGPULimits::GetMaxSamplersPerShaderStage() {
     return static_cast<int>(Get().maxSamplersPerShaderStage);
 }
 
-void WebGPULimits::SetMaxStorageBuffersPerShaderStage(int value) {
+void JGPU::WGPULimits::SetMaxStorageBuffersPerShaderStage(int value) {
     Get().maxStorageBuffersPerShaderStage = value;
 }
 
-int WebGPULimits::GetMaxStorageBuffersPerShaderStage() {
+int JGPU::WGPULimits::GetMaxStorageBuffersPerShaderStage() {
     return static_cast<int>(Get().maxStorageBuffersPerShaderStage);
 }
 
-void WebGPULimits::SetMaxStorageTexturesPerShaderStage(int value) {
+void JGPU::WGPULimits::SetMaxStorageTexturesPerShaderStage(int value) {
     Get().maxStorageTexturesPerShaderStage = value;
 }
 
-int WebGPULimits::GetMaxStorageTexturesPerShaderStage() {
+int JGPU::WGPULimits::GetMaxStorageTexturesPerShaderStage() {
     return static_cast<int>(Get().maxStorageTexturesPerShaderStage);
 }
 
-void WebGPULimits::SetMaxUniformBuffersPerShaderStage(int value) {
+void JGPU::WGPULimits::SetMaxUniformBuffersPerShaderStage(int value) {
     Get().maxUniformBuffersPerShaderStage = value;
 }
 
-int WebGPULimits::GetMaxUniformBuffersPerShaderStage() {
+int JGPU::WGPULimits::GetMaxUniformBuffersPerShaderStage() {
     return static_cast<int>(Get().maxUniformBuffersPerShaderStage);
 }
 
-void WebGPULimits::SetMaxUniformBufferBindingSize(int value) {
+void JGPU::WGPULimits::SetMaxUniformBufferBindingSize(int value) {
     Get().maxUniformBufferBindingSize = value;
 }
 
-int WebGPULimits::GetMaxUniformBufferBindingSize() {
+int JGPU::WGPULimits::GetMaxUniformBufferBindingSize() {
     return static_cast<int>(Get().maxUniformBufferBindingSize);
 }
 
-void WebGPULimits::SetMaxStorageBufferBindingSize(int value) {
+void JGPU::WGPULimits::SetMaxStorageBufferBindingSize(int value) {
     Get().maxStorageBufferBindingSize = value;
 }
 
-int WebGPULimits::GetMaxStorageBufferBindingSize() {
+int JGPU::WGPULimits::GetMaxStorageBufferBindingSize() {
     return static_cast<int>(Get().maxStorageBufferBindingSize);
 }
 
-void WebGPULimits::SetMinUniformBufferOffsetAlignment(int value) {
+void JGPU::WGPULimits::SetMinUniformBufferOffsetAlignment(int value) {
     Get().minUniformBufferOffsetAlignment = value;
 }
 
-int WebGPULimits::GetMinUniformBufferOffsetAlignment() {
+int JGPU::WGPULimits::GetMinUniformBufferOffsetAlignment() {
     return static_cast<int>(Get().minUniformBufferOffsetAlignment);
 }
 
-void WebGPULimits::SetMinStorageBufferOffsetAlignment(int value) {
+void JGPU::WGPULimits::SetMinStorageBufferOffsetAlignment(int value) {
     Get().minStorageBufferOffsetAlignment = value;
 }
 
-int WebGPULimits::GetMinStorageBufferOffsetAlignment() {
+int JGPU::WGPULimits::GetMinStorageBufferOffsetAlignment() {
     return static_cast<int>(Get().minStorageBufferOffsetAlignment);
 }
 
-void WebGPULimits::SetMaxVertexBuffers(int value) {
+void JGPU::WGPULimits::SetMaxVertexBuffers(int value) {
     Get().maxVertexBuffers = value;
 }
 
-int WebGPULimits::GetMaxVertexBuffers() {
+int JGPU::WGPULimits::GetMaxVertexBuffers() {
     return static_cast<int>(Get().maxVertexBuffers);
 }
 
-void WebGPULimits::SetMaxBufferSize(int value) {
+void JGPU::WGPULimits::SetMaxBufferSize(int value) {
     Get().maxBufferSize = value;
 }
 
-int WebGPULimits::GetMaxBufferSize() {
+int JGPU::WGPULimits::GetMaxBufferSize() {
     return static_cast<int>(Get().maxBufferSize);
 }
 
-void WebGPULimits::SetMaxVertexAttributes(int value) {
+void JGPU::WGPULimits::SetMaxVertexAttributes(int value) {
     Get().maxVertexAttributes = value;
 }
 
-int WebGPULimits::GetMaxVertexAttributes() {
+int JGPU::WGPULimits::GetMaxVertexAttributes() {
     return static_cast<int>(Get().maxVertexAttributes);
 }
 
-void WebGPULimits::SetMaxVertexBufferArrayStride(int value) {
+void JGPU::WGPULimits::SetMaxVertexBufferArrayStride(int value) {
     Get().maxVertexBufferArrayStride = value;
 }
 
-int WebGPULimits::GetMaxVertexBufferArrayStride() {
+int JGPU::WGPULimits::GetMaxVertexBufferArrayStride() {
     return static_cast<int>(Get().maxVertexBufferArrayStride);
 }
 
-void WebGPULimits::SetMaxInterStageShaderVariables(int value) {
+void JGPU::WGPULimits::SetMaxInterStageShaderVariables(int value) {
     Get().maxInterStageShaderVariables = value;
 }
 
-int WebGPULimits::GetMaxInterStageShaderVariables() {
+int JGPU::WGPULimits::GetMaxInterStageShaderVariables() {
     return static_cast<int>(Get().maxInterStageShaderVariables);
 }
 
-void WebGPULimits::SetMaxColorAttachments(int value) {
+void JGPU::WGPULimits::SetMaxColorAttachments(int value) {
     Get().maxColorAttachments = value;
 }
 
-int WebGPULimits::GetMaxColorAttachments() {
+int JGPU::WGPULimits::GetMaxColorAttachments() {
     return static_cast<int>(Get().maxColorAttachments);
 }
 
-void WebGPULimits::SetMaxColorAttachmentBytesPerSample(int value) {
+void JGPU::WGPULimits::SetMaxColorAttachmentBytesPerSample(int value) {
     Get().maxColorAttachmentBytesPerSample = value;
 }
 
-int WebGPULimits::GetMaxColorAttachmentBytesPerSample() {
+int JGPU::WGPULimits::GetMaxColorAttachmentBytesPerSample() {
     return static_cast<int>(Get().maxColorAttachmentBytesPerSample);
 }
 
-void WebGPULimits::SetMaxComputeWorkgroupStorageSize(int value) {
+void JGPU::WGPULimits::SetMaxComputeWorkgroupStorageSize(int value) {
     Get().maxComputeWorkgroupStorageSize = value;
 }
 
-int WebGPULimits::GetMaxComputeWorkgroupStorageSize() {
+int JGPU::WGPULimits::GetMaxComputeWorkgroupStorageSize() {
     return static_cast<int>(Get().maxComputeWorkgroupStorageSize);
 }
 
-void WebGPULimits::SetMaxComputeInvocationsPerWorkgroup(int value) {
+void JGPU::WGPULimits::SetMaxComputeInvocationsPerWorkgroup(int value) {
     Get().maxComputeInvocationsPerWorkgroup = value;
 }
 
-int WebGPULimits::GetMaxComputeInvocationsPerWorkgroup() {
+int JGPU::WGPULimits::GetMaxComputeInvocationsPerWorkgroup() {
     return static_cast<int>(Get().maxComputeInvocationsPerWorkgroup);
 }
 
-void WebGPULimits::SetMaxComputeWorkgroupSizeX(int value) {
+void JGPU::WGPULimits::SetMaxComputeWorkgroupSizeX(int value) {
     Get().maxComputeWorkgroupSizeX = value;
 }
 
-int WebGPULimits::GetMaxComputeWorkgroupSizeX() {
+int JGPU::WGPULimits::GetMaxComputeWorkgroupSizeX() {
     return static_cast<int>(Get().maxComputeWorkgroupSizeX);
 }
 
-void WebGPULimits::SetMaxComputeWorkgroupSizeY(int value) {
+void JGPU::WGPULimits::SetMaxComputeWorkgroupSizeY(int value) {
     Get().maxComputeWorkgroupSizeY = value;
 }
 
-int WebGPULimits::GetMaxComputeWorkgroupSizeY() {
+int JGPU::WGPULimits::GetMaxComputeWorkgroupSizeY() {
     return static_cast<int>(Get().maxComputeWorkgroupSizeY);
 }
 
-void WebGPULimits::SetMaxComputeWorkgroupSizeZ(int value) {
+void JGPU::WGPULimits::SetMaxComputeWorkgroupSizeZ(int value) {
     Get().maxComputeWorkgroupSizeZ = value;
 }
 
-int WebGPULimits::GetMaxComputeWorkgroupSizeZ() {
+int JGPU::WGPULimits::GetMaxComputeWorkgroupSizeZ() {
     return static_cast<int>(Get().maxComputeWorkgroupSizeZ);
 }
 
-void WebGPULimits::SetMaxComputeWorkgroupsPerDimension(int value) {
+void JGPU::WGPULimits::SetMaxComputeWorkgroupsPerDimension(int value) {
     Get().maxComputeWorkgroupsPerDimension = value;
 }
 
-int WebGPULimits::GetMaxComputeWorkgroupsPerDimension() {
+int JGPU::WGPULimits::GetMaxComputeWorkgroupsPerDimension() {
     return static_cast<int>(Get().maxComputeWorkgroupsPerDimension);
 }
 
-// WebGPUBufferBindingLayout
-WebGPUBufferBindingLayout* WebGPUBufferBindingLayout::Obtain() {
-    static WebGPUBufferBindingLayout obj;
-    obj = WebGPUBufferBindingLayout();
+// JGPU::WGPUBufferBindingLayout
+JGPU::WGPUBufferBindingLayout* JGPU::WGPUBufferBindingLayout::Obtain() {
+    static JGPU::WGPUBufferBindingLayout obj;
+    obj = JGPU::WGPUBufferBindingLayout();
     return &obj;
 }
 
-void WebGPUBufferBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUBufferBindingLayout::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUBufferBindingLayout::SetType(WGPUBufferBindingType type) {
+void JGPU::WGPUBufferBindingLayout::SetType(WGPUBufferBindingType type) {
     Get()->type = type;
 }
 
-void WebGPUBufferBindingLayout::SetHasDynamicOffset(int hasDynamicOffset) {
+void JGPU::WGPUBufferBindingLayout::SetHasDynamicOffset(int hasDynamicOffset) {
     Get()->hasDynamicOffset = hasDynamicOffset;
 }
 
-void WebGPUBufferBindingLayout::SetMinBindingSize(int minBindingSize) {
+void JGPU::WGPUBufferBindingLayout::SetMinBindingSize(int minBindingSize) {
     Get()->minBindingSize = minBindingSize;
 }
 
-// WebGPUSamplerBindingLayout
-WebGPUSamplerBindingLayout* WebGPUSamplerBindingLayout::Obtain() {
-    static WebGPUSamplerBindingLayout obj;
-    obj = WebGPUSamplerBindingLayout();
+// JGPU::WGPUSamplerBindingLayout
+JGPU::WGPUSamplerBindingLayout* JGPU::WGPUSamplerBindingLayout::Obtain() {
+    static JGPU::WGPUSamplerBindingLayout obj;
+    obj = JGPU::WGPUSamplerBindingLayout();
     return &obj;
 }
 
-void WebGPUSamplerBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUSamplerBindingLayout::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUSamplerBindingLayout::SetType(WGPUSamplerBindingType type) {
+void JGPU::WGPUSamplerBindingLayout::SetType(WGPUSamplerBindingType type) {
     Get()->type = type;
 }
 
-// WebGPUTextureBindingLayout
-WebGPUTextureBindingLayout* WebGPUTextureBindingLayout::Obtain() {
-    static WebGPUTextureBindingLayout obj;
-    obj = WebGPUTextureBindingLayout();
+// JGPU::WGPUTextureBindingLayout
+JGPU::WGPUTextureBindingLayout* JGPU::WGPUTextureBindingLayout::Obtain() {
+    static JGPU::WGPUTextureBindingLayout obj;
+    obj = JGPU::WGPUTextureBindingLayout();
     return &obj;
 }
 
-void WebGPUTextureBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUTextureBindingLayout::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUTextureBindingLayout::SetSampleType(WGPUTextureSampleType sampleType) {
+void JGPU::WGPUTextureBindingLayout::SetSampleType(WGPUTextureSampleType sampleType) {
     Get()->sampleType = sampleType;
 }
 
-void WebGPUTextureBindingLayout::SetViewDimension(WGPUTextureViewDimension viewDimension) {
+void JGPU::WGPUTextureBindingLayout::SetViewDimension(WGPUTextureViewDimension viewDimension) {
     Get()->viewDimension = viewDimension;
 }
 
-void WebGPUTextureBindingLayout::SetMultisampled(int multisampled) {
+void JGPU::WGPUTextureBindingLayout::SetMultisampled(int multisampled) {
     Get()->multisampled = multisampled;
 }
 
-// WebGPUStorageTextureBindingLayout
-WebGPUStorageTextureBindingLayout* WebGPUStorageTextureBindingLayout::Obtain() {
-    static WebGPUStorageTextureBindingLayout obj;
-    obj = WebGPUStorageTextureBindingLayout();
+// JGPU::WGPUStorageTextureBindingLayout
+JGPU::WGPUStorageTextureBindingLayout* JGPU::WGPUStorageTextureBindingLayout::Obtain() {
+    static JGPU::WGPUStorageTextureBindingLayout obj;
+    obj = JGPU::WGPUStorageTextureBindingLayout();
     return &obj;
 }
 
-void WebGPUStorageTextureBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUStorageTextureBindingLayout::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUStorageTextureBindingLayout::SetAccess(WGPUStorageTextureAccess access) {
+void JGPU::WGPUStorageTextureBindingLayout::SetAccess(WGPUStorageTextureAccess access) {
     Get()->access = access;
 }
 
-void WebGPUStorageTextureBindingLayout::SetFormat(WGPUTextureFormat format) {
+void JGPU::WGPUStorageTextureBindingLayout::SetFormat(WGPUTextureFormat format) {
     Get()->format = format;
 }
 
-void WebGPUStorageTextureBindingLayout::SetViewDimension(WGPUTextureViewDimension viewDimension) {
+void JGPU::WGPUStorageTextureBindingLayout::SetViewDimension(WGPUTextureViewDimension viewDimension) {
     Get()->viewDimension = viewDimension;
 }
 
-// WebGPUBindGroupLayoutEntry
-WebGPUBindGroupLayoutEntry* WebGPUBindGroupLayoutEntry::Obtain() {
-    static WebGPUBindGroupLayoutEntry obj;
-    obj = WebGPUBindGroupLayoutEntry();
+// JGPU::WGPUBindGroupLayoutEntry
+JGPU::WGPUBindGroupLayoutEntry* JGPU::WGPUBindGroupLayoutEntry::Obtain() {
+    static JGPU::WGPUBindGroupLayoutEntry obj;
+    obj = JGPU::WGPUBindGroupLayoutEntry();
     return &obj;
 }
 
-void WebGPUBindGroupLayoutEntry::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUBindGroupLayoutEntry::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUBindGroupLayoutEntry::SetBinding(int binding) {
+void JGPU::WGPUBindGroupLayoutEntry::SetBinding(int binding) {
     Get().binding = binding;
 }
 
-void WebGPUBindGroupLayoutEntry::SetVisibility(WGPUShaderStage visibility) {
+void JGPU::WGPUBindGroupLayoutEntry::SetVisibility(WGPUShaderStage visibility) {
     Get().visibility = visibility;
 }
 
-void WebGPUBindGroupLayoutEntry::SetBuffer(WebGPUBufferBindingLayout* buffer) {
+void JGPU::WGPUBindGroupLayoutEntry::SetBuffer(JGPU::WGPUBufferBindingLayout* buffer) {
     Get().buffer = *buffer->Get();
 }
 
-void WebGPUBindGroupLayoutEntry::SetSampler(WebGPUSamplerBindingLayout* sampler) {
+void JGPU::WGPUBindGroupLayoutEntry::SetSampler(JGPU::WGPUSamplerBindingLayout* sampler) {
     Get().sampler = *sampler->Get();
 }
 
-void WebGPUBindGroupLayoutEntry::SetTexture(WebGPUTextureBindingLayout* texture) {
+void JGPU::WGPUBindGroupLayoutEntry::SetTexture(JGPU::WGPUTextureBindingLayout* texture) {
     Get().texture = *texture->Get();
 }
 
-void WebGPUBindGroupLayoutEntry::SetStorageTexture(WebGPUStorageTextureBindingLayout* storageTexture) {
+void JGPU::WGPUBindGroupLayoutEntry::SetStorageTexture(JGPU::WGPUStorageTextureBindingLayout* storageTexture) {
     Get().storageTexture = *storageTexture->Get();
 }
 
-WebGPUBufferBindingLayout WebGPUBindGroupLayoutEntry::GetBuffer() {
-    WebGPUBufferBindingLayout temp(&Get().buffer);
+JGPU::WGPUBufferBindingLayout JGPU::WGPUBindGroupLayoutEntry::GetBuffer() {
+    JGPU::WGPUBufferBindingLayout temp(&Get().buffer);
     return temp;
 }
 
-WebGPUSamplerBindingLayout WebGPUBindGroupLayoutEntry::GetSampler() {
-    WebGPUSamplerBindingLayout temp(&Get().sampler);
+JGPU::WGPUSamplerBindingLayout JGPU::WGPUBindGroupLayoutEntry::GetSampler() {
+    JGPU::WGPUSamplerBindingLayout temp(&Get().sampler);
     return temp;
 }
 
-WebGPUStorageTextureBindingLayout WebGPUBindGroupLayoutEntry::GetStorageTexture() {
-    WebGPUStorageTextureBindingLayout temp(&Get().storageTexture);
+JGPU::WGPUStorageTextureBindingLayout JGPU::WGPUBindGroupLayoutEntry::GetStorageTexture() {
+    JGPU::WGPUStorageTextureBindingLayout temp(&Get().storageTexture);
     return temp;
 }
 
-WebGPUTextureBindingLayout WebGPUBindGroupLayoutEntry::GetTexture() {
-    WebGPUTextureBindingLayout temp(&Get().texture);
+JGPU::WGPUTextureBindingLayout JGPU::WGPUBindGroupLayoutEntry::GetTexture() {
+    JGPU::WGPUTextureBindingLayout temp(&Get().texture);
     return temp;
 }
 
-// WebGPURequestAdapterOptions
-WebGPURequestAdapterOptions* WebGPURequestAdapterOptions::Obtain() {
-    static WebGPURequestAdapterOptions obj;
-    obj = WebGPURequestAdapterOptions();
+// JGPU::WGPURequestAdapterOptions
+JGPU::WGPURequestAdapterOptions* JGPU::WGPURequestAdapterOptions::Obtain() {
+    static JGPU::WGPURequestAdapterOptions obj;
+    obj = JGPU::WGPURequestAdapterOptions();
     return &obj;
 }
 
-void WebGPURequestAdapterOptions::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURequestAdapterOptions::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPURequestAdapterOptions::SetFeatureLevel(WGPUFeatureLevel featureLevel) {
+void JGPU::WGPURequestAdapterOptions::SetFeatureLevel(WGPUFeatureLevel featureLevel) {
     Get().featureLevel = featureLevel;
 }
 
-void WebGPURequestAdapterOptions::SetPowerPreference(WGPUPowerPreference powerPreference) {
+void JGPU::WGPURequestAdapterOptions::SetPowerPreference(WGPUPowerPreference powerPreference) {
     Get().powerPreference = powerPreference;
 }
 
-void WebGPURequestAdapterOptions::SetBackendType(WGPUBackendType backendType) {
+void JGPU::WGPURequestAdapterOptions::SetBackendType(WGPUBackendType backendType) {
     Get().backendType = backendType;
 }
 
-void WebGPURequestAdapterOptions::SetCompatibleSurface(WebGPUSurface* compatibleSurface) {
+void JGPU::WGPURequestAdapterOptions::SetCompatibleSurface(JGPU::WGPUSurface* compatibleSurface) {
     Get().compatibleSurface = compatibleSurface->Get();
 }
 
-// WebGPUAdapterInfo
-WebGPUAdapterInfo* WebGPUAdapterInfo::Obtain() {
-    static WebGPUAdapterInfo obj;
-    obj = WebGPUAdapterInfo();
+// JGPU::WGPUAdapterInfo
+JGPU::WGPUAdapterInfo* JGPU::WGPUAdapterInfo::Obtain() {
+    static JGPU::WGPUAdapterInfo obj;
+    obj = JGPU::WGPUAdapterInfo();
     return &obj;
 }
 
-std::string WebGPUAdapterInfo::GetVendor() {
-    WebGPUStringView stringView(Get().vendor);
+std::string JGPU::WGPUAdapterInfo::GetVendor() {
+    JGPU::WGPUStringView stringView(Get().vendor);
     return stringView.GetString();
 }
 
-int WebGPUAdapterInfo::GetVendorID() {
+int JGPU::WGPUAdapterInfo::GetVendorID() {
     return Get().vendorID;
 }
 
-std::string WebGPUAdapterInfo::GetArchitecture() {
-    WebGPUStringView stringView(Get().architecture);
+std::string JGPU::WGPUAdapterInfo::GetArchitecture() {
+    JGPU::WGPUStringView stringView(Get().architecture);
     return stringView.GetString();
 }
 
-std::string WebGPUAdapterInfo::GetDevice() {
-    WebGPUStringView stringView(Get().device);
+std::string JGPU::WGPUAdapterInfo::GetDevice() {
+    JGPU::WGPUStringView stringView(Get().device);
     return stringView.GetString();
 }
 
-int WebGPUAdapterInfo::GetDeviceID() {
+int JGPU::WGPUAdapterInfo::GetDeviceID() {
     return Get().deviceID;
 }
 
-std::string WebGPUAdapterInfo::GetDescription() {
-    WebGPUStringView stringView(Get().description);
+std::string JGPU::WGPUAdapterInfo::GetDescription() {
+    JGPU::WGPUStringView stringView(Get().description);
     return stringView.GetString();
 }
 
-WGPUBackendType WebGPUAdapterInfo::GetBackendType() {
+WGPUBackendType JGPU::WGPUAdapterInfo::GetBackendType() {
     return Get().backendType;
 }
 
-WGPUAdapterType WebGPUAdapterInfo::GetAdapterType() {
+WGPUAdapterType JGPU::WGPUAdapterInfo::GetAdapterType() {
     return Get().adapterType;
 }
 
-// WebGPUFutureWaitInfo
-WebGPUFutureWaitInfo* WebGPUFutureWaitInfo::Obtain() {
-    static WebGPUFutureWaitInfo obj;
-    obj = WebGPUFutureWaitInfo();
+// JGPU::WGPUFutureWaitInfo
+JGPU::WGPUFutureWaitInfo* JGPU::WGPUFutureWaitInfo::Obtain() {
+    static JGPU::WGPUFutureWaitInfo obj;
+    obj = JGPU::WGPUFutureWaitInfo();
     return &obj;
 }
 
-void WebGPUFutureWaitInfo::SetFuture(WebGPUFuture* future) {
-    Get().future = future != NULL ? future->Get() : WGPUFuture();
+void JGPU::WGPUFutureWaitInfo::SetFuture(JGPU::WGPUFuture* future) {
+    Get().future = future != NULL ? future->Get() : ::WGPUFuture();
 }
 
-// WebGPUVertexAttribute
-WebGPUVertexAttribute* WebGPUVertexAttribute::Obtain() {
-    static WebGPUVertexAttribute obj;
-    obj = WebGPUVertexAttribute();
+// JGPU::WGPUVertexAttribute
+JGPU::WGPUVertexAttribute* JGPU::WGPUVertexAttribute::Obtain() {
+    static JGPU::WGPUVertexAttribute obj;
+    obj = JGPU::WGPUVertexAttribute();
     return &obj;
 }
 
-void WebGPUVertexAttribute::SetFormat(WGPUVertexFormat format) {
+void JGPU::WGPUVertexAttribute::SetFormat(WGPUVertexFormat format) {
     Get().format = format;
 }
 
-void WebGPUVertexAttribute::SetOffset(int offset) {
+void JGPU::WGPUVertexAttribute::SetOffset(int offset) {
     Get().offset = offset;
 }
 
-void WebGPUVertexAttribute::SetShaderLocation(int shaderLocation) {
+void JGPU::WGPUVertexAttribute::SetShaderLocation(int shaderLocation) {
     Get().shaderLocation = shaderLocation;
 }
 
-// WebGPUVertexBufferLayout
-WebGPUVertexBufferLayout* WebGPUVertexBufferLayout::Obtain() {
-    static WebGPUVertexBufferLayout obj;
-    obj = WebGPUVertexBufferLayout();
+// JGPU::WGPUVertexBufferLayout
+JGPU::WGPUVertexBufferLayout* JGPU::WGPUVertexBufferLayout::Obtain() {
+    static JGPU::WGPUVertexBufferLayout obj;
+    obj = JGPU::WGPUVertexBufferLayout();
     return &obj;
 }
 
-void WebGPUVertexBufferLayout::SetAttributes(WGPUVectorVertexAttribute* values) {
+void JGPU::WGPUVertexBufferLayout::SetAttributes(WGPUVectorVertexAttribute* values) {
     if(values != NULL) {
         Get().attributeCount = values->size();
-        Get().attributes = reinterpret_cast<const WGPUVertexAttribute*>(values->data());
+        Get().attributes = reinterpret_cast<const ::WGPUVertexAttribute*>(values->data());
     }
     else {
         Get().attributeCount = 0;
@@ -1441,32 +1430,32 @@ void WebGPUVertexBufferLayout::SetAttributes(WGPUVectorVertexAttribute* values) 
     }
 }
 
-void WebGPUVertexBufferLayout::SetArrayStride(int offset) {
+void JGPU::WGPUVertexBufferLayout::SetArrayStride(int offset) {
     Get().arrayStride = offset;
 }
 
-void WebGPUVertexBufferLayout::SetStepMode(WGPUVertexStepMode stepMode) {
+void JGPU::WGPUVertexBufferLayout::SetStepMode(WGPUVertexStepMode stepMode) {
     Get().stepMode = stepMode;
 }
 
-// WebGPUVertexState
-void WebGPUVertexState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+// JGPU::WGPUVertexState
+void JGPU::WGPUVertexState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUVertexState::SetModule(WebGPUShaderModule* shaderModule) {
+void JGPU::WGPUVertexState::SetModule(JGPU::WGPUShaderModule* shaderModule) {
     Get()->module = shaderModule != NULL ? shaderModule->Get() : NULL;
 }
 
-void WebGPUVertexState::SetEntryPoint(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUVertexState::SetEntryPoint(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get()->entryPoint = stringView.Get();
 }
 
-void WebGPUVertexState::SetConstants(WGPUVectorConstantEntry* values) {
+void JGPU::WGPUVertexState::SetConstants(WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get()->constantCount = values->size();
-        Get()->constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
+        Get()->constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
     }
     else {
         Get()->constantCount = 0;
@@ -1474,10 +1463,10 @@ void WebGPUVertexState::SetConstants(WGPUVectorConstantEntry* values) {
     }
 }
 
-void WebGPUVertexState::SetBuffers(WGPUVectorVertexBufferLayout* values) {
+void JGPU::WGPUVertexState::SetBuffers(WGPUVectorVertexBufferLayout* values) {
     if(values != NULL) {
         Get()->bufferCount = values->size();
-        Get()->buffers = reinterpret_cast<const WGPUVertexBufferLayout*>(values->data());
+        Get()->buffers = reinterpret_cast<const ::WGPUVertexBufferLayout*>(values->data());
     }
     else {
         Get()->bufferCount = 0;
@@ -1485,112 +1474,112 @@ void WebGPUVertexState::SetBuffers(WGPUVectorVertexBufferLayout* values) {
     }
 }
 
-// WebGPUShaderSourceWGSL
-WebGPUShaderSourceWGSL* WebGPUShaderSourceWGSL::Obtain() {
-    static WebGPUShaderSourceWGSL obj;
-    obj = WebGPUShaderSourceWGSL();
+// JGPU::WGPUShaderSourceWGSL
+JGPU::WGPUShaderSourceWGSL* JGPU::WGPUShaderSourceWGSL::Obtain() {
+    static JGPU::WGPUShaderSourceWGSL obj;
+    obj = JGPU::WGPUShaderSourceWGSL();
     return &obj;
 }
 
-void WebGPUShaderSourceWGSL::SetCode(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUShaderSourceWGSL::SetCode(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().code = stringView.Get();
 }
 
-WebGPUChainedStruct WebGPUShaderSourceWGSL::GetChain() {
-    WGPUChainedStruct* wgpuChain = &Get().chain;
-    WebGPUChainedStruct chain;
+JGPU::WGPUChainedStruct JGPU::WGPUShaderSourceWGSL::GetChain() {
+    ::WGPUChainedStruct* wgpuChain = &Get().chain;
+    JGPU::WGPUChainedStruct chain;
     chain.Set(wgpuChain);
     return chain;
 }
 
-// WebGPUBlendComponent
-void WebGPUBlendComponent::SetOperation(WGPUBlendOperation operation) {
+// JGPU::WGPUBlendComponent
+void JGPU::WGPUBlendComponent::SetOperation(WGPUBlendOperation operation) {
     Get()->operation = operation;
 }
 
-WGPUBlendOperation WebGPUBlendComponent::GetOperation() {
+WGPUBlendOperation JGPU::WGPUBlendComponent::GetOperation() {
     return Get()->operation;
 }
 
-void WebGPUBlendComponent::SetSrcFactor(WGPUBlendFactor factor) {
+void JGPU::WGPUBlendComponent::SetSrcFactor(WGPUBlendFactor factor) {
     Get()->srcFactor = factor;
 }
 
-WGPUBlendFactor WebGPUBlendComponent::GetSrcFactor() {
+WGPUBlendFactor JGPU::WGPUBlendComponent::GetSrcFactor() {
     return Get()->srcFactor;
 }
 
-void WebGPUBlendComponent::SetDstFactor(WGPUBlendFactor factor) {
+void JGPU::WGPUBlendComponent::SetDstFactor(WGPUBlendFactor factor) {
     Get()->dstFactor = factor;
 }
 
-WGPUBlendFactor WebGPUBlendComponent::GetDstFactor() {
+WGPUBlendFactor JGPU::WGPUBlendComponent::GetDstFactor() {
     return Get()->dstFactor;
 }
 
-// WebGPUBlendState
-WebGPUBlendState* WebGPUBlendState::Obtain() {
-    static WebGPUBlendState obj;
-    obj = WebGPUBlendState();
+// JGPU::WGPUBlendState
+JGPU::WGPUBlendState* JGPU::WGPUBlendState::Obtain() {
+    static JGPU::WGPUBlendState obj;
+    obj = JGPU::WGPUBlendState();
     return &obj;
 }
 
-WebGPUBlendComponent WebGPUBlendState::GetColor() {
-    WebGPUBlendComponent temp;
+JGPU::WGPUBlendComponent JGPU::WGPUBlendState::GetColor() {
+    JGPU::WGPUBlendComponent temp;
     temp.Set(&Get().color);
     return temp;
 }
 
-WebGPUBlendComponent WebGPUBlendState::GetAlpha() {
-    WebGPUBlendComponent temp;
+JGPU::WGPUBlendComponent JGPU::WGPUBlendState::GetAlpha() {
+    JGPU::WGPUBlendComponent temp;
     temp.Set(&Get().alpha);
     return temp;
 }
 
-// WebGPUColorTargetState
-WebGPUColorTargetState* WebGPUColorTargetState::Obtain() {
-    static WebGPUColorTargetState obj;
-    obj = WebGPUColorTargetState();
+// JGPU::WGPUColorTargetState
+JGPU::WGPUColorTargetState* JGPU::WGPUColorTargetState::Obtain() {
+    static JGPU::WGPUColorTargetState obj;
+    obj = JGPU::WGPUColorTargetState();
     return &obj;
 }
 
-void WebGPUColorTargetState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUColorTargetState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUColorTargetState::SetFormat(WGPUTextureFormat format) {
+void JGPU::WGPUColorTargetState::SetFormat(WGPUTextureFormat format) {
     Get().format = format;
 }
 
-void WebGPUColorTargetState::SetBlend(WebGPUBlendState* blendState) {
-    Get().blend = reinterpret_cast<const WGPUBlendState*>(blendState);
+void JGPU::WGPUColorTargetState::SetBlend(JGPU::WGPUBlendState* blendState) {
+    Get().blend = reinterpret_cast<const ::WGPUBlendState*>(blendState);
 }
 
-void WebGPUColorTargetState::SetWriteMask(WGPUColorWriteMask writeMask) {
+void JGPU::WGPUColorTargetState::SetWriteMask(WGPUColorWriteMask writeMask) {
     Get().writeMask = writeMask;
 }
 
-// WebGPUFragmentState
-WebGPUFragmentState* WebGPUFragmentState::Obtain() {
-    static WebGPUFragmentState obj;
-    obj = WebGPUFragmentState();
+// JGPU::WGPUFragmentState
+JGPU::WGPUFragmentState* JGPU::WGPUFragmentState::Obtain() {
+    static JGPU::WGPUFragmentState obj;
+    obj = JGPU::WGPUFragmentState();
     return &obj;
 }
 
-void WebGPUFragmentState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUFragmentState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUFragmentState::SetEntryPoint(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUFragmentState::SetEntryPoint(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().entryPoint = stringView.Get();
 }
 
-void WebGPUFragmentState::SetTargets(WGPUVectorColorTargetState* values) {
+void JGPU::WGPUFragmentState::SetTargets(WGPUVectorColorTargetState* values) {
     if(values != NULL) {
         Get().targetCount = values->size();
-        Get().targets = reinterpret_cast<const WGPUColorTargetState*>(values->data());
+        Get().targets = reinterpret_cast<const ::WGPUColorTargetState*>(values->data());
     }
     else {
         Get().targetCount = 0;
@@ -1598,14 +1587,14 @@ void WebGPUFragmentState::SetTargets(WGPUVectorColorTargetState* values) {
     }
 }
 
-void WebGPUFragmentState::SetModule(WebGPUShaderModule* shaderModule) {
+void JGPU::WGPUFragmentState::SetModule(JGPU::WGPUShaderModule* shaderModule) {
     Get().module = shaderModule != NULL ? shaderModule->Get() : NULL;
 }
 
-void WebGPUFragmentState::SetConstants(WGPUVectorConstantEntry* values) {
+void JGPU::WGPUFragmentState::SetConstants(WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get().constantCount = values->size();
-        Get().constants = reinterpret_cast<const WGPUConstantEntry*>(values->data());
+        Get().constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
     }
     else {
         Get().constantCount = 0;
@@ -1613,400 +1602,400 @@ void WebGPUFragmentState::SetConstants(WGPUVectorConstantEntry* values) {
     }
 }
 
-// WebGPUPrimitiveState
-void WebGPUPrimitiveState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+// JGPU::WGPUPrimitiveState
+void JGPU::WGPUPrimitiveState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUPrimitiveState::SetTopology(WGPUPrimitiveTopology value) {
+void JGPU::WGPUPrimitiveState::SetTopology(WGPUPrimitiveTopology value) {
     Get()->topology = value;
 }
 
-void WebGPUPrimitiveState::SetStripIndexFormat(WGPUIndexFormat value) {
+void JGPU::WGPUPrimitiveState::SetStripIndexFormat(WGPUIndexFormat value) {
     Get()->stripIndexFormat = value;
 }
 
-void WebGPUPrimitiveState::SetFrontFace(WGPUFrontFace value) {
+void JGPU::WGPUPrimitiveState::SetFrontFace(WGPUFrontFace value) {
     Get()->frontFace = value;
 }
 
-void WebGPUPrimitiveState::SetCullMode(WGPUCullMode value) {
+void JGPU::WGPUPrimitiveState::SetCullMode(WGPUCullMode value) {
     Get()->cullMode = value;
 }
 
-// WebGPUStencilFaceState
-void WebGPUStencilFaceState::SetCompare(WGPUCompareFunction compare) {
+// JGPU::WGPUStencilFaceState
+void JGPU::WGPUStencilFaceState::SetCompare(WGPUCompareFunction compare) {
     Get()->compare = compare;
 }
 
-void WebGPUStencilFaceState::SetFailOp(WGPUStencilOperation failOp) {
+void JGPU::WGPUStencilFaceState::SetFailOp(WGPUStencilOperation failOp) {
     Get()->failOp = failOp;
 }
 
-void WebGPUStencilFaceState::SetDepthFailOp(WGPUStencilOperation depthFailOp) {
+void JGPU::WGPUStencilFaceState::SetDepthFailOp(WGPUStencilOperation depthFailOp) {
     Get()->depthFailOp = depthFailOp;
 }
 
-void WebGPUStencilFaceState::SetPassOp(WGPUStencilOperation passOp) {
+void JGPU::WGPUStencilFaceState::SetPassOp(WGPUStencilOperation passOp) {
     Get()->passOp = passOp;
 }
 
-// WebGPUDepthStencilState
-WebGPUDepthStencilState* WebGPUDepthStencilState::Obtain() {
-    static WebGPUDepthStencilState obj;
-    obj = WebGPUDepthStencilState();
+// JGPU::WGPUDepthStencilState
+JGPU::WGPUDepthStencilState* JGPU::WGPUDepthStencilState::Obtain() {
+    static JGPU::WGPUDepthStencilState obj;
+    obj = JGPU::WGPUDepthStencilState();
     return &obj;
 }
 
-void WebGPUDepthStencilState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUDepthStencilState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUDepthStencilState::SetFormat(WGPUTextureFormat format) {
+void JGPU::WGPUDepthStencilState::SetFormat(WGPUTextureFormat format) {
     Get().format = format;
 }
 
-void WebGPUDepthStencilState::SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
+void JGPU::WGPUDepthStencilState::SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
     Get().depthWriteEnabled = depthWriteEnabled;
 }
 
-void WebGPUDepthStencilState::SetDepthCompare(WGPUCompareFunction depthCompare) {
+void JGPU::WGPUDepthStencilState::SetDepthCompare(WGPUCompareFunction depthCompare) {
     Get().depthCompare = depthCompare;
 }
 
-void WebGPUDepthStencilState::SetDepthBiasSlopeScale(float depthBiasSlopeScale) {
+void JGPU::WGPUDepthStencilState::SetDepthBiasSlopeScale(float depthBiasSlopeScale) {
     Get().depthBiasSlopeScale = depthBiasSlopeScale;
 }
 
-void WebGPUDepthStencilState::SetDepthBiasClamp(float depthBiasClamp) {
+void JGPU::WGPUDepthStencilState::SetDepthBiasClamp(float depthBiasClamp) {
     Get().depthBiasClamp = depthBiasClamp;
 }
 
-void WebGPUDepthStencilState::SetStencilReadMask(int stencilReadMask) {
+void JGPU::WGPUDepthStencilState::SetStencilReadMask(int stencilReadMask) {
     Get().stencilReadMask = stencilReadMask;
 }
 
-void WebGPUDepthStencilState::SetStencilWriteMask(int stencilWriteMask) {
+void JGPU::WGPUDepthStencilState::SetStencilWriteMask(int stencilWriteMask) {
     Get().stencilWriteMask = stencilWriteMask;
 }
 
-void WebGPUDepthStencilState::SetDepthBias(int depthBias) {
+void JGPU::WGPUDepthStencilState::SetDepthBias(int depthBias) {
     Get().depthBias = depthBias;
 }
 
-WebGPUStencilFaceState WebGPUDepthStencilState::GetStencilFront() {
-    WebGPUStencilFaceState temp;
+JGPU::WGPUStencilFaceState JGPU::WGPUDepthStencilState::GetStencilFront() {
+    JGPU::WGPUStencilFaceState temp;
     temp.Set(&Get().stencilFront);
     return temp;
 }
 
-WebGPUStencilFaceState WebGPUDepthStencilState::GetStencilBack() {
-    WebGPUStencilFaceState temp;
+JGPU::WGPUStencilFaceState JGPU::WGPUDepthStencilState::GetStencilBack() {
+    JGPU::WGPUStencilFaceState temp;
     temp.Set(&Get().stencilBack);
     return temp;
 }
 
-// WebGPUMultisampleState
-void WebGPUMultisampleState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+// JGPU::WGPUMultisampleState
+void JGPU::WGPUMultisampleState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUMultisampleState::SetCount(int count) {
+void JGPU::WGPUMultisampleState::SetCount(int count) {
     Get()->count = count;
 }
 
-void WebGPUMultisampleState::SetMask(int mask) {
+void JGPU::WGPUMultisampleState::SetMask(int mask) {
     Get()->mask = mask;
 }
 
-void WebGPUMultisampleState::SetAlphaToCoverageEnabled(bool alphaToCoverageEnabled) {
+void JGPU::WGPUMultisampleState::SetAlphaToCoverageEnabled(bool alphaToCoverageEnabled) {
     Get()->alphaToCoverageEnabled = alphaToCoverageEnabled;
 }
 
-// WebGPUColor
-WebGPUColor* WebGPUColor::Obtain() {
-    static WebGPUColor obj;
-    obj = WebGPUColor();
+// JGPU::WGPUColor
+JGPU::WGPUColor* JGPU::WGPUColor::Obtain() {
+    static JGPU::WGPUColor obj;
+    obj = JGPU::WGPUColor();
     return &obj;
 }
 
-void WebGPUColor::SetColor(float r, float g, float b, float a) {
+void JGPU::WGPUColor::SetColor(float r, float g, float b, float a) {
     Get()->r = r;
     Get()->g = g;
     Get()->b = b;
     Get()->a = a;
 }
 
-float WebGPUColor::GetR() {
+float JGPU::WGPUColor::GetR() {
     return Get()->r;
 }
 
-float WebGPUColor::GetG() {
+float JGPU::WGPUColor::GetG() {
     return Get()->g;
 }
 
-float WebGPUColor::GetB() {
+float JGPU::WGPUColor::GetB() {
     return Get()->b;
 }
 
-float WebGPUColor::GetA() {
+float JGPU::WGPUColor::GetA() {
     return Get()->a;
 }
 
-void WebGPUColor::SetR(float value) {
+void JGPU::WGPUColor::SetR(float value) {
     Get()->r = value;
 }
 
-void WebGPUColor::SetG(float value) {
+void JGPU::WGPUColor::SetG(float value) {
     Get()->g = value;
 }
 
-void WebGPUColor::SetB(float value) {
+void JGPU::WGPUColor::SetB(float value) {
     Get()->b = value;
 }
 
-void WebGPUColor::SetA(float value) {
+void JGPU::WGPUColor::SetA(float value) {
     Get()->a = value;
 }
 
-// WebGPUSupportedFeatures
-WebGPUSupportedFeatures* WebGPUSupportedFeatures::Obtain() {
-    static WebGPUSupportedFeatures obj;
-    obj = WebGPUSupportedFeatures();
+// JGPU::WGPUSupportedFeatures
+JGPU::WGPUSupportedFeatures* JGPU::WGPUSupportedFeatures::Obtain() {
+    static JGPU::WGPUSupportedFeatures obj;
+    obj = JGPU::WGPUSupportedFeatures();
     return &obj;
 }
 
-int WebGPUSupportedFeatures::GetFeatureCount() {
+int JGPU::WGPUSupportedFeatures::GetFeatureCount() {
     return Get().featureCount;
 }
 
-WGPUFeatureName WebGPUSupportedFeatures::GetFeatureAt(long index) {
+WGPUFeatureName JGPU::WGPUSupportedFeatures::GetFeatureAt(long index) {
     return Get().features[index];
 }
 
-// WebGPURenderPassDepthStencilAttachment
-WebGPURenderPassDepthStencilAttachment* WebGPURenderPassDepthStencilAttachment::Obtain() {
-    static WebGPURenderPassDepthStencilAttachment obj;
-    obj = WebGPURenderPassDepthStencilAttachment();
+// JGPU::WGPURenderPassDepthStencilAttachment
+JGPU::WGPURenderPassDepthStencilAttachment* JGPU::WGPURenderPassDepthStencilAttachment::Obtain() {
+    static JGPU::WGPURenderPassDepthStencilAttachment obj;
+    obj = JGPU::WGPURenderPassDepthStencilAttachment();
     return &obj;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
 // TODO dont exist in wgpu-native
 //    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetView(WebGPUTextureView* textureView) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetView(JGPU::WGPUTextureView* textureView) {
     Get().view = textureView ? textureView->Get() : nullptr;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetDepthLoadOp(WGPULoadOp loadOp) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetDepthLoadOp(WGPULoadOp loadOp) {
     Get().depthLoadOp = loadOp;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetDepthStoreOp(WGPUStoreOp storeOp) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetDepthStoreOp(WGPUStoreOp storeOp) {
     Get().depthStoreOp = storeOp;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetDepthClearValue(float depthClearValue) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetDepthClearValue(float depthClearValue) {
     Get().depthClearValue = depthClearValue;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetDepthReadOnly(bool depthReadOnly) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetDepthReadOnly(bool depthReadOnly) {
     Get().depthReadOnly = depthReadOnly;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetStencilLoadOp(WGPULoadOp loadOp) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetStencilLoadOp(WGPULoadOp loadOp) {
     Get().stencilLoadOp = loadOp;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetStencilStoreOp(WGPUStoreOp storeOp) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetStencilStoreOp(WGPUStoreOp storeOp) {
     Get().stencilStoreOp = storeOp;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetStencilClearValue(int stencilClearValue) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetStencilClearValue(int stencilClearValue) {
     Get().stencilClearValue = stencilClearValue;
 }
 
-void WebGPURenderPassDepthStencilAttachment::SetStencilReadOnly(bool stencilReadOnly) {
+void JGPU::WGPURenderPassDepthStencilAttachment::SetStencilReadOnly(bool stencilReadOnly) {
     Get().stencilReadOnly = stencilReadOnly;
 }
 
-// WebGPURenderPassTimestampWrites
-WebGPURenderPassTimestampWrites* WebGPURenderPassTimestampWrites::Obtain() {
-    static WebGPURenderPassTimestampWrites obj;
-    obj = WebGPURenderPassTimestampWrites();
+// JGPU::WGPURenderPassTimestampWrites
+JGPU::WGPURenderPassTimestampWrites* JGPU::WGPURenderPassTimestampWrites::Obtain() {
+    static JGPU::WGPURenderPassTimestampWrites obj;
+    obj = JGPU::WGPURenderPassTimestampWrites();
     return &obj;
 }
 
-void WebGPURenderPassTimestampWrites::SetQuerySet(WebGPUQuerySet* value) {
+void JGPU::WGPURenderPassTimestampWrites::SetQuerySet(JGPU::WGPUQuerySet* value) {
     Get().querySet = value->Get();
 }
 
-void WebGPURenderPassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
+void JGPU::WGPURenderPassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
     Get().beginningOfPassWriteIndex = value;
 }
 
-void WebGPURenderPassTimestampWrites::SetEndOfPassWriteIndex(int value) {
+void JGPU::WGPURenderPassTimestampWrites::SetEndOfPassWriteIndex(int value) {
     Get().endOfPassWriteIndex = value;
 }
 
-// WebGPUComputePassTimestampWrites
-WebGPUComputePassTimestampWrites* WebGPUComputePassTimestampWrites::Obtain() {
-    static WebGPUComputePassTimestampWrites obj;
-    obj = WebGPUComputePassTimestampWrites();
+// JGPU::WGPUComputePassTimestampWrites
+JGPU::WGPUComputePassTimestampWrites* JGPU::WGPUComputePassTimestampWrites::Obtain() {
+    static JGPU::WGPUComputePassTimestampWrites obj;
+    obj = JGPU::WGPUComputePassTimestampWrites();
     return &obj;
 }
 
-void WebGPUComputePassTimestampWrites::SetQuerySet(WebGPUQuerySet* value) {
+void JGPU::WGPUComputePassTimestampWrites::SetQuerySet(JGPU::WGPUQuerySet* value) {
     Get().querySet = value->Get();
 }
 
-void WebGPUComputePassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
+void JGPU::WGPUComputePassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
     Get().beginningOfPassWriteIndex = value;
 }
 
-void WebGPUComputePassTimestampWrites::SetEndOfPassWriteIndex(int value) {
+void JGPU::WGPUComputePassTimestampWrites::SetEndOfPassWriteIndex(int value) {
     Get().endOfPassWriteIndex = value;
 }
 
-// WebGPUOrigin3D
-WebGPUOrigin3D* WebGPUOrigin3D::Obtain() {
-    static WebGPUOrigin3D obj;
-    obj = WebGPUOrigin3D();
+// JGPU::WGPUOrigin3D
+JGPU::WGPUOrigin3D* JGPU::WGPUOrigin3D::Obtain() {
+    static JGPU::WGPUOrigin3D obj;
+    obj = JGPU::WGPUOrigin3D();
     return &obj;
 }
 
-void WebGPUOrigin3D::Set(int x, int y, int z) {
+void JGPU::WGPUOrigin3D::Set(int x, int y, int z) {
     Get()->x = x;
     Get()->y = y;
     Get()->z = z;
 }
 
-void WebGPUOrigin3D::SetX(int value) {
+void JGPU::WGPUOrigin3D::SetX(int value) {
     Get()->x = value;
 }
 
-void WebGPUOrigin3D::SetY(int value) {
+void JGPU::WGPUOrigin3D::SetY(int value) {
     Get()->y = value;
 }
 
-void WebGPUOrigin3D::SetZ(int value) {
+void JGPU::WGPUOrigin3D::SetZ(int value) {
     Get()->z = value;
 }
 
-// WebGPUTexelCopyTextureInfo
-WebGPUTexelCopyTextureInfo* WebGPUTexelCopyTextureInfo::Obtain() {
-    static WebGPUTexelCopyTextureInfo obj;
-    obj = WebGPUTexelCopyTextureInfo();
+// JGPU::WGPUTexelCopyTextureInfo
+JGPU::WGPUTexelCopyTextureInfo* JGPU::WGPUTexelCopyTextureInfo::Obtain() {
+    static JGPU::WGPUTexelCopyTextureInfo obj;
+    obj = JGPU::WGPUTexelCopyTextureInfo();
     return &obj;
 }
 
-void WebGPUTexelCopyTextureInfo::SetTexture(WebGPUTexture* texture) {
+void JGPU::WGPUTexelCopyTextureInfo::SetTexture(JGPU::WGPUTexture* texture) {
     Get().texture = texture->Get();
 }
 
-void WebGPUTexelCopyTextureInfo::SetMipLevel(int mipLevel) {
+void JGPU::WGPUTexelCopyTextureInfo::SetMipLevel(int mipLevel) {
     Get().mipLevel = mipLevel;
 }
 
-WebGPUOrigin3D WebGPUTexelCopyTextureInfo::GetOrigin() {
-    WebGPUOrigin3D temp(&Get().origin);
+JGPU::WGPUOrigin3D JGPU::WGPUTexelCopyTextureInfo::GetOrigin() {
+    JGPU::WGPUOrigin3D temp(&Get().origin);
     return temp;
 }
 
-void WebGPUTexelCopyTextureInfo::SetAspect(WGPUTextureAspect aspect) {
+void JGPU::WGPUTexelCopyTextureInfo::SetAspect(WGPUTextureAspect aspect) {
     Get().aspect = aspect;
 }
 
-// WebGPUExtent3D
-WebGPUExtent3D* WebGPUExtent3D::Obtain() {
-    static WebGPUExtent3D obj;
-    obj = WebGPUExtent3D();
+// JGPU::WGPUExtent3D
+JGPU::WGPUExtent3D* JGPU::WGPUExtent3D::Obtain() {
+    static JGPU::WGPUExtent3D obj;
+    obj = JGPU::WGPUExtent3D();
     return &obj;
 }
 
-void WebGPUExtent3D::SetWidth(int width) {
+void JGPU::WGPUExtent3D::SetWidth(int width) {
     Get()->width = width;
 }
 
-void WebGPUExtent3D::SetHeight(int height) {
+void JGPU::WGPUExtent3D::SetHeight(int height) {
     Get()->height = height;
 }
 
-void WebGPUExtent3D::SetDepthOrArrayLayers(int depthOrArrayLayers) {
+void JGPU::WGPUExtent3D::SetDepthOrArrayLayers(int depthOrArrayLayers) {
     Get()->depthOrArrayLayers = depthOrArrayLayers;
 }
 
-// WebGPUTexelCopyBufferLayout
-WebGPUTexelCopyBufferLayout* WebGPUTexelCopyBufferLayout::Obtain() {
-    static WebGPUTexelCopyBufferLayout obj;
-    obj = WebGPUTexelCopyBufferLayout();
+// JGPU::WGPUTexelCopyBufferLayout
+JGPU::WGPUTexelCopyBufferLayout* JGPU::WGPUTexelCopyBufferLayout::Obtain() {
+    static JGPU::WGPUTexelCopyBufferLayout obj;
+    obj = JGPU::WGPUTexelCopyBufferLayout();
     return &obj;
 }
 
-void WebGPUTexelCopyBufferLayout::SetOffset(int offset) {
+void JGPU::WGPUTexelCopyBufferLayout::SetOffset(int offset) {
     Get()->offset = offset;
 }
 
-void WebGPUTexelCopyBufferLayout::SetBytesPerRow(int bytesPerRow) {
+void JGPU::WGPUTexelCopyBufferLayout::SetBytesPerRow(int bytesPerRow) {
     Get()->bytesPerRow = bytesPerRow;
 }
 
-void WebGPUTexelCopyBufferLayout::SetRowsPerImage(int rowsPerImage) {
+void JGPU::WGPUTexelCopyBufferLayout::SetRowsPerImage(int rowsPerImage) {
     Get()->rowsPerImage = rowsPerImage;
 }
 
-// WebGPUTexelCopyBufferInfo
-WebGPUTexelCopyBufferInfo* WebGPUTexelCopyBufferInfo::Obtain() {
-    static WebGPUTexelCopyBufferInfo obj;
-    obj = WebGPUTexelCopyBufferInfo();
+// JGPU::WGPUTexelCopyBufferInfo
+JGPU::WGPUTexelCopyBufferInfo* JGPU::WGPUTexelCopyBufferInfo::Obtain() {
+    static JGPU::WGPUTexelCopyBufferInfo obj;
+    obj = JGPU::WGPUTexelCopyBufferInfo();
     return &obj;
 }
 
-WebGPUTexelCopyBufferLayout WebGPUTexelCopyBufferInfo::GetLayout() {
-    WebGPUTexelCopyBufferLayout temp(&Get().layout);
+JGPU::WGPUTexelCopyBufferLayout JGPU::WGPUTexelCopyBufferInfo::GetLayout() {
+    JGPU::WGPUTexelCopyBufferLayout temp(&Get().layout);
     return temp;
 }
 
-WebGPUBuffer WebGPUTexelCopyBufferInfo::GetBuffer() {
-    WebGPUBuffer temp;
+JGPU::WGPUBuffer JGPU::WGPUTexelCopyBufferInfo::GetBuffer() {
+    JGPU::WGPUBuffer temp;
     temp.Set(Get().buffer);
     return temp;
 }
 
-void WebGPUTexelCopyBufferInfo::SetBuffer(WebGPUBuffer* buffer) {
+void JGPU::WGPUTexelCopyBufferInfo::SetBuffer(JGPU::WGPUBuffer* buffer) {
     Get().buffer = buffer->Get();
 }
 
-// WebGPUSurfaceConfiguration
-WebGPUSurfaceConfiguration* WebGPUSurfaceConfiguration::Obtain() {
-    static WebGPUSurfaceConfiguration obj;
-    obj = WebGPUSurfaceConfiguration();
+// JGPU::WGPUSurfaceConfiguration
+JGPU::WGPUSurfaceConfiguration* JGPU::WGPUSurfaceConfiguration::Obtain() {
+    static JGPU::WGPUSurfaceConfiguration obj;
+    obj = JGPU::WGPUSurfaceConfiguration();
     return &obj;
 }
 
-void WebGPUSurfaceConfiguration::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUSurfaceConfiguration::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUSurfaceConfiguration::SetWidth(long width) {
+void JGPU::WGPUSurfaceConfiguration::SetWidth(long width) {
     Get().width = width;
 }
 
-void WebGPUSurfaceConfiguration::SetHeight(long height) {
+void JGPU::WGPUSurfaceConfiguration::SetHeight(long height) {
     Get().height = height;
 }
 
-void WebGPUSurfaceConfiguration::SetFormat(WGPUTextureFormat format) {
+void JGPU::WGPUSurfaceConfiguration::SetFormat(WGPUTextureFormat format) {
     Get().format = format;
 }
 
-void WebGPUSurfaceConfiguration::SetViewFormatCount(long value) {
+void JGPU::WGPUSurfaceConfiguration::SetViewFormatCount(long value) {
     Get().viewFormatCount = value;
 }
 
-void WebGPUSurfaceConfiguration::SetViewFormats(WGPUVectorTextureFormat* values) {
+void JGPU::WGPUSurfaceConfiguration::SetViewFormats(WGPUVectorTextureFormat* values) {
     if(values != NULL) {
         Get().viewFormatCount = values->size();
         Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(values->data());
@@ -2017,86 +2006,86 @@ void WebGPUSurfaceConfiguration::SetViewFormats(WGPUVectorTextureFormat* values)
     }
 }
 
-void WebGPUSurfaceConfiguration::SetUsage(WGPUTextureUsage usage) {
+void JGPU::WGPUSurfaceConfiguration::SetUsage(WGPUTextureUsage usage) {
     Get().usage = usage;
 }
 
-void WebGPUSurfaceConfiguration::SetDevice(WebGPUDevice* device) {
+void JGPU::WGPUSurfaceConfiguration::SetDevice(JGPU::WGPUDevice* device) {
     Get().device = device != NULL ? device->Get() : NULL;
 }
 
-void WebGPUSurfaceConfiguration::SetPresentMode(WGPUPresentMode presentMode) {
+void JGPU::WGPUSurfaceConfiguration::SetPresentMode(WGPUPresentMode presentMode) {
     Get().presentMode = presentMode;
 }
 
-void WebGPUSurfaceConfiguration::SetAlphaMode(WGPUCompositeAlphaMode alphaMode) {
+void JGPU::WGPUSurfaceConfiguration::SetAlphaMode(WGPUCompositeAlphaMode alphaMode) {
     Get().alphaMode = alphaMode;
 }
 
-// WebGPUSurfaceCapabilities
-WebGPUSurfaceCapabilities* WebGPUSurfaceCapabilities::Obtain() {
-    static WebGPUSurfaceCapabilities obj;
-    obj = WebGPUSurfaceCapabilities();
+// JGPU::WGPUSurfaceCapabilities
+JGPU::WGPUSurfaceCapabilities* JGPU::WGPUSurfaceCapabilities::Obtain() {
+    static JGPU::WGPUSurfaceCapabilities obj;
+    obj = JGPU::WGPUSurfaceCapabilities();
     return &obj;
 }
 
-WGPUVectorTextureFormat WebGPUSurfaceCapabilities::GetFormats() {
+WGPUVectorTextureFormat JGPU::WGPUSurfaceCapabilities::GetFormats() {
     WGPUVectorTextureFormat temp(Get().formats, Get().formatCount);
     return temp;
 }
 
-// WebGPURenderPassColorAttachment
-WebGPURenderPassColorAttachment::WebGPURenderPassColorAttachment() {
+// JGPU::WGPURenderPassColorAttachment
+JGPU::WGPURenderPassColorAttachment::WGPURenderPassColorAttachment() {
     SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
 }
 
-WebGPURenderPassColorAttachment* WebGPURenderPassColorAttachment::Obtain() {
-    static WebGPURenderPassColorAttachment obj;
-    obj = WebGPURenderPassColorAttachment();
+JGPU::WGPURenderPassColorAttachment* JGPU::WGPURenderPassColorAttachment::Obtain() {
+    static JGPU::WGPURenderPassColorAttachment obj;
+    obj = JGPU::WGPURenderPassColorAttachment();
     return &obj;
 }
 
-void WebGPURenderPassColorAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURenderPassColorAttachment::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
 }
 
-void WebGPURenderPassColorAttachment::SetResolveTarget(WebGPUTextureView* textureView) {
+void JGPU::WGPURenderPassColorAttachment::SetResolveTarget(JGPU::WGPUTextureView* textureView) {
     Get().resolveTarget = textureView == NULL ? NULL : textureView->Get();
 }
 
-void WebGPURenderPassColorAttachment::SetView(WebGPUTextureView* textureView) {
+void JGPU::WGPURenderPassColorAttachment::SetView(JGPU::WGPUTextureView* textureView) {
     Get().view = textureView == NULL ? NULL : textureView->Get();
 }
 
-void WebGPURenderPassColorAttachment::SetLoadOp(WGPULoadOp loadOp) {
+void JGPU::WGPURenderPassColorAttachment::SetLoadOp(WGPULoadOp loadOp) {
     Get().loadOp = loadOp;
 }
 
-void WebGPURenderPassColorAttachment::SetStoreOp(WGPUStoreOp storeOp) {
+void JGPU::WGPURenderPassColorAttachment::SetStoreOp(WGPUStoreOp storeOp) {
     Get().storeOp = storeOp;
 }
 
-void WebGPURenderPassColorAttachment::SetDepthSlice(int depthSlice) {
+void JGPU::WGPURenderPassColorAttachment::SetDepthSlice(int depthSlice) {
     Get().depthSlice = depthSlice;
 }
 
-WebGPUColor WebGPURenderPassColorAttachment::GetClearValue() {
-    WebGPUColor temp(&Get().clearValue);
+JGPU::WGPUColor JGPU::WGPURenderPassColorAttachment::GetClearValue() {
+    JGPU::WGPUColor temp(&Get().clearValue);
     return temp;
 }
 
-// WebGPUSurfaceTexture
-WebGPUSurfaceTexture* WebGPUSurfaceTexture::Obtain() {
-    static WebGPUSurfaceTexture obj;
-    obj = WebGPUSurfaceTexture();
+// JGPU::WGPUSurfaceTexture
+JGPU::WGPUSurfaceTexture* JGPU::WGPUSurfaceTexture::Obtain() {
+    static JGPU::WGPUSurfaceTexture obj;
+    obj = JGPU::WGPUSurfaceTexture();
     return &obj;
 }
 
-void WebGPUSurfaceTexture::GetTexture(WebGPUTexture* tex) {
+void JGPU::WGPUSurfaceTexture::GetTexture(JGPU::WGPUTexture* tex) {
     tex->Set(Get().texture);
 }
 
-WGPUSurfaceGetCurrentTextureStatus WebGPUSurfaceTexture::GetStatus() {
+WGPUSurfaceGetCurrentTextureStatus JGPU::WGPUSurfaceTexture::GetStatus() {
     return Get().status;
 }
 
@@ -2119,8 +2108,8 @@ WGPUPlatformType WGPU::GetPlatformType() {
     #endif
 }
 
-WebGPUInstance WGPU::CreateInstance(WebGPUInstanceDescriptor* descriptor) {
-    WebGPUInstance instance;
+JGPU::WGPUInstance WGPU::CreateInstance(JGPU::WGPUInstanceDescriptor* descriptor) {
+    JGPU::WGPUInstance instance;
     instance.Set(wgpuCreateInstance(descriptor != NULL ? &descriptor->Get() : NULL));
     return instance;
 }
@@ -2145,202 +2134,202 @@ STBImage* WGPU::loadImage(WGPUByteBuffer* buffer, int desiredChannels) {
     return stbImage;
 }
 
-// WebGPUBindGroupEntry
-WebGPUBindGroupEntry* WebGPUBindGroupEntry::Obtain() {
-    static WebGPUBindGroupEntry obj;
-    obj = WebGPUBindGroupEntry();
+// JGPU::WGPUBindGroupEntry
+JGPU::WGPUBindGroupEntry* JGPU::WGPUBindGroupEntry::Obtain() {
+    static JGPU::WGPUBindGroupEntry obj;
+    obj = JGPU::WGPUBindGroupEntry();
     return &obj;
 }
 
-void WebGPUBindGroupEntry::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUBindGroupEntry::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
 }
 
-void WebGPUBindGroupEntry::SetBinding(int binding) {
+void JGPU::WGPUBindGroupEntry::SetBinding(int binding) {
     Get().binding = binding;
 }
 
-void WebGPUBindGroupEntry::SetBuffer(WebGPUBuffer* buffer) {
+void JGPU::WGPUBindGroupEntry::SetBuffer(JGPU::WGPUBuffer* buffer) {
     Get().buffer = buffer ? buffer->Get() : nullptr;
 }
 
-void WebGPUBindGroupEntry::SetOffset(int offset) {
+void JGPU::WGPUBindGroupEntry::SetOffset(int offset) {
     Get().offset = offset;
 }
 
-void WebGPUBindGroupEntry::SetSize(int size) {
+void JGPU::WGPUBindGroupEntry::SetSize(int size) {
     Get().size = size;
 }
 
-void WebGPUBindGroupEntry::SetSampler(WebGPUSampler* sampler) {
+void JGPU::WGPUBindGroupEntry::SetSampler(JGPU::WGPUSampler* sampler) {
     Get().sampler = sampler ? sampler->Get() : nullptr;
 }
 
-void WebGPUBindGroupEntry::SetTextureView(WebGPUTextureView* textureView) {
+void JGPU::WGPUBindGroupEntry::SetTextureView(JGPU::WGPUTextureView* textureView) {
     Get().textureView = textureView ? textureView->Get() : nullptr;
 }
 
-// WebGPUInstanceCapabilities
-//void WebGPUInstanceCapabilities::SetTimedWaitAnyEnable(bool timedWaitAnyEnable) {
+// JGPU::WGPUInstanceCapabilities
+//void JGPU::WGPUInstanceCapabilities::SetTimedWaitAnyEnable(bool timedWaitAnyEnable) {
 //    Get()->timedWaitAnyEnable = timedWaitAnyEnable;
 //}
 //
-//void WebGPUInstanceCapabilities::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
+//void JGPU::WGPUInstanceCapabilities::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
 //    Get()->timedWaitAnyMaxCount = timedWaitAnyMaxCount;
 //}
 
-// WebGPURenderPassMaxDrawCount
-WebGPURenderPassMaxDrawCount* WebGPURenderPassMaxDrawCount::Obtain() {
-    static WebGPURenderPassMaxDrawCount obj;
-    obj = WebGPURenderPassMaxDrawCount();
+// JGPU::WGPURenderPassMaxDrawCount
+JGPU::WGPURenderPassMaxDrawCount* JGPU::WGPURenderPassMaxDrawCount::Obtain() {
+    static JGPU::WGPURenderPassMaxDrawCount obj;
+    obj = JGPU::WGPURenderPassMaxDrawCount();
     return &obj;
 }
 
-void WebGPURenderPassMaxDrawCount::SetMaxDrawCount(int maxDrawCount) {
+void JGPU::WGPURenderPassMaxDrawCount::SetMaxDrawCount(int maxDrawCount) {
     Get().maxDrawCount = maxDrawCount;
 }
 
-int WebGPURenderPassMaxDrawCount::GetMaxDrawCount() {
+int JGPU::WGPURenderPassMaxDrawCount::GetMaxDrawCount() {
     return Get().maxDrawCount;
 }
 
-// WebGPUShaderSourceSPIRV
-WebGPUShaderSourceSPIRV* WebGPUShaderSourceSPIRV::Obtain() {
-    static WebGPUShaderSourceSPIRV obj;
-    obj = WebGPUShaderSourceSPIRV();
+// JGPU::WGPUShaderSourceSPIRV
+JGPU::WGPUShaderSourceSPIRV* JGPU::WGPUShaderSourceSPIRV::Obtain() {
+    static JGPU::WGPUShaderSourceSPIRV obj;
+    obj = JGPU::WGPUShaderSourceSPIRV();
     return &obj;
 }
 
-//void WebGPUShaderSourceSPIRV::SetCode(const uint32_t* code, size_t codeSize) {
+//void JGPU::WGPUShaderSourceSPIRV::SetCode(const uint32_t* code, size_t codeSize) {
 //    this->code.assign(code, code + codeSize);
 //    Get().codeSize = codeSize;
 //    Get().code = this->code.data();
 //}
 //
-//WebGPUChainedStruct WebGPUShaderSourceSPIRV::GetChain() {
-//    WebGPUChainedStruct chain;
+//JGPU::WGPUChainedStruct JGPU::WGPUShaderSourceSPIRV::GetChain() {
+//    JGPU::WGPUChainedStruct chain;
 //    chain.Set(&Get().chain);
 //    return chain;
 //}
 
-// WebGPUShaderSourceSPIRV
-WebGPUSupportedWGSLLanguageFeatures* WebGPUSupportedWGSLLanguageFeatures::Obtain() {
-    static WebGPUSupportedWGSLLanguageFeatures obj;
-    obj = WebGPUSupportedWGSLLanguageFeatures();
+// JGPU::WGPUShaderSourceSPIRV
+JGPU::WGPUSupportedWGSLLanguageFeatures* JGPU::WGPUSupportedWGSLLanguageFeatures::Obtain() {
+    static JGPU::WGPUSupportedWGSLLanguageFeatures obj;
+    obj = JGPU::WGPUSupportedWGSLLanguageFeatures();
     return &obj;
 }
 
-int WebGPUSupportedWGSLLanguageFeatures::GetFeatureCount() {
+int JGPU::WGPUSupportedWGSLLanguageFeatures::GetFeatureCount() {
     return Get().featureCount;
 }
 
-WGPUWGSLLanguageFeatureName WebGPUSupportedWGSLLanguageFeatures::GetFeatureAt(int index) {
+WGPUWGSLLanguageFeatureName JGPU::WGPUSupportedWGSLLanguageFeatures::GetFeatureAt(int index) {
     return (index < Get().featureCount) ? Get().features[index] : WGPUWGSLLanguageFeatureName(0);
 }
 
-// WebGPUCompilationMessage
-WebGPUCompilationMessage* WebGPUCompilationMessage::Obtain() {
-    static WebGPUCompilationMessage obj;
-    obj = WebGPUCompilationMessage();
+// JGPU::WGPUCompilationMessage
+JGPU::WGPUCompilationMessage* JGPU::WGPUCompilationMessage::Obtain() {
+    static JGPU::WGPUCompilationMessage obj;
+    obj = JGPU::WGPUCompilationMessage();
     return &obj;
 }
 
-std::string WebGPUCompilationMessage::GetMessage() {
+std::string JGPU::WGPUCompilationMessage::GetMessage() {
     return std::string(Get().message.data, Get().message.length);
 }
 
-WGPUCompilationMessageType WebGPUCompilationMessage::GetType() {
+WGPUCompilationMessageType JGPU::WGPUCompilationMessage::GetType() {
     return Get().type;
 }
 
-int WebGPUCompilationMessage::GetLineNum() {
+int JGPU::WGPUCompilationMessage::GetLineNum() {
     return Get().lineNum;
 }
 
-int WebGPUCompilationMessage::GetLinePos() {
+int JGPU::WGPUCompilationMessage::GetLinePos() {
     return Get().linePos;
 }
 
-int WebGPUCompilationMessage::GetOffset() {
+int JGPU::WGPUCompilationMessage::GetOffset() {
     return Get().offset;
 }
 
-int WebGPUCompilationMessage::GetLength() {
+int JGPU::WGPUCompilationMessage::GetLength() {
     return Get().length;
 }
 
-// WebGPUCompilationInfo
-int WebGPUCompilationInfo::GetMessageCount() {
+// JGPU::WGPUCompilationInfo
+int JGPU::WGPUCompilationInfo::GetMessageCount() {
     return Get().messageCount;
 }
 
-WebGPUCompilationMessage WebGPUCompilationInfo::GetMessage(int index) {
+JGPU::WGPUCompilationMessage JGPU::WGPUCompilationInfo::GetMessage(int index) {
     int size = GetMessageCount();
     if(index >= 0 && index < size) {
-        WebGPUCompilationMessage temp;
+        JGPU::WGPUCompilationMessage temp;
         temp.Set(Get().messages[index]);
         return temp;
     }
-    return WebGPUCompilationMessage();
+    return JGPU::WGPUCompilationMessage();
 }
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
-// WebGPUInstanceDescriptor
-WebGPUInstanceDescriptor* WebGPUInstanceDescriptor::Obtain() {
-    static WebGPUInstanceDescriptor obj;
-    obj = WebGPUInstanceDescriptor();
+// JGPU::WGPUInstanceDescriptor
+JGPU::WGPUInstanceDescriptor* JGPU::WGPUInstanceDescriptor::Obtain() {
+    static JGPU::WGPUInstanceDescriptor obj;
+    obj = JGPU::WGPUInstanceDescriptor();
     return &obj;
 }
 
-void WebGPUInstanceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUInstanceDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
 }
 
-//WebGPUInstanceCapabilities WebGPUInstanceDescriptor::GetFeatures() { // TODO dawn have different code
+//JGPU::WGPUInstanceCapabilities JGPU::WGPUInstanceDescriptor::GetFeatures() { // TODO dawn have different code
 //    #ifdef __EMSCRIPTEN__
-//        WebGPUInstanceCapabilities temp;
+//        JGPU::WGPUInstanceCapabilities temp;
 //        temp.Set(&Get().capabilities);
 //    #else
-//        WebGPUInstanceCapabilities temp;
+//        JGPU::WGPUInstanceCapabilities temp;
 //        temp.Set(&Get().features);
 //    #endif
 //    return temp;
 //}
 
-// WebGPURenderBundleDescriptor
-WebGPURenderBundleDescriptor* WebGPURenderBundleDescriptor::Obtain() {
-    static WebGPURenderBundleDescriptor obj;
-    obj = WebGPURenderBundleDescriptor();
+// JGPU::WGPURenderBundleDescriptor
+JGPU::WGPURenderBundleDescriptor* JGPU::WGPURenderBundleDescriptor::Obtain() {
+    static JGPU::WGPURenderBundleDescriptor obj;
+    obj = JGPU::WGPURenderBundleDescriptor();
     return &obj;
 }
 
-void WebGPURenderBundleDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURenderBundleDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
 }
 
-void WebGPURenderBundleDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPURenderBundleDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-// WebGPURenderBundleEncoderDescriptor
-WebGPURenderBundleEncoderDescriptor* WebGPURenderBundleEncoderDescriptor::Obtain() {
-    static WebGPURenderBundleEncoderDescriptor obj;
-    obj = WebGPURenderBundleEncoderDescriptor();
+// JGPU::WGPURenderBundleEncoderDescriptor
+JGPU::WGPURenderBundleEncoderDescriptor* JGPU::WGPURenderBundleEncoderDescriptor::Obtain() {
+    static JGPU::WGPURenderBundleEncoderDescriptor obj;
+    obj = JGPU::WGPURenderBundleEncoderDescriptor();
     return &obj;
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURenderBundleEncoderDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPURenderBundleEncoderDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetColorFormats(WGPUVectorTextureFormat* colorFormats) {
+void JGPU::WGPURenderBundleEncoderDescriptor::SetColorFormats(WGPUVectorTextureFormat* colorFormats) {
     if(colorFormats != NULL) {
         Get().colorFormatCount = colorFormats->size();
         Get().colorFormats = reinterpret_cast<const WGPUTextureFormat*>(colorFormats->data());
@@ -2351,212 +2340,212 @@ void WebGPURenderBundleEncoderDescriptor::SetColorFormats(WGPUVectorTextureForma
     }
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
+void JGPU::WGPURenderBundleEncoderDescriptor::SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
     Get().depthStencilFormat = depthStencilFormat;
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetSampleCount(int sampleCount) {
+void JGPU::WGPURenderBundleEncoderDescriptor::SetSampleCount(int sampleCount) {
     Get().sampleCount = sampleCount;
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetDepthReadOnly(int depthReadOnly) {
+void JGPU::WGPURenderBundleEncoderDescriptor::SetDepthReadOnly(int depthReadOnly) {
     Get().depthReadOnly = depthReadOnly;
 }
 
-void WebGPURenderBundleEncoderDescriptor::SetStencilReadOnly(int stencilReadOnly) {
+void JGPU::WGPURenderBundleEncoderDescriptor::SetStencilReadOnly(int stencilReadOnly) {
     Get().stencilReadOnly = stencilReadOnly;
 }
 
-// WebGPUQuerySetDescriptor
-WebGPUQuerySetDescriptor* WebGPUQuerySetDescriptor::Obtain() {
-    static WebGPUQuerySetDescriptor obj;
-    obj = WebGPUQuerySetDescriptor();
+// JGPU::WGPUQuerySetDescriptor
+JGPU::WGPUQuerySetDescriptor* JGPU::WGPUQuerySetDescriptor::Obtain() {
+    static JGPU::WGPUQuerySetDescriptor obj;
+    obj = JGPU::WGPUQuerySetDescriptor();
     return &obj;
 }
 
-void WebGPUQuerySetDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUQuerySetDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUQuerySetDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUQuerySetDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUQuerySetDescriptor::SetType(WGPUQueryType type) {
+void JGPU::WGPUQuerySetDescriptor::SetType(WGPUQueryType type) {
     Get().type = type;
 }
 
-void WebGPUQuerySetDescriptor::SetCount(int count) {
+void JGPU::WGPUQuerySetDescriptor::SetCount(int count) {
     Get().count = count;
 }
 
-// WebGPUSamplerDescriptor
-WebGPUSamplerDescriptor* WebGPUSamplerDescriptor::Obtain() {
-    static WebGPUSamplerDescriptor obj;
-    obj = WebGPUSamplerDescriptor();
+// JGPU::WGPUSamplerDescriptor
+JGPU::WGPUSamplerDescriptor* JGPU::WGPUSamplerDescriptor::Obtain() {
+    static JGPU::WGPUSamplerDescriptor obj;
+    obj = JGPU::WGPUSamplerDescriptor();
     return &obj;
 }
 
-void WebGPUSamplerDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUSamplerDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUSamplerDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUSamplerDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUSamplerDescriptor::SetAddressModeU(WGPUAddressMode addressModeU) {
+void JGPU::WGPUSamplerDescriptor::SetAddressModeU(WGPUAddressMode addressModeU) {
     Get().addressModeU = addressModeU;
 }
 
-void WebGPUSamplerDescriptor::SetAddressModeV(WGPUAddressMode addressModeV) {
+void JGPU::WGPUSamplerDescriptor::SetAddressModeV(WGPUAddressMode addressModeV) {
     Get().addressModeV = addressModeV;
 }
 
-void WebGPUSamplerDescriptor::SetAddressModeW(WGPUAddressMode addressModeW) {
+void JGPU::WGPUSamplerDescriptor::SetAddressModeW(WGPUAddressMode addressModeW) {
     Get().addressModeW = addressModeW;
 }
 
-void WebGPUSamplerDescriptor::SetMagFilter(WGPUFilterMode magFilter) {
+void JGPU::WGPUSamplerDescriptor::SetMagFilter(WGPUFilterMode magFilter) {
     Get().magFilter = magFilter;
 }
 
-void WebGPUSamplerDescriptor::SetMinFilter(WGPUFilterMode minFilter) {
+void JGPU::WGPUSamplerDescriptor::SetMinFilter(WGPUFilterMode minFilter) {
     Get().minFilter = minFilter;
 }
 
-void WebGPUSamplerDescriptor::SetMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
+void JGPU::WGPUSamplerDescriptor::SetMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
     Get().mipmapFilter = mipmapFilter;
 }
 
-void WebGPUSamplerDescriptor::SetLodMinClamp(float lodMinClamp) {
+void JGPU::WGPUSamplerDescriptor::SetLodMinClamp(float lodMinClamp) {
     Get().lodMinClamp = lodMinClamp;
 }
 
-void WebGPUSamplerDescriptor::SetLodMaxClamp(float lodMaxClamp) {
+void JGPU::WGPUSamplerDescriptor::SetLodMaxClamp(float lodMaxClamp) {
     Get().lodMaxClamp = lodMaxClamp;
 }
 
-void WebGPUSamplerDescriptor::SetCompare(WGPUCompareFunction compare) {
+void JGPU::WGPUSamplerDescriptor::SetCompare(WGPUCompareFunction compare) {
     Get().compare = compare;
 }
 
-void WebGPUSamplerDescriptor::SetMaxAnisotropy(int maxAnisotropy) {
+void JGPU::WGPUSamplerDescriptor::SetMaxAnisotropy(int maxAnisotropy) {
     Get().maxAnisotropy = maxAnisotropy;
 }
 
-// WebGPUTextureViewDescriptor
-WebGPUTextureViewDescriptor* WebGPUTextureViewDescriptor::Obtain() {
-    static WebGPUTextureViewDescriptor obj;
-    obj = WebGPUTextureViewDescriptor();
+// JGPU::WGPUTextureViewDescriptor
+JGPU::WGPUTextureViewDescriptor* JGPU::WGPUTextureViewDescriptor::Obtain() {
+    static JGPU::WGPUTextureViewDescriptor obj;
+    obj = JGPU::WGPUTextureViewDescriptor();
     return &obj;
 }
 
-void WebGPUTextureViewDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUTextureViewDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUTextureViewDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUTextureViewDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUTextureViewDescriptor::SetFormat(WGPUTextureFormat format) {
+void JGPU::WGPUTextureViewDescriptor::SetFormat(WGPUTextureFormat format) {
     Get().format = format;
 }
 
-void WebGPUTextureViewDescriptor::SetDimension(WGPUTextureViewDimension dimension) {
+void JGPU::WGPUTextureViewDescriptor::SetDimension(WGPUTextureViewDimension dimension) {
     Get().dimension = dimension;
 }
 
-void WebGPUTextureViewDescriptor::SetBaseMipLevel(int baseMipLevel) {
+void JGPU::WGPUTextureViewDescriptor::SetBaseMipLevel(int baseMipLevel) {
     Get().baseMipLevel = baseMipLevel;
 }
 
-void WebGPUTextureViewDescriptor::SetMipLevelCount(int mipLevelCount) {
+void JGPU::WGPUTextureViewDescriptor::SetMipLevelCount(int mipLevelCount) {
     Get().mipLevelCount = mipLevelCount;
 }
 
-void WebGPUTextureViewDescriptor::SetBaseArrayLayer(int baseArrayLayer) {
+void JGPU::WGPUTextureViewDescriptor::SetBaseArrayLayer(int baseArrayLayer) {
     Get().baseArrayLayer = baseArrayLayer;
 }
 
-void WebGPUTextureViewDescriptor::SetArrayLayerCount(int arrayLayerCount) {
+void JGPU::WGPUTextureViewDescriptor::SetArrayLayerCount(int arrayLayerCount) {
     Get().arrayLayerCount = arrayLayerCount;
 }
 
-void WebGPUTextureViewDescriptor::SetAspect(WGPUTextureAspect aspect) {
+void JGPU::WGPUTextureViewDescriptor::SetAspect(WGPUTextureAspect aspect) {
     Get().aspect = aspect;
 }
 
-void WebGPUTextureViewDescriptor::SetUsage(WGPUTextureUsage usage) {
+void JGPU::WGPUTextureViewDescriptor::SetUsage(WGPUTextureUsage usage) {
     Get().usage = usage;
 }
 
-// WebGPUComputePassDescriptor
-WebGPUComputePassDescriptor* WebGPUComputePassDescriptor::Obtain() {
-    static WebGPUComputePassDescriptor obj;
-    obj = WebGPUComputePassDescriptor();
+// JGPU::WGPUComputePassDescriptor
+JGPU::WGPUComputePassDescriptor* JGPU::WGPUComputePassDescriptor::Obtain() {
+    static JGPU::WGPUComputePassDescriptor obj;
+    obj = JGPU::WGPUComputePassDescriptor();
     return &obj;
 }
 
-void WebGPUComputePassDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUComputePassDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUComputePassDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUComputePassDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUComputePassDescriptor::SetTimestampWrites(WebGPUComputePassTimestampWrites* timestampWrites) {
+void JGPU::WGPUComputePassDescriptor::SetTimestampWrites(JGPU::WGPUComputePassTimestampWrites* timestampWrites) {
     Get().timestampWrites = timestampWrites != NULL ? &timestampWrites->Get() : NULL;
 }
 
-// WebGPUTextureDescriptor
-WebGPUTextureDescriptor* WebGPUTextureDescriptor::Obtain() {
-    static WebGPUTextureDescriptor obj;
-    obj = WebGPUTextureDescriptor();
+// JGPU::WGPUTextureDescriptor
+JGPU::WGPUTextureDescriptor* JGPU::WGPUTextureDescriptor::Obtain() {
+    static JGPU::WGPUTextureDescriptor obj;
+    obj = JGPU::WGPUTextureDescriptor();
     return &obj;
 }
 
-void WebGPUTextureDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUTextureDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUTextureDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUTextureDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUTextureDescriptor::SetUsage(WGPUTextureUsage usage) {
+void JGPU::WGPUTextureDescriptor::SetUsage(WGPUTextureUsage usage) {
     Get().usage = usage;
 }
 
-void WebGPUTextureDescriptor::SetDimension(WGPUTextureDimension dimension) {
+void JGPU::WGPUTextureDescriptor::SetDimension(WGPUTextureDimension dimension) {
     Get().dimension = dimension;
 }
 
-WebGPUExtent3D WebGPUTextureDescriptor::GetSize() {
-    WebGPUExtent3D temp(&Get().size);
+JGPU::WGPUExtent3D JGPU::WGPUTextureDescriptor::GetSize() {
+    JGPU::WGPUExtent3D temp(&Get().size);
     return temp;
 }
 
-void WebGPUTextureDescriptor::SetFormat(WGPUTextureFormat format) {
+void JGPU::WGPUTextureDescriptor::SetFormat(WGPUTextureFormat format) {
     Get().format = format;
 }
 
-void WebGPUTextureDescriptor::SetMipLevelCount(int mipLevelCount) {
+void JGPU::WGPUTextureDescriptor::SetMipLevelCount(int mipLevelCount) {
     Get().mipLevelCount = mipLevelCount;
 }
 
-void WebGPUTextureDescriptor::SetSampleCount(int sampleCount) {
+void JGPU::WGPUTextureDescriptor::SetSampleCount(int sampleCount) {
     Get().sampleCount = sampleCount;
 }
 
-void WebGPUTextureDescriptor::SetViewFormats(WGPUVectorTextureFormat* viewFormats) {
+void JGPU::WGPUTextureDescriptor::SetViewFormats(WGPUVectorTextureFormat* viewFormats) {
     if(viewFormats != NULL) {
         Get().viewFormatCount = viewFormats->size();
         Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(viewFormats->data());
@@ -2567,26 +2556,26 @@ void WebGPUTextureDescriptor::SetViewFormats(WGPUVectorTextureFormat* viewFormat
     }
 }
 
-// WebGPURenderPassDescriptor
-WebGPURenderPassDescriptor* WebGPURenderPassDescriptor::Obtain() {
-    static WebGPURenderPassDescriptor obj;
-    obj = WebGPURenderPassDescriptor();
+// JGPU::WGPURenderPassDescriptor
+JGPU::WGPURenderPassDescriptor* JGPU::WGPURenderPassDescriptor::Obtain() {
+    static JGPU::WGPURenderPassDescriptor obj;
+    obj = JGPU::WGPURenderPassDescriptor();
     return &obj;
 }
 
-void WebGPURenderPassDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURenderPassDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPURenderPassDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPURenderPassDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPURenderPassDescriptor::SetColorAttachments(WGPUVectorRenderPassColorAttachment* values) {
+void JGPU::WGPURenderPassDescriptor::SetColorAttachments(WGPUVectorRenderPassColorAttachment* values) {
     if(values != NULL) {
         Get().colorAttachmentCount = values->size();
-        Get().colorAttachments = reinterpret_cast<const WGPURenderPassColorAttachment*>(values->data());
+        Get().colorAttachments = reinterpret_cast<const ::WGPURenderPassColorAttachment*>(values->data());
     }
     else {
         Get().colorAttachmentCount = 0;
@@ -2594,132 +2583,132 @@ void WebGPURenderPassDescriptor::SetColorAttachments(WGPUVectorRenderPassColorAt
     }
 }
 
-void WebGPURenderPassDescriptor::SetDepthStencilAttachment(WebGPURenderPassDepthStencilAttachment* attachment) {
+void JGPU::WGPURenderPassDescriptor::SetDepthStencilAttachment(JGPU::WGPURenderPassDepthStencilAttachment* attachment) {
     Get().depthStencilAttachment = attachment == NULL ? NULL : &(attachment->Get());
 }
 
-void WebGPURenderPassDescriptor::SetOcclusionQuerySet(WebGPUQuerySet* timestampWrites) {
+void JGPU::WGPURenderPassDescriptor::SetOcclusionQuerySet(JGPU::WGPUQuerySet* timestampWrites) {
     Get().occlusionQuerySet = timestampWrites == NULL ? NULL : timestampWrites->Get();
 }
 
-void WebGPURenderPassDescriptor::SetTimestampWrites(WebGPURenderPassTimestampWrites* timestampWrites) {
+void JGPU::WGPURenderPassDescriptor::SetTimestampWrites(JGPU::WGPURenderPassTimestampWrites* timestampWrites) {
     Get().timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->Get());
 }
 
-// WebGPUCommandEncoderDescriptor
-WebGPUCommandEncoderDescriptor* WebGPUCommandEncoderDescriptor::Obtain() {
-    static WebGPUCommandEncoderDescriptor obj;
-    obj = WebGPUCommandEncoderDescriptor();
+// JGPU::WGPUCommandEncoderDescriptor
+JGPU::WGPUCommandEncoderDescriptor* JGPU::WGPUCommandEncoderDescriptor::Obtain() {
+    static JGPU::WGPUCommandEncoderDescriptor obj;
+    obj = JGPU::WGPUCommandEncoderDescriptor();
     return &obj;
 }
 
-void WebGPUCommandEncoderDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUCommandEncoderDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUCommandEncoderDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUCommandEncoderDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-// WebGPUCommandBufferDescriptor
-WebGPUCommandBufferDescriptor* WebGPUCommandBufferDescriptor::Obtain() {
-    static WebGPUCommandBufferDescriptor obj;
-    obj = WebGPUCommandBufferDescriptor();
+// JGPU::WGPUCommandBufferDescriptor
+JGPU::WGPUCommandBufferDescriptor* JGPU::WGPUCommandBufferDescriptor::Obtain() {
+    static JGPU::WGPUCommandBufferDescriptor obj;
+    obj = JGPU::WGPUCommandBufferDescriptor();
     return &obj;
 }
 
-void WebGPUCommandBufferDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUCommandBufferDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUCommandBufferDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUCommandBufferDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-// WebGPURenderPipelineDescriptor
-WebGPURenderPipelineDescriptor* WebGPURenderPipelineDescriptor::Obtain() {
-    static WebGPURenderPipelineDescriptor obj;
-    obj = WebGPURenderPipelineDescriptor();
+// JGPU::WGPURenderPipelineDescriptor
+JGPU::WGPURenderPipelineDescriptor* JGPU::WGPURenderPipelineDescriptor::Obtain() {
+    static JGPU::WGPURenderPipelineDescriptor obj;
+    obj = JGPU::WGPURenderPipelineDescriptor();
     return &obj;
 }
 
-void WebGPURenderPipelineDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPURenderPipelineDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPURenderPipelineDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPURenderPipelineDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-WebGPUVertexState WebGPURenderPipelineDescriptor::GetVertex() {
-    WebGPUVertexState temp;
+JGPU::WGPUVertexState JGPU::WGPURenderPipelineDescriptor::GetVertex() {
+    JGPU::WGPUVertexState temp;
     temp.Set(&Get().vertex);
     return temp;
 }
 
-WebGPUPrimitiveState WebGPURenderPipelineDescriptor::GetPrimitive() {
-    WebGPUPrimitiveState temp;
+JGPU::WGPUPrimitiveState JGPU::WGPURenderPipelineDescriptor::GetPrimitive() {
+    JGPU::WGPUPrimitiveState temp;
     temp.Set(&Get().primitive);
     return temp;
 }
 
-void WebGPURenderPipelineDescriptor::SetFragment(WebGPUFragmentState* fragment) {
+void JGPU::WGPURenderPipelineDescriptor::SetFragment(JGPU::WGPUFragmentState* fragment) {
     Get().fragment = &fragment->Get();
 }
 
-void WebGPURenderPipelineDescriptor::SetDepthStencil(WebGPUDepthStencilState* depthStencilState) {
+void JGPU::WGPURenderPipelineDescriptor::SetDepthStencil(JGPU::WGPUDepthStencilState* depthStencilState) {
     Get().depthStencil = depthStencilState != NULL ? &depthStencilState->Get() : NULL;
 }
 
-WebGPUMultisampleState WebGPURenderPipelineDescriptor::GetMultisample() {
-    WebGPUMultisampleState temp;
+JGPU::WGPUMultisampleState JGPU::WGPURenderPipelineDescriptor::GetMultisample() {
+    JGPU::WGPUMultisampleState temp;
     temp.Set(&Get().multisample);
     return temp;
 }
 
-void WebGPURenderPipelineDescriptor::SetLayout(WebGPUPipelineLayout* pipelineLayout) {
+void JGPU::WGPURenderPipelineDescriptor::SetLayout(JGPU::WGPUPipelineLayout* pipelineLayout) {
     Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
 }
 
-// WebGPUShaderModuleDescriptor
-WebGPUShaderModuleDescriptor* WebGPUShaderModuleDescriptor::Obtain() {
-    static WebGPUShaderModuleDescriptor obj;
-    obj = WebGPUShaderModuleDescriptor();
+// JGPU::WGPUShaderModuleDescriptor
+JGPU::WGPUShaderModuleDescriptor* JGPU::WGPUShaderModuleDescriptor::Obtain() {
+    static JGPU::WGPUShaderModuleDescriptor obj;
+    obj = JGPU::WGPUShaderModuleDescriptor();
     return &obj;
 }
 
-void WebGPUShaderModuleDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUShaderModuleDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUShaderModuleDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUShaderModuleDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-// WebGPUBindGroupLayoutDescriptor
-WebGPUBindGroupLayoutDescriptor* WebGPUBindGroupLayoutDescriptor::Obtain() {
-    static WebGPUBindGroupLayoutDescriptor obj;
-    obj = WebGPUBindGroupLayoutDescriptor();
+// JGPU::WGPUBindGroupLayoutDescriptor
+JGPU::WGPUBindGroupLayoutDescriptor* JGPU::WGPUBindGroupLayoutDescriptor::Obtain() {
+    static JGPU::WGPUBindGroupLayoutDescriptor obj;
+    obj = JGPU::WGPUBindGroupLayoutDescriptor();
     return &obj;
 }
 
-void WebGPUBindGroupLayoutDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUBindGroupLayoutDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUBindGroupLayoutDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUBindGroupLayoutDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUBindGroupLayoutDescriptor::SetEntries(WGPUVectorBindGroupLayoutEntry* entries) {
+void JGPU::WGPUBindGroupLayoutDescriptor::SetEntries(WGPUVectorBindGroupLayoutEntry* entries) {
     if(entries != NULL) {
         Get().entryCount = entries->size();
-        Get().entries = reinterpret_cast<const WGPUBindGroupLayoutEntry*>(entries->data());
+        Get().entries = reinterpret_cast<const ::WGPUBindGroupLayoutEntry*>(entries->data());
     }
     else {
         Get().entryCount = 0;
@@ -2727,107 +2716,107 @@ void WebGPUBindGroupLayoutDescriptor::SetEntries(WGPUVectorBindGroupLayoutEntry*
     }
 }
 
-// WebGPUProgrammableStageDescriptor
-WebGPUProgrammableStageDescriptor* WebGPUProgrammableStageDescriptor::Obtain() {
-    static WebGPUProgrammableStageDescriptor obj;
-    obj = WebGPUProgrammableStageDescriptor();
+// JGPU::WGPUProgrammableStageDescriptor
+JGPU::WGPUProgrammableStageDescriptor* JGPU::WGPUProgrammableStageDescriptor::Obtain() {
+    static JGPU::WGPUProgrammableStageDescriptor obj;
+    obj = JGPU::WGPUProgrammableStageDescriptor();
     return &obj;
 }
 
-void WebGPUProgrammableStageDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUProgrammableStageDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-// WebGPUComputePipelineDescriptor
-WebGPUComputePipelineDescriptor* WebGPUComputePipelineDescriptor::Obtain() {
-    static WebGPUComputePipelineDescriptor obj;
-    obj = WebGPUComputePipelineDescriptor();
+// JGPU::WGPUComputePipelineDescriptor
+JGPU::WGPUComputePipelineDescriptor* JGPU::WGPUComputePipelineDescriptor::Obtain() {
+    static JGPU::WGPUComputePipelineDescriptor obj;
+    obj = JGPU::WGPUComputePipelineDescriptor();
     return &obj;
 }
 
-void WebGPUComputePipelineDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUComputePipelineDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUComputePipelineDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUComputePipelineDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-WebGPUProgrammableStageDescriptor WebGPUComputePipelineDescriptor::GetCompute() {
-    WebGPUProgrammableStageDescriptor temp;
+JGPU::WGPUProgrammableStageDescriptor JGPU::WGPUComputePipelineDescriptor::GetCompute() {
+    JGPU::WGPUProgrammableStageDescriptor temp;
     temp.Set(&Get().compute);
     return temp;
 }
 
-// WebGPUQueueDescriptor
-WebGPUQueueDescriptor* WebGPUQueueDescriptor::Obtain() {
-    static WebGPUQueueDescriptor obj;
-    obj = WebGPUQueueDescriptor();
+// JGPU::WGPUQueueDescriptor
+JGPU::WGPUQueueDescriptor* JGPU::WGPUQueueDescriptor::Obtain() {
+    static JGPU::WGPUQueueDescriptor obj;
+    obj = JGPU::WGPUQueueDescriptor();
     return &obj;
 }
 
-void WebGPUQueueDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUQueueDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUQueueDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUQueueDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get()->label = stringView.Get();
 }
 
-// WebGPUBufferDescriptor
-WebGPUBufferDescriptor* WebGPUBufferDescriptor::Obtain() {
-    static WebGPUBufferDescriptor obj;
-    obj = WebGPUBufferDescriptor();
+// JGPU::WGPUBufferDescriptor
+JGPU::WGPUBufferDescriptor* JGPU::WGPUBufferDescriptor::Obtain() {
+    static JGPU::WGPUBufferDescriptor obj;
+    obj = JGPU::WGPUBufferDescriptor();
     return &obj;
 }
 
-void WebGPUBufferDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUBufferDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUBufferDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUBufferDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUBufferDescriptor::SetUsage(WGPUBufferUsage usage) {
+void JGPU::WGPUBufferDescriptor::SetUsage(WGPUBufferUsage usage) {
     Get().usage = usage;
 }
 
-void WebGPUBufferDescriptor::SetSize(int size) {
+void JGPU::WGPUBufferDescriptor::SetSize(int size) {
     Get().size = size;
 }
 
-void WebGPUBufferDescriptor::SetMappedAtCreation(bool mappedAtCreation) {
+void JGPU::WGPUBufferDescriptor::SetMappedAtCreation(bool mappedAtCreation) {
     Get().mappedAtCreation = mappedAtCreation;
 }
 
-// WebGPUBindGroupDescriptor
-WebGPUBindGroupDescriptor* WebGPUBindGroupDescriptor::Obtain() {
-    static WebGPUBindGroupDescriptor obj;
-    obj = WebGPUBindGroupDescriptor();
+// JGPU::WGPUBindGroupDescriptor
+JGPU::WGPUBindGroupDescriptor* JGPU::WGPUBindGroupDescriptor::Obtain() {
+    static JGPU::WGPUBindGroupDescriptor obj;
+    obj = JGPU::WGPUBindGroupDescriptor();
     return &obj;
 }
 
-void WebGPUBindGroupDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUBindGroupDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUBindGroupDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUBindGroupDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUBindGroupDescriptor::SetLayout(WebGPUBindGroupLayout* layout) {
+void JGPU::WGPUBindGroupDescriptor::SetLayout(JGPU::WGPUBindGroupLayout* layout) {
     Get().layout = layout->Get();
 }
 
-void WebGPUBindGroupDescriptor::SetEntries(WGPUVectorBindGroupEntry* entries) {
+void JGPU::WGPUBindGroupDescriptor::SetEntries(WGPUVectorBindGroupEntry* entries) {
     if(entries != NULL) {
         Get().entryCount = entries->size();
-        Get().entries = reinterpret_cast<const WGPUBindGroupEntry*>(entries->data());
+        Get().entries = reinterpret_cast<const ::WGPUBindGroupEntry*>(entries->data());
     }
     else {
         Get().entryCount = 0;
@@ -2835,26 +2824,26 @@ void WebGPUBindGroupDescriptor::SetEntries(WGPUVectorBindGroupEntry* entries) {
     }
 }
 
-// WebGPUPipelineLayoutDescriptor
-WebGPUPipelineLayoutDescriptor* WebGPUPipelineLayoutDescriptor::Obtain() {
-    static WebGPUPipelineLayoutDescriptor obj;
-    obj = WebGPUPipelineLayoutDescriptor();
+// JGPU::WGPUPipelineLayoutDescriptor
+JGPU::WGPUPipelineLayoutDescriptor* JGPU::WGPUPipelineLayoutDescriptor::Obtain() {
+    static JGPU::WGPUPipelineLayoutDescriptor obj;
+    obj = JGPU::WGPUPipelineLayoutDescriptor();
     return &obj;
 }
 
-void WebGPUPipelineLayoutDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUPipelineLayoutDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUPipelineLayoutDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUPipelineLayoutDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUPipelineLayoutDescriptor::SetBindGroupLayouts(WGPUVectorBindGroupLayout* bindGroupLayouts) {
+void JGPU::WGPUPipelineLayoutDescriptor::SetBindGroupLayouts(WGPUVectorBindGroupLayout* bindGroupLayouts) {
     if(bindGroupLayouts != NULL) {
         Get().bindGroupLayoutCount = bindGroupLayouts->size();
-        Get().bindGroupLayouts = reinterpret_cast<const WGPUBindGroupLayout*>(bindGroupLayouts->data());
+        Get().bindGroupLayouts = reinterpret_cast<const ::WGPUBindGroupLayout*>(bindGroupLayouts->data());
     }
     else {
         Get().bindGroupLayoutCount = 0;
@@ -2862,27 +2851,27 @@ void WebGPUPipelineLayoutDescriptor::SetBindGroupLayouts(WGPUVectorBindGroupLayo
     }
 }
 
-// WebGPUDeviceDescriptor
-WebGPUDeviceDescriptor* WebGPUDeviceDescriptor::Obtain() {
-    static WebGPUDeviceDescriptor obj;
-    obj = WebGPUDeviceDescriptor();
+// JGPU::WGPUDeviceDescriptor
+JGPU::WGPUDeviceDescriptor* JGPU::WGPUDeviceDescriptor::Obtain() {
+    static JGPU::WGPUDeviceDescriptor obj;
+    obj = JGPU::WGPUDeviceDescriptor();
     return &obj;
 }
 
-void WebGPUDeviceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUDeviceDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void WebGPUDeviceDescriptor::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUDeviceDescriptor::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
 }
 
-void WebGPUDeviceDescriptor::SetRequiredLimits(WebGPULimits* limits) {
+void JGPU::WGPUDeviceDescriptor::SetRequiredLimits(JGPU::WGPULimits* limits) {
     Get().requiredLimits = &(limits->Get());
 }
 
-void WebGPUDeviceDescriptor::SetRequiredFeatures(WGPUVectorFeatureName* features) {
+void JGPU::WGPUDeviceDescriptor::SetRequiredFeatures(WGPUVectorFeatureName* features) {
     if(features != NULL) {
         Get().requiredFeatureCount = features->size();
         Get().requiredFeatures = features->data();
@@ -2893,64 +2882,64 @@ void WebGPUDeviceDescriptor::SetRequiredFeatures(WGPUVectorFeatureName* features
     }
 }
 
-WebGPUQueueDescriptor WebGPUDeviceDescriptor::GetDefaultQueue() {
-    WebGPUQueueDescriptor temp;
+JGPU::WGPUQueueDescriptor JGPU::WGPUDeviceDescriptor::GetDefaultQueue() {
+    JGPU::WGPUQueueDescriptor temp;
     temp.Set(&Get().defaultQueue);
     return temp;
 }
 
 // ################################### OPAQUE POINTER ###################################
 
-// WebGPUSampler
-void WebGPUSampler::AddRefInternal() {
+// JGPU::WGPUSampler
+void JGPU::WGPUSampler::AddRefInternal() {
     wgpuSamplerAddRef(Get());
 }
 
-void WebGPUSampler::ReleaseInternal() {
+void JGPU::WGPUSampler::ReleaseInternal() {
     wgpuSamplerRelease(Get());
 }
 
-void WebGPUSampler::SetLabel(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPUSampler::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuSamplerSetLabel(Get(), stringView.Get());
 }
 
-// WebGPURenderBundleEncoder
-WebGPURenderBundleEncoder* WebGPURenderBundleEncoder::Obtain() {
-    static WebGPURenderBundleEncoder obj;
-    obj = WebGPURenderBundleEncoder();
+// JGPU::WGPURenderBundleEncoder
+JGPU::WGPURenderBundleEncoder* JGPU::WGPURenderBundleEncoder::Obtain() {
+    static JGPU::WGPURenderBundleEncoder obj;
+    obj = JGPU::WGPURenderBundleEncoder();
     return &obj;
 }
 
-void WebGPURenderBundleEncoder::AddRefInternal() {
+void JGPU::WGPURenderBundleEncoder::AddRefInternal() {
     wgpuRenderBundleEncoderAddRef(Get());
 }
 
-void WebGPURenderBundleEncoder::ReleaseInternal() {
+void JGPU::WGPURenderBundleEncoder::ReleaseInternal() {
     wgpuRenderBundleEncoderRelease(Get());
 }
 
-void WebGPURenderBundleEncoder::SetPipeline(WebGPURenderPipeline* renderPipeline) {
+void JGPU::WGPURenderBundleEncoder::SetPipeline(JGPU::WGPURenderPipeline* renderPipeline) {
     wgpuRenderBundleEncoderSetPipeline(Get(), renderPipeline->Get());
 }
 
-void WebGPURenderBundleEncoder::Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
+void JGPU::WGPURenderBundleEncoder::Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
     wgpuRenderBundleEncoderDraw(Get(), vertexCount, instanceCount, firstVertex, firstInstance);
 }
 
-void WebGPURenderBundleEncoder::DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
+void JGPU::WGPURenderBundleEncoder::DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
     wgpuRenderBundleEncoderDrawIndexed(Get(), indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
 }
 
-void WebGPURenderBundleEncoder::DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+void JGPU::WGPURenderBundleEncoder::DrawIndirect(JGPU::WGPUBuffer* indirectBuffer, int indirectOffset) {
     wgpuRenderBundleEncoderDrawIndirect(Get(), indirectBuffer->Get(), indirectOffset);
 }
 
-void WebGPURenderBundleEncoder::DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+void JGPU::WGPURenderBundleEncoder::DrawIndexedIndirect(JGPU::WGPUBuffer* indirectBuffer, int indirectOffset) {
     wgpuRenderBundleEncoderDrawIndexedIndirect(Get(), indirectBuffer->Get(), indirectOffset);
 }
 
-void WebGPURenderBundleEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* offsets) {
+void JGPU::WGPURenderBundleEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGroup* group, WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
     uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
@@ -2960,182 +2949,182 @@ void WebGPURenderBundleEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* gr
     wgpuRenderBundleEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
 
-void WebGPURenderBundleEncoder::SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size) {
+void JGPU::WGPURenderBundleEncoder::SetVertexBuffer(int slot, JGPU::WGPUBuffer* buffer, int offset, int size) {
     wgpuRenderBundleEncoderSetVertexBuffer(Get(), slot, buffer->Get(), offset, size);
 }
 
-void WebGPURenderBundleEncoder::SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
+void JGPU::WGPURenderBundleEncoder::SetIndexBuffer(JGPU::WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
     wgpuRenderBundleEncoderSetIndexBuffer(Get(), buffer->Get(), format, offset, size);
 }
 
-void WebGPURenderBundleEncoder::InsertDebugMarker(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPURenderBundleEncoder::InsertDebugMarker(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuRenderBundleEncoderInsertDebugMarker(Get(), stringView.Get());
 }
 
-void WebGPURenderBundleEncoder::PopDebugGroup() {
+void JGPU::WGPURenderBundleEncoder::PopDebugGroup() {
     wgpuRenderBundleEncoderPopDebugGroup(Get());
 }
 
-void WebGPURenderBundleEncoder::PushDebugGroup(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPURenderBundleEncoder::PushDebugGroup(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuRenderBundleEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPURenderBundleEncoder::SetLabel(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPURenderBundleEncoder::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuRenderBundleEncoderSetLabel(Get(), stringView.Get());
 }
 
-void WebGPURenderBundleEncoder::Finish(WebGPURenderBundleDescriptor* descriptor, WebGPURenderBundle* bundle) {
+void JGPU::WGPURenderBundleEncoder::Finish(JGPU::WGPURenderBundleDescriptor* descriptor, JGPU::WGPURenderBundle* bundle) {
     bundle->Set(wgpuRenderBundleEncoderFinish(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }
 
-// WebGPUTextureView
-WebGPUTextureView* WebGPUTextureView::Obtain() {
-    static WebGPUTextureView obj;
-    obj = WebGPUTextureView();
+// JGPU::WGPUTextureView
+JGPU::WGPUTextureView* JGPU::WGPUTextureView::Obtain() {
+    static JGPU::WGPUTextureView obj;
+    obj = JGPU::WGPUTextureView();
     return &obj;
 }
 
-void WebGPUTextureView::AddRefInternal() {
+void JGPU::WGPUTextureView::AddRefInternal() {
     wgpuTextureViewAddRef(Get());
 }
 
-void WebGPUTextureView::ReleaseInternal() {
+void JGPU::WGPUTextureView::ReleaseInternal() {
     wgpuTextureViewRelease(Get());
 }
 
-// WebGPUTexture
-WebGPUTexture* WebGPUTexture::Obtain() {
-    static WebGPUTexture obj;
-    obj = WebGPUTexture();
+// JGPU::WGPUTexture
+JGPU::WGPUTexture* JGPU::WGPUTexture::Obtain() {
+    static JGPU::WGPUTexture obj;
+    obj = JGPU::WGPUTexture();
     return &obj;
 }
 
-void WebGPUTexture::AddRefInternal() {
+void JGPU::WGPUTexture::AddRefInternal() {
     wgpuTextureAddRef(Get());
 }
 
-void WebGPUTexture::ReleaseInternal() {
+void JGPU::WGPUTexture::ReleaseInternal() {
     wgpuTextureRelease(Get());
 }
 
-void WebGPUTexture::CreateView(WebGPUTextureViewDescriptor* textureViewDescriptor, WebGPUTextureView* textureView) {
+void JGPU::WGPUTexture::CreateView(JGPU::WGPUTextureViewDescriptor* textureViewDescriptor, JGPU::WGPUTextureView* textureView) {
     textureView->Set(wgpuTextureCreateView(Get(), &(textureViewDescriptor->Get())));
 }
 
-WGPUTextureFormat WebGPUTexture::GetFormat() {
+WGPUTextureFormat JGPU::WGPUTexture::GetFormat() {
     return wgpuTextureGetFormat(Get());
 }
 
 
-void WebGPUTexture::Destroy() {
+void JGPU::WGPUTexture::Destroy() {
     wgpuTextureDestroy(Get());
 }
 
-// WebGPUShaderModule
-WebGPUShaderModule* WebGPUShaderModule::Obtain() {
-    static WebGPUShaderModule obj;
-    obj = WebGPUShaderModule();
+// JGPU::WGPUShaderModule
+JGPU::WGPUShaderModule* JGPU::WGPUShaderModule::Obtain() {
+    static JGPU::WGPUShaderModule obj;
+    obj = JGPU::WGPUShaderModule();
     return &obj;
 }
 
-void WebGPUShaderModule::AddRefInternal() {
+void JGPU::WGPUShaderModule::AddRefInternal() {
     wgpuShaderModuleAddRef(Get());
 }
 
-void WebGPUShaderModule::ReleaseInternal() {
+void JGPU::WGPUShaderModule::ReleaseInternal() {
     wgpuShaderModuleRelease(Get());
 }
 
-// WebGPURenderPipeline
-WebGPURenderPipeline* WebGPURenderPipeline::Obtain() {
-    static WebGPURenderPipeline obj;
-    obj = WebGPURenderPipeline();
+// JGPU::WGPURenderPipeline
+JGPU::WGPURenderPipeline* JGPU::WGPURenderPipeline::Obtain() {
+    static JGPU::WGPURenderPipeline obj;
+    obj = JGPU::WGPURenderPipeline();
     return &obj;
 }
 
-void WebGPURenderPipeline::AddRefInternal() {
+void JGPU::WGPURenderPipeline::AddRefInternal() {
     wgpuRenderPipelineAddRef(Get());
 }
 
-void WebGPURenderPipeline::ReleaseInternal() {
+void JGPU::WGPURenderPipeline::ReleaseInternal() {
     wgpuRenderPipelineRelease(Get());
 }
 
-// WebGPURenderPassEncoder
-WebGPURenderPassEncoder* WebGPURenderPassEncoder::Obtain() {
-    static WebGPURenderPassEncoder obj;
-    obj = WebGPURenderPassEncoder();
+// JGPU::WGPURenderPassEncoder
+JGPU::WGPURenderPassEncoder* JGPU::WGPURenderPassEncoder::Obtain() {
+    static JGPU::WGPURenderPassEncoder obj;
+    obj = JGPU::WGPURenderPassEncoder();
     return &obj;
 }
 
-void WebGPURenderPassEncoder::AddRefInternal() {
+void JGPU::WGPURenderPassEncoder::AddRefInternal() {
     wgpuRenderPassEncoderAddRef(Get());
 }
 
-void WebGPURenderPassEncoder::ReleaseInternal() {
+void JGPU::WGPURenderPassEncoder::ReleaseInternal() {
     wgpuRenderPassEncoderRelease(Get());
 }
 
-void WebGPURenderPassEncoder::End() {
+void JGPU::WGPURenderPassEncoder::End() {
     wgpuRenderPassEncoderEnd(Get());
 }
 
-void WebGPURenderPassEncoder::SetPipeline(WebGPURenderPipeline* renderPipeline) {
+void JGPU::WGPURenderPassEncoder::SetPipeline(JGPU::WGPURenderPipeline* renderPipeline) {
     wgpuRenderPassEncoderSetPipeline(Get(), renderPipeline->Get());
 }
 
-void WebGPURenderPassEncoder::BeginOcclusionQuery(int queryIndex) {
+void JGPU::WGPURenderPassEncoder::BeginOcclusionQuery(int queryIndex) {
     wgpuRenderPassEncoderBeginOcclusionQuery(Get(), queryIndex);
 }
 
-void WebGPURenderPassEncoder::Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
+void JGPU::WGPURenderPassEncoder::Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
     wgpuRenderPassEncoderDraw(Get(), vertexCount, instanceCount, firstVertex, firstInstance);
 }
 
-void WebGPURenderPassEncoder::DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
+void JGPU::WGPURenderPassEncoder::DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
     wgpuRenderPassEncoderDrawIndexed(Get(), indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
 }
 
-void WebGPURenderPassEncoder::DrawIndexedIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+void JGPU::WGPURenderPassEncoder::DrawIndexedIndirect(JGPU::WGPUBuffer* indirectBuffer, int indirectOffset) {
     wgpuRenderPassEncoderDrawIndexedIndirect(Get(), indirectBuffer->Get(), indirectOffset);
 }
 
-void WebGPURenderPassEncoder::DrawIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+void JGPU::WGPURenderPassEncoder::DrawIndirect(JGPU::WGPUBuffer* indirectBuffer, int indirectOffset) {
     wgpuRenderPassEncoderDrawIndirect(Get(), indirectBuffer->Get(), indirectOffset);
 }
 
-void WebGPURenderPassEncoder::EndOcclusionQuery() {
+void JGPU::WGPURenderPassEncoder::EndOcclusionQuery() {
     wgpuRenderPassEncoderEndOcclusionQuery(Get());
 }
 
-void WebGPURenderPassEncoder::ExecuteBundles(WGPUVectorRenderBundle* values) {
+void JGPU::WGPURenderPassEncoder::ExecuteBundles(WGPUVectorRenderBundle* values) {
     if(values != NULL) {
         int size = values->size();
-        wgpuRenderPassEncoderExecuteBundles(Get(), size, reinterpret_cast<WGPURenderBundle const * >(values->data()));
+        wgpuRenderPassEncoderExecuteBundles(Get(), size, reinterpret_cast<::WGPURenderBundle const * >(values->data()));
     }
     else {
         wgpuRenderPassEncoderExecuteBundles(Get(), 0, NULL);
     }
 }
 
-void WebGPURenderPassEncoder::InsertDebugMarker(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPURenderPassEncoder::InsertDebugMarker(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuRenderPassEncoderInsertDebugMarker(Get(), stringView.Get());
 }
 
-void WebGPURenderPassEncoder::PopDebugGroup() {
+void JGPU::WGPURenderPassEncoder::PopDebugGroup() {
     wgpuRenderPassEncoderPopDebugGroup(Get());
 }
 
-void WebGPURenderPassEncoder::PushDebugGroup(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPURenderPassEncoder::PushDebugGroup(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuRenderPassEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPURenderPassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* offsets) {
+void JGPU::WGPURenderPassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGroup* group, WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
     uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
@@ -3145,94 +3134,94 @@ void WebGPURenderPassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* grou
     wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
 
-void WebGPURenderPassEncoder::SetBlendConstant(WebGPUColor* color) {
+void JGPU::WGPURenderPassEncoder::SetBlendConstant(JGPU::WGPUColor* color) {
     wgpuRenderPassEncoderSetBlendConstant(Get(), color != NULL ? color->Get() : NULL);
 }
 
-void WebGPURenderPassEncoder::SetIndexBuffer(WebGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
+void JGPU::WGPURenderPassEncoder::SetIndexBuffer(JGPU::WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
     wgpuRenderPassEncoderSetIndexBuffer(Get(), buffer->Get(), format, offset, size);
 }
 
-void WebGPURenderPassEncoder::SetLabel(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPURenderPassEncoder::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuRenderPassEncoderSetLabel(Get(), stringView.Get());
 }
 
-void WebGPURenderPassEncoder::SetScissorRect(int x, int y, int width, int height) {
+void JGPU::WGPURenderPassEncoder::SetScissorRect(int x, int y, int width, int height) {
     wgpuRenderPassEncoderSetScissorRect(Get(), x, y, width, height);
 }
 
-void WebGPURenderPassEncoder::SetStencilReference(int reference) {
+void JGPU::WGPURenderPassEncoder::SetStencilReference(int reference) {
     wgpuRenderPassEncoderSetStencilReference(Get(), reference);
 }
 
-void WebGPURenderPassEncoder::SetVertexBuffer(int slot, WebGPUBuffer* buffer, int offset, int size) {
+void JGPU::WGPURenderPassEncoder::SetVertexBuffer(int slot, JGPU::WGPUBuffer* buffer, int offset, int size) {
     wgpuRenderPassEncoderSetVertexBuffer(Get(), slot, buffer->Get(), offset, size);
 }
 
-void WebGPURenderPassEncoder::SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
+void JGPU::WGPURenderPassEncoder::SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
     wgpuRenderPassEncoderSetViewport(Get(), x, y, width, height, minDepth, maxDepth);
 }
 
-// WebGPUQuerySet
-void WebGPUQuerySet::AddRefInternal() {
+// JGPU::WGPUQuerySet
+void JGPU::WGPUQuerySet::AddRefInternal() {
     wgpuQuerySetAddRef(Get());
 }
 
-void WebGPUQuerySet::ReleaseInternal() {
+void JGPU::WGPUQuerySet::ReleaseInternal() {
     wgpuQuerySetRelease(Get());
 }
 
-void WebGPUQuerySet::Destroy() {
+void JGPU::WGPUQuerySet::Destroy() {
     wgpuQuerySetDestroy(Get());
 }
 
-int WebGPUQuerySet::GetCount() {
+int JGPU::WGPUQuerySet::GetCount() {
     return wgpuQuerySetGetCount(Get());
 }
 
-WGPUQueryType WebGPUQuerySet::GetType() {
+WGPUQueryType JGPU::WGPUQuerySet::GetType() {
     return wgpuQuerySetGetType(Get());
 }
 
-void WebGPUQuerySet::SetLabel(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPUQuerySet::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuQuerySetSetLabel(Get(), stringView.Get());
 }
 
-// WebGPUPipelineLayout
-void WebGPUPipelineLayout::AddRefInternal() {
+// JGPU::WGPUPipelineLayout
+void JGPU::WGPUPipelineLayout::AddRefInternal() {
     wgpuPipelineLayoutAddRef(Get());
 }
 
-void WebGPUPipelineLayout::ReleaseInternal() {
+void JGPU::WGPUPipelineLayout::ReleaseInternal() {
     wgpuPipelineLayoutRelease(Get());
 }
 
-void WebGPUPipelineLayout::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUPipelineLayout::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     wgpuPipelineLayoutSetLabel(Get(), stringView.Get());
 }
 
-// WebGPUInstance
-void WebGPUInstance::AddRefInternal() {
+// JGPU::WGPUInstance
+void JGPU::WGPUInstance::AddRefInternal() {
     wgpuInstanceAddRef(Get());
 }
 
-void WebGPUInstance::ReleaseInternal() {
+void JGPU::WGPUInstance::ReleaseInternal() {
     wgpuInstanceRelease(Get());
 }
 
-bool WebGPUInstance::IsValid() {
+bool JGPU::WGPUInstance::IsValid() {
     return Get() ? true : false;
 }
 
-void WebGPUInstance::RequestAdapter(WebGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
+void JGPU::WGPUInstance::RequestAdapter(JGPU::WGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
     WGPURequestAdapterCallbackInfo callbackInfo = {};
     callbackInfo.mode = mode;
-    callbackInfo.callback = [](WGPURequestAdapterStatus status, WGPUAdapter ad, WGPUStringView message, void* callback_param, void*) {
+    callbackInfo.callback = [](WGPURequestAdapterStatus status, ::WGPUAdapter ad, ::WGPUStringView message, void* callback_param, void*) {
         RequestAdapterCallback* cback = reinterpret_cast<RequestAdapterCallback*>(callback_param);
-        WebGPUAdapter* adapter = new WebGPUAdapter();
+        JGPU::WGPUAdapter* adapter = new JGPU::WGPUAdapter();
         adapter->Set(ad);
         cback->OnCallback(status, adapter);
     };
@@ -3241,26 +3230,26 @@ void WebGPUInstance::RequestAdapter(WebGPURequestAdapterOptions* options, WGPUCa
     auto result = wgpuInstanceRequestAdapter(Get(), &(options->Get()), callbackInfo);
 }
 
-WebGPUSurface* WebGPUInstance::CreateWebSurface(const char* canvas) {
+JGPU::WGPUSurface* JGPU::WGPUInstance::CreateWebSurface(const char* canvas) {
     #ifdef __EMSCRIPTEN__
         WGPUEmscriptenSurfaceSourceCanvasHTMLSelector canvasDesc {};
-        WebGPUStringView stringView(canvas);
+        JGPU::WGPUStringView stringView(canvas);
         canvasDesc.chain.sType = WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector;
         canvasDesc.selector = stringView.Get();
         WGPUSurfaceDescriptor surfDesc{};
-        surfDesc.nextInChain = (WGPUChainedStruct*)&canvasDesc;
-        WebGPUSurface* surface = new WebGPUSurface();
+        surfDesc.nextInChain = (::WGPUChainedStruct*)&canvasDesc;
+        JGPU::WGPUSurface* surface = new JGPU::WGPUSurface();
         surface->Set(wgpuInstanceCreateSurface(Get(), &surfDesc));
     #else
-        WebGPUSurface* surface = NULL;
+        JGPU::WGPUSurface* surface = NULL;
     #endif
     return surface;
 }
 
-WebGPUSurface* WebGPUInstance::CreateWindowsSurface(void * hwnd) {
-    WebGPUSurface* surface = NULL;
+JGPU::WGPUSurface* JGPU::WGPUInstance::CreateWindowsSurface(void * hwnd) {
+    JGPU::WGPUSurface* surface = NULL;
     #if _WIN32
-        surface = new WebGPUSurface();
+        surface = new JGPU::WGPUSurface();
         HINSTANCE hinstance = GetModuleHandle(NULL);
         WGPUSurfaceSourceWindowsHWND fromWindowsHWND;
         fromWindowsHWND.chain.next = NULL;
@@ -3274,10 +3263,10 @@ WebGPUSurface* WebGPUInstance::CreateWindowsSurface(void * hwnd) {
     return surface;
 }
 
-WebGPUSurface* WebGPUInstance::CreateLinuxSurface(bool isWayland, void * windowOrSurface, void* display) {
-    WebGPUSurface* surface = NULL;
+JGPU::WGPUSurface* JGPU::WGPUInstance::CreateLinuxSurface(bool isWayland, void * windowOrSurface, void* display) {
+    JGPU::WGPUSurface* surface = NULL;
     #if __linux__
-        surface = new WebGPUSurface();
+        surface = new JGPU::WGPUSurface();
         if(isWayland) {
             WGPUSurfaceSourceWaylandSurface fromLinux;
             fromLinux.chain.next = NULL;
@@ -3302,10 +3291,10 @@ WebGPUSurface* WebGPUInstance::CreateLinuxSurface(bool isWayland, void * windowO
     return surface;
 }
 
-WebGPUSurface* WebGPUInstance::CreateMacSurface(void * windowHandle) {
-    WebGPUSurface* surface = NULL;
+JGPU::WGPUSurface* JGPU::WGPUInstance::CreateMacSurface(void * windowHandle) {
+    JGPU::WGPUSurface* surface = NULL;
     #if TARGET_OS_MAC
-        surface = new WebGPUSurface();
+        surface = new JGPU::WGPUInstance();
         id metal_layer = [CAMetalLayer layer];
 
         NSWindow* ns_window = (NSWindow*)windowHandle;
@@ -3323,11 +3312,11 @@ WebGPUSurface* WebGPUInstance::CreateMacSurface(void * windowHandle) {
     return surface;
 }
 
-WebGPUSurface* WebGPUInstance::CreateAndroidSurface(WGPUAndroidWindow* window) {
-    WebGPUSurface* surface = NULL;
+JGPU::WGPUSurface* JGPU::WGPUInstance::CreateAndroidSurface(WGPUAndroidWindow* window) {
+    JGPU::WGPUSurface* surface = NULL;
     #if __ANDROID__
         void* androidWindow = window->GetWindow();
-        surface = new WebGPUSurface();
+        surface = new JGPU::WGPUSurface();
         WGPUSurfaceSourceAndroidNativeWindow androidSurfaceWindow;
         androidSurfaceWindow.chain.next = NULL;
         androidSurfaceWindow.chain.sType = WGPUSType_SurfaceSourceAndroidNativeWindow;
@@ -3339,7 +3328,7 @@ WebGPUSurface* WebGPUInstance::CreateAndroidSurface(WGPUAndroidWindow* window) {
     return surface;
 }
 
-void WebGPUInstance::ProcessEvents() {
+void JGPU::WGPUInstance::ProcessEvents() {
     #ifdef __EMSCRIPTEN__
         wgpuInstanceProcessEvents(Get());
 //        emscripten_sleep(100);
@@ -3348,137 +3337,137 @@ void WebGPUInstance::ProcessEvents() {
     #endif
 }
 
-WGPUWaitStatus WebGPUInstance::WaitAny(WGPUVectorFutureWaitInfo* futureVector, int timeoutNS) {
+WGPUWaitStatus JGPU::WGPUInstance::WaitAny(WGPUVectorFutureWaitInfo* futureVector, int timeoutNS) {
     int futureCount = 0;
-    WGPUFutureWaitInfo* futures = NULL;
+    ::WGPUFutureWaitInfo* futures = NULL;
     if(futureVector != NULL) {
         futureCount = futureVector->size();
-        futures = (WGPUFutureWaitInfo*)futureVector->data();
+        futures = (::WGPUFutureWaitInfo*)futureVector->data();
     }
     return wgpuInstanceWaitAny(Get(), futureCount, futures, timeoutNS);
 }
 
-// WebGPUDevice
-void WebGPUDevice::AddRefInternal() {
+// JGPU::WGPUDevice
+void JGPU::WGPUDevice::AddRefInternal() {
     wgpuDeviceAddRef(Get());
 }
 
-void WebGPUDevice::ReleaseInternal() {
+void JGPU::WGPUDevice::ReleaseInternal() {
     wgpuDeviceRelease(Get());
 }
 
-void WebGPUDevice::CreateBindGroup(WebGPUBindGroupDescriptor* descriptor, WebGPUBindGroup* valueOut) {
+void JGPU::WGPUDevice::CreateBindGroup(JGPU::WGPUBindGroupDescriptor* descriptor, JGPU::WGPUBindGroup* valueOut) {
     valueOut->Set(wgpuDeviceCreateBindGroup(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::CreateBindGroupLayout(WebGPUBindGroupLayoutDescriptor* descriptor, WebGPUBindGroupLayout* valueOut) {
+void JGPU::WGPUDevice::CreateBindGroupLayout(JGPU::WGPUBindGroupLayoutDescriptor* descriptor, JGPU::WGPUBindGroupLayout* valueOut) {
     valueOut->Set(wgpuDeviceCreateBindGroupLayout(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::CreateBuffer(WebGPUBufferDescriptor* descriptor, WebGPUBuffer* valueOut) {
+void JGPU::WGPUDevice::CreateBuffer(JGPU::WGPUBufferDescriptor* descriptor, JGPU::WGPUBuffer* valueOut) {
     valueOut->Set(wgpuDeviceCreateBuffer(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::CreateCommandEncoder(WebGPUCommandEncoderDescriptor* descriptor, WebGPUCommandEncoder* valueOut) {
+void JGPU::WGPUDevice::CreateCommandEncoder(JGPU::WGPUCommandEncoderDescriptor* descriptor, JGPU::WGPUCommandEncoder* valueOut) {
     valueOut->Set(wgpuDeviceCreateCommandEncoder(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }
 
-void WebGPUDevice::CreateComputePipeline(WebGPUComputePipelineDescriptor* descriptor, WebGPUComputePipeline* valueOut) {
+void JGPU::WGPUDevice::CreateComputePipeline(JGPU::WGPUComputePipelineDescriptor* descriptor, JGPU::WGPUComputePipeline* valueOut) {
     valueOut->Set(wgpuDeviceCreateComputePipeline(Get(), &(descriptor->Get())));
 }
 
-void WebGPUDevice::CreatePipelineLayout(WebGPUPipelineLayoutDescriptor* descriptor, WebGPUPipelineLayout* valueOut) {
+void JGPU::WGPUDevice::CreatePipelineLayout(JGPU::WGPUPipelineLayoutDescriptor* descriptor, JGPU::WGPUPipelineLayout* valueOut) {
     valueOut->Set(wgpuDeviceCreatePipelineLayout(Get(), &(descriptor->Get())));
 }
 
-void WebGPUDevice::CreateQuerySet(WebGPUQuerySetDescriptor* descriptor, WebGPUQuerySet* valueOut) {
+void JGPU::WGPUDevice::CreateQuerySet(JGPU::WGPUQuerySetDescriptor* descriptor, JGPU::WGPUQuerySet* valueOut) {
     valueOut->Set(wgpuDeviceCreateQuerySet(Get(), &(descriptor->Get())));
 }
 
-void WebGPUDevice::CreateRenderBundleEncoder(WebGPURenderBundleEncoderDescriptor* descriptor, WebGPURenderBundleEncoder* valueOut) {
+void JGPU::WGPUDevice::CreateRenderBundleEncoder(JGPU::WGPURenderBundleEncoderDescriptor* descriptor, JGPU::WGPURenderBundleEncoder* valueOut) {
     valueOut->Set(wgpuDeviceCreateRenderBundleEncoder(Get(), &(descriptor->Get())));
 }
 
-void WebGPUDevice::CreateRenderPipeline(WebGPURenderPipelineDescriptor* descriptor, WebGPURenderPipeline* valueOut) {
+void JGPU::WGPUDevice::CreateRenderPipeline(JGPU::WGPURenderPipelineDescriptor* descriptor, JGPU::WGPURenderPipeline* valueOut) {
     valueOut->Set(wgpuDeviceCreateRenderPipeline(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::CreateSampler(WebGPUSamplerDescriptor* descriptor, WebGPUSampler* valueOut) {
+void JGPU::WGPUDevice::CreateSampler(JGPU::WGPUSamplerDescriptor* descriptor, JGPU::WGPUSampler* valueOut) {
     valueOut->Set(wgpuDeviceCreateSampler(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::CreateShaderModule(WebGPUShaderModuleDescriptor* descriptor, WebGPUShaderModule* valueOut) {
+void JGPU::WGPUDevice::CreateShaderModule(JGPU::WGPUShaderModuleDescriptor* descriptor, JGPU::WGPUShaderModule* valueOut) {
     valueOut->Set(wgpuDeviceCreateShaderModule(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::CreateTexture(WebGPUTextureDescriptor* descriptor, WebGPUTexture* valueOut) {
+void JGPU::WGPUDevice::CreateTexture(JGPU::WGPUTextureDescriptor* descriptor, JGPU::WGPUTexture* valueOut) {
     valueOut->Set(wgpuDeviceCreateTexture(Get(), &descriptor->Get()));
 }
 
-void WebGPUDevice::Destroy() {
+void JGPU::WGPUDevice::Destroy() {
     wgpuDeviceDestroy(Get());
 }
 
-void WebGPUDevice::GetFeatures(WebGPUSupportedFeatures* features) {
+void JGPU::WGPUDevice::GetFeatures(JGPU::WGPUSupportedFeatures* features) {
     wgpuDeviceGetFeatures(Get(), &features->Get());
 }
 
-bool WebGPUDevice::HasFeature(WGPUFeatureName feature) {
+bool JGPU::WGPUDevice::HasFeature(WGPUFeatureName feature) {
     return wgpuDeviceHasFeature(Get(), feature);
 }
 
-void WebGPUDevice::GetLimits(WebGPULimits* limits) {
+void JGPU::WGPUDevice::GetLimits(JGPU::WGPULimits* limits) {
     wgpuDeviceGetLimits(Get(), &limits->Get());
 }
 
-WebGPUQueue WebGPUDevice::GetQueue() {
-    WebGPUQueue temp;
+JGPU::WGPUQueue JGPU::WGPUDevice::GetQueue() {
+    JGPU::WGPUQueue temp;
     temp.Set(wgpuDeviceGetQueue(Get()));
     return temp;
 }
 
-// WebGPUComputePassEncoder
-WebGPUComputePassEncoder* WebGPUComputePassEncoder::Obtain() {
-    static WebGPUComputePassEncoder obj;
-    obj = WebGPUComputePassEncoder();
+// JGPU::WGPUComputePassEncoder
+JGPU::WGPUComputePassEncoder* JGPU::WGPUComputePassEncoder::Obtain() {
+    static JGPU::WGPUComputePassEncoder obj;
+    obj = JGPU::WGPUComputePassEncoder();
     return &obj;
 }
 
-void WebGPUComputePassEncoder::AddRefInternal() {
+void JGPU::WGPUComputePassEncoder::AddRefInternal() {
     wgpuComputePassEncoderAddRef(Get());
 }
 
-void WebGPUComputePassEncoder::ReleaseInternal() {
+void JGPU::WGPUComputePassEncoder::ReleaseInternal() {
     wgpuComputePassEncoderRelease(Get());
 }
 
-void WebGPUComputePassEncoder::SetDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
+void JGPU::WGPUComputePassEncoder::SetDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
     wgpuComputePassEncoderDispatchWorkgroups(Get(), workgroupCountX, workgroupCountY, workgroupCountZ);
 }
 
-void WebGPUComputePassEncoder::DispatchWorkgroupsIndirect(WebGPUBuffer* indirectBuffer, int indirectOffset) {
+void JGPU::WGPUComputePassEncoder::DispatchWorkgroupsIndirect(JGPU::WGPUBuffer* indirectBuffer, int indirectOffset) {
     wgpuComputePassEncoderDispatchWorkgroupsIndirect(Get(), indirectBuffer->Get(), indirectOffset);
 }
 
-void WebGPUComputePassEncoder::End() {
+void JGPU::WGPUComputePassEncoder::End() {
     wgpuComputePassEncoderEnd(Get());
 }
 
-void WebGPUComputePassEncoder::InsertDebugMarker(const char* markerLabel) {
-    WebGPUStringView stringView(markerLabel);
+void JGPU::WGPUComputePassEncoder::InsertDebugMarker(const char* markerLabel) {
+    JGPU::WGPUStringView stringView(markerLabel);
     wgpuComputePassEncoderInsertDebugMarker(Get(), stringView.Get());
 }
 
-void WebGPUComputePassEncoder::PopDebugGroup() {
+void JGPU::WGPUComputePassEncoder::PopDebugGroup() {
     wgpuComputePassEncoderPopDebugGroup(Get());
 }
 
-void WebGPUComputePassEncoder::PushDebugGroup(const char* groupLabel) {
-    WebGPUStringView stringView(groupLabel);
+void JGPU::WGPUComputePassEncoder::PushDebugGroup(const char* groupLabel) {
+    JGPU::WGPUStringView stringView(groupLabel);
     wgpuComputePassEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPUComputePassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* group, WGPUVectorInt* offsets) {
+void JGPU::WGPUComputePassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGroup* group, WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
     uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
@@ -3488,306 +3477,306 @@ void WebGPUComputePassEncoder::SetBindGroup(int groupIndex, WebGPUBindGroup* gro
     wgpuComputePassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
 
-void WebGPUComputePassEncoder::SetLabel(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPUComputePassEncoder::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuComputePassEncoderSetLabel(Get(), stringView.Get());
 }
 
-void WebGPUComputePassEncoder::SetPipeline(WebGPUComputePipeline* pipeline) {
+void JGPU::WGPUComputePassEncoder::SetPipeline(JGPU::WGPUComputePipeline* pipeline) {
     wgpuComputePassEncoderSetPipeline(Get(), pipeline->Get());
 }
 
-// WebGPUCommandBuffer
-WebGPUCommandBuffer* WebGPUCommandBuffer::Obtain() {
-    static WebGPUCommandBuffer obj;
-    obj = WebGPUCommandBuffer();
+// JGPU::WGPUCommandBuffer
+JGPU::WGPUCommandBuffer* JGPU::WGPUCommandBuffer::Obtain() {
+    static JGPU::WGPUCommandBuffer obj;
+    obj = JGPU::WGPUCommandBuffer();
     return &obj;
 }
 
-void WebGPUCommandBuffer::AddRefInternal() {
+void JGPU::WGPUCommandBuffer::AddRefInternal() {
     wgpuCommandBufferAddRef(Get());
 }
 
-void WebGPUCommandBuffer::ReleaseInternal() {
+void JGPU::WGPUCommandBuffer::ReleaseInternal() {
     wgpuCommandBufferRelease(Get());
 }
 
-// WebGPUCommandEncoder
-WebGPUCommandEncoder* WebGPUCommandEncoder::Obtain() {
-    static WebGPUCommandEncoder obj;
-    obj = WebGPUCommandEncoder();
+// JGPU::WGPUCommandEncoder
+JGPU::WGPUCommandEncoder* JGPU::WGPUCommandEncoder::Obtain() {
+    static JGPU::WGPUCommandEncoder obj;
+    obj = JGPU::WGPUCommandEncoder();
     return &obj;
 }
 
-void WebGPUCommandEncoder::AddRefInternal() {
+void JGPU::WGPUCommandEncoder::AddRefInternal() {
     wgpuCommandEncoderAddRef(Get());
 }
 
-void WebGPUCommandEncoder::ReleaseInternal() {
+void JGPU::WGPUCommandEncoder::ReleaseInternal() {
     wgpuCommandEncoderRelease(Get());
 }
 
-void WebGPUCommandEncoder::BeginComputePass(WebGPUComputePassDescriptor* descriptor, WebGPUComputePassEncoder* encoder) {
+void JGPU::WGPUCommandEncoder::BeginComputePass(JGPU::WGPUComputePassDescriptor* descriptor, JGPU::WGPUComputePassEncoder* encoder) {
     encoder->Set(wgpuCommandEncoderBeginComputePass(Get(), &descriptor->Get()));
 }
 
-void WebGPUCommandEncoder::BeginRenderPass(WebGPURenderPassDescriptor* renderPassDescriptor, WebGPURenderPassEncoder* encoder) {
+void JGPU::WGPUCommandEncoder::BeginRenderPass(JGPU::WGPURenderPassDescriptor* renderPassDescriptor, JGPU::WGPURenderPassEncoder* encoder) {
     encoder->Set(wgpuCommandEncoderBeginRenderPass(Get(), &(renderPassDescriptor->Get())));
 }
 
-void WebGPUCommandEncoder::ClearBuffer(WebGPUBuffer* buffer, int offset, int size) {
+void JGPU::WGPUCommandEncoder::ClearBuffer(JGPU::WGPUBuffer* buffer, int offset, int size) {
     wgpuCommandEncoderClearBuffer(Get(), buffer->Get(), offset, size);
 }
 
-void WebGPUCommandEncoder::CopyBufferToBuffer(WebGPUBuffer* source, int sourceOffset, WebGPUBuffer* destination, int destinationOffset, int size) {
+void JGPU::WGPUCommandEncoder::CopyBufferToBuffer(JGPU::WGPUBuffer* source, int sourceOffset, JGPU::WGPUBuffer* destination, int destinationOffset, int size) {
     wgpuCommandEncoderCopyBufferToBuffer(Get(), source->Get(), sourceOffset, destination->Get(), destinationOffset, size);
 }
 
-void WebGPUCommandEncoder::CopyBufferToTexture(WebGPUTexelCopyBufferInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
+void JGPU::WGPUCommandEncoder::CopyBufferToTexture(JGPU::WGPUTexelCopyBufferInfo* source, JGPU::WGPUTexelCopyTextureInfo* destination, JGPU::WGPUExtent3D* copySize) {
     wgpuCommandEncoderCopyBufferToTexture(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
-void WebGPUCommandEncoder::TextureToBuffer(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyBufferInfo* destination, WebGPUExtent3D* copySize) {
+void JGPU::WGPUCommandEncoder::TextureToBuffer(JGPU::WGPUTexelCopyTextureInfo* source, JGPU::WGPUTexelCopyBufferInfo* destination, JGPU::WGPUExtent3D* copySize) {
     wgpuCommandEncoderCopyTextureToBuffer(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
-void WebGPUCommandEncoder::CopyTextureToTexture(WebGPUTexelCopyTextureInfo* source, WebGPUTexelCopyTextureInfo* destination, WebGPUExtent3D* copySize) {
+void JGPU::WGPUCommandEncoder::CopyTextureToTexture(JGPU::WGPUTexelCopyTextureInfo* source, JGPU::WGPUTexelCopyTextureInfo* destination, JGPU::WGPUExtent3D* copySize) {
     wgpuCommandEncoderCopyTextureToTexture(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
-void WebGPUCommandEncoder::Finish(WebGPUCommandBufferDescriptor* commandBufferDescriptor, WebGPUCommandBuffer* commandBuffer) {
+void JGPU::WGPUCommandEncoder::Finish(JGPU::WGPUCommandBufferDescriptor* commandBufferDescriptor, JGPU::WGPUCommandBuffer* commandBuffer) {
     commandBuffer->Set(wgpuCommandEncoderFinish(Get(), commandBufferDescriptor != NULL ? &commandBufferDescriptor->Get() : NULL));
 }
 
-void WebGPUCommandEncoder::InsertDebugMarker(const char* markerLabel) {
-    WebGPUStringView stringView(markerLabel);
+void JGPU::WGPUCommandEncoder::InsertDebugMarker(const char* markerLabel) {
+    JGPU::WGPUStringView stringView(markerLabel);
     wgpuCommandEncoderInsertDebugMarker(Get(), stringView.Get());
 }
 
-void WebGPUCommandEncoder::PopDebugGroup() {
+void JGPU::WGPUCommandEncoder::PopDebugGroup() {
     wgpuCommandEncoderPopDebugGroup(Get());
 }
 
-void WebGPUCommandEncoder::PushDebugGroup(const char* groupLabel) {
-    WebGPUStringView stringView(groupLabel);
+void JGPU::WGPUCommandEncoder::PushDebugGroup(const char* groupLabel) {
+    JGPU::WGPUStringView stringView(groupLabel);
     wgpuCommandEncoderPushDebugGroup(Get(), stringView.Get());
 }
 
-void WebGPUCommandEncoder::ResolveQuerySet(WebGPUQuerySet* querySet, int firstQuery, int queryCount, WebGPUBuffer* destination, int destinationOffset) {
+void JGPU::WGPUCommandEncoder::ResolveQuerySet(JGPU::WGPUQuerySet* querySet, int firstQuery, int queryCount, JGPU::WGPUBuffer* destination, int destinationOffset) {
     wgpuCommandEncoderResolveQuerySet(Get(), querySet->Get(), firstQuery, queryCount, destination->Get(), destinationOffset);
 }
 
-void WebGPUCommandEncoder::SetLabel(const char* label) {
-    WebGPUStringView stringView(label);
+void JGPU::WGPUCommandEncoder::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
     wgpuCommandEncoderSetLabel(Get(), stringView.Get());
 }
 
-void WebGPUCommandEncoder::WriteTimestamp(WebGPUQuerySet* querySet, int queryIndex) {
+void JGPU::WGPUCommandEncoder::WriteTimestamp(JGPU::WGPUQuerySet* querySet, int queryIndex) {
     wgpuCommandEncoderWriteTimestamp(Get(), querySet->Get(), queryIndex);
 }
 
-// WebGPUBuffer
-void WebGPUBuffer::AddRefInternal() {
+// JGPU::WGPUBuffer
+void JGPU::WGPUBuffer::AddRefInternal() {
     wgpuBufferAddRef(Get());
 }
 
-void WebGPUBuffer::ReleaseInternal() {
+void JGPU::WGPUBuffer::ReleaseInternal() {
     wgpuBufferRelease(Get());
 }
 
-void WebGPUBuffer::Unmap() {
+void JGPU::WGPUBuffer::Unmap() {
     wgpuBufferUnmap(Get());
 }
 
-int WebGPUBuffer::GetSize() {
+int JGPU::WGPUBuffer::GetSize() {
     return wgpuBufferGetSize(Get());
 }
 
-WGPUBufferUsage WebGPUBuffer::GetUsage() {
+WGPUBufferUsage JGPU::WGPUBuffer::GetUsage() {
     return static_cast<WGPUBufferUsage>(wgpuBufferGetUsage(Get()));
 }
 
-WebGPUFuture WebGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
+JGPU::WGPUFuture JGPU::WGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
     WGPUBufferMapCallbackInfo callbackInfo = {};
     callbackInfo.mode = callbackMode;
 
-    callbackInfo.callback = [](WGPUMapAsyncStatus status, WGPUStringView message, void* callback_param, void*) {
+    callbackInfo.callback = [](WGPUMapAsyncStatus status, ::WGPUStringView message, void* callback_param, void*) {
         BufferMapCallback* cback = reinterpret_cast<BufferMapCallback*>(callback_param);
-        cback->OnCallback(status, WebGPUStringView(message).GetString().c_str());
+        cback->OnCallback(status, JGPU::WGPUStringView(message).GetString().c_str());
     };
     callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
     callbackInfo.userdata2 = NULL;
 
-    WebGPUFuture temp;
+    JGPU::WGPUFuture temp;
     temp.Set(wgpuBufferMapAsync(Get(), mode, offset, size, callbackInfo));
     return temp;
 }
 
-WGPUByteBuffer WebGPUBuffer::GetConstMappedRange(int offset, int size) {
+WGPUByteBuffer JGPU::WGPUBuffer::GetConstMappedRange(int offset, int size) {
     // TODO need to test
     uint8_t* bufferData = (uint8_t*) wgpuBufferGetConstMappedRange(Get(), offset, size);
     WGPUByteBuffer buffer(bufferData, size);
     return buffer;
 }
 
-void WebGPUBuffer::Destroy() {
+void JGPU::WGPUBuffer::Destroy() {
     wgpuBufferDestroy(Get());
 }
 
-// WebGPUBindGroup
-void WebGPUBindGroup::AddRefInternal() {
+// JGPU::WGPUBindGroup
+void JGPU::WGPUBindGroup::AddRefInternal() {
     wgpuBindGroupAddRef(Get());
 }
 
-void WebGPUBindGroup::ReleaseInternal() {
+void JGPU::WGPUBindGroup::ReleaseInternal() {
     wgpuBindGroupRelease(Get());
 }
 
-void WebGPUBindGroup::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUBindGroup::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     wgpuBindGroupSetLabel(Get(), stringView.Get());
 }
 
-// WebGPUBindGroupLayout
-void WebGPUBindGroupLayout::AddRefInternal() {
+// JGPU::WGPUBindGroupLayout
+void JGPU::WGPUBindGroupLayout::AddRefInternal() {
     wgpuBindGroupLayoutAddRef(Get());
 }
 
-void WebGPUBindGroupLayout::ReleaseInternal() {
+void JGPU::WGPUBindGroupLayout::ReleaseInternal() {
     wgpuBindGroupLayoutRelease(Get());
 }
 
-void WebGPUBindGroupLayout::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUBindGroupLayout::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     wgpuBindGroupLayoutSetLabel(Get(), stringView.Get());
 }
 
-// WebGPUComputePipeline
-void WebGPUComputePipeline::AddRefInternal() {
+// JGPU::WGPUComputePipeline
+void JGPU::WGPUComputePipeline::AddRefInternal() {
     wgpuComputePipelineAddRef(Get());
 }
 
-void WebGPUComputePipeline::ReleaseInternal() {
+void JGPU::WGPUComputePipeline::ReleaseInternal() {
     wgpuComputePipelineRelease(Get());
 }
 
-void WebGPUComputePipeline::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUComputePipeline::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     wgpuComputePipelineSetLabel(Get(), stringView.Get());
 }
 
-WebGPUBindGroupLayout WebGPUComputePipeline::GetBindGroupLayout(int groupIndex) {
-    WebGPUBindGroupLayout temp;
+JGPU::WGPUBindGroupLayout JGPU::WGPUComputePipeline::GetBindGroupLayout(int groupIndex) {
+    JGPU::WGPUBindGroupLayout temp;
     temp.Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
     return temp;
 }
 
-// WebGPURenderBundle
-void WebGPURenderBundle::AddRefInternal() {
+// JGPU::WGPURenderBundle
+void JGPU::WGPURenderBundle::AddRefInternal() {
     wgpuRenderBundleAddRef(Get());
 }
 
-void WebGPURenderBundle::ReleaseInternal() {
+void JGPU::WGPURenderBundle::ReleaseInternal() {
     wgpuRenderBundleRelease(Get());
 }
 
-void WebGPURenderBundle::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPURenderBundle::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     wgpuRenderBundleSetLabel(Get(), stringView.Get());
 }
 
-// WebGPUAdapter
-void WebGPUAdapter::AddRefInternal() {
+// JGPU::WGPUAdapter
+void JGPU::WGPUAdapter::AddRefInternal() {
     wgpuAdapterAddRef(Get());
 }
 
-void WebGPUAdapter::ReleaseInternal() {
+void JGPU::WGPUAdapter::ReleaseInternal() {
     wgpuAdapterRelease(Get());
 }
 
-void WebGPUAdapter::RequestDevice(WebGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
-    descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const WGPUDevice* device, WGPUErrorType type, WGPUStringView message, void* callback_param, void* userdata_param) {
+void JGPU::WGPUAdapter::RequestDevice(JGPU::WGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
+    descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const ::WGPUDevice* device, WGPUErrorType type, ::WGPUStringView message, void* callback_param, void* userdata_param) {
         UncapturedErrorCallback* cback = reinterpret_cast<UncapturedErrorCallback*>(callback_param);
-        cback->OnCallback(type, WebGPUStringView(message).GetString().c_str());
+        cback->OnCallback(type, JGPU::WGPUStringView(message).GetString().c_str());
     };
     descriptor->Get().uncapturedErrorCallbackInfo.userdata1 = reinterpret_cast<void*>(errorCallback);
     descriptor->Get().uncapturedErrorCallbackInfo.userdata2 = NULL;
 
     WGPURequestDeviceCallbackInfo callbackInfo = {};
     callbackInfo.mode = mode;
-    callbackInfo.callback = [](WGPURequestDeviceStatus status, WGPUDevice dev, WGPUStringView message, void* callback_param, void*) {
+    callbackInfo.callback = [](WGPURequestDeviceStatus status, ::WGPUDevice dev, ::WGPUStringView message, void* callback_param, void*) {
         RequestDeviceCallback* cback = reinterpret_cast<RequestDeviceCallback*>(callback_param);
-        WebGPUDevice* device = new WebGPUDevice();
+        JGPU::WGPUDevice* device = new JGPU::WGPUDevice();
         device->Set(dev);
         cback->OnCallback(status, device);
     };
     callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
     callbackInfo.userdata2 = NULL;
-    const WGPUDeviceDescriptor* desc = reinterpret_cast<WGPUDeviceDescriptor const*>(descriptor);
+    const ::WGPUDeviceDescriptor* desc = reinterpret_cast<::WGPUDeviceDescriptor const*>(descriptor);
     auto result = wgpuAdapterRequestDevice(Get(), desc, callbackInfo);
 }
 
-bool WebGPUAdapter::GetInfo(WebGPUAdapterInfo* adapterInfo) {
+bool JGPU::WGPUAdapter::GetInfo(JGPU::WGPUAdapterInfo* adapterInfo) {
     WGPUStatus status = wgpuAdapterGetInfo(Get(), &(adapterInfo->Get()));
     return status == WGPUStatus_Success;
 }
 
-bool WebGPUAdapter::HasFeature(WGPUFeatureName featureName) {
+bool JGPU::WGPUAdapter::HasFeature(WGPUFeatureName featureName) {
     return wgpuAdapterHasFeature(Get(), featureName);
 }
 
-WGPUStatus WebGPUAdapter::GetLimits(WebGPULimits* limits) {
+WGPUStatus JGPU::WGPUAdapter::GetLimits(JGPU::WGPULimits* limits) {
     return wgpuAdapterGetLimits(Get(), &limits->Get());
 }
 
-// WebGPUSurface
-void WebGPUSurface::AddRefInternal() {
+// JGPU::WGPUSurface
+void JGPU::WGPUSurface::AddRefInternal() {
     wgpuSurfaceAddRef(Get());
 }
 
-void WebGPUSurface::ReleaseInternal() {
+void JGPU::WGPUSurface::ReleaseInternal() {
     wgpuSurfaceRelease(Get());
 }
 
-void WebGPUSurface::Unconfigure() {
+void JGPU::WGPUSurface::Unconfigure() {
     wgpuSurfaceUnconfigure(Get());
 }
 
-void WebGPUSurface::Configure(WebGPUSurfaceConfiguration* config) {
-    wgpuSurfaceConfigure(Get(), reinterpret_cast<WGPUSurfaceConfiguration const * >(config));
+void JGPU::WGPUSurface::Configure(JGPU::WGPUSurfaceConfiguration* config) {
+    wgpuSurfaceConfigure(Get(), reinterpret_cast<::WGPUSurfaceConfiguration const * >(config));
 }
 
-void WebGPUSurface::GetCapabilities(WebGPUAdapter* adapter, WebGPUSurfaceCapabilities* surfaceCapabilities) {
+void JGPU::WGPUSurface::GetCapabilities(JGPU::WGPUAdapter* adapter, JGPU::WGPUSurfaceCapabilities* surfaceCapabilities) {
     wgpuSurfaceGetCapabilities(Get(), adapter->Get(), &(surfaceCapabilities->Get()));
 }
 
-void WebGPUSurface::GetCurrentTexture(WebGPUSurfaceTexture* tex) {
+void JGPU::WGPUSurface::GetCurrentTexture(JGPU::WGPUSurfaceTexture* tex) {
     wgpuSurfaceGetCurrentTexture(Get(), &tex->Get());
 }
 
-void WebGPUSurface::Present() {
+void JGPU::WGPUSurface::Present() {
     wgpuSurfacePresent(Get());
 }
 
-// WebGPUQueue
-void WebGPUQueue::AddRefInternal() {
+// JGPU::WGPUQueue
+void JGPU::WGPUQueue::AddRefInternal() {
     wgpuQueueAddRef(Get());
 }
 
-void WebGPUQueue::ReleaseInternal() {
+void JGPU::WGPUQueue::ReleaseInternal() {
     wgpuQueueRelease(Get());
 }
 
-void WebGPUQueue::SetLabel(const char* value) {
-    WebGPUStringView stringView(value);
+void JGPU::WGPUQueue::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
     wgpuQueueSetLabel(Get(), stringView.Get());
 }
 
-void WebGPUQueue::Submit(int commandCount, WebGPUCommandBuffer* commandBuffer) {
+void JGPU::WGPUQueue::Submit(int commandCount, JGPU::WGPUCommandBuffer* commandBuffer) {
     wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
 }
 
-void WebGPUQueue::WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes) {
+void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes) {
     int size = 0;
     void* data = NULL;
     if(bytes != NULL) {
@@ -3797,7 +3786,7 @@ void WebGPUQueue::WriteBuffer(WebGPUBuffer* buffer, int bufferOffset, WGPUByteBu
     wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
 }
 
-void WebGPUQueue::WriteTexture(WebGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, WebGPUTexelCopyBufferLayout* dataLayout, WebGPUExtent3D* writeSize) {
+void JGPU::WGPUQueue::WriteTexture(JGPU::WGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, JGPU::WGPUTexelCopyBufferLayout* dataLayout, JGPU::WGPUExtent3D* writeSize) {
     int size = 0;
     void* data = NULL;
     if(bytes != NULL) {

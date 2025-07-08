@@ -22,7 +22,7 @@ A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms
 To help you navigate the jWebGPU library, here are the naming conventions used for classes, enums, and methods:
 
 - **Custom Classes**: Start with `WGPU` (e.g., `WGPU`, `WGPUAndroidWindow`).
-- **WebGPU Classes**: Start with `WebGPU` (e.g., `WebGPUAdapter`, `WebGPUDevice`).
+- **WebGPU Classes**: Start with `WGPU` (e.g., `WGPUAdapter`, `WGPUDevice`).
 - **WebGPU Enums**: Start with `WGPU` (e.g., `WGPUTextureFormat`, `WGPUPowerPreference`).
 - **Methods Requiring Arrays**: Start with `WGPUVector` (e.g., `WGPUVectorTextureFormat`, `WGPUVectorInt`).
 

@@ -29,46 +29,46 @@ import com.github.xpenatan.webgpu.WGPUVectorVertexAttribute;
 import com.github.xpenatan.webgpu.WGPUVectorVertexBufferLayout;
 import com.github.xpenatan.webgpu.WGPUVertexFormat;
 import com.github.xpenatan.webgpu.WGPUVertexStepMode;
-import com.github.xpenatan.webgpu.WebGPUBlendState;
-import com.github.xpenatan.webgpu.WebGPUBuffer;
-import com.github.xpenatan.webgpu.WebGPUBufferDescriptor;
-import com.github.xpenatan.webgpu.WebGPUColorTargetState;
-import com.github.xpenatan.webgpu.WebGPUCommandBuffer;
-import com.github.xpenatan.webgpu.WebGPUCommandBufferDescriptor;
-import com.github.xpenatan.webgpu.WebGPUCommandEncoder;
-import com.github.xpenatan.webgpu.WebGPUCommandEncoderDescriptor;
-import com.github.xpenatan.webgpu.WebGPUFragmentState;
-import com.github.xpenatan.webgpu.WebGPURenderPassColorAttachment;
-import com.github.xpenatan.webgpu.WebGPURenderPassDescriptor;
-import com.github.xpenatan.webgpu.WebGPURenderPassEncoder;
-import com.github.xpenatan.webgpu.WebGPURenderPipeline;
-import com.github.xpenatan.webgpu.WebGPURenderPipelineDescriptor;
-import com.github.xpenatan.webgpu.WebGPUShaderModule;
-import com.github.xpenatan.webgpu.WebGPUShaderModuleDescriptor;
-import com.github.xpenatan.webgpu.WebGPUShaderSourceWGSL;
-import com.github.xpenatan.webgpu.WebGPUSurfaceCapabilities;
-import com.github.xpenatan.webgpu.WebGPUSurfaceConfiguration;
-import com.github.xpenatan.webgpu.WebGPUSurfaceTexture;
-import com.github.xpenatan.webgpu.WebGPUTexture;
-import com.github.xpenatan.webgpu.WebGPUTextureView;
-import com.github.xpenatan.webgpu.WebGPUTextureViewDescriptor;
-import com.github.xpenatan.webgpu.WebGPUVertexAttribute;
-import com.github.xpenatan.webgpu.WebGPUVertexBufferLayout;
+import com.github.xpenatan.webgpu.WGPUBlendState;
+import com.github.xpenatan.webgpu.WGPUBuffer;
+import com.github.xpenatan.webgpu.WGPUBufferDescriptor;
+import com.github.xpenatan.webgpu.WGPUColorTargetState;
+import com.github.xpenatan.webgpu.WGPUCommandBuffer;
+import com.github.xpenatan.webgpu.WGPUCommandBufferDescriptor;
+import com.github.xpenatan.webgpu.WGPUCommandEncoder;
+import com.github.xpenatan.webgpu.WGPUCommandEncoderDescriptor;
+import com.github.xpenatan.webgpu.WGPUFragmentState;
+import com.github.xpenatan.webgpu.WGPURenderPassColorAttachment;
+import com.github.xpenatan.webgpu.WGPURenderPassDescriptor;
+import com.github.xpenatan.webgpu.WGPURenderPassEncoder;
+import com.github.xpenatan.webgpu.WGPURenderPipeline;
+import com.github.xpenatan.webgpu.WGPURenderPipelineDescriptor;
+import com.github.xpenatan.webgpu.WGPUShaderModule;
+import com.github.xpenatan.webgpu.WGPUShaderModuleDescriptor;
+import com.github.xpenatan.webgpu.WGPUShaderSourceWGSL;
+import com.github.xpenatan.webgpu.WGPUSurfaceCapabilities;
+import com.github.xpenatan.webgpu.WGPUSurfaceConfiguration;
+import com.github.xpenatan.webgpu.WGPUSurfaceTexture;
+import com.github.xpenatan.webgpu.WGPUTexture;
+import com.github.xpenatan.webgpu.WGPUTextureView;
+import com.github.xpenatan.webgpu.WGPUTextureViewDescriptor;
+import com.github.xpenatan.webgpu.WGPUVertexAttribute;
+import com.github.xpenatan.webgpu.WGPUVertexBufferLayout;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
 public class AFirstVertexAttribute implements ApplicationListener {
 
-    private WebGPURenderPipeline pipeline;
+    private WGPURenderPipeline pipeline;
     private WGPUTextureFormat surfaceFormat;
     private int vertexCount;
-    private WebGPUBuffer vertexBuffer;
+    private WGPUBuffer vertexBuffer;
 
     @Override
     public void create(WGPUApp wgpu) {
         if(wgpu.surface != null) {
             System.out.println("Surface created");
-            WebGPUSurfaceCapabilities surfaceCapabilities = WebGPUSurfaceCapabilities.obtain();
+            WGPUSurfaceCapabilities surfaceCapabilities = WGPUSurfaceCapabilities.obtain();
             wgpu.surface.getCapabilities(wgpu.adapter, surfaceCapabilities);
             WGPUVectorTextureFormat formats = surfaceCapabilities.getFormats();
             surfaceFormat = formats.get(0);
@@ -91,21 +91,21 @@ public class AFirstVertexAttribute implements ApplicationListener {
     @Override
     public void render(WGPUApp wgpu) {
 
-        WebGPUTextureView targetView = GetNextSurfaceTextureView(wgpu);
+        WGPUTextureView targetView = GetNextSurfaceTextureView(wgpu);
 
         // Create a command encoder for the draw call
-        WebGPUCommandEncoderDescriptor encoderDesc = WebGPUCommandEncoderDescriptor.obtain();
+        WGPUCommandEncoderDescriptor encoderDesc = WGPUCommandEncoderDescriptor.obtain();
         encoderDesc.setNextInChain(null);
         encoderDesc.setLabel("My command encoder");
-        WebGPUCommandEncoder encoder = WebGPUCommandEncoder.obtain();
+        WGPUCommandEncoder encoder = WGPUCommandEncoder.obtain();
         wgpu.device.createCommandEncoder(encoderDesc, encoder);
 
         // Create the render pass that clears the screen with our color
-        WebGPURenderPassDescriptor renderPassDesc = WebGPURenderPassDescriptor.obtain();
+        WGPURenderPassDescriptor renderPassDesc = WGPURenderPassDescriptor.obtain();
         renderPassDesc.setNextInChain(null);
 
         // The attachment part of the render pass descriptor describes the target texture of the pass
-        WebGPURenderPassColorAttachment renderPassColorAttachment = WebGPURenderPassColorAttachment.obtain();
+        WGPURenderPassColorAttachment renderPassColorAttachment = WGPURenderPassColorAttachment.obtain();
         renderPassColorAttachment.setView(targetView);
         renderPassColorAttachment.setResolveTarget(null);
         renderPassColorAttachment.setLoadOp(WGPULoadOp.Clear);
@@ -118,7 +118,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         renderPassDesc.setDepthStencilAttachment(null);
         renderPassDesc.setTimestampWrites(null);
 
-        WebGPURenderPassEncoder renderPass = WebGPURenderPassEncoder.obtain();
+        WGPURenderPassEncoder renderPass = WGPURenderPassEncoder.obtain();
         encoder.beginRenderPass(renderPassDesc, renderPass);
 
         // Select which render pipeline to use
@@ -134,10 +134,10 @@ public class AFirstVertexAttribute implements ApplicationListener {
         renderPass.release();
 
         // Encode and submit the render pass
-        WebGPUCommandBufferDescriptor cmdBufferDescriptor = WebGPUCommandBufferDescriptor.obtain();
+        WGPUCommandBufferDescriptor cmdBufferDescriptor = WGPUCommandBufferDescriptor.obtain();
         cmdBufferDescriptor.setNextInChain(null);
         cmdBufferDescriptor.setLabel("Command buffer");
-        WebGPUCommandBuffer command = WebGPUCommandBuffer.obtain();
+        WGPUCommandBuffer command = WGPUCommandBuffer.obtain();
         encoder.finish(cmdBufferDescriptor, command);
         encoder.release();
 
@@ -154,7 +154,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
     private void initSwapChain(WGPUApp wgpu) {
         // Configure the surface
-        WebGPUSurfaceConfiguration config = WebGPUSurfaceConfiguration.obtain();
+        WGPUSurfaceConfiguration config = WGPUSurfaceConfiguration.obtain();
 
         // Configuration of the textures created for the underlying swap chain
         config.setWidth(wgpu.width);
@@ -170,14 +170,14 @@ public class AFirstVertexAttribute implements ApplicationListener {
         wgpu.surface.configure(config);
     }
 
-    private WebGPUTextureView GetNextSurfaceTextureView(WGPUApp wgpu) {
-        WebGPUTextureView textureViewOut = WebGPUTextureView.obtain();
-        WebGPUSurfaceTexture surfaceTextureOut = WebGPUSurfaceTexture.obtain();
+    private WGPUTextureView GetNextSurfaceTextureView(WGPUApp wgpu) {
+        WGPUTextureView textureViewOut = WGPUTextureView.obtain();
+        WGPUSurfaceTexture surfaceTextureOut = WGPUSurfaceTexture.obtain();
         wgpu.surface.getCurrentTexture(surfaceTextureOut);
-        WebGPUTexture textureOut = WebGPUTexture.obtain();
+        WGPUTexture textureOut = WGPUTexture.obtain();
         surfaceTextureOut.getTexture(textureOut);
         WGPUTextureFormat textureFormat = textureOut.getFormat();
-        WebGPUTextureViewDescriptor viewDescriptor = WebGPUTextureViewDescriptor.obtain();
+        WGPUTextureViewDescriptor viewDescriptor = WGPUTextureViewDescriptor.obtain();
         viewDescriptor.setLabel("Surface texture view");
         viewDescriptor.setFormat(textureFormat);
         viewDescriptor.setDimension(WGPUTextureViewDimension._2D);
@@ -195,27 +195,27 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
     void initializePipeline(WGPUApp wgpu) {
         // Load the shader module
-        WebGPUShaderModuleDescriptor shaderDesc = WebGPUShaderModuleDescriptor.obtain();
+        WGPUShaderModuleDescriptor shaderDesc = WGPUShaderModuleDescriptor.obtain();
 
         // We use the extension mechanism to specify the WGSL part of the shader module descriptor
-        WebGPUShaderSourceWGSL shaderCodeDesc = WebGPUShaderSourceWGSL.obtain();
+        WGPUShaderSourceWGSL shaderCodeDesc = WGPUShaderSourceWGSL.obtain();
         // Set the chained struct's header
         shaderCodeDesc.getChain().setNext(null);
         shaderCodeDesc.getChain().setSType(WGPUSType.ShaderSourceWGSL);
         // Connect the chain
         shaderDesc.setNextInChain(shaderCodeDesc.getChain());
         shaderCodeDesc.setCode(shaderSource);
-        WebGPUShaderModule shaderModule = WebGPUShaderModule.obtain();
+        WGPUShaderModule shaderModule = WGPUShaderModule.obtain();
         wgpu.device.createShaderModule(shaderDesc, shaderModule);
 
         // Create the render pipeline
-        WebGPURenderPipelineDescriptor pipelineDesc = WebGPURenderPipelineDescriptor.obtain();
+        WGPURenderPipelineDescriptor pipelineDesc = WGPURenderPipelineDescriptor.obtain();
         pipelineDesc.setNextInChain(null);
 
         // Configure the vertex pipeline
         // We use one vertex buffer
-        WebGPUVertexBufferLayout vertexBufferLayout = WebGPUVertexBufferLayout.obtain();
-        WebGPUVertexAttribute positionAttrib = WebGPUVertexAttribute.obtain();
+        WGPUVertexBufferLayout vertexBufferLayout = WGPUVertexBufferLayout.obtain();
+        WGPUVertexAttribute positionAttrib = WGPUVertexAttribute.obtain();
         // == For each attribute, describe its layout, i.e., how to interpret the raw data ==
         // Corresponds to @location(...)
         positionAttrib.setShaderLocation(0);
@@ -262,12 +262,12 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
         // We tell that the programmable fragment shader stage is described
         // by the function called 'fs_main' in the shader module.
-        WebGPUFragmentState fragmentState = WebGPUFragmentState.obtain();
+        WGPUFragmentState fragmentState = WGPUFragmentState.obtain();
         fragmentState.setModule(shaderModule);
         fragmentState.setEntryPoint("fs_main");
         fragmentState.setConstants(null);
 
-        WebGPUBlendState blendState = WebGPUBlendState.obtain();
+        WGPUBlendState blendState = WGPUBlendState.obtain();
         blendState.getColor().setSrcFactor(WGPUBlendFactor.SrcAlpha);
         blendState.getColor().setDstFactor(WGPUBlendFactor.OneMinusSrcAlpha);
         blendState.getColor().setOperation(WGPUBlendOperation.Add);
@@ -275,7 +275,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         blendState.getAlpha().setDstFactor(WGPUBlendFactor.One);
         blendState.getAlpha().setOperation(WGPUBlendOperation.Add);
 
-        WebGPUColorTargetState colorTarget = WebGPUColorTargetState.obtain();
+        WGPUColorTargetState colorTarget = WGPUColorTargetState.obtain();
         colorTarget.setFormat(surfaceFormat);
         colorTarget.setBlend(blendState);
         colorTarget.setWriteMask(WGPUColorWriteMask.All); // We could write to only some of the color channels.
@@ -301,7 +301,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
         pipelineDesc.setLayout(null);
 
-        pipeline = new WebGPURenderPipeline();
+        pipeline = new WGPURenderPipeline();
         wgpu.device.createRenderPipeline(pipelineDesc, pipeline);
 
         // We no longer need to access the shader module
@@ -342,12 +342,12 @@ public class AFirstVertexAttribute implements ApplicationListener {
         vertexCount = floatBuffer.getLimit() / 2;
 
         // Create vertex buffer
-        WebGPUBufferDescriptor bufferDesc = WebGPUBufferDescriptor.obtain();
+        WGPUBufferDescriptor bufferDesc = WGPUBufferDescriptor.obtain();
         bufferDesc.setNextInChain(null);
         bufferDesc.setSize(vertexData.getLimit());
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Vertex)); // Vertex usage here!
         bufferDesc.setMappedAtCreation(false);
-        vertexBuffer = new WebGPUBuffer();
+        vertexBuffer = new WGPUBuffer();
         wgpu.device.createBuffer(bufferDesc, vertexBuffer);
 
 //        WGPU.testWriteBuffer(wgpu.queue, vertexBuffer);
