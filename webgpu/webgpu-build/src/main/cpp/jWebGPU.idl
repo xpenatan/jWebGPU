@@ -26,6 +26,10 @@ interface WGPUByteBuffer {
     [BindTo="put"] void put_0(byte value);
     [BindTo="put"] void put_1(long index, byte value);
     byte get();
+    void putInt(long byteIndex, long value);
+    long getInt(long byteIndex);
+    void putFloat(long byteIndex, float value);
+    float getFloat(long byteIndex);
     long remaining();
     long getCapacity();
     void position(long newPosition);

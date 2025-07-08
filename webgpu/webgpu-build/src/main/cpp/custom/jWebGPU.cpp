@@ -315,6 +315,34 @@ void WGPUByteBuffer::put(const uint8_t* values, int index, int size) {
     std::memcpy(&buffer[index], values, size);
 }
 
+void WGPUByteBuffer::putInt(int index, int value) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("ByteBuffer overflow");
+    }
+    putNumeric(index, value);
+}
+
+int WGPUByteBuffer::getInt(int index) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("ByteBuffer index out of bounds");
+    }
+    return getNumeric<int>(index);
+}
+
+void WGPUByteBuffer::putFloat(int index, float value) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("ByteBuffer overflow");
+    }
+    putNumeric(index, value);
+}
+
+float WGPUByteBuffer::getFloat(int index) {
+    if (index < 0 || index >= getLimit()) {
+        throw std::out_of_range("ByteBuffer index out of bounds");
+    }
+    return getNumeric<float>(index);
+}
+
 int WGPUByteBuffer::remaining() const {
     return _limit - _position;
 }

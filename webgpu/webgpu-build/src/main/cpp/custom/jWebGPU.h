@@ -393,6 +393,10 @@ class WGPUByteBuffer {
         void put(char value);
         char get();
         void put(const uint8_t* values, int index, int size);
+        void putInt(int byteIndex, int value);
+        int getInt(int byteIndex);
+        void putFloat(int byteIndex, float value);
+        float getFloat(int byteIndex);
         int remaining() const;
         void position(int newPosition);
         int getPosition();
