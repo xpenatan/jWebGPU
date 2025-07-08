@@ -610,11 +610,6 @@ class WebGPUObjectBase {
             }
         }
 
-        template<typename T, typename = void>
-        struct is_complete : std::false_type {};
-        template<typename T>
-        struct is_complete<T, std::void_t<decltype(sizeof(T))>> : std::true_type {};
-
     protected:
         CType mHandle = InitializeHandle<CType>();
 
@@ -653,19 +648,6 @@ class WebGPUObjectBase {
 
     void Set(Derived& other) {
         mHandle = other.mHandle;
-    }
-
-    void Reset() {
-        if constexpr (!std::is_pointer<CType>::value) {
-            std::memset(&mHandle, 0, sizeof(CType));
-        } else {
-            using PointeeType = std::remove_pointer_t<CType>;
-            if constexpr (is_complete<PointeeType>::value) {
-                if (mHandle != nullptr) {
-                    std::memset(mHandle, 0, sizeof(PointeeType));
-                }
-            }
-        }
     }
 };
 
