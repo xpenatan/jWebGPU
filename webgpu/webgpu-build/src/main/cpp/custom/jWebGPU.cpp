@@ -3294,7 +3294,7 @@ JGPU::WGPUSurface* JGPU::WGPUInstance::CreateLinuxSurface(bool isWayland, void *
 JGPU::WGPUSurface* JGPU::WGPUInstance::CreateMacSurface(void * windowHandle) {
     JGPU::WGPUSurface* surface = NULL;
     #if TARGET_OS_MAC
-        surface = new JGPU::WGPUInstance();
+        surface = new JGPU::WGPUSurface();
         id metal_layer = [CAMetalLayer layer];
 
         NSWindow* ns_window = (NSWindow*)windowHandle;
