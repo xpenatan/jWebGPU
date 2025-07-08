@@ -76,9 +76,10 @@ template class WebGPUObjectBase<WebGPUSurface, WGPUSurface>;
 template class WebGPUObjectBase<WebGPUInstance, WGPUInstance>;
 
 // WGPUVectorFutureWaitInfo
-WGPUVectorFutureWaitInfo WGPUVectorFutureWaitInfo::Obtain() {
-    WGPUVectorFutureWaitInfo obj;
-    return obj;
+WGPUVectorFutureWaitInfo* WGPUVectorFutureWaitInfo::Obtain() {
+    static WGPUVectorFutureWaitInfo obj;
+    obj = WGPUVectorFutureWaitInfo();
+    return &obj;
 }
 
 int WGPUVectorFutureWaitInfo::size() { return vector.size(); }
@@ -89,9 +90,10 @@ const WebGPUFutureWaitInfo* WGPUVectorFutureWaitInfo::data() { return vector.dat
 
 
 // WGPUVectorBindGroupEntry
-WGPUVectorBindGroupEntry WGPUVectorBindGroupEntry::Obtain() {
-    WGPUVectorBindGroupEntry obj;
-    return obj;
+WGPUVectorBindGroupEntry* WGPUVectorBindGroupEntry::Obtain() {
+    static WGPUVectorBindGroupEntry obj;
+    obj = WGPUVectorBindGroupEntry();
+    return &obj;
 }
 
 int WGPUVectorBindGroupEntry::size() { return vector.size(); }
@@ -101,9 +103,10 @@ void WGPUVectorBindGroupEntry::push_back(const WebGPUBindGroupEntry& entry) { ve
 const WebGPUBindGroupEntry* WGPUVectorBindGroupEntry::data() { return vector.data(); }
 
 // WGPUVectorColorTargetState
-WGPUVectorColorTargetState WGPUVectorColorTargetState::Obtain() {
-    WGPUVectorColorTargetState obj;
-    return obj;
+WGPUVectorColorTargetState* WGPUVectorColorTargetState::Obtain() {
+    static WGPUVectorColorTargetState obj;
+    obj = WGPUVectorColorTargetState();
+    return &obj;
 }
 
 int WGPUVectorColorTargetState::size() { return vector.size(); }
@@ -113,9 +116,10 @@ void WGPUVectorColorTargetState::push_back(const WebGPUColorTargetState& attachm
 const WebGPUColorTargetState* WGPUVectorColorTargetState::data() { return vector.data(); }
 
 // WGPUVectorFeatureName
-WGPUVectorFeatureName WGPUVectorFeatureName::Obtain() {
-    WGPUVectorFeatureName obj;
-    return obj;
+WGPUVectorFeatureName* WGPUVectorFeatureName::Obtain() {
+    static WGPUVectorFeatureName obj;
+    obj = WGPUVectorFeatureName();
+    return &obj;
 }
 
 int WGPUVectorFeatureName::size() { return vector.size(); }
@@ -125,9 +129,10 @@ void WGPUVectorFeatureName::push_back(const WGPUFeatureName& attachment) { vecto
 const WGPUFeatureName* WGPUVectorFeatureName::data() { return vector.data(); }
 
 // WGPUVectorConstantEntry
-WGPUVectorConstantEntry WGPUVectorConstantEntry::Obtain() {
-    WGPUVectorConstantEntry obj;
-    return obj;
+WGPUVectorConstantEntry* WGPUVectorConstantEntry::Obtain() {
+    static WGPUVectorConstantEntry obj;
+    obj = WGPUVectorConstantEntry();
+    return &obj;
 }
 
 int WGPUVectorConstantEntry::size() { return vector.size(); }
@@ -137,9 +142,10 @@ void WGPUVectorConstantEntry::push_back(const WebGPUConstantEntry& attachment) {
 const WebGPUConstantEntry* WGPUVectorConstantEntry::data() { return vector.data(); }
 
 // WGPUVectorVertexBufferLayout
-WGPUVectorVertexBufferLayout WGPUVectorVertexBufferLayout::Obtain() {
-    WGPUVectorVertexBufferLayout obj;
-    return obj;
+WGPUVectorVertexBufferLayout* WGPUVectorVertexBufferLayout::Obtain() {
+    static WGPUVectorVertexBufferLayout obj;
+    obj = WGPUVectorVertexBufferLayout();
+    return &obj;
 }
 
 int WGPUVectorVertexBufferLayout::size() { return vector.size(); }
@@ -149,9 +155,10 @@ void WGPUVectorVertexBufferLayout::push_back(const WebGPUVertexBufferLayout& att
 const WebGPUVertexBufferLayout* WGPUVectorVertexBufferLayout::data() { return vector.data(); }
 
 // WGPUVectorTextureFormat
-WGPUVectorTextureFormat WGPUVectorTextureFormat::Obtain() {
-    WGPUVectorTextureFormat obj;
-    return obj;
+WGPUVectorTextureFormat* WGPUVectorTextureFormat::Obtain() {
+    static WGPUVectorTextureFormat obj;
+    obj = WGPUVectorTextureFormat();
+    return &obj;
 }
 
 int WGPUVectorTextureFormat::size() { return vector.size(); }
@@ -163,9 +170,10 @@ void WGPUVectorTextureFormat::push_back(const WGPUTextureFormat& attachment) { v
 const WGPUTextureFormat* WGPUVectorTextureFormat::data() { return vector.data(); }
 
 // WGPUVectorRenderBundle
-WGPUVectorRenderBundle WGPUVectorRenderBundle::Obtain() {
-    WGPUVectorRenderBundle obj;
-    return obj;
+WGPUVectorRenderBundle* WGPUVectorRenderBundle::Obtain() {
+    static WGPUVectorRenderBundle obj;
+    obj = WGPUVectorRenderBundle();
+    return &obj;
 }
 
 int WGPUVectorRenderBundle::size() { return vector.size(); }
@@ -175,9 +183,10 @@ void WGPUVectorRenderBundle::push_back(const WebGPURenderBundle& attachment) { v
 const WebGPURenderBundle* WGPUVectorRenderBundle::data() { return vector.data(); }
 
 // WGPUVectorRenderPassColorAttachment
-WGPUVectorRenderPassColorAttachment WGPUVectorRenderPassColorAttachment::Obtain() {
-    WGPUVectorRenderPassColorAttachment obj;
-    return obj;
+WGPUVectorRenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::Obtain() {
+    static WGPUVectorRenderPassColorAttachment obj;
+    obj = WGPUVectorRenderPassColorAttachment();
+    return &obj;
 }
 
 int WGPUVectorRenderPassColorAttachment::size() { return vector.size(); }
@@ -187,9 +196,10 @@ void WGPUVectorRenderPassColorAttachment::push_back(const WebGPURenderPassColorA
 const WebGPURenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
 
 // WGPUVectorVertexAttribute
-WGPUVectorVertexAttribute WGPUVectorVertexAttribute::Obtain() {
-    WGPUVectorVertexAttribute obj;
-    return obj;
+WGPUVectorVertexAttribute* WGPUVectorVertexAttribute::Obtain() {
+    static WGPUVectorVertexAttribute obj;
+    obj = WGPUVectorVertexAttribute();
+    return &obj;
 }
 
 int WGPUVectorVertexAttribute::size() { return vector.size(); }
@@ -199,9 +209,10 @@ void WGPUVectorVertexAttribute::push_back(const WebGPUVertexAttribute& attribute
 const WebGPUVertexAttribute* WGPUVectorVertexAttribute::data() { return vector.data(); }
 
 // WGPUVectorBindGroupLayout
-WGPUVectorBindGroupLayout WGPUVectorBindGroupLayout::Obtain() {
-    WGPUVectorBindGroupLayout obj;
-    return obj;
+WGPUVectorBindGroupLayout* WGPUVectorBindGroupLayout::Obtain() {
+    static WGPUVectorBindGroupLayout obj;
+    obj = WGPUVectorBindGroupLayout();
+    return &obj;
 }
 
 int WGPUVectorBindGroupLayout::size() { return vector.size(); }
@@ -211,9 +222,10 @@ void WGPUVectorBindGroupLayout::push_back(const WebGPUBindGroupLayout& groupLayo
 const WebGPUBindGroupLayout* WGPUVectorBindGroupLayout::data() { return vector.data(); }
 
 // WGPUVectorBindGroupLayoutEntry
-WGPUVectorBindGroupLayoutEntry WGPUVectorBindGroupLayoutEntry::Obtain() {
-    WGPUVectorBindGroupLayoutEntry obj;
-    return obj;
+WGPUVectorBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::Obtain() {
+    static WGPUVectorBindGroupLayoutEntry obj;
+    obj = WGPUVectorBindGroupLayoutEntry();
+    return &obj;
 }
 
 int WGPUVectorBindGroupLayoutEntry::size() { return vector.size(); }
@@ -223,9 +235,10 @@ void WGPUVectorBindGroupLayoutEntry::push_back(const WebGPUBindGroupLayoutEntry&
 const WebGPUBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
 
 // WGPUVectorInt
-WGPUVectorInt WGPUVectorInt::Obtain() {
-    WGPUVectorInt obj;
-    return obj;
+WGPUVectorInt* WGPUVectorInt::Obtain() {
+    static WGPUVectorInt obj;
+    obj = WGPUVectorInt();
+    return &obj;
 }
 
 int WGPUVectorInt::size() { return vector.size(); }
@@ -264,9 +277,10 @@ uint64_t WGPUByteBuffer::swapBytes(uint64_t value) {
            ((value << 56) & 0xFF00000000000000ULL);
 }
 
-WGPUByteBuffer WGPUByteBuffer::Obtain(int capacity) {
-    WGPUByteBuffer obj(capacity);
-    return obj;
+WGPUByteBuffer* WGPUByteBuffer::Obtain(int capacity) {
+    static WGPUByteBuffer obj(capacity);
+    obj = WGPUByteBuffer(capacity);
+    return &obj;
 }
 
 int WGPUByteBuffer::getCapacity() { return buffer.size(); }
@@ -916,9 +930,10 @@ void WebGPUChainedStruct::SetSType(WGPUSType type) {
 }
 
 // WebGPULimits
-WebGPULimits WebGPULimits::Obtain() {
-    WebGPULimits obj;
-    return obj;
+WebGPULimits* WebGPULimits::Obtain() {
+    static WebGPULimits obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPULimits::SetMaxTextureDimension1D(int value) {
@@ -1170,9 +1185,10 @@ int WebGPULimits::GetMaxComputeWorkgroupsPerDimension() {
 }
 
 // WebGPUBufferBindingLayout
-WebGPUBufferBindingLayout WebGPUBufferBindingLayout::Obtain() {
-    WebGPUBufferBindingLayout obj;
-    return obj;
+WebGPUBufferBindingLayout* WebGPUBufferBindingLayout::Obtain() {
+    static WebGPUBufferBindingLayout obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUBufferBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1192,9 +1208,10 @@ void WebGPUBufferBindingLayout::SetMinBindingSize(int minBindingSize) {
 }
 
 // WebGPUSamplerBindingLayout
-WebGPUSamplerBindingLayout WebGPUSamplerBindingLayout::Obtain() {
-    WebGPUSamplerBindingLayout obj;
-    return obj;
+WebGPUSamplerBindingLayout* WebGPUSamplerBindingLayout::Obtain() {
+    static WebGPUSamplerBindingLayout obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUSamplerBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1206,9 +1223,10 @@ void WebGPUSamplerBindingLayout::SetType(WGPUSamplerBindingType type) {
 }
 
 // WebGPUTextureBindingLayout
-WebGPUTextureBindingLayout WebGPUTextureBindingLayout::Obtain() {
-    WebGPUTextureBindingLayout obj;
-    return obj;
+WebGPUTextureBindingLayout* WebGPUTextureBindingLayout::Obtain() {
+    static WebGPUTextureBindingLayout obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTextureBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1228,9 +1246,10 @@ void WebGPUTextureBindingLayout::SetMultisampled(int multisampled) {
 }
 
 // WebGPUStorageTextureBindingLayout
-WebGPUStorageTextureBindingLayout WebGPUStorageTextureBindingLayout::Obtain() {
-    WebGPUStorageTextureBindingLayout obj;
-    return obj;
+WebGPUStorageTextureBindingLayout* WebGPUStorageTextureBindingLayout::Obtain() {
+    static WebGPUStorageTextureBindingLayout obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUStorageTextureBindingLayout::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1250,9 +1269,10 @@ void WebGPUStorageTextureBindingLayout::SetViewDimension(WGPUTextureViewDimensio
 }
 
 // WebGPUBindGroupLayoutEntry
-WebGPUBindGroupLayoutEntry WebGPUBindGroupLayoutEntry::Obtain() {
-    WebGPUBindGroupLayoutEntry obj;
-    return obj;
+WebGPUBindGroupLayoutEntry* WebGPUBindGroupLayoutEntry::Obtain() {
+    static WebGPUBindGroupLayoutEntry obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUBindGroupLayoutEntry::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1304,9 +1324,10 @@ WebGPUTextureBindingLayout WebGPUBindGroupLayoutEntry::GetTexture() {
 }
 
 // WebGPURequestAdapterOptions
-WebGPURequestAdapterOptions WebGPURequestAdapterOptions::Obtain() {
-    WebGPURequestAdapterOptions obj;
-    return obj;
+WebGPURequestAdapterOptions* WebGPURequestAdapterOptions::Obtain() {
+    static WebGPURequestAdapterOptions obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURequestAdapterOptions::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1330,9 +1351,10 @@ void WebGPURequestAdapterOptions::SetCompatibleSurface(WebGPUSurface* compatible
 }
 
 // WebGPUAdapterInfo
-WebGPUAdapterInfo WebGPUAdapterInfo::Obtain() {
-    WebGPUAdapterInfo obj;
-    return obj;
+WebGPUAdapterInfo* WebGPUAdapterInfo::Obtain() {
+    static WebGPUAdapterInfo obj;
+    obj.Reset();
+    return &obj;
 }
 
 std::string WebGPUAdapterInfo::GetVendor() {
@@ -1372,9 +1394,10 @@ WGPUAdapterType WebGPUAdapterInfo::GetAdapterType() {
 }
 
 // WebGPUFutureWaitInfo
-WebGPUFutureWaitInfo WebGPUFutureWaitInfo::Obtain() {
-    WebGPUFutureWaitInfo obj;
-    return obj;
+WebGPUFutureWaitInfo* WebGPUFutureWaitInfo::Obtain() {
+    static WebGPUFutureWaitInfo obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUFutureWaitInfo::SetFuture(WebGPUFuture* future) {
@@ -1382,9 +1405,10 @@ void WebGPUFutureWaitInfo::SetFuture(WebGPUFuture* future) {
 }
 
 // WebGPUVertexAttribute
-WebGPUVertexAttribute WebGPUVertexAttribute::Obtain() {
-    WebGPUVertexAttribute obj;
-    return obj;
+WebGPUVertexAttribute* WebGPUVertexAttribute::Obtain() {
+    static WebGPUVertexAttribute obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUVertexAttribute::SetFormat(WGPUVertexFormat format) {
@@ -1400,9 +1424,10 @@ void WebGPUVertexAttribute::SetShaderLocation(int shaderLocation) {
 }
 
 // WebGPUVertexBufferLayout
-WebGPUVertexBufferLayout WebGPUVertexBufferLayout::Obtain() {
-    WebGPUVertexBufferLayout obj;
-    return obj;
+WebGPUVertexBufferLayout* WebGPUVertexBufferLayout::Obtain() {
+    static WebGPUVertexBufferLayout obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUVertexBufferLayout::SetAttributes(WGPUVectorVertexAttribute* values) {
@@ -1461,9 +1486,10 @@ void WebGPUVertexState::SetBuffers(WGPUVectorVertexBufferLayout* values) {
 }
 
 // WebGPUShaderSourceWGSL
-WebGPUShaderSourceWGSL WebGPUShaderSourceWGSL::Obtain() {
-    WebGPUShaderSourceWGSL obj;
-    return obj;
+WebGPUShaderSourceWGSL* WebGPUShaderSourceWGSL::Obtain() {
+    static WebGPUShaderSourceWGSL obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUShaderSourceWGSL::SetCode(const char* value) {
@@ -1504,9 +1530,10 @@ WGPUBlendFactor WebGPUBlendComponent::GetDstFactor() {
 }
 
 // WebGPUBlendState
-WebGPUBlendState WebGPUBlendState::Obtain() {
-    WebGPUBlendState obj;
-    return obj;
+WebGPUBlendState* WebGPUBlendState::Obtain() {
+    static WebGPUBlendState obj;
+    obj.Reset();
+    return &obj;
 }
 
 WebGPUBlendComponent WebGPUBlendState::GetColor() {
@@ -1522,9 +1549,10 @@ WebGPUBlendComponent WebGPUBlendState::GetAlpha() {
 }
 
 // WebGPUColorTargetState
-WebGPUColorTargetState WebGPUColorTargetState::Obtain() {
-    WebGPUColorTargetState obj;
-    return obj;
+WebGPUColorTargetState* WebGPUColorTargetState::Obtain() {
+    static WebGPUColorTargetState obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUColorTargetState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1544,9 +1572,10 @@ void WebGPUColorTargetState::SetWriteMask(WGPUColorWriteMask writeMask) {
 }
 
 // WebGPUFragmentState
-WebGPUFragmentState WebGPUFragmentState::Obtain() {
-    WebGPUFragmentState obj;
-    return obj;
+WebGPUFragmentState* WebGPUFragmentState::Obtain() {
+    static WebGPUFragmentState obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUFragmentState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1623,9 +1652,10 @@ void WebGPUStencilFaceState::SetPassOp(WGPUStencilOperation passOp) {
 }
 
 // WebGPUDepthStencilState
-WebGPUDepthStencilState WebGPUDepthStencilState::Obtain() {
-    WebGPUDepthStencilState obj;
-    return obj;
+WebGPUDepthStencilState* WebGPUDepthStencilState::Obtain() {
+    static WebGPUDepthStencilState obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUDepthStencilState::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1694,9 +1724,10 @@ void WebGPUMultisampleState::SetAlphaToCoverageEnabled(bool alphaToCoverageEnabl
 }
 
 // WebGPUColor
-WebGPUColor WebGPUColor::Obtain() {
-    WebGPUColor obj;
-    return obj;
+WebGPUColor* WebGPUColor::Obtain() {
+    static WebGPUColor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUColor::SetColor(float r, float g, float b, float a) {
@@ -1739,9 +1770,10 @@ void WebGPUColor::SetA(float value) {
 }
 
 // WebGPUSupportedFeatures
-WebGPUSupportedFeatures WebGPUSupportedFeatures::Obtain() {
-    WebGPUSupportedFeatures obj;
-    return obj;
+WebGPUSupportedFeatures* WebGPUSupportedFeatures::Obtain() {
+    static WebGPUSupportedFeatures obj;
+    obj.Reset();
+    return &obj;
 }
 
 int WebGPUSupportedFeatures::GetFeatureCount() {
@@ -1753,9 +1785,10 @@ WGPUFeatureName WebGPUSupportedFeatures::GetFeatureAt(long index) {
 }
 
 // WebGPURenderPassDepthStencilAttachment
-WebGPURenderPassDepthStencilAttachment WebGPURenderPassDepthStencilAttachment::Obtain() {
-    WebGPURenderPassDepthStencilAttachment obj;
-    return obj;
+WebGPURenderPassDepthStencilAttachment* WebGPURenderPassDepthStencilAttachment::Obtain() {
+    static WebGPURenderPassDepthStencilAttachment obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPassDepthStencilAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1800,9 +1833,10 @@ void WebGPURenderPassDepthStencilAttachment::SetStencilReadOnly(bool stencilRead
 }
 
 // WebGPURenderPassTimestampWrites
-WebGPURenderPassTimestampWrites WebGPURenderPassTimestampWrites::Obtain() {
-    WebGPURenderPassTimestampWrites obj;
-    return obj;
+WebGPURenderPassTimestampWrites* WebGPURenderPassTimestampWrites::Obtain() {
+    static WebGPURenderPassTimestampWrites obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPassTimestampWrites::SetQuerySet(WebGPUQuerySet* value) {
@@ -1818,9 +1852,10 @@ void WebGPURenderPassTimestampWrites::SetEndOfPassWriteIndex(int value) {
 }
 
 // WebGPUComputePassTimestampWrites
-WebGPUComputePassTimestampWrites WebGPUComputePassTimestampWrites::Obtain() {
-    WebGPUComputePassTimestampWrites obj;
-    return obj;
+WebGPUComputePassTimestampWrites* WebGPUComputePassTimestampWrites::Obtain() {
+    static WebGPUComputePassTimestampWrites obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUComputePassTimestampWrites::SetQuerySet(WebGPUQuerySet* value) {
@@ -1836,9 +1871,10 @@ void WebGPUComputePassTimestampWrites::SetEndOfPassWriteIndex(int value) {
 }
 
 // WebGPUOrigin3D
-WebGPUOrigin3D WebGPUOrigin3D::Obtain() {
-    WebGPUOrigin3D obj;
-    return obj;
+WebGPUOrigin3D* WebGPUOrigin3D::Obtain() {
+    static WebGPUOrigin3D obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUOrigin3D::Set(int x, int y, int z) {
@@ -1860,9 +1896,10 @@ void WebGPUOrigin3D::SetZ(int value) {
 }
 
 // WebGPUTexelCopyTextureInfo
-WebGPUTexelCopyTextureInfo WebGPUTexelCopyTextureInfo::Obtain() {
-    WebGPUTexelCopyTextureInfo obj;
-    return obj;
+WebGPUTexelCopyTextureInfo* WebGPUTexelCopyTextureInfo::Obtain() {
+    static WebGPUTexelCopyTextureInfo obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTexelCopyTextureInfo::SetTexture(WebGPUTexture* texture) {
@@ -1883,9 +1920,10 @@ void WebGPUTexelCopyTextureInfo::SetAspect(WGPUTextureAspect aspect) {
 }
 
 // WebGPUExtent3D
-WebGPUExtent3D WebGPUExtent3D::Obtain() {
-    WebGPUExtent3D obj;
-    return obj;
+WebGPUExtent3D* WebGPUExtent3D::Obtain() {
+    static WebGPUExtent3D obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUExtent3D::SetWidth(int width) {
@@ -1901,9 +1939,10 @@ void WebGPUExtent3D::SetDepthOrArrayLayers(int depthOrArrayLayers) {
 }
 
 // WebGPUTexelCopyBufferLayout
-WebGPUTexelCopyBufferLayout WebGPUTexelCopyBufferLayout::Obtain() {
-    WebGPUTexelCopyBufferLayout obj;
-    return obj;
+WebGPUTexelCopyBufferLayout* WebGPUTexelCopyBufferLayout::Obtain() {
+    static WebGPUTexelCopyBufferLayout obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTexelCopyBufferLayout::SetOffset(int offset) {
@@ -1919,9 +1958,10 @@ void WebGPUTexelCopyBufferLayout::SetRowsPerImage(int rowsPerImage) {
 }
 
 // WebGPUTexelCopyBufferInfo
-WebGPUTexelCopyBufferInfo WebGPUTexelCopyBufferInfo::Obtain() {
-    WebGPUTexelCopyBufferInfo obj;
-    return obj;
+WebGPUTexelCopyBufferInfo* WebGPUTexelCopyBufferInfo::Obtain() {
+    static WebGPUTexelCopyBufferInfo obj;
+    obj.Reset();
+    return &obj;
 }
 
 WebGPUTexelCopyBufferLayout WebGPUTexelCopyBufferInfo::GetLayout() {
@@ -1940,9 +1980,10 @@ void WebGPUTexelCopyBufferInfo::SetBuffer(WebGPUBuffer* buffer) {
 }
 
 // WebGPUSurfaceConfiguration
-WebGPUSurfaceConfiguration WebGPUSurfaceConfiguration::Obtain() {
-    WebGPUSurfaceConfiguration temp;
-    return temp;
+WebGPUSurfaceConfiguration* WebGPUSurfaceConfiguration::Obtain() {
+    static WebGPUSurfaceConfiguration obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUSurfaceConfiguration::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -1993,9 +2034,10 @@ void WebGPUSurfaceConfiguration::SetAlphaMode(WGPUCompositeAlphaMode alphaMode) 
 }
 
 // WebGPUSurfaceCapabilities
-WebGPUSurfaceCapabilities WebGPUSurfaceCapabilities::Obtain() {
-    WebGPUSurfaceCapabilities obj;
-    return obj;
+WebGPUSurfaceCapabilities* WebGPUSurfaceCapabilities::Obtain() {
+    static WebGPUSurfaceCapabilities obj;
+    obj.Reset();
+    return &obj;
 }
 
 WGPUVectorTextureFormat WebGPUSurfaceCapabilities::GetFormats() {
@@ -2008,9 +2050,10 @@ WebGPURenderPassColorAttachment::WebGPURenderPassColorAttachment() {
     SetDepthSlice(WGPU_DEPTH_SLICE_UNDEFINED); // Required for emscripten
 }
 
-WebGPURenderPassColorAttachment WebGPURenderPassColorAttachment::Obtain() {
-    WebGPURenderPassColorAttachment renderPassColorAttachment;
-    return renderPassColorAttachment;
+WebGPURenderPassColorAttachment* WebGPURenderPassColorAttachment::Obtain() {
+    static WebGPURenderPassColorAttachment obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPassColorAttachment::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2043,9 +2086,10 @@ WebGPUColor WebGPURenderPassColorAttachment::GetClearValue() {
 }
 
 // WebGPUSurfaceTexture
-WebGPUSurfaceTexture WebGPUSurfaceTexture::Obtain() {
-    WebGPUSurfaceTexture obj;
-    return obj;
+WebGPUSurfaceTexture* WebGPUSurfaceTexture::Obtain() {
+    static WebGPUSurfaceTexture obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUSurfaceTexture::GetTexture(WebGPUTexture* tex) {
@@ -2102,9 +2146,10 @@ STBImage* WGPU::loadImage(WGPUByteBuffer* buffer, int desiredChannels) {
 }
 
 // WebGPUBindGroupEntry
-WebGPUBindGroupEntry WebGPUBindGroupEntry::Obtain() {
-    WebGPUBindGroupEntry obj;
-    return obj;
+WebGPUBindGroupEntry* WebGPUBindGroupEntry::Obtain() {
+    static WebGPUBindGroupEntry obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUBindGroupEntry::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2145,9 +2190,10 @@ void WebGPUBindGroupEntry::SetTextureView(WebGPUTextureView* textureView) {
 //}
 
 // WebGPURenderPassMaxDrawCount
-WebGPURenderPassMaxDrawCount WebGPURenderPassMaxDrawCount::Obtain() {
-    WebGPURenderPassMaxDrawCount obj;
-    return obj;
+WebGPURenderPassMaxDrawCount* WebGPURenderPassMaxDrawCount::Obtain() {
+    static WebGPURenderPassMaxDrawCount obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPassMaxDrawCount::SetMaxDrawCount(int maxDrawCount) {
@@ -2159,9 +2205,10 @@ int WebGPURenderPassMaxDrawCount::GetMaxDrawCount() {
 }
 
 // WebGPUShaderSourceSPIRV
-WebGPUShaderSourceSPIRV WebGPUShaderSourceSPIRV::Obtain() {
-    WebGPUShaderSourceSPIRV obj;
-    return obj;
+WebGPUShaderSourceSPIRV* WebGPUShaderSourceSPIRV::Obtain() {
+    static WebGPUShaderSourceSPIRV obj;
+    obj.Reset();
+    return &obj;
 }
 
 //void WebGPUShaderSourceSPIRV::SetCode(const uint32_t* code, size_t codeSize) {
@@ -2177,9 +2224,10 @@ WebGPUShaderSourceSPIRV WebGPUShaderSourceSPIRV::Obtain() {
 //}
 
 // WebGPUShaderSourceSPIRV
-WebGPUSupportedWGSLLanguageFeatures WebGPUSupportedWGSLLanguageFeatures::Obtain() {
-    WebGPUSupportedWGSLLanguageFeatures obj;
-    return obj;
+WebGPUSupportedWGSLLanguageFeatures* WebGPUSupportedWGSLLanguageFeatures::Obtain() {
+    static WebGPUSupportedWGSLLanguageFeatures obj;
+    obj.Reset();
+    return &obj;
 }
 
 int WebGPUSupportedWGSLLanguageFeatures::GetFeatureCount() {
@@ -2191,9 +2239,10 @@ WGPUWGSLLanguageFeatureName WebGPUSupportedWGSLLanguageFeatures::GetFeatureAt(in
 }
 
 // WebGPUCompilationMessage
-WebGPUCompilationMessage WebGPUCompilationMessage::Obtain() {
-    WebGPUCompilationMessage obj;
-    return obj;
+WebGPUCompilationMessage* WebGPUCompilationMessage::Obtain() {
+    static WebGPUCompilationMessage obj;
+    obj.Reset();
+    return &obj;
 }
 
 std::string WebGPUCompilationMessage::GetMessage() {
@@ -2232,15 +2281,16 @@ WebGPUCompilationMessage WebGPUCompilationInfo::GetMessage(int index) {
         temp.Set(Get().messages[index]);
         return temp;
     }
-    return WebGPUCompilationMessage::Obtain();
+    return WebGPUCompilationMessage();
 }
 
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 // WebGPUInstanceDescriptor
-WebGPUInstanceDescriptor WebGPUInstanceDescriptor::Obtain() {
-    WebGPUInstanceDescriptor obj;
-    return obj;
+WebGPUInstanceDescriptor* WebGPUInstanceDescriptor::Obtain() {
+    static WebGPUInstanceDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUInstanceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2259,9 +2309,10 @@ void WebGPUInstanceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct
 //}
 
 // WebGPURenderBundleDescriptor
-WebGPURenderBundleDescriptor WebGPURenderBundleDescriptor::Obtain() {
-    WebGPURenderBundleDescriptor obj;
-    return obj;
+WebGPURenderBundleDescriptor* WebGPURenderBundleDescriptor::Obtain() {
+    static WebGPURenderBundleDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderBundleDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2274,9 +2325,10 @@ void WebGPURenderBundleDescriptor::SetLabel(const char* value) {
 }
 
 // WebGPURenderBundleEncoderDescriptor
-WebGPURenderBundleEncoderDescriptor WebGPURenderBundleEncoderDescriptor::Obtain() {
-    WebGPURenderBundleEncoderDescriptor obj;
-    return obj;
+WebGPURenderBundleEncoderDescriptor* WebGPURenderBundleEncoderDescriptor::Obtain() {
+    static WebGPURenderBundleEncoderDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderBundleEncoderDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2316,9 +2368,10 @@ void WebGPURenderBundleEncoderDescriptor::SetStencilReadOnly(int stencilReadOnly
 }
 
 // WebGPUQuerySetDescriptor
-WebGPUQuerySetDescriptor WebGPUQuerySetDescriptor::Obtain() {
-    WebGPUQuerySetDescriptor obj;
-    return obj;
+WebGPUQuerySetDescriptor* WebGPUQuerySetDescriptor::Obtain() {
+    static WebGPUQuerySetDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUQuerySetDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2339,9 +2392,10 @@ void WebGPUQuerySetDescriptor::SetCount(int count) {
 }
 
 // WebGPUSamplerDescriptor
-WebGPUSamplerDescriptor WebGPUSamplerDescriptor::Obtain() {
-    WebGPUSamplerDescriptor obj;
-    return obj;
+WebGPUSamplerDescriptor* WebGPUSamplerDescriptor::Obtain() {
+    static WebGPUSamplerDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUSamplerDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2394,9 +2448,10 @@ void WebGPUSamplerDescriptor::SetMaxAnisotropy(int maxAnisotropy) {
 }
 
 // WebGPUTextureViewDescriptor
-WebGPUTextureViewDescriptor WebGPUTextureViewDescriptor::Obtain() {
-    WebGPUTextureViewDescriptor obj;
-    return obj;
+WebGPUTextureViewDescriptor* WebGPUTextureViewDescriptor::Obtain() {
+    static WebGPUTextureViewDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTextureViewDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2441,9 +2496,10 @@ void WebGPUTextureViewDescriptor::SetUsage(WGPUTextureUsage usage) {
 }
 
 // WebGPUComputePassDescriptor
-WebGPUComputePassDescriptor WebGPUComputePassDescriptor::Obtain() {
-    WebGPUComputePassDescriptor obj;
-    return obj;
+WebGPUComputePassDescriptor* WebGPUComputePassDescriptor::Obtain() {
+    static WebGPUComputePassDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUComputePassDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2460,9 +2516,10 @@ void WebGPUComputePassDescriptor::SetTimestampWrites(WebGPUComputePassTimestampW
 }
 
 // WebGPUTextureDescriptor
-WebGPUTextureDescriptor WebGPUTextureDescriptor::Obtain() {
-    WebGPUTextureDescriptor obj;
-    return obj;
+WebGPUTextureDescriptor* WebGPUTextureDescriptor::Obtain() {
+    static WebGPUTextureDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTextureDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2511,9 +2568,10 @@ void WebGPUTextureDescriptor::SetViewFormats(WGPUVectorTextureFormat* viewFormat
 }
 
 // WebGPURenderPassDescriptor
-WebGPURenderPassDescriptor WebGPURenderPassDescriptor::Obtain() {
-    WebGPURenderPassDescriptor obj;
-    return obj;
+WebGPURenderPassDescriptor* WebGPURenderPassDescriptor::Obtain() {
+    static WebGPURenderPassDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPassDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2549,9 +2607,10 @@ void WebGPURenderPassDescriptor::SetTimestampWrites(WebGPURenderPassTimestampWri
 }
 
 // WebGPUCommandEncoderDescriptor
-WebGPUCommandEncoderDescriptor WebGPUCommandEncoderDescriptor::Obtain() {
-    WebGPUCommandEncoderDescriptor obj;
-    return obj;
+WebGPUCommandEncoderDescriptor* WebGPUCommandEncoderDescriptor::Obtain() {
+    static WebGPUCommandEncoderDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUCommandEncoderDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2564,9 +2623,10 @@ void WebGPUCommandEncoderDescriptor::SetLabel(const char* value) {
 }
 
 // WebGPUCommandBufferDescriptor
-WebGPUCommandBufferDescriptor WebGPUCommandBufferDescriptor::Obtain() {
-    WebGPUCommandBufferDescriptor obj;
-    return obj;
+WebGPUCommandBufferDescriptor* WebGPUCommandBufferDescriptor::Obtain() {
+    static WebGPUCommandBufferDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUCommandBufferDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2579,9 +2639,10 @@ void WebGPUCommandBufferDescriptor::SetLabel(const char* value) {
 }
 
 // WebGPURenderPipelineDescriptor
-WebGPURenderPipelineDescriptor WebGPURenderPipelineDescriptor::Obtain() {
-    WebGPURenderPipelineDescriptor obj;
-    return obj;
+WebGPURenderPipelineDescriptor* WebGPURenderPipelineDescriptor::Obtain() {
+    static WebGPURenderPipelineDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPipelineDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2624,9 +2685,10 @@ void WebGPURenderPipelineDescriptor::SetLayout(WebGPUPipelineLayout* pipelineLay
 }
 
 // WebGPUShaderModuleDescriptor
-WebGPUShaderModuleDescriptor WebGPUShaderModuleDescriptor::Obtain() {
-    WebGPUShaderModuleDescriptor obj;
-    return obj;
+WebGPUShaderModuleDescriptor* WebGPUShaderModuleDescriptor::Obtain() {
+    static WebGPUShaderModuleDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUShaderModuleDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2639,9 +2701,10 @@ void WebGPUShaderModuleDescriptor::SetLabel(const char* value) {
 }
 
 // WebGPUBindGroupLayoutDescriptor
-WebGPUBindGroupLayoutDescriptor WebGPUBindGroupLayoutDescriptor::Obtain() {
-    WebGPUBindGroupLayoutDescriptor obj;
-    return obj;
+WebGPUBindGroupLayoutDescriptor* WebGPUBindGroupLayoutDescriptor::Obtain() {
+    static WebGPUBindGroupLayoutDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUBindGroupLayoutDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2665,22 +2728,21 @@ void WebGPUBindGroupLayoutDescriptor::SetEntries(WGPUVectorBindGroupLayoutEntry*
 }
 
 // WebGPUProgrammableStageDescriptor
-WebGPUProgrammableStageDescriptor WebGPUProgrammableStageDescriptor::Obtain() {
-    WebGPUProgrammableStageDescriptor obj;
-    return obj;
+WebGPUProgrammableStageDescriptor* WebGPUProgrammableStageDescriptor::Obtain() {
+    static WebGPUProgrammableStageDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUProgrammableStageDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-
-
-
 // WebGPUComputePipelineDescriptor
-WebGPUComputePipelineDescriptor WebGPUComputePipelineDescriptor::Obtain() {
-    WebGPUComputePipelineDescriptor obj;
-    return obj;
+WebGPUComputePipelineDescriptor* WebGPUComputePipelineDescriptor::Obtain() {
+    static WebGPUComputePipelineDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUComputePipelineDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2699,9 +2761,10 @@ WebGPUProgrammableStageDescriptor WebGPUComputePipelineDescriptor::GetCompute() 
 }
 
 // WebGPUQueueDescriptor
-WebGPUQueueDescriptor WebGPUQueueDescriptor::Obtain() {
-    WebGPUQueueDescriptor obj;
-    return obj;
+WebGPUQueueDescriptor* WebGPUQueueDescriptor::Obtain() {
+    static WebGPUQueueDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUQueueDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2714,9 +2777,10 @@ void WebGPUQueueDescriptor::SetLabel(const char* value) {
 }
 
 // WebGPUBufferDescriptor
-WebGPUBufferDescriptor WebGPUBufferDescriptor::Obtain() {
-    WebGPUBufferDescriptor obj;
-    return obj;
+WebGPUBufferDescriptor* WebGPUBufferDescriptor::Obtain() {
+    static WebGPUBufferDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUBufferDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2741,9 +2805,10 @@ void WebGPUBufferDescriptor::SetMappedAtCreation(bool mappedAtCreation) {
 }
 
 // WebGPUBindGroupDescriptor
-WebGPUBindGroupDescriptor WebGPUBindGroupDescriptor::Obtain() {
-    WebGPUBindGroupDescriptor obj;
-    return obj;
+WebGPUBindGroupDescriptor* WebGPUBindGroupDescriptor::Obtain() {
+    static WebGPUBindGroupDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUBindGroupDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2771,9 +2836,10 @@ void WebGPUBindGroupDescriptor::SetEntries(WGPUVectorBindGroupEntry* entries) {
 }
 
 // WebGPUPipelineLayoutDescriptor
-WebGPUPipelineLayoutDescriptor WebGPUPipelineLayoutDescriptor::Obtain() {
-    WebGPUPipelineLayoutDescriptor obj;
-    return obj;
+WebGPUPipelineLayoutDescriptor* WebGPUPipelineLayoutDescriptor::Obtain() {
+    static WebGPUPipelineLayoutDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUPipelineLayoutDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2797,9 +2863,10 @@ void WebGPUPipelineLayoutDescriptor::SetBindGroupLayouts(WGPUVectorBindGroupLayo
 }
 
 // WebGPUDeviceDescriptor
-WebGPUDeviceDescriptor WebGPUDeviceDescriptor::Obtain() {
-    WebGPUDeviceDescriptor obj;
-    return obj;
+WebGPUDeviceDescriptor* WebGPUDeviceDescriptor::Obtain() {
+    static WebGPUDeviceDescriptor obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUDeviceDescriptor::SetNextInChain(WebGPUChainedStruct* chainedStruct) {
@@ -2849,9 +2916,10 @@ void WebGPUSampler::SetLabel(const char* label) {
 }
 
 // WebGPURenderBundleEncoder
-WebGPURenderBundleEncoder WebGPURenderBundleEncoder::Obtain() {
-    WebGPURenderBundleEncoder obj;
-    return obj;
+WebGPURenderBundleEncoder* WebGPURenderBundleEncoder::Obtain() {
+    static WebGPURenderBundleEncoder obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderBundleEncoder::AddRefInternal() {
@@ -2924,9 +2992,10 @@ void WebGPURenderBundleEncoder::Finish(WebGPURenderBundleDescriptor* descriptor,
 }
 
 // WebGPUTextureView
-WebGPUTextureView WebGPUTextureView::Obtain() {
-    WebGPUTextureView obj;
-    return obj;
+WebGPUTextureView* WebGPUTextureView::Obtain() {
+    static WebGPUTextureView obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTextureView::AddRefInternal() {
@@ -2938,9 +3007,10 @@ void WebGPUTextureView::ReleaseInternal() {
 }
 
 // WebGPUTexture
-WebGPUTexture WebGPUTexture::Obtain() {
-    WebGPUTexture obj;
-    return obj;
+WebGPUTexture* WebGPUTexture::Obtain() {
+    static WebGPUTexture obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUTexture::AddRefInternal() {
@@ -2965,9 +3035,10 @@ void WebGPUTexture::Destroy() {
 }
 
 // WebGPUShaderModule
-WebGPUShaderModule WebGPUShaderModule::Obtain() {
-    WebGPUShaderModule obj;
-    return obj;
+WebGPUShaderModule* WebGPUShaderModule::Obtain() {
+    static WebGPUShaderModule obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUShaderModule::AddRefInternal() {
@@ -2979,9 +3050,10 @@ void WebGPUShaderModule::ReleaseInternal() {
 }
 
 // WebGPURenderPipeline
-WebGPURenderPipeline WebGPURenderPipeline::Obtain() {
-    WebGPURenderPipeline obj;
-    return obj;
+WebGPURenderPipeline* WebGPURenderPipeline::Obtain() {
+    static WebGPURenderPipeline obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPipeline::AddRefInternal() {
@@ -2993,9 +3065,10 @@ void WebGPURenderPipeline::ReleaseInternal() {
 }
 
 // WebGPURenderPassEncoder
-WebGPURenderPassEncoder WebGPURenderPassEncoder::Obtain() {
-    WebGPURenderPassEncoder obj;
-    return obj;
+WebGPURenderPassEncoder* WebGPURenderPassEncoder::Obtain() {
+    static WebGPURenderPassEncoder obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPURenderPassEncoder::AddRefInternal() {
@@ -3365,9 +3438,10 @@ WebGPUQueue WebGPUDevice::GetQueue() {
 }
 
 // WebGPUComputePassEncoder
-WebGPUComputePassEncoder WebGPUComputePassEncoder::Obtain() {
-    WebGPUComputePassEncoder obj;
-    return obj;
+WebGPUComputePassEncoder* WebGPUComputePassEncoder::Obtain() {
+    static WebGPUComputePassEncoder obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUComputePassEncoder::AddRefInternal() {
@@ -3424,9 +3498,10 @@ void WebGPUComputePassEncoder::SetPipeline(WebGPUComputePipeline* pipeline) {
 }
 
 // WebGPUCommandBuffer
-WebGPUCommandBuffer WebGPUCommandBuffer::Obtain() {
-    WebGPUCommandBuffer obj;
-    return obj;
+WebGPUCommandBuffer* WebGPUCommandBuffer::Obtain() {
+    static WebGPUCommandBuffer obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUCommandBuffer::AddRefInternal() {
@@ -3438,9 +3513,10 @@ void WebGPUCommandBuffer::ReleaseInternal() {
 }
 
 // WebGPUCommandEncoder
-WebGPUCommandEncoder WebGPUCommandEncoder::Obtain() {
-    WebGPUCommandEncoder obj;
-    return obj;
+WebGPUCommandEncoder* WebGPUCommandEncoder::Obtain() {
+    static WebGPUCommandEncoder obj;
+    obj.Reset();
+    return &obj;
 }
 
 void WebGPUCommandEncoder::AddRefInternal() {

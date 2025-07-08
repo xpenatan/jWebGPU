@@ -20,7 +20,7 @@ interface WGPUAndroidWindow {
 
 interface WGPUByteBuffer {
     void WGPUByteBuffer(long capacity);
-    [Value] static WGPUByteBuffer Obtain(long capacity);
+    static WGPUByteBuffer Obtain(long capacity);
     void order(WGPUByteOrder order);
     byte get(long index);
     [BindTo="put"] void put_0(byte value);
@@ -127,43 +127,43 @@ enum WGPUPlatformType {
 
 interface WGPUVectorFutureWaitInfo {
     void WGPUVectorFutureWaitInfo();
-    [Value] static WGPUVectorFutureWaitInfo Obtain();
+    static WGPUVectorFutureWaitInfo Obtain();
     void push_back([Ref] WebGPUFutureWaitInfo entry);
 };
 
 interface WGPUVectorBindGroupEntry {
     void WGPUVectorBindGroupEntry();
-    [Value] static WGPUVectorBindGroupEntry Obtain();
+    static WGPUVectorBindGroupEntry Obtain();
     void push_back([Ref] WebGPUBindGroupEntry entry);
 };
 
 interface WGPUVectorColorTargetState {
     void WGPUVectorColorTargetState();
-    [Value] static WGPUVectorColorTargetState Obtain();
+    static WGPUVectorColorTargetState Obtain();
     void push_back([Ref] WebGPUColorTargetState colorTargetState);
 };
 
 interface WGPUVectorFeatureName {
     void WGPUVectorFeatureName();
-    [Value] static WGPUVectorFeatureName Obtain();
+    static WGPUVectorFeatureName Obtain();
     void push_back(WGPUFeatureName featureName);
 };
 
 interface WGPUVectorConstantEntry {
     void WGPUVectorConstantEntry();
-    [Value] static WGPUVectorConstantEntry Obtain();
+    static WGPUVectorConstantEntry Obtain();
     void push_back([Ref] WebGPUConstantEntry constantEntry);
 };
 
 interface WGPUVectorVertexBufferLayout {
     void WGPUVectorVertexBufferLayout();
-    [Value] static WGPUVectorVertexBufferLayout Obtain();
+    static WGPUVectorVertexBufferLayout Obtain();
     void push_back([Ref] WebGPUVertexBufferLayout vertexBufferLayout);
 };
 
 interface WGPUVectorTextureFormat {
     void WGPUVectorTextureFormat();
-    [Value] static WGPUVectorTextureFormat Obtain();
+    static WGPUVectorTextureFormat Obtain();
     void push_back(WGPUTextureFormat textureFormat);
     long size();
     WGPUTextureFormat get(long index);
@@ -171,37 +171,37 @@ interface WGPUVectorTextureFormat {
 
 interface WGPUVectorRenderBundle {
     void WGPUVectorRenderBundle();
-    [Value] static WGPUVectorRenderBundle Obtain();
+    static WGPUVectorRenderBundle Obtain();
     void push_back([Ref] WebGPURenderBundle renderBundle);
 };
 
 interface WGPUVectorRenderPassColorAttachment {
     void WGPUVectorRenderPassColorAttachment();
-    [Value] static WGPUVectorRenderPassColorAttachment Obtain();
+    static WGPUVectorRenderPassColorAttachment Obtain();
     void push_back([Ref] WebGPURenderPassColorAttachment colorAttachment);
 };
 
 interface WGPUVectorVertexAttribute {
     void WGPUVectorVertexAttribute();
-    [Value] static WGPUVectorVertexAttribute Obtain();
+    static WGPUVectorVertexAttribute Obtain();
     void push_back([Ref] WebGPUVertexAttribute colorAttachment);
 };
 
 interface WGPUVectorBindGroupLayout {
     void WGPUVectorBindGroupLayout();
-    [Value] static WGPUVectorBindGroupLayout Obtain();
+    static WGPUVectorBindGroupLayout Obtain();
     void push_back([Ref] WebGPUBindGroupLayout groupLayout);
 };
 
 interface WGPUVectorBindGroupLayoutEntry {
     void WGPUVectorBindGroupLayoutEntry();
-    [Value] static WGPUVectorBindGroupLayoutEntry Obtain();
+    static WGPUVectorBindGroupLayoutEntry Obtain();
     void push_back([Ref] WebGPUBindGroupLayoutEntry groupLayout);
 };
 
 interface WGPUVectorInt {
     void WGPUVectorInt();
-    [Value] static WGPUVectorInt Obtain();
+    static WGPUVectorInt Obtain();
     long size();
     void push_back(long value);
     long get(long index);
@@ -252,14 +252,14 @@ interface WebGPUFuture {
 };
 
 interface WebGPUFutureWaitInfo {
-    [Value] static WebGPUFutureWaitInfo Obtain();
+    static WebGPUFutureWaitInfo Obtain();
     void SetFuture(WebGPUFuture future);
 };
 
 
 interface WebGPUAdapterInfo {
     void WebGPUAdapterInfo();
-    [Value] static WebGPUAdapterInfo Obtain();
+    static WebGPUAdapterInfo Obtain();
     [Value] IDLString GetVendor();
     long GetVendorID();
     [Value] IDLString GetArchitecture();
@@ -272,7 +272,7 @@ interface WebGPUAdapterInfo {
 
 interface WebGPULimits {
     void WebGPULimits();
-    [Value] static WebGPULimits Obtain();
+    static WebGPULimits Obtain();
 
     void SetMaxTextureDimension1D(long value);
     long GetMaxTextureDimension1D();
@@ -370,7 +370,7 @@ interface WebGPULimits {
 
 interface WebGPURequestAdapterOptions {
     void WebGPURequestAdapterOptions();
-    [Value] static WebGPURequestAdapterOptions Obtain();
+    static WebGPURequestAdapterOptions Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetFeatureLevel(WGPUFeatureLevel featureLevel);
     void SetPowerPreference(WGPUPowerPreference powerPreference);
@@ -380,14 +380,14 @@ interface WebGPURequestAdapterOptions {
 
 interface WebGPUShaderSourceWGSL {
     void WebGPUShaderSourceWGSL();
-    [Value] static WebGPUShaderSourceWGSL Obtain();
+    static WebGPUShaderSourceWGSL Obtain();
     void SetCode([Const] DOMString code);
     [Value] WebGPUChainedStruct GetChain();
 };
 
 interface WebGPUSupportedFeatures {
     void WebGPUSupportedFeatures();
-    [Value] static WebGPUSupportedFeatures Obtain();
+    static WebGPUSupportedFeatures Obtain();
     long GetFeatureCount();
     WGPUFeatureName GetFeatureAt(long index);
 };
@@ -403,7 +403,7 @@ interface WebGPUBlendComponent {
 
 interface WebGPUBlendState {
     void WebGPUBlendState();
-    [Value] static WebGPUBlendState Obtain();
+    static WebGPUBlendState Obtain();
     [Value] WebGPUBlendComponent GetColor();
     [Value] WebGPUBlendComponent GetAlpha();
 };
@@ -414,7 +414,7 @@ interface WebGPUConstantEntry {
 
 interface WebGPUFragmentState {
     void WebGPUFragmentState();
-    [Value] static WebGPUFragmentState Obtain();
+    static WebGPUFragmentState Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetEntryPoint([Const] DOMString entryPoint);
     void SetTargets(WGPUVectorColorTargetState targets);
@@ -424,7 +424,7 @@ interface WebGPUFragmentState {
 
 interface WebGPUVertexAttribute {
     void WebGPUVertexAttribute();
-    [Value] static WebGPUVertexAttribute Obtain();
+    static WebGPUVertexAttribute Obtain();
     void SetFormat(WGPUVertexFormat format);
     void SetOffset(long offset);
     void SetShaderLocation(long shaderLocation);
@@ -432,7 +432,7 @@ interface WebGPUVertexAttribute {
 
 interface WebGPUVertexBufferLayout {
     void WebGPUVertexBufferLayout();
-    [Value] static WebGPUVertexBufferLayout Obtain();
+    static WebGPUVertexBufferLayout Obtain();
     void SetAttributes(WGPUVectorVertexAttribute values);
     void SetArrayStride(long offset);
     void SetStepMode(WGPUVertexStepMode stepMode);
@@ -448,7 +448,7 @@ interface WebGPUVertexState {
 
 interface WebGPUColorTargetState {
     void WebGPUColorTargetState();
-    [Value] static WebGPUColorTargetState Obtain();
+    static WebGPUColorTargetState Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
     void SetBlend(WebGPUBlendState blendState);
@@ -457,7 +457,7 @@ interface WebGPUColorTargetState {
 
 interface WebGPUStencilFaceState {
 //    void WebGPUStencilFaceState();
-//    [Value] static WebGPUStencilFaceState Obtain();
+//    static WebGPUStencilFaceState Obtain();
     void SetCompare(WGPUCompareFunction compare);
     void SetFailOp(WGPUStencilOperation failOp);
     void SetDepthFailOp(WGPUStencilOperation depthFailOp);
@@ -466,7 +466,7 @@ interface WebGPUStencilFaceState {
 
 interface WebGPUDepthStencilState {
     void WebGPUDepthStencilState();
-    [Value] static WebGPUDepthStencilState Obtain();
+    static WebGPUDepthStencilState Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
     void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled);
@@ -498,7 +498,7 @@ interface WebGPUPrimitiveState {
 
 interface WebGPURenderPassDepthStencilAttachment {
     void WebGPURenderPassDepthStencilAttachment();
-    [Value] static WebGPURenderPassDepthStencilAttachment Obtain();
+    static WebGPURenderPassDepthStencilAttachment Obtain();
 //    void SetNextInChain(WebGPUChainedStruct chainedStruct); // TODO dont exist in wgpu-native
     void SetView(WebGPUTextureView textureView);
     void SetDepthLoadOp(WGPULoadOp loadOp);
@@ -513,14 +513,14 @@ interface WebGPURenderPassDepthStencilAttachment {
 
 interface WebGPURenderPassTimestampWrites {
     void WebGPURenderPassTimestampWrites();
-    [Value] static WebGPURenderPassTimestampWrites Obtain();
+    static WebGPURenderPassTimestampWrites Obtain();
     void SetQuerySet(WebGPUQuerySet value);
     void SetBeginningOfPassWriteIndex(long value);
     void SetEndOfPassWriteIndex(long value);
 };
 
 interface WebGPUComputePassTimestampWrites {
-    [Value] static WebGPUComputePassTimestampWrites Obtain();
+    static WebGPUComputePassTimestampWrites Obtain();
     void SetQuerySet(WebGPUQuerySet value);
     void SetBeginningOfPassWriteIndex(long value);
     void SetEndOfPassWriteIndex(long value);
@@ -528,7 +528,7 @@ interface WebGPUComputePassTimestampWrites {
 
 interface WebGPUColor {
     void WebGPUColor();
-    [Value] static WebGPUColor Obtain();
+    static WebGPUColor Obtain();
     void SetColor(float r, float g, float b, float a);
     void SetR(float value);
     void SetG(float value);
@@ -542,7 +542,7 @@ interface WebGPUColor {
 
 interface WebGPURenderPassColorAttachment {
     void WebGPURenderPassColorAttachment();
-    [Value] static WebGPURenderPassColorAttachment Obtain();
+    static WebGPURenderPassColorAttachment Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetView(WebGPUTextureView textureView);
     void SetResolveTarget(WebGPUTextureView textureView);
@@ -554,20 +554,20 @@ interface WebGPURenderPassColorAttachment {
 
 interface WebGPUSurfaceTexture {
     void WebGPUSurfaceTexture();
-    [Value] static WebGPUSurfaceTexture Obtain();
+    static WebGPUSurfaceTexture Obtain();
     void GetTexture(WebGPUTexture texture);
     WGPUSurfaceGetCurrentTextureStatus GetStatus();
 };
 
 interface WebGPUSurfaceCapabilities {
     void WebGPUSurfaceCapabilities();
-    [Value] static WebGPUSurfaceCapabilities Obtain();
+    static WebGPUSurfaceCapabilities Obtain();
     [Value] WGPUVectorTextureFormat GetFormats();
 };
 
 interface WebGPUSurfaceConfiguration {
     void WebGPUSurfaceConfiguration();
-    [Value] static WebGPUSurfaceConfiguration Obtain();
+    static WebGPUSurfaceConfiguration Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetWidth(long width);
     void SetHeight(long height);
@@ -590,7 +590,7 @@ interface WebGPUStringView {
 
 interface WebGPUOrigin3D {
     void WebGPUOrigin3D();
-    [Value] static WebGPUOrigin3D Obtain();
+    static WebGPUOrigin3D Obtain();
     void Set(long x, long y, long z);
     void SetX(long value);
     void SetY(long value);
@@ -599,7 +599,7 @@ interface WebGPUOrigin3D {
 
 interface WebGPUTexelCopyTextureInfo {
     void WebGPUTexelCopyTextureInfo();
-    [Value] static WebGPUTexelCopyTextureInfo Obtain();
+    static WebGPUTexelCopyTextureInfo Obtain();
     void SetTexture(WebGPUTexture texture);
     void SetMipLevel(long mipLevel);
     [Value] WebGPUOrigin3D GetOrigin();
@@ -608,7 +608,7 @@ interface WebGPUTexelCopyTextureInfo {
 
 interface WebGPUExtent3D {
     void WebGPUExtent3D();
-    [Value] static WebGPUExtent3D Obtain();
+    static WebGPUExtent3D Obtain();
     void SetWidth(long width);
     void SetHeight(long height);
     void SetDepthOrArrayLayers(long depthOrArrayLayers);
@@ -616,7 +616,7 @@ interface WebGPUExtent3D {
 
 interface WebGPUTexelCopyBufferLayout {
     void WebGPUTexelCopyBufferLayout();
-    [Value] static WebGPUTexelCopyBufferLayout Obtain();
+    static WebGPUTexelCopyBufferLayout Obtain();
     void SetOffset(long offset);
     void SetBytesPerRow(long bytesPerRow);
     void SetRowsPerImage(long rowsPerImage);
@@ -624,7 +624,7 @@ interface WebGPUTexelCopyBufferLayout {
 
 interface WebGPUTexelCopyBufferInfo {
     void WebGPUTexelCopyBufferInfo();
-    [Value] static WebGPUTexelCopyBufferInfo Obtain();
+    static WebGPUTexelCopyBufferInfo Obtain();
     [Value] WebGPUTexelCopyBufferLayout GetLayout();
     [Value] WebGPUBuffer GetBuffer();
     void SetBuffer(WebGPUBuffer buffer);
@@ -632,7 +632,7 @@ interface WebGPUTexelCopyBufferInfo {
 
 interface WebGPUBindGroupLayoutEntry {
     void WebGPUBindGroupLayoutEntry();
-    [Value] static WebGPUBindGroupLayoutEntry Obtain();
+    static WebGPUBindGroupLayoutEntry Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetBinding(long binding);
     void SetVisibility(WGPUShaderStage visibility);
@@ -648,7 +648,7 @@ interface WebGPUBindGroupLayoutEntry {
 
 interface WebGPUBufferBindingLayout {
     void WebGPUBufferBindingLayout();
-    [Value] static WebGPUBufferBindingLayout Obtain();
+    static WebGPUBufferBindingLayout Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetType(WGPUBufferBindingType type);
     void SetHasDynamicOffset(long hasDynamicOffset);
@@ -657,14 +657,14 @@ interface WebGPUBufferBindingLayout {
 
 interface WebGPUSamplerBindingLayout {
     void WebGPUSamplerBindingLayout();
-    [Value] static WebGPUSamplerBindingLayout Obtain();
+    static WebGPUSamplerBindingLayout Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetType(WGPUSamplerBindingType type);
 };
 
 interface WebGPUTextureBindingLayout {
     void WebGPUTextureBindingLayout();
-    [Value] static WebGPUTextureBindingLayout Obtain();
+    static WebGPUTextureBindingLayout Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetSampleType(WGPUTextureSampleType sampleType);
     void SetViewDimension(WGPUTextureViewDimension viewDimension);
@@ -673,7 +673,7 @@ interface WebGPUTextureBindingLayout {
 
 interface WebGPUStorageTextureBindingLayout {
     void WebGPUStorageTextureBindingLayout();
-    [Value] static WebGPUStorageTextureBindingLayout Obtain();
+    static WebGPUStorageTextureBindingLayout Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetAccess(WGPUStorageTextureAccess access);
     void SetFormat(WGPUTextureFormat format);
@@ -682,7 +682,7 @@ interface WebGPUStorageTextureBindingLayout {
 
 interface WebGPUBindGroupEntry  {
     void WebGPUBindGroupEntry ();
-    [Value] static WebGPUBindGroupEntry Obtain();
+    static WebGPUBindGroupEntry Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetBinding(long binding);
     void SetBuffer(WebGPUBuffer buffer);
@@ -699,7 +699,7 @@ interface WebGPUBindGroupEntry  {
 
 interface WebGPURenderPassMaxDrawCount  {
     void WebGPURenderPassMaxDrawCount ();
-    [Value] static WebGPURenderPassMaxDrawCount Obtain();
+    static WebGPURenderPassMaxDrawCount Obtain();
     void SetMaxDrawCount(long maxDrawCount);
     long GetMaxDrawCount();
 
@@ -707,13 +707,13 @@ interface WebGPURenderPassMaxDrawCount  {
 
 interface WebGPUShaderSourceSPIRV  {
     void WebGPUShaderSourceSPIRV ();
-    [Value] static WebGPUShaderSourceSPIRV Obtain();
+    static WebGPUShaderSourceSPIRV Obtain();
 
 };
 
 interface WebGPUSupportedWGSLLanguageFeatures  {
     void WebGPUSupportedWGSLLanguageFeatures ();
-    [Value] static WebGPUSupportedWGSLLanguageFeatures Obtain();
+    static WebGPUSupportedWGSLLanguageFeatures Obtain();
     long GetFeatureCount();
     WGPUWGSLLanguageFeatureName GetFeatureAt(long index);
 };
@@ -726,7 +726,7 @@ interface WebGPUCompilationInfo  {
 
 interface WebGPUCompilationMessage  {
     void WebGPUCompilationMessage ();
-    [Value] static WebGPUCompilationMessage Obtain();
+    static WebGPUCompilationMessage Obtain();
     [Const, Value] IDLStringView GetMessage();
     WGPUCompilationMessageType GetType();
     long GetLineNum();
@@ -739,21 +739,21 @@ interface WebGPUCompilationMessage  {
 
 interface WebGPUInstanceDescriptor {
     void WebGPUInstanceDescriptor();
-    [Value] static WebGPUInstanceDescriptor Obtain();
+    static WebGPUInstanceDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
 //    [Value] WebGPUInstanceCapabilities GetFeatures();
 };
 
 interface WebGPURenderBundleDescriptor {
     void WebGPURenderBundleDescriptor();
-    [Value] static WebGPURenderBundleDescriptor Obtain();
+    static WebGPURenderBundleDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
 };
 
 interface WebGPURenderBundleEncoderDescriptor {
     void WebGPURenderBundleEncoderDescriptor();
-    [Value] static WebGPURenderBundleEncoderDescriptor Obtain();
+    static WebGPURenderBundleEncoderDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetColorFormats(WGPUVectorTextureFormat colorFormats);
@@ -765,7 +765,7 @@ interface WebGPURenderBundleEncoderDescriptor {
 
 interface WebGPUQuerySetDescriptor {
     void WebGPUQuerySetDescriptor();
-    [Value] static WebGPUQuerySetDescriptor Obtain();
+    static WebGPUQuerySetDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetType(WGPUQueryType type);
@@ -774,7 +774,7 @@ interface WebGPUQuerySetDescriptor {
 
 interface WebGPUSamplerDescriptor {
     void WebGPUSamplerDescriptor();
-    [Value] static WebGPUSamplerDescriptor Obtain();
+    static WebGPUSamplerDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetAddressModeU(WGPUAddressMode addressModeU);
@@ -791,7 +791,7 @@ interface WebGPUSamplerDescriptor {
 
 interface WebGPUBindGroupLayoutDescriptor {
     void WebGPUBindGroupLayoutDescriptor();
-    [Value] static WebGPUBindGroupLayoutDescriptor Obtain();
+    static WebGPUBindGroupLayoutDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetEntries(WGPUVectorBindGroupLayoutEntry entries);
@@ -799,13 +799,13 @@ interface WebGPUBindGroupLayoutDescriptor {
 
 interface WebGPUProgrammableStageDescriptor { // Pointer descriptor
 //    void WebGPUProgrammableStageDescriptor();
-//    [Value] static WebGPUProgrammableStageDescriptor Obtain();
+//    static WebGPUProgrammableStageDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
 };
 
 interface WebGPUComputePipelineDescriptor {
     void WebGPUComputePipelineDescriptor();
-    [Value] static WebGPUComputePipelineDescriptor Obtain();
+    static WebGPUComputePipelineDescriptor Obtain();
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
 //    void SetLayout(WebGPUPipelineLayout layout);
@@ -814,21 +814,21 @@ interface WebGPUComputePipelineDescriptor {
 
 interface WebGPUQueueDescriptor {  // Pointer descriptor
 //    void WebGPUQueueDescriptor();
-//    [Value] static WebGPUQueueDescriptor Obtain();
+//    static WebGPUQueueDescriptor Obtain();
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
 };
 
 interface WebGPUShaderModuleDescriptor {
     void WebGPUShaderModuleDescriptor();
-    [Value] static WebGPUShaderModuleDescriptor Obtain();
+    static WebGPUShaderModuleDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
 interface WebGPUBindGroupDescriptor {
     void WebGPUBindGroupDescriptor();
-    [Value] static WebGPUBindGroupDescriptor Obtain();
+    static WebGPUBindGroupDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetLayout(WebGPUBindGroupLayout layout);
@@ -837,7 +837,7 @@ interface WebGPUBindGroupDescriptor {
 
 interface WebGPUBufferDescriptor {
     void WebGPUBufferDescriptor();
-    [Value] static WebGPUBufferDescriptor Obtain();
+    static WebGPUBufferDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetUsage(WGPUBufferUsage usage);
@@ -847,7 +847,7 @@ interface WebGPUBufferDescriptor {
 
 interface WebGPUPipelineLayoutDescriptor {
     void WebGPUPipelineLayoutDescriptor();
-    [Value] static WebGPUPipelineLayoutDescriptor Obtain();
+    static WebGPUPipelineLayoutDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetBindGroupLayouts(WGPUVectorBindGroupLayout bindGroupLayouts);
@@ -855,7 +855,7 @@ interface WebGPUPipelineLayoutDescriptor {
 
 interface WebGPUDeviceDescriptor {
     void WebGPUDeviceDescriptor();
-    [Value] static WebGPUDeviceDescriptor Obtain();
+    static WebGPUDeviceDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString label);
     void SetRequiredLimits(WebGPULimits limits);
@@ -865,7 +865,7 @@ interface WebGPUDeviceDescriptor {
 
 interface WebGPURenderPipelineDescriptor {
     void WebGPURenderPipelineDescriptor();
-    [Value] static WebGPURenderPipelineDescriptor Obtain();
+    static WebGPURenderPipelineDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     [Value] WebGPUVertexState GetVertex();
@@ -878,14 +878,14 @@ interface WebGPURenderPipelineDescriptor {
 
 interface WebGPUCommandEncoderDescriptor {
     void WebGPUCommandEncoderDescriptor();
-    [Value] static WebGPUCommandEncoderDescriptor Obtain();
+    static WebGPUCommandEncoderDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
 interface WebGPURenderPassDescriptor {
     void WebGPURenderPassDescriptor();
-    [Value] static WebGPURenderPassDescriptor Obtain();
+    static WebGPURenderPassDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments);
@@ -896,14 +896,14 @@ interface WebGPURenderPassDescriptor {
 
 interface WebGPUCommandBufferDescriptor  {
     void WebGPUCommandBufferDescriptor();
-    [Value] static WebGPUCommandBufferDescriptor Obtain();
+    static WebGPUCommandBufferDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
 };
 
 interface WebGPUComputePassDescriptor {
     void WebGPUComputePassDescriptor();
-    [Value] static WebGPUComputePassDescriptor Obtain();
+    static WebGPUComputePassDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetTimestampWrites(WebGPUComputePassTimestampWrites timestampWrites);
@@ -911,7 +911,7 @@ interface WebGPUComputePassDescriptor {
 
 interface WebGPUTextureDescriptor {
     void WebGPUTextureDescriptor();
-    [Value] static WebGPUTextureDescriptor Obtain();
+    static WebGPUTextureDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetUsage(WGPUTextureUsage usage);
@@ -925,7 +925,7 @@ interface WebGPUTextureDescriptor {
 
 interface WebGPUTextureViewDescriptor {
     void WebGPUTextureViewDescriptor();
-    [Value] static WebGPUTextureViewDescriptor Obtain();
+    static WebGPUTextureViewDescriptor Obtain();
     void SetNextInChain(WebGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetFormat(WGPUTextureFormat format);
@@ -966,13 +966,13 @@ interface WebGPURenderBundleEncoder {
 
 interface WebGPUTextureView {
     void WebGPUTextureView();
-    [Value] static WebGPUTextureView Obtain();
+    static WebGPUTextureView Obtain();
     void Release();
 };
 
 interface WebGPUTexture {
     void WebGPUTexture();
-    [Value] static WebGPUTexture Obtain();
+    static WebGPUTexture Obtain();
     void CreateView(WebGPUTextureViewDescriptor textureViewDescriptor, WebGPUTextureView textureView);
     WGPUTextureFormat GetFormat();
     void Release();
@@ -981,7 +981,7 @@ interface WebGPUTexture {
 
 interface WebGPUShaderModule {
     void WebGPUShaderModule();
-    [Value] static WebGPUShaderModule Obtain();
+    static WebGPUShaderModule Obtain();
     void Release();
 };
 
@@ -992,7 +992,7 @@ interface WebGPURenderPipeline {
 
 interface WebGPURenderPassEncoder {
     void WebGPURenderPassEncoder();
-    [Value] static WebGPURenderPassEncoder Obtain();
+    static WebGPURenderPassEncoder Obtain();
     void Release();
     void End();
     void SetPipeline(WebGPURenderPipeline renderPipeline);
@@ -1070,7 +1070,7 @@ interface WebGPUDevice {
 
 interface WebGPUComputePassEncoder {
     void WebGPUComputePassEncoder();
-    [Value] static WebGPUComputePassEncoder Obtain();
+    static WebGPUComputePassEncoder Obtain();
     void Release();
     void SetDispatchWorkgroups(long workgroupCountX, long workgroupCountY, long workgroupCountZ);
     void DispatchWorkgroupsIndirect(WebGPUBuffer indirectBuffer, long indirectOffset);
@@ -1085,13 +1085,13 @@ interface WebGPUComputePassEncoder {
 
 interface WebGPUCommandBuffer {
     void WebGPUCommandBuffer();
-    [Value] static WebGPUCommandBuffer Obtain();
+    static WebGPUCommandBuffer Obtain();
     void Release();
 };
 
 interface WebGPUCommandEncoder {
     void WebGPUCommandEncoder();
-    [Value] static WebGPUCommandEncoder Obtain();
+    static WebGPUCommandEncoder Obtain();
     void Release();
     void BeginComputePass(WebGPUComputePassDescriptor descriptor, WebGPUComputePassEncoder computePassEncoder);
     void BeginRenderPass(WebGPURenderPassDescriptor renderPassDescriptor, WebGPURenderPassEncoder renderPassEncoder);
