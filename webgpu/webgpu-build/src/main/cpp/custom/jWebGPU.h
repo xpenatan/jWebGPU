@@ -1456,6 +1456,7 @@ class WGPUShaderModule : public WGPUObjectBase<WGPUShaderModule, ::WGPUShaderMod
         void ReleaseInternal();
     public:
         static WGPUShaderModule* Obtain();
+        bool IsValid();
 };
 
 class WGPURenderPipeline : public WGPUObjectBase<WGPURenderPipeline, ::WGPURenderPipeline> {
@@ -1464,6 +1465,7 @@ class WGPURenderPipeline : public WGPUObjectBase<WGPURenderPipeline, ::WGPURende
         void ReleaseInternal();
     public:
         static WGPURenderPipeline* Obtain();
+        bool IsValid();
 };
 
 class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGPURenderPassEncoder> {

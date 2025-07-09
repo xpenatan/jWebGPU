@@ -3038,6 +3038,10 @@ void JGPU::WGPUShaderModule::ReleaseInternal() {
     wgpuShaderModuleRelease(Get());
 }
 
+bool JGPU::WGPUShaderModule::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPURenderPipeline
 JGPU::WGPURenderPipeline* JGPU::WGPURenderPipeline::Obtain() {
     static JGPU::WGPURenderPipeline obj;
@@ -3051,6 +3055,10 @@ void JGPU::WGPURenderPipeline::AddRefInternal() {
 
 void JGPU::WGPURenderPipeline::ReleaseInternal() {
     wgpuRenderPipelineRelease(Get());
+}
+
+bool JGPU::WGPURenderPipeline::IsValid() {
+    return Get();
 }
 
 // JGPU::WGPURenderPassEncoder

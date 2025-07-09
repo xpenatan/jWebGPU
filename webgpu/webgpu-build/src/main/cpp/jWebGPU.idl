@@ -1052,12 +1052,14 @@ interface WGPUShaderModule {
     void WGPUShaderModule();
     static WGPUShaderModule Obtain();
     void Release();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPURenderPipeline {
     void WGPURenderPipeline();
     void Release();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
