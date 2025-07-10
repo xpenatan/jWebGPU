@@ -191,6 +191,8 @@ WGPUVectorRenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::Obtain
 
 int WGPUVectorRenderPassColorAttachment::size() { return vector.size(); }
 
+void WGPUVectorRenderPassColorAttachment::clear() { return vector.clear(); }
+
 void WGPUVectorRenderPassColorAttachment::push_back(const JGPU::WGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
 
 const JGPU::WGPURenderPassColorAttachment* WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
@@ -844,7 +846,7 @@ void WGPUShortBuffer::clear() {
 }
 
 void WGPUShortBuffer::limit(int newLimit) {
-    parent->limit(newLimit * sizeof(float));
+    parent->limit(newLimit * sizeof(int16_t));
 }
 
 int WGPUShortBuffer::getLimit() const {
@@ -2045,6 +2047,19 @@ JGPU::WGPURenderPassColorAttachment* JGPU::WGPURenderPassColorAttachment::Obtain
     return &obj;
 }
 
+void JGPU::WGPURenderPassColorAttachment::Reset() {
+    mHandle.nextInChain = NULL;
+    mHandle.resolveTarget = NULL;
+    mHandle.view = NULL;
+    mHandle.loadOp = WGPULoadOp_Undefined;
+    mHandle.storeOp = WGPUStoreOp_Undefined;
+    mHandle.depthSlice = ~0u;
+    mHandle.clearValue.r = 0;
+    mHandle.clearValue.g = 0;
+    mHandle.clearValue.b = 0;
+    mHandle.clearValue.a = 0;
+}
+
 void JGPU::WGPURenderPassColorAttachment::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
 }
@@ -2139,6 +2154,17 @@ JGPU::WGPUBindGroupEntry* JGPU::WGPUBindGroupEntry::Obtain() {
     static JGPU::WGPUBindGroupEntry obj;
     obj = JGPU::WGPUBindGroupEntry();
     return &obj;
+}
+
+void JGPU::WGPUBindGroupEntry::Reset() {
+    mHandle = ::WGPUBindGroupEntry{};
+    mHandle.nextInChain = NULL;
+    mHandle.binding = 0;
+    mHandle.buffer = NULL;
+    mHandle.offset = 0;
+    mHandle.size = 0;
+    mHandle.sampler = NULL;
+    mHandle.textureView = NULL;
 }
 
 void JGPU::WGPUBindGroupEntry::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
@@ -2561,6 +2587,16 @@ JGPU::WGPURenderPassDescriptor* JGPU::WGPURenderPassDescriptor::Obtain() {
     static JGPU::WGPURenderPassDescriptor obj;
     obj = JGPU::WGPURenderPassDescriptor();
     return &obj;
+}
+
+void JGPU::WGPURenderPassDescriptor::Reset() {
+    mHandle.nextInChain = NULL;
+    mHandle.label = ::WGPUStringView{};
+    mHandle.colorAttachmentCount = 0;
+    mHandle.colorAttachments = NULL;
+    mHandle.depthStencilAttachment = NULL;
+    mHandle.occlusionQuerySet = NULL;
+    mHandle.timestampWrites = NULL;
 }
 
 void JGPU::WGPURenderPassDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {

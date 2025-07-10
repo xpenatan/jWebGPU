@@ -179,6 +179,7 @@ interface WGPUVectorRenderPassColorAttachment {
     void WGPUVectorRenderPassColorAttachment();
     static WGPUVectorRenderPassColorAttachment Obtain();
     void push_back([Ref] WGPURenderPassColorAttachment colorAttachment);
+    void clear();
 };
 
 interface WGPUVectorVertexAttribute {
@@ -566,6 +567,7 @@ interface WGPUColor {
 interface WGPURenderPassColorAttachment {
     void WGPURenderPassColorAttachment();
     static WGPURenderPassColorAttachment Obtain();
+    void Reset();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetView(WGPUTextureView textureView);
     void SetResolveTarget(WGPUTextureView textureView);
@@ -722,6 +724,7 @@ interface WGPUStorageTextureBindingLayout {
 interface WGPUBindGroupEntry  {
     void WGPUBindGroupEntry ();
     static WGPUBindGroupEntry Obtain();
+    void Reset();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetBinding(long binding);
     void SetBuffer(WGPUBuffer buffer);
@@ -946,6 +949,7 @@ interface WGPUCommandEncoderDescriptor {
 interface WGPURenderPassDescriptor {
     void WGPURenderPassDescriptor();
     static WGPURenderPassDescriptor Obtain();
+    void Reset();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
     void SetColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments);

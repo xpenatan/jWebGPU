@@ -539,6 +539,7 @@ class WGPUVectorRenderPassColorAttachment {
         int size();
         void push_back(const JGPU::WGPURenderPassColorAttachment& attachment);
         const JGPU::WGPURenderPassColorAttachment* data();
+        void clear();
 };
 
 class WGPUVectorVertexAttribute {
@@ -1124,6 +1125,7 @@ class WGPURenderPassColorAttachment : public WGPUObjectBase<WGPURenderPassColorA
     public:
         WGPURenderPassColorAttachment();
         static WGPURenderPassColorAttachment* Obtain();
+        void Reset();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetResolveTarget(WGPUTextureView* textureView);
         void SetView(WGPUTextureView* textureView);
@@ -1143,6 +1145,7 @@ class WGPUSurfaceTexture : public WGPUObjectBase<WGPUSurfaceTexture, ::WGPUSurfa
 class WGPUBindGroupEntry : public WGPUObjectBase<WGPUBindGroupEntry, ::WGPUBindGroupEntry> {
 public:
     static WGPUBindGroupEntry* Obtain();
+    void Reset();
     void SetNextInChain(WGPUChainedStruct* chainedStruct);
     void SetBinding(int binding);
     void SetBuffer(WGPUBuffer* buffer);
@@ -1354,6 +1357,7 @@ class WGPUCommandBufferDescriptor : public WGPUObjectBase<WGPUCommandBufferDescr
 class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor, ::WGPURenderPassDescriptor> {
     public:
         static WGPURenderPassDescriptor* Obtain();
+        void Reset();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetColorAttachments(WGPUVectorRenderPassColorAttachment* values);

@@ -64,9 +64,17 @@ public class AFirstVertexAttribute implements ApplicationListener {
     private int vertexCount;
     private WGPUBuffer vertexBuffer;
 
+    private WGPURenderPassDescriptor renderPassDesc;
+    private WGPUVectorRenderPassColorAttachment attachments;
+    private WGPURenderPassColorAttachment renderPassColorAttachment;
+
     @Override
     public void create(WGPUApp wgpu) {
         if(wgpu.surface != null) {
+            renderPassDesc = new WGPURenderPassDescriptor();
+            attachments = new WGPUVectorRenderPassColorAttachment();
+            renderPassColorAttachment = new WGPURenderPassColorAttachment();
+
             System.out.println("Surface created");
             WGPUSurfaceCapabilities surfaceCapabilities = WGPUSurfaceCapabilities.obtain();
             wgpu.surface.getCapabilities(wgpu.adapter, surfaceCapabilities);
@@ -101,19 +109,19 @@ public class AFirstVertexAttribute implements ApplicationListener {
         wgpu.device.createCommandEncoder(encoderDesc, encoder);
 
         // Create the render pass that clears the screen with our color
-        WGPURenderPassDescriptor renderPassDesc = WGPURenderPassDescriptor.obtain();
         renderPassDesc.setNextInChain(null);
 
         // The attachment part of the render pass descriptor describes the target texture of the pass
-        WGPURenderPassColorAttachment renderPassColorAttachment = WGPURenderPassColorAttachment.obtain();
+        renderPassColorAttachment.reset();
         renderPassColorAttachment.setView(targetView);
         renderPassColorAttachment.setResolveTarget(null);
         renderPassColorAttachment.setLoadOp(WGPULoadOp.Clear);
         renderPassColorAttachment.setStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.getClearValue().setColor(0.9f, 0.1f, 0.2f, 1.0f);
 
-        WGPUVectorRenderPassColorAttachment attachments = WGPUVectorRenderPassColorAttachment.obtain();
+        attachments.clear();
         attachments.push_back(renderPassColorAttachment);
+        renderPassDesc.reset();
         renderPassDesc.setColorAttachments(attachments);
         renderPassDesc.setDepthStencilAttachment(null);
         renderPassDesc.setTimestampWrites(null);
