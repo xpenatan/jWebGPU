@@ -67,6 +67,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
     private WGPURenderPassDescriptor renderPassDesc;
     private WGPUVectorRenderPassColorAttachment attachments;
     private WGPURenderPassColorAttachment renderPassColorAttachment;
+    private WGPURenderPassEncoder renderPass;
 
     @Override
     public void create(WGPUApp wgpu) {
@@ -74,6 +75,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
             renderPassDesc = new WGPURenderPassDescriptor();
             attachments = new WGPUVectorRenderPassColorAttachment();
             renderPassColorAttachment = new WGPURenderPassColorAttachment();
+            renderPass = new WGPURenderPassEncoder();
 
             System.out.println("Surface created");
             WGPUSurfaceCapabilities surfaceCapabilities = WGPUSurfaceCapabilities.obtain();
@@ -126,7 +128,6 @@ public class AFirstVertexAttribute implements ApplicationListener {
         renderPassDesc.setDepthStencilAttachment(null);
         renderPassDesc.setTimestampWrites(null);
 
-        WGPURenderPassEncoder renderPass = WGPURenderPassEncoder.obtain();
         encoder.beginRenderPass(renderPassDesc, renderPass);
 
         // Select which render pipeline to use
