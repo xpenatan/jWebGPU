@@ -524,31 +524,34 @@ float WGPUFloatBuffer::get() {
 }
 
 void WGPUFloatBuffer::put(const float* values, int offset, int size) {
-    if (offset < 0 || size < 0 || offset + size > getLimit()) {
+    if (offset < 0 || size < 0 || offset + size > parent->getCapacity() / sizeof(float)) {
         throw std::out_of_range("Invalid offset or size for FloatBuffer");
     }
     if (size == 0) return;
 
-    size_t byteOffset = offset * sizeof(float);
+    int floatPosition = getPosition();
+    if (floatPosition + size > getLimit()) {
+        throw std::out_of_range("FloatBuffer overflow");
+    }
+
+    size_t byteOffset = floatPosition * sizeof(float);
     size_t byteSize = size * sizeof(float);
     if (byteOffset + byteSize > parent->getLimit()) {
         throw std::out_of_range("Buffer overflow");
     }
 
-    bool needsSwap = (parent->byteOrder == LittleEndian) != parent->isLittleEndianHost();
-    if (!needsSwap) {
-        // Direct copy if no byte-swapping is needed
-        std::memcpy(&parent->buffer[byteOffset], values, byteSize);
-    }
-    else {
-        // Copy and swap bytes for each float
-        std::vector<float> temp(values, values + size);
+    if (!parent->needsSwap) {
+        std::memcpy(&parent->buffer[byteOffset], values + offset, byteSize);
+    } else {
+        std::vector<float> temp(values + offset, values + offset + size);
         for (int i = 0; i < size; ++i) {
             uint32_t* ptr = reinterpret_cast<uint32_t*>(&temp[i]);
             *ptr = parent->swapBytes(*ptr);
         }
         std::memcpy(&parent->buffer[byteOffset], temp.data(), byteSize);
     }
+
+    position(floatPosition + size);
 }
 
 int WGPUFloatBuffer::remaining() const {
@@ -3820,13 +3823,21 @@ void JGPU::WGPUQueue::Submit(int commandCount, JGPU::WGPUCommandBuffer* commandB
     wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
 }
 
-void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes) {
+void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes, int dataSize) {
     int size = 0;
     void* data = NULL;
     if(bytes != NULL) {
-        size = bytes->getLimit();
+        size = dataSize == -1 ? bytes->getLimit() : dataSize;
         data = (void*)bytes->data();
     }
+    wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
+}
+
+void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, WGPUFloatBuffer* bytes, int dataSize) {
+    WriteBuffer(buffer, bufferOffset, bytes == NULL ? NULL : bytes->parent, dataSize);
+}
+
+void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, void const * data, int size) {
     wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
 }
 
