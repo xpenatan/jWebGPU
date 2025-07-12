@@ -1117,11 +1117,11 @@ interface WGPUInstance {
     boolean IsValid();
     void Release();
     void RequestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
-    WGPUSurface CreateWebSurface([Const] DOMString canvas);
-    WGPUSurface CreateWindowsSurface(any hwnd);
-    WGPUSurface CreateLinuxSurface(boolean isWayland, any windowOrSurface, any display);
-    WGPUSurface CreateMacSurface(any metalLayer);
-    WGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);
+    WGPUSurface CreateWebSurface([Const] DOMString canvas);                               //[-NEW_OBJECT]
+    WGPUSurface CreateWindowsSurface(any hwnd);                                           //[-NEW_OBJECT]
+    WGPUSurface CreateLinuxSurface(boolean isWayland, any windowOrSurface, any display);  //[-NEW_OBJECT]
+    WGPUSurface CreateMacSurface(any metalLayer);                                         //[-NEW_OBJECT]
+    WGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);                          //[-NEW_OBJECT]
     void ProcessEvents();
     WGPUWaitStatus WaitAny(WGPUVectorFutureWaitInfo futureVector, long timeoutNS);
 };
