@@ -56,6 +56,9 @@ import com.github.xpenatan.webgpu.WGPUVertexAttribute;
 import com.github.xpenatan.webgpu.WGPUVertexBufferLayout;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 
 public class AFirstVertexAttribute implements ApplicationListener {
 
@@ -321,11 +324,9 @@ public class AFirstVertexAttribute implements ApplicationListener {
         // Vertex buffer data
         // There are 2 floats per vertex, one for x and one for y.
 
-        WGPUByteBuffer vertexData = WGPUByteBuffer.obtain(12 * Float.BYTES);
-
-        vertexData.order(WGPUByteOrder.LittleEndian);
-
-        WGPUFloatBuffer floatBuffer = vertexData.asFloatBuffer();
+        ByteBuffer vertexData = ByteBuffer.allocateDirect(12 * Float.BYTES);
+        vertexData.order(ByteOrder.LITTLE_ENDIAN);
+        FloatBuffer floatBuffer = vertexData.asFloatBuffer();
 
         // Define a first triangle:
         floatBuffer.put(-0.5f);
@@ -343,25 +344,24 @@ public class AFirstVertexAttribute implements ApplicationListener {
         floatBuffer.put(-0.55f);
         floatBuffer.put(+0.5f);
 
-        for(int i = 0; i < floatBuffer.getLimit(); i++) {
+        for(int i = 0; i < floatBuffer.limit(); i++) {
             float v = floatBuffer.get(i);
             System.out.println(i + " Value: " + v);
         }
 
-        vertexCount = floatBuffer.getLimit() / 2;
+        vertexCount = floatBuffer.limit() / 2;
 
         // Create vertex buffer
         WGPUBufferDescriptor bufferDesc = WGPUBufferDescriptor.obtain();
         bufferDesc.setNextInChain(null);
-        bufferDesc.setSize(vertexData.getLimit());
+        bufferDesc.setSize(vertexData.limit());
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Vertex)); // Vertex usage here!
         bufferDesc.setMappedAtCreation(false);
         vertexBuffer = new WGPUBuffer();
         wgpu.device.createBuffer(bufferDesc, vertexBuffer);
 
-//        WGPU.testWriteBuffer(wgpu.queue, vertexBuffer);
         // Upload geometry data to the buffer
-        wgpu.queue.writeBuffer(vertexBuffer,0, vertexData);
+        wgpu.queue.writeBuffer(vertexBuffer,0, vertexData, vertexData.limit());
     }
 
     public String shaderSource =
