@@ -216,7 +216,7 @@ interface RequestAdapterCallback {
 [JSImplementation="RequestAdapterCallback"]
 interface RequestAdapterCallbackImpl {
     void RequestAdapterCallbackImpl();
-    void OnCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter);
+    void OnCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter); //[-NEW_PARAM=adapter]
 };
 
 interface RequestDeviceCallback {
@@ -225,7 +225,7 @@ interface RequestDeviceCallback {
 [JSImplementation="RequestDeviceCallback"]
 interface RequestDeviceCallbackImpl {
     void RequestDeviceCallbackImpl();
-    void OnCallback(WGPURequestDeviceStatus status, WGPUDevice device);
+    void OnCallback(WGPURequestDeviceStatus status, WGPUDevice device); //[-NEW_PARAM=device]
 };
 
 interface UncapturedErrorCallback {
