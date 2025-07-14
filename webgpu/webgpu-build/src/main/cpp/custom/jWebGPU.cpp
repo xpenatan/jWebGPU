@@ -2126,9 +2126,9 @@ WGPUPlatformType WGPU::GetPlatformType() {
     #endif
 }
 
-JGPU::WGPUInstance WGPU::CreateInstance(JGPU::WGPUInstanceDescriptor* descriptor) {
-    JGPU::WGPUInstance instance;
-    instance.Set(wgpuCreateInstance(descriptor != NULL ? &descriptor->Get() : NULL));
+JGPU::WGPUInstance* WGPU::CreateInstance(JGPU::WGPUInstanceDescriptor* descriptor) {
+    JGPU::WGPUInstance* instance = new JGPU::WGPUInstance();
+    instance->Set(wgpuCreateInstance(descriptor != NULL ? &descriptor->Get() : NULL));
     return instance;
 }
 

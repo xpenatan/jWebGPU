@@ -1696,6 +1696,6 @@ class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
 class WGPU {
     public:
         static WGPUPlatformType GetPlatformType();
-        static JGPU::WGPUInstance CreateInstance(JGPU::WGPUInstanceDescriptor* descriptor = NULL);
+        static JGPU::WGPUInstance* CreateInstance(JGPU::WGPUInstanceDescriptor* descriptor = NULL);
         static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
 };
