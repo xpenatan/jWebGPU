@@ -31,7 +31,7 @@ public class WGPUQueue extends IDLBase {
     /*[-TEAVM;-REPLACE_BLOCK]
         {
             org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
-            internal_native_WriteBuffer((int)getNativeData().getCPointer(), (int)buffer.getNativeData().getCPointer(), bufferOffset, array, dataSize, (int)dataLayout.getNativeData().getCPointer(), (int)writeSize.getNativeData().getCPointer());
+            internal_native_WriteTexture((int)getNativeData().getCPointer(), (int)destination.getNativeData().getCPointer(), array, dataSize, (int)dataLayout.getNativeData().getCPointer(), (int)writeSize.getNativeData().getCPointer());
         }
     */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
