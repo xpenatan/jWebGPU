@@ -3467,10 +3467,9 @@ void JGPU::WGPUDevice::GetLimits(JGPU::WGPULimits* limits) {
     wgpuDeviceGetLimits(Get(), &limits->Get());
 }
 
-JGPU::WGPUQueue JGPU::WGPUDevice::GetQueue() {
-    JGPU::WGPUQueue temp;
-    temp.Set(wgpuDeviceGetQueue(Get()));
-    return temp;
+JGPU::WGPUQueue* JGPU::WGPUDevice::GetQueue() {
+    defaultQueue.Set(wgpuDeviceGetQueue(Get()));
+    return &defaultQueue;
 }
 
 // JGPU::WGPUComputePassEncoder

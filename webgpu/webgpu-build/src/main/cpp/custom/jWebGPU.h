@@ -1535,33 +1535,6 @@ class WGPUInstance : public WGPUObjectBase<WGPUInstance, ::WGPUInstance> {
         WGPUWaitStatus WaitAny(WGPUVectorFutureWaitInfo* futureVector, int timeoutNS);
 };
 
-
-
-class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
-    public:
-        void CreateBindGroup(WGPUBindGroupDescriptor* descriptor, WGPUBindGroup* valueOut);
-        void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor* descriptor, WGPUBindGroupLayout* valueOut);
-        void CreateBuffer(WGPUBufferDescriptor* descriptor, WGPUBuffer* valueOut);
-        void CreateCommandEncoder(WGPUCommandEncoderDescriptor* descriptor, WGPUCommandEncoder* valueOut);
-        void CreateComputePipeline(WGPUComputePipelineDescriptor* descriptor, WGPUComputePipeline* valueOut);
-        void CreatePipelineLayout(WGPUPipelineLayoutDescriptor* descriptor, WGPUPipelineLayout* valueOut);
-        void CreateQuerySet(WGPUQuerySetDescriptor* descriptor, WGPUQuerySet* valueOut);
-        void CreateRenderBundleEncoder(WGPURenderBundleEncoderDescriptor* descriptor, WGPURenderBundleEncoder* valueOut);
-        void CreateRenderPipeline(WGPURenderPipelineDescriptor* pipelineDescriptor, WGPURenderPipeline* valueOut);
-        void CreateSampler(WGPUSamplerDescriptor* descriptor, WGPUSampler* valueOut);
-        void CreateShaderModule(WGPUShaderModuleDescriptor* shaderModuleDescriptor, WGPUShaderModule* valueOut);
-        void CreateTexture(WGPUTextureDescriptor* descriptor, WGPUTexture* valueOut);
-        void Destroy();
-
-        void GetFeatures(WGPUSupportedFeatures* features);
-        bool HasFeature(WGPUFeatureName feature);
-        void GetLimits(WGPULimits* limits);
-        WGPUQueue GetQueue();
-};
-
 class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::WGPUComputePassEncoder> {
     protected:
         void AddRefInternal();
@@ -1689,6 +1662,34 @@ class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
         void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, WGPUFloatBuffer* bytes, int dataSize = -1);
         void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, void const * data, int size);
         void WriteTexture(WGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, WGPUTexelCopyBufferLayout* dataLayout, WGPUExtent3D* writeSize);
+};
+
+class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
+    private:
+        WGPUQueue defaultQueue;
+
+    protected:
+        void AddRefInternal();
+        void ReleaseInternal();
+    public:
+        void CreateBindGroup(WGPUBindGroupDescriptor* descriptor, WGPUBindGroup* valueOut);
+        void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor* descriptor, WGPUBindGroupLayout* valueOut);
+        void CreateBuffer(WGPUBufferDescriptor* descriptor, WGPUBuffer* valueOut);
+        void CreateCommandEncoder(WGPUCommandEncoderDescriptor* descriptor, WGPUCommandEncoder* valueOut);
+        void CreateComputePipeline(WGPUComputePipelineDescriptor* descriptor, WGPUComputePipeline* valueOut);
+        void CreatePipelineLayout(WGPUPipelineLayoutDescriptor* descriptor, WGPUPipelineLayout* valueOut);
+        void CreateQuerySet(WGPUQuerySetDescriptor* descriptor, WGPUQuerySet* valueOut);
+        void CreateRenderBundleEncoder(WGPURenderBundleEncoderDescriptor* descriptor, WGPURenderBundleEncoder* valueOut);
+        void CreateRenderPipeline(WGPURenderPipelineDescriptor* pipelineDescriptor, WGPURenderPipeline* valueOut);
+        void CreateSampler(WGPUSamplerDescriptor* descriptor, WGPUSampler* valueOut);
+        void CreateShaderModule(WGPUShaderModuleDescriptor* shaderModuleDescriptor, WGPUShaderModule* valueOut);
+        void CreateTexture(WGPUTextureDescriptor* descriptor, WGPUTexture* valueOut);
+        void Destroy();
+
+        void GetFeatures(WGPUSupportedFeatures* features);
+        bool HasFeature(WGPUFeatureName feature);
+        void GetLimits(WGPULimits* limits);
+        WGPUQueue* GetQueue();
 };
 
 } // JGPU

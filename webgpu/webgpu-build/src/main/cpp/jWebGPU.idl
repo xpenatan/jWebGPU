@@ -1146,7 +1146,7 @@ interface WGPUDevice {
     void GetFeatures(WGPUSupportedFeatures features);
     boolean HasFeature(WGPUFeatureName feature);
     void GetLimits(WGPULimits limits);
-    [Value] WGPUQueue GetQueue();
+    WGPUQueue GetQueue();
 };
 
 [Prefix="JGPU::"]
