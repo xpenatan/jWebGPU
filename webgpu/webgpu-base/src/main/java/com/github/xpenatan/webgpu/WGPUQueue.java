@@ -23,15 +23,29 @@ public class WGPUQueue extends IDLBase {
      */
     /*[-JNI;-NATIVE]
         JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-        // Get the memory address of the direct buffer
         void* bufferAddress = env->GetDirectBufferAddress(byteBuffer);
-        unsigned char* data = static_cast<unsigned char*>(bufferAddress);
-        nativeObject->WriteBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)bufferOffset, data, (int)dataSize);
+        nativeObject->WriteBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)bufferOffset, bufferAddress, (int)dataSize);
     */
     private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize);
 
-    /*[-TEAVM;-REMOVE]*/
-    /*[-JNI;-REMOVE]*/
-    public void writeBuffer(WGPUBuffer buffer, int bufferOffset, IDLByteArray bytes, int dataSize) {
+    /*[-TEAVM;-REPLACE_BLOCK]
+        {
+            org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
+            internal_native_WriteBuffer((int)getNativeData().getCPointer(), (int)buffer.getNativeData().getCPointer(), bufferOffset, array, dataSize, (int)dataLayout.getNativeData().getCPointer(), (int)writeSize.getNativeData().getCPointer());
+        }
+    */
+    public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
+        internal_native_WriteTexture((long) getNativeData().getCPointer(), (long) (destination != null ? destination.getNativeData().getCPointer() : 0), byteBuffer, dataSize, dataLayout.getNativeData().getCPointer(), writeSize.getNativeData().getCPointer());
     }
+
+    /*[-TEAVM;-REPLACE]
+        @org.teavm.jso.JSBody(params = {"this_addr", "destination_addr", "bytes_addr", "dataSize", "dataLayout_addr", "writeSize_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.WriteTexture_1(destination_addr, bytes_addr, dataSize, dataLayout_addr, writeSize_addr);")
+        private static native void internal_native_WriteTexture(int this_addr, int destination_addr, org.teavm.jso.JSObject bytes_addr, int dataSize, int dataLayout_addr, int writeSize_addr);
+     */
+    /*[-JNI;-NATIVE]
+        JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+        void* bufferAddress = env->GetDirectBufferAddress(byteBuffer);
+        nativeObject->WriteTexture((JGPU::WGPUTexelCopyTextureInfo* )destination_addr, bufferAddress, (int)dataSize, (JGPU::WGPUTexelCopyBufferLayout* )dataLayout_addr, (JGPU::WGPUExtent3D* )writeSize_addr);
+    */
+    private static native void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr);
 }

@@ -3849,3 +3849,7 @@ void JGPU::WGPUQueue::WriteTexture(JGPU::WGPUTexelCopyTextureInfo* destination, 
     }
     wgpuQueueWriteTexture(Get(), &destination->Get(), data, size, dataLayout->Get(), writeSize->Get());
 }
+
+void JGPU::WGPUQueue::WriteTexture(JGPU::WGPUTexelCopyTextureInfo* destination, void const * data, int size, JGPU::WGPUTexelCopyBufferLayout* dataLayout, JGPU::WGPUExtent3D* writeSize) {
+    wgpuQueueWriteTexture(Get(), &destination->Get(), data, size, dataLayout->Get(), writeSize->Get());
+}
