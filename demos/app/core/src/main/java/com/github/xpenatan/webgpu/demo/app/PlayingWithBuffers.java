@@ -53,6 +53,8 @@ import com.github.xpenatan.webgpu.WGPUTextureView;
 import com.github.xpenatan.webgpu.WGPUTextureViewDescriptor;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 public class PlayingWithBuffers implements ApplicationListener {
 
@@ -323,12 +325,14 @@ public class PlayingWithBuffers implements ApplicationListener {
                 if(status != WGPUMapAsyncStatus.Success) return;
 
                 // Get a pointer to wherever the driver mapped the GPU memory to the RAM
-                WGPUByteBuffer bufferData = buffer2.getConstMappedRange(0, 16);
+                ByteBuffer byteBuffer = ByteBuffer.allocateDirect(16);
+                byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
+                buffer2.getConstMappedRange(0, 16, byteBuffer);
 
                 System.out.print("bufferData = [");
                 for(int i = 0; i < 16; ++i) {
                     if(i > 0) System.out.print(", ");
-                    byte b = bufferData.get(i);
+                    byte b = byteBuffer.get(i);
                     System.out.print(b);
                 }
                 System.out.println("]");

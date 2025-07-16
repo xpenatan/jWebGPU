@@ -1199,7 +1199,7 @@ interface WGPUBuffer {
     void Release();
     void Destroy();
     [Value] WGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);
-    [Value] WGPUByteBuffer GetConstMappedRange(long offset, long size);
+    void GetConstMappedRange(long offset, long size, octet[] bytes); //[-SKIP]
     void Unmap();
     long GetSize();
     WGPUBufferUsage GetUsage();

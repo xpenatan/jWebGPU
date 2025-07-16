@@ -3658,11 +3658,9 @@ JGPU::WGPUFuture JGPU::WGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int si
     return temp;
 }
 
-WGPUByteBuffer JGPU::WGPUBuffer::GetConstMappedRange(int offset, int size) {
-    // TODO need to test
+void JGPU::WGPUBuffer::GetConstMappedRange(int offset, int size, void* bufferOut) {
     uint8_t* bufferData = (uint8_t*) wgpuBufferGetConstMappedRange(Get(), offset, size);
-    WGPUByteBuffer buffer(bufferData, size);
-    return buffer;
+    std::memcpy(bufferOut, bufferData, size);
 }
 
 void JGPU::WGPUBuffer::Destroy() {
