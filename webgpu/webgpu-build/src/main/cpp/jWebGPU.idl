@@ -48,6 +48,7 @@ interface WGPUFloatBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
     [BindTo="put"] void put_0(float value);
     [BindTo="put"] void put_1(long index, float value);
+    [BindTo="put"] void put_2(float[] values, long offset, long size); //[-SKIP]
     float get(long index);
     float get();
     long remaining();

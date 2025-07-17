@@ -10,6 +10,7 @@ import com.github.xpenatan.webgpu.WGPUCallbackMode;
 import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
 import com.github.xpenatan.webgpu.WGPUCullMode;
+import com.github.xpenatan.webgpu.WGPUFloatBuffer;
 import com.github.xpenatan.webgpu.WGPUFrontFace;
 import com.github.xpenatan.webgpu.WGPUIndexFormat;
 import com.github.xpenatan.webgpu.WGPULoadOp;
@@ -80,20 +81,39 @@ public class PlayingWithBuffers implements ApplicationListener {
             initializePipeline(wgpu);
             playingWithBuffers(wgpu);
 
-            WGPUByteBuffer buffer = new WGPUByteBuffer(4);
-            buffer.put(0, (byte)1);
-            buffer.put(1, (byte)2);
-            buffer.put(2, (byte)3);
-            buffer.put(3, (byte)4);
-            for(int i = 0; i < buffer.getLimit(); i++) {
-                byte b = buffer.get(i);
-                System.out.println("i: " + i + " value: " + b);
-            }
-            buffer.dispose();
+            testWGPUBuffer();
         }
         else {
             System.out.println("Surface not created");
         }
+    }
+
+    private void testWGPUBuffer() {
+        WGPUByteBuffer buffer = new WGPUByteBuffer(4 * Float.BYTES);
+        WGPUFloatBuffer floatBuffer = buffer.asFloatBuffer();
+        floatBuffer.put(0, 1);
+        floatBuffer.put(1, 2);
+        floatBuffer.put(2, 3);
+        floatBuffer.put(3, 4);
+
+        for(int i = 0; i < floatBuffer.getLimit(); i++) {
+            float b = floatBuffer.get(i);
+            System.out.println("[" + i + "]: " + b);
+        }
+
+        float [] data = new float[4];
+        data[0] = 4;
+        data[1] = 3;
+        data[2] = 2;
+        data[3] = 1;
+        floatBuffer.put(data, 0, 4);
+
+        for(int i = 0; i < floatBuffer.getLimit(); i++) {
+            float b = floatBuffer.get(i);
+            System.out.println("[" + i + "]: " + b);
+        }
+
+        buffer.dispose();
     }
 
     @Override
