@@ -851,9 +851,10 @@ interface WGPUBindGroupLayoutDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUProgrammableStageDescriptor { // Pointer descriptor
-//    void WGPUProgrammableStageDescriptor();
-//    static WGPUProgrammableStageDescriptor Obtain();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void SetModule(WGPUShaderModule shaderModule);
+    void SetEntryPoint([Const] DOMString entryPoint);
+    void SetConstants(WGPUVectorConstantEntry values);
 };
 
 [Prefix="JGPU::"]
@@ -862,14 +863,12 @@ interface WGPUComputePipelineDescriptor {
     static WGPUComputePipelineDescriptor Obtain();
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
-//    void SetLayout(WGPUPipelineLayout layout);
+    void SetLayout(WGPUPipelineLayout layout);
     [Value] WGPUProgrammableStageDescriptor GetCompute();
 };
 
 [Prefix="JGPU::"]
 interface WGPUQueueDescriptor {  // Pointer descriptor
-//    void WGPUQueueDescriptor();
-//    static WGPUQueueDescriptor Obtain();
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
 };

@@ -2766,6 +2766,26 @@ void JGPU::WGPUProgrammableStageDescriptor::SetNextInChain(JGPU::WGPUChainedStru
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
+void JGPU::WGPUProgrammableStageDescriptor::SetModule(JGPU::WGPUShaderModule* module) {
+    Get()->module = module != NULL ? module->Get() : NULL;
+}
+
+void JGPU::WGPUProgrammableStageDescriptor::SetEntryPoint(const char* value) {
+    JGPU::WGPUStringView stringView(value);
+    Get()->entryPoint = stringView.Get();
+}
+
+void JGPU::WGPUProgrammableStageDescriptor::SetConstants(WGPUVectorConstantEntry* values) {
+    if(values != NULL) {
+        Get()->constantCount = values->size();
+        Get()->constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
+    }
+    else {
+        Get()->constantCount = 0;
+        Get()->constants = NULL;
+    }
+}
+
 // JGPU::WGPUComputePipelineDescriptor
 JGPU::WGPUComputePipelineDescriptor* JGPU::WGPUComputePipelineDescriptor::Obtain() {
     static JGPU::WGPUComputePipelineDescriptor obj;
@@ -2780,6 +2800,10 @@ void JGPU::WGPUComputePipelineDescriptor::SetNextInChain(JGPU::WGPUChainedStruct
 void JGPU::WGPUComputePipelineDescriptor::SetLabel(const char* value) {
     JGPU::WGPUStringView stringView(value);
     Get().label = stringView.Get();
+}
+
+void JGPU::WGPUComputePipelineDescriptor::SetLayout(WGPUPipelineLayout* pipelineLayout) {
+    Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
 }
 
 JGPU::WGPUProgrammableStageDescriptor JGPU::WGPUComputePipelineDescriptor::GetCompute() {

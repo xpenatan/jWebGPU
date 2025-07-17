@@ -1266,6 +1266,9 @@ class WGPUProgrammableStageDescriptor : public WGPUObjectBase<WGPUProgrammableSt
     public:
         static WGPUProgrammableStageDescriptor* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
+        void SetModule(WGPUShaderModule* module);
+        void SetEntryPoint(const char* value);
+        void SetConstants(WGPUVectorConstantEntry* values);
 };
 
 class WGPUComputePipelineDescriptor : public WGPUObjectBase<WGPUComputePipelineDescriptor, ::WGPUComputePipelineDescriptor> {
@@ -1273,6 +1276,7 @@ class WGPUComputePipelineDescriptor : public WGPUObjectBase<WGPUComputePipelineD
         static WGPUComputePipelineDescriptor* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
+        void SetLayout(WGPUPipelineLayout* pipelineLayout);
         WGPUProgrammableStageDescriptor GetCompute();
 };
 
