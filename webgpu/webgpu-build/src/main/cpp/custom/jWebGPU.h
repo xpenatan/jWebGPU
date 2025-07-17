@@ -361,7 +361,9 @@ class WGPUByteBuffer {
         static uint64_t swapBytes(uint64_t value);
 
     private:
-        std::vector<uint8_t> buffer;
+        uint8_t* buffer;
+        bool _shouldDeleteBuffer = true;
+        size_t _capacity = 0;
         size_t _position = 0;
         size_t _limit;
         WGPUByteOrder byteOrder;
@@ -372,7 +374,6 @@ class WGPUByteBuffer {
         WGPUShortBuffer shortBuffer;
 
     public:
-        void push_back(char value);
         const uint8_t* data();
         template<typename T>
         void putNumeric(int index, T value);
@@ -381,15 +382,18 @@ class WGPUByteBuffer {
 
     public:
         static WGPUByteBuffer* Obtain(int capacity);
-        WGPUByteBuffer() : buffer(0), _limit(0) {
+        WGPUByteBuffer(int capacity) : _limit(capacity), _capacity(capacity) {
             order(LittleEndian);
+            buffer = new uint8_t[capacity];
         }
-        WGPUByteBuffer(int capacity) : buffer(capacity), _limit(capacity) {
+        WGPUByteBuffer(uint8_t* bufferData, int dataSize, bool shouldDeleteBuffer) : _limit(dataSize), _capacity(dataSize), _shouldDeleteBuffer(shouldDeleteBuffer) {
             order(LittleEndian);
+            buffer = bufferData;
         }
-        WGPUByteBuffer(uint8_t* bufferData, int dataSize) : _limit(dataSize) {
-            order(LittleEndian);
-            buffer.insert(buffer.end(), bufferData, bufferData + dataSize);
+        ~WGPUByteBuffer() {
+            if(_shouldDeleteBuffer) {
+                delete[] buffer;
+            }
         }
         void order(WGPUByteOrder order);
         void put(int index, char value);
@@ -422,15 +426,19 @@ class WGPUByteBuffer {
 
 class STBImage {
     public:
+        ~STBImage() {
+            delete pixel;
+        }
+
         uint32_t width;
         uint32_t height;
         uint32_t format;
-        WGPUByteBuffer pixel;
+        WGPUByteBuffer* pixel;
 
         int GetWidth() { return width; }
         int GetHeight() { return height; }
         int GetFormat() { return format; }
-        WGPUByteBuffer& GetPixels() { return pixel; }
+        WGPUByteBuffer* GetPixels() { return pixel; }
 };
 
 class WGPUAndroidWindow {

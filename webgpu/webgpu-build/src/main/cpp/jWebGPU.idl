@@ -7,7 +7,7 @@ interface WGPU {
 };
 
 interface STBImage {
-    [Ref] WGPUByteBuffer GetPixels();
+    WGPUByteBuffer GetPixels();
     long GetWidth();
     long GetHeight();
     long GetFormat();

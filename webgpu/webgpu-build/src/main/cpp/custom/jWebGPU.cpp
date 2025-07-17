@@ -285,11 +285,9 @@ WGPUByteBuffer* WGPUByteBuffer::Obtain(int capacity) {
     return &obj;
 }
 
-int WGPUByteBuffer::getCapacity() { return buffer.size(); }
+int WGPUByteBuffer::getCapacity() { return _capacity; }
 
-void WGPUByteBuffer::push_back(char value) { buffer.push_back(value); }
-
-const uint8_t* WGPUByteBuffer::data() { return buffer.data(); }
+const uint8_t* WGPUByteBuffer::data() { return buffer; }
 
 void WGPUByteBuffer::order(WGPUByteOrder order) {
     byteOrder = order;
@@ -375,7 +373,7 @@ int WGPUByteBuffer::getPosition() {
 }
 
 void WGPUByteBuffer::limit(int newLimit) {
-    if (newLimit > buffer.size()) {
+    if (newLimit > getCapacity()) {
         throw std::out_of_range("Invalid limit");
     }
     _limit = newLimit;
@@ -387,7 +385,7 @@ size_t WGPUByteBuffer::getLimit() const {
 
 void WGPUByteBuffer::clear() {
     _position = 0;
-    _limit = buffer.size();
+    _limit = getCapacity();
 }
 
 void WGPUByteBuffer::flip() {
@@ -2144,7 +2142,10 @@ STBImage* WGPU::loadImage(WGPUByteBuffer* buffer, int desiredChannels) {
     }
 
     STBImage* stbImage = new STBImage();
-    stbImage->pixel = WGPUByteBuffer(pixels, width * height * bufferFormat);
+    size_t dataSize = width * height * bufferFormat;
+    uint8_t* newPixels = new uint8_t[dataSize];
+    std::memcpy(newPixels, pixels, dataSize);
+    stbImage->pixel = new WGPUByteBuffer(pixels, dataSize, true);
     stbi_image_free(pixels);
     stbImage->width = width;
     stbImage->height = height;

@@ -5,6 +5,7 @@ import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
 import com.github.xpenatan.webgpu.WGPUBufferUsage;
+import com.github.xpenatan.webgpu.WGPUByteBuffer;
 import com.github.xpenatan.webgpu.WGPUCallbackMode;
 import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
@@ -78,6 +79,17 @@ public class PlayingWithBuffers implements ApplicationListener {
 
             initializePipeline(wgpu);
             playingWithBuffers(wgpu);
+
+            WGPUByteBuffer buffer = new WGPUByteBuffer(4);
+            buffer.put(0, (byte)1);
+            buffer.put(1, (byte)2);
+            buffer.put(2, (byte)3);
+            buffer.put(3, (byte)4);
+            for(int i = 0; i < buffer.getLimit(); i++) {
+                byte b = buffer.get(i);
+                System.out.println("i: " + i + " value: " + b);
+            }
+            buffer.dispose();
         }
         else {
             System.out.println("Surface not created");
