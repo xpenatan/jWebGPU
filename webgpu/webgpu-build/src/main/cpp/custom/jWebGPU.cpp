@@ -3040,8 +3040,8 @@ void JGPU::WGPURenderBundleEncoder::SetLabel(const char* label) {
     wgpuRenderBundleEncoderSetLabel(Get(), stringView.Get());
 }
 
-void JGPU::WGPURenderBundleEncoder::Finish(JGPU::WGPURenderBundleDescriptor* descriptor, JGPU::WGPURenderBundle* bundle) {
-    bundle->Set(wgpuRenderBundleEncoderFinish(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
+void JGPU::WGPURenderBundleEncoder::Finish(JGPU::WGPURenderBundleDescriptor* descriptor, JGPU::WGPURenderBundle* bundleOut) {
+    bundleOut->Set(wgpuRenderBundleEncoderFinish(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }
 
 // JGPU::WGPUTextureView

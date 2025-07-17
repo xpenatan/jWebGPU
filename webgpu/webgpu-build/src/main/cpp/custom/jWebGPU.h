@@ -1447,7 +1447,7 @@ class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, :
         void PopDebugGroup();
         void PushDebugGroup(const char* label);
         void SetLabel(const char* label);
-        void Finish(WGPURenderBundleDescriptor* descriptor, WGPURenderBundle* bundle);
+        void Finish(WGPURenderBundleDescriptor* descriptor, WGPURenderBundle* bundleOut);
 };
 
 class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView> {

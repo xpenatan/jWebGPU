@@ -1031,7 +1031,7 @@ interface WGPURenderBundleEncoder {
     void InsertDebugMarker([Const] DOMString label);
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString label);
-    void Finish(WGPURenderBundleDescriptor descriptor, WGPURenderBundle bundle);
+    void Finish(WGPURenderBundleDescriptor descriptor, WGPURenderBundle bundleOut);
 };
 
 [Prefix="JGPU::"]
@@ -1222,6 +1222,7 @@ interface WGPUBindGroupLayout {
 
 [Prefix="JGPU::"]
 interface WGPUComputePipeline {
+    void WGPUComputePipeline();
     void Release();
     void SetLabel([Const] DOMString value);
     [Value] WGPUBindGroupLayout GetBindGroupLayout(long groupIndex);
@@ -1229,6 +1230,7 @@ interface WGPUComputePipeline {
 
 [Prefix="JGPU::"]
 interface WGPURenderBundle {
+    void WGPURenderBundle();
     void Release();
     void SetLabel([Const] DOMString value);
 };
