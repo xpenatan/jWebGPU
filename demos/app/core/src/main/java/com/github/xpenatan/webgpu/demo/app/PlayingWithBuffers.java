@@ -5,7 +5,6 @@ import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
 import com.github.xpenatan.webgpu.WGPUBufferUsage;
-import com.github.xpenatan.webgpu.WGPUByteBuffer;
 import com.github.xpenatan.webgpu.WGPUCallbackMode;
 import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
@@ -294,14 +293,14 @@ public class PlayingWithBuffers implements ApplicationListener {
         wgpu.device.createBuffer(bufferDesc, buffer2);
 
         // Create some CPU-side data buffer (of size 16 bytes)
-        WGPUByteBuffer numbers = WGPUByteBuffer.obtain(16);
+        ByteBuffer numbers = ByteBuffer.allocateDirect(16);
         for (int i = 0; i < 16; ++i) {
             numbers.put(i, (byte)i);
         }
         // `numbers` now contains [ 0, 1, 2, ... ]
 
         // Copy this from `numbers` (RAM) to `buffer1` (VRAM)
-        wgpu.queue.writeBuffer(buffer1, 0, numbers);
+        wgpu.queue.writeBuffer(buffer1, 0, numbers, numbers.limit());
 
         WGPUCommandEncoder encoder = new WGPUCommandEncoder();
         wgpu.device.createCommandEncoder(null, encoder);

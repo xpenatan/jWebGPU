@@ -1662,10 +1662,7 @@ class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
     public:
         void SetLabel(const char* value);
         void Submit(int commandCount, WGPUCommandBuffer* commandBuffer);
-        void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes, int dataSize = -1);
-        void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, WGPUFloatBuffer* bytes, int dataSize = -1);
         void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, void const * data, int size);
-        void WriteTexture(WGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, WGPUTexelCopyBufferLayout* dataLayout, WGPUExtent3D* writeSize);
         void WriteTexture(WGPUTexelCopyTextureInfo* destination, void const * data, int size, WGPUTexelCopyBufferLayout* dataLayout, WGPUExtent3D* writeSize);
 };
 

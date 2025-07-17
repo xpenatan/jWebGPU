@@ -3844,32 +3844,8 @@ void JGPU::WGPUQueue::Submit(int commandCount, JGPU::WGPUCommandBuffer* commandB
     wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
 }
 
-void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, WGPUByteBuffer* bytes, int dataSize) {
-    int size = 0;
-    void* data = NULL;
-    if(bytes != NULL) {
-        size = dataSize == -1 ? bytes->getLimit() : dataSize;
-        data = (void*)bytes->data();
-    }
-    wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
-}
-
-void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, WGPUFloatBuffer* bytes, int dataSize) {
-    WriteBuffer(buffer, bufferOffset, bytes == NULL ? NULL : bytes->parent, dataSize);
-}
-
 void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, void const * data, int size) {
     wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
-}
-
-void JGPU::WGPUQueue::WriteTexture(JGPU::WGPUTexelCopyTextureInfo* destination, WGPUByteBuffer* bytes, JGPU::WGPUTexelCopyBufferLayout* dataLayout, JGPU::WGPUExtent3D* writeSize) {
-    int size = 0;
-    void* data = NULL;
-    if(bytes != NULL) {
-        size = bytes->getLimit();
-        data = (void*)bytes->data();
-    }
-    wgpuQueueWriteTexture(Get(), &destination->Get(), data, size, dataLayout->Get(), writeSize->Get());
 }
 
 void JGPU::WGPUQueue::WriteTexture(JGPU::WGPUTexelCopyTextureInfo* destination, void const * data, int size, JGPU::WGPUTexelCopyBufferLayout* dataLayout, JGPU::WGPUExtent3D* writeSize) {
