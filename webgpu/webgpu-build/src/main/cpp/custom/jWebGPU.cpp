@@ -3688,6 +3688,16 @@ void JGPU::WGPUBuffer::GetConstMappedRange(int offset, int size, void* bufferOut
     std::memcpy(bufferOut, bufferData, size);
 }
 
+WGPUByteBuffer& JGPU::WGPUBuffer::GetMappedRange(int offset, int size) {
+    uint8_t* bufferData = (uint8_t*) wgpuBufferGetMappedRange(Get(), offset, size);
+    static WGPUByteBuffer temp;
+    temp.buffer = bufferData;
+    temp._limit = size;
+    temp._capacity = size;
+    temp._shouldDeleteBuffer = false;
+    return temp;
+}
+
 void JGPU::WGPUBuffer::Destroy() {
     wgpuBufferDestroy(Get());
 }

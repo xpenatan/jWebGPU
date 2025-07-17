@@ -361,11 +361,6 @@ class WGPUByteBuffer {
         static uint64_t swapBytes(uint64_t value);
 
     private:
-        uint8_t* buffer;
-        bool _shouldDeleteBuffer = true;
-        size_t _capacity = 0;
-        size_t _position = 0;
-        size_t _limit;
         WGPUByteOrder byteOrder;
         bool needsSwap;
         WGPUFloatBuffer floatBuffer;
@@ -374,6 +369,11 @@ class WGPUByteBuffer {
         WGPUShortBuffer shortBuffer;
 
     public:
+        uint8_t* buffer;
+        bool _shouldDeleteBuffer = true;
+        size_t _capacity = 0;
+        size_t _position = 0;
+        size_t _limit;
         const uint8_t* data();
         template<typename T>
         void putNumeric(int index, T value);
@@ -382,6 +382,9 @@ class WGPUByteBuffer {
 
     public:
         static WGPUByteBuffer* Obtain(int capacity);
+        WGPUByteBuffer() : buffer(NULL), _limit(0), _capacity(0) {
+            order(LittleEndian);
+        }
         WGPUByteBuffer(int capacity) : _limit(capacity), _capacity(capacity) {
             order(LittleEndian);
             buffer = new uint8_t[capacity];
@@ -1604,6 +1607,7 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
         WGPUBufferUsage GetUsage();
         WGPUFuture MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback);
         void GetConstMappedRange(int offset, int size, void* bufferOut);
+        WGPUByteBuffer& GetMappedRange(int offset, int size);
         void Destroy();
 };
 
