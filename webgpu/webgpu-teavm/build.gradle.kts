@@ -18,6 +18,7 @@ dependencies {
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-teavm:${LibExt.jParserVersion}")
     implementation("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
+    implementation("org.teavm:teavm-core:${LibExt.teaVMVersion}")
     implementation("org.teavm:teavm-classlib:${LibExt.teaVMVersion}")
     implementation("org.teavm:teavm-jso-apis:${LibExt.teaVMVersion}")
 }

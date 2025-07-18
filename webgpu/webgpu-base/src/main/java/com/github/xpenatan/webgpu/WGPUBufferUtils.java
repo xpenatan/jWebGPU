@@ -6,9 +6,11 @@ public class WGPUBufferUtils {
 
     /*[-TEAVM;-REPLACE_BLOCK]
         {
-            org.teavm.classlib.impl.nio.Buffers.free(byteBuffer);
+            if(org.teavm.classlib.PlatformDetector.isWebAssemblyGC() && buffer.isDirect()) {
+                org.teavm.classlib.impl.nio.Buffers.free(buffer);
+            }
         }
     */
-    public static void dispose(ByteBuffer byteBuffer) {
+    public static void dispose(ByteBuffer buffer) {
     }
 }
