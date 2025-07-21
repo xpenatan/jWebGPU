@@ -3,6 +3,7 @@ import java.util.*
 
 object LibExt {
     const val groupId = "com.github.xpenatan.jWebGPU"
+    const val libName = "jWebGPU"
     val libVersion: String = getVersion()
 
     //Library dependencies
