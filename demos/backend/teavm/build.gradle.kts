@@ -17,7 +17,7 @@ dependencies {
         api(project(":webgpu:webgpu-core"))
         api(project(":webgpu:webgpu-teavm"))
     }
-    implementation("com.github.xpenatan:jMultiplatform:0.1.2")
+    implementation("com.github.xpenatan:jMultiplatform:${LibExt.jMultiplatform}")
 
     api("org.teavm:teavm-tooling:${LibExt.teaVMVersion}")
     api("org.teavm:teavm-core:${LibExt.teaVMVersion}")
