@@ -3436,8 +3436,10 @@ void JGPU::WGPUDevice::CreateBindGroupLayout(JGPU::WGPUBindGroupLayoutDescriptor
     valueOut->Set(wgpuDeviceCreateBindGroupLayout(Get(), &descriptor->Get()));
 }
 
-void JGPU::WGPUDevice::CreateBuffer(JGPU::WGPUBufferDescriptor* descriptor, JGPU::WGPUBuffer* valueOut) {
+JGPU::WGPUBuffer* JGPU::WGPUDevice::CreateBuffer(JGPU::WGPUBufferDescriptor* descriptor) {
+    JGPU::WGPUBuffer* valueOut = new JGPU::WGPUBuffer();
     valueOut->Set(wgpuDeviceCreateBuffer(Get(), &descriptor->Get()));
+    return valueOut;
 }
 
 void JGPU::WGPUDevice::CreateCommandEncoder(JGPU::WGPUCommandEncoderDescriptor* descriptor, JGPU::WGPUCommandEncoder* valueOut) {

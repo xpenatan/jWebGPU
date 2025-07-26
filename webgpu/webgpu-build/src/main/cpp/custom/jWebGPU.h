@@ -658,6 +658,10 @@ class WGPUObjectBase {
         return mHandle;
     }
 
+    void* GetPtr() {
+        return &mHandle;
+    }
+
     void Set(CType handle) {
         mHandle = handle;
     }
@@ -1688,7 +1692,7 @@ class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
     public:
         void CreateBindGroup(WGPUBindGroupDescriptor* descriptor, WGPUBindGroup* valueOut);
         void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor* descriptor, WGPUBindGroupLayout* valueOut);
-        void CreateBuffer(WGPUBufferDescriptor* descriptor, WGPUBuffer* valueOut);
+        WGPUBuffer* CreateBuffer(WGPUBufferDescriptor* descriptor);
         void CreateCommandEncoder(WGPUCommandEncoderDescriptor* descriptor, WGPUCommandEncoder* valueOut);
         void CreateComputePipeline(WGPUComputePipelineDescriptor* descriptor, WGPUComputePipeline* valueOut);
         void CreatePipelineLayout(WGPUPipelineLayoutDescriptor* descriptor, WGPUPipelineLayout* valueOut);

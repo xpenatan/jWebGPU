@@ -632,6 +632,7 @@ interface WGPUOrigin3D {
 [Prefix="JGPU::"]
 interface WGPUTexelCopyTextureInfo {
     void WGPUTexelCopyTextureInfo();
+    any GetPtr(); //[-SKIP]
     static WGPUTexelCopyTextureInfo Obtain();
     void SetTexture(WGPUTexture texture);
     void SetMipLevel(long mipLevel);
@@ -642,6 +643,7 @@ interface WGPUTexelCopyTextureInfo {
 [Prefix="JGPU::"]
 interface WGPUExtent3D {
     void WGPUExtent3D();
+    any Get(); //[-SKIP]
     static WGPUExtent3D Obtain();
     void SetWidth(long width);
     void SetHeight(long height);
@@ -651,6 +653,7 @@ interface WGPUExtent3D {
 [Prefix="JGPU::"]
 interface WGPUTexelCopyBufferLayout {
     void WGPUTexelCopyBufferLayout();
+    any Get(); //[-SKIP]
     static WGPUTexelCopyBufferLayout Obtain();
     void SetOffset(long offset);
     void SetBytesPerRow(long bytesPerRow);
@@ -1131,7 +1134,7 @@ interface WGPUDevice {
     void Release();
     void CreateBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut);
     void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut);
-    void CreateBuffer(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
+    WGPUBuffer CreateBuffer(WGPUBufferDescriptor descriptor);     //[-NEW_OBJECT]
     void CreateCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut);
     void CreateComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut);
     void CreatePipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut);
@@ -1195,7 +1198,7 @@ interface WGPUCommandEncoder {
 
 [Prefix="JGPU::"]
 interface WGPUBuffer {
-    void WGPUBuffer();
+    any Get(); //[-SKIP]
     void Release();
     void Destroy();
     [Value] WGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);
@@ -1256,6 +1259,7 @@ interface WGPUSurface {
 
 [Prefix="JGPU::"]
 interface WGPUQueue {
+    any Get(); //[-SKIP]
     void SetLabel([Const] DOMString value);
     void Submit(long commandCount, WGPUCommandBuffer commandBuffer);
     void Release();

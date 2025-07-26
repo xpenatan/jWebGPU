@@ -217,6 +217,7 @@ public class WGPUBuild {
         linkTarget.cppFlags.add("--use-port=" + port);
         linkTarget.cppFlags.add("-fsanitize=address");
         linkTarget.linkerFlags.add("--use-port=" + port);
+        linkTarget.exportedRuntimeMethods.add("WebGPU");
         linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "jWebGPU.h");
         linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
         linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());

@@ -317,12 +317,10 @@ public class PlayingWithBuffers implements ApplicationListener {
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.CopySrc));
         bufferDesc.setSize(16);
         bufferDesc.setMappedAtCreation(false);
-        WGPUBuffer buffer1 = new WGPUBuffer();
-        wgpu.device.createBuffer(bufferDesc, buffer1);
+        WGPUBuffer buffer1 = wgpu.device.createBuffer(bufferDesc);
         bufferDesc.setLabel("Output buffer");
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.MapRead));
-        WGPUBuffer buffer2 = new WGPUBuffer();
-        wgpu.device.createBuffer(bufferDesc, buffer2);
+        WGPUBuffer buffer2 = wgpu.device.createBuffer(bufferDesc);
 
         // Create some CPU-side data buffer (of size 16 bytes)
         ByteBuffer numbers = ByteBuffer.allocateDirect(16);

@@ -357,8 +357,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         bufferDesc.setSize(vertexData.limit());
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Vertex)); // Vertex usage here!
         bufferDesc.setMappedAtCreation(false);
-        vertexBuffer = new WGPUBuffer();
-        wgpu.device.createBuffer(bufferDesc, vertexBuffer);
+        vertexBuffer = wgpu.device.createBuffer(bufferDesc);
 
         // Upload geometry data to the buffer
         wgpu.queue.writeBuffer(vertexBuffer,0, vertexData, vertexData.limit());

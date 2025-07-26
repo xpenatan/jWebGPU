@@ -5,6 +5,22 @@ import java.nio.ByteBuffer;
 
 public class WGPUBuffer extends IDLBase {
 
+    /*[-TEAVM;-ADD_RAW]
+        @Override
+        protected void onNativeAddressChanged() {
+            int cPointer = (int)nativeData.getCPointer();
+            nativeData.nativeObject = internal_native_getJsObject(cPointer);
+        }
+
+        @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
+            "var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUBuffer);" +
+            "var jsAddr = jsObj.Get();" +
+            "var nativeObject = [MODULE].WebGPU.getJsObject(jsAddr);" +
+            "return nativeObject;"
+        )
+        private static native org.teavm.jso.JSObject internal_native_getJsObject(int this_addr);
+    */
+
 
     /*[-TEAVM;-REPLACE_BLOCK]
         {
