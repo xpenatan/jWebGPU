@@ -84,6 +84,8 @@ WGPUVectorFutureWaitInfo* WGPUVectorFutureWaitInfo::Obtain() {
 
 int WGPUVectorFutureWaitInfo::size() { return vector.size(); }
 
+void WGPUVectorFutureWaitInfo::clear() { return vector.clear(); }
+
 void WGPUVectorFutureWaitInfo::push_back(const JGPU::WGPUFutureWaitInfo& entry) { vector.push_back(entry); }
 
 const JGPU::WGPUFutureWaitInfo* WGPUVectorFutureWaitInfo::data() { return vector.data(); }
@@ -98,6 +100,8 @@ WGPUVectorBindGroupEntry* WGPUVectorBindGroupEntry::Obtain() {
 
 int WGPUVectorBindGroupEntry::size() { return vector.size(); }
 
+void WGPUVectorBindGroupEntry::clear() { return vector.clear(); }
+
 void WGPUVectorBindGroupEntry::push_back(const JGPU::WGPUBindGroupEntry& entry) { vector.push_back(entry); }
 
 const JGPU::WGPUBindGroupEntry* WGPUVectorBindGroupEntry::data() { return vector.data(); }
@@ -110,6 +114,8 @@ WGPUVectorColorTargetState* WGPUVectorColorTargetState::Obtain() {
 }
 
 int WGPUVectorColorTargetState::size() { return vector.size(); }
+
+void WGPUVectorColorTargetState::clear() { return vector.clear(); }
 
 void WGPUVectorColorTargetState::push_back(const JGPU::WGPUColorTargetState& attachment) { vector.push_back(attachment); }
 
@@ -124,6 +130,8 @@ WGPUVectorFeatureName* WGPUVectorFeatureName::Obtain() {
 
 int WGPUVectorFeatureName::size() { return vector.size(); }
 
+void WGPUVectorFeatureName::clear() { return vector.clear(); }
+
 void WGPUVectorFeatureName::push_back(const WGPUFeatureName& attachment) { vector.push_back(attachment); }
 
 const WGPUFeatureName* WGPUVectorFeatureName::data() { return vector.data(); }
@@ -136,6 +144,8 @@ WGPUVectorConstantEntry* WGPUVectorConstantEntry::Obtain() {
 }
 
 int WGPUVectorConstantEntry::size() { return vector.size(); }
+
+void WGPUVectorConstantEntry::clear() { return vector.clear(); }
 
 void WGPUVectorConstantEntry::push_back(const JGPU::WGPUConstantEntry& attachment) { vector.push_back(attachment); }
 
@@ -150,6 +160,8 @@ WGPUVectorVertexBufferLayout* WGPUVectorVertexBufferLayout::Obtain() {
 
 int WGPUVectorVertexBufferLayout::size() { return vector.size(); }
 
+void WGPUVectorVertexBufferLayout::clear() { return vector.clear(); }
+
 void WGPUVectorVertexBufferLayout::push_back(const JGPU::WGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
 
 const JGPU::WGPUVertexBufferLayout* WGPUVectorVertexBufferLayout::data() { return vector.data(); }
@@ -162,6 +174,8 @@ WGPUVectorTextureFormat* WGPUVectorTextureFormat::Obtain() {
 }
 
 int WGPUVectorTextureFormat::size() { return vector.size(); }
+
+void WGPUVectorTextureFormat::clear() { return vector.clear(); }
 
 WGPUTextureFormat WGPUVectorTextureFormat::get(int index) { return vector[index]; }
 
@@ -177,6 +191,8 @@ WGPUVectorRenderBundle* WGPUVectorRenderBundle::Obtain() {
 }
 
 int WGPUVectorRenderBundle::size() { return vector.size(); }
+
+void WGPUVectorRenderBundle::clear() { return vector.clear(); }
 
 void WGPUVectorRenderBundle::push_back(const JGPU::WGPURenderBundle& attachment) { vector.push_back(attachment); }
 
@@ -206,6 +222,8 @@ WGPUVectorVertexAttribute* WGPUVectorVertexAttribute::Obtain() {
 
 int WGPUVectorVertexAttribute::size() { return vector.size(); }
 
+void WGPUVectorVertexAttribute::clear() { return vector.clear(); }
+
 void WGPUVectorVertexAttribute::push_back(const JGPU::WGPUVertexAttribute& attribute) { vector.push_back(attribute); }
 
 const JGPU::WGPUVertexAttribute* WGPUVectorVertexAttribute::data() { return vector.data(); }
@@ -218,6 +236,8 @@ WGPUVectorBindGroupLayout* WGPUVectorBindGroupLayout::Obtain() {
 }
 
 int WGPUVectorBindGroupLayout::size() { return vector.size(); }
+
+void WGPUVectorBindGroupLayout::clear() { return vector.clear(); }
 
 void WGPUVectorBindGroupLayout::push_back(const JGPU::WGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
 
@@ -232,7 +252,10 @@ WGPUVectorBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::Obtain() {
 
 int WGPUVectorBindGroupLayoutEntry::size() { return vector.size(); }
 
+void WGPUVectorBindGroupLayoutEntry::clear() { return vector.clear(); }
+
 void WGPUVectorBindGroupLayoutEntry::push_back(const JGPU::WGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
+
 
 const JGPU::WGPUBindGroupLayoutEntry* WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
 
@@ -244,6 +267,8 @@ WGPUVectorInt* WGPUVectorInt::Obtain() {
 }
 
 int WGPUVectorInt::size() { return vector.size(); }
+
+void WGPUVectorInt::clear() { return vector.clear(); }
 
 void WGPUVectorInt::push_back(int attachment) { vector.push_back(attachment); }
 

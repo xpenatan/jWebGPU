@@ -129,75 +129,97 @@ enum WGPUPlatformType {
 interface WGPUVectorFutureWaitInfo {
     void WGPUVectorFutureWaitInfo();
     static WGPUVectorFutureWaitInfo Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUFutureWaitInfo entry);
 };
 
 interface WGPUVectorBindGroupEntry {
     void WGPUVectorBindGroupEntry();
     static WGPUVectorBindGroupEntry Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUBindGroupEntry entry);
 };
 
 interface WGPUVectorColorTargetState {
     void WGPUVectorColorTargetState();
     static WGPUVectorColorTargetState Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUColorTargetState colorTargetState);
 };
 
 interface WGPUVectorFeatureName {
     void WGPUVectorFeatureName();
     static WGPUVectorFeatureName Obtain();
+    long size();
+    void clear();
     void push_back(WGPUFeatureName featureName);
 };
 
 interface WGPUVectorConstantEntry {
     void WGPUVectorConstantEntry();
     static WGPUVectorConstantEntry Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUConstantEntry constantEntry);
 };
 
 interface WGPUVectorVertexBufferLayout {
     void WGPUVectorVertexBufferLayout();
     static WGPUVectorVertexBufferLayout Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUVertexBufferLayout vertexBufferLayout);
 };
 
 interface WGPUVectorTextureFormat {
     void WGPUVectorTextureFormat();
     static WGPUVectorTextureFormat Obtain();
-    void push_back(WGPUTextureFormat textureFormat);
     long size();
+    void clear();
+    void push_back(WGPUTextureFormat textureFormat);
     WGPUTextureFormat get(long index);
 };
 
 interface WGPUVectorRenderBundle {
     void WGPUVectorRenderBundle();
     static WGPUVectorRenderBundle Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPURenderBundle renderBundle);
 };
 
 interface WGPUVectorRenderPassColorAttachment {
     void WGPUVectorRenderPassColorAttachment();
     static WGPUVectorRenderPassColorAttachment Obtain();
-    void push_back([Ref] WGPURenderPassColorAttachment colorAttachment);
+    long size();
     void clear();
+    void push_back([Ref] WGPURenderPassColorAttachment colorAttachment);
 };
 
 interface WGPUVectorVertexAttribute {
     void WGPUVectorVertexAttribute();
     static WGPUVectorVertexAttribute Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUVertexAttribute colorAttachment);
 };
 
 interface WGPUVectorBindGroupLayout {
     void WGPUVectorBindGroupLayout();
     static WGPUVectorBindGroupLayout Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUBindGroupLayout groupLayout);
 };
 
 interface WGPUVectorBindGroupLayoutEntry {
     void WGPUVectorBindGroupLayoutEntry();
     static WGPUVectorBindGroupLayoutEntry Obtain();
+    long size();
+    void clear();
     void push_back([Ref] WGPUBindGroupLayoutEntry groupLayout);
 };
 
@@ -205,6 +227,7 @@ interface WGPUVectorInt {
     void WGPUVectorInt();
     static WGPUVectorInt Obtain();
     long size();
+    void clear();
     void push_back(long value);
     long get(long index);
 };

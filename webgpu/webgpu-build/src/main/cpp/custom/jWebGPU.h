@@ -463,6 +463,7 @@ class WGPUVectorFutureWaitInfo {
     public:
         static WGPUVectorFutureWaitInfo* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUFutureWaitInfo& entry);
         const JGPU::WGPUFutureWaitInfo* data();
 };
@@ -473,6 +474,7 @@ class WGPUVectorBindGroupEntry {
     public:
         static WGPUVectorBindGroupEntry* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUBindGroupEntry& entry);
         const JGPU::WGPUBindGroupEntry* data();
 };
@@ -483,6 +485,7 @@ class WGPUVectorColorTargetState {
     public:
         static WGPUVectorColorTargetState* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUColorTargetState& attachment);
         const JGPU::WGPUColorTargetState* data();
 };
@@ -493,6 +496,7 @@ class WGPUVectorFeatureName {
     public:
         static WGPUVectorFeatureName* Obtain();
         int size();
+        void clear();
         void push_back(const WGPUFeatureName& attachment);
         const WGPUFeatureName* data();
 };
@@ -503,6 +507,7 @@ class WGPUVectorConstantEntry {
     public:
         static WGPUVectorConstantEntry* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUConstantEntry& attachment);
         const JGPU::WGPUConstantEntry* data();
 };
@@ -513,6 +518,7 @@ class WGPUVectorVertexBufferLayout {
     public:
         static WGPUVectorVertexBufferLayout* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUVertexBufferLayout& attachment);
         const JGPU::WGPUVertexBufferLayout* data();
 };
@@ -528,6 +534,7 @@ class WGPUVectorTextureFormat {
         }
         WGPUTextureFormat get(int index);
         int size();
+        void clear();
         void push_back(const WGPUTextureFormat& attachment);
         const WGPUTextureFormat* data();
 };
@@ -538,6 +545,7 @@ class WGPUVectorRenderBundle {
     public:
         static WGPUVectorRenderBundle* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPURenderBundle& attachment);
         const JGPU::WGPURenderBundle* data();
 };
@@ -548,9 +556,9 @@ class WGPUVectorRenderPassColorAttachment {
     public:
         static WGPUVectorRenderPassColorAttachment* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPURenderPassColorAttachment& attachment);
         const JGPU::WGPURenderPassColorAttachment* data();
-        void clear();
 };
 
 class WGPUVectorVertexAttribute {
@@ -559,6 +567,7 @@ class WGPUVectorVertexAttribute {
     public:
         static WGPUVectorVertexAttribute* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUVertexAttribute& attribute);
         const JGPU::WGPUVertexAttribute* data();
 };
@@ -569,6 +578,7 @@ class WGPUVectorBindGroupLayout {
     public:
         static WGPUVectorBindGroupLayout* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUBindGroupLayout& groupLayout);
         const JGPU::WGPUBindGroupLayout* data();
 };
@@ -579,6 +589,7 @@ class WGPUVectorBindGroupLayoutEntry {
     public:
         static WGPUVectorBindGroupLayoutEntry* Obtain();
         int size();
+        void clear();
         void push_back(const JGPU::WGPUBindGroupLayoutEntry& entry);
         const JGPU::WGPUBindGroupLayoutEntry* data();
 };
@@ -589,6 +600,7 @@ class WGPUVectorInt {
     public:
         static WGPUVectorInt* Obtain();
         int size();
+        void clear();
         void push_back(int attachment);
         int get(int index);
         const uint32_t* data();
