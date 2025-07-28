@@ -1039,6 +1039,7 @@ interface WGPUSampler {
     void WGPUSampler();
     void Release();
     void SetLabel([Const] DOMString label);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1058,6 +1059,7 @@ interface WGPURenderBundleEncoder {
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString label);
     void Finish(WGPURenderBundleDescriptor descriptor, WGPURenderBundle bundleOut);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1065,6 +1067,7 @@ interface WGPUTextureView {
     void WGPUTextureView();
     static WGPUTextureView Obtain();
     void Release();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1075,6 +1078,7 @@ interface WGPUTexture {
     WGPUTextureFormat GetFormat();
     void Release();
     void Destroy();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1118,6 +1122,7 @@ interface WGPURenderPassEncoder {
     void SetVertexBuffer(long slot, WGPUBuffer buffer, long offset, long size);
     void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth);
     void AddRef();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1129,6 +1134,7 @@ interface WGPUQuerySet {
     void SetLabel([Const] DOMString value);
     void Release();
     void AddRef();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1136,6 +1142,7 @@ interface WGPUPipelineLayout {
     void WGPUPipelineLayout();
     void Release();
     void SetLabel([Const] DOMString value);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1189,6 +1196,7 @@ interface WGPUComputePassEncoder {
     void SetBindGroup(long groupIndex, WGPUBindGroup group, WGPUVectorInt offsets);
     void SetLabel([Const] DOMString label);
     void SetPipeline(WGPUComputePipeline pipeline);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1196,6 +1204,7 @@ interface WGPUCommandBuffer {
     void WGPUCommandBuffer();
     static WGPUCommandBuffer Obtain();
     void Release();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1217,6 +1226,7 @@ interface WGPUCommandEncoder {
     void ResolveQuerySet(WGPUQuerySet querySet, long firstQuery, long queryCount, WGPUBuffer destination, long destinationOffset);
     void SetLabel([Const] DOMString value);
     void WriteTimestamp(WGPUQuerySet querySet, long queryIndex);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1230,6 +1240,7 @@ interface WGPUBuffer {
     void Unmap();
     long GetSize();
     WGPUBufferUsage GetUsage();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1237,6 +1248,7 @@ interface WGPUBindGroup {
     void WGPUBindGroup();
     void Release();
     void SetLabel([Const] DOMString value);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1244,6 +1256,7 @@ interface WGPUBindGroupLayout {
     void WGPUBindGroupLayout();
     void Release();
     void SetLabel([Const] DOMString value);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1252,6 +1265,7 @@ interface WGPUComputePipeline {
     void Release();
     void SetLabel([Const] DOMString value);
     [Value] WGPUBindGroupLayout GetBindGroupLayout(long groupIndex);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
@@ -1259,6 +1273,7 @@ interface WGPURenderBundle {
     void WGPURenderBundle();
     void Release();
     void SetLabel([Const] DOMString value);
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]

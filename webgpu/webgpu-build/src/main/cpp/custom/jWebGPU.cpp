@@ -2993,6 +2993,10 @@ void JGPU::WGPUSampler::SetLabel(const char* label) {
     wgpuSamplerSetLabel(Get(), stringView.Get());
 }
 
+bool JGPU::WGPUSampler::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPURenderBundleEncoder
 JGPU::WGPURenderBundleEncoder* JGPU::WGPURenderBundleEncoder::Obtain() {
     static JGPU::WGPURenderBundleEncoder obj;
@@ -3069,6 +3073,10 @@ void JGPU::WGPURenderBundleEncoder::Finish(JGPU::WGPURenderBundleDescriptor* des
     bundleOut->Set(wgpuRenderBundleEncoderFinish(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }
 
+bool JGPU::WGPURenderBundleEncoder::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUTextureView
 JGPU::WGPUTextureView* JGPU::WGPUTextureView::Obtain() {
     static JGPU::WGPUTextureView obj;
@@ -3082,6 +3090,10 @@ void JGPU::WGPUTextureView::AddRefInternal() {
 
 void JGPU::WGPUTextureView::ReleaseInternal() {
     wgpuTextureViewRelease(Get());
+}
+
+bool JGPU::WGPUTextureView::IsValid() {
+    return Get();
 }
 
 // JGPU::WGPUTexture
@@ -3107,6 +3119,9 @@ WGPUTextureFormat JGPU::WGPUTexture::GetFormat() {
     return wgpuTextureGetFormat(Get());
 }
 
+bool JGPU::WGPUTexture::IsValid() {
+    return Get();
+}
 
 void JGPU::WGPUTexture::Destroy() {
     wgpuTextureDestroy(Get());
@@ -3260,6 +3275,10 @@ void JGPU::WGPURenderPassEncoder::SetViewport(float x, float y, float width, flo
     wgpuRenderPassEncoderSetViewport(Get(), x, y, width, height, minDepth, maxDepth);
 }
 
+bool JGPU::WGPURenderPassEncoder::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUQuerySet
 void JGPU::WGPUQuerySet::AddRefInternal() {
     wgpuQuerySetAddRef(Get());
@@ -3286,6 +3305,10 @@ void JGPU::WGPUQuerySet::SetLabel(const char* label) {
     wgpuQuerySetSetLabel(Get(), stringView.Get());
 }
 
+bool JGPU::WGPUQuerySet::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUPipelineLayout
 void JGPU::WGPUPipelineLayout::AddRefInternal() {
     wgpuPipelineLayoutAddRef(Get());
@@ -3298,6 +3321,10 @@ void JGPU::WGPUPipelineLayout::ReleaseInternal() {
 void JGPU::WGPUPipelineLayout::SetLabel(const char* value) {
     JGPU::WGPUStringView stringView(value);
     wgpuPipelineLayoutSetLabel(Get(), stringView.Get());
+}
+
+bool JGPU::WGPUPipelineLayout::IsValid() {
+    return Get();
 }
 
 // JGPU::WGPUInstance
@@ -3584,6 +3611,10 @@ void JGPU::WGPUComputePassEncoder::SetPipeline(JGPU::WGPUComputePipeline* pipeli
     wgpuComputePassEncoderSetPipeline(Get(), pipeline->Get());
 }
 
+bool JGPU::WGPUComputePassEncoder::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUCommandBuffer
 JGPU::WGPUCommandBuffer* JGPU::WGPUCommandBuffer::Obtain() {
     static JGPU::WGPUCommandBuffer obj;
@@ -3597,6 +3628,10 @@ void JGPU::WGPUCommandBuffer::AddRefInternal() {
 
 void JGPU::WGPUCommandBuffer::ReleaseInternal() {
     wgpuCommandBufferRelease(Get());
+}
+
+bool JGPU::WGPUCommandBuffer::IsValid() {
+    return Get();
 }
 
 // JGPU::WGPUCommandEncoder
@@ -3673,6 +3708,10 @@ void JGPU::WGPUCommandEncoder::WriteTimestamp(JGPU::WGPUQuerySet* querySet, int 
     wgpuCommandEncoderWriteTimestamp(Get(), querySet->Get(), queryIndex);
 }
 
+bool JGPU::WGPUCommandEncoder::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUBuffer
 void JGPU::WGPUBuffer::AddRefInternal() {
     wgpuBufferAddRef(Get());
@@ -3729,6 +3768,10 @@ void JGPU::WGPUBuffer::Destroy() {
     wgpuBufferDestroy(Get());
 }
 
+bool JGPU::WGPUBuffer::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUBindGroup
 void JGPU::WGPUBindGroup::AddRefInternal() {
     wgpuBindGroupAddRef(Get());
@@ -3743,6 +3786,10 @@ void JGPU::WGPUBindGroup::SetLabel(const char* value) {
     wgpuBindGroupSetLabel(Get(), stringView.Get());
 }
 
+bool JGPU::WGPUBindGroup::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPUBindGroupLayout
 void JGPU::WGPUBindGroupLayout::AddRefInternal() {
     wgpuBindGroupLayoutAddRef(Get());
@@ -3755,6 +3802,10 @@ void JGPU::WGPUBindGroupLayout::ReleaseInternal() {
 void JGPU::WGPUBindGroupLayout::SetLabel(const char* value) {
     JGPU::WGPUStringView stringView(value);
     wgpuBindGroupLayoutSetLabel(Get(), stringView.Get());
+}
+
+bool JGPU::WGPUBindGroupLayout::IsValid() {
+    return Get();
 }
 
 // JGPU::WGPUComputePipeline
@@ -3777,6 +3828,10 @@ JGPU::WGPUBindGroupLayout JGPU::WGPUComputePipeline::GetBindGroupLayout(int grou
     return temp;
 }
 
+bool JGPU::WGPUComputePipeline::IsValid() {
+    return Get();
+}
+
 // JGPU::WGPURenderBundle
 void JGPU::WGPURenderBundle::AddRefInternal() {
     wgpuRenderBundleAddRef(Get());
@@ -3789,6 +3844,10 @@ void JGPU::WGPURenderBundle::ReleaseInternal() {
 void JGPU::WGPURenderBundle::SetLabel(const char* value) {
     JGPU::WGPUStringView stringView(value);
     wgpuRenderBundleSetLabel(Get(), stringView.Get());
+}
+
+bool JGPU::WGPURenderBundle::IsValid() {
+    return Get();
 }
 
 // JGPU::WGPUAdapter

@@ -1442,6 +1442,7 @@ class WGPUSampler : public WGPUObjectBase<WGPUSampler, ::WGPUSampler> {
         void ReleaseInternal();
     public:
         void SetLabel(const char* value);
+        bool IsValid();
 };
 
 class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, ::WGPURenderBundleEncoder> {
@@ -1464,6 +1465,7 @@ class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, :
         void PushDebugGroup(const char* label);
         void SetLabel(const char* label);
         void Finish(WGPURenderBundleDescriptor* descriptor, WGPURenderBundle* bundleOut);
+        bool IsValid();
 };
 
 class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView> {
@@ -1472,6 +1474,7 @@ class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView
         void ReleaseInternal();
     public:
         static WGPUTextureView* Obtain();
+        bool IsValid();
 };
 
 class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
@@ -1483,6 +1486,7 @@ class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
         void CreateView(WGPUTextureViewDescriptor* textureViewDescriptor, WGPUTextureView* textureView);
         WGPUTextureFormat GetFormat();
         void Destroy();
+        bool IsValid();
 };
 
 class WGPUShaderModule : public WGPUObjectBase<WGPUShaderModule, ::WGPUShaderModule> {
@@ -1529,6 +1533,7 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
         void SetStencilReference(int reference);
         void SetVertexBuffer(int slot, WGPUBuffer* buffer, int offset, int size);
         void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth);
+        bool IsValid();
 };
 
 class WGPUQuerySet : public WGPUObjectBase<WGPUQuerySet, ::WGPUQuerySet> {
@@ -1540,6 +1545,7 @@ class WGPUQuerySet : public WGPUObjectBase<WGPUQuerySet, ::WGPUQuerySet> {
         int GetCount();
         WGPUQueryType GetType();
         void SetLabel(const char* label);
+        bool IsValid();
 };
 
 class WGPUPipelineLayout : public WGPUObjectBase<WGPUPipelineLayout, ::WGPUPipelineLayout> {
@@ -1548,6 +1554,7 @@ class WGPUPipelineLayout : public WGPUObjectBase<WGPUPipelineLayout, ::WGPUPipel
         void ReleaseInternal();
     public:
         void SetLabel(const char* value);
+        bool IsValid();
 };
 
 class WGPUInstance : public WGPUObjectBase<WGPUInstance, ::WGPUInstance> {
@@ -1581,6 +1588,7 @@ class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::W
         void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* offsets);
         void SetLabel(const char* label);
         void SetPipeline(WGPUComputePipeline* pipeline);
+        bool IsValid();
 };
 
 class WGPUCommandBuffer : public WGPUObjectBase<WGPUCommandBuffer, ::WGPUCommandBuffer> {
@@ -1589,6 +1597,7 @@ class WGPUCommandBuffer : public WGPUObjectBase<WGPUCommandBuffer, ::WGPUCommand
         void ReleaseInternal();
     public:
         static WGPUCommandBuffer* Obtain();
+        bool IsValid();
 };
 
 class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUCommandEncoder> {
@@ -1611,6 +1620,7 @@ class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUComma
         void ResolveQuerySet(WGPUQuerySet* querySet, int firstQuery, int queryCount, WGPUBuffer* destination, int destinationOffset);
         void SetLabel(const char* label);
         void WriteTimestamp(WGPUQuerySet* querySet, int queryIndex);
+        bool IsValid();
 };
 
 class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
@@ -1625,6 +1635,7 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
         void GetConstMappedRange(int offset, int size, void* bufferOut);
         WGPUByteBuffer& GetMappedRange(int offset, int size);
         void Destroy();
+        bool IsValid();
 };
 
 class WGPUBindGroup : public WGPUObjectBase<WGPUBindGroup, ::WGPUBindGroup> {
@@ -1633,6 +1644,7 @@ class WGPUBindGroup : public WGPUObjectBase<WGPUBindGroup, ::WGPUBindGroup> {
         void ReleaseInternal();
     public:
         void SetLabel(const char* value);
+        bool IsValid();
 };
 
 class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBindGroupLayout> {
@@ -1641,6 +1653,7 @@ class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBin
         void ReleaseInternal();
     public:
         void SetLabel(const char* value);
+        bool IsValid();
 };
 
 class WGPUComputePipeline : public WGPUObjectBase<WGPUComputePipeline, ::WGPUComputePipeline> {
@@ -1650,6 +1663,7 @@ class WGPUComputePipeline : public WGPUObjectBase<WGPUComputePipeline, ::WGPUCom
     public:
         void SetLabel(const char* value);
         WGPUBindGroupLayout GetBindGroupLayout(int groupIndex);
+        bool IsValid();
 };
 
 class WGPURenderBundle : public WGPUObjectBase<WGPURenderBundle, ::WGPURenderBundle> {
@@ -1658,6 +1672,7 @@ class WGPURenderBundle : public WGPUObjectBase<WGPURenderBundle, ::WGPURenderBun
         void ReleaseInternal();
     public:
         void SetLabel(const char* value);
+        bool IsValid();
 };
 
 class WGPUAdapter : public WGPUObjectBase<WGPUAdapter, ::WGPUAdapter> {
