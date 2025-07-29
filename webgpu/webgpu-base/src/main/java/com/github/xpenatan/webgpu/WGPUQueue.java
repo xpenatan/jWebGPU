@@ -10,8 +10,8 @@ public class WGPUQueue extends IDLBase {
     /*[-TEAVM;-ADD_RAW]
         @Override
         protected void onNativeAddressChanged() {
-            int cPointer = (int)nativeData.getCPointer();
-            nativeData.nativeObject = internal_native_getJsObject(cPointer);
+            int cPointer = (int)native_address;
+            native_object = internal_native_getJsObject(cPointer);
         }
 
         @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
@@ -25,11 +25,11 @@ public class WGPUQueue extends IDLBase {
     /*[-TEAVM;-REPLACE_BLOCK]
         {
             org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
-            internal_native_WriteBuffer(nativeData.nativeObject, buffer.getNativeData().nativeObject, bufferOffset, array, dataSize);
+            internal_native_WriteBuffer(native_object, buffer.native_object, bufferOffset, array, dataSize);
         }
     */
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
-        internal_native_WriteBuffer((long) getNativeData().getCPointer(), (long) (buffer != null ? buffer.getNativeData().getCPointer() : 0), bufferOffset, byteBuffer, dataSize);
+        internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, byteBuffer, dataSize);
     }
 
     /*[-TEAVM;-REPLACE]
@@ -48,11 +48,11 @@ public class WGPUQueue extends IDLBase {
     /*[-TEAVM;-REPLACE_BLOCK]
         {
             org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
-            internal_native_WriteTexture(nativeData.nativeObject, (int)destination.getNativeData().getCPointer(), array, dataSize, (int)dataLayout.getNativeData().getCPointer(), (int)writeSize.getNativeData().getCPointer());
+            internal_native_WriteTexture(native_object, (int)destination.native_address, array, dataSize, (int)dataLayout.native_address, (int)writeSize.native_address);
         }
     */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
-        internal_native_WriteTexture((long) getNativeData().getCPointer(), (long) (destination != null ? destination.getNativeData().getCPointer() : 0), byteBuffer, dataSize, dataLayout.getNativeData().getCPointer(), writeSize.getNativeData().getCPointer());
+        internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), byteBuffer, dataSize, dataLayout.native_address, writeSize.native_address);
     }
 
     /*[-TEAVM;-REPLACE]

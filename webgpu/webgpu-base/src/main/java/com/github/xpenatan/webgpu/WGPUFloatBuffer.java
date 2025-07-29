@@ -4,7 +4,7 @@ import idl.IDLBase;
 
 public class WGPUFloatBuffer extends IDLBase {
     public void put(float [] values, int offset, int size) {
-        internal_put(getNativeData().getCPointer(), values, offset, size);
+        internal_put(native_address, values, offset, size);
     }
 
     /*[-TEAVM;-NATIVE]

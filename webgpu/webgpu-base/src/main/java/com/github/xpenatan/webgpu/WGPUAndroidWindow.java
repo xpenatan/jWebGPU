@@ -12,7 +12,7 @@ public class WGPUAndroidWindow extends IDLBase {
 
     public void createAndroidSurface(Object surface) {
         long surfacePtr = internal_getAndroidSurface(surface);
-        internal_native_SetWindow(getNativeData().getCPointer(), surfacePtr);
+        internal_native_SetWindow(native_address, surfacePtr);
     }
 
     /*[-TEAVM;-NATIVE]

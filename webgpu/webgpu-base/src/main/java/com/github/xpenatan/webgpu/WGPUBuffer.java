@@ -8,8 +8,8 @@ public class WGPUBuffer extends IDLBase {
     /*[-TEAVM;-ADD_RAW]
         @Override
         protected void onNativeAddressChanged() {
-            int cPointer = (int)nativeData.getCPointer();
-            nativeData.nativeObject = internal_native_getJsObject(cPointer);
+            int cPointer = (int)native_address;
+            native_object = internal_native_getJsObject(cPointer);
         }
 
         @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
@@ -25,11 +25,11 @@ public class WGPUBuffer extends IDLBase {
     /*[-TEAVM;-REPLACE_BLOCK]
         {
             org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(out);
-            internal_native_getConstMappedRange((int)getNativeData().getCPointer(), offset, size, array);
+            internal_native_getConstMappedRange((int)native_address, offset, size, array);
         }
     */
     public void getConstMappedRange(int offset, int size, ByteBuffer out) {
-        internal_native_getConstMappedRange(getNativeData().getCPointer(), offset, size, out);
+        internal_native_getConstMappedRange(native_address, offset, size, out);
     }
 
     /*[-TEAVM;-REPLACE]
