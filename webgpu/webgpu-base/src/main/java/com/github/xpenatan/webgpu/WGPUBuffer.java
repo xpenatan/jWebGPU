@@ -8,7 +8,7 @@ public class WGPUBuffer extends IDLBase {
     /*[-TEAVM;-ADD_RAW]
         @Override
         protected void onNativeAddressChanged() {
-            int cPointer = (int)native_address;
+            int cPointer = native_address;
             native_object = internal_native_getJsObject(cPointer);
         }
 

@@ -10,7 +10,7 @@ public class WGPUQueue extends IDLBase {
     /*[-TEAVM;-ADD_RAW]
         @Override
         protected void onNativeAddressChanged() {
-            int cPointer = (int)native_address;
+            int cPointer = native_address;
             native_object = internal_native_getJsObject(cPointer);
         }
 
@@ -48,7 +48,7 @@ public class WGPUQueue extends IDLBase {
     /*[-TEAVM;-REPLACE_BLOCK]
         {
             org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
-            internal_native_WriteTexture(native_object, (int)destination.native_address, array, dataSize, (int)dataLayout.native_address, (int)writeSize.native_address);
+            internal_native_WriteTexture(native_object, destination.native_address, array, dataSize, dataLayout.native_address, writeSize.native_address);
         }
     */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
