@@ -382,6 +382,7 @@ class WGPUByteBuffer {
 
     public:
         static WGPUByteBuffer* Obtain(int capacity);
+    public:
         WGPUByteBuffer() : buffer(NULL), _limit(0), _capacity(0) {
             order(LittleEndian);
         }
@@ -462,6 +463,7 @@ class WGPUVectorFutureWaitInfo {
         std::vector<JGPU::WGPUFutureWaitInfo> vector;
     public:
         static WGPUVectorFutureWaitInfo* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUFutureWaitInfo& entry);
@@ -473,6 +475,7 @@ class WGPUVectorBindGroupEntry {
         std::vector<JGPU::WGPUBindGroupEntry> vector;
     public:
         static WGPUVectorBindGroupEntry* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUBindGroupEntry& entry);
@@ -484,6 +487,7 @@ class WGPUVectorColorTargetState {
         std::vector<JGPU::WGPUColorTargetState> vector;
     public:
         static WGPUVectorColorTargetState* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUColorTargetState& attachment);
@@ -495,6 +499,7 @@ class WGPUVectorFeatureName {
         std::vector<WGPUFeatureName> vector;
     public:
         static WGPUVectorFeatureName* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const WGPUFeatureName& attachment);
@@ -506,6 +511,7 @@ class WGPUVectorConstantEntry {
         std::vector<JGPU::WGPUConstantEntry> vector;
     public:
         static WGPUVectorConstantEntry* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUConstantEntry& attachment);
@@ -517,6 +523,7 @@ class WGPUVectorVertexBufferLayout {
         std::vector<JGPU::WGPUVertexBufferLayout> vector;
     public:
         static WGPUVectorVertexBufferLayout* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUVertexBufferLayout& attachment);
@@ -528,6 +535,7 @@ class WGPUVectorTextureFormat {
         std::vector<WGPUTextureFormat> vector;
     public:
         static WGPUVectorTextureFormat* Obtain();
+    public:
         WGPUVectorTextureFormat() {}
         WGPUVectorTextureFormat(const WGPUTextureFormat* formats, size_t count) {
             vector.assign(formats, formats + count);
@@ -544,6 +552,7 @@ class WGPUVectorRenderBundle {
         std::vector<JGPU::WGPURenderBundle> vector;
     public:
         static WGPUVectorRenderBundle* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPURenderBundle& attachment);
@@ -555,6 +564,7 @@ class WGPUVectorRenderPassColorAttachment {
         std::vector<JGPU::WGPURenderPassColorAttachment> vector;
     public:
         static WGPUVectorRenderPassColorAttachment* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPURenderPassColorAttachment& attachment);
@@ -566,6 +576,7 @@ class WGPUVectorVertexAttribute {
         std::vector<JGPU::WGPUVertexAttribute> vector;
     public:
         static WGPUVectorVertexAttribute* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUVertexAttribute& attribute);
@@ -577,6 +588,7 @@ class WGPUVectorBindGroupLayout {
         std::vector<JGPU::WGPUBindGroupLayout> vector;
     public:
         static WGPUVectorBindGroupLayout* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUBindGroupLayout& groupLayout);
@@ -588,6 +600,7 @@ class WGPUVectorBindGroupLayoutEntry {
         std::vector<JGPU::WGPUBindGroupLayoutEntry> vector;
     public:
         static WGPUVectorBindGroupLayoutEntry* Obtain();
+    public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUBindGroupLayoutEntry& entry);
@@ -599,6 +612,7 @@ class WGPUVectorInt {
         std::vector<uint32_t> vector;
     public:
         static WGPUVectorInt* Obtain();
+    public:
         int size();
         void clear();
         void push_back(int attachment);
@@ -641,30 +655,9 @@ class WGPUObjectBase {
     protected:
         CType mHandle = InitializeHandle<CType>();
 
-        void AddRefInternal() {
-            // MUST BE IMPLEMENTED if needed
-        }
-
-        void ReleaseInternal() {
-             // MUST BE IMPLEMENTED if needed
-        }
-
     public:
 
     using ReturnType = CType&;
-
-    void AddRef() {
-        if constexpr (std::is_pointer<CType>::value) {
-            if (mHandle != nullptr) AddRefInternal();
-        }
-    }
-
-    void Release() {
-        if constexpr (std::is_pointer<CType>::value) {
-            if (mHandle != nullptr) ReleaseInternal();
-            mHandle = nullptr;
-        }
-    }
 
     ReturnType Get() {
         return mHandle;
@@ -707,6 +700,7 @@ class WGPUChainedStruct : public WGPUObjectBase<WGPUChainedStruct, ::WGPUChained
 class WGPULimits : public WGPUObjectBase<WGPULimits, ::WGPULimits> {
     public:
         static WGPULimits* Obtain();
+    public:
         void SetMaxTextureDimension1D(int value);
         int GetMaxTextureDimension1D();
         void SetMaxTextureDimension2D(int value);
@@ -773,6 +767,8 @@ class WGPULimits : public WGPUObjectBase<WGPULimits, ::WGPULimits> {
 
 class WGPUBufferBindingLayout : public WGPUObjectBase<WGPUBufferBindingLayout, ::WGPUBufferBindingLayout*> {
     public:
+        static WGPUBufferBindingLayout* Obtain();
+    public:
         WGPUBufferBindingLayout() {
             static ::WGPUBufferBindingLayout temp;
             temp = ::WGPUBufferBindingLayout{};
@@ -781,7 +777,6 @@ class WGPUBufferBindingLayout : public WGPUObjectBase<WGPUBufferBindingLayout, :
         WGPUBufferBindingLayout(::WGPUBufferBindingLayout* obj) {
             Set(obj);
         }
-        static WGPUBufferBindingLayout* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetType(WGPUBufferBindingType type);
         void SetHasDynamicOffset(int hasDynamicOffset);
@@ -789,6 +784,8 @@ class WGPUBufferBindingLayout : public WGPUObjectBase<WGPUBufferBindingLayout, :
 };
 
 class WGPUSamplerBindingLayout : public WGPUObjectBase<WGPUSamplerBindingLayout, ::WGPUSamplerBindingLayout*> {
+    public:
+        static WGPUSamplerBindingLayout* Obtain();
     public:
         WGPUSamplerBindingLayout() {
             static ::WGPUSamplerBindingLayout temp;
@@ -798,12 +795,13 @@ class WGPUSamplerBindingLayout : public WGPUObjectBase<WGPUSamplerBindingLayout,
         WGPUSamplerBindingLayout(::WGPUSamplerBindingLayout* obj) {
             Set(obj);
         }
-        static WGPUSamplerBindingLayout* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetType(WGPUSamplerBindingType type);
 };
 
 class WGPUTextureBindingLayout : public WGPUObjectBase<WGPUTextureBindingLayout, ::WGPUTextureBindingLayout*> {
+    public:
+        static WGPUTextureBindingLayout* Obtain();
     public:
         WGPUTextureBindingLayout() {
             static ::WGPUTextureBindingLayout temp;
@@ -813,7 +811,6 @@ class WGPUTextureBindingLayout : public WGPUObjectBase<WGPUTextureBindingLayout,
         WGPUTextureBindingLayout(::WGPUTextureBindingLayout* obj) {
             Set(obj);
         }
-        static WGPUTextureBindingLayout* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetSampleType(WGPUTextureSampleType sampleType);
         void SetViewDimension(WGPUTextureViewDimension viewDimension);
@@ -821,6 +818,8 @@ class WGPUTextureBindingLayout : public WGPUObjectBase<WGPUTextureBindingLayout,
 };
 
 class WGPUStorageTextureBindingLayout : public WGPUObjectBase<WGPUStorageTextureBindingLayout, ::WGPUStorageTextureBindingLayout*> {
+    public:
+        static WGPUStorageTextureBindingLayout* Obtain();
     public:
         WGPUStorageTextureBindingLayout() {
             static ::WGPUStorageTextureBindingLayout temp;
@@ -830,7 +829,6 @@ class WGPUStorageTextureBindingLayout : public WGPUObjectBase<WGPUStorageTexture
         WGPUStorageTextureBindingLayout(::WGPUStorageTextureBindingLayout* obj) {
             Set(obj);
         }
-        static WGPUStorageTextureBindingLayout* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetAccess(WGPUStorageTextureAccess access);
         void SetFormat(WGPUTextureFormat format);
@@ -840,6 +838,7 @@ class WGPUStorageTextureBindingLayout : public WGPUObjectBase<WGPUStorageTexture
 class WGPUBindGroupLayoutEntry : public WGPUObjectBase<WGPUBindGroupLayoutEntry, ::WGPUBindGroupLayoutEntry> {
     public:
         static WGPUBindGroupLayoutEntry* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetBinding(int binding);
         void SetVisibility(WGPUShaderStage visibility);
@@ -856,6 +855,7 @@ class WGPUBindGroupLayoutEntry : public WGPUObjectBase<WGPUBindGroupLayoutEntry,
 class WGPURequestAdapterOptions : public WGPUObjectBase<WGPURequestAdapterOptions, ::WGPURequestAdapterOptions> {
     public:
         static WGPURequestAdapterOptions* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetFeatureLevel(WGPUFeatureLevel featureLevel);
         void SetPowerPreference(WGPUPowerPreference powerPreference);
@@ -866,6 +866,7 @@ class WGPURequestAdapterOptions : public WGPUObjectBase<WGPURequestAdapterOption
 class WGPUAdapterInfo : public WGPUObjectBase<WGPUAdapterInfo, ::WGPUAdapterInfo> {
     public:
         static WGPUAdapterInfo* Obtain();
+    public:
         std::string GetVendor();
         int GetVendorID();
         std::string GetArchitecture();
@@ -883,6 +884,7 @@ class WGPUFuture : public WGPUObjectBase<WGPUFuture, ::WGPUFuture> {
 class WGPUFutureWaitInfo : public WGPUObjectBase<WGPUFutureWaitInfo, ::WGPUFutureWaitInfo> {
     public:
         static WGPUFutureWaitInfo* Obtain();
+    public:
         void SetFuture(WGPUFuture* future);
 };
 
@@ -893,6 +895,7 @@ class WGPUConstantEntry : public WGPUObjectBase<WGPUConstantEntry, ::WGPUConstan
 class WGPUVertexAttribute : public WGPUObjectBase<WGPUVertexAttribute, ::WGPUVertexAttribute> {
     public:
         static WGPUVertexAttribute* Obtain();
+    public:
         void SetFormat(WGPUVertexFormat format);
         void SetOffset(int offset);
         void SetShaderLocation(int shaderLocation);
@@ -901,6 +904,7 @@ class WGPUVertexAttribute : public WGPUObjectBase<WGPUVertexAttribute, ::WGPUVer
 class WGPUVertexBufferLayout : public WGPUObjectBase<WGPUVertexBufferLayout, ::WGPUVertexBufferLayout> {
     public:
         static WGPUVertexBufferLayout* Obtain();
+    public:
         void SetAttributes(WGPUVectorVertexAttribute* values);
         void SetArrayStride(int offset);
         void SetStepMode(WGPUVertexStepMode stepMode);
@@ -918,6 +922,7 @@ class WGPUVertexState : public WGPUObjectBase<WGPUVertexState, ::WGPUVertexState
 class WGPUShaderSourceWGSL : public WGPUObjectBase<WGPUShaderSourceWGSL, ::WGPUShaderSourceWGSL> {
     public:
         static WGPUShaderSourceWGSL* Obtain();
+    public:
         void SetCode(const char* value);
         WGPUChainedStruct GetChain();
 };
@@ -935,6 +940,7 @@ class WGPUBlendComponent : public WGPUObjectBase<WGPUBlendComponent, ::WGPUBlend
 class WGPUBlendState : public WGPUObjectBase<WGPUBlendState, ::WGPUBlendState> {
     public:
         static WGPUBlendState* Obtain();
+    public:
         WGPUBlendComponent GetColor();
         WGPUBlendComponent GetAlpha();
 };
@@ -942,6 +948,7 @@ class WGPUBlendState : public WGPUObjectBase<WGPUBlendState, ::WGPUBlendState> {
 class WGPUColorTargetState : public WGPUObjectBase<WGPUColorTargetState, ::WGPUColorTargetState> {
     public:
         static WGPUColorTargetState* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetFormat(WGPUTextureFormat format);
         void SetBlend(WGPUBlendState* blendState);
@@ -951,6 +958,7 @@ class WGPUColorTargetState : public WGPUObjectBase<WGPUColorTargetState, ::WGPUC
 class WGPUFragmentState : public WGPUObjectBase<WGPUFragmentState, ::WGPUFragmentState> {
     public:
         static WGPUFragmentState* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetEntryPoint(const char* value);
         void SetTargets(WGPUVectorColorTargetState* values);
@@ -978,6 +986,7 @@ class WGPUStencilFaceState : public WGPUObjectBase<WGPUStencilFaceState, ::WGPUS
 class WGPUDepthStencilState : public WGPUObjectBase<WGPUDepthStencilState, ::WGPUDepthStencilState> {
     public:
         static WGPUDepthStencilState* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetFormat(WGPUTextureFormat format);
         void SetDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled);
@@ -1001,6 +1010,8 @@ class WGPUMultisampleState : public WGPUObjectBase<WGPUMultisampleState, ::WGPUM
 
 class WGPUColor : public WGPUObjectBase<WGPUColor, ::WGPUColor*> {
     public:
+        static WGPUColor* Obtain();
+    public:
         WGPUColor() {
             static ::WGPUColor temp;
             temp = ::WGPUColor{};
@@ -1009,7 +1020,6 @@ class WGPUColor : public WGPUObjectBase<WGPUColor, ::WGPUColor*> {
         WGPUColor(::WGPUColor* color) {
             Set(color);
         }
-        static WGPUColor* Obtain();
         void SetColor(float r, float g, float b, float a);
         float GetR();
         float GetG();
@@ -1024,6 +1034,7 @@ class WGPUColor : public WGPUObjectBase<WGPUColor, ::WGPUColor*> {
 class WGPUSupportedFeatures : public WGPUObjectBase<WGPUSupportedFeatures, ::WGPUSupportedFeatures> {
     public:
         static WGPUSupportedFeatures* Obtain();
+    public:
         int GetFeatureCount();
         WGPUFeatureName GetFeatureAt(long index);
 };
@@ -1031,6 +1042,7 @@ class WGPUSupportedFeatures : public WGPUObjectBase<WGPUSupportedFeatures, ::WGP
 class WGPURenderPassDepthStencilAttachment : public WGPUObjectBase<WGPURenderPassDepthStencilAttachment, ::WGPURenderPassDepthStencilAttachment> {
     public:
         static WGPURenderPassDepthStencilAttachment* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetView(WGPUTextureView* textureView);
         void SetDepthLoadOp(WGPULoadOp loadOp);
@@ -1046,6 +1058,7 @@ class WGPURenderPassDepthStencilAttachment : public WGPUObjectBase<WGPURenderPas
 class WGPURenderPassTimestampWrites : public WGPUObjectBase<WGPURenderPassTimestampWrites, ::WGPURenderPassTimestampWrites> {
     public:
         static WGPURenderPassTimestampWrites* Obtain();
+    public:
         void SetQuerySet(WGPUQuerySet* value);
         void SetBeginningOfPassWriteIndex(int value);
         void SetEndOfPassWriteIndex(int value);
@@ -1054,12 +1067,15 @@ class WGPURenderPassTimestampWrites : public WGPUObjectBase<WGPURenderPassTimest
 class WGPUComputePassTimestampWrites : public WGPUObjectBase<WGPUComputePassTimestampWrites, ::WGPUComputePassTimestampWrites> {
     public:
         static WGPUComputePassTimestampWrites* Obtain();
+    public:
         void SetQuerySet(WGPUQuerySet* value);
         void SetBeginningOfPassWriteIndex(int value);
         void SetEndOfPassWriteIndex(int value);
 };
 
 class WGPUOrigin3D : public WGPUObjectBase<WGPUOrigin3D, ::WGPUOrigin3D*> {
+    public:
+        static WGPUOrigin3D* Obtain();
     public:
         WGPUOrigin3D() {
             static ::WGPUOrigin3D temp;
@@ -1070,7 +1086,6 @@ class WGPUOrigin3D : public WGPUObjectBase<WGPUOrigin3D, ::WGPUOrigin3D*> {
             WGPUObjectBase::Set(ptr);
         }
 
-        static WGPUOrigin3D* Obtain();
         void Set(int x, int y, int z);
         void SetX(int value);
         void SetY(int value);
@@ -1080,6 +1095,7 @@ class WGPUOrigin3D : public WGPUObjectBase<WGPUOrigin3D, ::WGPUOrigin3D*> {
 class WGPUTexelCopyTextureInfo : public WGPUObjectBase<WGPUTexelCopyTextureInfo, ::WGPUTexelCopyTextureInfo> {
     public:
         static WGPUTexelCopyTextureInfo* Obtain();
+    public:
         void SetTexture(WGPUTexture* texture);
         void SetMipLevel(int mipLevel);
         WGPUOrigin3D GetOrigin();
@@ -1087,6 +1103,8 @@ class WGPUTexelCopyTextureInfo : public WGPUObjectBase<WGPUTexelCopyTextureInfo,
 };
 
 class WGPUExtent3D : public WGPUObjectBase<WGPUExtent3D, ::WGPUExtent3D*> {
+    public:
+        static WGPUExtent3D* Obtain();
     public:
         WGPUExtent3D() {
             static ::WGPUExtent3D temp;
@@ -1097,13 +1115,14 @@ class WGPUExtent3D : public WGPUObjectBase<WGPUExtent3D, ::WGPUExtent3D*> {
             Set(ptr);
         }
 
-        static WGPUExtent3D* Obtain();
         void SetWidth(int width);
         void SetHeight(int height);
         void SetDepthOrArrayLayers(int depthOrArrayLayers);
 };
 
 class WGPUTexelCopyBufferLayout : public WGPUObjectBase<WGPUTexelCopyBufferLayout, ::WGPUTexelCopyBufferLayout*> {
+    public:
+        static WGPUTexelCopyBufferLayout* Obtain();
     public:
         WGPUTexelCopyBufferLayout() {
             static ::WGPUTexelCopyBufferLayout temp;
@@ -1113,7 +1132,6 @@ class WGPUTexelCopyBufferLayout : public WGPUObjectBase<WGPUTexelCopyBufferLayou
         WGPUTexelCopyBufferLayout(::WGPUTexelCopyBufferLayout* ptr) {
             Set(ptr);
         }
-        static WGPUTexelCopyBufferLayout* Obtain();
         void SetOffset(int offset);
         void SetBytesPerRow(int bytesPerRow);
         void SetRowsPerImage(int rowsPerImage);
@@ -1122,6 +1140,7 @@ class WGPUTexelCopyBufferLayout : public WGPUObjectBase<WGPUTexelCopyBufferLayou
 class WGPUTexelCopyBufferInfo : public WGPUObjectBase<WGPUTexelCopyBufferInfo, ::WGPUTexelCopyBufferInfo> {
     public:
         static WGPUTexelCopyBufferInfo* Obtain();
+    public:
         WGPUTexelCopyBufferLayout GetLayout();
         WGPUBuffer GetBuffer();
         void SetBuffer(WGPUBuffer* buffer);
@@ -1130,6 +1149,7 @@ class WGPUTexelCopyBufferInfo : public WGPUObjectBase<WGPUTexelCopyBufferInfo, :
 class WGPUSurfaceConfiguration : public WGPUObjectBase<WGPUSurfaceConfiguration, ::WGPUSurfaceConfiguration> {
     public:
         static WGPUSurfaceConfiguration* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetWidth(long width);
         void SetHeight(long height);
@@ -1145,13 +1165,15 @@ class WGPUSurfaceConfiguration : public WGPUObjectBase<WGPUSurfaceConfiguration,
 class WGPUSurfaceCapabilities : public WGPUObjectBase<WGPUSurfaceCapabilities, ::WGPUSurfaceCapabilities> {
     public:
         static WGPUSurfaceCapabilities* Obtain();
+    public:
         WGPUVectorTextureFormat GetFormats();
 };
 
 class WGPURenderPassColorAttachment : public WGPUObjectBase<WGPURenderPassColorAttachment, ::WGPURenderPassColorAttachment> {
     public:
-        WGPURenderPassColorAttachment();
         static WGPURenderPassColorAttachment* Obtain();
+    public:
+        WGPURenderPassColorAttachment();
         void Reset();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetResolveTarget(WGPUTextureView* textureView);
@@ -1165,21 +1187,23 @@ class WGPURenderPassColorAttachment : public WGPUObjectBase<WGPURenderPassColorA
 class WGPUSurfaceTexture : public WGPUObjectBase<WGPUSurfaceTexture, ::WGPUSurfaceTexture> {
     public:
         static WGPUSurfaceTexture* Obtain();
+    public:
         void GetTexture(WGPUTexture* tex);
         WGPUSurfaceGetCurrentTextureStatus GetStatus();
 };
 
 class WGPUBindGroupEntry : public WGPUObjectBase<WGPUBindGroupEntry, ::WGPUBindGroupEntry> {
-public:
-    static WGPUBindGroupEntry* Obtain();
-    void Reset();
-    void SetNextInChain(WGPUChainedStruct* chainedStruct);
-    void SetBinding(int binding);
-    void SetBuffer(WGPUBuffer* buffer);
-    void SetOffset(int offset);
-    void SetSize(int size);
-    void SetSampler(WGPUSampler* sampler);
-    void SetTextureView(WGPUTextureView* textureView);
+    public:
+        static WGPUBindGroupEntry* Obtain();
+    public:
+        void Reset();
+        void SetNextInChain(WGPUChainedStruct* chainedStruct);
+        void SetBinding(int binding);
+        void SetBuffer(WGPUBuffer* buffer);
+        void SetOffset(int offset);
+        void SetSize(int size);
+        void SetSampler(WGPUSampler* sampler);
+        void SetTextureView(WGPUTextureView* textureView);
 };
 
 //class WGPUInstanceCapabilities : public WGPUObjectBase<WGPUInstanceCapabilities, ::WGPUInstanceCapabilities*> {
@@ -1191,14 +1215,16 @@ public:
 class WGPURenderPassMaxDrawCount : public WGPUObjectBase<WGPURenderPassMaxDrawCount, ::WGPURenderPassMaxDrawCount> {
     public:
         static WGPURenderPassMaxDrawCount* Obtain();
+    public:
         void SetMaxDrawCount(int maxDrawCount);
         int GetMaxDrawCount();
 };
 
 class WGPUShaderSourceSPIRV : public WGPUObjectBase<WGPUShaderSourceSPIRV, ::WGPUShaderSourceSPIRV> {
     public:
-    //TODO change to vector
         static WGPUShaderSourceSPIRV* Obtain();
+    public:
+    //TODO change to vector
 //        void SetCode(const int* code, int codeSize);
 //        WGPUChainedStruct GetChain();
 };
@@ -1206,6 +1232,7 @@ class WGPUShaderSourceSPIRV : public WGPUObjectBase<WGPUShaderSourceSPIRV, ::WGP
 class WGPUSupportedWGSLLanguageFeatures : public WGPUObjectBase<WGPUSupportedWGSLLanguageFeatures, ::WGPUSupportedWGSLLanguageFeatures> {
     public:
         static WGPUSupportedWGSLLanguageFeatures* Obtain();
+    public:
         int GetFeatureCount();
         WGPUWGSLLanguageFeatureName GetFeatureAt(int index);
 };
@@ -1219,6 +1246,7 @@ class WGPUCompilationInfo : public WGPUObjectBase<WGPUCompilationInfo, ::WGPUCom
 class WGPUCompilationMessage : public WGPUObjectBase<WGPUCompilationMessage, ::WGPUCompilationMessage> {
     public:
         static WGPUCompilationMessage* Obtain();
+    public:
         std::string GetMessage();
         WGPUCompilationMessageType GetType();
         int GetLineNum();
@@ -1232,6 +1260,7 @@ class WGPUCompilationMessage : public WGPUObjectBase<WGPUCompilationMessage, ::W
 class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::WGPUInstanceDescriptor> {
     public:
         static WGPUInstanceDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
 //        WGPUInstanceCapabilities GetFeatures(); // TODO dawn have different code
 };
@@ -1239,6 +1268,7 @@ class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::W
 class WGPURenderBundleDescriptor : public WGPUObjectBase<WGPURenderBundleDescriptor, ::WGPURenderBundleDescriptor> {
     public:
         static WGPURenderBundleDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
 };
@@ -1246,6 +1276,7 @@ class WGPURenderBundleDescriptor : public WGPUObjectBase<WGPURenderBundleDescrip
 class WGPURenderBundleEncoderDescriptor : public WGPUObjectBase<WGPURenderBundleEncoderDescriptor, ::WGPURenderBundleEncoderDescriptor> {
     public:
         static WGPURenderBundleEncoderDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetColorFormats(WGPUVectorTextureFormat* colorFormats);
@@ -1258,6 +1289,7 @@ class WGPURenderBundleEncoderDescriptor : public WGPUObjectBase<WGPURenderBundle
 class WGPUQuerySetDescriptor : public WGPUObjectBase<WGPUQuerySetDescriptor, ::WGPUQuerySetDescriptor> {
     public:
         static WGPUQuerySetDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetType(WGPUQueryType type);
@@ -1284,6 +1316,7 @@ class WGPUSamplerDescriptor : public WGPUObjectBase<WGPUSamplerDescriptor, ::WGP
 class WGPUBindGroupLayoutDescriptor : public WGPUObjectBase<WGPUBindGroupLayoutDescriptor, ::WGPUBindGroupLayoutDescriptor> {
     public:
         static WGPUBindGroupLayoutDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetEntries(WGPUVectorBindGroupLayoutEntry* entries);
@@ -1292,6 +1325,7 @@ class WGPUBindGroupLayoutDescriptor : public WGPUObjectBase<WGPUBindGroupLayoutD
 class WGPUProgrammableStageDescriptor : public WGPUObjectBase<WGPUProgrammableStageDescriptor, ::WGPUProgrammableStageDescriptor*> {
     public:
         static WGPUProgrammableStageDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetModule(WGPUShaderModule* module);
         void SetEntryPoint(const char* value);
@@ -1301,6 +1335,7 @@ class WGPUProgrammableStageDescriptor : public WGPUObjectBase<WGPUProgrammableSt
 class WGPUComputePipelineDescriptor : public WGPUObjectBase<WGPUComputePipelineDescriptor, ::WGPUComputePipelineDescriptor> {
     public:
         static WGPUComputePipelineDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetLayout(WGPUPipelineLayout* pipelineLayout);
@@ -1310,6 +1345,7 @@ class WGPUComputePipelineDescriptor : public WGPUObjectBase<WGPUComputePipelineD
 class WGPUQueueDescriptor : public WGPUObjectBase<WGPUQueueDescriptor, ::WGPUQueueDescriptor*> {
     public:
         static WGPUQueueDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
 };
@@ -1317,6 +1353,7 @@ class WGPUQueueDescriptor : public WGPUObjectBase<WGPUQueueDescriptor, ::WGPUQue
 class WGPUBufferDescriptor : public WGPUObjectBase<WGPUBufferDescriptor, ::WGPUBufferDescriptor> {
     public:
         static WGPUBufferDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetUsage(WGPUBufferUsage usage);
@@ -1327,6 +1364,7 @@ class WGPUBufferDescriptor : public WGPUObjectBase<WGPUBufferDescriptor, ::WGPUB
 class WGPUBindGroupDescriptor : public WGPUObjectBase<WGPUBindGroupDescriptor, ::WGPUBindGroupDescriptor> {
     public:
         static WGPUBindGroupDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetLayout(WGPUBindGroupLayout* layout);
@@ -1336,6 +1374,7 @@ class WGPUBindGroupDescriptor : public WGPUObjectBase<WGPUBindGroupDescriptor, :
 class WGPUPipelineLayoutDescriptor : public WGPUObjectBase<WGPUPipelineLayoutDescriptor, ::WGPUPipelineLayoutDescriptor> {
     public:
         static WGPUPipelineLayoutDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetBindGroupLayouts(WGPUVectorBindGroupLayout* bindGroupLayouts);
@@ -1344,6 +1383,7 @@ class WGPUPipelineLayoutDescriptor : public WGPUObjectBase<WGPUPipelineLayoutDes
 class WGPUDeviceDescriptor : public WGPUObjectBase<WGPUDeviceDescriptor, ::WGPUDeviceDescriptor> {
     public:
         static WGPUDeviceDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetRequiredLimits(WGPULimits* limits);
@@ -1354,6 +1394,7 @@ class WGPUDeviceDescriptor : public WGPUObjectBase<WGPUDeviceDescriptor, ::WGPUD
 class WGPUShaderModuleDescriptor : public WGPUObjectBase<WGPUShaderModuleDescriptor, ::WGPUShaderModuleDescriptor> {
     public:
         static WGPUShaderModuleDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
 };
@@ -1361,6 +1402,7 @@ class WGPUShaderModuleDescriptor : public WGPUObjectBase<WGPUShaderModuleDescrip
 class WGPURenderPipelineDescriptor : public WGPUObjectBase<WGPURenderPipelineDescriptor, ::WGPURenderPipelineDescriptor> {
     public:
         static WGPURenderPipelineDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         WGPUVertexState GetVertex();
@@ -1374,6 +1416,7 @@ class WGPURenderPipelineDescriptor : public WGPUObjectBase<WGPURenderPipelineDes
 class WGPUCommandEncoderDescriptor : public WGPUObjectBase<WGPUCommandEncoderDescriptor, ::WGPUCommandEncoderDescriptor> {
     public:
         static WGPUCommandEncoderDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
 };
@@ -1381,6 +1424,7 @@ class WGPUCommandEncoderDescriptor : public WGPUObjectBase<WGPUCommandEncoderDes
 class WGPUCommandBufferDescriptor : public WGPUObjectBase<WGPUCommandBufferDescriptor, ::WGPUCommandBufferDescriptor> {
     public:
         static WGPUCommandBufferDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
 };
@@ -1388,6 +1432,7 @@ class WGPUCommandBufferDescriptor : public WGPUObjectBase<WGPUCommandBufferDescr
 class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor, ::WGPURenderPassDescriptor> {
     public:
         static WGPURenderPassDescriptor* Obtain();
+    public:
         void Reset();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
@@ -1400,6 +1445,7 @@ class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor,
 class WGPUComputePassDescriptor : public WGPUObjectBase<WGPUComputePassDescriptor, ::WGPUComputePassDescriptor> {
     public:
         static WGPUComputePassDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetTimestampWrites(WGPUComputePassTimestampWrites* timestampWrites);
@@ -1408,6 +1454,7 @@ class WGPUComputePassDescriptor : public WGPUObjectBase<WGPUComputePassDescripto
 class WGPUTextureDescriptor : public WGPUObjectBase<WGPUTextureDescriptor, ::WGPUTextureDescriptor> {
     public:
         static WGPUTextureDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetUsage(WGPUTextureUsage usage);
@@ -1422,6 +1469,7 @@ class WGPUTextureDescriptor : public WGPUObjectBase<WGPUTextureDescriptor, ::WGP
 class WGPUTextureViewDescriptor : public WGPUObjectBase<WGPUTextureViewDescriptor, ::WGPUTextureViewDescriptor> {
     public:
         static WGPUTextureViewDescriptor* Obtain();
+    public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetFormat(WGPUTextureFormat format);
@@ -1437,21 +1485,20 @@ class WGPUTextureViewDescriptor : public WGPUObjectBase<WGPUTextureViewDescripto
 // ################################### OPAQUE POINTER ###################################
 
 class WGPUSampler : public WGPUObjectBase<WGPUSampler, ::WGPUSampler> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, ::WGPURenderBundleEncoder> {
 // TODO implement methods
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPURenderBundleEncoder* Obtain();
+    public:
+        void AddRef();
+        void Release();
         void SetPipeline(WGPURenderPipeline* renderPipeline);
         void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance);
         void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance);
@@ -1469,20 +1516,20 @@ class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, :
 };
 
 class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPUTextureView* Obtain();
+    public:
+        void AddRef();
+        void Release();
         bool IsValid();
 };
 
 class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPUTexture* Obtain();
+    public:
+        void AddRef();
+        void Release();
         void CreateView(WGPUTextureViewDescriptor* textureViewDescriptor, WGPUTextureView* textureView);
         WGPUTextureFormat GetFormat();
         void Destroy();
@@ -1490,29 +1537,29 @@ class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
 };
 
 class WGPUShaderModule : public WGPUObjectBase<WGPUShaderModule, ::WGPUShaderModule> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPUShaderModule* Obtain();
+    public:
+        void AddRef();
+        void Release();
         bool IsValid();
 };
 
 class WGPURenderPipeline : public WGPUObjectBase<WGPURenderPipeline, ::WGPURenderPipeline> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPURenderPipeline* Obtain();
+    public:
+        void AddRef();
+        void Release();
         bool IsValid();
 };
 
 class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGPURenderPassEncoder> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPURenderPassEncoder* Obtain();
+    public:
+        void AddRef();
+        void Release();
         void End();
         void SetPipeline(WGPURenderPipeline* renderPipeline);
         void BeginOcclusionQuery(int queryIndex);
@@ -1537,10 +1584,9 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
 };
 
 class WGPUQuerySet : public WGPUObjectBase<WGPUQuerySet, ::WGPUQuerySet> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void Destroy();
         int GetCount();
         WGPUQueryType GetType();
@@ -1549,19 +1595,17 @@ class WGPUQuerySet : public WGPUObjectBase<WGPUQuerySet, ::WGPUQuerySet> {
 };
 
 class WGPUPipelineLayout : public WGPUObjectBase<WGPUPipelineLayout, ::WGPUPipelineLayout> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPUInstance : public WGPUObjectBase<WGPUInstance, ::WGPUInstance> {
-    private:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         bool IsValid();
         void RequestAdapter(WGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback);
         WGPUSurface* CreateWebSurface(const char* canvas);
@@ -1574,11 +1618,11 @@ class WGPUInstance : public WGPUObjectBase<WGPUInstance, ::WGPUInstance> {
 };
 
 class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::WGPUComputePassEncoder> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPUComputePassEncoder* Obtain();
+    public:
+        void AddRef();
+        void Release();
         void SetDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ);
         void DispatchWorkgroupsIndirect(WGPUBuffer* indirectBuffer, int indirectOffset);
         void End();
@@ -1592,20 +1636,20 @@ class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::W
 };
 
 class WGPUCommandBuffer : public WGPUObjectBase<WGPUCommandBuffer, ::WGPUCommandBuffer> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPUCommandBuffer* Obtain();
+    public:
+        void AddRef();
+        void Release();
         bool IsValid();
 };
 
 class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUCommandEncoder> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
         static WGPUCommandEncoder* Obtain();
+    public:
+        void AddRef();
+        void Release();
         void BeginComputePass(WGPUComputePassDescriptor* descriptor, WGPUComputePassEncoder* encoder);
         void BeginRenderPass(WGPURenderPassDescriptor* renderPassDescriptor, WGPURenderPassEncoder* encoder);
         void ClearBuffer(WGPUBuffer* buffer, int offset, int size);
@@ -1624,10 +1668,9 @@ class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUComma
 };
 
 class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void Unmap();
         int GetSize();
         WGPUBufferUsage GetUsage();
@@ -1639,47 +1682,42 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
 };
 
 class WGPUBindGroup : public WGPUObjectBase<WGPUBindGroup, ::WGPUBindGroup> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBindGroupLayout> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPUComputePipeline : public WGPUObjectBase<WGPUComputePipeline, ::WGPUComputePipeline> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         WGPUBindGroupLayout GetBindGroupLayout(int groupIndex);
         bool IsValid();
 };
 
 class WGPURenderBundle : public WGPUObjectBase<WGPURenderBundle, ::WGPURenderBundle> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPUAdapter : public WGPUObjectBase<WGPUAdapter, ::WGPUAdapter> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void RequestDevice(WGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback);
         bool GetInfo(WGPUAdapterInfo* adapterInfo);
         bool HasFeature(WGPUFeatureName featureName);
@@ -1687,10 +1725,9 @@ class WGPUAdapter : public WGPUObjectBase<WGPUAdapter, ::WGPUAdapter> {
 };
 
 class WGPUSurface : public WGPUObjectBase<WGPUSurface, ::WGPUSurface> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void Unconfigure();
         void Configure(WGPUSurfaceConfiguration* config);
         void GetCapabilities(WGPUAdapter* adapter, WGPUSurfaceCapabilities* surfaceCapabilities);
@@ -1699,10 +1736,9 @@ class WGPUSurface : public WGPUObjectBase<WGPUSurface, ::WGPUSurface> {
 };
 
 class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void SetLabel(const char* value);
         void Submit(int commandCount, WGPUCommandBuffer* commandBuffer);
         void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, void const * data, int size);
@@ -1712,11 +1748,9 @@ class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
 class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
     private:
         WGPUQueue defaultQueue;
-
-    protected:
-        void AddRefInternal();
-        void ReleaseInternal();
     public:
+        void AddRef();
+        void Release();
         void CreateBindGroup(WGPUBindGroupDescriptor* descriptor, WGPUBindGroup* valueOut);
         void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor* descriptor, WGPUBindGroupLayout* valueOut);
         WGPUBuffer* CreateBuffer(WGPUBufferDescriptor* descriptor);

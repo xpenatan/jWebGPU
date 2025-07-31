@@ -176,6 +176,11 @@ public class PlayingWithBuffers implements ApplicationListener {
         }
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
     private void initSwapChain(WGPUApp wgpu) {
         // Configure the surface
         WGPUSurfaceConfiguration config = WGPUSurfaceConfiguration.obtain();

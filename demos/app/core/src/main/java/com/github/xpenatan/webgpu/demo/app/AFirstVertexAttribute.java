@@ -72,6 +72,8 @@ public class AFirstVertexAttribute implements ApplicationListener {
     private WGPURenderPassColorAttachment renderPassColorAttachment;
     private WGPURenderPassEncoder renderPass;
 
+    private WGPUTexture textureOut;
+
     @Override
     public void create(WGPUApp wgpu) {
         if(wgpu.surface != null) {
@@ -92,6 +94,8 @@ public class AFirstVertexAttribute implements ApplicationListener {
             wgpu.adapter.release();
             wgpu.adapter.dispose();
             wgpu.adapter = null;
+
+            textureOut = new WGPUTexture();
 
             initializePipeline(wgpu);
             initializeBuffers(wgpu);
@@ -162,6 +166,14 @@ public class AFirstVertexAttribute implements ApplicationListener {
         if(WGPU.getPlatformType() != WGPUPlatformType.WGPU_Web) {
             wgpu.surface.present();
         }
+
+        // We no longer need the texture, only its view
+//        textureOut.release();
+    }
+
+    @Override
+    public void dispose() {
+        textureOut.dispose();
     }
 
     private void initSwapChain(WGPUApp wgpu) {
@@ -201,7 +213,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         textureOut.createView(viewDescriptor, textureViewOut);
 
         // We no longer need the texture, only its view
-        textureOut.release();
+//        textureOut.release();
         return textureViewOut;
     }
 

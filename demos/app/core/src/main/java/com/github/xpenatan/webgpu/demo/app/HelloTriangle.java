@@ -130,6 +130,11 @@ public class HelloTriangle implements ApplicationListener {
         }
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
     public void setColor(float r, float g, float b) {
         this.r = r;
         this.g = g;

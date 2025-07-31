@@ -2118,7 +2118,10 @@ JGPU::WGPUColor JGPU::WGPURenderPassColorAttachment::GetClearValue() {
 // JGPU::WGPUSurfaceTexture
 JGPU::WGPUSurfaceTexture* JGPU::WGPUSurfaceTexture::Obtain() {
     static JGPU::WGPUSurfaceTexture obj;
-    obj = JGPU::WGPUSurfaceTexture();
+    ::WGPUSurfaceTexture& texture = obj.Get();
+    texture.nextInChain = NULL;
+    texture.texture = 0;
+    texture.status = (WGPUSurfaceGetCurrentTextureStatus)0;
     return &obj;
 }
 
@@ -2980,11 +2983,11 @@ JGPU::WGPUQueueDescriptor JGPU::WGPUDeviceDescriptor::GetDefaultQueue() {
 // ################################### OPAQUE POINTER ###################################
 
 // JGPU::WGPUSampler
-void JGPU::WGPUSampler::AddRefInternal() {
+void JGPU::WGPUSampler::AddRef() {
     wgpuSamplerAddRef(Get());
 }
 
-void JGPU::WGPUSampler::ReleaseInternal() {
+void JGPU::WGPUSampler::Release() {
     wgpuSamplerRelease(Get());
 }
 
@@ -3004,11 +3007,11 @@ JGPU::WGPURenderBundleEncoder* JGPU::WGPURenderBundleEncoder::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPURenderBundleEncoder::AddRefInternal() {
+void JGPU::WGPURenderBundleEncoder::AddRef() {
     wgpuRenderBundleEncoderAddRef(Get());
 }
 
-void JGPU::WGPURenderBundleEncoder::ReleaseInternal() {
+void JGPU::WGPURenderBundleEncoder::Release() {
     wgpuRenderBundleEncoderRelease(Get());
 }
 
@@ -3084,11 +3087,11 @@ JGPU::WGPUTextureView* JGPU::WGPUTextureView::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPUTextureView::AddRefInternal() {
+void JGPU::WGPUTextureView::AddRef() {
     wgpuTextureViewAddRef(Get());
 }
 
-void JGPU::WGPUTextureView::ReleaseInternal() {
+void JGPU::WGPUTextureView::Release() {
     wgpuTextureViewRelease(Get());
 }
 
@@ -3103,11 +3106,11 @@ JGPU::WGPUTexture* JGPU::WGPUTexture::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPUTexture::AddRefInternal() {
+void JGPU::WGPUTexture::AddRef() {
     wgpuTextureAddRef(Get());
 }
 
-void JGPU::WGPUTexture::ReleaseInternal() {
+void JGPU::WGPUTexture::Release() {
     wgpuTextureRelease(Get());
 }
 
@@ -3134,11 +3137,11 @@ JGPU::WGPUShaderModule* JGPU::WGPUShaderModule::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPUShaderModule::AddRefInternal() {
+void JGPU::WGPUShaderModule::AddRef() {
     wgpuShaderModuleAddRef(Get());
 }
 
-void JGPU::WGPUShaderModule::ReleaseInternal() {
+void JGPU::WGPUShaderModule::Release() {
     wgpuShaderModuleRelease(Get());
 }
 
@@ -3153,11 +3156,11 @@ JGPU::WGPURenderPipeline* JGPU::WGPURenderPipeline::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPURenderPipeline::AddRefInternal() {
+void JGPU::WGPURenderPipeline::AddRef() {
     wgpuRenderPipelineAddRef(Get());
 }
 
-void JGPU::WGPURenderPipeline::ReleaseInternal() {
+void JGPU::WGPURenderPipeline::Release() {
     wgpuRenderPipelineRelease(Get());
 }
 
@@ -3172,11 +3175,11 @@ JGPU::WGPURenderPassEncoder* JGPU::WGPURenderPassEncoder::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPURenderPassEncoder::AddRefInternal() {
+void JGPU::WGPURenderPassEncoder::AddRef() {
     wgpuRenderPassEncoderAddRef(Get());
 }
 
-void JGPU::WGPURenderPassEncoder::ReleaseInternal() {
+void JGPU::WGPURenderPassEncoder::Release() {
     wgpuRenderPassEncoderRelease(Get());
 }
 
@@ -3280,11 +3283,11 @@ bool JGPU::WGPURenderPassEncoder::IsValid() {
 }
 
 // JGPU::WGPUQuerySet
-void JGPU::WGPUQuerySet::AddRefInternal() {
+void JGPU::WGPUQuerySet::AddRef() {
     wgpuQuerySetAddRef(Get());
 }
 
-void JGPU::WGPUQuerySet::ReleaseInternal() {
+void JGPU::WGPUQuerySet::Release() {
     wgpuQuerySetRelease(Get());
 }
 
@@ -3310,11 +3313,11 @@ bool JGPU::WGPUQuerySet::IsValid() {
 }
 
 // JGPU::WGPUPipelineLayout
-void JGPU::WGPUPipelineLayout::AddRefInternal() {
+void JGPU::WGPUPipelineLayout::AddRef() {
     wgpuPipelineLayoutAddRef(Get());
 }
 
-void JGPU::WGPUPipelineLayout::ReleaseInternal() {
+void JGPU::WGPUPipelineLayout::Release() {
     wgpuPipelineLayoutRelease(Get());
 }
 
@@ -3328,11 +3331,11 @@ bool JGPU::WGPUPipelineLayout::IsValid() {
 }
 
 // JGPU::WGPUInstance
-void JGPU::WGPUInstance::AddRefInternal() {
+void JGPU::WGPUInstance::AddRef() {
     wgpuInstanceAddRef(Get());
 }
 
-void JGPU::WGPUInstance::ReleaseInternal() {
+void JGPU::WGPUInstance::Release() {
     wgpuInstanceRelease(Get());
 }
 
@@ -3472,11 +3475,11 @@ WGPUWaitStatus JGPU::WGPUInstance::WaitAny(WGPUVectorFutureWaitInfo* futureVecto
 }
 
 // JGPU::WGPUDevice
-void JGPU::WGPUDevice::AddRefInternal() {
+void JGPU::WGPUDevice::AddRef() {
     wgpuDeviceAddRef(Get());
 }
 
-void JGPU::WGPUDevice::ReleaseInternal() {
+void JGPU::WGPUDevice::Release() {
     wgpuDeviceRelease(Get());
 }
 
@@ -3558,11 +3561,11 @@ JGPU::WGPUComputePassEncoder* JGPU::WGPUComputePassEncoder::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPUComputePassEncoder::AddRefInternal() {
+void JGPU::WGPUComputePassEncoder::AddRef() {
     wgpuComputePassEncoderAddRef(Get());
 }
 
-void JGPU::WGPUComputePassEncoder::ReleaseInternal() {
+void JGPU::WGPUComputePassEncoder::Release() {
     wgpuComputePassEncoderRelease(Get());
 }
 
@@ -3622,11 +3625,11 @@ JGPU::WGPUCommandBuffer* JGPU::WGPUCommandBuffer::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPUCommandBuffer::AddRefInternal() {
+void JGPU::WGPUCommandBuffer::AddRef() {
     wgpuCommandBufferAddRef(Get());
 }
 
-void JGPU::WGPUCommandBuffer::ReleaseInternal() {
+void JGPU::WGPUCommandBuffer::Release() {
     wgpuCommandBufferRelease(Get());
 }
 
@@ -3641,11 +3644,11 @@ JGPU::WGPUCommandEncoder* JGPU::WGPUCommandEncoder::Obtain() {
     return &obj;
 }
 
-void JGPU::WGPUCommandEncoder::AddRefInternal() {
+void JGPU::WGPUCommandEncoder::AddRef() {
     wgpuCommandEncoderAddRef(Get());
 }
 
-void JGPU::WGPUCommandEncoder::ReleaseInternal() {
+void JGPU::WGPUCommandEncoder::Release() {
     wgpuCommandEncoderRelease(Get());
 }
 
@@ -3713,11 +3716,11 @@ bool JGPU::WGPUCommandEncoder::IsValid() {
 }
 
 // JGPU::WGPUBuffer
-void JGPU::WGPUBuffer::AddRefInternal() {
+void JGPU::WGPUBuffer::AddRef() {
     wgpuBufferAddRef(Get());
 }
 
-void JGPU::WGPUBuffer::ReleaseInternal() {
+void JGPU::WGPUBuffer::Release() {
     wgpuBufferRelease(Get());
 }
 
@@ -3773,11 +3776,11 @@ bool JGPU::WGPUBuffer::IsValid() {
 }
 
 // JGPU::WGPUBindGroup
-void JGPU::WGPUBindGroup::AddRefInternal() {
+void JGPU::WGPUBindGroup::AddRef() {
     wgpuBindGroupAddRef(Get());
 }
 
-void JGPU::WGPUBindGroup::ReleaseInternal() {
+void JGPU::WGPUBindGroup::Release() {
     wgpuBindGroupRelease(Get());
 }
 
@@ -3791,11 +3794,11 @@ bool JGPU::WGPUBindGroup::IsValid() {
 }
 
 // JGPU::WGPUBindGroupLayout
-void JGPU::WGPUBindGroupLayout::AddRefInternal() {
+void JGPU::WGPUBindGroupLayout::AddRef() {
     wgpuBindGroupLayoutAddRef(Get());
 }
 
-void JGPU::WGPUBindGroupLayout::ReleaseInternal() {
+void JGPU::WGPUBindGroupLayout::Release() {
     wgpuBindGroupLayoutRelease(Get());
 }
 
@@ -3809,11 +3812,11 @@ bool JGPU::WGPUBindGroupLayout::IsValid() {
 }
 
 // JGPU::WGPUComputePipeline
-void JGPU::WGPUComputePipeline::AddRefInternal() {
+void JGPU::WGPUComputePipeline::AddRef() {
     wgpuComputePipelineAddRef(Get());
 }
 
-void JGPU::WGPUComputePipeline::ReleaseInternal() {
+void JGPU::WGPUComputePipeline::Release() {
     wgpuComputePipelineRelease(Get());
 }
 
@@ -3833,11 +3836,11 @@ bool JGPU::WGPUComputePipeline::IsValid() {
 }
 
 // JGPU::WGPURenderBundle
-void JGPU::WGPURenderBundle::AddRefInternal() {
+void JGPU::WGPURenderBundle::AddRef() {
     wgpuRenderBundleAddRef(Get());
 }
 
-void JGPU::WGPURenderBundle::ReleaseInternal() {
+void JGPU::WGPURenderBundle::Release() {
     wgpuRenderBundleRelease(Get());
 }
 
@@ -3851,11 +3854,11 @@ bool JGPU::WGPURenderBundle::IsValid() {
 }
 
 // JGPU::WGPUAdapter
-void JGPU::WGPUAdapter::AddRefInternal() {
+void JGPU::WGPUAdapter::AddRef() {
     wgpuAdapterAddRef(Get());
 }
 
-void JGPU::WGPUAdapter::ReleaseInternal() {
+void JGPU::WGPUAdapter::Release() {
     wgpuAdapterRelease(Get());
 }
 
@@ -3895,11 +3898,11 @@ WGPUStatus JGPU::WGPUAdapter::GetLimits(JGPU::WGPULimits* limits) {
 }
 
 // JGPU::WGPUSurface
-void JGPU::WGPUSurface::AddRefInternal() {
+void JGPU::WGPUSurface::AddRef() {
     wgpuSurfaceAddRef(Get());
 }
 
-void JGPU::WGPUSurface::ReleaseInternal() {
+void JGPU::WGPUSurface::Release() {
     wgpuSurfaceRelease(Get());
 }
 
@@ -3924,11 +3927,11 @@ void JGPU::WGPUSurface::Present() {
 }
 
 // JGPU::WGPUQueue
-void JGPU::WGPUQueue::AddRefInternal() {
+void JGPU::WGPUQueue::AddRef() {
     wgpuQueueAddRef(Get());
 }
 
-void JGPU::WGPUQueue::ReleaseInternal() {
+void JGPU::WGPUQueue::Release() {
     wgpuQueueRelease(Get());
 }
 

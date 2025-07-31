@@ -59,6 +59,7 @@ public class GLFWApp {
             wgpu.update();
             glfwPollEvents();
         }
+        applicationInterface.dispose();
         closeWindow();
     }
 
