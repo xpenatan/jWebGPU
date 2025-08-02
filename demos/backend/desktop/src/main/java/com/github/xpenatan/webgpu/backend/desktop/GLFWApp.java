@@ -27,7 +27,7 @@ public class GLFWApp {
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
-        JWebGPULoader.apiType = JWebGPULoader.ApiType.WGPU;
+        JWebGPULoader.apiType = JWebGPULoader.ApiType.DAWN;
 
         JWebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
