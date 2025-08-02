@@ -156,6 +156,7 @@ public class WGPUBuild {
         Path nativeDestination = Paths.get(dllOutputPath + "/webgpu_dawn.dll");
         try {
             Files.createDirectories(headerDestination.getParent());
+            Files.createDirectories(nativeDestination.getParent());
             Files.copy(headerSouce, headerDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
             Files.copy(nativeFile, nativeDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
         } catch(IOException e) {
