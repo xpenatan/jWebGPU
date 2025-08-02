@@ -291,7 +291,7 @@ jobs:
           path: ./webgpu/webgpu-build/build/c++/libs/
 
       - name: Generate classes
-        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project
 
       - name: Upload to repository
         uses: nick-fields/retry@v3
