@@ -209,7 +209,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_wgpu :webgpu:webgpu-download:webgpu_download_android_i686_wgpu :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
+        run: ./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_android_i686_wgpu :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
 
       - name: Build project
         run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_android_wgpu
