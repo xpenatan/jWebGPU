@@ -13,16 +13,21 @@ public class JWebGPULoader {
         #include "jWebGPU.h"
     */
 
-    public static ApiType apiType = ApiType.WGPU;
+    private static JWebGPUBackend backend;
+
+    public static void init(JParserLibraryLoaderListener listener) {
+        init(JWebGPUBackend.WGPU, listener);
+    }
 
     /*[-TEAVM;-REPLACE]
-        public static void init(JParserLibraryLoaderListener listener) {
-            apiType = ApiType.DAWN;
-            JParserLibraryLoader.load("jWebGPU", listener);
-        }
+      public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+          JWebGPULoader.backend = JWebGPUBackend.DAWN;
+          JParserLibraryLoader.load("jWebGPU", listener);
+      }
     */
-    public static void init(JParserLibraryLoaderListener listener) {
-        if(apiType == ApiType.DAWN) {
+    public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+        JWebGPULoader.backend = backend;
+        if(backend == JWebGPUBackend.DAWN) {
             // Load dawn first and then the bindings.
             JParserLibraryLoaderOptions options = new JParserLibraryLoaderOptions();
             options.autoAddSuffix = false;
@@ -41,8 +46,7 @@ public class JWebGPULoader {
         }
     }
 
-    public enum ApiType {
-        WGPU,
-        DAWN
+    public static JWebGPUBackend getBackend() {
+        return backend;
     }
 }

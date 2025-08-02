@@ -1,5 +1,6 @@
 package com.github.xpenatan.webgpu.demo.app;
 
+import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
@@ -210,7 +211,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         viewDescriptor.setAspect(WGPUTextureAspect.All);
         textureOut.createView(viewDescriptor, textureViewOut);
 
-        if(JWebGPULoader.apiType == JWebGPULoader.ApiType.DAWN) {
+        if(JWebGPULoader.getBackend() == JWebGPUBackend.DAWN) {
             textureOut.release();
         }
         return textureViewOut;
