@@ -151,7 +151,9 @@ public class WGPUBuild {
         Path headerSouce = Paths.get(wgpuPath + "/webgpu.h");
         Path headerDestination = Paths.get(webgpuIncludePath + "/webgpu/webgpu.h");
         Path nativeFile = Paths.get(wgpuPath + "/webgpu_dawn.dll");
-        Path nativeDestination = Paths.get(wgpuPath + "/webgpu_dawn64.dll");
+
+        String dllOutputPath = op.getLibsDir() + "/" + linkTarget.libDirSuffix;
+        Path nativeDestination = Paths.get(dllOutputPath + "/webgpu_dawn.dll");
         try {
             Files.createDirectories(headerDestination.getParent());
             Files.copy(headerSouce, headerDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);

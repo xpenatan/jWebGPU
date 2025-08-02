@@ -19,7 +19,7 @@ dependencies {
 
     if(LibExt.exampleUseRepoLibs) {
         api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
-        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:windows_64_dawn")
     }
     else {
         api(project(":webgpu:webgpu-core"))

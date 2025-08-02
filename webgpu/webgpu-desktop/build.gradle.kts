@@ -14,7 +14,7 @@ val linuxFile = "$libDir/webgpu-build/build/c++/libs/linux/libjWebGPU64.so"
 val macArmFile = "$libDir/webgpu-build/build/c++/libs/mac/arm/libjWebGPUarm64.dylib"
 val macFile = "$libDir/webgpu-build/build/c++/libs/mac/libjWebGPU64.dylib"
 val windowsFileDawn1 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/jWebGPU64.dll"
-val windowsFileDawn2 = "$libDir/webgpu-wgpu/build/dawn-x64/webgpu_dawn.dll"
+val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/webgpu_dawn.dll"
 
 tasks.jar {
     from(windowsFileDawn1)
