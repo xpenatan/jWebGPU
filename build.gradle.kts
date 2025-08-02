@@ -59,7 +59,6 @@ configure(libProjects) {
         repositories {
             maven {
                 var isSnapshot = LibExt.libVersion.endsWith("-SNAPSHOT")
-                isSnapshot = false;
                 url = if (isSnapshot) {
                     uri("https://central.sonatype.com/repository/maven-snapshots/")
                 } else {
