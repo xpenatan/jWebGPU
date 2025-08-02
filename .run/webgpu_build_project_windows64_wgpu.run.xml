@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="wgpu_build_project_teavm" type="GradleRunConfiguration" factoryName="Gradle" folderName="Build">
+  <configuration default="false" name="webgpu_build_project_windows64_wgpu" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Build">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-build" />
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="wgpu_build_project_teavm" />
+          <option value="webgpu_build_project_windows64_wgpu" />
         </list>
       </option>
       <option name="vmOptions" />

@@ -11,9 +11,9 @@ val emdawnVersion = "v20250629.124903"
 val buildDawnVersion = "2025-07-27"
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
-    val taskName = "download_$platform"
+    val taskName = "webgpu_download_${platform}_wgpu"
     tasks.register(taskName) {
-        group = "wgpu"
+        group = "webgpu"
         description = "Download wgpu-native binaries for $platform"
         doLast {
             val zipName = "wgpu-$os-$arch.zip"
@@ -37,8 +37,8 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
     }
 }
 
-tasks.register("download_emdawnwebgpu") {
-    group = "wgpu"
+tasks.register("webgpu_download_emdawnwebgpu") {
+    group = "webgpu"
     description = "Download emdawnwebgpu headers"
     doLast {
         var url = "https://github.com/google/dawn/releases/download/${emdawnVersion}/emdawnwebgpu_pkg-${emdawnVersion}.zip"
@@ -60,8 +60,8 @@ tasks.register("download_emdawnwebgpu") {
     }
 }
 
-tasks.register("download_windows_x86_64_dawn") {
-    group = "wgpu"
+tasks.register("webgpu_download_windows_x86_64_dawn") {
+    group = "webgpu"
     description = "Download windows64 dawn headers"
     doLast {
         var url = "https://github.com/mmozeiko/build-dawn/releases/download/${buildDawnVersion}/dawn-x64-${buildDawnVersion}.zip"
@@ -83,8 +83,8 @@ tasks.register("download_windows_x86_64_dawn") {
     }
 }
 
-tasks.register("download_glfw_windows") {
-    group = "wgpu"
+tasks.register("webgpu_download_glfw_windows") {
+    group = "webgpu"
     description = "Download GLFW 3.4 binaries for Windows and extract only the include folder contents to glfw-windows"
     doLast {
         val glfwVersion = "3.4"

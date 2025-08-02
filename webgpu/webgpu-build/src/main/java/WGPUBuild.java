@@ -28,32 +28,32 @@ public class WGPUBuild {
         BuilderTool.build(op, new BuildToolListener() {
             @Override
             public void onAddTarget(BuildToolOptions op, IDLReader idlReader, ArrayList<BuildMultiTarget> targets) {
-                String buildPath = null;
+                String downloadPath = null;
                 try {
-                    buildPath = new File(op.getModuleBuildPath() + "/../webgpu-wgpu/build").getCanonicalPath().replace("\\", "/");
+                    downloadPath = new File(op.getModuleBuildPath() + "/../webgpu-download/build").getCanonicalPath().replace("\\", "/");
                 } catch(IOException e) {
                     throw new RuntimeException(e);
                 }
                 if(op.containsArg("windows64")) {
-                    targets.add(getWindowTarget(op, buildPath));
+                    targets.add(getWindowTarget(op, downloadPath));
                 }
                 if(op.containsArg("windows64_dawn")) {
-                    targets.add(getWindowDawnTarget(op, buildPath));
+                    targets.add(getWindowDawnTarget(op, downloadPath));
                 }
                 if(op.containsArg("teavm")) {
-                    targets.add(getTeaVMTarget(op, idlReader, buildPath));
+                    targets.add(getTeaVMTarget(op, idlReader, downloadPath));
                 }
                 if(op.containsArg("android")) {
-                    targets.add(getAndroidTarget(op, buildPath));
+                    targets.add(getAndroidTarget(op, downloadPath));
                 }
                 if(op.containsArg("linux64")) {
-                    targets.add(getLinuxTarget(op, buildPath));
+                    targets.add(getLinuxTarget(op, downloadPath));
                 }
                 if(op.containsArg("mac64")) {
-                    targets.add(getMacTarget(op, buildPath, false));
+                    targets.add(getMacTarget(op, downloadPath, false));
                 }
                 if(op.containsArg("macArm")) {
-                    targets.add(getMacTarget(op, buildPath, true));
+                    targets.add(getMacTarget(op, downloadPath, true));
                 }
 //                if(op.containsArg("iOS")) {
 //                    targets.add(getIOSTarget(op));
@@ -70,17 +70,17 @@ public class WGPUBuild {
         });
     }
 
-    private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String buildPath) {
+    private static BuildMultiTarget getWindowTarget(BuildToolOptions op, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
 //        WindowsMSVCTarget.DEBUG_BUILD = true;
 //        String wgpuPath = buildPath + "/windows_x86_64_debug";
 
-        String wgpuPath = buildPath + "/windows_x86_64";
+        String wgpuPath = downloadPath + "/windows_x86_64";
         String webgpuIncludePath = wgpuPath + "/include";
         String libPath = wgpuPath + "/lib/wgpu_native.lib";
-        String glfwIncludePath = buildPath + "/GLFW";
+        String glfwIncludePath = downloadPath + "/GLFW";
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
@@ -112,14 +112,14 @@ public class WGPUBuild {
         return multiTarget;
     }
 
-    private static BuildMultiTarget getWindowDawnTarget(BuildToolOptions op, String buildPath) {
+    private static BuildMultiTarget getWindowDawnTarget(BuildToolOptions op, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
-        String wgpuPath = buildPath + "/dawn-x64";
-        String webgpuIncludePath = wgpuPath + "/include";
-        String libPath = wgpuPath + "/webgpu_dawn.lib";
-        String glfwIncludePath = buildPath + "/GLFW";
+        String dawnPath = downloadPath + "/dawn-x64";
+        String webgpuIncludePath = dawnPath + "/include";
+        String libPath = dawnPath + "/webgpu_dawn.lib";
+        String glfwIncludePath = downloadPath + "/GLFW";
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
@@ -148,9 +148,9 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("oleaut32.lib");
         multiTarget.add(linkTarget);
 
-        Path headerSouce = Paths.get(wgpuPath + "/webgpu.h");
+        Path headerSouce = Paths.get(dawnPath + "/webgpu.h");
         Path headerDestination = Paths.get(webgpuIncludePath + "/webgpu/webgpu.h");
-        Path nativeFile = Paths.get(wgpuPath + "/webgpu_dawn.dll");
+        Path nativeFile = Paths.get(dawnPath + "/webgpu_dawn.dll");
 
         String dllOutputPath = op.getLibsDir() + "/" + linkTarget.libDirSuffix;
         Path nativeDestination = Paths.get(dllOutputPath + "/webgpu_dawn.dll");
@@ -165,14 +165,14 @@ public class WGPUBuild {
         return multiTarget;
     }
 
-    private static BuildMultiTarget getLinuxTarget(BuildToolOptions op, String buildPath) {
+    private static BuildMultiTarget getLinuxTarget(BuildToolOptions op, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
-        String wgpuPath = buildPath + "/linux_x86_64";
+        String wgpuPath = downloadPath + "/linux_x86_64";
         String webgpuIncludePath = wgpuPath + "/include";
         String libPath = wgpuPath + "/lib/libwgpu_native.a";
-        String glfwIncludePath = buildPath + "/GLFW";
+        String glfwIncludePath = downloadPath + "/GLFW";
 
         // Compile glue code and link
         LinuxTarget linkTarget = new LinuxTarget();
@@ -189,15 +189,15 @@ public class WGPUBuild {
         return multiTarget;
     }
 
-    private static BuildMultiTarget getMacTarget(BuildToolOptions op, String buildPath, boolean isArm) {
+    private static BuildMultiTarget getMacTarget(BuildToolOptions op, String downloadPath, boolean isArm) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
         if(isArm) {
-            String wgpuPath = buildPath + "/macos_aarch64";
+            String wgpuPath = downloadPath + "/macos_aarch64";
             String webgpuIncludePath = wgpuPath + "/include";
             String libPath = wgpuPath + "/lib/libwgpu_native.a";
-            String glfwIncludePath = buildPath + "/GLFW";
+            String glfwIncludePath = downloadPath + "/GLFW";
 
             // Compile glue code and link
             MacTarget linkTarget = new MacTarget(true);
@@ -226,10 +226,10 @@ public class WGPUBuild {
             multiTarget.add(linkTarget);
         }
         else {
-            String wgpuPath = buildPath + "/macos_x86_64";
+            String wgpuPath = downloadPath + "/macos_x86_64";
             String webgpuIncludePath = wgpuPath + "/include";
             String libPath = wgpuPath + "/lib/libwgpu_native.a";
-            String glfwIncludePath = buildPath + "/GLFW";
+            String glfwIncludePath = downloadPath + "/GLFW";
 
             // Compile glue code and link
             MacTarget linkTarget = new MacTarget(false);
@@ -261,13 +261,13 @@ public class WGPUBuild {
         return multiTarget;
     }
 
-    private static BuildMultiTarget getTeaVMTarget(BuildToolOptions op, IDLReader idlReader, String buildPath) {
+    private static BuildMultiTarget getTeaVMTarget(BuildToolOptions op, IDLReader idlReader, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
-        String includePath = buildPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
+        String includePath = downloadPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
         String customSourceDir = op.getCustomSourceDir();
 
-        String port = buildPath + "/emdawnwebgpu_pkg/emdawnwebgpu.port.py";
-        String jsLib = buildPath + "/emdawnwebgpu_pkg/webgpu/src/webgpu-externs.js";
+        String port = downloadPath + "/emdawnwebgpu_pkg/emdawnwebgpu.port.py";
+        String jsLib = downloadPath + "/emdawnwebgpu_pkg/webgpu/src/webgpu-externs.js";
 
         EmscriptenTarget.DEBUG_BUILD = false;
 
@@ -289,7 +289,7 @@ public class WGPUBuild {
         return multiTarget;
     }
 
-    private static BuildMultiTarget getAndroidTarget(BuildToolOptions op, String buildPath) {
+    private static BuildMultiTarget getAndroidTarget(BuildToolOptions op, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
@@ -297,7 +297,7 @@ public class WGPUBuild {
 
         {
             // x86_64
-            String wgpuPath = buildPath + "/android_x86_64";
+            String wgpuPath = downloadPath + "/android_x86_64";
             String webgpuIncludePath = wgpuPath + "/include";
             String libPath = wgpuPath + "/lib/libwgpu_native.a";
 
@@ -318,7 +318,7 @@ public class WGPUBuild {
         }
         {
             // arm64_v8a
-            String wgpuPath = buildPath + "/android_aarch64";
+            String wgpuPath = downloadPath + "/android_aarch64";
             String webgpuIncludePath = wgpuPath + "/include";
             String libPath = wgpuPath + "/lib/libwgpu_native.a";
 
@@ -339,7 +339,7 @@ public class WGPUBuild {
         }
         {
             // armeabi_v7a
-            String wgpuPath = buildPath + "/android_armv7";
+            String wgpuPath = downloadPath + "/android_armv7";
             String webgpuIncludePath = wgpuPath + "/include";
             String libPath = wgpuPath + "/lib/libwgpu_native.a";
 
@@ -360,7 +360,7 @@ public class WGPUBuild {
         }
         {
             // x86
-            String wgpuPath = buildPath + "/android_i686";
+            String wgpuPath = downloadPath + "/android_i686";
             String webgpuIncludePath = wgpuPath + "/include";
             String libPath = wgpuPath + "/lib/libwgpu_native.a";
 

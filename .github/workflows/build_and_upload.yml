@@ -48,10 +48,10 @@ jobs:
           value: $env:PATH;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-wgpu:download_windows_x86_64 :webgpu:webgpu-wgpu:download_glfw_windows :webgpu:webgpu-wgpu:download_windows_x86_64_dawn
+        run: ./gradlew :webgpu:webgpu-download:download_windows_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_windows64 :webgpu:webgpu-build:dawn_build_project_windows64
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu :webgpu:webgpu-build:webgpu_build_project_windows64_dawn
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -86,10 +86,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-wgpu:download_linux_x86_64 :webgpu:webgpu-wgpu:download_glfw_windows
+        run: ./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_linux64
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -120,10 +120,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-wgpu:download_macos_x86_64 :webgpu:webgpu-wgpu:download_macos_aarch64 :webgpu:webgpu-wgpu:download_glfw_windows
+        run: ./gradlew :webgpu:webgpu-download:webgpu_download_macos_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_macos_aarch64 :webgpu:webgpu-download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_mac64 :webgpu:webgpu-build:wgpu_build_project_macArm
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -163,10 +163,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-wgpu:download_emdawnwebgpu
+        run: ./gradlew :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_teavm
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_teavm_dawn
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -209,7 +209,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-wgpu:download_android_x86 :webgpu:webgpu-wgpu:download_android_i686 :webgpu:webgpu-wgpu:download_android_armv7 :webgpu:webgpu-wgpu:download_android_aarch64
+        run: ./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_wgpu :webgpu:webgpu-download:webgpu_download_android_i686_wgpu :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
 
       - name: Build project
         run: ./gradlew :webgpu:webgpu-build:wgpu_build_project_android

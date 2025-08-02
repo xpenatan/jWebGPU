@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="dawn_generateCMake_windows_x64" type="GradleRunConfiguration" factoryName="Gradle" folderName="Dawn">
+  <configuration default="false" name="dawn_generateCMake_windows_x64" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Dawn">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-dawn" />

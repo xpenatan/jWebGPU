@@ -1,6 +1,6 @@
 //include(":webgpu:webgpu-dawn") // Experimental module to build dawn source
 
-include(":webgpu:webgpu-wgpu") // Module to download the sources
+include(":webgpu:webgpu-download") // Module to download the sources
 
 include(":webgpu:webgpu-build")
 include(":webgpu:webgpu-base")

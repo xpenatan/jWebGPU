@@ -1,15 +1,13 @@
 package com.github.xpenatan.webgpu.demo.app;
 
+import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
 import com.github.xpenatan.webgpu.WGPUBufferUsage;
-import com.github.xpenatan.webgpu.WGPUByteBuffer;
-import com.github.xpenatan.webgpu.WGPUByteOrder;
 import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
 import com.github.xpenatan.webgpu.WGPUCullMode;
-import com.github.xpenatan.webgpu.WGPUFloatBuffer;
 import com.github.xpenatan.webgpu.WGPUFrontFace;
 import com.github.xpenatan.webgpu.WGPUIndexFormat;
 import com.github.xpenatan.webgpu.WGPULoadOp;
@@ -212,8 +210,9 @@ public class AFirstVertexAttribute implements ApplicationListener {
         viewDescriptor.setAspect(WGPUTextureAspect.All);
         textureOut.createView(viewDescriptor, textureViewOut);
 
-        // We no longer need the texture, only its view
-        textureOut.release(); // This crash WGPU while not in dawn
+        if(JWebGPULoader.apiType == JWebGPULoader.ApiType.DAWN) {
+            textureOut.release();
+        }
         return textureViewOut;
     }
 

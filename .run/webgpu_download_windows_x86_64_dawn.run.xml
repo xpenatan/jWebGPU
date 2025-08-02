@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="dawn_build_windows_x64" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Dawn">
+  <configuration default="false" name="webgpu_download_windows_x86_64_dawn" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Download">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-dawn" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-download" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="" />
       <option name="taskDescriptions">
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="build_windows_x64" />
+          <option value="webgpu_download_windows_x86_64_dawn" />
         </list>
       </option>
       <option name="vmOptions" />

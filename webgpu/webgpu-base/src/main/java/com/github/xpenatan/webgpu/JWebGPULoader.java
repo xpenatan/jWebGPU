@@ -13,16 +13,22 @@ public class JWebGPULoader {
         #include "jWebGPU.h"
     */
 
-    public static boolean IS_DAWN_WINDOWS = false;
+    public static ApiType apiType = ApiType.WGPU;
 
+    /*[-TEAVM;-REPLACE]
+        public static void init(JParserLibraryLoaderListener listener) {
+            apiType = ApiType.DAWN;
+            JParserLibraryLoader.load("jWebGPU", listener);
+        }
+    */
     public static void init(JParserLibraryLoaderListener listener) {
-        String osName = System.getProperty("os.name").toLowerCase();
-        if(osName.contains("win") && IS_DAWN_WINDOWS) {
+        if(apiType == ApiType.DAWN) {
+            // Load dawn first and then the bindings.
             JParserLibraryLoaderOptions options = new JParserLibraryLoaderOptions();
             options.autoAddSuffix = false;
-            JParserLibraryLoader.load("webgpu_dawn", options, (isSuccess, e) -> {
+            JParserLibraryLoader.load("native/dawn/webgpu_dawn", options, (isSuccess, e) -> {
                 if(isSuccess) {
-                    JParserLibraryLoader.load("jWebGPU", listener);
+                    JParserLibraryLoader.load("native/dawn/jWebGPU", listener);
                 }
                 else {
                     listener.onLoad(false, e);
@@ -30,7 +36,13 @@ public class JWebGPULoader {
             });
         }
         else {
-            JParserLibraryLoader.load("jWebGPU", listener);
+            // WGPU do static link so it's a single library
+            JParserLibraryLoader.load("native/wgpu/jWebGPU", listener);
         }
+    }
+
+    public enum ApiType {
+        WGPU,
+        DAWN
     }
 }

@@ -18,23 +18,15 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
 }
 
-tasks.register<JavaExec>("wgpu_build_project") {
+tasks.register<JavaExec>("webgpu_build_project") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf()
+    args = mutableListOf() // Just generate classes
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("wgpu_build_project_windows64") {
-    group = "webgpu"
-    description = "Generate native project"
-    mainClass.set(mainWGPUClassName)
-    args = mutableListOf("windows64")
-    classpath = sourceSets["main"].runtimeClasspath
-}
-
-tasks.register<JavaExec>("dawn_build_project_windows64") {
+tasks.register<JavaExec>("webgpu_build_project_windows64_dawn") {
     group = "webgpu"
     description = "Generate dawn native project"
     mainClass.set(mainWGPUClassName)
@@ -42,31 +34,7 @@ tasks.register<JavaExec>("dawn_build_project_windows64") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("wgpu_build_project_linux64") {
-    group = "webgpu"
-    description = "Generate native project"
-    mainClass.set(mainWGPUClassName)
-    args = mutableListOf("linux64")
-    classpath = sourceSets["main"].runtimeClasspath
-}
-
-tasks.register<JavaExec>("wgpu_build_project_mac64") {
-    group = "webgpu"
-    description = "Generate native project"
-    mainClass.set(mainWGPUClassName)
-    args = mutableListOf("mac64")
-    classpath = sourceSets["main"].runtimeClasspath
-}
-
-tasks.register<JavaExec>("wgpu_build_project_macArm") {
-    group = "webgpu"
-    description = "Generate native project"
-    mainClass.set(mainWGPUClassName)
-    args = mutableListOf("macArm")
-    classpath = sourceSets["main"].runtimeClasspath
-}
-
-tasks.register<JavaExec>("wgpu_build_project_teavm") {
+tasks.register<JavaExec>("webgpu_build_project_teavm_dawn") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
@@ -74,7 +42,39 @@ tasks.register<JavaExec>("wgpu_build_project_teavm") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("wgpu_build_project_android") {
+tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("windows64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("linux64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("mac64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("macArm")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_android_wgpu") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)

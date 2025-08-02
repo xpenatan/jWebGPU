@@ -17,30 +17,30 @@ val windowsFileDawn1 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/jWeb
 val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/webgpu_dawn.dll"
 
 tasks.jar {
-    from(windowsFileDawn1)
-    from(windowsFileDawn2)
-    from(windowsFile)
-    from(linuxFile)
-    from(macArmFile)
-    from(macFile)
+    from(windowsFileDawn1) { into("native/dawn") }
+    from(windowsFileDawn2) { into("native/dawn") }
+    from(windowsFile) { into("native/wgpu") }
+    from(linuxFile) { into("native/wgpu") }
+    from(macArmFile) { into("native/wgpu") }
+    from(macFile) { into("native/wgpu") }
 }
 
 val platforms: Map<String, Jar.() -> Unit> = mapOf(
     "windows_64_dawn" to {
-        from(windowsFileDawn1)
-        from(windowsFileDawn2)
+        from(windowsFileDawn1) { into("native/dawn") }
+        from(windowsFileDawn2) { into("native/dawn") }
     },
     "windows_64_wgpu" to {
-        from(windowsFile)
+        from(windowsFile) { into("native/wgpu") }
     },
     "linux_64_wgpu" to {
-        from(linuxFile)
+        from(linuxFile) { into("native/wgpu") }
     },
     "mac_arm64_wgpu" to {
-        from(macArmFile)
+        from(macArmFile) { into("native/wgpu") }
     },
     "mac_64_wgpu" to {
-        from(macFile)
+        from(macFile) { into("native/wgpu") }
     }
 )
 

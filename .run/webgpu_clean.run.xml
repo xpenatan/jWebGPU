@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="webgpu_clean" type="GradleRunConfiguration" factoryName="Gradle" folderName="Build">
+  <configuration default="false" name="webgpu_clean" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Build">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />

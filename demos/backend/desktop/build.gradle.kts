@@ -20,7 +20,10 @@ dependencies {
     if(LibExt.exampleUseRepoLibs) {
         api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
         api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:windows_64_dawn")
-//        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:windows_64_wgpu")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:windows_64_wgpu")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:linux_64_wgpu")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:mac_arm64_wgpu")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:mac_64_wgpu")
     }
     else {
         api(project(":webgpu:webgpu-core"))
