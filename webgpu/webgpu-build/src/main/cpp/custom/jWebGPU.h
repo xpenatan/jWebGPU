@@ -198,7 +198,7 @@ class STBImage;
 
 class WGPUByteBuffer;
 
-#ifdef __EMSCRIPTEN__
+#if defined(__EMSCRIPTEN__) || defined(WEBGPU_DAWN)
 using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
 using WGPUComputePassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
 using WGPUProgrammableStageDescriptor = WGPUComputeState; // dawn version TODO remove when both are the same

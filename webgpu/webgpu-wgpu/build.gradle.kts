@@ -8,6 +8,7 @@ plugins {
 
 val WGPU_VERSION = "25.0.2.1"
 val emdawnVersion = "v20250629.124903"
+val buildDawnVersion = "2025-07-27"
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
     val taskName = "download_$platform"
@@ -45,6 +46,29 @@ tasks.register("download_emdawnwebgpu") {
         val tmpDir = project.buildDir.resolve("tmp")
         tmpDir.mkdirs()
         val zipFile = tmpDir.resolve("emdawnwebgpu.zip")
+        // Download the file
+        URL(url).openStream().use { input ->
+            Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
+        }
+        // Extract to build/bin_release64
+        val nativesDir = project.buildDir.resolve("")
+        nativesDir.mkdirs()
+        project.copy {
+            from(project.zipTree(zipFile))
+            into(nativesDir)
+        }
+    }
+}
+
+tasks.register("download_windows_x86_64_dawn") {
+    group = "wgpu"
+    description = "Download windows64 dawn headers"
+    doLast {
+        var url = "https://github.com/mmozeiko/build-dawn/releases/download/${buildDawnVersion}/dawn-x64-${buildDawnVersion}.zip"
+        println("URL: $url")
+        val tmpDir = project.buildDir.resolve("tmp")
+        tmpDir.mkdirs()
+        val zipFile = tmpDir.resolve("win64dawn.zip")
         // Download the file
         URL(url).openStream().use { input ->
             Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)

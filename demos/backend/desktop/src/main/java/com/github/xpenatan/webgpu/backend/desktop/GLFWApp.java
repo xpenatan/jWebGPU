@@ -27,6 +27,8 @@ public class GLFWApp {
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
+        JWebGPULoader.IS_DAWN_WINDOWS = true;
+
         JWebGPULoader.init((isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
@@ -59,7 +61,9 @@ public class GLFWApp {
             wgpu.update();
             glfwPollEvents();
         }
-        applicationInterface.dispose();
+        if(wGPUInit >= 3) {
+            applicationInterface.dispose();
+        }
         closeWindow();
     }
 

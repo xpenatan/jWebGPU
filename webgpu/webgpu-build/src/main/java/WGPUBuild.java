@@ -11,6 +11,9 @@ import com.github.xpenatan.jparser.idl.IDLReader;
 import com.github.xpenatan.jparser.idl.IDLRenaming;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class WGPUBuild {
@@ -31,26 +34,28 @@ public class WGPUBuild {
                 } catch(IOException e) {
                     throw new RuntimeException(e);
                 }
-
-                if(op.windows64) {
+                if(op.containsArg("windows64")) {
                     targets.add(getWindowTarget(op, buildPath));
                 }
-                if(op.teavm) {
+                if(op.containsArg("windows64_dawn")) {
+                    targets.add(getWindowDawnTarget(op, buildPath));
+                }
+                if(op.containsArg("teavm")) {
                     targets.add(getTeaVMTarget(op, idlReader, buildPath));
                 }
-                if(op.android) {
+                if(op.containsArg("android")) {
                     targets.add(getAndroidTarget(op, buildPath));
                 }
-                if(op.linux64) {
+                if(op.containsArg("linux64")) {
                     targets.add(getLinuxTarget(op, buildPath));
                 }
-                if(op.mac64) {
+                if(op.containsArg("mac64")) {
                     targets.add(getMacTarget(op, buildPath, false));
                 }
-                if(op.macArm) {
+                if(op.containsArg("macArm")) {
                     targets.add(getMacTarget(op, buildPath, true));
                 }
-//                if(op.iOS) {
+//                if(op.containsArg("iOS")) {
 //                    targets.add(getIOSTarget(op));
 //                }
             }
@@ -79,6 +84,9 @@ public class WGPUBuild {
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.libDirSuffix += "wgpu/";
+        linkTarget.tempBuildDir += "_wgpu";
+
         linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
@@ -101,6 +109,56 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("oleaut32.lib");
         multiTarget.add(linkTarget);
 
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getWindowDawnTarget(BuildToolOptions op, String buildPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        String wgpuPath = buildPath + "/dawn-x64";
+        String webgpuIncludePath = wgpuPath + "/include";
+        String libPath = wgpuPath + "/webgpu_dawn.lib";
+        String glfwIncludePath = buildPath + "/GLFW";
+
+        // Compile glue code and link
+        WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.libDirSuffix += "dawn/";
+        linkTarget.tempBuildDir += "_dawn";
+        linkTarget.addJNIHeaders();
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppCompiler.add("/MD");
+        linkTarget.cppCompiler.add("-DWEBGPU_DAWN");
+        linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
+        linkTarget.linkerFlags.add(libPath);
+        linkTarget.linkerFlags.add("ws2_32.lib");
+        linkTarget.linkerFlags.add("userenv.lib");
+        linkTarget.linkerFlags.add("ntdll.lib");
+        linkTarget.linkerFlags.add("opengl32.lib");
+        linkTarget.linkerFlags.add("d3dcompiler.lib");
+        linkTarget.linkerFlags.add("ole32.lib");
+        linkTarget.linkerFlags.add("propsys.lib");
+        linkTarget.linkerFlags.add("runtimeobject.lib");
+        linkTarget.linkerFlags.add("user32.lib");
+        linkTarget.linkerFlags.add("gdi32.lib");
+        linkTarget.linkerFlags.add("oleaut32.lib");
+        multiTarget.add(linkTarget);
+
+        Path headerSouce = Paths.get(wgpuPath + "/webgpu.h");
+        Path headerDestination = Paths.get(webgpuIncludePath + "/webgpu/webgpu.h");
+        Path nativeFile = Paths.get(wgpuPath + "/webgpu_dawn.dll");
+        Path nativeDestination = Paths.get(wgpuPath + "/webgpu_dawn64.dll");
+        try {
+            Files.createDirectories(headerDestination.getParent());
+            Files.copy(headerSouce, headerDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(nativeFile, nativeDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } catch(IOException e) {
+            throw new RuntimeException(e);
+        }
         return multiTarget;
     }
 
