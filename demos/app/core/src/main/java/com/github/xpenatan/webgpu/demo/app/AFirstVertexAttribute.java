@@ -213,7 +213,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         textureOut.createView(viewDescriptor, textureViewOut);
 
         // We no longer need the texture, only its view
-//        textureOut.release();
+        textureOut.release(); // This crash WGPU while not in dawn
         return textureViewOut;
     }
 
