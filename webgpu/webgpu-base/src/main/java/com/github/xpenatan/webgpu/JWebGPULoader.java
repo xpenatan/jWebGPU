@@ -31,9 +31,10 @@ public class JWebGPULoader {
             // Load dawn first and then the bindings.
             JParserLibraryLoaderOptions options = new JParserLibraryLoaderOptions();
             options.autoAddSuffix = false;
-            JParserLibraryLoader.load("native/dawn/webgpu_dawn", options, (isSuccess, e) -> {
+            options.autoAddPrefix = false;
+            JParserLibraryLoader.load("webgpu_dawn", "native/dawn/", options, (isSuccess, e) -> {
                 if(isSuccess) {
-                    JParserLibraryLoader.load("native/dawn/jWebGPU", listener);
+                    JParserLibraryLoader.load("jWebGPU", "native/dawn/", listener);
                 }
                 else {
                     listener.onLoad(false, e);
@@ -42,7 +43,7 @@ public class JWebGPULoader {
         }
         else {
             // WGPU do static link so it's a single library
-            JParserLibraryLoader.load("native/wgpu/jWebGPU", listener);
+            JParserLibraryLoader.load("jWebGPU", "native/wgpu/", listener);
         }
     }
 
