@@ -26,6 +26,11 @@ public class JWebGPULoader {
       }
     */
     public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+        String osName = System.getProperty("os.name").toLowerCase();
+        if(!osName.contains("win")) {
+            // Force WGPU if not windows. There is no libs for linux, mac or android.
+            backend = JWebGPUBackend.WGPU;
+        }
         JWebGPULoader.backend = backend;
         if(backend == JWebGPUBackend.DAWN) {
             // Load dawn first and then the bindings.
