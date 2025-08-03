@@ -12,11 +12,12 @@ A Java-based WebGPU binding that works across Desktop, Mobile, and Web platforms
 
 ### Platform status:
 
-| Emscripten | Windows | Linux |       Mac       |                   Android                   | iOS  |
-|:----------:|:-------:|:-----:|:---------------:|:-------------------------------------------:|:----:|
-|     ✅      |    ✅    |   ✅   |        ✅        |                      ✅                      |  ❌   |
-|    wasm    |   x86_64   |  x86_64  | x86_64<br>arm64 |  x86<br>x86_64<br>arm64_v8a<br>armeabi_v7a  | TODO |
-
+| Backend     | Emscripten | Windows | Linux  |       Mac       |                  Android                  | iOS  |
+|:------------|:----------:|:-------:|:------:|:---------------:|:-----------------------------------------:|:----:|
+| wgpu-native |     ❌      |    ✅    |   ✅    |        ✅        |                     ✅                     |  ❌   |
+|             |     -      |   x86_64   | x86_64 | x86_64<br>arm64 | x86<br>x86_64<br>arm64_v8a<br>armeabi_v7a | TODO |
+| Dawn        |     ✅      |    ✅    |   ❌    |        ❌        |                     ❌                     |  ❌   |
+|             |    wasm    |  x86_64 |   -    |        -        |                     -                     |  -   |
 
 ## Naming Conventions
 To help you navigate the jWebGPU library, here are the naming conventions used for classes, enums, and methods:
@@ -38,18 +39,19 @@ Change `LibExt.exampleUseRepoLibs` to false. Set to true only if you want to try
 1) **Download Dependencies**  
    Grab all the dependency files. They'll be saved in `webgpu/webgpu-wgpu/build`.
 ```
-./gradlew :webgpu:webgpu-wgpu:download_glfw_windows
-./gradlew :webgpu:webgpu-wgpu:download_emdawnwebgpu
-./gradlew :webgpu:webgpu-wgpu:download_windows_x86_64
-./gradlew :webgpu:webgpu-wgpu:download_windows_aarch64
-./gradlew :webgpu:webgpu-wgpu:download_macos_x86_64
-./gradlew :webgpu:webgpu-wgpu:download_macos_aarch64
-./gradlew :webgpu:webgpu-wgpu:download_linux_x86
-./gradlew :webgpu:webgpu-wgpu:download_linux_aarch64
-./gradlew :webgpu:webgpu-wgpu:download_android_x86
-./gradlew :webgpu:webgpu-wgpu:download_android_i686
-./gradlew :webgpu:webgpu-wgpu:download_android_armv7
-./gradlew :webgpu:webgpu-wgpu:download_android_aarch64
+./gradlew :webgpu:webgpu-download:webgpu_download_glfw_windows
+./gradlew :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_windows_x86_64_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
+./gradlew :webgpu:webgpu-download:webgpu_download_windows_aarch64_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_macos_x86_64_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_macos_aarch64_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_linux_aarch64_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_android_i686_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
 ```
 
 2) **Build Bindings for All Platforms**  
@@ -57,13 +59,14 @@ Change `LibExt.exampleUseRepoLibs` to false. Set to true only if you want to try
    The native files will end up in `webgpu/webgpu-build/build/C++/libs`.
 ```
 // Windows requires Visual Studio 2022 C++
-./gradlew :webgpu:webgpu-build:wgpu_build_project_windows64
+./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu
+./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_dawn
 
 // TeaVM requires Emscripten
-./gradlew :webgpu:webgpu-build:wgpu_build_project_teavm
+./gradlew :webgpu:webgpu-build:webgpu_build_project_teavm_dawn
 
 // Android requires NDK
-./gradlew :webgpu:webgpu-build:wgpu_build_project_android
+./gradlew :webgpu:webgpu-build:webgpu_build_project_android_wgpu
 ```
 
 3) **Run or Install the Demo App**  
