@@ -1,5 +1,7 @@
 package com.github.xpenatan.webgpu.demo.app;
 
+import com.github.xpenatan.webgpu.JWebGPUBackend;
+import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
 import com.github.xpenatan.webgpu.WGPUBlendState;
 import com.github.xpenatan.webgpu.WGPUColorTargetState;
@@ -158,7 +160,9 @@ public class HelloTriangle implements ApplicationListener {
         viewDescriptor.setArrayLayerCount(1);
         viewDescriptor.setAspect(WGPUTextureAspect.All);
         textureOut.createView(viewDescriptor, textureViewOut);
-        textureOut.release();
+        if(JWebGPULoader.getBackend() == JWebGPUBackend.DAWN) {
+            textureOut.release();
+        }
         return textureViewOut;
     }
 

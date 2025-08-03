@@ -1,6 +1,8 @@
 package com.github.xpenatan.webgpu.demo.app;
 
 import com.github.xpenatan.webgpu.BufferMapCallback;
+import com.github.xpenatan.webgpu.JWebGPUBackend;
+import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
@@ -216,7 +218,9 @@ public class PlayingWithBuffers implements ApplicationListener {
         viewDescriptor.setArrayLayerCount(1);
         viewDescriptor.setAspect(WGPUTextureAspect.All);
         textureOut.createView(viewDescriptor, textureViewOut);
-        textureOut.release();
+        if(JWebGPULoader.getBackend() == JWebGPUBackend.DAWN) {
+            textureOut.release();
+        }
         return textureViewOut;
     }
 
