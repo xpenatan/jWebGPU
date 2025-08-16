@@ -6,15 +6,20 @@ import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
 import com.github.xpenatan.webgpu.WGPUBufferUsage;
+import com.github.xpenatan.webgpu.WGPUChainedStruct;
 import com.github.xpenatan.webgpu.WGPUColorWriteMask;
 import com.github.xpenatan.webgpu.WGPUCompositeAlphaMode;
 import com.github.xpenatan.webgpu.WGPUCullMode;
+import com.github.xpenatan.webgpu.WGPUDepthStencilState;
 import com.github.xpenatan.webgpu.WGPUFrontFace;
 import com.github.xpenatan.webgpu.WGPUIndexFormat;
 import com.github.xpenatan.webgpu.WGPULoadOp;
+import com.github.xpenatan.webgpu.WGPUPipelineLayout;
 import com.github.xpenatan.webgpu.WGPUPlatformType;
 import com.github.xpenatan.webgpu.WGPUPresentMode;
 import com.github.xpenatan.webgpu.WGPUPrimitiveTopology;
+import com.github.xpenatan.webgpu.WGPURenderPassDepthStencilAttachment;
+import com.github.xpenatan.webgpu.WGPURenderPassTimestampWrites;
 import com.github.xpenatan.webgpu.WGPUSType;
 import com.github.xpenatan.webgpu.WGPUStoreOp;
 import com.github.xpenatan.webgpu.WGPUTextureAspect;
@@ -22,6 +27,7 @@ import com.github.xpenatan.webgpu.WGPUTextureFormat;
 import com.github.xpenatan.webgpu.WGPUTextureUsage;
 import com.github.xpenatan.webgpu.WGPUTextureViewDimension;
 import com.github.xpenatan.webgpu.WGPUVectorColorTargetState;
+import com.github.xpenatan.webgpu.WGPUVectorConstantEntry;
 import com.github.xpenatan.webgpu.WGPUVectorRenderPassColorAttachment;
 import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
 import com.github.xpenatan.webgpu.WGPUVectorVertexAttribute;
@@ -55,6 +61,7 @@ import com.github.xpenatan.webgpu.WGPUVertexAttribute;
 import com.github.xpenatan.webgpu.WGPUVertexBufferLayout;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
+import com.github.xpenatan.webgpu.idl.IDLBase;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -111,18 +118,18 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
         // Create a command encoder for the draw call
         WGPUCommandEncoderDescriptor encoderDesc = WGPUCommandEncoderDescriptor.obtain();
-        encoderDesc.setNextInChain(null);
+        encoderDesc.setNextInChain(WGPUChainedStruct.NULL);
         encoderDesc.setLabel("My command encoder");
         WGPUCommandEncoder encoder = WGPUCommandEncoder.obtain();
         wgpu.device.createCommandEncoder(encoderDesc, encoder);
 
         // Create the render pass that clears the screen with our color
-        renderPassDesc.setNextInChain(null);
+        renderPassDesc.setNextInChain(WGPUChainedStruct.NULL);
 
         // The attachment part of the render pass descriptor describes the target texture of the pass
         renderPassColorAttachment.reset();
         renderPassColorAttachment.setView(targetView);
-        renderPassColorAttachment.setResolveTarget(null);
+        renderPassColorAttachment.setResolveTarget(WGPUTextureView.NULL);
         renderPassColorAttachment.setLoadOp(WGPULoadOp.Clear);
         renderPassColorAttachment.setStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.getClearValue().setColor(0.9f, 0.1f, 0.2f, 1.0f);
@@ -131,8 +138,8 @@ public class AFirstVertexAttribute implements ApplicationListener {
         attachments.push_back(renderPassColorAttachment);
         renderPassDesc.reset();
         renderPassDesc.setColorAttachments(attachments);
-        renderPassDesc.setDepthStencilAttachment(null);
-        renderPassDesc.setTimestampWrites(null);
+        renderPassDesc.setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment.NULL);
+        renderPassDesc.setTimestampWrites(WGPURenderPassTimestampWrites.NULL);
 
         encoder.beginRenderPass(renderPassDesc, renderPass);
 
@@ -150,7 +157,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
         // Encode and submit the render pass
         WGPUCommandBufferDescriptor cmdBufferDescriptor = WGPUCommandBufferDescriptor.obtain();
-        cmdBufferDescriptor.setNextInChain(null);
+        cmdBufferDescriptor.setNextInChain(WGPUChainedStruct.NULL);
         cmdBufferDescriptor.setLabel("Command buffer");
         WGPUCommandBuffer command = WGPUCommandBuffer.obtain();
         encoder.finish(cmdBufferDescriptor, command);
@@ -186,7 +193,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         config.setFormat(surfaceFormat);
 
         // And we do not need any particular view format:
-        config.setViewFormats(null);
+        config.setViewFormats(WGPUVectorTextureFormat.NULL);
         config.setDevice(wgpu.device);
         config.setPresentMode(WGPUPresentMode.Fifo);
         config.setAlphaMode(WGPUCompositeAlphaMode.Auto);
@@ -224,7 +231,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         // We use the extension mechanism to specify the WGSL part of the shader module descriptor
         WGPUShaderSourceWGSL shaderCodeDesc = WGPUShaderSourceWGSL.obtain();
         // Set the chained struct's header
-        shaderCodeDesc.getChain().setNext(null);
+        shaderCodeDesc.getChain().setNext(WGPUChainedStruct.NULL);
         shaderCodeDesc.getChain().setSType(WGPUSType.ShaderSourceWGSL);
         // Connect the chain
         shaderDesc.setNextInChain(shaderCodeDesc.getChain());
@@ -234,7 +241,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
         // Create the render pipeline
         WGPURenderPipelineDescriptor pipelineDesc = WGPURenderPipelineDescriptor.obtain();
-        pipelineDesc.setNextInChain(null);
+        pipelineDesc.setNextInChain(WGPUChainedStruct.NULL);
 
         // Configure the vertex pipeline
         // We use one vertex buffer
@@ -265,7 +272,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         // by the function called 'vs_main' in that module.
         pipelineDesc.getVertex().setModule(shaderModule);
         pipelineDesc.getVertex().setEntryPoint("vs_main");
-        pipelineDesc.getVertex().setConstants(null);
+        pipelineDesc.getVertex().setConstants(WGPUVectorConstantEntry.NULL);
 
         // Each sequence of 3 vertices is considered as a triangle
         pipelineDesc.getPrimitive().setTopology(WGPUPrimitiveTopology.TriangleList);
@@ -289,7 +296,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         WGPUFragmentState fragmentState = WGPUFragmentState.obtain();
         fragmentState.setModule(shaderModule);
         fragmentState.setEntryPoint("fs_main");
-        fragmentState.setConstants(null);
+        fragmentState.setConstants(WGPUVectorConstantEntry.NULL);
 
         WGPUBlendState blendState = WGPUBlendState.obtain();
         blendState.getColor().setSrcFactor(WGPUBlendFactor.SrcAlpha);
@@ -312,7 +319,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         pipelineDesc.setFragment(fragmentState);
 
         // We do not use stencil/depth testing for now
-        pipelineDesc.setDepthStencil(null);
+        pipelineDesc.setDepthStencil(WGPUDepthStencilState.NULL);
 
         // Samples per pixel
         pipelineDesc.getMultisample().setCount(1);
@@ -323,7 +330,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
         // Default value as well (irrelevant for count = 1 anyways)
         pipelineDesc.getMultisample().setAlphaToCoverageEnabled(false);
 
-        pipelineDesc.setLayout(null);
+        pipelineDesc.setLayout(WGPUPipelineLayout.NULL);
 
         pipeline = new WGPURenderPipeline();
         wgpu.device.createRenderPipeline(pipelineDesc, pipeline);
@@ -365,7 +372,7 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
         // Create vertex buffer
         WGPUBufferDescriptor bufferDesc = WGPUBufferDescriptor.obtain();
-        bufferDesc.setNextInChain(null);
+        bufferDesc.setNextInChain(WGPUChainedStruct.NULL);
         bufferDesc.setSize(vertexData.limit());
         bufferDesc.setUsage(WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Vertex)); // Vertex usage here!
         bufferDesc.setMappedAtCreation(false);

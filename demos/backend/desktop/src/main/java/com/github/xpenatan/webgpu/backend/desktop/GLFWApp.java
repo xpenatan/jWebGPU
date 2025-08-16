@@ -4,6 +4,7 @@ import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
+import com.github.xpenatan.webgpu.idl.IDLBase;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -129,21 +130,25 @@ public class GLFWApp {
 
     private void createSurface() {
         String osName = System.getProperty("os.name").toLowerCase();
+        IDLBase voidHandle = IDLBase.create().native_setVoid(windowHandle);
         if(osName.contains("win")) {
-            wgpu.surface = wgpu.instance.createWindowsSurface(windowHandle);
+            wgpu.surface = wgpu.instance.createWindowsSurface(voidHandle);
         }
         else if(osName.contains("linux")) {
+            IDLBase displayVoid = IDLBase.create();
             if(glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
                 long display = glfwGetWaylandDisplay();
-                wgpu.surface = wgpu.instance.createLinuxSurface(true, windowHandle, display);
+                displayVoid.native_setVoid(display);
+                wgpu.surface = wgpu.instance.createLinuxSurface(true, voidHandle, displayVoid);
             }
             else {
                 long display = glfwGetX11Display();
-                wgpu.surface = wgpu.instance.createLinuxSurface(false, windowHandle, display);
+                displayVoid.native_setVoid(display);
+                wgpu.surface = wgpu.instance.createLinuxSurface(false, voidHandle, displayVoid);
             }
         }
         else if(osName.contains("mac")) {
-            wgpu.surface = wgpu.instance.createMacSurface(windowHandle);
+            wgpu.surface = wgpu.instance.createMacSurface(voidHandle);
         }
     }
 }

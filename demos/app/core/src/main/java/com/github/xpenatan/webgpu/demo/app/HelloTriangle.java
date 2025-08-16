@@ -2,6 +2,12 @@ package com.github.xpenatan.webgpu.demo.app;
 
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
+import com.github.xpenatan.webgpu.WGPUChainedStruct;
+import com.github.xpenatan.webgpu.WGPUDepthStencilState;
+import com.github.xpenatan.webgpu.WGPUPipelineLayout;
+import com.github.xpenatan.webgpu.WGPURenderPassDepthStencilAttachment;
+import com.github.xpenatan.webgpu.WGPURenderPassTimestampWrites;
+import com.github.xpenatan.webgpu.WGPUVectorConstantEntry;
 import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
 import com.github.xpenatan.webgpu.WGPUBlendState;
 import com.github.xpenatan.webgpu.WGPUColorTargetState;
@@ -44,6 +50,7 @@ import com.github.xpenatan.webgpu.WGPUTextureAspect;
 import com.github.xpenatan.webgpu.WGPUTextureFormat;
 import com.github.xpenatan.webgpu.WGPUTextureUsage;
 import com.github.xpenatan.webgpu.WGPUTextureViewDimension;
+import com.github.xpenatan.webgpu.WGPUVectorVertexBufferLayout;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 
@@ -96,7 +103,7 @@ public class HelloTriangle implements ApplicationListener {
 
         WGPURenderPassColorAttachment renderPassColorAttachment = WGPURenderPassColorAttachment.obtain();
         renderPassColorAttachment.setView(textureView);
-        renderPassColorAttachment.setResolveTarget(null);
+        renderPassColorAttachment.setResolveTarget(WGPUTextureView.NULL);
         renderPassColorAttachment.setLoadOp(WGPULoadOp.Clear);
         renderPassColorAttachment.setStoreOp(WGPUStoreOp.Store);
         renderPassColorAttachment.getClearValue().setColor(r, g, b, 1.0f);
@@ -106,8 +113,8 @@ public class HelloTriangle implements ApplicationListener {
 
         WGPURenderPassDescriptor renderPassDesc  = WGPURenderPassDescriptor.obtain();
         renderPassDesc.setColorAttachments(colorAttachmentVector);
-        renderPassDesc.setDepthStencilAttachment(null);
-        renderPassDesc.setTimestampWrites(null);
+        renderPassDesc.setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment.NULL);
+        renderPassDesc.setTimestampWrites(WGPURenderPassTimestampWrites.NULL);
         encoder.beginRenderPass(renderPassDesc, renderPass);
 
         renderPass.setPipeline(pipeline);
@@ -117,7 +124,7 @@ public class HelloTriangle implements ApplicationListener {
         renderPass.release();
 
         WGPUCommandBufferDescriptor cmdBufferDescriptor = WGPUCommandBufferDescriptor.obtain();
-        cmdBufferDescriptor.setNextInChain(null);
+        cmdBufferDescriptor.setNextInChain(WGPUChainedStruct.NULL);
         cmdBufferDescriptor.setLabel("Command buffer");
         encoder.finish(cmdBufferDescriptor, command);
         encoder.release();
@@ -172,7 +179,7 @@ public class HelloTriangle implements ApplicationListener {
         config.setWidth(wgpu.width);
         config.setHeight(wgpu.height);
         config.setFormat(surfaceFormat);
-        config.setViewFormats(null);
+        config.setViewFormats(WGPUVectorTextureFormat.NULL);
         config.setUsage(WGPUTextureUsage.RenderAttachment);
         config.setDevice(wgpu.device);
         config.setPresentMode(vsyncEnabled ? WGPUPresentMode.Fifo : WGPUPresentMode.Immediate);
@@ -186,10 +193,10 @@ public class HelloTriangle implements ApplicationListener {
         WGPURenderPipelineDescriptor pipelineDesc = WGPURenderPipelineDescriptor.obtain();
         pipelineDesc.setLabel("my pipeline");
 
-        pipelineDesc.getVertex().setBuffers(null);
+        pipelineDesc.getVertex().setBuffers(WGPUVectorVertexBufferLayout.NULL);
         pipelineDesc.getVertex().setModule(shaderModule);
         pipelineDesc.getVertex().setEntryPoint("vs_main");
-        pipelineDesc.getVertex().setConstants(null);
+        pipelineDesc.getVertex().setConstants(WGPUVectorConstantEntry.NULL);
 
         pipelineDesc.getPrimitive().setTopology(WGPUPrimitiveTopology.TriangleList);
         pipelineDesc.getPrimitive().setStripIndexFormat(WGPUIndexFormat.Undefined);
@@ -197,10 +204,10 @@ public class HelloTriangle implements ApplicationListener {
         pipelineDesc.getPrimitive().setCullMode(WGPUCullMode.None);
 
         WGPUFragmentState fragmentState = WGPUFragmentState.obtain();
-        fragmentState.setNextInChain(null);
+        fragmentState.setNextInChain(WGPUChainedStruct.NULL);
         fragmentState.setModule(shaderModule);
         fragmentState.setEntryPoint("fs_main");
-        fragmentState.setConstants(null);
+        fragmentState.setConstants(WGPUVectorConstantEntry.NULL);
 
         // blending
         WGPUBlendState blendState = WGPUBlendState.obtain();
@@ -221,11 +228,11 @@ public class HelloTriangle implements ApplicationListener {
         fragmentState.setTargets(colorStateTargets);
 
         pipelineDesc.setFragment(fragmentState);
-        pipelineDesc.setDepthStencil(null); // no depth or stencil buffer
+        pipelineDesc.setDepthStencil(WGPUDepthStencilState.NULL); // no depth or stencil buffer
         pipelineDesc.getMultisample().setCount(1);
         pipelineDesc.getMultisample().setMask(-1);
         pipelineDesc.getMultisample().setAlphaToCoverageEnabled(false);
-        pipelineDesc.setLayout(null);
+        pipelineDesc.setLayout(WGPUPipelineLayout.NULL);
 
         pipeline = new WGPURenderPipeline();
         wgpu.device.createRenderPipeline(pipelineDesc, pipeline);
@@ -242,7 +249,7 @@ public class HelloTriangle implements ApplicationListener {
         shaderDesc.setLabel("triangle shader");
 
         WGPUShaderSourceWGSL shaderCodeDesc = WGPUShaderSourceWGSL.obtain();
-        shaderCodeDesc.getChain().setNext(null);
+        shaderCodeDesc.getChain().setNext(WGPUChainedStruct.NULL);
         shaderCodeDesc.getChain().setSType(WGPUSType.ShaderSourceWGSL);
         shaderCodeDesc.setCode(shaderSource);
 
