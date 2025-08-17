@@ -7,7 +7,7 @@ object LibExt {
     val libVersion: String = getVersion()
 
     //Library dependencies
-    const val jParserVersion = "1.0.0-b16"
+    const val jParserVersion = "1.0.0-b17"
     const val teaVMVersion = "0.12.3"
     const val jMultiplatform = "0.1.3"
 
