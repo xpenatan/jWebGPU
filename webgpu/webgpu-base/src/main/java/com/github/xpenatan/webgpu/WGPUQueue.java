@@ -6,6 +6,15 @@ import java.nio.ByteBuffer;
 
 public class WGPUQueue extends IDLBase {
 
+    public final static WGPUQueue NULL = createInstance();
+
+    public static WGPUQueue createInstance() {
+        return new WGPUQueue((byte) 0, (char) 0);
+    }
+
+    private WGPUQueue(byte v, char c) {
+    }
+
 
     /*[-TEAVM;-ADD_RAW]
         @Override

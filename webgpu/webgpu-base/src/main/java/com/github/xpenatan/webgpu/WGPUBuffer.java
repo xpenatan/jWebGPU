@@ -5,6 +5,15 @@ import java.nio.ByteBuffer;
 
 public class WGPUBuffer extends IDLBase {
 
+    public final static WGPUBuffer NULL = createInstance();
+
+    public static WGPUBuffer createInstance() {
+        return new WGPUBuffer((byte) 0, (char) 0);
+    }
+
+    private WGPUBuffer(byte v, char c) {
+    }
+
     /*[-TEAVM;-ADD_RAW]
         @Override
         protected void onNativeAddressChanged() {
