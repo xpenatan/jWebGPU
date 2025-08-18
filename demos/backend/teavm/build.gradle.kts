@@ -3,8 +3,10 @@ plugins {
     id("java-library")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+}
 
 dependencies {
     api(project(":demos:backend:core"))

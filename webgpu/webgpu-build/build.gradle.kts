@@ -18,6 +18,11 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
 }
 
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+}
+
 tasks.register<JavaExec>("webgpu_build_project") {
     group = "webgpu"
     description = "Generate native project"

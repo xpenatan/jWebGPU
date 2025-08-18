@@ -4,10 +4,17 @@ import java.util.*
 object LibExt {
     const val groupId = "com.github.xpenatan.jWebGPU"
     const val libName = "jWebGPU"
-    val libVersion: String = getVersion()
+    var isRelease = false
+    var libVersion: String = ""
+        get() {
+            return getVersion()
+        }
+
+    const val java8Target = "1.8"
+    const val java11Target = "11"
 
     //Library dependencies
-    const val jParserVersion = "1.0.0-b17"
+    const val jParserVersion = "1.0.0-b18"
     const val teaVMVersion = "0.12.3"
     const val jMultiplatform = "0.1.3"
 
@@ -18,23 +25,20 @@ object LibExt {
 }
 
 private fun getVersion(): String {
-    val isReleaseStr = System.getenv("RELEASE")
-    val isRelease = isReleaseStr != null && isReleaseStr.toBoolean()
     var libVersion = "-SNAPSHOT"
     val file = File("gradle.properties")
     if(file.exists()) {
         val properties = Properties()
         properties.load(file.inputStream())
         val version = properties.getProperty("version")
-        if(isRelease) {
+        if(LibExt.isRelease) {
             libVersion = version
         }
     }
     else {
-        if(isRelease) {
+        if(LibExt.isRelease) {
             throw RuntimeException("properties should exist")
         }
     }
-    println("Lib Version: $libVersion")
     return libVersion
 }

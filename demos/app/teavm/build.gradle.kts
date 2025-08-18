@@ -8,11 +8,13 @@ plugins {
     id("java")
     id("java-library")
     id("org.gretty") version("3.1.0")
-    id("org.teavm") version("0.12.0")
+    id("org.teavm") version(LibExt.teaVMVersion)
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+}
 
 gretty {
     contextPath = "/"

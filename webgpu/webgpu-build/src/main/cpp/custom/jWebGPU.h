@@ -1776,6 +1776,6 @@ class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
 class WGPU {
     public:
         static WGPUPlatformType GetPlatformType();
-        static JGPU::WGPUInstance* CreateInstance(JGPU::WGPUInstanceDescriptor* descriptor = NULL);
+        static JGPU::WGPUInstance* SetupInstance(JGPU::WGPUInstanceDescriptor* descriptor = NULL);
         static STBImage* loadImage(WGPUByteBuffer* buffer, int desiredChannels = 0);
 };

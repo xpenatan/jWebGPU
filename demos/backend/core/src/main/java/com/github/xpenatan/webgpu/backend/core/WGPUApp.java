@@ -35,7 +35,7 @@ public class WGPUApp {
     private InitState initState = InitState.NOT_INITIALIZED;
 
     public void init() {
-        WGPUInstance instance = WGPU.createInstance();
+        WGPUInstance instance = WGPU.setupInstance();
         if(instance.isValid()) {
             initState = InitState.INSTANCE_VALID;
             this.instance = instance;

@@ -3,8 +3,6 @@ plugins {
     id("java-library")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
 
 val moduleName = "webgpu-desktop"
 
@@ -51,10 +49,16 @@ val nativeJars = platforms.map { (classifier, config) ->
     }
 }
 
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+}
+
 //java {
 //    withJavadocJar()
 //    withSourcesJar()
 //}
+
 
 publishing {
     publications {

@@ -2,7 +2,7 @@
 
 interface WGPU {
     static WGPUPlatformType GetPlatformType();
-    static WGPUInstance CreateInstance(optional WGPUInstanceDescriptor descriptor); //[-NEW_OBJECT]
+    static WGPUInstance SetupInstance(optional WGPUInstanceDescriptor descriptor); //[-NEW_OBJECT]
     static STBImage loadImage(WGPUByteBuffer buffer, optional long desiredChannels);
 };
 

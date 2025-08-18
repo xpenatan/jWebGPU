@@ -5,8 +5,10 @@ plugins {
     id("java-library")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+}
 
 val lwjglVersion = "3.3.4"
 val lwjglWindowsNatives = "natives-windows"

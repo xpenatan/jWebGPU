@@ -6,6 +6,7 @@ import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 import com.github.xpenatan.webgpu.idl.IDLBase;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.glfw.GLFWVidMode;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFWNativeCocoa.glfwGetCocoaWindow;
@@ -106,7 +107,7 @@ public class GLFWApp {
         }
 
         if(glfwGetPlatform() != GLFW_PLATFORM_WAYLAND) {
-            var vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+            GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
             glfwSetWindowPos(
                     window,
                     (vidMode.width() - windowWidth) / 2,
@@ -130,12 +131,12 @@ public class GLFWApp {
 
     private void createSurface() {
         String osName = System.getProperty("os.name").toLowerCase();
-        IDLBase voidHandle = IDLBase.create().native_setVoid(windowHandle);
+        IDLBase voidHandle = IDLBase.createInstance().native_setVoid(windowHandle);
         if(osName.contains("win")) {
             wgpu.surface = wgpu.instance.createWindowsSurface(voidHandle);
         }
         else if(osName.contains("linux")) {
-            IDLBase displayVoid = IDLBase.create();
+            IDLBase displayVoid = IDLBase.createInstance();
             if(glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
                 long display = glfwGetWaylandDisplay();
                 displayVoid.native_setVoid(display);
