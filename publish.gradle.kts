@@ -43,7 +43,7 @@ configure(libProjects) {
             if (this is MavenPublication) {
                 pom {
                     name.set(LibExt.libName)
-                    description.set("Java native binding for WebGPU")
+                    description.set("WebGPU Java Bindings for wgpu-native and Dawn")
                     url.set("https://github.com/xpenatan/jWebGPU")
                     developers {
                         developer {
