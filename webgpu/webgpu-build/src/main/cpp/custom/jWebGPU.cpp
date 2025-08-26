@@ -3965,6 +3965,10 @@ void JGPU::WGPUQueue::Submit(WGPUVectorCommandBuffer* commandVector) {
     wgpuQueueSubmit(Get(), commandCount, cmdBuffers);
 }
 
+void JGPU::WGPUQueue::Submit(JGPU::WGPUCommandBuffer* commandBuffer) {
+    wgpuQueueSubmit(Get(), 1, &(commandBuffer->Get()));
+}
+
 void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, void const * data, int size) {
     wgpuQueueWriteBuffer(Get(), buffer->Get(), bufferOffset, data, size);
 }

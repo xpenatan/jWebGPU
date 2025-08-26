@@ -69,7 +69,7 @@ public class WGPUQueue extends IDLBase {
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void submit(WGPUVectorCommandBuffer commandVector) {
-        internal_native_Submit(native_address, commandVector.native_address);
+        internal_native_Submit_1(native_address, commandVector.native_address);
     }
 
     /*
@@ -77,7 +77,18 @@ public class WGPUQueue extends IDLBase {
       JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
       nativeObject->Submit((WGPUVectorCommandBuffer* )commandVector_addr);
     */
-    public static native void internal_native_Submit(long this_addr, long commandVector_addr);
+    public static native void internal_native_Submit_1(long this_addr, long commandVector_addr);
+
+    public void submit(WGPUCommandBuffer commandBuffer) {
+        internal_native_Submit_2(native_address, commandBuffer.native_address);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer_addr);
+    */
+    public static native void internal_native_Submit_2(long this_addr, long commandBuffer_addr);
 
     public void release() {
         internal_native_Release(native_address);

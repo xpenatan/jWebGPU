@@ -1307,7 +1307,8 @@ interface WGPUSurface {
 interface WGPUQueue {
     any Get(); //[-SKIP]
     void SetLabel([Const] DOMString value);
-    void Submit(WGPUVectorCommandBuffer commandVector);
+    [BindTo="Submit"] void Submit_1(WGPUVectorCommandBuffer commandVector);
+    [BindTo="Submit"] void Submit_2(WGPUCommandBuffer commandBuffer);
     void Release();
     [BindTo="WriteBuffer"] void WriteBuffer_1(WGPUBuffer buffer, long bufferOffset, octet[] bytes, long dataSize);     //[-SKIP]
     [BindTo="WriteTexture"] void WriteTexture_1(WGPUTexelCopyTextureInfo destination, octet[] bytes, long dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize);  //[-SKIP]
