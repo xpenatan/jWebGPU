@@ -68,16 +68,16 @@ public class WGPUQueue extends IDLBase {
     */
     public static native void internal_native_SetLabel(long this_addr, String value);
 
-    public void submit(int commandCount, WGPUCommandBuffer commandBuffer) {
-        internal_native_Submit(native_address, commandCount, commandBuffer.native_address);
+    public void submit(WGPUVectorCommandBuffer commandVector) {
+        internal_native_Submit(native_address, commandVector.native_address);
     }
 
     /*
       [-JNI;-NATIVE]
       JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Submit((int)commandCount, (JGPU::WGPUCommandBuffer* )commandBuffer_addr);
+      nativeObject->Submit((WGPUVectorCommandBuffer* )commandVector_addr);
     */
-    public static native void internal_native_Submit(long this_addr, int commandCount, long commandBuffer_addr);
+    public static native void internal_native_Submit(long this_addr, long commandVector_addr);
 
     public void release() {
         internal_native_Release(native_address);

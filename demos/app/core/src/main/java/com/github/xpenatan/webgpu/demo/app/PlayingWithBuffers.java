@@ -33,6 +33,7 @@ import com.github.xpenatan.webgpu.WGPUTextureFormat;
 import com.github.xpenatan.webgpu.WGPUTextureUsage;
 import com.github.xpenatan.webgpu.WGPUTextureViewDimension;
 import com.github.xpenatan.webgpu.WGPUVectorColorTargetState;
+import com.github.xpenatan.webgpu.WGPUVectorCommandBuffer;
 import com.github.xpenatan.webgpu.WGPUVectorConstantEntry;
 import com.github.xpenatan.webgpu.WGPUVectorRenderPassColorAttachment;
 import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
@@ -174,7 +175,9 @@ public class PlayingWithBuffers implements ApplicationListener {
         encoder.finish(cmdBufferDescriptor, command);
         encoder.release();
 
-        wgpu.queue.submit(1, command);
+        WGPUVectorCommandBuffer commands = WGPUVectorCommandBuffer.obtain();
+        commands.push_back(command);
+        wgpu.queue.submit(commands);
         command.release();
 
         // At the end of the frame
@@ -357,7 +360,10 @@ public class PlayingWithBuffers implements ApplicationListener {
         WGPUCommandBuffer command = new WGPUCommandBuffer();
         encoder.finish(WGPUCommandBufferDescriptor.NULL, command);
         encoder.release();
-        wgpu.queue.submit(1, command);
+
+        WGPUVectorCommandBuffer commands = WGPUVectorCommandBuffer.obtain();
+        commands.push_back(command);
+        wgpu.queue.submit(commands);
         command.release();
 
         boolean [] ready = new boolean[1];

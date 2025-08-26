@@ -190,6 +190,7 @@ class WGPUCompilationMessage;
 class WGPUBindGroupEntry;
 class WGPUFuture;
 class WGPUFutureWaitInfo;
+class WGPUCommandBuffer;
 class WGPUInstanceDescriptor;
 
 }
@@ -457,6 +458,18 @@ class WGPUAndroidWindow {
 };
 
 // ################################### VECTORS ###################################
+
+class WGPUVectorCommandBuffer {
+    private:
+        std::vector<JGPU::WGPUCommandBuffer> vector;
+    public:
+        static WGPUVectorCommandBuffer* Obtain();
+    public:
+        int size();
+        void clear();
+        void push_back(const JGPU::WGPUCommandBuffer& entry);
+        const JGPU::WGPUCommandBuffer* data();
+};
 
 class WGPUVectorFutureWaitInfo {
     private:
@@ -1740,7 +1753,7 @@ class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
         void AddRef();
         void Release();
         void SetLabel(const char* value);
-        void Submit(int commandCount, WGPUCommandBuffer* commandBuffer);
+        void Submit(WGPUVectorCommandBuffer* commandVector);
         void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, void const * data, int size);
         void WriteTexture(WGPUTexelCopyTextureInfo* destination, void const * data, int size, WGPUTexelCopyBufferLayout* dataLayout, WGPUExtent3D* writeSize);
 };

@@ -75,6 +75,21 @@ template class WGPUObjectBase<JGPU::WGPUAdapter, WGPUAdapter>;
 template class WGPUObjectBase<JGPU::WGPUSurface, WGPUSurface>;
 template class WGPUObjectBase<JGPU::WGPUInstance, WGPUInstance>;
 
+// WGPUVectorCommandBuffer
+WGPUVectorCommandBuffer* WGPUVectorCommandBuffer::Obtain() {
+    static WGPUVectorCommandBuffer obj;
+    obj = WGPUVectorCommandBuffer();
+    return &obj;
+}
+
+int WGPUVectorCommandBuffer::size() { return vector.size(); }
+
+void WGPUVectorCommandBuffer::clear() { return vector.clear(); }
+
+void WGPUVectorCommandBuffer::push_back(const JGPU::WGPUCommandBuffer& entry) { vector.push_back(entry); }
+
+const JGPU::WGPUCommandBuffer* WGPUVectorCommandBuffer::data() { return vector.data(); }
+
 // WGPUVectorFutureWaitInfo
 WGPUVectorFutureWaitInfo* WGPUVectorFutureWaitInfo::Obtain() {
     static WGPUVectorFutureWaitInfo obj;
@@ -3940,8 +3955,14 @@ void JGPU::WGPUQueue::SetLabel(const char* value) {
     wgpuQueueSetLabel(Get(), stringView.Get());
 }
 
-void JGPU::WGPUQueue::Submit(int commandCount, JGPU::WGPUCommandBuffer* commandBuffer) {
-    wgpuQueueSubmit(Get(), commandCount, &(commandBuffer->Get()));
+void JGPU::WGPUQueue::Submit(WGPUVectorCommandBuffer* commandVector) {
+    int commandCount = 0;
+    ::WGPUCommandBuffer* cmdBuffers = NULL;
+    if(commandVector != NULL) {
+        commandCount = commandVector->size();
+        cmdBuffers = (::WGPUCommandBuffer*)commandVector->data();
+    }
+    wgpuQueueSubmit(Get(), commandCount, cmdBuffers);
 }
 
 void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, void const * data, int size) {

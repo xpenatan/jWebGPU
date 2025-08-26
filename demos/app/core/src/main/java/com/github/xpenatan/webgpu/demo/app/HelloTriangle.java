@@ -7,6 +7,7 @@ import com.github.xpenatan.webgpu.WGPUDepthStencilState;
 import com.github.xpenatan.webgpu.WGPUPipelineLayout;
 import com.github.xpenatan.webgpu.WGPURenderPassDepthStencilAttachment;
 import com.github.xpenatan.webgpu.WGPURenderPassTimestampWrites;
+import com.github.xpenatan.webgpu.WGPUVectorCommandBuffer;
 import com.github.xpenatan.webgpu.WGPUVectorConstantEntry;
 import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
 import com.github.xpenatan.webgpu.WGPUBlendState;
@@ -129,7 +130,9 @@ public class HelloTriangle implements ApplicationListener {
         encoder.finish(cmdBufferDescriptor, command);
         encoder.release();
 
-        wgpu.queue.submit(1, command);
+        WGPUVectorCommandBuffer commands = WGPUVectorCommandBuffer.obtain();
+        commands.push_back(command);
+        wgpu.queue.submit(commands);
         command.release();
 
         textureView.release();
