@@ -89,6 +89,16 @@ return (jlong)obj;
 */
     public static native long internal_native_CreateBuffer(long this_addr, long descriptor_addr);
 
+    public void createBuffer(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut) {
+        internal_native_CreateBuffer(native_address, descriptor.native_address, valueOut.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
+nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr, (JGPU::WGPUBuffer* )valueOut_addr);
+*/
+    public static native void internal_native_CreateBuffer(long this_addr, long descriptor_addr, long valueOut_addr);
+
     public void createCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut) {
         internal_native_CreateCommandEncoder(native_address, descriptor.native_address, valueOut.native_address);
     }

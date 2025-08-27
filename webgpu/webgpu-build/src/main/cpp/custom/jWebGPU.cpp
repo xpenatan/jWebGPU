@@ -3512,6 +3512,10 @@ JGPU::WGPUBuffer* JGPU::WGPUDevice::CreateBuffer(JGPU::WGPUBufferDescriptor* des
     return valueOut;
 }
 
+void JGPU::WGPUDevice::CreateBuffer(JGPU::WGPUBufferDescriptor* descriptor, JGPU::WGPUBuffer* valueOut) {
+    valueOut->Set(wgpuDeviceCreateBuffer(Get(), &descriptor->Get()));
+}
+
 void JGPU::WGPUDevice::CreateCommandEncoder(JGPU::WGPUCommandEncoderDescriptor* descriptor, JGPU::WGPUCommandEncoder* valueOut) {
     valueOut->Set(wgpuDeviceCreateCommandEncoder(Get(), descriptor != NULL ? &descriptor->Get() : NULL));
 }

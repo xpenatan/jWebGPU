@@ -1173,6 +1173,7 @@ interface WGPUDevice {
     void CreateBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut);
     void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut);
     WGPUBuffer CreateBuffer(WGPUBufferDescriptor descriptor);     //[-NEW_OBJECT]
+    void CreateBuffer(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
     void CreateCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut);
     void CreateComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut);
     void CreatePipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut);

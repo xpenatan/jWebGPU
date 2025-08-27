@@ -1768,6 +1768,7 @@ class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
         void CreateBindGroup(WGPUBindGroupDescriptor* descriptor, WGPUBindGroup* valueOut);
         void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor* descriptor, WGPUBindGroupLayout* valueOut);
         WGPUBuffer* CreateBuffer(WGPUBufferDescriptor* descriptor);
+        void CreateBuffer(WGPUBufferDescriptor* descriptor, WGPUBuffer* valueOut);
         void CreateCommandEncoder(WGPUCommandEncoderDescriptor* descriptor, WGPUCommandEncoder* valueOut);
         void CreateComputePipeline(WGPUComputePipelineDescriptor* descriptor, WGPUComputePipeline* valueOut);
         void CreatePipelineLayout(WGPUPipelineLayoutDescriptor* descriptor, WGPUPipelineLayout* valueOut);
