@@ -74,7 +74,7 @@ nativeObject->CreateBindGroupLayout((JGPU::WGPUBindGroupLayoutDescriptor* )descr
     public static native void internal_native_CreateBindGroupLayout(long this_addr, long descriptor_addr, long valueOut_addr);
 
     public WGPUBuffer createBuffer(WGPUBufferDescriptor descriptor) {
-        long pointer = internal_native_CreateBuffer(native_address, descriptor.native_address);
+        long pointer = internal_native_CreateBuffer_1(native_address, descriptor.native_address);
         if (pointer == 0)
             return null;
         WGPUBuffer WGPUBuffer_NEW = WGPUBuffer.createInstance();
@@ -87,17 +87,17 @@ JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
 JGPU::WGPUBuffer* obj = nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr);
 return (jlong)obj;
 */
-    public static native long internal_native_CreateBuffer(long this_addr, long descriptor_addr);
+    public static native long internal_native_CreateBuffer_1(long this_addr, long descriptor_addr);
 
     public void createBuffer(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut) {
-        internal_native_CreateBuffer(native_address, descriptor.native_address, valueOut.native_address);
+        internal_native_CreateBuffer_2(native_address, descriptor.native_address, valueOut.native_address);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
 nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr, (JGPU::WGPUBuffer* )valueOut_addr);
 */
-    public static native void internal_native_CreateBuffer(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static native void internal_native_CreateBuffer_2(long this_addr, long descriptor_addr, long valueOut_addr);
 
     public void createCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut) {
         internal_native_CreateCommandEncoder(native_address, descriptor.native_address, valueOut.native_address);
