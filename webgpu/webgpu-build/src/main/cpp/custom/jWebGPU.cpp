@@ -3786,6 +3786,11 @@ WGPUByteBuffer& JGPU::WGPUBuffer::GetMappedRange(int offset, int size) {
     return temp;
 }
 
+void JGPU::WGPUBuffer::SetLabel(const char* value) {
+    JGPU::WGPUStringView stringView(value);
+    wgpuBufferSetLabel(Get(), stringView.Get());
+}
+
 void JGPU::WGPUBuffer::Destroy() {
     wgpuBufferDestroy(Get());
 }

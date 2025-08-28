@@ -71,6 +71,18 @@ public class WGPUBuffer extends IDLBase {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);
+      jsObj.SetLabel(value);
+    */
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);jsObj.SetLabel(value);")
+    public static native void internal_native_SetLabel(int this_addr, String value);
+
     public void release() {
         internal_native_Release(native_address);
     }

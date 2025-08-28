@@ -1241,6 +1241,7 @@ interface WGPUCommandEncoder {
 [Prefix="JGPU::"]
 interface WGPUBuffer {
     any Get(); //[-SKIP]
+    void SetLabel([Const] DOMString value);
     void Release();
     void Destroy();
     [Value] WGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);

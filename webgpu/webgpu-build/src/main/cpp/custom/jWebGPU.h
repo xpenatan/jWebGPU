@@ -1690,6 +1690,7 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
         WGPUFuture MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback);
         void GetConstMappedRange(int offset, int size, void* bufferOut);
         WGPUByteBuffer& GetMappedRange(int offset, int size);
+        void SetLabel(const char* label);
         void Destroy();
         bool IsValid();
 };

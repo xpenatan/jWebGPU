@@ -48,6 +48,17 @@ public class WGPUBuffer extends IDLBase {
     */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
+      nativeObject->SetLabel(value);
+    */
+    public static native void internal_native_SetLabel(long this_addr, String value);
+
     public void release() {
         internal_native_Release(native_address);
     }
