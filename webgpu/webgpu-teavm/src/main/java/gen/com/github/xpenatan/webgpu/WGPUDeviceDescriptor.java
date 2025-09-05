@@ -13,13 +13,13 @@ public class WGPUDeviceDescriptor extends IDLBase {
 
     private WGPUQueueDescriptor WGPUQueueDescriptor_TEMP_GEN_0;
 
-    static public final WGPUDeviceDescriptor NULL = WGPUDeviceDescriptor.createInstance();
+    static public final WGPUDeviceDescriptor NULL = WGPUDeviceDescriptor.native_new();
 
-    static public final WGPUDeviceDescriptor T_01 = WGPUDeviceDescriptor.createInstance();
+    static public final WGPUDeviceDescriptor T_01 = WGPUDeviceDescriptor.native_new();
 
-    static public final WGPUDeviceDescriptor T_02 = WGPUDeviceDescriptor.createInstance();
+    static public final WGPUDeviceDescriptor T_02 = WGPUDeviceDescriptor.native_new();
 
-    static public final WGPUDeviceDescriptor T_03 = WGPUDeviceDescriptor.createInstance();
+    static public final WGPUDeviceDescriptor T_03 = WGPUDeviceDescriptor.native_new();
 
     public WGPUDeviceDescriptor() {
         int addr = internal_native_create();
@@ -43,7 +43,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUDeviceDescriptor createInstance() {
+    public static WGPUDeviceDescriptor native_new() {
         return new WGPUDeviceDescriptor((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.createInstance();
+            WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
         WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
     }
@@ -125,7 +125,7 @@ jsObj.SetRequiredFeatures(features_addr);
         if (pointer == 0)
             return null;
         if (WGPUQueueDescriptor_TEMP_GEN_0 == null)
-            WGPUQueueDescriptor_TEMP_GEN_0 = WGPUQueueDescriptor.createInstance();
+            WGPUQueueDescriptor_TEMP_GEN_0 = WGPUQueueDescriptor.native_new();
         WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUQueueDescriptor_TEMP_GEN_0;
     }

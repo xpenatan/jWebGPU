@@ -13,9 +13,9 @@ public class WGPUTexelCopyBufferLayout extends IDLBase {
 
     static private WGPUTexelCopyBufferLayout WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
 
-    public final static WGPUTexelCopyBufferLayout NULL = createInstance();
+    public final static WGPUTexelCopyBufferLayout NULL = native_new();
 
-    public static WGPUTexelCopyBufferLayout createInstance() {
+    public static WGPUTexelCopyBufferLayout native_new() {
         return new WGPUTexelCopyBufferLayout((byte) 0, (char) 0);
     }
 
@@ -49,7 +49,7 @@ public class WGPUTexelCopyBufferLayout extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferLayout.createInstance();
+            WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
         WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPUVectorVertexBufferLayout extends IDLBase {
 
     static private WGPUVectorVertexBufferLayout WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorVertexBufferLayout NULL = WGPUVectorVertexBufferLayout.createInstance();
+    static public final WGPUVectorVertexBufferLayout NULL = WGPUVectorVertexBufferLayout.native_new();
 
-    static public final WGPUVectorVertexBufferLayout T_01 = WGPUVectorVertexBufferLayout.createInstance();
+    static public final WGPUVectorVertexBufferLayout T_01 = WGPUVectorVertexBufferLayout.native_new();
 
-    static public final WGPUVectorVertexBufferLayout T_02 = WGPUVectorVertexBufferLayout.createInstance();
+    static public final WGPUVectorVertexBufferLayout T_02 = WGPUVectorVertexBufferLayout.native_new();
 
-    static public final WGPUVectorVertexBufferLayout T_03 = WGPUVectorVertexBufferLayout.createInstance();
+    static public final WGPUVectorVertexBufferLayout T_03 = WGPUVectorVertexBufferLayout.native_new();
 
     public WGPUVectorVertexBufferLayout() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorVertexBufferLayout createInstance() {
+    public static WGPUVectorVertexBufferLayout native_new() {
         return new WGPUVectorVertexBufferLayout((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVectorVertexBufferLayout.createInstance();
+            WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVectorVertexBufferLayout.native_new();
         WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPUTextureViewDescriptor extends IDLBase {
 
     static private WGPUTextureViewDescriptor WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUTextureViewDescriptor NULL = WGPUTextureViewDescriptor.createInstance();
+    static public final WGPUTextureViewDescriptor NULL = WGPUTextureViewDescriptor.native_new();
 
-    static public final WGPUTextureViewDescriptor T_01 = WGPUTextureViewDescriptor.createInstance();
+    static public final WGPUTextureViewDescriptor T_01 = WGPUTextureViewDescriptor.native_new();
 
-    static public final WGPUTextureViewDescriptor T_02 = WGPUTextureViewDescriptor.createInstance();
+    static public final WGPUTextureViewDescriptor T_02 = WGPUTextureViewDescriptor.native_new();
 
-    static public final WGPUTextureViewDescriptor T_03 = WGPUTextureViewDescriptor.createInstance();
+    static public final WGPUTextureViewDescriptor T_03 = WGPUTextureViewDescriptor.native_new();
 
     public WGPUTextureViewDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUTextureViewDescriptor createInstance() {
+    public static WGPUTextureViewDescriptor native_new() {
         return new WGPUTextureViewDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureViewDescriptor.createInstance();
+            WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureViewDescriptor.native_new();
         WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0;
     }

@@ -19,7 +19,7 @@ public class RequestAdapterCallback extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static RequestAdapterCallback createInstance() {
+    public static RequestAdapterCallback native_new() {
         return new RequestAdapterCallback((byte) 0, (char) 0);
     }
 
@@ -54,7 +54,7 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int status_addr, int adapter_addr) {
-        WGPUAdapter adapter_addr_new = WGPUAdapter.createInstance();
+        WGPUAdapter adapter_addr_new = WGPUAdapter.native_new();
         adapter_addr_new.internal_reset(adapter_addr, true);
         onCallback(WGPURequestAdapterStatus.MAP.get(status_addr), adapter_addr_new);
     }

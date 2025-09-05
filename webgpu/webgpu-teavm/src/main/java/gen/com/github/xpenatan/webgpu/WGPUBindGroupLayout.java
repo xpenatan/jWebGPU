@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUBindGroupLayout extends IDLBase {
 
-    static public final WGPUBindGroupLayout NULL = WGPUBindGroupLayout.createInstance();
+    static public final WGPUBindGroupLayout NULL = WGPUBindGroupLayout.native_new();
 
-    static public final WGPUBindGroupLayout T_01 = WGPUBindGroupLayout.createInstance();
+    static public final WGPUBindGroupLayout T_01 = WGPUBindGroupLayout.native_new();
 
-    static public final WGPUBindGroupLayout T_02 = WGPUBindGroupLayout.createInstance();
+    static public final WGPUBindGroupLayout T_02 = WGPUBindGroupLayout.native_new();
 
-    static public final WGPUBindGroupLayout T_03 = WGPUBindGroupLayout.createInstance();
+    static public final WGPUBindGroupLayout T_03 = WGPUBindGroupLayout.native_new();
 
     public WGPUBindGroupLayout() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBindGroupLayout createInstance() {
+    public static WGPUBindGroupLayout native_new() {
         return new WGPUBindGroupLayout((byte) 0, (char) 0);
     }
 

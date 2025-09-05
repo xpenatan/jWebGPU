@@ -11,13 +11,13 @@ public class WGPUComputePassTimestampWrites extends IDLBase {
 
     static private WGPUComputePassTimestampWrites WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
 
-    static public final WGPUComputePassTimestampWrites NULL = WGPUComputePassTimestampWrites.createInstance();
+    static public final WGPUComputePassTimestampWrites NULL = WGPUComputePassTimestampWrites.native_new();
 
-    static public final WGPUComputePassTimestampWrites T_01 = WGPUComputePassTimestampWrites.createInstance();
+    static public final WGPUComputePassTimestampWrites T_01 = WGPUComputePassTimestampWrites.native_new();
 
-    static public final WGPUComputePassTimestampWrites T_02 = WGPUComputePassTimestampWrites.createInstance();
+    static public final WGPUComputePassTimestampWrites T_02 = WGPUComputePassTimestampWrites.native_new();
 
-    static public final WGPUComputePassTimestampWrites T_03 = WGPUComputePassTimestampWrites.createInstance();
+    static public final WGPUComputePassTimestampWrites T_03 = WGPUComputePassTimestampWrites.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class WGPUComputePassTimestampWrites extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePassTimestampWrites createInstance() {
+    public static WGPUComputePassTimestampWrites native_new() {
         return new WGPUComputePassTimestampWrites((byte) 0, (char) 0);
     }
 
@@ -48,7 +48,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.createInstance();
+            WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.native_new();
         WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
     }

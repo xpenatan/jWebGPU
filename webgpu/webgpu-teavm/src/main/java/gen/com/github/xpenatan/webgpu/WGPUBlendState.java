@@ -15,13 +15,13 @@ public class WGPUBlendState extends IDLBase {
 
     private WGPUBlendComponent WGPUBlendComponent_TEMP_GEN_1;
 
-    static public final WGPUBlendState NULL = WGPUBlendState.createInstance();
+    static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 
-    static public final WGPUBlendState T_01 = WGPUBlendState.createInstance();
+    static public final WGPUBlendState T_01 = WGPUBlendState.native_new();
 
-    static public final WGPUBlendState T_02 = WGPUBlendState.createInstance();
+    static public final WGPUBlendState T_02 = WGPUBlendState.native_new();
 
-    static public final WGPUBlendState T_03 = WGPUBlendState.createInstance();
+    static public final WGPUBlendState T_03 = WGPUBlendState.native_new();
 
     public WGPUBlendState() {
         int addr = internal_native_create();
@@ -45,7 +45,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBlendState createInstance() {
+    public static WGPUBlendState native_new() {
         return new WGPUBlendState((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
-            WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.createInstance();
+            WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
         WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUBlendState_TEMP_STATIC_GEN_0;
     }
@@ -83,7 +83,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUBlendComponent_TEMP_GEN_0 == null)
-            WGPUBlendComponent_TEMP_GEN_0 = WGPUBlendComponent.createInstance();
+            WGPUBlendComponent_TEMP_GEN_0 = WGPUBlendComponent.native_new();
         WGPUBlendComponent_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUBlendComponent_TEMP_GEN_0;
     }
@@ -102,7 +102,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUBlendComponent_TEMP_GEN_1 == null)
-            WGPUBlendComponent_TEMP_GEN_1 = WGPUBlendComponent.createInstance();
+            WGPUBlendComponent_TEMP_GEN_1 = WGPUBlendComponent.native_new();
         WGPUBlendComponent_TEMP_GEN_1.internal_reset(pointer, false);
         return WGPUBlendComponent_TEMP_GEN_1;
     }

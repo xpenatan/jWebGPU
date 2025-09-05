@@ -11,13 +11,13 @@ public class WGPUTexture extends IDLBase {
 
     static private WGPUTexture WGPUTexture_TEMP_STATIC_GEN_0;
 
-    static public final WGPUTexture NULL = WGPUTexture.createInstance();
+    static public final WGPUTexture NULL = WGPUTexture.native_new();
 
-    static public final WGPUTexture T_01 = WGPUTexture.createInstance();
+    static public final WGPUTexture T_01 = WGPUTexture.native_new();
 
-    static public final WGPUTexture T_02 = WGPUTexture.createInstance();
+    static public final WGPUTexture T_02 = WGPUTexture.native_new();
 
-    static public final WGPUTexture T_03 = WGPUTexture.createInstance();
+    static public final WGPUTexture T_03 = WGPUTexture.native_new();
 
     public WGPUTexture() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUTexture();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUTexture createInstance() {
+    public static WGPUTexture native_new() {
         return new WGPUTexture((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUTexture_TEMP_STATIC_GEN_0 == null)
-            WGPUTexture_TEMP_STATIC_GEN_0 = WGPUTexture.createInstance();
+            WGPUTexture_TEMP_STATIC_GEN_0 = WGPUTexture.native_new();
         WGPUTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTexture_TEMP_STATIC_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPUVectorInt extends IDLBase {
 
     static private WGPUVectorInt WGPUVectorInt_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorInt NULL = WGPUVectorInt.createInstance();
+    static public final WGPUVectorInt NULL = WGPUVectorInt.native_new();
 
-    static public final WGPUVectorInt T_01 = WGPUVectorInt.createInstance();
+    static public final WGPUVectorInt T_01 = WGPUVectorInt.native_new();
 
-    static public final WGPUVectorInt T_02 = WGPUVectorInt.createInstance();
+    static public final WGPUVectorInt T_02 = WGPUVectorInt.native_new();
 
-    static public final WGPUVectorInt T_03 = WGPUVectorInt.createInstance();
+    static public final WGPUVectorInt T_03 = WGPUVectorInt.native_new();
 
     public WGPUVectorInt() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new WGPUVectorInt();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorInt createInstance() {
+    public static WGPUVectorInt native_new() {
         return new WGPUVectorInt((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUVectorInt_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorInt_TEMP_STATIC_GEN_0 = WGPUVectorInt.createInstance();
+            WGPUVectorInt_TEMP_STATIC_GEN_0 = WGPUVectorInt.native_new();
         WGPUVectorInt_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorInt_TEMP_STATIC_GEN_0;
     }

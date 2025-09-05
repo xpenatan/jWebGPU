@@ -13,9 +13,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUQueue extends IDLBase {
 
-    public final static WGPUQueue NULL = createInstance();
+    public final static WGPUQueue NULL = native_new();
 
-    public static WGPUQueue createInstance() {
+    public static WGPUQueue native_new() {
         return new WGPUQueue((byte) 0, (char) 0);
     }
 
@@ -89,6 +89,28 @@ public class WGPUQueue extends IDLBase {
       nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer_addr);
     */
     public static native void internal_native_Submit_2(long this_addr, long commandBuffer_addr);
+
+    public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02) {
+        internal_native_Submit_3(native_address, commandBuffer01.native_address, commandBuffer02.native_address);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer01_addr, (JGPU::WGPUCommandBuffer* )commandBuffer02_addr);
+    */
+    public static native void internal_native_Submit_3(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr);
+
+    public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03) {
+        internal_native_Submit_4(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer01_addr, (JGPU::WGPUCommandBuffer* )commandBuffer02_addr, (JGPU::WGPUCommandBuffer* )commandBuffer03_addr);
+    */
+    public static native void internal_native_Submit_4(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr);
 
     public void release() {
         internal_native_Release(native_address);

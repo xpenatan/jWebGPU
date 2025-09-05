@@ -11,13 +11,13 @@ public class WGPURenderPassEncoder extends IDLBase {
 
     static private WGPURenderPassEncoder WGPURenderPassEncoder_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderPassEncoder NULL = WGPURenderPassEncoder.createInstance();
+    static public final WGPURenderPassEncoder NULL = WGPURenderPassEncoder.native_new();
 
-    static public final WGPURenderPassEncoder T_01 = WGPURenderPassEncoder.createInstance();
+    static public final WGPURenderPassEncoder T_01 = WGPURenderPassEncoder.native_new();
 
-    static public final WGPURenderPassEncoder T_02 = WGPURenderPassEncoder.createInstance();
+    static public final WGPURenderPassEncoder T_02 = WGPURenderPassEncoder.native_new();
 
-    static public final WGPURenderPassEncoder T_03 = WGPURenderPassEncoder.createInstance();
+    static public final WGPURenderPassEncoder T_03 = WGPURenderPassEncoder.native_new();
 
     public WGPURenderPassEncoder() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPassEncoder createInstance() {
+    public static WGPURenderPassEncoder native_new() {
         return new WGPURenderPassEncoder((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderPassEncoder_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassEncoder_TEMP_STATIC_GEN_0 = WGPURenderPassEncoder.createInstance();
+            WGPURenderPassEncoder_TEMP_STATIC_GEN_0 = WGPURenderPassEncoder.native_new();
         WGPURenderPassEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPassEncoder_TEMP_STATIC_GEN_0;
     }

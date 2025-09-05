@@ -19,13 +19,13 @@ public class WGPUBindGroupLayoutEntry extends IDLBase {
 
     private WGPUTextureBindingLayout WGPUTextureBindingLayout_TEMP_GEN_0;
 
-    static public final WGPUBindGroupLayoutEntry NULL = WGPUBindGroupLayoutEntry.createInstance();
+    static public final WGPUBindGroupLayoutEntry NULL = WGPUBindGroupLayoutEntry.native_new();
 
-    static public final WGPUBindGroupLayoutEntry T_01 = WGPUBindGroupLayoutEntry.createInstance();
+    static public final WGPUBindGroupLayoutEntry T_01 = WGPUBindGroupLayoutEntry.native_new();
 
-    static public final WGPUBindGroupLayoutEntry T_02 = WGPUBindGroupLayoutEntry.createInstance();
+    static public final WGPUBindGroupLayoutEntry T_02 = WGPUBindGroupLayoutEntry.native_new();
 
-    static public final WGPUBindGroupLayoutEntry T_03 = WGPUBindGroupLayoutEntry.createInstance();
+    static public final WGPUBindGroupLayoutEntry T_03 = WGPUBindGroupLayoutEntry.native_new();
 
     public WGPUBindGroupLayoutEntry() {
         int addr = internal_native_create();
@@ -49,7 +49,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBindGroupLayoutEntry createInstance() {
+    public static WGPUBindGroupLayoutEntry native_new() {
         return new WGPUBindGroupLayoutEntry((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.createInstance();
+            WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.native_new();
         WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
     }
@@ -164,7 +164,7 @@ jsObj.SetStorageTexture(storageTexture_addr);
         if (pointer == 0)
             return null;
         if (WGPUBufferBindingLayout_TEMP_GEN_0 == null)
-            WGPUBufferBindingLayout_TEMP_GEN_0 = WGPUBufferBindingLayout.createInstance();
+            WGPUBufferBindingLayout_TEMP_GEN_0 = WGPUBufferBindingLayout.native_new();
         WGPUBufferBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUBufferBindingLayout_TEMP_GEN_0;
     }
@@ -183,7 +183,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUSamplerBindingLayout_TEMP_GEN_0 == null)
-            WGPUSamplerBindingLayout_TEMP_GEN_0 = WGPUSamplerBindingLayout.createInstance();
+            WGPUSamplerBindingLayout_TEMP_GEN_0 = WGPUSamplerBindingLayout.native_new();
         WGPUSamplerBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUSamplerBindingLayout_TEMP_GEN_0;
     }
@@ -202,7 +202,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUStorageTextureBindingLayout_TEMP_GEN_0 == null)
-            WGPUStorageTextureBindingLayout_TEMP_GEN_0 = WGPUStorageTextureBindingLayout.createInstance();
+            WGPUStorageTextureBindingLayout_TEMP_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
         WGPUStorageTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUStorageTextureBindingLayout_TEMP_GEN_0;
     }
@@ -221,7 +221,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUTextureBindingLayout_TEMP_GEN_0 == null)
-            WGPUTextureBindingLayout_TEMP_GEN_0 = WGPUTextureBindingLayout.createInstance();
+            WGPUTextureBindingLayout_TEMP_GEN_0 = WGPUTextureBindingLayout.native_new();
         WGPUTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUTextureBindingLayout_TEMP_GEN_0;
     }

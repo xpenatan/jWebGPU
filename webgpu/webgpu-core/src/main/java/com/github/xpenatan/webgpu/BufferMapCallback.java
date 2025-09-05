@@ -38,7 +38,7 @@ virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
     /**
      * @return An empty instance without a native address
      */
-    public static BufferMapCallback createInstance() {
+    public static BufferMapCallback native_new() {
         return new BufferMapCallback((byte) 0, (char) 0);
     }
 

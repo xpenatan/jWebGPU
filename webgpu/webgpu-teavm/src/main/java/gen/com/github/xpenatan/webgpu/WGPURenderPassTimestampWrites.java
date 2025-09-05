@@ -11,13 +11,13 @@ public class WGPURenderPassTimestampWrites extends IDLBase {
 
     static private WGPURenderPassTimestampWrites WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderPassTimestampWrites NULL = WGPURenderPassTimestampWrites.createInstance();
+    static public final WGPURenderPassTimestampWrites NULL = WGPURenderPassTimestampWrites.native_new();
 
-    static public final WGPURenderPassTimestampWrites T_01 = WGPURenderPassTimestampWrites.createInstance();
+    static public final WGPURenderPassTimestampWrites T_01 = WGPURenderPassTimestampWrites.native_new();
 
-    static public final WGPURenderPassTimestampWrites T_02 = WGPURenderPassTimestampWrites.createInstance();
+    static public final WGPURenderPassTimestampWrites T_02 = WGPURenderPassTimestampWrites.native_new();
 
-    static public final WGPURenderPassTimestampWrites T_03 = WGPURenderPassTimestampWrites.createInstance();
+    static public final WGPURenderPassTimestampWrites T_03 = WGPURenderPassTimestampWrites.native_new();
 
     public WGPURenderPassTimestampWrites() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPassTimestampWrites createInstance() {
+    public static WGPURenderPassTimestampWrites native_new() {
         return new WGPURenderPassTimestampWrites((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.createInstance();
+            WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.native_new();
         WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
     }

@@ -13,13 +13,13 @@ public class WGPUSurfaceCapabilities extends IDLBase {
 
     private WGPUVectorTextureFormat WGPUVectorTextureFormat_TEMP_GEN_0;
 
-    static public final WGPUSurfaceCapabilities NULL = WGPUSurfaceCapabilities.createInstance();
+    static public final WGPUSurfaceCapabilities NULL = WGPUSurfaceCapabilities.native_new();
 
-    static public final WGPUSurfaceCapabilities T_01 = WGPUSurfaceCapabilities.createInstance();
+    static public final WGPUSurfaceCapabilities T_01 = WGPUSurfaceCapabilities.native_new();
 
-    static public final WGPUSurfaceCapabilities T_02 = WGPUSurfaceCapabilities.createInstance();
+    static public final WGPUSurfaceCapabilities T_02 = WGPUSurfaceCapabilities.native_new();
 
-    static public final WGPUSurfaceCapabilities T_03 = WGPUSurfaceCapabilities.createInstance();
+    static public final WGPUSurfaceCapabilities T_03 = WGPUSurfaceCapabilities.native_new();
 
     public WGPUSurfaceCapabilities() {
         long addr = internal_native_create();
@@ -41,7 +41,7 @@ return (jlong)new JGPU::WGPUSurfaceCapabilities();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSurfaceCapabilities createInstance() {
+    public static WGPUSurfaceCapabilities native_new() {
         return new WGPUSurfaceCapabilities((byte) 0, (char) 0);
     }
 
@@ -60,7 +60,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 = WGPUSurfaceCapabilities.createInstance();
+            WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 = WGPUSurfaceCapabilities.native_new();
         WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
     }
@@ -75,7 +75,7 @@ return (jlong)JGPU::WGPUSurfaceCapabilities::Obtain();
         if (pointer == 0)
             return null;
         if (WGPUVectorTextureFormat_TEMP_GEN_0 == null)
-            WGPUVectorTextureFormat_TEMP_GEN_0 = WGPUVectorTextureFormat.createInstance();
+            WGPUVectorTextureFormat_TEMP_GEN_0 = WGPUVectorTextureFormat.native_new();
         WGPUVectorTextureFormat_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUVectorTextureFormat_TEMP_GEN_0;
     }

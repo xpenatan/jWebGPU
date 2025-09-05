@@ -11,13 +11,13 @@ public class WGPUBufferDescriptor extends IDLBase {
 
     static private WGPUBufferDescriptor WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUBufferDescriptor NULL = WGPUBufferDescriptor.createInstance();
+    static public final WGPUBufferDescriptor NULL = WGPUBufferDescriptor.native_new();
 
-    static public final WGPUBufferDescriptor T_01 = WGPUBufferDescriptor.createInstance();
+    static public final WGPUBufferDescriptor T_01 = WGPUBufferDescriptor.native_new();
 
-    static public final WGPUBufferDescriptor T_02 = WGPUBufferDescriptor.createInstance();
+    static public final WGPUBufferDescriptor T_02 = WGPUBufferDescriptor.native_new();
 
-    static public final WGPUBufferDescriptor T_03 = WGPUBufferDescriptor.createInstance();
+    static public final WGPUBufferDescriptor T_03 = WGPUBufferDescriptor.native_new();
 
     public WGPUBufferDescriptor() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUBufferDescriptor();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBufferDescriptor createInstance() {
+    public static WGPUBufferDescriptor native_new() {
         return new WGPUBufferDescriptor((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUBufferDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.createInstance();
+            WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.native_new();
         WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
     }

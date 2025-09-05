@@ -38,7 +38,7 @@ virtual void OnCallback(WGPUErrorType errorType, const char* message) {
     /**
      * @return An empty instance without a native address
      */
-    public static UncapturedErrorCallback createInstance() {
+    public static UncapturedErrorCallback native_new() {
         return new UncapturedErrorCallback((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class WGPURenderBundleDescriptor extends IDLBase {
 
     static private WGPURenderBundleDescriptor WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderBundleDescriptor NULL = WGPURenderBundleDescriptor.createInstance();
+    static public final WGPURenderBundleDescriptor NULL = WGPURenderBundleDescriptor.native_new();
 
-    static public final WGPURenderBundleDescriptor T_01 = WGPURenderBundleDescriptor.createInstance();
+    static public final WGPURenderBundleDescriptor T_01 = WGPURenderBundleDescriptor.native_new();
 
-    static public final WGPURenderBundleDescriptor T_02 = WGPURenderBundleDescriptor.createInstance();
+    static public final WGPURenderBundleDescriptor T_02 = WGPURenderBundleDescriptor.native_new();
 
-    static public final WGPURenderBundleDescriptor T_03 = WGPURenderBundleDescriptor.createInstance();
+    static public final WGPURenderBundleDescriptor T_03 = WGPURenderBundleDescriptor.native_new();
 
     public WGPURenderBundleDescriptor() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPURenderBundleDescriptor();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderBundleDescriptor createInstance() {
+    public static WGPURenderBundleDescriptor native_new() {
         return new WGPURenderBundleDescriptor((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleDescriptor.createInstance();
+            WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleDescriptor.native_new();
         WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0;
     }

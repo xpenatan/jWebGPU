@@ -11,13 +11,13 @@ public class WGPUVectorColorTargetState extends IDLBase {
 
     static private WGPUVectorColorTargetState WGPUVectorColorTargetState_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorColorTargetState NULL = WGPUVectorColorTargetState.createInstance();
+    static public final WGPUVectorColorTargetState NULL = WGPUVectorColorTargetState.native_new();
 
-    static public final WGPUVectorColorTargetState T_01 = WGPUVectorColorTargetState.createInstance();
+    static public final WGPUVectorColorTargetState T_01 = WGPUVectorColorTargetState.native_new();
 
-    static public final WGPUVectorColorTargetState T_02 = WGPUVectorColorTargetState.createInstance();
+    static public final WGPUVectorColorTargetState T_02 = WGPUVectorColorTargetState.native_new();
 
-    static public final WGPUVectorColorTargetState T_03 = WGPUVectorColorTargetState.createInstance();
+    static public final WGPUVectorColorTargetState T_03 = WGPUVectorColorTargetState.native_new();
 
     public WGPUVectorColorTargetState() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorColorTargetState createInstance() {
+    public static WGPUVectorColorTargetState native_new() {
         return new WGPUVectorColorTargetState((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVectorColorTargetState_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorColorTargetState_TEMP_STATIC_GEN_0 = WGPUVectorColorTargetState.createInstance();
+            WGPUVectorColorTargetState_TEMP_STATIC_GEN_0 = WGPUVectorColorTargetState.native_new();
         WGPUVectorColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorColorTargetState_TEMP_STATIC_GEN_0;
     }

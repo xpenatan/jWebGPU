@@ -51,7 +51,7 @@ public class WGPUAndroidWindow extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUAndroidWindow createInstance() {
+    public static WGPUAndroidWindow native_new() {
         return new WGPUAndroidWindow((byte) 0, (char) 0);
     }
 

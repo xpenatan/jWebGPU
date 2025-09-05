@@ -19,7 +19,7 @@ public class UncapturedErrorCallback extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static UncapturedErrorCallback createInstance() {
+    public static UncapturedErrorCallback native_new() {
         return new UncapturedErrorCallback((byte) 0, (char) 0);
     }
 

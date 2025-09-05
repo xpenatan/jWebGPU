@@ -11,13 +11,13 @@ public class WGPUShaderModule extends IDLBase {
 
     static private WGPUShaderModule WGPUShaderModule_TEMP_STATIC_GEN_0;
 
-    static public final WGPUShaderModule NULL = WGPUShaderModule.createInstance();
+    static public final WGPUShaderModule NULL = WGPUShaderModule.native_new();
 
-    static public final WGPUShaderModule T_01 = WGPUShaderModule.createInstance();
+    static public final WGPUShaderModule T_01 = WGPUShaderModule.native_new();
 
-    static public final WGPUShaderModule T_02 = WGPUShaderModule.createInstance();
+    static public final WGPUShaderModule T_02 = WGPUShaderModule.native_new();
 
-    static public final WGPUShaderModule T_03 = WGPUShaderModule.createInstance();
+    static public final WGPUShaderModule T_03 = WGPUShaderModule.native_new();
 
     public WGPUShaderModule() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUShaderModule();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUShaderModule createInstance() {
+    public static WGPUShaderModule native_new() {
         return new WGPUShaderModule((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUShaderModule_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderModule_TEMP_STATIC_GEN_0 = WGPUShaderModule.createInstance();
+            WGPUShaderModule_TEMP_STATIC_GEN_0 = WGPUShaderModule.native_new();
         WGPUShaderModule_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUShaderModule_TEMP_STATIC_GEN_0;
     }

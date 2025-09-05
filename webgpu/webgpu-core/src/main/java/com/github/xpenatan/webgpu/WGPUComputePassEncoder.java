@@ -11,13 +11,13 @@ public class WGPUComputePassEncoder extends IDLBase {
 
     static private WGPUComputePassEncoder WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
 
-    static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.createInstance();
+    static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 
-    static public final WGPUComputePassEncoder T_01 = WGPUComputePassEncoder.createInstance();
+    static public final WGPUComputePassEncoder T_01 = WGPUComputePassEncoder.native_new();
 
-    static public final WGPUComputePassEncoder T_02 = WGPUComputePassEncoder.createInstance();
+    static public final WGPUComputePassEncoder T_02 = WGPUComputePassEncoder.native_new();
 
-    static public final WGPUComputePassEncoder T_03 = WGPUComputePassEncoder.createInstance();
+    static public final WGPUComputePassEncoder T_03 = WGPUComputePassEncoder.native_new();
 
     public WGPUComputePassEncoder() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUComputePassEncoder();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePassEncoder createInstance() {
+    public static WGPUComputePassEncoder native_new() {
         return new WGPUComputePassEncoder((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUComputePassEncoder_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePassEncoder_TEMP_STATIC_GEN_0 = WGPUComputePassEncoder.createInstance();
+            WGPUComputePassEncoder_TEMP_STATIC_GEN_0 = WGPUComputePassEncoder.native_new();
         WGPUComputePassEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
     }

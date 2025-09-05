@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUConstantEntry extends IDLBase {
 
-    static public final WGPUConstantEntry NULL = WGPUConstantEntry.createInstance();
+    static public final WGPUConstantEntry NULL = WGPUConstantEntry.native_new();
 
-    static public final WGPUConstantEntry T_01 = WGPUConstantEntry.createInstance();
+    static public final WGPUConstantEntry T_01 = WGPUConstantEntry.native_new();
 
-    static public final WGPUConstantEntry T_02 = WGPUConstantEntry.createInstance();
+    static public final WGPUConstantEntry T_02 = WGPUConstantEntry.native_new();
 
-    static public final WGPUConstantEntry T_03 = WGPUConstantEntry.createInstance();
+    static public final WGPUConstantEntry T_03 = WGPUConstantEntry.native_new();
 
     public WGPUConstantEntry() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new JGPU::WGPUConstantEntry();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUConstantEntry createInstance() {
+    public static WGPUConstantEntry native_new() {
         return new WGPUConstantEntry((byte) 0, (char) 0);
     }
 

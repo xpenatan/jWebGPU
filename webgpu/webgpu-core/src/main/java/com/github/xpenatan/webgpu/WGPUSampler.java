@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUSampler extends IDLBase {
 
-    static public final WGPUSampler NULL = WGPUSampler.createInstance();
+    static public final WGPUSampler NULL = WGPUSampler.native_new();
 
-    static public final WGPUSampler T_01 = WGPUSampler.createInstance();
+    static public final WGPUSampler T_01 = WGPUSampler.native_new();
 
-    static public final WGPUSampler T_02 = WGPUSampler.createInstance();
+    static public final WGPUSampler T_02 = WGPUSampler.native_new();
 
-    static public final WGPUSampler T_03 = WGPUSampler.createInstance();
+    static public final WGPUSampler T_03 = WGPUSampler.native_new();
 
     public WGPUSampler() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new JGPU::WGPUSampler();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSampler createInstance() {
+    public static WGPUSampler native_new() {
         return new WGPUSampler((byte) 0, (char) 0);
     }
 

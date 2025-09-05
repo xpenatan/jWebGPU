@@ -11,13 +11,13 @@ public class WGPUCommandEncoder extends IDLBase {
 
     static private WGPUCommandEncoder WGPUCommandEncoder_TEMP_STATIC_GEN_0;
 
-    static public final WGPUCommandEncoder NULL = WGPUCommandEncoder.createInstance();
+    static public final WGPUCommandEncoder NULL = WGPUCommandEncoder.native_new();
 
-    static public final WGPUCommandEncoder T_01 = WGPUCommandEncoder.createInstance();
+    static public final WGPUCommandEncoder T_01 = WGPUCommandEncoder.native_new();
 
-    static public final WGPUCommandEncoder T_02 = WGPUCommandEncoder.createInstance();
+    static public final WGPUCommandEncoder T_02 = WGPUCommandEncoder.native_new();
 
-    static public final WGPUCommandEncoder T_03 = WGPUCommandEncoder.createInstance();
+    static public final WGPUCommandEncoder T_03 = WGPUCommandEncoder.native_new();
 
     public WGPUCommandEncoder() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUCommandEncoder();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUCommandEncoder createInstance() {
+    public static WGPUCommandEncoder native_new() {
         return new WGPUCommandEncoder((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUCommandEncoder_TEMP_STATIC_GEN_0 == null)
-            WGPUCommandEncoder_TEMP_STATIC_GEN_0 = WGPUCommandEncoder.createInstance();
+            WGPUCommandEncoder_TEMP_STATIC_GEN_0 = WGPUCommandEncoder.native_new();
         WGPUCommandEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUCommandEncoder_TEMP_STATIC_GEN_0;
     }

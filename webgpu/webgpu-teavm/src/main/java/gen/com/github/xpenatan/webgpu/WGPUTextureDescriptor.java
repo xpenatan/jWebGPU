@@ -13,13 +13,13 @@ public class WGPUTextureDescriptor extends IDLBase {
 
     private WGPUExtent3D WGPUExtent3D_TEMP_GEN_0;
 
-    static public final WGPUTextureDescriptor NULL = WGPUTextureDescriptor.createInstance();
+    static public final WGPUTextureDescriptor NULL = WGPUTextureDescriptor.native_new();
 
-    static public final WGPUTextureDescriptor T_01 = WGPUTextureDescriptor.createInstance();
+    static public final WGPUTextureDescriptor T_01 = WGPUTextureDescriptor.native_new();
 
-    static public final WGPUTextureDescriptor T_02 = WGPUTextureDescriptor.createInstance();
+    static public final WGPUTextureDescriptor T_02 = WGPUTextureDescriptor.native_new();
 
-    static public final WGPUTextureDescriptor T_03 = WGPUTextureDescriptor.createInstance();
+    static public final WGPUTextureDescriptor T_03 = WGPUTextureDescriptor.native_new();
 
     public WGPUTextureDescriptor() {
         int addr = internal_native_create();
@@ -43,7 +43,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUTextureDescriptor createInstance() {
+    public static WGPUTextureDescriptor native_new() {
         return new WGPUTextureDescriptor((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUTextureDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureDescriptor.createInstance();
+            WGPUTextureDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureDescriptor.native_new();
         WGPUTextureDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
     }
@@ -125,7 +125,7 @@ jsObj.SetDimension(dimension);
         if (pointer == 0)
             return null;
         if (WGPUExtent3D_TEMP_GEN_0 == null)
-            WGPUExtent3D_TEMP_GEN_0 = WGPUExtent3D.createInstance();
+            WGPUExtent3D_TEMP_GEN_0 = WGPUExtent3D.native_new();
         WGPUExtent3D_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUExtent3D_TEMP_GEN_0;
     }

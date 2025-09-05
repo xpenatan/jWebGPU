@@ -11,13 +11,13 @@ public class WGPUTextureBindingLayout extends IDLBase {
 
     static private WGPUTextureBindingLayout WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
 
-    static public final WGPUTextureBindingLayout NULL = WGPUTextureBindingLayout.createInstance();
+    static public final WGPUTextureBindingLayout NULL = WGPUTextureBindingLayout.native_new();
 
-    static public final WGPUTextureBindingLayout T_01 = WGPUTextureBindingLayout.createInstance();
+    static public final WGPUTextureBindingLayout T_01 = WGPUTextureBindingLayout.native_new();
 
-    static public final WGPUTextureBindingLayout T_02 = WGPUTextureBindingLayout.createInstance();
+    static public final WGPUTextureBindingLayout T_02 = WGPUTextureBindingLayout.native_new();
 
-    static public final WGPUTextureBindingLayout T_03 = WGPUTextureBindingLayout.createInstance();
+    static public final WGPUTextureBindingLayout T_03 = WGPUTextureBindingLayout.native_new();
 
     public WGPUTextureBindingLayout() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUTextureBindingLayout createInstance() {
+    public static WGPUTextureBindingLayout native_new() {
         return new WGPUTextureBindingLayout((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUTextureBindingLayout.createInstance();
+            WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUTextureBindingLayout.native_new();
         WGPUTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
     }

@@ -5,9 +5,9 @@ import java.nio.ByteBuffer;
 
 public class WGPUBuffer extends IDLBase {
 
-    public final static WGPUBuffer NULL = createInstance();
+    public final static WGPUBuffer NULL = native_new();
 
-    public static WGPUBuffer createInstance() {
+    public static WGPUBuffer native_new() {
         return new WGPUBuffer((byte) 0, (char) 0);
     }
 

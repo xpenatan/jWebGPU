@@ -11,13 +11,13 @@ public class WGPUColorTargetState extends IDLBase {
 
     static private WGPUColorTargetState WGPUColorTargetState_TEMP_STATIC_GEN_0;
 
-    static public final WGPUColorTargetState NULL = WGPUColorTargetState.createInstance();
+    static public final WGPUColorTargetState NULL = WGPUColorTargetState.native_new();
 
-    static public final WGPUColorTargetState T_01 = WGPUColorTargetState.createInstance();
+    static public final WGPUColorTargetState T_01 = WGPUColorTargetState.native_new();
 
-    static public final WGPUColorTargetState T_02 = WGPUColorTargetState.createInstance();
+    static public final WGPUColorTargetState T_02 = WGPUColorTargetState.native_new();
 
-    static public final WGPUColorTargetState T_03 = WGPUColorTargetState.createInstance();
+    static public final WGPUColorTargetState T_03 = WGPUColorTargetState.native_new();
 
     public WGPUColorTargetState() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUColorTargetState();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUColorTargetState createInstance() {
+    public static WGPUColorTargetState native_new() {
         return new WGPUColorTargetState((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUColorTargetState_TEMP_STATIC_GEN_0 == null)
-            WGPUColorTargetState_TEMP_STATIC_GEN_0 = WGPUColorTargetState.createInstance();
+            WGPUColorTargetState_TEMP_STATIC_GEN_0 = WGPUColorTargetState.native_new();
         WGPUColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUColorTargetState_TEMP_STATIC_GEN_0;
     }

@@ -19,7 +19,7 @@ public class RequestDeviceCallback extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static RequestDeviceCallback createInstance() {
+    public static RequestDeviceCallback native_new() {
         return new RequestDeviceCallback((byte) 0, (char) 0);
     }
 
@@ -54,7 +54,7 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int status_addr, int device_addr) {
-        WGPUDevice device_addr_new = WGPUDevice.createInstance();
+        WGPUDevice device_addr_new = WGPUDevice.native_new();
         device_addr_new.internal_reset(device_addr, true);
         onCallback(WGPURequestDeviceStatus.MAP.get(status_addr), device_addr_new);
     }

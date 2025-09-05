@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUBlendComponent extends IDLBase {
 
-    static public final WGPUBlendComponent NULL = WGPUBlendComponent.createInstance();
+    static public final WGPUBlendComponent NULL = WGPUBlendComponent.native_new();
 
-    static public final WGPUBlendComponent T_01 = WGPUBlendComponent.createInstance();
+    static public final WGPUBlendComponent T_01 = WGPUBlendComponent.native_new();
 
-    static public final WGPUBlendComponent T_02 = WGPUBlendComponent.createInstance();
+    static public final WGPUBlendComponent T_02 = WGPUBlendComponent.native_new();
 
-    static public final WGPUBlendComponent T_03 = WGPUBlendComponent.createInstance();
+    static public final WGPUBlendComponent T_03 = WGPUBlendComponent.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUBlendComponent extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBlendComponent createInstance() {
+    public static WGPUBlendComponent native_new() {
         return new WGPUBlendComponent((byte) 0, (char) 0);
     }
 

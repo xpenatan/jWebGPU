@@ -11,13 +11,13 @@ public class WGPUOrigin3D extends IDLBase {
 
     static private WGPUOrigin3D WGPUOrigin3D_TEMP_STATIC_GEN_0;
 
-    static public final WGPUOrigin3D NULL = WGPUOrigin3D.createInstance();
+    static public final WGPUOrigin3D NULL = WGPUOrigin3D.native_new();
 
-    static public final WGPUOrigin3D T_01 = WGPUOrigin3D.createInstance();
+    static public final WGPUOrigin3D T_01 = WGPUOrigin3D.native_new();
 
-    static public final WGPUOrigin3D T_02 = WGPUOrigin3D.createInstance();
+    static public final WGPUOrigin3D T_02 = WGPUOrigin3D.native_new();
 
-    static public final WGPUOrigin3D T_03 = WGPUOrigin3D.createInstance();
+    static public final WGPUOrigin3D T_03 = WGPUOrigin3D.native_new();
 
     public WGPUOrigin3D() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUOrigin3D();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUOrigin3D createInstance() {
+    public static WGPUOrigin3D native_new() {
         return new WGPUOrigin3D((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUOrigin3D_TEMP_STATIC_GEN_0 == null)
-            WGPUOrigin3D_TEMP_STATIC_GEN_0 = WGPUOrigin3D.createInstance();
+            WGPUOrigin3D_TEMP_STATIC_GEN_0 = WGPUOrigin3D.native_new();
         WGPUOrigin3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUOrigin3D_TEMP_STATIC_GEN_0;
     }

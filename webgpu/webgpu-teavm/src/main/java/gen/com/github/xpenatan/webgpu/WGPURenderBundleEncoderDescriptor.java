@@ -11,13 +11,13 @@ public class WGPURenderBundleEncoderDescriptor extends IDLBase {
 
     static private WGPURenderBundleEncoderDescriptor WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderBundleEncoderDescriptor NULL = WGPURenderBundleEncoderDescriptor.createInstance();
+    static public final WGPURenderBundleEncoderDescriptor NULL = WGPURenderBundleEncoderDescriptor.native_new();
 
-    static public final WGPURenderBundleEncoderDescriptor T_01 = WGPURenderBundleEncoderDescriptor.createInstance();
+    static public final WGPURenderBundleEncoderDescriptor T_01 = WGPURenderBundleEncoderDescriptor.native_new();
 
-    static public final WGPURenderBundleEncoderDescriptor T_02 = WGPURenderBundleEncoderDescriptor.createInstance();
+    static public final WGPURenderBundleEncoderDescriptor T_02 = WGPURenderBundleEncoderDescriptor.native_new();
 
-    static public final WGPURenderBundleEncoderDescriptor T_03 = WGPURenderBundleEncoderDescriptor.createInstance();
+    static public final WGPURenderBundleEncoderDescriptor T_03 = WGPURenderBundleEncoderDescriptor.native_new();
 
     public WGPURenderBundleEncoderDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderBundleEncoderDescriptor createInstance() {
+    public static WGPURenderBundleEncoderDescriptor native_new() {
         return new WGPURenderBundleEncoderDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.createInstance();
+            WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
         WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
     }

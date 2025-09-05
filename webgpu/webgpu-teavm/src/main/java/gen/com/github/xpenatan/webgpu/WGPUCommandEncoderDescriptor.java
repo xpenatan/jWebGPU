@@ -11,13 +11,13 @@ public class WGPUCommandEncoderDescriptor extends IDLBase {
 
     static private WGPUCommandEncoderDescriptor WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUCommandEncoderDescriptor NULL = WGPUCommandEncoderDescriptor.createInstance();
+    static public final WGPUCommandEncoderDescriptor NULL = WGPUCommandEncoderDescriptor.native_new();
 
-    static public final WGPUCommandEncoderDescriptor T_01 = WGPUCommandEncoderDescriptor.createInstance();
+    static public final WGPUCommandEncoderDescriptor T_01 = WGPUCommandEncoderDescriptor.native_new();
 
-    static public final WGPUCommandEncoderDescriptor T_02 = WGPUCommandEncoderDescriptor.createInstance();
+    static public final WGPUCommandEncoderDescriptor T_02 = WGPUCommandEncoderDescriptor.native_new();
 
-    static public final WGPUCommandEncoderDescriptor T_03 = WGPUCommandEncoderDescriptor.createInstance();
+    static public final WGPUCommandEncoderDescriptor T_03 = WGPUCommandEncoderDescriptor.native_new();
 
     public WGPUCommandEncoderDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUCommandEncoderDescriptor createInstance() {
+    public static WGPUCommandEncoderDescriptor native_new() {
         return new WGPUCommandEncoderDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.createInstance();
+            WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.native_new();
         WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
     }

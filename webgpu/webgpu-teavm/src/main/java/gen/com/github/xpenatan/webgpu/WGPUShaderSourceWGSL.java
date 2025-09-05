@@ -13,13 +13,13 @@ public class WGPUShaderSourceWGSL extends IDLBase {
 
     private WGPUChainedStruct WGPUChainedStruct_TEMP_GEN_0;
 
-    static public final WGPUShaderSourceWGSL NULL = WGPUShaderSourceWGSL.createInstance();
+    static public final WGPUShaderSourceWGSL NULL = WGPUShaderSourceWGSL.native_new();
 
-    static public final WGPUShaderSourceWGSL T_01 = WGPUShaderSourceWGSL.createInstance();
+    static public final WGPUShaderSourceWGSL T_01 = WGPUShaderSourceWGSL.native_new();
 
-    static public final WGPUShaderSourceWGSL T_02 = WGPUShaderSourceWGSL.createInstance();
+    static public final WGPUShaderSourceWGSL T_02 = WGPUShaderSourceWGSL.native_new();
 
-    static public final WGPUShaderSourceWGSL T_03 = WGPUShaderSourceWGSL.createInstance();
+    static public final WGPUShaderSourceWGSL T_03 = WGPUShaderSourceWGSL.native_new();
 
     public WGPUShaderSourceWGSL() {
         int addr = internal_native_create();
@@ -43,7 +43,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUShaderSourceWGSL createInstance() {
+    public static WGPUShaderSourceWGSL native_new() {
         return new WGPUShaderSourceWGSL((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.createInstance();
+            WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.native_new();
         WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
     }
@@ -92,7 +92,7 @@ jsObj.SetCode(code);
         if (pointer == 0)
             return null;
         if (WGPUChainedStruct_TEMP_GEN_0 == null)
-            WGPUChainedStruct_TEMP_GEN_0 = WGPUChainedStruct.createInstance();
+            WGPUChainedStruct_TEMP_GEN_0 = WGPUChainedStruct.native_new();
         WGPUChainedStruct_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUChainedStruct_TEMP_GEN_0;
     }

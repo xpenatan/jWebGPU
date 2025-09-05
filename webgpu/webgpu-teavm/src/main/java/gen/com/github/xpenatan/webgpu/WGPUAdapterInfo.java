@@ -20,13 +20,13 @@ public class WGPUAdapterInfo extends IDLBase {
 
     private IDLString IDLString_TEMP_GEN_3;
 
-    static public final WGPUAdapterInfo NULL = WGPUAdapterInfo.createInstance();
+    static public final WGPUAdapterInfo NULL = WGPUAdapterInfo.native_new();
 
-    static public final WGPUAdapterInfo T_01 = WGPUAdapterInfo.createInstance();
+    static public final WGPUAdapterInfo T_01 = WGPUAdapterInfo.native_new();
 
-    static public final WGPUAdapterInfo T_02 = WGPUAdapterInfo.createInstance();
+    static public final WGPUAdapterInfo T_02 = WGPUAdapterInfo.native_new();
 
-    static public final WGPUAdapterInfo T_03 = WGPUAdapterInfo.createInstance();
+    static public final WGPUAdapterInfo T_03 = WGPUAdapterInfo.native_new();
 
     public WGPUAdapterInfo() {
         int addr = internal_native_create();
@@ -50,7 +50,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUAdapterInfo createInstance() {
+    public static WGPUAdapterInfo native_new() {
         return new WGPUAdapterInfo((byte) 0, (char) 0);
     }
 
@@ -70,7 +70,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUAdapterInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUAdapterInfo_TEMP_STATIC_GEN_0 = WGPUAdapterInfo.createInstance();
+            WGPUAdapterInfo_TEMP_STATIC_GEN_0 = WGPUAdapterInfo.native_new();
         WGPUAdapterInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUAdapterInfo_TEMP_STATIC_GEN_0;
     }
@@ -88,7 +88,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.createInstance();
+            IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
@@ -119,7 +119,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_1 == null)
-            IDLString_TEMP_GEN_1 = IDLString.createInstance();
+            IDLString_TEMP_GEN_1 = IDLString.native_new();
         IDLString_TEMP_GEN_1.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_1;
     }
@@ -138,7 +138,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_2 == null)
-            IDLString_TEMP_GEN_2 = IDLString.createInstance();
+            IDLString_TEMP_GEN_2 = IDLString.native_new();
         IDLString_TEMP_GEN_2.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_2;
     }
@@ -169,7 +169,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_3 == null)
-            IDLString_TEMP_GEN_3 = IDLString.createInstance();
+            IDLString_TEMP_GEN_3 = IDLString.native_new();
         IDLString_TEMP_GEN_3.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_3;
     }

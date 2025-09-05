@@ -11,13 +11,13 @@ public class WGPURequestAdapterOptions extends IDLBase {
 
     static private WGPURequestAdapterOptions WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
 
-    static public final WGPURequestAdapterOptions NULL = WGPURequestAdapterOptions.createInstance();
+    static public final WGPURequestAdapterOptions NULL = WGPURequestAdapterOptions.native_new();
 
-    static public final WGPURequestAdapterOptions T_01 = WGPURequestAdapterOptions.createInstance();
+    static public final WGPURequestAdapterOptions T_01 = WGPURequestAdapterOptions.native_new();
 
-    static public final WGPURequestAdapterOptions T_02 = WGPURequestAdapterOptions.createInstance();
+    static public final WGPURequestAdapterOptions T_02 = WGPURequestAdapterOptions.native_new();
 
-    static public final WGPURequestAdapterOptions T_03 = WGPURequestAdapterOptions.createInstance();
+    static public final WGPURequestAdapterOptions T_03 = WGPURequestAdapterOptions.native_new();
 
     public WGPURequestAdapterOptions() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURequestAdapterOptions createInstance() {
+    public static WGPURequestAdapterOptions native_new() {
         return new WGPURequestAdapterOptions((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 == null)
-            WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 = WGPURequestAdapterOptions.createInstance();
+            WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 = WGPURequestAdapterOptions.native_new();
         WGPURequestAdapterOptions_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
     }

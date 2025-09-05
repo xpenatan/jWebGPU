@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUMultisampleState extends IDLBase {
 
-    static public final WGPUMultisampleState NULL = WGPUMultisampleState.createInstance();
+    static public final WGPUMultisampleState NULL = WGPUMultisampleState.native_new();
 
-    static public final WGPUMultisampleState T_01 = WGPUMultisampleState.createInstance();
+    static public final WGPUMultisampleState T_01 = WGPUMultisampleState.native_new();
 
-    static public final WGPUMultisampleState T_02 = WGPUMultisampleState.createInstance();
+    static public final WGPUMultisampleState T_02 = WGPUMultisampleState.native_new();
 
-    static public final WGPUMultisampleState T_03 = WGPUMultisampleState.createInstance();
+    static public final WGPUMultisampleState T_03 = WGPUMultisampleState.native_new();
 
     public WGPUMultisampleState() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new JGPU::WGPUMultisampleState();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUMultisampleState createInstance() {
+    public static WGPUMultisampleState native_new() {
         return new WGPUMultisampleState((byte) 0, (char) 0);
     }
 

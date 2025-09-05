@@ -11,13 +11,13 @@ public class WGPUVectorRenderBundle extends IDLBase {
 
     static private WGPUVectorRenderBundle WGPUVectorRenderBundle_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorRenderBundle NULL = WGPUVectorRenderBundle.createInstance();
+    static public final WGPUVectorRenderBundle NULL = WGPUVectorRenderBundle.native_new();
 
-    static public final WGPUVectorRenderBundle T_01 = WGPUVectorRenderBundle.createInstance();
+    static public final WGPUVectorRenderBundle T_01 = WGPUVectorRenderBundle.native_new();
 
-    static public final WGPUVectorRenderBundle T_02 = WGPUVectorRenderBundle.createInstance();
+    static public final WGPUVectorRenderBundle T_02 = WGPUVectorRenderBundle.native_new();
 
-    static public final WGPUVectorRenderBundle T_03 = WGPUVectorRenderBundle.createInstance();
+    static public final WGPUVectorRenderBundle T_03 = WGPUVectorRenderBundle.native_new();
 
     public WGPUVectorRenderBundle() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new WGPUVectorRenderBundle();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorRenderBundle createInstance() {
+    public static WGPUVectorRenderBundle native_new() {
         return new WGPUVectorRenderBundle((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUVectorRenderBundle_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorRenderBundle_TEMP_STATIC_GEN_0 = WGPUVectorRenderBundle.createInstance();
+            WGPUVectorRenderBundle_TEMP_STATIC_GEN_0 = WGPUVectorRenderBundle.native_new();
         WGPUVectorRenderBundle_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorRenderBundle_TEMP_STATIC_GEN_0;
     }

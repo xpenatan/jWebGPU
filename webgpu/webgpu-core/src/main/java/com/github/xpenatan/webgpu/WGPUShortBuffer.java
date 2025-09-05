@@ -11,13 +11,13 @@ public class WGPUShortBuffer extends IDLBase {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
-    static public final WGPUShortBuffer NULL = WGPUShortBuffer.createInstance();
+    static public final WGPUShortBuffer NULL = WGPUShortBuffer.native_new();
 
-    static public final WGPUShortBuffer T_01 = WGPUShortBuffer.createInstance();
+    static public final WGPUShortBuffer T_01 = WGPUShortBuffer.native_new();
 
-    static public final WGPUShortBuffer T_02 = WGPUShortBuffer.createInstance();
+    static public final WGPUShortBuffer T_02 = WGPUShortBuffer.native_new();
 
-    static public final WGPUShortBuffer T_03 = WGPUShortBuffer.createInstance();
+    static public final WGPUShortBuffer T_03 = WGPUShortBuffer.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class WGPUShortBuffer extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUShortBuffer createInstance() {
+    public static WGPUShortBuffer native_new() {
         return new WGPUShortBuffer((byte) 0, (char) 0);
     }
 
@@ -48,7 +48,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.createInstance();
+            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }

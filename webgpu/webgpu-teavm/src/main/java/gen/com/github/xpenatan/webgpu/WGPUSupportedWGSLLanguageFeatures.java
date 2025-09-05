@@ -11,13 +11,13 @@ public class WGPUSupportedWGSLLanguageFeatures extends IDLBase {
 
     static private WGPUSupportedWGSLLanguageFeatures WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0;
 
-    static public final WGPUSupportedWGSLLanguageFeatures NULL = WGPUSupportedWGSLLanguageFeatures.createInstance();
+    static public final WGPUSupportedWGSLLanguageFeatures NULL = WGPUSupportedWGSLLanguageFeatures.native_new();
 
-    static public final WGPUSupportedWGSLLanguageFeatures T_01 = WGPUSupportedWGSLLanguageFeatures.createInstance();
+    static public final WGPUSupportedWGSLLanguageFeatures T_01 = WGPUSupportedWGSLLanguageFeatures.native_new();
 
-    static public final WGPUSupportedWGSLLanguageFeatures T_02 = WGPUSupportedWGSLLanguageFeatures.createInstance();
+    static public final WGPUSupportedWGSLLanguageFeatures T_02 = WGPUSupportedWGSLLanguageFeatures.native_new();
 
-    static public final WGPUSupportedWGSLLanguageFeatures T_03 = WGPUSupportedWGSLLanguageFeatures.createInstance();
+    static public final WGPUSupportedWGSLLanguageFeatures T_03 = WGPUSupportedWGSLLanguageFeatures.native_new();
 
     public WGPUSupportedWGSLLanguageFeatures() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSupportedWGSLLanguageFeatures createInstance() {
+    public static WGPUSupportedWGSLLanguageFeatures native_new() {
         return new WGPUSupportedWGSLLanguageFeatures((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 == null)
-            WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedWGSLLanguageFeatures.createInstance();
+            WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedWGSLLanguageFeatures.native_new();
         WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPULimits extends IDLBase {
 
     static private WGPULimits WGPULimits_TEMP_STATIC_GEN_0;
 
-    static public final WGPULimits NULL = WGPULimits.createInstance();
+    static public final WGPULimits NULL = WGPULimits.native_new();
 
-    static public final WGPULimits T_01 = WGPULimits.createInstance();
+    static public final WGPULimits T_01 = WGPULimits.native_new();
 
-    static public final WGPULimits T_02 = WGPULimits.createInstance();
+    static public final WGPULimits T_02 = WGPULimits.native_new();
 
-    static public final WGPULimits T_03 = WGPULimits.createInstance();
+    static public final WGPULimits T_03 = WGPULimits.native_new();
 
     public WGPULimits() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPULimits();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPULimits createInstance() {
+    public static WGPULimits native_new() {
         return new WGPULimits((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPULimits_TEMP_STATIC_GEN_0 == null)
-            WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.createInstance();
+            WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
         WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPULimits_TEMP_STATIC_GEN_0;
     }

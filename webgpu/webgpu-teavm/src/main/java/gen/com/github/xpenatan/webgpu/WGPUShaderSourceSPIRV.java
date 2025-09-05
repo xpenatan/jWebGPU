@@ -11,13 +11,13 @@ public class WGPUShaderSourceSPIRV extends IDLBase {
 
     static private WGPUShaderSourceSPIRV WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
 
-    static public final WGPUShaderSourceSPIRV NULL = WGPUShaderSourceSPIRV.createInstance();
+    static public final WGPUShaderSourceSPIRV NULL = WGPUShaderSourceSPIRV.native_new();
 
-    static public final WGPUShaderSourceSPIRV T_01 = WGPUShaderSourceSPIRV.createInstance();
+    static public final WGPUShaderSourceSPIRV T_01 = WGPUShaderSourceSPIRV.native_new();
 
-    static public final WGPUShaderSourceSPIRV T_02 = WGPUShaderSourceSPIRV.createInstance();
+    static public final WGPUShaderSourceSPIRV T_02 = WGPUShaderSourceSPIRV.native_new();
 
-    static public final WGPUShaderSourceSPIRV T_03 = WGPUShaderSourceSPIRV.createInstance();
+    static public final WGPUShaderSourceSPIRV T_03 = WGPUShaderSourceSPIRV.native_new();
 
     public WGPUShaderSourceSPIRV() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUShaderSourceSPIRV createInstance() {
+    public static WGPUShaderSourceSPIRV native_new() {
         return new WGPUShaderSourceSPIRV((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 = WGPUShaderSourceSPIRV.createInstance();
+            WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 = WGPUShaderSourceSPIRV.native_new();
         WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
     }

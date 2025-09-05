@@ -13,13 +13,13 @@ public class WGPURenderPassColorAttachment extends IDLBase {
 
     private WGPUColor WGPUColor_TEMP_GEN_0;
 
-    static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.createInstance();
+    static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 
-    static public final WGPURenderPassColorAttachment T_01 = WGPURenderPassColorAttachment.createInstance();
+    static public final WGPURenderPassColorAttachment T_01 = WGPURenderPassColorAttachment.native_new();
 
-    static public final WGPURenderPassColorAttachment T_02 = WGPURenderPassColorAttachment.createInstance();
+    static public final WGPURenderPassColorAttachment T_02 = WGPURenderPassColorAttachment.native_new();
 
-    static public final WGPURenderPassColorAttachment T_03 = WGPURenderPassColorAttachment.createInstance();
+    static public final WGPURenderPassColorAttachment T_03 = WGPURenderPassColorAttachment.native_new();
 
     public WGPURenderPassColorAttachment() {
         long addr = internal_native_create();
@@ -41,7 +41,7 @@ return (jlong)new JGPU::WGPURenderPassColorAttachment();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPassColorAttachment createInstance() {
+    public static WGPURenderPassColorAttachment native_new() {
         return new WGPURenderPassColorAttachment((byte) 0, (char) 0);
     }
 
@@ -60,7 +60,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.createInstance();
+            WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
         WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
     }
@@ -135,7 +135,7 @@ nativeObject->SetStoreOp((::WGPUStoreOp)storeOp);
         if (pointer == 0)
             return null;
         if (WGPUColor_TEMP_GEN_0 == null)
-            WGPUColor_TEMP_GEN_0 = WGPUColor.createInstance();
+            WGPUColor_TEMP_GEN_0 = WGPUColor.native_new();
         WGPUColor_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUColor_TEMP_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPUVectorVertexAttribute extends IDLBase {
 
     static private WGPUVectorVertexAttribute WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorVertexAttribute NULL = WGPUVectorVertexAttribute.createInstance();
+    static public final WGPUVectorVertexAttribute NULL = WGPUVectorVertexAttribute.native_new();
 
-    static public final WGPUVectorVertexAttribute T_01 = WGPUVectorVertexAttribute.createInstance();
+    static public final WGPUVectorVertexAttribute T_01 = WGPUVectorVertexAttribute.native_new();
 
-    static public final WGPUVectorVertexAttribute T_02 = WGPUVectorVertexAttribute.createInstance();
+    static public final WGPUVectorVertexAttribute T_02 = WGPUVectorVertexAttribute.native_new();
 
-    static public final WGPUVectorVertexAttribute T_03 = WGPUVectorVertexAttribute.createInstance();
+    static public final WGPUVectorVertexAttribute T_03 = WGPUVectorVertexAttribute.native_new();
 
     public WGPUVectorVertexAttribute() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new WGPUVectorVertexAttribute();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorVertexAttribute createInstance() {
+    public static WGPUVectorVertexAttribute native_new() {
         return new WGPUVectorVertexAttribute((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVectorVertexAttribute.createInstance();
+            WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVectorVertexAttribute.native_new();
         WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
     }

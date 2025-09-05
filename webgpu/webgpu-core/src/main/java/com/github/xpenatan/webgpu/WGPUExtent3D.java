@@ -13,9 +13,9 @@ public class WGPUExtent3D extends IDLBase {
 
     static private WGPUExtent3D WGPUExtent3D_TEMP_STATIC_GEN_0;
 
-    public final static WGPUExtent3D NULL = createInstance();
+    public final static WGPUExtent3D NULL = native_new();
 
-    public static WGPUExtent3D createInstance() {
+    public static WGPUExtent3D native_new() {
         return new WGPUExtent3D((byte) 0, (char) 0);
     }
 
@@ -49,7 +49,7 @@ public class WGPUExtent3D extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUExtent3D_TEMP_STATIC_GEN_0 == null)
-            WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.createInstance();
+            WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.native_new();
         WGPUExtent3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUExtent3D_TEMP_STATIC_GEN_0;
     }

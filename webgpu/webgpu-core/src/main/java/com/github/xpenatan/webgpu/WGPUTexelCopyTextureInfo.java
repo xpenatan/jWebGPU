@@ -15,9 +15,9 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
 
     private WGPUOrigin3D WGPUOrigin3D_TEMP_GEN_0;
 
-    public final static WGPUTexelCopyTextureInfo NULL = createInstance();
+    public final static WGPUTexelCopyTextureInfo NULL = native_new();
 
-    public static WGPUTexelCopyTextureInfo createInstance() {
+    public static WGPUTexelCopyTextureInfo native_new() {
         return new WGPUTexelCopyTextureInfo((byte) 0, (char) 0);
     }
 
@@ -51,7 +51,7 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyTextureInfo.createInstance();
+            WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyTextureInfo.native_new();
         WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
     }
@@ -89,7 +89,7 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUOrigin3D_TEMP_GEN_0 == null)
-            WGPUOrigin3D_TEMP_GEN_0 = WGPUOrigin3D.createInstance();
+            WGPUOrigin3D_TEMP_GEN_0 = WGPUOrigin3D.native_new();
         WGPUOrigin3D_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUOrigin3D_TEMP_GEN_0;
     }

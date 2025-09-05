@@ -11,13 +11,13 @@ public class WGPUSamplerDescriptor extends IDLBase {
 
     static private WGPUSamplerDescriptor WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUSamplerDescriptor NULL = WGPUSamplerDescriptor.createInstance();
+    static public final WGPUSamplerDescriptor NULL = WGPUSamplerDescriptor.native_new();
 
-    static public final WGPUSamplerDescriptor T_01 = WGPUSamplerDescriptor.createInstance();
+    static public final WGPUSamplerDescriptor T_01 = WGPUSamplerDescriptor.native_new();
 
-    static public final WGPUSamplerDescriptor T_02 = WGPUSamplerDescriptor.createInstance();
+    static public final WGPUSamplerDescriptor T_02 = WGPUSamplerDescriptor.native_new();
 
-    static public final WGPUSamplerDescriptor T_03 = WGPUSamplerDescriptor.createInstance();
+    static public final WGPUSamplerDescriptor T_03 = WGPUSamplerDescriptor.native_new();
 
     public WGPUSamplerDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSamplerDescriptor createInstance() {
+    public static WGPUSamplerDescriptor native_new() {
         return new WGPUSamplerDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.createInstance();
+            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
         WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
     }

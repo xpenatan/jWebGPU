@@ -11,13 +11,13 @@ public class WGPUComputePassDescriptor extends IDLBase {
 
     static private WGPUComputePassDescriptor WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUComputePassDescriptor NULL = WGPUComputePassDescriptor.createInstance();
+    static public final WGPUComputePassDescriptor NULL = WGPUComputePassDescriptor.native_new();
 
-    static public final WGPUComputePassDescriptor T_01 = WGPUComputePassDescriptor.createInstance();
+    static public final WGPUComputePassDescriptor T_01 = WGPUComputePassDescriptor.native_new();
 
-    static public final WGPUComputePassDescriptor T_02 = WGPUComputePassDescriptor.createInstance();
+    static public final WGPUComputePassDescriptor T_02 = WGPUComputePassDescriptor.native_new();
 
-    static public final WGPUComputePassDescriptor T_03 = WGPUComputePassDescriptor.createInstance();
+    static public final WGPUComputePassDescriptor T_03 = WGPUComputePassDescriptor.native_new();
 
     public WGPUComputePassDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePassDescriptor createInstance() {
+    public static WGPUComputePassDescriptor native_new() {
         return new WGPUComputePassDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePassDescriptor.createInstance();
+            WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePassDescriptor.native_new();
         WGPUComputePassDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
     }

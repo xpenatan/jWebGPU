@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUFuture extends IDLBase {
 
-    static public final WGPUFuture NULL = WGPUFuture.createInstance();
+    static public final WGPUFuture NULL = WGPUFuture.native_new();
 
-    static public final WGPUFuture T_01 = WGPUFuture.createInstance();
+    static public final WGPUFuture T_01 = WGPUFuture.native_new();
 
-    static public final WGPUFuture T_02 = WGPUFuture.createInstance();
+    static public final WGPUFuture T_02 = WGPUFuture.native_new();
 
-    static public final WGPUFuture T_03 = WGPUFuture.createInstance();
+    static public final WGPUFuture T_03 = WGPUFuture.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUFuture extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUFuture createInstance() {
+    public static WGPUFuture native_new() {
         return new WGPUFuture((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class WGPUStorageTextureBindingLayout extends IDLBase {
 
     static private WGPUStorageTextureBindingLayout WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
 
-    static public final WGPUStorageTextureBindingLayout NULL = WGPUStorageTextureBindingLayout.createInstance();
+    static public final WGPUStorageTextureBindingLayout NULL = WGPUStorageTextureBindingLayout.native_new();
 
-    static public final WGPUStorageTextureBindingLayout T_01 = WGPUStorageTextureBindingLayout.createInstance();
+    static public final WGPUStorageTextureBindingLayout T_01 = WGPUStorageTextureBindingLayout.native_new();
 
-    static public final WGPUStorageTextureBindingLayout T_02 = WGPUStorageTextureBindingLayout.createInstance();
+    static public final WGPUStorageTextureBindingLayout T_02 = WGPUStorageTextureBindingLayout.native_new();
 
-    static public final WGPUStorageTextureBindingLayout T_03 = WGPUStorageTextureBindingLayout.createInstance();
+    static public final WGPUStorageTextureBindingLayout T_03 = WGPUStorageTextureBindingLayout.native_new();
 
     public WGPUStorageTextureBindingLayout() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUStorageTextureBindingLayout createInstance() {
+    public static WGPUStorageTextureBindingLayout native_new() {
         return new WGPUStorageTextureBindingLayout((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUStorageTextureBindingLayout.createInstance();
+            WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
         WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
     }

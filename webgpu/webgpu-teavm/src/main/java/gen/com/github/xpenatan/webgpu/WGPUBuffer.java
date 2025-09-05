@@ -19,9 +19,9 @@ public class WGPUBuffer extends IDLBase {
     @org.teavm.jso.JSBody(params = { "this_addr", "offset", "size", "bytes_addr" }, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer); var ptr = jWebGPU._malloc(size); jsObj.GetConstMappedRange(offset, size, ptr); var dataOut = jWebGPU.HEAPU8.subarray(ptr, ptr + size); bytes_addr.set(dataOut); jWebGPU._free(ptr);")
     private static native void internal_native_getConstMappedRange(int this_addr, int offset, int size, org.teavm.jso.JSObject bytes_addr);
 
-    public final static WGPUBuffer NULL = createInstance();
+    public final static WGPUBuffer NULL = native_new();
 
-    public static WGPUBuffer createInstance() {
+    public static WGPUBuffer native_new() {
         return new WGPUBuffer((byte) 0, (char) 0);
     }
 
@@ -112,7 +112,7 @@ public class WGPUBuffer extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUFuture_TEMP_GEN_0 == null)
-            WGPUFuture_TEMP_GEN_0 = WGPUFuture.createInstance();
+            WGPUFuture_TEMP_GEN_0 = WGPUFuture.native_new();
         WGPUFuture_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUFuture_TEMP_GEN_0;
     }
@@ -132,7 +132,7 @@ public class WGPUBuffer extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.createInstance();
+            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }

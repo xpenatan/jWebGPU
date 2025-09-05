@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUPrimitiveState extends IDLBase {
 
-    static public final WGPUPrimitiveState NULL = WGPUPrimitiveState.createInstance();
+    static public final WGPUPrimitiveState NULL = WGPUPrimitiveState.native_new();
 
-    static public final WGPUPrimitiveState T_01 = WGPUPrimitiveState.createInstance();
+    static public final WGPUPrimitiveState T_01 = WGPUPrimitiveState.native_new();
 
-    static public final WGPUPrimitiveState T_02 = WGPUPrimitiveState.createInstance();
+    static public final WGPUPrimitiveState T_02 = WGPUPrimitiveState.native_new();
 
-    static public final WGPUPrimitiveState T_03 = WGPUPrimitiveState.createInstance();
+    static public final WGPUPrimitiveState T_03 = WGPUPrimitiveState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUPrimitiveState extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUPrimitiveState createInstance() {
+    public static WGPUPrimitiveState native_new() {
         return new WGPUPrimitiveState((byte) 0, (char) 0);
     }
 

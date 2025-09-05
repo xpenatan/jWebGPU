@@ -11,13 +11,13 @@ public class WGPUFragmentState extends IDLBase {
 
     static private WGPUFragmentState WGPUFragmentState_TEMP_STATIC_GEN_0;
 
-    static public final WGPUFragmentState NULL = WGPUFragmentState.createInstance();
+    static public final WGPUFragmentState NULL = WGPUFragmentState.native_new();
 
-    static public final WGPUFragmentState T_01 = WGPUFragmentState.createInstance();
+    static public final WGPUFragmentState T_01 = WGPUFragmentState.native_new();
 
-    static public final WGPUFragmentState T_02 = WGPUFragmentState.createInstance();
+    static public final WGPUFragmentState T_02 = WGPUFragmentState.native_new();
 
-    static public final WGPUFragmentState T_03 = WGPUFragmentState.createInstance();
+    static public final WGPUFragmentState T_03 = WGPUFragmentState.native_new();
 
     public WGPUFragmentState() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUFragmentState createInstance() {
+    public static WGPUFragmentState native_new() {
         return new WGPUFragmentState((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
-            WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.createInstance();
+            WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
         WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUFragmentState_TEMP_STATIC_GEN_0;
     }

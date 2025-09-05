@@ -11,13 +11,13 @@ public class WGPUVectorCommandBuffer extends IDLBase {
 
     static private WGPUVectorCommandBuffer WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorCommandBuffer NULL = WGPUVectorCommandBuffer.createInstance();
+    static public final WGPUVectorCommandBuffer NULL = WGPUVectorCommandBuffer.native_new();
 
-    static public final WGPUVectorCommandBuffer T_01 = WGPUVectorCommandBuffer.createInstance();
+    static public final WGPUVectorCommandBuffer T_01 = WGPUVectorCommandBuffer.native_new();
 
-    static public final WGPUVectorCommandBuffer T_02 = WGPUVectorCommandBuffer.createInstance();
+    static public final WGPUVectorCommandBuffer T_02 = WGPUVectorCommandBuffer.native_new();
 
-    static public final WGPUVectorCommandBuffer T_03 = WGPUVectorCommandBuffer.createInstance();
+    static public final WGPUVectorCommandBuffer T_03 = WGPUVectorCommandBuffer.native_new();
 
     public WGPUVectorCommandBuffer() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorCommandBuffer createInstance() {
+    public static WGPUVectorCommandBuffer native_new() {
         return new WGPUVectorCommandBuffer((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0 = WGPUVectorCommandBuffer.createInstance();
+            WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0 = WGPUVectorCommandBuffer.native_new();
         WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0;
     }

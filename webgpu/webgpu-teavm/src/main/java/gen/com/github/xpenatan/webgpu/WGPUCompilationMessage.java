@@ -14,13 +14,13 @@ public class WGPUCompilationMessage extends IDLBase {
 
     private IDLStringView IDLStringView_TEMP_GEN_0;
 
-    static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.createInstance();
+    static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 
-    static public final WGPUCompilationMessage T_01 = WGPUCompilationMessage.createInstance();
+    static public final WGPUCompilationMessage T_01 = WGPUCompilationMessage.native_new();
 
-    static public final WGPUCompilationMessage T_02 = WGPUCompilationMessage.createInstance();
+    static public final WGPUCompilationMessage T_02 = WGPUCompilationMessage.native_new();
 
-    static public final WGPUCompilationMessage T_03 = WGPUCompilationMessage.createInstance();
+    static public final WGPUCompilationMessage T_03 = WGPUCompilationMessage.native_new();
 
     public WGPUCompilationMessage() {
         int addr = internal_native_create();
@@ -44,7 +44,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUCompilationMessage createInstance() {
+    public static WGPUCompilationMessage native_new() {
         return new WGPUCompilationMessage((byte) 0, (char) 0);
     }
 
@@ -64,7 +64,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
-            WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.createInstance();
+            WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
         WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
     }
@@ -82,7 +82,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (IDLStringView_TEMP_GEN_0 == null)
-            IDLStringView_TEMP_GEN_0 = IDLStringView.createInstance();
+            IDLStringView_TEMP_GEN_0 = IDLStringView.native_new();
         IDLStringView_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLStringView_TEMP_GEN_0;
     }

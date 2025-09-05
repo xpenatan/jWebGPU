@@ -11,13 +11,13 @@ public class WGPUVectorFeatureName extends IDLBase {
 
     static private WGPUVectorFeatureName WGPUVectorFeatureName_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorFeatureName NULL = WGPUVectorFeatureName.createInstance();
+    static public final WGPUVectorFeatureName NULL = WGPUVectorFeatureName.native_new();
 
-    static public final WGPUVectorFeatureName T_01 = WGPUVectorFeatureName.createInstance();
+    static public final WGPUVectorFeatureName T_01 = WGPUVectorFeatureName.native_new();
 
-    static public final WGPUVectorFeatureName T_02 = WGPUVectorFeatureName.createInstance();
+    static public final WGPUVectorFeatureName T_02 = WGPUVectorFeatureName.native_new();
 
-    static public final WGPUVectorFeatureName T_03 = WGPUVectorFeatureName.createInstance();
+    static public final WGPUVectorFeatureName T_03 = WGPUVectorFeatureName.native_new();
 
     public WGPUVectorFeatureName() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new WGPUVectorFeatureName();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorFeatureName createInstance() {
+    public static WGPUVectorFeatureName native_new() {
         return new WGPUVectorFeatureName((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUVectorFeatureName_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorFeatureName_TEMP_STATIC_GEN_0 = WGPUVectorFeatureName.createInstance();
+            WGPUVectorFeatureName_TEMP_STATIC_GEN_0 = WGPUVectorFeatureName.native_new();
         WGPUVectorFeatureName_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorFeatureName_TEMP_STATIC_GEN_0;
     }

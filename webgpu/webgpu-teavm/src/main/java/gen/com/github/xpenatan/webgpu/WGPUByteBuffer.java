@@ -19,13 +19,13 @@ public class WGPUByteBuffer extends IDLBase {
 
     private WGPUShortBuffer WGPUShortBuffer_TEMP_GEN_0;
 
-    static public final WGPUByteBuffer NULL = WGPUByteBuffer.createInstance();
+    static public final WGPUByteBuffer NULL = WGPUByteBuffer.native_new();
 
-    static public final WGPUByteBuffer T_01 = WGPUByteBuffer.createInstance();
+    static public final WGPUByteBuffer T_01 = WGPUByteBuffer.native_new();
 
-    static public final WGPUByteBuffer T_02 = WGPUByteBuffer.createInstance();
+    static public final WGPUByteBuffer T_02 = WGPUByteBuffer.native_new();
 
-    static public final WGPUByteBuffer T_03 = WGPUByteBuffer.createInstance();
+    static public final WGPUByteBuffer T_03 = WGPUByteBuffer.native_new();
 
     public WGPUByteBuffer(int capacity) {
         int addr = internal_native_create_int(capacity);
@@ -49,7 +49,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUByteBuffer createInstance() {
+    public static WGPUByteBuffer native_new() {
         return new WGPUByteBuffer((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUByteBuffer_TEMP_STATIC_GEN_0 == null)
-            WGPUByteBuffer_TEMP_STATIC_GEN_0 = WGPUByteBuffer.createInstance();
+            WGPUByteBuffer_TEMP_STATIC_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUByteBuffer_TEMP_STATIC_GEN_0;
     }
@@ -282,7 +282,7 @@ jsObj.flip();
         if (pointer == 0)
             return null;
         if (WGPUFloatBuffer_TEMP_GEN_0 == null)
-            WGPUFloatBuffer_TEMP_GEN_0 = WGPUFloatBuffer.createInstance();
+            WGPUFloatBuffer_TEMP_GEN_0 = WGPUFloatBuffer.native_new();
         WGPUFloatBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUFloatBuffer_TEMP_GEN_0;
     }
@@ -301,7 +301,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUIntBuffer_TEMP_GEN_0 == null)
-            WGPUIntBuffer_TEMP_GEN_0 = WGPUIntBuffer.createInstance();
+            WGPUIntBuffer_TEMP_GEN_0 = WGPUIntBuffer.native_new();
         WGPUIntBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUIntBuffer_TEMP_GEN_0;
     }
@@ -320,7 +320,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPULongBuffer_TEMP_GEN_0 == null)
-            WGPULongBuffer_TEMP_GEN_0 = WGPULongBuffer.createInstance();
+            WGPULongBuffer_TEMP_GEN_0 = WGPULongBuffer.native_new();
         WGPULongBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPULongBuffer_TEMP_GEN_0;
     }
@@ -339,7 +339,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUShortBuffer_TEMP_GEN_0 == null)
-            WGPUShortBuffer_TEMP_GEN_0 = WGPUShortBuffer.createInstance();
+            WGPUShortBuffer_TEMP_GEN_0 = WGPUShortBuffer.native_new();
         WGPUShortBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUShortBuffer_TEMP_GEN_0;
     }

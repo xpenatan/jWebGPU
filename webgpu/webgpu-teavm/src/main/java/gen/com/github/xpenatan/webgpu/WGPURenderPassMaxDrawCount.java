@@ -11,13 +11,13 @@ public class WGPURenderPassMaxDrawCount extends IDLBase {
 
     static private WGPURenderPassMaxDrawCount WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderPassMaxDrawCount NULL = WGPURenderPassMaxDrawCount.createInstance();
+    static public final WGPURenderPassMaxDrawCount NULL = WGPURenderPassMaxDrawCount.native_new();
 
-    static public final WGPURenderPassMaxDrawCount T_01 = WGPURenderPassMaxDrawCount.createInstance();
+    static public final WGPURenderPassMaxDrawCount T_01 = WGPURenderPassMaxDrawCount.native_new();
 
-    static public final WGPURenderPassMaxDrawCount T_02 = WGPURenderPassMaxDrawCount.createInstance();
+    static public final WGPURenderPassMaxDrawCount T_02 = WGPURenderPassMaxDrawCount.native_new();
 
-    static public final WGPURenderPassMaxDrawCount T_03 = WGPURenderPassMaxDrawCount.createInstance();
+    static public final WGPURenderPassMaxDrawCount T_03 = WGPURenderPassMaxDrawCount.native_new();
 
     public WGPURenderPassMaxDrawCount() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPassMaxDrawCount createInstance() {
+    public static WGPURenderPassMaxDrawCount native_new() {
         return new WGPURenderPassMaxDrawCount((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 = WGPURenderPassMaxDrawCount.createInstance();
+            WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 = WGPURenderPassMaxDrawCount.native_new();
         WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
     }

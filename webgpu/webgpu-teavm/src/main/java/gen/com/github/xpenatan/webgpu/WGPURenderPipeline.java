@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPURenderPipeline extends IDLBase {
 
-    static public final WGPURenderPipeline NULL = WGPURenderPipeline.createInstance();
+    static public final WGPURenderPipeline NULL = WGPURenderPipeline.native_new();
 
-    static public final WGPURenderPipeline T_01 = WGPURenderPipeline.createInstance();
+    static public final WGPURenderPipeline T_01 = WGPURenderPipeline.native_new();
 
-    static public final WGPURenderPipeline T_02 = WGPURenderPipeline.createInstance();
+    static public final WGPURenderPipeline T_02 = WGPURenderPipeline.native_new();
 
-    static public final WGPURenderPipeline T_03 = WGPURenderPipeline.createInstance();
+    static public final WGPURenderPipeline T_03 = WGPURenderPipeline.native_new();
 
     public WGPURenderPipeline() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPipeline createInstance() {
+    public static WGPURenderPipeline native_new() {
         return new WGPURenderPipeline((byte) 0, (char) 0);
     }
 

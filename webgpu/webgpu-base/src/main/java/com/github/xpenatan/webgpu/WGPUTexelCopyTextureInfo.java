@@ -4,9 +4,9 @@ import idl.IDLBase;
 
 public class WGPUTexelCopyTextureInfo extends IDLBase {
 
-    public final static WGPUTexelCopyTextureInfo NULL = createInstance();
+    public final static WGPUTexelCopyTextureInfo NULL = native_new();
 
-    public static WGPUTexelCopyTextureInfo createInstance() {
+    public static WGPUTexelCopyTextureInfo native_new() {
         return new WGPUTexelCopyTextureInfo((byte) 0, (char) 0);
     }
 

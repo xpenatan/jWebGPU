@@ -11,13 +11,13 @@ public class WGPUFutureWaitInfo extends IDLBase {
 
     static private WGPUFutureWaitInfo WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
 
-    static public final WGPUFutureWaitInfo NULL = WGPUFutureWaitInfo.createInstance();
+    static public final WGPUFutureWaitInfo NULL = WGPUFutureWaitInfo.native_new();
 
-    static public final WGPUFutureWaitInfo T_01 = WGPUFutureWaitInfo.createInstance();
+    static public final WGPUFutureWaitInfo T_01 = WGPUFutureWaitInfo.native_new();
 
-    static public final WGPUFutureWaitInfo T_02 = WGPUFutureWaitInfo.createInstance();
+    static public final WGPUFutureWaitInfo T_02 = WGPUFutureWaitInfo.native_new();
 
-    static public final WGPUFutureWaitInfo T_03 = WGPUFutureWaitInfo.createInstance();
+    static public final WGPUFutureWaitInfo T_03 = WGPUFutureWaitInfo.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class WGPUFutureWaitInfo extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUFutureWaitInfo createInstance() {
+    public static WGPUFutureWaitInfo native_new() {
         return new WGPUFutureWaitInfo((byte) 0, (char) 0);
     }
 
@@ -48,7 +48,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUFutureWaitInfo.createInstance();
+            WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUFutureWaitInfo.native_new();
         WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
     }

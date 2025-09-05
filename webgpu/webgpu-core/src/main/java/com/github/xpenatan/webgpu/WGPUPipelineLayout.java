@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUPipelineLayout extends IDLBase {
 
-    static public final WGPUPipelineLayout NULL = WGPUPipelineLayout.createInstance();
+    static public final WGPUPipelineLayout NULL = WGPUPipelineLayout.native_new();
 
-    static public final WGPUPipelineLayout T_01 = WGPUPipelineLayout.createInstance();
+    static public final WGPUPipelineLayout T_01 = WGPUPipelineLayout.native_new();
 
-    static public final WGPUPipelineLayout T_02 = WGPUPipelineLayout.createInstance();
+    static public final WGPUPipelineLayout T_02 = WGPUPipelineLayout.native_new();
 
-    static public final WGPUPipelineLayout T_03 = WGPUPipelineLayout.createInstance();
+    static public final WGPUPipelineLayout T_03 = WGPUPipelineLayout.native_new();
 
     public WGPUPipelineLayout() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new JGPU::WGPUPipelineLayout();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUPipelineLayout createInstance() {
+    public static WGPUPipelineLayout native_new() {
         return new WGPUPipelineLayout((byte) 0, (char) 0);
     }
 

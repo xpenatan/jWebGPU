@@ -11,13 +11,13 @@ public class STBImage extends IDLBase {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
-    static public final STBImage NULL = STBImage.createInstance();
+    static public final STBImage NULL = STBImage.native_new();
 
-    static public final STBImage T_01 = STBImage.createInstance();
+    static public final STBImage T_01 = STBImage.native_new();
 
-    static public final STBImage T_02 = STBImage.createInstance();
+    static public final STBImage T_02 = STBImage.native_new();
 
-    static public final STBImage T_03 = STBImage.createInstance();
+    static public final STBImage T_03 = STBImage.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class STBImage extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static STBImage createInstance() {
+    public static STBImage native_new() {
         return new STBImage((byte) 0, (char) 0);
     }
 
@@ -48,7 +48,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.createInstance();
+            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }

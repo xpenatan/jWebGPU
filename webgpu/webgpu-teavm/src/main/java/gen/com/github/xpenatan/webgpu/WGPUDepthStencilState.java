@@ -15,13 +15,13 @@ public class WGPUDepthStencilState extends IDLBase {
 
     private WGPUStencilFaceState WGPUStencilFaceState_TEMP_GEN_1;
 
-    static public final WGPUDepthStencilState NULL = WGPUDepthStencilState.createInstance();
+    static public final WGPUDepthStencilState NULL = WGPUDepthStencilState.native_new();
 
-    static public final WGPUDepthStencilState T_01 = WGPUDepthStencilState.createInstance();
+    static public final WGPUDepthStencilState T_01 = WGPUDepthStencilState.native_new();
 
-    static public final WGPUDepthStencilState T_02 = WGPUDepthStencilState.createInstance();
+    static public final WGPUDepthStencilState T_02 = WGPUDepthStencilState.native_new();
 
-    static public final WGPUDepthStencilState T_03 = WGPUDepthStencilState.createInstance();
+    static public final WGPUDepthStencilState T_03 = WGPUDepthStencilState.native_new();
 
     public WGPUDepthStencilState() {
         int addr = internal_native_create();
@@ -45,7 +45,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUDepthStencilState createInstance() {
+    public static WGPUDepthStencilState native_new() {
         return new WGPUDepthStencilState((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
-            WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.createInstance();
+            WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
         WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
     }
@@ -182,7 +182,7 @@ jsObj.SetDepthBias(depthBias);
         if (pointer == 0)
             return null;
         if (WGPUStencilFaceState_TEMP_GEN_0 == null)
-            WGPUStencilFaceState_TEMP_GEN_0 = WGPUStencilFaceState.createInstance();
+            WGPUStencilFaceState_TEMP_GEN_0 = WGPUStencilFaceState.native_new();
         WGPUStencilFaceState_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUStencilFaceState_TEMP_GEN_0;
     }
@@ -201,7 +201,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUStencilFaceState_TEMP_GEN_1 == null)
-            WGPUStencilFaceState_TEMP_GEN_1 = WGPUStencilFaceState.createInstance();
+            WGPUStencilFaceState_TEMP_GEN_1 = WGPUStencilFaceState.native_new();
         WGPUStencilFaceState_TEMP_GEN_1.internal_reset(pointer, false);
         return WGPUStencilFaceState_TEMP_GEN_1;
     }

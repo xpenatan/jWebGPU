@@ -11,13 +11,13 @@ public class WGPUSupportedFeatures extends IDLBase {
 
     static private WGPUSupportedFeatures WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
 
-    static public final WGPUSupportedFeatures NULL = WGPUSupportedFeatures.createInstance();
+    static public final WGPUSupportedFeatures NULL = WGPUSupportedFeatures.native_new();
 
-    static public final WGPUSupportedFeatures T_01 = WGPUSupportedFeatures.createInstance();
+    static public final WGPUSupportedFeatures T_01 = WGPUSupportedFeatures.native_new();
 
-    static public final WGPUSupportedFeatures T_02 = WGPUSupportedFeatures.createInstance();
+    static public final WGPUSupportedFeatures T_02 = WGPUSupportedFeatures.native_new();
 
-    static public final WGPUSupportedFeatures T_03 = WGPUSupportedFeatures.createInstance();
+    static public final WGPUSupportedFeatures T_03 = WGPUSupportedFeatures.native_new();
 
     public WGPUSupportedFeatures() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSupportedFeatures createInstance() {
+    public static WGPUSupportedFeatures native_new() {
         return new WGPUSupportedFeatures((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUSupportedFeatures_TEMP_STATIC_GEN_0 == null)
-            WGPUSupportedFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedFeatures.createInstance();
+            WGPUSupportedFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedFeatures.native_new();
         WGPUSupportedFeatures_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
     }

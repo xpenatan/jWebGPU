@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUInstance extends IDLBase {
 
-    static public final WGPUInstance NULL = WGPUInstance.createInstance();
+    static public final WGPUInstance NULL = WGPUInstance.native_new();
 
-    static public final WGPUInstance T_01 = WGPUInstance.createInstance();
+    static public final WGPUInstance T_01 = WGPUInstance.native_new();
 
-    static public final WGPUInstance T_02 = WGPUInstance.createInstance();
+    static public final WGPUInstance T_02 = WGPUInstance.native_new();
 
-    static public final WGPUInstance T_03 = WGPUInstance.createInstance();
+    static public final WGPUInstance T_03 = WGPUInstance.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUInstance extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUInstance createInstance() {
+    public static WGPUInstance native_new() {
         return new WGPUInstance((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (:
         long pointer = internal_native_CreateWebSurface(native_address, canvas);
         if (pointer == 0)
             return null;
-        WGPUSurface WGPUSurface_NEW = WGPUSurface.createInstance();
+        WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
     }
@@ -91,7 +91,7 @@ return (jlong)obj;
         long pointer = internal_native_CreateWindowsSurface(native_address, hwnd.native_void_address);
         if (pointer == 0)
             return null;
-        WGPUSurface WGPUSurface_NEW = WGPUSurface.createInstance();
+        WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
     }
@@ -107,7 +107,7 @@ return (jlong)obj;
         long pointer = internal_native_CreateLinuxSurface(native_address, isWayland, windowOrSurface.native_void_address, display.native_void_address);
         if (pointer == 0)
             return null;
-        WGPUSurface WGPUSurface_NEW = WGPUSurface.createInstance();
+        WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
     }
@@ -123,7 +123,7 @@ return (jlong)obj;
         long pointer = internal_native_CreateMacSurface(native_address, metalLayer.native_void_address);
         if (pointer == 0)
             return null;
-        WGPUSurface WGPUSurface_NEW = WGPUSurface.createInstance();
+        WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
     }
@@ -139,7 +139,7 @@ return (jlong)obj;
         long pointer = internal_native_CreateAndroidSurface(native_address, surface.native_address);
         if (pointer == 0)
             return null;
-        WGPUSurface WGPUSurface_NEW = WGPUSurface.createInstance();
+        WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
     }

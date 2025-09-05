@@ -11,13 +11,13 @@ public class WGPUBufferBindingLayout extends IDLBase {
 
     static private WGPUBufferBindingLayout WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
 
-    static public final WGPUBufferBindingLayout NULL = WGPUBufferBindingLayout.createInstance();
+    static public final WGPUBufferBindingLayout NULL = WGPUBufferBindingLayout.native_new();
 
-    static public final WGPUBufferBindingLayout T_01 = WGPUBufferBindingLayout.createInstance();
+    static public final WGPUBufferBindingLayout T_01 = WGPUBufferBindingLayout.native_new();
 
-    static public final WGPUBufferBindingLayout T_02 = WGPUBufferBindingLayout.createInstance();
+    static public final WGPUBufferBindingLayout T_02 = WGPUBufferBindingLayout.native_new();
 
-    static public final WGPUBufferBindingLayout T_03 = WGPUBufferBindingLayout.createInstance();
+    static public final WGPUBufferBindingLayout T_03 = WGPUBufferBindingLayout.native_new();
 
     public WGPUBufferBindingLayout() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBufferBindingLayout createInstance() {
+    public static WGPUBufferBindingLayout native_new() {
         return new WGPUBufferBindingLayout((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 = WGPUBufferBindingLayout.createInstance();
+            WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 = WGPUBufferBindingLayout.native_new();
         WGPUBufferBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
     }

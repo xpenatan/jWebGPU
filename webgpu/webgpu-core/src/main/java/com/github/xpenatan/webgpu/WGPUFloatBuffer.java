@@ -36,7 +36,7 @@ public class WGPUFloatBuffer extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUFloatBuffer createInstance() {
+    public static WGPUFloatBuffer native_new() {
         return new WGPUFloatBuffer((byte) 0, (char) 0);
     }
 
@@ -56,7 +56,7 @@ public class WGPUFloatBuffer extends IDLBase {
         if (pointer == 0)
             return null;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.createInstance();
+            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }

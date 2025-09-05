@@ -11,13 +11,13 @@ public class WGPUSamplerBindingLayout extends IDLBase {
 
     static private WGPUSamplerBindingLayout WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
 
-    static public final WGPUSamplerBindingLayout NULL = WGPUSamplerBindingLayout.createInstance();
+    static public final WGPUSamplerBindingLayout NULL = WGPUSamplerBindingLayout.native_new();
 
-    static public final WGPUSamplerBindingLayout T_01 = WGPUSamplerBindingLayout.createInstance();
+    static public final WGPUSamplerBindingLayout T_01 = WGPUSamplerBindingLayout.native_new();
 
-    static public final WGPUSamplerBindingLayout T_02 = WGPUSamplerBindingLayout.createInstance();
+    static public final WGPUSamplerBindingLayout T_02 = WGPUSamplerBindingLayout.native_new();
 
-    static public final WGPUSamplerBindingLayout T_03 = WGPUSamplerBindingLayout.createInstance();
+    static public final WGPUSamplerBindingLayout T_03 = WGPUSamplerBindingLayout.native_new();
 
     public WGPUSamplerBindingLayout() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSamplerBindingLayout createInstance() {
+    public static WGPUSamplerBindingLayout native_new() {
         return new WGPUSamplerBindingLayout((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 = WGPUSamplerBindingLayout.createInstance();
+            WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 = WGPUSamplerBindingLayout.native_new();
         WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
     }

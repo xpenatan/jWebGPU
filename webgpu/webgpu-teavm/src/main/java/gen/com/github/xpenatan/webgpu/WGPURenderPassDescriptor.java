@@ -11,13 +11,13 @@ public class WGPURenderPassDescriptor extends IDLBase {
 
     static private WGPURenderPassDescriptor WGPURenderPassDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderPassDescriptor NULL = WGPURenderPassDescriptor.createInstance();
+    static public final WGPURenderPassDescriptor NULL = WGPURenderPassDescriptor.native_new();
 
-    static public final WGPURenderPassDescriptor T_01 = WGPURenderPassDescriptor.createInstance();
+    static public final WGPURenderPassDescriptor T_01 = WGPURenderPassDescriptor.native_new();
 
-    static public final WGPURenderPassDescriptor T_02 = WGPURenderPassDescriptor.createInstance();
+    static public final WGPURenderPassDescriptor T_02 = WGPURenderPassDescriptor.native_new();
 
-    static public final WGPURenderPassDescriptor T_03 = WGPURenderPassDescriptor.createInstance();
+    static public final WGPURenderPassDescriptor T_03 = WGPURenderPassDescriptor.native_new();
 
     public WGPURenderPassDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPassDescriptor createInstance() {
+    public static WGPURenderPassDescriptor native_new() {
         return new WGPURenderPassDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderPassDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPassDescriptor.createInstance();
+            WGPURenderPassDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPassDescriptor.native_new();
         WGPURenderPassDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPassDescriptor_TEMP_STATIC_GEN_0;
     }

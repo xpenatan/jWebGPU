@@ -11,13 +11,13 @@ public class WGPUVectorRenderPassColorAttachment extends IDLBase {
 
     static private WGPUVectorRenderPassColorAttachment WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorRenderPassColorAttachment NULL = WGPUVectorRenderPassColorAttachment.createInstance();
+    static public final WGPUVectorRenderPassColorAttachment NULL = WGPUVectorRenderPassColorAttachment.native_new();
 
-    static public final WGPUVectorRenderPassColorAttachment T_01 = WGPUVectorRenderPassColorAttachment.createInstance();
+    static public final WGPUVectorRenderPassColorAttachment T_01 = WGPUVectorRenderPassColorAttachment.native_new();
 
-    static public final WGPUVectorRenderPassColorAttachment T_02 = WGPUVectorRenderPassColorAttachment.createInstance();
+    static public final WGPUVectorRenderPassColorAttachment T_02 = WGPUVectorRenderPassColorAttachment.native_new();
 
-    static public final WGPUVectorRenderPassColorAttachment T_03 = WGPUVectorRenderPassColorAttachment.createInstance();
+    static public final WGPUVectorRenderPassColorAttachment T_03 = WGPUVectorRenderPassColorAttachment.native_new();
 
     public WGPUVectorRenderPassColorAttachment() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new WGPUVectorRenderPassColorAttachment();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorRenderPassColorAttachment createInstance() {
+    public static WGPUVectorRenderPassColorAttachment native_new() {
         return new WGPUVectorRenderPassColorAttachment((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPUVectorRenderPassColorAttachment.createInstance();
+            WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPUVectorRenderPassColorAttachment.native_new();
         WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0;
     }

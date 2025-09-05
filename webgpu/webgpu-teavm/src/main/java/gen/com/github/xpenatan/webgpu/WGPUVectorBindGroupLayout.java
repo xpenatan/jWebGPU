@@ -11,13 +11,13 @@ public class WGPUVectorBindGroupLayout extends IDLBase {
 
     static private WGPUVectorBindGroupLayout WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorBindGroupLayout NULL = WGPUVectorBindGroupLayout.createInstance();
+    static public final WGPUVectorBindGroupLayout NULL = WGPUVectorBindGroupLayout.native_new();
 
-    static public final WGPUVectorBindGroupLayout T_01 = WGPUVectorBindGroupLayout.createInstance();
+    static public final WGPUVectorBindGroupLayout T_01 = WGPUVectorBindGroupLayout.native_new();
 
-    static public final WGPUVectorBindGroupLayout T_02 = WGPUVectorBindGroupLayout.createInstance();
+    static public final WGPUVectorBindGroupLayout T_02 = WGPUVectorBindGroupLayout.native_new();
 
-    static public final WGPUVectorBindGroupLayout T_03 = WGPUVectorBindGroupLayout.createInstance();
+    static public final WGPUVectorBindGroupLayout T_03 = WGPUVectorBindGroupLayout.native_new();
 
     public WGPUVectorBindGroupLayout() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorBindGroupLayout createInstance() {
+    public static WGPUVectorBindGroupLayout native_new() {
         return new WGPUVectorBindGroupLayout((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayout.createInstance();
+            WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayout.native_new();
         WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0;
     }

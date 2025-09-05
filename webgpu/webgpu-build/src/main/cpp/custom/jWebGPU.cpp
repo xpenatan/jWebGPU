@@ -3975,7 +3975,24 @@ void JGPU::WGPUQueue::Submit(WGPUVectorCommandBuffer* commandVector) {
 }
 
 void JGPU::WGPUQueue::Submit(JGPU::WGPUCommandBuffer* commandBuffer) {
-    wgpuQueueSubmit(Get(), 1, &(commandBuffer->Get()));
+    ::WGPUCommandBuffer command_buffers[1];
+    command_buffers[0] = commandBuffer->Get();
+    wgpuQueueSubmit(Get(), 1, command_buffers);
+}
+
+void JGPU::WGPUQueue::Submit(JGPU::WGPUCommandBuffer* commandBuffer01, JGPU::WGPUCommandBuffer* commandBuffer02) {
+    ::WGPUCommandBuffer command_buffers[2];
+    command_buffers[0] = commandBuffer01->Get();
+    command_buffers[1] = commandBuffer02->Get();
+    wgpuQueueSubmit(Get(), 2, command_buffers);
+}
+
+void JGPU::WGPUQueue::Submit(JGPU::WGPUCommandBuffer* commandBuffer01, JGPU::WGPUCommandBuffer* commandBuffer02, JGPU::WGPUCommandBuffer* commandBuffer03) {
+    ::WGPUCommandBuffer command_buffers[3];
+    command_buffers[0] = commandBuffer01->Get();
+    command_buffers[1] = commandBuffer02->Get();
+    command_buffers[2] = commandBuffer03->Get();
+    wgpuQueueSubmit(Get(), 3, command_buffers);
 }
 
 void JGPU::WGPUQueue::WriteBuffer(JGPU::WGPUBuffer* buffer, int bufferOffset, void const * data, int size) {

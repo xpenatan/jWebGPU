@@ -11,13 +11,13 @@ public class WGPUDevice extends IDLBase {
 
     private WGPUQueue WGPUQueue_TEMP_GEN_0;
 
-    static public final WGPUDevice NULL = WGPUDevice.createInstance();
+    static public final WGPUDevice NULL = WGPUDevice.native_new();
 
-    static public final WGPUDevice T_01 = WGPUDevice.createInstance();
+    static public final WGPUDevice T_01 = WGPUDevice.native_new();
 
-    static public final WGPUDevice T_02 = WGPUDevice.createInstance();
+    static public final WGPUDevice T_02 = WGPUDevice.native_new();
 
-    static public final WGPUDevice T_03 = WGPUDevice.createInstance();
+    static public final WGPUDevice T_03 = WGPUDevice.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class WGPUDevice extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUDevice createInstance() {
+    public static WGPUDevice native_new() {
         return new WGPUDevice((byte) 0, (char) 0);
     }
 
@@ -81,7 +81,7 @@ jsObj.CreateBindGroupLayout(descriptor_addr, valueOut_addr);
         int pointer = internal_native_CreateBuffer_1(native_address, descriptor.native_address);
         if (pointer == 0)
             return null;
-        WGPUBuffer WGPUBuffer_NEW = WGPUBuffer.createInstance();
+        WGPUBuffer WGPUBuffer_NEW = WGPUBuffer.native_new();
         WGPUBuffer_NEW.internal_reset(pointer, true);
         return WGPUBuffer_NEW;
     }
@@ -255,7 +255,7 @@ jsObj.GetLimits(limits_addr);
         if (pointer == 0)
             return null;
         if (WGPUQueue_TEMP_GEN_0 == null)
-            WGPUQueue_TEMP_GEN_0 = WGPUQueue.createInstance();
+            WGPUQueue_TEMP_GEN_0 = WGPUQueue.native_new();
         WGPUQueue_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUQueue_TEMP_GEN_0;
     }

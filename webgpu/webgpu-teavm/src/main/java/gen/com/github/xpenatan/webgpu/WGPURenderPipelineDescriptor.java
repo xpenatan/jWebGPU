@@ -17,13 +17,13 @@ public class WGPURenderPipelineDescriptor extends IDLBase {
 
     private WGPUMultisampleState WGPUMultisampleState_TEMP_GEN_0;
 
-    static public final WGPURenderPipelineDescriptor NULL = WGPURenderPipelineDescriptor.createInstance();
+    static public final WGPURenderPipelineDescriptor NULL = WGPURenderPipelineDescriptor.native_new();
 
-    static public final WGPURenderPipelineDescriptor T_01 = WGPURenderPipelineDescriptor.createInstance();
+    static public final WGPURenderPipelineDescriptor T_01 = WGPURenderPipelineDescriptor.native_new();
 
-    static public final WGPURenderPipelineDescriptor T_02 = WGPURenderPipelineDescriptor.createInstance();
+    static public final WGPURenderPipelineDescriptor T_02 = WGPURenderPipelineDescriptor.native_new();
 
-    static public final WGPURenderPipelineDescriptor T_03 = WGPURenderPipelineDescriptor.createInstance();
+    static public final WGPURenderPipelineDescriptor T_03 = WGPURenderPipelineDescriptor.native_new();
 
     public WGPURenderPipelineDescriptor() {
         int addr = internal_native_create();
@@ -47,7 +47,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPipelineDescriptor createInstance() {
+    public static WGPURenderPipelineDescriptor native_new() {
         return new WGPURenderPipelineDescriptor((byte) 0, (char) 0);
     }
 
@@ -67,7 +67,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPipelineDescriptor.createInstance();
+            WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPipelineDescriptor.native_new();
         WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0;
     }
@@ -107,7 +107,7 @@ jsObj.SetLabel(value);
         if (pointer == 0)
             return null;
         if (WGPUVertexState_TEMP_GEN_0 == null)
-            WGPUVertexState_TEMP_GEN_0 = WGPUVertexState.createInstance();
+            WGPUVertexState_TEMP_GEN_0 = WGPUVertexState.native_new();
         WGPUVertexState_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUVertexState_TEMP_GEN_0;
     }
@@ -126,7 +126,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUPrimitiveState_TEMP_GEN_0 == null)
-            WGPUPrimitiveState_TEMP_GEN_0 = WGPUPrimitiveState.createInstance();
+            WGPUPrimitiveState_TEMP_GEN_0 = WGPUPrimitiveState.native_new();
         WGPUPrimitiveState_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUPrimitiveState_TEMP_GEN_0;
     }
@@ -167,7 +167,7 @@ jsObj.SetDepthStencil(depthStencilState_addr);
         if (pointer == 0)
             return null;
         if (WGPUMultisampleState_TEMP_GEN_0 == null)
-            WGPUMultisampleState_TEMP_GEN_0 = WGPUMultisampleState.createInstance();
+            WGPUMultisampleState_TEMP_GEN_0 = WGPUMultisampleState.native_new();
         WGPUMultisampleState_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUMultisampleState_TEMP_GEN_0;
     }

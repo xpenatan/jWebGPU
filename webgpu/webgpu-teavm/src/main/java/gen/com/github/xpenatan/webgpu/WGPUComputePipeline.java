@@ -11,13 +11,13 @@ public class WGPUComputePipeline extends IDLBase {
 
     private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
 
-    static public final WGPUComputePipeline NULL = WGPUComputePipeline.createInstance();
+    static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
-    static public final WGPUComputePipeline T_01 = WGPUComputePipeline.createInstance();
+    static public final WGPUComputePipeline T_01 = WGPUComputePipeline.native_new();
 
-    static public final WGPUComputePipeline T_02 = WGPUComputePipeline.createInstance();
+    static public final WGPUComputePipeline T_02 = WGPUComputePipeline.native_new();
 
-    static public final WGPUComputePipeline T_03 = WGPUComputePipeline.createInstance();
+    static public final WGPUComputePipeline T_03 = WGPUComputePipeline.native_new();
 
     public WGPUComputePipeline() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePipeline createInstance() {
+    public static WGPUComputePipeline native_new() {
         return new WGPUComputePipeline((byte) 0, (char) 0);
     }
 
@@ -83,7 +83,7 @@ jsObj.SetLabel(value);
         if (pointer == 0)
             return null;
         if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
-            WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.createInstance();
+            WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
         WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUBindGroupLayout_TEMP_GEN_0;
     }

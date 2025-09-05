@@ -11,13 +11,13 @@ public class WGPUVectorBindGroupLayoutEntry extends IDLBase {
 
     static private WGPUVectorBindGroupLayoutEntry WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorBindGroupLayoutEntry NULL = WGPUVectorBindGroupLayoutEntry.createInstance();
+    static public final WGPUVectorBindGroupLayoutEntry NULL = WGPUVectorBindGroupLayoutEntry.native_new();
 
-    static public final WGPUVectorBindGroupLayoutEntry T_01 = WGPUVectorBindGroupLayoutEntry.createInstance();
+    static public final WGPUVectorBindGroupLayoutEntry T_01 = WGPUVectorBindGroupLayoutEntry.native_new();
 
-    static public final WGPUVectorBindGroupLayoutEntry T_02 = WGPUVectorBindGroupLayoutEntry.createInstance();
+    static public final WGPUVectorBindGroupLayoutEntry T_02 = WGPUVectorBindGroupLayoutEntry.native_new();
 
-    static public final WGPUVectorBindGroupLayoutEntry T_03 = WGPUVectorBindGroupLayoutEntry.createInstance();
+    static public final WGPUVectorBindGroupLayoutEntry T_03 = WGPUVectorBindGroupLayoutEntry.native_new();
 
     public WGPUVectorBindGroupLayoutEntry() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorBindGroupLayoutEntry createInstance() {
+    public static WGPUVectorBindGroupLayoutEntry native_new() {
         return new WGPUVectorBindGroupLayoutEntry((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayoutEntry.createInstance();
+            WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayoutEntry.native_new();
         WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
     }

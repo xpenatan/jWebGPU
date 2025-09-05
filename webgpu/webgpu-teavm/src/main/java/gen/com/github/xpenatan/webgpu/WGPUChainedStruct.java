@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUChainedStruct extends IDLBase {
 
-    static public final WGPUChainedStruct NULL = WGPUChainedStruct.createInstance();
+    static public final WGPUChainedStruct NULL = WGPUChainedStruct.native_new();
 
-    static public final WGPUChainedStruct T_01 = WGPUChainedStruct.createInstance();
+    static public final WGPUChainedStruct T_01 = WGPUChainedStruct.native_new();
 
-    static public final WGPUChainedStruct T_02 = WGPUChainedStruct.createInstance();
+    static public final WGPUChainedStruct T_02 = WGPUChainedStruct.native_new();
 
-    static public final WGPUChainedStruct T_03 = WGPUChainedStruct.createInstance();
+    static public final WGPUChainedStruct T_03 = WGPUChainedStruct.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUChainedStruct extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUChainedStruct createInstance() {
+    public static WGPUChainedStruct native_new() {
         return new WGPUChainedStruct((byte) 0, (char) 0);
     }
 

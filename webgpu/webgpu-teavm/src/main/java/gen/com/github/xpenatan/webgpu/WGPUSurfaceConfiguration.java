@@ -11,13 +11,13 @@ public class WGPUSurfaceConfiguration extends IDLBase {
 
     static private WGPUSurfaceConfiguration WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
 
-    static public final WGPUSurfaceConfiguration NULL = WGPUSurfaceConfiguration.createInstance();
+    static public final WGPUSurfaceConfiguration NULL = WGPUSurfaceConfiguration.native_new();
 
-    static public final WGPUSurfaceConfiguration T_01 = WGPUSurfaceConfiguration.createInstance();
+    static public final WGPUSurfaceConfiguration T_01 = WGPUSurfaceConfiguration.native_new();
 
-    static public final WGPUSurfaceConfiguration T_02 = WGPUSurfaceConfiguration.createInstance();
+    static public final WGPUSurfaceConfiguration T_02 = WGPUSurfaceConfiguration.native_new();
 
-    static public final WGPUSurfaceConfiguration T_03 = WGPUSurfaceConfiguration.createInstance();
+    static public final WGPUSurfaceConfiguration T_03 = WGPUSurfaceConfiguration.native_new();
 
     public WGPUSurfaceConfiguration() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSurfaceConfiguration createInstance() {
+    public static WGPUSurfaceConfiguration native_new() {
         return new WGPUSurfaceConfiguration((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.createInstance();
+            WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
         WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPURenderPassDepthStencilAttachment extends IDLBase {
 
     static private WGPURenderPassDepthStencilAttachment WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
 
-    static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.createInstance();
+    static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.native_new();
 
-    static public final WGPURenderPassDepthStencilAttachment T_01 = WGPURenderPassDepthStencilAttachment.createInstance();
+    static public final WGPURenderPassDepthStencilAttachment T_01 = WGPURenderPassDepthStencilAttachment.native_new();
 
-    static public final WGPURenderPassDepthStencilAttachment T_02 = WGPURenderPassDepthStencilAttachment.createInstance();
+    static public final WGPURenderPassDepthStencilAttachment T_02 = WGPURenderPassDepthStencilAttachment.native_new();
 
-    static public final WGPURenderPassDepthStencilAttachment T_03 = WGPURenderPassDepthStencilAttachment.createInstance();
+    static public final WGPURenderPassDepthStencilAttachment T_03 = WGPURenderPassDepthStencilAttachment.native_new();
 
     public WGPURenderPassDepthStencilAttachment() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderPassDepthStencilAttachment createInstance() {
+    public static WGPURenderPassDepthStencilAttachment native_new() {
         return new WGPURenderPassDepthStencilAttachment((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.createInstance();
+            WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
         WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
     }

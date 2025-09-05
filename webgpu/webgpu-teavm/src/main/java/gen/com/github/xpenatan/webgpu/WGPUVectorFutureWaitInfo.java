@@ -11,13 +11,13 @@ public class WGPUVectorFutureWaitInfo extends IDLBase {
 
     static private WGPUVectorFutureWaitInfo WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorFutureWaitInfo NULL = WGPUVectorFutureWaitInfo.createInstance();
+    static public final WGPUVectorFutureWaitInfo NULL = WGPUVectorFutureWaitInfo.native_new();
 
-    static public final WGPUVectorFutureWaitInfo T_01 = WGPUVectorFutureWaitInfo.createInstance();
+    static public final WGPUVectorFutureWaitInfo T_01 = WGPUVectorFutureWaitInfo.native_new();
 
-    static public final WGPUVectorFutureWaitInfo T_02 = WGPUVectorFutureWaitInfo.createInstance();
+    static public final WGPUVectorFutureWaitInfo T_02 = WGPUVectorFutureWaitInfo.native_new();
 
-    static public final WGPUVectorFutureWaitInfo T_03 = WGPUVectorFutureWaitInfo.createInstance();
+    static public final WGPUVectorFutureWaitInfo T_03 = WGPUVectorFutureWaitInfo.native_new();
 
     public WGPUVectorFutureWaitInfo() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorFutureWaitInfo createInstance() {
+    public static WGPUVectorFutureWaitInfo native_new() {
         return new WGPUVectorFutureWaitInfo((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUVectorFutureWaitInfo.createInstance();
+            WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUVectorFutureWaitInfo.native_new();
         WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0;
     }

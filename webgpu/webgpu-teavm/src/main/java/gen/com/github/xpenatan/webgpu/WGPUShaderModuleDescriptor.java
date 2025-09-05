@@ -11,13 +11,13 @@ public class WGPUShaderModuleDescriptor extends IDLBase {
 
     static private WGPUShaderModuleDescriptor WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUShaderModuleDescriptor NULL = WGPUShaderModuleDescriptor.createInstance();
+    static public final WGPUShaderModuleDescriptor NULL = WGPUShaderModuleDescriptor.native_new();
 
-    static public final WGPUShaderModuleDescriptor T_01 = WGPUShaderModuleDescriptor.createInstance();
+    static public final WGPUShaderModuleDescriptor T_01 = WGPUShaderModuleDescriptor.native_new();
 
-    static public final WGPUShaderModuleDescriptor T_02 = WGPUShaderModuleDescriptor.createInstance();
+    static public final WGPUShaderModuleDescriptor T_02 = WGPUShaderModuleDescriptor.native_new();
 
-    static public final WGPUShaderModuleDescriptor T_03 = WGPUShaderModuleDescriptor.createInstance();
+    static public final WGPUShaderModuleDescriptor T_03 = WGPUShaderModuleDescriptor.native_new();
 
     public WGPUShaderModuleDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUShaderModuleDescriptor createInstance() {
+    public static WGPUShaderModuleDescriptor native_new() {
         return new WGPUShaderModuleDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 = WGPUShaderModuleDescriptor.createInstance();
+            WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 = WGPUShaderModuleDescriptor.native_new();
         WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0;
     }

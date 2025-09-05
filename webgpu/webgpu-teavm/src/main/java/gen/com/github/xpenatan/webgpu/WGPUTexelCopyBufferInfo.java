@@ -15,13 +15,13 @@ public class WGPUTexelCopyBufferInfo extends IDLBase {
 
     private WGPUBuffer WGPUBuffer_TEMP_GEN_0;
 
-    static public final WGPUTexelCopyBufferInfo NULL = WGPUTexelCopyBufferInfo.createInstance();
+    static public final WGPUTexelCopyBufferInfo NULL = WGPUTexelCopyBufferInfo.native_new();
 
-    static public final WGPUTexelCopyBufferInfo T_01 = WGPUTexelCopyBufferInfo.createInstance();
+    static public final WGPUTexelCopyBufferInfo T_01 = WGPUTexelCopyBufferInfo.native_new();
 
-    static public final WGPUTexelCopyBufferInfo T_02 = WGPUTexelCopyBufferInfo.createInstance();
+    static public final WGPUTexelCopyBufferInfo T_02 = WGPUTexelCopyBufferInfo.native_new();
 
-    static public final WGPUTexelCopyBufferInfo T_03 = WGPUTexelCopyBufferInfo.createInstance();
+    static public final WGPUTexelCopyBufferInfo T_03 = WGPUTexelCopyBufferInfo.native_new();
 
     public WGPUTexelCopyBufferInfo() {
         int addr = internal_native_create();
@@ -45,7 +45,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUTexelCopyBufferInfo createInstance() {
+    public static WGPUTexelCopyBufferInfo native_new() {
         return new WGPUTexelCopyBufferInfo((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferInfo.createInstance();
+            WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferInfo.native_new();
         WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
     }
@@ -83,7 +83,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUTexelCopyBufferLayout_TEMP_GEN_0 == null)
-            WGPUTexelCopyBufferLayout_TEMP_GEN_0 = WGPUTexelCopyBufferLayout.createInstance();
+            WGPUTexelCopyBufferLayout_TEMP_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
         WGPUTexelCopyBufferLayout_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUTexelCopyBufferLayout_TEMP_GEN_0;
     }
@@ -102,7 +102,7 @@ return jWebGPU.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (WGPUBuffer_TEMP_GEN_0 == null)
-            WGPUBuffer_TEMP_GEN_0 = WGPUBuffer.createInstance();
+            WGPUBuffer_TEMP_GEN_0 = WGPUBuffer.native_new();
         WGPUBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUBuffer_TEMP_GEN_0;
     }

@@ -6,9 +6,9 @@ import java.nio.ByteBuffer;
 
 public class WGPUQueue extends IDLBase {
 
-    public final static WGPUQueue NULL = createInstance();
+    public final static WGPUQueue NULL = native_new();
 
-    public static WGPUQueue createInstance() {
+    public static WGPUQueue native_new() {
         return new WGPUQueue((byte) 0, (char) 0);
     }
 

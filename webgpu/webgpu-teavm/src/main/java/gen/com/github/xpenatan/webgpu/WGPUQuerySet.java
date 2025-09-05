@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUQuerySet extends IDLBase {
 
-    static public final WGPUQuerySet NULL = WGPUQuerySet.createInstance();
+    static public final WGPUQuerySet NULL = WGPUQuerySet.native_new();
 
-    static public final WGPUQuerySet T_01 = WGPUQuerySet.createInstance();
+    static public final WGPUQuerySet T_01 = WGPUQuerySet.native_new();
 
-    static public final WGPUQuerySet T_02 = WGPUQuerySet.createInstance();
+    static public final WGPUQuerySet T_02 = WGPUQuerySet.native_new();
 
-    static public final WGPUQuerySet T_03 = WGPUQuerySet.createInstance();
+    static public final WGPUQuerySet T_03 = WGPUQuerySet.native_new();
 
     public WGPUQuerySet() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUQuerySet createInstance() {
+    public static WGPUQuerySet native_new() {
         return new WGPUQuerySet((byte) 0, (char) 0);
     }
 

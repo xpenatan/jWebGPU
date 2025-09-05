@@ -4,9 +4,9 @@ import idl.IDLBase;
 
 public class WGPUTexelCopyBufferLayout extends IDLBase {
 
-    public final static WGPUTexelCopyBufferLayout NULL = createInstance();
+    public final static WGPUTexelCopyBufferLayout NULL = native_new();
 
-    public static WGPUTexelCopyBufferLayout createInstance() {
+    public static WGPUTexelCopyBufferLayout native_new() {
         return new WGPUTexelCopyBufferLayout((byte) 0, (char) 0);
     }
 

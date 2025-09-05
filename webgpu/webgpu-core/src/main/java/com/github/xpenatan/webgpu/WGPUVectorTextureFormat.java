@@ -11,13 +11,13 @@ public class WGPUVectorTextureFormat extends IDLBase {
 
     static private WGPUVectorTextureFormat WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVectorTextureFormat NULL = WGPUVectorTextureFormat.createInstance();
+    static public final WGPUVectorTextureFormat NULL = WGPUVectorTextureFormat.native_new();
 
-    static public final WGPUVectorTextureFormat T_01 = WGPUVectorTextureFormat.createInstance();
+    static public final WGPUVectorTextureFormat T_01 = WGPUVectorTextureFormat.native_new();
 
-    static public final WGPUVectorTextureFormat T_02 = WGPUVectorTextureFormat.createInstance();
+    static public final WGPUVectorTextureFormat T_02 = WGPUVectorTextureFormat.native_new();
 
-    static public final WGPUVectorTextureFormat T_03 = WGPUVectorTextureFormat.createInstance();
+    static public final WGPUVectorTextureFormat T_03 = WGPUVectorTextureFormat.native_new();
 
     public WGPUVectorTextureFormat() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new WGPUVectorTextureFormat();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVectorTextureFormat createInstance() {
+    public static WGPUVectorTextureFormat native_new() {
         return new WGPUVectorTextureFormat((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 = WGPUVectorTextureFormat.createInstance();
+            WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 = WGPUVectorTextureFormat.native_new();
         WGPUVectorTextureFormat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
     }

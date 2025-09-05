@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUSurface extends IDLBase {
 
-    static public final WGPUSurface NULL = WGPUSurface.createInstance();
+    static public final WGPUSurface NULL = WGPUSurface.native_new();
 
-    static public final WGPUSurface T_01 = WGPUSurface.createInstance();
+    static public final WGPUSurface T_01 = WGPUSurface.native_new();
 
-    static public final WGPUSurface T_02 = WGPUSurface.createInstance();
+    static public final WGPUSurface T_02 = WGPUSurface.native_new();
 
-    static public final WGPUSurface T_03 = WGPUSurface.createInstance();
+    static public final WGPUSurface T_03 = WGPUSurface.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUSurface extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSurface createInstance() {
+    public static WGPUSurface native_new() {
         return new WGPUSurface((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class WGPUBindGroupEntry extends IDLBase {
 
     static private WGPUBindGroupEntry WGPUBindGroupEntry_TEMP_STATIC_GEN_0;
 
-    static public final WGPUBindGroupEntry NULL = WGPUBindGroupEntry.createInstance();
+    static public final WGPUBindGroupEntry NULL = WGPUBindGroupEntry.native_new();
 
-    static public final WGPUBindGroupEntry T_01 = WGPUBindGroupEntry.createInstance();
+    static public final WGPUBindGroupEntry T_01 = WGPUBindGroupEntry.native_new();
 
-    static public final WGPUBindGroupEntry T_02 = WGPUBindGroupEntry.createInstance();
+    static public final WGPUBindGroupEntry T_02 = WGPUBindGroupEntry.native_new();
 
-    static public final WGPUBindGroupEntry T_03 = WGPUBindGroupEntry.createInstance();
+    static public final WGPUBindGroupEntry T_03 = WGPUBindGroupEntry.native_new();
 
     public WGPUBindGroupEntry() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBindGroupEntry createInstance() {
+    public static WGPUBindGroupEntry native_new() {
         return new WGPUBindGroupEntry((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUBindGroupEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUBindGroupEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupEntry.createInstance();
+            WGPUBindGroupEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupEntry.native_new();
         WGPUBindGroupEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUBindGroupEntry_TEMP_STATIC_GEN_0;
     }

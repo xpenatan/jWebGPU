@@ -9,13 +9,13 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUStencilFaceState extends IDLBase {
 
-    static public final WGPUStencilFaceState NULL = WGPUStencilFaceState.createInstance();
+    static public final WGPUStencilFaceState NULL = WGPUStencilFaceState.native_new();
 
-    static public final WGPUStencilFaceState T_01 = WGPUStencilFaceState.createInstance();
+    static public final WGPUStencilFaceState T_01 = WGPUStencilFaceState.native_new();
 
-    static public final WGPUStencilFaceState T_02 = WGPUStencilFaceState.createInstance();
+    static public final WGPUStencilFaceState T_02 = WGPUStencilFaceState.native_new();
 
-    static public final WGPUStencilFaceState T_03 = WGPUStencilFaceState.createInstance();
+    static public final WGPUStencilFaceState T_03 = WGPUStencilFaceState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUStencilFaceState extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUStencilFaceState createInstance() {
+    public static WGPUStencilFaceState native_new() {
         return new WGPUStencilFaceState((byte) 0, (char) 0);
     }
 

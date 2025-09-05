@@ -11,13 +11,13 @@ public class WGPUInstanceDescriptor extends IDLBase {
 
     static private WGPUInstanceDescriptor WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUInstanceDescriptor NULL = WGPUInstanceDescriptor.createInstance();
+    static public final WGPUInstanceDescriptor NULL = WGPUInstanceDescriptor.native_new();
 
-    static public final WGPUInstanceDescriptor T_01 = WGPUInstanceDescriptor.createInstance();
+    static public final WGPUInstanceDescriptor T_01 = WGPUInstanceDescriptor.native_new();
 
-    static public final WGPUInstanceDescriptor T_02 = WGPUInstanceDescriptor.createInstance();
+    static public final WGPUInstanceDescriptor T_02 = WGPUInstanceDescriptor.native_new();
 
-    static public final WGPUInstanceDescriptor T_03 = WGPUInstanceDescriptor.createInstance();
+    static public final WGPUInstanceDescriptor T_03 = WGPUInstanceDescriptor.native_new();
 
     public WGPUInstanceDescriptor() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUInstanceDescriptor();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUInstanceDescriptor createInstance() {
+    public static WGPUInstanceDescriptor native_new() {
         return new WGPUInstanceDescriptor((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUInstanceDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUInstanceDescriptor_TEMP_STATIC_GEN_0 = WGPUInstanceDescriptor.createInstance();
+            WGPUInstanceDescriptor_TEMP_STATIC_GEN_0 = WGPUInstanceDescriptor.native_new();
         WGPUInstanceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
     }

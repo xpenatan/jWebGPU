@@ -15,13 +15,13 @@ public class WGPU extends IDLBase {
 
     static private STBImage STBImage_TEMP_STATIC_GEN_1;
 
-    static public final WGPU NULL = WGPU.createInstance();
+    static public final WGPU NULL = WGPU.native_new();
 
-    static public final WGPU T_01 = WGPU.createInstance();
+    static public final WGPU T_01 = WGPU.native_new();
 
-    static public final WGPU T_02 = WGPU.createInstance();
+    static public final WGPU T_02 = WGPU.native_new();
 
-    static public final WGPU T_03 = WGPU.createInstance();
+    static public final WGPU T_03 = WGPU.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -33,7 +33,7 @@ public class WGPU extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPU createInstance() {
+    public static WGPU native_new() {
         return new WGPU((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ return (int)WGPU::GetPlatformType();
         long pointer = internal_native_SetupInstance(descriptor.native_address);
         if (pointer == 0)
             return null;
-        WGPUInstance WGPUInstance_NEW = WGPUInstance.createInstance();
+        WGPUInstance WGPUInstance_NEW = WGPUInstance.native_new();
         WGPUInstance_NEW.internal_reset(pointer, true);
         return WGPUInstance_NEW;
     }
@@ -76,7 +76,7 @@ return (jlong)WGPU::SetupInstance((JGPU::WGPUInstanceDescriptor* )descriptor_add
         if (pointer == 0)
             return null;
         if (WGPUInstance_TEMP_STATIC_GEN_0 == null)
-            WGPUInstance_TEMP_STATIC_GEN_0 = WGPUInstance.createInstance();
+            WGPUInstance_TEMP_STATIC_GEN_0 = WGPUInstance.native_new();
         WGPUInstance_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUInstance_TEMP_STATIC_GEN_0;
     }
@@ -91,7 +91,7 @@ return (jlong)WGPU::SetupInstance();
         if (pointer == 0)
             return null;
         if (STBImage_TEMP_STATIC_GEN_0 == null)
-            STBImage_TEMP_STATIC_GEN_0 = STBImage.createInstance();
+            STBImage_TEMP_STATIC_GEN_0 = STBImage.native_new();
         STBImage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return STBImage_TEMP_STATIC_GEN_0;
     }
@@ -106,7 +106,7 @@ return (jlong)WGPU::loadImage((WGPUByteBuffer* )buffer_addr, (int)desiredChannel
         if (pointer == 0)
             return null;
         if (STBImage_TEMP_STATIC_GEN_1 == null)
-            STBImage_TEMP_STATIC_GEN_1 = STBImage.createInstance();
+            STBImage_TEMP_STATIC_GEN_1 = STBImage.native_new();
         STBImage_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return STBImage_TEMP_STATIC_GEN_1;
     }

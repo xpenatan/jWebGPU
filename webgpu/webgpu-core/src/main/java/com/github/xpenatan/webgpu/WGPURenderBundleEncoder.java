@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPURenderBundleEncoder extends IDLBase {
 
-    static public final WGPURenderBundleEncoder NULL = WGPURenderBundleEncoder.createInstance();
+    static public final WGPURenderBundleEncoder NULL = WGPURenderBundleEncoder.native_new();
 
-    static public final WGPURenderBundleEncoder T_01 = WGPURenderBundleEncoder.createInstance();
+    static public final WGPURenderBundleEncoder T_01 = WGPURenderBundleEncoder.native_new();
 
-    static public final WGPURenderBundleEncoder T_02 = WGPURenderBundleEncoder.createInstance();
+    static public final WGPURenderBundleEncoder T_02 = WGPURenderBundleEncoder.native_new();
 
-    static public final WGPURenderBundleEncoder T_03 = WGPURenderBundleEncoder.createInstance();
+    static public final WGPURenderBundleEncoder T_03 = WGPURenderBundleEncoder.native_new();
 
     public WGPURenderBundleEncoder() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new JGPU::WGPURenderBundleEncoder();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPURenderBundleEncoder createInstance() {
+    public static WGPURenderBundleEncoder native_new() {
         return new WGPURenderBundleEncoder((byte) 0, (char) 0);
     }
 

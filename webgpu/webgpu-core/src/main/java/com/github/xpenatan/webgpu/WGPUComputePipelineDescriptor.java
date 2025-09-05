@@ -13,13 +13,13 @@ public class WGPUComputePipelineDescriptor extends IDLBase {
 
     private WGPUProgrammableStageDescriptor WGPUProgrammableStageDescriptor_TEMP_GEN_0;
 
-    static public final WGPUComputePipelineDescriptor NULL = WGPUComputePipelineDescriptor.createInstance();
+    static public final WGPUComputePipelineDescriptor NULL = WGPUComputePipelineDescriptor.native_new();
 
-    static public final WGPUComputePipelineDescriptor T_01 = WGPUComputePipelineDescriptor.createInstance();
+    static public final WGPUComputePipelineDescriptor T_01 = WGPUComputePipelineDescriptor.native_new();
 
-    static public final WGPUComputePipelineDescriptor T_02 = WGPUComputePipelineDescriptor.createInstance();
+    static public final WGPUComputePipelineDescriptor T_02 = WGPUComputePipelineDescriptor.native_new();
 
-    static public final WGPUComputePipelineDescriptor T_03 = WGPUComputePipelineDescriptor.createInstance();
+    static public final WGPUComputePipelineDescriptor T_03 = WGPUComputePipelineDescriptor.native_new();
 
     public WGPUComputePipelineDescriptor() {
         long addr = internal_native_create();
@@ -41,7 +41,7 @@ return (jlong)new JGPU::WGPUComputePipelineDescriptor();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePipelineDescriptor createInstance() {
+    public static WGPUComputePipelineDescriptor native_new() {
         return new WGPUComputePipelineDescriptor((byte) 0, (char) 0);
     }
 
@@ -60,7 +60,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.createInstance();
+            WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
         WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
     }
@@ -105,7 +105,7 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )layout_addr);
         if (pointer == 0)
             return null;
         if (WGPUProgrammableStageDescriptor_TEMP_GEN_0 == null)
-            WGPUProgrammableStageDescriptor_TEMP_GEN_0 = WGPUProgrammableStageDescriptor.createInstance();
+            WGPUProgrammableStageDescriptor_TEMP_GEN_0 = WGPUProgrammableStageDescriptor.native_new();
         WGPUProgrammableStageDescriptor_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUProgrammableStageDescriptor_TEMP_GEN_0;
     }

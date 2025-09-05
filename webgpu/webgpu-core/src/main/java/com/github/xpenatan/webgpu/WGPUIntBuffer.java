@@ -11,13 +11,13 @@ public class WGPUIntBuffer extends IDLBase {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
-    static public final WGPUIntBuffer NULL = WGPUIntBuffer.createInstance();
+    static public final WGPUIntBuffer NULL = WGPUIntBuffer.native_new();
 
-    static public final WGPUIntBuffer T_01 = WGPUIntBuffer.createInstance();
+    static public final WGPUIntBuffer T_01 = WGPUIntBuffer.native_new();
 
-    static public final WGPUIntBuffer T_02 = WGPUIntBuffer.createInstance();
+    static public final WGPUIntBuffer T_02 = WGPUIntBuffer.native_new();
 
-    static public final WGPUIntBuffer T_03 = WGPUIntBuffer.createInstance();
+    static public final WGPUIntBuffer T_03 = WGPUIntBuffer.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class WGPUIntBuffer extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUIntBuffer createInstance() {
+    public static WGPUIntBuffer native_new() {
         return new WGPUIntBuffer((byte) 0, (char) 0);
     }
 
@@ -48,7 +48,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.createInstance();
+            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }

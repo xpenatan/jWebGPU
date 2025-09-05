@@ -11,13 +11,13 @@ public class WGPUCompilationInfo extends IDLBase {
 
     private WGPUCompilationMessage WGPUCompilationMessage_TEMP_GEN_0;
 
-    static public final WGPUCompilationInfo NULL = WGPUCompilationInfo.createInstance();
+    static public final WGPUCompilationInfo NULL = WGPUCompilationInfo.native_new();
 
-    static public final WGPUCompilationInfo T_01 = WGPUCompilationInfo.createInstance();
+    static public final WGPUCompilationInfo T_01 = WGPUCompilationInfo.native_new();
 
-    static public final WGPUCompilationInfo T_02 = WGPUCompilationInfo.createInstance();
+    static public final WGPUCompilationInfo T_02 = WGPUCompilationInfo.native_new();
 
-    static public final WGPUCompilationInfo T_03 = WGPUCompilationInfo.createInstance();
+    static public final WGPUCompilationInfo T_03 = WGPUCompilationInfo.native_new();
 
     public WGPUCompilationInfo() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUCompilationInfo createInstance() {
+    public static WGPUCompilationInfo native_new() {
         return new WGPUCompilationInfo((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (WGPUCompilationMessage_TEMP_GEN_0 == null)
-            WGPUCompilationMessage_TEMP_GEN_0 = WGPUCompilationMessage.createInstance();
+            WGPUCompilationMessage_TEMP_GEN_0 = WGPUCompilationMessage.native_new();
         WGPUCompilationMessage_TEMP_GEN_0.internal_reset(pointer, false);
         return WGPUCompilationMessage_TEMP_GEN_0;
     }

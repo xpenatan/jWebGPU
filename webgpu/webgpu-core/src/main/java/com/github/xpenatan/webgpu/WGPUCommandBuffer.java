@@ -11,13 +11,13 @@ public class WGPUCommandBuffer extends IDLBase {
 
     static private WGPUCommandBuffer WGPUCommandBuffer_TEMP_STATIC_GEN_0;
 
-    static public final WGPUCommandBuffer NULL = WGPUCommandBuffer.createInstance();
+    static public final WGPUCommandBuffer NULL = WGPUCommandBuffer.native_new();
 
-    static public final WGPUCommandBuffer T_01 = WGPUCommandBuffer.createInstance();
+    static public final WGPUCommandBuffer T_01 = WGPUCommandBuffer.native_new();
 
-    static public final WGPUCommandBuffer T_02 = WGPUCommandBuffer.createInstance();
+    static public final WGPUCommandBuffer T_02 = WGPUCommandBuffer.native_new();
 
-    static public final WGPUCommandBuffer T_03 = WGPUCommandBuffer.createInstance();
+    static public final WGPUCommandBuffer T_03 = WGPUCommandBuffer.native_new();
 
     public WGPUCommandBuffer() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUCommandBuffer();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUCommandBuffer createInstance() {
+    public static WGPUCommandBuffer native_new() {
         return new WGPUCommandBuffer((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUCommandBuffer_TEMP_STATIC_GEN_0 == null)
-            WGPUCommandBuffer_TEMP_STATIC_GEN_0 = WGPUCommandBuffer.createInstance();
+            WGPUCommandBuffer_TEMP_STATIC_GEN_0 = WGPUCommandBuffer.native_new();
         WGPUCommandBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUCommandBuffer_TEMP_STATIC_GEN_0;
     }

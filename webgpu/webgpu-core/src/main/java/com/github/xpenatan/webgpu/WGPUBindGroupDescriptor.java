@@ -11,13 +11,13 @@ public class WGPUBindGroupDescriptor extends IDLBase {
 
     static private WGPUBindGroupDescriptor WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUBindGroupDescriptor NULL = WGPUBindGroupDescriptor.createInstance();
+    static public final WGPUBindGroupDescriptor NULL = WGPUBindGroupDescriptor.native_new();
 
-    static public final WGPUBindGroupDescriptor T_01 = WGPUBindGroupDescriptor.createInstance();
+    static public final WGPUBindGroupDescriptor T_01 = WGPUBindGroupDescriptor.native_new();
 
-    static public final WGPUBindGroupDescriptor T_02 = WGPUBindGroupDescriptor.createInstance();
+    static public final WGPUBindGroupDescriptor T_02 = WGPUBindGroupDescriptor.native_new();
 
-    static public final WGPUBindGroupDescriptor T_03 = WGPUBindGroupDescriptor.createInstance();
+    static public final WGPUBindGroupDescriptor T_03 = WGPUBindGroupDescriptor.native_new();
 
     public WGPUBindGroupDescriptor() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new JGPU::WGPUBindGroupDescriptor();
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUBindGroupDescriptor createInstance() {
+    public static WGPUBindGroupDescriptor native_new() {
         return new WGPUBindGroupDescriptor((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupDescriptor.createInstance();
+            WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupDescriptor.native_new();
         WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0;
     }

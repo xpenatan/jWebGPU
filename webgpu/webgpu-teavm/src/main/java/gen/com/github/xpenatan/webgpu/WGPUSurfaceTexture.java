@@ -11,13 +11,13 @@ public class WGPUSurfaceTexture extends IDLBase {
 
     static private WGPUSurfaceTexture WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
 
-    static public final WGPUSurfaceTexture NULL = WGPUSurfaceTexture.createInstance();
+    static public final WGPUSurfaceTexture NULL = WGPUSurfaceTexture.native_new();
 
-    static public final WGPUSurfaceTexture T_01 = WGPUSurfaceTexture.createInstance();
+    static public final WGPUSurfaceTexture T_01 = WGPUSurfaceTexture.native_new();
 
-    static public final WGPUSurfaceTexture T_02 = WGPUSurfaceTexture.createInstance();
+    static public final WGPUSurfaceTexture T_02 = WGPUSurfaceTexture.native_new();
 
-    static public final WGPUSurfaceTexture T_03 = WGPUSurfaceTexture.createInstance();
+    static public final WGPUSurfaceTexture T_03 = WGPUSurfaceTexture.native_new();
 
     public WGPUSurfaceTexture() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUSurfaceTexture createInstance() {
+    public static WGPUSurfaceTexture native_new() {
         return new WGPUSurfaceTexture((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUSurfaceTexture_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.createInstance();
+            WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.native_new();
         WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
     }

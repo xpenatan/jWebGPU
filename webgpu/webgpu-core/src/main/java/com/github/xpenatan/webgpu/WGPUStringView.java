@@ -12,13 +12,13 @@ public class WGPUStringView extends IDLBase {
 
     private IDLString IDLString_TEMP_GEN_0;
 
-    static public final WGPUStringView NULL = WGPUStringView.createInstance();
+    static public final WGPUStringView NULL = WGPUStringView.native_new();
 
-    static public final WGPUStringView T_01 = WGPUStringView.createInstance();
+    static public final WGPUStringView T_01 = WGPUStringView.native_new();
 
-    static public final WGPUStringView T_02 = WGPUStringView.createInstance();
+    static public final WGPUStringView T_02 = WGPUStringView.native_new();
 
-    static public final WGPUStringView T_03 = WGPUStringView.createInstance();
+    static public final WGPUStringView T_03 = WGPUStringView.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class WGPUStringView extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUStringView createInstance() {
+    public static WGPUStringView native_new() {
         return new WGPUStringView((byte) 0, (char) 0);
     }
 
@@ -49,7 +49,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.createInstance();
+            IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }

@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUQueueDescriptor extends IDLBase {
 
-    static public final WGPUQueueDescriptor NULL = WGPUQueueDescriptor.createInstance();
+    static public final WGPUQueueDescriptor NULL = WGPUQueueDescriptor.native_new();
 
-    static public final WGPUQueueDescriptor T_01 = WGPUQueueDescriptor.createInstance();
+    static public final WGPUQueueDescriptor T_01 = WGPUQueueDescriptor.native_new();
 
-    static public final WGPUQueueDescriptor T_02 = WGPUQueueDescriptor.createInstance();
+    static public final WGPUQueueDescriptor T_02 = WGPUQueueDescriptor.native_new();
 
-    static public final WGPUQueueDescriptor T_03 = WGPUQueueDescriptor.createInstance();
+    static public final WGPUQueueDescriptor T_03 = WGPUQueueDescriptor.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUQueueDescriptor extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUQueueDescriptor createInstance() {
+    public static WGPUQueueDescriptor native_new() {
         return new WGPUQueueDescriptor((byte) 0, (char) 0);
     }
 

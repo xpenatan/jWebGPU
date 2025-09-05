@@ -11,13 +11,13 @@ public class WGPUVertexAttribute extends IDLBase {
 
     static private WGPUVertexAttribute WGPUVertexAttribute_TEMP_STATIC_GEN_0;
 
-    static public final WGPUVertexAttribute NULL = WGPUVertexAttribute.createInstance();
+    static public final WGPUVertexAttribute NULL = WGPUVertexAttribute.native_new();
 
-    static public final WGPUVertexAttribute T_01 = WGPUVertexAttribute.createInstance();
+    static public final WGPUVertexAttribute T_01 = WGPUVertexAttribute.native_new();
 
-    static public final WGPUVertexAttribute T_02 = WGPUVertexAttribute.createInstance();
+    static public final WGPUVertexAttribute T_02 = WGPUVertexAttribute.native_new();
 
-    static public final WGPUVertexAttribute T_03 = WGPUVertexAttribute.createInstance();
+    static public final WGPUVertexAttribute T_03 = WGPUVertexAttribute.native_new();
 
     public WGPUVertexAttribute() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVertexAttribute createInstance() {
+    public static WGPUVertexAttribute native_new() {
         return new WGPUVertexAttribute((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUVertexAttribute_TEMP_STATIC_GEN_0 == null)
-            WGPUVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVertexAttribute.createInstance();
+            WGPUVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVertexAttribute.native_new();
         WGPUVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
     }

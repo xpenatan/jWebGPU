@@ -11,13 +11,13 @@ public class WGPUPipelineLayoutDescriptor extends IDLBase {
 
     static private WGPUPipelineLayoutDescriptor WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUPipelineLayoutDescriptor NULL = WGPUPipelineLayoutDescriptor.createInstance();
+    static public final WGPUPipelineLayoutDescriptor NULL = WGPUPipelineLayoutDescriptor.native_new();
 
-    static public final WGPUPipelineLayoutDescriptor T_01 = WGPUPipelineLayoutDescriptor.createInstance();
+    static public final WGPUPipelineLayoutDescriptor T_01 = WGPUPipelineLayoutDescriptor.native_new();
 
-    static public final WGPUPipelineLayoutDescriptor T_02 = WGPUPipelineLayoutDescriptor.createInstance();
+    static public final WGPUPipelineLayoutDescriptor T_02 = WGPUPipelineLayoutDescriptor.native_new();
 
-    static public final WGPUPipelineLayoutDescriptor T_03 = WGPUPipelineLayoutDescriptor.createInstance();
+    static public final WGPUPipelineLayoutDescriptor T_03 = WGPUPipelineLayoutDescriptor.native_new();
 
     public WGPUPipelineLayoutDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUPipelineLayoutDescriptor createInstance() {
+    public static WGPUPipelineLayoutDescriptor native_new() {
         return new WGPUPipelineLayoutDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUPipelineLayoutDescriptor.createInstance();
+            WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUPipelineLayoutDescriptor.native_new();
         WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
     }

@@ -11,13 +11,13 @@ public class WGPUQuerySetDescriptor extends IDLBase {
 
     static private WGPUQuerySetDescriptor WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
 
-    static public final WGPUQuerySetDescriptor NULL = WGPUQuerySetDescriptor.createInstance();
+    static public final WGPUQuerySetDescriptor NULL = WGPUQuerySetDescriptor.native_new();
 
-    static public final WGPUQuerySetDescriptor T_01 = WGPUQuerySetDescriptor.createInstance();
+    static public final WGPUQuerySetDescriptor T_01 = WGPUQuerySetDescriptor.native_new();
 
-    static public final WGPUQuerySetDescriptor T_02 = WGPUQuerySetDescriptor.createInstance();
+    static public final WGPUQuerySetDescriptor T_02 = WGPUQuerySetDescriptor.native_new();
 
-    static public final WGPUQuerySetDescriptor T_03 = WGPUQuerySetDescriptor.createInstance();
+    static public final WGPUQuerySetDescriptor T_03 = WGPUQuerySetDescriptor.native_new();
 
     public WGPUQuerySetDescriptor() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jWebGPU.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUQuerySetDescriptor createInstance() {
+    public static WGPUQuerySetDescriptor native_new() {
         return new WGPUQuerySetDescriptor((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 = WGPUQuerySetDescriptor.createInstance();
+            WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 = WGPUQuerySetDescriptor.native_new();
         WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
     }

@@ -9,13 +9,13 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUVertexState extends IDLBase {
 
-    static public final WGPUVertexState NULL = WGPUVertexState.createInstance();
+    static public final WGPUVertexState NULL = WGPUVertexState.native_new();
 
-    static public final WGPUVertexState T_01 = WGPUVertexState.createInstance();
+    static public final WGPUVertexState T_01 = WGPUVertexState.native_new();
 
-    static public final WGPUVertexState T_02 = WGPUVertexState.createInstance();
+    static public final WGPUVertexState T_02 = WGPUVertexState.native_new();
 
-    static public final WGPUVertexState T_03 = WGPUVertexState.createInstance();
+    static public final WGPUVertexState T_03 = WGPUVertexState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class WGPUVertexState extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUVertexState createInstance() {
+    public static WGPUVertexState native_new() {
         return new WGPUVertexState((byte) 0, (char) 0);
     }
 
