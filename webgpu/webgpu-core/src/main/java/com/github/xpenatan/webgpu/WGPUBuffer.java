@@ -37,6 +37,17 @@ public class WGPUBuffer extends IDLBase {
     */
     private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out);
 
+    public WGPUBuffer() {
+        long addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)new JGPU::WGPUBuffer();
+    */
+    public static native long internal_native_create();
+
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }

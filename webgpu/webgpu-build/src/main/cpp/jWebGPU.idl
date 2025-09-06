@@ -1240,6 +1240,7 @@ interface WGPUCommandEncoder {
 
 [Prefix="JGPU::"]
 interface WGPUBuffer {
+    void WGPUBuffer();
     any Get(); //[-SKIP]
     void SetLabel([Const] DOMString value);
     void Release();
