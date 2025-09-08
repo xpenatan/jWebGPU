@@ -1,11 +1,11 @@
 package com.github.xpenatan.webgpu.demo.app;
 
-import com.github.xpenatan.webgpu.BufferMapCallback;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.WGPU;
 import com.github.xpenatan.webgpu.WGPUBlendFactor;
 import com.github.xpenatan.webgpu.WGPUBlendOperation;
+import com.github.xpenatan.webgpu.WGPUBufferMapCallback;
 import com.github.xpenatan.webgpu.WGPUBufferUsage;
 import com.github.xpenatan.webgpu.WGPUByteBuffer;
 import com.github.xpenatan.webgpu.WGPUCallbackMode;
@@ -369,7 +369,7 @@ public class PlayingWithBuffers implements ApplicationListener {
 
         boolean [] ready = new boolean[1];
 
-        WGPUFuture webGPUFuture = buffer2.mapAsync(WGPUMapMode.Read, 0, 16, WGPUCallbackMode.AllowProcessEvents, new BufferMapCallback() {
+        WGPUFuture webGPUFuture = buffer2.mapAsync(WGPUMapMode.Read, 0, 16, WGPUCallbackMode.AllowProcessEvents, new WGPUBufferMapCallback() {
             @Override
             protected void onCallback(WGPUMapAsyncStatus status, String message) {
                 ready[0] = true;

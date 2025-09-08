@@ -3358,14 +3358,14 @@ bool JGPU::WGPUInstance::IsValid() {
     return Get() ? true : false;
 }
 
-void JGPU::WGPUInstance::RequestAdapter(JGPU::WGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback) {
+void JGPU::WGPUInstance::RequestAdapter(JGPU::WGPURequestAdapterOptions* options, WGPUCallbackMode mode, JGPU::WGPURequestAdapterCallback* callback) {
     WGPURequestAdapterCallbackInfo callbackInfo = {};
     callbackInfo.mode = mode;
     callbackInfo.callback = [](WGPURequestAdapterStatus status, ::WGPUAdapter ad, ::WGPUStringView message, void* callback_param, void*) {
-        RequestAdapterCallback* cback = reinterpret_cast<RequestAdapterCallback*>(callback_param);
+        JGPU::WGPURequestAdapterCallback* cback = reinterpret_cast<JGPU::WGPURequestAdapterCallback*>(callback_param);
         JGPU::WGPUAdapter* adapter = new JGPU::WGPUAdapter();
         adapter->Set(ad);
-        cback->OnCallback(status, adapter);
+        cback->OnCallback(status, adapter, JGPU::WGPUStringView(message).GetString().c_str());
     };
     callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
     callbackInfo.userdata2 = NULL;
@@ -3755,12 +3755,12 @@ WGPUBufferUsage JGPU::WGPUBuffer::GetUsage() {
     return static_cast<WGPUBufferUsage>(wgpuBufferGetUsage(Get()));
 }
 
-JGPU::WGPUFuture JGPU::WGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback) {
+JGPU::WGPUFuture JGPU::WGPUBuffer::MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, JGPU::WGPUBufferMapCallback* callback) {
     WGPUBufferMapCallbackInfo callbackInfo = {};
     callbackInfo.mode = callbackMode;
 
     callbackInfo.callback = [](WGPUMapAsyncStatus status, ::WGPUStringView message, void* callback_param, void*) {
-        BufferMapCallback* cback = reinterpret_cast<BufferMapCallback*>(callback_param);
+        JGPU::WGPUBufferMapCallback* cback = reinterpret_cast<JGPU::WGPUBufferMapCallback*>(callback_param);
         cback->OnCallback(status, JGPU::WGPUStringView(message).GetString().c_str());
     };
     callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
@@ -3886,9 +3886,9 @@ void JGPU::WGPUAdapter::Release() {
     wgpuAdapterRelease(Get());
 }
 
-void JGPU::WGPUAdapter::RequestDevice(JGPU::WGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback) {
+void JGPU::WGPUAdapter::RequestDevice(JGPU::WGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, JGPU::WGPURequestDeviceCallback* callback, JGPU::WGPUUncapturedErrorCallback* errorCallback) {
     descriptor->Get().uncapturedErrorCallbackInfo.callback = [](const ::WGPUDevice* device, WGPUErrorType type, ::WGPUStringView message, void* callback_param, void* userdata_param) {
-        UncapturedErrorCallback* cback = reinterpret_cast<UncapturedErrorCallback*>(callback_param);
+        JGPU::WGPUUncapturedErrorCallback* cback = reinterpret_cast<JGPU::WGPUUncapturedErrorCallback*>(callback_param);
         cback->OnCallback(type, JGPU::WGPUStringView(message).GetString().c_str());
     };
     descriptor->Get().uncapturedErrorCallbackInfo.userdata1 = reinterpret_cast<void*>(errorCallback);
@@ -3897,10 +3897,10 @@ void JGPU::WGPUAdapter::RequestDevice(JGPU::WGPUDeviceDescriptor* descriptor, WG
     WGPURequestDeviceCallbackInfo callbackInfo = {};
     callbackInfo.mode = mode;
     callbackInfo.callback = [](WGPURequestDeviceStatus status, ::WGPUDevice dev, ::WGPUStringView message, void* callback_param, void*) {
-        RequestDeviceCallback* cback = reinterpret_cast<RequestDeviceCallback*>(callback_param);
+        JGPU::WGPURequestDeviceCallback* cback = reinterpret_cast<JGPU::WGPURequestDeviceCallback*>(callback_param);
         JGPU::WGPUDevice* device = new JGPU::WGPUDevice();
         device->Set(dev);
-        cback->OnCallback(status, device);
+        cback->OnCallback(status, device, JGPU::WGPUStringView(message).GetString().c_str());
     };
     callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
     callbackInfo.userdata2 = NULL;

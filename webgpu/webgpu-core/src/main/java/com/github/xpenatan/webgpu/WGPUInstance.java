@@ -61,13 +61,13 @@ nativeObject->Release();
 */
     public static native void internal_native_Release(long this_addr);
 
-    public void requestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback) {
+    public void requestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback) {
         internal_native_RequestAdapter(native_address, options.native_address, mode.getValue(), callback.native_address);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (::WGPUCallbackMode)mode, (RequestAdapterCallback* )callback_addr);
+nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestAdapterCallback* )callback_addr);
 */
     public static native void internal_native_RequestAdapter(long this_addr, long options_addr, long mode, long callback_addr);
 

@@ -51,13 +51,13 @@ nativeObject->Release();
 */
     public static native void internal_native_Release(long this_addr);
 
-    public void requestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback) {
+    public void requestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback) {
         internal_native_RequestDevice(native_address, options.native_address, mode.getValue(), callback.native_address, errorCallback.native_address);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-nativeObject->RequestDevice((JGPU::WGPUDeviceDescriptor* )options_addr, (::WGPUCallbackMode)mode, (RequestDeviceCallback* )callback_addr, (UncapturedErrorCallback* )errorCallback_addr);
+nativeObject->RequestDevice((JGPU::WGPUDeviceDescriptor* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestDeviceCallback* )callback_addr, (JGPU::WGPUUncapturedErrorCallback* )errorCallback_addr);
 */
     public static native void internal_native_RequestDevice(long this_addr, long options_addr, long mode, long callback_addr, long errorCallback_addr);
 

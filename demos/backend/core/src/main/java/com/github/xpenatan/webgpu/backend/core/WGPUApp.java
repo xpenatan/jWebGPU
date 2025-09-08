@@ -1,27 +1,27 @@
 package com.github.xpenatan.webgpu.backend.core;
 
-import com.github.xpenatan.webgpu.RequestAdapterCallback;
-import com.github.xpenatan.webgpu.RequestDeviceCallback;
-import com.github.xpenatan.webgpu.UncapturedErrorCallback;
 import com.github.xpenatan.webgpu.WGPU;
+import com.github.xpenatan.webgpu.WGPUAdapter;
+import com.github.xpenatan.webgpu.WGPUAdapterInfo;
 import com.github.xpenatan.webgpu.WGPUAdapterType;
 import com.github.xpenatan.webgpu.WGPUBackendType;
 import com.github.xpenatan.webgpu.WGPUCallbackMode;
-import com.github.xpenatan.webgpu.WGPUErrorType;
-import com.github.xpenatan.webgpu.WGPUFeatureName;
-import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
-import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
-import com.github.xpenatan.webgpu.WGPUVectorFeatureName;
-import com.github.xpenatan.webgpu.WGPUAdapter;
-import com.github.xpenatan.webgpu.WGPUAdapterInfo;
 import com.github.xpenatan.webgpu.WGPUDevice;
 import com.github.xpenatan.webgpu.WGPUDeviceDescriptor;
+import com.github.xpenatan.webgpu.WGPUErrorType;
+import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPUInstance;
 import com.github.xpenatan.webgpu.WGPULimits;
 import com.github.xpenatan.webgpu.WGPUQueue;
+import com.github.xpenatan.webgpu.WGPURequestAdapterCallback;
 import com.github.xpenatan.webgpu.WGPURequestAdapterOptions;
+import com.github.xpenatan.webgpu.WGPURequestAdapterStatus;
+import com.github.xpenatan.webgpu.WGPURequestDeviceCallback;
+import com.github.xpenatan.webgpu.WGPURequestDeviceStatus;
 import com.github.xpenatan.webgpu.WGPUSupportedFeatures;
 import com.github.xpenatan.webgpu.WGPUSurface;
+import com.github.xpenatan.webgpu.WGPUUncapturedErrorCallback;
+import com.github.xpenatan.webgpu.WGPUVectorFeatureName;
 
 public class WGPUApp {
     public int width;
@@ -49,9 +49,9 @@ public class WGPUApp {
 
     private void requestAdapter() {
         WGPURequestAdapterOptions op = WGPURequestAdapterOptions.obtain();
-        RequestAdapterCallback callback = new RequestAdapterCallback() {
+        WGPURequestAdapterCallback callback = new WGPURequestAdapterCallback() {
             @Override
-            protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter) {
+            protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, String message) {
                 System.out.println("Adapter Status: " + status);
                 if(status == WGPURequestAdapterStatus.Success) {
                     initState = InitState.ADAPTER_VALID;
@@ -96,10 +96,10 @@ public class WGPUApp {
 
         deviceDescriptor.getDefaultQueue().setLabel("The default queue");
 
-        adapter.requestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new RequestDeviceCallback() {
+        adapter.requestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new WGPURequestDeviceCallback() {
             @Override
-            protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device) {
-                System.out.println("Device Status: " + status);
+            protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device, String message) {
+                System.out.println("Device Status: " + status + " message: " + message);
                 if(status == WGPURequestDeviceStatus.Success) {
                     initState = InitState.DEVICE_VALID;
                     WGPUApp.this.device = device;
@@ -127,7 +127,7 @@ public class WGPUApp {
                     initState = InitState.DEVICE_NOT_VALID;
                 }
             }
-        }, new UncapturedErrorCallback() {
+        }, new WGPUUncapturedErrorCallback() {
             @Override
             protected void onCallback(WGPUErrorType errorType, String message) {
                 System.err.println("ErrorType: " + errorType);

@@ -92,7 +92,7 @@ public class WGPUBuffer extends IDLBase {
     */
     public static native void internal_native_Destroy(long this_addr);
 
-    public WGPUFuture mapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback callback) {
+    public WGPUFuture mapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback) {
         long pointer = internal_native_MapAsync(native_address, mode.getValue(), offset, size, callbackMode.getValue(), callback.native_address);
         if (pointer == 0)
             return null;
@@ -106,7 +106,7 @@ public class WGPUBuffer extends IDLBase {
       [-JNI;-NATIVE]
       JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
       static JGPU::WGPUFuture copy_addr;
-      copy_addr = nativeObject->MapAsync((::WGPUMapMode)mode, (int)offset, (int)size, (::WGPUCallbackMode)callbackMode, (BufferMapCallback* )callback_addr);
+      copy_addr = nativeObject->MapAsync((::WGPUMapMode)mode, (int)offset, (int)size, (::WGPUCallbackMode)callbackMode, (JGPU::WGPUBufferMapCallback* )callback_addr);
       return (jlong)&copy_addr;
     */
     public static native long internal_native_MapAsync(long this_addr, long mode, int offset, int size, long callbackMode, long callback_addr);

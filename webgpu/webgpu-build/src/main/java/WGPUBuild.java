@@ -269,7 +269,7 @@ public class WGPUBuild {
         String port = downloadPath + "/emdawnwebgpu_pkg/emdawnwebgpu.port.py";
         String jsLib = downloadPath + "/emdawnwebgpu_pkg/webgpu/src/webgpu-externs.js";
 
-        EmscriptenTarget.DEBUG_BUILD = false;
+//        EmscriptenTarget.DEBUG_BUILD = false;
 
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget(idlReader);

@@ -7,20 +7,20 @@ package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
-public class BufferMapCallback extends IDLBase {
+public class WGPUBufferMapCallback extends IDLBase {
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected BufferMapCallback(byte b, char c) {
+    protected WGPUBufferMapCallback(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static BufferMapCallback native_new() {
-        return new BufferMapCallback((byte) 0, (char) 0);
+    public static WGPUBufferMapCallback native_new() {
+        return new WGPUBufferMapCallback((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -28,13 +28,13 @@ public class BufferMapCallback extends IDLBase {
     }
 
     /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.BufferMapCallbackImpl);
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferMapCallbackImpl);
 jWebGPU.destroy(jsObj);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.BufferMapCallbackImpl);jWebGPU.destroy(jsObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferMapCallbackImpl);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public BufferMapCallback() {
+    public WGPUBufferMapCallback() {
         int addr = internal_native_create();
         internal_reset(addr, true);
         setupCallback();
@@ -58,13 +58,13 @@ jWebGPU.destroy(jsObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.BufferMapCallbackImpl();
+var jsObj = new jWebGPU.WGPUBufferMapCallbackImpl();
 return jWebGPU.getPointer(jsObj);
 */
-    @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.BufferMapCallbackImpl();return jWebGPU.getPointer(jsObj);")
+    @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUBufferMapCallbackImpl();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create();
 
-    @org.teavm.jso.JSBody(params = { "this_addr", "OnCallback" }, script = "var BufferMapCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.BufferMapCallbackImpl); BufferMapCallbackImpl.OnCallback = OnCallback;")
+    @org.teavm.jso.JSBody(params = { "this_addr", "OnCallback" }, script = "var WGPUBufferMapCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferMapCallbackImpl); WGPUBufferMapCallbackImpl.OnCallback = OnCallback;")
     public static native void internal_native_setupCallback(int this_addr, OnCallback OnCallback);
 
     @org.teavm.jso.JSFunctor()

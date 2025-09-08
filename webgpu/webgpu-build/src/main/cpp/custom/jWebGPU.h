@@ -633,26 +633,6 @@ class WGPUVectorInt {
         const uint32_t* data();
 };
 
-class RequestAdapterCallback {
-public:
-    virtual void OnCallback(WGPURequestAdapterStatus status, JGPU::WGPUAdapter* adapter) = 0;
-};
-
-class RequestDeviceCallback {
-public:
-    virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device) = 0;
-};
-
-class UncapturedErrorCallback {
-public:
-    virtual void OnCallback(WGPUErrorType errorType, const char* message) = 0;
-};
-
-class BufferMapCallback {
-public:
-    virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) = 0;
-};
-
 template<typename Derived, typename CType>
 class WGPUObjectBase {
     private:
@@ -690,6 +670,26 @@ class WGPUObjectBase {
 };
 
 namespace JGPU {
+
+class WGPURequestAdapterCallback {
+    public:
+        virtual void OnCallback(WGPURequestAdapterStatus status, JGPU::WGPUAdapter* adapter, const char* message) = 0;
+};
+
+class WGPURequestDeviceCallback {
+    public:
+        virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device, const char* message) = 0;
+};
+
+class WGPUUncapturedErrorCallback {
+    public:
+        virtual void OnCallback(WGPUErrorType errorType, const char* message) = 0;
+};
+
+class WGPUBufferMapCallback {
+    public:
+        virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) = 0;
+};
 
 class WGPUStringView : public WGPUObjectBase<WGPUStringView, ::WGPUStringView> {
     public:
@@ -1620,7 +1620,7 @@ class WGPUInstance : public WGPUObjectBase<WGPUInstance, ::WGPUInstance> {
         void AddRef();
         void Release();
         bool IsValid();
-        void RequestAdapter(WGPURequestAdapterOptions* options, WGPUCallbackMode mode, RequestAdapterCallback* callback);
+        void RequestAdapter(WGPURequestAdapterOptions* options, WGPUCallbackMode mode, WGPURequestAdapterCallback* callback);
         WGPUSurface* CreateWebSurface(const char* canvas);
         WGPUSurface* CreateWindowsSurface(void * hwnd);
         WGPUSurface* CreateLinuxSurface(bool isWayland, void * windowOrSurface, void* display);
@@ -1687,7 +1687,7 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
         void Unmap();
         int GetSize();
         WGPUBufferUsage GetUsage();
-        WGPUFuture MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, BufferMapCallback* callback);
+        WGPUFuture MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback* callback);
         void GetConstMappedRange(int offset, int size, void* bufferOut);
         WGPUByteBuffer& GetMappedRange(int offset, int size);
         void SetLabel(const char* label);
@@ -1732,7 +1732,7 @@ class WGPUAdapter : public WGPUObjectBase<WGPUAdapter, ::WGPUAdapter> {
     public:
         void AddRef();
         void Release();
-        void RequestDevice(WGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, RequestDeviceCallback* callback, UncapturedErrorCallback* errorCallback);
+        void RequestDevice(WGPUDeviceDescriptor* descriptor, WGPUCallbackMode mode, WGPURequestDeviceCallback* callback, WGPUUncapturedErrorCallback* errorCallback);
         bool GetInfo(WGPUAdapterInfo* adapterInfo);
         bool HasFeature(WGPUFeatureName featureName);
         WGPUStatus GetLimits(WGPULimits* limits);

@@ -7,10 +7,10 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.webgpu.idl.IDLBase;
 
-public class BufferMapCallback extends IDLBase {
+public class WGPUUncapturedErrorCallback extends IDLBase {
 
     /*[-JNI;-NATIVE]
-class BufferMapCallbackImpl : public BufferMapCallback {
+class WGPUUncapturedErrorCallbackImpl : public JGPU::WGPUUncapturedErrorCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
@@ -21,25 +21,25 @@ public:
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(BufferMapCallbackImpl::jClassID == 0) {
-		BufferMapCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		BufferMapCallbackImpl::OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
+	if(WGPUUncapturedErrorCallbackImpl::jClassID == 0) {
+		WGPUUncapturedErrorCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WGPUUncapturedErrorCallbackImpl::OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
 	}
 }
-virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
-   env->CallVoidMethod(obj, BufferMapCallbackImpl::OnCallbackIS_ID, status, env->NewStringUTF(message));
+virtual void OnCallback(WGPUErrorType errorType, const char* message) {
+   env->CallVoidMethod(obj, WGPUUncapturedErrorCallbackImpl::OnCallbackIS_ID, errorType, env->NewStringUTF(message));
 }
 };
 */
     @Deprecated()
-    protected BufferMapCallback(byte b, char c) {
+    protected WGPUUncapturedErrorCallback(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static BufferMapCallback native_new() {
-        return new BufferMapCallback((byte) 0, (char) 0);
+    public static WGPUUncapturedErrorCallback native_new() {
+        return new WGPUUncapturedErrorCallback((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -47,12 +47,12 @@ virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
     }
 
     /*[-JNI;-NATIVE]
-BufferMapCallbackImpl* nativeObject = (BufferMapCallbackImpl*)this_addr;
+WGPUUncapturedErrorCallbackImpl* nativeObject = (WGPUUncapturedErrorCallbackImpl*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public BufferMapCallback() {
+    public WGPUUncapturedErrorCallback() {
         long addr = internal_native_create();
         internal_reset(addr, true);
         setupCallback();
@@ -62,20 +62,20 @@ delete nativeObject;
         internal_native_setupCallback(native_address);
     }
 
-    protected void onCallback(WGPUMapAsyncStatus status, String message) {
+    protected void onCallback(WGPUErrorType errorType, String message) {
     }
 
-    private void internal_onCallback(int status_addr, String message_addr) {
-        onCallback(WGPUMapAsyncStatus.MAP.get(status_addr), message_addr);
+    private void internal_onCallback(int errorType_addr, String message_addr) {
+        onCallback(WGPUErrorType.MAP.get(errorType_addr), message_addr);
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)new BufferMapCallbackImpl();
+return (jlong)new WGPUUncapturedErrorCallbackImpl();
 */
     public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
-BufferMapCallbackImpl* nativeObject = (BufferMapCallbackImpl*)this_addr;
+WGPUUncapturedErrorCallbackImpl* nativeObject = (WGPUUncapturedErrorCallbackImpl*)this_addr;
 nativeObject->setupCallback(env, object);
 */
     public native void internal_native_setupCallback(long this_addr);

@@ -7,20 +7,20 @@ package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
-public class UncapturedErrorCallback extends IDLBase {
+public class WGPUUncapturedErrorCallback extends IDLBase {
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected UncapturedErrorCallback(byte b, char c) {
+    protected WGPUUncapturedErrorCallback(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static UncapturedErrorCallback native_new() {
-        return new UncapturedErrorCallback((byte) 0, (char) 0);
+    public static WGPUUncapturedErrorCallback native_new() {
+        return new WGPUUncapturedErrorCallback((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -28,13 +28,13 @@ public class UncapturedErrorCallback extends IDLBase {
     }
 
     /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.UncapturedErrorCallbackImpl);
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUUncapturedErrorCallbackImpl);
 jWebGPU.destroy(jsObj);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.UncapturedErrorCallbackImpl);jWebGPU.destroy(jsObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUUncapturedErrorCallbackImpl);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public UncapturedErrorCallback() {
+    public WGPUUncapturedErrorCallback() {
         int addr = internal_native_create();
         internal_reset(addr, true);
         setupCallback();
@@ -58,13 +58,13 @@ jWebGPU.destroy(jsObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.UncapturedErrorCallbackImpl();
+var jsObj = new jWebGPU.WGPUUncapturedErrorCallbackImpl();
 return jWebGPU.getPointer(jsObj);
 */
-    @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.UncapturedErrorCallbackImpl();return jWebGPU.getPointer(jsObj);")
+    @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUUncapturedErrorCallbackImpl();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create();
 
-    @org.teavm.jso.JSBody(params = { "this_addr", "OnCallback" }, script = "var UncapturedErrorCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.UncapturedErrorCallbackImpl); UncapturedErrorCallbackImpl.OnCallback = OnCallback;")
+    @org.teavm.jso.JSBody(params = { "this_addr", "OnCallback" }, script = "var WGPUUncapturedErrorCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUUncapturedErrorCallbackImpl); WGPUUncapturedErrorCallbackImpl.OnCallback = OnCallback;")
     public static native void internal_native_setupCallback(int this_addr, OnCallback OnCallback);
 
     @org.teavm.jso.JSFunctor()

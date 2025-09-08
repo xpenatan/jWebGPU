@@ -242,44 +242,47 @@ interface WGPUVectorInt {
 
 // ################################### CALLBACKS ###################################
 
-interface RequestAdapterCallback {
+[Prefix="JGPU::"]
+interface WGPURequestAdapterCallback {
 };
 
-[JSImplementation="RequestAdapterCallback"]
-interface RequestAdapterCallbackImpl {
-    void RequestAdapterCallbackImpl();
-    void OnCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter); //[-NEW_PARAM=adapter]
+[JSImplementation="WGPURequestAdapterCallback"]
+interface WGPURequestAdapterCallbackImpl {
+    void WGPURequestAdapterCallbackImpl();
+    void OnCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, [Const] DOMString message); //[-NEW_PARAM=adapter]
 };
 
-interface RequestDeviceCallback {
+[Prefix="JGPU::"]
+interface WGPURequestDeviceCallback {
 };
 
-[JSImplementation="RequestDeviceCallback"]
-interface RequestDeviceCallbackImpl {
-    void RequestDeviceCallbackImpl();
-    void OnCallback(WGPURequestDeviceStatus status, WGPUDevice device); //[-NEW_PARAM=device]
+[JSImplementation="WGPURequestDeviceCallback"]
+interface WGPURequestDeviceCallbackImpl {
+    void WGPURequestDeviceCallbackImpl();
+    void OnCallback(WGPURequestDeviceStatus status, WGPUDevice device, [Const] DOMString message); //[-NEW_PARAM=device]
 };
 
-interface UncapturedErrorCallback {
+[Prefix="JGPU::"]
+interface WGPUUncapturedErrorCallback {
 };
 
-[JSImplementation="UncapturedErrorCallback"]
-interface UncapturedErrorCallbackImpl {
-    void UncapturedErrorCallbackImpl();
+[JSImplementation="WGPUUncapturedErrorCallback"]
+interface WGPUUncapturedErrorCallbackImpl {
+    void WGPUUncapturedErrorCallbackImpl();
     void OnCallback(WGPUErrorType errorType, [Const] DOMString message);
 };
 
-interface BufferMapCallback {
+[Prefix="JGPU::"]
+interface WGPUBufferMapCallback {
 };
 
-[JSImplementation="BufferMapCallback"]
-interface BufferMapCallbackImpl {
-    void BufferMapCallbackImpl();
+[JSImplementation="WGPUBufferMapCallback"]
+interface WGPUBufferMapCallbackImpl {
+    void WGPUBufferMapCallbackImpl();
     void OnCallback(WGPUMapAsyncStatus status, [Const] DOMString message);
 };
 
 // ################################### STRUCTS ###################################
-
 
 [Prefix="JGPU::"]
 interface WGPUFuture {
@@ -1157,7 +1160,7 @@ interface WGPUPipelineLayout {
 interface WGPUInstance {
     boolean IsValid();
     void Release();
-    void RequestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, RequestAdapterCallback callback);
+    void RequestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback);
     WGPUSurface CreateWebSurface([Const] DOMString canvas);                               //[-NEW_OBJECT]
     WGPUSurface CreateWindowsSurface(any hwnd);                                           //[-NEW_OBJECT]
     WGPUSurface CreateLinuxSurface(boolean isWayland, any windowOrSurface, any display);  //[-NEW_OBJECT]
@@ -1245,7 +1248,7 @@ interface WGPUBuffer {
     void SetLabel([Const] DOMString value);
     void Release();
     void Destroy();
-    [Value] WGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, BufferMapCallback callback);
+    [Value] WGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback);
     void GetConstMappedRange(long offset, long size, octet[] bytes); //[-SKIP]
     [Ref] WGPUByteBuffer GetMappedRange(long offset, long size);
     void Unmap();
@@ -1290,7 +1293,7 @@ interface WGPURenderBundle {
 [Prefix="JGPU::"]
 interface WGPUAdapter {
     void Release();
-    void RequestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback);
+    void RequestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback);
     boolean GetInfo(WGPUAdapterInfo adapterInfo);
     boolean HasFeature(WGPUFeatureName featureName);
     WGPUStatus GetLimits(WGPULimits limits);

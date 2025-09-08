@@ -53,7 +53,7 @@ jsObj.Release();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAdapter);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
-    public void requestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, RequestDeviceCallback callback, UncapturedErrorCallback errorCallback) {
+    public void requestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback) {
         internal_native_RequestDevice(native_address, options.native_address, (int) mode.getValue(), callback.native_address, errorCallback.native_address);
     }
 
