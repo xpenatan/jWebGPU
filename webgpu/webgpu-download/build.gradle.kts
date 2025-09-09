@@ -8,7 +8,7 @@ plugins {
 
 val WGPU_VERSION = "25.0.2.2"
 val emdawnVersion = "v20250907.221810"
-val buildDawnVersion = "2025-09-07"
+val buildDawnVersion = "2025-08-03"
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
     val taskName = "webgpu_download_${platform}_wgpu"
