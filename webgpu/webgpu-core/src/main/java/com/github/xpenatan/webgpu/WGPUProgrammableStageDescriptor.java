@@ -77,7 +77,7 @@ nativeObject->SetEntryPoint(entryPoint);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
-nativeObject->SetConstants((WGPUVectorConstantEntry* )values_addr);
+nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )values_addr);
 */
     public static native void internal_native_SetConstants(long this_addr, long values_addr);
 }

@@ -459,6 +459,8 @@ class WGPUAndroidWindow {
 
 // ################################### VECTORS ###################################
 
+namespace JGPU {
+
 class WGPUVectorCommandBuffer {
     private:
         std::vector<JGPU::WGPUCommandBuffer> vector;
@@ -668,8 +670,6 @@ class WGPUObjectBase {
         mHandle = other.mHandle;
     }
 };
-
-namespace JGPU {
 
 class WGPURequestAdapterCallback {
     public:
@@ -975,6 +975,10 @@ class WGPUFragmentState : public WGPUObjectBase<WGPUFragmentState, ::WGPUFragmen
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetEntryPoint(const char* value);
         void SetTargets(WGPUVectorColorTargetState* values);
+        void SetTargets(WGPUColorTargetState* target01);
+        void SetTargets(WGPUColorTargetState* target01, WGPUColorTargetState* target02);
+        void SetTargets(WGPUColorTargetState* target01, WGPUColorTargetState* target02, WGPUColorTargetState* target03);
+        void SetTargets(WGPUColorTargetState* target01, WGPUColorTargetState* target02, WGPUColorTargetState* target03, WGPUColorTargetState* target04);
         void SetModule(WGPUShaderModule* shaderModule);
         void SetConstants(WGPUVectorConstantEntry* values);
 };
@@ -1450,6 +1454,10 @@ class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor,
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetColorAttachments(WGPUVectorRenderPassColorAttachment* values);
+        void SetColorAttachments(WGPURenderPassColorAttachment* colorAttachment01);
+        void SetColorAttachments(WGPURenderPassColorAttachment* colorAttachment01, WGPURenderPassColorAttachment* colorAttachment02);
+        void SetColorAttachments(WGPURenderPassColorAttachment* colorAttachment01, WGPURenderPassColorAttachment* colorAttachment02, WGPURenderPassColorAttachment* colorAttachment03);
+        void SetColorAttachments(WGPURenderPassColorAttachment* colorAttachment01, WGPURenderPassColorAttachment* colorAttachment02, WGPURenderPassColorAttachment* colorAttachment03, WGPURenderPassColorAttachment* colorAttachment04);
         void SetDepthStencilAttachment(WGPURenderPassDepthStencilAttachment* attachment);
         void SetOcclusionQuerySet(WGPUQuerySet* occlusionQuerySet);
         void SetTimestampWrites(WGPURenderPassTimestampWrites* timestampWrites);
@@ -1517,7 +1525,7 @@ class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, :
         void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance);
         void DrawIndirect(WGPUBuffer* indirectBuffer, int indirectOffset);
         void DrawIndexedIndirect(WGPUBuffer* indirectBuffer, int indirectOffset);
-        void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets);
+        void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets = NULL);
         void SetVertexBuffer(int slot, WGPUBuffer* buffer, int offset, int size);
         void SetIndexBuffer(WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
         void InsertDebugMarker(const char* label);
@@ -1585,7 +1593,7 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
         void InsertDebugMarker(const char* label);
         void PopDebugGroup();
         void PushDebugGroup(const char* label);
-        void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets);
+        void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets = NULL);
         void SetBlendConstant(WGPUColor* color);
         void SetIndexBuffer(WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
         void SetLabel(const char* label);
@@ -1642,7 +1650,7 @@ class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::W
         void InsertDebugMarker(const char* markerLabel);
         void PopDebugGroup();
         void PushDebugGroup(const char* groupLabel);
-        void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* offsets);
+        void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* offsets = NULL);
         void SetLabel(const char* label);
         void SetPipeline(WGPUComputePipeline* pipeline);
         bool IsValid();
@@ -1758,6 +1766,7 @@ class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
         void Submit(WGPUCommandBuffer* commandBuffer);
         void Submit(WGPUCommandBuffer* commandBuffer01, WGPUCommandBuffer* commandBuffer02);
         void Submit(WGPUCommandBuffer* commandBuffer01, WGPUCommandBuffer* commandBuffer02, WGPUCommandBuffer* commandBuffer03);
+        void Submit(WGPUCommandBuffer* commandBuffer01, WGPUCommandBuffer* commandBuffer02, WGPUCommandBuffer* commandBuffer03, WGPUCommandBuffer* commandBuffer04);
         void WriteBuffer(WGPUBuffer* buffer, int bufferOffset, void const * data, int size);
         void WriteTexture(WGPUTexelCopyTextureInfo* destination, void const * data, int size, WGPUTexelCopyBufferLayout* dataLayout, WGPUExtent3D* writeSize);
 };

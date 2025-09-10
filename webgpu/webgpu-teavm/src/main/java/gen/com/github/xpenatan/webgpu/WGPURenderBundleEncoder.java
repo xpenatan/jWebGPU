@@ -142,6 +142,17 @@ jsObj.SetBindGroup(groupIndex, group_addr, dynamicOffsets_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr", "dynamicOffsets_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);jsObj.SetBindGroup(groupIndex, group_addr, dynamicOffsets_addr);")
     public static native void internal_native_SetBindGroup(int this_addr, int groupIndex, int group_addr, int dynamicOffsets_addr);
 
+    public void setBindGroup(int groupIndex, WGPUBindGroup group) {
+        internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);
+jsObj.SetBindGroup(groupIndex, group_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);jsObj.SetBindGroup(groupIndex, group_addr);")
+    public static native void internal_native_SetBindGroup(int this_addr, int groupIndex, int group_addr);
+
     public void setVertexBuffer(int slot, WGPUBuffer buffer, int offset, int size) {
         internal_native_SetVertexBuffer(native_address, slot, buffer.native_address, offset, size);
     }

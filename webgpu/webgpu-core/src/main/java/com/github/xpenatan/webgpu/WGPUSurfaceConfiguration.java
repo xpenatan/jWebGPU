@@ -114,7 +114,7 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetViewFormats((WGPUVectorTextureFormat* )formats_addr);
+nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )formats_addr);
 */
     public static native void internal_native_SetViewFormats(long this_addr, long formats_addr);
 

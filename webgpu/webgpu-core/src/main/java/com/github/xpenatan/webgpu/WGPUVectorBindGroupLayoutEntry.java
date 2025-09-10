@@ -25,7 +25,7 @@ public class WGPUVectorBindGroupLayoutEntry extends IDLBase {
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)new WGPUVectorBindGroupLayoutEntry();
+return (jlong)new JGPU::WGPUVectorBindGroupLayoutEntry();
 */
     public static native long internal_native_create();
 
@@ -48,7 +48,7 @@ return (jlong)new WGPUVectorBindGroupLayoutEntry();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorBindGroupLayoutEntry* nativeObject = (WGPUVectorBindGroupLayoutEntry*)this_addr;
+JGPU::WGPUVectorBindGroupLayoutEntry* nativeObject = (JGPU::WGPUVectorBindGroupLayoutEntry*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
@@ -64,7 +64,7 @@ delete nativeObject;
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)WGPUVectorBindGroupLayoutEntry::Obtain();
+return (jlong)JGPU::WGPUVectorBindGroupLayoutEntry::Obtain();
 */
     public static native long internal_native_Obtain();
 
@@ -73,7 +73,7 @@ return (jlong)WGPUVectorBindGroupLayoutEntry::Obtain();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorBindGroupLayoutEntry* nativeObject = (WGPUVectorBindGroupLayoutEntry*)this_addr;
+JGPU::WGPUVectorBindGroupLayoutEntry* nativeObject = (JGPU::WGPUVectorBindGroupLayoutEntry*)this_addr;
 return nativeObject->size();
 */
     public static native int internal_native_size(long this_addr);
@@ -83,7 +83,7 @@ return nativeObject->size();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorBindGroupLayoutEntry* nativeObject = (WGPUVectorBindGroupLayoutEntry*)this_addr;
+JGPU::WGPUVectorBindGroupLayoutEntry* nativeObject = (JGPU::WGPUVectorBindGroupLayoutEntry*)this_addr;
 nativeObject->clear();
 */
     public static native void internal_native_clear(long this_addr);
@@ -93,7 +93,7 @@ nativeObject->clear();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorBindGroupLayoutEntry* nativeObject = (WGPUVectorBindGroupLayoutEntry*)this_addr;
+JGPU::WGPUVectorBindGroupLayoutEntry* nativeObject = (JGPU::WGPUVectorBindGroupLayoutEntry*)this_addr;
 nativeObject->push_back(*((JGPU::WGPUBindGroupLayoutEntry* )groupLayout_addr));
 */
     public static native void internal_native_push_back(long this_addr, long groupLayout_addr);

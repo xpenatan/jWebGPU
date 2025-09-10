@@ -89,14 +89,54 @@ nativeObject->SetEntryPoint(entryPoint);
     public static native void internal_native_SetEntryPoint(long this_addr, String entryPoint);
 
     public void setTargets(WGPUVectorColorTargetState targets) {
-        internal_native_SetTargets(native_address, targets.native_address);
+        internal_native_SetTargets_0(native_address, targets.native_address);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetTargets((WGPUVectorColorTargetState* )targets_addr);
+nativeObject->SetTargets((JGPU::WGPUVectorColorTargetState* )targets_addr);
 */
-    public static native void internal_native_SetTargets(long this_addr, long targets_addr);
+    public static native void internal_native_SetTargets_0(long this_addr, long targets_addr);
+
+    public void setTargets(WGPUColorTargetState target01) {
+        internal_native_SetTargets_1(native_address, target01.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
+nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr);
+*/
+    public static native void internal_native_SetTargets_1(long this_addr, long target01_addr);
+
+    public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02) {
+        internal_native_SetTargets_2(native_address, target01.native_address, target02.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
+nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGPUColorTargetState* )target02_addr);
+*/
+    public static native void internal_native_SetTargets_2(long this_addr, long target01_addr, long target02_addr);
+
+    public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03) {
+        internal_native_SetTargets_3(native_address, target01.native_address, target02.native_address, target03.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
+nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGPUColorTargetState* )target02_addr, (JGPU::WGPUColorTargetState* )target03_addr);
+*/
+    public static native void internal_native_SetTargets_3(long this_addr, long target01_addr, long target02_addr, long target03_addr);
+
+    public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03, WGPUColorTargetState target04) {
+        internal_native_SetTargets_4(native_address, target01.native_address, target02.native_address, target03.native_address, target04.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
+nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGPUColorTargetState* )target02_addr, (JGPU::WGPUColorTargetState* )target03_addr, (JGPU::WGPUColorTargetState* )target04_addr);
+*/
+    public static native void internal_native_SetTargets_4(long this_addr, long target01_addr, long target02_addr, long target03_addr, long target04_addr);
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
@@ -114,7 +154,7 @@ nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetConstants((WGPUVectorConstantEntry* )constants_addr);
+nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
 */
     public static native void internal_native_SetConstants(long this_addr, long constants_addr);
 }

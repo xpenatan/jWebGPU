@@ -82,7 +82,7 @@ return (jlong)JGPU::WGPUSurfaceCapabilities::Obtain();
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUSurfaceCapabilities* nativeObject = (JGPU::WGPUSurfaceCapabilities*)this_addr;
-static WGPUVectorTextureFormat copy_addr;
+static JGPU::WGPUVectorTextureFormat copy_addr;
 copy_addr = nativeObject->GetFormats();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetFormats(long this_addr);

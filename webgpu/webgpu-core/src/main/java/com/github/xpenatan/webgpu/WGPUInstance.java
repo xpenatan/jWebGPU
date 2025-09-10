@@ -168,7 +168,7 @@ nativeObject->ProcessEvents();
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-return (int)nativeObject->WaitAny((WGPUVectorFutureWaitInfo* )futureVector_addr, (int)timeoutNS);
+return (int)nativeObject->WaitAny((JGPU::WGPUVectorFutureWaitInfo* )futureVector_addr, (int)timeoutNS);
 */
     public static native int internal_native_WaitAny(long this_addr, long futureVector_addr, int timeoutNS);
 }

@@ -77,7 +77,7 @@ nativeObject->SetEntryPoint(entryPoint);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetConstants((WGPUVectorConstantEntry* )constants_addr);
+nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
 */
     public static native void internal_native_SetConstants(long this_addr, long constants_addr);
 
@@ -87,7 +87,7 @@ nativeObject->SetConstants((WGPUVectorConstantEntry* )constants_addr);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetBuffers((WGPUVectorVertexBufferLayout* )buffers_addr);
+nativeObject->SetBuffers((JGPU::WGPUVectorVertexBufferLayout* )buffers_addr);
 */
     public static native void internal_native_SetBuffers(long this_addr, long buffers_addr);
 }

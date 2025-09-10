@@ -164,7 +164,7 @@ nativeObject->EndOcclusionQuery();
 
     /*[-JNI;-NATIVE]
 JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
-nativeObject->ExecuteBundles((WGPUVectorRenderBundle* )bundles_addr);
+nativeObject->ExecuteBundles((JGPU::WGPUVectorRenderBundle* )bundles_addr);
 */
     public static native void internal_native_ExecuteBundles(long this_addr, long bundles_addr);
 
@@ -204,9 +204,19 @@ nativeObject->PushDebugGroup(value);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
-nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (WGPUVectorInt* )dynamicOffsets_addr);
+nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (JGPU::WGPUVectorInt* )dynamicOffsets_addr);
 */
     public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long dynamicOffsets_addr);
+
+    public void setBindGroup(int groupIndex, WGPUBindGroup group) {
+        internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
+nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
+*/
+    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr);
 
     public void setBlendConstant(WGPUColor color) {
         internal_native_SetBlendConstant(native_address, color.native_address);

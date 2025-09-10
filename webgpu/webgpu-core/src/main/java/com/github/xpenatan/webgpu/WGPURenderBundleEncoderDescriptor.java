@@ -94,7 +94,7 @@ nativeObject->SetLabel(label);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetColorFormats((WGPUVectorTextureFormat* )colorFormats_addr);
+nativeObject->SetColorFormats((JGPU::WGPUVectorTextureFormat* )colorFormats_addr);
 */
     public static native void internal_native_SetColorFormats(long this_addr, long colorFormats_addr);
 

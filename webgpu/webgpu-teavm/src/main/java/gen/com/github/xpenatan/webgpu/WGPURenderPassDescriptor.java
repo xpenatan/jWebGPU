@@ -108,15 +108,59 @@ jsObj.SetLabel(value);
     public static native void internal_native_SetLabel(int this_addr, String value);
 
     public void setColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments) {
-        internal_native_SetColorAttachments(native_address, colorAttachments.native_address);
+        internal_native_SetColorAttachments_0(native_address, colorAttachments.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
-jsObj.SetColorAttachments(colorAttachments_addr);
+jsObj.SetColorAttachments_0(colorAttachments_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachments_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetColorAttachments(colorAttachments_addr);")
-    public static native void internal_native_SetColorAttachments(int this_addr, int colorAttachments_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachments_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetColorAttachments_0(colorAttachments_addr);")
+    public static native void internal_native_SetColorAttachments_0(int this_addr, int colorAttachments_addr);
+
+    public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01) {
+        internal_native_SetColorAttachments_1(native_address, colorAttachment01.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
+jsObj.SetColorAttachments_1(colorAttachment01_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachment01_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetColorAttachments_1(colorAttachment01_addr);")
+    public static native void internal_native_SetColorAttachments_1(int this_addr, int colorAttachment01_addr);
+
+    public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02) {
+        internal_native_SetColorAttachments_2(native_address, colorAttachment01.native_address, colorAttachment02.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
+jsObj.SetColorAttachments_2(colorAttachment01_addr, colorAttachment02_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachment01_addr", "colorAttachment02_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetColorAttachments_2(colorAttachment01_addr, colorAttachment02_addr);")
+    public static native void internal_native_SetColorAttachments_2(int this_addr, int colorAttachment01_addr, int colorAttachment02_addr);
+
+    public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03) {
+        internal_native_SetColorAttachments_3(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
+jsObj.SetColorAttachments_3(colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachment01_addr", "colorAttachment02_addr", "colorAttachment03_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetColorAttachments_3(colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr);")
+    public static native void internal_native_SetColorAttachments_3(int this_addr, int colorAttachment01_addr, int colorAttachment02_addr, int colorAttachment03_addr);
+
+    public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03, WGPURenderPassColorAttachment colorAttachment04) {
+        internal_native_SetColorAttachments_4(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address, colorAttachment04.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
+jsObj.SetColorAttachments_4(colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr, colorAttachment04_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachment01_addr", "colorAttachment02_addr", "colorAttachment03_addr", "colorAttachment04_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetColorAttachments_4(colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr, colorAttachment04_addr);")
+    public static native void internal_native_SetColorAttachments_4(int this_addr, int colorAttachment01_addr, int colorAttachment02_addr, int colorAttachment03_addr, int colorAttachment04_addr);
 
     public void setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment attachment) {
         internal_native_SetDepthStencilAttachment(native_address, attachment.native_address);

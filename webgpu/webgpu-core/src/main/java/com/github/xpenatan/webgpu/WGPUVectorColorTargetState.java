@@ -25,7 +25,7 @@ public class WGPUVectorColorTargetState extends IDLBase {
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)new WGPUVectorColorTargetState();
+return (jlong)new JGPU::WGPUVectorColorTargetState();
 */
     public static native long internal_native_create();
 
@@ -48,7 +48,7 @@ return (jlong)new WGPUVectorColorTargetState();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorColorTargetState* nativeObject = (WGPUVectorColorTargetState*)this_addr;
+JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
@@ -64,7 +64,7 @@ delete nativeObject;
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)WGPUVectorColorTargetState::Obtain();
+return (jlong)JGPU::WGPUVectorColorTargetState::Obtain();
 */
     public static native long internal_native_Obtain();
 
@@ -73,7 +73,7 @@ return (jlong)WGPUVectorColorTargetState::Obtain();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorColorTargetState* nativeObject = (WGPUVectorColorTargetState*)this_addr;
+JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
 return nativeObject->size();
 */
     public static native int internal_native_size(long this_addr);
@@ -83,7 +83,7 @@ return nativeObject->size();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorColorTargetState* nativeObject = (WGPUVectorColorTargetState*)this_addr;
+JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
 nativeObject->clear();
 */
     public static native void internal_native_clear(long this_addr);
@@ -93,7 +93,7 @@ nativeObject->clear();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorColorTargetState* nativeObject = (WGPUVectorColorTargetState*)this_addr;
+JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
 nativeObject->push_back(*((JGPU::WGPUColorTargetState* )colorTargetState_addr));
 */
     public static native void internal_native_push_back(long this_addr, long colorTargetState_addr);

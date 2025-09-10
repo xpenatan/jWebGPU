@@ -127,9 +127,19 @@ nativeObject->DrawIndexedIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)
 
     /*[-JNI;-NATIVE]
 JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (WGPUVectorInt* )dynamicOffsets_addr);
+nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (JGPU::WGPUVectorInt* )dynamicOffsets_addr);
 */
     public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long dynamicOffsets_addr);
+
+    public void setBindGroup(int groupIndex, WGPUBindGroup group) {
+        internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
+nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
+*/
+    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr);
 
     public void setVertexBuffer(int slot, WGPUBuffer buffer, int offset, int size) {
         internal_native_SetVertexBuffer(native_address, slot, buffer.native_address, offset, size);

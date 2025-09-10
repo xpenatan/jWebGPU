@@ -106,7 +106,7 @@ nativeObject->SetRequiredLimits((JGPU::WGPULimits* )limits_addr);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUDeviceDescriptor* nativeObject = (JGPU::WGPUDeviceDescriptor*)this_addr;
-nativeObject->SetRequiredFeatures((WGPUVectorFeatureName* )features_addr);
+nativeObject->SetRequiredFeatures((JGPU::WGPUVectorFeatureName* )features_addr);
 */
     public static native void internal_native_SetRequiredFeatures(long this_addr, long features_addr);
 

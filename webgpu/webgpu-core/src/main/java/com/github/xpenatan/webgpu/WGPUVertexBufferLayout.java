@@ -74,7 +74,7 @@ return (jlong)JGPU::WGPUVertexBufferLayout::Obtain();
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetAttributes((WGPUVectorVertexAttribute* )values_addr);
+nativeObject->SetAttributes((JGPU::WGPUVectorVertexAttribute* )values_addr);
 */
     public static native void internal_native_SetAttributes(long this_addr, long values_addr);
 

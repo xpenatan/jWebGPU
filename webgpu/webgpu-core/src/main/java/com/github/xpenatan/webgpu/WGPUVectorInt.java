@@ -25,7 +25,7 @@ public class WGPUVectorInt extends IDLBase {
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)new WGPUVectorInt();
+return (jlong)new JGPU::WGPUVectorInt();
 */
     public static native long internal_native_create();
 
@@ -48,7 +48,7 @@ return (jlong)new WGPUVectorInt();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorInt* nativeObject = (WGPUVectorInt*)this_addr;
+JGPU::WGPUVectorInt* nativeObject = (JGPU::WGPUVectorInt*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
@@ -64,7 +64,7 @@ delete nativeObject;
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)WGPUVectorInt::Obtain();
+return (jlong)JGPU::WGPUVectorInt::Obtain();
 */
     public static native long internal_native_Obtain();
 
@@ -73,7 +73,7 @@ return (jlong)WGPUVectorInt::Obtain();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorInt* nativeObject = (WGPUVectorInt*)this_addr;
+JGPU::WGPUVectorInt* nativeObject = (JGPU::WGPUVectorInt*)this_addr;
 return nativeObject->size();
 */
     public static native int internal_native_size(long this_addr);
@@ -83,7 +83,7 @@ return nativeObject->size();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorInt* nativeObject = (WGPUVectorInt*)this_addr;
+JGPU::WGPUVectorInt* nativeObject = (JGPU::WGPUVectorInt*)this_addr;
 nativeObject->clear();
 */
     public static native void internal_native_clear(long this_addr);
@@ -93,7 +93,7 @@ nativeObject->clear();
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorInt* nativeObject = (WGPUVectorInt*)this_addr;
+JGPU::WGPUVectorInt* nativeObject = (JGPU::WGPUVectorInt*)this_addr;
 nativeObject->push_back((int)value);
 */
     public static native void internal_native_push_back(long this_addr, int value);
@@ -103,7 +103,7 @@ nativeObject->push_back((int)value);
     }
 
     /*[-JNI;-NATIVE]
-WGPUVectorInt* nativeObject = (WGPUVectorInt*)this_addr;
+JGPU::WGPUVectorInt* nativeObject = (JGPU::WGPUVectorInt*)this_addr;
 return nativeObject->get((int)index);
 */
     public static native int internal_native_get(long this_addr, int index);

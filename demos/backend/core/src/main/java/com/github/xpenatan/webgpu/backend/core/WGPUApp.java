@@ -12,6 +12,7 @@ import com.github.xpenatan.webgpu.WGPUErrorType;
 import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPUInstance;
 import com.github.xpenatan.webgpu.WGPULimits;
+import com.github.xpenatan.webgpu.WGPUPowerPreference;
 import com.github.xpenatan.webgpu.WGPUQueue;
 import com.github.xpenatan.webgpu.WGPURequestAdapterCallback;
 import com.github.xpenatan.webgpu.WGPURequestAdapterOptions;
@@ -49,6 +50,7 @@ public class WGPUApp {
 
     private void requestAdapter() {
         WGPURequestAdapterOptions op = WGPURequestAdapterOptions.obtain();
+        op.setPowerPreference(WGPUPowerPreference.HighPerformance);
         WGPURequestAdapterCallback callback = new WGPURequestAdapterCallback() {
             @Override
             protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, String message) {

@@ -94,7 +94,7 @@ nativeObject->SetLabel(label);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUBindGroupLayoutDescriptor* nativeObject = (JGPU::WGPUBindGroupLayoutDescriptor*)this_addr;
-nativeObject->SetEntries((WGPUVectorBindGroupLayoutEntry* )entries_addr);
+nativeObject->SetEntries((JGPU::WGPUVectorBindGroupLayoutEntry* )entries_addr);
 */
     public static native void internal_native_SetEntries(long this_addr, long entries_addr);
 }

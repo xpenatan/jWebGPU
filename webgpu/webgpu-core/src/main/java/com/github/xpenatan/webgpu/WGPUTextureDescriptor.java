@@ -163,7 +163,7 @@ nativeObject->SetSampleCount((int)sampleCount);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetViewFormats((WGPUVectorTextureFormat* )viewFormats_addr);
+nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )viewFormats_addr);
 */
     public static native void internal_native_SetViewFormats(long this_addr, long viewFormats_addr);
 }

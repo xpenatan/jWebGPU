@@ -144,9 +144,19 @@ nativeObject->PushDebugGroup(groupLabel);
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUComputePassEncoder* nativeObject = (JGPU::WGPUComputePassEncoder*)this_addr;
-nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (WGPUVectorInt* )offsets_addr);
+nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (JGPU::WGPUVectorInt* )offsets_addr);
 */
     public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long offsets_addr);
+
+    public void setBindGroup(int groupIndex, WGPUBindGroup group) {
+        internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUComputePassEncoder* nativeObject = (JGPU::WGPUComputePassEncoder*)this_addr;
+nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
+*/
+    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr);
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
