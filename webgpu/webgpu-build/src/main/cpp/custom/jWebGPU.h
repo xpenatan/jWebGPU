@@ -192,6 +192,7 @@ class WGPUFuture;
 class WGPUFutureWaitInfo;
 class WGPUCommandBuffer;
 class WGPUInstanceDescriptor;
+class WGPUCompilationInfo;
 
 }
 
@@ -669,6 +670,11 @@ class WGPUObjectBase {
     void Set(Derived& other) {
         mHandle = other.mHandle;
     }
+};
+
+class WGPUCompilationInfoCallback {
+    public:
+        virtual void OnCallback(WGPUCompilationInfoRequestStatus status, JGPU::WGPUCompilationInfo* compilationInfo) = 0;
 };
 
 class WGPURequestAdapterCallback {
@@ -1254,7 +1260,7 @@ class WGPUSupportedWGSLLanguageFeatures : public WGPUObjectBase<WGPUSupportedWGS
         WGPUWGSLLanguageFeatureName GetFeatureAt(int index);
 };
 
-class WGPUCompilationInfo : public WGPUObjectBase<WGPUCompilationInfo, ::WGPUCompilationInfo> {
+class WGPUCompilationInfo : public WGPUObjectBase<WGPUCompilationInfo, ::WGPUCompilationInfo*> {
     public:
         int GetMessageCount();
         WGPUCompilationMessage GetMessage(int index);
@@ -1540,6 +1546,7 @@ class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView
     public:
         static WGPUTextureView* Obtain();
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
         bool IsValid();
@@ -1549,6 +1556,7 @@ class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
     public:
         static WGPUTexture* Obtain();
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
         void CreateView(WGPUTextureViewDescriptor* textureViewDescriptor, WGPUTextureView* textureView);
@@ -1561,15 +1569,18 @@ class WGPUShaderModule : public WGPUObjectBase<WGPUShaderModule, ::WGPUShaderMod
     public:
         static WGPUShaderModule* Obtain();
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
         bool IsValid();
+        void SetCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback* callback);
 };
 
 class WGPURenderPipeline : public WGPUObjectBase<WGPURenderPipeline, ::WGPURenderPipeline> {
     public:
         static WGPURenderPipeline* Obtain();
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
         bool IsValid();
@@ -1579,6 +1590,7 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
     public:
         static WGPURenderPassEncoder* Obtain();
     public:
+        void SetLabel(const char* label);
         void AddRef();
         void Release();
         void End();
@@ -1596,7 +1608,6 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
         void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets = NULL);
         void SetBlendConstant(WGPUColor* color);
         void SetIndexBuffer(WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
-        void SetLabel(const char* label);
         void SetScissorRect(int x, int y, int width, int height);
         void SetStencilReference(int reference);
         void SetVertexBuffer(int slot, WGPUBuffer* buffer, int offset, int size);
@@ -1660,6 +1671,7 @@ class WGPUCommandBuffer : public WGPUObjectBase<WGPUCommandBuffer, ::WGPUCommand
     public:
         static WGPUCommandBuffer* Obtain();
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
         bool IsValid();
@@ -1669,6 +1681,7 @@ class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUComma
     public:
         static WGPUCommandEncoder* Obtain();
     public:
+        void SetLabel(const char* label);
         void AddRef();
         void Release();
         void BeginComputePass(WGPUComputePassDescriptor* descriptor, WGPUComputePassEncoder* encoder);
@@ -1683,13 +1696,13 @@ class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUComma
         void PopDebugGroup();
         void PushDebugGroup(const char* groupLabel);
         void ResolveQuerySet(WGPUQuerySet* querySet, int firstQuery, int queryCount, WGPUBuffer* destination, int destinationOffset);
-        void SetLabel(const char* label);
         void WriteTimestamp(WGPUQuerySet* querySet, int queryIndex);
         bool IsValid();
 };
 
 class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
     public:
+        void SetLabel(const char* label);
         void AddRef();
         void Release();
         void Unmap();
@@ -1698,41 +1711,40 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
         WGPUFuture MapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback* callback);
         void GetConstMappedRange(int offset, int size, void* bufferOut);
         WGPUByteBuffer& GetMappedRange(int offset, int size);
-        void SetLabel(const char* label);
         void Destroy();
         bool IsValid();
 };
 
 class WGPUBindGroup : public WGPUObjectBase<WGPUBindGroup, ::WGPUBindGroup> {
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
-        void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBindGroupLayout> {
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
-        void SetLabel(const char* value);
         bool IsValid();
 };
 
 class WGPUComputePipeline : public WGPUObjectBase<WGPUComputePipeline, ::WGPUComputePipeline> {
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
-        void SetLabel(const char* value);
         WGPUBindGroupLayout GetBindGroupLayout(int groupIndex);
         bool IsValid();
 };
 
 class WGPURenderBundle : public WGPUObjectBase<WGPURenderBundle, ::WGPURenderBundle> {
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
-        void SetLabel(const char* value);
         bool IsValid();
 };
 
@@ -1748,6 +1760,7 @@ class WGPUAdapter : public WGPUObjectBase<WGPUAdapter, ::WGPUAdapter> {
 
 class WGPUSurface : public WGPUObjectBase<WGPUSurface, ::WGPUSurface> {
     public:
+        void SetLabel(const char* value);
         void AddRef();
         void Release();
         void Unconfigure();

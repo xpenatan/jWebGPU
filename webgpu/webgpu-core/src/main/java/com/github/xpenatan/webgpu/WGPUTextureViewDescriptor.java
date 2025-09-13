@@ -68,16 +68,6 @@ return (jlong)JGPU::WGPUTextureViewDescriptor::Obtain();
 */
     public static native long internal_native_Obtain();
 
-    public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -87,6 +77,16 @@ JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor
 nativeObject->SetLabel(value);
 */
     public static native void internal_native_SetLabel(long this_addr, String value);
+
+    public void setNextInChain(WGPUChainedStruct chainedStruct) {
+        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
+nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
+*/
+    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());

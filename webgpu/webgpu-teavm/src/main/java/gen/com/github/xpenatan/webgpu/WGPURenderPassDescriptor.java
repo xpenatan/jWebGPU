@@ -74,6 +74,17 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain();
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
+jsObj.SetLabel(value);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetLabel(value);")
+    public static native void internal_native_SetLabel(int this_addr, String value);
+
     public void reset() {
         internal_native_Reset(native_address);
     }
@@ -95,17 +106,6 @@ jsObj.SetNextInChain(chainedStruct_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
-
-    public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);
-jsObj.SetLabel(value);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetLabel(value);")
-    public static native void internal_native_SetLabel(int this_addr, String value);
 
     public void setColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments) {
         internal_native_SetColorAttachments_0(native_address, colorAttachments.native_address);

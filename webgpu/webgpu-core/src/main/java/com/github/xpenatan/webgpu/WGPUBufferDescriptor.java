@@ -68,16 +68,6 @@ return (jlong)JGPU::WGPUBufferDescriptor::Obtain();
 */
     public static native long internal_native_Obtain();
 
-    public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -87,6 +77,16 @@ JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_add
 nativeObject->SetLabel(label);
 */
     public static native void internal_native_SetLabel(long this_addr, String label);
+
+    public void setNextInChain(WGPUChainedStruct chainedStruct) {
+        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
+nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
+*/
+    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setUsage(WGPUBufferUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());

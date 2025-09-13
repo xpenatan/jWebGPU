@@ -74,17 +74,6 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTextureViewDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain();
 
-    public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureViewDescriptor);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureViewDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
-    public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -95,6 +84,17 @@ jsObj.SetLabel(value);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureViewDescriptor);jsObj.SetLabel(value);")
     public static native void internal_native_SetLabel(int this_addr, String value);
+
+    public void setNextInChain(WGPUChainedStruct chainedStruct) {
+        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureViewDescriptor);
+jsObj.SetNextInChain(chainedStruct_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureViewDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
+    public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, (int) format.getValue());

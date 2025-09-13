@@ -68,6 +68,16 @@ return (jlong)JGPU::WGPURenderPassDescriptor::Obtain();
 */
     public static native long internal_native_Obtain();
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
+nativeObject->SetLabel(value);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String value);
+
     public void reset() {
         internal_native_Reset(native_address);
     }
@@ -87,16 +97,6 @@ JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)
 nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
-
-    public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void setColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments) {
         internal_native_SetColorAttachments_0(native_address, colorAttachments.native_address);

@@ -51,6 +51,36 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
+nativeObject->SetLabel(value);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String value);
+
+    public void addRef() {
+        internal_native_AddRef(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
+nativeObject->AddRef();
+*/
+    public static native void internal_native_AddRef(long this_addr);
+
+    public void release() {
+        internal_native_Release(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
+nativeObject->Release();
+*/
+    public static native void internal_native_Release(long this_addr);
+
     public void destroy() {
         internal_native_Destroy(native_address);
     }
@@ -81,36 +111,6 @@ JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
 return (int)nativeObject->GetType();
 */
     public static native int internal_native_GetType(long this_addr);
-
-    public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->SetLabel(value);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String value);
-
-    public void release() {
-        internal_native_Release(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->Release();
-*/
-    public static native void internal_native_Release(long this_addr);
-
-    public void addRef() {
-        internal_native_AddRef(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->AddRef();
-*/
-    public static native void internal_native_AddRef(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);

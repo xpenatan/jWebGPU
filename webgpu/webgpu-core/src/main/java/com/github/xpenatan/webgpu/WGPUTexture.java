@@ -68,6 +68,16 @@ return (jlong)JGPU::WGPUTexture::Obtain();
 */
     public static native long internal_native_Obtain();
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUTexture* nativeObject = (JGPU::WGPUTexture*)this_addr;
+nativeObject->SetLabel(label);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String label);
+
     public void createView(WGPUTextureViewDescriptor textureViewDescriptor, WGPUTextureView textureView) {
         internal_native_CreateView(native_address, textureViewDescriptor.native_address, textureView.native_address);
     }

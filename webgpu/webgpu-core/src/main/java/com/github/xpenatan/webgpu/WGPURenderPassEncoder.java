@@ -68,6 +68,26 @@ return (jlong)JGPU::WGPURenderPassEncoder::Obtain();
 */
     public static native long internal_native_Obtain();
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
+nativeObject->SetLabel(value);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String value);
+
+    public void addRef() {
+        internal_native_AddRef(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
+nativeObject->AddRef();
+*/
+    public static native void internal_native_AddRef(long this_addr);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -238,16 +258,6 @@ nativeObject->SetIndexBuffer((JGPU::WGPUBuffer* )buffer_addr, (::WGPUIndexFormat
 */
     public static native void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, long format, int offset, int size);
 
-    public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
-nativeObject->SetLabel(value);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String value);
-
     public void setScissorRect(int x, int y, int width, int height) {
         internal_native_SetScissorRect(native_address, x, y, width, height);
     }
@@ -287,16 +297,6 @@ JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_a
 nativeObject->SetViewport((float)x, (float)y, (float)width, (float)height, (float)minDepth, (float)maxDepth);
 */
     public static native void internal_native_SetViewport(long this_addr, float x, float y, float width, float height, float minDepth, float maxDepth);
-
-    public void addRef() {
-        internal_native_AddRef(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
-nativeObject->AddRef();
-*/
-    public static native void internal_native_AddRef(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);

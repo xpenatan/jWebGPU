@@ -68,6 +68,16 @@ return (jlong)JGPU::WGPUShaderModule::Obtain();
 */
     public static native long internal_native_Obtain();
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
+nativeObject->SetLabel(label);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String label);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -87,4 +97,14 @@ JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
 return nativeObject->IsValid();
 */
     public static native boolean internal_native_IsValid(long this_addr);
+
+    public void setCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback) {
+        internal_native_SetCallback(native_address, callbackMode.getValue(), callback.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
+nativeObject->SetCallback((::WGPUCallbackMode)callbackMode, (JGPU::WGPUCompilationInfoCallback* )callback_addr);
+*/
+    public static native void internal_native_SetCallback(long this_addr, long callbackMode, long callback_addr);
 }

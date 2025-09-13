@@ -74,6 +74,17 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUCommandEncoder.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain();
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);
+jsObj.SetLabel(value);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);jsObj.SetLabel(value);")
+    public static native void internal_native_SetLabel(int this_addr, String value);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -216,17 +227,6 @@ jsObj.ResolveQuerySet(querySet_addr, firstQuery, queryCount, destination_addr, d
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "querySet_addr", "firstQuery", "queryCount", "destination_addr", "destinationOffset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);jsObj.ResolveQuerySet(querySet_addr, firstQuery, queryCount, destination_addr, destinationOffset);")
     public static native void internal_native_ResolveQuerySet(int this_addr, int querySet_addr, int firstQuery, int queryCount, int destination_addr, int destinationOffset);
-
-    public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);
-jsObj.SetLabel(value);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);jsObj.SetLabel(value);")
-    public static native void internal_native_SetLabel(int this_addr, String value);
 
     public void writeTimestamp(WGPUQuerySet querySet, int queryIndex) {
         internal_native_WriteTimestamp(native_address, querySet.native_address, queryIndex);

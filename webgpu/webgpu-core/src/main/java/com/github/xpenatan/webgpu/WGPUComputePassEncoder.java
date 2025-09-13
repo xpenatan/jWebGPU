@@ -68,6 +68,16 @@ return (jlong)JGPU::WGPUComputePassEncoder::Obtain();
 */
     public static native long internal_native_Obtain();
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUComputePassEncoder* nativeObject = (JGPU::WGPUComputePassEncoder*)this_addr;
+nativeObject->SetLabel(label);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String label);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -157,16 +167,6 @@ JGPU::WGPUComputePassEncoder* nativeObject = (JGPU::WGPUComputePassEncoder*)this
 nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
 */
     public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr);
-
-    public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePassEncoder* nativeObject = (JGPU::WGPUComputePassEncoder*)this_addr;
-nativeObject->SetLabel(label);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void setPipeline(WGPUComputePipeline pipeline) {
         internal_native_SetPipeline(native_address, pipeline.native_address);

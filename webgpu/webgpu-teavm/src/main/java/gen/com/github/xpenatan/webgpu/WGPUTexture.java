@@ -74,6 +74,17 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexture.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain();
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexture);
+jsObj.SetLabel(label);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexture);jsObj.SetLabel(label);")
+    public static native void internal_native_SetLabel(int this_addr, String label);
+
     public void createView(WGPUTextureViewDescriptor textureViewDescriptor, WGPUTextureView textureView) {
         internal_native_CreateView(native_address, textureViewDescriptor.native_address, textureView.native_address);
     }

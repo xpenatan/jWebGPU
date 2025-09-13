@@ -68,6 +68,16 @@ return (jlong)JGPU::WGPUCommandEncoder::Obtain();
 */
     public static native long internal_native_Obtain();
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
+nativeObject->SetLabel(value);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String value);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -197,16 +207,6 @@ JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
 nativeObject->ResolveQuerySet((JGPU::WGPUQuerySet* )querySet_addr, (int)firstQuery, (int)queryCount, (JGPU::WGPUBuffer* )destination_addr, (int)destinationOffset);
 */
     public static native void internal_native_ResolveQuerySet(long this_addr, long querySet_addr, int firstQuery, int queryCount, long destination_addr, int destinationOffset);
-
-    public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->SetLabel(value);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void writeTimestamp(WGPUQuerySet querySet, int queryIndex) {
         internal_native_WriteTimestamp(native_address, querySet.native_address, queryIndex);

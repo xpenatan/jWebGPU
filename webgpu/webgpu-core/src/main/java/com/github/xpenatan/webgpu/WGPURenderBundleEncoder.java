@@ -51,6 +51,16 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
+nativeObject->SetLabel(label);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String label);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -70,16 +80,6 @@ JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)th
 nativeObject->SetPipeline((JGPU::WGPURenderPipeline* )renderPipeline_addr);
 */
     public static native void internal_native_SetPipeline(long this_addr, long renderPipeline_addr);
-
-    public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetLabel(label);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
         internal_native_Draw(native_address, vertexCount, instanceCount, firstVertex, firstInstance);

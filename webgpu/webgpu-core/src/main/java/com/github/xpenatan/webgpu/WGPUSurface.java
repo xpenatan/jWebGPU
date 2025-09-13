@@ -41,6 +41,16 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public void setLabel(String value) {
+        internal_native_SetLabel(native_address, value);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
+nativeObject->SetLabel(value);
+*/
+    public static native void internal_native_SetLabel(long this_addr, String value);
+
     public void unconfigure() {
         internal_native_Unconfigure(native_address);
     }

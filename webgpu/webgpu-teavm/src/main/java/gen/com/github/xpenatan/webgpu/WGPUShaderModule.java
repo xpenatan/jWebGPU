@@ -74,6 +74,17 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUShaderModule.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain();
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShaderModule);
+jsObj.SetLabel(label);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShaderModule);jsObj.SetLabel(label);")
+    public static native void internal_native_SetLabel(int this_addr, String label);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -96,4 +107,15 @@ return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShaderModule);var returnedJSObj = jsObj.IsValid();return returnedJSObj;")
     public static native boolean internal_native_IsValid(int this_addr);
+
+    public void setCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback) {
+        internal_native_SetCallback(native_address, (int) callbackMode.getValue(), callback.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShaderModule);
+jsObj.SetCallback(callbackMode, callback_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "callbackMode", "callback_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShaderModule);jsObj.SetCallback(callbackMode, callback_addr);")
+    public static native void internal_native_SetCallback(int this_addr, int callbackMode, int callback_addr);
 }

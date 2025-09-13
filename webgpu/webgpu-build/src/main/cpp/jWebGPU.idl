@@ -257,6 +257,16 @@ interface WGPUVectorInt {
 // ################################### CALLBACKS ###################################
 
 [Prefix="JGPU::"]
+interface WGPUCompilationInfoCallback {
+};
+
+[JSImplementation="WGPUCompilationInfoCallback"]
+interface WGPUCompilationInfoCallbackImpl {
+    void WGPUCompilationInfoCallbackImpl();
+    void OnCallback(WGPUCompilationInfoRequestStatus status, WGPUCompilationInfo compilationInfo);
+};
+
+[Prefix="JGPU::"]
 interface WGPURequestAdapterCallback {
 };
 
@@ -849,18 +859,18 @@ interface WGPUInstanceDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPURenderBundleDescriptor {
-    void WGPURenderBundleDescriptor();
     static WGPURenderBundleDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPURenderBundleDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
 };
 
 [Prefix="JGPU::"]
 interface WGPURenderBundleEncoderDescriptor {
-    void WGPURenderBundleEncoderDescriptor();
     static WGPURenderBundleEncoderDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPURenderBundleEncoderDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetColorFormats(WGPUVectorTextureFormat colorFormats);
     void SetDepthStencilFormat(WGPUTextureFormat depthStencilFormat);
     void SetSampleCount(long sampleCount);
@@ -870,20 +880,20 @@ interface WGPURenderBundleEncoderDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUQuerySetDescriptor {
-    void WGPUQuerySetDescriptor();
     static WGPUQuerySetDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUQuerySetDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetType(WGPUQueryType type);
     void SetCount(long count);
 };
 
 [Prefix="JGPU::"]
 interface WGPUSamplerDescriptor {
-    void WGPUSamplerDescriptor();
     static WGPUSamplerDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUSamplerDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetAddressModeU(WGPUAddressMode addressModeU);
     void SetAddressModeV(WGPUAddressMode addressModeV);
     void SetAddressModeW(WGPUAddressMode addressModeW);
@@ -898,10 +908,10 @@ interface WGPUSamplerDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUBindGroupLayoutDescriptor {
-    void WGPUBindGroupLayoutDescriptor();
     static WGPUBindGroupLayoutDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUBindGroupLayoutDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetEntries(WGPUVectorBindGroupLayoutEntry entries);
 };
 
@@ -915,8 +925,8 @@ interface WGPUProgrammableStageDescriptor { // Pointer descriptor
 
 [Prefix="JGPU::"]
 interface WGPUComputePipelineDescriptor {
-    void WGPUComputePipelineDescriptor();
     static WGPUComputePipelineDescriptor Obtain();
+    void WGPUComputePipelineDescriptor();
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetLayout(WGPUPipelineLayout layout);
@@ -931,28 +941,28 @@ interface WGPUQueueDescriptor {  // Pointer descriptor
 
 [Prefix="JGPU::"]
 interface WGPUShaderModuleDescriptor {
-    void WGPUShaderModuleDescriptor();
     static WGPUShaderModuleDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUShaderModuleDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
 };
 
 [Prefix="JGPU::"]
 interface WGPUBindGroupDescriptor {
-    void WGPUBindGroupDescriptor();
     static WGPUBindGroupDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUBindGroupDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetLayout(WGPUBindGroupLayout layout);
     void SetEntries(WGPUVectorBindGroupEntry entries);
 };
 
 [Prefix="JGPU::"]
 interface WGPUBufferDescriptor {
-    void WGPUBufferDescriptor();
     static WGPUBufferDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUBufferDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetUsage(WGPUBufferUsage usage);
     void SetSize(long size);
     void SetMappedAtCreation(boolean mappedAtCreation);
@@ -960,19 +970,19 @@ interface WGPUBufferDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUPipelineLayoutDescriptor {
-    void WGPUPipelineLayoutDescriptor();
     static WGPUPipelineLayoutDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUPipelineLayoutDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetBindGroupLayouts(WGPUVectorBindGroupLayout bindGroupLayouts);
 };
 
 [Prefix="JGPU::"]
 interface WGPUDeviceDescriptor {
-    void WGPUDeviceDescriptor();
     static WGPUDeviceDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUDeviceDescriptor();
     void SetLabel([Const] DOMString label);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetRequiredLimits(WGPULimits limits);
     void SetRequiredFeatures(WGPUVectorFeatureName features);
     [Value] WGPUQueueDescriptor GetDefaultQueue();
@@ -980,10 +990,10 @@ interface WGPUDeviceDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPURenderPipelineDescriptor {
-    void WGPURenderPipelineDescriptor();
     static WGPURenderPipelineDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPURenderPipelineDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     [Value] WGPUVertexState GetVertex();
     [Value] WGPUPrimitiveState GetPrimitive();
     void SetFragment(WGPUFragmentState fragmentState);
@@ -994,19 +1004,19 @@ interface WGPURenderPipelineDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUCommandEncoderDescriptor {
-    void WGPUCommandEncoderDescriptor();
     static WGPUCommandEncoderDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUCommandEncoderDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
 };
 
 [Prefix="JGPU::"]
 interface WGPURenderPassDescriptor {
-    void WGPURenderPassDescriptor();
     static WGPURenderPassDescriptor Obtain();
+    void WGPURenderPassDescriptor();
+    void SetLabel([Const] DOMString value);
     void Reset();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
-    void SetLabel([Const] DOMString value);
     [BindTo="SetColorAttachments"] void SetColorAttachments_0(WGPUVectorRenderPassColorAttachment colorAttachments);
     [BindTo="SetColorAttachments"] void SetColorAttachments_1(WGPURenderPassColorAttachment colorAttachment01);
     [BindTo="SetColorAttachments"] void SetColorAttachments_2(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02);
@@ -1019,27 +1029,27 @@ interface WGPURenderPassDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUCommandBufferDescriptor  {
-    void WGPUCommandBufferDescriptor();
     static WGPUCommandBufferDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUCommandBufferDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
 };
 
 [Prefix="JGPU::"]
 interface WGPUComputePassDescriptor {
-    void WGPUComputePassDescriptor();
     static WGPUComputePassDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUComputePassDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetTimestampWrites(WGPUComputePassTimestampWrites timestampWrites);
 };
 
 [Prefix="JGPU::"]
 interface WGPUTextureDescriptor {
-    void WGPUTextureDescriptor();
     static WGPUTextureDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    void WGPUTextureDescriptor();
     void SetLabel([Const] DOMString value);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetUsage(WGPUTextureUsage usage);
     void SetDimension(WGPUTextureDimension dimension);
     [Value] WGPUExtent3D GetSize();
@@ -1051,10 +1061,10 @@ interface WGPUTextureDescriptor {
 
 [Prefix="JGPU::"]
 interface WGPUTextureViewDescriptor {
-    void WGPUTextureViewDescriptor();
     static WGPUTextureViewDescriptor Obtain();
-    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetLabel([Const] DOMString value);
+    void WGPUTextureViewDescriptor();
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetFormat(WGPUTextureFormat format);
     void SetDimension(WGPUTextureViewDimension dimension);
     void SetBaseMipLevel(long baseMipLevel);
@@ -1070,17 +1080,17 @@ interface WGPUTextureViewDescriptor {
 [Prefix="JGPU::"]
 interface WGPUSampler {
     void WGPUSampler();
-    void Release();
     void SetLabel([Const] DOMString label);
+    void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPURenderBundleEncoder {
     void WGPURenderBundleEncoder();
+    void SetLabel([Const] DOMString label);
     void Release();
     void SetPipeline(WGPURenderPipeline renderPipeline);
-    void SetLabel([Const] DOMString label);
     void Draw(long vertexCount, long instanceCount, long firstVertex, long firstInstance);
     void DrawIndexed(long indexCount, long instanceCount, long firstIndex, long baseVertex, long firstInstance);
     void DrawIndirect(WGPUBuffer indirectBuffer, long indirectOffset);
@@ -1097,16 +1107,18 @@ interface WGPURenderBundleEncoder {
 
 [Prefix="JGPU::"]
 interface WGPUTextureView {
-    void WGPUTextureView();
     static WGPUTextureView Obtain();
+    void WGPUTextureView();
+    void SetLabel([Const] DOMString label);
     void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUTexture {
-    void WGPUTexture();
     static WGPUTexture Obtain();
+    void WGPUTexture();
+    void SetLabel([Const] DOMString label);
     void CreateView(WGPUTextureViewDescriptor textureViewDescriptor, WGPUTextureView textureView);
     WGPUTextureFormat GetFormat();
     void Release();
@@ -1116,23 +1128,28 @@ interface WGPUTexture {
 
 [Prefix="JGPU::"]
 interface WGPUShaderModule {
-    void WGPUShaderModule();
     static WGPUShaderModule Obtain();
+    void WGPUShaderModule();
+    void SetLabel([Const] DOMString label);
     void Release();
     boolean IsValid();
+    void SetCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback);
 };
 
 [Prefix="JGPU::"]
 interface WGPURenderPipeline {
     void WGPURenderPipeline();
+    void SetLabel([Const] DOMString label);
     void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPURenderPassEncoder {
-    void WGPURenderPassEncoder();
     static WGPURenderPassEncoder Obtain();
+    void WGPURenderPassEncoder();
+    void SetLabel([Const] DOMString value);
+    void AddRef();
     void Release();
     void End();
     void SetPipeline(WGPURenderPipeline renderPipeline);
@@ -1149,77 +1166,38 @@ interface WGPURenderPassEncoder {
     void SetBindGroup(long groupIndex, WGPUBindGroup group, optional WGPUVectorInt dynamicOffsets);
     void SetBlendConstant(WGPUColor color);
     void SetIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
-    void SetLabel([Const] DOMString value);
     void SetScissorRect(long x, long y, long width, long height);
     void SetStencilReference(long reference);
     void SetVertexBuffer(long slot, WGPUBuffer buffer, long offset, long size);
     void SetViewport(float x, float y, float width, float height, float minDepth, float maxDepth);
-    void AddRef();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUQuerySet {
     void WGPUQuerySet();
+    void SetLabel([Const] DOMString value);
+    void AddRef();
+    void Release();
     void Destroy();
     long GetCount();
     WGPUQueryType GetType();
-    void SetLabel([Const] DOMString value);
-    void Release();
-    void AddRef();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUPipelineLayout {
     void WGPUPipelineLayout();
-    void Release();
     void SetLabel([Const] DOMString value);
-    boolean IsValid();
-};
-
-[Prefix="JGPU::"]
-interface WGPUInstance {
-    boolean IsValid();
     void Release();
-    void RequestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback);
-    WGPUSurface CreateWebSurface([Const] DOMString canvas);                               //[-NEW_OBJECT]
-    WGPUSurface CreateWindowsSurface(any hwnd);                                           //[-NEW_OBJECT]
-    WGPUSurface CreateLinuxSurface(boolean isWayland, any windowOrSurface, any display);  //[-NEW_OBJECT]
-    WGPUSurface CreateMacSurface(any metalLayer);                                         //[-NEW_OBJECT]
-    WGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);                          //[-NEW_OBJECT]
-    void ProcessEvents();
-    WGPUWaitStatus WaitAny(WGPUVectorFutureWaitInfo futureVector, long timeoutNS);
-};
-
-[Prefix="JGPU::"]
-interface WGPUDevice {
-    void Release();
-    void CreateBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut);
-    void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut);
-    [BindTo="CreateBuffer"] WGPUBuffer CreateBuffer_1(WGPUBufferDescriptor descriptor);     //[-NEW_OBJECT]
-    [BindTo="CreateBuffer"] void CreateBuffer_2(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
-    void CreateCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut);
-    void CreateComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut);
-    void CreatePipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut);
-    void CreateQuerySet(WGPUQuerySetDescriptor descriptor, WGPUQuerySet valueOut);
-    void CreateRenderBundleEncoder(WGPURenderBundleEncoderDescriptor descriptor, WGPURenderBundleEncoder valueOut);
-    void CreateRenderPipeline(WGPURenderPipelineDescriptor descriptor, WGPURenderPipeline valueOut);
-    void CreateSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut);
-    void CreateShaderModule(WGPUShaderModuleDescriptor descriptor, WGPUShaderModule shaderModule);
-    void CreateTexture(WGPUTextureDescriptor descriptor, WGPUTexture valueOut);
-    void Destroy();
-
-    void GetFeatures(WGPUSupportedFeatures features);
-    boolean HasFeature(WGPUFeatureName feature);
-    void GetLimits(WGPULimits limits);
-    WGPUQueue GetQueue();
+    boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUComputePassEncoder {
-    void WGPUComputePassEncoder();
     static WGPUComputePassEncoder Obtain();
+    void WGPUComputePassEncoder();
+    void SetLabel([Const] DOMString label);
     void Release();
     void SetDispatchWorkgroups(long workgroupCountX, long workgroupCountY, long workgroupCountZ);
     void DispatchWorkgroupsIndirect(WGPUBuffer indirectBuffer, long indirectOffset);
@@ -1228,23 +1206,24 @@ interface WGPUComputePassEncoder {
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString groupLabel);
     void SetBindGroup(long groupIndex, WGPUBindGroup group, optional WGPUVectorInt offsets);
-    void SetLabel([Const] DOMString label);
     void SetPipeline(WGPUComputePipeline pipeline);
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUCommandBuffer {
-    void WGPUCommandBuffer();
     static WGPUCommandBuffer Obtain();
+    void WGPUCommandBuffer();
+    void SetLabel([Const] DOMString label);
     void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUCommandEncoder {
-    void WGPUCommandEncoder();
     static WGPUCommandEncoder Obtain();
+    void WGPUCommandEncoder();
+    void SetLabel([Const] DOMString value);
     void Release();
     void BeginComputePass(WGPUComputePassDescriptor descriptor, WGPUComputePassEncoder computePassEncoder);
     void BeginRenderPass(WGPURenderPassDescriptor renderPassDescriptor, WGPURenderPassEncoder renderPassEncoder);
@@ -1258,7 +1237,6 @@ interface WGPUCommandEncoder {
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString value);
     void ResolveQuerySet(WGPUQuerySet querySet, long firstQuery, long queryCount, WGPUBuffer destination, long destinationOffset);
-    void SetLabel([Const] DOMString value);
     void WriteTimestamp(WGPUQuerySet querySet, long queryIndex);
     boolean IsValid();
 };
@@ -1266,8 +1244,8 @@ interface WGPUCommandEncoder {
 [Prefix="JGPU::"]
 interface WGPUBuffer {
     void WGPUBuffer();
-    any Get(); //[-SKIP]
     void SetLabel([Const] DOMString value);
+    any Get(); //[-SKIP]
     void Release();
     void Destroy();
     [Value] WGPUFuture MapAsync(WGPUMapMode mode, long offset, long size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback);
@@ -1282,24 +1260,24 @@ interface WGPUBuffer {
 [Prefix="JGPU::"]
 interface WGPUBindGroup {
     void WGPUBindGroup();
-    void Release();
     void SetLabel([Const] DOMString value);
+    void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUBindGroupLayout {
     void WGPUBindGroupLayout();
-    void Release();
     void SetLabel([Const] DOMString value);
+    void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
 interface WGPUComputePipeline {
     void WGPUComputePipeline();
-    void Release();
     void SetLabel([Const] DOMString value);
+    void Release();
     [Value] WGPUBindGroupLayout GetBindGroupLayout(long groupIndex);
     boolean IsValid();
 };
@@ -1307,22 +1285,14 @@ interface WGPUComputePipeline {
 [Prefix="JGPU::"]
 interface WGPURenderBundle {
     void WGPURenderBundle();
-    void Release();
     void SetLabel([Const] DOMString value);
+    void Release();
     boolean IsValid();
 };
 
 [Prefix="JGPU::"]
-interface WGPUAdapter {
-    void Release();
-    void RequestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback);
-    boolean GetInfo(WGPUAdapterInfo adapterInfo);
-    boolean HasFeature(WGPUFeatureName featureName);
-    WGPUStatus GetLimits(WGPULimits limits);
-};
-
-[Prefix="JGPU::"]
 interface WGPUSurface {
+    void SetLabel([Const] DOMString value);
     void Unconfigure();
     void Release();
     void Configure(WGPUSurfaceConfiguration config);
@@ -1343,6 +1313,52 @@ interface WGPUQueue {
     void Release();
     [BindTo="WriteBuffer"] void WriteBuffer_1(WGPUBuffer buffer, long bufferOffset, octet[] bytes, long dataSize);     //[-SKIP]
     [BindTo="WriteTexture"] void WriteTexture_1(WGPUTexelCopyTextureInfo destination, octet[] bytes, long dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize);  //[-SKIP]
+};
+
+[Prefix="JGPU::"]
+interface WGPUInstance {
+    boolean IsValid();
+    void Release();
+    void RequestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback);
+    WGPUSurface CreateWebSurface([Const] DOMString canvas);                               //[-NEW_OBJECT]
+    WGPUSurface CreateWindowsSurface(any hwnd);                                           //[-NEW_OBJECT]
+    WGPUSurface CreateLinuxSurface(boolean isWayland, any windowOrSurface, any display);  //[-NEW_OBJECT]
+    WGPUSurface CreateMacSurface(any metalLayer);                                         //[-NEW_OBJECT]
+    WGPUSurface CreateAndroidSurface(WGPUAndroidWindow surface);                          //[-NEW_OBJECT]
+    void ProcessEvents();
+    WGPUWaitStatus WaitAny(WGPUVectorFutureWaitInfo futureVector, long timeoutNS);
+};
+
+[Prefix="JGPU::"]
+interface WGPUAdapter {
+    void Release();
+    void RequestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback);
+    boolean GetInfo(WGPUAdapterInfo adapterInfo);
+    boolean HasFeature(WGPUFeatureName featureName);
+    WGPUStatus GetLimits(WGPULimits limits);
+};
+
+[Prefix="JGPU::"]
+interface WGPUDevice {
+    void Release();
+    void CreateBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut);
+    void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut);
+    [BindTo="CreateBuffer"] WGPUBuffer CreateBuffer_1(WGPUBufferDescriptor descriptor);     //[-NEW_OBJECT]
+    [BindTo="CreateBuffer"] void CreateBuffer_2(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
+    void CreateCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut);
+    void CreateComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut);
+    void CreatePipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut);
+    void CreateQuerySet(WGPUQuerySetDescriptor descriptor, WGPUQuerySet valueOut);
+    void CreateRenderBundleEncoder(WGPURenderBundleEncoderDescriptor descriptor, WGPURenderBundleEncoder valueOut);
+    void CreateRenderPipeline(WGPURenderPipelineDescriptor descriptor, WGPURenderPipeline valueOut);
+    void CreateSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut);
+    void CreateShaderModule(WGPUShaderModuleDescriptor descriptor, WGPUShaderModule shaderModule);
+    void CreateTexture(WGPUTextureDescriptor descriptor, WGPUTexture valueOut);
+    void Destroy();
+    void GetFeatures(WGPUSupportedFeatures features);
+    boolean HasFeature(WGPUFeatureName feature);
+    void GetLimits(WGPULimits limits);
+    WGPUQueue GetQueue();
 };
 
 // ################################### ENUMS ###################################

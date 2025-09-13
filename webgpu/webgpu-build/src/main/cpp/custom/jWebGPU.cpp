@@ -2338,14 +2338,14 @@ int JGPU::WGPUCompilationMessage::GetLength() {
 
 // JGPU::WGPUCompilationInfo
 int JGPU::WGPUCompilationInfo::GetMessageCount() {
-    return Get().messageCount;
+    return Get()->messageCount;
 }
 
 JGPU::WGPUCompilationMessage JGPU::WGPUCompilationInfo::GetMessage(int index) {
     int size = GetMessageCount();
     if(index >= 0 && index < size) {
         JGPU::WGPUCompilationMessage temp;
-        temp.Set(Get().messages[index]);
+        temp.Set(Get()->messages[index]);
         return temp;
     }
     return JGPU::WGPUCompilationMessage();
@@ -3141,6 +3141,11 @@ JGPU::WGPUTextureView* JGPU::WGPUTextureView::Obtain() {
     return &obj;
 }
 
+void JGPU::WGPUTextureView::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
+    wgpuTextureViewSetLabel(Get(), stringView.Get());
+}
+
 void JGPU::WGPUTextureView::AddRef() {
     wgpuTextureViewAddRef(Get());
 }
@@ -3158,6 +3163,11 @@ JGPU::WGPUTexture* JGPU::WGPUTexture::Obtain() {
     static JGPU::WGPUTexture obj;
     obj = JGPU::WGPUTexture();
     return &obj;
+}
+
+void JGPU::WGPUTexture::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
+    wgpuTextureSetLabel(Get(), stringView.Get());
 }
 
 void JGPU::WGPUTexture::AddRef() {
@@ -3191,6 +3201,11 @@ JGPU::WGPUShaderModule* JGPU::WGPUShaderModule::Obtain() {
     return &obj;
 }
 
+void JGPU::WGPUShaderModule::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
+    wgpuShaderModuleSetLabel(Get(), stringView.Get());
+}
+
 void JGPU::WGPUShaderModule::AddRef() {
     wgpuShaderModuleAddRef(Get());
 }
@@ -3203,11 +3218,30 @@ bool JGPU::WGPUShaderModule::IsValid() {
     return Get();
 }
 
+void JGPU::WGPUShaderModule::SetCallback(WGPUCallbackMode callbackMode, JGPU::WGPUCompilationInfoCallback* callback) {
+    WGPUCompilationInfoCallbackInfo callbackInfo = {};
+    callbackInfo.mode = callbackMode;
+    callbackInfo.callback = [](WGPUCompilationInfoRequestStatus status, const ::WGPUCompilationInfo* compilationInfo, void* callback_param, void*) {
+        JGPU::WGPUCompilationInfoCallback* cback = reinterpret_cast<JGPU::WGPUCompilationInfoCallback*>(callback_param);
+        JGPU::WGPUCompilationInfo compInfo;
+        compInfo.Set((::WGPUCompilationInfo*)compilationInfo);
+        cback->OnCallback(status, &compInfo);
+    };
+    callbackInfo.userdata1 = reinterpret_cast<void*>(callback);
+    callbackInfo.userdata2 = NULL;
+    auto result = wgpuShaderModuleGetCompilationInfo(Get(), callbackInfo);
+}
+
 // JGPU::WGPURenderPipeline
 JGPU::WGPURenderPipeline* JGPU::WGPURenderPipeline::Obtain() {
     static JGPU::WGPURenderPipeline obj;
     obj = JGPU::WGPURenderPipeline();
     return &obj;
+}
+
+void JGPU::WGPURenderPipeline::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
+    wgpuRenderPipelineSetLabel(Get(), stringView.Get());
 }
 
 void JGPU::WGPURenderPipeline::AddRef() {
@@ -3683,6 +3717,11 @@ JGPU::WGPUCommandBuffer* JGPU::WGPUCommandBuffer::Obtain() {
     return &obj;
 }
 
+void JGPU::WGPUCommandBuffer::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
+    wgpuCommandBufferSetLabel(Get(), stringView.Get());
+}
+
 void JGPU::WGPUCommandBuffer::AddRef() {
     wgpuCommandBufferAddRef(Get());
 }
@@ -3961,6 +4000,11 @@ WGPUStatus JGPU::WGPUAdapter::GetLimits(JGPU::WGPULimits* limits) {
 }
 
 // JGPU::WGPUSurface
+void JGPU::WGPUSurface::SetLabel(const char* label) {
+    JGPU::WGPUStringView stringView(label);
+    wgpuSurfaceSetLabel(Get(), stringView.Get());
+}
+
 void JGPU::WGPUSurface::AddRef() {
     wgpuSurfaceAddRef(Get());
 }

@@ -74,17 +74,6 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain();
 
-    public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
-    public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -95,6 +84,17 @@ jsObj.SetLabel(label);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetLabel(label);")
     public static native void internal_native_SetLabel(int this_addr, String label);
+
+    public void setNextInChain(WGPUChainedStruct chainedStruct) {
+        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);
+jsObj.SetNextInChain(chainedStruct_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
+    public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setAddressModeU(WGPUAddressMode addressModeU) {
         internal_native_SetAddressModeU(native_address, (int) addressModeU.getValue());

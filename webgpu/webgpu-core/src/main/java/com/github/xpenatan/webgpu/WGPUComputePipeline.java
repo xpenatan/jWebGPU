@@ -53,16 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public void release() {
-        internal_native_Release(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
-nativeObject->Release();
-*/
-    public static native void internal_native_Release(long this_addr);
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -72,6 +62,16 @@ JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
 nativeObject->SetLabel(value);
 */
     public static native void internal_native_SetLabel(long this_addr, String value);
+
+    public void release() {
+        internal_native_Release(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
+nativeObject->Release();
+*/
+    public static native void internal_native_Release(long this_addr);
 
     public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
         long pointer = internal_native_GetBindGroupLayout(native_address, groupIndex);

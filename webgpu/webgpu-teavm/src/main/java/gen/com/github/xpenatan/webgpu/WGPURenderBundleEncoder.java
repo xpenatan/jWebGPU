@@ -54,6 +54,17 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
+    public void setLabel(String label) {
+        internal_native_SetLabel(native_address, label);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);
+jsObj.SetLabel(label);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);jsObj.SetLabel(label);")
+    public static native void internal_native_SetLabel(int this_addr, String label);
+
     public void release() {
         internal_native_Release(native_address);
     }
@@ -75,17 +86,6 @@ jsObj.SetPipeline(renderPipeline_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "renderPipeline_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);jsObj.SetPipeline(renderPipeline_addr);")
     public static native void internal_native_SetPipeline(int this_addr, int renderPipeline_addr);
-
-    public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);
-jsObj.SetLabel(label);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);jsObj.SetLabel(label);")
-    public static native void internal_native_SetLabel(int this_addr, String label);
 
     public void draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
         internal_native_Draw(native_address, vertexCount, instanceCount, firstVertex, firstInstance);

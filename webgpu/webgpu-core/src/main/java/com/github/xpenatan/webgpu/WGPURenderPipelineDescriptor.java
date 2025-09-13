@@ -74,16 +74,6 @@ return (jlong)JGPU::WGPURenderPipelineDescriptor::Obtain();
 */
     public static native long internal_native_Obtain();
 
-    public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -93,6 +83,16 @@ JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDesc
 nativeObject->SetLabel(value);
 */
     public static native void internal_native_SetLabel(long this_addr, String value);
+
+    public void setNextInChain(WGPUChainedStruct chainedStruct) {
+        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
+nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
+*/
+    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public WGPUVertexState getVertex() {
         long pointer = internal_native_GetVertex(native_address);

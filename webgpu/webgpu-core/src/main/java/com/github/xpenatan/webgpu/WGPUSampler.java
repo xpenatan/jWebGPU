@@ -51,16 +51,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public void release() {
-        internal_native_Release(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSampler* nativeObject = (JGPU::WGPUSampler*)this_addr;
-nativeObject->Release();
-*/
-    public static native void internal_native_Release(long this_addr);
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -70,6 +60,16 @@ JGPU::WGPUSampler* nativeObject = (JGPU::WGPUSampler*)this_addr;
 nativeObject->SetLabel(label);
 */
     public static native void internal_native_SetLabel(long this_addr, String label);
+
+    public void release() {
+        internal_native_Release(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUSampler* nativeObject = (JGPU::WGPUSampler*)this_addr;
+nativeObject->Release();
+*/
+    public static native void internal_native_Release(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
