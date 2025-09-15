@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUTextureBindingLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTextureBindingLayout.NULL;
-        if (WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUTextureBindingLayout.native_new();
-        WGPUTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureBindingLayout::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -107,4 +92,19 @@ JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)
 nativeObject->SetMultisampled((int)multisampled);
 */
     public static native void internal_native_SetMultisampled(long this_addr, int multisampled);
+
+    public static WGPUTextureBindingLayout obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTextureBindingLayout.NULL;
+        if (WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUTextureBindingLayout.native_new();
+        WGPUTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUTextureBindingLayout::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUVertexAttribute obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVertexAttribute.NULL;
-        if (WGPUVertexAttribute_TEMP_STATIC_GEN_0 == null)
-            WGPUVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVertexAttribute.native_new();
-        WGPUVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVertexAttribute::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setFormat(WGPUVertexFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
@@ -97,4 +82,19 @@ JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
 nativeObject->SetShaderLocation((int)shaderLocation);
 */
     public static native void internal_native_SetShaderLocation(long this_addr, int shaderLocation);
+
+    public static WGPUVertexAttribute obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVertexAttribute.NULL;
+        if (WGPUVertexAttribute_TEMP_STATIC_GEN_0 == null)
+            WGPUVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVertexAttribute.native_new();
+        WGPUVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUVertexAttribute::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

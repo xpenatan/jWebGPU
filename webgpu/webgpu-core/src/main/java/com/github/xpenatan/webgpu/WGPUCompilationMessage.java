@@ -10,9 +10,9 @@ import com.github.xpenatan.webgpu.idl.helper.IDLStringView;
 
 public class WGPUCompilationMessage extends IDLBase {
 
-    static private WGPUCompilationMessage WGPUCompilationMessage_TEMP_STATIC_GEN_0;
-
     private IDLStringView IDLStringView_TEMP_GEN_0;
+
+    static private WGPUCompilationMessage WGPUCompilationMessage_TEMP_STATIC_GEN_0;
 
     static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 
@@ -55,21 +55,6 @@ JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUCompilationMessage obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUCompilationMessage.NULL;
-        if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
-            WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
-        WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUCompilationMessage::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public IDLStringView getMessage() {
         long pointer = internal_native_GetMessage(native_address);
@@ -138,4 +123,19 @@ JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this
 return nativeObject->GetLength();
 */
     public static native int internal_native_GetLength(long this_addr);
+
+    public static WGPUCompilationMessage obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUCompilationMessage.NULL;
+        if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
+            WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
+        WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUCompilationMessage::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

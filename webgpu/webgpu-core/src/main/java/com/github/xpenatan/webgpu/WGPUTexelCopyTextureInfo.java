@@ -11,9 +11,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUTexelCopyTextureInfo extends IDLBase {
 
-    static private WGPUTexelCopyTextureInfo WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
-
     private WGPUOrigin3D WGPUOrigin3D_TEMP_GEN_0;
+
+    static private WGPUTexelCopyTextureInfo WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
 
     public final static WGPUTexelCopyTextureInfo NULL = native_new();
 
@@ -45,22 +45,6 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
       delete nativeObject;
     */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUTexelCopyTextureInfo obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTexelCopyTextureInfo.NULL;
-        if (WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyTextureInfo.native_new();
-        WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
-    }
-
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)JGPU::WGPUTexelCopyTextureInfo::Obtain();
-    */
-    public static native long internal_native_Obtain();
 
     public void setTexture(WGPUTexture texture) {
         internal_native_SetTexture(native_address, texture.native_address);
@@ -113,4 +97,20 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
       nativeObject->SetAspect((::WGPUTextureAspect)aspect);
     */
     public static native void internal_native_SetAspect(long this_addr, long aspect);
+
+    public static WGPUTexelCopyTextureInfo obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTexelCopyTextureInfo.NULL;
+        if (WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 == null)
+            WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyTextureInfo.native_new();
+        WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)JGPU::WGPUTexelCopyTextureInfo::Obtain();
+    */
+    public static native long internal_native_Obtain();
 }

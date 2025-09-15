@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUFragmentState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUFragmentState.NULL;
-        if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
-            WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
-        WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUFragmentState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUFragmentState::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -157,4 +142,19 @@ JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
 nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
 */
     public static native void internal_native_SetConstants(long this_addr, long constants_addr);
+
+    public static WGPUFragmentState obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUFragmentState.NULL;
+        if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
+            WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
+        WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUFragmentState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUFragmentState::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUColor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUColor.NULL;
-        if (WGPUColor_TEMP_STATIC_GEN_0 == null)
-            WGPUColor_TEMP_STATIC_GEN_0 = WGPUColor.native_new();
-        WGPUColor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUColor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUColor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setColor(float r, float g, float b, float a) {
         internal_native_SetColor(native_address, r, g, b, a);
     }
@@ -157,4 +142,19 @@ JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
 return nativeObject->GetA();
 */
     public static native float internal_native_GetA(long this_addr);
+
+    public static WGPUColor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUColor.NULL;
+        if (WGPUColor_TEMP_STATIC_GEN_0 == null)
+            WGPUColor_TEMP_STATIC_GEN_0 = WGPUColor.native_new();
+        WGPUColor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUColor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUColor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

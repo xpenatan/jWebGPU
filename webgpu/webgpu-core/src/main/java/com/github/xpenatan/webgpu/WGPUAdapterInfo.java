@@ -10,8 +10,6 @@ import com.github.xpenatan.webgpu.idl.helper.IDLString;
 
 public class WGPUAdapterInfo extends IDLBase {
 
-    static private WGPUAdapterInfo WGPUAdapterInfo_TEMP_STATIC_GEN_0;
-
     private IDLString IDLString_TEMP_GEN_0;
 
     private IDLString IDLString_TEMP_GEN_1;
@@ -19,6 +17,8 @@ public class WGPUAdapterInfo extends IDLBase {
     private IDLString IDLString_TEMP_GEN_2;
 
     private IDLString IDLString_TEMP_GEN_3;
+
+    static private WGPUAdapterInfo WGPUAdapterInfo_TEMP_STATIC_GEN_0;
 
     static public final WGPUAdapterInfo NULL = WGPUAdapterInfo.native_new();
 
@@ -61,21 +61,6 @@ JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUAdapterInfo obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUAdapterInfo.NULL;
-        if (WGPUAdapterInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUAdapterInfo_TEMP_STATIC_GEN_0 = WGPUAdapterInfo.native_new();
-        WGPUAdapterInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUAdapterInfo_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUAdapterInfo::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public IDLString getVendor() {
         long pointer = internal_native_GetVendor(native_address);
@@ -186,4 +171,19 @@ JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
 return (int)nativeObject->GetAdapterType();
 */
     public static native int internal_native_GetAdapterType(long this_addr);
+
+    public static WGPUAdapterInfo obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUAdapterInfo.NULL;
+        if (WGPUAdapterInfo_TEMP_STATIC_GEN_0 == null)
+            WGPUAdapterInfo_TEMP_STATIC_GEN_0 = WGPUAdapterInfo.native_new();
+        WGPUAdapterInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUAdapterInfo_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUAdapterInfo::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

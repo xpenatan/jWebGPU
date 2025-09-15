@@ -10,9 +10,9 @@ import gen.com.github.xpenatan.webgpu.idl.helper.IDLStringView;
 
 public class WGPUCompilationMessage extends IDLBase {
 
-    static private WGPUCompilationMessage WGPUCompilationMessage_TEMP_STATIC_GEN_0;
-
     private IDLStringView IDLStringView_TEMP_GEN_0;
+
+    static private WGPUCompilationMessage WGPUCompilationMessage_TEMP_STATIC_GEN_0;
 
     static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 
@@ -58,24 +58,6 @@ jWebGPU.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationMessage);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
-
-    public static WGPUCompilationMessage obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUCompilationMessage.NULL;
-        if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
-            WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
-        WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUCompilationMessage.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUCompilationMessage.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
 
     public IDLStringView getMessage() {
         int pointer = internal_native_GetMessage(native_address);
@@ -156,4 +138,22 @@ return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationMessage);var returnedJSObj = jsObj.GetLength();return returnedJSObj;")
     public static native int internal_native_GetLength(int this_addr);
+
+    public static WGPUCompilationMessage obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUCompilationMessage.NULL;
+        if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
+            WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
+        WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUCompilationMessage.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUCompilationMessage.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

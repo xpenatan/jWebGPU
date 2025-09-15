@@ -9,11 +9,11 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUDepthStencilState extends IDLBase {
 
-    static private WGPUDepthStencilState WGPUDepthStencilState_TEMP_STATIC_GEN_0;
-
     private WGPUStencilFaceState WGPUStencilFaceState_TEMP_GEN_0;
 
     private WGPUStencilFaceState WGPUStencilFaceState_TEMP_GEN_1;
+
+    static private WGPUDepthStencilState WGPUDepthStencilState_TEMP_STATIC_GEN_0;
 
     static public final WGPUDepthStencilState NULL = WGPUDepthStencilState.native_new();
 
@@ -56,21 +56,6 @@ JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_a
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUDepthStencilState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUDepthStencilState.NULL;
-        if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
-            WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
-        WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUDepthStencilState::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
@@ -195,4 +180,19 @@ static JGPU::WGPUStencilFaceState copy_addr;
 copy_addr = nativeObject->GetStencilBack();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetStencilBack(long this_addr);
+
+    public static WGPUDepthStencilState obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUDepthStencilState.NULL;
+        if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
+            WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
+        WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUDepthStencilState::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

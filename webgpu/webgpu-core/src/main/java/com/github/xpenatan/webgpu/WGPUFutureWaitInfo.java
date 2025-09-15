@@ -43,6 +43,16 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public void setFuture(WGPUFuture future) {
+        internal_native_SetFuture(native_address, future.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUFutureWaitInfo* nativeObject = (JGPU::WGPUFutureWaitInfo*)this_addr;
+nativeObject->SetFuture((JGPU::WGPUFuture* )future_addr);
+*/
+    public static native void internal_native_SetFuture(long this_addr, long future_addr);
+
     public static WGPUFutureWaitInfo obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
@@ -57,14 +67,4 @@ delete nativeObject;
 return (jlong)JGPU::WGPUFutureWaitInfo::Obtain();
 */
     public static native long internal_native_Obtain();
-
-    public void setFuture(WGPUFuture future) {
-        internal_native_SetFuture(native_address, future.native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUFutureWaitInfo* nativeObject = (JGPU::WGPUFutureWaitInfo*)this_addr;
-nativeObject->SetFuture((JGPU::WGPUFuture* )future_addr);
-*/
-    public static native void internal_native_SetFuture(long this_addr, long future_addr);
 }

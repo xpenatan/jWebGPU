@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUQuerySetDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUQuerySetDescriptor.NULL;
-        if (WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 = WGPUQuerySetDescriptor.native_new();
-        WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUQuerySetDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -107,4 +92,19 @@ JGPU::WGPUQuerySetDescriptor* nativeObject = (JGPU::WGPUQuerySetDescriptor*)this
 nativeObject->SetCount((int)count);
 */
     public static native void internal_native_SetCount(long this_addr, int count);
+
+    public static WGPUQuerySetDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUQuerySetDescriptor.NULL;
+        if (WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 = WGPUQuerySetDescriptor.native_new();
+        WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUQuerySetDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

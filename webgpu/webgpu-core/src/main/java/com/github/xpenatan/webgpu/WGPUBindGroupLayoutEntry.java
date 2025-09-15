@@ -9,8 +9,6 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUBindGroupLayoutEntry extends IDLBase {
 
-    static private WGPUBindGroupLayoutEntry WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
-
     private WGPUBufferBindingLayout WGPUBufferBindingLayout_TEMP_GEN_0;
 
     private WGPUSamplerBindingLayout WGPUSamplerBindingLayout_TEMP_GEN_0;
@@ -18,6 +16,8 @@ public class WGPUBindGroupLayoutEntry extends IDLBase {
     private WGPUStorageTextureBindingLayout WGPUStorageTextureBindingLayout_TEMP_GEN_0;
 
     private WGPUTextureBindingLayout WGPUTextureBindingLayout_TEMP_GEN_0;
+
+    static private WGPUBindGroupLayoutEntry WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
 
     static public final WGPUBindGroupLayoutEntry NULL = WGPUBindGroupLayoutEntry.native_new();
 
@@ -60,21 +60,6 @@ JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUBindGroupLayoutEntry obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUBindGroupLayoutEntry.NULL;
-        if (WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.native_new();
-        WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBindGroupLayoutEntry::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
@@ -213,4 +198,19 @@ static JGPU::WGPUTextureBindingLayout copy_addr;
 copy_addr = nativeObject->GetTexture();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetTexture(long this_addr);
+
+    public static WGPUBindGroupLayoutEntry obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUBindGroupLayoutEntry.NULL;
+        if (WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
+            WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.native_new();
+        WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUBindGroupLayoutEntry::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

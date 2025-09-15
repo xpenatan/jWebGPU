@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexBufferLayout);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUVertexBufferLayout obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVertexBufferLayout.NULL;
-        if (WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVertexBufferLayout.native_new();
-        WGPUVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUVertexBufferLayout.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVertexBufferLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setAttributes(WGPUVectorVertexAttribute values) {
         internal_native_SetAttributes(native_address, values.native_address);
     }
@@ -106,4 +88,22 @@ jsObj.SetStepMode(stepMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "stepMode"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexBufferLayout);jsObj.SetStepMode(stepMode);")
     public static native void internal_native_SetStepMode(int this_addr, int stepMode);
+
+    public static WGPUVertexBufferLayout obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVertexBufferLayout.NULL;
+        if (WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVertexBufferLayout.native_new();
+        WGPUVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUVertexBufferLayout.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVertexBufferLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

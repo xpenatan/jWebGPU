@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexture);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUTexture obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTexture.NULL;
-        if (WGPUTexture_TEMP_STATIC_GEN_0 == null)
-            WGPUTexture_TEMP_STATIC_GEN_0 = WGPUTexture.native_new();
-        WGPUTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTexture_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUTexture.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexture.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -142,4 +124,22 @@ return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexture);var returnedJSObj = jsObj.IsValid();return returnedJSObj;")
     public static native boolean internal_native_IsValid(int this_addr);
+
+    public static WGPUTexture obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTexture.NULL;
+        if (WGPUTexture_TEMP_STATIC_GEN_0 == null)
+            WGPUTexture_TEMP_STATIC_GEN_0 = WGPUTexture.native_new();
+        WGPUTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTexture_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUTexture.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexture.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUCommandEncoderDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUCommandEncoderDescriptor.NULL;
-        if (WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.native_new();
-        WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUCommandEncoderDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -87,4 +72,19 @@ JGPU::WGPUCommandEncoderDescriptor* nativeObject = (JGPU::WGPUCommandEncoderDesc
 nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+
+    public static WGPUCommandEncoderDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUCommandEncoderDescriptor.NULL;
+        if (WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.native_new();
+        WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUCommandEncoderDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

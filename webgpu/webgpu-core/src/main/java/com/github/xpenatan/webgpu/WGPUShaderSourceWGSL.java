@@ -9,9 +9,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUShaderSourceWGSL extends IDLBase {
 
-    static private WGPUShaderSourceWGSL WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
-
     private WGPUChainedStruct WGPUChainedStruct_TEMP_GEN_0;
+
+    static private WGPUShaderSourceWGSL WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
 
     static public final WGPUShaderSourceWGSL NULL = WGPUShaderSourceWGSL.native_new();
 
@@ -55,21 +55,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUShaderSourceWGSL obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUShaderSourceWGSL.NULL;
-        if (WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.native_new();
-        WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUShaderSourceWGSL::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setCode(String code) {
         internal_native_SetCode(native_address, code);
     }
@@ -96,4 +81,19 @@ static JGPU::WGPUChainedStruct copy_addr;
 copy_addr = nativeObject->GetChain();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetChain(long this_addr);
+
+    public static WGPUShaderSourceWGSL obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUShaderSourceWGSL.NULL;
+        if (WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 == null)
+            WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.native_new();
+        WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUShaderSourceWGSL::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

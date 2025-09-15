@@ -47,25 +47,6 @@ public class WGPUExtent3D extends IDLBase {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUExtent3D obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUExtent3D.NULL;
-        if (WGPUExtent3D_TEMP_STATIC_GEN_0 == null)
-            WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.native_new();
-        WGPUExtent3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUExtent3D_TEMP_STATIC_GEN_0;
-    }
-
-    /*
-      [-TEAVM;-NATIVE]
-      var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();
-      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
-      return jWebGPU.getPointer(returnedJSObj);
-    */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setWidth(int width) {
         internal_native_SetWidth(native_address, width);
     }
@@ -101,4 +82,23 @@ public class WGPUExtent3D extends IDLBase {
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "depthOrArrayLayers"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetDepthOrArrayLayers(depthOrArrayLayers);")
     public static native void internal_native_SetDepthOrArrayLayers(int this_addr, int depthOrArrayLayers);
+
+    public static WGPUExtent3D obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUExtent3D.NULL;
+        if (WGPUExtent3D_TEMP_STATIC_GEN_0 == null)
+            WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.native_new();
+        WGPUExtent3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUExtent3D_TEMP_STATIC_GEN_0;
+    }
+
+    /*
+      [-TEAVM;-NATIVE]
+      var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();
+      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
+      return jWebGPU.getPointer(returnedJSObj);
+    */
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

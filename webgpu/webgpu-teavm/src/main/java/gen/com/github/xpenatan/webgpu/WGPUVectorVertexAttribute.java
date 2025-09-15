@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorVertexAttribute);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUVectorVertexAttribute obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVectorVertexAttribute.NULL;
-        if (WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVectorVertexAttribute.native_new();
-        WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUVectorVertexAttribute.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVectorVertexAttribute.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public int size() {
         return internal_native_size(native_address);
     }
@@ -107,4 +89,22 @@ jsObj.push_back(colorAttachment_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "colorAttachment_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorVertexAttribute);jsObj.push_back(colorAttachment_addr);")
     public static native void internal_native_push_back(int this_addr, int colorAttachment_addr);
+
+    public static WGPUVectorVertexAttribute obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVectorVertexAttribute.NULL;
+        if (WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 == null)
+            WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVectorVertexAttribute.native_new();
+        WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUVectorVertexAttribute.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVectorVertexAttribute.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

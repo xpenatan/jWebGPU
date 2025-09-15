@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUVectorVertexBufferLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVectorVertexBufferLayout.NULL;
-        if (WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVectorVertexBufferLayout.native_new();
-        WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorVertexBufferLayout::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public int size() {
         return internal_native_size(native_address);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUVectorVertexBufferLayout* nativeObject = (JGPU::WGPUVectorVertexBuffer
 nativeObject->push_back(*((JGPU::WGPUVertexBufferLayout* )vertexBufferLayout_addr));
 */
     public static native void internal_native_push_back(long this_addr, long vertexBufferLayout_addr);
+
+    public static WGPUVectorVertexBufferLayout obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVectorVertexBufferLayout.NULL;
+        if (WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVectorVertexBufferLayout.native_new();
+        WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUVectorVertexBufferLayout::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

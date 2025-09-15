@@ -44,22 +44,6 @@ public class WGPUExtent3D extends IDLBase {
     */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUExtent3D obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUExtent3D.NULL;
-        if (WGPUExtent3D_TEMP_STATIC_GEN_0 == null)
-            WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.native_new();
-        WGPUExtent3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUExtent3D_TEMP_STATIC_GEN_0;
-    }
-
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)JGPU::WGPUExtent3D::Obtain();
-    */
-    public static native long internal_native_Obtain();
-
     public void setWidth(int width) {
         internal_native_SetWidth(native_address, width);
     }
@@ -92,4 +76,20 @@ public class WGPUExtent3D extends IDLBase {
       nativeObject->SetDepthOrArrayLayers((int)depthOrArrayLayers);
     */
     public static native void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers);
+
+    public static WGPUExtent3D obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUExtent3D.NULL;
+        if (WGPUExtent3D_TEMP_STATIC_GEN_0 == null)
+            WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.native_new();
+        WGPUExtent3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUExtent3D_TEMP_STATIC_GEN_0;
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)JGPU::WGPUExtent3D::Obtain();
+    */
+    public static native long internal_native_Obtain();
 }

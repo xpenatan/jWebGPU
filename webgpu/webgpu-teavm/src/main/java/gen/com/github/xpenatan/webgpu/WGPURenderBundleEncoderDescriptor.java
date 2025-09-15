@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPURenderBundleEncoderDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderBundleEncoderDescriptor.NULL;
-        if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
-        WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPURenderBundleEncoderDescriptor.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderBundleEncoderDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -150,4 +132,22 @@ jsObj.SetStencilReadOnly(stencilReadOnly);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "stencilReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetStencilReadOnly(stencilReadOnly);")
     public static native void internal_native_SetStencilReadOnly(int this_addr, int stencilReadOnly);
+
+    public static WGPURenderBundleEncoderDescriptor obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderBundleEncoderDescriptor.NULL;
+        if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
+        WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPURenderBundleEncoderDescriptor.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderBundleEncoderDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

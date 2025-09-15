@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUCommandBufferDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUCommandBufferDescriptor.NULL;
-        if (WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandBufferDescriptor.native_new();
-        WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUCommandBufferDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -87,4 +72,19 @@ JGPU::WGPUCommandBufferDescriptor* nativeObject = (JGPU::WGPUCommandBufferDescri
 nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+
+    public static WGPUCommandBufferDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUCommandBufferDescriptor.NULL;
+        if (WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandBufferDescriptor.native_new();
+        WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUCommandBufferDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

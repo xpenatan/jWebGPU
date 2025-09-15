@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerBindingLayout);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUSamplerBindingLayout obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUSamplerBindingLayout.NULL;
-        if (WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 = WGPUSamplerBindingLayout.native_new();
-        WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUSamplerBindingLayout.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerBindingLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -95,4 +77,22 @@ jsObj.SetType(type);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerBindingLayout);jsObj.SetType(type);")
     public static native void internal_native_SetType(int this_addr, int type);
+
+    public static WGPUSamplerBindingLayout obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUSamplerBindingLayout.NULL;
+        if (WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 = WGPUSamplerBindingLayout.native_new();
+        WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUSamplerBindingLayout.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerBindingLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

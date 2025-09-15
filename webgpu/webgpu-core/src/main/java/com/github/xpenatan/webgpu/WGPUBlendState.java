@@ -9,11 +9,11 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUBlendState extends IDLBase {
 
-    static private WGPUBlendState WGPUBlendState_TEMP_STATIC_GEN_0;
-
     private WGPUBlendComponent WGPUBlendComponent_TEMP_GEN_0;
 
     private WGPUBlendComponent WGPUBlendComponent_TEMP_GEN_1;
+
+    static private WGPUBlendState WGPUBlendState_TEMP_STATIC_GEN_0;
 
     static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 
@@ -57,21 +57,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUBlendState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUBlendState.NULL;
-        if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
-            WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
-        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUBlendState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBlendState::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public WGPUBlendComponent getColor() {
         long pointer = internal_native_GetColor(native_address);
         if (pointer == 0)
@@ -105,4 +90,19 @@ static JGPU::WGPUBlendComponent copy_addr;
 copy_addr = nativeObject->GetAlpha();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetAlpha(long this_addr);
+
+    public static WGPUBlendState obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUBlendState.NULL;
+        if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
+            WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
+        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUBlendState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUBlendState::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

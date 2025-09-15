@@ -9,9 +9,9 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPURenderPassColorAttachment extends IDLBase {
 
-    static private WGPURenderPassColorAttachment WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
-
     private WGPUColor WGPUColor_TEMP_GEN_0;
+
+    static private WGPURenderPassColorAttachment WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
 
     static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 
@@ -57,24 +57,6 @@ jWebGPU.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
-
-    public static WGPURenderPassColorAttachment obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderPassColorAttachment.NULL;
-        if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
-        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
 
     public void reset() {
         internal_native_Reset(native_address);
@@ -171,4 +153,22 @@ jsObj.SetDepthSlice(depthSlice);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "depthSlice"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetDepthSlice(depthSlice);")
     public static native void internal_native_SetDepthSlice(int this_addr, int depthSlice);
+
+    public static WGPURenderPassColorAttachment obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderPassColorAttachment.NULL;
+        if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
+            WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
+        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

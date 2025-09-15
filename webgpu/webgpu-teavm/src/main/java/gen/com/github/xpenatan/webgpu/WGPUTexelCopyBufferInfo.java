@@ -9,11 +9,11 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUTexelCopyBufferInfo extends IDLBase {
 
-    static private WGPUTexelCopyBufferInfo WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
-
     private WGPUTexelCopyBufferLayout WGPUTexelCopyBufferLayout_TEMP_GEN_0;
 
     private WGPUBuffer WGPUBuffer_TEMP_GEN_0;
+
+    static private WGPUTexelCopyBufferInfo WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
 
     static public final WGPUTexelCopyBufferInfo NULL = WGPUTexelCopyBufferInfo.native_new();
 
@@ -59,24 +59,6 @@ jWebGPU.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferInfo);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
-
-    public static WGPUTexelCopyBufferInfo obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTexelCopyBufferInfo.NULL;
-        if (WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferInfo.native_new();
-        WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUTexelCopyBufferInfo.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexelCopyBufferInfo.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
 
     public WGPUTexelCopyBufferLayout getLayout() {
         int pointer = internal_native_GetLayout(native_address);
@@ -126,4 +108,22 @@ jsObj.SetBuffer(buffer_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "buffer_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferInfo);jsObj.SetBuffer(buffer_addr);")
     public static native void internal_native_SetBuffer(int this_addr, int buffer_addr);
+
+    public static WGPUTexelCopyBufferInfo obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTexelCopyBufferInfo.NULL;
+        if (WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 == null)
+            WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferInfo.native_new();
+        WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUTexelCopyBufferInfo.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexelCopyBufferInfo.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

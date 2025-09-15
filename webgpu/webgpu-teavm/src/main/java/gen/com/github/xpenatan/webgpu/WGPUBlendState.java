@@ -9,11 +9,11 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUBlendState extends IDLBase {
 
-    static private WGPUBlendState WGPUBlendState_TEMP_STATIC_GEN_0;
-
     private WGPUBlendComponent WGPUBlendComponent_TEMP_GEN_0;
 
     private WGPUBlendComponent WGPUBlendComponent_TEMP_GEN_1;
+
+    static private WGPUBlendState WGPUBlendState_TEMP_STATIC_GEN_0;
 
     static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 
@@ -60,24 +60,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUBlendState obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUBlendState.NULL;
-        if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
-            WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
-        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUBlendState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUBlendState.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBlendState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public WGPUBlendComponent getColor() {
         int pointer = internal_native_GetColor(native_address);
         if (pointer == 0)
@@ -115,4 +97,22 @@ return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendState);var returnedJSObj = jsObj.GetAlpha();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetAlpha(int this_addr);
+
+    public static WGPUBlendState obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUBlendState.NULL;
+        if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
+            WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
+        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUBlendState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUBlendState.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBlendState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

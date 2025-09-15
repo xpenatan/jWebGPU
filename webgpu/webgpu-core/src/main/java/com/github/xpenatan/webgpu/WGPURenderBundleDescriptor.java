@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPURenderBundleDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderBundleDescriptor.NULL;
-        if (WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleDescriptor.native_new();
-        WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderBundleDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -87,4 +72,19 @@ JGPU::WGPURenderBundleDescriptor* nativeObject = (JGPU::WGPURenderBundleDescript
 nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+
+    public static WGPURenderBundleDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderBundleDescriptor.NULL;
+        if (WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleDescriptor.native_new();
+        WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPURenderBundleDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

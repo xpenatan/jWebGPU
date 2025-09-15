@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupLayoutDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUBindGroupLayoutDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUBindGroupLayoutDescriptor.NULL;
-        if (WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutDescriptor.native_new();
-        WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUBindGroupLayoutDescriptor.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBindGroupLayoutDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -106,4 +88,22 @@ jsObj.SetEntries(entries_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "entries_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupLayoutDescriptor);jsObj.SetEntries(entries_addr);")
     public static native void internal_native_SetEntries(int this_addr, int entries_addr);
+
+    public static WGPUBindGroupLayoutDescriptor obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUBindGroupLayoutDescriptor.NULL;
+        if (WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutDescriptor.native_new();
+        WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUBindGroupLayoutDescriptor.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBindGroupLayoutDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

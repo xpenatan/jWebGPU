@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUSamplerDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUSamplerDescriptor.NULL;
-        if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
-        WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -205,4 +187,22 @@ jsObj.SetMaxAnisotropy(maxAnisotropy);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "maxAnisotropy"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetMaxAnisotropy(maxAnisotropy);")
     public static native void internal_native_SetMaxAnisotropy(int this_addr, int maxAnisotropy);
+
+    public static WGPUSamplerDescriptor obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUSamplerDescriptor.NULL;
+        if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
+        WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

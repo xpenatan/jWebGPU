@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUPipelineLayoutDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUPipelineLayoutDescriptor.NULL;
-        if (WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUPipelineLayoutDescriptor.native_new();
-        WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUPipelineLayoutDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUPipelineLayoutDescriptor* nativeObject = (JGPU::WGPUPipelineLayoutDesc
 nativeObject->SetBindGroupLayouts((JGPU::WGPUVectorBindGroupLayout* )bindGroupLayouts_addr);
 */
     public static native void internal_native_SetBindGroupLayouts(long this_addr, long bindGroupLayouts_addr);
+
+    public static WGPUPipelineLayoutDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUPipelineLayoutDescriptor.NULL;
+        if (WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUPipelineLayoutDescriptor.native_new();
+        WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUPipelineLayoutDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUVectorTextureFormat obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVectorTextureFormat.NULL;
-        if (WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 = WGPUVectorTextureFormat.native_new();
-        WGPUVectorTextureFormat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorTextureFormat::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public int size() {
         return internal_native_size(native_address);
     }
@@ -108,4 +93,19 @@ JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)th
 return (int)nativeObject->get((int)index);
 */
     public static native int internal_native_get(long this_addr, int index);
+
+    public static WGPUVectorTextureFormat obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVectorTextureFormat.NULL;
+        if (WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 == null)
+            WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 = WGPUVectorTextureFormat.native_new();
+        WGPUVectorTextureFormat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUVectorTextureFormat::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUVectorRenderPassColorAttachment obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVectorRenderPassColorAttachment.NULL;
-        if (WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPUVectorRenderPassColorAttachment.native_new();
-        WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorRenderPassColorAttachment::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public int size() {
         return internal_native_size(native_address);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUVectorRenderPassColorAttachment* nativeObject = (JGPU::WGPUVectorRende
 nativeObject->push_back(*((JGPU::WGPURenderPassColorAttachment* )colorAttachment_addr));
 */
     public static native void internal_native_push_back(long this_addr, long colorAttachment_addr);
+
+    public static WGPUVectorRenderPassColorAttachment obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVectorRenderPassColorAttachment.NULL;
+        if (WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
+            WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPUVectorRenderPassColorAttachment.native_new();
+        WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUVectorRenderPassColorAttachment::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

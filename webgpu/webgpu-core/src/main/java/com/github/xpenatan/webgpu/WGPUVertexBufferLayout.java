@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUVertexBufferLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVertexBufferLayout.NULL;
-        if (WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVertexBufferLayout.native_new();
-        WGPUVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVertexBufferLayout::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setAttributes(WGPUVectorVertexAttribute values) {
         internal_native_SetAttributes(native_address, values.native_address);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this
 nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
 */
     public static native void internal_native_SetStepMode(long this_addr, long stepMode);
+
+    public static WGPUVertexBufferLayout obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVertexBufferLayout.NULL;
+        if (WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVertexBufferLayout.native_new();
+        WGPUVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUVertexBufferLayout::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

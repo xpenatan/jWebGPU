@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUVectorBindGroupLayoutEntry obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUVectorBindGroupLayoutEntry.NULL;
-        if (WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayoutEntry.native_new();
-        WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorBindGroupLayoutEntry::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public int size() {
         return internal_native_size(native_address);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUVectorBindGroupLayoutEntry* nativeObject = (JGPU::WGPUVectorBindGroupL
 nativeObject->push_back(*((JGPU::WGPUBindGroupLayoutEntry* )groupLayout_addr));
 */
     public static native void internal_native_push_back(long this_addr, long groupLayout_addr);
+
+    public static WGPUVectorBindGroupLayoutEntry obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUVectorBindGroupLayoutEntry.NULL;
+        if (WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
+            WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayoutEntry.native_new();
+        WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUVectorBindGroupLayoutEntry::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

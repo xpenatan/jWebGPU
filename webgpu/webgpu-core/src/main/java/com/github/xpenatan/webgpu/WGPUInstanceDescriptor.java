@@ -53,6 +53,16 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public void setNextInChain(WGPUChainedStruct chainedStruct) {
+        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
+nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
+*/
+    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+
     public static WGPUInstanceDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
@@ -67,14 +77,4 @@ delete nativeObject;
 return (jlong)JGPU::WGPUInstanceDescriptor::Obtain();
 */
     public static native long internal_native_Obtain();
-
-    public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 }

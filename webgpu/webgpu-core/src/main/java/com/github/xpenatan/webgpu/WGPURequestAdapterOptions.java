@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPURequestAdapterOptions obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURequestAdapterOptions.NULL;
-        if (WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 == null)
-            WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 = WGPURequestAdapterOptions.native_new();
-        WGPURequestAdapterOptions_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURequestAdapterOptions::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -117,4 +102,19 @@ JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions
 nativeObject->SetCompatibleSurface((JGPU::WGPUSurface* )compatibleSurface_addr);
 */
     public static native void internal_native_SetCompatibleSurface(long this_addr, long compatibleSurface_addr);
+
+    public static WGPURequestAdapterOptions obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURequestAdapterOptions.NULL;
+        if (WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 == null)
+            WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 = WGPURequestAdapterOptions.native_new();
+        WGPURequestAdapterOptions_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPURequestAdapterOptions::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

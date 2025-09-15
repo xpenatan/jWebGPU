@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPURenderPassDepthStencilAttachment obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderPassDepthStencilAttachment.NULL;
-        if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
-        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassDepthStencilAttachment::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setView(WGPUTextureView textureView) {
         internal_native_SetView(native_address, textureView.native_address);
     }
@@ -157,4 +142,19 @@ JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPass
 nativeObject->SetStencilReadOnly(stencilReadOnly);
 */
     public static native void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly);
+
+    public static WGPURenderPassDepthStencilAttachment obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderPassDepthStencilAttachment.NULL;
+        if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
+            WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
+        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPURenderPassDepthStencilAttachment::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

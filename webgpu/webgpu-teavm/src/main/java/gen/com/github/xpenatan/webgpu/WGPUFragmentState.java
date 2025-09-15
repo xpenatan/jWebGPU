@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUFragmentState obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUFragmentState.NULL;
-        if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
-            WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
-        WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUFragmentState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUFragmentState.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUFragmentState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -172,4 +154,22 @@ jsObj.SetConstants(constants_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "constants_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetConstants(constants_addr);")
     public static native void internal_native_SetConstants(int this_addr, int constants_addr);
+
+    public static WGPUFragmentState obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUFragmentState.NULL;
+        if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
+            WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
+        WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUFragmentState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUFragmentState.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUFragmentState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

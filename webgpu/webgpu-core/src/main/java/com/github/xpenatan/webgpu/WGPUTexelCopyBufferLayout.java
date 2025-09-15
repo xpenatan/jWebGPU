@@ -44,22 +44,6 @@ public class WGPUTexelCopyBufferLayout extends IDLBase {
     */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUTexelCopyBufferLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTexelCopyBufferLayout.NULL;
-        if (WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
-        WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)JGPU::WGPUTexelCopyBufferLayout::Obtain();
-    */
-    public static native long internal_native_Obtain();
-
     public void setOffset(int offset) {
         internal_native_SetOffset(native_address, offset);
     }
@@ -92,4 +76,20 @@ public class WGPUTexelCopyBufferLayout extends IDLBase {
       nativeObject->SetRowsPerImage((int)rowsPerImage);
     */
     public static native void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage);
+
+    public static WGPUTexelCopyBufferLayout obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTexelCopyBufferLayout.NULL;
+        if (WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
+        WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)JGPU::WGPUTexelCopyBufferLayout::Obtain();
+    */
+    public static native long internal_native_Obtain();
 }

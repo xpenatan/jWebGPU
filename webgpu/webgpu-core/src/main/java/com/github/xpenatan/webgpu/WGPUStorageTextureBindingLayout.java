@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUStorageTextureBindingLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUStorageTextureBindingLayout.NULL;
-        if (WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
-        WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUStorageTextureBindingLayout::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -107,4 +92,19 @@ JGPU::WGPUStorageTextureBindingLayout* nativeObject = (JGPU::WGPUStorageTextureB
 nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
 */
     public static native void internal_native_SetViewDimension(long this_addr, long viewDimension);
+
+    public static WGPUStorageTextureBindingLayout obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUStorageTextureBindingLayout.NULL;
+        if (WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
+            WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
+        WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUStorageTextureBindingLayout::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

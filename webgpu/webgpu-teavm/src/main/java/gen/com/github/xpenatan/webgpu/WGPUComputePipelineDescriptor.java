@@ -9,9 +9,9 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUComputePipelineDescriptor extends IDLBase {
 
-    static private WGPUComputePipelineDescriptor WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
-
     private WGPUProgrammableStageDescriptor WGPUProgrammableStageDescriptor_TEMP_GEN_0;
+
+    static private WGPUComputePipelineDescriptor WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
 
     static public final WGPUComputePipelineDescriptor NULL = WGPUComputePipelineDescriptor.native_new();
 
@@ -57,24 +57,6 @@ jWebGPU.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePipelineDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
-
-    public static WGPUComputePipelineDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUComputePipelineDescriptor.NULL;
-        if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
-        WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUComputePipelineDescriptor.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePipelineDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
@@ -127,4 +109,22 @@ return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePipelineDescriptor);var returnedJSObj = jsObj.GetCompute();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetCompute(int this_addr);
+
+    public static WGPUComputePipelineDescriptor obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUComputePipelineDescriptor.NULL;
+        if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
+        WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUComputePipelineDescriptor.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePipelineDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

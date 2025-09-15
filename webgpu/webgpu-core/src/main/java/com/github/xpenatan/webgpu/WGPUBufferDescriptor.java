@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUBufferDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUBufferDescriptor.NULL;
-        if (WGPUBufferDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.native_new();
-        WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBufferDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -117,4 +102,19 @@ JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_add
 nativeObject->SetMappedAtCreation(mappedAtCreation);
 */
     public static native void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation);
+
+    public static WGPUBufferDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUBufferDescriptor.NULL;
+        if (WGPUBufferDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.native_new();
+        WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUBufferDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

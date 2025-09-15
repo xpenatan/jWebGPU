@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUSamplerDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUSamplerDescriptor.NULL;
-        if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
-        WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSamplerDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -187,4 +172,19 @@ JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_a
 nativeObject->SetMaxAnisotropy((int)maxAnisotropy);
 */
     public static native void internal_native_SetMaxAnisotropy(long this_addr, int maxAnisotropy);
+
+    public static WGPUSamplerDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUSamplerDescriptor.NULL;
+        if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
+        WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUSamplerDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

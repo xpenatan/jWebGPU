@@ -9,11 +9,11 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUDepthStencilState extends IDLBase {
 
-    static private WGPUDepthStencilState WGPUDepthStencilState_TEMP_STATIC_GEN_0;
-
     private WGPUStencilFaceState WGPUStencilFaceState_TEMP_GEN_0;
 
     private WGPUStencilFaceState WGPUStencilFaceState_TEMP_GEN_1;
+
+    static private WGPUDepthStencilState WGPUDepthStencilState_TEMP_STATIC_GEN_0;
 
     static public final WGPUDepthStencilState NULL = WGPUDepthStencilState.native_new();
 
@@ -59,24 +59,6 @@ jWebGPU.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
-
-    public static WGPUDepthStencilState obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUDepthStencilState.NULL;
-        if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
-            WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
-        WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUDepthStencilState.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUDepthStencilState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
@@ -214,4 +196,22 @@ return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);var returnedJSObj = jsObj.GetStencilBack();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetStencilBack(int this_addr);
+
+    public static WGPUDepthStencilState obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUDepthStencilState.NULL;
+        if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
+            WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
+        WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUDepthStencilState.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUDepthStencilState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

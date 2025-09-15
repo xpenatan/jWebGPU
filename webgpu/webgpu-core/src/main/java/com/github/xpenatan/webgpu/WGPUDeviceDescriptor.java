@@ -9,9 +9,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUDeviceDescriptor extends IDLBase {
 
-    static private WGPUDeviceDescriptor WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
-
     private WGPUQueueDescriptor WGPUQueueDescriptor_TEMP_GEN_0;
+
+    static private WGPUDeviceDescriptor WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
 
     static public final WGPUDeviceDescriptor NULL = WGPUDeviceDescriptor.native_new();
 
@@ -54,21 +54,6 @@ JGPU::WGPUDeviceDescriptor* nativeObject = (JGPU::WGPUDeviceDescriptor*)this_add
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUDeviceDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUDeviceDescriptor.NULL;
-        if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
-        WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUDeviceDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
@@ -126,4 +111,19 @@ static JGPU::WGPUQueueDescriptor copy_addr;
 copy_addr = nativeObject->GetDefaultQueue();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetDefaultQueue(long this_addr);
+
+    public static WGPUDeviceDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUDeviceDescriptor.NULL;
+        if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
+        WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUDeviceDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

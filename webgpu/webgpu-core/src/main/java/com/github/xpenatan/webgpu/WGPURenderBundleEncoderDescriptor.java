@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPURenderBundleEncoderDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderBundleEncoderDescriptor.NULL;
-        if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
-        WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderBundleEncoderDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -137,4 +122,19 @@ JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleE
 nativeObject->SetStencilReadOnly((int)stencilReadOnly);
 */
     public static native void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly);
+
+    public static WGPURenderBundleEncoderDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderBundleEncoderDescriptor.NULL;
+        if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
+        WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPURenderBundleEncoderDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

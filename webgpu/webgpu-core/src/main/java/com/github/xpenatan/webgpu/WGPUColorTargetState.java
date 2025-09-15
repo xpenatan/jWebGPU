@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUColorTargetState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUColorTargetState.NULL;
-        if (WGPUColorTargetState_TEMP_STATIC_GEN_0 == null)
-            WGPUColorTargetState_TEMP_STATIC_GEN_0 = WGPUColorTargetState.native_new();
-        WGPUColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUColorTargetState_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUColorTargetState::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -107,4 +92,19 @@ JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_add
 nativeObject->SetWriteMask((::WGPUColorWriteMask)writeMask);
 */
     public static native void internal_native_SetWriteMask(long this_addr, long writeMask);
+
+    public static WGPUColorTargetState obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUColorTargetState.NULL;
+        if (WGPUColorTargetState_TEMP_STATIC_GEN_0 == null)
+            WGPUColorTargetState_TEMP_STATIC_GEN_0 = WGPUColorTargetState.native_new();
+        WGPUColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUColorTargetState_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUColorTargetState::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

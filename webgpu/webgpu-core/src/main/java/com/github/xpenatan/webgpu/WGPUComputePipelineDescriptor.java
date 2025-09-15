@@ -9,9 +9,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUComputePipelineDescriptor extends IDLBase {
 
-    static private WGPUComputePipelineDescriptor WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
-
     private WGPUProgrammableStageDescriptor WGPUProgrammableStageDescriptor_TEMP_GEN_0;
+
+    static private WGPUComputePipelineDescriptor WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
 
     static public final WGPUComputePipelineDescriptor NULL = WGPUComputePipelineDescriptor.native_new();
 
@@ -54,21 +54,6 @@ JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDe
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUComputePipelineDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUComputePipelineDescriptor.NULL;
-        if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
-        WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUComputePipelineDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
@@ -116,4 +101,19 @@ static JGPU::WGPUProgrammableStageDescriptor copy_addr;
 copy_addr = nativeObject->GetCompute();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetCompute(long this_addr);
+
+    public static WGPUComputePipelineDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUComputePipelineDescriptor.NULL;
+        if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
+        WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUComputePipelineDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

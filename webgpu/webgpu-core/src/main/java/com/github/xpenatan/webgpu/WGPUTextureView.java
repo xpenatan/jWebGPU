@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUTextureView obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTextureView.NULL;
-        if (WGPUTextureView_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureView_TEMP_STATIC_GEN_0 = WGPUTextureView.native_new();
-        WGPUTextureView_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTextureView_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureView::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
 return nativeObject->IsValid();
 */
     public static native boolean internal_native_IsValid(long this_addr);
+
+    public static WGPUTextureView obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTextureView.NULL;
+        if (WGPUTextureView_TEMP_STATIC_GEN_0 == null)
+            WGPUTextureView_TEMP_STATIC_GEN_0 = WGPUTextureView.native_new();
+        WGPUTextureView_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTextureView_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUTextureView::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

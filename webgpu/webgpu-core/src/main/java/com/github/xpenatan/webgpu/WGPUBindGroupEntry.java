@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUBindGroupEntry obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUBindGroupEntry.NULL;
-        if (WGPUBindGroupEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUBindGroupEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupEntry.native_new();
-        WGPUBindGroupEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUBindGroupEntry_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBindGroupEntry::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void reset() {
         internal_native_Reset(native_address);
     }
@@ -147,4 +132,19 @@ JGPU::WGPUBindGroupEntry* nativeObject = (JGPU::WGPUBindGroupEntry*)this_addr;
 nativeObject->SetTextureView((JGPU::WGPUTextureView* )textureView_addr);
 */
     public static native void internal_native_SetTextureView(long this_addr, long textureView_addr);
+
+    public static WGPUBindGroupEntry obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUBindGroupEntry.NULL;
+        if (WGPUBindGroupEntry_TEMP_STATIC_GEN_0 == null)
+            WGPUBindGroupEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupEntry.native_new();
+        WGPUBindGroupEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUBindGroupEntry_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUBindGroupEntry::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

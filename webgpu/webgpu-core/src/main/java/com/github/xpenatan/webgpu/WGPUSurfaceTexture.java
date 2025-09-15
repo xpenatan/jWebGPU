@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUSurfaceTexture obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUSurfaceTexture.NULL;
-        if (WGPUSurfaceTexture_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.native_new();
-        WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSurfaceTexture::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void getTexture(WGPUTexture texture) {
         internal_native_GetTexture(native_address, texture.native_address);
     }
@@ -88,4 +73,19 @@ JGPU::WGPUSurfaceTexture* nativeObject = (JGPU::WGPUSurfaceTexture*)this_addr;
 return (int)nativeObject->GetStatus();
 */
     public static native int internal_native_GetStatus(long this_addr);
+
+    public static WGPUSurfaceTexture obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUSurfaceTexture.NULL;
+        if (WGPUSurfaceTexture_TEMP_STATIC_GEN_0 == null)
+            WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.native_new();
+        WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUSurfaceTexture::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

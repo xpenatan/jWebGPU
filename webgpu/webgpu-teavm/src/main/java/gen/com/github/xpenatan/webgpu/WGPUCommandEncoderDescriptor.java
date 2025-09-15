@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoderDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUCommandEncoderDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUCommandEncoderDescriptor.NULL;
-        if (WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.native_new();
-        WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUCommandEncoderDescriptor.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUCommandEncoderDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -95,4 +77,22 @@ jsObj.SetNextInChain(chainedStruct_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoderDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
+
+    public static WGPUCommandEncoderDescriptor obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUCommandEncoderDescriptor.NULL;
+        if (WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.native_new();
+        WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUCommandEncoderDescriptor.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUCommandEncoderDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

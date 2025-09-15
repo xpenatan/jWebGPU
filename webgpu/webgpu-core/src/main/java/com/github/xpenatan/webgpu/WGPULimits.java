@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPULimits obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPULimits.NULL;
-        if (WGPULimits_TEMP_STATIC_GEN_0 == null)
-            WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
-        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPULimits_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPULimits::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setMaxTextureDimension1D(int value) {
         internal_native_SetMaxTextureDimension1D(native_address, value);
     }
@@ -687,4 +672,19 @@ JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
 return nativeObject->GetMaxComputeWorkgroupsPerDimension();
 */
     public static native int internal_native_GetMaxComputeWorkgroupsPerDimension(long this_addr);
+
+    public static WGPULimits obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPULimits.NULL;
+        if (WGPULimits_TEMP_STATIC_GEN_0 == null)
+            WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
+        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPULimits_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPULimits::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

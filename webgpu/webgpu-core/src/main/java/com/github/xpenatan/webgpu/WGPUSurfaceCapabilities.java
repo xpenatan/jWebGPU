@@ -9,9 +9,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUSurfaceCapabilities extends IDLBase {
 
-    static private WGPUSurfaceCapabilities WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
-
     private WGPUVectorTextureFormat WGPUVectorTextureFormat_TEMP_GEN_0;
+
+    static private WGPUSurfaceCapabilities WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
 
     static public final WGPUSurfaceCapabilities NULL = WGPUSurfaceCapabilities.native_new();
 
@@ -55,21 +55,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUSurfaceCapabilities obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUSurfaceCapabilities.NULL;
-        if (WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 = WGPUSurfaceCapabilities.native_new();
-        WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSurfaceCapabilities::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public WGPUVectorTextureFormat getFormats() {
         long pointer = internal_native_GetFormats(native_address);
         if (pointer == 0)
@@ -86,4 +71,19 @@ static JGPU::WGPUVectorTextureFormat copy_addr;
 copy_addr = nativeObject->GetFormats();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetFormats(long this_addr);
+
+    public static WGPUSurfaceCapabilities obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUSurfaceCapabilities.NULL;
+        if (WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 == null)
+            WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 = WGPUSurfaceCapabilities.native_new();
+        WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUSurfaceCapabilities::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -9,9 +9,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPURenderPassColorAttachment extends IDLBase {
 
-    static private WGPURenderPassColorAttachment WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
-
     private WGPUColor WGPUColor_TEMP_GEN_0;
+
+    static private WGPURenderPassColorAttachment WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
 
     static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 
@@ -54,21 +54,6 @@ JGPU::WGPURenderPassColorAttachment* nativeObject = (JGPU::WGPURenderPassColorAt
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPURenderPassColorAttachment obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderPassColorAttachment.NULL;
-        if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
-        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassColorAttachment::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public void reset() {
         internal_native_Reset(native_address);
@@ -156,4 +141,19 @@ JGPU::WGPURenderPassColorAttachment* nativeObject = (JGPU::WGPURenderPassColorAt
 nativeObject->SetDepthSlice((int)depthSlice);
 */
     public static native void internal_native_SetDepthSlice(long this_addr, int depthSlice);
+
+    public static WGPURenderPassColorAttachment obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderPassColorAttachment.NULL;
+        if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
+            WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
+        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPURenderPassColorAttachment::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

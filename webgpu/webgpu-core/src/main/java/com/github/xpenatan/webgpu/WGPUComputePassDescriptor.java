@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUComputePassDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUComputePassDescriptor.NULL;
-        if (WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePassDescriptor.native_new();
-        WGPUComputePassDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUComputePassDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -97,4 +82,19 @@ JGPU::WGPUComputePassDescriptor* nativeObject = (JGPU::WGPUComputePassDescriptor
 nativeObject->SetTimestampWrites((JGPU::WGPUComputePassTimestampWrites* )timestampWrites_addr);
 */
     public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
+
+    public static WGPUComputePassDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUComputePassDescriptor.NULL;
+        if (WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePassDescriptor.native_new();
+        WGPUComputePassDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUComputePassDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

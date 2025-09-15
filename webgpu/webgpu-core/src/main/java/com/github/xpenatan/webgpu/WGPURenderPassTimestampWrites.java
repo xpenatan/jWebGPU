@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPURenderPassTimestampWrites obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPURenderPassTimestampWrites.NULL;
-        if (WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.native_new();
-        WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassTimestampWrites::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setQuerySet(WGPUQuerySet value) {
         internal_native_SetQuerySet(native_address, value.native_address);
     }
@@ -97,4 +82,19 @@ JGPU::WGPURenderPassTimestampWrites* nativeObject = (JGPU::WGPURenderPassTimesta
 nativeObject->SetEndOfPassWriteIndex((int)value);
 */
     public static native void internal_native_SetEndOfPassWriteIndex(long this_addr, int value);
+
+    public static WGPURenderPassTimestampWrites obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPURenderPassTimestampWrites.NULL;
+        if (WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
+            WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.native_new();
+        WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPURenderPassTimestampWrites::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

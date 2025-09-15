@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUSurfaceConfiguration obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUSurfaceConfiguration.NULL;
-        if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
-        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSurfaceConfiguration::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -157,4 +142,19 @@ JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)
 nativeObject->SetAlphaMode((::WGPUCompositeAlphaMode)alphaMode);
 */
     public static native void internal_native_SetAlphaMode(long this_addr, long alphaMode);
+
+    public static WGPUSurfaceConfiguration obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUSurfaceConfiguration.NULL;
+        if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
+            WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
+        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUSurfaceConfiguration::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUTextureViewDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTextureViewDescriptor.NULL;
-        if (WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureViewDescriptor.native_new();
-        WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureViewDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
@@ -167,4 +152,19 @@ JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor
 nativeObject->SetUsage((::WGPUTextureUsage)usage);
 */
     public static native void internal_native_SetUsage(long this_addr, long usage);
+
+    public static WGPUTextureViewDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTextureViewDescriptor.NULL;
+        if (WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureViewDescriptor.native_new();
+        WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUTextureViewDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

@@ -53,21 +53,6 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public static WGPUShaderModule obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUShaderModule.NULL;
-        if (WGPUShaderModule_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderModule_TEMP_STATIC_GEN_0 = WGPUShaderModule.native_new();
-        WGPUShaderModule_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUShaderModule_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUShaderModule::Obtain();
-*/
-    public static native long internal_native_Obtain();
-
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
@@ -107,4 +92,19 @@ JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
 nativeObject->SetCallback((::WGPUCallbackMode)callbackMode, (JGPU::WGPUCompilationInfoCallback* )callback_addr);
 */
     public static native void internal_native_SetCallback(long this_addr, long callbackMode, long callback_addr);
+
+    public static WGPUShaderModule obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUShaderModule.NULL;
+        if (WGPUShaderModule_TEMP_STATIC_GEN_0 == null)
+            WGPUShaderModule_TEMP_STATIC_GEN_0 = WGPUShaderModule.native_new();
+        WGPUShaderModule_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUShaderModule_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUShaderModule::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

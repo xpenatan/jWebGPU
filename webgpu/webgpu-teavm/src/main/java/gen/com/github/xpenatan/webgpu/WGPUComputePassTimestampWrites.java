@@ -44,24 +44,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassTimestampWrites);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUComputePassTimestampWrites obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUComputePassTimestampWrites.NULL;
-        if (WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.native_new();
-        WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUComputePassTimestampWrites.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePassTimestampWrites.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setQuerySet(WGPUQuerySet value) {
         internal_native_SetQuerySet(native_address, value.native_address);
     }
@@ -94,4 +76,22 @@ jsObj.SetEndOfPassWriteIndex(value);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassTimestampWrites);jsObj.SetEndOfPassWriteIndex(value);")
     public static native void internal_native_SetEndOfPassWriteIndex(int this_addr, int value);
+
+    public static WGPUComputePassTimestampWrites obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUComputePassTimestampWrites.NULL;
+        if (WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 == null)
+            WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.native_new();
+        WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUComputePassTimestampWrites.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePassTimestampWrites.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPUColor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUColor.NULL;
-        if (WGPUColor_TEMP_STATIC_GEN_0 == null)
-            WGPUColor_TEMP_STATIC_GEN_0 = WGPUColor.native_new();
-        WGPUColor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUColor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUColor.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUColor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setColor(float r, float g, float b, float a) {
         internal_native_SetColor(native_address, r, g, b, a);
     }
@@ -176,4 +158,22 @@ return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColor);var returnedJSObj = jsObj.GetA();return returnedJSObj;")
     public static native float internal_native_GetA(int this_addr);
+
+    public static WGPUColor obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUColor.NULL;
+        if (WGPUColor_TEMP_STATIC_GEN_0 == null)
+            WGPUColor_TEMP_STATIC_GEN_0 = WGPUColor.native_new();
+        WGPUColor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUColor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPUColor.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUColor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }

@@ -1,3 +1,4 @@
+import org.teavm.gradle.api.OptimizationLevel
 import org.teavm.gradle.api.SourceFilePolicy
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
@@ -32,6 +33,7 @@ teavm {
         relativePathInOutputDir = ""
         targetFileName = "app.js"
         sourceMap = false
+        optimization = OptimizationLevel.NONE
         sourceFilePolicy = SourceFilePolicy.COPY
         obfuscated = false
         debugInformation = true

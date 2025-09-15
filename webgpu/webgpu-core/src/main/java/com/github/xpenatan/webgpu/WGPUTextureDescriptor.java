@@ -9,9 +9,9 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUTextureDescriptor extends IDLBase {
 
-    static private WGPUTextureDescriptor WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
-
     private WGPUExtent3D WGPUExtent3D_TEMP_GEN_0;
+
+    static private WGPUTextureDescriptor WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
 
     static public final WGPUTextureDescriptor NULL = WGPUTextureDescriptor.native_new();
 
@@ -54,21 +54,6 @@ JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_a
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static WGPUTextureDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPUTextureDescriptor.NULL;
-        if (WGPUTextureDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUTextureDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureDescriptor.native_new();
-        WGPUTextureDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain();
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
@@ -166,4 +151,19 @@ JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_a
 nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )viewFormats_addr);
 */
     public static native void internal_native_SetViewFormats(long this_addr, long viewFormats_addr);
+
+    public static WGPUTextureDescriptor obtain() {
+        long pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPUTextureDescriptor.NULL;
+        if (WGPUTextureDescriptor_TEMP_STATIC_GEN_0 == null)
+            WGPUTextureDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureDescriptor.native_new();
+        WGPUTextureDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JGPU::WGPUTextureDescriptor::Obtain();
+*/
+    public static native long internal_native_Obtain();
 }

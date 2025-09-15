@@ -56,24 +56,6 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public static WGPULimits obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
-            return WGPULimits.NULL;
-        if (WGPULimits_TEMP_STATIC_GEN_0 == null)
-            WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
-        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return WGPULimits_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
-
     public void setMaxTextureDimension1D(int value) {
         internal_native_SetMaxTextureDimension1D(native_address, value);
     }
@@ -786,4 +768,22 @@ return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeWorkgroupsPerDimension();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeWorkgroupsPerDimension(int this_addr);
+
+    public static WGPULimits obtain() {
+        int pointer = internal_native_Obtain();
+        if (pointer == 0)
+            return WGPULimits.NULL;
+        if (WGPULimits_TEMP_STATIC_GEN_0 == null)
+            WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
+        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return WGPULimits_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jWebGPU.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_Obtain();
 }
