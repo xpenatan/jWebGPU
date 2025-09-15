@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUVectorFeatureName obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorFeatureName.NULL;
         if (WGPUVectorFeatureName_TEMP_STATIC_GEN_0 == null)
             WGPUVectorFeatureName_TEMP_STATIC_GEN_0 = WGPUVectorFeatureName.native_new();
         WGPUVectorFeatureName_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

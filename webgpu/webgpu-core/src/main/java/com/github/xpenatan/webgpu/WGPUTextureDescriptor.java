@@ -58,7 +58,7 @@ delete nativeObject;
     public static WGPUTextureDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTextureDescriptor.NULL;
         if (WGPUTextureDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUTextureDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureDescriptor.native_new();
         WGPUTextureDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -113,7 +113,7 @@ nativeObject->SetDimension((::WGPUTextureDimension)dimension);
     public WGPUExtent3D getSize() {
         long pointer = internal_native_GetSize(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUExtent3D.NULL;
         if (WGPUExtent3D_TEMP_GEN_0 == null)
             WGPUExtent3D_TEMP_GEN_0 = WGPUExtent3D.native_new();
         WGPUExtent3D_TEMP_GEN_0.internal_reset(pointer, false);

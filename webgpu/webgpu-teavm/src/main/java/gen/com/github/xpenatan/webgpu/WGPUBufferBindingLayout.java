@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUBufferBindingLayout obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBufferBindingLayout.NULL;
         if (WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 = WGPUBufferBindingLayout.native_new();
         WGPUBufferBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

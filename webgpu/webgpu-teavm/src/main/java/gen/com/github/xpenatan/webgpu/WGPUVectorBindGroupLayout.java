@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUVectorBindGroupLayout obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorBindGroupLayout.NULL;
         if (WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 == null)
             WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayout.native_new();
         WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -49,7 +49,7 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
     public static WGPUTexelCopyTextureInfo obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTexelCopyTextureInfo.NULL;
         if (WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 == null)
             WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyTextureInfo.native_new();
         WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -87,7 +87,7 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
     public WGPUOrigin3D getOrigin() {
         long pointer = internal_native_GetOrigin(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUOrigin3D.NULL;
         if (WGPUOrigin3D_TEMP_GEN_0 == null)
             WGPUOrigin3D_TEMP_GEN_0 = WGPUOrigin3D.native_new();
         WGPUOrigin3D_TEMP_GEN_0.internal_reset(pointer, false);

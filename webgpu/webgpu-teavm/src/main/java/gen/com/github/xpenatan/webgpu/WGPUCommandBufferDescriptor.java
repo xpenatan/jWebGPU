@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUCommandBufferDescriptor obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUCommandBufferDescriptor.NULL;
         if (WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandBufferDescriptor.native_new();
         WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

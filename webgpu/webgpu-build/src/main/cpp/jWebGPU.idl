@@ -23,8 +23,8 @@ interface WGPUByteBuffer {
     static WGPUByteBuffer Obtain(long capacity);
     void order(WGPUByteOrder order);
     byte get(long index);
-    [BindTo="put"] void put_0(byte value);
-    [BindTo="put"] void put_1(long index, byte value);
+    [BindTo="put"] void put__0(byte value);
+    [BindTo="put"] void put__1(long index, byte value);
     byte get();
     void putInt(long byteIndex, long value);
     long getInt(long byteIndex);
@@ -46,9 +46,9 @@ interface WGPUByteBuffer {
 
 interface WGPUFloatBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
-    [BindTo="put"] void put_0(float value);
-    [BindTo="put"] void put_1(long index, float value);
-    [BindTo="put"] void put_2(float[] values, long offset, long size); //[-SKIP]
+    [BindTo="put"] void put__0(float value);
+    [BindTo="put"] void put__1(long index, float value);
+    [BindTo="put"] void put__2(float[] values, long offset, long size); //[-SKIP]
     float get(long index);
     float get();
     long remaining();
@@ -63,8 +63,8 @@ interface WGPUFloatBuffer {
 
 interface WGPUIntBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
-    [BindTo="put"] void put_0(long value);
-    [BindTo="put"] void put_1(long index, long value);
+    [BindTo="put"] void put__0(long value);
+    [BindTo="put"] void put__1(long index, long value);
     long get(long index);
     long get();
     long remaining();
@@ -79,8 +79,8 @@ interface WGPUIntBuffer {
 
 interface WGPULongBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
-    [BindTo="put"] void put_0(long long value);
-    [BindTo="put"] void put_1(long index, long long value);
+    [BindTo="put"] void put__0(long long value);
+    [BindTo="put"] void put__1(long index, long long value);
     long long get(long index);
     long long get();
     long remaining();
@@ -95,8 +95,8 @@ interface WGPULongBuffer {
 
 interface WGPUShortBuffer {
     [Ref] WGPUByteBuffer getByteBuffer();
-    [BindTo="put"] void put_0(short value);
-    [BindTo="put"] void put_1(long index, short value);
+    [BindTo="put"] void put__0(short value);
+    [BindTo="put"] void put__1(long index, short value);
     short get(long index);
     short get();
     long remaining();
@@ -487,11 +487,11 @@ interface WGPUFragmentState {
     static WGPUFragmentState Obtain();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetEntryPoint([Const] DOMString entryPoint);
-    [BindTo="SetTargets"] void SetTargets_0(WGPUVectorColorTargetState targets);
-    [BindTo="SetTargets"] void SetTargets_1(WGPUColorTargetState target01);
-    [BindTo="SetTargets"] void SetTargets_2(WGPUColorTargetState target01, WGPUColorTargetState target02);
-    [BindTo="SetTargets"] void SetTargets_3(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03);
-    [BindTo="SetTargets"] void SetTargets_4(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03, WGPUColorTargetState target04);
+    [BindTo="SetTargets"] void SetTargets__0(WGPUVectorColorTargetState targets);
+    [BindTo="SetTargets"] void SetTargets__1(WGPUColorTargetState target01);
+    [BindTo="SetTargets"] void SetTargets__2(WGPUColorTargetState target01, WGPUColorTargetState target02);
+    [BindTo="SetTargets"] void SetTargets__3(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03);
+    [BindTo="SetTargets"] void SetTargets__4(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03, WGPUColorTargetState target04);
     void SetModule(WGPUShaderModule shaderModule);
     void SetConstants(WGPUVectorConstantEntry constants);
 };
@@ -1017,11 +1017,11 @@ interface WGPURenderPassDescriptor {
     void SetLabel([Const] DOMString value);
     void Reset();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
-    [BindTo="SetColorAttachments"] void SetColorAttachments_0(WGPUVectorRenderPassColorAttachment colorAttachments);
-    [BindTo="SetColorAttachments"] void SetColorAttachments_1(WGPURenderPassColorAttachment colorAttachment01);
-    [BindTo="SetColorAttachments"] void SetColorAttachments_2(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02);
-    [BindTo="SetColorAttachments"] void SetColorAttachments_3(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03);
-    [BindTo="SetColorAttachments"] void SetColorAttachments_4(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03, WGPURenderPassColorAttachment colorAttachment04);
+    [BindTo="SetColorAttachments"] void SetColorAttachments__0(WGPUVectorRenderPassColorAttachment colorAttachments);
+    [BindTo="SetColorAttachments"] void SetColorAttachments__1(WGPURenderPassColorAttachment colorAttachment01);
+    [BindTo="SetColorAttachments"] void SetColorAttachments__2(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02);
+    [BindTo="SetColorAttachments"] void SetColorAttachments__3(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03);
+    [BindTo="SetColorAttachments"] void SetColorAttachments__4(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03, WGPURenderPassColorAttachment colorAttachment04);
     void SetDepthStencilAttachment(WGPURenderPassDepthStencilAttachment attachment);
     void SetOcclusionQuerySet(WGPUQuerySet occlusionQuerySet);
     void SetTimestampWrites(WGPURenderPassTimestampWrites timestampWrites);
@@ -1305,14 +1305,14 @@ interface WGPUSurface {
 interface WGPUQueue {
     any Get(); //[-SKIP]
     void SetLabel([Const] DOMString value);
-    [BindTo="Submit"] void Submit_1(WGPUVectorCommandBuffer commandVector);
-    [BindTo="Submit"] void Submit_2(WGPUCommandBuffer commandBuffer);
-    [BindTo="Submit"] void Submit_3(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02);
-    [BindTo="Submit"] void Submit_4(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03);
-    [BindTo="Submit"] void Submit_5(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03, WGPUCommandBuffer commandBuffer04);
+    [BindTo="Submit"] void Submit__0(WGPUVectorCommandBuffer commandVector);
+    [BindTo="Submit"] void Submit__1(WGPUCommandBuffer commandBuffer);
+    [BindTo="Submit"] void Submit__2(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02);
+    [BindTo="Submit"] void Submit__3(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03);
+    [BindTo="Submit"] void Submit__4(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03, WGPUCommandBuffer commandBuffer04);
     void Release();
-    [BindTo="WriteBuffer"] void WriteBuffer_1(WGPUBuffer buffer, long bufferOffset, octet[] bytes, long dataSize);     //[-SKIP]
-    [BindTo="WriteTexture"] void WriteTexture_1(WGPUTexelCopyTextureInfo destination, octet[] bytes, long dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize);  //[-SKIP]
+    [BindTo="WriteBuffer"] void WriteBuffer__0(WGPUBuffer buffer, long bufferOffset, octet[] bytes, long dataSize);     //[-SKIP]
+    [BindTo="WriteTexture"] void WriteTexture__1(WGPUTexelCopyTextureInfo destination, octet[] bytes, long dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize);  //[-SKIP]
 };
 
 [Prefix="JGPU::"]
@@ -1343,8 +1343,8 @@ interface WGPUDevice {
     void Release();
     void CreateBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut);
     void CreateBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut);
-    [BindTo="CreateBuffer"] WGPUBuffer CreateBuffer_1(WGPUBufferDescriptor descriptor);     //[-NEW_OBJECT]
-    [BindTo="CreateBuffer"] void CreateBuffer_2(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
+    [BindTo="CreateBuffer"] WGPUBuffer CreateBuffer__0(WGPUBufferDescriptor descriptor);     //[-NEW_OBJECT]
+    [BindTo="CreateBuffer"] void CreateBuffer__1(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
     void CreateCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut);
     void CreateComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut);
     void CreatePipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut);

@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUVectorCommandBuffer obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorCommandBuffer.NULL;
         if (WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0 == null)
             WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0 = WGPUVectorCommandBuffer.native_new();
         WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

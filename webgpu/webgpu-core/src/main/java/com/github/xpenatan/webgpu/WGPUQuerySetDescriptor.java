@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUQuerySetDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUQuerySetDescriptor.NULL;
         if (WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0 = WGPUQuerySetDescriptor.native_new();
         WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -46,7 +46,7 @@ delete nativeObject;
     public WGPUByteBuffer getPixels() {
         long pointer = internal_native_GetPixels(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);

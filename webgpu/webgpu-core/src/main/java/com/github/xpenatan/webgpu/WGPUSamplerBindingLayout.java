@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUSamplerBindingLayout obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSamplerBindingLayout.NULL;
         if (WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 = WGPUSamplerBindingLayout.native_new();
         WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

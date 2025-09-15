@@ -47,7 +47,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUFutureWaitInfo obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUFutureWaitInfo.NULL;
         if (WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
             WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUFutureWaitInfo.native_new();
         WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

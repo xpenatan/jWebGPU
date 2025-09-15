@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUPipelineLayoutDescriptor obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUPipelineLayoutDescriptor.NULL;
         if (WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUPipelineLayoutDescriptor.native_new();
         WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

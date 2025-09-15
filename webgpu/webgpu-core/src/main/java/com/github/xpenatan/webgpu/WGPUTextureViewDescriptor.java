@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUTextureViewDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTextureViewDescriptor.NULL;
         if (WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureViewDescriptor.native_new();
         WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

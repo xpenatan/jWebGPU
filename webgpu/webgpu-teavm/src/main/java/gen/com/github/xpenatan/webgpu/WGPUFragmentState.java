@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUFragmentState obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUFragmentState.NULL;
         if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
             WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
         WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -97,59 +97,59 @@ jsObj.SetEntryPoint(entryPoint);
     public static native void internal_native_SetEntryPoint(int this_addr, String entryPoint);
 
     public void setTargets(WGPUVectorColorTargetState targets) {
-        internal_native_SetTargets_0(native_address, targets.native_address);
+        internal_native_SetTargets__0(native_address, targets.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);
-jsObj.SetTargets_0(targets_addr);
+jsObj.SetTargets__0(targets_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "targets_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets_0(targets_addr);")
-    public static native void internal_native_SetTargets_0(int this_addr, int targets_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "targets_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets__0(targets_addr);")
+    public static native void internal_native_SetTargets__0(int this_addr, int targets_addr);
 
     public void setTargets(WGPUColorTargetState target01) {
-        internal_native_SetTargets_1(native_address, target01.native_address);
+        internal_native_SetTargets__1(native_address, target01.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);
-jsObj.SetTargets_1(target01_addr);
+jsObj.SetTargets__1(target01_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets_1(target01_addr);")
-    public static native void internal_native_SetTargets_1(int this_addr, int target01_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets__1(target01_addr);")
+    public static native void internal_native_SetTargets__1(int this_addr, int target01_addr);
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02) {
-        internal_native_SetTargets_2(native_address, target01.native_address, target02.native_address);
+        internal_native_SetTargets__2(native_address, target01.native_address, target02.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);
-jsObj.SetTargets_2(target01_addr, target02_addr);
+jsObj.SetTargets__2(target01_addr, target02_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr", "target02_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets_2(target01_addr, target02_addr);")
-    public static native void internal_native_SetTargets_2(int this_addr, int target01_addr, int target02_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr", "target02_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets__2(target01_addr, target02_addr);")
+    public static native void internal_native_SetTargets__2(int this_addr, int target01_addr, int target02_addr);
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03) {
-        internal_native_SetTargets_3(native_address, target01.native_address, target02.native_address, target03.native_address);
+        internal_native_SetTargets__3(native_address, target01.native_address, target02.native_address, target03.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);
-jsObj.SetTargets_3(target01_addr, target02_addr, target03_addr);
+jsObj.SetTargets__3(target01_addr, target02_addr, target03_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr", "target02_addr", "target03_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets_3(target01_addr, target02_addr, target03_addr);")
-    public static native void internal_native_SetTargets_3(int this_addr, int target01_addr, int target02_addr, int target03_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr", "target02_addr", "target03_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets__3(target01_addr, target02_addr, target03_addr);")
+    public static native void internal_native_SetTargets__3(int this_addr, int target01_addr, int target02_addr, int target03_addr);
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03, WGPUColorTargetState target04) {
-        internal_native_SetTargets_4(native_address, target01.native_address, target02.native_address, target03.native_address, target04.native_address);
+        internal_native_SetTargets__4(native_address, target01.native_address, target02.native_address, target03.native_address, target04.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);
-jsObj.SetTargets_4(target01_addr, target02_addr, target03_addr, target04_addr);
+jsObj.SetTargets__4(target01_addr, target02_addr, target03_addr, target04_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr", "target02_addr", "target03_addr", "target04_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets_4(target01_addr, target02_addr, target03_addr, target04_addr);")
-    public static native void internal_native_SetTargets_4(int this_addr, int target01_addr, int target02_addr, int target03_addr, int target04_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "target01_addr", "target02_addr", "target03_addr", "target04_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFragmentState);jsObj.SetTargets__4(target01_addr, target02_addr, target03_addr, target04_addr);")
+    public static native void internal_native_SetTargets__4(int this_addr, int target01_addr, int target02_addr, int target03_addr, int target04_addr);
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);

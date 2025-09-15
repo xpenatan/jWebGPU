@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUVectorVertexAttribute obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorVertexAttribute.NULL;
         if (WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 == null)
             WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVectorVertexAttribute.native_new();
         WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

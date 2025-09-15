@@ -13,6 +13,19 @@ public class WGPUFloatBuffer extends IDLBase {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
+    public final static WGPUFloatBuffer NULL;
+
+    static {
+        NULL = native_new();
+    }
+
+    public static WGPUFloatBuffer native_new() {
+        return new WGPUFloatBuffer((byte) 0, (char) 0);
+    }
+
+    private WGPUFloatBuffer(byte b, char c) {
+    }
+
     public void put(float[] values, int offset, int size) {
         internal_put(native_address, values, offset, size);
     }
@@ -25,20 +38,6 @@ public class WGPUFloatBuffer extends IDLBase {
               env->ReleasePrimitiveArrayCritical(values, criticalArray, 0);
     */
     private static native void internal_put(long this_addr, float[] values, int offset, int size);
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUFloatBuffer(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUFloatBuffer native_new() {
-        return new WGPUFloatBuffer((byte) 0, (char) 0);
-    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
@@ -54,7 +53,7 @@ public class WGPUFloatBuffer extends IDLBase {
     public WGPUByteBuffer getByteBuffer() {
         long pointer = internal_native_getByteBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -69,7 +68,7 @@ public class WGPUFloatBuffer extends IDLBase {
     public static native long internal_native_getByteBuffer(long this_addr);
 
     public void put(float value) {
-        internal_native_put_0(native_address, value);
+        internal_native_put__0(native_address, value);
     }
 
     /*
@@ -77,10 +76,10 @@ public class WGPUFloatBuffer extends IDLBase {
       WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
       nativeObject->put((float)value);
     */
-    public static native void internal_native_put_0(long this_addr, float value);
+    public static native void internal_native_put__0(long this_addr, float value);
 
     public void put(int index, float value) {
-        internal_native_put_1(native_address, index, value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*
@@ -88,7 +87,7 @@ public class WGPUFloatBuffer extends IDLBase {
       WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
       nativeObject->put((int)index, (float)value);
     */
-    public static native void internal_native_put_1(long this_addr, int index, float value);
+    public static native void internal_native_put__1(long this_addr, int index, float value);
 
     public float get(int index) {
         return internal_native_get(native_address, index);

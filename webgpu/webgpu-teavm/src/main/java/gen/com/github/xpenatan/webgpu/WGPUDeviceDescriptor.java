@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUDeviceDescriptor obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUDeviceDescriptor.NULL;
         if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
         WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -123,7 +123,7 @@ jsObj.SetRequiredFeatures(features_addr);
     public WGPUQueueDescriptor getDefaultQueue() {
         int pointer = internal_native_GetDefaultQueue(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUQueueDescriptor.NULL;
         if (WGPUQueueDescriptor_TEMP_GEN_0 == null)
             WGPUQueueDescriptor_TEMP_GEN_0 = WGPUQueueDescriptor.native_new();
         WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(pointer, false);

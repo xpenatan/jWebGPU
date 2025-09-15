@@ -47,7 +47,7 @@ jWebGPU.destroy(jsObj);
     public WGPUByteBuffer getByteBuffer() {
         int pointer = internal_native_getByteBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -64,26 +64,26 @@ return jWebGPU.getPointer(returnedJSObj);
     public static native int internal_native_getByteBuffer(int this_addr);
 
     public void put(short value) {
-        internal_native_put_0(native_address, value);
+        internal_native_put__0(native_address, value);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);
-jsObj.put_0(value);
+jsObj.put__0(value);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put_0(value);")
-    public static native void internal_native_put_0(int this_addr, short value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put__0(value);")
+    public static native void internal_native_put__0(int this_addr, short value);
 
     public void put(int index, short value) {
-        internal_native_put_1(native_address, index, value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);
-jsObj.put_1(index, value);
+jsObj.put__1(index, value);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put_1(index, value);")
-    public static native void internal_native_put_1(int this_addr, int index, short value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put__1(index, value);")
+    public static native void internal_native_put__1(int this_addr, int index, short value);
 
     public short get(int index) {
         return internal_native_get(native_address, index);

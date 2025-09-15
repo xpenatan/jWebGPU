@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUComputePassEncoder obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUComputePassEncoder.NULL;
         if (WGPUComputePassEncoder_TEMP_STATIC_GEN_0 == null)
             WGPUComputePassEncoder_TEMP_STATIC_GEN_0 = WGPUComputePassEncoder.native_new();
         WGPUComputePassEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

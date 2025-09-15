@@ -64,7 +64,7 @@ delete nativeObject;
     public static WGPUBindGroupLayoutEntry obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBindGroupLayoutEntry.NULL;
         if (WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
             WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.native_new();
         WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -149,7 +149,7 @@ nativeObject->SetStorageTexture((JGPU::WGPUStorageTextureBindingLayout* )storage
     public WGPUBufferBindingLayout getBuffer() {
         long pointer = internal_native_GetBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUBufferBindingLayout.NULL;
         if (WGPUBufferBindingLayout_TEMP_GEN_0 == null)
             WGPUBufferBindingLayout_TEMP_GEN_0 = WGPUBufferBindingLayout.native_new();
         WGPUBufferBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
@@ -166,7 +166,7 @@ return (jlong)&copy_addr;*/
     public WGPUSamplerBindingLayout getSampler() {
         long pointer = internal_native_GetSampler(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUSamplerBindingLayout.NULL;
         if (WGPUSamplerBindingLayout_TEMP_GEN_0 == null)
             WGPUSamplerBindingLayout_TEMP_GEN_0 = WGPUSamplerBindingLayout.native_new();
         WGPUSamplerBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
@@ -183,7 +183,7 @@ return (jlong)&copy_addr;*/
     public WGPUStorageTextureBindingLayout getStorageTexture() {
         long pointer = internal_native_GetStorageTexture(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUStorageTextureBindingLayout.NULL;
         if (WGPUStorageTextureBindingLayout_TEMP_GEN_0 == null)
             WGPUStorageTextureBindingLayout_TEMP_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
         WGPUStorageTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
@@ -200,7 +200,7 @@ return (jlong)&copy_addr;*/
     public WGPUTextureBindingLayout getTexture() {
         long pointer = internal_native_GetTexture(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUTextureBindingLayout.NULL;
         if (WGPUTextureBindingLayout_TEMP_GEN_0 == null)
             WGPUTextureBindingLayout_TEMP_GEN_0 = WGPUTextureBindingLayout.native_new();
         WGPUTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);

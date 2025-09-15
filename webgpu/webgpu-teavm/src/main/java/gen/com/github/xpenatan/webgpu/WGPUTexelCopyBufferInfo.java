@@ -63,7 +63,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUTexelCopyBufferInfo obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTexelCopyBufferInfo.NULL;
         if (WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 == null)
             WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferInfo.native_new();
         WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -81,7 +81,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUTexelCopyBufferLayout getLayout() {
         int pointer = internal_native_GetLayout(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUTexelCopyBufferLayout.NULL;
         if (WGPUTexelCopyBufferLayout_TEMP_GEN_0 == null)
             WGPUTexelCopyBufferLayout_TEMP_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
         WGPUTexelCopyBufferLayout_TEMP_GEN_0.internal_reset(pointer, false);
@@ -100,7 +100,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUBuffer getBuffer() {
         int pointer = internal_native_GetBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUBuffer.NULL;
         if (WGPUBuffer_TEMP_GEN_0 == null)
             WGPUBuffer_TEMP_GEN_0 = WGPUBuffer.native_new();
         WGPUBuffer_TEMP_GEN_0.internal_reset(pointer, false);

@@ -63,7 +63,7 @@ return returnedJSObj;
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         int pointer = internal_native_SetupInstance(descriptor.native_address);
         if (pointer == 0)
-            return null;
+            return WGPUInstance.NULL;
         WGPUInstance WGPUInstance_NEW = WGPUInstance.native_new();
         WGPUInstance_NEW.internal_reset(pointer, true);
         return WGPUInstance_NEW;
@@ -80,7 +80,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public static WGPUInstance setupInstance() {
         int pointer = internal_native_SetupInstance();
         if (pointer == 0)
-            return null;
+            return WGPUInstance.NULL;
         if (WGPUInstance_TEMP_STATIC_GEN_0 == null)
             WGPUInstance_TEMP_STATIC_GEN_0 = WGPUInstance.native_new();
         WGPUInstance_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -98,7 +98,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {
         int pointer = internal_native_loadImage(buffer.native_address, desiredChannels);
         if (pointer == 0)
-            return null;
+            return STBImage.NULL;
         if (STBImage_TEMP_STATIC_GEN_0 == null)
             STBImage_TEMP_STATIC_GEN_0 = STBImage.native_new();
         STBImage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -116,7 +116,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public static STBImage loadImage(WGPUByteBuffer buffer) {
         int pointer = internal_native_loadImage(buffer.native_address);
         if (pointer == 0)
-            return null;
+            return STBImage.NULL;
         if (STBImage_TEMP_STATIC_GEN_1 == null)
             STBImage_TEMP_STATIC_GEN_1 = STBImage.native_new();
         STBImage_TEMP_STATIC_GEN_1.internal_reset(pointer, false);

@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUVectorTextureFormat obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorTextureFormat.NULL;
         if (WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 == null)
             WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 = WGPUVectorTextureFormat.native_new();
         WGPUVectorTextureFormat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -58,7 +58,7 @@ delete nativeObject;
     public static WGPUSurfaceCapabilities obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSurfaceCapabilities.NULL;
         if (WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 = WGPUSurfaceCapabilities.native_new();
         WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -73,7 +73,7 @@ return (jlong)JGPU::WGPUSurfaceCapabilities::Obtain();
     public WGPUVectorTextureFormat getFormats() {
         long pointer = internal_native_GetFormats(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUVectorTextureFormat.NULL;
         if (WGPUVectorTextureFormat_TEMP_GEN_0 == null)
             WGPUVectorTextureFormat_TEMP_GEN_0 = WGPUVectorTextureFormat.native_new();
         WGPUVectorTextureFormat_TEMP_GEN_0.internal_reset(pointer, false);

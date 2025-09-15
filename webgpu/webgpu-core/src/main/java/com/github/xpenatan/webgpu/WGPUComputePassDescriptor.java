@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUComputePassDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUComputePassDescriptor.NULL;
         if (WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUComputePassDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePassDescriptor.native_new();
         WGPUComputePassDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

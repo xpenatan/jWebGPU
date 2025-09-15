@@ -9,6 +9,14 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPURequestAdapterCallback extends IDLBase {
 
+    static public final WGPURequestAdapterCallback NULL = WGPURequestAdapterCallback.native_new();
+
+    static public final WGPURequestAdapterCallback T_01 = WGPURequestAdapterCallback.native_new();
+
+    static public final WGPURequestAdapterCallback T_02 = WGPURequestAdapterCallback.native_new();
+
+    static public final WGPURequestAdapterCallback T_03 = WGPURequestAdapterCallback.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

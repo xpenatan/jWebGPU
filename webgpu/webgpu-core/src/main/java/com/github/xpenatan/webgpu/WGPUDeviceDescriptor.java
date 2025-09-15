@@ -58,7 +58,7 @@ delete nativeObject;
     public static WGPUDeviceDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUDeviceDescriptor.NULL;
         if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
         WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -113,7 +113,7 @@ nativeObject->SetRequiredFeatures((JGPU::WGPUVectorFeatureName* )features_addr);
     public WGPUQueueDescriptor getDefaultQueue() {
         long pointer = internal_native_GetDefaultQueue(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUQueueDescriptor.NULL;
         if (WGPUQueueDescriptor_TEMP_GEN_0 == null)
             WGPUQueueDescriptor_TEMP_GEN_0 = WGPUQueueDescriptor.native_new();
         WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(pointer, false);

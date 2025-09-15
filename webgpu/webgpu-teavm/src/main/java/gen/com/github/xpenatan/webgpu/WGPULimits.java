@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPULimits obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPULimits.NULL;
         if (WGPULimits_TEMP_STATIC_GEN_0 == null)
             WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
         WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

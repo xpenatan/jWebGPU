@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUCommandEncoder obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUCommandEncoder.NULL;
         if (WGPUCommandEncoder_TEMP_STATIC_GEN_0 == null)
             WGPUCommandEncoder_TEMP_STATIC_GEN_0 = WGPUCommandEncoder.native_new();
         WGPUCommandEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

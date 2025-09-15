@@ -9,6 +9,14 @@ import com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUBufferMapCallback extends IDLBase {
 
+    static public final WGPUBufferMapCallback NULL = WGPUBufferMapCallback.native_new();
+
+    static public final WGPUBufferMapCallback T_01 = WGPUBufferMapCallback.native_new();
+
+    static public final WGPUBufferMapCallback T_02 = WGPUBufferMapCallback.native_new();
+
+    static public final WGPUBufferMapCallback T_03 = WGPUBufferMapCallback.native_new();
+
     /*[-JNI;-NATIVE]
 class WGPUBufferMapCallbackImpl : public JGPU::WGPUBufferMapCallback {
 private:

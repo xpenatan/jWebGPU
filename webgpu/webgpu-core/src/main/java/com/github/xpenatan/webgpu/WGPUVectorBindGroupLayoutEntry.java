@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUVectorBindGroupLayoutEntry obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorBindGroupLayoutEntry.NULL;
         if (WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
             WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayoutEntry.native_new();
         WGPUVectorBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

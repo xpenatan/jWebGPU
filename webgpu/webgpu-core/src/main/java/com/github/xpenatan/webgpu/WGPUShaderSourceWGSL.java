@@ -58,7 +58,7 @@ delete nativeObject;
     public static WGPUShaderSourceWGSL obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUShaderSourceWGSL.NULL;
         if (WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 == null)
             WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.native_new();
         WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -83,7 +83,7 @@ nativeObject->SetCode(code);
     public WGPUChainedStruct getChain() {
         long pointer = internal_native_GetChain(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUChainedStruct.NULL;
         if (WGPUChainedStruct_TEMP_GEN_0 == null)
             WGPUChainedStruct_TEMP_GEN_0 = WGPUChainedStruct.native_new();
         WGPUChainedStruct_TEMP_GEN_0.internal_reset(pointer, false);

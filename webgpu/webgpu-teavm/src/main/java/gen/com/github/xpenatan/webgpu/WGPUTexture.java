@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUTexture obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTexture.NULL;
         if (WGPUTexture_TEMP_STATIC_GEN_0 == null)
             WGPUTexture_TEMP_STATIC_GEN_0 = WGPUTexture.native_new();
         WGPUTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

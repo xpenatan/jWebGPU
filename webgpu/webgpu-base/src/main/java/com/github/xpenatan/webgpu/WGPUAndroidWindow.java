@@ -10,6 +10,19 @@ public class WGPUAndroidWindow extends IDLBase {
         #endif
     */
 
+    public final static WGPUAndroidWindow NULL;
+
+    static {
+        NULL = native_new();
+    }
+
+    public static WGPUAndroidWindow native_new() {
+        return new WGPUAndroidWindow((byte) 0, (char) 0);
+    }
+
+    private WGPUAndroidWindow(byte b, char c) {
+    }
+
     public void createAndroidSurface(Object surface) {
         long surfacePtr = internal_getAndroidSurface(surface);
         internal_native_SetWindow(native_address, surfacePtr);

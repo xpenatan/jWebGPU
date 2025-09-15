@@ -63,7 +63,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUBlendState obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBlendState.NULL;
         if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
             WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
         WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -81,7 +81,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUBlendComponent getColor() {
         int pointer = internal_native_GetColor(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_0 == null)
             WGPUBlendComponent_TEMP_GEN_0 = WGPUBlendComponent.native_new();
         WGPUBlendComponent_TEMP_GEN_0.internal_reset(pointer, false);
@@ -100,7 +100,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUBlendComponent getAlpha() {
         int pointer = internal_native_GetAlpha(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_1 == null)
             WGPUBlendComponent_TEMP_GEN_1 = WGPUBlendComponent.native_new();
         WGPUBlendComponent_TEMP_GEN_1.internal_reset(pointer, false);

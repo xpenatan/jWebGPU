@@ -11,6 +11,14 @@ public class WGPUCompilationInfoCallback extends IDLBase {
 
     static private WGPUCompilationInfo WGPUCompilationInfo_TEMP_STATIC_GEN_0;
 
+    static public final WGPUCompilationInfoCallback NULL = WGPUCompilationInfoCallback.native_new();
+
+    static public final WGPUCompilationInfoCallback T_01 = WGPUCompilationInfoCallback.native_new();
+
+    static public final WGPUCompilationInfoCallback T_02 = WGPUCompilationInfoCallback.native_new();
+
+    static public final WGPUCompilationInfoCallback T_03 = WGPUCompilationInfoCallback.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

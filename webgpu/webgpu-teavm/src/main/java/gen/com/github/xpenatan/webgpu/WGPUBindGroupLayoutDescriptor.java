@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUBindGroupLayoutDescriptor obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBindGroupLayoutDescriptor.NULL;
         if (WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutDescriptor.native_new();
         WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

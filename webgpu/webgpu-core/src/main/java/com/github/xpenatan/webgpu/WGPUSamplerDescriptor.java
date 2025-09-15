@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUSamplerDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSamplerDescriptor.NULL;
         if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
         WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUBindGroupDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBindGroupDescriptor.NULL;
         if (WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupDescriptor.native_new();
         WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

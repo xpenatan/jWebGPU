@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUColorTargetState obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUColorTargetState.NULL;
         if (WGPUColorTargetState_TEMP_STATIC_GEN_0 == null)
             WGPUColorTargetState_TEMP_STATIC_GEN_0 = WGPUColorTargetState.native_new();
         WGPUColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

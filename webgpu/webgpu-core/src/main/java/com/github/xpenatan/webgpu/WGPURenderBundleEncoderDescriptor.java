@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPURenderBundleEncoderDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderBundleEncoderDescriptor.NULL;
         if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
         WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

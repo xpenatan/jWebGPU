@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUShaderSourceSPIRV obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUShaderSourceSPIRV.NULL;
         if (WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 == null)
             WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 = WGPUShaderSourceSPIRV.native_new();
         WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -60,7 +60,7 @@ delete nativeObject;
     public static WGPUBlendState obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBlendState.NULL;
         if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
             WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
         WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -75,7 +75,7 @@ return (jlong)JGPU::WGPUBlendState::Obtain();
     public WGPUBlendComponent getColor() {
         long pointer = internal_native_GetColor(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_0 == null)
             WGPUBlendComponent_TEMP_GEN_0 = WGPUBlendComponent.native_new();
         WGPUBlendComponent_TEMP_GEN_0.internal_reset(pointer, false);
@@ -92,7 +92,7 @@ return (jlong)&copy_addr;*/
     public WGPUBlendComponent getAlpha() {
         long pointer = internal_native_GetAlpha(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_1 == null)
             WGPUBlendComponent_TEMP_GEN_1 = WGPUBlendComponent.native_new();
         WGPUBlendComponent_TEMP_GEN_1.internal_reset(pointer, false);

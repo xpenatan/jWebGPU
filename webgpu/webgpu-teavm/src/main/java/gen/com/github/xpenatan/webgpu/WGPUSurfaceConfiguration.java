@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUSurfaceConfiguration obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSurfaceConfiguration.NULL;
         if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
         WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

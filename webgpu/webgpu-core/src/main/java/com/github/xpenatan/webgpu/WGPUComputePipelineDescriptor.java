@@ -58,7 +58,7 @@ delete nativeObject;
     public static WGPUComputePipelineDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUComputePipelineDescriptor.NULL;
         if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
         WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -103,7 +103,7 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )layout_addr);
     public WGPUProgrammableStageDescriptor getCompute() {
         long pointer = internal_native_GetCompute(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUProgrammableStageDescriptor.NULL;
         if (WGPUProgrammableStageDescriptor_TEMP_GEN_0 == null)
             WGPUProgrammableStageDescriptor_TEMP_GEN_0 = WGPUProgrammableStageDescriptor.native_new();
         WGPUProgrammableStageDescriptor_TEMP_GEN_0.internal_reset(pointer, false);

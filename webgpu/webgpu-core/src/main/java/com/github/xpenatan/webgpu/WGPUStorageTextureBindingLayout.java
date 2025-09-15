@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUStorageTextureBindingLayout obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUStorageTextureBindingLayout.NULL;
         if (WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
         WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

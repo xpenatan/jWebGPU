@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPURequestAdapterOptions obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURequestAdapterOptions.NULL;
         if (WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 == null)
             WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 = WGPURequestAdapterOptions.native_new();
         WGPURequestAdapterOptions_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUSurfaceTexture obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSurfaceTexture.NULL;
         if (WGPUSurfaceTexture_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.native_new();
         WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

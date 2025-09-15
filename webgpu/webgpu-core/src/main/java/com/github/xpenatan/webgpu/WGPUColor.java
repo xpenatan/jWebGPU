@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUColor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUColor.NULL;
         if (WGPUColor_TEMP_STATIC_GEN_0 == null)
             WGPUColor_TEMP_STATIC_GEN_0 = WGPUColor.native_new();
         WGPUColor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

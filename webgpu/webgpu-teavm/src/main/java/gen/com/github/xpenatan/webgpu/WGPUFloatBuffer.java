@@ -13,6 +13,19 @@ public class WGPUFloatBuffer extends IDLBase {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
+    public final static WGPUFloatBuffer NULL;
+
+    static {
+        NULL = native_new();
+    }
+
+    public static WGPUFloatBuffer native_new() {
+        return new WGPUFloatBuffer((byte) 0, (char) 0);
+    }
+
+    private WGPUFloatBuffer(byte b, char c) {
+    }
+
     public void put(float[] values, int offset, int size) {
         internal_put(native_address, values, offset, size);
     }
@@ -24,20 +37,6 @@ public class WGPUFloatBuffer extends IDLBase {
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "values", "offset", "size"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer); jsObj.put_2(values, offset, size);")
     private static native void internal_put(int this_addr, float[] values, int offset, int size);
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUFloatBuffer(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUFloatBuffer native_new() {
-        return new WGPUFloatBuffer((byte) 0, (char) 0);
-    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
@@ -54,7 +53,7 @@ public class WGPUFloatBuffer extends IDLBase {
     public WGPUByteBuffer getByteBuffer() {
         int pointer = internal_native_getByteBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -72,28 +71,28 @@ public class WGPUFloatBuffer extends IDLBase {
     public static native int internal_native_getByteBuffer(int this_addr);
 
     public void put(float value) {
-        internal_native_put_0(native_address, value);
+        internal_native_put__0(native_address, value);
     }
 
     /*
       [-TEAVM;-NATIVE]
       var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.put_0(value);
+      jsObj.put__0(value);
     */
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.put_0(value);")
-    public static native void internal_native_put_0(int this_addr, float value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.put__0(value);")
+    public static native void internal_native_put__0(int this_addr, float value);
 
     public void put(int index, float value) {
-        internal_native_put_1(native_address, index, value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*
       [-TEAVM;-NATIVE]
       var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.put_1(index, value);
+      jsObj.put__1(index, value);
     */
-    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.put_1(index, value);")
-    public static native void internal_native_put_1(int this_addr, int index, float value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.put__1(index, value);")
+    public static native void internal_native_put__1(int this_addr, int index, float value);
 
     public float get(int index) {
         return internal_native_get(native_address, index);

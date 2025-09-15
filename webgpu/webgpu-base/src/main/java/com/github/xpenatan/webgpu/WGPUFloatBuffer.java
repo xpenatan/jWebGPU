@@ -3,6 +3,20 @@ package com.github.xpenatan.webgpu;
 import idl.IDLBase;
 
 public class WGPUFloatBuffer extends IDLBase {
+
+    public final static WGPUFloatBuffer NULL;
+
+    static {
+        NULL = native_new();
+    }
+
+    public static WGPUFloatBuffer native_new() {
+        return new WGPUFloatBuffer((byte) 0, (char) 0);
+    }
+
+    private WGPUFloatBuffer(byte b, char c) {
+    }
+
     public void put(float [] values, int offset, int size) {
         internal_put(native_address, values, offset, size);
     }

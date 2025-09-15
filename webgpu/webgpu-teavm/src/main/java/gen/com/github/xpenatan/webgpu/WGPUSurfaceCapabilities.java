@@ -61,7 +61,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUSurfaceCapabilities obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSurfaceCapabilities.NULL;
         if (WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0 = WGPUSurfaceCapabilities.native_new();
         WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -79,7 +79,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUVectorTextureFormat getFormats() {
         int pointer = internal_native_GetFormats(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUVectorTextureFormat.NULL;
         if (WGPUVectorTextureFormat_TEMP_GEN_0 == null)
             WGPUVectorTextureFormat_TEMP_GEN_0 = WGPUVectorTextureFormat.native_new();
         WGPUVectorTextureFormat_TEMP_GEN_0.internal_reset(pointer, false);

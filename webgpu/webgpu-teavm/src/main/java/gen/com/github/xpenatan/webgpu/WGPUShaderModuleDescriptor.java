@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUShaderModuleDescriptor obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUShaderModuleDescriptor.NULL;
         if (WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 = WGPUShaderModuleDescriptor.native_new();
         WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

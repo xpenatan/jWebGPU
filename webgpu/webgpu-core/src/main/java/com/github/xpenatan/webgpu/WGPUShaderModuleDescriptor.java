@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUShaderModuleDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUShaderModuleDescriptor.NULL;
         if (WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0 = WGPUShaderModuleDescriptor.native_new();
         WGPUShaderModuleDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

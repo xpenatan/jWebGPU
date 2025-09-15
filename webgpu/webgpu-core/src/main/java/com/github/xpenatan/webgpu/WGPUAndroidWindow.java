@@ -17,6 +17,19 @@ public class WGPUAndroidWindow extends IDLBase {
                   #include <android/native_window_jni.h>
               #endif
     */
+    public final static WGPUAndroidWindow NULL;
+
+    static {
+        NULL = native_new();
+    }
+
+    public static WGPUAndroidWindow native_new() {
+        return new WGPUAndroidWindow((byte) 0, (char) 0);
+    }
+
+    private WGPUAndroidWindow(byte b, char c) {
+    }
+
     public void createAndroidSurface(Object surface) {
         long surfacePtr = internal_getAndroidSurface(surface);
         internal_native_SetWindow(native_address, surfacePtr);
@@ -50,20 +63,6 @@ public class WGPUAndroidWindow extends IDLBase {
       return (jlong)new WGPUAndroidWindow();
     */
     public static native long internal_native_create();
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUAndroidWindow(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUAndroidWindow native_new() {
-        return new WGPUAndroidWindow((byte) 0, (char) 0);
-    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);

@@ -58,7 +58,7 @@ delete nativeObject;
     public static WGPURenderPassColorAttachment obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderPassColorAttachment.NULL;
         if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
         WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -133,7 +133,7 @@ nativeObject->SetStoreOp((::WGPUStoreOp)storeOp);
     public WGPUColor getClearValue() {
         long pointer = internal_native_GetClearValue(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUColor.NULL;
         if (WGPUColor_TEMP_GEN_0 == null)
             WGPUColor_TEMP_GEN_0 = WGPUColor.native_new();
         WGPUColor_TEMP_GEN_0.internal_reset(pointer, false);

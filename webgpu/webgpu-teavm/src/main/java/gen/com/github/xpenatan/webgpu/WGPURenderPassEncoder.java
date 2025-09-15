@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPURenderPassEncoder obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderPassEncoder.NULL;
         if (WGPURenderPassEncoder_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassEncoder_TEMP_STATIC_GEN_0 = WGPURenderPassEncoder.native_new();
         WGPURenderPassEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

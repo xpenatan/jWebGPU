@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUCommandBuffer obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUCommandBuffer.NULL;
         if (WGPUCommandBuffer_TEMP_STATIC_GEN_0 == null)
             WGPUCommandBuffer_TEMP_STATIC_GEN_0 = WGPUCommandBuffer.native_new();
         WGPUCommandBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

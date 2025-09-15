@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUCommandEncoderDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUCommandEncoderDescriptor.NULL;
         if (WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPUCommandEncoderDescriptor.native_new();
         WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPURenderPassMaxDrawCount obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderPassMaxDrawCount.NULL;
         if (WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 = WGPURenderPassMaxDrawCount.native_new();
         WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

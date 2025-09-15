@@ -11,6 +11,19 @@ import gen.com.github.xpenatan.webgpu.idl.IDLBase;
 
 public class WGPUAndroidWindow extends IDLBase {
 
+    public final static WGPUAndroidWindow NULL;
+
+    static {
+        NULL = native_new();
+    }
+
+    public static WGPUAndroidWindow native_new() {
+        return new WGPUAndroidWindow((byte) 0, (char) 0);
+    }
+
+    private WGPUAndroidWindow(byte b, char c) {
+    }
+
     public void createAndroidSurface(Object surface) {
         int surfacePtr = internal_getAndroidSurface(surface);
         internal_native_SetWindow(native_address, (int) surfacePtr);
@@ -40,20 +53,6 @@ public class WGPUAndroidWindow extends IDLBase {
     */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUAndroidWindow();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create();
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUAndroidWindow(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUAndroidWindow native_new() {
-        return new WGPUAndroidWindow((byte) 0, (char) 0);
-    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);

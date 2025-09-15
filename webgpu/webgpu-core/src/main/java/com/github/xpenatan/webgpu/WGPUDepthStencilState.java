@@ -60,7 +60,7 @@ delete nativeObject;
     public static WGPUDepthStencilState obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUDepthStencilState.NULL;
         if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
             WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
         WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -165,7 +165,7 @@ nativeObject->SetDepthBias((int)depthBias);
     public WGPUStencilFaceState getStencilFront() {
         long pointer = internal_native_GetStencilFront(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUStencilFaceState.NULL;
         if (WGPUStencilFaceState_TEMP_GEN_0 == null)
             WGPUStencilFaceState_TEMP_GEN_0 = WGPUStencilFaceState.native_new();
         WGPUStencilFaceState_TEMP_GEN_0.internal_reset(pointer, false);
@@ -182,7 +182,7 @@ return (jlong)&copy_addr;*/
     public WGPUStencilFaceState getStencilBack() {
         long pointer = internal_native_GetStencilBack(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUStencilFaceState.NULL;
         if (WGPUStencilFaceState_TEMP_GEN_1 == null)
             WGPUStencilFaceState_TEMP_GEN_1 = WGPUStencilFaceState.native_new();
         WGPUStencilFaceState_TEMP_GEN_1.internal_reset(pointer, false);

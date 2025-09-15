@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUVectorFutureWaitInfo obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorFutureWaitInfo.NULL;
         if (WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
             WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUVectorFutureWaitInfo.native_new();
         WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUTextureBindingLayout obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTextureBindingLayout.NULL;
         if (WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUTextureBindingLayout.native_new();
         WGPUTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -50,7 +50,7 @@ public class WGPUExtent3D extends IDLBase {
     public static WGPUExtent3D obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUExtent3D.NULL;
         if (WGPUExtent3D_TEMP_STATIC_GEN_0 == null)
             WGPUExtent3D_TEMP_STATIC_GEN_0 = WGPUExtent3D.native_new();
         WGPUExtent3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

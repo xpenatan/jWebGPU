@@ -62,7 +62,7 @@ delete nativeObject;
     public static WGPURenderPipelineDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderPipelineDescriptor.NULL;
         if (WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPipelineDescriptor.native_new();
         WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -97,7 +97,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
     public WGPUVertexState getVertex() {
         long pointer = internal_native_GetVertex(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUVertexState.NULL;
         if (WGPUVertexState_TEMP_GEN_0 == null)
             WGPUVertexState_TEMP_GEN_0 = WGPUVertexState.native_new();
         WGPUVertexState_TEMP_GEN_0.internal_reset(pointer, false);
@@ -114,7 +114,7 @@ return (jlong)&copy_addr;*/
     public WGPUPrimitiveState getPrimitive() {
         long pointer = internal_native_GetPrimitive(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUPrimitiveState.NULL;
         if (WGPUPrimitiveState_TEMP_GEN_0 == null)
             WGPUPrimitiveState_TEMP_GEN_0 = WGPUPrimitiveState.native_new();
         WGPUPrimitiveState_TEMP_GEN_0.internal_reset(pointer, false);
@@ -151,7 +151,7 @@ nativeObject->SetDepthStencil((JGPU::WGPUDepthStencilState* )depthStencilState_a
     public WGPUMultisampleState getMultisample() {
         long pointer = internal_native_GetMultisample(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUMultisampleState.NULL;
         if (WGPUMultisampleState_TEMP_GEN_0 == null)
             WGPUMultisampleState_TEMP_GEN_0 = WGPUMultisampleState.native_new();
         WGPUMultisampleState_TEMP_GEN_0.internal_reset(pointer, false);

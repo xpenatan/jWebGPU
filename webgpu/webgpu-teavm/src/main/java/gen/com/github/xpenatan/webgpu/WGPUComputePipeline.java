@@ -81,7 +81,7 @@ jsObj.Release();
     public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
         int pointer = internal_native_GetBindGroupLayout(native_address, groupIndex);
         if (pointer == 0)
-            return null;
+            return WGPUBindGroupLayout.NULL;
         if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
             WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
         WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(pointer, false);

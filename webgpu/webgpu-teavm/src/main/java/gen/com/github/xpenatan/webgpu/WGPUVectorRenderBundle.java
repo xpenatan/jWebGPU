@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUVectorRenderBundle obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorRenderBundle.NULL;
         if (WGPUVectorRenderBundle_TEMP_STATIC_GEN_0 == null)
             WGPUVectorRenderBundle_TEMP_STATIC_GEN_0 = WGPUVectorRenderBundle.native_new();
         WGPUVectorRenderBundle_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

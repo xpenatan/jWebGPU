@@ -74,7 +74,7 @@ nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (:
     public WGPUSurface createWebSurface(String canvas) {
         long pointer = internal_native_CreateWebSurface(native_address, canvas);
         if (pointer == 0)
-            return null;
+            return WGPUSurface.NULL;
         WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
@@ -90,7 +90,7 @@ return (jlong)obj;
     public WGPUSurface createWindowsSurface(IDLBase hwnd) {
         long pointer = internal_native_CreateWindowsSurface(native_address, hwnd.native_void_address);
         if (pointer == 0)
-            return null;
+            return WGPUSurface.NULL;
         WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
@@ -106,7 +106,7 @@ return (jlong)obj;
     public WGPUSurface createLinuxSurface(boolean isWayland, IDLBase windowOrSurface, IDLBase display) {
         long pointer = internal_native_CreateLinuxSurface(native_address, isWayland, windowOrSurface.native_void_address, display.native_void_address);
         if (pointer == 0)
-            return null;
+            return WGPUSurface.NULL;
         WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
@@ -122,7 +122,7 @@ return (jlong)obj;
     public WGPUSurface createMacSurface(IDLBase metalLayer) {
         long pointer = internal_native_CreateMacSurface(native_address, metalLayer.native_void_address);
         if (pointer == 0)
-            return null;
+            return WGPUSurface.NULL;
         WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;
@@ -138,7 +138,7 @@ return (jlong)obj;
     public WGPUSurface createAndroidSurface(WGPUAndroidWindow surface) {
         long pointer = internal_native_CreateAndroidSurface(native_address, surface.native_address);
         if (pointer == 0)
-            return null;
+            return WGPUSurface.NULL;
         WGPUSurface WGPUSurface_NEW = WGPUSurface.native_new();
         WGPUSurface_NEW.internal_reset(pointer, true);
         return WGPUSurface_NEW;

@@ -46,7 +46,7 @@ delete nativeObject;
     public WGPUByteBuffer getByteBuffer() {
         long pointer = internal_native_getByteBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -60,24 +60,24 @@ return (jlong)&nativeObject->getByteBuffer();
     public static native long internal_native_getByteBuffer(long this_addr);
 
     public void put(short value) {
-        internal_native_put_0(native_address, value);
+        internal_native_put__0(native_address, value);
     }
 
     /*[-JNI;-NATIVE]
 WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
 nativeObject->put(value);
 */
-    public static native void internal_native_put_0(long this_addr, short value);
+    public static native void internal_native_put__0(long this_addr, short value);
 
     public void put(int index, short value) {
-        internal_native_put_1(native_address, index, value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*[-JNI;-NATIVE]
 WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
 nativeObject->put((int)index, value);
 */
-    public static native void internal_native_put_1(long this_addr, int index, short value);
+    public static native void internal_native_put__1(long this_addr, int index, short value);
 
     public short get(int index) {
         return internal_native_get(native_address, index);

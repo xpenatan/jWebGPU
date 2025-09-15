@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPURenderPassDepthStencilAttachment obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderPassDepthStencilAttachment.NULL;
         if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
         WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

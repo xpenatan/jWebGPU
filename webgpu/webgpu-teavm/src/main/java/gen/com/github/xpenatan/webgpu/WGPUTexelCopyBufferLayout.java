@@ -50,7 +50,7 @@ public class WGPUTexelCopyBufferLayout extends IDLBase {
     public static WGPUTexelCopyBufferLayout obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUTexelCopyBufferLayout.NULL;
         if (WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 == null)
             WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
         WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

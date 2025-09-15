@@ -67,7 +67,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUByteBuffer obtain(int capacity) {
         int pointer = internal_native_Obtain(capacity);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_STATIC_GEN_0 == null)
             WGPUByteBuffer_TEMP_STATIC_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -106,26 +106,26 @@ return returnedJSObj;
     public static native byte internal_native_get(int this_addr, int index);
 
     public void put(byte value) {
-        internal_native_put_0(native_address, value);
+        internal_native_put__0(native_address, value);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);
-jsObj.put_0(value);
+jsObj.put__0(value);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put_0(value);")
-    public static native void internal_native_put_0(int this_addr, byte value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put__0(value);")
+    public static native void internal_native_put__0(int this_addr, byte value);
 
     public void put(int index, byte value) {
-        internal_native_put_1(native_address, index, value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);
-jsObj.put_1(index, value);
+jsObj.put__1(index, value);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put_1(index, value);")
-    public static native void internal_native_put_1(int this_addr, int index, byte value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put__1(index, value);")
+    public static native void internal_native_put__1(int this_addr, int index, byte value);
 
     public byte get() {
         return internal_native_get(native_address);
@@ -280,7 +280,7 @@ jsObj.flip();
     public WGPUFloatBuffer asFloatBuffer() {
         int pointer = internal_native_asFloatBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUFloatBuffer.NULL;
         if (WGPUFloatBuffer_TEMP_GEN_0 == null)
             WGPUFloatBuffer_TEMP_GEN_0 = WGPUFloatBuffer.native_new();
         WGPUFloatBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -299,7 +299,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUIntBuffer asIntBuffer() {
         int pointer = internal_native_asIntBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUIntBuffer.NULL;
         if (WGPUIntBuffer_TEMP_GEN_0 == null)
             WGPUIntBuffer_TEMP_GEN_0 = WGPUIntBuffer.native_new();
         WGPUIntBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -318,7 +318,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPULongBuffer asLongBuffer() {
         int pointer = internal_native_asLongBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPULongBuffer.NULL;
         if (WGPULongBuffer_TEMP_GEN_0 == null)
             WGPULongBuffer_TEMP_GEN_0 = WGPULongBuffer.native_new();
         WGPULongBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -337,7 +337,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUShortBuffer asShortBuffer() {
         int pointer = internal_native_asShortBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUShortBuffer.NULL;
         if (WGPUShortBuffer_TEMP_GEN_0 == null)
             WGPUShortBuffer_TEMP_GEN_0 = WGPUShortBuffer.native_new();
         WGPUShortBuffer_TEMP_GEN_0.internal_reset(pointer, false);

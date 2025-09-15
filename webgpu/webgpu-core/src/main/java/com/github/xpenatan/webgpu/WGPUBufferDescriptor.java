@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUBufferDescriptor obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUBufferDescriptor.NULL;
         if (WGPUBufferDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.native_new();
         WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

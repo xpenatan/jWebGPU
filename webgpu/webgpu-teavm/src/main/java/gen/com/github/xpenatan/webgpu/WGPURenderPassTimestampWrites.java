@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPURenderPassTimestampWrites obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPURenderPassTimestampWrites.NULL;
         if (WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.native_new();
         WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

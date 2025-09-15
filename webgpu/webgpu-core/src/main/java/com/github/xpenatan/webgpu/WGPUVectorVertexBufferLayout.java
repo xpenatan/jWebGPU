@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUVectorVertexBufferLayout obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorVertexBufferLayout.NULL;
         if (WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
             WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVectorVertexBufferLayout.native_new();
         WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

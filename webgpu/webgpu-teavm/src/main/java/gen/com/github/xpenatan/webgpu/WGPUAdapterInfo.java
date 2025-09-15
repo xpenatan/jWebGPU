@@ -68,7 +68,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUAdapterInfo obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUAdapterInfo.NULL;
         if (WGPUAdapterInfo_TEMP_STATIC_GEN_0 == null)
             WGPUAdapterInfo_TEMP_STATIC_GEN_0 = WGPUAdapterInfo.native_new();
         WGPUAdapterInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -86,7 +86,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public IDLString getVendor() {
         int pointer = internal_native_GetVendor(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
@@ -117,7 +117,7 @@ return returnedJSObj;
     public IDLString getArchitecture() {
         int pointer = internal_native_GetArchitecture(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_1 == null)
             IDLString_TEMP_GEN_1 = IDLString.native_new();
         IDLString_TEMP_GEN_1.internal_reset(pointer, false);
@@ -136,7 +136,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public IDLString getDevice() {
         int pointer = internal_native_GetDevice(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_2 == null)
             IDLString_TEMP_GEN_2 = IDLString.native_new();
         IDLString_TEMP_GEN_2.internal_reset(pointer, false);
@@ -167,7 +167,7 @@ return returnedJSObj;
     public IDLString getDescription() {
         int pointer = internal_native_GetDescription(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_3 == null)
             IDLString_TEMP_GEN_3 = IDLString.native_new();
         IDLString_TEMP_GEN_3.internal_reset(pointer, false);

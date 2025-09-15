@@ -123,7 +123,7 @@ public class WGPUBuffer extends IDLBase {
     public WGPUFuture mapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback) {
         int pointer = internal_native_MapAsync(native_address, (int) mode.getValue(), offset, size, (int) callbackMode.getValue(), callback.native_address);
         if (pointer == 0)
-            return null;
+            return WGPUFuture.NULL;
         if (WGPUFuture_TEMP_GEN_0 == null)
             WGPUFuture_TEMP_GEN_0 = WGPUFuture.native_new();
         WGPUFuture_TEMP_GEN_0.internal_reset(pointer, false);
@@ -143,7 +143,7 @@ public class WGPUBuffer extends IDLBase {
     public WGPUByteBuffer getMappedRange(int offset, int size) {
         int pointer = internal_native_GetMappedRange(native_address, offset, size);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);

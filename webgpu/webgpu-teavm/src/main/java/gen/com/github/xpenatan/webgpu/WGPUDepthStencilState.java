@@ -63,7 +63,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUDepthStencilState obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUDepthStencilState.NULL;
         if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
             WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
         WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -180,7 +180,7 @@ jsObj.SetDepthBias(depthBias);
     public WGPUStencilFaceState getStencilFront() {
         int pointer = internal_native_GetStencilFront(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUStencilFaceState.NULL;
         if (WGPUStencilFaceState_TEMP_GEN_0 == null)
             WGPUStencilFaceState_TEMP_GEN_0 = WGPUStencilFaceState.native_new();
         WGPUStencilFaceState_TEMP_GEN_0.internal_reset(pointer, false);
@@ -199,7 +199,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public WGPUStencilFaceState getStencilBack() {
         int pointer = internal_native_GetStencilBack(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUStencilFaceState.NULL;
         if (WGPUStencilFaceState_TEMP_GEN_1 == null)
             WGPUStencilFaceState_TEMP_GEN_1 = WGPUStencilFaceState.native_new();
         WGPUStencilFaceState_TEMP_GEN_1.internal_reset(pointer, false);

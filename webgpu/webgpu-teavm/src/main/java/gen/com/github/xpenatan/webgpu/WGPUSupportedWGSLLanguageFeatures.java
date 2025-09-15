@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUSupportedWGSLLanguageFeatures obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUSupportedWGSLLanguageFeatures.NULL;
         if (WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 == null)
             WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedWGSLLanguageFeatures.native_new();
         WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

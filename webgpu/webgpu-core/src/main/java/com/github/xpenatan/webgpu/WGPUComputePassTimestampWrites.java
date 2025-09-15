@@ -46,7 +46,7 @@ delete nativeObject;
     public static WGPUComputePassTimestampWrites obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUComputePassTimestampWrites.NULL;
         if (WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 == null)
             WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.native_new();
         WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -47,7 +47,7 @@ delete nativeObject;
     public IDLString getString() {
         long pointer = internal_native_GetString(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);

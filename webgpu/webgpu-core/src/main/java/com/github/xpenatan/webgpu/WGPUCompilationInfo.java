@@ -66,7 +66,7 @@ return nativeObject->GetMessageCount();
     public WGPUCompilationMessage getMessage(int index) {
         long pointer = internal_native_GetMessage(native_address, index);
         if (pointer == 0)
-            return null;
+            return WGPUCompilationMessage.NULL;
         if (WGPUCompilationMessage_TEMP_GEN_0 == null)
             WGPUCompilationMessage_TEMP_GEN_0 = WGPUCompilationMessage.native_new();
         WGPUCompilationMessage_TEMP_GEN_0.internal_reset(pointer, false);

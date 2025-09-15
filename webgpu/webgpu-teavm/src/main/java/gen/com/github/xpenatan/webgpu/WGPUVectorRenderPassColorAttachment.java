@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUVectorRenderPassColorAttachment obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVectorRenderPassColorAttachment.NULL;
         if (WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
             WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPUVectorRenderPassColorAttachment.native_new();
         WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

@@ -64,7 +64,7 @@ delete nativeObject;
     public static WGPUByteBuffer obtain(int capacity) {
         long pointer = internal_native_Obtain(capacity);
         if (pointer == 0)
-            return null;
+            return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_STATIC_GEN_0 == null)
             WGPUByteBuffer_TEMP_STATIC_GEN_0 = WGPUByteBuffer.native_new();
         WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -97,24 +97,24 @@ return nativeObject->get((int)index);
     public static native byte internal_native_get(long this_addr, int index);
 
     public void put(byte value) {
-        internal_native_put_0(native_address, value);
+        internal_native_put__0(native_address, value);
     }
 
     /*[-JNI;-NATIVE]
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 nativeObject->put(value);
 */
-    public static native void internal_native_put_0(long this_addr, byte value);
+    public static native void internal_native_put__0(long this_addr, byte value);
 
     public void put(int index, byte value) {
-        internal_native_put_1(native_address, index, value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*[-JNI;-NATIVE]
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 nativeObject->put((int)index, value);
 */
-    public static native void internal_native_put_1(long this_addr, int index, byte value);
+    public static native void internal_native_put__1(long this_addr, int index, byte value);
 
     public byte get() {
         return internal_native_get(native_address);
@@ -249,7 +249,7 @@ nativeObject->flip();
     public WGPUFloatBuffer asFloatBuffer() {
         long pointer = internal_native_asFloatBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUFloatBuffer.NULL;
         if (WGPUFloatBuffer_TEMP_GEN_0 == null)
             WGPUFloatBuffer_TEMP_GEN_0 = WGPUFloatBuffer.native_new();
         WGPUFloatBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -265,7 +265,7 @@ return (jlong)&nativeObject->asFloatBuffer();
     public WGPUIntBuffer asIntBuffer() {
         long pointer = internal_native_asIntBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUIntBuffer.NULL;
         if (WGPUIntBuffer_TEMP_GEN_0 == null)
             WGPUIntBuffer_TEMP_GEN_0 = WGPUIntBuffer.native_new();
         WGPUIntBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -281,7 +281,7 @@ return (jlong)&nativeObject->asIntBuffer();
     public WGPULongBuffer asLongBuffer() {
         long pointer = internal_native_asLongBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPULongBuffer.NULL;
         if (WGPULongBuffer_TEMP_GEN_0 == null)
             WGPULongBuffer_TEMP_GEN_0 = WGPULongBuffer.native_new();
         WGPULongBuffer_TEMP_GEN_0.internal_reset(pointer, false);
@@ -297,7 +297,7 @@ return (jlong)&nativeObject->asLongBuffer();
     public WGPUShortBuffer asShortBuffer() {
         long pointer = internal_native_asShortBuffer(native_address);
         if (pointer == 0)
-            return null;
+            return WGPUShortBuffer.NULL;
         if (WGPUShortBuffer_TEMP_GEN_0 == null)
             WGPUShortBuffer_TEMP_GEN_0 = WGPUShortBuffer.native_new();
         WGPUShortBuffer_TEMP_GEN_0.internal_reset(pointer, false);

@@ -56,7 +56,7 @@ delete nativeObject;
     public static WGPUOrigin3D obtain() {
         long pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUOrigin3D.NULL;
         if (WGPUOrigin3D_TEMP_STATIC_GEN_0 == null)
             WGPUOrigin3D_TEMP_STATIC_GEN_0 = WGPUOrigin3D.native_new();
         WGPUOrigin3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

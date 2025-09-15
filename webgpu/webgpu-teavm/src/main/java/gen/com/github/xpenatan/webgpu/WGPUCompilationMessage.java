@@ -62,7 +62,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUCompilationMessage obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUCompilationMessage.NULL;
         if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
             WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
         WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -80,7 +80,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public IDLStringView getMessage() {
         int pointer = internal_native_GetMessage(native_address);
         if (pointer == 0)
-            return null;
+            return IDLStringView.NULL;
         if (IDLStringView_TEMP_GEN_0 == null)
             IDLStringView_TEMP_GEN_0 = IDLStringView.native_new();
         IDLStringView_TEMP_GEN_0.internal_reset(pointer, false);

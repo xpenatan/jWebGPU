@@ -59,7 +59,7 @@ jWebGPU.destroy(jsObj);
     public static WGPUVertexBufferLayout obtain() {
         int pointer = internal_native_Obtain();
         if (pointer == 0)
-            return null;
+            return WGPUVertexBufferLayout.NULL;
         if (WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
             WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVertexBufferLayout.native_new();
         WGPUVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
