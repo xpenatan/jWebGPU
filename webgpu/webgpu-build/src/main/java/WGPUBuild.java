@@ -23,7 +23,13 @@ public class WGPUBuild {
         String modulePrefix = "webgpu";
         String basePackage = "com.github.xpenatan.webgpu";
 
-        BuildToolOptions op = new BuildToolOptions(libName, basePackage, modulePrefix, null, args);
+        BuildToolOptions.BuildToolParams data = new BuildToolOptions.BuildToolParams();
+        data.libName = libName;
+        data.idlName = libName;
+        data.webModuleName = libName;
+        data.packageName = basePackage;
+        data.modulePrefix = modulePrefix;
+        BuildToolOptions op = new BuildToolOptions(data, args);
 
         BuilderTool.build(op, new BuildToolListener() {
             @Override
