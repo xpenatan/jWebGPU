@@ -1313,6 +1313,7 @@ interface WGPUQueue {
     [BindTo="Submit"] void Submit__4(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03, WGPUCommandBuffer commandBuffer04);
     void Release();
     [BindTo="WriteBuffer"] void WriteBuffer__0(WGPUBuffer buffer, long bufferOffset, octet[] bytes, long dataSize);     //[-SKIP]
+    [BindTo="WriteBuffer"] void WriteBuffer__1(WGPUBuffer buffer, long bufferOffset, any bytes, long dataSize);
     [BindTo="WriteTexture"] void WriteTexture__1(WGPUTexelCopyTextureInfo destination, octet[] bytes, long dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize);  //[-SKIP]
 };
 

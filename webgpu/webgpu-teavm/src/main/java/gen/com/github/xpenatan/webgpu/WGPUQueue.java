@@ -180,4 +180,16 @@ public class WGPUQueue extends IDLBase {
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
+
+    public void writeBuffer(WGPUBuffer buffer, int bufferOffset, IDLBase bytes, int dataSize) {
+        internal_native_WriteBuffer__1(native_address, buffer.native_address, bufferOffset, bytes.native_void_address, dataSize);
+    }
+
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
+      jsObj.WriteBuffer__1(buffer_addr, bufferOffset, bytes_addr, dataSize);
+    */
+    @org.teavm.jso.JSBody(params = {"this_addr", "buffer_addr", "bufferOffset", "bytes_addr", "dataSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.WriteBuffer__1(buffer_addr, bufferOffset, bytes_addr, dataSize);")
+    public static native void internal_native_WriteBuffer__1(int this_addr, int buffer_addr, int bufferOffset, int bytes_addr, int dataSize);
 }
