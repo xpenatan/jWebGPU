@@ -15,12 +15,6 @@ public class WGPUComputePipelineDescriptor extends IDLBase {
 
     static public final WGPUComputePipelineDescriptor NULL = WGPUComputePipelineDescriptor.native_new();
 
-    static public final WGPUComputePipelineDescriptor T_01 = WGPUComputePipelineDescriptor.native_new();
-
-    static public final WGPUComputePipelineDescriptor T_02 = WGPUComputePipelineDescriptor.native_new();
-
-    static public final WGPUComputePipelineDescriptor T_03 = WGPUComputePipelineDescriptor.native_new();
-
     public WGPUComputePipelineDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

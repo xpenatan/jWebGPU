@@ -16,12 +16,6 @@ public class WGPUCompilationMessage extends IDLBase {
 
     static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 
-    static public final WGPUCompilationMessage T_01 = WGPUCompilationMessage.native_new();
-
-    static public final WGPUCompilationMessage T_02 = WGPUCompilationMessage.native_new();
-
-    static public final WGPUCompilationMessage T_03 = WGPUCompilationMessage.native_new();
-
     public WGPUCompilationMessage() {
         long addr = internal_native_create();
         internal_reset(addr, true);

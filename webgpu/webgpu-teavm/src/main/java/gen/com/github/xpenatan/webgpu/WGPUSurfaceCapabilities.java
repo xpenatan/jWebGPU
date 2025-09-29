@@ -15,12 +15,6 @@ public class WGPUSurfaceCapabilities extends IDLBase {
 
     static public final WGPUSurfaceCapabilities NULL = WGPUSurfaceCapabilities.native_new();
 
-    static public final WGPUSurfaceCapabilities T_01 = WGPUSurfaceCapabilities.native_new();
-
-    static public final WGPUSurfaceCapabilities T_02 = WGPUSurfaceCapabilities.native_new();
-
-    static public final WGPUSurfaceCapabilities T_03 = WGPUSurfaceCapabilities.native_new();
-
     public WGPUSurfaceCapabilities() {
         int addr = internal_native_create();
         internal_reset(addr, true);

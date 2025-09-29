@@ -13,12 +13,6 @@ public class WGPURenderPassDepthStencilAttachment extends IDLBase {
 
     static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.native_new();
 
-    static public final WGPURenderPassDepthStencilAttachment T_01 = WGPURenderPassDepthStencilAttachment.native_new();
-
-    static public final WGPURenderPassDepthStencilAttachment T_02 = WGPURenderPassDepthStencilAttachment.native_new();
-
-    static public final WGPURenderPassDepthStencilAttachment T_03 = WGPURenderPassDepthStencilAttachment.native_new();
-
     public WGPURenderPassDepthStencilAttachment() {
         long addr = internal_native_create();
         internal_reset(addr, true);

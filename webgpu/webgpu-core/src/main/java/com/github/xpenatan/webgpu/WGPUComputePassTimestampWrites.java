@@ -13,12 +13,6 @@ public class WGPUComputePassTimestampWrites extends IDLBase {
 
     static public final WGPUComputePassTimestampWrites NULL = WGPUComputePassTimestampWrites.native_new();
 
-    static public final WGPUComputePassTimestampWrites T_01 = WGPUComputePassTimestampWrites.native_new();
-
-    static public final WGPUComputePassTimestampWrites T_02 = WGPUComputePassTimestampWrites.native_new();
-
-    static public final WGPUComputePassTimestampWrites T_03 = WGPUComputePassTimestampWrites.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

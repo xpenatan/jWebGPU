@@ -17,12 +17,6 @@ public class WGPUTexelCopyBufferInfo extends IDLBase {
 
     static public final WGPUTexelCopyBufferInfo NULL = WGPUTexelCopyBufferInfo.native_new();
 
-    static public final WGPUTexelCopyBufferInfo T_01 = WGPUTexelCopyBufferInfo.native_new();
-
-    static public final WGPUTexelCopyBufferInfo T_02 = WGPUTexelCopyBufferInfo.native_new();
-
-    static public final WGPUTexelCopyBufferInfo T_03 = WGPUTexelCopyBufferInfo.native_new();
-
     public WGPUTexelCopyBufferInfo() {
         long addr = internal_native_create();
         internal_reset(addr, true);

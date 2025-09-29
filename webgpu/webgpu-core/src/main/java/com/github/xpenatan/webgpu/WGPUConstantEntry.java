@@ -11,12 +11,6 @@ public class WGPUConstantEntry extends IDLBase {
 
     static public final WGPUConstantEntry NULL = WGPUConstantEntry.native_new();
 
-    static public final WGPUConstantEntry T_01 = WGPUConstantEntry.native_new();
-
-    static public final WGPUConstantEntry T_02 = WGPUConstantEntry.native_new();
-
-    static public final WGPUConstantEntry T_03 = WGPUConstantEntry.native_new();
-
     public WGPUConstantEntry() {
         long addr = internal_native_create();
         internal_reset(addr, true);

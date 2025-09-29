@@ -13,12 +13,6 @@ public class WGPUQuerySetDescriptor extends IDLBase {
 
     static public final WGPUQuerySetDescriptor NULL = WGPUQuerySetDescriptor.native_new();
 
-    static public final WGPUQuerySetDescriptor T_01 = WGPUQuerySetDescriptor.native_new();
-
-    static public final WGPUQuerySetDescriptor T_02 = WGPUQuerySetDescriptor.native_new();
-
-    static public final WGPUQuerySetDescriptor T_03 = WGPUQuerySetDescriptor.native_new();
-
     public WGPUQuerySetDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

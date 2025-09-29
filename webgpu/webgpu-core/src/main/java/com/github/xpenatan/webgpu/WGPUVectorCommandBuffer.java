@@ -13,12 +13,6 @@ public class WGPUVectorCommandBuffer extends IDLBase {
 
     static public final WGPUVectorCommandBuffer NULL = WGPUVectorCommandBuffer.native_new();
 
-    static public final WGPUVectorCommandBuffer T_01 = WGPUVectorCommandBuffer.native_new();
-
-    static public final WGPUVectorCommandBuffer T_02 = WGPUVectorCommandBuffer.native_new();
-
-    static public final WGPUVectorCommandBuffer T_03 = WGPUVectorCommandBuffer.native_new();
-
     public WGPUVectorCommandBuffer() {
         long addr = internal_native_create();
         internal_reset(addr, true);

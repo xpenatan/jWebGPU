@@ -13,12 +13,6 @@ public class WGPUStorageTextureBindingLayout extends IDLBase {
 
     static public final WGPUStorageTextureBindingLayout NULL = WGPUStorageTextureBindingLayout.native_new();
 
-    static public final WGPUStorageTextureBindingLayout T_01 = WGPUStorageTextureBindingLayout.native_new();
-
-    static public final WGPUStorageTextureBindingLayout T_02 = WGPUStorageTextureBindingLayout.native_new();
-
-    static public final WGPUStorageTextureBindingLayout T_03 = WGPUStorageTextureBindingLayout.native_new();
-
     public WGPUStorageTextureBindingLayout() {
         long addr = internal_native_create();
         internal_reset(addr, true);

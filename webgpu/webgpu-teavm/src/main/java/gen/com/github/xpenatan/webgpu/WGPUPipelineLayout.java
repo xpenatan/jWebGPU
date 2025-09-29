@@ -11,12 +11,6 @@ public class WGPUPipelineLayout extends IDLBase {
 
     static public final WGPUPipelineLayout NULL = WGPUPipelineLayout.native_new();
 
-    static public final WGPUPipelineLayout T_01 = WGPUPipelineLayout.native_new();
-
-    static public final WGPUPipelineLayout T_02 = WGPUPipelineLayout.native_new();
-
-    static public final WGPUPipelineLayout T_03 = WGPUPipelineLayout.native_new();
-
     public WGPUPipelineLayout() {
         int addr = internal_native_create();
         internal_reset(addr, true);

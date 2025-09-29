@@ -13,12 +13,6 @@ public class WGPUCommandBufferDescriptor extends IDLBase {
 
     static public final WGPUCommandBufferDescriptor NULL = WGPUCommandBufferDescriptor.native_new();
 
-    static public final WGPUCommandBufferDescriptor T_01 = WGPUCommandBufferDescriptor.native_new();
-
-    static public final WGPUCommandBufferDescriptor T_02 = WGPUCommandBufferDescriptor.native_new();
-
-    static public final WGPUCommandBufferDescriptor T_03 = WGPUCommandBufferDescriptor.native_new();
-
     public WGPUCommandBufferDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

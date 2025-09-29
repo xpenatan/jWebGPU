@@ -11,12 +11,6 @@ public class WGPUUncapturedErrorCallback extends IDLBase {
 
     static public final WGPUUncapturedErrorCallback NULL = WGPUUncapturedErrorCallback.native_new();
 
-    static public final WGPUUncapturedErrorCallback T_01 = WGPUUncapturedErrorCallback.native_new();
-
-    static public final WGPUUncapturedErrorCallback T_02 = WGPUUncapturedErrorCallback.native_new();
-
-    static public final WGPUUncapturedErrorCallback T_03 = WGPUUncapturedErrorCallback.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

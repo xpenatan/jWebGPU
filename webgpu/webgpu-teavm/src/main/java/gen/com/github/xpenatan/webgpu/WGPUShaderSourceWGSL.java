@@ -15,12 +15,6 @@ public class WGPUShaderSourceWGSL extends IDLBase {
 
     static public final WGPUShaderSourceWGSL NULL = WGPUShaderSourceWGSL.native_new();
 
-    static public final WGPUShaderSourceWGSL T_01 = WGPUShaderSourceWGSL.native_new();
-
-    static public final WGPUShaderSourceWGSL T_02 = WGPUShaderSourceWGSL.native_new();
-
-    static public final WGPUShaderSourceWGSL T_03 = WGPUShaderSourceWGSL.native_new();
-
     public WGPUShaderSourceWGSL() {
         int addr = internal_native_create();
         internal_reset(addr, true);

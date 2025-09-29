@@ -15,12 +15,6 @@ public class WGPUTextureDescriptor extends IDLBase {
 
     static public final WGPUTextureDescriptor NULL = WGPUTextureDescriptor.native_new();
 
-    static public final WGPUTextureDescriptor T_01 = WGPUTextureDescriptor.native_new();
-
-    static public final WGPUTextureDescriptor T_02 = WGPUTextureDescriptor.native_new();
-
-    static public final WGPUTextureDescriptor T_03 = WGPUTextureDescriptor.native_new();
-
     public WGPUTextureDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

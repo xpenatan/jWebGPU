@@ -11,12 +11,6 @@ public class WGPUStencilFaceState extends IDLBase {
 
     static public final WGPUStencilFaceState NULL = WGPUStencilFaceState.native_new();
 
-    static public final WGPUStencilFaceState T_01 = WGPUStencilFaceState.native_new();
-
-    static public final WGPUStencilFaceState T_02 = WGPUStencilFaceState.native_new();
-
-    static public final WGPUStencilFaceState T_03 = WGPUStencilFaceState.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

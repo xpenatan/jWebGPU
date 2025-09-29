@@ -13,12 +13,6 @@ public class WGPUSamplerDescriptor extends IDLBase {
 
     static public final WGPUSamplerDescriptor NULL = WGPUSamplerDescriptor.native_new();
 
-    static public final WGPUSamplerDescriptor T_01 = WGPUSamplerDescriptor.native_new();
-
-    static public final WGPUSamplerDescriptor T_02 = WGPUSamplerDescriptor.native_new();
-
-    static public final WGPUSamplerDescriptor T_03 = WGPUSamplerDescriptor.native_new();
-
     public WGPUSamplerDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

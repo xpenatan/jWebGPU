@@ -13,12 +13,6 @@ public class WGPUSupportedWGSLLanguageFeatures extends IDLBase {
 
     static public final WGPUSupportedWGSLLanguageFeatures NULL = WGPUSupportedWGSLLanguageFeatures.native_new();
 
-    static public final WGPUSupportedWGSLLanguageFeatures T_01 = WGPUSupportedWGSLLanguageFeatures.native_new();
-
-    static public final WGPUSupportedWGSLLanguageFeatures T_02 = WGPUSupportedWGSLLanguageFeatures.native_new();
-
-    static public final WGPUSupportedWGSLLanguageFeatures T_03 = WGPUSupportedWGSLLanguageFeatures.native_new();
-
     public WGPUSupportedWGSLLanguageFeatures() {
         int addr = internal_native_create();
         internal_reset(addr, true);

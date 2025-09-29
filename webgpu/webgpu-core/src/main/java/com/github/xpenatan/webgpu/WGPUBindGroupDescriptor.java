@@ -13,12 +13,6 @@ public class WGPUBindGroupDescriptor extends IDLBase {
 
     static public final WGPUBindGroupDescriptor NULL = WGPUBindGroupDescriptor.native_new();
 
-    static public final WGPUBindGroupDescriptor T_01 = WGPUBindGroupDescriptor.native_new();
-
-    static public final WGPUBindGroupDescriptor T_02 = WGPUBindGroupDescriptor.native_new();
-
-    static public final WGPUBindGroupDescriptor T_03 = WGPUBindGroupDescriptor.native_new();
-
     public WGPUBindGroupDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

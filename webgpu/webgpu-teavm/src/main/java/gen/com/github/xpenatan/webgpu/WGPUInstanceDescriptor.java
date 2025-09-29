@@ -13,12 +13,6 @@ public class WGPUInstanceDescriptor extends IDLBase {
 
     static public final WGPUInstanceDescriptor NULL = WGPUInstanceDescriptor.native_new();
 
-    static public final WGPUInstanceDescriptor T_01 = WGPUInstanceDescriptor.native_new();
-
-    static public final WGPUInstanceDescriptor T_02 = WGPUInstanceDescriptor.native_new();
-
-    static public final WGPUInstanceDescriptor T_03 = WGPUInstanceDescriptor.native_new();
-
     public WGPUInstanceDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -13,12 +13,6 @@ public class WGPUSupportedFeatures extends IDLBase {
 
     static public final WGPUSupportedFeatures NULL = WGPUSupportedFeatures.native_new();
 
-    static public final WGPUSupportedFeatures T_01 = WGPUSupportedFeatures.native_new();
-
-    static public final WGPUSupportedFeatures T_02 = WGPUSupportedFeatures.native_new();
-
-    static public final WGPUSupportedFeatures T_03 = WGPUSupportedFeatures.native_new();
-
     public WGPUSupportedFeatures() {
         long addr = internal_native_create();
         internal_reset(addr, true);

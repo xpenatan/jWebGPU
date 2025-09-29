@@ -13,12 +13,6 @@ public class WGPUVectorVertexBufferLayout extends IDLBase {
 
     static public final WGPUVectorVertexBufferLayout NULL = WGPUVectorVertexBufferLayout.native_new();
 
-    static public final WGPUVectorVertexBufferLayout T_01 = WGPUVectorVertexBufferLayout.native_new();
-
-    static public final WGPUVectorVertexBufferLayout T_02 = WGPUVectorVertexBufferLayout.native_new();
-
-    static public final WGPUVectorVertexBufferLayout T_03 = WGPUVectorVertexBufferLayout.native_new();
-
     public WGPUVectorVertexBufferLayout() {
         int addr = internal_native_create();
         internal_reset(addr, true);

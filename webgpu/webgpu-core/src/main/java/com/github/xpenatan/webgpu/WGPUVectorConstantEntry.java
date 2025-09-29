@@ -13,12 +13,6 @@ public class WGPUVectorConstantEntry extends IDLBase {
 
     static public final WGPUVectorConstantEntry NULL = WGPUVectorConstantEntry.native_new();
 
-    static public final WGPUVectorConstantEntry T_01 = WGPUVectorConstantEntry.native_new();
-
-    static public final WGPUVectorConstantEntry T_02 = WGPUVectorConstantEntry.native_new();
-
-    static public final WGPUVectorConstantEntry T_03 = WGPUVectorConstantEntry.native_new();
-
     public WGPUVectorConstantEntry() {
         long addr = internal_native_create();
         internal_reset(addr, true);

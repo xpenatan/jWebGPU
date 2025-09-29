@@ -13,12 +13,6 @@ public class WGPURenderBundleEncoderDescriptor extends IDLBase {
 
     static public final WGPURenderBundleEncoderDescriptor NULL = WGPURenderBundleEncoderDescriptor.native_new();
 
-    static public final WGPURenderBundleEncoderDescriptor T_01 = WGPURenderBundleEncoderDescriptor.native_new();
-
-    static public final WGPURenderBundleEncoderDescriptor T_02 = WGPURenderBundleEncoderDescriptor.native_new();
-
-    static public final WGPURenderBundleEncoderDescriptor T_03 = WGPURenderBundleEncoderDescriptor.native_new();
-
     public WGPURenderBundleEncoderDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

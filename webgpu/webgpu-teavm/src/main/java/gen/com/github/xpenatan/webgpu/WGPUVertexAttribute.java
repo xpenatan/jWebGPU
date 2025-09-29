@@ -13,12 +13,6 @@ public class WGPUVertexAttribute extends IDLBase {
 
     static public final WGPUVertexAttribute NULL = WGPUVertexAttribute.native_new();
 
-    static public final WGPUVertexAttribute T_01 = WGPUVertexAttribute.native_new();
-
-    static public final WGPUVertexAttribute T_02 = WGPUVertexAttribute.native_new();
-
-    static public final WGPUVertexAttribute T_03 = WGPUVertexAttribute.native_new();
-
     public WGPUVertexAttribute() {
         int addr = internal_native_create();
         internal_reset(addr, true);

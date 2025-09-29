@@ -13,12 +13,6 @@ public class WGPURequestAdapterOptions extends IDLBase {
 
     static public final WGPURequestAdapterOptions NULL = WGPURequestAdapterOptions.native_new();
 
-    static public final WGPURequestAdapterOptions T_01 = WGPURequestAdapterOptions.native_new();
-
-    static public final WGPURequestAdapterOptions T_02 = WGPURequestAdapterOptions.native_new();
-
-    static public final WGPURequestAdapterOptions T_03 = WGPURequestAdapterOptions.native_new();
-
     public WGPURequestAdapterOptions() {
         long addr = internal_native_create();
         internal_reset(addr, true);

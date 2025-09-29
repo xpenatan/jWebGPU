@@ -11,12 +11,6 @@ public class WGPURenderBundleEncoder extends IDLBase {
 
     static public final WGPURenderBundleEncoder NULL = WGPURenderBundleEncoder.native_new();
 
-    static public final WGPURenderBundleEncoder T_01 = WGPURenderBundleEncoder.native_new();
-
-    static public final WGPURenderBundleEncoder T_02 = WGPURenderBundleEncoder.native_new();
-
-    static public final WGPURenderBundleEncoder T_03 = WGPURenderBundleEncoder.native_new();
-
     public WGPURenderBundleEncoder() {
         int addr = internal_native_create();
         internal_reset(addr, true);

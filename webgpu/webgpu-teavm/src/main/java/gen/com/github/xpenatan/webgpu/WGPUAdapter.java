@@ -11,12 +11,6 @@ public class WGPUAdapter extends IDLBase {
 
     static public final WGPUAdapter NULL = WGPUAdapter.native_new();
 
-    static public final WGPUAdapter T_01 = WGPUAdapter.native_new();
-
-    static public final WGPUAdapter T_02 = WGPUAdapter.native_new();
-
-    static public final WGPUAdapter T_03 = WGPUAdapter.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -13,12 +13,6 @@ public class WGPUColor extends IDLBase {
 
     static public final WGPUColor NULL = WGPUColor.native_new();
 
-    static public final WGPUColor T_01 = WGPUColor.native_new();
-
-    static public final WGPUColor T_02 = WGPUColor.native_new();
-
-    static public final WGPUColor T_03 = WGPUColor.native_new();
-
     public WGPUColor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

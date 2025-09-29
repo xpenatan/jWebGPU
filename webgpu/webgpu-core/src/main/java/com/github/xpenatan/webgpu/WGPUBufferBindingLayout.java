@@ -13,12 +13,6 @@ public class WGPUBufferBindingLayout extends IDLBase {
 
     static public final WGPUBufferBindingLayout NULL = WGPUBufferBindingLayout.native_new();
 
-    static public final WGPUBufferBindingLayout T_01 = WGPUBufferBindingLayout.native_new();
-
-    static public final WGPUBufferBindingLayout T_02 = WGPUBufferBindingLayout.native_new();
-
-    static public final WGPUBufferBindingLayout T_03 = WGPUBufferBindingLayout.native_new();
-
     public WGPUBufferBindingLayout() {
         long addr = internal_native_create();
         internal_reset(addr, true);

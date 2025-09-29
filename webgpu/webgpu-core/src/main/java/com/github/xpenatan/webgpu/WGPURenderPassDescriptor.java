@@ -13,12 +13,6 @@ public class WGPURenderPassDescriptor extends IDLBase {
 
     static public final WGPURenderPassDescriptor NULL = WGPURenderPassDescriptor.native_new();
 
-    static public final WGPURenderPassDescriptor T_01 = WGPURenderPassDescriptor.native_new();
-
-    static public final WGPURenderPassDescriptor T_02 = WGPURenderPassDescriptor.native_new();
-
-    static public final WGPURenderPassDescriptor T_03 = WGPURenderPassDescriptor.native_new();
-
     public WGPURenderPassDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

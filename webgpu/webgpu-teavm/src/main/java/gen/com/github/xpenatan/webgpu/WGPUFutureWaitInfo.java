@@ -13,12 +13,6 @@ public class WGPUFutureWaitInfo extends IDLBase {
 
     static public final WGPUFutureWaitInfo NULL = WGPUFutureWaitInfo.native_new();
 
-    static public final WGPUFutureWaitInfo T_01 = WGPUFutureWaitInfo.native_new();
-
-    static public final WGPUFutureWaitInfo T_02 = WGPUFutureWaitInfo.native_new();
-
-    static public final WGPUFutureWaitInfo T_03 = WGPUFutureWaitInfo.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -11,12 +11,6 @@ public class WGPUChainedStruct extends IDLBase {
 
     static public final WGPUChainedStruct NULL = WGPUChainedStruct.native_new();
 
-    static public final WGPUChainedStruct T_01 = WGPUChainedStruct.native_new();
-
-    static public final WGPUChainedStruct T_02 = WGPUChainedStruct.native_new();
-
-    static public final WGPUChainedStruct T_03 = WGPUChainedStruct.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

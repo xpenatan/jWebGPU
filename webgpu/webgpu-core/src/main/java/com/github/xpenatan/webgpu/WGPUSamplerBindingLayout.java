@@ -13,12 +13,6 @@ public class WGPUSamplerBindingLayout extends IDLBase {
 
     static public final WGPUSamplerBindingLayout NULL = WGPUSamplerBindingLayout.native_new();
 
-    static public final WGPUSamplerBindingLayout T_01 = WGPUSamplerBindingLayout.native_new();
-
-    static public final WGPUSamplerBindingLayout T_02 = WGPUSamplerBindingLayout.native_new();
-
-    static public final WGPUSamplerBindingLayout T_03 = WGPUSamplerBindingLayout.native_new();
-
     public WGPUSamplerBindingLayout() {
         long addr = internal_native_create();
         internal_reset(addr, true);

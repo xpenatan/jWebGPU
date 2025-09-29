@@ -13,12 +13,6 @@ public class WGPUTextureView extends IDLBase {
 
     static public final WGPUTextureView NULL = WGPUTextureView.native_new();
 
-    static public final WGPUTextureView T_01 = WGPUTextureView.native_new();
-
-    static public final WGPUTextureView T_02 = WGPUTextureView.native_new();
-
-    static public final WGPUTextureView T_03 = WGPUTextureView.native_new();
-
     public WGPUTextureView() {
         long addr = internal_native_create();
         internal_reset(addr, true);

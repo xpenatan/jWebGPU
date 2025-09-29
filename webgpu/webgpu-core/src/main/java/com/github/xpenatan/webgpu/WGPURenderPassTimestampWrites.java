@@ -13,12 +13,6 @@ public class WGPURenderPassTimestampWrites extends IDLBase {
 
     static public final WGPURenderPassTimestampWrites NULL = WGPURenderPassTimestampWrites.native_new();
 
-    static public final WGPURenderPassTimestampWrites T_01 = WGPURenderPassTimestampWrites.native_new();
-
-    static public final WGPURenderPassTimestampWrites T_02 = WGPURenderPassTimestampWrites.native_new();
-
-    static public final WGPURenderPassTimestampWrites T_03 = WGPURenderPassTimestampWrites.native_new();
-
     public WGPURenderPassTimestampWrites() {
         long addr = internal_native_create();
         internal_reset(addr, true);

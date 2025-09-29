@@ -13,12 +13,6 @@ public class WGPUComputePipeline extends IDLBase {
 
     static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
-    static public final WGPUComputePipeline T_01 = WGPUComputePipeline.native_new();
-
-    static public final WGPUComputePipeline T_02 = WGPUComputePipeline.native_new();
-
-    static public final WGPUComputePipeline T_03 = WGPUComputePipeline.native_new();
-
     public WGPUComputePipeline() {
         int addr = internal_native_create();
         internal_reset(addr, true);

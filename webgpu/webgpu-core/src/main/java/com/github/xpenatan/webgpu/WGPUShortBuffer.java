@@ -13,12 +13,6 @@ public class WGPUShortBuffer extends IDLBase {
 
     static public final WGPUShortBuffer NULL = WGPUShortBuffer.native_new();
 
-    static public final WGPUShortBuffer T_01 = WGPUShortBuffer.native_new();
-
-    static public final WGPUShortBuffer T_02 = WGPUShortBuffer.native_new();
-
-    static public final WGPUShortBuffer T_03 = WGPUShortBuffer.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

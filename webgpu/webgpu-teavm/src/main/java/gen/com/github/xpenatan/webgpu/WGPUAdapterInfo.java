@@ -22,12 +22,6 @@ public class WGPUAdapterInfo extends IDLBase {
 
     static public final WGPUAdapterInfo NULL = WGPUAdapterInfo.native_new();
 
-    static public final WGPUAdapterInfo T_01 = WGPUAdapterInfo.native_new();
-
-    static public final WGPUAdapterInfo T_02 = WGPUAdapterInfo.native_new();
-
-    static public final WGPUAdapterInfo T_03 = WGPUAdapterInfo.native_new();
-
     public WGPUAdapterInfo() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -13,12 +13,6 @@ public class WGPUVectorFutureWaitInfo extends IDLBase {
 
     static public final WGPUVectorFutureWaitInfo NULL = WGPUVectorFutureWaitInfo.native_new();
 
-    static public final WGPUVectorFutureWaitInfo T_01 = WGPUVectorFutureWaitInfo.native_new();
-
-    static public final WGPUVectorFutureWaitInfo T_02 = WGPUVectorFutureWaitInfo.native_new();
-
-    static public final WGPUVectorFutureWaitInfo T_03 = WGPUVectorFutureWaitInfo.native_new();
-
     public WGPUVectorFutureWaitInfo() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -11,12 +11,6 @@ public class WGPUBlendComponent extends IDLBase {
 
     static public final WGPUBlendComponent NULL = WGPUBlendComponent.native_new();
 
-    static public final WGPUBlendComponent T_01 = WGPUBlendComponent.native_new();
-
-    static public final WGPUBlendComponent T_02 = WGPUBlendComponent.native_new();
-
-    static public final WGPUBlendComponent T_03 = WGPUBlendComponent.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

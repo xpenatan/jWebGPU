@@ -13,12 +13,6 @@ public class WGPUTextureBindingLayout extends IDLBase {
 
     static public final WGPUTextureBindingLayout NULL = WGPUTextureBindingLayout.native_new();
 
-    static public final WGPUTextureBindingLayout T_01 = WGPUTextureBindingLayout.native_new();
-
-    static public final WGPUTextureBindingLayout T_02 = WGPUTextureBindingLayout.native_new();
-
-    static public final WGPUTextureBindingLayout T_03 = WGPUTextureBindingLayout.native_new();
-
     public WGPUTextureBindingLayout() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -15,12 +15,6 @@ public class WGPURenderPassColorAttachment extends IDLBase {
 
     static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 
-    static public final WGPURenderPassColorAttachment T_01 = WGPURenderPassColorAttachment.native_new();
-
-    static public final WGPURenderPassColorAttachment T_02 = WGPURenderPassColorAttachment.native_new();
-
-    static public final WGPURenderPassColorAttachment T_03 = WGPURenderPassColorAttachment.native_new();
-
     public WGPURenderPassColorAttachment() {
         int addr = internal_native_create();
         internal_reset(addr, true);

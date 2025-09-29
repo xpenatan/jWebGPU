@@ -13,12 +13,6 @@ public class WGPUVectorRenderBundle extends IDLBase {
 
     static public final WGPUVectorRenderBundle NULL = WGPUVectorRenderBundle.native_new();
 
-    static public final WGPUVectorRenderBundle T_01 = WGPUVectorRenderBundle.native_new();
-
-    static public final WGPUVectorRenderBundle T_02 = WGPUVectorRenderBundle.native_new();
-
-    static public final WGPUVectorRenderBundle T_03 = WGPUVectorRenderBundle.native_new();
-
     public WGPUVectorRenderBundle() {
         long addr = internal_native_create();
         internal_reset(addr, true);

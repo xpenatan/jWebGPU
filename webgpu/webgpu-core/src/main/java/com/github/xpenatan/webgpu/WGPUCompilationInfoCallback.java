@@ -13,12 +13,6 @@ public class WGPUCompilationInfoCallback extends IDLBase {
 
     static public final WGPUCompilationInfoCallback NULL = WGPUCompilationInfoCallback.native_new();
 
-    static public final WGPUCompilationInfoCallback T_01 = WGPUCompilationInfoCallback.native_new();
-
-    static public final WGPUCompilationInfoCallback T_02 = WGPUCompilationInfoCallback.native_new();
-
-    static public final WGPUCompilationInfoCallback T_03 = WGPUCompilationInfoCallback.native_new();
-
     /*[-JNI;-NATIVE]
 class WGPUCompilationInfoCallbackImpl : public JGPU::WGPUCompilationInfoCallback {
 private:

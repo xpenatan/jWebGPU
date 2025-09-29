@@ -13,12 +13,6 @@ public class WGPUDevice extends IDLBase {
 
     static public final WGPUDevice NULL = WGPUDevice.native_new();
 
-    static public final WGPUDevice T_01 = WGPUDevice.native_new();
-
-    static public final WGPUDevice T_02 = WGPUDevice.native_new();
-
-    static public final WGPUDevice T_03 = WGPUDevice.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

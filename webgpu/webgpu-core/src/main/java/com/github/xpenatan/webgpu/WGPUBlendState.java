@@ -17,12 +17,6 @@ public class WGPUBlendState extends IDLBase {
 
     static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 
-    static public final WGPUBlendState T_01 = WGPUBlendState.native_new();
-
-    static public final WGPUBlendState T_02 = WGPUBlendState.native_new();
-
-    static public final WGPUBlendState T_03 = WGPUBlendState.native_new();
-
     public WGPUBlendState() {
         long addr = internal_native_create();
         internal_reset(addr, true);

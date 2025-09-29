@@ -13,12 +13,6 @@ public class WGPUIntBuffer extends IDLBase {
 
     static public final WGPUIntBuffer NULL = WGPUIntBuffer.native_new();
 
-    static public final WGPUIntBuffer T_01 = WGPUIntBuffer.native_new();
-
-    static public final WGPUIntBuffer T_02 = WGPUIntBuffer.native_new();
-
-    static public final WGPUIntBuffer T_03 = WGPUIntBuffer.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

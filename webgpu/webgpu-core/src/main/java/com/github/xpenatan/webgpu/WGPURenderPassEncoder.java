@@ -13,12 +13,6 @@ public class WGPURenderPassEncoder extends IDLBase {
 
     static public final WGPURenderPassEncoder NULL = WGPURenderPassEncoder.native_new();
 
-    static public final WGPURenderPassEncoder T_01 = WGPURenderPassEncoder.native_new();
-
-    static public final WGPURenderPassEncoder T_02 = WGPURenderPassEncoder.native_new();
-
-    static public final WGPURenderPassEncoder T_03 = WGPURenderPassEncoder.native_new();
-
     public WGPURenderPassEncoder() {
         long addr = internal_native_create();
         internal_reset(addr, true);

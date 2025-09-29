@@ -13,12 +13,6 @@ public class WGPUTexture extends IDLBase {
 
     static public final WGPUTexture NULL = WGPUTexture.native_new();
 
-    static public final WGPUTexture T_01 = WGPUTexture.native_new();
-
-    static public final WGPUTexture T_02 = WGPUTexture.native_new();
-
-    static public final WGPUTexture T_03 = WGPUTexture.native_new();
-
     public WGPUTexture() {
         int addr = internal_native_create();
         internal_reset(addr, true);

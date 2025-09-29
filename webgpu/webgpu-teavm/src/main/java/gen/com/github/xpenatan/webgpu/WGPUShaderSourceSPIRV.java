@@ -13,12 +13,6 @@ public class WGPUShaderSourceSPIRV extends IDLBase {
 
     static public final WGPUShaderSourceSPIRV NULL = WGPUShaderSourceSPIRV.native_new();
 
-    static public final WGPUShaderSourceSPIRV T_01 = WGPUShaderSourceSPIRV.native_new();
-
-    static public final WGPUShaderSourceSPIRV T_02 = WGPUShaderSourceSPIRV.native_new();
-
-    static public final WGPUShaderSourceSPIRV T_03 = WGPUShaderSourceSPIRV.native_new();
-
     public WGPUShaderSourceSPIRV() {
         int addr = internal_native_create();
         internal_reset(addr, true);

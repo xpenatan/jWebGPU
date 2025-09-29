@@ -13,12 +13,6 @@ public class WGPUColorTargetState extends IDLBase {
 
     static public final WGPUColorTargetState NULL = WGPUColorTargetState.native_new();
 
-    static public final WGPUColorTargetState T_01 = WGPUColorTargetState.native_new();
-
-    static public final WGPUColorTargetState T_02 = WGPUColorTargetState.native_new();
-
-    static public final WGPUColorTargetState T_03 = WGPUColorTargetState.native_new();
-
     public WGPUColorTargetState() {
         long addr = internal_native_create();
         internal_reset(addr, true);

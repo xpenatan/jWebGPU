@@ -11,12 +11,6 @@ public class WGPUMultisampleState extends IDLBase {
 
     static public final WGPUMultisampleState NULL = WGPUMultisampleState.native_new();
 
-    static public final WGPUMultisampleState T_01 = WGPUMultisampleState.native_new();
-
-    static public final WGPUMultisampleState T_02 = WGPUMultisampleState.native_new();
-
-    static public final WGPUMultisampleState T_03 = WGPUMultisampleState.native_new();
-
     public WGPUMultisampleState() {
         int addr = internal_native_create();
         internal_reset(addr, true);

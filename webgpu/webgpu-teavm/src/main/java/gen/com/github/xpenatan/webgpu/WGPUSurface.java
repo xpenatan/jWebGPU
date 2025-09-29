@@ -11,12 +11,6 @@ public class WGPUSurface extends IDLBase {
 
     static public final WGPUSurface NULL = WGPUSurface.native_new();
 
-    static public final WGPUSurface T_01 = WGPUSurface.native_new();
-
-    static public final WGPUSurface T_02 = WGPUSurface.native_new();
-
-    static public final WGPUSurface T_03 = WGPUSurface.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

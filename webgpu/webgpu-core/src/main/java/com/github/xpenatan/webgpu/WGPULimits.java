@@ -13,12 +13,6 @@ public class WGPULimits extends IDLBase {
 
     static public final WGPULimits NULL = WGPULimits.native_new();
 
-    static public final WGPULimits T_01 = WGPULimits.native_new();
-
-    static public final WGPULimits T_02 = WGPULimits.native_new();
-
-    static public final WGPULimits T_03 = WGPULimits.native_new();
-
     public WGPULimits() {
         long addr = internal_native_create();
         internal_reset(addr, true);

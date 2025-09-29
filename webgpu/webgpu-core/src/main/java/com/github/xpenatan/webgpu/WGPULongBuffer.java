@@ -13,12 +13,6 @@ public class WGPULongBuffer extends IDLBase {
 
     static public final WGPULongBuffer NULL = WGPULongBuffer.native_new();
 
-    static public final WGPULongBuffer T_01 = WGPULongBuffer.native_new();
-
-    static public final WGPULongBuffer T_02 = WGPULongBuffer.native_new();
-
-    static public final WGPULongBuffer T_03 = WGPULongBuffer.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

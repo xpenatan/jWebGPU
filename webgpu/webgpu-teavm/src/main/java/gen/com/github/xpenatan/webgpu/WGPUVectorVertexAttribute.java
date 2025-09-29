@@ -13,12 +13,6 @@ public class WGPUVectorVertexAttribute extends IDLBase {
 
     static public final WGPUVectorVertexAttribute NULL = WGPUVectorVertexAttribute.native_new();
 
-    static public final WGPUVectorVertexAttribute T_01 = WGPUVectorVertexAttribute.native_new();
-
-    static public final WGPUVectorVertexAttribute T_02 = WGPUVectorVertexAttribute.native_new();
-
-    static public final WGPUVectorVertexAttribute T_03 = WGPUVectorVertexAttribute.native_new();
-
     public WGPUVectorVertexAttribute() {
         int addr = internal_native_create();
         internal_reset(addr, true);

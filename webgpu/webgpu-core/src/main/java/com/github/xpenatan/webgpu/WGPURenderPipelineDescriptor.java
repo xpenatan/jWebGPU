@@ -19,12 +19,6 @@ public class WGPURenderPipelineDescriptor extends IDLBase {
 
     static public final WGPURenderPipelineDescriptor NULL = WGPURenderPipelineDescriptor.native_new();
 
-    static public final WGPURenderPipelineDescriptor T_01 = WGPURenderPipelineDescriptor.native_new();
-
-    static public final WGPURenderPipelineDescriptor T_02 = WGPURenderPipelineDescriptor.native_new();
-
-    static public final WGPURenderPipelineDescriptor T_03 = WGPURenderPipelineDescriptor.native_new();
-
     public WGPURenderPipelineDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

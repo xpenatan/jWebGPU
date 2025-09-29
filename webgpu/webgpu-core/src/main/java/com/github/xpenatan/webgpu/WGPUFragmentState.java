@@ -13,12 +13,6 @@ public class WGPUFragmentState extends IDLBase {
 
     static public final WGPUFragmentState NULL = WGPUFragmentState.native_new();
 
-    static public final WGPUFragmentState T_01 = WGPUFragmentState.native_new();
-
-    static public final WGPUFragmentState T_02 = WGPUFragmentState.native_new();
-
-    static public final WGPUFragmentState T_03 = WGPUFragmentState.native_new();
-
     public WGPUFragmentState() {
         long addr = internal_native_create();
         internal_reset(addr, true);

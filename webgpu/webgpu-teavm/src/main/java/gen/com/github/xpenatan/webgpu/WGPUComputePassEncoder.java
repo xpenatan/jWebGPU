@@ -13,12 +13,6 @@ public class WGPUComputePassEncoder extends IDLBase {
 
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 
-    static public final WGPUComputePassEncoder T_01 = WGPUComputePassEncoder.native_new();
-
-    static public final WGPUComputePassEncoder T_02 = WGPUComputePassEncoder.native_new();
-
-    static public final WGPUComputePassEncoder T_03 = WGPUComputePassEncoder.native_new();
-
     public WGPUComputePassEncoder() {
         int addr = internal_native_create();
         internal_reset(addr, true);

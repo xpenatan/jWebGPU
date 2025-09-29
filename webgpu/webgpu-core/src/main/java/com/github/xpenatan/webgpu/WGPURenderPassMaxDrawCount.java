@@ -13,12 +13,6 @@ public class WGPURenderPassMaxDrawCount extends IDLBase {
 
     static public final WGPURenderPassMaxDrawCount NULL = WGPURenderPassMaxDrawCount.native_new();
 
-    static public final WGPURenderPassMaxDrawCount T_01 = WGPURenderPassMaxDrawCount.native_new();
-
-    static public final WGPURenderPassMaxDrawCount T_02 = WGPURenderPassMaxDrawCount.native_new();
-
-    static public final WGPURenderPassMaxDrawCount T_03 = WGPURenderPassMaxDrawCount.native_new();
-
     public WGPURenderPassMaxDrawCount() {
         long addr = internal_native_create();
         internal_reset(addr, true);

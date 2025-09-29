@@ -21,12 +21,6 @@ public class WGPUByteBuffer extends IDLBase {
 
     static public final WGPUByteBuffer NULL = WGPUByteBuffer.native_new();
 
-    static public final WGPUByteBuffer T_01 = WGPUByteBuffer.native_new();
-
-    static public final WGPUByteBuffer T_02 = WGPUByteBuffer.native_new();
-
-    static public final WGPUByteBuffer T_03 = WGPUByteBuffer.native_new();
-
     public WGPUByteBuffer(int capacity) {
         long addr = internal_native_create_int(capacity);
         internal_reset(addr, true);

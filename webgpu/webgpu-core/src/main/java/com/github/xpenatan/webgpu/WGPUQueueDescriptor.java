@@ -11,12 +11,6 @@ public class WGPUQueueDescriptor extends IDLBase {
 
     static public final WGPUQueueDescriptor NULL = WGPUQueueDescriptor.native_new();
 
-    static public final WGPUQueueDescriptor T_01 = WGPUQueueDescriptor.native_new();
-
-    static public final WGPUQueueDescriptor T_02 = WGPUQueueDescriptor.native_new();
-
-    static public final WGPUQueueDescriptor T_03 = WGPUQueueDescriptor.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

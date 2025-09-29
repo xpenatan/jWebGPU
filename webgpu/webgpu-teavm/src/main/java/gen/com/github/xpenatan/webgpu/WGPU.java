@@ -17,12 +17,6 @@ public class WGPU extends IDLBase {
 
     static public final WGPU NULL = WGPU.native_new();
 
-    static public final WGPU T_01 = WGPU.native_new();
-
-    static public final WGPU T_02 = WGPU.native_new();
-
-    static public final WGPU T_03 = WGPU.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

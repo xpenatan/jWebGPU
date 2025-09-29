@@ -13,12 +13,6 @@ public class WGPUSurfaceTexture extends IDLBase {
 
     static public final WGPUSurfaceTexture NULL = WGPUSurfaceTexture.native_new();
 
-    static public final WGPUSurfaceTexture T_01 = WGPUSurfaceTexture.native_new();
-
-    static public final WGPUSurfaceTexture T_02 = WGPUSurfaceTexture.native_new();
-
-    static public final WGPUSurfaceTexture T_03 = WGPUSurfaceTexture.native_new();
-
     public WGPUSurfaceTexture() {
         long addr = internal_native_create();
         internal_reset(addr, true);

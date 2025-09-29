@@ -13,12 +13,6 @@ public class WGPUVectorBindGroupEntry extends IDLBase {
 
     static public final WGPUVectorBindGroupEntry NULL = WGPUVectorBindGroupEntry.native_new();
 
-    static public final WGPUVectorBindGroupEntry T_01 = WGPUVectorBindGroupEntry.native_new();
-
-    static public final WGPUVectorBindGroupEntry T_02 = WGPUVectorBindGroupEntry.native_new();
-
-    static public final WGPUVectorBindGroupEntry T_03 = WGPUVectorBindGroupEntry.native_new();
-
     public WGPUVectorBindGroupEntry() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -11,12 +11,6 @@ public class WGPUVertexState extends IDLBase {
 
     static public final WGPUVertexState NULL = WGPUVertexState.native_new();
 
-    static public final WGPUVertexState T_01 = WGPUVertexState.native_new();
-
-    static public final WGPUVertexState T_02 = WGPUVertexState.native_new();
-
-    static public final WGPUVertexState T_03 = WGPUVertexState.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

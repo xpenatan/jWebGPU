@@ -11,12 +11,6 @@ public class WGPUPrimitiveState extends IDLBase {
 
     static public final WGPUPrimitiveState NULL = WGPUPrimitiveState.native_new();
 
-    static public final WGPUPrimitiveState T_01 = WGPUPrimitiveState.native_new();
-
-    static public final WGPUPrimitiveState T_02 = WGPUPrimitiveState.native_new();
-
-    static public final WGPUPrimitiveState T_03 = WGPUPrimitiveState.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

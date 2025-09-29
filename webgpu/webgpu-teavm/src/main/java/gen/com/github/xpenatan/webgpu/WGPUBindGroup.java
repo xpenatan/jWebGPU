@@ -11,12 +11,6 @@ public class WGPUBindGroup extends IDLBase {
 
     static public final WGPUBindGroup NULL = WGPUBindGroup.native_new();
 
-    static public final WGPUBindGroup T_01 = WGPUBindGroup.native_new();
-
-    static public final WGPUBindGroup T_02 = WGPUBindGroup.native_new();
-
-    static public final WGPUBindGroup T_03 = WGPUBindGroup.native_new();
-
     public WGPUBindGroup() {
         int addr = internal_native_create();
         internal_reset(addr, true);

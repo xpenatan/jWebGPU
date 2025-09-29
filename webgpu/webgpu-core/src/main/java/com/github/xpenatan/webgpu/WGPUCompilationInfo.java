@@ -13,12 +13,6 @@ public class WGPUCompilationInfo extends IDLBase {
 
     static public final WGPUCompilationInfo NULL = WGPUCompilationInfo.native_new();
 
-    static public final WGPUCompilationInfo T_01 = WGPUCompilationInfo.native_new();
-
-    static public final WGPUCompilationInfo T_02 = WGPUCompilationInfo.native_new();
-
-    static public final WGPUCompilationInfo T_03 = WGPUCompilationInfo.native_new();
-
     public WGPUCompilationInfo() {
         long addr = internal_native_create();
         internal_reset(addr, true);

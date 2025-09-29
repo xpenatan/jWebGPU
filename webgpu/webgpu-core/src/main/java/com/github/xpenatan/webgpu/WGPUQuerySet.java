@@ -11,12 +11,6 @@ public class WGPUQuerySet extends IDLBase {
 
     static public final WGPUQuerySet NULL = WGPUQuerySet.native_new();
 
-    static public final WGPUQuerySet T_01 = WGPUQuerySet.native_new();
-
-    static public final WGPUQuerySet T_02 = WGPUQuerySet.native_new();
-
-    static public final WGPUQuerySet T_03 = WGPUQuerySet.native_new();
-
     public WGPUQuerySet() {
         long addr = internal_native_create();
         internal_reset(addr, true);

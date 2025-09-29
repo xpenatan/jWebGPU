@@ -11,12 +11,6 @@ public class WGPURequestDeviceCallback extends IDLBase {
 
     static public final WGPURequestDeviceCallback NULL = WGPURequestDeviceCallback.native_new();
 
-    static public final WGPURequestDeviceCallback T_01 = WGPURequestDeviceCallback.native_new();
-
-    static public final WGPURequestDeviceCallback T_02 = WGPURequestDeviceCallback.native_new();
-
-    static public final WGPURequestDeviceCallback T_03 = WGPURequestDeviceCallback.native_new();
-
     /*[-JNI;-NATIVE]
 class WGPURequestDeviceCallbackImpl : public JGPU::WGPURequestDeviceCallback {
 private:

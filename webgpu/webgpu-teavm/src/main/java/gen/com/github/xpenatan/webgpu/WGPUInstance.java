@@ -11,12 +11,6 @@ public class WGPUInstance extends IDLBase {
 
     static public final WGPUInstance NULL = WGPUInstance.native_new();
 
-    static public final WGPUInstance T_01 = WGPUInstance.native_new();
-
-    static public final WGPUInstance T_02 = WGPUInstance.native_new();
-
-    static public final WGPUInstance T_03 = WGPUInstance.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

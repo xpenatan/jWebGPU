@@ -11,12 +11,6 @@ public class WGPUSampler extends IDLBase {
 
     static public final WGPUSampler NULL = WGPUSampler.native_new();
 
-    static public final WGPUSampler T_01 = WGPUSampler.native_new();
-
-    static public final WGPUSampler T_02 = WGPUSampler.native_new();
-
-    static public final WGPUSampler T_03 = WGPUSampler.native_new();
-
     public WGPUSampler() {
         long addr = internal_native_create();
         internal_reset(addr, true);

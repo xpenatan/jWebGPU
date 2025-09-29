@@ -13,12 +13,6 @@ public class WGPUCommandEncoder extends IDLBase {
 
     static public final WGPUCommandEncoder NULL = WGPUCommandEncoder.native_new();
 
-    static public final WGPUCommandEncoder T_01 = WGPUCommandEncoder.native_new();
-
-    static public final WGPUCommandEncoder T_02 = WGPUCommandEncoder.native_new();
-
-    static public final WGPUCommandEncoder T_03 = WGPUCommandEncoder.native_new();
-
     public WGPUCommandEncoder() {
         int addr = internal_native_create();
         internal_reset(addr, true);

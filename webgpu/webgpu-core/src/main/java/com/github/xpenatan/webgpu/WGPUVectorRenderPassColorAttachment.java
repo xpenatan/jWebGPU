@@ -13,12 +13,6 @@ public class WGPUVectorRenderPassColorAttachment extends IDLBase {
 
     static public final WGPUVectorRenderPassColorAttachment NULL = WGPUVectorRenderPassColorAttachment.native_new();
 
-    static public final WGPUVectorRenderPassColorAttachment T_01 = WGPUVectorRenderPassColorAttachment.native_new();
-
-    static public final WGPUVectorRenderPassColorAttachment T_02 = WGPUVectorRenderPassColorAttachment.native_new();
-
-    static public final WGPUVectorRenderPassColorAttachment T_03 = WGPUVectorRenderPassColorAttachment.native_new();
-
     public WGPUVectorRenderPassColorAttachment() {
         long addr = internal_native_create();
         internal_reset(addr, true);

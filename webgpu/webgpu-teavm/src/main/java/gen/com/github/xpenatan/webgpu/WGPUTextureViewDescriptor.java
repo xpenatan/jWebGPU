@@ -13,12 +13,6 @@ public class WGPUTextureViewDescriptor extends IDLBase {
 
     static public final WGPUTextureViewDescriptor NULL = WGPUTextureViewDescriptor.native_new();
 
-    static public final WGPUTextureViewDescriptor T_01 = WGPUTextureViewDescriptor.native_new();
-
-    static public final WGPUTextureViewDescriptor T_02 = WGPUTextureViewDescriptor.native_new();
-
-    static public final WGPUTextureViewDescriptor T_03 = WGPUTextureViewDescriptor.native_new();
-
     public WGPUTextureViewDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

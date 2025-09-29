@@ -13,12 +13,6 @@ public class WGPUBufferDescriptor extends IDLBase {
 
     static public final WGPUBufferDescriptor NULL = WGPUBufferDescriptor.native_new();
 
-    static public final WGPUBufferDescriptor T_01 = WGPUBufferDescriptor.native_new();
-
-    static public final WGPUBufferDescriptor T_02 = WGPUBufferDescriptor.native_new();
-
-    static public final WGPUBufferDescriptor T_03 = WGPUBufferDescriptor.native_new();
-
     public WGPUBufferDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -13,12 +13,6 @@ public class WGPUSurfaceConfiguration extends IDLBase {
 
     static public final WGPUSurfaceConfiguration NULL = WGPUSurfaceConfiguration.native_new();
 
-    static public final WGPUSurfaceConfiguration T_01 = WGPUSurfaceConfiguration.native_new();
-
-    static public final WGPUSurfaceConfiguration T_02 = WGPUSurfaceConfiguration.native_new();
-
-    static public final WGPUSurfaceConfiguration T_03 = WGPUSurfaceConfiguration.native_new();
-
     public WGPUSurfaceConfiguration() {
         int addr = internal_native_create();
         internal_reset(addr, true);

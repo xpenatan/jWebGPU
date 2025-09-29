@@ -13,12 +13,6 @@ public class WGPUShaderModuleDescriptor extends IDLBase {
 
     static public final WGPUShaderModuleDescriptor NULL = WGPUShaderModuleDescriptor.native_new();
 
-    static public final WGPUShaderModuleDescriptor T_01 = WGPUShaderModuleDescriptor.native_new();
-
-    static public final WGPUShaderModuleDescriptor T_02 = WGPUShaderModuleDescriptor.native_new();
-
-    static public final WGPUShaderModuleDescriptor T_03 = WGPUShaderModuleDescriptor.native_new();
-
     public WGPUShaderModuleDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

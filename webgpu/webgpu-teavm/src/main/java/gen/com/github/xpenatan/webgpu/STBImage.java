@@ -13,12 +13,6 @@ public class STBImage extends IDLBase {
 
     static public final STBImage NULL = STBImage.native_new();
 
-    static public final STBImage T_01 = STBImage.native_new();
-
-    static public final STBImage T_02 = STBImage.native_new();
-
-    static public final STBImage T_03 = STBImage.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

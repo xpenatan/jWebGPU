@@ -15,12 +15,6 @@ public class WGPUDeviceDescriptor extends IDLBase {
 
     static public final WGPUDeviceDescriptor NULL = WGPUDeviceDescriptor.native_new();
 
-    static public final WGPUDeviceDescriptor T_01 = WGPUDeviceDescriptor.native_new();
-
-    static public final WGPUDeviceDescriptor T_02 = WGPUDeviceDescriptor.native_new();
-
-    static public final WGPUDeviceDescriptor T_03 = WGPUDeviceDescriptor.native_new();
-
     public WGPUDeviceDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

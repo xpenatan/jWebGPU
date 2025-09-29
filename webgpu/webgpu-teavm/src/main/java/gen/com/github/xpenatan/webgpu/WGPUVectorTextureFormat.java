@@ -13,12 +13,6 @@ public class WGPUVectorTextureFormat extends IDLBase {
 
     static public final WGPUVectorTextureFormat NULL = WGPUVectorTextureFormat.native_new();
 
-    static public final WGPUVectorTextureFormat T_01 = WGPUVectorTextureFormat.native_new();
-
-    static public final WGPUVectorTextureFormat T_02 = WGPUVectorTextureFormat.native_new();
-
-    static public final WGPUVectorTextureFormat T_03 = WGPUVectorTextureFormat.native_new();
-
     public WGPUVectorTextureFormat() {
         int addr = internal_native_create();
         internal_reset(addr, true);

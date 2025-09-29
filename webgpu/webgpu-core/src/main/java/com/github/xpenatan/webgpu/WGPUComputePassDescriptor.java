@@ -13,12 +13,6 @@ public class WGPUComputePassDescriptor extends IDLBase {
 
     static public final WGPUComputePassDescriptor NULL = WGPUComputePassDescriptor.native_new();
 
-    static public final WGPUComputePassDescriptor T_01 = WGPUComputePassDescriptor.native_new();
-
-    static public final WGPUComputePassDescriptor T_02 = WGPUComputePassDescriptor.native_new();
-
-    static public final WGPUComputePassDescriptor T_03 = WGPUComputePassDescriptor.native_new();
-
     public WGPUComputePassDescriptor() {
         long addr = internal_native_create();
         internal_reset(addr, true);

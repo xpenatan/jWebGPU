@@ -13,12 +13,6 @@ public class WGPUPipelineLayoutDescriptor extends IDLBase {
 
     static public final WGPUPipelineLayoutDescriptor NULL = WGPUPipelineLayoutDescriptor.native_new();
 
-    static public final WGPUPipelineLayoutDescriptor T_01 = WGPUPipelineLayoutDescriptor.native_new();
-
-    static public final WGPUPipelineLayoutDescriptor T_02 = WGPUPipelineLayoutDescriptor.native_new();
-
-    static public final WGPUPipelineLayoutDescriptor T_03 = WGPUPipelineLayoutDescriptor.native_new();
-
     public WGPUPipelineLayoutDescriptor() {
         int addr = internal_native_create();
         internal_reset(addr, true);

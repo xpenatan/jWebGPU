@@ -13,12 +13,6 @@ public class WGPUVectorFeatureName extends IDLBase {
 
     static public final WGPUVectorFeatureName NULL = WGPUVectorFeatureName.native_new();
 
-    static public final WGPUVectorFeatureName T_01 = WGPUVectorFeatureName.native_new();
-
-    static public final WGPUVectorFeatureName T_02 = WGPUVectorFeatureName.native_new();
-
-    static public final WGPUVectorFeatureName T_03 = WGPUVectorFeatureName.native_new();
-
     public WGPUVectorFeatureName() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -17,12 +17,6 @@ public class WGPUDepthStencilState extends IDLBase {
 
     static public final WGPUDepthStencilState NULL = WGPUDepthStencilState.native_new();
 
-    static public final WGPUDepthStencilState T_01 = WGPUDepthStencilState.native_new();
-
-    static public final WGPUDepthStencilState T_02 = WGPUDepthStencilState.native_new();
-
-    static public final WGPUDepthStencilState T_03 = WGPUDepthStencilState.native_new();
-
     public WGPUDepthStencilState() {
         long addr = internal_native_create();
         internal_reset(addr, true);

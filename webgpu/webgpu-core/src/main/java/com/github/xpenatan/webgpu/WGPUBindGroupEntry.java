@@ -13,12 +13,6 @@ public class WGPUBindGroupEntry extends IDLBase {
 
     static public final WGPUBindGroupEntry NULL = WGPUBindGroupEntry.native_new();
 
-    static public final WGPUBindGroupEntry T_01 = WGPUBindGroupEntry.native_new();
-
-    static public final WGPUBindGroupEntry T_02 = WGPUBindGroupEntry.native_new();
-
-    static public final WGPUBindGroupEntry T_03 = WGPUBindGroupEntry.native_new();
-
     public WGPUBindGroupEntry() {
         long addr = internal_native_create();
         internal_reset(addr, true);

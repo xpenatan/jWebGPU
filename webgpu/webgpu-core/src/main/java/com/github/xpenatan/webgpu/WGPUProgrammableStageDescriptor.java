@@ -11,12 +11,6 @@ public class WGPUProgrammableStageDescriptor extends IDLBase {
 
     static public final WGPUProgrammableStageDescriptor NULL = WGPUProgrammableStageDescriptor.native_new();
 
-    static public final WGPUProgrammableStageDescriptor T_01 = WGPUProgrammableStageDescriptor.native_new();
-
-    static public final WGPUProgrammableStageDescriptor T_02 = WGPUProgrammableStageDescriptor.native_new();
-
-    static public final WGPUProgrammableStageDescriptor T_03 = WGPUProgrammableStageDescriptor.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

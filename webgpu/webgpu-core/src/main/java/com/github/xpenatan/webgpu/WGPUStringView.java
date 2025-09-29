@@ -14,12 +14,6 @@ public class WGPUStringView extends IDLBase {
 
     static public final WGPUStringView NULL = WGPUStringView.native_new();
 
-    static public final WGPUStringView T_01 = WGPUStringView.native_new();
-
-    static public final WGPUStringView T_02 = WGPUStringView.native_new();
-
-    static public final WGPUStringView T_03 = WGPUStringView.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

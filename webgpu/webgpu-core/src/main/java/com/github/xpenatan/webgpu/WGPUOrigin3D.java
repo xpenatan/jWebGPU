@@ -13,12 +13,6 @@ public class WGPUOrigin3D extends IDLBase {
 
     static public final WGPUOrigin3D NULL = WGPUOrigin3D.native_new();
 
-    static public final WGPUOrigin3D T_01 = WGPUOrigin3D.native_new();
-
-    static public final WGPUOrigin3D T_02 = WGPUOrigin3D.native_new();
-
-    static public final WGPUOrigin3D T_03 = WGPUOrigin3D.native_new();
-
     public WGPUOrigin3D() {
         long addr = internal_native_create();
         internal_reset(addr, true);
