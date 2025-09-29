@@ -8,7 +8,7 @@
 package com.github.xpenatan.webgpu;
 
 import java.nio.ByteBuffer;
-import com.github.xpenatan.webgpu.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUBuffer extends IDLBase {
 

@@ -3,9 +3,6 @@ plugins {
     id("java-library")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
-
 val moduleName = "webgpu-teavm"
 
 val emscriptenFile = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGPU.wasm.js"
@@ -17,6 +14,8 @@ tasks.jar {
 dependencies {
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-teavm:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-teavm:${LibExt.jParserVersion}")
     implementation("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
     implementation("org.teavm:teavm-core:${LibExt.teaVMVersion}")
     implementation("org.teavm:teavm-classlib:${LibExt.teaVMVersion}")

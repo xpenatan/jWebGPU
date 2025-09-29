@@ -7,7 +7,7 @@
 */
 package gen.com.github.xpenatan.webgpu.idl.helper;
 
-import gen.com.github.xpenatan.webgpu.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 
 public class IDLStringView extends IDLBase {
 

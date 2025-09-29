@@ -7,7 +7,7 @@ package com.github.xpenatan.webgpu;
 
 import java.util.Map;
 import java.util.HashMap;
-import com.github.xpenatan.webgpu.idl.IDLEnum;
+import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUStatus implements IDLEnum<WGPUStatus> {
 

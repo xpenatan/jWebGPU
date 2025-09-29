@@ -1,10 +1,10 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
+import com.github.xpenatan.jParser.idl.IDLBase;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
-import com.github.xpenatan.webgpu.idl.IDLBase;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;

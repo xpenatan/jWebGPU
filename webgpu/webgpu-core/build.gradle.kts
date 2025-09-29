@@ -3,13 +3,11 @@ plugins {
     id("java-library")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
-
 val moduleName = "webgpu-core"
 
 dependencies {
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
 
     testImplementation("junit:junit:${LibExt.jUnitVersion}")
 }

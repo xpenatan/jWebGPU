@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.webgpu.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import com.github.xpenatan.webgpu.idl.helper.IDLString;
 
 public class WGPUAdapterInfo extends IDLBase {

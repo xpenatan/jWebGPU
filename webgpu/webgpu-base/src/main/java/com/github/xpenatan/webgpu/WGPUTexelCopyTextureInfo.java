@@ -1,6 +1,6 @@
 package com.github.xpenatan.webgpu;
 
-import idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUTexelCopyTextureInfo extends IDLBase {
 

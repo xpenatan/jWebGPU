@@ -3,9 +3,6 @@ plugins {
     id("java-library")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
-
 val mainWGPUClassName = "WGPUBuild"
 
 dependencies {
@@ -19,8 +16,8 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
-    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java11Target)
 }
 
 tasks.register<JavaExec>("webgpu_build_project") {

@@ -62,7 +62,6 @@ import com.github.xpenatan.webgpu.WGPUVertexAttribute;
 import com.github.xpenatan.webgpu.WGPUVertexBufferLayout;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
-import com.github.xpenatan.webgpu.idl.IDLBase;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;

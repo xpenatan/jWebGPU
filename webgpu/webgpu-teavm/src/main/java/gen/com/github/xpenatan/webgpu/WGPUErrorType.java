@@ -7,7 +7,7 @@ package gen.com.github.xpenatan.webgpu;
 
 import java.util.Map;
 import java.util.HashMap;
-import gen.com.github.xpenatan.webgpu.idl.IDLEnum;
+import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUErrorType implements IDLEnum<WGPUErrorType> {
 

@@ -5,7 +5,8 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.webgpu.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.webgpu.idl.helper.IDLUtils;
 
 public class WGPURequestDeviceCallback extends IDLBase {
 
@@ -46,7 +47,7 @@ jWebGPU.destroy(jsObj);
         OnCallback OnCallback = new OnCallback() {
 
             public void OnCallback(int status_addr, int device_addr, int message_addr) {
-                internal_onCallback(status_addr, device_addr, IDLBase.getJSString(message_addr));
+                internal_onCallback(status_addr, device_addr, IDLUtils.getJSString(message_addr));
             }
         };
         internal_native_setupCallback(native_address, OnCallback);

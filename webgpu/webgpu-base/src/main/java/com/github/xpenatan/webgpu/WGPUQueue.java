@@ -1,7 +1,6 @@
 package com.github.xpenatan.webgpu;
 
-import idl.IDLBase;
-import idl.helper.IDLByteArray;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import java.nio.ByteBuffer;
 
 public class WGPUQueue extends IDLBase {

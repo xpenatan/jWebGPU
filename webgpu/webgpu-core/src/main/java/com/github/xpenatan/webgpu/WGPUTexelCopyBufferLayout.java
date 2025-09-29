@@ -7,7 +7,7 @@
 */
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.webgpu.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUTexelCopyBufferLayout extends IDLBase {
 
