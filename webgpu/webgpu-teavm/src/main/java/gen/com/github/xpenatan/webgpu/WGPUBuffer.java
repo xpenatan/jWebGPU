@@ -16,7 +16,7 @@ public class WGPUBuffer extends IDLBase {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
-    @org.teavm.jso.JSBody(params = { "this_addr", "offset", "size", "bytes_addr" }, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer); var ptr = jWebGPU._malloc(size); jsObj.GetConstMappedRange(offset, size, ptr); var dataOut = jWebGPU.HEAPU8.subarray(ptr, ptr + size); bytes_addr.set(dataOut); jWebGPU._free(ptr);")
+    @org.teavm.jso.JSBody(params = { "this_addr", "offset", "size", "bytes_addr" }, script = "" + "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);" + "var ptr = jWebGPU._malloc(size);" + "jsObj.GetConstMappedRange(offset, size, ptr);" + "var dataOut = jWebGPU.HEAPU8.subarray(ptr, ptr + size);" + "bytes_addr.set(dataOut);" + "jWebGPU._free(ptr);")
     private static native void internal_native_getConstMappedRange(int this_addr, int offset, int size, org.teavm.jso.JSObject bytes_addr);
 
     public final static WGPUBuffer NULL = native_new();
@@ -56,7 +56,14 @@ public class WGPUBuffer extends IDLBase {
 
     /*
       [-TEAVM;-REPLACE]
-              @org.teavm.jso.JSBody(params = {"this_addr", "offset", "size", "bytes_addr"}, script = "var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUBuffer); var ptr = [MODULE]._malloc(size); jsObj.GetConstMappedRange(offset, size, ptr); var dataOut = [MODULE].HEAPU8.subarray(ptr, ptr + size); bytes_addr.set(dataOut); [MODULE]._free(ptr);")
+              @org.teavm.jso.JSBody(params = {"this_addr", "offset", "size", "bytes_addr"}, script = "" +
+                  "var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUBuffer);" +
+                  "var ptr = [MODULE]._malloc(size);" +
+                  "jsObj.GetConstMappedRange(offset, size, ptr);" +
+                  "var dataOut = [MODULE].HEAPU8.subarray(ptr, ptr + size);" +
+                  "bytes_addr.set(dataOut);" +
+                  "[MODULE]._free(ptr);"
+              )
               private static native void internal_native_getConstMappedRange(int this_addr, int offset, int size, org.teavm.jso.JSObject bytes_addr);
     */
     public WGPUBuffer() {
