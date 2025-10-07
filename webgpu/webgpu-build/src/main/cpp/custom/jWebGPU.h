@@ -1223,8 +1223,8 @@ class WGPUBindGroupEntry : public WGPUObjectBase<WGPUBindGroupEntry, ::WGPUBindG
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetBinding(int binding);
         void SetBuffer(WGPUBuffer* buffer);
-        void SetOffset(int offset);
-        void SetSize(int size);
+        void SetOffset(uint64_t offset);
+        void SetSize(uint64_t size);
         void SetSampler(WGPUSampler* sampler);
         void SetTextureView(WGPUTextureView* textureView);
 };
@@ -1380,7 +1380,7 @@ class WGPUBufferDescriptor : public WGPUObjectBase<WGPUBufferDescriptor, ::WGPUB
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetUsage(WGPUBufferUsage usage);
-        void SetSize(int size);
+        void SetSize(uint64_t size);
         void SetMappedAtCreation(bool mappedAtCreation);
 };
 

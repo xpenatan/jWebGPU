@@ -77,15 +77,15 @@ nativeObject->SetUsage((::WGPUBufferUsage)usage);
 */
     public static native void internal_native_SetUsage(long this_addr, long usage);
 
-    public void setSize(int size) {
+    public void setSize(long size) {
         internal_native_SetSize(native_address, size);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetSize((int)size);
+nativeObject->SetSize(size);
 */
-    public static native void internal_native_SetSize(long this_addr, int size);
+    public static native void internal_native_SetSize(long this_addr, long size);
 
     public void setMappedAtCreation(boolean mappedAtCreation) {
         internal_native_SetMappedAtCreation(native_address, mappedAtCreation);

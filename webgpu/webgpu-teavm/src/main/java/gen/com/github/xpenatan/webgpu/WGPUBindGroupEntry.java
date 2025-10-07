@@ -94,8 +94,8 @@ jsObj.SetBuffer(buffer_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "buffer_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupEntry);jsObj.SetBuffer(buffer_addr);")
     public static native void internal_native_SetBuffer(int this_addr, int buffer_addr);
 
-    public void setOffset(int offset) {
-        internal_native_SetOffset(native_address, offset);
+    public void setOffset(long offset) {
+        internal_native_SetOffset(native_address, (int) offset);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -105,8 +105,8 @@ jsObj.SetOffset(offset);
     @org.teavm.jso.JSBody(params = {"this_addr", "offset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupEntry);jsObj.SetOffset(offset);")
     public static native void internal_native_SetOffset(int this_addr, int offset);
 
-    public void setSize(int size) {
-        internal_native_SetSize(native_address, size);
+    public void setSize(long size) {
+        internal_native_SetSize(native_address, (int) size);
     }
 
     /*[-TEAVM;-NATIVE]

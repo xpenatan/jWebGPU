@@ -87,25 +87,25 @@ nativeObject->SetBuffer((JGPU::WGPUBuffer* )buffer_addr);
 */
     public static native void internal_native_SetBuffer(long this_addr, long buffer_addr);
 
-    public void setOffset(int offset) {
+    public void setOffset(long offset) {
         internal_native_SetOffset(native_address, offset);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUBindGroupEntry* nativeObject = (JGPU::WGPUBindGroupEntry*)this_addr;
-nativeObject->SetOffset((int)offset);
+nativeObject->SetOffset(offset);
 */
-    public static native void internal_native_SetOffset(long this_addr, int offset);
+    public static native void internal_native_SetOffset(long this_addr, long offset);
 
-    public void setSize(int size) {
+    public void setSize(long size) {
         internal_native_SetSize(native_address, size);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUBindGroupEntry* nativeObject = (JGPU::WGPUBindGroupEntry*)this_addr;
-nativeObject->SetSize((int)size);
+nativeObject->SetSize(size);
 */
-    public static native void internal_native_SetSize(long this_addr, int size);
+    public static native void internal_native_SetSize(long this_addr, long size);
 
     public void setSampler(WGPUSampler sampler) {
         internal_native_SetSampler(native_address, sampler.native_address);

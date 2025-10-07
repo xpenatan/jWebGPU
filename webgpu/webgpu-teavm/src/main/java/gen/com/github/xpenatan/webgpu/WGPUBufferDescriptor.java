@@ -83,8 +83,8 @@ jsObj.SetUsage(usage);
     @org.teavm.jso.JSBody(params = {"this_addr", "usage"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferDescriptor);jsObj.SetUsage(usage);")
     public static native void internal_native_SetUsage(int this_addr, int usage);
 
-    public void setSize(int size) {
-        internal_native_SetSize(native_address, size);
+    public void setSize(long size) {
+        internal_native_SetSize(native_address, (int) size);
     }
 
     /*[-TEAVM;-NATIVE]

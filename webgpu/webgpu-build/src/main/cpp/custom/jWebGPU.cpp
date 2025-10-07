@@ -2231,11 +2231,11 @@ void JGPU::WGPUBindGroupEntry::SetBuffer(JGPU::WGPUBuffer* buffer) {
     Get().buffer = buffer ? buffer->Get() : nullptr;
 }
 
-void JGPU::WGPUBindGroupEntry::SetOffset(int offset) {
+void JGPU::WGPUBindGroupEntry::SetOffset(uint64_t offset) {
     Get().offset = offset;
 }
 
-void JGPU::WGPUBindGroupEntry::SetSize(int size) {
+void JGPU::WGPUBindGroupEntry::SetSize(uint64_t size) {
     Get().size = size;
 }
 
@@ -2931,7 +2931,7 @@ void JGPU::WGPUBufferDescriptor::SetUsage(WGPUBufferUsage usage) {
     Get().usage = usage;
 }
 
-void JGPU::WGPUBufferDescriptor::SetSize(int size) {
+void JGPU::WGPUBufferDescriptor::SetSize(uint64_t size) {
     Get().size = size;
 }
 

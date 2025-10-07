@@ -794,8 +794,8 @@ interface WGPUBindGroupEntry {
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetBinding(long binding);
     void SetBuffer(WGPUBuffer buffer);
-    void SetOffset(long offset);
-    void SetSize(long size);
+    void SetOffset(unsigned long long offset);
+    void SetSize(unsigned long long size);
     void SetSampler(WGPUSampler sampler);
     void SetTextureView(WGPUTextureView textureView);
     static WGPUBindGroupEntry Obtain();
@@ -964,7 +964,7 @@ interface WGPUBufferDescriptor {
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetUsage(WGPUBufferUsage usage);
-    void SetSize(long size);
+    void SetSize(unsigned long long size);
     void SetMappedAtCreation(boolean mappedAtCreation);
     static WGPUBufferDescriptor Obtain();
 };
