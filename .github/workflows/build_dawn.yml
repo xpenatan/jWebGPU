@@ -46,3 +46,12 @@ jobs:
 
       - name: Download sources
         run: ./gradlew :webgpu:webgpu-dawn:download_source
+
+      - name: Generate cmake
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64
+
+      - name: Build Dawn
+        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
+
+      - name: Install Dawn
+        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64_install
