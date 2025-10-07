@@ -1508,9 +1508,12 @@ enum WGPUCompareFunction {
 };
 
 enum WGPUCompilationInfoRequestStatus {
-    "WGPUCompilationInfoRequestStatus_Success",             //[-RENAME=Success]
+    "WGPUCompilationInfoRequestStatus_Success",              //[-RENAME=Success]
+//    "WGPUCompilationInfoRequestStatus_InstanceDropped",      //[-RENAME=InstanceDropped] // TODO dawn is CallbackCancelled
+//    "WGPUCompilationInfoRequestStatus_Error",                //[-RENAME=Error]    // TODO missing in dawn
+//    "WGPUCompilationInfoRequestStatus_Unknown",              //[-RENAME=Unknown]  // TODO missing in dawn
     // "WGPUCompilationInfoRequestStatus_CallbackCancelled", // TODO missing in wgpu-native header
-    "WGPUCompilationInfoRequestStatus_Force32"              //[-RENAME=Force32]
+    "WGPUCompilationInfoRequestStatus_Force32"               //[-RENAME=Force32]
 };
 
 enum WGPUCompilationMessageType {
