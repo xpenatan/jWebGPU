@@ -94,10 +94,10 @@ jobs:
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
       - name: Generate CMake static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_macos_x64_static
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_static
 
       - name: Build Dawn static
-        run: ./gradlew :webgpu:webgpu-dawn:build_macos_x64
+        run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
 
       - name: Upload natives static
         uses: actions/upload-artifact@v4
@@ -110,10 +110,10 @@ jobs:
         shell: bash
 
       - name: Generate CMake (shared)
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_macos_x64_shared
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_shared
 
       - name: Build Dawn shared
-        run: ./gradlew :webgpu:webgpu-dawn:build_macos_x64
+        run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
 
       - name: Upload natives shared
         uses: actions/upload-artifact@v4
