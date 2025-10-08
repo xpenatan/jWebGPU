@@ -61,6 +61,7 @@ jobs:
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/install/
+        shell: bash
 
       - name: Generate cmake
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_shared
