@@ -22,25 +22,7 @@ val platforms = mapOf(
     "emscripten" to listOf("wasm")
 )
 
-// Define libraries to combine for each platform (customize this list as needed)
-val libsToCombine = mapOf(
-    "windows" to listOf("dawn.lib", "dxgi.lib", "d3d11.lib", "d3d12.lib"),
-    "mac" to listOf("libdawn.a", "libmetal.a"),
-    "linux" to listOf("libdawn.a", "libvulkan.a"),
-    "ios" to listOf("libdawn.a", "libmetal.a"),
-    "android" to listOf("libdawn.a", "libvulkan.a"),
-    "emscripten" to listOf() // No combination for Emscripten
-)
-
-// Build types per platform
-val buildTypes = mapOf(
-    "windows" to "shared",
-    "mac" to "static",
-    "linux" to "static",
-    "ios" to "static",
-    "android" to "static",
-    "emscripten" to "shared"
-)
+val libraryModes = listOf("shared", "static")
 
 // Task to download and extract Dawn source
 tasks.register<Download>("download_source") {
@@ -135,8 +117,9 @@ tasks.register("patch_dawn") {
 //}
 
 // Generate CMake build files for a platform and architecture
-fun createGenerateCMakeTask(platform: String, arch: String) {
-    val taskName = "generateCMake_${platform}_$arch"
+fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
+    val modeUpper = mode.uppercase()
+    val taskName = "generateCMake_${platform}_${arch}_${mode}"
     tasks.register<Exec>(taskName) {
         description = "Generates CMake build files for $platform $arch."
         group = "dawn"
@@ -149,13 +132,17 @@ fun createGenerateCMakeTask(platform: String, arch: String) {
             "-DDAWN_ENABLE_INSTALL=ON",
             "-DCMAKE_BUILD_TYPE=Release",
             "-DCMAKE_CXX_STANDARD=17",
-            "-DDAWN_BUILD_MONOLITHIC_LIBRARY=STATIC",
-            "-DDAWN_ENABLE_D3D12=ON",
-            "-DDAWN_ENABLE_VULKAN=ON",
+            "-DDAWN_BUILD_MONOLITHIC_LIBRARY=$modeUpper",
+            "-DDAWN_ENABLE_D3D11=OFF",
             "-DBUILD_SHARED_LIBS=OFF",
             "-DDAWN_BUILD_SAMPLES=OFF",
             "-DDAWN_BUILD_TESTS=OFF",
             "-DTINT_BUILD_TESTS=OFF",
+            "-DTINT_BUILD_SPV_READER=OFF",
+            "-DTINT_BUILD_SPV_WRITER=OFF",
+            "-DTINT_BUILD_CMD_TOOLS=OFF",
+            "-DDAWN_ENABLE_SPIRV_VALIDATION=OFF",
+            "-DDAWN_DXC_ENABLE_ASSERTS_IN_NDEBUG=OFF",
             "-DDAWN_USE_GLFW=OFF"
         )
         when (platform) {
@@ -193,7 +180,6 @@ fun createBuildTask(platform: String, arch: String) {
     tasks.register<Exec>(taskName) {
         description = "Builds the library for $platform on $arch."
         group = "dawn"
-        dependsOn("generateCMake_${platform}_$arch")
         workingDir("${sourcePath}/build_${platform}_$arch")
         commandLine("cmake", "--build", ".", "--config", "Release", "--target",  "webgpu_dawn", "--parallel")
     }
@@ -218,9 +204,16 @@ fun createBuildTask(platform: String, arch: String) {
 }
 
 // Register tasks for all platforms and architectures
+libraryModes.forEach { mode ->
+    platforms.forEach { (platform, archs) ->
+        archs.forEach { arch ->
+            createGenerateCMakeTask(platform, arch, mode)
+        }
+    }
+}
+
 platforms.forEach { (platform, archs) ->
     archs.forEach { arch ->
-        createGenerateCMakeTask(platform, arch)
         createBuildTask(platform, arch)
     }
 }
