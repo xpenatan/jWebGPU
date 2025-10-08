@@ -48,10 +48,10 @@ jobs:
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
       - name: Generate cmake
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_static
 
       - name: Build Dawn static
-        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64_static
+        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
 
       - name: Upload natives shared
         uses: actions/upload-artifact@v4
@@ -62,8 +62,11 @@ jobs:
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/install/
 
+      - name: Generate cmake
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_shared
+
       - name: Build Dawn shared
-        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64_shared
+        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
 
       - name: Upload natives shared
         uses: actions/upload-artifact@v4
