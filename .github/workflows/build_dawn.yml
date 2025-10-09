@@ -177,7 +177,8 @@ jobs:
 
   build_android:
     name: Build Android
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
@@ -230,6 +231,7 @@ jobs:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 
       - name: Build Dawn shared
+        timeout-minutes: 30
         run: ./gradlew :webgpu:webgpu-dawn:build_android_arm64
 
       - name: Upload natives shared
