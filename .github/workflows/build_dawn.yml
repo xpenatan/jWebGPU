@@ -207,15 +207,15 @@ jobs:
       - name: Download sources
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
-      - name: Generate CMake static
+      - name: Generate arm64 static
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_arm64_static
         env:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 
-      - name: Build Dawn static
+      - name: Build arm64
         run: ./gradlew :webgpu:webgpu-dawn:build_android_arm64
 
-      - name: Upload natives static
+      - name: Upload arm64
         uses: actions/upload-artifact@v4
         with:
           name: android_arm64_static
@@ -225,16 +225,16 @@ jobs:
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
         shell: bash
 
-      - name: Generate CMake static
+      - name: Generate armv7 static
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_armv7_static
         env:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 
-      - name: Build Dawn shared
+      - name: Build armv7
         timeout-minutes: 30
         run: ./gradlew :webgpu:webgpu-dawn:build_android_armv7
 
-      - name: Upload natives shared
+      - name: Upload armv7
         uses: actions/upload-artifact@v4
         with:
           name: android_armv7_static
@@ -244,16 +244,16 @@ jobs:
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
         shell: bash
 
-      - name: Generate CMake static
+      - name: Generate x64 static
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x64_static
         env:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 
-      - name: Build Dawn shared
+      - name: Build x64
         timeout-minutes: 30
         run: ./gradlew :webgpu:webgpu-dawn:build_android_x64
 
-      - name: Upload natives shared
+      - name: Upload x64
         uses: actions/upload-artifact@v4
         with:
           name: android_x64_static
@@ -263,19 +263,19 @@ jobs:
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
         shell: bash
 
-      - name: Generate CMake static
+      - name: Generate x86 static
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x86_static
         env:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 
-      - name: Build Dawn shared
+      - name: Build x86
         timeout-minutes: 30
         run: ./gradlew :webgpu:webgpu-dawn:build_android_x86
 
-      - name: Upload natives shared
+      - name: Upload x86
         uses: actions/upload-artifact@v4
         with:
-          name: android_x64_static
+          name: android_x86_static
           path: ./webgpu/webgpu-dawn/build/dawn/install/
 
       - name: Delete path
