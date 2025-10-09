@@ -17,7 +17,7 @@ val platforms = mapOf(
     "windows" to listOf("x64", "arm64"),
     "mac" to listOf("x64", "arm64"),
     "linux" to listOf("x64", "arm64"),
-    "ios" to listOf("arm64", "x64"),
+    "ios" to listOf("arm64", "universal", "sim_x64", "sim_arm64"),
     "android" to listOf("arm64", "armv7", "x64", "x86"),
     "emscripten" to listOf("wasm")
 )
@@ -157,7 +157,23 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
                 cmakeArgs.addAll(listOf("-DCMAKE_OSX_ARCHITECTURES=$macArch"))
             }
             "linux" -> cmakeArgs.addAll(listOf("-DCMAKE_SYSTEM_PROCESSOR=$arch"))
-            "ios" -> cmakeArgs.addAll(listOf("-CMAKE_SYSTEM_NAME=iOS", "-CMAKE_OSX_ARCHITECTURES=$arch"))
+            "ios" -> {
+                val iOSArch = when(arch) {
+                    "sim_x64" -> "SIMULATOR64"
+                    "sim_arm64" -> "SIMULATORARM64"
+                    "arm64" -> "OS64"
+                    "universal" -> "MAC_UNIVERSAL"
+                    else -> throw GradleException("Unsupported Mac arch: $arch")
+                }
+                cmakeArgs.addAll(listOf(
+                    "-DCMAKE_TOOLCHAIN_FILE=build-tools/apple.toolchain.cmake",
+                    "-DPLATFORM=$iOSArch",
+                    "-DDEPLOYMENT_TARGET=13.0",
+                    "-DENABLE_BITCODE=OFF",
+                    "-DENABLE_ARC=OFF",
+                    "-DENABLE_VISIBILITY=OFF",
+                ))
+            }
             "android" -> {
                 val ndkHome = System.getenv("ANDROID_NDK_HOME") ?: throw GradleException("ANDROID_NDK_HOME not set")
                 val abi = when (arch) {
