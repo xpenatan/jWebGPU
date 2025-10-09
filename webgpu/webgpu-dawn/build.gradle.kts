@@ -184,7 +184,7 @@ fun createBuildTask(platform: String, arch: String) {
         description = "Builds the library for $platform on $arch."
         group = "dawn"
         workingDir("${sourcePath}/build_${platform}_$arch")
-        commandLine("cmake", "--build", ".", "--config", "Release", "--target",  "webgpu_dawn", "--parallel")
+        commandLine("cmake", "--build", ".", "--config", "Release", "--target",  "webgpu_dawn", "--parallel 2")
     }
     val taskNameInstall = taskName + "_install"
     tasks.register<Exec>(taskNameInstall) {
