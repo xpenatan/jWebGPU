@@ -141,6 +141,7 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
             "-DTINT_BUILD_SPV_READER=OFF",
             "-DTINT_BUILD_SPV_WRITER=OFF",
             "-DTINT_BUILD_CMD_TOOLS=OFF",
+            "-DTINT_BUILD_IR_BINARY=OFF",
             "-DDAWN_ENABLE_SPIRV_VALIDATION=OFF",
             "-DDAWN_DXC_ENABLE_ASSERTS_IN_NDEBUG=OFF",
             "-DDAWN_USE_GLFW=OFF"
@@ -160,9 +161,11 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
                     else -> throw GradleException("Unsupported Android arch: $arch")
                 }
                 cmakeArgs.addAll(listOf(
-                    "-DCMAKE_SYSTEM_NAME=Android",
-                    "-DCMAKE_ANDROID_NDK=$ndkHome",
-                    "-CMAKE_ANDROID_ARCH_ABI=$abi"
+                    "-DCMAKE_TOOLCHAIN_FILE=$ndkHome/build/cmake/android.toolchain.cmake",
+                    "-DANDROID_PLATFORM=android-26",
+                    "-DANDROID_ABI=$abi",
+                    "-DDAWN_ENABLE_DESKTOP_GL=OFF",
+                    "-DDAWN_ENABLE_OPENGLES=ON",
                 ))
             }
             "emscripten" -> {
