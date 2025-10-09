@@ -148,7 +148,14 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
         )
         when (platform) {
             "windows" -> cmakeArgs.addAll(listOf("-A", if (arch == "x64") "x64" else "ARM64"))
-            "mac" -> cmakeArgs.addAll(listOf("-DCMAKE_OSX_ARCHITECTURES=$arch"))
+            "mac" -> {
+                val macArch = when(arch) {
+                    "x64" -> "x86_64"
+                    "arm64" -> "arm64"
+                    else -> throw GradleException("Unsupported Mac arch: $arch")
+                }
+                cmakeArgs.addAll(listOf("-DCMAKE_OSX_ARCHITECTURES=$macArch"))
+            }
             "linux" -> cmakeArgs.addAll(listOf("-DCMAKE_SYSTEM_PROCESSOR=$arch"))
             "ios" -> cmakeArgs.addAll(listOf("-CMAKE_SYSTEM_NAME=iOS", "-CMAKE_OSX_ARCHITECTURES=$arch"))
             "android" -> {
