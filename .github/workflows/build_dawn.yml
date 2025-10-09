@@ -207,7 +207,7 @@ jobs:
       - name: Download sources
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
-      - name: Generate CMake (static)
+      - name: Generate CMake static
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_arm64_static
         env:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
@@ -225,20 +225,62 @@ jobs:
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
         shell: bash
 
-      - name: Generate CMake shared
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_arm64_shared
+      - name: Generate CMake static
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_armv7_static
         env:
           ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 
       - name: Build Dawn shared
         timeout-minutes: 30
-        run: ./gradlew :webgpu:webgpu-dawn:build_android_arm64
+        run: ./gradlew :webgpu:webgpu-dawn:build_android_armv7
 
       - name: Upload natives shared
         uses: actions/upload-artifact@v4
         with:
-          name: android_arm64_shared
+          name: android_armv7_static
           path: ./webgpu/webgpu-dawn/build/dawn/install/
+
+      - name: Delete path
+        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+        shell: bash
+
+      - name: Generate CMake static
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x64_static
+        env:
+          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+
+      - name: Build Dawn shared
+        timeout-minutes: 30
+        run: ./gradlew :webgpu:webgpu-dawn:build_android_x64
+
+      - name: Upload natives shared
+        uses: actions/upload-artifact@v4
+        with:
+          name: android_x64_static
+          path: ./webgpu/webgpu-dawn/build/dawn/install/
+
+      - name: Delete path
+        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+        shell: bash
+
+      - name: Generate CMake static
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x86_static
+        env:
+          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+
+      - name: Build Dawn shared
+        timeout-minutes: 30
+        run: ./gradlew :webgpu:webgpu-dawn:build_android_x86
+
+      - name: Upload natives shared
+        uses: actions/upload-artifact@v4
+        with:
+          name: android_x64_static
+          path: ./webgpu/webgpu-dawn/build/dawn/install/
+
+      - name: Delete path
+        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+        shell: bash
 
 #  build_ios:
 #    name: Build iOS
