@@ -40,13 +40,13 @@ jobs:
 #      - name: Download sources
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
-#      - name: Generate cmake
+#      - name: Generate x64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_static
 #
-#      - name: Build Dawn static
+#      - name: Build x64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
 #
-#      - name: Upload natives static
+#      - name: Upload x64 static
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: windows_x64_static
@@ -56,18 +56,18 @@ jobs:
 #        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
 #        shell: bash
 #
-#      - name: Generate cmake
+#      - name: Generate x64 shared
 #        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_shared
 #
-#      - name: Build Dawn shared
+#      - name: Build x64 shared
 #        run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
 #
-#      - name: Upload natives shared
+#      - name: Upload x64 shared
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: windows_x64_shared
 #          path: ./webgpu/webgpu-dawn/build/dawn/install/
-#
+
 #  build_macos:
 #    name: Build macOS
 #    runs-on: macos-latest
@@ -93,13 +93,13 @@ jobs:
 #      - name: Download sources
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
-#      - name: Generate CMake static
+#      - name: Generate x64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_static
 #
-#      - name: Build Dawn static
+#      - name: Build x64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
 #
-#      - name: Upload natives static
+#      - name: Upload x64 static
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: macos_x64_static
@@ -108,77 +108,10 @@ jobs:
 #      - name: Delete path
 #        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
 #        shell: bash
-#
-#      - name: Generate CMake (shared)
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_shared
-#
-#      - name: Build Dawn shared
-#        run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
-#
-#      - name: Upload natives shared
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: macos_x64_shared
-#          path: ./webgpu/webgpu-dawn/build/dawn/install/
-#
-#  build_linux:
-#    name: Build Linux
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Cancel Previous Runs
-#        uses: styfle/cancel-workflow-action@0.12.1
-#        with:
-#          access_token: ${{ github.token }}
-#
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up JDK 17
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: "corretto"
-#          java-version: 17
-#
-#      - name: Install CMake, Ninja, and dependencies
-#        run: |
-#          sudo apt-get update
-#          sudo apt-get install -y cmake ninja-build libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev
-#
-#      - name: Download sources
-#        run: ./gradlew :webgpu:webgpu-dawn:download_source
-#
-#      - name: Generate CMake (static)
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_linux_x64_static
-#
-#      - name: Build Dawn static
-#        run: ./gradlew :webgpu:webgpu-dawn:build_linux_x64
-#
-#      - name: Upload natives static
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: linux_x64_static
-#          path: ./webgpu/webgpu-dawn/build/dawn/install/
-#
-#      - name: Delete path
-#        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
-#        shell: bash
-#
-#      - name: Generate CMake shared
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_linux_x64_shared
-#
-#      - name: Build Dawn shared
-#        run: ./gradlew :webgpu:webgpu-dawn:build_linux_x64
-#
-#      - name: Upload natives shared
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: linux_x64_shared
-#          path: ./webgpu/webgpu-dawn/build/dawn/install/
 
-  build_android:
-    name: Build Android
-    runs-on: ubuntu-22.04
-    timeout-minutes: 60
+  build_linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
@@ -194,93 +127,136 @@ jobs:
           distribution: "corretto"
           java-version: 17
 
-      - name: Set up Android NDK
-        uses: android-actions/setup-android@v3
-        with:
-          ndk-version: '26.1.10909125'
-
-      - name: Install CMake and Ninja
+      - name: Install CMake, Ninja, and dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake ninja-build
+          sudo apt-get install -y cmake ninja-build libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libx11-xcb-dev libxcb1-dev
 
       - name: Download sources
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
-      - name: Generate arm64 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_arm64_static
-        env:
-          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
-
-      - name: Build arm64
-        run: ./gradlew :webgpu:webgpu-dawn:build_android_arm64
-
-      - name: Upload arm64
-        uses: actions/upload-artifact@v4
-        with:
-          name: android_arm64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
-
-      - name: Delete path
-        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
-        shell: bash
-
-      - name: Generate armv7 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_armv7_static
-        env:
-          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
-
-      - name: Build armv7
-        timeout-minutes: 30
-        run: ./gradlew :webgpu:webgpu-dawn:build_android_armv7
-
-      - name: Upload armv7
-        uses: actions/upload-artifact@v4
-        with:
-          name: android_armv7_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
-
-      - name: Delete path
-        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
-        shell: bash
-
       - name: Generate x64 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x64_static
-        env:
-          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_linux_x64_static
 
-      - name: Build x64
-        timeout-minutes: 30
-        run: ./gradlew :webgpu:webgpu-dawn:build_android_x64
+      - name: Build x64 static
+        run: ./gradlew :webgpu:webgpu-dawn:build_linux_x64
 
-      - name: Upload x64
+      - name: Upload x64 static
         uses: actions/upload-artifact@v4
         with:
-          name: android_x64_static
+          name: linux_x64_static
           path: ./webgpu/webgpu-dawn/build/dawn/install/
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
         shell: bash
 
-      - name: Generate x86 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x86_static
-        env:
-          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
-
-      - name: Build x86
-        timeout-minutes: 30
-        run: ./gradlew :webgpu:webgpu-dawn:build_android_x86
-
-      - name: Upload x86
-        uses: actions/upload-artifact@v4
-        with:
-          name: android_x86_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
-
-      - name: Delete path
-        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
-        shell: bash
+#  build_android:
+#    name: Build Android
+#    runs-on: ubuntu-22.04
+#    timeout-minutes: 60
+#    steps:
+#      - name: Cancel Previous Runs
+#        uses: styfle/cancel-workflow-action@0.12.1
+#        with:
+#          access_token: ${{ github.token }}
+#
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#
+#      - name: Set up JDK 17
+#        uses: actions/setup-java@v4
+#        with:
+#          distribution: "corretto"
+#          java-version: 17
+#
+#      - name: Set up Android NDK
+#        uses: android-actions/setup-android@v3
+#        with:
+#          ndk-version: '26.1.10909125'
+#
+#      - name: Install CMake and Ninja
+#        run: |
+#          sudo apt-get update
+#          sudo apt-get install -y cmake ninja-build
+#
+#      - name: Download sources
+#        run: ./gradlew :webgpu:webgpu-dawn:download_source
+#
+#      - name: Generate arm64 static
+#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_arm64_static
+#        env:
+#          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+#
+#      - name: Build arm64 static
+#        run: ./gradlew :webgpu:webgpu-dawn:build_android_arm64
+#
+#      - name: Upload arm64 static
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: android_arm64_static
+#          path: ./webgpu/webgpu-dawn/build/dawn/install/
+#
+#      - name: Delete path
+#        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+#        shell: bash
+#
+#      - name: Generate armv7 static
+#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_armv7_static
+#        env:
+#          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+#
+#      - name: Build armv7 static
+#        timeout-minutes: 30
+#        run: ./gradlew :webgpu:webgpu-dawn:build_android_armv7
+#
+#      - name: Upload armv7 static
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: android_armv7_static
+#          path: ./webgpu/webgpu-dawn/build/dawn/install/
+#
+#      - name: Delete path
+#        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+#        shell: bash
+#
+#      - name: Generate x64 static
+#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x64_static
+#        env:
+#          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+#
+#      - name: Build x64 static
+#        timeout-minutes: 30
+#        run: ./gradlew :webgpu:webgpu-dawn:build_android_x64
+#
+#      - name: Upload x64 static
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: android_x64_static
+#          path: ./webgpu/webgpu-dawn/build/dawn/install/
+#
+#      - name: Delete path
+#        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+#        shell: bash
+#
+#      - name: Generate x86 static
+#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x86_static
+#        env:
+#          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
+#
+#      - name: Build x86 static
+#        timeout-minutes: 30
+#        run: ./gradlew :webgpu:webgpu-dawn:build_android_x86
+#
+#      - name: Upload x86 static
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: android_x86_static
+#          path: ./webgpu/webgpu-dawn/build/dawn/install/
+#
+#      - name: Delete path
+#        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+#        shell: bash
 
 #  build_ios:
 #    name: Build iOS
