@@ -622,7 +622,7 @@ jobs:
         with:
           path: artifacts/
 
-      - name: Upload all artifacts with github-script
+      - name: Upload all artifacts to release
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -631,48 +631,85 @@ jobs:
             const path = require('path');
             
             try {
-              const artifactsDir = 'artifacts';
+              const artifactsDir = 'downloaded-artifacts';
               const releaseId = parseInt('${{ steps.create_release.outputs.release_id }}');
             
-              // Walk through all downloaded artifact directories
+              console.log(`📂 Scanning artifacts in: ${artifactsDir}`);
+            
+              // Get all artifact directories
               const artifactDirs = fs.readdirSync(artifactsDir).filter(dir => 
                 fs.statSync(path.join(artifactsDir, dir)).isDirectory()
               );
             
-              console.log(`Found ${artifactDirs.length} artifact directories:`, artifactDirs);
+              if (artifactDirs.length === 0) {
+                core.setFailed('No artifact directories found!');
+                return;
+              }
+            
+              console.log(`Found ${artifactDirs.length} artifact sets: ${artifactDirs.join(', ')}`);
+            
+              let totalFiles = 0;
             
               for (const artifactDir of artifactDirs) {
                 const dirPath = path.join(artifactsDir, artifactDir);
-                const files = fs.readdirSync(dirPath);
+                let files;
             
-                console.log(`Processing ${artifactDir}: ${files.length} files`);
+                try {
+                  // Only process .zip files
+                  files = fs.readdirSync(dirPath).filter(file => 
+                    fs.statSync(path.join(dirPath, file)).isFile() && 
+                    file.endsWith('.zip')
+                  );
+                } catch (e) {
+                  core.warning(`Could not read directory ${dirPath}: ${e.message}`);
+                  continue;
+                }
+            
+                console.log(`\n📦 Processing ${artifactDir}: ${files.length} zip files`);
+            
+                if (files.length === 0) {
+                  core.warning(`No .zip files found in ${artifactDir}`);
+                  continue;
+                }
             
                 for (const file of files) {
                   const filePath = path.join(dirPath, file);
-                  const fileBuffer = fs.readFileSync(filePath);
-                  const fileStats = fs.statSync(filePath);
             
-                  // Use original artifact name as prefix to avoid conflicts
-                  const originalArtifactName = artifactDir.replace(/[-_]/g, '_');
-                  const releaseAssetName = file; // or `${originalArtifactName}_${file}`
+                  try {
+                    const fileBuffer = fs.readFileSync(filePath);
+                    const fileStats = fs.statSync(filePath);
             
-                  console.log(`📤 Uploading ${artifactDir}/${file} (${fileStats.size} bytes) as "${releaseAssetName}"`);
+                    // Use the original zip filename (e.g., windows_x64_static.zip)
+                    const releaseAssetName = file;
             
-                  await github.rest.repos.uploadReleaseAsset({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    release_id: releaseId,
-                    name: releaseAssetName,
-                    data: fileBuffer
-                  });
+                    console.log(`📤 Uploading ${artifactDir}/${file} (${(fileStats.size / 1024 / 1024).toFixed(2)} MB)`);
             
-                  console.log(`✅ Uploaded ${releaseAssetName}`);
+                    await github.rest.repos.uploadReleaseAsset({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      release_id: releaseId,
+                      name: releaseAssetName,
+                      data: fileBuffer
+                    });
+            
+                    console.log(`✅ Successfully uploaded ${releaseAssetName}`);
+                    totalFiles++;
+            
+                  } catch (uploadError) {
+                    core.error(`Failed to upload ${filePath}: ${uploadError.message}`);
+                    // Continue with other files
+                  }
                 }
               }
             
-              console.log('🎉 All artifacts uploaded successfully!');
+              if (totalFiles === 0) {
+                core.setFailed('No .zip files were uploaded to the release!');
+                return;
+              }
+            
+              console.log(`\n🎉 Successfully uploaded ${totalFiles} zip files to release!`);
             
             } catch (error) {
-              core.setFailed(`Failed to upload artifacts: ${error.message}`);
+              core.setFailed(`Upload process failed: ${error.message}`);
               console.error(error);
             }
