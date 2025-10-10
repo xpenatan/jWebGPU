@@ -631,7 +631,7 @@ jobs:
             const path = require('path');
             
             try {
-              const artifactsDir = 'downloaded-artifacts';
+              const artifactsDir = 'artifacts';
               const releaseId = parseInt('${{ steps.create_release.outputs.release_id }}');
             
               console.log(`📂 Scanning artifacts in: ${artifactsDir}`);
