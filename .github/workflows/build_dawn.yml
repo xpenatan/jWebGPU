@@ -422,9 +422,9 @@ jobs:
 
       - name: Download Apple toolchain
         run: |
-          mkdir -p build-tools
+          mkdir -p webgpu/webgpu-dawn/build/build-tools
           # Download the ios-cmake toolchain file
-          curl -L https://raw.githubusercontent.com/leetal/ios-cmake/6fa909e133b92343db2d099e0478448c05ffec1a/ios.toolchain.cmake -o ./webgpu/webgpu-dawn/build-tools/apple.toolchain.cmake
+          curl -L https://raw.githubusercontent.com/leetal/ios-cmake/6fa909e133b92343db2d099e0478448c05ffec1a/ios.toolchain.cmake -o webgpu/webgpu-dawn/build/build-tools/apple.toolchain.cmake
 
       - name: Generate arm64 static
         run: ./gradlew :webgpu:webgpu-dawn:generateCMake_ios_arm64_static

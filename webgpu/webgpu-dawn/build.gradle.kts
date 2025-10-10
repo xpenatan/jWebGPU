@@ -124,9 +124,9 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
         description = "Generates CMake build files for $platform $arch."
         group = "dawn"
         workingDir(sourcePath)
-        val buildDir = "${sourcePath}/build_${platform}_$arch"
+        val buildPath = "${sourcePath}/build_${platform}_$arch"
         val cmakeArgs = mutableListOf(
-            "-B", buildDir,
+            "-B", buildPath,
             "-S", ".",
             "-DDAWN_FETCH_DEPENDENCIES=ON",
             "-DDAWN_ENABLE_INSTALL=ON",
@@ -166,7 +166,7 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
                     else -> throw GradleException("Unsupported Mac arch: $arch")
                 }
                 cmakeArgs.addAll(listOf(
-                    "-DCMAKE_TOOLCHAIN_FILE=build-tools/apple.toolchain.cmake",
+                    "-DCMAKE_TOOLCHAIN_FILE=${buildDir}/build-tools/apple.toolchain.cmake",
                     "-DPLATFORM=$iOSArch",
                     "-DDEPLOYMENT_TARGET=13.0",
                     "-DENABLE_BITCODE=OFF",
