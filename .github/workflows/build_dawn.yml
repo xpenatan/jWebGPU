@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows_x64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_windows_x64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
