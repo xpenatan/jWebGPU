@@ -622,6 +622,16 @@ jobs:
         with:
           path: artifacts/
 
+      - name: Debug downloaded artifacts
+        run: |
+          echo "Downloaded artifacts structure:"
+          if [ -d "artifacts" ]; then
+            ls -laR artifacts/ || echo "No files in artifacts/"
+          else
+            echo "ERROR: artifacts directory does not exist!"
+            exit 1
+          fi
+
       - name: Upload all artifacts to release
         uses: actions/github-script@v7
         with:
@@ -634,6 +644,12 @@ jobs:
               const artifactsDir = 'artifacts';
               const releaseId = parseInt('${{ steps.create_release.outputs.release_id }}');
             
+              // Check if artifacts directory exists
+              if (!fs.existsSync(artifactsDir)) {
+                core.setFailed(`Directory ${artifactsDir} does not exist! No artifacts were downloaded.`);
+                return;
+              }
+            
               console.log(`📂 Scanning artifacts in: ${artifactsDir}`);
             
               // Get all artifact directories
@@ -642,7 +658,7 @@ jobs:
               );
             
               if (artifactDirs.length === 0) {
-                core.setFailed('No artifact directories found!');
+                core.setFailed(`No artifact directories found in ${artifactsDir}!`);
                 return;
               }
             
@@ -655,17 +671,17 @@ jobs:
                 let files;
             
                 try {
-                  // Only process .zip files
+                  // Process .zip or .ZIP files (case-insensitive)
                   files = fs.readdirSync(dirPath).filter(file => 
                     fs.statSync(path.join(dirPath, file)).isFile() && 
-                    file.endsWith('.zip')
+                    file.toLowerCase().endsWith('.zip')
                   );
                 } catch (e) {
                   core.warning(`Could not read directory ${dirPath}: ${e.message}`);
                   continue;
                 }
             
-                console.log(`\n📦 Processing ${artifactDir}: ${files.length} zip files`);
+                console.log(`\n📦 Processing ${artifactDir}: ${files.length} zip files: ${files.join(', ')}`);
             
                 if (files.length === 0) {
                   core.warning(`No .zip files found in ${artifactDir}`);
@@ -679,7 +695,7 @@ jobs:
                     const fileBuffer = fs.readFileSync(filePath);
                     const fileStats = fs.statSync(filePath);
             
-                    // Use the original zip filename (e.g., windows_x64_static.zip)
+                    // Use the original zip filename
                     const releaseAssetName = file;
             
                     console.log(`📤 Uploading ${artifactDir}/${file} (${(fileStats.size / 1024 / 1024).toFixed(2)} MB)`);
@@ -695,7 +711,7 @@ jobs:
                     console.log(`✅ Successfully uploaded ${releaseAssetName}`);
                     totalFiles++;
             
-                  } catch (uploadError) {
+                  } case {
                     core.error(`Failed to upload ${filePath}: ${uploadError.message}`);
                     // Continue with other files
                   }
