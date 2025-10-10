@@ -586,7 +586,7 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
     name: Create release
-    needs: [build_macos_x64]
+    needs: [build_macos_x64, build_macos_arm64]
 
     steps:
       - name: Create Release
