@@ -5,41 +5,6 @@ on:
   workflow_call:
 
 jobs:
-  create-release:
-    runs-on: ubuntu-latest
-    name: Create release
-
-    steps:
-      - name: Create Release
-        id: create_release
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-
-            var name = "dawn_7458";
-
-            try {
-              const release = await github.rest.repos.createRelease({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                tag_name: name,
-                target_commitish: 'dawn_natives',
-                name: name,
-                draft: true,
-                prerelease: false
-              });
-
-              console.log(`Created release: ${release.data.html_url}`);
-              core.setOutput('release_id', release.data.id);
-              core.setOutput('upload_url', release.data.upload_url);
-
-            } catch (error) {
-              core.setFailed(`Failed to create release: ${error.message}`);
-              console.error(error);
-            }
-  
-
 #  build_windows_x64:
 #    name: Build Windows x64
 #    runs-on: windows-latest
@@ -103,46 +68,46 @@ jobs:
 #          name: windows_x64_shared
 #          path: ./webgpu/webgpu-dawn/build/dawn/install/build_windows_x64
 
-#  build_macos_x64:
-#    name: Build MacOS x64
-#    runs-on: macos-latest
-#    steps:
-#      - name: Cancel Previous Runs
-#        uses: styfle/cancel-workflow-action@0.12.1
-#        with:
-#          access_token: ${{ github.token }}
-#
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up JDK 17
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: "corretto"
-#          java-version: 17
-#
-#      - name: Install CMake and Ninja
-#        run: |
-#          brew install cmake ninja
-#
-#      - name: Download sources
-#        run: ./gradlew :webgpu:webgpu-dawn:download_source
-#
-#      - name: Generate x64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_static
-#
-#      - name: Build x64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
-#
-#      - name: Upload x64 static
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: macos_x64_static
-#          path: ./webgpu/webgpu-dawn/build/dawn/install/build_mac_x64
-#
-#      - name: Delete path
-#        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
-#        shell: bash
+  build_macos_x64:
+    name: Build MacOS x64
+    runs-on: macos-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "corretto"
+          java-version: 17
+
+      - name: Install CMake and Ninja
+        run: |
+          brew install cmake ninja
+
+      - name: Download sources
+        run: ./gradlew :webgpu:webgpu-dawn:download_source
+
+      - name: Generate x64 static
+        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_static
+
+      - name: Build x64 static
+        run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
+
+      - name: Upload x64 static
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos_x64_static
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_mac_x64
+
+      - name: Delete path
+        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
+        shell: bash
 #
 #  build_macos_arm64:
 #    name: Build MacOS arm64
@@ -617,3 +582,96 @@ jobs:
 #      - name: Delete path
 #        run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
 #        shell: bash
+
+  create-release:
+    runs-on: ubuntu-latest
+    name: Create release
+
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+
+            var name = "dawn_7458";
+
+            try {
+              const release = await github.rest.repos.createRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                tag_name: name,
+                target_commitish: 'dawn_natives',
+                name: name,
+                draft: true,
+                prerelease: false
+              });
+
+              console.log(`Created release: ${release.data.html_url}`);
+              core.setOutput('release_id', release.data.id);
+              core.setOutput('upload_url', release.data.upload_url);
+
+            } catch (error) {
+              core.setFailed(`Failed to create release: ${error.message}`);
+              console.error(error);
+            }
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      - name: Upload all artifacts with github-script
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            try {
+              const artifactsDir = 'artifacts';
+              const releaseId = parseInt('${{ steps.create_release.outputs.release_id }}');
+            
+              // Walk through all downloaded artifact directories
+              const artifactDirs = fs.readdirSync(artifactsDir).filter(dir => 
+                fs.statSync(path.join(artifactsDir, dir)).isDirectory()
+              );
+            
+              console.log(`Found ${artifactDirs.length} artifact directories:`, artifactDirs);
+            
+              for (const artifactDir of artifactDirs) {
+                const dirPath = path.join(artifactsDir, artifactDir);
+                const files = fs.readdirSync(dirPath);
+            
+                console.log(`Processing ${artifactDir}: ${files.length} files`);
+            
+                for (const file of files) {
+                  const filePath = path.join(dirPath, file);
+                  const fileBuffer = fs.readFileSync(filePath);
+                  const fileStats = fs.statSync(filePath);
+            
+                  // Use original artifact name as prefix to avoid conflicts
+                  const originalArtifactName = artifactDir.replace(/[-_]/g, '_');
+                  const releaseAssetName = file; // or `${originalArtifactName}_${file}`
+            
+                  console.log(`📤 Uploading ${artifactDir}/${file} (${fileStats.size} bytes) as "${releaseAssetName}"`);
+            
+                  await github.rest.repos.uploadReleaseAsset({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    release_id: releaseId,
+                    name: releaseAssetName,
+                    data: fileBuffer
+                  });
+            
+                  console.log(`✅ Uploaded ${releaseAssetName}`);
+                }
+              }
+            
+              console.log('🎉 All artifacts uploaded successfully!');
+            
+            } catch (error) {
+              core.setFailed(`Failed to upload artifacts: ${error.message}`);
+              console.error(error);
+            }
