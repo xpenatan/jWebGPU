@@ -66,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows_x64_shared
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_windows_x64
 
   build_macos_x64:
     name: Build MacOS x64
@@ -103,7 +103,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: macos_x64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_mac_x64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -144,7 +144,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: macos_arm64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_mac_arm64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -186,7 +186,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux_x64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_linux_x64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -236,7 +236,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android_arm64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_android_arm64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -287,7 +287,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android_armv7_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_android_armv7
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -338,7 +338,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android_x64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_android_x64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -389,7 +389,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android_x86_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_android_x86
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -436,7 +436,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios_arm64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_ios_arm64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -483,7 +483,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios_universal_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_ios_universal
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -530,7 +530,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios_sim_arm64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_ios_sim_arm64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
@@ -577,7 +577,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios_sim_x64_static
-          path: ./webgpu/webgpu-dawn/build/dawn/install/
+          path: ./webgpu/webgpu-dawn/build/dawn/install/build_ios_sim_x64
 
       - name: Delete path
         run: rm -rf ./webgpu/webgpu-dawn/build/dawn/install/
