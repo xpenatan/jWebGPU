@@ -44,8 +44,8 @@ public class WGPUBuild {
                     targets.add(getWindowTarget(op, downloadPath));
                 }
                 if(op.containsArg("windows64_dawn")) {
-//                    targets.add(getWindowDawnTarget(op, downloadPath));
-                    targets.add(getWindowDawn2Target(op, downloadPath));
+                    targets.add(getWindowDawnTarget(op, downloadPath));
+//                    targets.add(getWindowDawn2Target(op, downloadPath));
                 }
                 if(op.containsArg("teavm")) {
                     targets.add(getTeaVMTarget(op, idlReader, downloadPath));

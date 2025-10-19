@@ -61,15 +61,15 @@ public class IDLBool extends IDLBoolArray {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.IDLBool);var returnedJSObj = jsObj.getValue();return returnedJSObj;")
     public static native boolean internal_native_getValue(int this_addr);
 
-    public void setValue(boolean value) {
-        internal_native_setValue(native_address, value);
+    public void set(boolean value) {
+        internal_native_set(native_address, value);
     }
 
     /*
       [-TEAVM;-NATIVE]
       var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.IDLBool);
-      jsObj.setValue(value);
+      jsObj.set(value);
     */
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.IDLBool);jsObj.setValue(value);")
-    public static native void internal_native_setValue(int this_addr, boolean value);
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.IDLBool);jsObj.set(value);")
+    public static native void internal_native_set(int this_addr, boolean value);
 }
