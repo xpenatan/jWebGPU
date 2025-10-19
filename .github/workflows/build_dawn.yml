@@ -41,7 +41,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
       - name: Generate x64 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_static
+        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_windows_x64_static_release
 
       - name: Build x64 static
         run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
@@ -57,7 +57,7 @@ jobs:
         shell: bash
 
       - name: Generate x64 shared
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_windows_x64_shared
+        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_windows_x64_shared_release
 
       - name: Build x64 shared
         run: ./gradlew :webgpu:webgpu-dawn:build_windows_x64
@@ -94,7 +94,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
       - name: Generate x64 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_x64_static
+        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_mac_x64_static_release
 
       - name: Build x64 static
         run: ./gradlew :webgpu:webgpu-dawn:build_mac_x64
@@ -135,7 +135,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-dawn:download_source
 
       - name: Generate arm64 static
-        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_mac_arm64_static
+        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_mac_arm64_static_release
 
       - name: Build arm64 static
         run: ./gradlew :webgpu:webgpu-dawn:build_mac_arm64
@@ -177,7 +177,7 @@ jobs:
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
 #      - name: Generate x64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_linux_x64_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_linux_x64_static_release
 #
 #      - name: Build x64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_linux_x64
@@ -225,7 +225,7 @@ jobs:
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
 #      - name: Generate arm64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_arm64_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_android_arm64_static_release
 #        env:
 #          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 #
@@ -275,7 +275,7 @@ jobs:
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
 #      - name: Generate armv7 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_armv7_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_android_armv7_static_release
 #        env:
 #          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 #
@@ -326,7 +326,7 @@ jobs:
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
 #      - name: Generate x64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x64_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_android_x64_static_release
 #        env:
 #          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 #
@@ -377,7 +377,7 @@ jobs:
 #        run: ./gradlew :webgpu:webgpu-dawn:download_source
 #
 #      - name: Generate x86 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_android_x86_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_android_x86_static_release
 #        env:
 #          ANDROID_NDK: ${{ env.ANDROID_NDK_HOME }}
 #
@@ -427,7 +427,7 @@ jobs:
 #          curl -L https://raw.githubusercontent.com/leetal/ios-cmake/6fa909e133b92343db2d099e0478448c05ffec1a/ios.toolchain.cmake -o webgpu/webgpu-dawn/build/build-tools/apple.toolchain.cmake
 #
 #      - name: Generate arm64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_ios_arm64_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_ios_arm64_static_release
 #
 #      - name: Build arm64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_ios_arm64
@@ -474,7 +474,7 @@ jobs:
 #          curl -L https://raw.githubusercontent.com/leetal/ios-cmake/6fa909e133b92343db2d099e0478448c05ffec1a/ios.toolchain.cmake -o webgpu/webgpu-dawn/build/build-tools/apple.toolchain.cmake
 #
 #      - name: Generate universal static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_ios_universal_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_ios_universal_static_release
 #
 #      - name: Build universal static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_ios_universal
@@ -521,7 +521,7 @@ jobs:
 #          curl -L https://raw.githubusercontent.com/leetal/ios-cmake/6fa909e133b92343db2d099e0478448c05ffec1a/ios.toolchain.cmake -o webgpu/webgpu-dawn/build/build-tools/apple.toolchain.cmake
 #
 #      - name: Generate sim_arm64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_ios_sim_arm64_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_ios_sim_arm64_static_release
 #
 #      - name: Build sim_arm64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_ios_sim_arm64
@@ -568,7 +568,7 @@ jobs:
 #          curl -L https://raw.githubusercontent.com/leetal/ios-cmake/6fa909e133b92343db2d099e0478448c05ffec1a/ios.toolchain.cmake -o webgpu/webgpu-dawn/build/build-tools/apple.toolchain.cmake
 #
 #      - name: Generate sim_x64 static
-#        run: ./gradlew :webgpu:webgpu-dawn:generateCMake_ios_sim_x64_static
+#        run: ./gradlew :webgpu:webgpu-dawn:generate_cmake_ios_sim_x64_static_release
 #
 #      - name: Build sim_x64 static
 #        run: ./gradlew :webgpu:webgpu-dawn:build_ios_sim_x64
@@ -617,20 +617,6 @@ jobs:
               core.setFailed(`Failed to create release: ${error.message}`);
               console.error(error);
             }
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: artifacts/
-
-      - name: Debug downloaded artifacts
-        run: |
-          echo "Downloaded artifacts structure:"
-          if [ -d "artifacts" ]; then
-            ls -laR artifacts/ || echo "No files in artifacts/"
-          else
-            echo "ERROR: artifacts directory does not exist!"
-            exit 1
-          fi
 
       - name: Upload all artifacts to release
         uses: actions/github-script@v7
@@ -639,91 +625,90 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
+            const https = require('https');
             
             try {
-              const artifactsDir = 'artifacts';
               const releaseId = parseInt('${{ steps.create_release.outputs.release_id }}');
             
-              // Check if artifacts directory exists
-              if (!fs.existsSync(artifactsDir)) {
-                core.setFailed(`Directory ${artifactsDir} does not exist! No artifacts were downloaded.`);
+              // List all artifacts for the workflow run
+              const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: context.runId
+              });
+            
+              if (artifacts.data.artifacts.length === 0) {
+                core.setFailed('No artifacts found for this workflow run!');
                 return;
               }
             
-              console.log(`📂 Scanning artifacts in: ${artifactsDir}`);
+              console.log(`Found ${artifacts.data.artifacts.length} artifacts: ${artifacts.data.artifacts.map(a => a.name).join(', ')}`);
             
-              // Get all artifact directories
-              const artifactDirs = fs.readdirSync(artifactsDir).filter(dir => 
-                fs.statSync(path.join(artifactsDir, dir)).isDirectory()
-              );
+              let totalUploaded = 0;
             
-              if (artifactDirs.length === 0) {
-                core.setFailed(`No artifact directories found in ${artifactsDir}!`);
-                return;
-              }
-            
-              console.log(`Found ${artifactDirs.length} artifact sets: ${artifactDirs.join(', ')}`);
-            
-              let totalFiles = 0;
-            
-              for (const artifactDir of artifactDirs) {
-                const dirPath = path.join(artifactsDir, artifactDir);
-                let files;
-            
+              // Process each artifact
+              for (const artifact of artifacts.data.artifacts) {
                 try {
-                  // Process .zip or .ZIP files (case-insensitive)
-                  files = fs.readdirSync(dirPath).filter(file => 
-                    fs.statSync(path.join(dirPath, file)).isFile() && 
-                    file.toLowerCase().endsWith('.zip')
-                  );
-                } catch (e) {
-                  core.warning(`Could not read directory ${dirPath}: ${e.message}`);
-                  continue;
-                }
+                  // Get the download URL for the artifact's zip file
+                  const download = await github.rest.actions.downloadArtifact({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    artifact_id: artifact.id,
+                    archive_format: 'zip'
+                  });
             
-                console.log(`\n📦 Processing ${artifactDir}: ${files.length} zip files: ${files.join(', ')}`);
+                  // Download the zip file
+                  const zipPath = path.join('artifacts', `${artifact.name}.zip`);
+                  fs.mkdirSync(path.dirname(zipPath), { recursive: true });
             
-                if (files.length === 0) {
-                  core.warning(`No .zip files found in ${artifactDir}`);
-                  continue;
-                }
-            
-                for (const file of files) {
-                  const filePath = path.join(dirPath, file);
-            
-                  try {
-                    const fileBuffer = fs.readFileSync(filePath);
-                    const fileStats = fs.statSync(filePath);
-            
-                    // Use the original zip filename
-                    const releaseAssetName = file;
-            
-                    console.log(`📤 Uploading ${artifactDir}/${file} (${(fileStats.size / 1024 / 1024).toFixed(2)} MB)`);
-            
-                    await github.rest.repos.uploadReleaseAsset({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      release_id: releaseId,
-                      name: releaseAssetName,
-                      data: fileBuffer
+                  await new Promise((resolve, reject) => {
+                    const file = fs.createWriteStream(zipPath);
+                    https.get(download.data.url, response => {
+                      response.pipe(file);
+                      file.on('finish', () => {
+                        file.close();
+                        resolve();
+                      });
+                    }).on('error', error => {
+                      fs.unlinkSync(zipPath);
+                      reject(error);
                     });
+                  });
             
-                    console.log(`✅ Successfully uploaded ${releaseAssetName}`);
-                    totalFiles++;
+                  console.log(`📥 Downloaded artifact ${artifact.name}.zip`);
             
-                  } case {
-                    core.error(`Failed to upload ${filePath}: ${uploadError.message}`);
-                    // Continue with other files
-                  }
+                  // Read the zip file
+                  const fileBuffer = fs.readFileSync(zipPath);
+                  const fileStats = fs.statSync(zipPath);
+            
+                  // Upload to release
+                  console.log(`📤 Uploading ${artifact.name}.zip (${(fileStats.size / 1024 / 1024).toFixed(2)} MB)`);
+                  await github.rest.repos.uploadReleaseAsset({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    release_id: releaseId,
+                    name: `${artifact.name}.zip`,
+                    data: fileBuffer
+                  });
+            
+                  console.log(`✅ Successfully uploaded ${artifact.name}.zip`);
+                  totalUploaded++;
+            
+                  // Clean up
+                  fs.unlinkSync(zipPath);
+            
+                } catch (error) {
+                  core.error(`Failed to process artifact ${artifact.name}: ${error.message}`);
+                  // Continue with other artifacts
                 }
               }
             
-              if (totalFiles === 0) {
-                core.setFailed('No .zip files were uploaded to the release!');
+              if (totalUploaded === 0) {
+                core.setFailed('No artifacts were uploaded to the release!');
                 return;
               }
             
-              console.log(`\n🎉 Successfully uploaded ${totalFiles} zip files to release!`);
+              console.log(`🎉 Successfully uploaded ${totalUploaded} artifact zip files to release!`);
             
             } catch (error) {
               core.setFailed(`Upload process failed: ${error.message}`);

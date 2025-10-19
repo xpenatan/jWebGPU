@@ -1,3 +1,4 @@
+import android.databinding.tool.ext.capitalizeUS
 import de.undercouch.gradle.tasks.download.Download
 import org.gradle.api.tasks.Exec
 import org.gradle.api.GradleException
@@ -117,9 +118,10 @@ tasks.register("patch_dawn") {
 //}
 
 // Generate CMake build files for a platform and architecture
-fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
+fun createGenerateCMakeTask(platform: String, arch: String, mode: String, buildType: String) {
     val modeUpper = mode.uppercase()
-    val taskName = "generateCMake_${platform}_${arch}_${mode}"
+    val buildTypeCap = buildType.capitalizeUS()
+    val taskName = "generate_cmake_${platform}_${arch}_${mode}_${buildType}"
     tasks.register<Exec>(taskName) {
         description = "Generates CMake build files for $platform $arch."
         group = "dawn"
@@ -130,7 +132,7 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String) {
             "-S", ".",
             "-DDAWN_FETCH_DEPENDENCIES=ON",
             "-DDAWN_ENABLE_INSTALL=ON",
-            "-DCMAKE_BUILD_TYPE=Release",
+            "-DCMAKE_BUILD_TYPE=$buildTypeCap",
             "-DCMAKE_CXX_STANDARD=17",
             "-DDAWN_BUILD_MONOLITHIC_LIBRARY=$modeUpper",
             "-DDAWN_ENABLE_D3D11=OFF",
@@ -233,10 +235,13 @@ fun createBuildTask(platform: String, arch: String) {
 libraryModes.forEach { mode ->
     platforms.forEach { (platform, archs) ->
         archs.forEach { arch ->
-            createGenerateCMakeTask(platform, arch, mode)
+            createGenerateCMakeTask(platform, arch, mode, "release")
         }
     }
 }
+
+createGenerateCMakeTask("windows", "x64", "shared", "debug")
+createGenerateCMakeTask("windows", "x64", "static", "debug")
 
 platforms.forEach { (platform, archs) ->
     archs.forEach { arch ->
