@@ -625,7 +625,6 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const https = require('https');
             
             try {
               const releaseId = parseInt('${{ steps.create_release.outputs.release_id }}');
@@ -649,7 +648,7 @@ jobs:
               // Process each artifact
               for (const artifact of artifacts.data.artifacts) {
                 try {
-                  // Get the download URL for the artifact's zip file
+                  // Download the artifact zip directly
                   const download = await github.rest.actions.downloadArtifact({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -657,32 +656,17 @@ jobs:
                     archive_format: 'zip'
                   });
             
-                  // Download the zip file
-                  const zipPath = path.join('artifacts', `${artifact.name}.zip`);
-                  fs.mkdirSync(path.dirname(zipPath), { recursive: true });
+                  // The data is an ArrayBuffer containing the zip content
+                  if (!(download.data instanceof ArrayBuffer)) {
+                    throw new Error(`Unexpected data type for artifact ${artifact.name}: ${typeof download.data}`);
+                  }
             
-                  await new Promise((resolve, reject) => {
-                    const file = fs.createWriteStream(zipPath);
-                    https.get(download.headers.location, response => {
-                      response.pipe(file);
-                      file.on('finish', () => {
-                        file.close();
-                        resolve();
-                      });
-                    }).on('error', error => {
-                      fs.unlinkSync(zipPath);
-                      reject(error);
-                    });
-                  });
+                  const fileBuffer = Buffer.from(download.data);
             
-                  console.log(`📥 Downloaded artifact ${artifact.name}.zip`);
-            
-                  // Read the zip file
-                  const fileBuffer = fs.readFileSync(zipPath);
-                  const fileStats = fs.statSync(zipPath);
+                  console.log(`📥 Downloaded artifact ${artifact.name}.zip (${(fileBuffer.length / 1024 / 1024).toFixed(2)} MB)`);
             
                   // Upload to release
-                  console.log(`📤 Uploading ${artifact.name}.zip (${(fileStats.size / 1024 / 1024).toFixed(2)} MB)`);
+                  console.log(`📤 Uploading ${artifact.name}.zip`);
                   await github.rest.repos.uploadReleaseAsset({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -694,11 +678,9 @@ jobs:
                   console.log(`✅ Successfully uploaded ${artifact.name}.zip`);
                   totalUploaded++;
             
-                  // Clean up
-                  fs.unlinkSync(zipPath);
-            
                 } catch (error) {
                   core.error(`Failed to process artifact ${artifact.name}: ${error.message}`);
+                  console.error(error);
                   // Continue with other artifacts
                 }
               }
