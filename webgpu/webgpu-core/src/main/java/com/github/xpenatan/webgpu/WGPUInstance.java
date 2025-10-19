@@ -92,7 +92,7 @@ return (jlong)obj;
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateWindowsSurface((void** )hwnd_addr);
+JGPU::WGPUSurface* obj = nativeObject->CreateWindowsSurface((void*)hwnd_addr);
 return (jlong)obj;
 */
     public static native long internal_native_CreateWindowsSurface(long this_addr, long hwnd_addr);
@@ -108,7 +108,7 @@ return (jlong)obj;
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateLinuxSurface(isWayland, (void** )windowOrSurface_addr, (void** )display_addr);
+JGPU::WGPUSurface* obj = nativeObject->CreateLinuxSurface(isWayland, (void*)windowOrSurface_addr, (void*)display_addr);
 return (jlong)obj;
 */
     public static native long internal_native_CreateLinuxSurface(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr);
@@ -124,7 +124,7 @@ return (jlong)obj;
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateMacSurface((void** )metalLayer_addr);
+JGPU::WGPUSurface* obj = nativeObject->CreateMacSurface((void*)metalLayer_addr);
 return (jlong)obj;
 */
     public static native long internal_native_CreateMacSurface(long this_addr, long metalLayer_addr);

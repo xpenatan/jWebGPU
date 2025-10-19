@@ -44,7 +44,8 @@ public class WGPUBuild {
                     targets.add(getWindowTarget(op, downloadPath));
                 }
                 if(op.containsArg("windows64_dawn")) {
-                    targets.add(getWindowDawnTarget(op, downloadPath));
+//                    targets.add(getWindowDawnTarget(op, downloadPath));
+                    targets.add(getWindowDawn2Target(op, downloadPath));
                 }
                 if(op.containsArg("teavm")) {
                     targets.add(getTeaVMTarget(op, idlReader, downloadPath));
@@ -164,6 +165,59 @@ public class WGPUBuild {
             Files.createDirectories(headerDestination.getParent());
             Files.createDirectories(nativeDestination.getParent());
             Files.copy(headerSouce, headerDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(nativeFile, nativeDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } catch(IOException e) {
+            throw new RuntimeException(e);
+        }
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getWindowDawn2Target(BuildToolOptions op, String downloadPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        String dawnPath = downloadPath + "/dawn_windows_x64_shared";
+        String webgpuIncludePath = dawnPath + "/include";
+        String libPath = dawnPath + "/lib/webgpu_dawn.lib";
+        String glfwIncludePath = downloadPath + "/GLFW";
+
+        // Compile glue code and link
+        WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.libDirSuffix += "dawn/";
+        linkTarget.tempBuildDir += "_dawn";
+        linkTarget.addJNIHeaders();
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppCompiler.add("/MD");
+        linkTarget.cppCompiler.add("-DWEBGPU_DAWN");
+        linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
+        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
+        linkTarget.linkerFlags.add(libPath);
+        linkTarget.linkerFlags.add("ws2_32.lib");
+        linkTarget.linkerFlags.add("userenv.lib");
+        linkTarget.linkerFlags.add("ntdll.lib");
+        linkTarget.linkerFlags.add("opengl32.lib");
+        linkTarget.linkerFlags.add("d3dcompiler.lib");
+        linkTarget.linkerFlags.add("ole32.lib");
+        linkTarget.linkerFlags.add("propsys.lib");
+        linkTarget.linkerFlags.add("runtimeobject.lib");
+        linkTarget.linkerFlags.add("user32.lib");
+        linkTarget.linkerFlags.add("gdi32.lib");
+        linkTarget.linkerFlags.add("oleaut32.lib");
+        multiTarget.add(linkTarget);
+
+        Path headerSouce = Paths.get(dawnPath + "/webgpu.h");
+//        Path headerDestination = Paths.get(webgpuIncludePath + "/webgpu/webgpu.h");
+        Path nativeFile = Paths.get(dawnPath + "/bin/webgpu_dawn.dll");
+
+        String dllOutputPath = op.getLibsDir() + "/" + linkTarget.libDirSuffix;
+        Path nativeDestination = Paths.get(dllOutputPath + "/webgpu_dawn.dll");
+        try {
+//            Files.createDirectories(headerDestination.getParent());
+            Files.createDirectories(nativeDestination.getParent());
+//            Files.copy(headerSouce, headerDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
             Files.copy(nativeFile, nativeDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
         } catch(IOException e) {
             throw new RuntimeException(e);

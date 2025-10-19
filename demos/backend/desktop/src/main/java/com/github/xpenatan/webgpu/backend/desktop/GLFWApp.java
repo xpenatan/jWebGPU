@@ -30,7 +30,7 @@ public class GLFWApp {
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
-        JWebGPULoader.init(JWebGPUBackend.DAWN, (isSuccess, e) -> {
+        JWebGPULoader.init(JWebGPUBackend.WGPU, (isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;

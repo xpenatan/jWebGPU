@@ -140,7 +140,7 @@ public class WGPUQueue extends IDLBase {
     /*
       [-JNI;-NATIVE]
       JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->WriteBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)bufferOffset, (void** )bytes_addr, (int)dataSize);
+      nativeObject->WriteBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)bufferOffset, (void*)bytes_addr, (int)dataSize);
     */
     public static native void internal_native_WriteBuffer__1(long this_addr, long buffer_addr, int bufferOffset, long bytes_addr, int dataSize);
 }
