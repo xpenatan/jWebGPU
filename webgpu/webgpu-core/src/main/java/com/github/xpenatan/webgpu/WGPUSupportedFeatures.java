@@ -59,7 +59,13 @@ return nativeObject->GetFeatureCount();
 
     public WGPUFeatureName getFeatureAt(int index) {
         int value = internal_native_GetFeatureAt(native_address, index);
-        return WGPUFeatureName.MAP.get(value);
+        WGPUFeatureName[] values = WGPUFeatureName.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUFeatureName enumVal = values[i];
+            if (enumVal != WGPUFeatureName.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUFeatureName.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

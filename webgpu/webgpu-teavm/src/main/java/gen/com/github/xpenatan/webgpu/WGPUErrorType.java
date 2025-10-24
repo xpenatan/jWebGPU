@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUErrorType implements IDLEnum<WGPUErrorType> {
@@ -39,16 +37,6 @@ public enum WGPUErrorType implements IDLEnum<WGPUErrorType> {
 
     public WGPUErrorType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUErrorType> MAP = new HashMap<>();
-
-    static {
-        for (WGPUErrorType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

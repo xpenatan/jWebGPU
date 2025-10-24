@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUPowerPreference implements IDLEnum<WGPUPowerPreference> {
@@ -33,16 +31,6 @@ public enum WGPUPowerPreference implements IDLEnum<WGPUPowerPreference> {
 
     public WGPUPowerPreference getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUPowerPreference> MAP = new HashMap<>();
-
-    static {
-        for (WGPUPowerPreference value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

@@ -74,7 +74,13 @@ jsObj.CreateView(textureViewDescriptor_addr, textureView_addr);
 
     public WGPUTextureFormat getFormat() {
         int value = internal_native_GetFormat(native_address);
-        return WGPUTextureFormat.MAP.get(value);
+        WGPUTextureFormat[] values = WGPUTextureFormat.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUTextureFormat enumVal = values[i];
+            if (enumVal != WGPUTextureFormat.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUTextureFormat.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

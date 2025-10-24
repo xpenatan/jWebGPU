@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUDeviceLostReason implements IDLEnum<WGPUDeviceLostReason> {
@@ -33,16 +31,6 @@ public enum WGPUDeviceLostReason implements IDLEnum<WGPUDeviceLostReason> {
 
     public WGPUDeviceLostReason getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUDeviceLostReason> MAP = new HashMap<>();
-
-    static {
-        for (WGPUDeviceLostReason value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUCreatePipelineAsyncStatus implements IDLEnum<WGPUCreatePipelineAsyncStatus> {
@@ -33,16 +31,6 @@ public enum WGPUCreatePipelineAsyncStatus implements IDLEnum<WGPUCreatePipelineA
 
     public WGPUCreatePipelineAsyncStatus getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUCreatePipelineAsyncStatus> MAP = new HashMap<>();
-
-    static {
-        for (WGPUCreatePipelineAsyncStatus value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

@@ -58,10 +58,19 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int status_addr, int compilationInfo_addr) {
+        WGPUCompilationInfoRequestStatus status_addr_enum = WGPUCompilationInfoRequestStatus.CUSTOM.setValue(status_addr);
+        WGPUCompilationInfoRequestStatus[] status_addr_enum_values = WGPUCompilationInfoRequestStatus.values();
+        for (int i = 0; i < status_addr_enum_values.length; i++) {
+            WGPUCompilationInfoRequestStatus enumVal = status_addr_enum_values[i];
+            if (enumVal != WGPUCompilationInfoRequestStatus.CUSTOM && enumVal.getValue() == status_addr) {
+                status_addr_enum = status_addr_enum_values[i];
+                break;
+            }
+        }
         if (WGPUCompilationInfo_TEMP_STATIC_GEN_0 == null)
             WGPUCompilationInfo_TEMP_STATIC_GEN_0 = WGPUCompilationInfo.native_new();
         WGPUCompilationInfo_TEMP_STATIC_GEN_0.internal_reset(compilationInfo_addr, false);
-        onCallback(WGPUCompilationInfoRequestStatus.MAP.get(status_addr), WGPUCompilationInfo_TEMP_STATIC_GEN_0);
+        onCallback(status_addr_enum, WGPUCompilationInfo_TEMP_STATIC_GEN_0);
     }
 
     /*[-TEAVM;-NATIVE]

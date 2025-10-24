@@ -79,7 +79,13 @@ nativeObject->push_back((::WGPUTextureFormat)textureFormat);
 
     public WGPUTextureFormat get(int index) {
         int value = internal_native_get(native_address, index);
-        return WGPUTextureFormat.MAP.get(value);
+        WGPUTextureFormat[] values = WGPUTextureFormat.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUTextureFormat enumVal = values[i];
+            if (enumVal != WGPUTextureFormat.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUTextureFormat.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

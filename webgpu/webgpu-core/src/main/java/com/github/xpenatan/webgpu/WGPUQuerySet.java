@@ -97,7 +97,13 @@ return nativeObject->GetCount();
 
     public WGPUQueryType getType() {
         int value = internal_native_GetType(native_address);
-        return WGPUQueryType.MAP.get(value);
+        WGPUQueryType[] values = WGPUQueryType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUQueryType enumVal = values[i];
+            if (enumVal != WGPUQueryType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUQueryType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

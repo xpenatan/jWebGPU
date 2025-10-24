@@ -173,7 +173,13 @@ jsObj.ProcessEvents();
 
     public WGPUWaitStatus waitAny(WGPUVectorFutureWaitInfo futureVector, int timeoutNS) {
         int value = internal_native_WaitAny(native_address, futureVector.native_address, timeoutNS);
-        return WGPUWaitStatus.MAP.get(value);
+        WGPUWaitStatus[] values = WGPUWaitStatus.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUWaitStatus enumVal = values[i];
+            if (enumVal != WGPUWaitStatus.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUWaitStatus.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

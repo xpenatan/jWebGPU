@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUPrimitiveTopology implements IDLEnum<WGPUPrimitiveTopology> {
@@ -40,16 +38,6 @@ public enum WGPUPrimitiveTopology implements IDLEnum<WGPUPrimitiveTopology> {
 
     public WGPUPrimitiveTopology getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUPrimitiveTopology> MAP = new HashMap<>();
-
-    static {
-        for (WGPUPrimitiveTopology value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

@@ -161,7 +161,13 @@ return jWebGPU.getPointer(returnedJSObj);
 
     public WGPUBackendType getBackendType() {
         int value = internal_native_GetBackendType(native_address);
-        return WGPUBackendType.MAP.get(value);
+        WGPUBackendType[] values = WGPUBackendType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBackendType enumVal = values[i];
+            if (enumVal != WGPUBackendType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBackendType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -174,7 +180,13 @@ return returnedJSObj;
 
     public WGPUAdapterType getAdapterType() {
         int value = internal_native_GetAdapterType(native_address);
-        return WGPUAdapterType.MAP.get(value);
+        WGPUAdapterType[] values = WGPUAdapterType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUAdapterType enumVal = values[i];
+            if (enumVal != WGPUAdapterType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUAdapterType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

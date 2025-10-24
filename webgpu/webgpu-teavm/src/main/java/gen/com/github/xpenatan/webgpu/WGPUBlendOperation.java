@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUBlendOperation implements IDLEnum<WGPUBlendOperation> {
@@ -40,16 +38,6 @@ public enum WGPUBlendOperation implements IDLEnum<WGPUBlendOperation> {
 
     public WGPUBlendOperation getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUBlendOperation> MAP = new HashMap<>();
-
-    static {
-        for (WGPUBlendOperation value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

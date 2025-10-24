@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUCompilationMessageType implements IDLEnum<WGPUCompilationMessageType> {
@@ -33,16 +31,6 @@ public enum WGPUCompilationMessageType implements IDLEnum<WGPUCompilationMessage
 
     public WGPUCompilationMessageType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUCompilationMessageType> MAP = new HashMap<>();
-
-    static {
-        for (WGPUCompilationMessageType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

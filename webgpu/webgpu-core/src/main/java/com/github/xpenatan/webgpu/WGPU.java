@@ -43,7 +43,13 @@ delete nativeObject;
 
     public static WGPUPlatformType getPlatformType() {
         int value = internal_native_GetPlatformType();
-        return WGPUPlatformType.MAP.get(value);
+        WGPUPlatformType[] values = WGPUPlatformType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUPlatformType enumVal = values[i];
+            if (enumVal != WGPUPlatformType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUPlatformType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

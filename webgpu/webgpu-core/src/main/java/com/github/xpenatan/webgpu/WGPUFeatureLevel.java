@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUFeatureLevel implements IDLEnum<WGPUFeatureLevel> {
@@ -33,16 +31,6 @@ public enum WGPUFeatureLevel implements IDLEnum<WGPUFeatureLevel> {
 
     public WGPUFeatureLevel getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUFeatureLevel> MAP = new HashMap<>();
-
-    static {
-        for (WGPUFeatureLevel value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

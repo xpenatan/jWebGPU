@@ -69,7 +69,13 @@ return (jlong)&copy_addr;*/
 
     public WGPUCompilationMessageType getType() {
         int value = internal_native_GetType(native_address);
-        return WGPUCompilationMessageType.MAP.get(value);
+        WGPUCompilationMessageType[] values = WGPUCompilationMessageType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUCompilationMessageType enumVal = values[i];
+            if (enumVal != WGPUCompilationMessageType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUCompilationMessageType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

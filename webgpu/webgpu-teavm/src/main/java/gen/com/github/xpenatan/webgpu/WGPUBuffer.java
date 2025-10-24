@@ -194,7 +194,13 @@ public class WGPUBuffer extends IDLBase {
 
     public WGPUBufferUsage getUsage() {
         int value = internal_native_GetUsage(native_address);
-        return WGPUBufferUsage.MAP.get(value);
+        WGPUBufferUsage[] values = WGPUBufferUsage.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBufferUsage enumVal = values[i];
+            if (enumVal != WGPUBufferUsage.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBufferUsage.CUSTOM.setValue(value);
     }
 
     /*

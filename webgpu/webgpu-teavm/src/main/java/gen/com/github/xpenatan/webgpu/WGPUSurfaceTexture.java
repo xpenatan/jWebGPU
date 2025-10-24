@@ -63,7 +63,13 @@ jsObj.GetTexture(texture_addr);
 
     public WGPUSurfaceGetCurrentTextureStatus getStatus() {
         int value = internal_native_GetStatus(native_address);
-        return WGPUSurfaceGetCurrentTextureStatus.MAP.get(value);
+        WGPUSurfaceGetCurrentTextureStatus[] values = WGPUSurfaceGetCurrentTextureStatus.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUSurfaceGetCurrentTextureStatus enumVal = values[i];
+            if (enumVal != WGPUSurfaceGetCurrentTextureStatus.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUSurfaceGetCurrentTextureStatus.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUCompositeAlphaMode implements IDLEnum<WGPUCompositeAlphaMode> {
@@ -39,16 +37,6 @@ public enum WGPUCompositeAlphaMode implements IDLEnum<WGPUCompositeAlphaMode> {
 
     public WGPUCompositeAlphaMode getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUCompositeAlphaMode> MAP = new HashMap<>();
-
-    static {
-        for (WGPUCompositeAlphaMode value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

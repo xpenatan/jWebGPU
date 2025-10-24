@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUStencilOperation implements IDLEnum<WGPUStencilOperation> {
@@ -43,16 +41,6 @@ public enum WGPUStencilOperation implements IDLEnum<WGPUStencilOperation> {
 
     public WGPUStencilOperation getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUStencilOperation> MAP = new HashMap<>();
-
-    static {
-        for (WGPUStencilOperation value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

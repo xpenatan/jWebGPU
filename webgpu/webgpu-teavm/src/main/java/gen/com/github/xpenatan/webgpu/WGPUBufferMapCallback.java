@@ -57,7 +57,16 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int status_addr, String message_addr) {
-        onCallback(WGPUMapAsyncStatus.MAP.get(status_addr), message_addr);
+        WGPUMapAsyncStatus status_addr_enum = WGPUMapAsyncStatus.CUSTOM.setValue(status_addr);
+        WGPUMapAsyncStatus[] status_addr_enum_values = WGPUMapAsyncStatus.values();
+        for (int i = 0; i < status_addr_enum_values.length; i++) {
+            WGPUMapAsyncStatus enumVal = status_addr_enum_values[i];
+            if (enumVal != WGPUMapAsyncStatus.CUSTOM && enumVal.getValue() == status_addr) {
+                status_addr_enum = status_addr_enum_values[i];
+                break;
+            }
+        }
+        onCallback(status_addr_enum, message_addr);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -57,7 +57,16 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int errorType_addr, String message_addr) {
-        onCallback(WGPUErrorType.MAP.get(errorType_addr), message_addr);
+        WGPUErrorType errorType_addr_enum = WGPUErrorType.CUSTOM.setValue(errorType_addr);
+        WGPUErrorType[] errorType_addr_enum_values = WGPUErrorType.values();
+        for (int i = 0; i < errorType_addr_enum_values.length; i++) {
+            WGPUErrorType enumVal = errorType_addr_enum_values[i];
+            if (enumVal != WGPUErrorType.CUSTOM && enumVal.getValue() == errorType_addr) {
+                errorType_addr_enum = errorType_addr_enum_values[i];
+                break;
+            }
+        }
+        onCallback(errorType_addr_enum, message_addr);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -57,9 +57,18 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int status_addr, int adapter_addr, String message_addr) {
+        WGPURequestAdapterStatus status_addr_enum = WGPURequestAdapterStatus.CUSTOM.setValue(status_addr);
+        WGPURequestAdapterStatus[] status_addr_enum_values = WGPURequestAdapterStatus.values();
+        for (int i = 0; i < status_addr_enum_values.length; i++) {
+            WGPURequestAdapterStatus enumVal = status_addr_enum_values[i];
+            if (enumVal != WGPURequestAdapterStatus.CUSTOM && enumVal.getValue() == status_addr) {
+                status_addr_enum = status_addr_enum_values[i];
+                break;
+            }
+        }
         WGPUAdapter adapter_addr_new = WGPUAdapter.native_new();
         adapter_addr_new.internal_reset(adapter_addr, true);
-        onCallback(WGPURequestAdapterStatus.MAP.get(status_addr), adapter_addr_new, message_addr);
+        onCallback(status_addr_enum, adapter_addr_new, message_addr);
     }
 
     /*[-TEAVM;-NATIVE]

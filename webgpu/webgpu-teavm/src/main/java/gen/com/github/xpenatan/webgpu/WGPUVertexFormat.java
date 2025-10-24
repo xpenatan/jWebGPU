@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUVertexFormat implements IDLEnum<WGPUVertexFormat> {
@@ -75,16 +73,6 @@ public enum WGPUVertexFormat implements IDLEnum<WGPUVertexFormat> {
 
     public WGPUVertexFormat getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUVertexFormat> MAP = new HashMap<>();
-
-    static {
-        for (WGPUVertexFormat value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

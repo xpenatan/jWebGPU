@@ -84,7 +84,13 @@ return returnedJSObj;
 
     public WGPUStatus getLimits(WGPULimits limits) {
         int value = internal_native_GetLimits(native_address, limits.native_address);
-        return WGPUStatus.MAP.get(value);
+        WGPUStatus[] values = WGPUStatus.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUStatus enumVal = values[i];
+            if (enumVal != WGPUStatus.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUStatus.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

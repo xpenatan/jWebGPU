@@ -57,9 +57,18 @@ jWebGPU.destroy(jsObj);
     }
 
     private void internal_onCallback(int status_addr, int device_addr, String message_addr) {
+        WGPURequestDeviceStatus status_addr_enum = WGPURequestDeviceStatus.CUSTOM.setValue(status_addr);
+        WGPURequestDeviceStatus[] status_addr_enum_values = WGPURequestDeviceStatus.values();
+        for (int i = 0; i < status_addr_enum_values.length; i++) {
+            WGPURequestDeviceStatus enumVal = status_addr_enum_values[i];
+            if (enumVal != WGPURequestDeviceStatus.CUSTOM && enumVal.getValue() == status_addr) {
+                status_addr_enum = status_addr_enum_values[i];
+                break;
+            }
+        }
         WGPUDevice device_addr_new = WGPUDevice.native_new();
         device_addr_new.internal_reset(device_addr, true);
-        onCallback(WGPURequestDeviceStatus.MAP.get(status_addr), device_addr_new, message_addr);
+        onCallback(status_addr_enum, device_addr_new, message_addr);
     }
 
     /*[-TEAVM;-NATIVE]

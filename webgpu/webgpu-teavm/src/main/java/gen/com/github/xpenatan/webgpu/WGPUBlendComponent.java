@@ -49,7 +49,13 @@ jsObj.SetOperation(operation);
 
     public WGPUBlendOperation getOperation() {
         int value = internal_native_GetOperation(native_address);
-        return WGPUBlendOperation.MAP.get(value);
+        WGPUBlendOperation[] values = WGPUBlendOperation.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBlendOperation enumVal = values[i];
+            if (enumVal != WGPUBlendOperation.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBlendOperation.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +79,13 @@ jsObj.SetSrcFactor(factor);
 
     public WGPUBlendFactor getSrcFactor() {
         int value = internal_native_GetSrcFactor(native_address);
-        return WGPUBlendFactor.MAP.get(value);
+        WGPUBlendFactor[] values = WGPUBlendFactor.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBlendFactor enumVal = values[i];
+            if (enumVal != WGPUBlendFactor.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +109,13 @@ jsObj.SetDstFactor(factor);
 
     public WGPUBlendFactor getDstFactor() {
         int value = internal_native_GetDstFactor(native_address);
-        return WGPUBlendFactor.MAP.get(value);
+        WGPUBlendFactor[] values = WGPUBlendFactor.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBlendFactor enumVal = values[i];
+            if (enumVal != WGPUBlendFactor.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

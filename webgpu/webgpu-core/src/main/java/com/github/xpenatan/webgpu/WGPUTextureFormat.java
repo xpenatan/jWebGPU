@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPUTextureFormat implements IDLEnum<WGPUTextureFormat> {
@@ -130,16 +128,6 @@ public enum WGPUTextureFormat implements IDLEnum<WGPUTextureFormat> {
 
     public WGPUTextureFormat getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPUTextureFormat> MAP = new HashMap<>();
-
-    static {
-        for (WGPUTextureFormat value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

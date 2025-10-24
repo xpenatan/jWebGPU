@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.com.github.xpenatan.webgpu;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum WGPURequestDeviceStatus implements IDLEnum<WGPURequestDeviceStatus> {
@@ -33,16 +31,6 @@ public enum WGPURequestDeviceStatus implements IDLEnum<WGPURequestDeviceStatus> 
 
     public WGPURequestDeviceStatus getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, WGPURequestDeviceStatus> MAP = new HashMap<>();
-
-    static {
-        for (WGPURequestDeviceStatus value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

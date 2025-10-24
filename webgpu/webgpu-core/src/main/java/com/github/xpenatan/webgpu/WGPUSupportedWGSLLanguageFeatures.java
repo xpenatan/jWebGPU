@@ -59,7 +59,13 @@ return nativeObject->GetFeatureCount();
 
     public WGPUWGSLLanguageFeatureName getFeatureAt(int index) {
         int value = internal_native_GetFeatureAt(native_address, index);
-        return WGPUWGSLLanguageFeatureName.MAP.get(value);
+        WGPUWGSLLanguageFeatureName[] values = WGPUWGSLLanguageFeatureName.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUWGSLLanguageFeatureName enumVal = values[i];
+            if (enumVal != WGPUWGSLLanguageFeatureName.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUWGSLLanguageFeatureName.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]
