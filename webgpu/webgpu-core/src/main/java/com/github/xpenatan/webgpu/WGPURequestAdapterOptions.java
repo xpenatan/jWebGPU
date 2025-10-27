@@ -65,7 +65,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
 nativeObject->SetFeatureLevel((::WGPUFeatureLevel)featureLevel);
 */
-    public static native void internal_native_SetFeatureLevel(long this_addr, long featureLevel);
+    public static native void internal_native_SetFeatureLevel(long this_addr, int featureLevel);
 
     public void setPowerPreference(WGPUPowerPreference powerPreference) {
         internal_native_SetPowerPreference(native_address, powerPreference.getValue());
@@ -75,7 +75,7 @@ nativeObject->SetFeatureLevel((::WGPUFeatureLevel)featureLevel);
 JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
 nativeObject->SetPowerPreference((::WGPUPowerPreference)powerPreference);
 */
-    public static native void internal_native_SetPowerPreference(long this_addr, long powerPreference);
+    public static native void internal_native_SetPowerPreference(long this_addr, int powerPreference);
 
     public void setBackendType(WGPUBackendType backendType) {
         internal_native_SetBackendType(native_address, backendType.getValue());
@@ -85,7 +85,7 @@ nativeObject->SetPowerPreference((::WGPUPowerPreference)powerPreference);
 JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
 nativeObject->SetBackendType((::WGPUBackendType)backendType);
 */
-    public static native void internal_native_SetBackendType(long this_addr, long backendType);
+    public static native void internal_native_SetBackendType(long this_addr, int backendType);
 
     public void setCompatibleSurface(WGPUSurface compatibleSurface) {
         internal_native_SetCompatibleSurface(native_address, compatibleSurface.native_address);

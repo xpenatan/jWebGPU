@@ -48,7 +48,7 @@ jsObj.SetNext(value_addr);
     public static native void internal_native_SetNext(int this_addr, int value_addr);
 
     public void setSType(WGPUSType type) {
-        internal_native_SetSType(native_address, (int) type.getValue());
+        internal_native_SetSType(native_address, type.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

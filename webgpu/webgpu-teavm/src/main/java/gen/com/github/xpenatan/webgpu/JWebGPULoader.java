@@ -7,9 +7,9 @@
 */
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jparser.loader.JParserLibraryLoader;
-import com.github.xpenatan.jparser.loader.JParserLibraryLoaderListener;
-import com.github.xpenatan.jparser.loader.JParserLibraryLoaderOptions;
+import com.github.xpenatan.jParser.loader.JParserLibraryLoader;
+import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
+import com.github.xpenatan.jParser.loader.JParserLibraryLoaderOptions;
 
 /**
  * @author xpenatan

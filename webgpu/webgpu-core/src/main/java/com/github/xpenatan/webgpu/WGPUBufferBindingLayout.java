@@ -65,7 +65,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
 nativeObject->SetType((::WGPUBufferBindingType)type);
 */
-    public static native void internal_native_SetType(long this_addr, long type);
+    public static native void internal_native_SetType(long this_addr, int type);
 
     public void setHasDynamicOffset(int hasDynamicOffset) {
         internal_native_SetHasDynamicOffset(native_address, hasDynamicOffset);

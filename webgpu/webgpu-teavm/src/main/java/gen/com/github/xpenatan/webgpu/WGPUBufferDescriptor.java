@@ -73,7 +73,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setUsage(WGPUBufferUsage usage) {
-        internal_native_SetUsage(native_address, (int) usage.getValue());
+        internal_native_SetUsage(native_address, usage.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -153,7 +153,7 @@ nativeObject->SetVertexBuffer((int)slot, (JGPU::WGPUBuffer* )buffer_addr, (int)o
 JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
 nativeObject->SetIndexBuffer((JGPU::WGPUBuffer* )buffer_addr, (::WGPUIndexFormat)format, (int)offset, (int)size);
 */
-    public static native void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, long format, int offset, int size);
+    public static native void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, int format, int offset, int size);
 
     public void insertDebugMarker(String label) {
         internal_native_InsertDebugMarker(native_address, label);

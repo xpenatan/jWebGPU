@@ -66,7 +66,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,7 +77,7 @@ jsObj.SetFormat(format);
     public static native void internal_native_SetFormat(int this_addr, int format);
 
     public void setDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
-        internal_native_SetDepthWriteEnabled(native_address, (int) depthWriteEnabled.getValue());
+        internal_native_SetDepthWriteEnabled(native_address, depthWriteEnabled.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -88,7 +88,7 @@ jsObj.SetDepthWriteEnabled(depthWriteEnabled);
     public static native void internal_native_SetDepthWriteEnabled(int this_addr, int depthWriteEnabled);
 
     public void setDepthCompare(WGPUCompareFunction depthCompare) {
-        internal_native_SetDepthCompare(native_address, (int) depthCompare.getValue());
+        internal_native_SetDepthCompare(native_address, depthCompare.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

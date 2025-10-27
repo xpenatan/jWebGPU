@@ -73,7 +73,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +84,7 @@ jsObj.SetFormat(format);
     public static native void internal_native_SetFormat(int this_addr, int format);
 
     public void setDimension(WGPUTextureViewDimension dimension) {
-        internal_native_SetDimension(native_address, (int) dimension.getValue());
+        internal_native_SetDimension(native_address, dimension.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -139,7 +139,7 @@ jsObj.SetArrayLayerCount(arrayLayerCount);
     public static native void internal_native_SetArrayLayerCount(int this_addr, int arrayLayerCount);
 
     public void setAspect(WGPUTextureAspect aspect) {
-        internal_native_SetAspect(native_address, (int) aspect.getValue());
+        internal_native_SetAspect(native_address, aspect.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -150,7 +150,7 @@ jsObj.SetAspect(aspect);
     public static native void internal_native_SetAspect(int this_addr, int aspect);
 
     public void setUsage(WGPUTextureUsage usage) {
-        internal_native_SetUsage(native_address, (int) usage.getValue());
+        internal_native_SetUsage(native_address, usage.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

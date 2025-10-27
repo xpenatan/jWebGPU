@@ -62,7 +62,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setAccess(WGPUStorageTextureAccess access) {
-        internal_native_SetAccess(native_address, (int) access.getValue());
+        internal_native_SetAccess(native_address, access.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +73,7 @@ jsObj.SetAccess(access);
     public static native void internal_native_SetAccess(int this_addr, int access);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +84,7 @@ jsObj.SetFormat(format);
     public static native void internal_native_SetFormat(int this_addr, int format);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
-        internal_native_SetViewDimension(native_address, (int) viewDimension.getValue());
+        internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

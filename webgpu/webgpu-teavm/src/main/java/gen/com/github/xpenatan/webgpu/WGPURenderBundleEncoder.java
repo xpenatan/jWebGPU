@@ -159,7 +159,7 @@ jsObj.SetVertexBuffer(slot, buffer_addr, offset, size);
     public static native void internal_native_SetVertexBuffer(int this_addr, int slot, int buffer_addr, int offset, int size);
 
     public void setIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, int offset, int size) {
-        internal_native_SetIndexBuffer(native_address, buffer.native_address, (int) format.getValue(), offset, size);
+        internal_native_SetIndexBuffer(native_address, buffer.native_address, format.getValue(), offset, size);
     }
 
     /*[-TEAVM;-NATIVE]

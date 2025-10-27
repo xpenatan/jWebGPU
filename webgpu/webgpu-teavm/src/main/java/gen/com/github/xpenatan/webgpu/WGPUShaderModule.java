@@ -85,7 +85,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsValid(int this_addr);
 
     public void setCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback) {
-        internal_native_SetCallback(native_address, (int) callbackMode.getValue(), callback.native_address);
+        internal_native_SetCallback(native_address, callbackMode.getValue(), callback.native_address);
     }
 
     /*[-TEAVM;-NATIVE]

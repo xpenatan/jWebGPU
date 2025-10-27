@@ -53,7 +53,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
 nativeObject->SetTopology((::WGPUPrimitiveTopology)value);
 */
-    public static native void internal_native_SetTopology(long this_addr, long value);
+    public static native void internal_native_SetTopology(long this_addr, int value);
 
     public void setStripIndexFormat(WGPUIndexFormat value) {
         internal_native_SetStripIndexFormat(native_address, value.getValue());
@@ -63,7 +63,7 @@ nativeObject->SetTopology((::WGPUPrimitiveTopology)value);
 JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
 nativeObject->SetStripIndexFormat((::WGPUIndexFormat)value);
 */
-    public static native void internal_native_SetStripIndexFormat(long this_addr, long value);
+    public static native void internal_native_SetStripIndexFormat(long this_addr, int value);
 
     public void setFrontFace(WGPUFrontFace value) {
         internal_native_SetFrontFace(native_address, value.getValue());
@@ -73,7 +73,7 @@ nativeObject->SetStripIndexFormat((::WGPUIndexFormat)value);
 JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
 nativeObject->SetFrontFace((::WGPUFrontFace)value);
 */
-    public static native void internal_native_SetFrontFace(long this_addr, long value);
+    public static native void internal_native_SetFrontFace(long this_addr, int value);
 
     public void setCullMode(WGPUCullMode value) {
         internal_native_SetCullMode(native_address, value.getValue());
@@ -83,5 +83,5 @@ nativeObject->SetFrontFace((::WGPUFrontFace)value);
 JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
 nativeObject->SetCullMode((::WGPUCullMode)value);
 */
-    public static native void internal_native_SetCullMode(long this_addr, long value);
+    public static native void internal_native_SetCullMode(long this_addr, int value);
 }

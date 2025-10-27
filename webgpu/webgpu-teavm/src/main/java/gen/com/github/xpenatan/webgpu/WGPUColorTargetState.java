@@ -62,7 +62,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +84,7 @@ jsObj.SetBlend(blendState_addr);
     public static native void internal_native_SetBlend(int this_addr, int blendState_addr);
 
     public void setWriteMask(WGPUColorWriteMask writeMask) {
-        internal_native_SetWriteMask(native_address, (int) writeMask.getValue());
+        internal_native_SetWriteMask(native_address, writeMask.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

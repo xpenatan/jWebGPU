@@ -75,7 +75,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUQuerySetDescriptor* nativeObject = (JGPU::WGPUQuerySetDescriptor*)this_addr;
 nativeObject->SetType((::WGPUQueryType)type);
 */
-    public static native void internal_native_SetType(long this_addr, long type);
+    public static native void internal_native_SetType(long this_addr, int type);
 
     public void setCount(int count) {
         internal_native_SetCount(native_address, count);

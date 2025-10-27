@@ -97,7 +97,7 @@ nativeObject->SetResolveTarget((JGPU::WGPUTextureView* )textureView_addr);
 JGPU::WGPURenderPassColorAttachment* nativeObject = (JGPU::WGPURenderPassColorAttachment*)this_addr;
 nativeObject->SetLoadOp((::WGPULoadOp)loadOp);
 */
-    public static native void internal_native_SetLoadOp(long this_addr, long loadOp);
+    public static native void internal_native_SetLoadOp(long this_addr, int loadOp);
 
     public void setStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetStoreOp(native_address, storeOp.getValue());
@@ -107,7 +107,7 @@ nativeObject->SetLoadOp((::WGPULoadOp)loadOp);
 JGPU::WGPURenderPassColorAttachment* nativeObject = (JGPU::WGPURenderPassColorAttachment*)this_addr;
 nativeObject->SetStoreOp((::WGPUStoreOp)storeOp);
 */
-    public static native void internal_native_SetStoreOp(long this_addr, long storeOp);
+    public static native void internal_native_SetStoreOp(long this_addr, int storeOp);
 
     public WGPUColor getClearValue() {
         long pointer = internal_native_GetClearValue(native_address);

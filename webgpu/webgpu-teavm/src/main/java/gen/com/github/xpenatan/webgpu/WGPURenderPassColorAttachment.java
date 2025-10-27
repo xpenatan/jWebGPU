@@ -97,7 +97,7 @@ jsObj.SetResolveTarget(textureView_addr);
     public static native void internal_native_SetResolveTarget(int this_addr, int textureView_addr);
 
     public void setLoadOp(WGPULoadOp loadOp) {
-        internal_native_SetLoadOp(native_address, (int) loadOp.getValue());
+        internal_native_SetLoadOp(native_address, loadOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,7 +108,7 @@ jsObj.SetLoadOp(loadOp);
     public static native void internal_native_SetLoadOp(int this_addr, int loadOp);
 
     public void setStoreOp(WGPUStoreOp storeOp) {
-        internal_native_SetStoreOp(native_address, (int) storeOp.getValue());
+        internal_native_SetStoreOp(native_address, storeOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

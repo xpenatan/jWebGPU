@@ -55,7 +55,7 @@ delete nativeObject;
 JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
 nativeObject->SetFormat((::WGPUVertexFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setOffset(int offset) {
         internal_native_SetOffset(native_address, offset);

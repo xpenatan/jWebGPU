@@ -60,7 +60,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public void requestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback) {
-        internal_native_RequestAdapter(native_address, options.native_address, (int) mode.getValue(), callback.native_address);
+        internal_native_RequestAdapter(native_address, options.native_address, mode.getValue(), callback.native_address);
     }
 
     /*[-TEAVM;-NATIVE]

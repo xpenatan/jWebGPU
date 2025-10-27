@@ -43,7 +43,7 @@ delete nativeObject;
 JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
 nativeObject->SetCompare((::WGPUCompareFunction)compare);
 */
-    public static native void internal_native_SetCompare(long this_addr, long compare);
+    public static native void internal_native_SetCompare(long this_addr, int compare);
 
     public void setFailOp(WGPUStencilOperation failOp) {
         internal_native_SetFailOp(native_address, failOp.getValue());
@@ -53,7 +53,7 @@ nativeObject->SetCompare((::WGPUCompareFunction)compare);
 JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
 nativeObject->SetFailOp((::WGPUStencilOperation)failOp);
 */
-    public static native void internal_native_SetFailOp(long this_addr, long failOp);
+    public static native void internal_native_SetFailOp(long this_addr, int failOp);
 
     public void setDepthFailOp(WGPUStencilOperation depthFailOp) {
         internal_native_SetDepthFailOp(native_address, depthFailOp.getValue());
@@ -63,7 +63,7 @@ nativeObject->SetFailOp((::WGPUStencilOperation)failOp);
 JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
 nativeObject->SetDepthFailOp((::WGPUStencilOperation)depthFailOp);
 */
-    public static native void internal_native_SetDepthFailOp(long this_addr, long depthFailOp);
+    public static native void internal_native_SetDepthFailOp(long this_addr, int depthFailOp);
 
     public void setPassOp(WGPUStencilOperation passOp) {
         internal_native_SetPassOp(native_address, passOp.getValue());
@@ -73,5 +73,5 @@ nativeObject->SetDepthFailOp((::WGPUStencilOperation)depthFailOp);
 JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
 nativeObject->SetPassOp((::WGPUStencilOperation)passOp);
 */
-    public static native void internal_native_SetPassOp(long this_addr, long passOp);
+    public static native void internal_native_SetPassOp(long this_addr, int passOp);
 }

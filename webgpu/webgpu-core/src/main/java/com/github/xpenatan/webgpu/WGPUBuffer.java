@@ -109,7 +109,7 @@ public class WGPUBuffer extends IDLBase {
       copy_addr = nativeObject->MapAsync((::WGPUMapMode)mode, (int)offset, (int)size, (::WGPUCallbackMode)callbackMode, (JGPU::WGPUBufferMapCallback* )callback_addr);
       return (jlong)&copy_addr;
     */
-    public static native long internal_native_MapAsync(long this_addr, long mode, int offset, int size, long callbackMode, long callback_addr);
+    public static native long internal_native_MapAsync(long this_addr, int mode, int offset, int size, int callbackMode, long callback_addr);
 
     public WGPUByteBuffer getMappedRange(int offset, int size) {
         long pointer = internal_native_GetMappedRange(native_address, offset, size);

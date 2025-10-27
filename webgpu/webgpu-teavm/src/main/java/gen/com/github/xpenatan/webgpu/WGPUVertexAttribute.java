@@ -51,7 +51,7 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void setFormat(WGPUVertexFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

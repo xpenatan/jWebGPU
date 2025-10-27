@@ -62,7 +62,7 @@ jsObj.SetView(textureView_addr);
     public static native void internal_native_SetView(int this_addr, int textureView_addr);
 
     public void setDepthLoadOp(WGPULoadOp loadOp) {
-        internal_native_SetDepthLoadOp(native_address, (int) loadOp.getValue());
+        internal_native_SetDepthLoadOp(native_address, loadOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +73,7 @@ jsObj.SetDepthLoadOp(loadOp);
     public static native void internal_native_SetDepthLoadOp(int this_addr, int loadOp);
 
     public void setDepthStoreOp(WGPUStoreOp storeOp) {
-        internal_native_SetDepthStoreOp(native_address, (int) storeOp.getValue());
+        internal_native_SetDepthStoreOp(native_address, storeOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -106,7 +106,7 @@ jsObj.SetDepthReadOnly(depthReadOnly);
     public static native void internal_native_SetDepthReadOnly(int this_addr, boolean depthReadOnly);
 
     public void setStencilLoadOp(WGPULoadOp loadOp) {
-        internal_native_SetStencilLoadOp(native_address, (int) loadOp.getValue());
+        internal_native_SetStencilLoadOp(native_address, loadOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -117,7 +117,7 @@ jsObj.SetStencilLoadOp(loadOp);
     public static native void internal_native_SetStencilLoadOp(int this_addr, int loadOp);
 
     public void setStencilStoreOp(WGPUStoreOp storeOp) {
-        internal_native_SetStencilStoreOp(native_address, (int) storeOp.getValue());
+        internal_native_SetStencilStoreOp(native_address, storeOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

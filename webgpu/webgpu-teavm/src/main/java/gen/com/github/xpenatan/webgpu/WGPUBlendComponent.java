@@ -37,7 +37,7 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void setOperation(WGPUBlendOperation operation) {
-        internal_native_SetOperation(native_address, (int) operation.getValue());
+        internal_native_SetOperation(native_address, operation.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +67,7 @@ return returnedJSObj;
     public static native int internal_native_GetOperation(int this_addr);
 
     public void setSrcFactor(WGPUBlendFactor factor) {
-        internal_native_SetSrcFactor(native_address, (int) factor.getValue());
+        internal_native_SetSrcFactor(native_address, factor.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +97,7 @@ return returnedJSObj;
     public static native int internal_native_GetSrcFactor(int this_addr);
 
     public void setDstFactor(WGPUBlendFactor factor) {
-        internal_native_SetDstFactor(native_address, (int) factor.getValue());
+        internal_native_SetDstFactor(native_address, factor.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

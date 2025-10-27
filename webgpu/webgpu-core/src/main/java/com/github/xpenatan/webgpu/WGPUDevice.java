@@ -211,7 +211,7 @@ nativeObject->GetFeatures((JGPU::WGPUSupportedFeatures* )features_addr);
 JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
 return nativeObject->HasFeature((::WGPUFeatureName)feature);
 */
-    public static native boolean internal_native_HasFeature(long this_addr, long feature);
+    public static native boolean internal_native_HasFeature(long this_addr, int feature);
 
     public void getLimits(WGPULimits limits) {
         internal_native_GetLimits(native_address, limits.native_address);

@@ -73,7 +73,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setType(WGPUQueryType type) {
-        internal_native_SetType(native_address, (int) type.getValue());
+        internal_native_SetType(native_address, type.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

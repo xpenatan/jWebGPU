@@ -75,7 +75,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setUsage(WGPUTextureUsage usage) {
-        internal_native_SetUsage(native_address, (int) usage.getValue());
+        internal_native_SetUsage(native_address, usage.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -86,7 +86,7 @@ jsObj.SetUsage(usage);
     public static native void internal_native_SetUsage(int this_addr, int usage);
 
     public void setDimension(WGPUTextureDimension dimension) {
-        internal_native_SetDimension(native_address, (int) dimension.getValue());
+        internal_native_SetDimension(native_address, dimension.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -116,7 +116,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public static native int internal_native_GetSize(int this_addr);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -65,7 +65,7 @@ nativeObject->SetView((JGPU::WGPUTextureView* )textureView_addr);
 JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
 nativeObject->SetDepthLoadOp((::WGPULoadOp)loadOp);
 */
-    public static native void internal_native_SetDepthLoadOp(long this_addr, long loadOp);
+    public static native void internal_native_SetDepthLoadOp(long this_addr, int loadOp);
 
     public void setDepthStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetDepthStoreOp(native_address, storeOp.getValue());
@@ -75,7 +75,7 @@ nativeObject->SetDepthLoadOp((::WGPULoadOp)loadOp);
 JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
 nativeObject->SetDepthStoreOp((::WGPUStoreOp)storeOp);
 */
-    public static native void internal_native_SetDepthStoreOp(long this_addr, long storeOp);
+    public static native void internal_native_SetDepthStoreOp(long this_addr, int storeOp);
 
     public void setDepthClearValue(float depthClearValue) {
         internal_native_SetDepthClearValue(native_address, depthClearValue);
@@ -105,7 +105,7 @@ nativeObject->SetDepthReadOnly(depthReadOnly);
 JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
 nativeObject->SetStencilLoadOp((::WGPULoadOp)loadOp);
 */
-    public static native void internal_native_SetStencilLoadOp(long this_addr, long loadOp);
+    public static native void internal_native_SetStencilLoadOp(long this_addr, int loadOp);
 
     public void setStencilStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetStencilStoreOp(native_address, storeOp.getValue());
@@ -115,7 +115,7 @@ nativeObject->SetStencilLoadOp((::WGPULoadOp)loadOp);
 JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
 nativeObject->SetStencilStoreOp((::WGPUStoreOp)storeOp);
 */
-    public static native void internal_native_SetStencilStoreOp(long this_addr, long storeOp);
+    public static native void internal_native_SetStencilStoreOp(long this_addr, int storeOp);
 
     public void setStencilClearValue(int stencilClearValue) {
         internal_native_SetStencilClearValue(native_address, stencilClearValue);

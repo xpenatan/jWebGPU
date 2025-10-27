@@ -65,7 +65,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUStorageTextureBindingLayout* nativeObject = (JGPU::WGPUStorageTextureBindingLayout*)this_addr;
 nativeObject->SetAccess((::WGPUStorageTextureAccess)access);
 */
-    public static native void internal_native_SetAccess(long this_addr, long access);
+    public static native void internal_native_SetAccess(long this_addr, int access);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
@@ -75,7 +75,7 @@ nativeObject->SetAccess((::WGPUStorageTextureAccess)access);
 JGPU::WGPUStorageTextureBindingLayout* nativeObject = (JGPU::WGPUStorageTextureBindingLayout*)this_addr;
 nativeObject->SetFormat((::WGPUTextureFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
@@ -85,7 +85,7 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
 JGPU::WGPUStorageTextureBindingLayout* nativeObject = (JGPU::WGPUStorageTextureBindingLayout*)this_addr;
 nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
 */
-    public static native void internal_native_SetViewDimension(long this_addr, long viewDimension);
+    public static native void internal_native_SetViewDimension(long this_addr, int viewDimension);
 
     public static WGPUStorageTextureBindingLayout obtain() {
         long pointer = internal_native_Obtain();

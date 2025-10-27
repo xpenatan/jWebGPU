@@ -74,7 +74,7 @@ jsObj.clear();
     public static native void internal_native_clear(int this_addr);
 
     public void push_back(WGPUTextureFormat textureFormat) {
-        internal_native_push_back(native_address, (int) textureFormat.getValue());
+        internal_native_push_back(native_address, textureFormat.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

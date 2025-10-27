@@ -75,7 +75,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
 nativeObject->SetFormat((::WGPUTextureFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setDimension(WGPUTextureViewDimension dimension) {
         internal_native_SetDimension(native_address, dimension.getValue());
@@ -85,7 +85,7 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
 JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
 nativeObject->SetDimension((::WGPUTextureViewDimension)dimension);
 */
-    public static native void internal_native_SetDimension(long this_addr, long dimension);
+    public static native void internal_native_SetDimension(long this_addr, int dimension);
 
     public void setBaseMipLevel(int baseMipLevel) {
         internal_native_SetBaseMipLevel(native_address, baseMipLevel);
@@ -135,7 +135,7 @@ nativeObject->SetArrayLayerCount((int)arrayLayerCount);
 JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
 nativeObject->SetAspect((::WGPUTextureAspect)aspect);
 */
-    public static native void internal_native_SetAspect(long this_addr, long aspect);
+    public static native void internal_native_SetAspect(long this_addr, int aspect);
 
     public void setUsage(WGPUTextureUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());
@@ -145,7 +145,7 @@ nativeObject->SetAspect((::WGPUTextureAspect)aspect);
 JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
 nativeObject->SetUsage((::WGPUTextureUsage)usage);
 */
-    public static native void internal_native_SetUsage(long this_addr, long usage);
+    public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public static WGPUTextureViewDescriptor obtain() {
         long pointer = internal_native_Obtain();

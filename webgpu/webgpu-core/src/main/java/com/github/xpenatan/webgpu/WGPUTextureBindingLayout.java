@@ -65,7 +65,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
 nativeObject->SetSampleType((::WGPUTextureSampleType)sampleType);
 */
-    public static native void internal_native_SetSampleType(long this_addr, long sampleType);
+    public static native void internal_native_SetSampleType(long this_addr, int sampleType);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
@@ -75,7 +75,7 @@ nativeObject->SetSampleType((::WGPUTextureSampleType)sampleType);
 JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
 nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
 */
-    public static native void internal_native_SetViewDimension(long this_addr, long viewDimension);
+    public static native void internal_native_SetViewDimension(long this_addr, int viewDimension);
 
     public void setMultisampled(int multisampled) {
         internal_native_SetMultisampled(native_address, multisampled);

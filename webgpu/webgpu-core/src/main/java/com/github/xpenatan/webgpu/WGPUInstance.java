@@ -63,7 +63,7 @@ nativeObject->Release();
 JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
 nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestAdapterCallback* )callback_addr);
 */
-    public static native void internal_native_RequestAdapter(long this_addr, long options_addr, long mode, long callback_addr);
+    public static native void internal_native_RequestAdapter(long this_addr, long options_addr, int mode, long callback_addr);
 
     public WGPUSurface createWebSurface(String canvas) {
         long pointer = internal_native_CreateWebSurface(native_address, canvas);

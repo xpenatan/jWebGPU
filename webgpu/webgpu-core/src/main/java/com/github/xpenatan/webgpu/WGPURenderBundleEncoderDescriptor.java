@@ -85,7 +85,7 @@ nativeObject->SetColorFormats((JGPU::WGPUVectorTextureFormat* )colorFormats_addr
 JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
 nativeObject->SetDepthStencilFormat((::WGPUTextureFormat)depthStencilFormat);
 */
-    public static native void internal_native_SetDepthStencilFormat(long this_addr, long depthStencilFormat);
+    public static native void internal_native_SetDepthStencilFormat(long this_addr, int depthStencilFormat);
 
     public void setSampleCount(int sampleCount) {
         internal_native_SetSampleCount(native_address, sampleCount);

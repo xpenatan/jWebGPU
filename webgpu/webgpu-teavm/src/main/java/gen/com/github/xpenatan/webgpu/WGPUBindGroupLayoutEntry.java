@@ -81,7 +81,7 @@ jsObj.SetBinding(binding);
     public static native void internal_native_SetBinding(int this_addr, int binding);
 
     public void setVisibility(WGPUShaderStage visibility) {
-        internal_native_SetVisibility(native_address, (int) visibility.getValue());
+        internal_native_SetVisibility(native_address, visibility.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -62,7 +62,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setSampleType(WGPUTextureSampleType sampleType) {
-        internal_native_SetSampleType(native_address, (int) sampleType.getValue());
+        internal_native_SetSampleType(native_address, sampleType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +73,7 @@ jsObj.SetSampleType(sampleType);
     public static native void internal_native_SetSampleType(int this_addr, int sampleType);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
-        internal_native_SetViewDimension(native_address, (int) viewDimension.getValue());
+        internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -65,7 +65,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUSamplerBindingLayout* nativeObject = (JGPU::WGPUSamplerBindingLayout*)this_addr;
 nativeObject->SetType((::WGPUSamplerBindingType)type);
 */
-    public static native void internal_native_SetType(long this_addr, long type);
+    public static native void internal_native_SetType(long this_addr, int type);
 
     public static WGPUSamplerBindingLayout obtain() {
         long pointer = internal_native_Obtain();

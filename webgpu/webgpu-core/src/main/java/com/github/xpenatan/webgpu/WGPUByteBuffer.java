@@ -78,7 +78,7 @@ return (jlong)WGPUByteBuffer::Obtain((int)capacity);
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 nativeObject->order((::WGPUByteOrder)order);
 */
-    public static native void internal_native_order(long this_addr, long order);
+    public static native void internal_native_order(long this_addr, int order);
 
     public byte get(int index) {
         return internal_native_get(native_address, index);

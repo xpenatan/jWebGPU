@@ -65,7 +65,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
 nativeObject->SetFormat((::WGPUTextureFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setBlend(WGPUBlendState blendState) {
         internal_native_SetBlend(native_address, blendState.native_address);
@@ -85,7 +85,7 @@ nativeObject->SetBlend((JGPU::WGPUBlendState* )blendState_addr);
 JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
 nativeObject->SetWriteMask((::WGPUColorWriteMask)writeMask);
 */
-    public static native void internal_native_SetWriteMask(long this_addr, long writeMask);
+    public static native void internal_native_SetWriteMask(long this_addr, int writeMask);
 
     public static WGPUColorTargetState obtain() {
         long pointer = internal_native_Obtain();

@@ -75,7 +75,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
 nativeObject->SetUsage((::WGPUBufferUsage)usage);
 */
-    public static native void internal_native_SetUsage(long this_addr, long usage);
+    public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public void setSize(long size) {
         internal_native_SetSize(native_address, size);

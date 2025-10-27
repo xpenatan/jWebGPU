@@ -75,7 +75,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetAddressModeU((::WGPUAddressMode)addressModeU);
 */
-    public static native void internal_native_SetAddressModeU(long this_addr, long addressModeU);
+    public static native void internal_native_SetAddressModeU(long this_addr, int addressModeU);
 
     public void setAddressModeV(WGPUAddressMode addressModeV) {
         internal_native_SetAddressModeV(native_address, addressModeV.getValue());
@@ -85,7 +85,7 @@ nativeObject->SetAddressModeU((::WGPUAddressMode)addressModeU);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetAddressModeV((::WGPUAddressMode)addressModeV);
 */
-    public static native void internal_native_SetAddressModeV(long this_addr, long addressModeV);
+    public static native void internal_native_SetAddressModeV(long this_addr, int addressModeV);
 
     public void setAddressModeW(WGPUAddressMode addressModeW) {
         internal_native_SetAddressModeW(native_address, addressModeW.getValue());
@@ -95,7 +95,7 @@ nativeObject->SetAddressModeV((::WGPUAddressMode)addressModeV);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetAddressModeW((::WGPUAddressMode)addressModeW);
 */
-    public static native void internal_native_SetAddressModeW(long this_addr, long addressModeW);
+    public static native void internal_native_SetAddressModeW(long this_addr, int addressModeW);
 
     public void setMagFilter(WGPUFilterMode magFilter) {
         internal_native_SetMagFilter(native_address, magFilter.getValue());
@@ -105,7 +105,7 @@ nativeObject->SetAddressModeW((::WGPUAddressMode)addressModeW);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetMagFilter((::WGPUFilterMode)magFilter);
 */
-    public static native void internal_native_SetMagFilter(long this_addr, long magFilter);
+    public static native void internal_native_SetMagFilter(long this_addr, int magFilter);
 
     public void setMinFilter(WGPUFilterMode minFilter) {
         internal_native_SetMinFilter(native_address, minFilter.getValue());
@@ -115,7 +115,7 @@ nativeObject->SetMagFilter((::WGPUFilterMode)magFilter);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetMinFilter((::WGPUFilterMode)minFilter);
 */
-    public static native void internal_native_SetMinFilter(long this_addr, long minFilter);
+    public static native void internal_native_SetMinFilter(long this_addr, int minFilter);
 
     public void setMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
         internal_native_SetMipmapFilter(native_address, mipmapFilter.getValue());
@@ -125,7 +125,7 @@ nativeObject->SetMinFilter((::WGPUFilterMode)minFilter);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetMipmapFilter((::WGPUMipmapFilterMode)mipmapFilter);
 */
-    public static native void internal_native_SetMipmapFilter(long this_addr, long mipmapFilter);
+    public static native void internal_native_SetMipmapFilter(long this_addr, int mipmapFilter);
 
     public void setLodMinClamp(float lodMinClamp) {
         internal_native_SetLodMinClamp(native_address, lodMinClamp);
@@ -155,7 +155,7 @@ nativeObject->SetLodMaxClamp((float)lodMaxClamp);
 JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
 nativeObject->SetCompare((::WGPUCompareFunction)compare);
 */
-    public static native void internal_native_SetCompare(long this_addr, long compare);
+    public static native void internal_native_SetCompare(long this_addr, int compare);
 
     public void setMaxAnisotropy(int maxAnisotropy) {
         internal_native_SetMaxAnisotropy(native_address, maxAnisotropy);

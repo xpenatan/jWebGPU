@@ -94,7 +94,7 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
     public static native int internal_native_GetOrigin(int this_addr);
 
     public void setAspect(WGPUTextureAspect aspect) {
-        internal_native_SetAspect(native_address, (int) aspect.getValue());
+        internal_native_SetAspect(native_address, aspect.getValue());
     }
 
     /*

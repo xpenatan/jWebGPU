@@ -53,7 +53,7 @@ nativeObject->Release();
 JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
 nativeObject->RequestDevice((JGPU::WGPUDeviceDescriptor* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestDeviceCallback* )callback_addr, (JGPU::WGPUUncapturedErrorCallback* )errorCallback_addr);
 */
-    public static native void internal_native_RequestDevice(long this_addr, long options_addr, long mode, long callback_addr, long errorCallback_addr);
+    public static native void internal_native_RequestDevice(long this_addr, long options_addr, int mode, long callback_addr, long errorCallback_addr);
 
     public boolean getInfo(WGPUAdapterInfo adapterInfo) {
         return internal_native_GetInfo(native_address, adapterInfo.native_address);
@@ -73,7 +73,7 @@ return nativeObject->GetInfo((JGPU::WGPUAdapterInfo* )adapterInfo_addr);
 JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
 return nativeObject->HasFeature((::WGPUFeatureName)featureName);
 */
-    public static native boolean internal_native_HasFeature(long this_addr, long featureName);
+    public static native boolean internal_native_HasFeature(long this_addr, int featureName);
 
     public WGPUStatus getLimits(WGPULimits limits) {
         int value = internal_native_GetLimits(native_address, limits.native_address);

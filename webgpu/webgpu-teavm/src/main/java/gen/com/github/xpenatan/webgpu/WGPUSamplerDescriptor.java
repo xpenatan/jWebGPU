@@ -73,7 +73,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setAddressModeU(WGPUAddressMode addressModeU) {
-        internal_native_SetAddressModeU(native_address, (int) addressModeU.getValue());
+        internal_native_SetAddressModeU(native_address, addressModeU.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +84,7 @@ jsObj.SetAddressModeU(addressModeU);
     public static native void internal_native_SetAddressModeU(int this_addr, int addressModeU);
 
     public void setAddressModeV(WGPUAddressMode addressModeV) {
-        internal_native_SetAddressModeV(native_address, (int) addressModeV.getValue());
+        internal_native_SetAddressModeV(native_address, addressModeV.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -95,7 +95,7 @@ jsObj.SetAddressModeV(addressModeV);
     public static native void internal_native_SetAddressModeV(int this_addr, int addressModeV);
 
     public void setAddressModeW(WGPUAddressMode addressModeW) {
-        internal_native_SetAddressModeW(native_address, (int) addressModeW.getValue());
+        internal_native_SetAddressModeW(native_address, addressModeW.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -106,7 +106,7 @@ jsObj.SetAddressModeW(addressModeW);
     public static native void internal_native_SetAddressModeW(int this_addr, int addressModeW);
 
     public void setMagFilter(WGPUFilterMode magFilter) {
-        internal_native_SetMagFilter(native_address, (int) magFilter.getValue());
+        internal_native_SetMagFilter(native_address, magFilter.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -117,7 +117,7 @@ jsObj.SetMagFilter(magFilter);
     public static native void internal_native_SetMagFilter(int this_addr, int magFilter);
 
     public void setMinFilter(WGPUFilterMode minFilter) {
-        internal_native_SetMinFilter(native_address, (int) minFilter.getValue());
+        internal_native_SetMinFilter(native_address, minFilter.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -128,7 +128,7 @@ jsObj.SetMinFilter(minFilter);
     public static native void internal_native_SetMinFilter(int this_addr, int minFilter);
 
     public void setMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
-        internal_native_SetMipmapFilter(native_address, (int) mipmapFilter.getValue());
+        internal_native_SetMipmapFilter(native_address, mipmapFilter.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -161,7 +161,7 @@ jsObj.SetLodMaxClamp(lodMaxClamp);
     public static native void internal_native_SetLodMaxClamp(int this_addr, float lodMaxClamp);
 
     public void setCompare(WGPUCompareFunction compare) {
-        internal_native_SetCompare(native_address, (int) compare.getValue());
+        internal_native_SetCompare(native_address, compare.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

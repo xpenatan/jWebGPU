@@ -84,7 +84,7 @@ jsObj.SetColorFormats(colorFormats_addr);
     public static native void internal_native_SetColorFormats(int this_addr, int colorFormats_addr);
 
     public void setDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
-        internal_native_SetDepthStencilFormat(native_address, (int) depthStencilFormat.getValue());
+        internal_native_SetDepthStencilFormat(native_address, depthStencilFormat.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

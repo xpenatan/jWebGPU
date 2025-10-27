@@ -69,7 +69,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
 nativeObject->SetFormat((::WGPUTextureFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
         internal_native_SetDepthWriteEnabled(native_address, depthWriteEnabled.getValue());
@@ -79,7 +79,7 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
 JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
 nativeObject->SetDepthWriteEnabled((::WGPUOptionalBool)depthWriteEnabled);
 */
-    public static native void internal_native_SetDepthWriteEnabled(long this_addr, long depthWriteEnabled);
+    public static native void internal_native_SetDepthWriteEnabled(long this_addr, int depthWriteEnabled);
 
     public void setDepthCompare(WGPUCompareFunction depthCompare) {
         internal_native_SetDepthCompare(native_address, depthCompare.getValue());
@@ -89,7 +89,7 @@ nativeObject->SetDepthWriteEnabled((::WGPUOptionalBool)depthWriteEnabled);
 JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
 nativeObject->SetDepthCompare((::WGPUCompareFunction)depthCompare);
 */
-    public static native void internal_native_SetDepthCompare(long this_addr, long depthCompare);
+    public static native void internal_native_SetDepthCompare(long this_addr, int depthCompare);
 
     public void setDepthBiasSlopeScale(float depthBiasSlopeScale) {
         internal_native_SetDepthBiasSlopeScale(native_address, depthBiasSlopeScale);

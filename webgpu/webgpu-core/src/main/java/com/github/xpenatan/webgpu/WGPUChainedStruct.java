@@ -53,5 +53,5 @@ nativeObject->SetNext((JGPU::WGPUChainedStruct* )value_addr);
 JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
 nativeObject->SetSType((::WGPUSType)type);
 */
-    public static native void internal_native_SetSType(long this_addr, long type);
+    public static native void internal_native_SetSType(long this_addr, int type);
 }

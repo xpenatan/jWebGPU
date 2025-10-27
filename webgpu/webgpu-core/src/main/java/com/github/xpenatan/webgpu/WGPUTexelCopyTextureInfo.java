@@ -96,7 +96,7 @@ public class WGPUTexelCopyTextureInfo extends IDLBase {
       JGPU::WGPUTexelCopyTextureInfo* nativeObject = (JGPU::WGPUTexelCopyTextureInfo*)this_addr;
       nativeObject->SetAspect((::WGPUTextureAspect)aspect);
     */
-    public static native void internal_native_SetAspect(long this_addr, long aspect);
+    public static native void internal_native_SetAspect(long this_addr, int aspect);
 
     public static WGPUTexelCopyTextureInfo obtain() {
         long pointer = internal_native_Obtain();

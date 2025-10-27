@@ -85,7 +85,7 @@ nativeObject->SetHeight((int)height);
 JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
 nativeObject->SetFormat((::WGPUTextureFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setViewFormats(WGPUVectorTextureFormat formats) {
         internal_native_SetViewFormats(native_address, formats.native_address);
@@ -105,7 +105,7 @@ nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )formats_addr);
 JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
 nativeObject->SetUsage((::WGPUTextureUsage)usage);
 */
-    public static native void internal_native_SetUsage(long this_addr, long usage);
+    public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public void setDevice(WGPUDevice device) {
         internal_native_SetDevice(native_address, device.native_address);
@@ -125,7 +125,7 @@ nativeObject->SetDevice((JGPU::WGPUDevice* )device_addr);
 JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
 nativeObject->SetPresentMode((::WGPUPresentMode)presentMode);
 */
-    public static native void internal_native_SetPresentMode(long this_addr, long presentMode);
+    public static native void internal_native_SetPresentMode(long this_addr, int presentMode);
 
     public void setAlphaMode(WGPUCompositeAlphaMode alphaMode) {
         internal_native_SetAlphaMode(native_address, alphaMode.getValue());
@@ -135,7 +135,7 @@ nativeObject->SetPresentMode((::WGPUPresentMode)presentMode);
 JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
 nativeObject->SetAlphaMode((::WGPUCompositeAlphaMode)alphaMode);
 */
-    public static native void internal_native_SetAlphaMode(long this_addr, long alphaMode);
+    public static native void internal_native_SetAlphaMode(long this_addr, int alphaMode);
 
     public static WGPUSurfaceConfiguration obtain() {
         long pointer = internal_native_Obtain();

@@ -75,7 +75,7 @@ nativeObject->clear();
 JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
 nativeObject->push_back((::WGPUTextureFormat)textureFormat);
 */
-    public static native void internal_native_push_back(long this_addr, long textureFormat);
+    public static native void internal_native_push_back(long this_addr, int textureFormat);
 
     public WGPUTextureFormat get(int index) {
         int value = internal_native_get(native_address, index);

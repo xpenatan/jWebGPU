@@ -48,7 +48,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public void requestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback) {
-        internal_native_RequestDevice(native_address, options.native_address, (int) mode.getValue(), callback.native_address, errorCallback.native_address);
+        internal_native_RequestDevice(native_address, options.native_address, mode.getValue(), callback.native_address, errorCallback.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -71,7 +71,7 @@ return returnedJSObj;
     public static native boolean internal_native_GetInfo(int this_addr, int adapterInfo_addr);
 
     public boolean hasFeature(WGPUFeatureName featureName) {
-        return internal_native_HasFeature(native_address, (int) featureName.getValue());
+        return internal_native_HasFeature(native_address, featureName.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

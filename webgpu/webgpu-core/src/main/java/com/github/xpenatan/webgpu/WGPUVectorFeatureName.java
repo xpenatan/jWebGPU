@@ -75,7 +75,7 @@ nativeObject->clear();
 JGPU::WGPUVectorFeatureName* nativeObject = (JGPU::WGPUVectorFeatureName*)this_addr;
 nativeObject->push_back((::WGPUFeatureName)featureName);
 */
-    public static native void internal_native_push_back(long this_addr, long featureName);
+    public static native void internal_native_push_back(long this_addr, int featureName);
 
     public static WGPUVectorFeatureName obtain() {
         long pointer = internal_native_Obtain();

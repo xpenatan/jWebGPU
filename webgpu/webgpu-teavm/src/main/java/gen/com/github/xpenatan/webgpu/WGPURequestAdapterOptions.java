@@ -62,7 +62,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setFeatureLevel(WGPUFeatureLevel featureLevel) {
-        internal_native_SetFeatureLevel(native_address, (int) featureLevel.getValue());
+        internal_native_SetFeatureLevel(native_address, featureLevel.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +73,7 @@ jsObj.SetFeatureLevel(featureLevel);
     public static native void internal_native_SetFeatureLevel(int this_addr, int featureLevel);
 
     public void setPowerPreference(WGPUPowerPreference powerPreference) {
-        internal_native_SetPowerPreference(native_address, (int) powerPreference.getValue());
+        internal_native_SetPowerPreference(native_address, powerPreference.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +84,7 @@ jsObj.SetPowerPreference(powerPreference);
     public static native void internal_native_SetPowerPreference(int this_addr, int powerPreference);
 
     public void setBackendType(WGPUBackendType backendType) {
-        internal_native_SetBackendType(native_address, (int) backendType.getValue());
+        internal_native_SetBackendType(native_address, backendType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

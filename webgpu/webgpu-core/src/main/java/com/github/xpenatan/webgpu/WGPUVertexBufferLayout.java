@@ -75,7 +75,7 @@ nativeObject->SetArrayStride((int)offset);
 JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
 nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
 */
-    public static native void internal_native_SetStepMode(long this_addr, long stepMode);
+    public static native void internal_native_SetStepMode(long this_addr, int stepMode);
 
     public static WGPUVertexBufferLayout obtain() {
         long pointer = internal_native_Obtain();

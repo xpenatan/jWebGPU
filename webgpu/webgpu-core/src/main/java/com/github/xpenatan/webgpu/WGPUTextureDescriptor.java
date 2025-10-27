@@ -77,7 +77,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
 nativeObject->SetUsage((::WGPUTextureUsage)usage);
 */
-    public static native void internal_native_SetUsage(long this_addr, long usage);
+    public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public void setDimension(WGPUTextureDimension dimension) {
         internal_native_SetDimension(native_address, dimension.getValue());
@@ -87,7 +87,7 @@ nativeObject->SetUsage((::WGPUTextureUsage)usage);
 JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
 nativeObject->SetDimension((::WGPUTextureDimension)dimension);
 */
-    public static native void internal_native_SetDimension(long this_addr, long dimension);
+    public static native void internal_native_SetDimension(long this_addr, int dimension);
 
     public WGPUExtent3D getSize() {
         long pointer = internal_native_GetSize(native_address);
@@ -114,7 +114,7 @@ return (jlong)&copy_addr;*/
 JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
 nativeObject->SetFormat((::WGPUTextureFormat)format);
 */
-    public static native void internal_native_SetFormat(long this_addr, long format);
+    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setMipLevelCount(int mipLevelCount) {
         internal_native_SetMipLevelCount(native_address, mipLevelCount);

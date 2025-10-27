@@ -222,7 +222,7 @@ jsObj.GetFeatures(features_addr);
     public static native void internal_native_GetFeatures(int this_addr, int features_addr);
 
     public boolean hasFeature(WGPUFeatureName feature) {
-        return internal_native_HasFeature(native_address, (int) feature.getValue());
+        return internal_native_HasFeature(native_address, feature.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

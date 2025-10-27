@@ -85,7 +85,7 @@ return nativeObject->IsValid();
 JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
 nativeObject->SetCallback((::WGPUCallbackMode)callbackMode, (JGPU::WGPUCompilationInfoCallback* )callback_addr);
 */
-    public static native void internal_native_SetCallback(long this_addr, long callbackMode, long callback_addr);
+    public static native void internal_native_SetCallback(long this_addr, int callbackMode, long callback_addr);
 
     public static WGPUShaderModule obtain() {
         long pointer = internal_native_Obtain();

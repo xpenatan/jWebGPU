@@ -73,7 +73,7 @@ jsObj.SetArrayStride(offset);
     public static native void internal_native_SetArrayStride(int this_addr, int offset);
 
     public void setStepMode(WGPUVertexStepMode stepMode) {
-        internal_native_SetStepMode(native_address, (int) stepMode.getValue());
+        internal_native_SetStepMode(native_address, stepMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -48,7 +48,7 @@ jsObj.SetNextInChain(chainedStruct_addr);
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setTopology(WGPUPrimitiveTopology value) {
-        internal_native_SetTopology(native_address, (int) value.getValue());
+        internal_native_SetTopology(native_address, value.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,7 +59,7 @@ jsObj.SetTopology(value);
     public static native void internal_native_SetTopology(int this_addr, int value);
 
     public void setStripIndexFormat(WGPUIndexFormat value) {
-        internal_native_SetStripIndexFormat(native_address, (int) value.getValue());
+        internal_native_SetStripIndexFormat(native_address, value.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,7 +70,7 @@ jsObj.SetStripIndexFormat(value);
     public static native void internal_native_SetStripIndexFormat(int this_addr, int value);
 
     public void setFrontFace(WGPUFrontFace value) {
-        internal_native_SetFrontFace(native_address, (int) value.getValue());
+        internal_native_SetFrontFace(native_address, value.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -81,7 +81,7 @@ jsObj.SetFrontFace(value);
     public static native void internal_native_SetFrontFace(int this_addr, int value);
 
     public void setCullMode(WGPUCullMode value) {
-        internal_native_SetCullMode(native_address, (int) value.getValue());
+        internal_native_SetCullMode(native_address, value.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

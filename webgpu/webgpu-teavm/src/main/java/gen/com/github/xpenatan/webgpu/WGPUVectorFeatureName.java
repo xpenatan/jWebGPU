@@ -74,7 +74,7 @@ jsObj.clear();
     public static native void internal_native_clear(int this_addr);
 
     public void push_back(WGPUFeatureName featureName) {
-        internal_native_push_back(native_address, (int) featureName.getValue());
+        internal_native_push_back(native_address, featureName.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

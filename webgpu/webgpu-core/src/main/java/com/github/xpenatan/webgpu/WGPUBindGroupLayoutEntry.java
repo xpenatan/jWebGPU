@@ -83,7 +83,7 @@ nativeObject->SetBinding((int)binding);
 JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
 nativeObject->SetVisibility((::WGPUShaderStage)visibility);
 */
-    public static native void internal_native_SetVisibility(long this_addr, long visibility);
+    public static native void internal_native_SetVisibility(long this_addr, int visibility);
 
     public void setBuffer(WGPUBufferBindingLayout buffer) {
         internal_native_SetBuffer(native_address, buffer.native_address);

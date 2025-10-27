@@ -235,7 +235,7 @@ nativeObject->SetBlendConstant((JGPU::WGPUColor* )color_addr);
 JGPU::WGPURenderPassEncoder* nativeObject = (JGPU::WGPURenderPassEncoder*)this_addr;
 nativeObject->SetIndexBuffer((JGPU::WGPUBuffer* )buffer_addr, (::WGPUIndexFormat)format, (int)offset, (int)size);
 */
-    public static native void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, long format, int offset, int size);
+    public static native void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, int format, int offset, int size);
 
     public void setScissorRect(int x, int y, int width, int height) {
         internal_native_SetScissorRect(native_address, x, y, width, height);

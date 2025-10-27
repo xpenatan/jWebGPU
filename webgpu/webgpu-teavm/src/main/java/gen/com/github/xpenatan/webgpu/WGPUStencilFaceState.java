@@ -37,7 +37,7 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void setCompare(WGPUCompareFunction compare) {
-        internal_native_SetCompare(native_address, (int) compare.getValue());
+        internal_native_SetCompare(native_address, compare.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,7 +48,7 @@ jsObj.SetCompare(compare);
     public static native void internal_native_SetCompare(int this_addr, int compare);
 
     public void setFailOp(WGPUStencilOperation failOp) {
-        internal_native_SetFailOp(native_address, (int) failOp.getValue());
+        internal_native_SetFailOp(native_address, failOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,7 +59,7 @@ jsObj.SetFailOp(failOp);
     public static native void internal_native_SetFailOp(int this_addr, int failOp);
 
     public void setDepthFailOp(WGPUStencilOperation depthFailOp) {
-        internal_native_SetDepthFailOp(native_address, (int) depthFailOp.getValue());
+        internal_native_SetDepthFailOp(native_address, depthFailOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,7 +70,7 @@ jsObj.SetDepthFailOp(depthFailOp);
     public static native void internal_native_SetDepthFailOp(int this_addr, int depthFailOp);
 
     public void setPassOp(WGPUStencilOperation passOp) {
-        internal_native_SetPassOp(native_address, (int) passOp.getValue());
+        internal_native_SetPassOp(native_address, passOp.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

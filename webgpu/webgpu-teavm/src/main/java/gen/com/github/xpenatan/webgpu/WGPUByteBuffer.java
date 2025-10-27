@@ -77,7 +77,7 @@ return jWebGPU.getPointer(returnedJSObj);
     public static native int internal_native_Obtain(int capacity);
 
     public void order(WGPUByteOrder order) {
-        internal_native_order(native_address, (int) order.getValue());
+        internal_native_order(native_address, order.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

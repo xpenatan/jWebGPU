@@ -84,7 +84,7 @@ jsObj.SetHeight(height);
     public static native void internal_native_SetHeight(int this_addr, int height);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, (int) format.getValue());
+        internal_native_SetFormat(native_address, format.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -106,7 +106,7 @@ jsObj.SetViewFormats(formats_addr);
     public static native void internal_native_SetViewFormats(int this_addr, int formats_addr);
 
     public void setUsage(WGPUTextureUsage usage) {
-        internal_native_SetUsage(native_address, (int) usage.getValue());
+        internal_native_SetUsage(native_address, usage.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -128,7 +128,7 @@ jsObj.SetDevice(device_addr);
     public static native void internal_native_SetDevice(int this_addr, int device_addr);
 
     public void setPresentMode(WGPUPresentMode presentMode) {
-        internal_native_SetPresentMode(native_address, (int) presentMode.getValue());
+        internal_native_SetPresentMode(native_address, presentMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -139,7 +139,7 @@ jsObj.SetPresentMode(presentMode);
     public static native void internal_native_SetPresentMode(int this_addr, int presentMode);
 
     public void setAlphaMode(WGPUCompositeAlphaMode alphaMode) {
-        internal_native_SetAlphaMode(native_address, (int) alphaMode.getValue());
+        internal_native_SetAlphaMode(native_address, alphaMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

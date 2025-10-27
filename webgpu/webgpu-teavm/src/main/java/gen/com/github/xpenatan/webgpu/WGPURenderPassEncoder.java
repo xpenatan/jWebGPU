@@ -249,7 +249,7 @@ jsObj.SetBlendConstant(color_addr);
     public static native void internal_native_SetBlendConstant(int this_addr, int color_addr);
 
     public void setIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, int offset, int size) {
-        internal_native_SetIndexBuffer(native_address, buffer.native_address, (int) format.getValue(), offset, size);
+        internal_native_SetIndexBuffer(native_address, buffer.native_address, format.getValue(), offset, size);
     }
 
     /*[-TEAVM;-NATIVE]
