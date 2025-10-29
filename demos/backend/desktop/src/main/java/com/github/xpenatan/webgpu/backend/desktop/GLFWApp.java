@@ -131,7 +131,7 @@ public class GLFWApp {
 
     private void createSurface() {
         String osName = System.getProperty("os.name").toLowerCase();
-        IDLBase voidHandle = IDLBase.native_new().native_setVoid(windowHandle);
+        IDLBase voidHandle = IDLBase.native_new().native_setAddress(windowHandle);
         if(osName.contains("win")) {
             wgpu.surface = wgpu.instance.createWindowsSurface(voidHandle);
         }
@@ -139,12 +139,12 @@ public class GLFWApp {
             IDLBase displayVoid = IDLBase.native_new();
             if(glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
                 long display = glfwGetWaylandDisplay();
-                displayVoid.native_setVoid(display);
+                displayVoid.native_setAddress(display);
                 wgpu.surface = wgpu.instance.createLinuxSurface(true, voidHandle, displayVoid);
             }
             else {
                 long display = glfwGetX11Display();
-                displayVoid.native_setVoid(display);
+                displayVoid.native_setAddress(display);
                 wgpu.surface = wgpu.instance.createLinuxSurface(false, voidHandle, displayVoid);
             }
         }
