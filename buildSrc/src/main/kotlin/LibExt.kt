@@ -14,8 +14,8 @@ object LibExt {
     const val java11Target = "11"
 
     //Library dependencies
-    const val jParserVersion = "1.0.0-b25"
-    const val teaVMVersion = "0.12.3"
+    const val jParserVersion = "-SNAPSHOT"
+    const val teaVMVersion = "0.13.0"
     const val jMultiplatform = "0.1.3"
 
     //Example dependencies
