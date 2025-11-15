@@ -52,9 +52,9 @@ public class JWebGPULoader {
             JParserLibraryLoaderOptions options = new JParserLibraryLoaderOptions();
             options.autoAddSuffix = false;
             options.autoAddPrefix = false;
-            JParserLibraryLoader.load("webgpu_dawn", path, options, (isSuccess, e) -> {
+            JParserLibraryLoader.loadSync("webgpu_dawn", path, options, (isSuccess, e) -> {
                 if(isSuccess) {
-                    JParserLibraryLoader.load("jWebGPU", path, listener);
+                    JParserLibraryLoader.loadSync("jWebGPU", path, listener);
                 }
                 else {
                     listener.onLoad(false, e);
@@ -63,7 +63,7 @@ public class JWebGPULoader {
         }
         else {
             // WGPU do static link so it's a single library
-            JParserLibraryLoader.load("jWebGPU", path, listener);
+            JParserLibraryLoader.loadSync("jWebGPU", path, listener);
         }
     }
 
