@@ -91,10 +91,11 @@ public class WGPUBuild {
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.addJNIHeaders();
+        linkTarget.cppFlags.add("-std:c++17");
         linkTarget.libDirSuffix += "wgpu/";
         linkTarget.tempBuildDir += "_wgpu";
 
-        linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -130,9 +131,10 @@ public class WGPUBuild {
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.addJNIHeaders();
+        linkTarget.cppFlags.add("-std:c++17");
         linkTarget.libDirSuffix += "dawn/";
         linkTarget.tempBuildDir += "_dawn";
-        linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -183,9 +185,10 @@ public class WGPUBuild {
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.addJNIHeaders();
+        linkTarget.cppFlags.add("-std:c++17");
         linkTarget.libDirSuffix += "dawn/";
         linkTarget.tempBuildDir += "_dawn";
-        linkTarget.addJNIHeaders();
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -237,6 +240,7 @@ public class WGPUBuild {
         // Compile glue code and link
         LinuxTarget linkTarget = new LinuxTarget();
         linkTarget.addJNIHeaders();
+        linkTarget.cppFlags.add("-std=c++17");
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -261,9 +265,10 @@ public class WGPUBuild {
 
             // Compile glue code and link
             MacTarget linkTarget = new MacTarget(true);
+            linkTarget.addJNIHeaders();
+            linkTarget.cppFlags.add("-std=c++17");
             linkTarget.cppCompiler.add("-x");
             linkTarget.cppCompiler.add("objective-c++");
-            linkTarget.addJNIHeaders();
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -293,9 +298,10 @@ public class WGPUBuild {
 
             // Compile glue code and link
             MacTarget linkTarget = new MacTarget(false);
+            linkTarget.addJNIHeaders();
+            linkTarget.cppFlags.add("-std=c++17");
             linkTarget.cppCompiler.add("-x");
             linkTarget.cppCompiler.add("objective-c++");
-            linkTarget.addJNIHeaders();
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -333,6 +339,7 @@ public class WGPUBuild {
 
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget(idlReader);
+        linkTarget.cppFlags.add("-std=c++17");
         linkTarget.headerDirs.add("-I" + includePath);
         linkTarget.headerDirs.add("-I" + customSourceDir);
         linkTarget.cppFlags.add("--use-port=" + port);
@@ -365,6 +372,7 @@ public class WGPUBuild {
 
             AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
             linkTarget.addJNIHeaders();
+            linkTarget.cppFlags.add("-std=c++17");
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
@@ -386,6 +394,7 @@ public class WGPUBuild {
 
             AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
             linkTarget.addJNIHeaders();
+            linkTarget.cppFlags.add("-std=c++17");
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
@@ -407,6 +416,7 @@ public class WGPUBuild {
 
             AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
             linkTarget.addJNIHeaders();
+            linkTarget.cppFlags.add("-std=c++17");
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
@@ -428,6 +438,7 @@ public class WGPUBuild {
 
             AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
             linkTarget.addJNIHeaders();
+            linkTarget.cppFlags.add("-std=c++17");
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
