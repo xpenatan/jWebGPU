@@ -12,24 +12,24 @@ public class WGPURequestDeviceCallback extends IDLBase {
     static public final WGPURequestDeviceCallback NULL = WGPURequestDeviceCallback.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID WGPURequestDeviceCallbackImpl_OnCallbackIJS_ID;
+
 class WGPURequestDeviceCallbackImpl : public JGPU::WGPURequestDeviceCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnCallbackIJS_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(WGPURequestDeviceCallbackImpl::jClassID == 0) {
-		WGPURequestDeviceCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPURequestDeviceCallbackImpl::OnCallbackIJS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJLjava/lang/String;)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WGPURequestDeviceCallbackImpl_OnCallbackIJS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJLjava/lang/String;)V");
 	}
 }
 virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device, const char* message) {
-   env->CallVoidMethod(obj, WGPURequestDeviceCallbackImpl::OnCallbackIJS_ID, status, (jlong)device, env->NewStringUTF(message));
+   env->CallVoidMethod(obj, WGPURequestDeviceCallbackImpl_OnCallbackIJS_ID, status, (jlong)device, env->NewStringUTF(message));
 }
 };
 */

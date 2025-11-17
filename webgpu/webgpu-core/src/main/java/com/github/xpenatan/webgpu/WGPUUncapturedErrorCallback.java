@@ -12,24 +12,24 @@ public class WGPUUncapturedErrorCallback extends IDLBase {
     static public final WGPUUncapturedErrorCallback NULL = WGPUUncapturedErrorCallback.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID WGPUUncapturedErrorCallbackImpl_OnCallbackIS_ID;
+
 class WGPUUncapturedErrorCallbackImpl : public JGPU::WGPUUncapturedErrorCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnCallbackIS_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(WGPUUncapturedErrorCallbackImpl::jClassID == 0) {
-		WGPUUncapturedErrorCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPUUncapturedErrorCallbackImpl::OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WGPUUncapturedErrorCallbackImpl_OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
 	}
 }
 virtual void OnCallback(WGPUErrorType errorType, const char* message) {
-   env->CallVoidMethod(obj, WGPUUncapturedErrorCallbackImpl::OnCallbackIS_ID, errorType, env->NewStringUTF(message));
+   env->CallVoidMethod(obj, WGPUUncapturedErrorCallbackImpl_OnCallbackIS_ID, errorType, env->NewStringUTF(message));
 }
 };
 */

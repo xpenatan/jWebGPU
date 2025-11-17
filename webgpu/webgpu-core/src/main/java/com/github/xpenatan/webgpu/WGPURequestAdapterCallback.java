@@ -12,24 +12,24 @@ public class WGPURequestAdapterCallback extends IDLBase {
     static public final WGPURequestAdapterCallback NULL = WGPURequestAdapterCallback.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID WGPURequestAdapterCallbackImpl_OnCallbackIJS_ID;
+
 class WGPURequestAdapterCallbackImpl : public JGPU::WGPURequestAdapterCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnCallbackIJS_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(WGPURequestAdapterCallbackImpl::jClassID == 0) {
-		WGPURequestAdapterCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPURequestAdapterCallbackImpl::OnCallbackIJS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJLjava/lang/String;)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WGPURequestAdapterCallbackImpl_OnCallbackIJS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJLjava/lang/String;)V");
 	}
 }
 virtual void OnCallback(WGPURequestAdapterStatus status, JGPU::WGPUAdapter* adapter, const char* message) {
-   env->CallVoidMethod(obj, WGPURequestAdapterCallbackImpl::OnCallbackIJS_ID, status, (jlong)adapter, env->NewStringUTF(message));
+   env->CallVoidMethod(obj, WGPURequestAdapterCallbackImpl_OnCallbackIJS_ID, status, (jlong)adapter, env->NewStringUTF(message));
 }
 };
 */

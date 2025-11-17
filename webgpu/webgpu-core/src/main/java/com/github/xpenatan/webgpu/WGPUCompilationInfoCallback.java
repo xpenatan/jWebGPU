@@ -14,24 +14,24 @@ public class WGPUCompilationInfoCallback extends IDLBase {
     static public final WGPUCompilationInfoCallback NULL = WGPUCompilationInfoCallback.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID WGPUCompilationInfoCallbackImpl_OnCallbackIJ_ID;
+
 class WGPUCompilationInfoCallbackImpl : public JGPU::WGPUCompilationInfoCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnCallbackIJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(WGPUCompilationInfoCallbackImpl::jClassID == 0) {
-		WGPUCompilationInfoCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPUCompilationInfoCallbackImpl::OnCallbackIJ_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJ)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WGPUCompilationInfoCallbackImpl_OnCallbackIJ_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJ)V");
 	}
 }
 virtual void OnCallback(WGPUCompilationInfoRequestStatus status, JGPU::WGPUCompilationInfo* compilationInfo) {
-   env->CallVoidMethod(obj, WGPUCompilationInfoCallbackImpl::OnCallbackIJ_ID, status, (jlong)compilationInfo);
+   env->CallVoidMethod(obj, WGPUCompilationInfoCallbackImpl_OnCallbackIJ_ID, status, (jlong)compilationInfo);
 }
 };
 */

@@ -838,8 +838,8 @@ interface WGPUCompilationInfo  {
 
 [Prefix="JGPU::"]
 interface WGPUCompilationMessage  {
-    void WGPUCompilationMessage ();
-    [Const, Value] IDLStringView GetMessage();
+    void WGPUCompilationMessage();
+    [Const, Value] IDLString GetMessage();
     WGPUCompilationMessageType GetType();
     long GetLineNum();
     long GetLinePos();

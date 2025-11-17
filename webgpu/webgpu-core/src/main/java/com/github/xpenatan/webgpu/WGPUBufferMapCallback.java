@@ -12,24 +12,24 @@ public class WGPUBufferMapCallback extends IDLBase {
     static public final WGPUBufferMapCallback NULL = WGPUBufferMapCallback.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID WGPUBufferMapCallbackImpl_OnCallbackIS_ID;
+
 class WGPUBufferMapCallbackImpl : public JGPU::WGPUBufferMapCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnCallbackIS_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(WGPUBufferMapCallbackImpl::jClassID == 0) {
-		WGPUBufferMapCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPUBufferMapCallbackImpl::OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WGPUBufferMapCallbackImpl_OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
 	}
 }
 virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
-   env->CallVoidMethod(obj, WGPUBufferMapCallbackImpl::OnCallbackIS_ID, status, env->NewStringUTF(message));
+   env->CallVoidMethod(obj, WGPUBufferMapCallbackImpl_OnCallbackIS_ID, status, env->NewStringUTF(message));
 }
 };
 */

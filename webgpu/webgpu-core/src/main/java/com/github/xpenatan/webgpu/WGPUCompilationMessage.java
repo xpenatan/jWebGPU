@@ -6,11 +6,11 @@
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.webgpu.idl.helper.IDLStringView;
+import com.github.xpenatan.webgpu.idl.helper.IDLString;
 
 public class WGPUCompilationMessage extends IDLBase {
 
-    private IDLStringView IDLStringView_TEMP_GEN_0;
+    private IDLString IDLString_TEMP_GEN_0;
 
     static private WGPUCompilationMessage WGPUCompilationMessage_TEMP_STATIC_GEN_0;
 
@@ -50,19 +50,19 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public IDLStringView getMessage() {
+    public IDLString getMessage() {
         long pointer = internal_native_GetMessage(native_address);
         if (pointer == 0)
-            return IDLStringView.NULL;
-        if (IDLStringView_TEMP_GEN_0 == null)
-            IDLStringView_TEMP_GEN_0 = IDLStringView.native_new();
-        IDLStringView_TEMP_GEN_0.internal_reset(pointer, false);
-        return IDLStringView_TEMP_GEN_0;
+            return IDLString.NULL;
+        if (IDLString_TEMP_GEN_0 == null)
+            IDLString_TEMP_GEN_0 = IDLString.native_new();
+        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        return IDLString_TEMP_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-static IDLStringView copy_addr;
+static IDLString copy_addr;
 copy_addr = nativeObject->GetMessage();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetMessage(long this_addr);
