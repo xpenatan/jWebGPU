@@ -338,7 +338,8 @@ public class WGPUBuild {
 //        EmscriptenTarget.DEBUG_BUILD = false;
 
         // Compile glue code and link
-        EmscriptenTarget linkTarget = new EmscriptenTarget(idlReader);
+        EmscriptenTarget linkTarget = new EmscriptenTarget();
+        linkTarget.idlReader = idlReader;
         linkTarget.cppFlags.add("-std=c++17");
         linkTarget.headerDirs.add("-I" + includePath);
         linkTarget.headerDirs.add("-I" + customSourceDir);
