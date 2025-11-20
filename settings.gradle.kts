@@ -35,3 +35,16 @@ include(":demos:app:android")
 //        substitute(module("com.github.xpenatan.jParser:loader-teavm")).using(project(":loader:loader-teavm"))
 //    }
 //}
+
+//includeBuild("E:/Dev/Projects/java/teavm") {
+//    dependencySubstitution {
+//        substitute(module("org.teavm:teavm-tooling")).using(project(":tools:core"))
+//        substitute(module("org.teavm:teavm-core")).using(project(":core"))
+//        substitute(module("org.teavm:teavm-classlib")).using(project(":classlib"))
+//        substitute(module("org.teavm:teavm-jso")).using(project(":jso:core"))
+//        substitute(module("org.teavm:teavm-jso-apis")).using(project(":jso:apis"))
+//        substitute(module("org.teavm:teavm-jso-impl")).using(project(":jso:impl"))
+//        substitute(module("org.teavm:teavm-gradle-plugin")).using(project(":tools:gradle"))
+//        substitute(module("org.teavm:teavm-junit")).using(project(":tools:junit"))
+//    }
+//}

@@ -1,5 +1,3 @@
-import org.teavm.gradle.api.OptimizationLevel
-import org.teavm.gradle.api.SourceFilePolicy
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.util.jar.JarFile
@@ -9,7 +7,6 @@ plugins {
     id("java")
     id("java-library")
     id("org.gretty") version("3.1.0")
-    id("org.teavm") version(LibExt.teaVMVersion)
 }
 
 java {
@@ -25,22 +22,6 @@ gretty {
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:teavm"))
-}
-
-teavm {
-    js {
-        outputDir = layout.buildDirectory.dir("dist/webapp").get().asFile
-        relativePathInOutputDir = ""
-        targetFileName = "app.js"
-        sourceMap = false
-        optimization = OptimizationLevel.NONE
-        sourceFilePolicy = SourceFilePolicy.COPY
-        obfuscated = false
-        debugInformation = true
-        addedToWebApp = true
-        mainClass = "com.github.xpenatan.webgpu.demo.app.MainTeaVM"
-    }
-
 }
 
 tasks.register<Copy>("copyWebappToDist") {
@@ -106,17 +87,18 @@ tasks.register("findAndCopyJavaScriptInClasspath") {
     }
 }
 
-tasks.register("webgpu_demo_app_build_dist") {
+tasks.register<JavaExec>("webgpu_demo_app_build") {
     group = "webgpu_demo_teavm"
     description = "Generates JavaScript and copies webapp resources to build/dist"
-    dependsOn("generateJavaScript", "copyWebappToDist")
-    tasks.findByName("copyWebappToDist")?.mustRunAfter("generateJavaScript")
+    mainClass.set("com.github.xpenatan.webgpu.demo.app.Build")
+    classpath = sourceSets["main"].runtimeClasspath
+    dependsOn("copyWebappToDist")
 }
 
 tasks.register("webgpu_demo_app_run_teavm") {
     group = "webgpu_demo_teavm"
     description = "Run teavm app"
-    val list = listOf("webgpu_demo_app_build_dist", "jettyRun")
+    val list = listOf("webgpu_demo_app_build", "jettyRun")
     dependsOn(list)
-    tasks.findByName("jettyRun")?.mustRunAfter("webgpu_demo_app_build_dist")
+    tasks.findByName("jettyRun")?.mustRunAfter("webgpu_demo_app_build")
 }
