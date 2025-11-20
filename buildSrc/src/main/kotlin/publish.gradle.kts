@@ -116,7 +116,7 @@ if(!LibExt.libVersion.endsWith("-SNAPSHOT")) {
                 val rawBundleName = "${LibExt.libName}-${LibExt.libVersion}"
                 val encodedBundleName = URLEncoder.encode(rawBundleName, "UTF-8")
 
-                exec {
+                providers.exec {
                     commandLine = listOf(
                         "curl",
                         "-u",
@@ -127,7 +127,7 @@ if(!LibExt.libVersion.endsWith("-SNAPSHOT")) {
                         "bundle=@${zipFile.absolutePath}",
                         "https://central.sonatype.com/api/v1/publisher/upload?name=${encodedBundleName}"
                     )
-                }
+                }.result.get()
             }
         }
     }

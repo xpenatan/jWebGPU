@@ -14,6 +14,7 @@ public class Build {
         tool.setMainClass(Launcher.class.getName());
         File target = new File("build/dist/webapp");
         tool.setTargetDirectory(target);
+        tool.setTargetFileName("app.js");
         tool.setDebugInformationGenerated(false);
         tool.generate();
     }

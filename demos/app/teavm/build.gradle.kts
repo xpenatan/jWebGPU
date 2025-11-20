@@ -6,22 +6,22 @@ import kotlin.sequences.forEach
 plugins {
     id("java")
     id("java-library")
-    id("org.gretty") version("3.1.0")
+    id("org.gretty") version("4.1.10")
 }
 
-java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.java11Target)
-    targetCompatibility = JavaVersion.toVersion(LibExt.java11Target)
-}
-
+project.extra["webAppDir"] = File(projectDir, "build/dist/webapp")
 gretty {
     contextPath = "/"
-    extraResourceBase("build/dist/webapp")
 }
 
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:teavm"))
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java11Target)
 }
 
 tasks.register<Copy>("copyWebappToDist") {
@@ -101,4 +101,10 @@ tasks.register("webgpu_demo_app_run_teavm") {
     val list = listOf("webgpu_demo_app_build", "jettyRun")
     dependsOn(list)
     tasks.findByName("jettyRun")?.mustRunAfter("webgpu_demo_app_build")
+}
+
+afterEvaluate {
+    tasks.named("prepareInplaceWebAppFolder").configure {
+        dependsOn("copyWebappToDist")
+    }
 }

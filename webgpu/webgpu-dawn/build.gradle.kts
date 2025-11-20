@@ -1,6 +1,5 @@
 import android.databinding.tool.ext.capitalizeUS
 import de.undercouch.gradle.tasks.download.Download
-import org.gradle.api.tasks.Exec
 import org.gradle.api.GradleException
 import java.io.File
 
@@ -35,17 +34,17 @@ tasks.register<Download>("download_source") {
     doLast {
         try {
             File(sourcePath).mkdirs()
-            exec {
-                commandLine = listOf("tar", "-xzf", zippedPath, "-C", sourcePath)
+            providers.exec {
+                commandLine("tar", "-xzf", zippedPath, "-C", sourcePath)
                 workingDir = buildDir
-            }
+            }.result.get()
             File(sourcePath).walk().forEach { file ->
                 if (file.extension == "tar") {
                     println("Found nested tar file: ${file.name}")
-                    exec {
-                        commandLine = listOf("tar", "-xf", file.absolutePath, "-C", sourcePath)
+                    providers.exec {
+                        commandLine("tar", "-xf", file.absolutePath, "-C", sourcePath)
                         workingDir = buildDir
-                    }
+                    }.result.get()
                     file.delete()
                 }
             }
