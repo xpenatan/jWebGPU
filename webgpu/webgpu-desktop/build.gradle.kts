@@ -59,6 +59,9 @@ java {
 //    withSourcesJar()
 //}
 
+dependencies {
+    api("com.github.xpenatan.jParser:idl-helper-desktop:${LibExt.jParserVersion}")
+}
 
 publishing {
     publications {

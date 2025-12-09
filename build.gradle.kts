@@ -13,7 +13,7 @@ buildscript {
     val kotlinVersion = "2.1.10"
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.5.1")
+        classpath("com.android.tools.build:gradle:8.12.3")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }

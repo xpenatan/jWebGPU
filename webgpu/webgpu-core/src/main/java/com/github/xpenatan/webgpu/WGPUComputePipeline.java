@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUComputePipeline extends IDLBase {
     static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
     public WGPUComputePipeline() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUComputePipeline();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,12 +69,12 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
-        long pointer = internal_native_GetBindGroupLayout(native_address, groupIndex);
-        if (pointer == 0)
+        long addr = internal_native_GetBindGroupLayout_addr(native_address, groupIndex);
+        if (addr == 0)
             return WGPUBindGroupLayout.NULL;
         if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
             WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
-        WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUBindGroupLayout_TEMP_GEN_0;
     }
 
@@ -82,7 +83,7 @@ JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
 static JGPU::WGPUBindGroupLayout copy_addr;
 copy_addr = nativeObject->GetBindGroupLayout((int)groupIndex);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetBindGroupLayout(long this_addr, int groupIndex);
+    public static native long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);

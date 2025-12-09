@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPURenderPassDepthStencilAttachment extends IDLBase {
     static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.native_new();
 
     public WGPURenderPassDepthStencilAttachment() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPURenderPassDepthStencilAttachment();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPURenderPassDepthStencilAttachment();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -150,12 +151,12 @@ jsObj.SetStencilReadOnly(stencilReadOnly);
     public static native void internal_native_SetStencilReadOnly(int this_addr, boolean stencilReadOnly);
 
     public static WGPURenderPassDepthStencilAttachment obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPassDepthStencilAttachment.NULL;
         if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
-        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
     }
 
@@ -165,5 +166,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassDepthStencilAttachment.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

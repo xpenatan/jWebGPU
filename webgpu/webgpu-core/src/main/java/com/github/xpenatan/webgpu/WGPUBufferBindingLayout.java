@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUBufferBindingLayout extends IDLBase {
     static public final WGPUBufferBindingLayout NULL = WGPUBufferBindingLayout.native_new();
 
     public WGPUBufferBindingLayout() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUBufferBindingLayout();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -88,17 +89,17 @@ nativeObject->SetMinBindingSize((int)minBindingSize);
     public static native void internal_native_SetMinBindingSize(long this_addr, int minBindingSize);
 
     public static WGPUBufferBindingLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBufferBindingLayout.NULL;
         if (WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUBufferBindingLayout_TEMP_STATIC_GEN_0 = WGPUBufferBindingLayout.native_new();
-        WGPUBufferBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBufferBindingLayout_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUBufferBindingLayout::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPULimits extends IDLBase {
     static public final WGPULimits NULL = WGPULimits.native_new();
 
     public WGPULimits() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPULimits();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPULimits();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -488,7 +489,7 @@ return returnedJSObj;
     public static native int internal_native_GetMaxVertexBuffers(int this_addr);
 
     public void setMaxBufferSize(long value) {
-        internal_native_SetMaxBufferSize(native_address, (int) value);
+        internal_native_SetMaxBufferSize(native_address, value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -496,7 +497,7 @@ var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
 jsObj.SetMaxBufferSize(value);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxBufferSize(value);")
-    public static native void internal_native_SetMaxBufferSize(int this_addr, int value);
+    public static native void internal_native_SetMaxBufferSize(int this_addr, long value);
 
     public int getMaxBufferSize() {
         return internal_native_GetMaxBufferSize(native_address);
@@ -764,12 +765,12 @@ return returnedJSObj;
     public static native int internal_native_GetMaxComputeWorkgroupsPerDimension(int this_addr);
 
     public static WGPULimits obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPULimits.NULL;
         if (WGPULimits_TEMP_STATIC_GEN_0 == null)
             WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
-        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPULimits_TEMP_STATIC_GEN_0;
     }
 
@@ -779,5 +780,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUBufferDescriptor extends IDLBase {
     static public final WGPUBufferDescriptor NULL = WGPUBufferDescriptor.native_new();
 
     public WGPUBufferDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUBufferDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -98,17 +99,17 @@ nativeObject->SetMappedAtCreation(mappedAtCreation);
     public static native void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation);
 
     public static WGPUBufferDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBufferDescriptor.NULL;
         if (WGPUBufferDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.native_new();
-        WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUBufferDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,14 +17,14 @@ public class WGPUComputePipelineDescriptor extends IDLBase {
     static public final WGPUComputePipelineDescriptor NULL = WGPUComputePipelineDescriptor.native_new();
 
     public WGPUComputePipelineDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUComputePipelineDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -80,12 +81,12 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )layout_addr);
     public static native void internal_native_SetLayout(long this_addr, long layout_addr);
 
     public WGPUProgrammableStageDescriptor getCompute() {
-        long pointer = internal_native_GetCompute(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetCompute_addr(native_address);
+        if (addr == 0)
             return WGPUProgrammableStageDescriptor.NULL;
         if (WGPUProgrammableStageDescriptor_TEMP_GEN_0 == null)
             WGPUProgrammableStageDescriptor_TEMP_GEN_0 = WGPUProgrammableStageDescriptor.native_new();
-        WGPUProgrammableStageDescriptor_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUProgrammableStageDescriptor_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUProgrammableStageDescriptor_TEMP_GEN_0;
     }
 
@@ -94,20 +95,20 @@ JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDe
 static JGPU::WGPUProgrammableStageDescriptor copy_addr;
 copy_addr = nativeObject->GetCompute();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetCompute(long this_addr);
+    public static native long internal_native_GetCompute_addr(long this_addr);
 
     public static WGPUComputePipelineDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUComputePipelineDescriptor.NULL;
         if (WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0 = WGPUComputePipelineDescriptor.native_new();
-        WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUComputePipelineDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

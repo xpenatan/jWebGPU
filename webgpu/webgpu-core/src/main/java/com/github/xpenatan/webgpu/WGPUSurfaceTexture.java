@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUSurfaceTexture extends IDLBase {
     static public final WGPUSurfaceTexture NULL = WGPUSurfaceTexture.native_new();
 
     public WGPUSurfaceTexture() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUSurfaceTexture();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,17 +76,17 @@ return (int)nativeObject->GetStatus();
     public static native int internal_native_GetStatus(long this_addr);
 
     public static WGPUSurfaceTexture obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSurfaceTexture.NULL;
         if (WGPUSurfaceTexture_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.native_new();
-        WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUSurfaceTexture::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

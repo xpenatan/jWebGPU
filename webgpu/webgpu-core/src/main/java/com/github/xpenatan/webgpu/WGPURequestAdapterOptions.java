@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPURequestAdapterOptions extends IDLBase {
     static public final WGPURequestAdapterOptions NULL = WGPURequestAdapterOptions.native_new();
 
     public WGPURequestAdapterOptions() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURequestAdapterOptions();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -98,17 +99,17 @@ nativeObject->SetCompatibleSurface((JGPU::WGPUSurface* )compatibleSurface_addr);
     public static native void internal_native_SetCompatibleSurface(long this_addr, long compatibleSurface_addr);
 
     public static WGPURequestAdapterOptions obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURequestAdapterOptions.NULL;
         if (WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 == null)
             WGPURequestAdapterOptions_TEMP_STATIC_GEN_0 = WGPURequestAdapterOptions.native_new();
-        WGPURequestAdapterOptions_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURequestAdapterOptions_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURequestAdapterOptions::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

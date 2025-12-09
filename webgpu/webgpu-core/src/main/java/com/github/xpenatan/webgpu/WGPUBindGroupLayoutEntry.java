@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -22,14 +23,14 @@ public class WGPUBindGroupLayoutEntry extends IDLBase {
     static public final WGPUBindGroupLayoutEntry NULL = WGPUBindGroupLayoutEntry.native_new();
 
     public WGPUBindGroupLayoutEntry() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUBindGroupLayoutEntry();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -126,12 +127,12 @@ nativeObject->SetStorageTexture((JGPU::WGPUStorageTextureBindingLayout* )storage
     public static native void internal_native_SetStorageTexture(long this_addr, long storageTexture_addr);
 
     public WGPUBufferBindingLayout getBuffer() {
-        long pointer = internal_native_GetBuffer(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUBufferBindingLayout.NULL;
         if (WGPUBufferBindingLayout_TEMP_GEN_0 == null)
             WGPUBufferBindingLayout_TEMP_GEN_0 = WGPUBufferBindingLayout.native_new();
-        WGPUBufferBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUBufferBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUBufferBindingLayout_TEMP_GEN_0;
     }
 
@@ -140,15 +141,15 @@ JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)
 static JGPU::WGPUBufferBindingLayout copy_addr;
 copy_addr = nativeObject->GetBuffer();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetBuffer(long this_addr);
+    public static native long internal_native_GetBuffer_addr(long this_addr);
 
     public WGPUSamplerBindingLayout getSampler() {
-        long pointer = internal_native_GetSampler(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSampler_addr(native_address);
+        if (addr == 0)
             return WGPUSamplerBindingLayout.NULL;
         if (WGPUSamplerBindingLayout_TEMP_GEN_0 == null)
             WGPUSamplerBindingLayout_TEMP_GEN_0 = WGPUSamplerBindingLayout.native_new();
-        WGPUSamplerBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUSamplerBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUSamplerBindingLayout_TEMP_GEN_0;
     }
 
@@ -157,15 +158,15 @@ JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)
 static JGPU::WGPUSamplerBindingLayout copy_addr;
 copy_addr = nativeObject->GetSampler();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetSampler(long this_addr);
+    public static native long internal_native_GetSampler_addr(long this_addr);
 
     public WGPUStorageTextureBindingLayout getStorageTexture() {
-        long pointer = internal_native_GetStorageTexture(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetStorageTexture_addr(native_address);
+        if (addr == 0)
             return WGPUStorageTextureBindingLayout.NULL;
         if (WGPUStorageTextureBindingLayout_TEMP_GEN_0 == null)
             WGPUStorageTextureBindingLayout_TEMP_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
-        WGPUStorageTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUStorageTextureBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUStorageTextureBindingLayout_TEMP_GEN_0;
     }
 
@@ -174,15 +175,15 @@ JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)
 static JGPU::WGPUStorageTextureBindingLayout copy_addr;
 copy_addr = nativeObject->GetStorageTexture();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetStorageTexture(long this_addr);
+    public static native long internal_native_GetStorageTexture_addr(long this_addr);
 
     public WGPUTextureBindingLayout getTexture() {
-        long pointer = internal_native_GetTexture(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTexture_addr(native_address);
+        if (addr == 0)
             return WGPUTextureBindingLayout.NULL;
         if (WGPUTextureBindingLayout_TEMP_GEN_0 == null)
             WGPUTextureBindingLayout_TEMP_GEN_0 = WGPUTextureBindingLayout.native_new();
-        WGPUTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUTextureBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUTextureBindingLayout_TEMP_GEN_0;
     }
 
@@ -191,20 +192,20 @@ JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)
 static JGPU::WGPUTextureBindingLayout copy_addr;
 copy_addr = nativeObject->GetTexture();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTexture(long this_addr);
+    public static native long internal_native_GetTexture_addr(long this_addr);
 
     public static WGPUBindGroupLayoutEntry obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBindGroupLayoutEntry.NULL;
         if (WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
             WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.native_new();
-        WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUBindGroupLayoutEntry::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

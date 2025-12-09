@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -55,7 +56,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUUncapturedErrorCallback() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -83,7 +84,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new WGPUUncapturedErrorCallbackImpl();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 WGPUUncapturedErrorCallbackImpl* nativeObject = (WGPUUncapturedErrorCallbackImpl*)this_addr;

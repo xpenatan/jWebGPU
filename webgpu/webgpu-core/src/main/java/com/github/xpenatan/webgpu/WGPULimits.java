@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPULimits extends IDLBase {
     static public final WGPULimits NULL = WGPULimits.native_new();
 
     public WGPULimits() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPULimits();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -668,17 +669,17 @@ return nativeObject->GetMaxComputeWorkgroupsPerDimension();
     public static native int internal_native_GetMaxComputeWorkgroupsPerDimension(long this_addr);
 
     public static WGPULimits obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPULimits.NULL;
         if (WGPULimits_TEMP_STATIC_GEN_0 == null)
             WGPULimits_TEMP_STATIC_GEN_0 = WGPULimits.native_new();
-        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPULimits_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPULimits_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPULimits::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

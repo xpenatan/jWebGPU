@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPURenderPassDepthStencilAttachment extends IDLBase {
     static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.native_new();
 
     public WGPURenderPassDepthStencilAttachment() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURenderPassDepthStencilAttachment();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -138,17 +139,17 @@ nativeObject->SetStencilReadOnly(stencilReadOnly);
     public static native void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly);
 
     public static WGPURenderPassDepthStencilAttachment obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPassDepthStencilAttachment.NULL;
         if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
-        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURenderPassDepthStencilAttachment::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

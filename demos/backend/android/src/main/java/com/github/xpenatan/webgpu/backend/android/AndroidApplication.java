@@ -10,6 +10,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
+import com.github.xpenatan.jparser.idl.IDLLoader;
 import com.github.xpenatan.webgpu.WGPUAndroidWindow;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
@@ -30,12 +32,21 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
         wgpu = new WGPUApp();
 
-        JWebGPULoader.init((isSuccess, e) -> {
-            System.out.println("WebGPU Init Success: " + isSuccess);
-            if (isSuccess) {
-                wGPUInit = 1;
-            } else {
-                e.printStackTrace();
+        IDLLoader.init(new JParserLibraryLoaderListener() {
+            @Override
+            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
+                if(idl_e != null) {
+                    idl_e.printStackTrace();
+                    return;
+                }
+                JWebGPULoader.init((isSuccess, e) -> {
+                    System.out.println("WebGPU Init Success: " + isSuccess);
+                    if (isSuccess) {
+                        wGPUInit = 1;
+                    } else {
+                        e.printStackTrace();
+                    }
+                });
             }
         });
     }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUVectorInt extends IDLBase {
     static public final WGPUVectorInt NULL = WGPUVectorInt.native_new();
 
     public WGPUVectorInt() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUVectorInt();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUVectorInt();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -97,12 +98,12 @@ return returnedJSObj;
     public static native int internal_native_get(int this_addr, int index);
 
     public static WGPUVectorInt obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUVectorInt.NULL;
         if (WGPUVectorInt_TEMP_STATIC_GEN_0 == null)
             WGPUVectorInt_TEMP_STATIC_GEN_0 = WGPUVectorInt.native_new();
-        WGPUVectorInt_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUVectorInt_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUVectorInt_TEMP_STATIC_GEN_0;
     }
 
@@ -112,5 +113,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVectorInt.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUTextureView extends IDLBase {
     static public final WGPUTextureView NULL = WGPUTextureView.native_new();
 
     public WGPUTextureView() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUTextureView();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUTextureView();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -85,12 +86,12 @@ return returnedJSObj;
     public static native boolean internal_native_IsValid(int this_addr);
 
     public static WGPUTextureView obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUTextureView.NULL;
         if (WGPUTextureView_TEMP_STATIC_GEN_0 == null)
             WGPUTextureView_TEMP_STATIC_GEN_0 = WGPUTextureView.native_new();
-        WGPUTextureView_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUTextureView_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUTextureView_TEMP_STATIC_GEN_0;
     }
 
@@ -100,5 +101,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTextureView.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

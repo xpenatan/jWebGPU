@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -61,11 +62,11 @@ return returnedJSObj;
     public static native int internal_native_GetPlatformType();
 
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
-        int pointer = internal_native_SetupInstance(descriptor.native_address);
-        if (pointer == 0)
+        int addr = internal_native_SetupInstance_addr(descriptor.native_address);
+        if (addr == 0)
             return WGPUInstance.NULL;
         WGPUInstance WGPUInstance_NEW = WGPUInstance.native_new();
-        WGPUInstance_NEW.internal_reset(pointer, true);
+        WGPUInstance_NEW.internal_reset(addr, true);
         return WGPUInstance_NEW;
     }
 
@@ -75,15 +76,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"descriptor_addr"}, script = "var returnedJSObj = jWebGPU.WGPU.prototype.SetupInstance(descriptor_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_SetupInstance(int descriptor_addr);
+    public static native int internal_native_SetupInstance_addr(int descriptor_addr);
 
     public static WGPUInstance setupInstance() {
-        int pointer = internal_native_SetupInstance();
-        if (pointer == 0)
+        int addr = internal_native_SetupInstance_addr();
+        if (addr == 0)
             return WGPUInstance.NULL;
         if (WGPUInstance_TEMP_STATIC_GEN_0 == null)
             WGPUInstance_TEMP_STATIC_GEN_0 = WGPUInstance.native_new();
-        WGPUInstance_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUInstance_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUInstance_TEMP_STATIC_GEN_0;
     }
 
@@ -93,15 +94,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.SetupInstance();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_SetupInstance();
+    public static native int internal_native_SetupInstance_addr();
 
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {
-        int pointer = internal_native_loadImage(buffer.native_address, desiredChannels);
-        if (pointer == 0)
+        int addr = internal_native_loadImage_addr(buffer.native_address, desiredChannels);
+        if (addr == 0)
             return STBImage.NULL;
         if (STBImage_TEMP_STATIC_GEN_0 == null)
             STBImage_TEMP_STATIC_GEN_0 = STBImage.native_new();
-        STBImage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        STBImage_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return STBImage_TEMP_STATIC_GEN_0;
     }
 
@@ -111,15 +112,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"buffer_addr", "desiredChannels"}, script = "var returnedJSObj = jWebGPU.WGPU.prototype.loadImage(buffer_addr, desiredChannels);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_loadImage(int buffer_addr, int desiredChannels);
+    public static native int internal_native_loadImage_addr(int buffer_addr, int desiredChannels);
 
     public static STBImage loadImage(WGPUByteBuffer buffer) {
-        int pointer = internal_native_loadImage(buffer.native_address);
-        if (pointer == 0)
+        int addr = internal_native_loadImage_addr(buffer.native_address);
+        if (addr == 0)
             return STBImage.NULL;
         if (STBImage_TEMP_STATIC_GEN_1 == null)
             STBImage_TEMP_STATIC_GEN_1 = STBImage.native_new();
-        STBImage_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
+        STBImage_TEMP_STATIC_GEN_1.internal_reset(addr, false);
         return STBImage_TEMP_STATIC_GEN_1;
     }
 
@@ -129,5 +130,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"buffer_addr"}, script = "var returnedJSObj = jWebGPU.WGPU.prototype.loadImage(buffer_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_loadImage(int buffer_addr);
+    public static native int internal_native_loadImage_addr(int buffer_addr);
 }

@@ -1,16 +1,14 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
 }
 
 android {
     namespace = "com.github.xpenatan.webgpu.demo"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.github.xpenatan.webgpu.demo"
         minSdk = 26
-        targetSdk = 35
         versionCode = 5
         versionName = "0.0.5"
     }
@@ -35,9 +33,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
         targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
-    }
-    kotlinOptions {
-        jvmTarget = LibExt.java8Target
     }
     buildFeatures {
         viewBinding = true

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,7 +17,7 @@ public class WGPURenderPassColorAttachment extends IDLBase {
     static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 
     public WGPURenderPassColorAttachment() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -25,7 +26,7 @@ var jsObj = new jWebGPU.WGPURenderPassColorAttachment();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPURenderPassColorAttachment();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -119,12 +120,12 @@ jsObj.SetStoreOp(storeOp);
     public static native void internal_native_SetStoreOp(int this_addr, int storeOp);
 
     public WGPUColor getClearValue() {
-        int pointer = internal_native_GetClearValue(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetClearValue_addr(native_address);
+        if (addr == 0)
             return WGPUColor.NULL;
         if (WGPUColor_TEMP_GEN_0 == null)
             WGPUColor_TEMP_GEN_0 = WGPUColor.native_new();
-        WGPUColor_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUColor_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUColor_TEMP_GEN_0;
     }
 
@@ -135,7 +136,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);var returnedJSObj = jsObj.GetClearValue();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetClearValue(int this_addr);
+    public static native int internal_native_GetClearValue_addr(int this_addr);
 
     public void setDepthSlice(int depthSlice) {
         internal_native_SetDepthSlice(native_address, depthSlice);
@@ -149,12 +150,12 @@ jsObj.SetDepthSlice(depthSlice);
     public static native void internal_native_SetDepthSlice(int this_addr, int depthSlice);
 
     public static WGPURenderPassColorAttachment obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPassColorAttachment.NULL;
         if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
-        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
     }
 
@@ -164,5 +165,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

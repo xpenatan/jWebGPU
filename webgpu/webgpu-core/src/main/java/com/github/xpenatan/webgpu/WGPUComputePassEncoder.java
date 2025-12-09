@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUComputePassEncoder extends IDLBase {
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 
     public WGPUComputePassEncoder() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUComputePassEncoder();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -168,17 +169,17 @@ return nativeObject->IsValid();
     public static native boolean internal_native_IsValid(long this_addr);
 
     public static WGPUComputePassEncoder obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUComputePassEncoder.NULL;
         if (WGPUComputePassEncoder_TEMP_STATIC_GEN_0 == null)
             WGPUComputePassEncoder_TEMP_STATIC_GEN_0 = WGPUComputePassEncoder.native_new();
-        WGPUComputePassEncoder_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUComputePassEncoder_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUComputePassEncoder::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

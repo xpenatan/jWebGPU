@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,7 +17,7 @@ public class WGPUDeviceDescriptor extends IDLBase {
     static public final WGPUDeviceDescriptor NULL = WGPUDeviceDescriptor.native_new();
 
     public WGPUDeviceDescriptor() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -25,7 +26,7 @@ var jsObj = new jWebGPU.WGPUDeviceDescriptor();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUDeviceDescriptor();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -97,12 +98,12 @@ jsObj.SetRequiredFeatures(features_addr);
     public static native void internal_native_SetRequiredFeatures(int this_addr, int features_addr);
 
     public WGPUQueueDescriptor getDefaultQueue() {
-        int pointer = internal_native_GetDefaultQueue(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetDefaultQueue_addr(native_address);
+        if (addr == 0)
             return WGPUQueueDescriptor.NULL;
         if (WGPUQueueDescriptor_TEMP_GEN_0 == null)
             WGPUQueueDescriptor_TEMP_GEN_0 = WGPUQueueDescriptor.native_new();
-        WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUQueueDescriptor_TEMP_GEN_0;
     }
 
@@ -113,15 +114,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDeviceDescriptor);var returnedJSObj = jsObj.GetDefaultQueue();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetDefaultQueue(int this_addr);
+    public static native int internal_native_GetDefaultQueue_addr(int this_addr);
 
     public static WGPUDeviceDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUDeviceDescriptor.NULL;
         if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
-        WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
     }
 
@@ -131,5 +132,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUDeviceDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

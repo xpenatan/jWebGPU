@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.com.github.xpenatan.webgpu.idl.helper.IDLString;
+import gen.com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class WGPUStringView extends IDLBase {
 
@@ -40,12 +41,12 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public IDLString getString() {
-        int pointer = internal_native_GetString(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetString_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(addr, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -56,5 +57,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStringView);var returnedJSObj = jsObj.GetString();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetString(int this_addr);
+    public static native int internal_native_GetString_addr(int this_addr);
 }

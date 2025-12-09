@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUSupportedFeatures extends IDLBase {
     static public final WGPUSupportedFeatures NULL = WGPUSupportedFeatures.native_new();
 
     public WGPUSupportedFeatures() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUSupportedFeatures();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUSupportedFeatures();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -82,12 +83,12 @@ return returnedJSObj;
     public static native int internal_native_GetFeatureAt(int this_addr, int index);
 
     public static WGPUSupportedFeatures obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSupportedFeatures.NULL;
         if (WGPUSupportedFeatures_TEMP_STATIC_GEN_0 == null)
             WGPUSupportedFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedFeatures.native_new();
-        WGPUSupportedFeatures_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSupportedFeatures_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
     }
 
@@ -97,5 +98,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSupportedFeatures.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

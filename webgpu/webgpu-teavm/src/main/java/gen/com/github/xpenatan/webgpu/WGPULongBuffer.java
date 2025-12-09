@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -39,12 +40,12 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WGPUByteBuffer getByteBuffer() {
-        int pointer = internal_native_getByteBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_getByteBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUByteBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
@@ -55,10 +56,10 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);var returnedJSObj = jsObj.getByteBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_getByteBuffer(int this_addr);
+    public static native int internal_native_getByteBuffer_addr(int this_addr);
 
     public void put(long value) {
-        internal_native_put__0(native_address, (int) value);
+        internal_native_put__0(native_address, value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,10 +67,10 @@ var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);
 jsObj.put__0(value);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);jsObj.put__0(value);")
-    public static native void internal_native_put__0(int this_addr, int value);
+    public static native void internal_native_put__0(int this_addr, long value);
 
     public void put(int index, long value) {
-        internal_native_put__1(native_address, index, (int) value);
+        internal_native_put__1(native_address, index, value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,7 +78,7 @@ var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);
 jsObj.put__1(index, value);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);jsObj.put__1(index, value);")
-    public static native void internal_native_put__1(int this_addr, int index, int value);
+    public static native void internal_native_put__1(int this_addr, int index, long value);
 
     public long get(int index) {
         return internal_native_get(native_address, index);
@@ -89,7 +90,7 @@ var returnedJSObj = jsObj.get(index);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);var returnedJSObj = jsObj.get(index);return returnedJSObj;")
-    public static native int internal_native_get(int this_addr, int index);
+    public static native long internal_native_get(int this_addr, int index);
 
     public long get() {
         return internal_native_get(native_address);
@@ -101,7 +102,7 @@ var returnedJSObj = jsObj.get();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULongBuffer);var returnedJSObj = jsObj.get();return returnedJSObj;")
-    public static native int internal_native_get(int this_addr);
+    public static native long internal_native_get(int this_addr);
 
     public int remaining() {
         return internal_native_remaining(native_address);

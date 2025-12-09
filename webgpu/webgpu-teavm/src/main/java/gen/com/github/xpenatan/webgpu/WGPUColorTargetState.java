@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUColorTargetState extends IDLBase {
     static public final WGPUColorTargetState NULL = WGPUColorTargetState.native_new();
 
     public WGPUColorTargetState() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUColorTargetState();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUColorTargetState();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -95,12 +96,12 @@ jsObj.SetWriteMask(writeMask);
     public static native void internal_native_SetWriteMask(int this_addr, int writeMask);
 
     public static WGPUColorTargetState obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUColorTargetState.NULL;
         if (WGPUColorTargetState_TEMP_STATIC_GEN_0 == null)
             WGPUColorTargetState_TEMP_STATIC_GEN_0 = WGPUColorTargetState.native_new();
-        WGPUColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUColorTargetState_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUColorTargetState_TEMP_STATIC_GEN_0;
     }
 
@@ -110,5 +111,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUColorTargetState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

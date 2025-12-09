@@ -13,6 +13,7 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-teavm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-cpp:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
 }
 
 java {

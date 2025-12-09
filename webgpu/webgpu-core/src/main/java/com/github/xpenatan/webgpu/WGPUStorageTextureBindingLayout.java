@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUStorageTextureBindingLayout extends IDLBase {
     static public final WGPUStorageTextureBindingLayout NULL = WGPUStorageTextureBindingLayout.native_new();
 
     public WGPUStorageTextureBindingLayout() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUStorageTextureBindingLayout();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -88,17 +89,17 @@ nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
     public static native void internal_native_SetViewDimension(long this_addr, int viewDimension);
 
     public static WGPUStorageTextureBindingLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUStorageTextureBindingLayout.NULL;
         if (WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
-        WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUStorageTextureBindingLayout::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -20,14 +21,14 @@ public class WGPURenderPipelineDescriptor extends IDLBase {
     static public final WGPURenderPipelineDescriptor NULL = WGPURenderPipelineDescriptor.native_new();
 
     public WGPURenderPipelineDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURenderPipelineDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -74,12 +75,12 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public WGPUVertexState getVertex() {
-        long pointer = internal_native_GetVertex(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetVertex_addr(native_address);
+        if (addr == 0)
             return WGPUVertexState.NULL;
         if (WGPUVertexState_TEMP_GEN_0 == null)
             WGPUVertexState_TEMP_GEN_0 = WGPUVertexState.native_new();
-        WGPUVertexState_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUVertexState_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUVertexState_TEMP_GEN_0;
     }
 
@@ -88,15 +89,15 @@ JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDesc
 static JGPU::WGPUVertexState copy_addr;
 copy_addr = nativeObject->GetVertex();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetVertex(long this_addr);
+    public static native long internal_native_GetVertex_addr(long this_addr);
 
     public WGPUPrimitiveState getPrimitive() {
-        long pointer = internal_native_GetPrimitive(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPrimitive_addr(native_address);
+        if (addr == 0)
             return WGPUPrimitiveState.NULL;
         if (WGPUPrimitiveState_TEMP_GEN_0 == null)
             WGPUPrimitiveState_TEMP_GEN_0 = WGPUPrimitiveState.native_new();
-        WGPUPrimitiveState_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUPrimitiveState_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUPrimitiveState_TEMP_GEN_0;
     }
 
@@ -105,7 +106,7 @@ JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDesc
 static JGPU::WGPUPrimitiveState copy_addr;
 copy_addr = nativeObject->GetPrimitive();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetPrimitive(long this_addr);
+    public static native long internal_native_GetPrimitive_addr(long this_addr);
 
     public void setFragment(WGPUFragmentState fragmentState) {
         internal_native_SetFragment(native_address, fragmentState.native_address);
@@ -128,12 +129,12 @@ nativeObject->SetDepthStencil((JGPU::WGPUDepthStencilState* )depthStencilState_a
     public static native void internal_native_SetDepthStencil(long this_addr, long depthStencilState_addr);
 
     public WGPUMultisampleState getMultisample() {
-        long pointer = internal_native_GetMultisample(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMultisample_addr(native_address);
+        if (addr == 0)
             return WGPUMultisampleState.NULL;
         if (WGPUMultisampleState_TEMP_GEN_0 == null)
             WGPUMultisampleState_TEMP_GEN_0 = WGPUMultisampleState.native_new();
-        WGPUMultisampleState_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUMultisampleState_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUMultisampleState_TEMP_GEN_0;
     }
 
@@ -142,7 +143,7 @@ JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDesc
 static JGPU::WGPUMultisampleState copy_addr;
 copy_addr = nativeObject->GetMultisample();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetMultisample(long this_addr);
+    public static native long internal_native_GetMultisample_addr(long this_addr);
 
     public void setLayout(WGPUPipelineLayout pipelineLayout) {
         internal_native_SetLayout(native_address, pipelineLayout.native_address);
@@ -155,17 +156,17 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )pipelineLayout_addr);
     public static native void internal_native_SetLayout(long this_addr, long pipelineLayout_addr);
 
     public static WGPURenderPipelineDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPipelineDescriptor.NULL;
         if (WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPipelineDescriptor.native_new();
-        WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURenderPipelineDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

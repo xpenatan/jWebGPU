@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -72,12 +73,12 @@ jsObj.SetEndOfPassWriteIndex(value);
     public static native void internal_native_SetEndOfPassWriteIndex(int this_addr, int value);
 
     public static WGPUComputePassTimestampWrites obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUComputePassTimestampWrites.NULL;
         if (WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 == null)
             WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.native_new();
-        WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
     }
 
@@ -87,5 +88,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePassTimestampWrites.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

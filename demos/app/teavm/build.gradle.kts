@@ -53,11 +53,11 @@ tasks.register("findAndCopyJavaScriptInClasspath") {
 
         runtimeClasspath.resolve().forEach { file ->
             // Only process files/JARs whose name contains the target artifact
-            if (!file.name.contains(targetArtifact)) return@forEach
+            if (!(file.name.contains("webgpu-teavm") || file.name.contains("idl-helper"))) return@forEach
 
             if (file.isDirectory) {
                 file.walkTopDown()
-                    .filter { it.isFile && it.extension == "js" }
+                    .filter { it.isFile && (it.extension == "js" || it.extension == "wasm") }
                     .forEach { jsFile ->
                         val destFile = File(distDir, jsFile.name)
                         jsFile.copyTo(destFile, overwrite = true)
@@ -66,7 +66,7 @@ tasks.register("findAndCopyJavaScriptInClasspath") {
             } else if (file.extension == "jar") {
                 JarFile(file).use { jar ->
                     jar.entries().asSequence()
-                        .filter { !it.isDirectory && it.name.endsWith(".js") }
+                        .filter { !it.isDirectory && (it.name.endsWith(".js") || it.name.endsWith(".wasm")) }
                         .forEach { entry ->
                             val outFile = File(distDir, entry.name.substringAfterLast('/'))
                             jar.getInputStream(entry).use { input ->

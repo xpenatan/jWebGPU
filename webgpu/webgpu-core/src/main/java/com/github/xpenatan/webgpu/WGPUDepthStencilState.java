@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,14 +19,14 @@ public class WGPUDepthStencilState extends IDLBase {
     static public final WGPUDepthStencilState NULL = WGPUDepthStencilState.native_new();
 
     public WGPUDepthStencilState() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUDepthStencilState();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -142,12 +143,12 @@ nativeObject->SetDepthBias((int)depthBias);
     public static native void internal_native_SetDepthBias(long this_addr, int depthBias);
 
     public WGPUStencilFaceState getStencilFront() {
-        long pointer = internal_native_GetStencilFront(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetStencilFront_addr(native_address);
+        if (addr == 0)
             return WGPUStencilFaceState.NULL;
         if (WGPUStencilFaceState_TEMP_GEN_0 == null)
             WGPUStencilFaceState_TEMP_GEN_0 = WGPUStencilFaceState.native_new();
-        WGPUStencilFaceState_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUStencilFaceState_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUStencilFaceState_TEMP_GEN_0;
     }
 
@@ -156,15 +157,15 @@ JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_a
 static JGPU::WGPUStencilFaceState copy_addr;
 copy_addr = nativeObject->GetStencilFront();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetStencilFront(long this_addr);
+    public static native long internal_native_GetStencilFront_addr(long this_addr);
 
     public WGPUStencilFaceState getStencilBack() {
-        long pointer = internal_native_GetStencilBack(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetStencilBack_addr(native_address);
+        if (addr == 0)
             return WGPUStencilFaceState.NULL;
         if (WGPUStencilFaceState_TEMP_GEN_1 == null)
             WGPUStencilFaceState_TEMP_GEN_1 = WGPUStencilFaceState.native_new();
-        WGPUStencilFaceState_TEMP_GEN_1.internal_reset(pointer, false);
+        WGPUStencilFaceState_TEMP_GEN_1.internal_reset(addr, false);
         return WGPUStencilFaceState_TEMP_GEN_1;
     }
 
@@ -173,20 +174,20 @@ JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_a
 static JGPU::WGPUStencilFaceState copy_addr;
 copy_addr = nativeObject->GetStencilBack();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetStencilBack(long this_addr);
+    public static native long internal_native_GetStencilBack_addr(long this_addr);
 
     public static WGPUDepthStencilState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUDepthStencilState.NULL;
         if (WGPUDepthStencilState_TEMP_STATIC_GEN_0 == null)
             WGPUDepthStencilState_TEMP_STATIC_GEN_0 = WGPUDepthStencilState.native_new();
-        WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUDepthStencilState_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUDepthStencilState::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

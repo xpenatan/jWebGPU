@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUFragmentState extends IDLBase {
     static public final WGPUFragmentState NULL = WGPUFragmentState.native_new();
 
     public WGPUFragmentState() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUFragmentState();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -138,17 +139,17 @@ nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
     public static native void internal_native_SetConstants(long this_addr, long constants_addr);
 
     public static WGPUFragmentState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUFragmentState.NULL;
         if (WGPUFragmentState_TEMP_STATIC_GEN_0 == null)
             WGPUFragmentState_TEMP_STATIC_GEN_0 = WGPUFragmentState.native_new();
-        WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUFragmentState_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUFragmentState_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUFragmentState::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

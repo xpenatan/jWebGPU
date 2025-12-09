@@ -1,7 +1,9 @@
 package com.github.xpenatan.webgpu.backend.teavm;
 
 
+import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
 import com.github.xpenatan.jmultiplatform.core.JMultiplatform;
+import com.github.xpenatan.jparser.idl.IDLLoader;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
@@ -45,13 +47,22 @@ public class TeaVMApp {
 
         System.out.println("CANVAS CREATED");
 
-        JWebGPULoader.init((isSuccess, e) -> {
-            System.out.println("WebGPU Init Success: " + isSuccess);
-            if(isSuccess) {
-                wGPUInit = 1;
-            }
-            else {
-                e.printStackTrace();
+        IDLLoader.init(new JParserLibraryLoaderListener() {
+            @Override
+            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
+                if(idl_e != null) {
+                    idl_e.printStackTrace();
+                    return;
+                }
+                JWebGPULoader.init((isSuccess, e) -> {
+                    System.out.println("WebGPU Init Success: " + isSuccess);
+                    if(isSuccess) {
+                        wGPUInit = 1;
+                    }
+                    else {
+                        e.printStackTrace();
+                    }
+                });
             }
         });
 

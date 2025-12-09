@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,7 +19,7 @@ public class WGPUBlendState extends IDLBase {
     static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 
     public WGPUBlendState() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -27,7 +28,7 @@ var jsObj = new jWebGPU.WGPUBlendState();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUBlendState();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,12 +56,12 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WGPUBlendComponent getColor() {
-        int pointer = internal_native_GetColor(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetColor_addr(native_address);
+        if (addr == 0)
             return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_0 == null)
             WGPUBlendComponent_TEMP_GEN_0 = WGPUBlendComponent.native_new();
-        WGPUBlendComponent_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUBlendComponent_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUBlendComponent_TEMP_GEN_0;
     }
 
@@ -71,15 +72,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendState);var returnedJSObj = jsObj.GetColor();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetColor(int this_addr);
+    public static native int internal_native_GetColor_addr(int this_addr);
 
     public WGPUBlendComponent getAlpha() {
-        int pointer = internal_native_GetAlpha(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetAlpha_addr(native_address);
+        if (addr == 0)
             return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_1 == null)
             WGPUBlendComponent_TEMP_GEN_1 = WGPUBlendComponent.native_new();
-        WGPUBlendComponent_TEMP_GEN_1.internal_reset(pointer, false);
+        WGPUBlendComponent_TEMP_GEN_1.internal_reset(addr, false);
         return WGPUBlendComponent_TEMP_GEN_1;
     }
 
@@ -90,15 +91,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendState);var returnedJSObj = jsObj.GetAlpha();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetAlpha(int this_addr);
+    public static native int internal_native_GetAlpha_addr(int this_addr);
 
     public static WGPUBlendState obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBlendState.NULL;
         if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
             WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
-        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBlendState_TEMP_STATIC_GEN_0;
     }
 
@@ -108,5 +109,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBlendState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

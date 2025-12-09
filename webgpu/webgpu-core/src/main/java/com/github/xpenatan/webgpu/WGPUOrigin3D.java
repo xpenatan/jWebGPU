@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUOrigin3D extends IDLBase {
     static public final WGPUOrigin3D NULL = WGPUOrigin3D.native_new();
 
     public WGPUOrigin3D() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUOrigin3D();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -88,17 +89,17 @@ nativeObject->SetZ((int)value);
     public static native void internal_native_SetZ(long this_addr, int value);
 
     public static WGPUOrigin3D obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUOrigin3D.NULL;
         if (WGPUOrigin3D_TEMP_STATIC_GEN_0 == null)
             WGPUOrigin3D_TEMP_STATIC_GEN_0 = WGPUOrigin3D.native_new();
-        WGPUOrigin3D_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUOrigin3D_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUOrigin3D_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUOrigin3D::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

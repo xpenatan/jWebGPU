@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUCompilationInfo extends IDLBase {
     static public final WGPUCompilationInfo NULL = WGPUCompilationInfo.native_new();
 
     public WGPUCompilationInfo() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUCompilationInfo();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUCompilationInfo();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -63,12 +64,12 @@ return returnedJSObj;
     public static native int internal_native_GetMessageCount(int this_addr);
 
     public WGPUCompilationMessage getMessage(int index) {
-        int pointer = internal_native_GetMessage(native_address, index);
-        if (pointer == 0)
+        int addr = internal_native_GetMessage_addr(native_address, index);
+        if (addr == 0)
             return WGPUCompilationMessage.NULL;
         if (WGPUCompilationMessage_TEMP_GEN_0 == null)
             WGPUCompilationMessage_TEMP_GEN_0 = WGPUCompilationMessage.native_new();
-        WGPUCompilationMessage_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUCompilationMessage_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUCompilationMessage_TEMP_GEN_0;
     }
 
@@ -79,5 +80,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationInfo);var returnedJSObj = jsObj.GetMessage(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetMessage(int this_addr, int index);
+    public static native int internal_native_GetMessage_addr(int this_addr, int index);
 }

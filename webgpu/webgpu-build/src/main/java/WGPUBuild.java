@@ -7,6 +7,7 @@ import com.github.xpenatan.jParser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jParser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jParser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jParser.builder.tool.BuilderTool;
+import com.github.xpenatan.jParser.core.JParser;
 import com.github.xpenatan.jParser.idl.IDLReader;
 import com.github.xpenatan.jParser.idl.IDLRenaming;
 import java.io.File;
@@ -23,6 +24,8 @@ public class WGPUBuild {
         String modulePrefix = "webgpu";
         String basePackage = "com.github.xpenatan.webgpu";
 
+        JParser.CREATE_IDL_HELPER = false;
+
         BuildToolOptions.BuildToolParams data = new BuildToolOptions.BuildToolParams();
         data.libName = libName;
         data.idlName = libName;
@@ -30,6 +33,7 @@ public class WGPUBuild {
         data.packageName = basePackage;
         data.modulePrefix = modulePrefix;
         BuildToolOptions op = new BuildToolOptions(data, args);
+        op.addAdditionalIDLRefPath(IDLReader.getIDLHelperFile());
 
         BuilderTool.build(op, new BuildToolListener() {
             @Override
@@ -100,9 +104,9 @@ public class WGPUBuild {
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
         linkTarget.cppCompiler.add("/MD");
+        linkTarget.cppCompiler.add("/EHsc");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libPath);
         linkTarget.linkerFlags.add("ws2_32.lib");
         linkTarget.linkerFlags.add("userenv.lib");
@@ -139,10 +143,10 @@ public class WGPUBuild {
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
         linkTarget.cppCompiler.add("/MD");
+        linkTarget.cppCompiler.add("/EHsc");
         linkTarget.cppCompiler.add("-DWEBGPU_DAWN");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libPath);
         linkTarget.linkerFlags.add("ws2_32.lib");
         linkTarget.linkerFlags.add("userenv.lib");
@@ -196,7 +200,6 @@ public class WGPUBuild {
         linkTarget.cppCompiler.add("-DWEBGPU_DAWN");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libPath);
         linkTarget.linkerFlags.add("ws2_32.lib");
         linkTarget.linkerFlags.add("userenv.lib");
@@ -246,7 +249,6 @@ public class WGPUBuild {
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libPath);
         multiTarget.add(linkTarget);
 
@@ -274,7 +276,6 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             linkTarget.linkerFlags.add("-framework");
             linkTarget.linkerFlags.add("Metal");
             linkTarget.linkerFlags.add("-framework");
@@ -307,7 +308,6 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + glfwIncludePath);
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             linkTarget.linkerFlags.add("-framework");
             linkTarget.linkerFlags.add("Metal");
             linkTarget.linkerFlags.add("-framework");
@@ -329,7 +329,8 @@ public class WGPUBuild {
 
     private static BuildMultiTarget getTeaVMTarget(BuildToolOptions op, IDLReader idlReader, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
-        String includePath = downloadPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
+        String includePath = downloadPath + "/emdawnwebgpu_pkg/webgpu/include";
+        String includeCPPPath = downloadPath + "/emdawnwebgpu_pkg/webgpu_cpp/include";
         String customSourceDir = op.getCustomSourceDir();
 
         String port = downloadPath + "/emdawnwebgpu_pkg/emdawnwebgpu.port.py";
@@ -340,18 +341,19 @@ public class WGPUBuild {
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget();
         linkTarget.idlReader = idlReader;
+        linkTarget.mainModuleName = "idl";
+        linkTarget.cppInclude.add(customSourceDir + "**.cpp");
         linkTarget.cppFlags.add("-std=c++17");
         linkTarget.headerDirs.add("-I" + includePath);
+        linkTarget.headerDirs.add("-I" + includeCPPPath);
         linkTarget.headerDirs.add("-I" + customSourceDir);
-        linkTarget.cppFlags.add("--use-port=" + port);
-        linkTarget.cppFlags.add("-fsanitize=address");
-        linkTarget.linkerFlags.add("--use-port=" + port);
-        linkTarget.exportedRuntimeMethods.add("WebGPU");
         linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "jWebGPU.h");
-        linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-        linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
-        linkTarget.linkerFlags.add("-fsanitize=address");
+        linkTarget.linkerFlags.add("-sSIDE_MODULE=2");
+        linkTarget.linkerFlags.add("--use-port=" + port);
         linkTarget.linkerFlags.add("--closure-args=--externs=" + jsLib);
+        linkTarget.linkerFlags.add("-lc++abi"); // C++ ABI (exceptions, thread_atexit, etc.)
+        linkTarget.linkerFlags.add("-lc++"); // C++ STL (std::cout, std::string, etc.)
+        linkTarget.linkerFlags.add("-lc"); // C standard library (fopen, fclose, printf, etc.)
         multiTarget.add(linkTarget);
 
         return multiTarget;
@@ -360,7 +362,6 @@ public class WGPUBuild {
     private static BuildMultiTarget getAndroidTarget(BuildToolOptions op, String downloadPath) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
-
 
         AndroidTarget.ApiLevel apiLevel = AndroidTarget.ApiLevel.Android_10_29;
         ArrayList<AndroidTarget.Target> targets = new ArrayList<>();
@@ -407,7 +408,6 @@ public class WGPUBuild {
             linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
             linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
-            linkTarget.additionalSourceDirs.add(op.getCustomSourceDir());
             linkTarget.linkerFlags.add("-Wl,-z,max-page-size=16384");
             multiTarget.add(linkTarget);
         }

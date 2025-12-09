@@ -24,7 +24,7 @@ public class WGPUQueue extends IDLBase {
 
         @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
             "var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUQueue);" +
-            "var nativeObject = [MODULE].WebGPU.getJsObject(jsObj.Get());" +
+            "var nativeObject = idl.WebGPU.getJsObject(jsObj.Get());" +
             "return nativeObject;"
         )
         private static native org.teavm.jso.JSObject internal_native_getJsObject(int this_addr);
@@ -68,9 +68,9 @@ public class WGPUQueue extends IDLBase {
             "var destinationJS = [MODULE].wrapPointer(destination_addr, [MODULE].WGPUTexelCopyTextureInfo);" +
             "var dataLayoutJS = [MODULE].wrapPointer(dataLayout_addr, [MODULE].WGPUTexelCopyBufferLayout);" +
             "var writeSizeJS = [MODULE].wrapPointer(writeSize_addr, [MODULE].WGPUExtent3D);" +
-            "var destination = [MODULE].WebGPU.makeTexelCopyTextureInfo(destinationJS.GetPtr());" +
-            "var dataLayout = [MODULE].WebGPU.makeTexelCopyBufferLayout(dataLayoutJS.Get());" +
-            "var writeSize = [MODULE].WebGPU.makeExtent3D(writeSizeJS.Get());" +
+            "var destination = idl.WebGPU.makeTexelCopyTextureInfo(destinationJS.GetPtr());" +
+            "var dataLayout = idl.WebGPU.makeTexelCopyBufferLayout(dataLayoutJS.Get());" +
+            "var writeSize = idl.WebGPU.makeExtent3D(writeSizeJS.Get());" +
             "this_addr.writeTexture(destination, bytes_addr, dataLayout, writeSize);"
         )
         private static native void internal_native_WriteTexture(org.teavm.jso.JSObject this_addr, int destination_addr, org.teavm.jso.JSObject bytes_addr, int dataSize, int dataLayout_addr, int writeSize_addr);

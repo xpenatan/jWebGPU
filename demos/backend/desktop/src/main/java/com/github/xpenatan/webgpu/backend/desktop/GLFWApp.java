@@ -1,6 +1,8 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
+import com.github.xpenatan.jparser.idl.IDLLoader;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
@@ -30,15 +32,26 @@ public class GLFWApp {
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
-        JWebGPULoader.init(JWebGPUBackend.WGPU, (isSuccess, e) -> {
-            System.out.println("WebGPU Init Success: " + isSuccess);
-            if(isSuccess) {
-                wGPUInit = 1;
-            }
-            else {
-                e.printStackTrace();
+        IDLLoader.init(new JParserLibraryLoaderListener() {
+            @Override
+            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
+                if(idl_e != null) {
+                    idl_e.printStackTrace();
+                    return;
+                }
+                JWebGPULoader.init(JWebGPUBackend.WGPU, (isSuccess, e) -> {
+                    System.out.println("WebGPU Init Success: " + isSuccess);
+                    if(isSuccess) {
+                        wGPUInit = 1;
+                    }
+                    else {
+                        e.printStackTrace();
+                    }
+                });
             }
         });
+
+
 
         wgpu = new WGPUApp();
 

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -22,7 +23,7 @@ public class WGPUByteBuffer extends IDLBase {
     static public final WGPUByteBuffer NULL = WGPUByteBuffer.native_new();
 
     public WGPUByteBuffer(int capacity) {
-        int addr = internal_native_create_int(capacity);
+        int addr = internal_native_create_int_addr(capacity);
         internal_reset(addr, true);
     }
 
@@ -31,7 +32,7 @@ var jsObj = new jWebGPU.WGPUByteBuffer(capacity);
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"capacity"}, script = "var jsObj = new jWebGPU.WGPUByteBuffer(capacity);return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create_int(int capacity);
+    public static native int internal_native_create_int_addr(int capacity);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -59,12 +60,12 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public static WGPUByteBuffer obtain(int capacity) {
-        int pointer = internal_native_Obtain(capacity);
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr(capacity);
+        if (addr == 0)
             return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_STATIC_GEN_0 == null)
             WGPUByteBuffer_TEMP_STATIC_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUByteBuffer_TEMP_STATIC_GEN_0;
     }
 
@@ -74,7 +75,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"capacity"}, script = "var returnedJSObj = jWebGPU.WGPUByteBuffer.prototype.Obtain(capacity);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain(int capacity);
+    public static native int internal_native_Obtain_addr(int capacity);
 
     public void order(WGPUByteOrder order) {
         internal_native_order(native_address, order.getValue());
@@ -272,12 +273,12 @@ jsObj.flip();
     public static native void internal_native_flip(int this_addr);
 
     public WGPUFloatBuffer asFloatBuffer() {
-        int pointer = internal_native_asFloatBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_asFloatBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUFloatBuffer.NULL;
         if (WGPUFloatBuffer_TEMP_GEN_0 == null)
             WGPUFloatBuffer_TEMP_GEN_0 = WGPUFloatBuffer.native_new();
-        WGPUFloatBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUFloatBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUFloatBuffer_TEMP_GEN_0;
     }
 
@@ -288,15 +289,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);var returnedJSObj = jsObj.asFloatBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_asFloatBuffer(int this_addr);
+    public static native int internal_native_asFloatBuffer_addr(int this_addr);
 
     public WGPUIntBuffer asIntBuffer() {
-        int pointer = internal_native_asIntBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_asIntBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUIntBuffer.NULL;
         if (WGPUIntBuffer_TEMP_GEN_0 == null)
             WGPUIntBuffer_TEMP_GEN_0 = WGPUIntBuffer.native_new();
-        WGPUIntBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUIntBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUIntBuffer_TEMP_GEN_0;
     }
 
@@ -307,15 +308,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);var returnedJSObj = jsObj.asIntBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_asIntBuffer(int this_addr);
+    public static native int internal_native_asIntBuffer_addr(int this_addr);
 
     public WGPULongBuffer asLongBuffer() {
-        int pointer = internal_native_asLongBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_asLongBuffer_addr(native_address);
+        if (addr == 0)
             return WGPULongBuffer.NULL;
         if (WGPULongBuffer_TEMP_GEN_0 == null)
             WGPULongBuffer_TEMP_GEN_0 = WGPULongBuffer.native_new();
-        WGPULongBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPULongBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPULongBuffer_TEMP_GEN_0;
     }
 
@@ -326,15 +327,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);var returnedJSObj = jsObj.asLongBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_asLongBuffer(int this_addr);
+    public static native int internal_native_asLongBuffer_addr(int this_addr);
 
     public WGPUShortBuffer asShortBuffer() {
-        int pointer = internal_native_asShortBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_asShortBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUShortBuffer.NULL;
         if (WGPUShortBuffer_TEMP_GEN_0 == null)
             WGPUShortBuffer_TEMP_GEN_0 = WGPUShortBuffer.native_new();
-        WGPUShortBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUShortBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUShortBuffer_TEMP_GEN_0;
     }
 
@@ -345,5 +346,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);var returnedJSObj = jsObj.asShortBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_asShortBuffer(int this_addr);
+    public static native int internal_native_asShortBuffer_addr(int this_addr);
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -48,17 +49,17 @@ nativeObject->SetFuture((JGPU::WGPUFuture* )future_addr);
     public static native void internal_native_SetFuture(long this_addr, long future_addr);
 
     public static WGPUFutureWaitInfo obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUFutureWaitInfo.NULL;
         if (WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
             WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUFutureWaitInfo.native_new();
-        WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUFutureWaitInfo::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

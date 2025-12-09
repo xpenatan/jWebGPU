@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.webgpu.idl.helper.IDLString;
+import com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class WGPUCompilationMessage extends IDLBase {
 
@@ -17,14 +18,14 @@ public class WGPUCompilationMessage extends IDLBase {
     static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 
     public WGPUCompilationMessage() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUCompilationMessage();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,12 +52,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public IDLString getMessage() {
-        long pointer = internal_native_GetMessage(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMessage_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(addr, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -65,7 +66,7 @@ JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this
 static IDLString copy_addr;
 copy_addr = nativeObject->GetMessage();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetMessage(long this_addr);
+    public static native long internal_native_GetMessage_addr(long this_addr);
 
     public WGPUCompilationMessageType getType() {
         int value = internal_native_GetType(native_address);
@@ -125,17 +126,17 @@ return nativeObject->GetLength();
     public static native int internal_native_GetLength(long this_addr);
 
     public static WGPUCompilationMessage obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUCompilationMessage.NULL;
         if (WGPUCompilationMessage_TEMP_STATIC_GEN_0 == null)
             WGPUCompilationMessage_TEMP_STATIC_GEN_0 = WGPUCompilationMessage.native_new();
-        WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUCompilationMessage_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUCompilationMessage::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

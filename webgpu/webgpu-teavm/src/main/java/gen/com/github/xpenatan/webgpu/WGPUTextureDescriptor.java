@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,7 +17,7 @@ public class WGPUTextureDescriptor extends IDLBase {
     static public final WGPUTextureDescriptor NULL = WGPUTextureDescriptor.native_new();
 
     public WGPUTextureDescriptor() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -25,7 +26,7 @@ var jsObj = new jWebGPU.WGPUTextureDescriptor();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUTextureDescriptor();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -97,12 +98,12 @@ jsObj.SetDimension(dimension);
     public static native void internal_native_SetDimension(int this_addr, int dimension);
 
     public WGPUExtent3D getSize() {
-        int pointer = internal_native_GetSize(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetSize_addr(native_address);
+        if (addr == 0)
             return WGPUExtent3D.NULL;
         if (WGPUExtent3D_TEMP_GEN_0 == null)
             WGPUExtent3D_TEMP_GEN_0 = WGPUExtent3D.native_new();
-        WGPUExtent3D_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUExtent3D_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUExtent3D_TEMP_GEN_0;
     }
 
@@ -113,7 +114,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureDescriptor);var returnedJSObj = jsObj.GetSize();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetSize(int this_addr);
+    public static native int internal_native_GetSize_addr(int this_addr);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
@@ -160,12 +161,12 @@ jsObj.SetViewFormats(viewFormats_addr);
     public static native void internal_native_SetViewFormats(int this_addr, int viewFormats_addr);
 
     public static WGPUTextureDescriptor obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUTextureDescriptor.NULL;
         if (WGPUTextureDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUTextureDescriptor_TEMP_STATIC_GEN_0 = WGPUTextureDescriptor.native_new();
-        WGPUTextureDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUTextureDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
     }
 
@@ -175,5 +176,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTextureDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

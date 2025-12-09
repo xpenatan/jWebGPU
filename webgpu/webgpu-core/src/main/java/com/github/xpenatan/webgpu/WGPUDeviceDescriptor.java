@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,14 +17,14 @@ public class WGPUDeviceDescriptor extends IDLBase {
     static public final WGPUDeviceDescriptor NULL = WGPUDeviceDescriptor.native_new();
 
     public WGPUDeviceDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUDeviceDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -90,12 +91,12 @@ nativeObject->SetRequiredFeatures((JGPU::WGPUVectorFeatureName* )features_addr);
     public static native void internal_native_SetRequiredFeatures(long this_addr, long features_addr);
 
     public WGPUQueueDescriptor getDefaultQueue() {
-        long pointer = internal_native_GetDefaultQueue(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetDefaultQueue_addr(native_address);
+        if (addr == 0)
             return WGPUQueueDescriptor.NULL;
         if (WGPUQueueDescriptor_TEMP_GEN_0 == null)
             WGPUQueueDescriptor_TEMP_GEN_0 = WGPUQueueDescriptor.native_new();
-        WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUQueueDescriptor_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUQueueDescriptor_TEMP_GEN_0;
     }
 
@@ -104,20 +105,20 @@ JGPU::WGPUDeviceDescriptor* nativeObject = (JGPU::WGPUDeviceDescriptor*)this_add
 static JGPU::WGPUQueueDescriptor copy_addr;
 copy_addr = nativeObject->GetDefaultQueue();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetDefaultQueue(long this_addr);
+    public static native long internal_native_GetDefaultQueue_addr(long this_addr);
 
     public static WGPUDeviceDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUDeviceDescriptor.NULL;
         if (WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUDeviceDescriptor_TEMP_STATIC_GEN_0 = WGPUDeviceDescriptor.native_new();
-        WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUDeviceDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUDeviceDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUDeviceDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

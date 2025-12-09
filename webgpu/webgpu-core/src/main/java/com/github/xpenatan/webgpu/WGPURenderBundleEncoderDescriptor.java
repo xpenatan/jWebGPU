@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPURenderBundleEncoderDescriptor extends IDLBase {
     static public final WGPURenderBundleEncoderDescriptor NULL = WGPURenderBundleEncoderDescriptor.native_new();
 
     public WGPURenderBundleEncoderDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURenderBundleEncoderDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -118,17 +119,17 @@ nativeObject->SetStencilReadOnly((int)stencilReadOnly);
     public static native void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly);
 
     public static WGPURenderBundleEncoderDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderBundleEncoderDescriptor.NULL;
         if (WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0 = WGPURenderBundleEncoderDescriptor.native_new();
-        WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURenderBundleEncoderDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUShaderSourceSPIRV extends IDLBase {
     static public final WGPUShaderSourceSPIRV NULL = WGPUShaderSourceSPIRV.native_new();
 
     public WGPUShaderSourceSPIRV() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUShaderSourceSPIRV();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUShaderSourceSPIRV();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,12 +52,12 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public static WGPUShaderSourceSPIRV obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUShaderSourceSPIRV.NULL;
         if (WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 == null)
             WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 = WGPUShaderSourceSPIRV.native_new();
-        WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
     }
 
@@ -66,5 +67,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUShaderSourceSPIRV.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

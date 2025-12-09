@@ -5,13 +5,16 @@ plugins {
 
 val moduleName = "webgpu-teavm"
 
-val emscriptenFile = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGPU.wasm.js"
+val emscriptenJS = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGPU.js"
+val emscriptenWASM = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGPU.wasm"
 
 tasks.jar {
-    from(emscriptenFile)
+    from(emscriptenJS, emscriptenWASM)
 }
 
 dependencies {
+    api("com.github.xpenatan.jParser:idl-helper-teavm:${LibExt.jParserVersion}")
+
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-teavm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")

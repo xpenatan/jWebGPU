@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUSurfaceTexture extends IDLBase {
     static public final WGPUSurfaceTexture NULL = WGPUSurfaceTexture.native_new();
 
     public WGPUSurfaceTexture() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUSurfaceTexture();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUSurfaceTexture();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -81,12 +82,12 @@ return returnedJSObj;
     public static native int internal_native_GetStatus(int this_addr);
 
     public static WGPUSurfaceTexture obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSurfaceTexture.NULL;
         if (WGPUSurfaceTexture_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceTexture_TEMP_STATIC_GEN_0 = WGPUSurfaceTexture.native_new();
-        WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSurfaceTexture_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
     }
 
@@ -96,5 +97,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSurfaceTexture.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

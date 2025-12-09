@@ -23,7 +23,7 @@ public class WGPUFloatBuffer extends IDLBase {
 
     /*[-TEAVM;-NATIVE]
         var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUFloatBuffer);
-        jsObj.put_2(values, offset, size);
+        jsObj.put__2(values, offset, size);
     */
     /*[-JNI;-NATIVE]
         WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;

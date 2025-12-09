@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUSamplerBindingLayout extends IDLBase {
     static public final WGPUSamplerBindingLayout NULL = WGPUSamplerBindingLayout.native_new();
 
     public WGPUSamplerBindingLayout() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUSamplerBindingLayout();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,17 +69,17 @@ nativeObject->SetType((::WGPUSamplerBindingType)type);
     public static native void internal_native_SetType(long this_addr, int type);
 
     public static WGPUSamplerBindingLayout obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSamplerBindingLayout.NULL;
         if (WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 == null)
             WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0 = WGPUSamplerBindingLayout.native_new();
-        WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUSamplerBindingLayout::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

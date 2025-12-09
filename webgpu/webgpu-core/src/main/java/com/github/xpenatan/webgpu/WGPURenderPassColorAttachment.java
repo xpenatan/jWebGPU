@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,14 +17,14 @@ public class WGPURenderPassColorAttachment extends IDLBase {
     static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 
     public WGPURenderPassColorAttachment() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURenderPassColorAttachment();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -110,12 +111,12 @@ nativeObject->SetStoreOp((::WGPUStoreOp)storeOp);
     public static native void internal_native_SetStoreOp(long this_addr, int storeOp);
 
     public WGPUColor getClearValue() {
-        long pointer = internal_native_GetClearValue(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetClearValue_addr(native_address);
+        if (addr == 0)
             return WGPUColor.NULL;
         if (WGPUColor_TEMP_GEN_0 == null)
             WGPUColor_TEMP_GEN_0 = WGPUColor.native_new();
-        WGPUColor_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUColor_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUColor_TEMP_GEN_0;
     }
 
@@ -124,7 +125,7 @@ JGPU::WGPURenderPassColorAttachment* nativeObject = (JGPU::WGPURenderPassColorAt
 static JGPU::WGPUColor copy_addr;
 copy_addr = nativeObject->GetClearValue();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetClearValue(long this_addr);
+    public static native long internal_native_GetClearValue_addr(long this_addr);
 
     public void setDepthSlice(int depthSlice) {
         internal_native_SetDepthSlice(native_address, depthSlice);
@@ -137,17 +138,17 @@ nativeObject->SetDepthSlice((int)depthSlice);
     public static native void internal_native_SetDepthSlice(long this_addr, int depthSlice);
 
     public static WGPURenderPassColorAttachment obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPassColorAttachment.NULL;
         if (WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassColorAttachment.native_new();
-        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURenderPassColorAttachment::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

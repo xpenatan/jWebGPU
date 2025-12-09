@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPURenderPassTimestampWrites extends IDLBase {
     static public final WGPURenderPassTimestampWrites NULL = WGPURenderPassTimestampWrites.native_new();
 
     public WGPURenderPassTimestampWrites() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURenderPassTimestampWrites();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -78,17 +79,17 @@ nativeObject->SetEndOfPassWriteIndex((int)value);
     public static native void internal_native_SetEndOfPassWriteIndex(long this_addr, int value);
 
     public static WGPURenderPassTimestampWrites obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPassTimestampWrites.NULL;
         if (WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.native_new();
-        WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURenderPassTimestampWrites::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

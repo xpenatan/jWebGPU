@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -50,12 +51,12 @@ jsObj.SetFuture(future_addr);
     public static native void internal_native_SetFuture(int this_addr, int future_addr);
 
     public static WGPUFutureWaitInfo obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUFutureWaitInfo.NULL;
         if (WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
             WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUFutureWaitInfo.native_new();
-        WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
     }
 
@@ -65,5 +66,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUFutureWaitInfo.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

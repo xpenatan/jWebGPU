@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUBindGroupLayoutDescriptor extends IDLBase {
     static public final WGPUBindGroupLayoutDescriptor NULL = WGPUBindGroupLayoutDescriptor.native_new();
 
     public WGPUBindGroupLayoutDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUBindGroupLayoutDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -78,17 +79,17 @@ nativeObject->SetEntries((JGPU::WGPUVectorBindGroupLayoutEntry* )entries_addr);
     public static native void internal_native_SetEntries(long this_addr, long entries_addr);
 
     public static WGPUBindGroupLayoutDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBindGroupLayoutDescriptor.NULL;
         if (WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutDescriptor.native_new();
-        WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUBindGroupLayoutDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -22,7 +23,7 @@ public class WGPUBindGroupLayoutEntry extends IDLBase {
     static public final WGPUBindGroupLayoutEntry NULL = WGPUBindGroupLayoutEntry.native_new();
 
     public WGPUBindGroupLayoutEntry() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -31,7 +32,7 @@ var jsObj = new jWebGPU.WGPUBindGroupLayoutEntry();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUBindGroupLayoutEntry();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -136,12 +137,12 @@ jsObj.SetStorageTexture(storageTexture_addr);
     public static native void internal_native_SetStorageTexture(int this_addr, int storageTexture_addr);
 
     public WGPUBufferBindingLayout getBuffer() {
-        int pointer = internal_native_GetBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUBufferBindingLayout.NULL;
         if (WGPUBufferBindingLayout_TEMP_GEN_0 == null)
             WGPUBufferBindingLayout_TEMP_GEN_0 = WGPUBufferBindingLayout.native_new();
-        WGPUBufferBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUBufferBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUBufferBindingLayout_TEMP_GEN_0;
     }
 
@@ -152,15 +153,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupLayoutEntry);var returnedJSObj = jsObj.GetBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetBuffer(int this_addr);
+    public static native int internal_native_GetBuffer_addr(int this_addr);
 
     public WGPUSamplerBindingLayout getSampler() {
-        int pointer = internal_native_GetSampler(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetSampler_addr(native_address);
+        if (addr == 0)
             return WGPUSamplerBindingLayout.NULL;
         if (WGPUSamplerBindingLayout_TEMP_GEN_0 == null)
             WGPUSamplerBindingLayout_TEMP_GEN_0 = WGPUSamplerBindingLayout.native_new();
-        WGPUSamplerBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUSamplerBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUSamplerBindingLayout_TEMP_GEN_0;
     }
 
@@ -171,15 +172,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupLayoutEntry);var returnedJSObj = jsObj.GetSampler();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetSampler(int this_addr);
+    public static native int internal_native_GetSampler_addr(int this_addr);
 
     public WGPUStorageTextureBindingLayout getStorageTexture() {
-        int pointer = internal_native_GetStorageTexture(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetStorageTexture_addr(native_address);
+        if (addr == 0)
             return WGPUStorageTextureBindingLayout.NULL;
         if (WGPUStorageTextureBindingLayout_TEMP_GEN_0 == null)
             WGPUStorageTextureBindingLayout_TEMP_GEN_0 = WGPUStorageTextureBindingLayout.native_new();
-        WGPUStorageTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUStorageTextureBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUStorageTextureBindingLayout_TEMP_GEN_0;
     }
 
@@ -190,15 +191,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupLayoutEntry);var returnedJSObj = jsObj.GetStorageTexture();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetStorageTexture(int this_addr);
+    public static native int internal_native_GetStorageTexture_addr(int this_addr);
 
     public WGPUTextureBindingLayout getTexture() {
-        int pointer = internal_native_GetTexture(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetTexture_addr(native_address);
+        if (addr == 0)
             return WGPUTextureBindingLayout.NULL;
         if (WGPUTextureBindingLayout_TEMP_GEN_0 == null)
             WGPUTextureBindingLayout_TEMP_GEN_0 = WGPUTextureBindingLayout.native_new();
-        WGPUTextureBindingLayout_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUTextureBindingLayout_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUTextureBindingLayout_TEMP_GEN_0;
     }
 
@@ -209,15 +210,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupLayoutEntry);var returnedJSObj = jsObj.GetTexture();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetTexture(int this_addr);
+    public static native int internal_native_GetTexture_addr(int this_addr);
 
     public static WGPUBindGroupLayoutEntry obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBindGroupLayoutEntry.NULL;
         if (WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 == null)
             WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0 = WGPUBindGroupLayoutEntry.native_new();
-        WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
     }
 
@@ -227,5 +228,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBindGroupLayoutEntry.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

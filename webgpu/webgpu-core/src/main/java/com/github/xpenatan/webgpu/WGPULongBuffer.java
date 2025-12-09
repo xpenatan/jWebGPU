@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -38,12 +39,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUByteBuffer getByteBuffer() {
-        long pointer = internal_native_getByteBuffer(native_address);
-        if (pointer == 0)
+        long addr = internal_native_getByteBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUByteBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
@@ -51,7 +52,7 @@ delete nativeObject;
 WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
 return (jlong)&nativeObject->getByteBuffer();
 */
-    public static native long internal_native_getByteBuffer(long this_addr);
+    public static native long internal_native_getByteBuffer_addr(long this_addr);
 
     public void put(long value) {
         internal_native_put__0(native_address, value);

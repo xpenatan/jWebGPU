@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,14 +19,14 @@ public class WGPUBlendState extends IDLBase {
     static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 
     public WGPUBlendState() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUBlendState();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,12 +53,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUBlendComponent getColor() {
-        long pointer = internal_native_GetColor(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetColor_addr(native_address);
+        if (addr == 0)
             return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_0 == null)
             WGPUBlendComponent_TEMP_GEN_0 = WGPUBlendComponent.native_new();
-        WGPUBlendComponent_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUBlendComponent_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUBlendComponent_TEMP_GEN_0;
     }
 
@@ -66,15 +67,15 @@ JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
 static JGPU::WGPUBlendComponent copy_addr;
 copy_addr = nativeObject->GetColor();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetColor(long this_addr);
+    public static native long internal_native_GetColor_addr(long this_addr);
 
     public WGPUBlendComponent getAlpha() {
-        long pointer = internal_native_GetAlpha(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAlpha_addr(native_address);
+        if (addr == 0)
             return WGPUBlendComponent.NULL;
         if (WGPUBlendComponent_TEMP_GEN_1 == null)
             WGPUBlendComponent_TEMP_GEN_1 = WGPUBlendComponent.native_new();
-        WGPUBlendComponent_TEMP_GEN_1.internal_reset(pointer, false);
+        WGPUBlendComponent_TEMP_GEN_1.internal_reset(addr, false);
         return WGPUBlendComponent_TEMP_GEN_1;
     }
 
@@ -83,20 +84,20 @@ JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
 static JGPU::WGPUBlendComponent copy_addr;
 copy_addr = nativeObject->GetAlpha();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAlpha(long this_addr);
+    public static native long internal_native_GetAlpha_addr(long this_addr);
 
     public static WGPUBlendState obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUBlendState.NULL;
         if (WGPUBlendState_TEMP_STATIC_GEN_0 == null)
             WGPUBlendState_TEMP_STATIC_GEN_0 = WGPUBlendState.native_new();
-        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUBlendState_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUBlendState_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUBlendState::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

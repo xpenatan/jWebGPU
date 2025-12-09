@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUTextureView extends IDLBase {
     static public final WGPUTextureView NULL = WGPUTextureView.native_new();
 
     public WGPUTextureView() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUTextureView();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -78,17 +79,17 @@ return nativeObject->IsValid();
     public static native boolean internal_native_IsValid(long this_addr);
 
     public static WGPUTextureView obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUTextureView.NULL;
         if (WGPUTextureView_TEMP_STATIC_GEN_0 == null)
             WGPUTextureView_TEMP_STATIC_GEN_0 = WGPUTextureView.native_new();
-        WGPUTextureView_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUTextureView_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUTextureView_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUTextureView::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

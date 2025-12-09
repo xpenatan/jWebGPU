@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,7 +17,7 @@ public class WGPUShaderSourceWGSL extends IDLBase {
     static public final WGPUShaderSourceWGSL NULL = WGPUShaderSourceWGSL.native_new();
 
     public WGPUShaderSourceWGSL() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -25,7 +26,7 @@ var jsObj = new jWebGPU.WGPUShaderSourceWGSL();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUShaderSourceWGSL();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -64,12 +65,12 @@ jsObj.SetCode(code);
     public static native void internal_native_SetCode(int this_addr, String code);
 
     public WGPUChainedStruct getChain() {
-        int pointer = internal_native_GetChain(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetChain_addr(native_address);
+        if (addr == 0)
             return WGPUChainedStruct.NULL;
         if (WGPUChainedStruct_TEMP_GEN_0 == null)
             WGPUChainedStruct_TEMP_GEN_0 = WGPUChainedStruct.native_new();
-        WGPUChainedStruct_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUChainedStruct_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUChainedStruct_TEMP_GEN_0;
     }
 
@@ -80,15 +81,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShaderSourceWGSL);var returnedJSObj = jsObj.GetChain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_GetChain(int this_addr);
+    public static native int internal_native_GetChain_addr(int this_addr);
 
     public static WGPUShaderSourceWGSL obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUShaderSourceWGSL.NULL;
         if (WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 == null)
             WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.native_new();
-        WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
     }
 
@@ -98,5 +99,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUShaderSourceWGSL.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

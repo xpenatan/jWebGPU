@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.webgpu.idl.helper.IDLString;
+import com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class WGPUStringView extends IDLBase {
 
@@ -39,12 +40,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public IDLString getString() {
-        long pointer = internal_native_GetString(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetString_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(addr, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -53,5 +54,5 @@ JGPU::WGPUStringView* nativeObject = (JGPU::WGPUStringView*)this_addr;
 static IDLString copy_addr;
 copy_addr = nativeObject->GetString();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetString(long this_addr);
+    public static native long internal_native_GetString_addr(long this_addr);
 }

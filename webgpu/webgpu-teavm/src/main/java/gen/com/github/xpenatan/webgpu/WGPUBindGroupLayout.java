@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class WGPUBindGroupLayout extends IDLBase {
     static public final WGPUBindGroupLayout NULL = WGPUBindGroupLayout.native_new();
 
     public WGPUBindGroupLayout() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -21,7 +22,7 @@ var jsObj = new jWebGPU.WGPUBindGroupLayout();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUBindGroupLayout();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

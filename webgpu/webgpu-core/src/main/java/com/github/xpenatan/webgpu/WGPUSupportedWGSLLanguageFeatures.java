@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUSupportedWGSLLanguageFeatures extends IDLBase {
     static public final WGPUSupportedWGSLLanguageFeatures NULL = WGPUSupportedWGSLLanguageFeatures.native_new();
 
     public WGPUSupportedWGSLLanguageFeatures() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUSupportedWGSLLanguageFeatures();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,17 +76,17 @@ return (int)nativeObject->GetFeatureAt((int)index);
     public static native int internal_native_GetFeatureAt(long this_addr, int index);
 
     public static WGPUSupportedWGSLLanguageFeatures obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSupportedWGSLLanguageFeatures.NULL;
         if (WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 == null)
             WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedWGSLLanguageFeatures.native_new();
-        WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUSupportedWGSLLanguageFeatures::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

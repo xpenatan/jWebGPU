@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.com.github.xpenatan.webgpu.idl.helper.IDLUtils;
+import gen.com.github.xpenatan.jparser.idl.helper.IDLUtils;
 
 public class WGPURequestAdapterCallback extends IDLBase {
 
@@ -38,7 +39,7 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WGPURequestAdapterCallback() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -76,7 +77,7 @@ var jsObj = new jWebGPU.WGPURequestAdapterCallbackImpl();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPURequestAdapterCallbackImpl();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnCallback" }, script = "var WGPURequestAdapterCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterCallbackImpl); WGPURequestAdapterCallbackImpl.OnCallback = OnCallback;")
     public static native void internal_native_setupCallback(int this_addr, OnCallback OnCallback);

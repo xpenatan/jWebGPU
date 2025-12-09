@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -22,14 +23,14 @@ public class WGPUByteBuffer extends IDLBase {
     static public final WGPUByteBuffer NULL = WGPUByteBuffer.native_new();
 
     public WGPUByteBuffer(int capacity) {
-        long addr = internal_native_create_int(capacity);
+        long addr = internal_native_create_int_addr(capacity);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new WGPUByteBuffer((int)capacity);
 */
-    public static native long internal_native_create_int(int capacity);
+    public static native long internal_native_create_int_addr(int capacity);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,19 +57,19 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public static WGPUByteBuffer obtain(int capacity) {
-        long pointer = internal_native_Obtain(capacity);
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr(capacity);
+        if (addr == 0)
             return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_STATIC_GEN_0 == null)
             WGPUByteBuffer_TEMP_STATIC_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUByteBuffer_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUByteBuffer_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)WGPUByteBuffer::Obtain((int)capacity);
 */
-    public static native long internal_native_Obtain(int capacity);
+    public static native long internal_native_Obtain_addr(int capacity);
 
     public void order(WGPUByteOrder order) {
         internal_native_order(native_address, order.getValue());
@@ -241,12 +242,12 @@ nativeObject->flip();
     public static native void internal_native_flip(long this_addr);
 
     public WGPUFloatBuffer asFloatBuffer() {
-        long pointer = internal_native_asFloatBuffer(native_address);
-        if (pointer == 0)
+        long addr = internal_native_asFloatBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUFloatBuffer.NULL;
         if (WGPUFloatBuffer_TEMP_GEN_0 == null)
             WGPUFloatBuffer_TEMP_GEN_0 = WGPUFloatBuffer.native_new();
-        WGPUFloatBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUFloatBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUFloatBuffer_TEMP_GEN_0;
     }
 
@@ -254,15 +255,15 @@ nativeObject->flip();
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 return (jlong)&nativeObject->asFloatBuffer();
 */
-    public static native long internal_native_asFloatBuffer(long this_addr);
+    public static native long internal_native_asFloatBuffer_addr(long this_addr);
 
     public WGPUIntBuffer asIntBuffer() {
-        long pointer = internal_native_asIntBuffer(native_address);
-        if (pointer == 0)
+        long addr = internal_native_asIntBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUIntBuffer.NULL;
         if (WGPUIntBuffer_TEMP_GEN_0 == null)
             WGPUIntBuffer_TEMP_GEN_0 = WGPUIntBuffer.native_new();
-        WGPUIntBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUIntBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUIntBuffer_TEMP_GEN_0;
     }
 
@@ -270,15 +271,15 @@ return (jlong)&nativeObject->asFloatBuffer();
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 return (jlong)&nativeObject->asIntBuffer();
 */
-    public static native long internal_native_asIntBuffer(long this_addr);
+    public static native long internal_native_asIntBuffer_addr(long this_addr);
 
     public WGPULongBuffer asLongBuffer() {
-        long pointer = internal_native_asLongBuffer(native_address);
-        if (pointer == 0)
+        long addr = internal_native_asLongBuffer_addr(native_address);
+        if (addr == 0)
             return WGPULongBuffer.NULL;
         if (WGPULongBuffer_TEMP_GEN_0 == null)
             WGPULongBuffer_TEMP_GEN_0 = WGPULongBuffer.native_new();
-        WGPULongBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPULongBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPULongBuffer_TEMP_GEN_0;
     }
 
@@ -286,15 +287,15 @@ return (jlong)&nativeObject->asIntBuffer();
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 return (jlong)&nativeObject->asLongBuffer();
 */
-    public static native long internal_native_asLongBuffer(long this_addr);
+    public static native long internal_native_asLongBuffer_addr(long this_addr);
 
     public WGPUShortBuffer asShortBuffer() {
-        long pointer = internal_native_asShortBuffer(native_address);
-        if (pointer == 0)
+        long addr = internal_native_asShortBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUShortBuffer.NULL;
         if (WGPUShortBuffer_TEMP_GEN_0 == null)
             WGPUShortBuffer_TEMP_GEN_0 = WGPUShortBuffer.native_new();
-        WGPUShortBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUShortBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUShortBuffer_TEMP_GEN_0;
     }
 
@@ -302,5 +303,5 @@ return (jlong)&nativeObject->asLongBuffer();
 WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
 return (jlong)&nativeObject->asShortBuffer();
 */
-    public static native long internal_native_asShortBuffer(long this_addr);
+    public static native long internal_native_asShortBuffer_addr(long this_addr);
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPURenderPassDescriptor extends IDLBase {
     static public final WGPURenderPassDescriptor NULL = WGPURenderPassDescriptor.native_new();
 
     public WGPURenderPassDescriptor() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPURenderPassDescriptor();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -158,17 +159,17 @@ nativeObject->SetTimestampWrites((JGPU::WGPURenderPassTimestampWrites* )timestam
     public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
 
     public static WGPURenderPassDescriptor obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPURenderPassDescriptor.NULL;
         if (WGPURenderPassDescriptor_TEMP_STATIC_GEN_0 == null)
             WGPURenderPassDescriptor_TEMP_STATIC_GEN_0 = WGPURenderPassDescriptor.native_new();
-        WGPURenderPassDescriptor_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPURenderPassDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPURenderPassDescriptor_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPURenderPassDescriptor::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

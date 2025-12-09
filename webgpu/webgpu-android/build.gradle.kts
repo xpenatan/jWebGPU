@@ -1,12 +1,20 @@
 plugins {
     id("com.android.library")
-    kotlin("android")
 }
+
 val moduleName = "webgpu-android"
+
+
+val filterJniLibs by tasks.registering(Copy::class) {
+    from("$projectDir/../webgpu-build/build/c++/libs/android")
+    into(layout.buildDirectory.dir("tmp/jniLibs"))
+    include("**/*.so")
+    exclude("**/*.a")
+}
 
 android {
     namespace = "com.github.xpenatan.webgpu.android"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 26
@@ -14,20 +22,17 @@ android {
 
     sourceSets {
         named("main") {
-            jniLibs.srcDirs("$projectDir/../webgpu-build/build/c++/libs/android")
+            jniLibs.srcDirs(layout.buildDirectory.dir("tmp/jniLibs"))
         }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
         targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
     }
-    
-    kotlinOptions {
-        jvmTarget = LibExt.java8Target
-    }
 }
 
 dependencies {
+    api("com.github.xpenatan.jParser:idl-helper-android:${LibExt.jParserVersion}")
 }
 
 publishing {
@@ -37,7 +42,7 @@ publishing {
             group = LibExt.groupId
             version = LibExt.libVersion
             afterEvaluate {
-                from(components["release"])
+                artifact(tasks.named("bundleReleaseAar"))
             }
         }
     }

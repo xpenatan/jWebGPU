@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUVectorColorTargetState extends IDLBase {
     static public final WGPUVectorColorTargetState NULL = WGPUVectorColorTargetState.native_new();
 
     public WGPUVectorColorTargetState() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUVectorColorTargetState();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUVectorColorTargetState();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -85,12 +86,12 @@ jsObj.push_back(colorTargetState_addr);
     public static native void internal_native_push_back(int this_addr, int colorTargetState_addr);
 
     public static WGPUVectorColorTargetState obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUVectorColorTargetState.NULL;
         if (WGPUVectorColorTargetState_TEMP_STATIC_GEN_0 == null)
             WGPUVectorColorTargetState_TEMP_STATIC_GEN_0 = WGPUVectorColorTargetState.native_new();
-        WGPUVectorColorTargetState_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUVectorColorTargetState_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUVectorColorTargetState_TEMP_STATIC_GEN_0;
     }
 
@@ -100,5 +101,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVectorColorTargetState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }

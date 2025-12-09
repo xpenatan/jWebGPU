@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -39,12 +40,12 @@ jWebGPU.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WGPUByteBuffer getByteBuffer() {
-        int pointer = internal_native_getByteBuffer(native_address);
-        if (pointer == 0)
+        int addr = internal_native_getByteBuffer_addr(native_address);
+        if (addr == 0)
             return WGPUByteBuffer.NULL;
         if (WGPUByteBuffer_TEMP_GEN_0 == null)
             WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_GEN_0.internal_reset(pointer, false);
+        WGPUByteBuffer_TEMP_GEN_0.internal_reset(addr, false);
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
@@ -55,7 +56,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);var returnedJSObj = jsObj.getByteBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_getByteBuffer(int this_addr);
+    public static native int internal_native_getByteBuffer_addr(int this_addr);
 
     public void put(short value) {
         internal_native_put__0(native_address, value);

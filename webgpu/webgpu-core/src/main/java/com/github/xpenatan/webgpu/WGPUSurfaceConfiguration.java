@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class WGPUSurfaceConfiguration extends IDLBase {
     static public final WGPUSurfaceConfiguration NULL = WGPUSurfaceConfiguration.native_new();
 
     public WGPUSurfaceConfiguration() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUSurfaceConfiguration();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -138,17 +139,17 @@ nativeObject->SetAlphaMode((::WGPUCompositeAlphaMode)alphaMode);
     public static native void internal_native_SetAlphaMode(long this_addr, int alphaMode);
 
     public static WGPUSurfaceConfiguration obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSurfaceConfiguration.NULL;
         if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
-        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUSurfaceConfiguration::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

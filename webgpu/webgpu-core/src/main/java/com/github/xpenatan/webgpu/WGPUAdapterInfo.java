@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.webgpu.idl.helper.IDLString;
+import com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class WGPUAdapterInfo extends IDLBase {
 
@@ -23,14 +24,14 @@ public class WGPUAdapterInfo extends IDLBase {
     static public final WGPUAdapterInfo NULL = WGPUAdapterInfo.native_new();
 
     public WGPUAdapterInfo() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JGPU::WGPUAdapterInfo();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -57,12 +58,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public IDLString getVendor() {
-        long pointer = internal_native_GetVendor(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetVendor_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(addr, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -71,7 +72,7 @@ JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
 static IDLString copy_addr;
 copy_addr = nativeObject->GetVendor();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetVendor(long this_addr);
+    public static native long internal_native_GetVendor_addr(long this_addr);
 
     public int getVendorID() {
         return internal_native_GetVendorID(native_address);
@@ -84,12 +85,12 @@ return nativeObject->GetVendorID();
     public static native int internal_native_GetVendorID(long this_addr);
 
     public IDLString getArchitecture() {
-        long pointer = internal_native_GetArchitecture(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetArchitecture_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_1 == null)
             IDLString_TEMP_GEN_1 = IDLString.native_new();
-        IDLString_TEMP_GEN_1.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_1.internal_reset(addr, false);
         return IDLString_TEMP_GEN_1;
     }
 
@@ -98,15 +99,15 @@ JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
 static IDLString copy_addr;
 copy_addr = nativeObject->GetArchitecture();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetArchitecture(long this_addr);
+    public static native long internal_native_GetArchitecture_addr(long this_addr);
 
     public IDLString getDevice() {
-        long pointer = internal_native_GetDevice(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetDevice_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_2 == null)
             IDLString_TEMP_GEN_2 = IDLString.native_new();
-        IDLString_TEMP_GEN_2.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_2.internal_reset(addr, false);
         return IDLString_TEMP_GEN_2;
     }
 
@@ -115,7 +116,7 @@ JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
 static IDLString copy_addr;
 copy_addr = nativeObject->GetDevice();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetDevice(long this_addr);
+    public static native long internal_native_GetDevice_addr(long this_addr);
 
     public int getDeviceID() {
         return internal_native_GetDeviceID(native_address);
@@ -128,12 +129,12 @@ return nativeObject->GetDeviceID();
     public static native int internal_native_GetDeviceID(long this_addr);
 
     public IDLString getDescription() {
-        long pointer = internal_native_GetDescription(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetDescription_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_3 == null)
             IDLString_TEMP_GEN_3 = IDLString.native_new();
-        IDLString_TEMP_GEN_3.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_3.internal_reset(addr, false);
         return IDLString_TEMP_GEN_3;
     }
 
@@ -142,7 +143,7 @@ JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
 static IDLString copy_addr;
 copy_addr = nativeObject->GetDescription();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetDescription(long this_addr);
+    public static native long internal_native_GetDescription_addr(long this_addr);
 
     public WGPUBackendType getBackendType() {
         int value = internal_native_GetBackendType(native_address);
@@ -179,17 +180,17 @@ return (int)nativeObject->GetAdapterType();
     public static native int internal_native_GetAdapterType(long this_addr);
 
     public static WGPUAdapterInfo obtain() {
-        long pointer = internal_native_Obtain();
-        if (pointer == 0)
+        long addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUAdapterInfo.NULL;
         if (WGPUAdapterInfo_TEMP_STATIC_GEN_0 == null)
             WGPUAdapterInfo_TEMP_STATIC_GEN_0 = WGPUAdapterInfo.native_new();
-        WGPUAdapterInfo_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUAdapterInfo_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUAdapterInfo_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JGPU::WGPUAdapterInfo::Obtain();
 */
-    public static native long internal_native_Obtain();
+    public static native long internal_native_Obtain_addr();
 }

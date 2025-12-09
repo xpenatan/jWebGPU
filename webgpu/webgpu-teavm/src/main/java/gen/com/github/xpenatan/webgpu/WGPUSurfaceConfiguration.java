@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.com.github.xpenatan.webgpu;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class WGPUSurfaceConfiguration extends IDLBase {
     static public final WGPUSurfaceConfiguration NULL = WGPUSurfaceConfiguration.native_new();
 
     public WGPUSurfaceConfiguration() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jWebGPU.WGPUSurfaceConfiguration();
 return jWebGPU.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUSurfaceConfiguration();return jWebGPU.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -150,12 +151,12 @@ jsObj.SetAlphaMode(alphaMode);
     public static native void internal_native_SetAlphaMode(int this_addr, int alphaMode);
 
     public static WGPUSurfaceConfiguration obtain() {
-        int pointer = internal_native_Obtain();
-        if (pointer == 0)
+        int addr = internal_native_Obtain_addr();
+        if (addr == 0)
             return WGPUSurfaceConfiguration.NULL;
         if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
             WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
-        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
     }
 
@@ -165,5 +166,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jWebGPU.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSurfaceConfiguration.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
-    public static native int internal_native_Obtain();
+    public static native int internal_native_Obtain_addr();
 }
