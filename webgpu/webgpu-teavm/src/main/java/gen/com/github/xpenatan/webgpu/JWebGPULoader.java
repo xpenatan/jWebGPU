@@ -9,13 +9,14 @@ package gen.com.github.xpenatan.webgpu;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoader;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoaderOptions;
+import com.github.xpenatan.jparser.idl.IDLLoader;
 
 /**
  * @author xpenatan
  */
 public class JWebGPULoader {
 
-    public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+    private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
         JWebGPULoader.backend = JWebGPUBackend.DAWN;
         JParserLibraryLoader.load("jWebGPU", listener);
     }
@@ -24,6 +25,20 @@ public class JWebGPULoader {
 
     public static void init(JParserLibraryLoaderListener listener) {
         init(JWebGPUBackend.WGPU, listener);
+    }
+
+    public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+        IDLLoader.init(new JParserLibraryLoaderListener() {
+
+            @Override
+            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
+                if (idl_isSuccess) {
+                    initInternal(backend, listener);
+                } else {
+                    listener.onLoad(false, idl_e);
+                }
+            }
+        });
     }
 
     public static JWebGPUBackend getBackend() {

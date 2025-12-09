@@ -9,6 +9,7 @@ package com.github.xpenatan.webgpu;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoader;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoaderOptions;
+import com.github.xpenatan.jparser.idl.IDLLoader;
 
 /**
  * @author xpenatan
@@ -26,6 +27,20 @@ public class JWebGPULoader {
     }
 
     public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+        IDLLoader.init(new JParserLibraryLoaderListener() {
+
+            @Override
+            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
+                if (idl_isSuccess) {
+                    initInternal(backend, listener);
+                } else {
+                    listener.onLoad(false, idl_e);
+                }
+            }
+        });
+    }
+
+    private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
         String vm = System.getProperty("java.runtime.name");
         boolean isAndroid = vm != null && vm.contains("Android Runtime");
         String osName = System.getProperty("os.name").toLowerCase();

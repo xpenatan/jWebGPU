@@ -13,6 +13,7 @@ tasks.jar {
 }
 
 dependencies {
+    api("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:idl-helper-teavm:${LibExt.jParserVersion}")
 
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")

@@ -32,21 +32,13 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
         wgpu = new WGPUApp();
 
-        IDLLoader.init(new JParserLibraryLoaderListener() {
-            @Override
-            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
-                if(idl_e != null) {
-                    idl_e.printStackTrace();
-                    return;
-                }
-                JWebGPULoader.init((isSuccess, e) -> {
-                    System.out.println("WebGPU Init Success: " + isSuccess);
-                    if (isSuccess) {
-                        wGPUInit = 1;
-                    } else {
-                        e.printStackTrace();
-                    }
-                });
+        JWebGPULoader.init((isSuccess, e) -> {
+            System.out.println("WebGPU Init Success: " + isSuccess);
+            if(isSuccess) {
+                wGPUInit = 1;
+            }
+            else {
+                e.printStackTrace();
             }
         });
     }
