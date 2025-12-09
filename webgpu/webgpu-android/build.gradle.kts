@@ -12,6 +12,10 @@ val filterJniLibs by tasks.registering(Copy::class) {
     exclude("**/*.a")
 }
 
+tasks.named("preBuild").configure {
+    dependsOn(filterJniLibs)
+}
+
 android {
     namespace = "com.github.xpenatan.webgpu.android"
     compileSdk = 36
