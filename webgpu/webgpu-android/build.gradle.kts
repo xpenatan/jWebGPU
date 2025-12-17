@@ -4,7 +4,6 @@ plugins {
 
 val moduleName = "webgpu-android"
 
-
 val filterJniLibs by tasks.registering(Copy::class) {
     from("$projectDir/../webgpu-build/build/c++/libs/android")
     into(layout.buildDirectory.dir("tmp/jniLibs"))
@@ -21,7 +20,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 26
+        minSdk = 29
     }
 
     sourceSets {

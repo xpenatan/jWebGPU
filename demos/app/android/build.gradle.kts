@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.github.xpenatan.webgpu.demo"
-        minSdk = 26
+        minSdk = 29
         versionCode = 5
         versionName = "0.0.5"
     }

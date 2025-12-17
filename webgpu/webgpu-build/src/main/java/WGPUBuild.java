@@ -404,6 +404,7 @@ public class WGPUBuild {
             linkTarget.headerDirs.add("-I" + webgpuIncludePath);
             linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jniglue");
             linkTarget.linkerFlags.add(libPath);
+            linkTarget.cppCompiler.add("-fPIC");
             linkTarget.linkerFlags.add("-landroid");
             linkTarget.linkerFlags.add("-llog");
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
