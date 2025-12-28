@@ -23,12 +23,12 @@ public class JWebGPULoader {
     public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
         IDLLoader.init(new JParserLibraryLoaderListener() {
             @Override
-            public void onLoad(boolean idl_isSuccess, Exception idl_e) {
+            public void onLoad(boolean idl_isSuccess, Throwable idl_t) {
                 if(idl_isSuccess) {
                     initInternal(backend, listener);
                 }
                 else {
-                    listener.onLoad(false, idl_e);
+                    listener.onLoad(false, idl_t);
                 }
             }
         });
