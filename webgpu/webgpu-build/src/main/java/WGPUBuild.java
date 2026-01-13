@@ -119,6 +119,7 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("user32.lib");
         linkTarget.linkerFlags.add("gdi32.lib");
         linkTarget.linkerFlags.add("oleaut32.lib");
+        linkTarget.linkerFlags.add("-DLL");
         multiTarget.add(linkTarget);
 
         return multiTarget;
@@ -159,6 +160,7 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("user32.lib");
         linkTarget.linkerFlags.add("gdi32.lib");
         linkTarget.linkerFlags.add("oleaut32.lib");
+        linkTarget.linkerFlags.add("-DLL");
         multiTarget.add(linkTarget);
 
         Path headerSouce = Paths.get(dawnPath + "/webgpu.h");
@@ -212,6 +214,7 @@ public class WGPUBuild {
         linkTarget.linkerFlags.add("user32.lib");
         linkTarget.linkerFlags.add("gdi32.lib");
         linkTarget.linkerFlags.add("oleaut32.lib");
+        linkTarget.linkerFlags.add("-DLL");
         multiTarget.add(linkTarget);
 
         Path headerSouce = Paths.get(dawnPath + "/webgpu.h");
