@@ -247,6 +247,7 @@ public class WGPUBuild {
         LinuxTarget linkTarget = new LinuxTarget();
         linkTarget.addJNIHeaders();
         linkTarget.cppFlags.add("-std=c++17");
+        linkTarget.cppFlags.add("-fPIC");
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.headerDirs.add("-I" + webgpuIncludePath);
         linkTarget.headerDirs.add("-I" + glfwIncludePath);
@@ -272,6 +273,7 @@ public class WGPUBuild {
             MacTarget linkTarget = new MacTarget(true);
             linkTarget.addJNIHeaders();
             linkTarget.cppFlags.add("-std=c++17");
+            linkTarget.cppFlags.add("-fPIC");
             linkTarget.cppCompiler.add("-x");
             linkTarget.cppCompiler.add("objective-c++");
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
@@ -304,6 +306,7 @@ public class WGPUBuild {
             MacTarget linkTarget = new MacTarget(false);
             linkTarget.addJNIHeaders();
             linkTarget.cppFlags.add("-std=c++17");
+            linkTarget.cppFlags.add("-fPIC");
             linkTarget.cppCompiler.add("-x");
             linkTarget.cppCompiler.add("objective-c++");
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
