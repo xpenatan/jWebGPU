@@ -32,20 +32,27 @@ android {
         sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
         targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
     api("com.github.xpenatan.jParser:idl-helper-android:${LibExt.jParserVersion}")
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            artifactId = moduleName
-            group = LibExt.groupId
-            version = LibExt.libVersion
-            afterEvaluate {
-                artifact(tasks.named("bundleReleaseAar"))
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                artifactId = moduleName
+                group = LibExt.groupId
+                version = LibExt.libVersion
+                from(components["release"])
             }
         }
     }
