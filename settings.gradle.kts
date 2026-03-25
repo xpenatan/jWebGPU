@@ -5,18 +5,18 @@ include(":webgpu:webgpu-download") // Module to download the sources
 include(":webgpu:webgpu-build")
 include(":webgpu:webgpu-base")
 include(":webgpu:webgpu-core")
-include(":webgpu:webgpu-desktop")
+include(":webgpu:webgpu-desktop-jni")
 include(":webgpu:webgpu-teavm")
 include(":webgpu:webgpu-android")
 
 // A temp backend code for testing
 include(":demos:backend:core")
-include(":demos:backend:desktop")
+include(":demos:backend:desktop-jni")
 include(":demos:backend:teavm")
 include(":demos:backend:android")
 
 include(":demos:app:core")
-include(":demos:app:desktop")
+include(":demos:app:desktop-jni")
 include(":demos:app:teavm")
 include(":demos:app:android")
 

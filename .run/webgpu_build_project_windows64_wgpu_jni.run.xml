@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="webgpu_build_project_android_wgpu" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Build">
+  <configuration default="false" name="webgpu_build_project_windows64_wgpu_jni" type="GradleRunConfiguration" factoryName="Gradle" folderName="WebGPU-Build">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/webgpu/webgpu-build" />
@@ -10,15 +10,18 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="webgpu_build_project_android_wgpu" />
+          <option value="webgpu_build_project_windows64_wgpu_jni" />
         </list>
       </option>
       <option name="vmOptions" />
     </ExternalSystemSettings>
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+    <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
     <DebugAllEnabled>false</DebugAllEnabled>
     <RunAsTest>false</RunAsTest>
+    <GradleProfilingDisabled>false</GradleProfilingDisabled>
+    <GradleCoverageDisabled>false</GradleCoverageDisabled>
     <method v="2" />
   </configuration>
 </component>

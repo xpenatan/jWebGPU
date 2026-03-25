@@ -4,7 +4,7 @@ plugins {
 }
 
 
-val moduleName = "webgpu-desktop"
+val moduleName = "webgpu-desktop-jni"
 
 val libDir = "${rootProject.projectDir}/webgpu"
 val windowsFile = "$libDir/webgpu-build/build/c++/libs/windows/vc/wgpu/jWebGPU64.dll"
@@ -60,7 +60,7 @@ java {
 //}
 
 dependencies {
-    api("com.github.xpenatan.jParser:idl-helper-desktop:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:idl-helper-desktop-jni:${LibExt.jParserVersion}")
 }
 
 publishing {

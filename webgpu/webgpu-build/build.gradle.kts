@@ -29,7 +29,7 @@ tasks.register<JavaExec>("webgpu_build_project") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_windows64_dawn") {
+tasks.register<JavaExec>("webgpu_build_project_windows64_dawn_jni") {
     group = "webgpu"
     description = "Generate dawn native project"
     mainClass.set(mainWGPUClassName)
@@ -45,7 +45,7 @@ tasks.register<JavaExec>("webgpu_build_project_teavm_dawn") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu") {
+tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
@@ -53,7 +53,7 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu") {
+tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
@@ -61,7 +61,7 @@ tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu") {
+tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
@@ -69,7 +69,7 @@ tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu") {
+tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
@@ -77,7 +77,7 @@ tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_android_wgpu") {
+tasks.register<JavaExec>("webgpu_build_project_android_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)

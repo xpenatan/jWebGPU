@@ -54,7 +54,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-download:webgpu_download_windows_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu :webgpu:webgpu-build:webgpu_build_project_windows64_dawn
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_jni :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_jni
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -92,7 +92,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_jni
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -126,7 +126,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-download:webgpu_download_macos_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_macos_aarch64 :webgpu:webgpu-download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_jni :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_jni
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -215,7 +215,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_android_i686_wgpu :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_android_wgpu
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_android_wgpu_jni
         env:
           NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
