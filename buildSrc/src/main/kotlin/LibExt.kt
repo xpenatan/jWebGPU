@@ -12,6 +12,7 @@ object LibExt {
 
     const val java8Target = "1.8"
     const val java11Target = "11"
+    const val java24Target = "24"
 
     //Library dependencies
     const val jParserVersion = "-SNAPSHOT"
@@ -21,7 +22,7 @@ object LibExt {
     //Example dependencies
     const val jUnitVersion = "4.12"
 
-    const val exampleUseRepoLibs = true
+    const val exampleUseRepoLibs = false
 }
 
 private fun getVersion(): String {

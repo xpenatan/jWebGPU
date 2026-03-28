@@ -5,6 +5,7 @@ import java.net.URLEncoder
 var libProjects = mutableSetOf(
     project(":webgpu:webgpu-core"),
     project(":webgpu:webgpu-desktop-jni"),
+    project(":webgpu:webgpu-desktop-ffm"),
     project(":webgpu:webgpu-teavm"),
     project(":webgpu:webgpu-android"),
 )

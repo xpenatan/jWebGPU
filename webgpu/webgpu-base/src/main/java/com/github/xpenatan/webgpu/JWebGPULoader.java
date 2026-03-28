@@ -14,6 +14,10 @@ public class JWebGPULoader {
         #include "jWebGPU.h"
     */
 
+    /*[-FFM;-NATIVE]
+        #include "jWebGPU.h"
+    */
+
     private static JWebGPUBackend backend;
 
     public static void init(JParserLibraryLoaderListener listener) {

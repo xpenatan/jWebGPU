@@ -14,6 +14,50 @@ public class WGPUQueue extends IDLBase {
     private WGPUQueue(byte v, char c) {
     }
 
+    /*[-FFM;-NATIVE]
+        extern "C" {
+        FFM_EXPORT void jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteBufferFFM__JJIJI(int64_t this_addr, int64_t buffer_addr, int32_t bufferOffset, int64_t data_ptr, int32_t dataSize) {
+            JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+            nativeObject->WriteBuffer((JGPU::WGPUBuffer*)buffer_addr, bufferOffset, (void*)data_ptr, dataSize);
+        }
+
+        FFM_EXPORT void jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteTextureFFM__JJJIJJ(int64_t this_addr, int64_t destination_addr, int64_t data_ptr, int32_t dataSize, int64_t dataLayout_addr, int64_t writeSize_addr) {
+            JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+            nativeObject->WriteTexture((JGPU::WGPUTexelCopyTextureInfo*)destination_addr, (void*)data_ptr, dataSize, (JGPU::WGPUTexelCopyBufferLayout*)dataLayout_addr, (JGPU::WGPUExtent3D*)writeSize_addr);
+        }
+        }
+    */
+
+    /*[-FFM;-ADD]
+        private static final class FFMBufferHandles {
+            private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+            private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+
+            static final java.lang.invoke.MethodHandle writeBuffer = LINKER.downcallHandle(
+                    LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteBufferFFM__JJIJI").orElseThrow(),
+                    java.lang.foreign.FunctionDescriptor.ofVoid(
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_INT,
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_INT
+                    )
+            );
+
+            static final java.lang.invoke.MethodHandle writeTexture = LINKER.downcallHandle(
+                    LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteTextureFFM__JJJIJJ").orElseThrow(),
+                    java.lang.foreign.FunctionDescriptor.ofVoid(
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_INT,
+                            java.lang.foreign.ValueLayout.JAVA_LONG,
+                            java.lang.foreign.ValueLayout.JAVA_LONG
+                    )
+            );
+        }
+    */
+
 
     /*[-TEAVM;-ADD_RAW]
         @Override
@@ -36,6 +80,12 @@ public class WGPUQueue extends IDLBase {
             internal_native_WriteBuffer(native_object, buffer.native_object, bufferOffset, array, dataSize);
         }
     */
+    /*[-FFM;-REPLACE_BLOCK]
+        {
+            java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofBuffer(byteBuffer);
+            internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, seg.address(), dataSize);
+        }
+    */
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
         internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, byteBuffer, dataSize);
     }
@@ -51,12 +101,28 @@ public class WGPUQueue extends IDLBase {
         void* bufferAddress = env->GetDirectBufferAddress(byteBuffer);
         nativeObject->WriteBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)bufferOffset, bufferAddress, (int)dataSize);
     */
+    /*[-FFM;-REPLACE]
+        private static void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, long data_ptr, int dataSize) {
+            try {
+                FFMBufferHandles.writeBuffer.invokeExact(this_addr, buffer_addr, bufferOffset, data_ptr, dataSize);
+            }
+            catch(Throwable e) {
+                throw new RuntimeException(e);
+            }
+        }
+    */
     private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize);
 
     /*[-TEAVM;-REPLACE_BLOCK]
         {
             org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
             internal_native_WriteTexture(native_object, destination.native_address, array, dataSize, dataLayout.native_address, writeSize.native_address);
+        }
+    */
+    /*[-FFM;-REPLACE_BLOCK]
+        {
+            java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofBuffer(byteBuffer);
+            internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), seg.address(), dataSize, dataLayout.native_address, writeSize.native_address);
         }
     */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
@@ -79,6 +145,16 @@ public class WGPUQueue extends IDLBase {
         JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
         void* bufferAddress = env->GetDirectBufferAddress(byteBuffer);
         nativeObject->WriteTexture((JGPU::WGPUTexelCopyTextureInfo* )destination_addr, bufferAddress, (int)dataSize, (JGPU::WGPUTexelCopyBufferLayout* )dataLayout_addr, (JGPU::WGPUExtent3D* )writeSize_addr);
+    */
+    /*[-FFM;-REPLACE]
+        private static void internal_native_WriteTexture(long this_addr, long destination_addr, long data_ptr, int dataSize, long dataLayout_addr, long writeSize_addr) {
+            try {
+                FFMBufferHandles.writeTexture.invokeExact(this_addr, destination_addr, data_ptr, dataSize, dataLayout_addr, writeSize_addr);
+            }
+            catch(Throwable e) {
+                throw new RuntimeException(e);
+            }
+        }
     */
     private static native void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr);
 }

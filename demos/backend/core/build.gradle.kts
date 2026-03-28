@@ -9,10 +9,11 @@ java {
 }
 
 dependencies {
+    compileOnly("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
     if(LibExt.exampleUseRepoLibs) {
-        api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+        compileOnly("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
     }
     else {
-        api(project(":webgpu:webgpu-core"))
+        compileOnly(project(":webgpu:webgpu-core"))
     }
 }

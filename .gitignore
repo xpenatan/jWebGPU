@@ -32,3 +32,5 @@ libs/
 *.ini
 
 **/webapp/**
+
+LOCAL_AGENT.md

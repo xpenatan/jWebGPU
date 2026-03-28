@@ -43,6 +43,7 @@ android {
 
 dependencies {
     api("com.github.xpenatan.jParser:idl-helper-android:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
 }
 
 afterEvaluate {

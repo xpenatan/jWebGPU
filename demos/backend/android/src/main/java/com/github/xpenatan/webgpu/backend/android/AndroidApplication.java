@@ -10,8 +10,6 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
-import com.github.xpenatan.jparser.idl.IDLLoader;
 import com.github.xpenatan.webgpu.WGPUAndroidWindow;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;

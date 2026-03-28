@@ -37,6 +37,14 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_dawn_jni") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
+tasks.register<JavaExec>("webgpu_build_project_windows64_dawn_ffm") {
+    group = "webgpu"
+    description = "Generate dawn native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("ffm_windows64_dawn")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
 tasks.register<JavaExec>("webgpu_build_project_teavm_dawn") {
     group = "webgpu"
     description = "Generate native project"
@@ -82,5 +90,37 @@ tasks.register<JavaExec>("webgpu_build_project_android_wgpu_jni") {
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
     args = mutableListOf("android")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu_ffm") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("ffm_windows64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu_ffm") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("ffm_linux64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu_ffm") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("ffm_mac64")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu_ffm") {
+    group = "webgpu"
+    description = "Generate native project"
+    mainClass.set(mainWGPUClassName)
+    args = mutableListOf("ffm_macArm")
     classpath = sourceSets["main"].runtimeClasspath
 }

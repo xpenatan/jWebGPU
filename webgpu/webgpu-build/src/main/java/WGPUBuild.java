@@ -35,6 +35,19 @@ public class WGPUBuild {
         BuildToolOptions op = new BuildToolOptions(data, args);
         op.addAdditionalIDLRefPath(IDLReader.getIDLHelperFile());
 
+        boolean enableFFM = op.containsArg("ffm");
+        if(!enableFFM) {
+            for(String arg : args) {
+                if(arg != null && arg.startsWith("ffm_")) {
+                    enableFFM = true;
+                    break;
+                }
+            }
+        }
+        if(enableFFM) {
+            op.generateFFM = true;
+        }
+
         BuilderTool.build(op, new BuildToolListener() {
             @Override
             public void onAddTarget(BuildToolOptions op, IDLReader idlReader, ArrayList<BuildMultiTarget> targets) {
@@ -69,6 +82,23 @@ public class WGPUBuild {
 //                if(op.containsArg("iOS")) {
 //                    targets.add(getIOSTarget(op));
 //                }
+
+
+                if(op.containsArg("ffm_windows64")) {
+                    targets.add(getFFMWindowTarget(op, downloadPath));
+                }
+                if(op.containsArg("ffm_windows64_dawn")) {
+                    targets.add(getFFMWindowDawnTarget(op, downloadPath));
+                }
+                if(op.containsArg("ffm_linux64")) {
+                    targets.add(getFFMLinuxTarget(op, downloadPath));
+                }
+                if(op.containsArg("ffm_mac64")) {
+                    targets.add(getFFMMacTarget(op, downloadPath, false));
+                }
+                if(op.containsArg("ffm_macArm")) {
+                    targets.add(getFFMMacTarget(op, downloadPath, true));
+                }
             }
         }, new IDLRenaming() {
             @Override
@@ -417,6 +447,166 @@ public class WGPUBuild {
             linkTarget.cppInclude.add(op.getCustomSourceDir() + "jWebGPU.cpp");
             linkTarget.linkerFlags.add("-Wl,-z,max-page-size=16384");
             multiTarget.add(linkTarget);
+        }
+        return multiTarget;
+    }
+
+
+    private static BuildMultiTarget getFFMWindowTarget(BuildToolOptions op, String downloadPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+//        WindowsMSVCTarget.DEBUG_BUILD = true;
+//        String wgpuPath = buildPath + "/windows_x86_64_debug";
+
+        String wgpuPath = downloadPath + "/windows_x86_64";
+        String webgpuIncludePath = wgpuPath + "/include";
+        String libPath = wgpuPath + "/lib/wgpu_native.lib";
+        String glfwIncludePath = downloadPath + "/GLFW";
+
+        // Compile glue code and link
+        WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.addFFMGlueCode(libBuildCPPPath);
+        linkTarget.cppFlags.add("-std:c++17");
+        linkTarget.libDirSuffix += "wgpu/ffm";
+        linkTarget.tempBuildDir += "_wgpu";
+
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppCompiler.add("/MD");
+        linkTarget.cppCompiler.add("/EHsc");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "*.cpp");
+        linkTarget.linkerFlags.add(libPath);
+        linkTarget.linkerFlags.add("ws2_32.lib");
+        linkTarget.linkerFlags.add("userenv.lib");
+        linkTarget.linkerFlags.add("ntdll.lib");
+        linkTarget.linkerFlags.add("opengl32.lib");
+        linkTarget.linkerFlags.add("d3dcompiler.lib");
+        linkTarget.linkerFlags.add("ole32.lib");
+        linkTarget.linkerFlags.add("propsys.lib");
+        linkTarget.linkerFlags.add("runtimeobject.lib");
+        linkTarget.linkerFlags.add("user32.lib");
+        linkTarget.linkerFlags.add("gdi32.lib");
+        linkTarget.linkerFlags.add("oleaut32.lib");
+        linkTarget.linkerFlags.add("-DLL");
+        multiTarget.add(linkTarget);
+
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getFFMLinuxTarget(BuildToolOptions op, String downloadPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        String wgpuPath = downloadPath + "/linux_x86_64";
+        String webgpuIncludePath = wgpuPath + "/include";
+        String libPath = wgpuPath + "/lib/libwgpu_native.a";
+        String glfwIncludePath = downloadPath + "/GLFW";
+
+        LinuxTarget linkTarget = new LinuxTarget();
+        linkTarget.addFFMGlueCode(libBuildCPPPath);
+        linkTarget.cppFlags.add("-std=c++17");
+        linkTarget.cppFlags.add("-fPIC");
+        linkTarget.libDirSuffix = "linux/ffm";
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "*.cpp");
+        linkTarget.linkerFlags.add(libPath);
+        multiTarget.add(linkTarget);
+
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getFFMMacTarget(BuildToolOptions op, String downloadPath, boolean isArm) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        String wgpuPath = isArm ? downloadPath + "/macos_aarch64" : downloadPath + "/macos_x86_64";
+        String webgpuIncludePath = wgpuPath + "/include";
+        String libPath = wgpuPath + "/lib/libwgpu_native.a";
+        String glfwIncludePath = downloadPath + "/GLFW";
+
+        MacTarget linkTarget = new MacTarget(isArm);
+        linkTarget.addFFMGlueCode(libBuildCPPPath);
+        linkTarget.cppFlags.add("-std=c++17");
+        linkTarget.cppFlags.add("-fPIC");
+        linkTarget.libDirSuffix = isArm ? "mac/arm/ffm" : "mac/ffm";
+        linkTarget.cppCompiler.add("-x");
+        linkTarget.cppCompiler.add("objective-c++");
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "*.cpp");
+        linkTarget.linkerFlags.add("-framework");
+        linkTarget.linkerFlags.add("Metal");
+        linkTarget.linkerFlags.add("-framework");
+        linkTarget.linkerFlags.add("Foundation");
+        linkTarget.linkerFlags.add("-framework");
+        linkTarget.linkerFlags.add("Cocoa");
+        linkTarget.linkerFlags.add("-framework");
+        linkTarget.linkerFlags.add("QuartzCore");
+        linkTarget.linkerFlags.add("-framework");
+        linkTarget.linkerFlags.add("CoreFoundation");
+        linkTarget.linkerFlags.add("-framework");
+        linkTarget.linkerFlags.add("IOKit");
+        linkTarget.linkerFlags.add(libPath);
+        multiTarget.add(linkTarget);
+
+        return multiTarget;
+    }
+
+    private static BuildMultiTarget getFFMWindowDawnTarget(BuildToolOptions op, String downloadPath) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+
+        String dawnPath = downloadPath + "/dawn-x64";
+        String webgpuIncludePath = dawnPath + "/include";
+        String libPath = dawnPath + "/webgpu_dawn.lib";
+        String glfwIncludePath = downloadPath + "/GLFW";
+
+        // Compile glue code and link
+        WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
+        linkTarget.addFFMGlueCode(libBuildCPPPath);
+        linkTarget.cppFlags.add("-std:c++17");
+        linkTarget.libDirSuffix += "dawn/ffm";
+        linkTarget.tempBuildDir += "_dawn";
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        linkTarget.headerDirs.add("-I" + webgpuIncludePath);
+        linkTarget.headerDirs.add("-I" + glfwIncludePath);
+        linkTarget.cppCompiler.add("/MD");
+        linkTarget.cppCompiler.add("/EHsc");
+        linkTarget.cppCompiler.add("-DWEBGPU_DAWN");
+        linkTarget.cppInclude.add(op.getCustomSourceDir() + "*.cpp");
+        linkTarget.linkerFlags.add(libPath);
+        linkTarget.linkerFlags.add("ws2_32.lib");
+        linkTarget.linkerFlags.add("userenv.lib");
+        linkTarget.linkerFlags.add("ntdll.lib");
+        linkTarget.linkerFlags.add("opengl32.lib");
+        linkTarget.linkerFlags.add("d3dcompiler.lib");
+        linkTarget.linkerFlags.add("ole32.lib");
+        linkTarget.linkerFlags.add("propsys.lib");
+        linkTarget.linkerFlags.add("runtimeobject.lib");
+        linkTarget.linkerFlags.add("user32.lib");
+        linkTarget.linkerFlags.add("gdi32.lib");
+        linkTarget.linkerFlags.add("oleaut32.lib");
+        linkTarget.linkerFlags.add("-DLL");
+        multiTarget.add(linkTarget);
+
+        Path headerSouce = Paths.get(dawnPath + "/webgpu.h");
+        Path headerDestination = Paths.get(webgpuIncludePath + "/webgpu/webgpu.h");
+        Path nativeFile = Paths.get(dawnPath + "/webgpu_dawn.dll");
+
+        String dllOutputPath = op.getLibsDir() + "/" + linkTarget.libDirSuffix;
+        Path nativeDestination = Paths.get(dllOutputPath + "/webgpu_dawn.dll");
+        try {
+            Files.createDirectories(headerDestination.getParent());
+            Files.createDirectories(nativeDestination.getParent());
+            Files.copy(headerSouce, headerDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(nativeFile, nativeDestination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } catch(IOException e) {
+            throw new RuntimeException(e);
         }
         return multiTarget;
     }
