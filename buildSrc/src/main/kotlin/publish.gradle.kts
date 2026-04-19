@@ -53,9 +53,9 @@ configure(libProjects) {
                         }
                     }
                     scm {
-                        connection.set("scm:git:git://github.com/xpenatan/jWebGPU.git")
-                        developerConnection.set("scm:git:ssh://github.com/xpenatan/jWebGPU.git")
-                        url.set("http://github.com/xpenatan/jWebGPU/tree/master")
+                        connection.set("scm:git@github.com:xpenatan/jWebGPU.git")
+                        developerConnection.set("scm:git@github.com:xpenatan/jWebGPU.git")
+                        url.set("http://github.com/xpenatan/jWebGPU")
                     }
                     licenses {
                         license {
