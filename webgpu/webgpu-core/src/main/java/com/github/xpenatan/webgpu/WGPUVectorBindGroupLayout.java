@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUVectorBindGroupLayout extends IDLBase {
 
-    static private WGPUVectorBindGroupLayout WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0;
-
     static public final WGPUVectorBindGroupLayout NULL = WGPUVectorBindGroupLayout.native_new();
 
     public WGPUVectorBindGroupLayout() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorBindGroupLayout();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,17 @@ return (jlong)new JGPU::WGPUVectorBindGroupLayout();
         return new WGPUVectorBindGroupLayout((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorBindGroupLayout* nativeObject = (JGPU::WGPUVectorBindGroupLayout*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int size() {
-        return internal_native_size(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorBindGroupLayout* nativeObject = (JGPU::WGPUVectorBindGroupLayout*)this_addr;
-return nativeObject->size();
-*/
-    public static native int internal_native_size(long this_addr);
 
     public void clear() {
-        internal_native_clear(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorBindGroupLayout* nativeObject = (JGPU::WGPUVectorBindGroupLayout*)this_addr;
-nativeObject->clear();
-*/
-    public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUBindGroupLayout groupLayout) {
-        internal_native_push_back(native_address, groupLayout.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorBindGroupLayout* nativeObject = (JGPU::WGPUVectorBindGroupLayout*)this_addr;
-nativeObject->push_back(*((JGPU::WGPUBindGroupLayout* )groupLayout_addr));
-*/
-    public static native void internal_native_push_back(long this_addr, long groupLayout_addr);
 
     public static WGPUVectorBindGroupLayout obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUVectorBindGroupLayout.NULL;
-        if (WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0 = WGPUVectorBindGroupLayout.native_new();
-        WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorBindGroupLayout::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

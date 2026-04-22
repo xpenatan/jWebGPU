@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUOrigin3D extends IDLBase {
 
-    static private WGPUOrigin3D WGPUOrigin3D_TEMP_STATIC_GEN_0;
-
     static public final WGPUOrigin3D NULL = WGPUOrigin3D.native_new();
 
     public WGPUOrigin3D() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUOrigin3D();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,68 +29,19 @@ return (jlong)new JGPU::WGPUOrigin3D();
         return new WGPUOrigin3D((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void set(int x, int y, int z) {
-        internal_native_Set(native_address, x, y, z);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->Set((int)x, (int)y, (int)z);
-*/
-    public static native void internal_native_Set(long this_addr, int x, int y, int z);
 
     public void setX(int value) {
-        internal_native_SetX(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->SetX((int)value);
-*/
-    public static native void internal_native_SetX(long this_addr, int value);
 
     public void setY(int value) {
-        internal_native_SetY(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->SetY((int)value);
-*/
-    public static native void internal_native_SetY(long this_addr, int value);
 
     public void setZ(int value) {
-        internal_native_SetZ(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->SetZ((int)value);
-*/
-    public static native void internal_native_SetZ(long this_addr, int value);
 
     public static WGPUOrigin3D obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUOrigin3D.NULL;
-        if (WGPUOrigin3D_TEMP_STATIC_GEN_0 == null)
-            WGPUOrigin3D_TEMP_STATIC_GEN_0 = WGPUOrigin3D.native_new();
-        WGPUOrigin3D_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUOrigin3D_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUOrigin3D::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

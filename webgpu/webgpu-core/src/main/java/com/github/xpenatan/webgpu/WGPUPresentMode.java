@@ -40,33 +40,15 @@ public enum WGPUPresentMode implements IDLEnum<WGPUPresentMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPresentMode_Undefined;
-*/
     private static native int WGPUPresentMode_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPresentMode_Fifo;
-*/
     private static native int WGPUPresentMode_Fifo_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPresentMode_FifoRelaxed;
-*/
     private static native int WGPUPresentMode_FifoRelaxed_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPresentMode_Immediate;
-*/
     private static native int WGPUPresentMode_Immediate_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPresentMode_Mailbox;
-*/
     private static native int WGPUPresentMode_Mailbox_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPresentMode_Force32;
-*/
     private static native int WGPUPresentMode_Force32_NATIVE();
 }

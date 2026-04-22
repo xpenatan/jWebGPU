@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUShaderSourceSPIRV extends IDLBase {
 
-    static private WGPUShaderSourceSPIRV WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
-
     static public final WGPUShaderSourceSPIRV NULL = WGPUShaderSourceSPIRV.native_new();
 
     public WGPUShaderSourceSPIRV() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUShaderSourceSPIRV();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,28 +29,7 @@ return (jlong)new JGPU::WGPUShaderSourceSPIRV();
         return new WGPUShaderSourceSPIRV((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderSourceSPIRV* nativeObject = (JGPU::WGPUShaderSourceSPIRV*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public static WGPUShaderSourceSPIRV obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUShaderSourceSPIRV.NULL;
-        if (WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0 = WGPUShaderSourceSPIRV.native_new();
-        WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUShaderSourceSPIRV::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUBufferDescriptor extends IDLBase {
 
-    static private WGPUBufferDescriptor WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
-
     static public final WGPUBufferDescriptor NULL = WGPUBufferDescriptor.native_new();
 
     public WGPUBufferDescriptor() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUBufferDescriptor();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,78 +29,22 @@ return (jlong)new JGPU::WGPUBufferDescriptor();
         return new WGPUBufferDescriptor((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setUsage(WGPUBufferUsage usage) {
-        internal_native_SetUsage(native_address, usage.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetUsage((::WGPUBufferUsage)usage);
-*/
-    public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public void setSize(long size) {
-        internal_native_SetSize(native_address, size);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetSize(size);
-*/
-    public static native void internal_native_SetSize(long this_addr, long size);
 
     public void setMappedAtCreation(boolean mappedAtCreation) {
-        internal_native_SetMappedAtCreation(native_address, mappedAtCreation);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferDescriptor* nativeObject = (JGPU::WGPUBufferDescriptor*)this_addr;
-nativeObject->SetMappedAtCreation(mappedAtCreation);
-*/
-    public static native void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation);
 
     public static WGPUBufferDescriptor obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUBufferDescriptor.NULL;
-        if (WGPUBufferDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUBufferDescriptor_TEMP_STATIC_GEN_0 = WGPUBufferDescriptor.native_new();
-        WGPUBufferDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBufferDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

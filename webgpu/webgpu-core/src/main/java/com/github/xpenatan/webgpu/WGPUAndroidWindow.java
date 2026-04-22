@@ -10,12 +10,6 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUAndroidWindow extends IDLBase {
 
-    /*
-      [-JNI;-NATIVE]
-              #ifdef __ANDROID__
-                  #include <android/native_window_jni.h>
-              #endif
-    */
     public final static WGPUAndroidWindow NULL;
 
     static {
@@ -34,54 +28,13 @@ public class WGPUAndroidWindow extends IDLBase {
         internal_native_SetWindow(native_address, surfacePtr);
     }
 
-    /*
-      [-JNI;-NATIVE]
-              #ifdef __ANDROID__
-                  ANativeWindow* g_window = g_window = ANativeWindow_fromSurface(env, surface);
-                  return (jlong)g_window;
-              #else
-                  return 0;
-              #endif
-    */
     private static native long internal_getAndroidSurface(Object surface);
 
-    /*
-      [-JNI;-NATIVE]
-              WGPUAndroidWindow* nativeObject = (WGPUAndroidWindow*)this_addr;
-              nativeObject->SetWindow((void*)surfaceAddr);
-    */
     private static native void internal_native_SetWindow(long this_addr, long surfaceAddr);
 
     public WGPUAndroidWindow() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)new WGPUAndroidWindow();
-    */
-    public static native long internal_native_create_addr();
-
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*
-      [-JNI;-NATIVE]
-      WGPUAndroidWindow* nativeObject = (WGPUAndroidWindow*)this_addr;
-      delete nativeObject;
-    */
-    public static native void internal_native_deleteNative(long this_addr);
 
     public void initLogcat() {
-        internal_native_InitLogcat(native_address);
     }
-
-    /*
-      [-JNI;-NATIVE]
-      WGPUAndroidWindow* nativeObject = (WGPUAndroidWindow*)this_addr;
-      nativeObject->InitLogcat();
-    */
-    public static native void internal_native_InitLogcat(long this_addr);
 }

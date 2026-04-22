@@ -44,53 +44,23 @@ public enum WGPUBackendType implements IDLEnum<WGPUBackendType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_Undefined;
-*/
     private static native int WGPUBackendType_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_Null;
-*/
     private static native int WGPUBackendType_Null_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_WebGPU;
-*/
     private static native int WGPUBackendType_WebGPU_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_D3D11;
-*/
     private static native int WGPUBackendType_D3D11_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_D3D12;
-*/
     private static native int WGPUBackendType_D3D12_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_Metal;
-*/
     private static native int WGPUBackendType_Metal_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_Vulkan;
-*/
     private static native int WGPUBackendType_Vulkan_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_OpenGL;
-*/
     private static native int WGPUBackendType_OpenGL_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_OpenGLES;
-*/
     private static native int WGPUBackendType_OpenGLES_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBackendType_Force32;
-*/
     private static native int WGPUBackendType_Force32_NATIVE();
 }

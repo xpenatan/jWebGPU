@@ -42,8 +42,16 @@ android {
 }
 
 dependencies {
-    api("com.github.xpenatan.jParser:idl-helper-android:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-helper-android:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
+}
+
+tasks.named("clean") {
+    doFirst {
+        val srcPath = "$projectDir/src/main/java"
+        project.delete(files(srcPath))
+    }
 }
 
 afterEvaluate {

@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUCompilationInfo extends IDLBase {
 
-    private WGPUCompilationMessage WGPUCompilationMessage_TEMP_GEN_0;
-
     static public final WGPUCompilationInfo NULL = WGPUCompilationInfo.native_new();
 
     public WGPUCompilationInfo() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUCompilationInfo();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,40 +29,11 @@ return (jlong)new JGPU::WGPUCompilationInfo();
         return new WGPUCompilationInfo((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationInfo* nativeObject = (JGPU::WGPUCompilationInfo*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int getMessageCount() {
-        return internal_native_GetMessageCount(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationInfo* nativeObject = (JGPU::WGPUCompilationInfo*)this_addr;
-return nativeObject->GetMessageCount();
-*/
-    public static native int internal_native_GetMessageCount(long this_addr);
 
     public WGPUCompilationMessage getMessage(int index) {
-        long addr = internal_native_GetMessage_addr(native_address, index);
-        if (addr == 0)
-            return WGPUCompilationMessage.NULL;
-        if (WGPUCompilationMessage_TEMP_GEN_0 == null)
-            WGPUCompilationMessage_TEMP_GEN_0 = WGPUCompilationMessage.native_new();
-        WGPUCompilationMessage_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUCompilationMessage_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationInfo* nativeObject = (JGPU::WGPUCompilationInfo*)this_addr;
-static JGPU::WGPUCompilationMessage copy_addr;
-copy_addr = nativeObject->GetMessage((int)index);
-return (jlong)&copy_addr;*/
-    public static native long internal_native_GetMessage_addr(long this_addr, int index);
 }

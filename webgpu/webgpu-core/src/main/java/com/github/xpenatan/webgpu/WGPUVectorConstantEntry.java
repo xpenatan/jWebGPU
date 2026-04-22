@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUVectorConstantEntry extends IDLBase {
 
-    static private WGPUVectorConstantEntry WGPUVectorConstantEntry_TEMP_STATIC_GEN_0;
-
     static public final WGPUVectorConstantEntry NULL = WGPUVectorConstantEntry.native_new();
 
     public WGPUVectorConstantEntry() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorConstantEntry();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,17 @@ return (jlong)new JGPU::WGPUVectorConstantEntry();
         return new WGPUVectorConstantEntry((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorConstantEntry* nativeObject = (JGPU::WGPUVectorConstantEntry*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int size() {
-        return internal_native_size(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorConstantEntry* nativeObject = (JGPU::WGPUVectorConstantEntry*)this_addr;
-return nativeObject->size();
-*/
-    public static native int internal_native_size(long this_addr);
 
     public void clear() {
-        internal_native_clear(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorConstantEntry* nativeObject = (JGPU::WGPUVectorConstantEntry*)this_addr;
-nativeObject->clear();
-*/
-    public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUConstantEntry constantEntry) {
-        internal_native_push_back(native_address, constantEntry.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorConstantEntry* nativeObject = (JGPU::WGPUVectorConstantEntry*)this_addr;
-nativeObject->push_back(*((JGPU::WGPUConstantEntry* )constantEntry_addr));
-*/
-    public static native void internal_native_push_back(long this_addr, long constantEntry_addr);
 
     public static WGPUVectorConstantEntry obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUVectorConstantEntry.NULL;
-        if (WGPUVectorConstantEntry_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorConstantEntry_TEMP_STATIC_GEN_0 = WGPUVectorConstantEntry.native_new();
-        WGPUVectorConstantEntry_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUVectorConstantEntry_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorConstantEntry::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

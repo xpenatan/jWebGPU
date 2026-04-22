@@ -34,23 +34,11 @@ public enum WGPUPowerPreference implements IDLEnum<WGPUPowerPreference> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPowerPreference_Undefined;
-*/
     private static native int WGPUPowerPreference_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPowerPreference_LowPower;
-*/
     private static native int WGPUPowerPreference_LowPower_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPowerPreference_HighPerformance;
-*/
     private static native int WGPUPowerPreference_HighPerformance_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPowerPreference_Force32;
-*/
     private static native int WGPUPowerPreference_Force32_NATIVE();
 }

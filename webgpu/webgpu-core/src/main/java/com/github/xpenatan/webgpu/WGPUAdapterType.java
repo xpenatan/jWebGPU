@@ -39,28 +39,13 @@ public enum WGPUAdapterType implements IDLEnum<WGPUAdapterType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAdapterType_DiscreteGPU;
-*/
     private static native int WGPUAdapterType_DiscreteGPU_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAdapterType_IntegratedGPU;
-*/
     private static native int WGPUAdapterType_IntegratedGPU_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAdapterType_CPU;
-*/
     private static native int WGPUAdapterType_CPU_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAdapterType_Unknown;
-*/
     private static native int WGPUAdapterType_Unknown_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAdapterType_Force32;
-*/
     private static native int WGPUAdapterType_Force32_NATIVE();
 }

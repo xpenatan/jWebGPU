@@ -10,23 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUTexelCopyBufferInfo extends IDLBase {
 
-    private WGPUTexelCopyBufferLayout WGPUTexelCopyBufferLayout_TEMP_GEN_0;
-
-    private WGPUBuffer WGPUBuffer_TEMP_GEN_0;
-
-    static private WGPUTexelCopyBufferInfo WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
-
     static public final WGPUTexelCopyBufferInfo NULL = WGPUTexelCopyBufferInfo.native_new();
 
     public WGPUTexelCopyBufferInfo() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUTexelCopyBufferInfo();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -42,72 +29,18 @@ return (jlong)new JGPU::WGPUTexelCopyBufferInfo();
         return new WGPUTexelCopyBufferInfo((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public WGPUTexelCopyBufferLayout getLayout() {
-        long addr = internal_native_GetLayout_addr(native_address);
-        if (addr == 0)
-            return WGPUTexelCopyBufferLayout.NULL;
-        if (WGPUTexelCopyBufferLayout_TEMP_GEN_0 == null)
-            WGPUTexelCopyBufferLayout_TEMP_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
-        WGPUTexelCopyBufferLayout_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUTexelCopyBufferLayout_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-static JGPU::WGPUTexelCopyBufferLayout copy_addr;
-copy_addr = nativeObject->GetLayout();
-return (jlong)&copy_addr;*/
-    public static native long internal_native_GetLayout_addr(long this_addr);
 
     public WGPUBuffer getBuffer() {
-        long addr = internal_native_GetBuffer_addr(native_address);
-        if (addr == 0)
-            return WGPUBuffer.NULL;
-        if (WGPUBuffer_TEMP_GEN_0 == null)
-            WGPUBuffer_TEMP_GEN_0 = WGPUBuffer.native_new();
-        WGPUBuffer_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUBuffer_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-static JGPU::WGPUBuffer copy_addr;
-copy_addr = nativeObject->GetBuffer();
-return (jlong)&copy_addr;*/
-    public static native long internal_native_GetBuffer_addr(long this_addr);
 
     public void setBuffer(WGPUBuffer buffer) {
-        internal_native_SetBuffer(native_address, buffer.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-nativeObject->SetBuffer((JGPU::WGPUBuffer* )buffer_addr);
-*/
-    public static native void internal_native_SetBuffer(long this_addr, long buffer_addr);
 
     public static WGPUTexelCopyBufferInfo obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUTexelCopyBufferInfo.NULL;
-        if (WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferInfo.native_new();
-        WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTexelCopyBufferInfo::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

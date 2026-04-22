@@ -34,18 +34,9 @@ public enum WGPUQueryType implements IDLEnum<WGPUQueryType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUQueryType_Occlusion;
-*/
     private static native int WGPUQueryType_Occlusion_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUQueryType_Timestamp;
-*/
     private static native int WGPUQueryType_Timestamp_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUQueryType_Force32;
-*/
     private static native int WGPUQueryType_Force32_NATIVE();
 }

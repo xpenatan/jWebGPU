@@ -40,33 +40,15 @@ public enum WGPUTextureUsage implements IDLEnum<WGPUTextureUsage> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureUsage_None;
-*/
     private static native int WGPUTextureUsage_None_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureUsage_CopySrc;
-*/
     private static native int WGPUTextureUsage_CopySrc_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureUsage_CopyDst;
-*/
     private static native int WGPUTextureUsage_CopyDst_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureUsage_TextureBinding;
-*/
     private static native int WGPUTextureUsage_TextureBinding_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureUsage_StorageBinding;
-*/
     private static native int WGPUTextureUsage_StorageBinding_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureUsage_RenderAttachment;
-*/
     private static native int WGPUTextureUsage_RenderAttachment_NATIVE();
 }

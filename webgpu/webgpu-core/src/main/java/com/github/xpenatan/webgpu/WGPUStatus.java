@@ -34,18 +34,9 @@ public enum WGPUStatus implements IDLEnum<WGPUStatus> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStatus_Success;
-*/
     private static native int WGPUStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStatus_Error;
-*/
     private static native int WGPUStatus_Error_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStatus_Force32;
-*/
     private static native int WGPUStatus_Force32_NATIVE();
 }

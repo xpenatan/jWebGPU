@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUTexelCopyBufferLayout extends IDLBase {
 
-    static private WGPUTexelCopyBufferLayout WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
-
     public final static WGPUTexelCopyBufferLayout NULL = native_new();
 
     public static WGPUTexelCopyBufferLayout native_new() {
@@ -22,73 +20,18 @@ public class WGPUTexelCopyBufferLayout extends IDLBase {
     }
 
     public WGPUTexelCopyBufferLayout() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)new JGPU::WGPUTexelCopyBufferLayout();
-    */
-    public static native long internal_native_create_addr();
-
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      delete nativeObject;
-    */
-    public static native void internal_native_deleteNative(long this_addr);
 
     public void setOffset(int offset) {
-        internal_native_SetOffset(native_address, offset);
     }
-
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      nativeObject->SetOffset((int)offset);
-    */
-    public static native void internal_native_SetOffset(long this_addr, int offset);
 
     public void setBytesPerRow(int bytesPerRow) {
-        internal_native_SetBytesPerRow(native_address, bytesPerRow);
     }
-
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      nativeObject->SetBytesPerRow((int)bytesPerRow);
-    */
-    public static native void internal_native_SetBytesPerRow(long this_addr, int bytesPerRow);
 
     public void setRowsPerImage(int rowsPerImage) {
-        internal_native_SetRowsPerImage(native_address, rowsPerImage);
     }
-
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      nativeObject->SetRowsPerImage((int)rowsPerImage);
-    */
-    public static native void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage);
 
     public static WGPUTexelCopyBufferLayout obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUTexelCopyBufferLayout.NULL;
-        if (WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0 = WGPUTexelCopyBufferLayout.native_new();
-        WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)JGPU::WGPUTexelCopyBufferLayout::Obtain();
-    */
-    public static native long internal_native_Obtain_addr();
 }

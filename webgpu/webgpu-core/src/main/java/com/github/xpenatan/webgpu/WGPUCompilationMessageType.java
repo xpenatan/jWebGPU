@@ -34,23 +34,11 @@ public enum WGPUCompilationMessageType implements IDLEnum<WGPUCompilationMessage
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompilationMessageType_Error;
-*/
     private static native int WGPUCompilationMessageType_Error_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompilationMessageType_Warning;
-*/
     private static native int WGPUCompilationMessageType_Warning_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompilationMessageType_Info;
-*/
     private static native int WGPUCompilationMessageType_Info_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompilationMessageType_Force32;
-*/
     private static native int WGPUCompilationMessageType_Force32_NATIVE();
 }

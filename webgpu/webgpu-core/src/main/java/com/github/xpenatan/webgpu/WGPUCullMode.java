@@ -39,28 +39,13 @@ public enum WGPUCullMode implements IDLEnum<WGPUCullMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCullMode_Undefined;
-*/
     private static native int WGPUCullMode_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCullMode_None;
-*/
     private static native int WGPUCullMode_None_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCullMode_Front;
-*/
     private static native int WGPUCullMode_Front_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCullMode_Back;
-*/
     private static native int WGPUCullMode_Back_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCullMode_Force32;
-*/
     private static native int WGPUCullMode_Force32_NATIVE();
 }

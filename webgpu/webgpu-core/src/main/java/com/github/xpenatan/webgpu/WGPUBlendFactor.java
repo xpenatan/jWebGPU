@@ -53,98 +53,41 @@ public enum WGPUBlendFactor implements IDLEnum<WGPUBlendFactor> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Undefined;
-*/
     private static native int WGPUBlendFactor_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Zero;
-*/
     private static native int WGPUBlendFactor_Zero_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_One;
-*/
     private static native int WGPUBlendFactor_One_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Src;
-*/
     private static native int WGPUBlendFactor_Src_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusSrc;
-*/
     private static native int WGPUBlendFactor_OneMinusSrc_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_SrcAlpha;
-*/
     private static native int WGPUBlendFactor_SrcAlpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusSrcAlpha;
-*/
     private static native int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Dst;
-*/
     private static native int WGPUBlendFactor_Dst_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusDst;
-*/
     private static native int WGPUBlendFactor_OneMinusDst_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_DstAlpha;
-*/
     private static native int WGPUBlendFactor_DstAlpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusDstAlpha;
-*/
     private static native int WGPUBlendFactor_OneMinusDstAlpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_SrcAlphaSaturated;
-*/
     private static native int WGPUBlendFactor_SrcAlphaSaturated_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Constant;
-*/
     private static native int WGPUBlendFactor_Constant_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusConstant;
-*/
     private static native int WGPUBlendFactor_OneMinusConstant_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Src1;
-*/
     private static native int WGPUBlendFactor_Src1_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusSrc1;
-*/
     private static native int WGPUBlendFactor_OneMinusSrc1_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Src1Alpha;
-*/
     private static native int WGPUBlendFactor_Src1Alpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_OneMinusSrc1Alpha;
-*/
     private static native int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendFactor_Force32;
-*/
     private static native int WGPUBlendFactor_Force32_NATIVE();
 }

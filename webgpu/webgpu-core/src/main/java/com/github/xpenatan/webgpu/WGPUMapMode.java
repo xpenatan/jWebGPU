@@ -34,18 +34,9 @@ public enum WGPUMapMode implements IDLEnum<WGPUMapMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapMode_None;
-*/
     private static native int WGPUMapMode_None_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapMode_Read;
-*/
     private static native int WGPUMapMode_Read_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapMode_Write;
-*/
     private static native int WGPUMapMode_Write_NATIVE();
 }

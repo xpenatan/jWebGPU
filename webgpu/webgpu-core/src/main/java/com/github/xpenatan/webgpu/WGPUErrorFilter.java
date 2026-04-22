@@ -34,23 +34,11 @@ public enum WGPUErrorFilter implements IDLEnum<WGPUErrorFilter> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorFilter_Validation;
-*/
     private static native int WGPUErrorFilter_Validation_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorFilter_OutOfMemory;
-*/
     private static native int WGPUErrorFilter_OutOfMemory_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorFilter_Internal;
-*/
     private static native int WGPUErrorFilter_Internal_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorFilter_Force32;
-*/
     private static native int WGPUErrorFilter_Force32_NATIVE();
 }

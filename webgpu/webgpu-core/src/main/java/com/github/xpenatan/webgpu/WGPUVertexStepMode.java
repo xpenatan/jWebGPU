@@ -34,23 +34,11 @@ public enum WGPUVertexStepMode implements IDLEnum<WGPUVertexStepMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexStepMode_Undefined;
-*/
     private static native int WGPUVertexStepMode_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexStepMode_Vertex;
-*/
     private static native int WGPUVertexStepMode_Vertex_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexStepMode_Instance;
-*/
     private static native int WGPUVertexStepMode_Instance_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexStepMode_Force32;
-*/
     private static native int WGPUVertexStepMode_Force32_NATIVE();
 }

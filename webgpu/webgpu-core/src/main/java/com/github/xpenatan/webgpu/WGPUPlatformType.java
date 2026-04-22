@@ -41,38 +41,17 @@ public enum WGPUPlatformType implements IDLEnum<WGPUPlatformType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_Windows;
-*/
     private static native int WGPU_Windows_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_Mac;
-*/
     private static native int WGPU_Mac_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_Linux;
-*/
     private static native int WGPU_Linux_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_iOS;
-*/
     private static native int WGPU_iOS_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_Android;
-*/
     private static native int WGPU_Android_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_Web;
-*/
     private static native int WGPU_Web_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU_Unknown;
-*/
     private static native int WGPU_Unknown_NATIVE();
 }

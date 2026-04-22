@@ -48,13 +48,11 @@ This ensures that if the session is interrupted, the next agent has a perfect "s
 .\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm
 .\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_teavm_dawn
 
-.\gradlew.bat :demos:app:desktop:webgpu_demo_app_run_desktop_jni
-.\gradlew.bat :demos:app:desktop:webgpu_demo_app_run_desktop_ffm
-.\gradlew.bat :demos:app:desktop:webgpu_demo_app_run_desktop -Pbridge=jni
-.\gradlew.bat :demos:app:desktop:webgpu_demo_app_run_desktop -Pbridge=ffm
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm
 .\gradlew.bat :demos:app:teavm:webgpu_demo_app_run_teavm
 ```
-- Use task names from Gradle files (some README names are older and omit `_jni`/`_ffm` suffixes).
+- Use task names from Gradle files.
 
 ## Integration Points
 - Local development against jParser/TeaVM can be enabled via commented `includeBuild(...)` dependency substitution in `settings.gradle.kts`.
@@ -65,4 +63,3 @@ This ensures that if the session is interrupted, the next agent has a perfect "s
 - If generation looks wrong, inspect in order: `jWebGPU.idl` -> `webgpu-base` method directives -> generated target module file.
 - If runtime loading fails, check expected native paths under `native/wgpu` or `native/dawn` and loader logic in `JWebGPULoader`.
 - If TeaVM app starts but bindings are missing, verify `demos/app/teavm` task `findAndCopyJavaScriptInClasspath` copied `.js/.wasm` to `build/dist/webapp/scripts`.
-

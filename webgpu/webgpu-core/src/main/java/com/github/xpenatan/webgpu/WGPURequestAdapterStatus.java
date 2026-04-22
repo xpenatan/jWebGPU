@@ -34,23 +34,11 @@ public enum WGPURequestAdapterStatus implements IDLEnum<WGPURequestAdapterStatus
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestAdapterStatus_Success;
-*/
     private static native int WGPURequestAdapterStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestAdapterStatus_Unavailable;
-*/
     private static native int WGPURequestAdapterStatus_Unavailable_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestAdapterStatus_Error;
-*/
     private static native int WGPURequestAdapterStatus_Error_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestAdapterStatus_Force32;
-*/
     private static native int WGPURequestAdapterStatus_Force32_NATIVE();
 }

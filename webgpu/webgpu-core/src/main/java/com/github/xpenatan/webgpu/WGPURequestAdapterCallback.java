@@ -12,28 +12,9 @@ public class WGPURequestAdapterCallback extends IDLBase {
 
     static public final WGPURequestAdapterCallback NULL = WGPURequestAdapterCallback.native_new();
 
-    /*[-JNI;-NATIVE]
-	static jmethodID WGPURequestAdapterCallbackImpl_OnCallbackIJS_ID;
-
-class WGPURequestAdapterCallbackImpl : public JGPU::WGPURequestAdapterCallback {
-private:
-	JNIEnv* env;
-	jobject obj;
-public:
-void setupCallback(JNIEnv* env, jobject obj) {
-	this->env = env;
-	this->obj = env->NewGlobalRef(obj);
-	static jclass jClassID = 0;
-	if(jClassID == 0) {
-		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPURequestAdapterCallbackImpl_OnCallbackIJS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJLjava/lang/String;)V");
-	}
-}
-virtual void OnCallback(WGPURequestAdapterStatus status, JGPU::WGPUAdapter* adapter, const char* message) {
-   env->CallVoidMethod(obj, WGPURequestAdapterCallbackImpl_OnCallbackIJS_ID, status, (jlong)adapter, env->NewStringUTF(message));
-}
-};
-*/
+    /**
+     * Dummy constructor, used internally to creates objects without C++ pointer
+     */
     @Deprecated()
     protected WGPURequestAdapterCallback(byte b, char c) {
     }
@@ -45,16 +26,6 @@ virtual void OnCallback(WGPURequestAdapterStatus status, JGPU::WGPUAdapter* adap
         return new WGPURequestAdapterCallback((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-WGPURequestAdapterCallbackImpl* nativeObject = (WGPURequestAdapterCallbackImpl*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public WGPURequestAdapterCallback() {
         long addr = internal_native_create_addr();
         internal_reset(addr, true);
@@ -62,7 +33,6 @@ delete nativeObject;
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(native_address);
     }
 
     protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, String message) {
@@ -83,14 +53,5 @@ delete nativeObject;
         onCallback(status_addr_enum, adapter_addr_new, message_addr);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new WGPURequestAdapterCallbackImpl();
-*/
     public static native long internal_native_create_addr();
-
-    /*[-JNI;-NATIVE]
-WGPURequestAdapterCallbackImpl* nativeObject = (WGPURequestAdapterCallbackImpl*)this_addr;
-nativeObject->setupCallback(env, object);
-*/
-    public native void internal_native_setupCallback(long this_addr);
 }

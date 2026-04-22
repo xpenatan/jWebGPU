@@ -10,12 +10,6 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPU extends IDLBase {
 
-    static private WGPUInstance WGPUInstance_TEMP_STATIC_GEN_0;
-
-    static private STBImage STBImage_TEMP_STATIC_GEN_0;
-
-    static private STBImage STBImage_TEMP_STATIC_GEN_1;
-
     static public final WGPU NULL = WGPU.native_new();
 
     /**
@@ -32,88 +26,23 @@ public class WGPU extends IDLBase {
         return new WGPU((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-WGPU* nativeObject = (WGPU*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public static WGPUPlatformType getPlatformType() {
-        int value = internal_native_GetPlatformType();
-        WGPUPlatformType[] values = WGPUPlatformType.values();
-        for (int i = 0; i < values.length; i++) {
-            WGPUPlatformType enumVal = values[i];
-            if (enumVal != WGPUPlatformType.CUSTOM && enumVal.getValue() == value)
-                return enumVal;
-        }
-        return WGPUPlatformType.CUSTOM.setValue(value);
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (int)WGPU::GetPlatformType();
-*/
-    public static native int internal_native_GetPlatformType();
 
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
-        long addr = internal_native_SetupInstance_addr(descriptor.native_address);
-        if (addr == 0)
-            return WGPUInstance.NULL;
-        WGPUInstance WGPUInstance_NEW = WGPUInstance.native_new();
-        WGPUInstance_NEW.internal_reset(addr, true);
-        return WGPUInstance_NEW;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::SetupInstance((JGPU::WGPUInstanceDescriptor* )descriptor_addr);
-*/
-    public static native long internal_native_SetupInstance_addr(long descriptor_addr);
 
     public static WGPUInstance setupInstance() {
-        long addr = internal_native_SetupInstance_addr();
-        if (addr == 0)
-            return WGPUInstance.NULL;
-        if (WGPUInstance_TEMP_STATIC_GEN_0 == null)
-            WGPUInstance_TEMP_STATIC_GEN_0 = WGPUInstance.native_new();
-        WGPUInstance_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUInstance_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::SetupInstance();
-*/
-    public static native long internal_native_SetupInstance_addr();
 
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {
-        long addr = internal_native_loadImage_addr(buffer.native_address, desiredChannels);
-        if (addr == 0)
-            return STBImage.NULL;
-        if (STBImage_TEMP_STATIC_GEN_0 == null)
-            STBImage_TEMP_STATIC_GEN_0 = STBImage.native_new();
-        STBImage_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return STBImage_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::loadImage((WGPUByteBuffer* )buffer_addr, (int)desiredChannels);
-*/
-    public static native long internal_native_loadImage_addr(long buffer_addr, int desiredChannels);
 
     public static STBImage loadImage(WGPUByteBuffer buffer) {
-        long addr = internal_native_loadImage_addr(buffer.native_address);
-        if (addr == 0)
-            return STBImage.NULL;
-        if (STBImage_TEMP_STATIC_GEN_1 == null)
-            STBImage_TEMP_STATIC_GEN_1 = STBImage.native_new();
-        STBImage_TEMP_STATIC_GEN_1.internal_reset(addr, false);
-        return STBImage_TEMP_STATIC_GEN_1;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::loadImage((WGPUByteBuffer* )buffer_addr);
-*/
-    public static native long internal_native_loadImage_addr(long buffer_addr);
 }

@@ -26,63 +26,18 @@ public class WGPUPrimitiveState extends IDLBase {
         return new WGPUPrimitiveState((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setTopology(WGPUPrimitiveTopology value) {
-        internal_native_SetTopology(native_address, value.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetTopology((::WGPUPrimitiveTopology)value);
-*/
-    public static native void internal_native_SetTopology(long this_addr, int value);
 
     public void setStripIndexFormat(WGPUIndexFormat value) {
-        internal_native_SetStripIndexFormat(native_address, value.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetStripIndexFormat((::WGPUIndexFormat)value);
-*/
-    public static native void internal_native_SetStripIndexFormat(long this_addr, int value);
 
     public void setFrontFace(WGPUFrontFace value) {
-        internal_native_SetFrontFace(native_address, value.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetFrontFace((::WGPUFrontFace)value);
-*/
-    public static native void internal_native_SetFrontFace(long this_addr, int value);
 
     public void setCullMode(WGPUCullMode value) {
-        internal_native_SetCullMode(native_address, value.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetCullMode((::WGPUCullMode)value);
-*/
-    public static native void internal_native_SetCullMode(long this_addr, int value);
 }

@@ -34,23 +34,11 @@ public enum WGPUCallbackMode implements IDLEnum<WGPUCallbackMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCallbackMode_WaitAnyOnly;
-*/
     private static native int WGPUCallbackMode_WaitAnyOnly_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCallbackMode_AllowProcessEvents;
-*/
     private static native int WGPUCallbackMode_AllowProcessEvents_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCallbackMode_AllowSpontaneous;
-*/
     private static native int WGPUCallbackMode_AllowSpontaneous_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCallbackMode_Force32;
-*/
     private static native int WGPUCallbackMode_Force32_NATIVE();
 }

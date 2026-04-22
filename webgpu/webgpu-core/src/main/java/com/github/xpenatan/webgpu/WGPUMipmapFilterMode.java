@@ -34,23 +34,11 @@ public enum WGPUMipmapFilterMode implements IDLEnum<WGPUMipmapFilterMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMipmapFilterMode_Undefined;
-*/
     private static native int WGPUMipmapFilterMode_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMipmapFilterMode_Nearest;
-*/
     private static native int WGPUMipmapFilterMode_Nearest_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMipmapFilterMode_Linear;
-*/
     private static native int WGPUMipmapFilterMode_Linear_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMipmapFilterMode_Force32;
-*/
     private static native int WGPUMipmapFilterMode_Force32_NATIVE();
 }

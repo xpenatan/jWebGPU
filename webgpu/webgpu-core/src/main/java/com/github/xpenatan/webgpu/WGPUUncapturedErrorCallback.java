@@ -12,28 +12,9 @@ public class WGPUUncapturedErrorCallback extends IDLBase {
 
     static public final WGPUUncapturedErrorCallback NULL = WGPUUncapturedErrorCallback.native_new();
 
-    /*[-JNI;-NATIVE]
-	static jmethodID WGPUUncapturedErrorCallbackImpl_OnCallbackIS_ID;
-
-class WGPUUncapturedErrorCallbackImpl : public JGPU::WGPUUncapturedErrorCallback {
-private:
-	JNIEnv* env;
-	jobject obj;
-public:
-void setupCallback(JNIEnv* env, jobject obj) {
-	this->env = env;
-	this->obj = env->NewGlobalRef(obj);
-	static jclass jClassID = 0;
-	if(jClassID == 0) {
-		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPUUncapturedErrorCallbackImpl_OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
-	}
-}
-virtual void OnCallback(WGPUErrorType errorType, const char* message) {
-   env->CallVoidMethod(obj, WGPUUncapturedErrorCallbackImpl_OnCallbackIS_ID, errorType, env->NewStringUTF(message));
-}
-};
-*/
+    /**
+     * Dummy constructor, used internally to creates objects without C++ pointer
+     */
     @Deprecated()
     protected WGPUUncapturedErrorCallback(byte b, char c) {
     }
@@ -45,16 +26,6 @@ virtual void OnCallback(WGPUErrorType errorType, const char* message) {
         return new WGPUUncapturedErrorCallback((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-WGPUUncapturedErrorCallbackImpl* nativeObject = (WGPUUncapturedErrorCallbackImpl*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public WGPUUncapturedErrorCallback() {
         long addr = internal_native_create_addr();
         internal_reset(addr, true);
@@ -62,7 +33,6 @@ delete nativeObject;
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(native_address);
     }
 
     protected void onCallback(WGPUErrorType errorType, String message) {
@@ -81,14 +51,5 @@ delete nativeObject;
         onCallback(errorType_addr_enum, message_addr);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new WGPUUncapturedErrorCallbackImpl();
-*/
     public static native long internal_native_create_addr();
-
-    /*[-JNI;-NATIVE]
-WGPUUncapturedErrorCallbackImpl* nativeObject = (WGPUUncapturedErrorCallbackImpl*)this_addr;
-nativeObject->setupCallback(env, object);
-*/
-    public native void internal_native_setupCallback(long this_addr);
 }

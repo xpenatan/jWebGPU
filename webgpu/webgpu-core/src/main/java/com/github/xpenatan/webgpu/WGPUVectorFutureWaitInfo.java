@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUVectorFutureWaitInfo extends IDLBase {
 
-    static private WGPUVectorFutureWaitInfo WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0;
-
     static public final WGPUVectorFutureWaitInfo NULL = WGPUVectorFutureWaitInfo.native_new();
 
     public WGPUVectorFutureWaitInfo() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorFutureWaitInfo();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,17 @@ return (jlong)new JGPU::WGPUVectorFutureWaitInfo();
         return new WGPUVectorFutureWaitInfo((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFutureWaitInfo* nativeObject = (JGPU::WGPUVectorFutureWaitInfo*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int size() {
-        return internal_native_size(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFutureWaitInfo* nativeObject = (JGPU::WGPUVectorFutureWaitInfo*)this_addr;
-return nativeObject->size();
-*/
-    public static native int internal_native_size(long this_addr);
 
     public void clear() {
-        internal_native_clear(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFutureWaitInfo* nativeObject = (JGPU::WGPUVectorFutureWaitInfo*)this_addr;
-nativeObject->clear();
-*/
-    public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUFutureWaitInfo entry) {
-        internal_native_push_back(native_address, entry.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFutureWaitInfo* nativeObject = (JGPU::WGPUVectorFutureWaitInfo*)this_addr;
-nativeObject->push_back(*((JGPU::WGPUFutureWaitInfo* )entry_addr));
-*/
-    public static native void internal_native_push_back(long this_addr, long entry_addr);
 
     public static WGPUVectorFutureWaitInfo obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUVectorFutureWaitInfo.NULL;
-        if (WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUVectorFutureWaitInfo.native_new();
-        WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUVectorFutureWaitInfo_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorFutureWaitInfo::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

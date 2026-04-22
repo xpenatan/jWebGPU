@@ -44,53 +44,23 @@ public enum WGPUCompareFunction implements IDLEnum<WGPUCompareFunction> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Undefined;
-*/
     private static native int WGPUCompareFunction_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Never;
-*/
     private static native int WGPUCompareFunction_Never_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Less;
-*/
     private static native int WGPUCompareFunction_Less_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Equal;
-*/
     private static native int WGPUCompareFunction_Equal_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_LessEqual;
-*/
     private static native int WGPUCompareFunction_LessEqual_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Greater;
-*/
     private static native int WGPUCompareFunction_Greater_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_NotEqual;
-*/
     private static native int WGPUCompareFunction_NotEqual_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_GreaterEqual;
-*/
     private static native int WGPUCompareFunction_GreaterEqual_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Always;
-*/
     private static native int WGPUCompareFunction_Always_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompareFunction_Force32;
-*/
     private static native int WGPUCompareFunction_Force32_NATIVE();
 }

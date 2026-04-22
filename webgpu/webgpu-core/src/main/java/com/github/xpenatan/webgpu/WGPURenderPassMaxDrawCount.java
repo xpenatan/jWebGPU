@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPURenderPassMaxDrawCount extends IDLBase {
 
-    static private WGPURenderPassMaxDrawCount WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
-
     static public final WGPURenderPassMaxDrawCount NULL = WGPURenderPassMaxDrawCount.native_new();
 
     public WGPURenderPassMaxDrawCount() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderPassMaxDrawCount();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,48 +29,14 @@ return (jlong)new JGPU::WGPURenderPassMaxDrawCount();
         return new WGPURenderPassMaxDrawCount((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setMaxDrawCount(int maxDrawCount) {
-        internal_native_SetMaxDrawCount(native_address, maxDrawCount);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-nativeObject->SetMaxDrawCount((int)maxDrawCount);
-*/
-    public static native void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount);
 
     public int getMaxDrawCount() {
-        return internal_native_GetMaxDrawCount(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-return nativeObject->GetMaxDrawCount();
-*/
-    public static native int internal_native_GetMaxDrawCount(long this_addr);
 
     public static WGPURenderPassMaxDrawCount obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPURenderPassMaxDrawCount.NULL;
-        if (WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0 = WGPURenderPassMaxDrawCount.native_new();
-        WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassMaxDrawCount::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

@@ -10,21 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUShaderSourceWGSL extends IDLBase {
 
-    private WGPUChainedStruct WGPUChainedStruct_TEMP_GEN_0;
-
-    static private WGPUShaderSourceWGSL WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
-
     static public final WGPUShaderSourceWGSL NULL = WGPUShaderSourceWGSL.native_new();
 
     public WGPUShaderSourceWGSL() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUShaderSourceWGSL();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -40,55 +29,14 @@ return (jlong)new JGPU::WGPUShaderSourceWGSL();
         return new WGPUShaderSourceWGSL((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderSourceWGSL* nativeObject = (JGPU::WGPUShaderSourceWGSL*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setCode(String code) {
-        internal_native_SetCode(native_address, code);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderSourceWGSL* nativeObject = (JGPU::WGPUShaderSourceWGSL*)this_addr;
-nativeObject->SetCode(code);
-*/
-    public static native void internal_native_SetCode(long this_addr, String code);
 
     public WGPUChainedStruct getChain() {
-        long addr = internal_native_GetChain_addr(native_address);
-        if (addr == 0)
-            return WGPUChainedStruct.NULL;
-        if (WGPUChainedStruct_TEMP_GEN_0 == null)
-            WGPUChainedStruct_TEMP_GEN_0 = WGPUChainedStruct.native_new();
-        WGPUChainedStruct_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUChainedStruct_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderSourceWGSL* nativeObject = (JGPU::WGPUShaderSourceWGSL*)this_addr;
-static JGPU::WGPUChainedStruct copy_addr;
-copy_addr = nativeObject->GetChain();
-return (jlong)&copy_addr;*/
-    public static native long internal_native_GetChain_addr(long this_addr);
 
     public static WGPUShaderSourceWGSL obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUShaderSourceWGSL.NULL;
-        if (WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0 = WGPUShaderSourceWGSL.native_new();
-        WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUShaderSourceWGSL::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

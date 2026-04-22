@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUFutureWaitInfo extends IDLBase {
 
-    static private WGPUFutureWaitInfo WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
-
     static public final WGPUFutureWaitInfo NULL = WGPUFutureWaitInfo.native_new();
 
     /**
@@ -28,38 +26,10 @@ public class WGPUFutureWaitInfo extends IDLBase {
         return new WGPUFutureWaitInfo((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUFutureWaitInfo* nativeObject = (JGPU::WGPUFutureWaitInfo*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setFuture(WGPUFuture future) {
-        internal_native_SetFuture(native_address, future.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUFutureWaitInfo* nativeObject = (JGPU::WGPUFutureWaitInfo*)this_addr;
-nativeObject->SetFuture((JGPU::WGPUFuture* )future_addr);
-*/
-    public static native void internal_native_SetFuture(long this_addr, long future_addr);
 
     public static WGPUFutureWaitInfo obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUFutureWaitInfo.NULL;
-        if (WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 == null)
-            WGPUFutureWaitInfo_TEMP_STATIC_GEN_0 = WGPUFutureWaitInfo.native_new();
-        WGPUFutureWaitInfo_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUFutureWaitInfo::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

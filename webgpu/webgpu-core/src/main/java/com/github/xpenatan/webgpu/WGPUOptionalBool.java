@@ -34,23 +34,11 @@ public enum WGPUOptionalBool implements IDLEnum<WGPUOptionalBool> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUOptionalBool_False;
-*/
     private static native int WGPUOptionalBool_False_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUOptionalBool_True;
-*/
     private static native int WGPUOptionalBool_True_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUOptionalBool_Undefined;
-*/
     private static native int WGPUOptionalBool_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUOptionalBool_Force32;
-*/
     private static native int WGPUOptionalBool_Force32_NATIVE();
 }

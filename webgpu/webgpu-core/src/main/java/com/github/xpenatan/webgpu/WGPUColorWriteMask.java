@@ -40,33 +40,15 @@ public enum WGPUColorWriteMask implements IDLEnum<WGPUColorWriteMask> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUColorWriteMask_None;
-*/
     private static native int WGPUColorWriteMask_None_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUColorWriteMask_Red;
-*/
     private static native int WGPUColorWriteMask_Red_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUColorWriteMask_Green;
-*/
     private static native int WGPUColorWriteMask_Green_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUColorWriteMask_Blue;
-*/
     private static native int WGPUColorWriteMask_Blue_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUColorWriteMask_Alpha;
-*/
     private static native int WGPUColorWriteMask_Alpha_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUColorWriteMask_All;
-*/
     private static native int WGPUColorWriteMask_All_NATIVE();
 }

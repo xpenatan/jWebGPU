@@ -41,38 +41,17 @@ public enum WGPUSurfaceGetCurrentTextureStatus implements IDLEnum<WGPUSurfaceGet
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_Timeout;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_Outdated;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_Lost;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_Error;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSurfaceGetCurrentTextureStatus_Force32;
-*/
     private static native int WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE();
 }

@@ -34,23 +34,11 @@ public enum WGPUMapAsyncStatus implements IDLEnum<WGPUMapAsyncStatus> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapAsyncStatus_Success;
-*/
     private static native int WGPUMapAsyncStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapAsyncStatus_Error;
-*/
     private static native int WGPUMapAsyncStatus_Error_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapAsyncStatus_Aborted;
-*/
     private static native int WGPUMapAsyncStatus_Aborted_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUMapAsyncStatus_Force32;
-*/
     private static native int WGPUMapAsyncStatus_Force32_NATIVE();
 }

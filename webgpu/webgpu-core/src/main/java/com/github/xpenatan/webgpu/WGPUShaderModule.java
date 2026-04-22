@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUShaderModule extends IDLBase {
 
-    static private WGPUShaderModule WGPUShaderModule_TEMP_STATIC_GEN_0;
-
     static public final WGPUShaderModule NULL = WGPUShaderModule.native_new();
 
     public WGPUShaderModule() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUShaderModule();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,68 +29,20 @@ return (jlong)new JGPU::WGPUShaderModule();
         return new WGPUShaderModule((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
-nativeObject->SetLabel(label);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void release() {
-        internal_native_Release(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
-nativeObject->Release();
-*/
-    public static native void internal_native_Release(long this_addr);
 
     public boolean isValid() {
-        return internal_native_IsValid(native_address);
+        return false;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
-return nativeObject->IsValid();
-*/
-    public static native boolean internal_native_IsValid(long this_addr);
 
     public void setCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback) {
-        internal_native_SetCallback(native_address, callbackMode.getValue(), callback.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderModule* nativeObject = (JGPU::WGPUShaderModule*)this_addr;
-nativeObject->SetCallback((::WGPUCallbackMode)callbackMode, (JGPU::WGPUCompilationInfoCallback* )callback_addr);
-*/
-    public static native void internal_native_SetCallback(long this_addr, int callbackMode, long callback_addr);
 
     public static WGPUShaderModule obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUShaderModule.NULL;
-        if (WGPUShaderModule_TEMP_STATIC_GEN_0 == null)
-            WGPUShaderModule_TEMP_STATIC_GEN_0 = WGPUShaderModule.native_new();
-        WGPUShaderModule_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUShaderModule_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUShaderModule::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

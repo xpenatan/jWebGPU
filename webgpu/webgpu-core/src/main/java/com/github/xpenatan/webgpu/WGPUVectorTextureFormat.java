@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUVectorTextureFormat extends IDLBase {
 
-    static private WGPUVectorTextureFormat WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
-
     static public final WGPUVectorTextureFormat NULL = WGPUVectorTextureFormat.native_new();
 
     public WGPUVectorTextureFormat() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorTextureFormat();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,75 +29,21 @@ return (jlong)new JGPU::WGPUVectorTextureFormat();
         return new WGPUVectorTextureFormat((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int size() {
-        return internal_native_size(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-return nativeObject->size();
-*/
-    public static native int internal_native_size(long this_addr);
 
     public void clear() {
-        internal_native_clear(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-nativeObject->clear();
-*/
-    public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUTextureFormat textureFormat) {
-        internal_native_push_back(native_address, textureFormat.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-nativeObject->push_back((::WGPUTextureFormat)textureFormat);
-*/
-    public static native void internal_native_push_back(long this_addr, int textureFormat);
 
     public WGPUTextureFormat get(int index) {
-        int value = internal_native_get(native_address, index);
-        WGPUTextureFormat[] values = WGPUTextureFormat.values();
-        for (int i = 0; i < values.length; i++) {
-            WGPUTextureFormat enumVal = values[i];
-            if (enumVal != WGPUTextureFormat.CUSTOM && enumVal.getValue() == value)
-                return enumVal;
-        }
-        return WGPUTextureFormat.CUSTOM.setValue(value);
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-return (int)nativeObject->get((int)index);
-*/
-    public static native int internal_native_get(long this_addr, int index);
 
     public static WGPUVectorTextureFormat obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUVectorTextureFormat.NULL;
-        if (WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorTextureFormat_TEMP_STATIC_GEN_0 = WGPUVectorTextureFormat.native_new();
-        WGPUVectorTextureFormat_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorTextureFormat::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

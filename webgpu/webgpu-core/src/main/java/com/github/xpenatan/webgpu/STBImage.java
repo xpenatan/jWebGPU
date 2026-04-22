@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class STBImage extends IDLBase {
 
-    private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
-
     static public final STBImage NULL = STBImage.native_new();
 
     /**
@@ -28,60 +26,19 @@ public class STBImage extends IDLBase {
         return new STBImage((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public WGPUByteBuffer getPixels() {
-        long addr = internal_native_GetPixels_addr(native_address);
-        if (addr == 0)
-            return WGPUByteBuffer.NULL;
-        if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUByteBuffer_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-WGPUByteBuffer* obj = nativeObject->GetPixels();
-return (jlong)obj;
-*/
-    public static native long internal_native_GetPixels_addr(long this_addr);
 
     public int getWidth() {
-        return internal_native_GetWidth(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetWidth();
-*/
-    public static native int internal_native_GetWidth(long this_addr);
 
     public int getHeight() {
-        return internal_native_GetHeight(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetHeight();
-*/
-    public static native int internal_native_GetHeight(long this_addr);
 
     public int getFormat() {
-        return internal_native_GetFormat(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetFormat();
-*/
-    public static native int internal_native_GetFormat(long this_addr);
 }

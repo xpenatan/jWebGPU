@@ -51,88 +51,37 @@ public enum WGPUFeatureName implements IDLEnum<WGPUFeatureName> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_DepthClipControl;
-*/
     private static native int WGPUFeatureName_DepthClipControl_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_Depth32FloatStencil8;
-*/
     private static native int WGPUFeatureName_Depth32FloatStencil8_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_TimestampQuery;
-*/
     private static native int WGPUFeatureName_TimestampQuery_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_TextureCompressionBC;
-*/
     private static native int WGPUFeatureName_TextureCompressionBC_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_TextureCompressionBCSliced3D;
-*/
     private static native int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_TextureCompressionETC2;
-*/
     private static native int WGPUFeatureName_TextureCompressionETC2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_TextureCompressionASTC;
-*/
     private static native int WGPUFeatureName_TextureCompressionASTC_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_TextureCompressionASTCSliced3D;
-*/
     private static native int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_IndirectFirstInstance;
-*/
     private static native int WGPUFeatureName_IndirectFirstInstance_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_ShaderF16;
-*/
     private static native int WGPUFeatureName_ShaderF16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_RG11B10UfloatRenderable;
-*/
     private static native int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_BGRA8UnormStorage;
-*/
     private static native int WGPUFeatureName_BGRA8UnormStorage_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_Float32Filterable;
-*/
     private static native int WGPUFeatureName_Float32Filterable_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_Float32Blendable;
-*/
     private static native int WGPUFeatureName_Float32Blendable_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_ClipDistances;
-*/
     private static native int WGPUFeatureName_ClipDistances_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_DualSourceBlending;
-*/
     private static native int WGPUFeatureName_DualSourceBlending_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureName_Force32;
-*/
     private static native int WGPUFeatureName_Force32_NATIVE();
 }

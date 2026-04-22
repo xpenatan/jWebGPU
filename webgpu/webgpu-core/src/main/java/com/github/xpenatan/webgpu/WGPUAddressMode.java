@@ -39,28 +39,13 @@ public enum WGPUAddressMode implements IDLEnum<WGPUAddressMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAddressMode_Undefined;
-*/
     private static native int WGPUAddressMode_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAddressMode_ClampToEdge;
-*/
     private static native int WGPUAddressMode_ClampToEdge_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAddressMode_Repeat;
-*/
     private static native int WGPUAddressMode_Repeat_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAddressMode_MirrorRepeat;
-*/
     private static native int WGPUAddressMode_MirrorRepeat_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUAddressMode_Force32;
-*/
     private static native int WGPUAddressMode_Force32_NATIVE();
 }

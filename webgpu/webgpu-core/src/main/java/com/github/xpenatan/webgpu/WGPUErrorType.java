@@ -40,33 +40,15 @@ public enum WGPUErrorType implements IDLEnum<WGPUErrorType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorType_NoError;
-*/
     private static native int WGPUErrorType_NoError_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorType_Validation;
-*/
     private static native int WGPUErrorType_Validation_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorType_OutOfMemory;
-*/
     private static native int WGPUErrorType_OutOfMemory_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorType_Internal;
-*/
     private static native int WGPUErrorType_Internal_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorType_Unknown;
-*/
     private static native int WGPUErrorType_Unknown_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUErrorType_Force32;
-*/
     private static native int WGPUErrorType_Force32_NATIVE();
 }

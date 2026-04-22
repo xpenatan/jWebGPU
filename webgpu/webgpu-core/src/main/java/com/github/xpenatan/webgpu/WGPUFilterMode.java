@@ -34,23 +34,11 @@ public enum WGPUFilterMode implements IDLEnum<WGPUFilterMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFilterMode_Undefined;
-*/
     private static native int WGPUFilterMode_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFilterMode_Nearest;
-*/
     private static native int WGPUFilterMode_Nearest_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFilterMode_Linear;
-*/
     private static native int WGPUFilterMode_Linear_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFilterMode_Force32;
-*/
     private static native int WGPUFilterMode_Force32_NATIVE();
 }

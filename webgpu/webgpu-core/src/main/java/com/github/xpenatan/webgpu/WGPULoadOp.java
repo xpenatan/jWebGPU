@@ -34,23 +34,11 @@ public enum WGPULoadOp implements IDLEnum<WGPULoadOp> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPULoadOp_Undefined;
-*/
     private static native int WGPULoadOp_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPULoadOp_Load;
-*/
     private static native int WGPULoadOp_Load_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPULoadOp_Clear;
-*/
     private static native int WGPULoadOp_Clear_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPULoadOp_Force32;
-*/
     private static native int WGPULoadOp_Force32_NATIVE();
 }

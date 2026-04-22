@@ -3,16 +3,21 @@ plugins {
     id("java-library")
 }
 
-
 val moduleName = "webgpu-desktop-ffm"
 
 val libDir = "${rootProject.projectDir}/webgpu"
 val windowsFile = "$libDir/webgpu-build/build/c++/libs/windows/vc/wgpu/ffm/jWebGPU64.dll"
-val linuxFile = "$libDir/webgpu-build/build/c++/libs/linux/ffm/libjWebGPU64.so"
-val macArmFile = "$libDir/webgpu-build/build/c++/libs/mac/arm/ffm/libjWebGPUarm64.dylib"
-val macFile = "$libDir/webgpu-build/build/c++/libs/mac/ffm/libjWebGPU64.dylib"
+val linuxFile = "$libDir/webgpu-build/build/c++/libs/linux/wgpu/ffm/libjWebGPU64.so"
+val macArmFile = "$libDir/webgpu-build/build/c++/libs/mac/arm/wgpu/ffm/libjWebGPUarm64.dylib"
+val macFile = "$libDir/webgpu-build/build/c++/libs/mac/wgpu/ffm/libjWebGPU64.dylib"
 val windowsFileDawn1 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/ffm/jWebGPU64.dll"
 val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/ffm/webgpu_dawn.dll"
+
+dependencies {
+    implementation("com.github.xpenatan.jParser:idl-helper-desktop-ffm:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
+}
 
 tasks.jar {
     from(windowsFileDawn1) { into("native/dawn") }
@@ -54,15 +59,16 @@ java {
     targetCompatibility = JavaVersion.toVersion(LibExt.java24Target)
 }
 
-//java {
-//    withJavadocJar()
-//    withSourcesJar()
-//}
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
-dependencies {
-    implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:idl-helper-desktop-ffm:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
+tasks.named("clean") {
+    doFirst {
+        val srcPath = "$projectDir/src/main/java"
+        project.delete(files(srcPath))
+    }
 }
 
 publishing {

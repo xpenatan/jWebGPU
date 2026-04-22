@@ -34,23 +34,11 @@ public enum WGPUBufferMapState implements IDLEnum<WGPUBufferMapState> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferMapState_Unmapped;
-*/
     private static native int WGPUBufferMapState_Unmapped_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferMapState_Pending;
-*/
     private static native int WGPUBufferMapState_Pending_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferMapState_Mapped;
-*/
     private static native int WGPUBufferMapState_Mapped_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferMapState_Force32;
-*/
     private static native int WGPUBufferMapState_Force32_NATIVE();
 }

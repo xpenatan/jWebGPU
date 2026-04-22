@@ -39,28 +39,13 @@ public enum WGPUWGSLLanguageFeatureName implements IDLEnum<WGPUWGSLLanguageFeatu
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures;
-*/
     private static native int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct;
-*/
     private static native int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters;
-*/
     private static native int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWGSLLanguageFeatureName_PointerCompositeAccess;
-*/
     private static native int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWGSLLanguageFeatureName_Force32;
-*/
     private static native int WGPUWGSLLanguageFeatureName_Force32_NATIVE();
 }

@@ -34,23 +34,11 @@ public enum WGPUShaderStage implements IDLEnum<WGPUShaderStage> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUShaderStage_None;
-*/
     private static native int WGPUShaderStage_None_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUShaderStage_Vertex;
-*/
     private static native int WGPUShaderStage_Vertex_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUShaderStage_Fragment;
-*/
     private static native int WGPUShaderStage_Fragment_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUShaderStage_Compute;
-*/
     private static native int WGPUShaderStage_Compute_NATIVE();
 }

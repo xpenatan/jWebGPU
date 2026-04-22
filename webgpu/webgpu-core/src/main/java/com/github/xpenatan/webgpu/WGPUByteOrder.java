@@ -34,13 +34,7 @@ public enum WGPUByteOrder implements IDLEnum<WGPUByteOrder> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)BigEndian;
-*/
     private static native int BigEndian_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)LittleEndian;
-*/
     private static native int LittleEndian_NATIVE();
 }

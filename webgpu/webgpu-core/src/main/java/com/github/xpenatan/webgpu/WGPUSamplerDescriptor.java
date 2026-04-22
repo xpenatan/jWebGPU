@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUSamplerDescriptor extends IDLBase {
 
-    static private WGPUSamplerDescriptor WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
-
     static public final WGPUSamplerDescriptor NULL = WGPUSamplerDescriptor.native_new();
 
     public WGPUSamplerDescriptor() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSamplerDescriptor();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,148 +29,43 @@ return (jlong)new JGPU::WGPUSamplerDescriptor();
         return new WGPUSamplerDescriptor((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setAddressModeU(WGPUAddressMode addressModeU) {
-        internal_native_SetAddressModeU(native_address, addressModeU.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetAddressModeU((::WGPUAddressMode)addressModeU);
-*/
-    public static native void internal_native_SetAddressModeU(long this_addr, int addressModeU);
 
     public void setAddressModeV(WGPUAddressMode addressModeV) {
-        internal_native_SetAddressModeV(native_address, addressModeV.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetAddressModeV((::WGPUAddressMode)addressModeV);
-*/
-    public static native void internal_native_SetAddressModeV(long this_addr, int addressModeV);
 
     public void setAddressModeW(WGPUAddressMode addressModeW) {
-        internal_native_SetAddressModeW(native_address, addressModeW.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetAddressModeW((::WGPUAddressMode)addressModeW);
-*/
-    public static native void internal_native_SetAddressModeW(long this_addr, int addressModeW);
 
     public void setMagFilter(WGPUFilterMode magFilter) {
-        internal_native_SetMagFilter(native_address, magFilter.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetMagFilter((::WGPUFilterMode)magFilter);
-*/
-    public static native void internal_native_SetMagFilter(long this_addr, int magFilter);
 
     public void setMinFilter(WGPUFilterMode minFilter) {
-        internal_native_SetMinFilter(native_address, minFilter.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetMinFilter((::WGPUFilterMode)minFilter);
-*/
-    public static native void internal_native_SetMinFilter(long this_addr, int minFilter);
 
     public void setMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
-        internal_native_SetMipmapFilter(native_address, mipmapFilter.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetMipmapFilter((::WGPUMipmapFilterMode)mipmapFilter);
-*/
-    public static native void internal_native_SetMipmapFilter(long this_addr, int mipmapFilter);
 
     public void setLodMinClamp(float lodMinClamp) {
-        internal_native_SetLodMinClamp(native_address, lodMinClamp);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetLodMinClamp((float)lodMinClamp);
-*/
-    public static native void internal_native_SetLodMinClamp(long this_addr, float lodMinClamp);
 
     public void setLodMaxClamp(float lodMaxClamp) {
-        internal_native_SetLodMaxClamp(native_address, lodMaxClamp);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetLodMaxClamp((float)lodMaxClamp);
-*/
-    public static native void internal_native_SetLodMaxClamp(long this_addr, float lodMaxClamp);
 
     public void setCompare(WGPUCompareFunction compare) {
-        internal_native_SetCompare(native_address, compare.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetCompare((::WGPUCompareFunction)compare);
-*/
-    public static native void internal_native_SetCompare(long this_addr, int compare);
 
     public void setMaxAnisotropy(int maxAnisotropy) {
-        internal_native_SetMaxAnisotropy(native_address, maxAnisotropy);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerDescriptor* nativeObject = (JGPU::WGPUSamplerDescriptor*)this_addr;
-nativeObject->SetMaxAnisotropy((int)maxAnisotropy);
-*/
-    public static native void internal_native_SetMaxAnisotropy(long this_addr, int maxAnisotropy);
 
     public static WGPUSamplerDescriptor obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUSamplerDescriptor.NULL;
-        if (WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUSamplerDescriptor_TEMP_STATIC_GEN_0 = WGPUSamplerDescriptor.native_new();
-        WGPUSamplerDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSamplerDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

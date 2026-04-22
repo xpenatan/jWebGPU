@@ -26,33 +26,9 @@ public class WGPUChainedStruct extends IDLBase {
         return new WGPUChainedStruct((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setNext(WGPUChainedStruct value) {
-        internal_native_SetNext(native_address, value.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
-nativeObject->SetNext((JGPU::WGPUChainedStruct* )value_addr);
-*/
-    public static native void internal_native_SetNext(long this_addr, long value_addr);
 
     public void setSType(WGPUSType type) {
-        internal_native_SetSType(native_address, type.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
-nativeObject->SetSType((::WGPUSType)type);
-*/
-    public static native void internal_native_SetSType(long this_addr, int type);
 }

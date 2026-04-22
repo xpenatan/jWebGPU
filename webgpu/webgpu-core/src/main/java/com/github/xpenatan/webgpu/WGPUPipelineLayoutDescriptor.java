@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUPipelineLayoutDescriptor extends IDLBase {
 
-    static private WGPUPipelineLayoutDescriptor WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
-
     static public final WGPUPipelineLayoutDescriptor NULL = WGPUPipelineLayoutDescriptor.native_new();
 
     public WGPUPipelineLayoutDescriptor() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUPipelineLayoutDescriptor();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,16 @@ return (jlong)new JGPU::WGPUPipelineLayoutDescriptor();
         return new WGPUPipelineLayoutDescriptor((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPipelineLayoutDescriptor* nativeObject = (JGPU::WGPUPipelineLayoutDescriptor*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setLabel(String label) {
-        internal_native_SetLabel(native_address, label);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPipelineLayoutDescriptor* nativeObject = (JGPU::WGPUPipelineLayoutDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPipelineLayoutDescriptor* nativeObject = (JGPU::WGPUPipelineLayoutDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setBindGroupLayouts(WGPUVectorBindGroupLayout bindGroupLayouts) {
-        internal_native_SetBindGroupLayouts(native_address, bindGroupLayouts.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUPipelineLayoutDescriptor* nativeObject = (JGPU::WGPUPipelineLayoutDescriptor*)this_addr;
-nativeObject->SetBindGroupLayouts((JGPU::WGPUVectorBindGroupLayout* )bindGroupLayouts_addr);
-*/
-    public static native void internal_native_SetBindGroupLayouts(long this_addr, long bindGroupLayouts_addr);
 
     public static WGPUPipelineLayoutDescriptor obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUPipelineLayoutDescriptor.NULL;
-        if (WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0 = WGPUPipelineLayoutDescriptor.native_new();
-        WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUPipelineLayoutDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

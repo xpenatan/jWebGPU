@@ -13,14 +13,7 @@ public class WGPUConstantEntry extends IDLBase {
     static public final WGPUConstantEntry NULL = WGPUConstantEntry.native_new();
 
     public WGPUConstantEntry() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUConstantEntry();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -35,14 +28,4 @@ return (jlong)new JGPU::WGPUConstantEntry();
     public static WGPUConstantEntry native_new() {
         return new WGPUConstantEntry((byte) 0, (char) 0);
     }
-
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUConstantEntry* nativeObject = (JGPU::WGPUConstantEntry*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
 }

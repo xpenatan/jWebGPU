@@ -26,83 +26,24 @@ public class WGPUSurface extends IDLBase {
         return new WGPUSurface((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setLabel(String value) {
-        internal_native_SetLabel(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->SetLabel(value);
-*/
-    public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void unconfigure() {
-        internal_native_Unconfigure(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Unconfigure();
-*/
-    public static native void internal_native_Unconfigure(long this_addr);
 
     public void release() {
-        internal_native_Release(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Release();
-*/
-    public static native void internal_native_Release(long this_addr);
 
     public void configure(WGPUSurfaceConfiguration config) {
-        internal_native_Configure(native_address, config.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Configure((JGPU::WGPUSurfaceConfiguration* )config_addr);
-*/
-    public static native void internal_native_Configure(long this_addr, long config_addr);
 
     public void getCapabilities(WGPUAdapter adapter, WGPUSurfaceCapabilities surfaceCapabilities) {
-        internal_native_GetCapabilities(native_address, adapter.native_address, surfaceCapabilities.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->GetCapabilities((JGPU::WGPUAdapter* )adapter_addr, (JGPU::WGPUSurfaceCapabilities* )surfaceCapabilities_addr);
-*/
-    public static native void internal_native_GetCapabilities(long this_addr, long adapter_addr, long surfaceCapabilities_addr);
 
     public void getCurrentTexture(WGPUSurfaceTexture surfaceTexture) {
-        internal_native_GetCurrentTexture(native_address, surfaceTexture.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->GetCurrentTexture((JGPU::WGPUSurfaceTexture* )surfaceTexture_addr);
-*/
-    public static native void internal_native_GetCurrentTexture(long this_addr, long surfaceTexture_addr);
 
     public void present() {
-        internal_native_Present(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Present();
-*/
-    public static native void internal_native_Present(long this_addr);
 }

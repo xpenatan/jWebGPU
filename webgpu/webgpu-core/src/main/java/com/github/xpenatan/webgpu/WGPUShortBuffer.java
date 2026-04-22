@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUShortBuffer extends IDLBase {
 
-    private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
-
     static public final WGPUShortBuffer NULL = WGPUShortBuffer.native_new();
 
     /**
@@ -28,149 +26,49 @@ public class WGPUShortBuffer extends IDLBase {
         return new WGPUShortBuffer((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public WGPUByteBuffer getByteBuffer() {
-        long addr = internal_native_getByteBuffer_addr(native_address);
-        if (addr == 0)
-            return WGPUByteBuffer.NULL;
-        if (WGPUByteBuffer_TEMP_GEN_0 == null)
-            WGPUByteBuffer_TEMP_GEN_0 = WGPUByteBuffer.native_new();
-        WGPUByteBuffer_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUByteBuffer_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return (jlong)&nativeObject->getByteBuffer();
-*/
-    public static native long internal_native_getByteBuffer_addr(long this_addr);
 
     public void put(short value) {
-        internal_native_put__0(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-nativeObject->put(value);
-*/
-    public static native void internal_native_put__0(long this_addr, short value);
 
     public void put(int index, short value) {
-        internal_native_put__1(native_address, index, value);
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-nativeObject->put((int)index, value);
-*/
-    public static native void internal_native_put__1(long this_addr, int index, short value);
 
     public short get(int index) {
-        return internal_native_get(native_address, index);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return nativeObject->get((int)index);
-*/
-    public static native short internal_native_get(long this_addr, int index);
 
     public short get() {
-        return internal_native_get(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return nativeObject->get();
-*/
-    public static native short internal_native_get(long this_addr);
 
     public int remaining() {
-        return internal_native_remaining(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return nativeObject->remaining();
-*/
-    public static native int internal_native_remaining(long this_addr);
 
     public int getCapacity() {
-        return internal_native_getCapacity(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return nativeObject->getCapacity();
-*/
-    public static native int internal_native_getCapacity(long this_addr);
 
     public void clear() {
-        internal_native_clear(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-nativeObject->clear();
-*/
-    public static native void internal_native_clear(long this_addr);
 
     public void limit(int newLimit) {
-        internal_native_limit(native_address, newLimit);
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-nativeObject->limit((int)newLimit);
-*/
-    public static native void internal_native_limit(long this_addr, int newLimit);
 
     public int getLimit() {
-        return internal_native_getLimit(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return nativeObject->getLimit();
-*/
-    public static native int internal_native_getLimit(long this_addr);
 
     public void position(int newPosition) {
-        internal_native_position(native_address, newPosition);
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-nativeObject->position((int)newPosition);
-*/
-    public static native void internal_native_position(long this_addr, int newPosition);
 
     public int getPosition() {
-        return internal_native_getPosition(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-return nativeObject->getPosition();
-*/
-    public static native int internal_native_getPosition(long this_addr);
 
     public void flip() {
-        internal_native_flip(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-WGPUShortBuffer* nativeObject = (WGPUShortBuffer*)this_addr;
-nativeObject->flip();
-*/
-    public static native void internal_native_flip(long this_addr);
 }

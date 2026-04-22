@@ -40,33 +40,15 @@ public enum WGPUStorageTextureAccess implements IDLEnum<WGPUStorageTextureAccess
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStorageTextureAccess_BindingNotUsed;
-*/
     private static native int WGPUStorageTextureAccess_BindingNotUsed_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStorageTextureAccess_Undefined;
-*/
     private static native int WGPUStorageTextureAccess_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStorageTextureAccess_WriteOnly;
-*/
     private static native int WGPUStorageTextureAccess_WriteOnly_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStorageTextureAccess_ReadOnly;
-*/
     private static native int WGPUStorageTextureAccess_ReadOnly_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStorageTextureAccess_ReadWrite;
-*/
     private static native int WGPUStorageTextureAccess_ReadWrite_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStorageTextureAccess_Force32;
-*/
     private static native int WGPUStorageTextureAccess_Force32_NATIVE();
 }

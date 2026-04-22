@@ -25,14 +25,4 @@ public class WGPUFuture extends IDLBase {
     public static WGPUFuture native_new() {
         return new WGPUFuture((byte) 0, (char) 0);
     }
-
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUFuture* nativeObject = (JGPU::WGPUFuture*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
 }

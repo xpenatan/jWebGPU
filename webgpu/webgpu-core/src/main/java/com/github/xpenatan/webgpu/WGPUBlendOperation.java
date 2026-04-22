@@ -41,38 +41,17 @@ public enum WGPUBlendOperation implements IDLEnum<WGPUBlendOperation> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_Undefined;
-*/
     private static native int WGPUBlendOperation_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_Add;
-*/
     private static native int WGPUBlendOperation_Add_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_Subtract;
-*/
     private static native int WGPUBlendOperation_Subtract_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_ReverseSubtract;
-*/
     private static native int WGPUBlendOperation_ReverseSubtract_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_Min;
-*/
     private static native int WGPUBlendOperation_Min_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_Max;
-*/
     private static native int WGPUBlendOperation_Max_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBlendOperation_Force32;
-*/
     private static native int WGPUBlendOperation_Force32_NATIVE();
 }

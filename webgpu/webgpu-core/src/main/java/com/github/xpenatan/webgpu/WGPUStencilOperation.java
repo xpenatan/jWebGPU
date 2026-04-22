@@ -44,53 +44,23 @@ public enum WGPUStencilOperation implements IDLEnum<WGPUStencilOperation> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_Undefined;
-*/
     private static native int WGPUStencilOperation_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_Keep;
-*/
     private static native int WGPUStencilOperation_Keep_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_Zero;
-*/
     private static native int WGPUStencilOperation_Zero_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_Replace;
-*/
     private static native int WGPUStencilOperation_Replace_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_Invert;
-*/
     private static native int WGPUStencilOperation_Invert_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_IncrementClamp;
-*/
     private static native int WGPUStencilOperation_IncrementClamp_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_DecrementClamp;
-*/
     private static native int WGPUStencilOperation_DecrementClamp_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_IncrementWrap;
-*/
     private static native int WGPUStencilOperation_IncrementWrap_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_DecrementWrap;
-*/
     private static native int WGPUStencilOperation_DecrementWrap_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStencilOperation_Force32;
-*/
     private static native int WGPUStencilOperation_Force32_NATIVE();
 }

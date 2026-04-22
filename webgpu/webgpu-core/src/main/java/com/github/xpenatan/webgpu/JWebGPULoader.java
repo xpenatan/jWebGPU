@@ -16,10 +16,6 @@ import com.github.xpenatan.jparser.idl.IDLLoader;
  */
 public class JWebGPULoader {
 
-    /*
-      [-JNI;-NATIVE]
-              #include "jWebGPU.h"
-    */
     private static JWebGPUBackend backend;
 
     public static void init(JParserLibraryLoaderListener listener) {

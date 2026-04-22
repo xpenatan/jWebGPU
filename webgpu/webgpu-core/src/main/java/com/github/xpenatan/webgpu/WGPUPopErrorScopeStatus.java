@@ -34,13 +34,7 @@ public enum WGPUPopErrorScopeStatus implements IDLEnum<WGPUPopErrorScopeStatus> 
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPopErrorScopeStatus_Success;
-*/
     private static native int WGPUPopErrorScopeStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPopErrorScopeStatus_Force32;
-*/
     private static native int WGPUPopErrorScopeStatus_Force32_NATIVE();
 }

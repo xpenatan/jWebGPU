@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUInstanceDescriptor extends IDLBase {
 
-    static private WGPUInstanceDescriptor WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
-
     static public final WGPUInstanceDescriptor NULL = WGPUInstanceDescriptor.native_new();
 
     public WGPUInstanceDescriptor() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUInstanceDescriptor();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,38 +29,10 @@ return (jlong)new JGPU::WGPUInstanceDescriptor();
         return new WGPUInstanceDescriptor((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public static WGPUInstanceDescriptor obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUInstanceDescriptor.NULL;
-        if (WGPUInstanceDescriptor_TEMP_STATIC_GEN_0 == null)
-            WGPUInstanceDescriptor_TEMP_STATIC_GEN_0 = WGPUInstanceDescriptor.native_new();
-        WGPUInstanceDescriptor_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUInstanceDescriptor::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

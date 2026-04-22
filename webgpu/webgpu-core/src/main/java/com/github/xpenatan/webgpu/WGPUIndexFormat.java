@@ -34,23 +34,11 @@ public enum WGPUIndexFormat implements IDLEnum<WGPUIndexFormat> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUIndexFormat_Undefined;
-*/
     private static native int WGPUIndexFormat_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUIndexFormat_Uint16;
-*/
     private static native int WGPUIndexFormat_Uint16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUIndexFormat_Uint32;
-*/
     private static native int WGPUIndexFormat_Uint32_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUIndexFormat_Force32;
-*/
     private static native int WGPUIndexFormat_Force32_NATIVE();
 }

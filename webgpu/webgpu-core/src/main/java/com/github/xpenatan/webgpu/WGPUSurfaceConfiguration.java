@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUSurfaceConfiguration extends IDLBase {
 
-    static private WGPUSurfaceConfiguration WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
-
     static public final WGPUSurfaceConfiguration NULL = WGPUSurfaceConfiguration.native_new();
 
     public WGPUSurfaceConfiguration() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSurfaceConfiguration();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,118 +29,34 @@ return (jlong)new JGPU::WGPUSurfaceConfiguration();
         return new WGPUSurfaceConfiguration((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
-        internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setWidth(int width) {
-        internal_native_SetWidth(native_address, width);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetWidth((int)width);
-*/
-    public static native void internal_native_SetWidth(long this_addr, int width);
 
     public void setHeight(int height) {
-        internal_native_SetHeight(native_address, height);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetHeight((int)height);
-*/
-    public static native void internal_native_SetHeight(long this_addr, int height);
 
     public void setFormat(WGPUTextureFormat format) {
-        internal_native_SetFormat(native_address, format.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
-    public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setViewFormats(WGPUVectorTextureFormat formats) {
-        internal_native_SetViewFormats(native_address, formats.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )formats_addr);
-*/
-    public static native void internal_native_SetViewFormats(long this_addr, long formats_addr);
 
     public void setUsage(WGPUTextureUsage usage) {
-        internal_native_SetUsage(native_address, usage.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetUsage((::WGPUTextureUsage)usage);
-*/
-    public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public void setDevice(WGPUDevice device) {
-        internal_native_SetDevice(native_address, device.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetDevice((JGPU::WGPUDevice* )device_addr);
-*/
-    public static native void internal_native_SetDevice(long this_addr, long device_addr);
 
     public void setPresentMode(WGPUPresentMode presentMode) {
-        internal_native_SetPresentMode(native_address, presentMode.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetPresentMode((::WGPUPresentMode)presentMode);
-*/
-    public static native void internal_native_SetPresentMode(long this_addr, int presentMode);
 
     public void setAlphaMode(WGPUCompositeAlphaMode alphaMode) {
-        internal_native_SetAlphaMode(native_address, alphaMode.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetAlphaMode((::WGPUCompositeAlphaMode)alphaMode);
-*/
-    public static native void internal_native_SetAlphaMode(long this_addr, int alphaMode);
 
     public static WGPUSurfaceConfiguration obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUSurfaceConfiguration.NULL;
-        if (WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 == null)
-            WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0 = WGPUSurfaceConfiguration.native_new();
-        WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSurfaceConfiguration::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

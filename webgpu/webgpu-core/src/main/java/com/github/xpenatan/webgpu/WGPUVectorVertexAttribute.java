@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUVectorVertexAttribute extends IDLBase {
 
-    static private WGPUVectorVertexAttribute WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
-
     static public final WGPUVectorVertexAttribute NULL = WGPUVectorVertexAttribute.native_new();
 
     public WGPUVectorVertexAttribute() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorVertexAttribute();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,17 @@ return (jlong)new JGPU::WGPUVectorVertexAttribute();
         return new WGPUVectorVertexAttribute((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int size() {
-        return internal_native_size(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-return nativeObject->size();
-*/
-    public static native int internal_native_size(long this_addr);
 
     public void clear() {
-        internal_native_clear(native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-nativeObject->clear();
-*/
-    public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUVertexAttribute colorAttachment) {
-        internal_native_push_back(native_address, colorAttachment.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-nativeObject->push_back(*((JGPU::WGPUVertexAttribute* )colorAttachment_addr));
-*/
-    public static native void internal_native_push_back(long this_addr, long colorAttachment_addr);
 
     public static WGPUVectorVertexAttribute obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUVectorVertexAttribute.NULL;
-        if (WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 == null)
-            WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0 = WGPUVectorVertexAttribute.native_new();
-        WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorVertexAttribute::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

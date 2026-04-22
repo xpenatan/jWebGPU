@@ -34,23 +34,11 @@ public enum WGPUCreatePipelineAsyncStatus implements IDLEnum<WGPUCreatePipelineA
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCreatePipelineAsyncStatus_Success;
-*/
     private static native int WGPUCreatePipelineAsyncStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCreatePipelineAsyncStatus_ValidationError;
-*/
     private static native int WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCreatePipelineAsyncStatus_InternalError;
-*/
     private static native int WGPUCreatePipelineAsyncStatus_InternalError_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCreatePipelineAsyncStatus_Force32;
-*/
     private static native int WGPUCreatePipelineAsyncStatus_Force32_NATIVE();
 }

@@ -34,18 +34,9 @@ public enum WGPUFeatureLevel implements IDLEnum<WGPUFeatureLevel> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureLevel_Compatibility;
-*/
     private static native int WGPUFeatureLevel_Compatibility_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureLevel_Core;
-*/
     private static native int WGPUFeatureLevel_Core_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFeatureLevel_Force32;
-*/
     private static native int WGPUFeatureLevel_Force32_NATIVE();
 }

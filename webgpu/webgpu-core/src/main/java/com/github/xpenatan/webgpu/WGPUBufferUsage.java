@@ -45,58 +45,25 @@ public enum WGPUBufferUsage implements IDLEnum<WGPUBufferUsage> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_None;
-*/
     private static native int WGPUBufferUsage_None_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_MapRead;
-*/
     private static native int WGPUBufferUsage_MapRead_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_MapWrite;
-*/
     private static native int WGPUBufferUsage_MapWrite_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_CopySrc;
-*/
     private static native int WGPUBufferUsage_CopySrc_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_CopyDst;
-*/
     private static native int WGPUBufferUsage_CopyDst_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_Index;
-*/
     private static native int WGPUBufferUsage_Index_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_Vertex;
-*/
     private static native int WGPUBufferUsage_Vertex_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_Uniform;
-*/
     private static native int WGPUBufferUsage_Uniform_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_Storage;
-*/
     private static native int WGPUBufferUsage_Storage_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_Indirect;
-*/
     private static native int WGPUBufferUsage_Indirect_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferUsage_QueryResolve;
-*/
     private static native int WGPUBufferUsage_QueryResolve_NATIVE();
 }

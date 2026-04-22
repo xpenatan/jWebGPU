@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUVertexBufferLayout extends IDLBase {
 
-    static private WGPUVertexBufferLayout WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
-
     static public final WGPUVertexBufferLayout NULL = WGPUVertexBufferLayout.native_new();
 
     public WGPUVertexBufferLayout() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVertexBufferLayout();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,16 @@ return (jlong)new JGPU::WGPUVertexBufferLayout();
         return new WGPUVertexBufferLayout((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setAttributes(WGPUVectorVertexAttribute values) {
-        internal_native_SetAttributes(native_address, values.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetAttributes((JGPU::WGPUVectorVertexAttribute* )values_addr);
-*/
-    public static native void internal_native_SetAttributes(long this_addr, long values_addr);
 
     public void setArrayStride(int offset) {
-        internal_native_SetArrayStride(native_address, offset);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetArrayStride((int)offset);
-*/
-    public static native void internal_native_SetArrayStride(long this_addr, int offset);
 
     public void setStepMode(WGPUVertexStepMode stepMode) {
-        internal_native_SetStepMode(native_address, stepMode.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
-*/
-    public static native void internal_native_SetStepMode(long this_addr, int stepMode);
 
     public static WGPUVertexBufferLayout obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUVertexBufferLayout.NULL;
-        if (WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 == null)
-            WGPUVertexBufferLayout_TEMP_STATIC_GEN_0 = WGPUVertexBufferLayout.native_new();
-        WGPUVertexBufferLayout_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVertexBufferLayout::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

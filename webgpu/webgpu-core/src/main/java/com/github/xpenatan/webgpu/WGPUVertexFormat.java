@@ -76,213 +76,87 @@ public enum WGPUVertexFormat implements IDLEnum<WGPUVertexFormat> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint8;
-*/
     private static native int WGPUVertexFormat_Uint8_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint8x2;
-*/
     private static native int WGPUVertexFormat_Uint8x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint8x4;
-*/
     private static native int WGPUVertexFormat_Uint8x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint8;
-*/
     private static native int WGPUVertexFormat_Sint8_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint8x2;
-*/
     private static native int WGPUVertexFormat_Sint8x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint8x4;
-*/
     private static native int WGPUVertexFormat_Sint8x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm8;
-*/
     private static native int WGPUVertexFormat_Unorm8_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm8x2;
-*/
     private static native int WGPUVertexFormat_Unorm8x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm8x4;
-*/
     private static native int WGPUVertexFormat_Unorm8x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Snorm8;
-*/
     private static native int WGPUVertexFormat_Snorm8_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Snorm8x2;
-*/
     private static native int WGPUVertexFormat_Snorm8x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Snorm8x4;
-*/
     private static native int WGPUVertexFormat_Snorm8x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint16;
-*/
     private static native int WGPUVertexFormat_Uint16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint16x2;
-*/
     private static native int WGPUVertexFormat_Uint16x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint16x4;
-*/
     private static native int WGPUVertexFormat_Uint16x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint16;
-*/
     private static native int WGPUVertexFormat_Sint16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint16x2;
-*/
     private static native int WGPUVertexFormat_Sint16x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint16x4;
-*/
     private static native int WGPUVertexFormat_Sint16x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm16;
-*/
     private static native int WGPUVertexFormat_Unorm16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm16x2;
-*/
     private static native int WGPUVertexFormat_Unorm16x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm16x4;
-*/
     private static native int WGPUVertexFormat_Unorm16x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Snorm16;
-*/
     private static native int WGPUVertexFormat_Snorm16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Snorm16x2;
-*/
     private static native int WGPUVertexFormat_Snorm16x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Snorm16x4;
-*/
     private static native int WGPUVertexFormat_Snorm16x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float16;
-*/
     private static native int WGPUVertexFormat_Float16_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float16x2;
-*/
     private static native int WGPUVertexFormat_Float16x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float16x4;
-*/
     private static native int WGPUVertexFormat_Float16x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float32;
-*/
     private static native int WGPUVertexFormat_Float32_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float32x2;
-*/
     private static native int WGPUVertexFormat_Float32x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float32x3;
-*/
     private static native int WGPUVertexFormat_Float32x3_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Float32x4;
-*/
     private static native int WGPUVertexFormat_Float32x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint32;
-*/
     private static native int WGPUVertexFormat_Uint32_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint32x2;
-*/
     private static native int WGPUVertexFormat_Uint32x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint32x3;
-*/
     private static native int WGPUVertexFormat_Uint32x3_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Uint32x4;
-*/
     private static native int WGPUVertexFormat_Uint32x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint32;
-*/
     private static native int WGPUVertexFormat_Sint32_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint32x2;
-*/
     private static native int WGPUVertexFormat_Sint32x2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint32x3;
-*/
     private static native int WGPUVertexFormat_Sint32x3_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Sint32x4;
-*/
     private static native int WGPUVertexFormat_Sint32x4_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm10_10_10_2;
-*/
     private static native int WGPUVertexFormat_Unorm10_10_10_2_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Unorm8x4BGRA;
-*/
     private static native int WGPUVertexFormat_Unorm8x4BGRA_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUVertexFormat_Force32;
-*/
     private static native int WGPUVertexFormat_Force32_NATIVE();
 }

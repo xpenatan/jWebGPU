@@ -40,33 +40,15 @@ public enum WGPUBufferBindingType implements IDLEnum<WGPUBufferBindingType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferBindingType_BindingNotUsed;
-*/
     private static native int WGPUBufferBindingType_BindingNotUsed_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferBindingType_Undefined;
-*/
     private static native int WGPUBufferBindingType_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferBindingType_Uniform;
-*/
     private static native int WGPUBufferBindingType_Uniform_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferBindingType_Storage;
-*/
     private static native int WGPUBufferBindingType_Storage_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferBindingType_ReadOnlyStorage;
-*/
     private static native int WGPUBufferBindingType_ReadOnlyStorage_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUBufferBindingType_Force32;
-*/
     private static native int WGPUBufferBindingType_Force32_NATIVE();
 }

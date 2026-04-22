@@ -34,23 +34,11 @@ public enum WGPUDeviceLostReason implements IDLEnum<WGPUDeviceLostReason> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUDeviceLostReason_Unknown;
-*/
     private static native int WGPUDeviceLostReason_Unknown_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUDeviceLostReason_Destroyed;
-*/
     private static native int WGPUDeviceLostReason_Destroyed_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUDeviceLostReason_FailedCreation;
-*/
     private static native int WGPUDeviceLostReason_FailedCreation_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUDeviceLostReason_Force32;
-*/
     private static native int WGPUDeviceLostReason_Force32_NATIVE();
 }

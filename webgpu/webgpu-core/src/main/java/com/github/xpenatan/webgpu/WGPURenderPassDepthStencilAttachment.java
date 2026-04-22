@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPURenderPassDepthStencilAttachment extends IDLBase {
 
-    static private WGPURenderPassDepthStencilAttachment WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
-
     static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.native_new();
 
     public WGPURenderPassDepthStencilAttachment() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderPassDepthStencilAttachment();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,118 +29,34 @@ return (jlong)new JGPU::WGPURenderPassDepthStencilAttachment();
         return new WGPURenderPassDepthStencilAttachment((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setView(WGPUTextureView textureView) {
-        internal_native_SetView(native_address, textureView.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetView((JGPU::WGPUTextureView* )textureView_addr);
-*/
-    public static native void internal_native_SetView(long this_addr, long textureView_addr);
 
     public void setDepthLoadOp(WGPULoadOp loadOp) {
-        internal_native_SetDepthLoadOp(native_address, loadOp.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthLoadOp((::WGPULoadOp)loadOp);
-*/
-    public static native void internal_native_SetDepthLoadOp(long this_addr, int loadOp);
 
     public void setDepthStoreOp(WGPUStoreOp storeOp) {
-        internal_native_SetDepthStoreOp(native_address, storeOp.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthStoreOp((::WGPUStoreOp)storeOp);
-*/
-    public static native void internal_native_SetDepthStoreOp(long this_addr, int storeOp);
 
     public void setDepthClearValue(float depthClearValue) {
-        internal_native_SetDepthClearValue(native_address, depthClearValue);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthClearValue((float)depthClearValue);
-*/
-    public static native void internal_native_SetDepthClearValue(long this_addr, float depthClearValue);
 
     public void setDepthReadOnly(boolean depthReadOnly) {
-        internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthReadOnly(depthReadOnly);
-*/
-    public static native void internal_native_SetDepthReadOnly(long this_addr, boolean depthReadOnly);
 
     public void setStencilLoadOp(WGPULoadOp loadOp) {
-        internal_native_SetStencilLoadOp(native_address, loadOp.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilLoadOp((::WGPULoadOp)loadOp);
-*/
-    public static native void internal_native_SetStencilLoadOp(long this_addr, int loadOp);
 
     public void setStencilStoreOp(WGPUStoreOp storeOp) {
-        internal_native_SetStencilStoreOp(native_address, storeOp.getValue());
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilStoreOp((::WGPUStoreOp)storeOp);
-*/
-    public static native void internal_native_SetStencilStoreOp(long this_addr, int storeOp);
 
     public void setStencilClearValue(int stencilClearValue) {
-        internal_native_SetStencilClearValue(native_address, stencilClearValue);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilClearValue((int)stencilClearValue);
-*/
-    public static native void internal_native_SetStencilClearValue(long this_addr, int stencilClearValue);
 
     public void setStencilReadOnly(boolean stencilReadOnly) {
-        internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilReadOnly(stencilReadOnly);
-*/
-    public static native void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly);
 
     public static WGPURenderPassDepthStencilAttachment obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPURenderPassDepthStencilAttachment.NULL;
-        if (WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0 = WGPURenderPassDepthStencilAttachment.native_new();
-        WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassDepthStencilAttachment::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

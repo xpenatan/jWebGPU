@@ -11,8 +11,6 @@ import com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class WGPUStringView extends IDLBase {
 
-    private IDLString IDLString_TEMP_GEN_0;
-
     static public final WGPUStringView NULL = WGPUStringView.native_new();
 
     /**
@@ -29,30 +27,7 @@ public class WGPUStringView extends IDLBase {
         return new WGPUStringView((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUStringView* nativeObject = (JGPU::WGPUStringView*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public IDLString getString() {
-        long addr = internal_native_GetString_addr(native_address);
-        if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUStringView* nativeObject = (JGPU::WGPUStringView*)this_addr;
-static IDLString copy_addr;
-copy_addr = nativeObject->GetString();
-return (jlong)&copy_addr;*/
-    public static native long internal_native_GetString_addr(long this_addr);
 }

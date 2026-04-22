@@ -42,43 +42,19 @@ public enum WGPUTextureViewDimension implements IDLEnum<WGPUTextureViewDimension
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_Undefined;
-*/
     private static native int WGPUTextureViewDimension_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_1D;
-*/
     private static native int WGPUTextureViewDimension_1D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_2D;
-*/
     private static native int WGPUTextureViewDimension_2D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_2DArray;
-*/
     private static native int WGPUTextureViewDimension_2DArray_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_Cube;
-*/
     private static native int WGPUTextureViewDimension_Cube_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_CubeArray;
-*/
     private static native int WGPUTextureViewDimension_CubeArray_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_3D;
-*/
     private static native int WGPUTextureViewDimension_3D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureViewDimension_Force32;
-*/
     private static native int WGPUTextureViewDimension_Force32_NATIVE();
 }

@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUSupportedWGSLLanguageFeatures extends IDLBase {
 
-    static private WGPUSupportedWGSLLanguageFeatures WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0;
-
     static public final WGPUSupportedWGSLLanguageFeatures NULL = WGPUSupportedWGSLLanguageFeatures.native_new();
 
     public WGPUSupportedWGSLLanguageFeatures() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSupportedWGSLLanguageFeatures();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,55 +29,15 @@ return (jlong)new JGPU::WGPUSupportedWGSLLanguageFeatures();
         return new WGPUSupportedWGSLLanguageFeatures((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedWGSLLanguageFeatures* nativeObject = (JGPU::WGPUSupportedWGSLLanguageFeatures*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int getFeatureCount() {
-        return internal_native_GetFeatureCount(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedWGSLLanguageFeatures* nativeObject = (JGPU::WGPUSupportedWGSLLanguageFeatures*)this_addr;
-return nativeObject->GetFeatureCount();
-*/
-    public static native int internal_native_GetFeatureCount(long this_addr);
 
     public WGPUWGSLLanguageFeatureName getFeatureAt(int index) {
-        int value = internal_native_GetFeatureAt(native_address, index);
-        WGPUWGSLLanguageFeatureName[] values = WGPUWGSLLanguageFeatureName.values();
-        for (int i = 0; i < values.length; i++) {
-            WGPUWGSLLanguageFeatureName enumVal = values[i];
-            if (enumVal != WGPUWGSLLanguageFeatureName.CUSTOM && enumVal.getValue() == value)
-                return enumVal;
-        }
-        return WGPUWGSLLanguageFeatureName.CUSTOM.setValue(value);
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedWGSLLanguageFeatures* nativeObject = (JGPU::WGPUSupportedWGSLLanguageFeatures*)this_addr;
-return (int)nativeObject->GetFeatureAt((int)index);
-*/
-    public static native int internal_native_GetFeatureAt(long this_addr, int index);
 
     public static WGPUSupportedWGSLLanguageFeatures obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUSupportedWGSLLanguageFeatures.NULL;
-        if (WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 == null)
-            WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedWGSLLanguageFeatures.native_new();
-        WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSupportedWGSLLanguageFeatures::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

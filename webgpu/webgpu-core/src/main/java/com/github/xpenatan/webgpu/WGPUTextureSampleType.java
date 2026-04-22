@@ -42,43 +42,19 @@ public enum WGPUTextureSampleType implements IDLEnum<WGPUTextureSampleType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_BindingNotUsed;
-*/
     private static native int WGPUTextureSampleType_BindingNotUsed_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_Undefined;
-*/
     private static native int WGPUTextureSampleType_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_Float;
-*/
     private static native int WGPUTextureSampleType_Float_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_UnfilterableFloat;
-*/
     private static native int WGPUTextureSampleType_UnfilterableFloat_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_Depth;
-*/
     private static native int WGPUTextureSampleType_Depth_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_Sint;
-*/
     private static native int WGPUTextureSampleType_Sint_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_Uint;
-*/
     private static native int WGPUTextureSampleType_Uint_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureSampleType_Force32;
-*/
     private static native int WGPUTextureSampleType_Force32_NATIVE();
 }

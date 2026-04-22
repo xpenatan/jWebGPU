@@ -34,18 +34,9 @@ public enum WGPUWaitStatus implements IDLEnum<WGPUWaitStatus> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWaitStatus_Success;
-*/
     private static native int WGPUWaitStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWaitStatus_TimedOut;
-*/
     private static native int WGPUWaitStatus_TimedOut_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUWaitStatus_Force32;
-*/
     private static native int WGPUWaitStatus_Force32_NATIVE();
 }

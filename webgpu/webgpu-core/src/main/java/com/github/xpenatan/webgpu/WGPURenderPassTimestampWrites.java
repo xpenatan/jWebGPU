@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPURenderPassTimestampWrites extends IDLBase {
 
-    static private WGPURenderPassTimestampWrites WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
-
     static public final WGPURenderPassTimestampWrites NULL = WGPURenderPassTimestampWrites.native_new();
 
     public WGPURenderPassTimestampWrites() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderPassTimestampWrites();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,58 +29,16 @@ return (jlong)new JGPU::WGPURenderPassTimestampWrites();
         return new WGPURenderPassTimestampWrites((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassTimestampWrites* nativeObject = (JGPU::WGPURenderPassTimestampWrites*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public void setQuerySet(WGPUQuerySet value) {
-        internal_native_SetQuerySet(native_address, value.native_address);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassTimestampWrites* nativeObject = (JGPU::WGPURenderPassTimestampWrites*)this_addr;
-nativeObject->SetQuerySet((JGPU::WGPUQuerySet* )value_addr);
-*/
-    public static native void internal_native_SetQuerySet(long this_addr, long value_addr);
 
     public void setBeginningOfPassWriteIndex(int value) {
-        internal_native_SetBeginningOfPassWriteIndex(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassTimestampWrites* nativeObject = (JGPU::WGPURenderPassTimestampWrites*)this_addr;
-nativeObject->SetBeginningOfPassWriteIndex((int)value);
-*/
-    public static native void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value);
 
     public void setEndOfPassWriteIndex(int value) {
-        internal_native_SetEndOfPassWriteIndex(native_address, value);
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassTimestampWrites* nativeObject = (JGPU::WGPURenderPassTimestampWrites*)this_addr;
-nativeObject->SetEndOfPassWriteIndex((int)value);
-*/
-    public static native void internal_native_SetEndOfPassWriteIndex(long this_addr, int value);
 
     public static WGPURenderPassTimestampWrites obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPURenderPassTimestampWrites.NULL;
-        if (WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
-            WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPURenderPassTimestampWrites.native_new();
-        WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPURenderPassTimestampWrites_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassTimestampWrites::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

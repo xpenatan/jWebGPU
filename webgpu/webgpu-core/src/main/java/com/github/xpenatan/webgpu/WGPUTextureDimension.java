@@ -39,28 +39,13 @@ public enum WGPUTextureDimension implements IDLEnum<WGPUTextureDimension> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureDimension_Undefined;
-*/
     private static native int WGPUTextureDimension_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureDimension_1D;
-*/
     private static native int WGPUTextureDimension_1D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureDimension_2D;
-*/
     private static native int WGPUTextureDimension_2D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureDimension_3D;
-*/
     private static native int WGPUTextureDimension_3D_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUTextureDimension_Force32;
-*/
     private static native int WGPUTextureDimension_Force32_NATIVE();
 }

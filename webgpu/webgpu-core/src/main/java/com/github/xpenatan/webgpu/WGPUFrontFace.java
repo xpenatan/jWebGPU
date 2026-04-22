@@ -34,23 +34,11 @@ public enum WGPUFrontFace implements IDLEnum<WGPUFrontFace> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFrontFace_Undefined;
-*/
     private static native int WGPUFrontFace_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFrontFace_CCW;
-*/
     private static native int WGPUFrontFace_CCW_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFrontFace_CW;
-*/
     private static native int WGPUFrontFace_CW_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUFrontFace_Force32;
-*/
     private static native int WGPUFrontFace_Force32_NATIVE();
 }

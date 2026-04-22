@@ -34,13 +34,7 @@ public enum WGPUCompilationInfoRequestStatus implements IDLEnum<WGPUCompilationI
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompilationInfoRequestStatus_Success;
-*/
     private static native int WGPUCompilationInfoRequestStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompilationInfoRequestStatus_Force32;
-*/
     private static native int WGPUCompilationInfoRequestStatus_Force32_NATIVE();
 }

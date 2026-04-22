@@ -44,53 +44,23 @@ public enum WGPUSType implements IDLEnum<WGPUSType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_ShaderSourceSPIRV;
-*/
     private static native int WGPUSType_ShaderSourceSPIRV_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_ShaderSourceWGSL;
-*/
     private static native int WGPUSType_ShaderSourceWGSL_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_RenderPassMaxDrawCount;
-*/
     private static native int WGPUSType_RenderPassMaxDrawCount_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_SurfaceSourceMetalLayer;
-*/
     private static native int WGPUSType_SurfaceSourceMetalLayer_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_SurfaceSourceWindowsHWND;
-*/
     private static native int WGPUSType_SurfaceSourceWindowsHWND_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_SurfaceSourceXlibWindow;
-*/
     private static native int WGPUSType_SurfaceSourceXlibWindow_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_SurfaceSourceWaylandSurface;
-*/
     private static native int WGPUSType_SurfaceSourceWaylandSurface_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_SurfaceSourceAndroidNativeWindow;
-*/
     private static native int WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_SurfaceSourceXCBWindow;
-*/
     private static native int WGPUSType_SurfaceSourceXCBWindow_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSType_Force32;
-*/
     private static native int WGPUSType_Force32_NATIVE();
 }

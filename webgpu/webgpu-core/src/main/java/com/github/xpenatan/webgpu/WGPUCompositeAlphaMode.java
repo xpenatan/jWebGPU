@@ -40,33 +40,15 @@ public enum WGPUCompositeAlphaMode implements IDLEnum<WGPUCompositeAlphaMode> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompositeAlphaMode_Auto;
-*/
     private static native int WGPUCompositeAlphaMode_Auto_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompositeAlphaMode_Opaque;
-*/
     private static native int WGPUCompositeAlphaMode_Opaque_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompositeAlphaMode_Premultiplied;
-*/
     private static native int WGPUCompositeAlphaMode_Premultiplied_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompositeAlphaMode_Unpremultiplied;
-*/
     private static native int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompositeAlphaMode_Inherit;
-*/
     private static native int WGPUCompositeAlphaMode_Inherit_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUCompositeAlphaMode_Force32;
-*/
     private static native int WGPUCompositeAlphaMode_Force32_NATIVE();
 }

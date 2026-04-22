@@ -34,23 +34,11 @@ public enum WGPUStoreOp implements IDLEnum<WGPUStoreOp> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStoreOp_Undefined;
-*/
     private static native int WGPUStoreOp_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStoreOp_Store;
-*/
     private static native int WGPUStoreOp_Store_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStoreOp_Discard;
-*/
     private static native int WGPUStoreOp_Discard_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUStoreOp_Force32;
-*/
     private static native int WGPUStoreOp_Force32_NATIVE();
 }

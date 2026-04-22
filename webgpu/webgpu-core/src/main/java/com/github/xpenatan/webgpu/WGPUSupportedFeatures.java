@@ -10,19 +10,10 @@ import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUSupportedFeatures extends IDLBase {
 
-    static private WGPUSupportedFeatures WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
-
     static public final WGPUSupportedFeatures NULL = WGPUSupportedFeatures.native_new();
 
     public WGPUSupportedFeatures() {
-        long addr = internal_native_create_addr();
-        internal_reset(addr, true);
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSupportedFeatures();
-*/
-    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,55 +29,15 @@ return (jlong)new JGPU::WGPUSupportedFeatures();
         return new WGPUSupportedFeatures((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public int getFeatureCount() {
-        return internal_native_GetFeatureCount(native_address);
+        return 0;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-return nativeObject->GetFeatureCount();
-*/
-    public static native int internal_native_GetFeatureCount(long this_addr);
 
     public WGPUFeatureName getFeatureAt(int index) {
-        int value = internal_native_GetFeatureAt(native_address, index);
-        WGPUFeatureName[] values = WGPUFeatureName.values();
-        for (int i = 0; i < values.length; i++) {
-            WGPUFeatureName enumVal = values[i];
-            if (enumVal != WGPUFeatureName.CUSTOM && enumVal.getValue() == value)
-                return enumVal;
-        }
-        return WGPUFeatureName.CUSTOM.setValue(value);
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-return (int)nativeObject->GetFeatureAt((int)index);
-*/
-    public static native int internal_native_GetFeatureAt(long this_addr, int index);
 
     public static WGPUSupportedFeatures obtain() {
-        long addr = internal_native_Obtain_addr();
-        if (addr == 0)
-            return WGPUSupportedFeatures.NULL;
-        if (WGPUSupportedFeatures_TEMP_STATIC_GEN_0 == null)
-            WGPUSupportedFeatures_TEMP_STATIC_GEN_0 = WGPUSupportedFeatures.native_new();
-        WGPUSupportedFeatures_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
+        return null;
     }
-
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSupportedFeatures::Obtain();
-*/
-    public static native long internal_native_Obtain_addr();
 }

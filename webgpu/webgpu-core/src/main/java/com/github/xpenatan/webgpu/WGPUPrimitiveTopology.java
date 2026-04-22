@@ -41,38 +41,17 @@ public enum WGPUPrimitiveTopology implements IDLEnum<WGPUPrimitiveTopology> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_Undefined;
-*/
     private static native int WGPUPrimitiveTopology_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_PointList;
-*/
     private static native int WGPUPrimitiveTopology_PointList_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_LineList;
-*/
     private static native int WGPUPrimitiveTopology_LineList_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_LineStrip;
-*/
     private static native int WGPUPrimitiveTopology_LineStrip_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_TriangleList;
-*/
     private static native int WGPUPrimitiveTopology_TriangleList_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_TriangleStrip;
-*/
     private static native int WGPUPrimitiveTopology_TriangleStrip_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUPrimitiveTopology_Force32;
-*/
     private static native int WGPUPrimitiveTopology_Force32_NATIVE();
 }

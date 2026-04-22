@@ -40,33 +40,15 @@ public enum WGPUSamplerBindingType implements IDLEnum<WGPUSamplerBindingType> {
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSamplerBindingType_BindingNotUsed;
-*/
     private static native int WGPUSamplerBindingType_BindingNotUsed_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSamplerBindingType_Undefined;
-*/
     private static native int WGPUSamplerBindingType_Undefined_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSamplerBindingType_Filtering;
-*/
     private static native int WGPUSamplerBindingType_Filtering_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSamplerBindingType_NonFiltering;
-*/
     private static native int WGPUSamplerBindingType_NonFiltering_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSamplerBindingType_Comparison;
-*/
     private static native int WGPUSamplerBindingType_Comparison_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUSamplerBindingType_Force32;
-*/
     private static native int WGPUSamplerBindingType_Force32_NATIVE();
 }

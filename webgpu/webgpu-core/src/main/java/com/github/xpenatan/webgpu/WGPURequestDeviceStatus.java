@@ -34,18 +34,9 @@ public enum WGPURequestDeviceStatus implements IDLEnum<WGPURequestDeviceStatus> 
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestDeviceStatus_Success;
-*/
     private static native int WGPURequestDeviceStatus_Success_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestDeviceStatus_Error;
-*/
     private static native int WGPURequestDeviceStatus_Error_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPURequestDeviceStatus_Force32;
-*/
     private static native int WGPURequestDeviceStatus_Force32_NATIVE();
 }
