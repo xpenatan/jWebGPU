@@ -22,15 +22,9 @@ dependencies {
 
     if(LibExt.exampleUseRepoLibs) {
         compileOnly("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
-//        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:windows_64_dawn")
-//        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:windows_64_wgpu")
-//        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:linux_64_wgpu")
-//        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:mac_arm64_wgpu")
-//        api("com.github.xpenatan.jWebGPU:webgpu-desktop:-SNAPSHOT:mac_64_wgpu")
     }
     else {
         compileOnly(project(":webgpu:webgpu-core"))
-//        api(project(":webgpu:webgpu-desktop"))
     }
 
     implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
