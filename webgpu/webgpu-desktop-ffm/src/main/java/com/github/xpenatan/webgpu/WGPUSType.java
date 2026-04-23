@@ -27,6 +27,8 @@ public enum WGPUSType implements IDLEnum<WGPUSType> {
     SurfaceSourceWaylandSurface(WGPUSType_SurfaceSourceWaylandSurface_NATIVE()),
     SurfaceSourceAndroidNativeWindow(WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE()),
     SurfaceSourceXCBWindow(WGPUSType_SurfaceSourceXCBWindow_NATIVE()),
+    SurfaceColorManagement(WGPUSType_SurfaceColorManagement_NATIVE()),
+    RequestAdapterWebXROptions(WGPUSType_RequestAdapterWebXROptions_NATIVE()),
     Force32(WGPUSType_Force32_NATIVE());
 
     private int value;
@@ -151,6 +153,28 @@ return (int64_t)WGPUSType_SurfaceSourceXCBWindow;
     }
 
     /*[-FFM;-NATIVE]
+return (int64_t)WGPUSType_SurfaceColorManagement;
+*/
+    private static int WGPUSType_SurfaceColorManagement_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUSType_SurfaceColorManagement_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /*[-FFM;-NATIVE]
+return (int64_t)WGPUSType_RequestAdapterWebXROptions;
+*/
+    private static int WGPUSType_RequestAdapterWebXROptions_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUSType_RequestAdapterWebXROptions_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /*[-FFM;-NATIVE]
 return (int64_t)WGPUSType_Force32;
 */
     private static int WGPUSType_Force32_NATIVE() {
@@ -188,6 +212,10 @@ return (int64_t)WGPUSType_Force32;
         static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceAndroidNativeWindow_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXCBWindow_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceXCBWindow_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceColorManagement_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceColorManagement_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUSType_RequestAdapterWebXROptions_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1RequestAdapterWebXROptions_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle WGPUSType_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }

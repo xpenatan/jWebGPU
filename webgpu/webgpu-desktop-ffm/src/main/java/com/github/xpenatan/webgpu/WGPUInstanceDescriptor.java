@@ -83,6 +83,38 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         }
     }
 
+    public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
+        internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
+    }
+
+    /*[-FFM;-NATIVE]
+JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
+nativeObject->SetRequiredFeatures((JGPU::WGPUVectorInstanceFeatureName* )requiredFeatures_addr);
+*/
+    public static void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr) {
+        try {
+            FFMHandles.internal_native_SetRequiredFeatures__JJ.invokeExact(this_addr, requiredFeatures_addr);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
+        internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
+    }
+
+    /*[-FFM;-NATIVE]
+JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
+nativeObject->SetRequiredLimits((JGPU::WGPUVectorInstanceLimits* )requiredLimits_addr);
+*/
+    public static void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr) {
+        try {
+            FFMHandles.internal_native_SetRequiredLimits__JJ.invokeExact(this_addr, requiredLimits_addr);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static WGPUInstanceDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
         if (addr == 0)
@@ -119,6 +151,10 @@ return (int64_t)JGPU::WGPUInstanceDescriptor::Obtain();
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstanceDescriptor_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_SetNextInChain__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstanceDescriptor_internal_1native_1SetNextInChain__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_SetRequiredFeatures__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstanceDescriptor_internal_1native_1SetRequiredFeatures__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_SetRequiredLimits__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstanceDescriptor_internal_1native_1SetRequiredLimits__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstanceDescriptor_internal_1native_1Obtain_1addr__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }

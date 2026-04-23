@@ -188,6 +188,7 @@ class WGPUComputePipeline;
 class WGPURenderPipeline;
 class WGPUSampler;
 class WGPUCompilationMessage;
+class WGPUInstanceLimits;
 class WGPUBindGroupEntry;
 class WGPUFuture;
 class WGPUFutureWaitInfo;
@@ -523,6 +524,30 @@ class WGPUVectorConstantEntry {
         void clear();
         void push_back(const JGPU::WGPUConstantEntry& attachment);
         const JGPU::WGPUConstantEntry* data();
+};
+
+class WGPUVectorInstanceFeatureName {
+    private:
+        std::vector<WGPUInstanceFeatureName> vector;
+    public:
+        static WGPUVectorInstanceFeatureName* Obtain();
+    public:
+        int size();
+        void clear();
+        void push_back(const WGPUInstanceFeatureName& featureName);
+        const WGPUInstanceFeatureName* data();
+};
+
+class WGPUVectorInstanceLimits {
+    private:
+        std::vector<JGPU::WGPUInstanceLimits> vector;
+    public:
+        static WGPUVectorInstanceLimits* Obtain();
+    public:
+        int size();
+        void clear();
+        void push_back(const JGPU::WGPUInstanceLimits& attachment);
+        const JGPU::WGPUInstanceLimits* data();
 };
 
 class WGPUVectorVertexBufferLayout {
@@ -1260,6 +1285,14 @@ class WGPUCompilationMessage : public WGPUObjectBase<WGPUCompilationMessage, ::W
         int GetLength();
 };
 
+class WGPUInstanceLimits : public WGPUObjectBase<WGPUInstanceLimits, ::WGPUInstanceLimits> {
+    public:
+        static WGPUInstanceLimits* Obtain();
+    public:
+        void SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount);
+        void SetNextInChain(WGPUChainedStruct* chainedStruct);
+};
+
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::WGPUInstanceDescriptor> {
@@ -1267,6 +1300,8 @@ class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::W
         static WGPUInstanceDescriptor* Obtain();
     public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
+        void SetRequiredFeatures(WGPUVectorInstanceFeatureName* requiredFeatures);
+        void SetRequiredLimits(WGPUVectorInstanceLimits* requiredLimits);
 //        WGPUInstanceCapabilities GetFeatures(); // TODO dawn have different code
 };
 

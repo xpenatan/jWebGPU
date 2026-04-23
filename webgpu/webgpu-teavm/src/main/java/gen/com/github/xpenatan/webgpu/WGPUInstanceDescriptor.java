@@ -62,6 +62,28 @@ jsObj.SetNextInChain(chainedStruct_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
+    public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
+        internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);
+jsObj.SetRequiredFeatures(requiredFeatures_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "requiredFeatures_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetRequiredFeatures(requiredFeatures_addr);")
+    public static native void internal_native_SetRequiredFeatures(int this_addr, int requiredFeatures_addr);
+
+    public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
+        internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);
+jsObj.SetRequiredLimits(requiredLimits_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "requiredLimits_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetRequiredLimits(requiredLimits_addr);")
+    public static native void internal_native_SetRequiredLimits(int this_addr, int requiredLimits_addr);
+
     public static WGPUInstanceDescriptor obtain() {
         int addr = internal_native_Obtain_addr();
         if (addr == 0)

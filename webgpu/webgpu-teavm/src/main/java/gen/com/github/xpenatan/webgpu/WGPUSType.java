@@ -20,6 +20,8 @@ public enum WGPUSType implements IDLEnum<WGPUSType> {
     SurfaceSourceWaylandSurface(WGPUSType_SurfaceSourceWaylandSurface_NATIVE()),
     SurfaceSourceAndroidNativeWindow(WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE()),
     SurfaceSourceXCBWindow(WGPUSType_SurfaceSourceXCBWindow_NATIVE()),
+    SurfaceColorManagement(WGPUSType_SurfaceColorManagement_NATIVE()),
+    RequestAdapterWebXROptions(WGPUSType_RequestAdapterWebXROptions_NATIVE()),
     Force32(WGPUSType_Force32_NATIVE());
 
     private int value;
@@ -97,6 +99,18 @@ return jWebGPU.WGPUSType_SurfaceSourceXCBWindow;
 */
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceXCBWindow;")
     private static native int WGPUSType_SurfaceSourceXCBWindow_NATIVE();
+
+    /*[-TEAVM;-NATIVE]
+return jWebGPU.WGPUSType_SurfaceColorManagement;
+*/
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceColorManagement;")
+    private static native int WGPUSType_SurfaceColorManagement_NATIVE();
+
+    /*[-TEAVM;-NATIVE]
+return jWebGPU.WGPUSType_RequestAdapterWebXROptions;
+*/
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_RequestAdapterWebXROptions;")
+    private static native int WGPUSType_RequestAdapterWebXROptions_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jWebGPU.WGPUSType_Force32;

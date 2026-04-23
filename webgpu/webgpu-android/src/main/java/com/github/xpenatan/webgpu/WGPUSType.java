@@ -20,6 +20,8 @@ public enum WGPUSType implements IDLEnum<WGPUSType> {
     SurfaceSourceWaylandSurface(WGPUSType_SurfaceSourceWaylandSurface_NATIVE()),
     SurfaceSourceAndroidNativeWindow(WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE()),
     SurfaceSourceXCBWindow(WGPUSType_SurfaceSourceXCBWindow_NATIVE()),
+    SurfaceColorManagement(WGPUSType_SurfaceColorManagement_NATIVE()),
+    RequestAdapterWebXROptions(WGPUSType_RequestAdapterWebXROptions_NATIVE()),
     Force32(WGPUSType_Force32_NATIVE());
 
     private int value;
@@ -88,6 +90,16 @@ return (jlong)WGPUSType_SurfaceSourceAndroidNativeWindow;
 return (jlong)WGPUSType_SurfaceSourceXCBWindow;
 */
     private static native int WGPUSType_SurfaceSourceXCBWindow_NATIVE();
+
+    /*[-JNI;-NATIVE]
+return (jlong)WGPUSType_SurfaceColorManagement;
+*/
+    private static native int WGPUSType_SurfaceColorManagement_NATIVE();
+
+    /*[-JNI;-NATIVE]
+return (jlong)WGPUSType_RequestAdapterWebXROptions;
+*/
+    private static native int WGPUSType_RequestAdapterWebXROptions_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)WGPUSType_Force32;

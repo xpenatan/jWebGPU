@@ -1,3 +1,6 @@
+// ################################### NOTES ###################################
+// WGPUSurfaceColorManagement and WGPUPredefinedColorSpace is not needed
+
 // ################################### CUSTOM CODE ###################################
 
 interface WGPU {
@@ -178,6 +181,24 @@ interface WGPUVectorConstantEntry {
     void clear();
     void push_back([Ref] WGPUConstantEntry constantEntry);
     static WGPUVectorConstantEntry Obtain();
+};
+
+[Prefix="JGPU::"]
+interface WGPUVectorInstanceFeatureName {
+    void WGPUVectorInstanceFeatureName();
+    long size();
+    void clear();
+    void push_back(WGPUInstanceFeatureName featureName);
+    static WGPUVectorInstanceFeatureName Obtain();
+};
+
+[Prefix="JGPU::"]
+interface WGPUVectorInstanceLimits {
+    void WGPUVectorInstanceLimits();
+    long size();
+    void clear();
+    void push_back([Ref] WGPUInstanceLimits featureName);
+    static WGPUVectorInstanceLimits Obtain();
 };
 
 [Prefix="JGPU::"]
@@ -792,12 +813,6 @@ interface WGPUBindGroupEntry {
     static WGPUBindGroupEntry Obtain();
 };
 
-//[Prefix="JGPU::"]
-//interface WGPUInstanceCapabilities  { // TODO dawn have different code
-//    void SetTimedWaitAnyEnable(boolean enable);
-//    void SetTimedWaitAnyMaxCount(long timedWaitAnyMaxCount);
-//};
-
 [Prefix="JGPU::"]
 interface WGPURenderPassMaxDrawCount  {
     void WGPURenderPassMaxDrawCount ();
@@ -839,13 +854,22 @@ interface WGPUCompilationMessage  {
     static WGPUCompilationMessage Obtain();
 };
 
+[Prefix="JGPU::"]
+interface WGPUInstanceLimits {
+    void WGPUInstanceLimits();
+    void SetTimedWaitAnyMaxCount(long timedWaitAnyMaxCount);
+    void SetNextInChain(WGPUChainedStruct chainedStruct);
+    static WGPUInstanceLimits Obtain();
+};
+
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 [Prefix="JGPU::"]
 interface WGPUInstanceDescriptor {
     void WGPUInstanceDescriptor();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
-//    [Value] WGPUInstanceCapabilities GetFeatures();
+    void SetRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures);
+    void SetRequiredLimits(WGPUVectorInstanceLimits requiredLimits);
     static WGPUInstanceDescriptor Obtain();
 };
 
@@ -1659,12 +1683,6 @@ enum WGPUPowerPreference {
     "WGPUPowerPreference_Force32"           //[-RENAME=Force32]
 };
 
-// enum WGPUPredefinedColorSpace {    // TODO missing in wgpu-native header
-//     "WGPUPredefinedColorSpace_SRGB", //[-RENAME=SRGB]
-//     "WGPUPredefinedColorSpace_DisplayP3", //[-RENAME=DisplayP3]
-//     "WGPUPredefinedColorSpace_Force32" //[-RENAME=Force32]
-// };
-
 enum WGPUPresentMode {
     "WGPUPresentMode_Undefined",       //[-RENAME=Undefined]
     "WGPUPresentMode_Fifo",            //[-RENAME=Fifo]
@@ -1766,11 +1784,8 @@ enum WGPUSType {
     "WGPUSType_SurfaceSourceWaylandSurface",        //[-RENAME=SurfaceSourceWaylandSurface]
     "WGPUSType_SurfaceSourceAndroidNativeWindow",   //[-RENAME=SurfaceSourceAndroidNativeWindow]
     "WGPUSType_SurfaceSourceXCBWindow",             //[-RENAME=SurfaceSourceXCBWindow]
-    // "WGPUSType_SurfaceColorManagement",    // TODO missing in wgpu-native header
-    // "WGPUSType_RequestAdapterWebXROptions", // TODO missing in wgpu-native header
-    // "WGPUSType_AdapterPropertiesSubgroups", // TODO missing in wgpu-native header
-    // "WGPUSType_BindGroupLayoutEntryArraySize", // TODO missing in wgpu-native header
-    // "WGPUSType_TextureBindingViewDimensionDescriptor",   // TODO missing in wgpu-native header
+    "WGPUSType_SurfaceColorManagement",             //[-RENAME=SurfaceColorManagement]
+    "WGPUSType_RequestAdapterWebXROptions",         //[-RENAME=RequestAdapterWebXROptions]
     // "WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector",  // TODO missing in wgpu-native header
     // "WGPUSType_DawnCompilationMessageUtf16",  // TODO missing in wgpu-native header
     "WGPUSType_Force32"                             //[-RENAME=Force32]
@@ -1932,11 +1947,11 @@ enum WGPUTextureViewDimension {
     "WGPUTextureViewDimension_Force32" //[-RENAME=Force32]
 };
 
-// enum WGPUToneMappingMode {    // TODO missing in wgpu-native header
-//     "WGPUToneMappingMode_Standard", //[-RENAME=Standard]
-//     "WGPUToneMappingMode_Extended", //[-RENAME=Extended]
-//     "WGPUToneMappingMode_Force32" //[-RENAME=Force32]
-// };
+ enum WGPUToneMappingMode {
+     "WGPUToneMappingMode_Standard", //[-RENAME=Standard]
+     "WGPUToneMappingMode_Extended", //[-RENAME=Extended]
+     "WGPUToneMappingMode_Force32" //[-RENAME=Force32]
+ };
 
 enum WGPUVertexFormat {
     "WGPUVertexFormat_Uint8",          //[-RENAME=Uint8]
@@ -2004,4 +2019,11 @@ enum WGPUWGSLLanguageFeatureName {
     "WGPUWGSLLanguageFeatureName_PointerCompositeAccess",               //[-RENAME=PointerCompositeAccess]
     // "WGPUWGSLLanguageFeatureName_SizedBindingArray",   // TODO missing in wgpu-native header
     "WGPUWGSLLanguageFeatureName_Force32"                               //[-RENAME=Force32]
+};
+
+enum WGPUInstanceFeatureName {
+    "WGPUInstanceFeatureName_TimedWaitAny",                 //[-RENAME=TimedWaitAny]
+    "WGPUInstanceFeatureName_ShaderSourceSPIRV",            //[-RENAME=ShaderSourceSPIRV]
+    "WGPUInstanceFeatureName_MultipleDevicesPerAdapter",    //[-RENAME=MultipleDevicesPerAdapter]
+    "WGPUInstanceFeatureName_Force32"                       //[-RENAME=Force32]
 };

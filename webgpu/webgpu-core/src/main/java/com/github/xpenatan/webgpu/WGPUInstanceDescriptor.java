@@ -32,6 +32,12 @@ public class WGPUInstanceDescriptor extends IDLBase {
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
     }
 
+    public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
+    }
+
+    public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
+    }
+
     public static WGPUInstanceDescriptor obtain() {
         return null;
     }

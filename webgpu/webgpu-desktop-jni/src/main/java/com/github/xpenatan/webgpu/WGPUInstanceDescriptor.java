@@ -58,6 +58,26 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
+    public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
+        internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
+nativeObject->SetRequiredFeatures((JGPU::WGPUVectorInstanceFeatureName* )requiredFeatures_addr);
+*/
+    public static native void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr);
+
+    public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
+        internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
+nativeObject->SetRequiredLimits((JGPU::WGPUVectorInstanceLimits* )requiredLimits_addr);
+*/
+    public static native void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr);
+
     public static WGPUInstanceDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
         if (addr == 0)

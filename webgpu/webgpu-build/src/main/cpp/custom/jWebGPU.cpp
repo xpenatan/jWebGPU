@@ -137,6 +137,36 @@ void JGPU::WGPUVectorConstantEntry::push_back(const JGPU::WGPUConstantEntry& att
 
 const JGPU::WGPUConstantEntry* JGPU::WGPUVectorConstantEntry::data() { return vector.data(); }
 
+// WGPUVectorInstanceFeatureName
+JGPU::WGPUVectorInstanceFeatureName* JGPU::WGPUVectorInstanceFeatureName::Obtain() {
+    static JGPU::WGPUVectorInstanceFeatureName obj;
+    obj = JGPU::WGPUVectorInstanceFeatureName();
+    return &obj;
+}
+
+int JGPU::WGPUVectorInstanceFeatureName::size() { return vector.size(); }
+
+void JGPU::WGPUVectorInstanceFeatureName::clear() { return vector.clear(); }
+
+void JGPU::WGPUVectorInstanceFeatureName::push_back(const WGPUInstanceFeatureName& attachment) { vector.push_back(attachment); }
+
+const WGPUInstanceFeatureName* JGPU::WGPUVectorInstanceFeatureName::data() { return vector.data(); }
+
+// WGPUVectorInstanceLimits
+JGPU::WGPUVectorInstanceLimits* JGPU::WGPUVectorInstanceLimits::Obtain() {
+    static JGPU::WGPUVectorInstanceLimits obj;
+    obj = JGPU::WGPUVectorInstanceLimits();
+    return &obj;
+}
+
+int JGPU::WGPUVectorInstanceLimits::size() { return vector.size(); }
+
+void JGPU::WGPUVectorInstanceLimits::clear() { return vector.clear(); }
+
+void JGPU::WGPUVectorInstanceLimits::push_back(const JGPU::WGPUInstanceLimits& attachment) { vector.push_back(attachment); }
+
+const JGPU::WGPUInstanceLimits* JGPU::WGPUVectorInstanceLimits::data() { return vector.data(); }
+
 // WGPUVectorVertexBufferLayout
 JGPU::WGPUVectorVertexBufferLayout* JGPU::WGPUVectorVertexBufferLayout::Obtain() {
     static JGPU::WGPUVectorVertexBufferLayout obj;
@@ -2317,6 +2347,21 @@ int JGPU::WGPUCompilationMessage::GetLength() {
     return Get().length;
 }
 
+// JGPU::WGPUInstanceLimits
+JGPU::WGPUInstanceLimits* JGPU::WGPUInstanceLimits::Obtain() {
+    static JGPU::WGPUInstanceLimits obj;
+    obj = JGPU::WGPUInstanceLimits();
+    return &obj;
+}
+
+void JGPU::WGPUInstanceLimits::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
+    Get().timedWaitAnyMaxCount = timedWaitAnyMaxCount;
+}
+
+void JGPU::WGPUInstanceLimits::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
+    Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
+}
+
 // JGPU::WGPUCompilationInfo
 int JGPU::WGPUCompilationInfo::GetMessageCount() {
     return Get()->messageCount;
@@ -2343,6 +2388,26 @@ JGPU::WGPUInstanceDescriptor* JGPU::WGPUInstanceDescriptor::Obtain() {
 
 void JGPU::WGPUInstanceDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get().nextInChain = chainedStruct != nullptr ? chainedStruct->Get() : nullptr;
+}
+
+void JGPU::WGPUInstanceDescriptor::SetRequiredFeatures(JGPU::WGPUVectorInstanceFeatureName* requiredFeatures) {
+    if(requiredFeatures != NULL) {
+        Get().requiredFeatureCount = requiredFeatures->size();
+        Get().requiredFeatures = requiredFeatures->data();
+    }
+    else {
+        Get().requiredFeatureCount = 0;
+        Get().requiredFeatures = NULL;
+    }
+}
+
+void JGPU::WGPUInstanceDescriptor::SetRequiredLimits(JGPU::WGPUVectorInstanceLimits* requiredLimits) {
+    if(requiredLimits != NULL) {
+        Get().requiredLimits = (::WGPUInstanceLimits*)requiredLimits->data();
+    }
+    else {
+        Get().requiredLimits = NULL;
+    }
 }
 
 //JGPU::WGPUInstanceCapabilities JGPU::WGPUInstanceDescriptor::GetFeatures() { // TODO dawn have different code
