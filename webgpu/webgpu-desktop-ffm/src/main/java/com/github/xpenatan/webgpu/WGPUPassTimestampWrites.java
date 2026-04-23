@@ -15,24 +15,24 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUComputePassTimestampWrites extends IDLBase {
+public class WGPUPassTimestampWrites extends IDLBase {
 
-    static private WGPUComputePassTimestampWrites WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
+    static private WGPUPassTimestampWrites WGPUPassTimestampWrites_TEMP_STATIC_GEN_0;
 
-    static public final WGPUComputePassTimestampWrites NULL = WGPUComputePassTimestampWrites.native_new();
+    static public final WGPUPassTimestampWrites NULL = WGPUPassTimestampWrites.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected WGPUComputePassTimestampWrites(byte b, char c) {
+    protected WGPUPassTimestampWrites(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePassTimestampWrites native_new() {
-        return new WGPUComputePassTimestampWrites((byte) 0, (char) 0);
+    public static WGPUPassTimestampWrites native_new() {
+        return new WGPUPassTimestampWrites((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -40,7 +40,7 @@ public class WGPUComputePassTimestampWrites extends IDLBase {
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUComputePassTimestampWrites* nativeObject = (JGPU::WGPUComputePassTimestampWrites*)this_addr;
+JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
 delete nativeObject;
 */
     public static void internal_native_deleteNative(long this_addr) {
@@ -56,7 +56,7 @@ delete nativeObject;
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUComputePassTimestampWrites* nativeObject = (JGPU::WGPUComputePassTimestampWrites*)this_addr;
+JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
 nativeObject->SetQuerySet((JGPU::WGPUQuerySet* )value_addr);
 */
     public static void internal_native_SetQuerySet(long this_addr, long value_addr) {
@@ -72,7 +72,7 @@ nativeObject->SetQuerySet((JGPU::WGPUQuerySet* )value_addr);
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUComputePassTimestampWrites* nativeObject = (JGPU::WGPUComputePassTimestampWrites*)this_addr;
+JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
 nativeObject->SetBeginningOfPassWriteIndex((int)value);
 */
     public static void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value) {
@@ -88,7 +88,7 @@ nativeObject->SetBeginningOfPassWriteIndex((int)value);
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUComputePassTimestampWrites* nativeObject = (JGPU::WGPUComputePassTimestampWrites*)this_addr;
+JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
 nativeObject->SetEndOfPassWriteIndex((int)value);
 */
     public static void internal_native_SetEndOfPassWriteIndex(long this_addr, int value) {
@@ -99,18 +99,18 @@ nativeObject->SetEndOfPassWriteIndex((int)value);
         }
     }
 
-    public static WGPUComputePassTimestampWrites obtain() {
+    public static WGPUPassTimestampWrites obtain() {
         long addr = internal_native_Obtain_addr();
         if (addr == 0)
-            return WGPUComputePassTimestampWrites.NULL;
-        if (WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 == null)
-            WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUComputePassTimestampWrites.native_new();
-        WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUComputePassTimestampWrites_TEMP_STATIC_GEN_0;
+            return WGPUPassTimestampWrites.NULL;
+        if (WGPUPassTimestampWrites_TEMP_STATIC_GEN_0 == null)
+            WGPUPassTimestampWrites_TEMP_STATIC_GEN_0 = WGPUPassTimestampWrites.native_new();
+        WGPUPassTimestampWrites_TEMP_STATIC_GEN_0.internal_reset(addr, false);
+        return WGPUPassTimestampWrites_TEMP_STATIC_GEN_0;
     }
 
     /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUComputePassTimestampWrites::Obtain();
+return (int64_t)JGPU::WGPUPassTimestampWrites::Obtain();
 */
     public static long internal_native_Obtain_addr() {
         try {
@@ -130,14 +130,14 @@ return (int64_t)JGPU::WGPUComputePassTimestampWrites::Obtain();
             LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
         }
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputePassTimestampWrites_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUPassTimestampWrites_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetQuerySet__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputePassTimestampWrites_internal_1native_1SetQuerySet__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetQuerySet__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUPassTimestampWrites_internal_1native_1SetQuerySet__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetBeginningOfPassWriteIndex__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputePassTimestampWrites_internal_1native_1SetBeginningOfPassWriteIndex__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetBeginningOfPassWriteIndex__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUPassTimestampWrites_internal_1native_1SetBeginningOfPassWriteIndex__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetEndOfPassWriteIndex__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputePassTimestampWrites_internal_1native_1SetEndOfPassWriteIndex__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetEndOfPassWriteIndex__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUPassTimestampWrites_internal_1native_1SetEndOfPassWriteIndex__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputePassTimestampWrites_internal_1native_1Obtain_1addr__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUPassTimestampWrites_internal_1native_1Obtain_1addr__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }

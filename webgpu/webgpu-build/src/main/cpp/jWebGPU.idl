@@ -596,20 +596,11 @@ interface WGPURenderPassDepthStencilAttachment {
 };
 
 [Prefix="JGPU::"]
-interface WGPURenderPassTimestampWrites {
-    void WGPURenderPassTimestampWrites();
+interface WGPUPassTimestampWrites {
     void SetQuerySet(WGPUQuerySet value);
     void SetBeginningOfPassWriteIndex(long value);
     void SetEndOfPassWriteIndex(long value);
-    static WGPURenderPassTimestampWrites Obtain();
-};
-
-[Prefix="JGPU::"]
-interface WGPUComputePassTimestampWrites {
-    void SetQuerySet(WGPUQuerySet value);
-    void SetBeginningOfPassWriteIndex(long value);
-    void SetEndOfPassWriteIndex(long value);
-    static WGPUComputePassTimestampWrites Obtain();
+    static WGPUPassTimestampWrites Obtain();
 };
 
 [Prefix="JGPU::"]
@@ -917,7 +908,7 @@ interface WGPUBindGroupLayoutDescriptor {
 };
 
 [Prefix="JGPU::"]
-interface WGPUProgrammableStageDescriptor { // Pointer descriptor
+interface WGPUComputeState { // Pointer descriptor
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetModule(WGPUShaderModule shaderModule);
     void SetEntryPoint([Const] DOMString entryPoint);
@@ -930,7 +921,7 @@ interface WGPUComputePipelineDescriptor {
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetLayout(WGPUPipelineLayout layout);
-    [Value] WGPUProgrammableStageDescriptor GetCompute();
+    [Value] WGPUComputeState GetCompute();
     static WGPUComputePipelineDescriptor Obtain();
 };
 
@@ -1024,7 +1015,7 @@ interface WGPURenderPassDescriptor {
     [BindTo="SetColorAttachments"] void SetColorAttachments__4(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03, WGPURenderPassColorAttachment colorAttachment04);
     void SetDepthStencilAttachment(WGPURenderPassDepthStencilAttachment attachment);
     void SetOcclusionQuerySet(WGPUQuerySet occlusionQuerySet);
-    void SetTimestampWrites(WGPURenderPassTimestampWrites timestampWrites);
+    void SetTimestampWrites(WGPUPassTimestampWrites timestampWrites);
     static WGPURenderPassDescriptor Obtain();
 };
 
@@ -1041,7 +1032,7 @@ interface WGPUComputePassDescriptor {
     void WGPUComputePassDescriptor();
     void SetLabel([Const] DOMString value);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
-    void SetTimestampWrites(WGPUComputePassTimestampWrites timestampWrites);
+    void SetTimestampWrites(WGPUPassTimestampWrites timestampWrites);
     static WGPUComputePassDescriptor Obtain();
 };
 

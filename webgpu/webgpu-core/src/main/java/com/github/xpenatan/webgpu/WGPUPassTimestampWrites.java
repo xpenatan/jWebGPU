@@ -8,22 +8,22 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
 
-public class WGPUComputePassTimestampWrites extends IDLBase {
+public class WGPUPassTimestampWrites extends IDLBase {
 
-    static public final WGPUComputePassTimestampWrites NULL = WGPUComputePassTimestampWrites.native_new();
+    static public final WGPUPassTimestampWrites NULL = WGPUPassTimestampWrites.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected WGPUComputePassTimestampWrites(byte b, char c) {
+    protected WGPUPassTimestampWrites(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUComputePassTimestampWrites native_new() {
-        return new WGPUComputePassTimestampWrites((byte) 0, (char) 0);
+    public static WGPUPassTimestampWrites native_new() {
+        return new WGPUPassTimestampWrites((byte) 0, (char) 0);
     }
 
     public void setQuerySet(WGPUQuerySet value) {
@@ -35,7 +35,7 @@ public class WGPUComputePassTimestampWrites extends IDLBase {
     public void setEndOfPassWriteIndex(int value) {
     }
 
-    public static WGPUComputePassTimestampWrites obtain() {
+    public static WGPUPassTimestampWrites obtain() {
         return null;
     }
 }

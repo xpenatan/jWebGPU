@@ -6,9 +6,9 @@ plugins {
     id("java")
 }
 
-val WGPU_VERSION = "27.0.4.0"
-val emdawnVersion = "v20250907.221810"
-val buildDawnVersion = "2025-08-03"
+val WGPU_VERSION = "29.0.0.0"
+val emdawnVersion = "v20260319.174537"
+val buildDawnVersion = "2026-03-22"
 
 val buildDir = layout.buildDirectory.get().asFile
 

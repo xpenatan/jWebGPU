@@ -38,7 +38,7 @@ public class WGPUComputePipelineDescriptor extends IDLBase {
     public void setLayout(WGPUPipelineLayout layout) {
     }
 
-    public WGPUProgrammableStageDescriptor getCompute() {
+    public WGPUComputeState getCompute() {
         return null;
     }
 

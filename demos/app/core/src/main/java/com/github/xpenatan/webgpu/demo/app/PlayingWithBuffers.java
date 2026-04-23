@@ -20,12 +20,12 @@ import com.github.xpenatan.webgpu.WGPUIndexFormat;
 import com.github.xpenatan.webgpu.WGPULoadOp;
 import com.github.xpenatan.webgpu.WGPUMapAsyncStatus;
 import com.github.xpenatan.webgpu.WGPUMapMode;
+import com.github.xpenatan.webgpu.WGPUPassTimestampWrites;
 import com.github.xpenatan.webgpu.WGPUPipelineLayout;
 import com.github.xpenatan.webgpu.WGPUPlatformType;
 import com.github.xpenatan.webgpu.WGPUPresentMode;
 import com.github.xpenatan.webgpu.WGPUPrimitiveTopology;
 import com.github.xpenatan.webgpu.WGPURenderPassDepthStencilAttachment;
-import com.github.xpenatan.webgpu.WGPURenderPassTimestampWrites;
 import com.github.xpenatan.webgpu.WGPUSType;
 import com.github.xpenatan.webgpu.WGPUStoreOp;
 import com.github.xpenatan.webgpu.WGPUTextureAspect;
@@ -154,7 +154,7 @@ public class PlayingWithBuffers implements ApplicationListener {
         attachments.push_back(renderPassColorAttachment);
         renderPassDesc.setColorAttachments(attachments);
         renderPassDesc.setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment.NULL);
-        renderPassDesc.setTimestampWrites(WGPURenderPassTimestampWrites.NULL);
+        renderPassDesc.setTimestampWrites(WGPUPassTimestampWrites.NULL);
 
         WGPURenderPassEncoder renderPass = WGPURenderPassEncoder.obtain();
         encoder.beginRenderPass(renderPassDesc, renderPass);

@@ -161,7 +161,7 @@ jsObj.SetOcclusionQuerySet(occlusionQuerySet_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "occlusionQuerySet_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDescriptor);jsObj.SetOcclusionQuerySet(occlusionQuerySet_addr);")
     public static native void internal_native_SetOcclusionQuerySet(int this_addr, int occlusionQuerySet_addr);
 
-    public void setTimestampWrites(WGPURenderPassTimestampWrites timestampWrites) {
+    public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 

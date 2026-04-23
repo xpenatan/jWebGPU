@@ -10,7 +10,7 @@ import gen.com.github.xpenatan.jParser.idl.IDLBase;
 
 public class WGPUComputePipelineDescriptor extends IDLBase {
 
-    private WGPUProgrammableStageDescriptor WGPUProgrammableStageDescriptor_TEMP_GEN_0;
+    private WGPUComputeState WGPUComputeState_TEMP_GEN_0;
 
     static private WGPUComputePipelineDescriptor WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
 
@@ -86,14 +86,14 @@ jsObj.SetLayout(layout_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "layout_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePipelineDescriptor);jsObj.SetLayout(layout_addr);")
     public static native void internal_native_SetLayout(int this_addr, int layout_addr);
 
-    public WGPUProgrammableStageDescriptor getCompute() {
+    public WGPUComputeState getCompute() {
         int addr = internal_native_GetCompute_addr(native_address);
         if (addr == 0)
-            return WGPUProgrammableStageDescriptor.NULL;
-        if (WGPUProgrammableStageDescriptor_TEMP_GEN_0 == null)
-            WGPUProgrammableStageDescriptor_TEMP_GEN_0 = WGPUProgrammableStageDescriptor.native_new();
-        WGPUProgrammableStageDescriptor_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUProgrammableStageDescriptor_TEMP_GEN_0;
+            return WGPUComputeState.NULL;
+        if (WGPUComputeState_TEMP_GEN_0 == null)
+            WGPUComputeState_TEMP_GEN_0 = WGPUComputeState.native_new();
+        WGPUComputeState_TEMP_GEN_0.internal_reset(addr, false);
+        return WGPUComputeState_TEMP_GEN_0;
     }
 
     /*[-TEAVM;-NATIVE]

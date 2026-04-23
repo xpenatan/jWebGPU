@@ -1869,41 +1869,22 @@ void JGPU::WGPURenderPassDepthStencilAttachment::SetStencilReadOnly(bool stencil
     Get().stencilReadOnly = stencilReadOnly;
 }
 
-// JGPU::WGPURenderPassTimestampWrites
-JGPU::WGPURenderPassTimestampWrites* JGPU::WGPURenderPassTimestampWrites::Obtain() {
-    static JGPU::WGPURenderPassTimestampWrites obj;
-    obj = JGPU::WGPURenderPassTimestampWrites();
+// JGPU::WGPUPassTimestampWrites
+JGPU::WGPUPassTimestampWrites* JGPU::WGPUPassTimestampWrites::Obtain() {
+    static JGPU::WGPUPassTimestampWrites obj;
+    obj = JGPU::WGPUPassTimestampWrites();
     return &obj;
 }
 
-void JGPU::WGPURenderPassTimestampWrites::SetQuerySet(JGPU::WGPUQuerySet* value) {
+void JGPU::WGPUPassTimestampWrites::SetQuerySet(JGPU::WGPUQuerySet* value) {
     Get().querySet = value->Get();
 }
 
-void JGPU::WGPURenderPassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
+void JGPU::WGPUPassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
     Get().beginningOfPassWriteIndex = value;
 }
 
-void JGPU::WGPURenderPassTimestampWrites::SetEndOfPassWriteIndex(int value) {
-    Get().endOfPassWriteIndex = value;
-}
-
-// JGPU::WGPUComputePassTimestampWrites
-JGPU::WGPUComputePassTimestampWrites* JGPU::WGPUComputePassTimestampWrites::Obtain() {
-    static JGPU::WGPUComputePassTimestampWrites obj;
-    obj = JGPU::WGPUComputePassTimestampWrites();
-    return &obj;
-}
-
-void JGPU::WGPUComputePassTimestampWrites::SetQuerySet(JGPU::WGPUQuerySet* value) {
-    Get().querySet = value->Get();
-}
-
-void JGPU::WGPUComputePassTimestampWrites::SetBeginningOfPassWriteIndex(int value) {
-    Get().beginningOfPassWriteIndex = value;
-}
-
-void JGPU::WGPUComputePassTimestampWrites::SetEndOfPassWriteIndex(int value) {
+void JGPU::WGPUPassTimestampWrites::SetEndOfPassWriteIndex(int value) {
     Get().endOfPassWriteIndex = value;
 }
 
@@ -2578,7 +2559,7 @@ void JGPU::WGPUComputePassDescriptor::SetLabel(const char* value) {
     Get().label = stringView.Get();
 }
 
-void JGPU::WGPUComputePassDescriptor::SetTimestampWrites(JGPU::WGPUComputePassTimestampWrites* timestampWrites) {
+void JGPU::WGPUComputePassDescriptor::SetTimestampWrites(JGPU::WGPUPassTimestampWrites* timestampWrites) {
     Get().timestampWrites = timestampWrites != NULL ? &timestampWrites->Get() : NULL;
 }
 
@@ -2713,7 +2694,7 @@ void JGPU::WGPURenderPassDescriptor::SetOcclusionQuerySet(JGPU::WGPUQuerySet* ti
     Get().occlusionQuerySet = timestampWrites == NULL ? NULL : timestampWrites->Get();
 }
 
-void JGPU::WGPURenderPassDescriptor::SetTimestampWrites(JGPU::WGPURenderPassTimestampWrites* timestampWrites) {
+void JGPU::WGPURenderPassDescriptor::SetTimestampWrites(JGPU::WGPUPassTimestampWrites* timestampWrites) {
     Get().timestampWrites = timestampWrites == NULL ? NULL : &(timestampWrites->Get());
 }
 
@@ -2838,27 +2819,27 @@ void JGPU::WGPUBindGroupLayoutDescriptor::SetEntries(JGPU::WGPUVectorBindGroupLa
     }
 }
 
-// JGPU::WGPUProgrammableStageDescriptor
-JGPU::WGPUProgrammableStageDescriptor* JGPU::WGPUProgrammableStageDescriptor::Obtain() {
-    static JGPU::WGPUProgrammableStageDescriptor obj;
-    obj = JGPU::WGPUProgrammableStageDescriptor();
+// JGPU::WGPUComputeState
+JGPU::WGPUComputeState* JGPU::WGPUComputeState::Obtain() {
+    static JGPU::WGPUComputeState obj;
+    obj = JGPU::WGPUComputeState();
     return &obj;
 }
 
-void JGPU::WGPUProgrammableStageDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
+void JGPU::WGPUComputeState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
     Get()->nextInChain = chainedStruct != NULL ? chainedStruct->Get() : NULL;
 }
 
-void JGPU::WGPUProgrammableStageDescriptor::SetModule(JGPU::WGPUShaderModule* module) {
+void JGPU::WGPUComputeState::SetModule(JGPU::WGPUShaderModule* module) {
     Get()->module = module != NULL ? module->Get() : NULL;
 }
 
-void JGPU::WGPUProgrammableStageDescriptor::SetEntryPoint(const char* value) {
+void JGPU::WGPUComputeState::SetEntryPoint(const char* value) {
     JGPU::WGPUStringView stringView(value);
     Get()->entryPoint = stringView.Get();
 }
 
-void JGPU::WGPUProgrammableStageDescriptor::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
+void JGPU::WGPUComputeState::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get()->constantCount = values->size();
         Get()->constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
@@ -2889,8 +2870,8 @@ void JGPU::WGPUComputePipelineDescriptor::SetLayout(WGPUPipelineLayout* pipeline
     Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
 }
 
-JGPU::WGPUProgrammableStageDescriptor JGPU::WGPUComputePipelineDescriptor::GetCompute() {
-    JGPU::WGPUProgrammableStageDescriptor temp;
+JGPU::WGPUComputeState JGPU::WGPUComputePipelineDescriptor::GetCompute() {
+    JGPU::WGPUComputeState temp;
     temp.Set(&Get().compute);
     return temp;
 }

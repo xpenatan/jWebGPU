@@ -4,9 +4,9 @@ import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.WGPUChainedStruct;
 import com.github.xpenatan.webgpu.WGPUDepthStencilState;
+import com.github.xpenatan.webgpu.WGPUPassTimestampWrites;
 import com.github.xpenatan.webgpu.WGPUPipelineLayout;
 import com.github.xpenatan.webgpu.WGPURenderPassDepthStencilAttachment;
-import com.github.xpenatan.webgpu.WGPURenderPassTimestampWrites;
 import com.github.xpenatan.webgpu.WGPUVectorCommandBuffer;
 import com.github.xpenatan.webgpu.WGPUVectorConstantEntry;
 import com.github.xpenatan.webgpu.WGPUVectorTextureFormat;
@@ -115,7 +115,7 @@ public class HelloTriangle implements ApplicationListener {
         WGPURenderPassDescriptor renderPassDesc  = WGPURenderPassDescriptor.obtain();
         renderPassDesc.setColorAttachments(colorAttachmentVector);
         renderPassDesc.setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment.NULL);
-        renderPassDesc.setTimestampWrites(WGPURenderPassTimestampWrites.NULL);
+        renderPassDesc.setTimestampWrites(WGPUPassTimestampWrites.NULL);
         encoder.beginRenderPass(renderPassDesc, renderPass);
 
         renderPass.setPipeline(pipeline);

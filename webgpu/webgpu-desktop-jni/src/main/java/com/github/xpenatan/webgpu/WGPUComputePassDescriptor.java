@@ -68,13 +68,13 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
-    public void setTimestampWrites(WGPUComputePassTimestampWrites timestampWrites) {
+    public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUComputePassDescriptor* nativeObject = (JGPU::WGPUComputePassDescriptor*)this_addr;
-nativeObject->SetTimestampWrites((JGPU::WGPUComputePassTimestampWrites* )timestampWrites_addr);
+nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrites_addr);
 */
     public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
 

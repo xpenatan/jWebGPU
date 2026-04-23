@@ -59,7 +59,7 @@ public class WGPURenderPassDescriptor extends IDLBase {
     public void setOcclusionQuerySet(WGPUQuerySet occlusionQuerySet) {
     }
 
-    public void setTimestampWrites(WGPURenderPassTimestampWrites timestampWrites) {
+    public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
     }
 
     public static WGPURenderPassDescriptor obtain() {

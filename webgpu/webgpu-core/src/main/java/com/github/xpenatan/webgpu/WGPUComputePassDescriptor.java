@@ -35,7 +35,7 @@ public class WGPUComputePassDescriptor extends IDLBase {
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
     }
 
-    public void setTimestampWrites(WGPUComputePassTimestampWrites timestampWrites) {
+    public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
     }
 
     public static WGPUComputePassDescriptor obtain() {

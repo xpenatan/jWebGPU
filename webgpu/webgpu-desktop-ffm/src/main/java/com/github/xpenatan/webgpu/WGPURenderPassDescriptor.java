@@ -227,13 +227,13 @@ nativeObject->SetOcclusionQuerySet((JGPU::WGPUQuerySet* )occlusionQuerySet_addr)
         }
     }
 
-    public void setTimestampWrites(WGPURenderPassTimestampWrites timestampWrites) {
+    public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetTimestampWrites((JGPU::WGPURenderPassTimestampWrites* )timestampWrites_addr);
+nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrites_addr);
 */
     public static void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr) {
         try {

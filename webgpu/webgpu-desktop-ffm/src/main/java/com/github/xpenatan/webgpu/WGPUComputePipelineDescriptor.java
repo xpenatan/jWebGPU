@@ -17,7 +17,7 @@ import java.lang.invoke.MethodHandle;
 
 public class WGPUComputePipelineDescriptor extends IDLBase {
 
-    private WGPUProgrammableStageDescriptor WGPUProgrammableStageDescriptor_TEMP_GEN_0;
+    private WGPUComputeState WGPUComputeState_TEMP_GEN_0;
 
     static private WGPUComputePipelineDescriptor WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
 
@@ -117,19 +117,19 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )layout_addr);
         }
     }
 
-    public WGPUProgrammableStageDescriptor getCompute() {
+    public WGPUComputeState getCompute() {
         long addr = internal_native_GetCompute_addr(native_address);
         if (addr == 0)
-            return WGPUProgrammableStageDescriptor.NULL;
-        if (WGPUProgrammableStageDescriptor_TEMP_GEN_0 == null)
-            WGPUProgrammableStageDescriptor_TEMP_GEN_0 = WGPUProgrammableStageDescriptor.native_new();
-        WGPUProgrammableStageDescriptor_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUProgrammableStageDescriptor_TEMP_GEN_0;
+            return WGPUComputeState.NULL;
+        if (WGPUComputeState_TEMP_GEN_0 == null)
+            WGPUComputeState_TEMP_GEN_0 = WGPUComputeState.native_new();
+        WGPUComputeState_TEMP_GEN_0.internal_reset(addr, false);
+        return WGPUComputeState_TEMP_GEN_0;
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDescriptor*)this_addr;
-static JGPU::WGPUProgrammableStageDescriptor copy_addr;
+static JGPU::WGPUComputeState copy_addr;
 copy_addr = nativeObject->GetCompute();
 return (int64_t)&copy_addr;*/
     public static long internal_native_GetCompute_addr(long this_addr) {

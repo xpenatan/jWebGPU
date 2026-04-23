@@ -8,22 +8,22 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
 
-public class WGPUProgrammableStageDescriptor extends IDLBase {
+public class WGPUComputeState extends IDLBase {
 
-    static public final WGPUProgrammableStageDescriptor NULL = WGPUProgrammableStageDescriptor.native_new();
+    static public final WGPUComputeState NULL = WGPUComputeState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected WGPUProgrammableStageDescriptor(byte b, char c) {
+    protected WGPUComputeState(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUProgrammableStageDescriptor native_new() {
-        return new WGPUProgrammableStageDescriptor((byte) 0, (char) 0);
+    public static WGPUComputeState native_new() {
+        return new WGPUComputeState((byte) 0, (char) 0);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {

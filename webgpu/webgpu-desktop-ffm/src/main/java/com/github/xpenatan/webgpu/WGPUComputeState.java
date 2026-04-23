@@ -15,22 +15,22 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUProgrammableStageDescriptor extends IDLBase {
+public class WGPUComputeState extends IDLBase {
 
-    static public final WGPUProgrammableStageDescriptor NULL = WGPUProgrammableStageDescriptor.native_new();
+    static public final WGPUComputeState NULL = WGPUComputeState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected WGPUProgrammableStageDescriptor(byte b, char c) {
+    protected WGPUComputeState(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUProgrammableStageDescriptor native_new() {
-        return new WGPUProgrammableStageDescriptor((byte) 0, (char) 0);
+    public static WGPUComputeState native_new() {
+        return new WGPUComputeState((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -38,7 +38,7 @@ public class WGPUProgrammableStageDescriptor extends IDLBase {
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 delete nativeObject;
 */
     public static void internal_native_deleteNative(long this_addr) {
@@ -54,7 +54,7 @@ delete nativeObject;
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
@@ -70,7 +70,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
 */
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
@@ -86,7 +86,7 @@ nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetEntryPoint(entryPoint);
 */
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
@@ -102,7 +102,7 @@ nativeObject->SetEntryPoint(entryPoint);
     }
 
     /*[-FFM;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )values_addr);
 */
     public static void internal_native_SetConstants(long this_addr, long values_addr) {
@@ -123,14 +123,14 @@ nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )values_addr);
             LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
         }
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUProgrammableStageDescriptor_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputeState_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetNextInChain__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUProgrammableStageDescriptor_internal_1native_1SetNextInChain__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetNextInChain__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputeState_internal_1native_1SetNextInChain__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetModule__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUProgrammableStageDescriptor_internal_1native_1SetModule__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetModule__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputeState_internal_1native_1SetModule__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetEntryPoint__JLjava_lang_String_2 = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUProgrammableStageDescriptor_internal_1native_1SetEntryPoint__JLjava_lang_String_2").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
+        static final java.lang.invoke.MethodHandle internal_native_SetEntryPoint__JLjava_lang_String_2 = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputeState_internal_1native_1SetEntryPoint__JLjava_lang_String_2").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetConstants__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUProgrammableStageDescriptor_internal_1native_1SetConstants__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetConstants__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputeState_internal_1native_1SetConstants__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
     }
 }

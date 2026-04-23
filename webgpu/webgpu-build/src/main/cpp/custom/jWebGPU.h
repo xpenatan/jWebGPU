@@ -201,16 +201,6 @@ class STBImage;
 
 class WGPUByteBuffer;
 
-#if defined(__EMSCRIPTEN__) || defined(WEBGPU_DAWN)
-using WGPURenderPassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
-using WGPUComputePassTimestampWrites = WGPUPassTimestampWrites; // dawn version TODO remove when both are the same
-using WGPUProgrammableStageDescriptor = WGPUComputeState; // dawn version TODO remove when both are the same
-#else
-using WGPURenderPassTimestampWrites = WGPURenderPassTimestampWrites;  // wgpu-native version TODO remove when both are the same
-using WGPUComputePassTimestampWrites = WGPUComputePassTimestampWrites;  // wgpu-native version TODO remove when both are the same
-using WGPUProgrammableStageDescriptor = WGPUProgrammableStageDescriptor;  // wgpu-native version TODO remove when both are the same
-#endif //__EMSCRIPTEN__
-
 // ################################### CUSTOM CODE ###################################
 
 // Define 32-bit enums
@@ -1079,18 +1069,9 @@ class WGPURenderPassDepthStencilAttachment : public WGPUObjectBase<WGPURenderPas
         void SetStencilReadOnly(bool stencilReadOnly);
 };
 
-class WGPURenderPassTimestampWrites : public WGPUObjectBase<WGPURenderPassTimestampWrites, ::WGPURenderPassTimestampWrites> {
+class WGPUPassTimestampWrites : public WGPUObjectBase<WGPUPassTimestampWrites, ::WGPUPassTimestampWrites> {
     public:
-        static WGPURenderPassTimestampWrites* Obtain();
-    public:
-        void SetQuerySet(WGPUQuerySet* value);
-        void SetBeginningOfPassWriteIndex(int value);
-        void SetEndOfPassWriteIndex(int value);
-};
-
-class WGPUComputePassTimestampWrites : public WGPUObjectBase<WGPUComputePassTimestampWrites, ::WGPUComputePassTimestampWrites> {
-    public:
-        static WGPUComputePassTimestampWrites* Obtain();
+        static WGPUPassTimestampWrites* Obtain();
     public:
         void SetQuerySet(WGPUQuerySet* value);
         void SetBeginningOfPassWriteIndex(int value);
@@ -1346,9 +1327,9 @@ class WGPUBindGroupLayoutDescriptor : public WGPUObjectBase<WGPUBindGroupLayoutD
         void SetEntries(WGPUVectorBindGroupLayoutEntry* entries);
 };
 
-class WGPUProgrammableStageDescriptor : public WGPUObjectBase<WGPUProgrammableStageDescriptor, ::WGPUProgrammableStageDescriptor*> {
+class WGPUComputeState : public WGPUObjectBase<WGPUComputeState, ::WGPUComputeState*> {
     public:
-        static WGPUProgrammableStageDescriptor* Obtain();
+        static WGPUComputeState* Obtain();
     public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetModule(WGPUShaderModule* module);
@@ -1363,7 +1344,7 @@ class WGPUComputePipelineDescriptor : public WGPUObjectBase<WGPUComputePipelineD
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetLayout(WGPUPipelineLayout* pipelineLayout);
-        WGPUProgrammableStageDescriptor GetCompute();
+        WGPUComputeState GetCompute();
 };
 
 class WGPUQueueDescriptor : public WGPUObjectBase<WGPUQueueDescriptor, ::WGPUQueueDescriptor*> {
@@ -1467,7 +1448,7 @@ class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor,
         void SetColorAttachments(WGPURenderPassColorAttachment* colorAttachment01, WGPURenderPassColorAttachment* colorAttachment02, WGPURenderPassColorAttachment* colorAttachment03, WGPURenderPassColorAttachment* colorAttachment04);
         void SetDepthStencilAttachment(WGPURenderPassDepthStencilAttachment* attachment);
         void SetOcclusionQuerySet(WGPUQuerySet* occlusionQuerySet);
-        void SetTimestampWrites(WGPURenderPassTimestampWrites* timestampWrites);
+        void SetTimestampWrites(WGPUPassTimestampWrites* timestampWrites);
 };
 
 class WGPUComputePassDescriptor : public WGPUObjectBase<WGPUComputePassDescriptor, ::WGPUComputePassDescriptor> {
@@ -1476,7 +1457,7 @@ class WGPUComputePassDescriptor : public WGPUObjectBase<WGPUComputePassDescripto
     public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
-        void SetTimestampWrites(WGPUComputePassTimestampWrites* timestampWrites);
+        void SetTimestampWrites(WGPUPassTimestampWrites* timestampWrites);
 };
 
 class WGPUTextureDescriptor : public WGPUObjectBase<WGPUTextureDescriptor, ::WGPUTextureDescriptor> {

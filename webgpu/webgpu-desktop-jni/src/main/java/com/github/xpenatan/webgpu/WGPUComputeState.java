@@ -8,22 +8,22 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
 
-public class WGPUProgrammableStageDescriptor extends IDLBase {
+public class WGPUComputeState extends IDLBase {
 
-    static public final WGPUProgrammableStageDescriptor NULL = WGPUProgrammableStageDescriptor.native_new();
+    static public final WGPUComputeState NULL = WGPUComputeState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
     @Deprecated()
-    protected WGPUProgrammableStageDescriptor(byte b, char c) {
+    protected WGPUComputeState(byte b, char c) {
     }
 
     /**
      * @return An empty instance without a native address
      */
-    public static WGPUProgrammableStageDescriptor native_new() {
-        return new WGPUProgrammableStageDescriptor((byte) 0, (char) 0);
+    public static WGPUComputeState native_new() {
+        return new WGPUComputeState((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -31,7 +31,7 @@ public class WGPUProgrammableStageDescriptor extends IDLBase {
     }
 
     /*[-JNI;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
@@ -41,7 +41,7 @@ delete nativeObject;
     }
 
     /*[-JNI;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
 */
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
@@ -51,7 +51,7 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
     }
 
     /*[-JNI;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
 */
     public static native void internal_native_SetModule(long this_addr, long shaderModule_addr);
@@ -61,7 +61,7 @@ nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
     }
 
     /*[-JNI;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetEntryPoint(entryPoint);
 */
     public static native void internal_native_SetEntryPoint(long this_addr, String entryPoint);
@@ -71,7 +71,7 @@ nativeObject->SetEntryPoint(entryPoint);
     }
 
     /*[-JNI;-NATIVE]
-JGPU::WGPUProgrammableStageDescriptor* nativeObject = (JGPU::WGPUProgrammableStageDescriptor*)this_addr;
+JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
 nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )values_addr);
 */
     public static native void internal_native_SetConstants(long this_addr, long values_addr);
