@@ -44,46 +44,46 @@ public class WGPUBuild {
                 }
                 boolean isDawn = op.containsArg("dawn");
                 if(isDawn) {
-                    if(op.containsArg("jni_windows64")) {
+                    if(op.containsArg("windows64_jni")) {
                         targets.add(getWindowDawnTarget(op, downloadPath));
 //                    targets.add(getWindowDawn2Target(op, downloadPath));
                     }
-                    if(op.containsArg("ffm_windows64")) {
+                    if(op.containsArg("windows64_ffm")) {
                         targets.add(getFFMWindowDawnTarget(op, downloadPath));
                     }
                 }
                 else {
-                    if(op.containsArg("jni_windows64")) {
+                    if(op.containsArg("windows64_jni")) {
                         targets.add(getWindowTarget(op, downloadPath));
                     }
                     if(op.containsArg("teavm")) {
                         targets.add(getTeaVMTarget(op, idlReader, downloadPath));
                     }
-                    if(op.containsArg("jni_android")) {
+                    if(op.containsArg("android_jni")) {
                         targets.add(getAndroidTarget(op, downloadPath));
                     }
-                    if(op.containsArg("jni_linux64")) {
+                    if(op.containsArg("linux64_jni")) {
                         targets.add(getLinuxTarget(op, downloadPath));
                     }
-                    if(op.containsArg("jni_mac64")) {
+                    if(op.containsArg("mac64_jni")) {
                         targets.add(getMacTarget(op, downloadPath, false));
                     }
-                    if(op.containsArg("jni_macArm")) {
+                    if(op.containsArg("macArm_jni")) {
                         targets.add(getMacTarget(op, downloadPath, true));
                     }
     //                if(op.containsArg("iOS")) {
     //                    targets.add(getIOSTarget(op));
     //                }
-                    if(op.containsArg("ffm_windows64")) {
+                    if(op.containsArg("windows64_ffm")) {
                         targets.add(getFFMWindowTarget(op, downloadPath));
                     }
-                    if(op.containsArg("ffm_linux64")) {
+                    if(op.containsArg("linux64_ffm")) {
                         targets.add(getFFMLinuxTarget(op, downloadPath));
                     }
-                    if(op.containsArg("ffm_mac64")) {
+                    if(op.containsArg("mac64_ffm")) {
                         targets.add(getFFMMacTarget(op, downloadPath, false));
                     }
-                    if(op.containsArg("ffm_macArm")) {
+                    if(op.containsArg("macArm_ffm")) {
                         targets.add(getFFMMacTarget(op, downloadPath, true));
                     }
                 }

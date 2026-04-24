@@ -26,7 +26,7 @@ tasks.register<JavaExec>("webgpu_build_project") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("gen_ffm_desktop", "gen_jni_desktop", "gen_jni_android", "gen_jni_ios", "gen_teavm") // Just generate classes
+    args = mutableListOf("gen_desktop_ffm", "gen_desktop_jni", "gen_android_jni", "gen_ios_jni", "gen_teavm") // Just generate classes
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -34,7 +34,7 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_dawn_jni") {
     group = "webgpu"
     description = "Generate dawn native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("jni_windows64", "dawn")
+    args = mutableListOf("windows64_jni", "dawn")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -42,7 +42,7 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_dawn_ffm") {
     group = "webgpu"
     description = "Generate dawn native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("ffm_windows64", "dawn")
+    args = mutableListOf("windows64_ffm", "dawn")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -58,7 +58,7 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("jni_windows64")
+    args = mutableListOf("windows64_jni")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -66,7 +66,7 @@ tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("jni_linux64")
+    args = mutableListOf("linux64_jni")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -74,7 +74,7 @@ tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("jni_mac64")
+    args = mutableListOf("mac64_jni")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -82,7 +82,7 @@ tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("jni_macArm")
+    args = mutableListOf("macArm_jni")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -90,7 +90,7 @@ tasks.register<JavaExec>("webgpu_build_project_android_wgpu_jni") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("jni_android")
+    args = mutableListOf("android_jni")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -98,7 +98,7 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_wgpu_ffm") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("ffm_windows64")
+    args = mutableListOf("windows64_ffm")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -106,7 +106,7 @@ tasks.register<JavaExec>("webgpu_build_project_linux64_wgpu_ffm") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("ffm_linux64")
+    args = mutableListOf("linux64_ffm")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -114,7 +114,7 @@ tasks.register<JavaExec>("webgpu_build_project_mac64_wgpu_ffm") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("ffm_mac64")
+    args = mutableListOf("mac64_ffm")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -122,6 +122,6 @@ tasks.register<JavaExec>("webgpu_build_project_macArm_wgpu_ffm") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)
-    args = mutableListOf("ffm_macArm")
+    args = mutableListOf("macArm_ffm")
     classpath = sourceSets["main"].runtimeClasspath
 }
