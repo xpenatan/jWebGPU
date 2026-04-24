@@ -17,12 +17,12 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-        targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-    }
-    kotlinOptions {
-        jvmTarget = LibExt.javaMainTarget
+
+    kotlin {
+        compileOptions {
+            sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+            targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+        }
     }
 }
 

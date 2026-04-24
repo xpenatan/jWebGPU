@@ -10,7 +10,7 @@ buildscript {
         google()
     }
 
-    val kotlinVersion = "2.1.10"
+    val kotlinVersion = "2.3.20"
 
     dependencies {
         classpath("com.android.tools.build:gradle:8.12.3")
