@@ -19,15 +19,6 @@ dependencies {
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 }
 
-tasks.jar {
-    from(windowsFileDawn1) { into("native/dawn") }
-    from(windowsFileDawn2) { into("native/dawn") }
-    from(windowsFile) { into("native/wgpu") }
-    from(linuxFile) { into("native/wgpu") }
-    from(macArmFile) { into("native/wgpu") }
-    from(macFile) { into("native/wgpu") }
-}
-
 val platforms: Map<String, Jar.() -> Unit> = mapOf(
     "windows_64_dawn" to {
         from(windowsFileDawn1) { into("native/dawn") }
@@ -54,9 +45,18 @@ val nativeJars = platforms.map { (classifier, config) ->
     }
 }
 
+val nativeRuntime by configurations.creating {
+    isCanBeConsumed = true
+    isCanBeResolved = false
+}
+
+artifacts {
+    nativeJars.forEach { add(nativeRuntime.name, it) }
+}
+
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.java24Target)
-    targetCompatibility = JavaVersion.toVersion(LibExt.java24Target)
+    sourceCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
+    targetCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
 }
 
 java {

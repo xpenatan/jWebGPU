@@ -6,14 +6,15 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
-    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+    targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
 }
 
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:desktop"))
     api(project(":webgpu:webgpu-desktop-jni"))
+    runtimeOnly(project(mapOf("path" to ":webgpu:webgpu-desktop-jni", "configuration" to "nativeRuntime")))
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.app.Main"
@@ -28,4 +29,3 @@ tasks.register<JavaExec>("webgpu_demo_app_run_desktop_jni") {
         jvmArgs("-XstartOnFirstThread")
     }
 }
-

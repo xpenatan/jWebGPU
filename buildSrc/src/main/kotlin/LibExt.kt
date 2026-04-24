@@ -10,9 +10,9 @@ object LibExt {
             return getVersion()
         }
 
-    const val java8Target = "1.8"
-    const val java11Target = "11"
-    const val java24Target = "24"
+    const val javaMainTarget = "1.8"
+    const val javaWebTarget = "11"
+    const val javaFFMTarget = "25"
 
     //Library dependencies
     const val jParserVersion = "-SNAPSHOT"
