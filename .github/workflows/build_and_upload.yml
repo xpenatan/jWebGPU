@@ -36,9 +36,6 @@ jobs:
           distribution: "corretto"
           java-version: 25
 
-      - name: Set up MinGW
-        uses: msys2/setup-msys2@v2
-
       - name: Set up Developer Command Prompt
         uses: TheMrMilchmann/setup-msvc-dev@v3
         with:
