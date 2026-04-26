@@ -41,8 +41,8 @@ android {
 }
 
 dependencies {
-    implementation("com.github.xpenatan.jParser:idl-helper-android:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-android:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 }
 

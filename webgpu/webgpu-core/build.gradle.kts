@@ -7,8 +7,8 @@ val moduleName = "webgpu-core"
 
 dependencies {
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
-    compileOnly("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
+    compileOnly("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
 
     testImplementation("junit:junit:${LibExt.jUnitVersion}")
 }

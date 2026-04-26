@@ -16,7 +16,7 @@ val lwjglMacArmNatives = "natives-macos-arm64"
 
 dependencies {
     api(project(":demos:backend:core"))
-    compileOnly("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
+    compileOnly("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
 
     if(LibExt.exampleUseRepoLibs) {
         compileOnly("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")

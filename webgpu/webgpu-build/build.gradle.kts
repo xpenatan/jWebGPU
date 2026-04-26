@@ -14,7 +14,7 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-jni:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-ffm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
 }
 
 java {

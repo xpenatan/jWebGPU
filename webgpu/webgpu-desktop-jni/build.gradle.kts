@@ -14,9 +14,13 @@ val windowsFileDawn1 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/jni/
 val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/jni/webgpu_dawn.dll"
 
 dependencies {
-    implementation("com.github.xpenatan.jParser:idl-helper-desktop-jni:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-desktop-jni:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-desktop-jni:${LibExt.jParserVersion}:windows_64")
+    implementation("com.github.xpenatan.jParser:runtime-desktop-jni:${LibExt.jParserVersion}:linux_x64")
+    implementation("com.github.xpenatan.jParser:runtime-desktop-jni:${LibExt.jParserVersion}:mac_x64")
+    implementation("com.github.xpenatan.jParser:runtime-desktop-jni:${LibExt.jParserVersion}:mac_arm64")
+    implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
 }
 
 
