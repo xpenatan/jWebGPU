@@ -45,7 +45,10 @@ public class WGPUFloatBuffer extends IDLBase {
 
     /*[-FFM;-REPLACE_BLOCK]
         {
-            java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofArray(values);
+            long bytes = (long) values.length * Float.BYTES;
+            java.lang.foreign.MemorySegment seg = java.lang.foreign.Arena.global().allocate(bytes);
+            java.nio.FloatBuffer fb = seg.asByteBuffer().order(java.nio.ByteOrder.nativeOrder()).asFloatBuffer();
+            fb.put(values);
             internal_put(native_address, seg, offset, size);
         }
     */
