@@ -104,7 +104,7 @@ public class WGPUBuild {
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
 //        WindowsMSVCTarget.DEBUG_BUILD = true;
-//        String wgpuPath = buildPath + "/windows_x86_64_debug";
+//        String wgpuPath = downloadPath + "/windows_x86_64_debug";
 
         String wgpuPath = downloadPath + "/windows_x86_64";
         String webgpuIncludePath = wgpuPath + "/include";
@@ -412,7 +412,7 @@ public class WGPUBuild {
         String libBuildCPPPath = op.getModuleBuildCPPPath();
 
 //        WindowsMSVCTarget.DEBUG_BUILD = true;
-//        String wgpuPath = buildPath + "/windows_x86_64_debug";
+//        String wgpuPath = downloadPath + "/windows_x86_64_debug";
 
         String wgpuPath = downloadPath + "/windows_x86_64";
         String webgpuIncludePath = wgpuPath + "/include";

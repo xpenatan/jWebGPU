@@ -14,7 +14,6 @@ dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:desktop"))
     api(project(":webgpu:webgpu-desktop-ffm"))
-    runtimeOnly(project(mapOf("path" to ":webgpu:webgpu-desktop-ffm", "configuration" to "nativeRuntime")))
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.app.Main"

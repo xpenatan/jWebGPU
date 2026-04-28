@@ -43,20 +43,27 @@ val platforms: Map<String, Jar.() -> Unit> = mapOf(
     }
 )
 
+val isPublishing: Boolean = gradle.startParameter.taskNames.any { name ->
+    name.contains("publish", ignoreCase = true) ||
+    name.contains("publishToMavenLocal", ignoreCase = true) ||
+    name.contains("upload", ignoreCase = true)
+}
+val includeNativesInMainJar = !isPublishing
+
+tasks.named<Jar>("jar") {
+    if (includeNativesInMainJar) {
+        platforms.forEach { (_, config) ->
+            // `config` is a Jar.() -> Unit and will run with this Jar as the receiver
+            config()
+        }
+    }
+}
+
 val nativeJars = platforms.map { (classifier, config) ->
     tasks.register<Jar>("nativeJar$classifier") {
         config()
         archiveClassifier.set(classifier)
     }
-}
-
-val nativeRuntime by configurations.creating {
-    isCanBeConsumed = true
-    isCanBeResolved = false
-}
-
-artifacts {
-    nativeJars.forEach { add(nativeRuntime.name, it) }
 }
 
 java {

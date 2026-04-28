@@ -47,6 +47,7 @@ public:
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
+        releaseUpcallResources();
     }
 
     /*[-FFM;-NATIVE]
@@ -69,9 +70,11 @@ delete nativeObject;
 
     private void setupCallback() {
         try {
+            releaseUpcallResources();
+            upcallArena = java.lang.foreign.Arena.ofShared();
             java.lang.invoke.MethodHandle mh_OnCallback = java.lang.invoke.MethodHandles.lookup().findVirtual(WGPUBufferMapCallback.class, "internal_onCallback", java.lang.invoke.MethodType.methodType(void.class, int.class, java.lang.foreign.MemorySegment.class)).bindTo(this);
-            java.lang.foreign.MemorySegment stub_OnCallback = java.lang.foreign.Linker.nativeLinker().upcallStub(mh_OnCallback, java.lang.foreign.FunctionDescriptor.ofVoid(java.lang.foreign.ValueLayout.JAVA_INT, java.lang.foreign.ValueLayout.ADDRESS), java.lang.foreign.Arena.ofAuto());
-            internal_native_setupCallback(native_address, stub_OnCallback.address());
+            upcallStub_OnCallback = java.lang.foreign.Linker.nativeLinker().upcallStub(mh_OnCallback, java.lang.foreign.FunctionDescriptor.ofVoid(java.lang.foreign.ValueLayout.JAVA_INT, java.lang.foreign.ValueLayout.ADDRESS), upcallArena);
+            internal_native_setupCallback(native_address, upcallStub_OnCallback.address());
         } catch (Throwable e) {
             throw new RuntimeException(e);
         }
@@ -102,6 +105,22 @@ return (int64_t)new WGPUBufferMapCallbackImpl();
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private Arena upcallArena;
+
+    private MemorySegment upcallStub_OnCallback;
+
+    private void releaseUpcallResources() {
+        Arena arena = upcallArena;
+        upcallStub_OnCallback = null;
+        upcallArena = null;
+        if (arena != null) {
+            try {
+                arena.close();
+            } catch (Exception ignored) {
+            }
         }
     }
 
