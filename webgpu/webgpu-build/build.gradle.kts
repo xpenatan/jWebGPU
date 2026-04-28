@@ -17,11 +17,6 @@ dependencies {
     implementation("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
 }
 
-java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-}
-
 tasks.register<JavaExec>("webgpu_build_project") {
     group = "webgpu"
     description = "Generate native project"
