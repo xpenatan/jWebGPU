@@ -65,6 +65,11 @@ val nativeJars = platforms.map { (classifier, config) ->
     }
 }
 
+val nativeJarAll = tasks.register<Jar>("nativeJarAll") {
+    platforms.forEach { (_, config) -> config() }
+    archiveClassifier.set("all")
+}
+
 java {
     sourceCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
     targetCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
@@ -90,6 +95,7 @@ publishing {
             version = LibExt.libVersion
             from(components["java"])
             nativeJars.forEach { artifact(it) }
+            artifact(nativeJarAll)
         }
     }
 }
