@@ -30,7 +30,7 @@ public:
 		this->OnCallback_ptr = OnCallback;
 	}
 	virtual void OnCallback(WGPUErrorType errorType, const char* message) {
-		OnCallback_ptr(errorType, message);
+		OnCallback_ptr(static_cast<int32_t>(errorType), message);
 	}
 };
 */

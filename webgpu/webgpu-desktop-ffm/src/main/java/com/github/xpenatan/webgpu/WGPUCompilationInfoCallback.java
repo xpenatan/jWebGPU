@@ -32,7 +32,7 @@ public:
 		this->OnCallback_ptr = OnCallback;
 	}
 	virtual void OnCallback(WGPUCompilationInfoRequestStatus status, JGPU::WGPUCompilationInfo* compilationInfo) {
-		OnCallback_ptr(status, (int64_t)compilationInfo);
+		OnCallback_ptr(static_cast<int32_t>(status), (int64_t)compilationInfo);
 	}
 };
 */

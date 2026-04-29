@@ -30,7 +30,7 @@ public:
 		this->OnCallback_ptr = OnCallback;
 	}
 	virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device, const char* message) {
-		OnCallback_ptr(status, (int64_t)device, message);
+		OnCallback_ptr(static_cast<int32_t>(status), (int64_t)device, message);
 	}
 };
 */

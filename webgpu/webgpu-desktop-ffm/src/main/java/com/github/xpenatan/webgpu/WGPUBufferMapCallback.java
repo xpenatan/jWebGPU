@@ -30,7 +30,7 @@ public:
 		this->OnCallback_ptr = OnCallback;
 	}
 	virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
-		OnCallback_ptr(status, message);
+		OnCallback_ptr(static_cast<int32_t>(status), message);
 	}
 };
 */
