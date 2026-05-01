@@ -10,7 +10,7 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-build:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-build-tool:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-teavm:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:jParser-web:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-jni:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-ffm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
