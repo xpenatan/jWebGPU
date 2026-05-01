@@ -55,7 +55,7 @@ public class WGPUBuild {
                     if(op.containsArg("windows64_jni")) {
                         targets.add(getWindowTarget(op, downloadPath, false));
                     }
-                    if(op.containsArg("teavm")) {
+                    if(op.containsArg("web_wasm")) {
                         targets.add(getTeaVMTarget(op, idlReader, downloadPath));
                     }
                     if(op.containsArg("android_jni")) {

@@ -13,7 +13,7 @@ java {
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:desktop"))
-    api(project(":webgpu:webgpu-desktop-jni"))
+    api(project(":webgpu:webgpu-jni"))
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.app.Main"

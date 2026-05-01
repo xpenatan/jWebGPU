@@ -175,7 +175,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_teavm_dawn
+        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_web_dawn
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -302,7 +302,7 @@ jobs:
       - name: Delete generated files
         run: |
           rm -rf webgpu/webgpu-core/src/main/java/*
-          rm -rf webgpu/webgpu-teavm/src/main/java/*
+          rm -rf webgpu/webgpu-web/src/main/java/*
           echo "Deleted generated files"
 
       - name: Generate classes

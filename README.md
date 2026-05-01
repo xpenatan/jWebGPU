@@ -4,190 +4,196 @@
 [![Maven Central Version](https://img.shields.io/maven-central/v/com.github.xpenatan.jWebGPU/webgpu-core)](https://central.sonatype.com/namespace/com.github.xpenatan.jWebGPU)
 [![Snapshot](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/com/github/xpenatan/jWebGPU/)
 
-jWebGPU is a Java WebGPU binding stack for desktop, mobile, and web targets.
+jWebGPU is a Java binding stack for WebGPU APIs across desktop, Android, and web targets.
 
-It provides a consistent Java API shape with backend/runtime-specific packaging for JVM desktop, Android, and TeaVM/WebAssembly workflows.
+It keeps one Java-facing API shape and generates target-specific glue/code for:
+- JNI desktop runtime
+- FFM desktop runtime
+- TeaVM/WebAssembly web runtime
+- Android JNI runtime
 
-## Highlights
+## What this project is for
 
-- Multi-target architecture: desktop (JNI/FFM), Android, and TeaVM/WebAssembly.
-- Backend support for `wgpu-native` and `Dawn` (platform-dependent availability).
-- Generator-driven workflow with reusable base templates and generated target modules.
-- Published artifacts under `com.github.xpenatan.jWebGPU` on Maven Central and snapshots.
+- Build and ship WebGPU-capable Java apps across multiple runtimes.
+- Reuse the same API model while swapping backend/runtime packaging per platform.
+- Generate and package bindings from `webgpu-base` + IDL/native sources.
 
 ## Table of Contents
 
-- [Demo](#demo)
-- [Platform Support](#platform-support)
-- [Installation](#installation)
-- [Requirements](#requirements)
-- [Project Modules](#project-modules)
 - [Quick Start](#quick-start)
-- [Build Pipeline](#build-pipeline)
-- [Run Demos](#run-demos)
-- [API Design Notes](#api-design-notes)
-
-## Demo
-
-- Android app: [Google Play](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
-
-## Platform Support
-
-| Backend     | Emscripten | Windows | Linux  |       Mac       |                  Android                  | iOS  |
-|:------------|:----------:|:-------:|:------:|:---------------:|:-----------------------------------------:|:----:|
-| wgpu-native |     ❌      |    ✅    |   ✅    |        ✅        |                     ✅                     |  ❌   |
-|             |     -      | x86_64  | x86_64 | x86_64<br>arm64 | x86<br>x86_64<br>arm64_v8a<br>armeabi_v7a | TODO |
-| Dawn        |     ✅      |    ✅    |   ❌    |        ❌        |                     ❌                     |  ❌   |
-|             |    wasm    | x86_64  |   -    |        -        |                     -                     |  -   |
-
-## Installation
-
-Use the group ID `com.github.xpenatan.jWebGPU`.
-
-### Gradle (Kotlin DSL)
-
-```kotlin
-dependencies {
-	// Base API
-	implementation("com.github.xpenatan.jWebGPU:webgpu-core:<version>")
-
-	// Choose one runtime target
-	implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-jni:<version>")
-	// implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:<version>")
-	// implementation("com.github.xpenatan.jWebGPU:webgpu-teavm:<version>")
-	// implementation("com.github.xpenatan.jWebGPU:webgpu-android:<version>")
-}
-```
-
-Use the Maven Central badge for the latest release version. Snapshot builds are published with `-SNAPSHOT`.
-
-## Requirements
-
-- `Java 8+` for `webgpu-core`, `webgpu-desktop-jni`, and `webgpu-android` modules.
-- `Java 11+` for `webgpu-teavm`.
-- `Java 24+` for `webgpu-desktop-ffm`.
-- Visual Studio 2022 C++ tools for Windows native builds.
-- Emscripten for TeaVM/Dawn web output tasks.
-- Android NDK for Android native build tasks.
-
-## Project Modules
-
-### Library modules
-
-- `webgpu/webgpu-core`: generated Java WebGPU API core.
-- `webgpu/webgpu-desktop-jni`: desktop JNI packaging with native classifiers.
-- `webgpu/webgpu-desktop-ffm`: desktop FFM packaging with native classifiers.
-- `webgpu/webgpu-teavm`: TeaVM/WebAssembly bridge artifacts.
-- `webgpu/webgpu-android`: Android library packaging with JNI libs.
-
-### Build and generation modules
-
-- `webgpu/webgpu-base`: base Java templates and bridge directives.
-- `webgpu/webgpu-build`: generation/build entry module and native build tasks.
-- `webgpu/webgpu-download`: native dependency downloader tasks.
-- `webgpu/webgpu-dawn`: experimental Dawn source build module.
-
-### Demo modules
-
-- `demos/app/*`: runnable demo applications per target.
-- `demos/backend/*`: backend wiring modules used by demos.
+- [Project Structure](#project-structure)
+- [Build Commands](#build-commands)
+  - [JNI](#jni)
+  - [FFM](#ffm)
+  - [TeaVM Web](#teavm-web)
+  - [Android JNI](#android-jni)
+- [Run Examples](#run-examples)
+- [CI Build Matrix](#ci-build-matrix)
+- [Development Notes](#development-notes)
+- [Installation](#installation)
+- [License](#license)
 
 ## Quick Start
 
-Before building locally, set `LibExt.exampleUseRepoLibs` to `false`.
-
 Use `./gradlew` on macOS/Linux and `gradlew.bat` on Windows.
 
-## Build Pipeline
+Windows examples in this README use `gradlew.bat`.
 
-### 1) Download Dependencies
+Before local builds, ensure your environment is set up for your target:
+- JNI/FFM Windows native builds: Visual Studio C++ tools.
+- TeaVM web builds: emscripten.
+- Android builds: Android NDK.
 
-Dependency artifacts are downloaded into `webgpu/webgpu-download/build`.
+## Project Structure
+
+Canonical modules are defined in `settings.gradle.kts`.
+
+### Core library modules
+
+- `:webgpu:webgpu-base` - hand-authored Java templates and directive blocks.
+- `:webgpu:webgpu-build` - generation and native build driver (`WGPUBuild`).
+- `:webgpu:webgpu-core` - generated Java API layer.
+- `:webgpu:webgpu-jni` - JNI runtime packaging.
+- `:webgpu:webgpu-ffm` - FFM runtime packaging.
+- `:webgpu:webgpu-web` - TeaVM/Web runtime packaging.
+- `:webgpu:webgpu-android` - Android runtime packaging.
+- `:webgpu:webgpu-download` - native dependency download tasks.
+
+### Example app modules
+
+- `:demos:app:desktop-jni`
+- `:demos:app:desktop-ffm`
+- `:demos:app:web`
+- `:demos:app:android`
+
+## Build Commands
+
+### JNI
+
+#### Windows (wgpu + dawn)
+
+```powershell
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_glfw_windows
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_windows_x86_64_wgpu
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_jni
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_jni
+```
+
+#### Linux (wgpu)
 
 ```bash
+./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_64_wgpu
 ./gradlew :webgpu:webgpu-download:webgpu_download_glfw_windows
-./gradlew :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_windows_x86_64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
-./gradlew :webgpu:webgpu-download:webgpu_download_windows_aarch64_wgpu
+./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_jni
+```
+
+#### macOS (wgpu x86_64 + arm64)
+
+```bash
 ./gradlew :webgpu:webgpu-download:webgpu_download_macos_x86_64_wgpu
 ./gradlew :webgpu:webgpu-download:webgpu_download_macos_aarch64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_linux_aarch64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_android_i686_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
+./gradlew :webgpu:webgpu-download:webgpu_download_glfw_windows
+./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_jni
+./gradlew :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_jni
 ```
 
-### 2) Build Bindings
+### FFM
 
-Generated native outputs are produced in `webgpu/webgpu-build/build/C++/libs`.
+#### Windows (wgpu + dawn)
+
+```powershell
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_ffm
+```
+
+#### Linux (wgpu)
 
 ```bash
-# Windows requires Visual Studio 2022 C++
-./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_jni
-./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm
-./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_jni
-./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_ffm
-
-# TeaVM requires Emscripten
-./gradlew :webgpu:webgpu-build:webgpu_build_project_teavm_dawn
-
-# Android requires NDK
-./gradlew :webgpu:webgpu-build:webgpu_build_project_android_wgpu_jni
+./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_ffm
 ```
 
-
-## Run Demos
+#### macOS (wgpu x86_64 + arm64)
 
 ```bash
-./gradlew :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
-./gradlew :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm
-./gradlew :demos:app:teavm:webgpu_demo_app_run_teavm
-./gradlew :demos:app:android:installDebug
+./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_ffm
+./gradlew :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_ffm
 ```
 
-## Repository Layout
+### TeaVM Web
 
-```text
-webgpu/
-  webgpu-base/          # base Java template layer
-  webgpu-build/         # generation/native build driver
-  webgpu-core/          # generated core Java API
-  webgpu-desktop-jni/   # desktop JNI artifact + natives
-  webgpu-desktop-ffm/   # desktop FFM artifact + natives
-  webgpu-teavm/         # TeaVM JS/WASM bridge artifact
-  webgpu-android/       # Android artifact + jniLibs packaging
-
-demos/
-  app/                  # runnable demos
-  backend/              # backend abstraction modules for demos
+```powershell
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_web_dawn
 ```
 
-## API Design Notes
+### Android JNI
 
-### Naming conventions
+```powershell
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_x86_64_wgpu
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_i686_wgpu
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu
+.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_android_wgpu_jni
+```
 
-- Custom classes start with `WGPU` (for example: `WGPU`, `WGPUAndroidWindow`).
-- WebGPU classes start with `WGPU` (for example: `WGPUAdapter`, `WGPUDevice`).
-- WebGPU enums start with `WGPU` (for example: `WGPUTextureFormat`, `WGPUPowerPreference`).
-- Methods that require array/vector wrappers use `WGPUVector` prefixes.
+Generated native outputs are placed under `webgpu/webgpu-build/build/c++/libs/`.
 
-### Memory management and `obtain`
+## Run Examples
 
-Most non-opaque classes provide a static `obtain` method that reuses global instances to reduce Java/native allocations.
+Desktop and web demo tasks are explicitly declared in demo module Gradle files.
 
-Use `obtain` when reuse is acceptable; create a new instance explicitly when you need a unique object and memory address.
+```powershell
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm
+.\gradlew.bat :demos:app:web:webgpu_demo_app_run_web
+```
+
+Android demo install (provided by Android plugin tasking):
+
+```powershell
+.\gradlew.bat :demos:app:android:installDebug
+```
+
+## CI Build Matrix
+
+From `.github/workflows/build_and_upload.yml`:
+
+- Windows: JNI + FFM (`wgpu` and `dawn`).
+- Linux: JNI + FFM (`wgpu`).
+- macOS: JNI + FFM (`wgpu`).
+- TeaVM: web build with `webgpu_build_project_web_dawn`.
+- Android: JNI build with `webgpu_build_project_android_wgpu_jni`.
 
 ## Development Notes
 
-- Source-of-truth edits are typically in `webgpu/webgpu-base/src/main/java` and `webgpu/webgpu-build/src/main/cpp`.
-- Generated targets live under `webgpu/webgpu-core`, `webgpu/webgpu-desktop-jni`, `webgpu/webgpu-desktop-ffm`, `webgpu/webgpu-android`, and `webgpu/webgpu-teavm`.
+- Primary edit locations:
+  - `webgpu/webgpu-base/src/main/java/**`
+  - `webgpu/webgpu-build/src/main/cpp/**`
+- Avoid manual edits in generated targets:
+  - `webgpu/webgpu-core/src/main/java/**`
+  - `webgpu/webgpu-ffm/src/main/java/**`
+  - `webgpu/webgpu-web/src/main/java/**`
+
+## Installation
+
+Use group ID `com.github.xpenatan.jWebGPU`.
+
+```kotlin
+dependencies {
+    implementation("com.github.xpenatan.jWebGPU:webgpu-core:<version>")
+
+    // Choose one runtime target
+    implementation("com.github.xpenatan.jWebGPU:webgpu-jni:<version>")
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-ffm:<version>")
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-android:<version>")
+}
+```
 
 ## Support
 
-If you find this project valuable and want to fuel its continued growth, please consider [sponsoring](https://github.com/sponsors/xpenatan) it. Your support keeps the momentum going!
+If you find this project valuable and want to fuel its continued growth, please consider [sponsoring](https://github.com/sponsors/xpenatan).
 
 ## License
 
