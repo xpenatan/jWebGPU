@@ -67,7 +67,7 @@ val nativeJars = platforms.map { (classifier, config) ->
 
 val nativeJarAll = tasks.register<Jar>("nativeJarAll") {
     platforms.forEach { (_, config) -> config() }
-    archiveClassifier.set("all")
+    archiveClassifier.set("desktop")
 }
 
 java {
