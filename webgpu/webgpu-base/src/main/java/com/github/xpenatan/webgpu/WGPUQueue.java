@@ -134,9 +134,9 @@ public class WGPUQueue extends NativeObject {
             "var destinationJS = [MODULE].wrapPointer(destination_addr, [MODULE].WGPUTexelCopyTextureInfo);" +
             "var dataLayoutJS = [MODULE].wrapPointer(dataLayout_addr, [MODULE].WGPUTexelCopyBufferLayout);" +
             "var writeSizeJS = [MODULE].wrapPointer(writeSize_addr, [MODULE].WGPUExtent3D);" +
-            "var destination = idl.WebGPU.makeTexelCopyTextureInfo(destinationJS.GetPtr());" +
-            "var dataLayout = idl.WebGPU.makeTexelCopyBufferLayout(dataLayoutJS.Get());" +
-            "var writeSize = idl.WebGPU.makeExtent3D(writeSizeJS.Get());" +
+            "var destination = runtime.WebGPU.makeTexelCopyTextureInfo(destinationJS.GetPtr());" +
+            "var dataLayout = runtime.WebGPU.makeTexelCopyBufferLayout(dataLayoutJS.Get());" +
+            "var writeSize = runtime.WebGPU.makeExtent3D(writeSizeJS.Get());" +
             "this_addr.writeTexture(destination, bytes_addr, dataLayout, writeSize);"
         )
         private static native void internal_native_WriteTexture(org.teavm.jso.JSObject this_addr, int destination_addr, org.teavm.jso.JSObject bytes_addr, int dataSize, int dataLayout_addr, int writeSize_addr);
