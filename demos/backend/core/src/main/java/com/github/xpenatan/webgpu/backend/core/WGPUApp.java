@@ -69,6 +69,7 @@ public class WGPUApp {
     }
 
     private void requestDevice() {
+        boolean hasDepthClipControl = adapter.hasFeature(WGPUFeatureName.DepthClipControl);
         WGPUAdapterInfo info = WGPUAdapterInfo.obtain();
         if(adapter.getInfo(info)) {
             WGPUBackendType backendType = info.getBackendType();
@@ -83,7 +84,7 @@ public class WGPUApp {
             System.out.println("Description: " + description);
             String device = info.getDevice().c_str();
             System.out.println("Device: " + device);
-            System.out.println("Has Feature DepthClipControl: " + adapter.hasFeature(WGPUFeatureName.DepthClipControl));
+            System.out.println("Has Feature DepthClipControl: " + hasDepthClipControl);
         }
 
         WGPUDeviceDescriptor deviceDescriptor = WGPUDeviceDescriptor.obtain();
@@ -93,7 +94,9 @@ public class WGPUApp {
         deviceDescriptor.setLabel("My Device");
 
         WGPUVectorFeatureName features = WGPUVectorFeatureName.obtain();
-        features.push_back(WGPUFeatureName.DepthClipControl);
+        if(hasDepthClipControl) {
+            features.push_back(WGPUFeatureName.DepthClipControl);
+        }
         deviceDescriptor.setRequiredFeatures(features);
 
         deviceDescriptor.getDefaultQueue().setLabel("The default queue");
