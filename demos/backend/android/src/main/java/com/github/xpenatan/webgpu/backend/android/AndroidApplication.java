@@ -1,6 +1,7 @@
 package com.github.xpenatan.webgpu.backend.android;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Choreographer;
 import android.view.Display;
@@ -22,6 +23,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     private ApplicationListener applicationListener;
     private Surface surface;
     private WGPUAndroidWindow androidWindow;
+    private boolean errorDialogShown = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,29 +45,37 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
     @Override
     public void doFrame(long frameTimeNanos) {
-        if(surface != null) {
-            if (wGPUInit == 3) {
-                applicationListener.render(wgpu);
-            } else if (wGPUInit > 0) {
-                if (wGPUInit == 1) {
-                    wGPUInit = 2;
-                    androidWindow = new WGPUAndroidWindow();
-                    androidWindow.initLogcat();
-                    WindowManager windowManager = (WindowManager)getApplicationContext().getSystemService(WINDOW_SERVICE);
-                    Display display = windowManager.getDefaultDisplay();
-                    wgpu.width = display.getWidth();
-                    wgpu.height = display.getHeight();
-                    wgpu.init();
+
+        try {
+            if(surface != null) {
+                if(wGPUInit == 3) {
+                    applicationListener.render(wgpu);
                 }
-                else if (wGPUInit == 2 && wgpu.isReady()) {
-                    createSurface(surface);
-                    applicationListener.create(wgpu);
-                    wGPUInit = 3;
+                else if(wGPUInit > 0) {
+                    if(wGPUInit == 1) {
+                        wGPUInit = 2;
+                        androidWindow = new WGPUAndroidWindow();
+                        androidWindow.initLogcat();
+                        WindowManager windowManager = (WindowManager)getApplicationContext().getSystemService(WINDOW_SERVICE);
+                        Display display = windowManager.getDefaultDisplay();
+                        wgpu.width = display.getWidth();
+                        wgpu.height = display.getHeight();
+                        wgpu.init();
+                    }
+                    else if(wGPUInit == 2 && wgpu.isReady()) {
+                        createSurface(surface);
+                        applicationListener.create(wgpu);
+                        wGPUInit = 3;
+                    }
                 }
+                wgpu.update();
             }
-            wgpu.update();
+            Choreographer.getInstance().postFrameCallback(this);
+
+        } catch(Throwable e) {
+            e.printStackTrace();
+            showErrorDialog(e);
         }
-        Choreographer.getInstance().postFrameCallback(this);
     }
 
     protected void initialize(ApplicationListener applicationListener) {
@@ -122,6 +132,28 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
             @Override
             public void surfaceDestroyed(SurfaceHolder holder) {
             }
+        });
+    }
+
+    private void showErrorDialog(Throwable e) {
+        if(errorDialogShown) {
+            return;
+        }
+        errorDialogShown = true;
+        runOnUiThread(() -> {
+            if(isFinishing()) {
+                return;
+            }
+            String errorMessage = e.getClass().getSimpleName();
+            if(e.getMessage() != null && !e.getMessage().isEmpty()) {
+                errorMessage += "\n" + e.getMessage();
+            }
+            new AlertDialog.Builder(AndroidApplication.this)
+                    .setTitle("WebGPU Error")
+                    .setMessage(errorMessage)
+                    .setCancelable(false)
+                    .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
+                    .show();
         });
     }
 }

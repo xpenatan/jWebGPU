@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUPresentMode implements IDLEnum<WGPUPresentMode> {
+public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     CUSTOM(0),
     Undefined(WGPUPresentMode_Undefined_NATIVE()),

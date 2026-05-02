@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUBufferMapState implements IDLEnum<WGPUBufferMapState> {
+public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
 
     CUSTOM(0), Unmapped(WGPUBufferMapState_Unmapped_NATIVE()), Pending(WGPUBufferMapState_Pending_NATIVE()), Mapped(WGPUBufferMapState_Mapped_NATIVE()), Force32(WGPUBufferMapState_Force32_NATIVE());
 

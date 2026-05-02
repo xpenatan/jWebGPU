@@ -6,15 +6,15 @@ Token-light operational guide for coding agents in this repository.
 
 Must do in this order:
 
-1. Read `LOCAL_AGENT.md` first.
+1. Read `CURRENT_CHAT_CONTEXT.MD` first.
 2. Validate the request against real source/APIs/tasks (no guessing).
-3. Record plan + target files in `LOCAL_AGENT.md`.
+3. Record plan + target files in `CURRENT_CHAT_CONTEXT.MD`.
 4. Get user approval before execution.
 5. Execute edits/commands.
-6. Update `LOCAL_AGENT.md` to current state only.
+6. Update `CURRENT_CHAT_CONTEXT.MD` to current state only.
 7. Run at least one compile/verification task before ending turn.
 
-`LOCAL_AGENT.md` is rolling state, not a running log: replace/update prior entries instead of appending history.
+`CURRENT_CHAT_CONTEXT.MD` is rolling state, not a running log: replace/update prior entries instead of appending history.
 
 ## 2) Project Snapshot
 

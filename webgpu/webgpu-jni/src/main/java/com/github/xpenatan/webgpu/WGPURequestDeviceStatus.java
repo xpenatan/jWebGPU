@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPURequestDeviceStatus implements IDLEnum<WGPURequestDeviceStatus> {
+public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatus> {
 
     CUSTOM(0), Success(WGPURequestDeviceStatus_Success_NATIVE()), Error(WGPURequestDeviceStatus_Error_NATIVE()), Force32(WGPURequestDeviceStatus_Force32_NATIVE());
 

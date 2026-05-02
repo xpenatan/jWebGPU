@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBindGroup extends IDLBase {
+public class WGPUBindGroup extends NativeObject {
 
     static public final WGPUBindGroup NULL = WGPUBindGroup.native_new();
 

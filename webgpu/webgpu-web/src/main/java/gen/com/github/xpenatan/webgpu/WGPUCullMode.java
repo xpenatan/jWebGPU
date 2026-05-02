@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUCullMode implements IDLEnum<WGPUCullMode> {
+public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
 
     CUSTOM(0),
     Undefined(WGPUCullMode_Undefined_NATIVE()),

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IDLHelper.h"
+#include "RuntimeHelper.h"
 #include <vector>
 
 // WGPUBufferUsage macros

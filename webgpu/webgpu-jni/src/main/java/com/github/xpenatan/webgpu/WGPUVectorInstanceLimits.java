@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorInstanceLimits extends IDLBase {
+public class WGPUVectorInstanceLimits extends NativeObject {
 
     static private WGPUVectorInstanceLimits WGPUVectorInstanceLimits_TEMP_STATIC_GEN_0;
 

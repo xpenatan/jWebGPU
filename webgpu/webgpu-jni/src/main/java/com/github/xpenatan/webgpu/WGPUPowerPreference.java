@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUPowerPreference implements IDLEnum<WGPUPowerPreference> {
+public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
 
     CUSTOM(0), Undefined(WGPUPowerPreference_Undefined_NATIVE()), LowPower(WGPUPowerPreference_LowPower_NATIVE()), HighPerformance(WGPUPowerPreference_HighPerformance_NATIVE()), Force32(WGPUPowerPreference_Force32_NATIVE());
 

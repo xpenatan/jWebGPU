@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUWaitStatus implements IDLEnum<WGPUWaitStatus> {
+public enum WGPUWaitStatus implements NativeEnum<WGPUWaitStatus> {
 
     CUSTOM(0), Success(WGPUWaitStatus_Success_NATIVE()), TimedOut(WGPUWaitStatus_TimedOut_NATIVE()), Force32(WGPUWaitStatus_Force32_NATIVE());
 

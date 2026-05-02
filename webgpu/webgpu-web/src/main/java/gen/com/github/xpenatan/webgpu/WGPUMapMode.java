@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUMapMode implements IDLEnum<WGPUMapMode> {
+public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
 
     CUSTOM(0), None(WGPUMapMode_None_NATIVE()), Read(WGPUMapMode_Read_NATIVE()), Write(WGPUMapMode_Write_NATIVE());
 

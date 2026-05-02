@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUToneMappingMode implements IDLEnum<WGPUToneMappingMode> {
+public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
 
     CUSTOM(0), Standard(WGPUToneMappingMode_Standard_NATIVE()), Extended(WGPUToneMappingMode_Extended_NATIVE()), Force32(WGPUToneMappingMode_Force32_NATIVE());
 

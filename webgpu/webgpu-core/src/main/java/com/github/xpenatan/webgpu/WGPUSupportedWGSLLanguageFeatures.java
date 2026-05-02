@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSupportedWGSLLanguageFeatures extends IDLBase {
+public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
 
     static public final WGPUSupportedWGSLLanguageFeatures NULL = WGPUSupportedWGSLLanguageFeatures.native_new();
 

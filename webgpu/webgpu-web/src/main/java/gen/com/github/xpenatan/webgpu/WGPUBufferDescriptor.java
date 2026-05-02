@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBufferDescriptor extends IDLBase {
+public class WGPUBufferDescriptor extends NativeObject {
 
     static private WGPUBufferDescriptor WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
 

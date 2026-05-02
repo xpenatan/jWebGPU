@@ -6,10 +6,10 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jparser.idl.helper.IDLString;
+import com.github.xpenatan.jParser.api.NativeObject;
+import com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUCompilationMessage extends IDLBase {
+public class WGPUCompilationMessage extends NativeObject {
 
     static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 
@@ -30,7 +30,7 @@ public class WGPUCompilationMessage extends IDLBase {
         return new WGPUCompilationMessage((byte) 0, (char) 0);
     }
 
-    public IDLString getMessage() {
+    public NativeString getMessage() {
         return null;
     }
 

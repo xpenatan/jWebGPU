@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorConstantEntry extends IDLBase {
+public class WGPUVectorConstantEntry extends NativeObject {
 
     static private WGPUVectorConstantEntry WGPUVectorConstantEntry_TEMP_STATIC_GEN_0;
 

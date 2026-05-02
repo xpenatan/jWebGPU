@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUCompilationInfoCallback extends IDLBase {
+public class WGPUCompilationInfoCallback extends NativeObject {
 
     static private WGPUCompilationInfo WGPUCompilationInfo_TEMP_STATIC_GEN_0;
 

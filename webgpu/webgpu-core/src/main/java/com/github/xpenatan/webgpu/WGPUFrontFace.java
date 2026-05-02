@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUFrontFace implements IDLEnum<WGPUFrontFace> {
+public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
 
     CUSTOM(0), Undefined(WGPUFrontFace_Undefined_NATIVE()), CCW(WGPUFrontFace_CCW_NATIVE()), CW(WGPUFrontFace_CW_NATIVE()), Force32(WGPUFrontFace_Force32_NATIVE());
 

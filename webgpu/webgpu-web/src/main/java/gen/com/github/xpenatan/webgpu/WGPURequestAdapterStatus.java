@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPURequestAdapterStatus implements IDLEnum<WGPURequestAdapterStatus> {
+public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterStatus> {
 
     CUSTOM(0), Success(WGPURequestAdapterStatus_Success_NATIVE()), Unavailable(WGPURequestAdapterStatus_Unavailable_NATIVE()), Error(WGPURequestAdapterStatus_Error_NATIVE()), Force32(WGPURequestAdapterStatus_Force32_NATIVE());
 

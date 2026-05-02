@@ -6,10 +6,10 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jparser.idl.helper.IDLString;
+import com.github.xpenatan.jParser.api.NativeObject;
+import com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUStringView extends IDLBase {
+public class WGPUStringView extends NativeObject {
 
     static public final WGPUStringView NULL = WGPUStringView.native_new();
 
@@ -27,7 +27,7 @@ public class WGPUStringView extends IDLBase {
         return new WGPUStringView((byte) 0, (char) 0);
     }
 
-    public IDLString getString() {
+    public NativeString getString() {
         return null;
     }
 }

@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUCompareFunction implements IDLEnum<WGPUCompareFunction> {
+public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     CUSTOM(0),
     Undefined(WGPUCompareFunction_Undefined_NATIVE()),

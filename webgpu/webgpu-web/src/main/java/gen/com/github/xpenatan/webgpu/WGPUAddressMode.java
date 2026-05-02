@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUAddressMode implements IDLEnum<WGPUAddressMode> {
+public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     CUSTOM(0),
     Undefined(WGPUAddressMode_Undefined_NATIVE()),

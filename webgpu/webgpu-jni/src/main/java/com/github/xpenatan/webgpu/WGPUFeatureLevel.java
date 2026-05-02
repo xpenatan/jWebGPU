@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUFeatureLevel implements IDLEnum<WGPUFeatureLevel> {
+public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
 
     CUSTOM(0), Compatibility(WGPUFeatureLevel_Compatibility_NATIVE()), Core(WGPUFeatureLevel_Core_NATIVE()), Force32(WGPUFeatureLevel_Force32_NATIVE());
 

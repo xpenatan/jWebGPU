@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUAndroidWindow extends IDLBase {
+public class WGPUAndroidWindow extends NativeObject {
 
     public final static WGPUAndroidWindow NULL;
 

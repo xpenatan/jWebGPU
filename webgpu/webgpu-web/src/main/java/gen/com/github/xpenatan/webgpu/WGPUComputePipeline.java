@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUComputePipeline extends IDLBase {
+public class WGPUComputePipeline extends NativeObject {
 
     private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
 

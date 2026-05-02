@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURequestDeviceCallback extends IDLBase {
+public class WGPURequestDeviceCallback extends NativeObject {
 
     static public final WGPURequestDeviceCallback NULL = WGPURequestDeviceCallback.native_new();
 

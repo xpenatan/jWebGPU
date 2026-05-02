@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUMapAsyncStatus implements IDLEnum<WGPUMapAsyncStatus> {
+public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
 
     CUSTOM(0), Success(WGPUMapAsyncStatus_Success_NATIVE()), Error(WGPUMapAsyncStatus_Error_NATIVE()), Aborted(WGPUMapAsyncStatus_Aborted_NATIVE()), Force32(WGPUMapAsyncStatus_Force32_NATIVE());
 

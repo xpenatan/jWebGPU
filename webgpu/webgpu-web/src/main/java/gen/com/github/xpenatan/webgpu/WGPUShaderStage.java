@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUShaderStage implements IDLEnum<WGPUShaderStage> {
+public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
 
     CUSTOM(0), None(WGPUShaderStage_None_NATIVE()), Vertex(WGPUShaderStage_Vertex_NATIVE()), Fragment(WGPUShaderStage_Fragment_NATIVE()), Compute(WGPUShaderStage_Compute_NATIVE());
 

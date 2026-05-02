@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUStencilFaceState extends IDLBase {
+public class WGPUStencilFaceState extends NativeObject {
 
     static public final WGPUStencilFaceState NULL = WGPUStencilFaceState.native_new();
 

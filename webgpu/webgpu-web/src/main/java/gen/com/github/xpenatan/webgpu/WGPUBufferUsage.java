@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUBufferUsage implements IDLEnum<WGPUBufferUsage> {
+public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     CUSTOM(0),
     None(WGPUBufferUsage_None_NATIVE()),

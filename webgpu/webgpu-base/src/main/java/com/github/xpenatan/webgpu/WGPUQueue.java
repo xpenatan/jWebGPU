@@ -1,9 +1,9 @@
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 import java.nio.ByteBuffer;
 
-public class WGPUQueue extends IDLBase {
+public class WGPUQueue extends NativeObject {
 
     public final static WGPUQueue NULL = native_new();
 
@@ -68,7 +68,7 @@ public class WGPUQueue extends IDLBase {
 
         @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
             "var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUQueue);" +
-            "var nativeObject = idl.WebGPU.getJsObject(jsObj.Get());" +
+            "var nativeObject = runtime.WebGPU.getJsObject(jsObj.Get());" +
             "return nativeObject;"
         )
         private static native org.teavm.jso.JSObject internal_native_getJsObject(int this_addr);

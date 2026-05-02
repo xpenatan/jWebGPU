@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUInstance extends IDLBase {
+public class WGPUInstance extends NativeObject {
 
     static public final WGPUInstance NULL = WGPUInstance.native_new();
 
@@ -89,7 +89,7 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "canvas"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateWebSurface(canvas);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateWebSurface_addr(int this_addr, String canvas);
 
-    public WGPUSurface createWindowsSurface(IDLBase hwnd) {
+    public WGPUSurface createWindowsSurface(NativeObject hwnd) {
         int addr = internal_native_CreateWindowsSurface_addr(native_address, hwnd.native_void_address);
         if (addr == 0)
             return WGPUSurface.NULL;
@@ -107,7 +107,7 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "hwnd_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateWindowsSurface(hwnd_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateWindowsSurface_addr(int this_addr, int hwnd_addr);
 
-    public WGPUSurface createLinuxSurface(boolean isWayland, IDLBase windowOrSurface, IDLBase display) {
+    public WGPUSurface createLinuxSurface(boolean isWayland, NativeObject windowOrSurface, NativeObject display) {
         int addr = internal_native_CreateLinuxSurface_addr(native_address, isWayland, windowOrSurface.native_void_address, display.native_void_address);
         if (addr == 0)
             return WGPUSurface.NULL;
@@ -125,7 +125,7 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "isWayland", "windowOrSurface_addr", "display_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateLinuxSurface(isWayland, windowOrSurface_addr, display_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateLinuxSurface_addr(int this_addr, boolean isWayland, int windowOrSurface_addr, int display_addr);
 
-    public WGPUSurface createMacSurface(IDLBase metalLayer) {
+    public WGPUSurface createMacSurface(NativeObject metalLayer) {
         int addr = internal_native_CreateMacSurface_addr(native_address, metalLayer.native_void_address);
         if (addr == 0)
             return WGPUSurface.NULL;

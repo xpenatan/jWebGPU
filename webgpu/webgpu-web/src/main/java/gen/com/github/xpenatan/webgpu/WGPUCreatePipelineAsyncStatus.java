@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUCreatePipelineAsyncStatus implements IDLEnum<WGPUCreatePipelineAsyncStatus> {
+public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipelineAsyncStatus> {
 
     CUSTOM(0), Success(WGPUCreatePipelineAsyncStatus_Success_NATIVE()), ValidationError(WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE()), InternalError(WGPUCreatePipelineAsyncStatus_InternalError_NATIVE()), Force32(WGPUCreatePipelineAsyncStatus_Force32_NATIVE());
 

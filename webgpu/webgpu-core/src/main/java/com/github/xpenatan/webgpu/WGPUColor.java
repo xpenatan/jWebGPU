@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUColor extends IDLBase {
+public class WGPUColor extends NativeObject {
 
     static public final WGPUColor NULL = WGPUColor.native_new();
 

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUPipelineLayoutDescriptor extends IDLBase {
+public class WGPUPipelineLayoutDescriptor extends NativeObject {
 
     static public final WGPUPipelineLayoutDescriptor NULL = WGPUPipelineLayoutDescriptor.native_new();
 

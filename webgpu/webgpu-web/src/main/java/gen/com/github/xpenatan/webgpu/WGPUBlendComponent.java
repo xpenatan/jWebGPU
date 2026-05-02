@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBlendComponent extends IDLBase {
+public class WGPUBlendComponent extends NativeObject {
 
     static public final WGPUBlendComponent NULL = WGPUBlendComponent.native_new();
 

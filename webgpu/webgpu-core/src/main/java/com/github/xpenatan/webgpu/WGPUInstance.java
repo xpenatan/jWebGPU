@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUInstance extends IDLBase {
+public class WGPUInstance extends NativeObject {
 
     static public final WGPUInstance NULL = WGPUInstance.native_new();
 
@@ -40,15 +40,15 @@ public class WGPUInstance extends IDLBase {
         return null;
     }
 
-    public WGPUSurface createWindowsSurface(IDLBase hwnd) {
+    public WGPUSurface createWindowsSurface(NativeObject hwnd) {
         return null;
     }
 
-    public WGPUSurface createLinuxSurface(boolean isWayland, IDLBase windowOrSurface, IDLBase display) {
+    public WGPUSurface createLinuxSurface(boolean isWayland, NativeObject windowOrSurface, NativeObject display) {
         return null;
     }
 
-    public WGPUSurface createMacSurface(IDLBase metalLayer) {
+    public WGPUSurface createMacSurface(NativeObject metalLayer) {
         return null;
     }
 

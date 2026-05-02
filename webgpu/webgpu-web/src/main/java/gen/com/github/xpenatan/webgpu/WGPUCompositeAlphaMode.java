@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUCompositeAlphaMode implements IDLEnum<WGPUCompositeAlphaMode> {
+public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode> {
 
     CUSTOM(0),
     Auto(WGPUCompositeAlphaMode_Auto_NATIVE()),

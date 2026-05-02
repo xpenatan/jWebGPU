@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUUncapturedErrorCallback extends IDLBase {
+public class WGPUUncapturedErrorCallback extends NativeObject {
 
     static public final WGPUUncapturedErrorCallback NULL = WGPUUncapturedErrorCallback.native_new();
 

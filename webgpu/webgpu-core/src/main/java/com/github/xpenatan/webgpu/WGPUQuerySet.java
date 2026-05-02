@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQuerySet extends IDLBase {
+public class WGPUQuerySet extends NativeObject {
 
     static public final WGPUQuerySet NULL = WGPUQuerySet.native_new();
 

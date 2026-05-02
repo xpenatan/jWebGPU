@@ -7,9 +7,9 @@
 package gen.com.github.xpenatan.webgpu;
 
 import java.nio.ByteBuffer;
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQueue extends IDLBase {
+public class WGPUQueue extends NativeObject {
 
     @org.teavm.jso.JSBody(params = { "this_addr", "buffer_addr", "bufferOffset", "bytes_addr", "dataSize" }, script = "" + "this_addr.writeBuffer(buffer_addr, bufferOffset, bytes_addr, 0, dataSize);")
     private static native void internal_native_WriteBuffer(org.teavm.jso.JSObject this_addr, org.teavm.jso.JSObject buffer_addr, int bufferOffset, org.teavm.jso.JSObject bytes_addr, int dataSize);
@@ -34,7 +34,7 @@ public class WGPUQueue extends IDLBase {
 
         @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
             "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);" +
-            "var nativeObject = idl.WebGPU.getJsObject(jsObj.Get());" +
+            "var nativeObject = runtime.WebGPU.getJsObject(jsObj.Get());" +
             "return nativeObject;"
         )
         private static native org.teavm.jso.JSObject internal_native_getJsObject(int this_addr);
@@ -179,7 +179,7 @@ public class WGPUQueue extends IDLBase {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
-    public void writeBuffer(WGPUBuffer buffer, int bufferOffset, IDLBase bytes, int dataSize) {
+    public void writeBuffer(WGPUBuffer buffer, int bufferOffset, NativeObject bytes, int dataSize) {
         internal_native_WriteBuffer__1(native_address, buffer.native_address, bufferOffset, bytes.native_void_address, dataSize);
     }
 

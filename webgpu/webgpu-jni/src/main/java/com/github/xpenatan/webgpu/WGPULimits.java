@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPULimits extends IDLBase {
+public class WGPULimits extends NativeObject {
 
     static private WGPULimits WGPULimits_TEMP_STATIC_GEN_0;
 

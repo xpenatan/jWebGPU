@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassColorAttachment extends IDLBase {
+public class WGPURenderPassColorAttachment extends NativeObject {
 
     static public final WGPURenderPassColorAttachment NULL = WGPURenderPassColorAttachment.native_new();
 

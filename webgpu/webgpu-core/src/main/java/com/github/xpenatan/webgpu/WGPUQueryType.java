@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUQueryType implements IDLEnum<WGPUQueryType> {
+public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
 
     CUSTOM(0), Occlusion(WGPUQueryType_Occlusion_NATIVE()), Timestamp(WGPUQueryType_Timestamp_NATIVE()), Force32(WGPUQueryType_Force32_NATIVE());
 

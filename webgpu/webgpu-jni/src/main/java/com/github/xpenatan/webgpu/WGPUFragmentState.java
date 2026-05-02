@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUFragmentState extends IDLBase {
+public class WGPUFragmentState extends NativeObject {
 
     static private WGPUFragmentState WGPUFragmentState_TEMP_STATIC_GEN_0;
 

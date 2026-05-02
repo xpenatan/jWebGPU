@@ -6,8 +6,8 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jparser.idl.helper.IDLString;
+import com.github.xpenatan.jParser.api.NativeObject;
+import com.github.xpenatan.jparser.runtime.helper.NativeString;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -16,15 +16,15 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUAdapterInfo extends IDLBase {
+public class WGPUAdapterInfo extends NativeObject {
 
-    private IDLString IDLString_TEMP_GEN_0;
+    private NativeString NativeString_TEMP_GEN_0;
 
-    private IDLString IDLString_TEMP_GEN_1;
+    private NativeString NativeString_TEMP_GEN_1;
 
-    private IDLString IDLString_TEMP_GEN_2;
+    private NativeString NativeString_TEMP_GEN_2;
 
-    private IDLString IDLString_TEMP_GEN_3;
+    private NativeString NativeString_TEMP_GEN_3;
 
     static private WGPUAdapterInfo WGPUAdapterInfo_TEMP_STATIC_GEN_0;
 
@@ -76,19 +76,19 @@ delete nativeObject;
         }
     }
 
-    public IDLString getVendor() {
+    public NativeString getVendor() {
         long addr = internal_native_GetVendor_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_0;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_0 == null)
+            NativeString_TEMP_GEN_0 = NativeString.native_new();
+        NativeString_TEMP_GEN_0.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_0;
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-static IDLString copy_addr;
+static NativeString copy_addr;
 copy_addr = nativeObject->GetVendor();
 return (int64_t)&copy_addr;*/
     public static long internal_native_GetVendor_addr(long this_addr) {
@@ -115,19 +115,19 @@ return nativeObject->GetVendorID();
         }
     }
 
-    public IDLString getArchitecture() {
+    public NativeString getArchitecture() {
         long addr = internal_native_GetArchitecture_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_1 == null)
-            IDLString_TEMP_GEN_1 = IDLString.native_new();
-        IDLString_TEMP_GEN_1.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_1;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_1 == null)
+            NativeString_TEMP_GEN_1 = NativeString.native_new();
+        NativeString_TEMP_GEN_1.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_1;
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-static IDLString copy_addr;
+static NativeString copy_addr;
 copy_addr = nativeObject->GetArchitecture();
 return (int64_t)&copy_addr;*/
     public static long internal_native_GetArchitecture_addr(long this_addr) {
@@ -138,19 +138,19 @@ return (int64_t)&copy_addr;*/
         }
     }
 
-    public IDLString getDevice() {
+    public NativeString getDevice() {
         long addr = internal_native_GetDevice_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_2 == null)
-            IDLString_TEMP_GEN_2 = IDLString.native_new();
-        IDLString_TEMP_GEN_2.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_2;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_2 == null)
+            NativeString_TEMP_GEN_2 = NativeString.native_new();
+        NativeString_TEMP_GEN_2.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_2;
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-static IDLString copy_addr;
+static NativeString copy_addr;
 copy_addr = nativeObject->GetDevice();
 return (int64_t)&copy_addr;*/
     public static long internal_native_GetDevice_addr(long this_addr) {
@@ -177,19 +177,19 @@ return nativeObject->GetDeviceID();
         }
     }
 
-    public IDLString getDescription() {
+    public NativeString getDescription() {
         long addr = internal_native_GetDescription_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_3 == null)
-            IDLString_TEMP_GEN_3 = IDLString.native_new();
-        IDLString_TEMP_GEN_3.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_3;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_3 == null)
+            NativeString_TEMP_GEN_3 = NativeString.native_new();
+        NativeString_TEMP_GEN_3.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_3;
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-static IDLString copy_addr;
+static NativeString copy_addr;
 copy_addr = nativeObject->GetDescription();
 return (int64_t)&copy_addr;*/
     public static long internal_native_GetDescription_addr(long this_addr) {

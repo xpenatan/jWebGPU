@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUDepthStencilState extends IDLBase {
+public class WGPUDepthStencilState extends NativeObject {
 
     private WGPUStencilFaceState WGPUStencilFaceState_TEMP_GEN_0;
 

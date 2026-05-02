@@ -1,9 +1,7 @@
 package com.github.xpenatan.webgpu.backend.teavm;
 
 
-import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
 import com.github.xpenatan.jmultiplatform.core.JMultiplatform;
-import com.github.xpenatan.jparser.idl.IDLLoader;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;

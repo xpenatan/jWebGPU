@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUComputePassEncoder extends IDLBase {
+public class WGPUComputePassEncoder extends NativeObject {
 
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 

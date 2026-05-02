@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderBundle extends IDLBase {
+public class WGPURenderBundle extends NativeObject {
 
     static public final WGPURenderBundle NULL = WGPURenderBundle.native_new();
 

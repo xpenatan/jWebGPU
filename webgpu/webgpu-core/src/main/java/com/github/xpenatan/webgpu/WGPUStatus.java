@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUStatus implements IDLEnum<WGPUStatus> {
+public enum WGPUStatus implements NativeEnum<WGPUStatus> {
 
     CUSTOM(0), Success(WGPUStatus_Success_NATIVE()), Error(WGPUStatus_Error_NATIVE()), Force32(WGPUStatus_Force32_NATIVE());
 

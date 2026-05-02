@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorTextureFormat extends IDLBase {
+public class WGPUVectorTextureFormat extends NativeObject {
 
     static public final WGPUVectorTextureFormat NULL = WGPUVectorTextureFormat.native_new();
 

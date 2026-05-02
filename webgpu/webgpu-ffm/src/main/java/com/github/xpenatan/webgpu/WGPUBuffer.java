@@ -7,7 +7,7 @@
 package com.github.xpenatan.webgpu;
 
 import java.nio.ByteBuffer;
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -16,7 +16,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUBuffer extends IDLBase {
+public class WGPUBuffer extends NativeObject {
 
     private WGPUFuture WGPUFuture_TEMP_GEN_0;
 

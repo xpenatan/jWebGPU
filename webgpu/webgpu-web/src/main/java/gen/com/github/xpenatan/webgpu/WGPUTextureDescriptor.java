@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTextureDescriptor extends IDLBase {
+public class WGPUTextureDescriptor extends NativeObject {
 
     private WGPUExtent3D WGPUExtent3D_TEMP_GEN_0;
 

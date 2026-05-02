@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUBlendOperation implements IDLEnum<WGPUBlendOperation> {
+public enum WGPUBlendOperation implements NativeEnum<WGPUBlendOperation> {
 
     CUSTOM(0),
     Undefined(WGPUBlendOperation_Undefined_NATIVE()),

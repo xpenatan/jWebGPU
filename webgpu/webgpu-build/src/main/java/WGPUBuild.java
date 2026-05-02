@@ -30,7 +30,7 @@ public class WGPUBuild {
         data.packageName = basePackage;
         data.modulePrefix = modulePrefix;
         BuildToolOptions op = new BuildToolOptions(data, args);
-        op.addAdditionalIDLRefPath(IDLReader.getIDLHelperFile());
+        op.addAdditionalIDLRefPath(IDLReader.getRuntimeHelperFile());
 
         BuilderTool.build(op, new BuildToolListener() {
             @Override
@@ -361,7 +361,7 @@ public class WGPUBuild {
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget();
         linkTarget.idlReader = idlReader;
-        linkTarget.mainModuleName = "idl";
+        linkTarget.mainModuleName = "runtime";
         linkTarget.cppInclude.add(customSourceDir + "**.cpp");
         linkTarget.cppFlags.add("-std=c++17");
         linkTarget.headerDirs.add("-I" + includePath);

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVertexState extends IDLBase {
+public class WGPUVertexState extends NativeObject {
 
     static public final WGPUVertexState NULL = WGPUVertexState.native_new();
 

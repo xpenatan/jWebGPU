@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUInstance extends IDLBase {
+public class WGPUInstance extends NativeObject {
 
     static public final WGPUInstance NULL = WGPUInstance.native_new();
 
@@ -82,7 +82,7 @@ return (jlong)obj;
 */
     public static native long internal_native_CreateWebSurface_addr(long this_addr, String canvas);
 
-    public WGPUSurface createWindowsSurface(IDLBase hwnd) {
+    public WGPUSurface createWindowsSurface(NativeObject hwnd) {
         long addr = internal_native_CreateWindowsSurface_addr(native_address, hwnd.native_void_address);
         if (addr == 0)
             return WGPUSurface.NULL;
@@ -98,7 +98,7 @@ return (jlong)obj;
 */
     public static native long internal_native_CreateWindowsSurface_addr(long this_addr, long hwnd_addr);
 
-    public WGPUSurface createLinuxSurface(boolean isWayland, IDLBase windowOrSurface, IDLBase display) {
+    public WGPUSurface createLinuxSurface(boolean isWayland, NativeObject windowOrSurface, NativeObject display) {
         long addr = internal_native_CreateLinuxSurface_addr(native_address, isWayland, windowOrSurface.native_void_address, display.native_void_address);
         if (addr == 0)
             return WGPUSurface.NULL;
@@ -114,7 +114,7 @@ return (jlong)obj;
 */
     public static native long internal_native_CreateLinuxSurface_addr(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr);
 
-    public WGPUSurface createMacSurface(IDLBase metalLayer) {
+    public WGPUSurface createMacSurface(NativeObject metalLayer) {
         long addr = internal_native_CreateMacSurface_addr(native_address, metalLayer.native_void_address);
         if (addr == 0)
             return WGPUSurface.NULL;

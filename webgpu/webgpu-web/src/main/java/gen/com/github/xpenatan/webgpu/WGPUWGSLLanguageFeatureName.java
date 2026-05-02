@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUWGSLLanguageFeatureName implements IDLEnum<WGPUWGSLLanguageFeatureName> {
+public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFeatureName> {
 
     CUSTOM(0),
     ReadonlyAndReadwriteStorageTextures(WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE()),

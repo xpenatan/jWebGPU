@@ -6,7 +6,7 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public enum WGPUQueueWorkDoneStatus implements IDLEnum<WGPUQueueWorkDoneStatus> {
+public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatus> {
 
     CUSTOM(0), Success(WGPUQueueWorkDoneStatus_Success_NATIVE()), Error(WGPUQueueWorkDoneStatus_Error_NATIVE()), Force32(WGPUQueueWorkDoneStatus_Force32_NATIVE());
 

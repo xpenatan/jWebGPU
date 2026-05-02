@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTextureDescriptor extends IDLBase {
+public class WGPUTextureDescriptor extends NativeObject {
 
     static public final WGPUTextureDescriptor NULL = WGPUTextureDescriptor.native_new();
 

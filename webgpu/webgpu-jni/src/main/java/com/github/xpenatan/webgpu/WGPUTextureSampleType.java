@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUTextureSampleType implements IDLEnum<WGPUTextureSampleType> {
+public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     CUSTOM(0),
     BindingNotUsed(WGPUTextureSampleType_BindingNotUsed_NATIVE()),

@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUBufferBindingType implements IDLEnum<WGPUBufferBindingType> {
+public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     CUSTOM(0),
     BindingNotUsed(WGPUBufferBindingType_BindingNotUsed_NATIVE()),

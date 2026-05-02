@@ -7,9 +7,9 @@
 package com.github.xpenatan.webgpu;
 
 import java.nio.ByteBuffer;
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQueue extends IDLBase {
+public class WGPUQueue extends NativeObject {
 
     public final static WGPUQueue NULL = native_new();
 
@@ -132,7 +132,7 @@ public class WGPUQueue extends IDLBase {
     */
     public static native void internal_native_Release(long this_addr);
 
-    public void writeBuffer(WGPUBuffer buffer, int bufferOffset, IDLBase bytes, int dataSize) {
+    public void writeBuffer(WGPUBuffer buffer, int bufferOffset, NativeObject bytes, int dataSize) {
         internal_native_WriteBuffer__1(native_address, buffer.native_address, bufferOffset, bytes.native_void_address, dataSize);
     }
 

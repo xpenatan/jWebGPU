@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUBlendFactor implements IDLEnum<WGPUBlendFactor> {
+public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     CUSTOM(0),
     Undefined(WGPUBlendFactor_Undefined_NATIVE()),

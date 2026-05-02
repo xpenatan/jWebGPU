@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorColorTargetState extends IDLBase {
+public class WGPUVectorColorTargetState extends NativeObject {
 
     static private WGPUVectorColorTargetState WGPUVectorColorTargetState_TEMP_STATIC_GEN_0;
 

@@ -6,18 +6,18 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.com.github.xpenatan.jparser.idl.helper.IDLString;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
+import gen.com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUAdapterInfo extends IDLBase {
+public class WGPUAdapterInfo extends NativeObject {
 
-    private IDLString IDLString_TEMP_GEN_0;
+    private NativeString NativeString_TEMP_GEN_0;
 
-    private IDLString IDLString_TEMP_GEN_1;
+    private NativeString NativeString_TEMP_GEN_1;
 
-    private IDLString IDLString_TEMP_GEN_2;
+    private NativeString NativeString_TEMP_GEN_2;
 
-    private IDLString IDLString_TEMP_GEN_3;
+    private NativeString NativeString_TEMP_GEN_3;
 
     static private WGPUAdapterInfo WGPUAdapterInfo_TEMP_STATIC_GEN_0;
 
@@ -60,14 +60,14 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAdapterInfo);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public IDLString getVendor() {
+    public NativeString getVendor() {
         int addr = internal_native_GetVendor_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_0;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_0 == null)
+            NativeString_TEMP_GEN_0 = NativeString.native_new();
+        NativeString_TEMP_GEN_0.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_0;
     }
 
     /*[-TEAVM;-NATIVE]
@@ -91,14 +91,14 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAdapterInfo);var returnedJSObj = jsObj.GetVendorID();return returnedJSObj;")
     public static native int internal_native_GetVendorID(int this_addr);
 
-    public IDLString getArchitecture() {
+    public NativeString getArchitecture() {
         int addr = internal_native_GetArchitecture_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_1 == null)
-            IDLString_TEMP_GEN_1 = IDLString.native_new();
-        IDLString_TEMP_GEN_1.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_1;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_1 == null)
+            NativeString_TEMP_GEN_1 = NativeString.native_new();
+        NativeString_TEMP_GEN_1.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_1;
     }
 
     /*[-TEAVM;-NATIVE]
@@ -110,14 +110,14 @@ return jWebGPU.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAdapterInfo);var returnedJSObj = jsObj.GetArchitecture();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetArchitecture_addr(int this_addr);
 
-    public IDLString getDevice() {
+    public NativeString getDevice() {
         int addr = internal_native_GetDevice_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_2 == null)
-            IDLString_TEMP_GEN_2 = IDLString.native_new();
-        IDLString_TEMP_GEN_2.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_2;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_2 == null)
+            NativeString_TEMP_GEN_2 = NativeString.native_new();
+        NativeString_TEMP_GEN_2.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_2;
     }
 
     /*[-TEAVM;-NATIVE]
@@ -141,14 +141,14 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAdapterInfo);var returnedJSObj = jsObj.GetDeviceID();return returnedJSObj;")
     public static native int internal_native_GetDeviceID(int this_addr);
 
-    public IDLString getDescription() {
+    public NativeString getDescription() {
         int addr = internal_native_GetDescription_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_3 == null)
-            IDLString_TEMP_GEN_3 = IDLString.native_new();
-        IDLString_TEMP_GEN_3.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_3;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_3 == null)
+            NativeString_TEMP_GEN_3 = NativeString.native_new();
+        NativeString_TEMP_GEN_3.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_3;
     }
 
     /*[-TEAVM;-NATIVE]

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUQueueWorkDoneStatus implements IDLEnum<WGPUQueueWorkDoneStatus> {
+public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatus> {
 
     CUSTOM(0), Success(WGPUQueueWorkDoneStatus_Success_NATIVE()), Error(WGPUQueueWorkDoneStatus_Error_NATIVE()), Force32(WGPUQueueWorkDoneStatus_Force32_NATIVE());
 

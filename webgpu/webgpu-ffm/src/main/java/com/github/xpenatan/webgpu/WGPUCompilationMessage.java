@@ -6,8 +6,8 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jparser.idl.helper.IDLString;
+import com.github.xpenatan.jParser.api.NativeObject;
+import com.github.xpenatan.jparser.runtime.helper.NativeString;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -16,9 +16,9 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUCompilationMessage extends IDLBase {
+public class WGPUCompilationMessage extends NativeObject {
 
-    private IDLString IDLString_TEMP_GEN_0;
+    private NativeString NativeString_TEMP_GEN_0;
 
     static private WGPUCompilationMessage WGPUCompilationMessage_TEMP_STATIC_GEN_0;
 
@@ -70,19 +70,19 @@ delete nativeObject;
         }
     }
 
-    public IDLString getMessage() {
+    public NativeString getMessage() {
         long addr = internal_native_GetMessage_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_0;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_0 == null)
+            NativeString_TEMP_GEN_0 = NativeString.native_new();
+        NativeString_TEMP_GEN_0.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_0;
     }
 
     /*[-FFM;-NATIVE]
 JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-static IDLString copy_addr;
+static NativeString copy_addr;
 copy_addr = nativeObject->GetMessage();
 return (int64_t)&copy_addr;*/
     public static long internal_native_GetMessage_addr(long this_addr) {

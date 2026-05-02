@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTexelCopyBufferInfo extends IDLBase {
+public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     private WGPUTexelCopyBufferLayout WGPUTexelCopyBufferLayout_TEMP_GEN_0;
 

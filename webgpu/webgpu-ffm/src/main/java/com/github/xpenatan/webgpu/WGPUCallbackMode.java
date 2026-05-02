@@ -6,7 +6,7 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public enum WGPUCallbackMode implements IDLEnum<WGPUCallbackMode> {
+public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
 
     CUSTOM(0), WaitAnyOnly(WGPUCallbackMode_WaitAnyOnly_NATIVE()), AllowProcessEvents(WGPUCallbackMode_AllowProcessEvents_NATIVE()), AllowSpontaneous(WGPUCallbackMode_AllowSpontaneous_NATIVE()), Force32(WGPUCallbackMode_Force32_NATIVE());
 

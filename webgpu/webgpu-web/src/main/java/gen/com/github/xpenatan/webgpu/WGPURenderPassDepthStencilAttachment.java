@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassDepthStencilAttachment extends IDLBase {
+public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     static private WGPURenderPassDepthStencilAttachment WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
 

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUErrorFilter implements IDLEnum<WGPUErrorFilter> {
+public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
 
     CUSTOM(0), Validation(WGPUErrorFilter_Validation_NATIVE()), OutOfMemory(WGPUErrorFilter_OutOfMemory_NATIVE()), Internal(WGPUErrorFilter_Internal_NATIVE()), Force32(WGPUErrorFilter_Force32_NATIVE());
 

@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUAdapterType implements IDLEnum<WGPUAdapterType> {
+public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
 
     CUSTOM(0),
     DiscreteGPU(WGPUAdapterType_DiscreteGPU_NATIVE()),

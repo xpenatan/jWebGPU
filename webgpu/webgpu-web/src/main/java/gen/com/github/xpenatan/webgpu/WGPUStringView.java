@@ -6,12 +6,12 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.com.github.xpenatan.jparser.idl.helper.IDLString;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
+import gen.com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUStringView extends IDLBase {
+public class WGPUStringView extends NativeObject {
 
-    private IDLString IDLString_TEMP_GEN_0;
+    private NativeString NativeString_TEMP_GEN_0;
 
     static public final WGPUStringView NULL = WGPUStringView.native_new();
 
@@ -40,14 +40,14 @@ jWebGPU.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStringView);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public IDLString getString() {
+    public NativeString getString() {
         int addr = internal_native_GetString_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_0;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_0 == null)
+            NativeString_TEMP_GEN_0 = NativeString.native_new();
+        NativeString_TEMP_GEN_0.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_0;
     }
 
     /*[-TEAVM;-NATIVE]

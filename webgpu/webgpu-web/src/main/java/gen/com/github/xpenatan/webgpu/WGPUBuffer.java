@@ -7,15 +7,15 @@
 package gen.com.github.xpenatan.webgpu;
 
 import java.nio.ByteBuffer;
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBuffer extends IDLBase {
+public class WGPUBuffer extends NativeObject {
 
     private WGPUFuture WGPUFuture_TEMP_GEN_0;
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
-    @org.teavm.jso.JSBody(params = { "this_addr", "offset", "size", "bytes_addr" }, script = "" + "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);" + "var ptr = idl._malloc(size);" + "jsObj.GetConstMappedRange(offset, size, ptr);" + "var dataOut = idl.HEAPU8.subarray(ptr, ptr + size);" + "bytes_addr.set(dataOut);" + "idl._free(ptr);")
+    @org.teavm.jso.JSBody(params = { "this_addr", "offset", "size", "bytes_addr" }, script = "" + "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);" + "var ptr = runtime._malloc(size);" + "jsObj.GetConstMappedRange(offset, size, ptr);" + "var dataOut = runtime.HEAPU8.subarray(ptr, ptr + size);" + "bytes_addr.set(dataOut);" + "runtime._free(ptr);")
     private static native void internal_native_getConstMappedRange(int this_addr, int offset, int size, org.teavm.jso.JSObject bytes_addr);
 
     public final static WGPUBuffer NULL = native_new();
@@ -36,7 +36,7 @@ public class WGPUBuffer extends IDLBase {
         @org.teavm.jso.JSBody(params = { "this_addr" }, script = "" +
             "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBuffer);" +
             "var jsAddr = jsObj.Get();" +
-            "var nativeObject = idl.WebGPU.getJsObject(jsAddr);" +
+            "var nativeObject = runtime.WebGPU.getJsObject(jsAddr);" +
             "return nativeObject;"
         )
         private static native org.teavm.jso.JSObject internal_native_getJsObject(int this_addr);
@@ -57,11 +57,11 @@ public class WGPUBuffer extends IDLBase {
       [-TEAVM;-REPLACE]
               @org.teavm.jso.JSBody(params = {"this_addr", "offset", "size", "bytes_addr"}, script = "" +
                   "var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUBuffer);" +
-                  "var ptr = idl._malloc(size);" +
+                  "var ptr = runtime._malloc(size);" +
                   "jsObj.GetConstMappedRange(offset, size, ptr);" +
-                  "var dataOut = idl.HEAPU8.subarray(ptr, ptr + size);" +
+                  "var dataOut = runtime.HEAPU8.subarray(ptr, ptr + size);" +
                   "bytes_addr.set(dataOut);" +
-                  "idl._free(ptr);"
+                  "runtime._free(ptr);"
               )
               private static native void internal_native_getConstMappedRange(int this_addr, int offset, int size, org.teavm.jso.JSObject bytes_addr);
     */

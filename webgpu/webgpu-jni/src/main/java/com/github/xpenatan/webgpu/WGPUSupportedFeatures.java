@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSupportedFeatures extends IDLBase {
+public class WGPUSupportedFeatures extends NativeObject {
 
     static private WGPUSupportedFeatures WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
 

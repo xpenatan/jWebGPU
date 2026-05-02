@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUOrigin3D extends IDLBase {
+public class WGPUOrigin3D extends NativeObject {
 
     static public final WGPUOrigin3D NULL = WGPUOrigin3D.native_new();
 

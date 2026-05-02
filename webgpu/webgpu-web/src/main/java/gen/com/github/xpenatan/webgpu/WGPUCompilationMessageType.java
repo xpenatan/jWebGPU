@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUCompilationMessageType implements IDLEnum<WGPUCompilationMessageType> {
+public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMessageType> {
 
     CUSTOM(0), Error(WGPUCompilationMessageType_Error_NATIVE()), Warning(WGPUCompilationMessageType_Warning_NATIVE()), Info(WGPUCompilationMessageType_Info_NATIVE()), Force32(WGPUCompilationMessageType_Force32_NATIVE());
 

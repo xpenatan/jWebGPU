@@ -9,7 +9,7 @@ package com.github.xpenatan.webgpu;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoader;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
 import com.github.xpenatan.jParser.loader.JParserLibraryLoaderOptions;
-import com.github.xpenatan.jparser.idl.IDLLoader;
+import com.github.xpenatan.jparser.runtime.RuntimeLoader;
 
 /**
  * @author xpenatan
@@ -27,7 +27,7 @@ public class JWebGPULoader {
     }
 
     public static void init(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
-        IDLLoader.init(new JParserLibraryLoaderListener() {
+        RuntimeLoader.init(new JParserLibraryLoaderListener() {
 
             @Override
             public void onLoad(boolean idl_isSuccess, Throwable idl_t) {

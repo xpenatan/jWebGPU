@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorFutureWaitInfo extends IDLBase {
+public class WGPUVectorFutureWaitInfo extends NativeObject {
 
     static public final WGPUVectorFutureWaitInfo NULL = WGPUVectorFutureWaitInfo.native_new();
 

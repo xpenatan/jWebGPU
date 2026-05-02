@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUPlatformType implements IDLEnum<WGPUPlatformType> {
+public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     CUSTOM(0),
     WGPU_Windows(WGPU_Windows_NATIVE()),

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUStencilOperation implements IDLEnum<WGPUStencilOperation> {
+public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     CUSTOM(0),
     Undefined(WGPUStencilOperation_Undefined_NATIVE()),

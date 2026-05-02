@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassMaxDrawCount extends IDLBase {
+public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     static private WGPURenderPassMaxDrawCount WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
 

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVertexBufferLayout extends IDLBase {
+public class WGPUVertexBufferLayout extends NativeObject {
 
     static private WGPUVertexBufferLayout WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
 

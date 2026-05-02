@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUDeviceLostReason implements IDLEnum<WGPUDeviceLostReason> {
+public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
 
     CUSTOM(0), Unknown(WGPUDeviceLostReason_Unknown_NATIVE()), Destroyed(WGPUDeviceLostReason_Destroyed_NATIVE()), FailedCreation(WGPUDeviceLostReason_FailedCreation_NATIVE()), Force32(WGPUDeviceLostReason_Force32_NATIVE());
 

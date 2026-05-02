@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUTextureAspect implements IDLEnum<WGPUTextureAspect> {
+public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
 
     CUSTOM(0),
     Undefined(WGPUTextureAspect_Undefined_NATIVE()),

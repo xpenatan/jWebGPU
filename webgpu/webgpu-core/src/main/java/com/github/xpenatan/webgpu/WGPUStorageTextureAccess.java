@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUStorageTextureAccess implements IDLEnum<WGPUStorageTextureAccess> {
+public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAccess> {
 
     CUSTOM(0),
     BindingNotUsed(WGPUStorageTextureAccess_BindingNotUsed_NATIVE()),

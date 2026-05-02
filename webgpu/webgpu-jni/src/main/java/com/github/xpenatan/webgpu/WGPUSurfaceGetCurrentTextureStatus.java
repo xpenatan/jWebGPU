@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUSurfaceGetCurrentTextureStatus implements IDLEnum<WGPUSurfaceGetCurrentTextureStatus> {
+public enum WGPUSurfaceGetCurrentTextureStatus implements NativeEnum<WGPUSurfaceGetCurrentTextureStatus> {
 
     CUSTOM(0),
     SuccessOptimal(WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE()),

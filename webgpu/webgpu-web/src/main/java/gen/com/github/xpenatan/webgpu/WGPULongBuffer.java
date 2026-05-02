@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPULongBuffer extends IDLBase {
+public class WGPULongBuffer extends NativeObject {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 

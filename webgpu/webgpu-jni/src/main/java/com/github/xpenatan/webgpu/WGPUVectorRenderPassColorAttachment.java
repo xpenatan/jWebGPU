@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorRenderPassColorAttachment extends IDLBase {
+public class WGPUVectorRenderPassColorAttachment extends NativeObject {
 
     static private WGPUVectorRenderPassColorAttachment WGPUVectorRenderPassColorAttachment_TEMP_STATIC_GEN_0;
 

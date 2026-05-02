@@ -6,12 +6,12 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jparser.idl.helper.IDLString;
+import com.github.xpenatan.jParser.api.NativeObject;
+import com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUStringView extends IDLBase {
+public class WGPUStringView extends NativeObject {
 
-    private IDLString IDLString_TEMP_GEN_0;
+    private NativeString NativeString_TEMP_GEN_0;
 
     static public final WGPUStringView NULL = WGPUStringView.native_new();
 
@@ -39,19 +39,19 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
-    public IDLString getString() {
+    public NativeString getString() {
         long addr = internal_native_GetString_addr(native_address);
         if (addr == 0)
-            return IDLString.NULL;
-        if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(addr, false);
-        return IDLString_TEMP_GEN_0;
+            return NativeString.NULL;
+        if (NativeString_TEMP_GEN_0 == null)
+            NativeString_TEMP_GEN_0 = NativeString.native_new();
+        NativeString_TEMP_GEN_0.internal_reset(addr, false);
+        return NativeString_TEMP_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUStringView* nativeObject = (JGPU::WGPUStringView*)this_addr;
-static IDLString copy_addr;
+static NativeString copy_addr;
 copy_addr = nativeObject->GetString();
 return (jlong)&copy_addr;*/
     public static native long internal_native_GetString_addr(long this_addr);

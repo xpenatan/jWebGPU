@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUFilterMode implements IDLEnum<WGPUFilterMode> {
+public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
 
     CUSTOM(0), Undefined(WGPUFilterMode_Undefined_NATIVE()), Nearest(WGPUFilterMode_Nearest_NATIVE()), Linear(WGPUFilterMode_Linear_NATIVE()), Force32(WGPUFilterMode_Force32_NATIVE());
 

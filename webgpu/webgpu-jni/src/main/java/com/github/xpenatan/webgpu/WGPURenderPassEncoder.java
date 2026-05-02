@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassEncoder extends IDLBase {
+public class WGPURenderPassEncoder extends NativeObject {
 
     static private WGPURenderPassEncoder WGPURenderPassEncoder_TEMP_STATIC_GEN_0;
 

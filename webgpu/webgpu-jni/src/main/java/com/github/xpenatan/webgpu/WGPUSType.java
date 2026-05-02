@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUSType implements IDLEnum<WGPUSType> {
+public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     CUSTOM(0),
     ShaderSourceSPIRV(WGPUSType_ShaderSourceSPIRV_NATIVE()),

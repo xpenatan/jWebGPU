@@ -127,6 +127,7 @@ public class WGPUApp {
                 }
                 else {
                     initState = InitState.DEVICE_NOT_VALID;
+                    throw new RuntimeException("Failed to create device: " + message);
                 }
             }
         }, new WGPUUncapturedErrorCallback() {

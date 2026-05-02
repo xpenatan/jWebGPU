@@ -6,10 +6,10 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.com.github.xpenatan.jparser.idl.helper.IDLUtils;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
+import gen.com.github.xpenatan.jparser.runtime.helper.NativeUtils;
 
-public class WGPUUncapturedErrorCallback extends IDLBase {
+public class WGPUUncapturedErrorCallback extends NativeObject {
 
     static public final WGPUUncapturedErrorCallback NULL = WGPUUncapturedErrorCallback.native_new();
 
@@ -48,7 +48,7 @@ jWebGPU.destroy(jsObj);
         OnCallback OnCallback = new OnCallback() {
 
             public void OnCallback(int errorType_addr, int message_addr) {
-                internal_onCallback(errorType_addr, IDLUtils.getJSString(message_addr));
+                internal_onCallback(errorType_addr, NativeUtils.getJSString(message_addr));
             }
         };
         internal_native_setupCallback(native_address, OnCallback);

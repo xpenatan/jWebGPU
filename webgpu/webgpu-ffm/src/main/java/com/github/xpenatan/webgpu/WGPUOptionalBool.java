@@ -6,7 +6,7 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public enum WGPUOptionalBool implements IDLEnum<WGPUOptionalBool> {
+public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
 
     CUSTOM(0), False(WGPUOptionalBool_False_NATIVE()), True(WGPUOptionalBool_True_NATIVE()), Undefined(WGPUOptionalBool_Undefined_NATIVE()), Force32(WGPUOptionalBool_Force32_NATIVE());
 

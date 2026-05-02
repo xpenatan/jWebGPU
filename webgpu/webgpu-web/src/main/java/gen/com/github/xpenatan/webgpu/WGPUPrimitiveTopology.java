@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUPrimitiveTopology implements IDLEnum<WGPUPrimitiveTopology> {
+public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     CUSTOM(0),
     Undefined(WGPUPrimitiveTopology_Undefined_NATIVE()),

@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSurfaceTexture extends IDLBase {
+public class WGPUSurfaceTexture extends NativeObject {
 
     static private WGPUSurfaceTexture WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
 

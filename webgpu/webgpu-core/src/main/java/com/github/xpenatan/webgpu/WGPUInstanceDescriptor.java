@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUInstanceDescriptor extends IDLBase {
+public class WGPUInstanceDescriptor extends NativeObject {
 
     static public final WGPUInstanceDescriptor NULL = WGPUInstanceDescriptor.native_new();
 

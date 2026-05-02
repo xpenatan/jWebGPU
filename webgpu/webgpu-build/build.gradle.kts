@@ -7,13 +7,13 @@ val mainWGPUClassName = "WGPUBuild"
 
 dependencies {
     implementation(project(":webgpu:webgpu-base"))
-    implementation("com.github.xpenatan.jParser:jParser-core:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-build:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-build-tool:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-web:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-jni:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-ffm:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-build:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-build-tool:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-web:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-jni:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-ffm:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:gen-idl:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
 }
 

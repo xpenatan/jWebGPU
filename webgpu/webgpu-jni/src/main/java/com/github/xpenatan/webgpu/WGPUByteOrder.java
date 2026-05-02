@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUByteOrder implements IDLEnum<WGPUByteOrder> {
+public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
 
     CUSTOM(0), BigEndian(BigEndian_NATIVE()), LittleEndian(LittleEndian_NATIVE());
 

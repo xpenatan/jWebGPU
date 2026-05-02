@@ -6,7 +6,7 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
 import java.lang.foreign.Linker;
@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public enum WGPUPlatformType implements IDLEnum<WGPUPlatformType> {
+public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     CUSTOM(0),
     WGPU_Windows(WGPU_Windows_NATIVE()),

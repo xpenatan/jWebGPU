@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUPopErrorScopeStatus implements IDLEnum<WGPUPopErrorScopeStatus> {
+public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatus> {
 
     CUSTOM(0), Success(WGPUPopErrorScopeStatus_Success_NATIVE()), Force32(WGPUPopErrorScopeStatus_Force32_NATIVE());
 

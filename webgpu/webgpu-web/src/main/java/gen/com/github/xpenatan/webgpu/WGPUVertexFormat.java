@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUVertexFormat implements IDLEnum<WGPUVertexFormat> {
+public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     CUSTOM(0),
     Uint8(WGPUVertexFormat_Uint8_NATIVE()),

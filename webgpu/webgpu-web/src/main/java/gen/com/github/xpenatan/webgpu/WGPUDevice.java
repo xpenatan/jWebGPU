@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUDevice extends IDLBase {
+public class WGPUDevice extends NativeObject {
 
     private WGPUQueue WGPUQueue_TEMP_GEN_0;
 

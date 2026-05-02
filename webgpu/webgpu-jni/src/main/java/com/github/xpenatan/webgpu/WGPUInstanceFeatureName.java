@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUInstanceFeatureName implements IDLEnum<WGPUInstanceFeatureName> {
+public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureName> {
 
     CUSTOM(0), TimedWaitAny(WGPUInstanceFeatureName_TimedWaitAny_NATIVE()), ShaderSourceSPIRV(WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE()), MultipleDevicesPerAdapter(WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE()), Force32(WGPUInstanceFeatureName_Force32_NATIVE());
 

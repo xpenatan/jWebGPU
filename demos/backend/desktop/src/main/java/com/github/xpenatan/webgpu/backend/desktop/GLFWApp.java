@@ -1,8 +1,6 @@
 package com.github.xpenatan.webgpu.backend.desktop;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jParser.loader.JParserLibraryLoaderListener;
-import com.github.xpenatan.jparser.idl.IDLLoader;
+import com.github.xpenatan.jParser.api.NativeObject;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
@@ -133,12 +131,12 @@ public class GLFWApp {
 
     private void createSurface() {
         String osName = System.getProperty("os.name").toLowerCase();
-        IDLBase voidHandle = IDLBase.native_new().native_setAddress(windowHandle);
+        NativeObject voidHandle = NativeObject.native_new().native_setAddress(windowHandle);
         if(osName.contains("win")) {
             wgpu.surface = wgpu.instance.createWindowsSurface(voidHandle);
         }
         else if(osName.contains("linux")) {
-            IDLBase displayVoid = IDLBase.native_new();
+            NativeObject displayVoid = NativeObject.native_new();
             if(glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
                 long display = glfwGetWaylandDisplay();
                 displayVoid.native_setAddress(display);

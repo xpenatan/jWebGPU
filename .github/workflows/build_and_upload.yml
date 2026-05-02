@@ -28,7 +28,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -57,7 +57,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_ffm
 
       - name: Upload natives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: windows-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
@@ -73,7 +73,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -94,7 +94,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_ffm
 
       - name: Upload natives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: linux-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
@@ -110,7 +110,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -131,7 +131,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_ffm :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_ffm
 
       - name: Upload natives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mac-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
@@ -142,12 +142,12 @@ jobs:
 
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
+        uses: styfle/cancel-workflow-action@0.13.1
         with:
           access_token: ${{ github.token }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -170,7 +170,7 @@ jobs:
         run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_web_dawn
 
       - name: Upload natives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: teavm-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
@@ -186,7 +186,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -214,7 +214,7 @@ jobs:
           NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Upload natives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: android-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
@@ -231,7 +231,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Checkout repository with latest changes
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
@@ -258,31 +258,31 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download windows natives
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: windows-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
 
       - name: Download linux natives
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: linux-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
 
       - name: Download mac natives
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: mac-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
 
       - name: Download android natives
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: android-natives
           path: ./webgpu/webgpu-build/build/c++/libs/
 
       - name: Download teavm natives
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: teavm-natives
           path: ./webgpu/webgpu-build/build/c++/libs/

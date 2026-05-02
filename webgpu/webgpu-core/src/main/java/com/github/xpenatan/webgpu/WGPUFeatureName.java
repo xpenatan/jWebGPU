@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUFeatureName implements IDLEnum<WGPUFeatureName> {
+public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     CUSTOM(0),
     DepthClipControl(WGPUFeatureName_DepthClipControl_NATIVE()),

@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUColorWriteMask implements IDLEnum<WGPUColorWriteMask> {
+public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     CUSTOM(0),
     None(WGPUColorWriteMask_None_NATIVE()),

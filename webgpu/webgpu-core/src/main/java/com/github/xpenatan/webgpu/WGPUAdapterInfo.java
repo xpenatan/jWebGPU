@@ -6,10 +6,10 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
-import com.github.xpenatan.jparser.idl.helper.IDLString;
+import com.github.xpenatan.jParser.api.NativeObject;
+import com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUAdapterInfo extends IDLBase {
+public class WGPUAdapterInfo extends NativeObject {
 
     static public final WGPUAdapterInfo NULL = WGPUAdapterInfo.native_new();
 
@@ -30,7 +30,7 @@ public class WGPUAdapterInfo extends IDLBase {
         return new WGPUAdapterInfo((byte) 0, (char) 0);
     }
 
-    public IDLString getVendor() {
+    public NativeString getVendor() {
         return null;
     }
 
@@ -38,11 +38,11 @@ public class WGPUAdapterInfo extends IDLBase {
         return 0;
     }
 
-    public IDLString getArchitecture() {
+    public NativeString getArchitecture() {
         return null;
     }
 
-    public IDLString getDevice() {
+    public NativeString getDevice() {
         return null;
     }
 
@@ -50,7 +50,7 @@ public class WGPUAdapterInfo extends IDLBase {
         return 0;
     }
 
-    public IDLString getDescription() {
+    public NativeString getDescription() {
         return null;
     }
 

@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class STBImage extends IDLBase {
+public class STBImage extends NativeObject {
 
     static public final STBImage NULL = STBImage.native_new();
 

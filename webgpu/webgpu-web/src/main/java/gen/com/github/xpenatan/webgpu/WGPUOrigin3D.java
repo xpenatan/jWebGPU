@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUOrigin3D extends IDLBase {
+public class WGPUOrigin3D extends NativeObject {
 
     static private WGPUOrigin3D WGPUOrigin3D_TEMP_STATIC_GEN_0;
 

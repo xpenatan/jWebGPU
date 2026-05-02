@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import gen.com.github.xpenatan.jParser.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVertexAttribute extends IDLBase {
+public class WGPUVertexAttribute extends NativeObject {
 
     static private WGPUVertexAttribute WGPUVertexAttribute_TEMP_STATIC_GEN_0;
 

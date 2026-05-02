@@ -6,9 +6,9 @@
 
 package gen.com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLEnum;
+import com.github.xpenatan.jParser.api.NativeEnum;
 
-public enum WGPUVertexStepMode implements IDLEnum<WGPUVertexStepMode> {
+public enum WGPUVertexStepMode implements NativeEnum<WGPUVertexStepMode> {
 
     CUSTOM(0), Undefined(WGPUVertexStepMode_Undefined_NATIVE()), Vertex(WGPUVertexStepMode_Vertex_NATIVE()), Instance(WGPUVertexStepMode_Instance_NATIVE()), Force32(WGPUVertexStepMode_Force32_NATIVE());
 

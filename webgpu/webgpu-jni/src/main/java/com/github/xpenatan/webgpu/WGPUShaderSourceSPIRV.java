@@ -6,9 +6,9 @@
 
 package com.github.xpenatan.webgpu;
 
-import com.github.xpenatan.jParser.idl.IDLBase;
+import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUShaderSourceSPIRV extends IDLBase {
+public class WGPUShaderSourceSPIRV extends NativeObject {
 
     static private WGPUShaderSourceSPIRV WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
 
