@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">WebGPU Demo</string>
+    <string name="btn_previous_test">Prev test</string>
+    <string name="btn_current_test">Current test: \n%1$s</string>
+    <string name="btn_next_test">Next test</string>
 </resources>

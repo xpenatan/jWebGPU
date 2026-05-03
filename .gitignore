@@ -33,4 +33,6 @@ libs/
 
 **/webapp/**
 
+**/local-logs/
+
 CURRENT_CHAT_CONTEXT.MD

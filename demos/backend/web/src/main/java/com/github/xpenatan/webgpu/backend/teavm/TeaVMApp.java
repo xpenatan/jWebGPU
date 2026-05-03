@@ -31,8 +31,8 @@ public class TeaVMApp {
         System.out.println("START");
 
         Location location = Window.current().getLocation();
-        String hostPageBaseURL = location.getFullURL();
-        JMultiplatform.getInstance().getMap().put("WEB_SCRIPT_PATH", hostPageBaseURL + "scripts/");
+        String webScriptPath = getWebScriptPath(location.getFullURL());
+        JMultiplatform.getInstance().getMap().put("WEB_SCRIPT_PATH", webScriptPath);
 
         HTMLDocument document = Window.current().getDocument();
         HTMLCanvasElement canvas = (HTMLCanvasElement)document.createElement("canvas");
@@ -73,6 +73,29 @@ public class TeaVMApp {
             }
         });
         System.out.println("END");
+    }
+
+    private static String getWebScriptPath(String fullURL) {
+        int end = fullURL.length();
+        int queryIndex = fullURL.indexOf('?');
+        int hashIndex = fullURL.indexOf('#');
+        if(queryIndex >= 0) {
+            end = queryIndex;
+        }
+        if(hashIndex >= 0 && hashIndex < end) {
+            end = hashIndex;
+        }
+
+        String pageURL = fullURL.substring(0, end);
+        String baseURL;
+        if(pageURL.endsWith("/")) {
+            baseURL = pageURL;
+        }
+        else {
+            int lastSlash = pageURL.lastIndexOf('/');
+            baseURL = lastSlash >= 0 ? pageURL.substring(0, lastSlash + 1) : pageURL + "/";
+        }
+        return baseURL + "scripts/";
     }
 
     private void tick() {

@@ -119,7 +119,6 @@ public class WGPUApp {
                         WGPUFeatureName featureName = features.getFeatureAt(i);
                         System.out.println("Feature name: " + featureName);
                     }
-                    features.dispose();
 
                     WGPULimits limits = WGPULimits.obtain();
                     device.getLimits(limits);

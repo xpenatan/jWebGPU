@@ -33,7 +33,7 @@ tasks.register<JavaExec>("webgpu_build_project_windows64_dawn_jni") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("webgpu_build_project_web_dawn") {
+tasks.register<JavaExec>("webgpu_build_project_web_dawn_wasm") {
     group = "webgpu"
     description = "Generate native project"
     mainClass.set(mainWGPUClassName)

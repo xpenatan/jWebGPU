@@ -1,4 +1,4 @@
-package com.github.xpenatan.webgpu.demo.app;
+package com.github.xpenatan.webgpu.demo.app.demos.tutorial;
 
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
@@ -286,3 +286,4 @@ public class HelloTriangle implements ApplicationListener {
         return triangleShader;
     }
 }
+

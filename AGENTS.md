@@ -74,7 +74,7 @@ Use task names from Gradle files.
 .\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm
 .\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_ffm
 
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_web_dawn
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_web_dawn_wasm
 .\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_android_wgpu_jni
 
 .\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
@@ -90,7 +90,7 @@ From `.github/workflows/build_and_upload.yml`:
 - Windows: JNI + FFM (`wgpu` and `dawn` on x86_64).
 - Linux: JNI + FFM (`wgpu` on x86_64).
 - macOS: JNI + FFM (`wgpu` on x86_64 and arm64).
-- TeaVM: web Dawn build (`webgpu_build_project_web_dawn`) with emscripten.
+- TeaVM: web Dawn build (`webgpu_build_project_web_dawn_wasm`) with emscripten.
 - Android: JNI build (`webgpu_build_project_android_wgpu_jni`) with NDK.
 
 ## 8) Integration Points

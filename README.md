@@ -6,17 +6,22 @@
 
 jWebGPU is a Java binding stack for WebGPU APIs across desktop, Android, and web targets.
 
-It keeps one Java-facing API shape and generates target-specific glue/code for:
-- JNI desktop runtime
-- FFM desktop runtime
-- TeaVM/WebAssembly web runtime
-- Android JNI runtime
+![jWebGPU Project](demos/app/android/src/main/ic_launcher-playstore.png)
+
+- Browser example: [Studio demo](https://xpenatan.github.io/jWebGPU/index.html?demo=studio)
+- Android app: [Google Play](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
 
 ## What this project is for
 
 - Build and ship WebGPU-capable Java apps across multiple runtimes.
 - Reuse the same API model while swapping backend/runtime packaging per platform.
 - Generate and package bindings from `webgpu-base` + IDL/native sources.
+
+It keeps one Java-facing API shape and generates target-specific glue/code for:
+- JNI desktop runtime
+- FFM desktop runtime
+- TeaVM/WebAssembly web runtime
+- Android JNI runtime
 
 ## Table of Contents
 
@@ -124,7 +129,7 @@ Canonical modules are defined in `settings.gradle.kts`.
 
 ```powershell
 .\gradlew.bat :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_web_dawn
+.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_web_dawn_wasm
 ```
 
 ### Android JNI
@@ -162,7 +167,7 @@ From `.github/workflows/build_and_upload.yml`:
 - Windows: JNI + FFM (`wgpu` and `dawn`).
 - Linux: JNI + FFM (`wgpu`).
 - macOS: JNI + FFM (`wgpu`).
-- TeaVM: web build with `webgpu_build_project_web_dawn`.
+- TeaVM: web build with `webgpu_build_project_web_dawn_wasm`.
 - Android: JNI build with `webgpu_build_project_android_wgpu_jni`.
 
 ## Development Notes

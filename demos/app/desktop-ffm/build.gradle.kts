@@ -24,6 +24,11 @@ tasks.register<JavaExec>("webgpu_demo_app_run_desktop_ffm") {
     mainClass.set(mainClassName)
     classpath = sourceSets["main"].runtimeClasspath
     jvmArgs("--enable-native-access=ALL-UNNAMED")
+    systemProperty("studio.capture", "false")
+    systemProperty("studio.capture.shadow", "false")
+    systemProperty("studio.capture.shadow.diagnostics", "false")
+    systemProperty("studio.capture.max", "1")
+    systemProperty("studio.capture.path", "local-logs/screenshots")
 
     if(DefaultNativePlatform.getCurrentOperatingSystem().isMacOsX) {
         jvmArgs("-XstartOnFirstThread")

@@ -24,6 +24,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     private Surface surface;
     private WGPUAndroidWindow androidWindow;
     private boolean errorDialogShown = false;
+    private boolean frameCallbackPosted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +46,17 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
     @Override
     public void doFrame(long frameTimeNanos) {
+        frameCallbackPosted = false;
 
         try {
             if(surface != null) {
+                if(wGPUInit == 3) {
+                    if(wgpu.surface == null) {
+                        // Re-create surface/config after lifecycle teardown.
+                        wGPUInit = 2;
+                    }
+                }
+
                 if(wGPUInit == 3) {
                     applicationListener.render(wgpu);
                 }
@@ -70,12 +79,28 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
                 }
                 wgpu.update();
             }
-            Choreographer.getInstance().postFrameCallback(this);
+            if(shouldRunFrames()) {
+                postFrameCallbackIfNeeded();
+            }
 
         } catch(Throwable e) {
             e.printStackTrace();
             showErrorDialog(e);
+            removeFrameCallbackIfNeeded();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        removeFrameCallbackIfNeeded();
+    }
+
+    @Override
+    protected void onDestroy() {
+        removeFrameCallbackIfNeeded();
+        disposeCurrentSession();
+        super.onDestroy();
     }
 
     protected void initialize(ApplicationListener applicationListener) {
@@ -122,7 +147,7 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 surface = holder.getSurface();
-                Choreographer.getInstance().postFrameCallback(AndroidApplication.this);
+                postFrameCallbackIfNeeded();
             }
 
             @Override
@@ -131,8 +156,49 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
             @Override
             public void surfaceDestroyed(SurfaceHolder holder) {
+                removeFrameCallbackIfNeeded();
+                disposeCurrentSession();
+                surface = null;
             }
         });
+    }
+
+    private boolean shouldRunFrames() {
+        return !isFinishing() && !isDestroyed() && surface != null;
+    }
+
+    private void postFrameCallbackIfNeeded() {
+        if(frameCallbackPosted) {
+            return;
+        }
+        frameCallbackPosted = true;
+        Choreographer.getInstance().postFrameCallback(this);
+    }
+
+    private void removeFrameCallbackIfNeeded() {
+        if(!frameCallbackPosted) {
+            return;
+        }
+        Choreographer.getInstance().removeFrameCallback(this);
+        frameCallbackPosted = false;
+    }
+
+    private void disposeCurrentSession() {
+        if(wGPUInit == 3 && applicationListener != null) {
+            applicationListener.dispose();
+        }
+        if(wgpu != null && wgpu.surface != null) {
+            try {
+                wgpu.surface.unconfigure();
+            }
+            catch(Throwable ignored) {
+            }
+            wgpu.surface.release();
+            wgpu.surface = null;
+        }
+        if(wgpu != null && wgpu.isReady()) {
+            wGPUInit = 2;
+        }
     }
 
     private void showErrorDialog(Throwable e) {
