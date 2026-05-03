@@ -33,10 +33,11 @@ dependencies {
     implementation("com.github.xpenatan.jParser:loader-web:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-web:${LibExt.jParserVersion}")
-    implementation("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
-    implementation("org.teavm:teavm-core:${LibExt.teaVMVersion}")
-    implementation("org.teavm:teavm-classlib:${LibExt.teaVMVersion}")
-    implementation("org.teavm:teavm-jso-apis:${LibExt.teaVMVersion}")
+
+    api("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
+    api("org.teavm:teavm-core:${LibExt.teaVMVersion}")
+    api("org.teavm:teavm-classlib:${LibExt.teaVMVersion}")
+    api("org.teavm:teavm-jso-apis:${LibExt.teaVMVersion}")
 }
 
 tasks.named("clean") {
