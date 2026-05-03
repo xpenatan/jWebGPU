@@ -12,7 +12,7 @@ import com.github.xpenatan.webgpu.demo.app.demos.tutorial.PlayingWithBuffers;
 public class DemoFactory {
 
     public static DemoId defaultDemo() {
-        return DemoId.PLAYING_WITH_BUFFERS;
+        return DemoId.STUDIO;
     }
 
     public static DemoId resolveDemoId(String value) {

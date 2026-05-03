@@ -36,6 +36,7 @@ public class GpuBufferUtils {
         for(short value : values) {
             byteBuffer.putShort(value);
         }
+        byteBuffer.flip(); // Required
         return byteBuffer;
     }
 }
