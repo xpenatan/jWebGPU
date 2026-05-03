@@ -6,7 +6,7 @@
 
 jWebGPU is a Java binding stack for WebGPU APIs across desktop, Android, and web targets.
 
-![jWebGPU Project](demos/app/android/src/main/ic_launcher-playstore.png)
+<img width="790" height="592" alt="image" src="https://github.com/user-attachments/assets/21317836-0c92-4457-9354-22b494cfc438" />
 
 - Browser example: [Studio demo](https://xpenatan.github.io/jWebGPU/index.html?demo=studio)
 - Android app: [Google Play](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
