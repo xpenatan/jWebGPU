@@ -291,6 +291,8 @@ jobs:
         run: |
           rm -rf webgpu/webgpu-core/src/main/java/*
           rm -rf webgpu/webgpu-web/src/main/java/*
+          rm -rf webgpu/webgpu-jni/src/main/java/*
+          rm -rf webgpu/webgpu-ffm/src/main/java/*
           echo "Deleted generated files"
 
       - name: Generate classes
