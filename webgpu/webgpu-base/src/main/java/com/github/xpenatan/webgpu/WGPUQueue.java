@@ -82,8 +82,8 @@ public class WGPUQueue extends NativeObject {
     */
     /*[-FFM;-REPLACE_BLOCK]
         {
-            java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofBuffer(byteBuffer);
-            internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, seg.address(), dataSize);
+            long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+            internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, dataAddress, dataSize);
         }
     */
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
@@ -121,8 +121,8 @@ public class WGPUQueue extends NativeObject {
     */
     /*[-FFM;-REPLACE_BLOCK]
         {
-            java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofBuffer(byteBuffer);
-            internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), seg.address(), dataSize, dataLayout.native_address, writeSize.native_address);
+            long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+            internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), dataAddress, dataSize, dataLayout.native_address, writeSize.native_address);
         }
     */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {

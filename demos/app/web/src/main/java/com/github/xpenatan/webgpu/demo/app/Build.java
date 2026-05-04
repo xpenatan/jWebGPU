@@ -13,7 +13,7 @@ public class Build {
 
     public static void main(String[] args) throws TeaVMToolException {
         TeaVMTool tool = new TeaVMTool();
-        tool.setObfuscated(false);
+        tool.setObfuscated(true);
         tool.setOptimizationLevel(TeaVMOptimizationLevel.SIMPLE);
         tool.setClassLoader(Build.class.getClassLoader());
         tool.setIncremental(false);

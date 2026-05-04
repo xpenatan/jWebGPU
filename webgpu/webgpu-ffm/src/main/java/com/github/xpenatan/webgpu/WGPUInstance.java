@@ -45,7 +45,7 @@ delete nativeObject;
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -61,7 +61,7 @@ return nativeObject->IsValid();
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -77,7 +77,7 @@ nativeObject->Release();
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -93,7 +93,7 @@ nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (:
         try {
             FFMHandles.internal_native_RequestAdapter__JJIJ.invokeExact(this_addr, options_addr, mode, callback_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -113,9 +113,9 @@ return (int64_t)obj;
 */
     public static long internal_native_CreateWebSurface_addr(long this_addr, String canvas) {
         try {
-            return (long) FFMHandles.internal_native_CreateWebSurface_addr__JLjava_lang_String_2.invokeExact(this_addr, (java.lang.foreign.MemorySegment) (canvas != null ? java.lang.foreign.Arena.global().allocateFrom(canvas) : java.lang.foreign.MemorySegment.NULL));
+            return (long) FFMHandles.internal_native_CreateWebSurface_addr__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(canvas));
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -137,7 +137,7 @@ return (int64_t)obj;
         try {
             return (long) FFMHandles.internal_native_CreateWindowsSurface_addr__JJ.invokeExact(this_addr, hwnd_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -159,7 +159,7 @@ return (int64_t)obj;
         try {
             return (long) FFMHandles.internal_native_CreateLinuxSurface_addr__JZJJ.invokeExact(this_addr, isWayland, windowOrSurface_addr, display_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -181,7 +181,7 @@ return (int64_t)obj;
         try {
             return (long) FFMHandles.internal_native_CreateMacSurface_addr__JJ.invokeExact(this_addr, metalLayer_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -203,7 +203,7 @@ return (int64_t)obj;
         try {
             return (long) FFMHandles.internal_native_CreateAndroidSurface_addr__JJ.invokeExact(this_addr, surface_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -219,7 +219,7 @@ nativeObject->ProcessEvents();
         try {
             FFMHandles.internal_native_ProcessEvents__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -242,40 +242,62 @@ return (int)nativeObject->WaitAny((JGPU::WGPUVectorFutureWaitInfo* )futureVector
         try {
             return (int) FFMHandles.internal_native_WaitAny__JJI.invokeExact(this_addr, futureVector_addr, timeoutNS);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle internal_native_IsValid__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1IsValid__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle internal_native_Release__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1Release__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1deleteNative__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_RequestAdapter__JJIJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1RequestAdapter__JJIJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_IsValid__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1IsValid__J", FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateWebSurface_addr__JLjava_lang_String_2 = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateWebSurface_1addr__JLjava_lang_String_2").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
+        static final java.lang.invoke.MethodHandle internal_native_Release__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1Release__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateWindowsSurface_addr__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateWindowsSurface_1addr__JJ").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_RequestAdapter__JJIJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1RequestAdapter__JJIJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateLinuxSurface_addr__JZJJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateLinuxSurface_1addr__JZJJ").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateWebSurface_addr__JLjava_lang_String_2 = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateWebSurface_1addr__JLjava_lang_String_2", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateMacSurface_addr__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateMacSurface_1addr__JJ").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateWindowsSurface_addr__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateWindowsSurface_1addr__JJ", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateAndroidSurface_addr__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateAndroidSurface_1addr__JJ").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateLinuxSurface_addr__JZJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateLinuxSurface_1addr__JZJJ", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_ProcessEvents__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1ProcessEvents__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateMacSurface_addr__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateMacSurface_1addr__JJ", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_WaitAny__JJI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1WaitAny__JJI").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_CreateAndroidSurface_addr__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1CreateAndroidSurface_1addr__JJ", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_ProcessEvents__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1ProcessEvents__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_WaitAny__JJI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUInstance_internal_1native_1WaitAny__JJI", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
     }
 }

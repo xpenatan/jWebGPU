@@ -58,7 +58,7 @@ return (int64_t)WGPUStencilOperation_Undefined;
         try {
             return (int) FFMHandles.WGPUStencilOperation_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -69,7 +69,7 @@ return (int64_t)WGPUStencilOperation_Keep;
         try {
             return (int) FFMHandles.WGPUStencilOperation_Keep_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -80,7 +80,7 @@ return (int64_t)WGPUStencilOperation_Zero;
         try {
             return (int) FFMHandles.WGPUStencilOperation_Zero_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -91,7 +91,7 @@ return (int64_t)WGPUStencilOperation_Replace;
         try {
             return (int) FFMHandles.WGPUStencilOperation_Replace_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -102,7 +102,7 @@ return (int64_t)WGPUStencilOperation_Invert;
         try {
             return (int) FFMHandles.WGPUStencilOperation_Invert_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -113,7 +113,7 @@ return (int64_t)WGPUStencilOperation_IncrementClamp;
         try {
             return (int) FFMHandles.WGPUStencilOperation_IncrementClamp_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -124,7 +124,7 @@ return (int64_t)WGPUStencilOperation_DecrementClamp;
         try {
             return (int) FFMHandles.WGPUStencilOperation_DecrementClamp_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -135,7 +135,7 @@ return (int64_t)WGPUStencilOperation_IncrementWrap;
         try {
             return (int) FFMHandles.WGPUStencilOperation_IncrementWrap_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -146,7 +146,7 @@ return (int64_t)WGPUStencilOperation_DecrementWrap;
         try {
             return (int) FFMHandles.WGPUStencilOperation_DecrementWrap_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -157,38 +157,60 @@ return (int64_t)WGPUStencilOperation_Force32;
         try {
             return (int) FFMHandles.WGPUStencilOperation_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Undefined_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Undefined_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Keep_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Keep_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Zero_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Zero_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Replace_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Replace_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Keep_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Keep_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Invert_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Invert_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Zero_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Zero_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_IncrementClamp_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1IncrementClamp_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Replace_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Replace_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_DecrementClamp_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1DecrementClamp_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Invert_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Invert_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_IncrementWrap_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1IncrementWrap_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_IncrementClamp_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1IncrementClamp_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_DecrementWrap_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1DecrementWrap_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_DecrementClamp_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1DecrementClamp_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_IncrementWrap_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1IncrementWrap_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_DecrementWrap_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1DecrementWrap_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUStencilOperation_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUStencilOperation_WGPUStencilOperation_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

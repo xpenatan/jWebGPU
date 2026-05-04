@@ -60,7 +60,7 @@ return (int64_t)WGPUSType_ShaderSourceSPIRV;
         try {
             return (int) FFMHandles.WGPUSType_ShaderSourceSPIRV_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -71,7 +71,7 @@ return (int64_t)WGPUSType_ShaderSourceWGSL;
         try {
             return (int) FFMHandles.WGPUSType_ShaderSourceWGSL_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -82,7 +82,7 @@ return (int64_t)WGPUSType_RenderPassMaxDrawCount;
         try {
             return (int) FFMHandles.WGPUSType_RenderPassMaxDrawCount_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -93,7 +93,7 @@ return (int64_t)WGPUSType_SurfaceSourceMetalLayer;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceMetalLayer_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -104,7 +104,7 @@ return (int64_t)WGPUSType_SurfaceSourceWindowsHWND;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceWindowsHWND_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -115,7 +115,7 @@ return (int64_t)WGPUSType_SurfaceSourceXlibWindow;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceXlibWindow_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -126,7 +126,7 @@ return (int64_t)WGPUSType_SurfaceSourceWaylandSurface;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceWaylandSurface_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -137,7 +137,7 @@ return (int64_t)WGPUSType_SurfaceSourceAndroidNativeWindow;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -148,7 +148,7 @@ return (int64_t)WGPUSType_SurfaceSourceXCBWindow;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceXCBWindow_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -159,7 +159,7 @@ return (int64_t)WGPUSType_SurfaceColorManagement;
         try {
             return (int) FFMHandles.WGPUSType_SurfaceColorManagement_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -170,7 +170,7 @@ return (int64_t)WGPUSType_RequestAdapterWebXROptions;
         try {
             return (int) FFMHandles.WGPUSType_RequestAdapterWebXROptions_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -181,42 +181,64 @@ return (int64_t)WGPUSType_Force32;
         try {
             return (int) FFMHandles.WGPUSType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceSPIRV_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1ShaderSourceSPIRV_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceWGSL_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1ShaderSourceWGSL_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUSType_RenderPassMaxDrawCount_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1RenderPassMaxDrawCount_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceSPIRV_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1ShaderSourceSPIRV_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceMetalLayer_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceMetalLayer_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceWGSL_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1ShaderSourceWGSL_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWindowsHWND_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceWindowsHWND_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_RenderPassMaxDrawCount_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1RenderPassMaxDrawCount_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXlibWindow_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceXlibWindow_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceMetalLayer_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceMetalLayer_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWaylandSurface_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceWaylandSurface_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWindowsHWND_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceWindowsHWND_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceAndroidNativeWindow_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXlibWindow_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceXlibWindow_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXCBWindow_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceXCBWindow_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWaylandSurface_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceWaylandSurface_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceColorManagement_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceColorManagement_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceAndroidNativeWindow_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_RequestAdapterWebXROptions_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1RequestAdapterWebXROptions_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXCBWindow_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceSourceXCBWindow_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceColorManagement_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1SurfaceColorManagement_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUSType_RequestAdapterWebXROptions_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1RequestAdapterWebXROptions_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUSType_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSType_WGPUSType_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

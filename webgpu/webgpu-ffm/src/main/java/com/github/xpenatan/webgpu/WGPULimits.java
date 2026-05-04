@@ -33,7 +33,7 @@ return (int64_t)new JGPU::WGPULimits();
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -63,7 +63,7 @@ delete nativeObject;
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -79,7 +79,7 @@ nativeObject->SetMaxTextureDimension1D((int)value);
         try {
             FFMHandles.internal_native_SetMaxTextureDimension1D__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -95,7 +95,7 @@ return nativeObject->GetMaxTextureDimension1D();
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureDimension1D__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -111,7 +111,7 @@ nativeObject->SetMaxTextureDimension2D((int)value);
         try {
             FFMHandles.internal_native_SetMaxTextureDimension2D__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -127,7 +127,7 @@ return nativeObject->GetMaxTextureDimension2D();
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureDimension2D__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -143,7 +143,7 @@ nativeObject->SetMaxTextureDimension3D((int)value);
         try {
             FFMHandles.internal_native_SetMaxTextureDimension3D__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -159,7 +159,7 @@ return nativeObject->GetMaxTextureDimension3D();
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureDimension3D__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -175,7 +175,7 @@ nativeObject->SetMaxTextureArrayLayers((int)value);
         try {
             FFMHandles.internal_native_SetMaxTextureArrayLayers__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -191,7 +191,7 @@ return nativeObject->GetMaxTextureArrayLayers();
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureArrayLayers__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -207,7 +207,7 @@ nativeObject->SetMaxBindGroups((int)value);
         try {
             FFMHandles.internal_native_SetMaxBindGroups__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -223,7 +223,7 @@ return nativeObject->GetMaxBindGroups();
         try {
             return (int) FFMHandles.internal_native_GetMaxBindGroups__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -239,7 +239,7 @@ nativeObject->SetMaxBindGroupsPlusVertexBuffers((int)value);
         try {
             FFMHandles.internal_native_SetMaxBindGroupsPlusVertexBuffers__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -255,7 +255,7 @@ return nativeObject->GetMaxBindGroupsPlusVertexBuffers();
         try {
             return (int) FFMHandles.internal_native_GetMaxBindGroupsPlusVertexBuffers__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -271,7 +271,7 @@ nativeObject->SetMaxBindingsPerBindGroup((int)value);
         try {
             FFMHandles.internal_native_SetMaxBindingsPerBindGroup__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -287,7 +287,7 @@ return nativeObject->GetMaxBindingsPerBindGroup();
         try {
             return (int) FFMHandles.internal_native_GetMaxBindingsPerBindGroup__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -303,7 +303,7 @@ nativeObject->SetMaxDynamicUniformBuffersPerPipelineLayout((int)value);
         try {
             FFMHandles.internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -319,7 +319,7 @@ return nativeObject->GetMaxDynamicUniformBuffersPerPipelineLayout();
         try {
             return (int) FFMHandles.internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -335,7 +335,7 @@ nativeObject->SetMaxDynamicStorageBuffersPerPipelineLayout((int)value);
         try {
             FFMHandles.internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -351,7 +351,7 @@ return nativeObject->GetMaxDynamicStorageBuffersPerPipelineLayout();
         try {
             return (int) FFMHandles.internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -367,7 +367,7 @@ nativeObject->SetMaxSampledTexturesPerShaderStage((int)value);
         try {
             FFMHandles.internal_native_SetMaxSampledTexturesPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -383,7 +383,7 @@ return nativeObject->GetMaxSampledTexturesPerShaderStage();
         try {
             return (int) FFMHandles.internal_native_GetMaxSampledTexturesPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -399,7 +399,7 @@ nativeObject->SetMaxSamplersPerShaderStage((int)value);
         try {
             FFMHandles.internal_native_SetMaxSamplersPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -415,7 +415,7 @@ return nativeObject->GetMaxSamplersPerShaderStage();
         try {
             return (int) FFMHandles.internal_native_GetMaxSamplersPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -431,7 +431,7 @@ nativeObject->SetMaxStorageBuffersPerShaderStage((int)value);
         try {
             FFMHandles.internal_native_SetMaxStorageBuffersPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -447,7 +447,7 @@ return nativeObject->GetMaxStorageBuffersPerShaderStage();
         try {
             return (int) FFMHandles.internal_native_GetMaxStorageBuffersPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -463,7 +463,7 @@ nativeObject->SetMaxStorageTexturesPerShaderStage((int)value);
         try {
             FFMHandles.internal_native_SetMaxStorageTexturesPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -479,7 +479,7 @@ return nativeObject->GetMaxStorageTexturesPerShaderStage();
         try {
             return (int) FFMHandles.internal_native_GetMaxStorageTexturesPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -495,7 +495,7 @@ nativeObject->SetMaxUniformBuffersPerShaderStage((int)value);
         try {
             FFMHandles.internal_native_SetMaxUniformBuffersPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -511,7 +511,7 @@ return nativeObject->GetMaxUniformBuffersPerShaderStage();
         try {
             return (int) FFMHandles.internal_native_GetMaxUniformBuffersPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -527,7 +527,7 @@ nativeObject->SetMaxUniformBufferBindingSize((int)value);
         try {
             FFMHandles.internal_native_SetMaxUniformBufferBindingSize__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -543,7 +543,7 @@ return nativeObject->GetMaxUniformBufferBindingSize();
         try {
             return (int) FFMHandles.internal_native_GetMaxUniformBufferBindingSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -559,7 +559,7 @@ nativeObject->SetMaxStorageBufferBindingSize((int)value);
         try {
             FFMHandles.internal_native_SetMaxStorageBufferBindingSize__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -575,7 +575,7 @@ return nativeObject->GetMaxStorageBufferBindingSize();
         try {
             return (int) FFMHandles.internal_native_GetMaxStorageBufferBindingSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -591,7 +591,7 @@ nativeObject->SetMinUniformBufferOffsetAlignment((int)value);
         try {
             FFMHandles.internal_native_SetMinUniformBufferOffsetAlignment__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -607,7 +607,7 @@ return nativeObject->GetMinUniformBufferOffsetAlignment();
         try {
             return (int) FFMHandles.internal_native_GetMinUniformBufferOffsetAlignment__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -623,7 +623,7 @@ nativeObject->SetMinStorageBufferOffsetAlignment((int)value);
         try {
             FFMHandles.internal_native_SetMinStorageBufferOffsetAlignment__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -639,7 +639,7 @@ return nativeObject->GetMinStorageBufferOffsetAlignment();
         try {
             return (int) FFMHandles.internal_native_GetMinStorageBufferOffsetAlignment__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -655,7 +655,7 @@ nativeObject->SetMaxVertexBuffers((int)value);
         try {
             FFMHandles.internal_native_SetMaxVertexBuffers__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -671,7 +671,7 @@ return nativeObject->GetMaxVertexBuffers();
         try {
             return (int) FFMHandles.internal_native_GetMaxVertexBuffers__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -687,7 +687,7 @@ nativeObject->SetMaxBufferSize(value);
         try {
             FFMHandles.internal_native_SetMaxBufferSize__JJ.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -703,7 +703,7 @@ return nativeObject->GetMaxBufferSize();
         try {
             return (int) FFMHandles.internal_native_GetMaxBufferSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -719,7 +719,7 @@ nativeObject->SetMaxVertexAttributes((int)value);
         try {
             FFMHandles.internal_native_SetMaxVertexAttributes__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -735,7 +735,7 @@ return nativeObject->GetMaxVertexAttributes();
         try {
             return (int) FFMHandles.internal_native_GetMaxVertexAttributes__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -751,7 +751,7 @@ nativeObject->SetMaxVertexBufferArrayStride((int)value);
         try {
             FFMHandles.internal_native_SetMaxVertexBufferArrayStride__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -767,7 +767,7 @@ return nativeObject->GetMaxVertexBufferArrayStride();
         try {
             return (int) FFMHandles.internal_native_GetMaxVertexBufferArrayStride__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -783,7 +783,7 @@ nativeObject->SetMaxInterStageShaderVariables((int)value);
         try {
             FFMHandles.internal_native_SetMaxInterStageShaderVariables__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -799,7 +799,7 @@ return nativeObject->GetMaxInterStageShaderVariables();
         try {
             return (int) FFMHandles.internal_native_GetMaxInterStageShaderVariables__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -815,7 +815,7 @@ nativeObject->SetMaxColorAttachments((int)value);
         try {
             FFMHandles.internal_native_SetMaxColorAttachments__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -831,7 +831,7 @@ return nativeObject->GetMaxColorAttachments();
         try {
             return (int) FFMHandles.internal_native_GetMaxColorAttachments__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -847,7 +847,7 @@ nativeObject->SetMaxColorAttachmentBytesPerSample((int)value);
         try {
             FFMHandles.internal_native_SetMaxColorAttachmentBytesPerSample__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -863,7 +863,7 @@ return nativeObject->GetMaxColorAttachmentBytesPerSample();
         try {
             return (int) FFMHandles.internal_native_GetMaxColorAttachmentBytesPerSample__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -879,7 +879,7 @@ nativeObject->SetMaxComputeWorkgroupStorageSize((int)value);
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupStorageSize__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -895,7 +895,7 @@ return nativeObject->GetMaxComputeWorkgroupStorageSize();
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupStorageSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -911,7 +911,7 @@ nativeObject->SetMaxComputeInvocationsPerWorkgroup((int)value);
         try {
             FFMHandles.internal_native_SetMaxComputeInvocationsPerWorkgroup__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -927,7 +927,7 @@ return nativeObject->GetMaxComputeInvocationsPerWorkgroup();
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeInvocationsPerWorkgroup__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -943,7 +943,7 @@ nativeObject->SetMaxComputeWorkgroupSizeX((int)value);
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeX__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -959,7 +959,7 @@ return nativeObject->GetMaxComputeWorkgroupSizeX();
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeX__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -975,7 +975,7 @@ nativeObject->SetMaxComputeWorkgroupSizeY((int)value);
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeY__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -991,7 +991,7 @@ return nativeObject->GetMaxComputeWorkgroupSizeY();
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeY__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -1007,7 +1007,7 @@ nativeObject->SetMaxComputeWorkgroupSizeZ((int)value);
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeZ__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -1023,7 +1023,7 @@ return nativeObject->GetMaxComputeWorkgroupSizeZ();
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeZ__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -1039,7 +1039,7 @@ nativeObject->SetMaxComputeWorkgroupsPerDimension((int)value);
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupsPerDimension__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -1055,7 +1055,7 @@ return nativeObject->GetMaxComputeWorkgroupsPerDimension();
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupsPerDimension__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -1076,148 +1076,170 @@ return (int64_t)JGPU::WGPULimits::Obtain();
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1create_1addr__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension1D__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureDimension1D__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1create_1addr__", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension1D__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureDimension1D__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1deleteNative__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension2D__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureDimension2D__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension1D__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureDimension1D__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension2D__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureDimension2D__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension1D__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureDimension1D__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension3D__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureDimension3D__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension2D__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureDimension2D__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension3D__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureDimension3D__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension2D__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureDimension2D__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureArrayLayers__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureArrayLayers__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension3D__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureDimension3D__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureArrayLayers__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureArrayLayers__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension3D__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureDimension3D__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroups__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBindGroups__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureArrayLayers__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxTextureArrayLayers__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroups__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBindGroups__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureArrayLayers__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxTextureArrayLayers__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroupsPlusVertexBuffers__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBindGroupsPlusVertexBuffers__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroups__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBindGroups__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroupsPlusVertexBuffers__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBindGroupsPlusVertexBuffers__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroups__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBindGroups__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindingsPerBindGroup__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBindingsPerBindGroup__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroupsPlusVertexBuffers__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBindGroupsPlusVertexBuffers__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindingsPerBindGroup__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBindingsPerBindGroup__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroupsPlusVertexBuffers__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBindGroupsPlusVertexBuffers__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxDynamicUniformBuffersPerPipelineLayout__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindingsPerBindGroup__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBindingsPerBindGroup__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxDynamicUniformBuffersPerPipelineLayout__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindingsPerBindGroup__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBindingsPerBindGroup__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxDynamicStorageBuffersPerPipelineLayout__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxDynamicUniformBuffersPerPipelineLayout__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxDynamicStorageBuffersPerPipelineLayout__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxDynamicUniformBuffersPerPipelineLayout__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxSampledTexturesPerShaderStage__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxSampledTexturesPerShaderStage__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxDynamicStorageBuffersPerPipelineLayout__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxSampledTexturesPerShaderStage__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxSampledTexturesPerShaderStage__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxDynamicStorageBuffersPerPipelineLayout__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxSamplersPerShaderStage__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxSamplersPerShaderStage__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxSampledTexturesPerShaderStage__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxSampledTexturesPerShaderStage__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxSamplersPerShaderStage__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxSamplersPerShaderStage__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxSampledTexturesPerShaderStage__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxSampledTexturesPerShaderStage__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBuffersPerShaderStage__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxStorageBuffersPerShaderStage__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxSamplersPerShaderStage__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxSamplersPerShaderStage__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBuffersPerShaderStage__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxStorageBuffersPerShaderStage__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxSamplersPerShaderStage__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxSamplersPerShaderStage__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageTexturesPerShaderStage__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxStorageTexturesPerShaderStage__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBuffersPerShaderStage__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxStorageBuffersPerShaderStage__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageTexturesPerShaderStage__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxStorageTexturesPerShaderStage__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBuffersPerShaderStage__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxStorageBuffersPerShaderStage__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBuffersPerShaderStage__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxUniformBuffersPerShaderStage__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageTexturesPerShaderStage__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxStorageTexturesPerShaderStage__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBuffersPerShaderStage__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxUniformBuffersPerShaderStage__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageTexturesPerShaderStage__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxStorageTexturesPerShaderStage__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBufferBindingSize__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxUniformBufferBindingSize__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBuffersPerShaderStage__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxUniformBuffersPerShaderStage__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBufferBindingSize__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxUniformBufferBindingSize__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBuffersPerShaderStage__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxUniformBuffersPerShaderStage__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBufferBindingSize__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxStorageBufferBindingSize__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBufferBindingSize__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxUniformBufferBindingSize__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBufferBindingSize__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxStorageBufferBindingSize__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBufferBindingSize__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxUniformBufferBindingSize__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMinUniformBufferOffsetAlignment__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMinUniformBufferOffsetAlignment__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBufferBindingSize__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxStorageBufferBindingSize__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMinUniformBufferOffsetAlignment__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMinUniformBufferOffsetAlignment__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBufferBindingSize__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxStorageBufferBindingSize__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMinStorageBufferOffsetAlignment__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMinStorageBufferOffsetAlignment__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMinUniformBufferOffsetAlignment__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMinUniformBufferOffsetAlignment__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMinStorageBufferOffsetAlignment__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMinStorageBufferOffsetAlignment__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMinUniformBufferOffsetAlignment__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMinUniformBufferOffsetAlignment__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBuffers__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxVertexBuffers__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMinStorageBufferOffsetAlignment__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMinStorageBufferOffsetAlignment__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBuffers__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxVertexBuffers__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMinStorageBufferOffsetAlignment__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMinStorageBufferOffsetAlignment__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBufferSize__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBufferSize__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBuffers__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxVertexBuffers__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBufferSize__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBufferSize__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBuffers__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxVertexBuffers__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexAttributes__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxVertexAttributes__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBufferSize__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxBufferSize__JJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexAttributes__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxVertexAttributes__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBufferSize__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxBufferSize__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBufferArrayStride__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxVertexBufferArrayStride__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexAttributes__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxVertexAttributes__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBufferArrayStride__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxVertexBufferArrayStride__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexAttributes__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxVertexAttributes__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxInterStageShaderVariables__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxInterStageShaderVariables__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBufferArrayStride__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxVertexBufferArrayStride__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxInterStageShaderVariables__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxInterStageShaderVariables__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBufferArrayStride__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxVertexBufferArrayStride__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachments__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxColorAttachments__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxInterStageShaderVariables__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxInterStageShaderVariables__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachments__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxColorAttachments__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxInterStageShaderVariables__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxInterStageShaderVariables__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachmentBytesPerSample__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxColorAttachmentBytesPerSample__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachments__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxColorAttachments__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachmentBytesPerSample__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxColorAttachmentBytesPerSample__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachments__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxColorAttachments__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupStorageSize__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupStorageSize__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachmentBytesPerSample__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxColorAttachmentBytesPerSample__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupStorageSize__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupStorageSize__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachmentBytesPerSample__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxColorAttachmentBytesPerSample__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeInvocationsPerWorkgroup__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeInvocationsPerWorkgroup__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupStorageSize__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupStorageSize__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeInvocationsPerWorkgroup__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeInvocationsPerWorkgroup__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupStorageSize__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupStorageSize__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeX__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupSizeX__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeInvocationsPerWorkgroup__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeInvocationsPerWorkgroup__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeX__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupSizeX__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeInvocationsPerWorkgroup__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeInvocationsPerWorkgroup__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeY__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupSizeY__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeX__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupSizeX__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeY__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupSizeY__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeX__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupSizeX__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeZ__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupSizeZ__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeY__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupSizeY__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeZ__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupSizeZ__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeY__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupSizeY__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupsPerDimension__JI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupsPerDimension__JI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeZ__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupSizeZ__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupsPerDimension__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupsPerDimension__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeZ__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupSizeZ__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1Obtain_1addr__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupsPerDimension__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1SetMaxComputeWorkgroupsPerDimension__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupsPerDimension__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1GetMaxComputeWorkgroupsPerDimension__J", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPULimits_internal_1native_1Obtain_1addr__", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }

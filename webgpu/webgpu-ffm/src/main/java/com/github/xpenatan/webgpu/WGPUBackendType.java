@@ -58,7 +58,7 @@ return (int64_t)WGPUBackendType_Undefined;
         try {
             return (int) FFMHandles.WGPUBackendType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -69,7 +69,7 @@ return (int64_t)WGPUBackendType_Null;
         try {
             return (int) FFMHandles.WGPUBackendType_Null_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -80,7 +80,7 @@ return (int64_t)WGPUBackendType_WebGPU;
         try {
             return (int) FFMHandles.WGPUBackendType_WebGPU_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -91,7 +91,7 @@ return (int64_t)WGPUBackendType_D3D11;
         try {
             return (int) FFMHandles.WGPUBackendType_D3D11_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -102,7 +102,7 @@ return (int64_t)WGPUBackendType_D3D12;
         try {
             return (int) FFMHandles.WGPUBackendType_D3D12_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -113,7 +113,7 @@ return (int64_t)WGPUBackendType_Metal;
         try {
             return (int) FFMHandles.WGPUBackendType_Metal_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -124,7 +124,7 @@ return (int64_t)WGPUBackendType_Vulkan;
         try {
             return (int) FFMHandles.WGPUBackendType_Vulkan_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -135,7 +135,7 @@ return (int64_t)WGPUBackendType_OpenGL;
         try {
             return (int) FFMHandles.WGPUBackendType_OpenGL_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -146,7 +146,7 @@ return (int64_t)WGPUBackendType_OpenGLES;
         try {
             return (int) FFMHandles.WGPUBackendType_OpenGLES_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -157,38 +157,60 @@ return (int64_t)WGPUBackendType_Force32;
         try {
             return (int) FFMHandles.WGPUBackendType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_Undefined_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Undefined_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_Null_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Null_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_WebGPU_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1WebGPU_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_D3D11_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1D3D11_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_Null_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Null_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_D3D12_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1D3D12_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_WebGPU_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1WebGPU_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_Metal_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Metal_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_D3D11_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1D3D11_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_Vulkan_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Vulkan_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_D3D12_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1D3D12_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_OpenGL_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1OpenGL_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_Metal_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Metal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_OpenGLES_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1OpenGLES_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_Vulkan_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Vulkan_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBackendType_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBackendType_OpenGL_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1OpenGL_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUBackendType_OpenGLES_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1OpenGLES_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUBackendType_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBackendType_WGPUBackendType_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

@@ -67,7 +67,7 @@ return (int64_t)WGPUBlendFactor_Undefined;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -78,7 +78,7 @@ return (int64_t)WGPUBlendFactor_Zero;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Zero_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -89,7 +89,7 @@ return (int64_t)WGPUBlendFactor_One;
         try {
             return (int) FFMHandles.WGPUBlendFactor_One_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -100,7 +100,7 @@ return (int64_t)WGPUBlendFactor_Src;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Src_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -111,7 +111,7 @@ return (int64_t)WGPUBlendFactor_OneMinusSrc;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -122,7 +122,7 @@ return (int64_t)WGPUBlendFactor_SrcAlpha;
         try {
             return (int) FFMHandles.WGPUBlendFactor_SrcAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -133,7 +133,7 @@ return (int64_t)WGPUBlendFactor_OneMinusSrcAlpha;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrcAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -144,7 +144,7 @@ return (int64_t)WGPUBlendFactor_Dst;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Dst_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -155,7 +155,7 @@ return (int64_t)WGPUBlendFactor_OneMinusDst;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusDst_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -166,7 +166,7 @@ return (int64_t)WGPUBlendFactor_DstAlpha;
         try {
             return (int) FFMHandles.WGPUBlendFactor_DstAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -177,7 +177,7 @@ return (int64_t)WGPUBlendFactor_OneMinusDstAlpha;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusDstAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -188,7 +188,7 @@ return (int64_t)WGPUBlendFactor_SrcAlphaSaturated;
         try {
             return (int) FFMHandles.WGPUBlendFactor_SrcAlphaSaturated_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -199,7 +199,7 @@ return (int64_t)WGPUBlendFactor_Constant;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Constant_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -210,7 +210,7 @@ return (int64_t)WGPUBlendFactor_OneMinusConstant;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusConstant_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -221,7 +221,7 @@ return (int64_t)WGPUBlendFactor_Src1;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Src1_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -232,7 +232,7 @@ return (int64_t)WGPUBlendFactor_OneMinusSrc1;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc1_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -243,7 +243,7 @@ return (int64_t)WGPUBlendFactor_Src1Alpha;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Src1Alpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -254,7 +254,7 @@ return (int64_t)WGPUBlendFactor_OneMinusSrc1Alpha;
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -265,56 +265,78 @@ return (int64_t)WGPUBlendFactor_Force32;
         try {
             return (int) FFMHandles.WGPUBlendFactor_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Undefined_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Undefined_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Zero_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Zero_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_One_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1One_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Src_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Src_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Zero_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Zero_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrc_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrc_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_One_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1One_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_SrcAlpha_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1SrcAlpha_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Src_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Src_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrcAlpha_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrcAlpha_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrc_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrc_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Dst_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Dst_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_SrcAlpha_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1SrcAlpha_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusDst_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusDst_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrcAlpha_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrcAlpha_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_DstAlpha_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1DstAlpha_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Dst_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Dst_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusDstAlpha_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusDstAlpha_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusDst_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusDst_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_SrcAlphaSaturated_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1SrcAlphaSaturated_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_DstAlpha_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1DstAlpha_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Constant_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Constant_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusDstAlpha_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusDstAlpha_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusConstant_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusConstant_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_SrcAlphaSaturated_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1SrcAlphaSaturated_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Src1_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Src1_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Constant_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Constant_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrc1_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrc1_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusConstant_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusConstant_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Src1Alpha_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Src1Alpha_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Src1_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Src1_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrc1Alpha_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrc1_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrc1_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Src1Alpha_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Src1Alpha_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1OneMinusSrc1Alpha_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUBlendFactor_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendFactor_WGPUBlendFactor_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

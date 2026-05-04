@@ -13,7 +13,14 @@ java {
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:desktop"))
-    api(project(":webgpu:webgpu-ffm"))
+
+    if(LibExt.exampleUseRepoLibs) {
+        api("com.github.xpenatan.jWebGPU:webgpu-ffm:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-ffm:-SNAPSHOT:desktop")
+    }
+    else {
+        api(project(":webgpu:webgpu-ffm"))
+    }
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.app.Main"

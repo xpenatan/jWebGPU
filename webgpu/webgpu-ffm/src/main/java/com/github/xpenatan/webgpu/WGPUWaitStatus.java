@@ -48,7 +48,7 @@ return (int64_t)WGPUWaitStatus_Success;
         try {
             return (int) FFMHandles.WGPUWaitStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -59,7 +59,7 @@ return (int64_t)WGPUWaitStatus_TimedOut;
         try {
             return (int) FFMHandles.WGPUWaitStatus_TimedOut_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -70,24 +70,46 @@ return (int64_t)WGPUWaitStatus_Force32;
         try {
             return (int) FFMHandles.WGPUWaitStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUWaitStatus_Success_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUWaitStatus_WGPUWaitStatus_1Success_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUWaitStatus_TimedOut_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUWaitStatus_WGPUWaitStatus_1TimedOut_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUWaitStatus_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUWaitStatus_WGPUWaitStatus_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUWaitStatus_Success_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUWaitStatus_WGPUWaitStatus_1Success_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWaitStatus_TimedOut_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUWaitStatus_WGPUWaitStatus_1TimedOut_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWaitStatus_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUWaitStatus_WGPUWaitStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

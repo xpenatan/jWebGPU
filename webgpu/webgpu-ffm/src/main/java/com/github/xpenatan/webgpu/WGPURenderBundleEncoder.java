@@ -31,7 +31,7 @@ return (int64_t)new JGPU::WGPURenderBundleEncoder();
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -61,7 +61,7 @@ delete nativeObject;
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -75,9 +75,9 @@ nativeObject->SetLabel(label);
 */
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
-            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, (java.lang.foreign.MemorySegment) (label != null ? java.lang.foreign.Arena.global().allocateFrom(label) : java.lang.foreign.MemorySegment.NULL));
+            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -93,7 +93,7 @@ nativeObject->Release();
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -109,7 +109,7 @@ nativeObject->SetPipeline((JGPU::WGPURenderPipeline* )renderPipeline_addr);
         try {
             FFMHandles.internal_native_SetPipeline__JJ.invokeExact(this_addr, renderPipeline_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -125,7 +125,7 @@ nativeObject->Draw((int)vertexCount, (int)instanceCount, (int)firstVertex, (int)
         try {
             FFMHandles.internal_native_Draw__JIIII.invokeExact(this_addr, vertexCount, instanceCount, firstVertex, firstInstance);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -141,7 +141,7 @@ nativeObject->DrawIndexed((int)indexCount, (int)instanceCount, (int)firstIndex, 
         try {
             FFMHandles.internal_native_DrawIndexed__JIIIII.invokeExact(this_addr, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -157,7 +157,7 @@ nativeObject->DrawIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)indirec
         try {
             FFMHandles.internal_native_DrawIndirect__JJI.invokeExact(this_addr, indirectBuffer_addr, indirectOffset);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -173,7 +173,7 @@ nativeObject->DrawIndexedIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)
         try {
             FFMHandles.internal_native_DrawIndexedIndirect__JJI.invokeExact(this_addr, indirectBuffer_addr, indirectOffset);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -189,7 +189,7 @@ nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (
         try {
             FFMHandles.internal_native_SetBindGroup__JIJJ.invokeExact(this_addr, groupIndex, group_addr, dynamicOffsets_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -205,7 +205,7 @@ nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
         try {
             FFMHandles.internal_native_SetBindGroup__JIJ.invokeExact(this_addr, groupIndex, group_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -221,7 +221,7 @@ nativeObject->SetVertexBuffer((int)slot, (JGPU::WGPUBuffer* )buffer_addr, (int)o
         try {
             FFMHandles.internal_native_SetVertexBuffer__JIJII.invokeExact(this_addr, slot, buffer_addr, offset, size);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -237,7 +237,7 @@ nativeObject->SetIndexBuffer((JGPU::WGPUBuffer* )buffer_addr, (::WGPUIndexFormat
         try {
             FFMHandles.internal_native_SetIndexBuffer__JJIII.invokeExact(this_addr, buffer_addr, format, offset, size);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -251,9 +251,9 @@ nativeObject->InsertDebugMarker(label);
 */
     public static void internal_native_InsertDebugMarker(long this_addr, String label) {
         try {
-            FFMHandles.internal_native_InsertDebugMarker__JLjava_lang_String_2.invokeExact(this_addr, (java.lang.foreign.MemorySegment) (label != null ? java.lang.foreign.Arena.global().allocateFrom(label) : java.lang.foreign.MemorySegment.NULL));
+            FFMHandles.internal_native_InsertDebugMarker__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -269,7 +269,7 @@ nativeObject->PopDebugGroup();
         try {
             FFMHandles.internal_native_PopDebugGroup__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -283,9 +283,9 @@ nativeObject->PushDebugGroup(label);
 */
     public static void internal_native_PushDebugGroup(long this_addr, String label) {
         try {
-            FFMHandles.internal_native_PushDebugGroup__JLjava_lang_String_2.invokeExact(this_addr, (java.lang.foreign.MemorySegment) (label != null ? java.lang.foreign.Arena.global().allocateFrom(label) : java.lang.foreign.MemorySegment.NULL));
+            FFMHandles.internal_native_PushDebugGroup__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -301,7 +301,7 @@ nativeObject->Finish((JGPU::WGPURenderBundleDescriptor* )descriptor_addr, (JGPU:
         try {
             FFMHandles.internal_native_Finish__JJJ.invokeExact(this_addr, descriptor_addr, bundleOut_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -317,54 +317,76 @@ return nativeObject->IsValid();
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1create_1addr__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1deleteNative__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle internal_native_SetLabel__JLjava_lang_String_2 = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetLabel__JLjava_lang_String_2").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1create_1addr__", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Release__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1Release__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1deleteNative__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetPipeline__JJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetPipeline__JJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetLabel__JLjava_lang_String_2 = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetLabel__JLjava_lang_String_2", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
 
-        static final java.lang.invoke.MethodHandle internal_native_Draw__JIIII = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1Draw__JIIII").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_Release__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1Release__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_DrawIndexed__JIIIII = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1DrawIndexed__JIIIII").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetPipeline__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetPipeline__JJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_DrawIndirect__JJI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1DrawIndirect__JJI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_Draw__JIIII = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1Draw__JIIII", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_DrawIndexedIndirect__JJI = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1DrawIndexedIndirect__JJI").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_DrawIndexed__JIIIII = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1DrawIndexed__JIIIII", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetBindGroup__JIJJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetBindGroup__JIJJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_DrawIndirect__JJI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1DrawIndirect__JJI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetBindGroup__JIJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetBindGroup__JIJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_DrawIndexedIndirect__JJI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1DrawIndexedIndirect__JJI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetVertexBuffer__JIJII = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetVertexBuffer__JIJII").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetBindGroup__JIJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetBindGroup__JIJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetIndexBuffer__JJIII = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetIndexBuffer__JJIII").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetBindGroup__JIJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetBindGroup__JIJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_InsertDebugMarker__JLjava_lang_String_2 = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1InsertDebugMarker__JLjava_lang_String_2").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
+        static final java.lang.invoke.MethodHandle internal_native_SetVertexBuffer__JIJII = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetVertexBuffer__JIJII", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_PopDebugGroup__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1PopDebugGroup__J").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetIndexBuffer__JJIII = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1SetIndexBuffer__JJIII", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_PushDebugGroup__JLjava_lang_String_2 = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1PushDebugGroup__JLjava_lang_String_2").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
+        static final java.lang.invoke.MethodHandle internal_native_InsertDebugMarker__JLjava_lang_String_2 = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1InsertDebugMarker__JLjava_lang_String_2", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
 
-        static final java.lang.invoke.MethodHandle internal_native_Finish__JJJ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1Finish__JJJ").orElseThrow(), FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_PopDebugGroup__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1PopDebugGroup__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_IsValid__J = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1IsValid__J").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_PushDebugGroup__JLjava_lang_String_2 = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1PushDebugGroup__JLjava_lang_String_2", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.ADDRESS));
+
+        static final java.lang.invoke.MethodHandle internal_native_Finish__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1Finish__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_IsValid__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURenderBundleEncoder_internal_1native_1IsValid__J", FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG));
     }
 }

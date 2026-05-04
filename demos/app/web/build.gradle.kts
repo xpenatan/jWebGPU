@@ -16,7 +16,13 @@ gretty {
 
 dependencies {
     implementation(project(":demos:app:core"))
-    implementation(project(":demos:backend:web"))
+
+    if(LibExt.exampleUseRepoLibs) {
+        api("com.github.xpenatan.jWebGPU:webgpu-web:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-web:-SNAPSHOT:wasm")
+    } else {
+        implementation(project(":demos:backend:web"))
+    }
 }
 
 java {

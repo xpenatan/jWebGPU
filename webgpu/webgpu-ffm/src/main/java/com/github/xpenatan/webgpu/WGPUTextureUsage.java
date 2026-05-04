@@ -54,7 +54,7 @@ return (int64_t)WGPUTextureUsage_None;
         try {
             return (int) FFMHandles.WGPUTextureUsage_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -65,7 +65,7 @@ return (int64_t)WGPUTextureUsage_CopySrc;
         try {
             return (int) FFMHandles.WGPUTextureUsage_CopySrc_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -76,7 +76,7 @@ return (int64_t)WGPUTextureUsage_CopyDst;
         try {
             return (int) FFMHandles.WGPUTextureUsage_CopyDst_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -87,7 +87,7 @@ return (int64_t)WGPUTextureUsage_TextureBinding;
         try {
             return (int) FFMHandles.WGPUTextureUsage_TextureBinding_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -98,7 +98,7 @@ return (int64_t)WGPUTextureUsage_StorageBinding;
         try {
             return (int) FFMHandles.WGPUTextureUsage_StorageBinding_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -109,30 +109,52 @@ return (int64_t)WGPUTextureUsage_RenderAttachment;
         try {
             return (int) FFMHandles.WGPUTextureUsage_RenderAttachment_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUTextureUsage_None_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1None_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUTextureUsage_CopySrc_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1CopySrc_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUTextureUsage_CopyDst_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1CopyDst_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureUsage_None_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1None_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureUsage_TextureBinding_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1TextureBinding_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureUsage_CopySrc_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1CopySrc_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureUsage_StorageBinding_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1StorageBinding_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureUsage_CopyDst_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1CopyDst_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureUsage_RenderAttachment_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1RenderAttachment_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureUsage_TextureBinding_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1TextureBinding_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUTextureUsage_StorageBinding_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1StorageBinding_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUTextureUsage_RenderAttachment_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureUsage_WGPUTextureUsage_1RenderAttachment_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

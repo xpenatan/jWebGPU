@@ -56,7 +56,7 @@ return (int64_t)WGPUTextureSampleType_BindingNotUsed;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_BindingNotUsed_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -67,7 +67,7 @@ return (int64_t)WGPUTextureSampleType_Undefined;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -78,7 +78,7 @@ return (int64_t)WGPUTextureSampleType_Float;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -89,7 +89,7 @@ return (int64_t)WGPUTextureSampleType_UnfilterableFloat;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_UnfilterableFloat_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -100,7 +100,7 @@ return (int64_t)WGPUTextureSampleType_Depth;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Depth_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -111,7 +111,7 @@ return (int64_t)WGPUTextureSampleType_Sint;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -122,7 +122,7 @@ return (int64_t)WGPUTextureSampleType_Uint;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
@@ -133,34 +133,56 @@ return (int64_t)WGPUTextureSampleType_Force32;
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw FFMHandles.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP;
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+
+        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
 
         private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
 
-        static {
-            LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static RuntimeException rethrow(Throwable e) {
+            if (e instanceof RuntimeException)
+                return (RuntimeException) e;
+            if (e instanceof Error)
+                throw (Error) e;
+            return new RuntimeException(e);
         }
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_BindingNotUsed_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1BindingNotUsed_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Undefined_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Undefined_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
+            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
+            try {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
+            } catch (Throwable ignored) {
+                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
+            }
+        }
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Float_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Float_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_BindingNotUsed_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1BindingNotUsed_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_UnfilterableFloat_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1UnfilterableFloat_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Depth_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Depth_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Sint_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Sint_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_UnfilterableFloat_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1UnfilterableFloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Uint_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Uint_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Depth_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Depth_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Force32_NATIVE__ = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Force32_1NATIVE__").orElseThrow(), FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUTextureSampleType_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureSampleType_WGPUTextureSampleType_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

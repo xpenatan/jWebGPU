@@ -24,7 +24,6 @@ include(":demos:app:android")
 
 //includeBuild("E:\\Dev\\Projects\\java\\jParser") {
 //    dependencySubstitution {
-//        substitute(module("com.github.xpenatan.jParser:gen-base")).using(project(":jParser:gen:gen-base"))
 //        substitute(module("com.github.xpenatan.jParser:gen-build")).using(project(":jParser:gen:gen-build"))
 //        substitute(module("com.github.xpenatan.jParser:gen-build-tool")).using(project(":jParser:gen:gen-build-tool"))
 //        substitute(module("com.github.xpenatan.jParser:gen-core")).using(project(":jParser:gen:gen-core"))
@@ -34,6 +33,7 @@ include(":demos:app:android")
 //        substitute(module("com.github.xpenatan.jParser:gen-web")).using(project(":jParser:gen:gen-web"))
 //        substitute(module("com.github.xpenatan.jParser:api-core")).using(project(":jParser:api:api-core"))
 //        substitute(module("com.github.xpenatan.jParser:api-web")).using(project(":jParser:api:api-web"))
+//        substitute(module("com.github.xpenatan.jParser:runtime-base")).using(project(":jParser:runtime:runtime-base"))
 //        substitute(module("com.github.xpenatan.jParser:runtime-core")).using(project(":jParser:runtime:runtime-core"))
 //        substitute(module("com.github.xpenatan.jParser:runtime-web")).using(project(":jParser:runtime:runtime-web"))
 //        substitute(module("com.github.xpenatan.jParser:runtime-jni")).using(project(":jParser:runtime:runtime-jni"))
