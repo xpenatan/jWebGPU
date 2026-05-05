@@ -15,29 +15,29 @@ val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/ffm/
 
 dependencies {
     implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}:windows_64")
-    implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}:linux_x64")
-    implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}:mac_x64")
-    implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}:mac_arm64")
+    implementation("com.github.xpenatan.jParser:runtime-ffm-windows-64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm-linux-x64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm-mac-x64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm-mac-arm64:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 }
 
 val platforms: Map<String, Jar.() -> Unit> = mapOf(
-    "windows_64_dawn" to {
+    "windows-64-dawn" to {
         from(windowsFileDawn1) { into("native/dawn") }
         from(windowsFileDawn2) { into("native/dawn") }
     },
-    "windows_64_wgpu" to {
+    "windows-64-wgpu" to {
         from(windowsFile) { into("native/wgpu") }
     },
-    "linux_64_wgpu" to {
+    "linux-64-wgpu" to {
         from(linuxFile) { into("native/wgpu") }
     },
-    "mac_arm64_wgpu" to {
+    "mac-arm64-wgpu" to {
         from(macArmFile) { into("native/wgpu") }
     },
-    "mac_64_wgpu" to {
+    "mac-64-wgpu" to {
         from(macFile) { into("native/wgpu") }
     }
 )
@@ -58,16 +58,18 @@ tasks.named<Jar>("jar") {
     }
 }
 
-val nativeJars = platforms.map { (classifier, config) ->
-    tasks.register<Jar>("nativeJar$classifier") {
+val nativeJars: Map<String, TaskProvider<Jar>> = platforms.mapValues { (platform, config) ->
+    tasks.register<Jar>("nativeJar$platform") {
         config()
-        archiveClassifier.set(classifier)
+        archiveBaseName.set("${moduleName}-${platform}")
+        archiveClassifier.set("")
     }
 }
 
 val nativeJarAll = tasks.register<Jar>("nativeJarAll") {
     platforms.forEach { (_, config) -> config() }
-    archiveClassifier.set("desktop")
+    archiveBaseName.set("${moduleName}-desktop")
+    archiveClassifier.set("")
 }
 
 java {
@@ -94,7 +96,21 @@ publishing {
             group = LibExt.groupId
             version = LibExt.libVersion
             from(components["java"])
-            nativeJars.forEach { artifact(it) }
+        }
+
+        nativeJars.forEach { (platform, nativeJar) ->
+            create<MavenPublication>("maven${platform.replace("_", "")}") {
+                artifactId = "${moduleName}-${platform}"
+                group = LibExt.groupId
+                version = LibExt.libVersion
+                artifact(nativeJar)
+            }
+        }
+
+        create<MavenPublication>("mavenDesktop") {
+            artifactId = "${moduleName}-desktop"
+            group = LibExt.groupId
+            version = LibExt.libVersion
             artifact(nativeJarAll)
         }
     }

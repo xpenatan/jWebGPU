@@ -9,9 +9,10 @@ val emscriptenJS = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGP
 val emscriptenWASM = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWebGPU.wasm"
 
 val wasmJar = tasks.register<Jar>("wasmJar") {
-    // Publish web runtime payload as a dedicated classifier artifact.
+    // Publish web runtime payload as a dedicated artifactId publication.
     from(emscriptenJS, emscriptenWASM)
-    archiveClassifier.set("wasm")
+    archiveBaseName.set("${moduleName}-wasm")
+    archiveClassifier.set("")
 }
 
 val isPublishingTask = gradle.startParameter.taskNames.any { it.contains("publish", ignoreCase = true) }
@@ -27,7 +28,7 @@ tasks.named<Jar>("jar") {
 dependencies {
     api("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:runtime-web:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:runtime-web:${LibExt.jParserVersion}:wasm")
+    api("com.github.xpenatan.jParser:runtime-web-wasm:${LibExt.jParserVersion}")
 
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-web:${LibExt.jParserVersion}")
@@ -65,6 +66,12 @@ publishing {
             group = LibExt.groupId
             version = LibExt.libVersion
             from(components["java"])
+        }
+
+        create<MavenPublication>("mavenWasm") {
+            artifactId = "${moduleName}-wasm"
+            group = LibExt.groupId
+            version = LibExt.libVersion
             artifact(wasmJar)
         }
     }
