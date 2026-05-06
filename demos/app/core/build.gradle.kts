@@ -10,11 +10,4 @@ java {
 
 dependencies {
     implementation(project(":demos:backend:core"))
-
-    if(LibExt.exampleUseRepoLibs) {
-        compileOnly("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
-    }
-    else {
-        compileOnly(project(":webgpu:webgpu-core"))
-    }
 }

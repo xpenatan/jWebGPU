@@ -9,11 +9,11 @@ java {
 }
 
 dependencies {
-    compileOnly("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
+    compileOnlyApi("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
     if(LibExt.exampleUseRepoLibs) {
-        compileOnly("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+        compileOnlyApi("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
     }
     else {
-        compileOnly(project(":webgpu:webgpu-core"))
+        compileOnlyApi(project(":webgpu:webgpu-core"))
     }
 }
