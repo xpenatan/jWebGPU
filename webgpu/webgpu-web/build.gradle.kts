@@ -75,7 +75,7 @@ publishing {
         }
 
         create<MavenPublication>("mavenWasm") {
-            artifactId = "${moduleName}-wasm"
+            artifactId = "${moduleName}_wasm"
             group = LibExt.groupId
             version = LibExt.libVersion
             artifact(wasmJar)
