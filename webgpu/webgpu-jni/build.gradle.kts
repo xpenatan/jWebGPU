@@ -16,7 +16,7 @@ val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/jni/
 dependencies {
     implementation("com.github.xpenatan.jParser:runtime-jni:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:runtime-jni_windows_64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni_linux_64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-jni_linux_x64:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:runtime-jni_mac_x64:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:runtime-jni_mac_arm64:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
@@ -25,20 +25,20 @@ dependencies {
 
 
 val platforms: Map<String, Jar.() -> Unit> = mapOf(
-    "windows_64_dawn" to {
+    "windows_x64_dawn" to {
         from(windowsFileDawn1) { into("native/dawn") }
         from(windowsFileDawn2) { into("native/dawn") }
     },
-    "windows_64_wgpu" to {
+    "windows_x64_wgpu" to {
         from(windowsFile) { into("native/wgpu") }
     },
-    "linux_64_wgpu" to {
+    "linux_x64_wgpu" to {
         from(linuxFile) { into("native/wgpu") }
     },
     "mac_arm64_wgpu" to {
         from(macArmFile) { into("native/wgpu") }
     },
-    "mac_64_wgpu" to {
+    "mac_x64_wgpu" to {
         from(macFile) { into("native/wgpu") }
     }
 )
