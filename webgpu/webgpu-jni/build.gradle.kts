@@ -25,30 +25,31 @@ dependencies {
 
 
 val platforms: Map<String, Jar.() -> Unit> = mapOf(
-    "windows-64-dawn" to {
+    "windows_64_dawn" to {
         from(windowsFileDawn1) { into("native/dawn") }
         from(windowsFileDawn2) { into("native/dawn") }
     },
-    "windows-64-wgpu" to {
+    "windows_64_wgpu" to {
         from(windowsFile) { into("native/wgpu") }
     },
-    "linux-64-wgpu" to {
+    "linux_64_wgpu" to {
         from(linuxFile) { into("native/wgpu") }
     },
-    "mac-arm64-wgpu" to {
+    "mac_arm64_wgpu" to {
         from(macArmFile) { into("native/wgpu") }
     },
-    "mac-64-wgpu" to {
+    "mac_64_wgpu" to {
         from(macFile) { into("native/wgpu") }
     }
 )
 
-val isPublishing: Boolean = gradle.startParameter.taskNames.any { name ->
-    name.contains("publish", ignoreCase = true) ||
-    name.contains("publishToMavenLocal", ignoreCase = true) ||
-    name.contains("upload", ignoreCase = true)
+val taskNames = gradle.startParameter.taskNames
+fun isTaskRequested(taskName: String): Boolean {
+    return taskNames.any { it == taskName || it.endsWith(":$taskName") }
 }
-val includeNativesInMainJar = !isPublishing
+val isPrepareDeployTask = isTaskRequested("prepareReleaseDeploy") || isTaskRequested("prepareSnapshotDeploy")
+val isPublishTask = taskNames.any { it.contains("publish", ignoreCase = true) }
+val includeNativesInMainJar = !(isPrepareDeployTask || isPublishTask)
 
 tasks.named<Jar>("jar") {
     if (includeNativesInMainJar) {
@@ -62,14 +63,14 @@ tasks.named<Jar>("jar") {
 val nativeJars: Map<String, TaskProvider<Jar>> = platforms.mapValues { (platform, config) ->
     tasks.register<Jar>("nativeJar$platform") {
         config()
-        archiveBaseName.set("${moduleName}-${platform}")
+        archiveBaseName.set("${moduleName}_${platform}")
         archiveClassifier.set("")
     }
 }
 
 val nativeJarAll = tasks.register<Jar>("nativeJarAll") {
     platforms.forEach { (_, config) -> config() }
-    archiveBaseName.set("${moduleName}-desktop")
+    archiveBaseName.set("${moduleName}_desktop")
     archiveClassifier.set("")
 }
 
@@ -100,8 +101,8 @@ publishing {
         }
 
         nativeJars.forEach { (platform, nativeJar) ->
-            create<MavenPublication>("maven${platform.replace("_", "")}") {
-                artifactId = "${moduleName}-${platform}"
+            create<MavenPublication>("maven${platform}") {
+                artifactId = "${moduleName}_${platform}"
                 group = LibExt.groupId
                 version = LibExt.libVersion
                 artifact(nativeJar)
@@ -109,7 +110,7 @@ publishing {
         }
 
         create<MavenPublication>("mavenDesktop") {
-            artifactId = "${moduleName}-desktop"
+            artifactId = "${moduleName}_desktop"
             group = LibExt.groupId
             version = LibExt.libVersion
             artifact(nativeJarAll)
