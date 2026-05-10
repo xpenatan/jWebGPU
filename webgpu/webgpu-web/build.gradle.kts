@@ -34,7 +34,7 @@ tasks.named<Jar>("jar") {
 dependencies {
     api("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:runtime-web:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:runtime-web-wasm:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:runtime-web_wasm:${LibExt.jParserVersion}")
 
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-web:${LibExt.jParserVersion}")

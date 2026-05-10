@@ -15,10 +15,10 @@ val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/ffm/
 
 dependencies {
     implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm-windows-64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm-linux-x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm-mac-x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm-mac-arm64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm_windows_64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm_linux_x64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm_mac_x64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-ffm_mac_arm64:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 }

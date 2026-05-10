@@ -15,10 +15,10 @@ val windowsFileDawn2 = "$libDir/webgpu-build/build/c++/libs/windows/vc/dawn/jni/
 
 dependencies {
     implementation("com.github.xpenatan.jParser:runtime-jni:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni-windows-64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni-linux-x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni-mac-x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni-mac-arm64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-jni_windows_64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-jni_linux_64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-jni_mac_x64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-jni_mac_arm64:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 }
