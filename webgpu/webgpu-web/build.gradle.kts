@@ -11,7 +11,7 @@ val emscriptenWASM = "$projectDir/../webgpu-build/build/c++/libs/emscripten/jWeb
 val wasmJar = tasks.register<Jar>("wasmJar") {
     // Publish web runtime payload as a dedicated artifactId publication.
     from(emscriptenJS, emscriptenWASM)
-    archiveBaseName.set("${moduleName}-wasm")
+    archiveBaseName.set("${moduleName}_wasm")
     archiveClassifier.set("")
 }
 

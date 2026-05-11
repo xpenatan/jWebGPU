@@ -14,7 +14,7 @@ dependencies {
     if(LibExt.exampleUseRepoLibs) {
         api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
         api("com.github.xpenatan.jWebGPU:webgpu-web:-SNAPSHOT")
-        api("com.github.xpenatan.jWebGPU:webgpu-web-wasm:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-web_wasm:-SNAPSHOT")
     }
     else {
         api(project(":webgpu:webgpu-core"))
