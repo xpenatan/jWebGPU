@@ -58,7 +58,7 @@ return (int64_t)WGPUCompareFunction_Undefined;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -69,7 +69,7 @@ return (int64_t)WGPUCompareFunction_Never;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Never_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -80,7 +80,7 @@ return (int64_t)WGPUCompareFunction_Less;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Less_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -91,7 +91,7 @@ return (int64_t)WGPUCompareFunction_Equal;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Equal_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -102,7 +102,7 @@ return (int64_t)WGPUCompareFunction_LessEqual;
         try {
             return (int) FFMHandles.WGPUCompareFunction_LessEqual_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -113,7 +113,7 @@ return (int64_t)WGPUCompareFunction_Greater;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Greater_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -124,7 +124,7 @@ return (int64_t)WGPUCompareFunction_NotEqual;
         try {
             return (int) FFMHandles.WGPUCompareFunction_NotEqual_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -135,7 +135,7 @@ return (int64_t)WGPUCompareFunction_GreaterEqual;
         try {
             return (int) FFMHandles.WGPUCompareFunction_GreaterEqual_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -146,7 +146,7 @@ return (int64_t)WGPUCompareFunction_Always;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Always_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -157,60 +157,30 @@ return (int64_t)WGPUCompareFunction_Force32;
         try {
             return (int) FFMHandles.WGPUCompareFunction_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Never_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Never_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Less_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Less_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Equal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Equal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_LessEqual_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1LessEqual_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Greater_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Greater_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_NotEqual_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1NotEqual_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_GreaterEqual_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1GreaterEqual_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Never_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Never_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Always_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Always_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Less_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Less_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Equal_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Equal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_LessEqual_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1LessEqual_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Greater_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Greater_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_NotEqual_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1NotEqual_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_GreaterEqual_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1GreaterEqual_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Always_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Always_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompareFunction_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompareFunction_WGPUCompareFunction_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

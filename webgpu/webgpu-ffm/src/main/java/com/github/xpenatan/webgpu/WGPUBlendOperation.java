@@ -55,7 +55,7 @@ return (int64_t)WGPUBlendOperation_Undefined;
         try {
             return (int) FFMHandles.WGPUBlendOperation_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -66,7 +66,7 @@ return (int64_t)WGPUBlendOperation_Add;
         try {
             return (int) FFMHandles.WGPUBlendOperation_Add_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -77,7 +77,7 @@ return (int64_t)WGPUBlendOperation_Subtract;
         try {
             return (int) FFMHandles.WGPUBlendOperation_Subtract_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -88,7 +88,7 @@ return (int64_t)WGPUBlendOperation_ReverseSubtract;
         try {
             return (int) FFMHandles.WGPUBlendOperation_ReverseSubtract_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -99,7 +99,7 @@ return (int64_t)WGPUBlendOperation_Min;
         try {
             return (int) FFMHandles.WGPUBlendOperation_Min_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -110,7 +110,7 @@ return (int64_t)WGPUBlendOperation_Max;
         try {
             return (int) FFMHandles.WGPUBlendOperation_Max_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -121,54 +121,24 @@ return (int64_t)WGPUBlendOperation_Force32;
         try {
             return (int) FFMHandles.WGPUBlendOperation_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Add_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Add_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Subtract_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Subtract_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_ReverseSubtract_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1ReverseSubtract_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Min_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Min_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Max_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Max_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Add_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Add_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Subtract_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Subtract_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_ReverseSubtract_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1ReverseSubtract_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Min_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Min_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Max_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Max_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBlendOperation_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBlendOperation_WGPUBlendOperation_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

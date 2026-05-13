@@ -47,7 +47,7 @@ delete nativeObject;
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -63,7 +63,7 @@ nativeObject->Release();
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -79,7 +79,7 @@ nativeObject->CreateBindGroup((JGPU::WGPUBindGroupDescriptor* )descriptor_addr, 
         try {
             FFMHandles.internal_native_CreateBindGroup__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -95,7 +95,7 @@ nativeObject->CreateBindGroupLayout((JGPU::WGPUBindGroupLayoutDescriptor* )descr
         try {
             FFMHandles.internal_native_CreateBindGroupLayout__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -117,7 +117,7 @@ return (int64_t)obj;
         try {
             return (long) FFMHandles.internal_native_CreateBuffer__0_addr__JJ.invokeExact(this_addr, descriptor_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -133,7 +133,7 @@ nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr, (JGPU:
         try {
             FFMHandles.internal_native_CreateBuffer__1__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -149,7 +149,7 @@ nativeObject->CreateCommandEncoder((JGPU::WGPUCommandEncoderDescriptor* )descrip
         try {
             FFMHandles.internal_native_CreateCommandEncoder__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -165,7 +165,7 @@ nativeObject->CreateComputePipeline((JGPU::WGPUComputePipelineDescriptor* )descr
         try {
             FFMHandles.internal_native_CreateComputePipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -181,7 +181,7 @@ nativeObject->CreatePipelineLayout((JGPU::WGPUPipelineLayoutDescriptor* )descrip
         try {
             FFMHandles.internal_native_CreatePipelineLayout__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -197,7 +197,7 @@ nativeObject->CreateQuerySet((JGPU::WGPUQuerySetDescriptor* )descriptor_addr, (J
         try {
             FFMHandles.internal_native_CreateQuerySet__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -213,7 +213,7 @@ nativeObject->CreateRenderBundleEncoder((JGPU::WGPURenderBundleEncoderDescriptor
         try {
             FFMHandles.internal_native_CreateRenderBundleEncoder__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -229,7 +229,7 @@ nativeObject->CreateRenderPipeline((JGPU::WGPURenderPipelineDescriptor* )descrip
         try {
             FFMHandles.internal_native_CreateRenderPipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -245,7 +245,7 @@ nativeObject->CreateSampler((JGPU::WGPUSamplerDescriptor* )descriptor_addr, (JGP
         try {
             FFMHandles.internal_native_CreateSampler__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -261,7 +261,7 @@ nativeObject->CreateShaderModule((JGPU::WGPUShaderModuleDescriptor* )descriptor_
         try {
             FFMHandles.internal_native_CreateShaderModule__JJJ.invokeExact(this_addr, descriptor_addr, shaderModule_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -277,7 +277,7 @@ nativeObject->CreateTexture((JGPU::WGPUTextureDescriptor* )descriptor_addr, (JGP
         try {
             FFMHandles.internal_native_CreateTexture__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -293,7 +293,7 @@ nativeObject->Destroy();
         try {
             FFMHandles.internal_native_Destroy__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -309,7 +309,7 @@ nativeObject->GetFeatures((JGPU::WGPUSupportedFeatures* )features_addr);
         try {
             FFMHandles.internal_native_GetFeatures__JJ.invokeExact(this_addr, features_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -325,7 +325,7 @@ return nativeObject->HasFeature((::WGPUFeatureName)feature);
         try {
             return (boolean) FFMHandles.internal_native_HasFeature__JI.invokeExact(this_addr, feature);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -341,7 +341,7 @@ nativeObject->GetLimits((JGPU::WGPULimits* )limits_addr);
         try {
             FFMHandles.internal_native_GetLimits__JJ.invokeExact(this_addr, limits_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -364,80 +364,50 @@ return (int64_t)obj;
         try {
             return (long) FFMHandles.internal_native_GetQueue_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1deleteNative__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle internal_native_Release__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1Release__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle internal_native_CreateBindGroup__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBindGroup__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle internal_native_CreateBindGroupLayout__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBindGroupLayout__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__0_addr__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBuffer_1_10_1addr__JJ", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__1__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBuffer_1_11__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
+        static final java.lang.invoke.MethodHandle internal_native_CreateCommandEncoder__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateCommandEncoder__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1deleteNative__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateComputePipeline__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateComputePipeline__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Release__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1Release__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreatePipelineLayout__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreatePipelineLayout__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateBindGroup__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBindGroup__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateQuerySet__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateQuerySet__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateBindGroupLayout__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBindGroupLayout__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateRenderBundleEncoder__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateRenderBundleEncoder__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__0_addr__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBuffer_1_10_1addr__JJ", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateRenderPipeline__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateRenderPipeline__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__1__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateBuffer_1_11__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateSampler__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateSampler__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateCommandEncoder__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateCommandEncoder__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateShaderModule__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateShaderModule__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateComputePipeline__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateComputePipeline__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateTexture__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateTexture__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreatePipelineLayout__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreatePipelineLayout__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Destroy__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1Destroy__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateQuerySet__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateQuerySet__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetFeatures__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1GetFeatures__JJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateRenderBundleEncoder__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateRenderBundleEncoder__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_HasFeature__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1HasFeature__JI", FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateRenderPipeline__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateRenderPipeline__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetLimits__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1GetLimits__JJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateSampler__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateSampler__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
-
-        static final java.lang.invoke.MethodHandle internal_native_CreateShaderModule__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateShaderModule__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
-
-        static final java.lang.invoke.MethodHandle internal_native_CreateTexture__JJJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1CreateTexture__JJJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
-
-        static final java.lang.invoke.MethodHandle internal_native_Destroy__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1Destroy__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
-
-        static final java.lang.invoke.MethodHandle internal_native_GetFeatures__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1GetFeatures__JJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
-
-        static final java.lang.invoke.MethodHandle internal_native_HasFeature__JI = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1HasFeature__JI", FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle internal_native_GetLimits__JJ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1GetLimits__JJ", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
-
-        static final java.lang.invoke.MethodHandle internal_native_GetQueue_addr__J = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1GetQueue_1addr__J", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetQueue_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDevice_internal_1native_1GetQueue_1addr__J", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
     }
 }

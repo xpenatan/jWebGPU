@@ -54,7 +54,7 @@ return (int64_t)WGPUBufferBindingType_BindingNotUsed;
         try {
             return (int) FFMHandles.WGPUBufferBindingType_BindingNotUsed_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -65,7 +65,7 @@ return (int64_t)WGPUBufferBindingType_Undefined;
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -76,7 +76,7 @@ return (int64_t)WGPUBufferBindingType_Uniform;
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Uniform_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -87,7 +87,7 @@ return (int64_t)WGPUBufferBindingType_Storage;
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Storage_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -98,7 +98,7 @@ return (int64_t)WGPUBufferBindingType_ReadOnlyStorage;
         try {
             return (int) FFMHandles.WGPUBufferBindingType_ReadOnlyStorage_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -109,52 +109,22 @@ return (int64_t)WGPUBufferBindingType_Force32;
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_BindingNotUsed_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1BindingNotUsed_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Uniform_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Uniform_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Storage_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Storage_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_ReadOnlyStorage_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1ReadOnlyStorage_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
-
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
-
-        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_BindingNotUsed_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1BindingNotUsed_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Uniform_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Uniform_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Storage_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Storage_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_ReadOnlyStorage_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1ReadOnlyStorage_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUBufferBindingType_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUBufferBindingType_WGPUBufferBindingType_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

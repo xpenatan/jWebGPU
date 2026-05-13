@@ -55,7 +55,7 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -66,7 +66,7 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -77,7 +77,7 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Timeout;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -88,7 +88,7 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Outdated;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -99,7 +99,7 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Lost;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -110,7 +110,7 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Error;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -121,54 +121,24 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Force32;
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1SuccessOptimal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1SuccessSuboptimal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Timeout_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Outdated_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Lost_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Error_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1SuccessOptimal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1SuccessSuboptimal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Timeout_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Outdated_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Lost_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Error_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

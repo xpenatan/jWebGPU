@@ -56,7 +56,7 @@ return (int64_t)WGPUTextureViewDimension_Undefined;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -67,7 +67,7 @@ return (int64_t)WGPUTextureViewDimension_1D;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_1D_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -78,7 +78,7 @@ return (int64_t)WGPUTextureViewDimension_2D;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_2D_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -89,7 +89,7 @@ return (int64_t)WGPUTextureViewDimension_2DArray;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_2DArray_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -100,7 +100,7 @@ return (int64_t)WGPUTextureViewDimension_Cube;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_Cube_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -111,7 +111,7 @@ return (int64_t)WGPUTextureViewDimension_CubeArray;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_CubeArray_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -122,7 +122,7 @@ return (int64_t)WGPUTextureViewDimension_3D;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_3D_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -133,56 +133,26 @@ return (int64_t)WGPUTextureViewDimension_Force32;
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_1D_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_11D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_2D_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_12D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_2DArray_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_12DArray_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_Cube_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1Cube_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_CubeArray_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1CubeArray_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_3D_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_13D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_1D_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_11D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_2D_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_12D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_2DArray_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_12DArray_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_Cube_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1Cube_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_CubeArray_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1CubeArray_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_3D_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_13D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureViewDimension_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureViewDimension_WGPUTextureViewDimension_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

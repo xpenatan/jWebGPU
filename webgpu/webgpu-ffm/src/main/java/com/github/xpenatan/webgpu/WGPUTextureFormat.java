@@ -145,7 +145,7 @@ return (int64_t)WGPUTextureFormat_Undefined;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -156,7 +156,7 @@ return (int64_t)WGPUTextureFormat_R8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -167,7 +167,7 @@ return (int64_t)WGPUTextureFormat_R8Snorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Snorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -178,7 +178,7 @@ return (int64_t)WGPUTextureFormat_R8Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -189,7 +189,7 @@ return (int64_t)WGPUTextureFormat_R8Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -200,7 +200,7 @@ return (int64_t)WGPUTextureFormat_R16Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R16Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -211,7 +211,7 @@ return (int64_t)WGPUTextureFormat_R16Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R16Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -222,7 +222,7 @@ return (int64_t)WGPUTextureFormat_R16Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R16Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -233,7 +233,7 @@ return (int64_t)WGPUTextureFormat_RG8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -244,7 +244,7 @@ return (int64_t)WGPUTextureFormat_RG8Snorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Snorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -255,7 +255,7 @@ return (int64_t)WGPUTextureFormat_RG8Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -266,7 +266,7 @@ return (int64_t)WGPUTextureFormat_RG8Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -277,7 +277,7 @@ return (int64_t)WGPUTextureFormat_R32Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R32Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -288,7 +288,7 @@ return (int64_t)WGPUTextureFormat_R32Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R32Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -299,7 +299,7 @@ return (int64_t)WGPUTextureFormat_R32Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_R32Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -310,7 +310,7 @@ return (int64_t)WGPUTextureFormat_RG16Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG16Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -321,7 +321,7 @@ return (int64_t)WGPUTextureFormat_RG16Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG16Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -332,7 +332,7 @@ return (int64_t)WGPUTextureFormat_RG16Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG16Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -343,7 +343,7 @@ return (int64_t)WGPUTextureFormat_RGBA8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -354,7 +354,7 @@ return (int64_t)WGPUTextureFormat_RGBA8UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -365,7 +365,7 @@ return (int64_t)WGPUTextureFormat_RGBA8Snorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Snorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -376,7 +376,7 @@ return (int64_t)WGPUTextureFormat_RGBA8Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -387,7 +387,7 @@ return (int64_t)WGPUTextureFormat_RGBA8Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -398,7 +398,7 @@ return (int64_t)WGPUTextureFormat_BGRA8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BGRA8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -409,7 +409,7 @@ return (int64_t)WGPUTextureFormat_BGRA8UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BGRA8UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -420,7 +420,7 @@ return (int64_t)WGPUTextureFormat_RGB10A2Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGB10A2Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -431,7 +431,7 @@ return (int64_t)WGPUTextureFormat_RGB10A2Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGB10A2Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -442,7 +442,7 @@ return (int64_t)WGPUTextureFormat_RG11B10Ufloat;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG11B10Ufloat_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -453,7 +453,7 @@ return (int64_t)WGPUTextureFormat_RGB9E5Ufloat;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGB9E5Ufloat_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -464,7 +464,7 @@ return (int64_t)WGPUTextureFormat_RG32Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG32Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -475,7 +475,7 @@ return (int64_t)WGPUTextureFormat_RG32Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG32Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -486,7 +486,7 @@ return (int64_t)WGPUTextureFormat_RG32Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG32Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -497,7 +497,7 @@ return (int64_t)WGPUTextureFormat_RGBA16Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA16Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -508,7 +508,7 @@ return (int64_t)WGPUTextureFormat_RGBA16Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA16Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -519,7 +519,7 @@ return (int64_t)WGPUTextureFormat_RGBA16Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA16Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -530,7 +530,7 @@ return (int64_t)WGPUTextureFormat_RGBA32Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA32Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -541,7 +541,7 @@ return (int64_t)WGPUTextureFormat_RGBA32Uint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA32Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -552,7 +552,7 @@ return (int64_t)WGPUTextureFormat_RGBA32Sint;
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA32Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -563,7 +563,7 @@ return (int64_t)WGPUTextureFormat_Stencil8;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Stencil8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -574,7 +574,7 @@ return (int64_t)WGPUTextureFormat_Depth16Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth16Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -585,7 +585,7 @@ return (int64_t)WGPUTextureFormat_Depth24Plus;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth24Plus_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -596,7 +596,7 @@ return (int64_t)WGPUTextureFormat_Depth24PlusStencil8;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth24PlusStencil8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -607,7 +607,7 @@ return (int64_t)WGPUTextureFormat_Depth32Float;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth32Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -618,7 +618,7 @@ return (int64_t)WGPUTextureFormat_Depth32FloatStencil8;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth32FloatStencil8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -629,7 +629,7 @@ return (int64_t)WGPUTextureFormat_BC1RGBAUnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC1RGBAUnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -640,7 +640,7 @@ return (int64_t)WGPUTextureFormat_BC1RGBAUnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -651,7 +651,7 @@ return (int64_t)WGPUTextureFormat_BC2RGBAUnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC2RGBAUnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -662,7 +662,7 @@ return (int64_t)WGPUTextureFormat_BC2RGBAUnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -673,7 +673,7 @@ return (int64_t)WGPUTextureFormat_BC3RGBAUnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC3RGBAUnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -684,7 +684,7 @@ return (int64_t)WGPUTextureFormat_BC3RGBAUnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -695,7 +695,7 @@ return (int64_t)WGPUTextureFormat_BC4RUnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC4RUnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -706,7 +706,7 @@ return (int64_t)WGPUTextureFormat_BC4RSnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC4RSnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -717,7 +717,7 @@ return (int64_t)WGPUTextureFormat_BC5RGUnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC5RGUnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -728,7 +728,7 @@ return (int64_t)WGPUTextureFormat_BC5RGSnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC5RGSnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -739,7 +739,7 @@ return (int64_t)WGPUTextureFormat_BC6HRGBUfloat;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC6HRGBUfloat_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -750,7 +750,7 @@ return (int64_t)WGPUTextureFormat_BC6HRGBFloat;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC6HRGBFloat_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -761,7 +761,7 @@ return (int64_t)WGPUTextureFormat_BC7RGBAUnorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC7RGBAUnorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -772,7 +772,7 @@ return (int64_t)WGPUTextureFormat_BC7RGBAUnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -783,7 +783,7 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -794,7 +794,7 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -805,7 +805,7 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8A1Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -816,7 +816,7 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8A1UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -827,7 +827,7 @@ return (int64_t)WGPUTextureFormat_ETC2RGBA8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -838,7 +838,7 @@ return (int64_t)WGPUTextureFormat_ETC2RGBA8UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -849,7 +849,7 @@ return (int64_t)WGPUTextureFormat_EACR11Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACR11Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -860,7 +860,7 @@ return (int64_t)WGPUTextureFormat_EACR11Snorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACR11Snorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -871,7 +871,7 @@ return (int64_t)WGPUTextureFormat_EACRG11Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACRG11Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -882,7 +882,7 @@ return (int64_t)WGPUTextureFormat_EACRG11Snorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACRG11Snorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -893,7 +893,7 @@ return (int64_t)WGPUTextureFormat_ASTC4x4Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC4x4Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -904,7 +904,7 @@ return (int64_t)WGPUTextureFormat_ASTC4x4UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -915,7 +915,7 @@ return (int64_t)WGPUTextureFormat_ASTC5x4Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x4Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -926,7 +926,7 @@ return (int64_t)WGPUTextureFormat_ASTC5x4UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -937,7 +937,7 @@ return (int64_t)WGPUTextureFormat_ASTC5x5Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x5Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -948,7 +948,7 @@ return (int64_t)WGPUTextureFormat_ASTC5x5UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -959,7 +959,7 @@ return (int64_t)WGPUTextureFormat_ASTC6x5Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x5Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -970,7 +970,7 @@ return (int64_t)WGPUTextureFormat_ASTC6x5UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -981,7 +981,7 @@ return (int64_t)WGPUTextureFormat_ASTC6x6Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x6Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -992,7 +992,7 @@ return (int64_t)WGPUTextureFormat_ASTC6x6UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1003,7 +1003,7 @@ return (int64_t)WGPUTextureFormat_ASTC8x5Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x5Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1014,7 +1014,7 @@ return (int64_t)WGPUTextureFormat_ASTC8x5UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1025,7 +1025,7 @@ return (int64_t)WGPUTextureFormat_ASTC8x6Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x6Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1036,7 +1036,7 @@ return (int64_t)WGPUTextureFormat_ASTC8x6UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1047,7 +1047,7 @@ return (int64_t)WGPUTextureFormat_ASTC8x8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1058,7 +1058,7 @@ return (int64_t)WGPUTextureFormat_ASTC8x8UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1069,7 +1069,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x5Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x5Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1080,7 +1080,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x5UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1091,7 +1091,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x6Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x6Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1102,7 +1102,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x6UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1113,7 +1113,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x8Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x8Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1124,7 +1124,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x8UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1135,7 +1135,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x10Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x10Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1146,7 +1146,7 @@ return (int64_t)WGPUTextureFormat_ASTC10x10UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1157,7 +1157,7 @@ return (int64_t)WGPUTextureFormat_ASTC12x10Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x10Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1168,7 +1168,7 @@ return (int64_t)WGPUTextureFormat_ASTC12x10UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1179,7 +1179,7 @@ return (int64_t)WGPUTextureFormat_ASTC12x12Unorm;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x12Unorm_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1190,7 +1190,7 @@ return (int64_t)WGPUTextureFormat_ASTC12x12UnormSrgb;
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -1201,234 +1201,204 @@ return (int64_t)WGPUTextureFormat_Force32;
         try {
             return (int) FFMHandles.WGPUTextureFormat_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Snorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R16Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R16Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R16Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R16Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Undefined_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R16Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R16Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Snorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Snorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R8Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R8Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R16Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R16Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R32Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R16Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R16Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R32Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R32Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R16Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R16Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R32Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R32Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG16Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG16Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Snorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG16Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG16Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG16Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG16Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG8Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG8Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R32Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R32Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R32Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Snorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_R32Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1R32Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG16Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG16Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG16Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG16Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BGRA8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BGRA8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG16Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG16Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BGRA8UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BGRA8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGB10A2Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGB10A2Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGB10A2Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGB10A2Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Snorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG11B10Ufloat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG11B10Ufloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGB9E5Ufloat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGB9E5Ufloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA8Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA8Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG32Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BGRA8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BGRA8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG32Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG32Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BGRA8UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BGRA8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG32Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG32Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGB10A2Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGB10A2Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA16Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA16Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGB10A2Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGB10A2Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA16Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA16Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG11B10Ufloat_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG11B10Ufloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA16Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA16Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGB9E5Ufloat_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGB9E5Ufloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA32Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG32Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA32Uint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA32Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG32Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG32Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA32Sint_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA32Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RG32Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RG32Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Stencil8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Stencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA16Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA16Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth16Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth16Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA16Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA16Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth24Plus_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth24Plus_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA16Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA16Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth24PlusStencil8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth24PlusStencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA32Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth32Float_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA32Uint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA32Uint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth32FloatStencil8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth32FloatStencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_RGBA32Sint_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1RGBA32Sint_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC1RGBAUnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC1RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Stencil8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Stencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC1RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth16Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth16Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC2RGBAUnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC2RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth24Plus_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth24Plus_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC2RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth24PlusStencil8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth24PlusStencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC3RGBAUnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC3RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth32Float_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth32Float_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC3RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Depth32FloatStencil8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Depth32FloatStencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC4RUnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC4RUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC1RGBAUnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC1RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC4RSnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC4RSnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC1RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC5RGUnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC5RGUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC2RGBAUnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC2RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC5RGSnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC5RGSnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC2RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC6HRGBUfloat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC6HRGBUfloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC3RGBAUnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC3RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC6HRGBFloat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC6HRGBFloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC3RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC7RGBAUnorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC7RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC4RUnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC4RUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC7RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC4RSnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC4RSnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC5RGUnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC5RGUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC5RGSnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC5RGSnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8A1Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC6HRGBUfloat_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC6HRGBUfloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8A1UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC6HRGBFloat_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC6HRGBFloat_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGBA8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC7RGBAUnorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC7RGBAUnorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGBA8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1BC7RGBAUnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACR11Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACR11Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACR11Snorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACR11Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACRG11Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACRG11Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8A1Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACRG11Snorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACRG11Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGB8A1UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC4x4Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC4x4Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGBA8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC4x4UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ETC2RGBA8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x4Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x4Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACR11Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACR11Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x4UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACR11Snorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACR11Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x5Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACRG11Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACRG11Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_EACRG11Snorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1EACRG11Snorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x5Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC4x4Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC4x4Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC4x4UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x6Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x6Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x4Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x4Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x6UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x4UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x5Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x5Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC5x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x6Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x6Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x5Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x6UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x6Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x6Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC6x6UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x5Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x5Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x6Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x6Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x6Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x6Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x6UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x6UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x8Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC8x8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x10Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x10Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x5Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x5Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x10UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x5UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x10Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x10Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x6Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x6Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x10UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x6UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x12Unorm_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x12Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x8Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x8Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x12UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x8UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x10Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x10Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC10x10UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x10Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x10Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x10UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x12Unorm_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x12Unorm_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1ASTC12x12UnormSrgb_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUTextureFormat_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUTextureFormat_WGPUTextureFormat_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

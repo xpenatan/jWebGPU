@@ -90,7 +90,7 @@ return (int64_t)WGPUVertexFormat_Uint8;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -101,7 +101,7 @@ return (int64_t)WGPUVertexFormat_Uint8x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -112,7 +112,7 @@ return (int64_t)WGPUVertexFormat_Uint8x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -123,7 +123,7 @@ return (int64_t)WGPUVertexFormat_Sint8;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -134,7 +134,7 @@ return (int64_t)WGPUVertexFormat_Sint8x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -145,7 +145,7 @@ return (int64_t)WGPUVertexFormat_Sint8x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -156,7 +156,7 @@ return (int64_t)WGPUVertexFormat_Unorm8;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -167,7 +167,7 @@ return (int64_t)WGPUVertexFormat_Unorm8x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -178,7 +178,7 @@ return (int64_t)WGPUVertexFormat_Unorm8x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -189,7 +189,7 @@ return (int64_t)WGPUVertexFormat_Snorm8;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -200,7 +200,7 @@ return (int64_t)WGPUVertexFormat_Snorm8x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -211,7 +211,7 @@ return (int64_t)WGPUVertexFormat_Snorm8x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -222,7 +222,7 @@ return (int64_t)WGPUVertexFormat_Uint16;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint16_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -233,7 +233,7 @@ return (int64_t)WGPUVertexFormat_Uint16x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -244,7 +244,7 @@ return (int64_t)WGPUVertexFormat_Uint16x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -255,7 +255,7 @@ return (int64_t)WGPUVertexFormat_Sint16;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint16_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -266,7 +266,7 @@ return (int64_t)WGPUVertexFormat_Sint16x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -277,7 +277,7 @@ return (int64_t)WGPUVertexFormat_Sint16x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -288,7 +288,7 @@ return (int64_t)WGPUVertexFormat_Unorm16;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm16_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -299,7 +299,7 @@ return (int64_t)WGPUVertexFormat_Unorm16x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -310,7 +310,7 @@ return (int64_t)WGPUVertexFormat_Unorm16x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -321,7 +321,7 @@ return (int64_t)WGPUVertexFormat_Snorm16;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm16_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -332,7 +332,7 @@ return (int64_t)WGPUVertexFormat_Snorm16x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -343,7 +343,7 @@ return (int64_t)WGPUVertexFormat_Snorm16x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -354,7 +354,7 @@ return (int64_t)WGPUVertexFormat_Float16;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float16_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -365,7 +365,7 @@ return (int64_t)WGPUVertexFormat_Float16x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -376,7 +376,7 @@ return (int64_t)WGPUVertexFormat_Float16x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -387,7 +387,7 @@ return (int64_t)WGPUVertexFormat_Float32;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -398,7 +398,7 @@ return (int64_t)WGPUVertexFormat_Float32x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -409,7 +409,7 @@ return (int64_t)WGPUVertexFormat_Float32x3;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32x3_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -420,7 +420,7 @@ return (int64_t)WGPUVertexFormat_Float32x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -431,7 +431,7 @@ return (int64_t)WGPUVertexFormat_Uint32;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -442,7 +442,7 @@ return (int64_t)WGPUVertexFormat_Uint32x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -453,7 +453,7 @@ return (int64_t)WGPUVertexFormat_Uint32x3;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32x3_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -464,7 +464,7 @@ return (int64_t)WGPUVertexFormat_Uint32x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -475,7 +475,7 @@ return (int64_t)WGPUVertexFormat_Sint32;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -486,7 +486,7 @@ return (int64_t)WGPUVertexFormat_Sint32x2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -497,7 +497,7 @@ return (int64_t)WGPUVertexFormat_Sint32x3;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32x3_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -508,7 +508,7 @@ return (int64_t)WGPUVertexFormat_Sint32x4;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -519,7 +519,7 @@ return (int64_t)WGPUVertexFormat_Unorm10_10_10_2;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm10_10_10_2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -530,7 +530,7 @@ return (int64_t)WGPUVertexFormat_Unorm8x4BGRA;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x4BGRA_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -541,124 +541,94 @@ return (int64_t)WGPUVertexFormat_Force32;
         try {
             return (int) FFMHandles.WGPUVertexFormat_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint8x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint8x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint8x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint8x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint8x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint8x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm8x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint8x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm8x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint8x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint16_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint16x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint16x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint16_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint16x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm8x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm8x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint16x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm8x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm8x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm16_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint16_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm16x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint16x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm16x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint16x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm16_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint16_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm16x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint16x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm16x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint16x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float16_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm16_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float16x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm16x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float16x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm16x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm16_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm16x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32x3_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32x3_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Snorm16x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Snorm16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float16_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float16x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float16x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float16x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float16x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32x3_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32x3_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32x3_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32x3_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32x2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Float32x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Float32x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32x3_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32x3_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32x4_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm10_10_10_2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm10_110_110_12_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32x3_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32x3_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8x4BGRA_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8x4BGRA_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Uint32x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Uint32x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32x2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32x2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32x3_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32x3_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Sint32x4_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Sint32x4_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm10_10_10_2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm10_110_110_12_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Unorm8x4BGRA_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Unorm8x4BGRA_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUVertexFormat_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUVertexFormat_WGPUVertexFormat_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

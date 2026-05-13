@@ -65,7 +65,7 @@ return (int64_t)WGPUFeatureName_DepthClipControl;
         try {
             return (int) FFMHandles.WGPUFeatureName_DepthClipControl_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -76,7 +76,7 @@ return (int64_t)WGPUFeatureName_Depth32FloatStencil8;
         try {
             return (int) FFMHandles.WGPUFeatureName_Depth32FloatStencil8_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -87,7 +87,7 @@ return (int64_t)WGPUFeatureName_TimestampQuery;
         try {
             return (int) FFMHandles.WGPUFeatureName_TimestampQuery_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -98,7 +98,7 @@ return (int64_t)WGPUFeatureName_TextureCompressionBC;
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionBC_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -109,7 +109,7 @@ return (int64_t)WGPUFeatureName_TextureCompressionBCSliced3D;
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -120,7 +120,7 @@ return (int64_t)WGPUFeatureName_TextureCompressionETC2;
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionETC2_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -131,7 +131,7 @@ return (int64_t)WGPUFeatureName_TextureCompressionASTC;
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionASTC_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -142,7 +142,7 @@ return (int64_t)WGPUFeatureName_TextureCompressionASTCSliced3D;
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -153,7 +153,7 @@ return (int64_t)WGPUFeatureName_IndirectFirstInstance;
         try {
             return (int) FFMHandles.WGPUFeatureName_IndirectFirstInstance_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -164,7 +164,7 @@ return (int64_t)WGPUFeatureName_ShaderF16;
         try {
             return (int) FFMHandles.WGPUFeatureName_ShaderF16_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -175,7 +175,7 @@ return (int64_t)WGPUFeatureName_RG11B10UfloatRenderable;
         try {
             return (int) FFMHandles.WGPUFeatureName_RG11B10UfloatRenderable_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -186,7 +186,7 @@ return (int64_t)WGPUFeatureName_BGRA8UnormStorage;
         try {
             return (int) FFMHandles.WGPUFeatureName_BGRA8UnormStorage_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -197,7 +197,7 @@ return (int64_t)WGPUFeatureName_Float32Filterable;
         try {
             return (int) FFMHandles.WGPUFeatureName_Float32Filterable_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -208,7 +208,7 @@ return (int64_t)WGPUFeatureName_Float32Blendable;
         try {
             return (int) FFMHandles.WGPUFeatureName_Float32Blendable_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -219,7 +219,7 @@ return (int64_t)WGPUFeatureName_ClipDistances;
         try {
             return (int) FFMHandles.WGPUFeatureName_ClipDistances_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -230,7 +230,7 @@ return (int64_t)WGPUFeatureName_DualSourceBlending;
         try {
             return (int) FFMHandles.WGPUFeatureName_DualSourceBlending_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
@@ -241,74 +241,44 @@ return (int64_t)WGPUFeatureName_Force32;
         try {
             return (int) FFMHandles.WGPUFeatureName_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
-            throw FFMHandles.rethrow(e);
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
     }
 
     private static final class FFMHandles {
 
-        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_DepthClipControl_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1DepthClipControl_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_CRITICAL = new java.lang.foreign.Linker.Option[] { java.lang.foreign.Linker.Option.critical(true) };
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_Depth32FloatStencil8_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Depth32FloatStencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker.Option[] LINKER_OPTIONS_DEFAULT = new java.lang.foreign.Linker.Option[0];
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_TimestampQuery_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TimestampQuery_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionBC_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionBC_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static RuntimeException rethrow(Throwable e) {
-            if (e instanceof RuntimeException)
-                return (RuntimeException) e;
-            if (e instanceof Error)
-                throw (Error) e;
-            return new RuntimeException(e);
-        }
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionBCSliced3D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallDefault(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-        }
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionETC2_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionETC2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static java.lang.invoke.MethodHandle downcallCritical(String symbolName, java.lang.foreign.FunctionDescriptor descriptor) {
-            java.lang.foreign.MemorySegment symbol = LOOKUP.find(symbolName).orElseThrow();
-            try {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_CRITICAL);
-            } catch (Throwable ignored) {
-                return LINKER.downcallHandle(symbol, descriptor, LINKER_OPTIONS_DEFAULT);
-            }
-        }
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionASTC_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionASTC_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_DepthClipControl_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1DepthClipControl_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionASTCSliced3D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_Depth32FloatStencil8_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Depth32FloatStencil8_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_IndirectFirstInstance_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1IndirectFirstInstance_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_TimestampQuery_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TimestampQuery_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_ShaderF16_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1ShaderF16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionBC_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionBC_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_RG11B10UfloatRenderable_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1RG11B10UfloatRenderable_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionBCSliced3D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_BGRA8UnormStorage_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1BGRA8UnormStorage_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionETC2_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionETC2_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_Float32Filterable_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Float32Filterable_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionASTC_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionASTC_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_Float32Blendable_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Float32Blendable_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1TextureCompressionASTCSliced3D_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_ClipDistances_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1ClipDistances_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_IndirectFirstInstance_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1IndirectFirstInstance_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_DualSourceBlending_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1DualSourceBlending_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_ShaderF16_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1ShaderF16_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_RG11B10UfloatRenderable_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1RG11B10UfloatRenderable_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_BGRA8UnormStorage_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1BGRA8UnormStorage_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_Float32Filterable_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Float32Filterable_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_Float32Blendable_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Float32Blendable_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_ClipDistances_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1ClipDistances_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_DualSourceBlending_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1DualSourceBlending_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
-
-        static final java.lang.invoke.MethodHandle WGPUFeatureName_Force32_NATIVE__ = downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUFeatureName_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUFeatureName_WGPUFeatureName_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }
