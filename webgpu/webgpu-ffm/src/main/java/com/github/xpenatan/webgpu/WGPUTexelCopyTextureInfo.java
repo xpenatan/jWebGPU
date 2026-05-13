@@ -35,10 +35,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)new JGPU::WGPUTexelCopyTextureInfo();
-    */
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -51,11 +47,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyTextureInfo* nativeObject = (JGPU::WGPUTexelCopyTextureInfo*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -68,11 +59,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetTexture(native_address, texture.native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyTextureInfo* nativeObject = (JGPU::WGPUTexelCopyTextureInfo*)this_addr;
-      nativeObject->SetTexture((JGPU::WGPUTexture* )texture_addr);
-    */
     public static void internal_native_SetTexture(long this_addr, long texture_addr) {
         try {
             FFMHandles.internal_native_SetTexture__JJ.invokeExact(this_addr, texture_addr);
@@ -85,11 +71,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetMipLevel(native_address, mipLevel);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyTextureInfo* nativeObject = (JGPU::WGPUTexelCopyTextureInfo*)this_addr;
-      nativeObject->SetMipLevel((int)mipLevel);
-    */
     public static void internal_native_SetMipLevel(long this_addr, int mipLevel) {
         try {
             FFMHandles.internal_native_SetMipLevel__JI.invokeExact(this_addr, mipLevel);
@@ -108,13 +89,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUOrigin3D_TEMP_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyTextureInfo* nativeObject = (JGPU::WGPUTexelCopyTextureInfo*)this_addr;
-      thread_local static JGPU::WGPUOrigin3D copy_addr;
-      copy_addr = nativeObject->GetOrigin();
-      return (int64_t)&copy_addr;
-    */
     public static long internal_native_GetOrigin_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetOrigin_addr__J.invokeExact(this_addr);
@@ -127,11 +101,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetAspect(native_address, aspect.getValue());
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyTextureInfo* nativeObject = (JGPU::WGPUTexelCopyTextureInfo*)this_addr;
-      nativeObject->SetAspect((::WGPUTextureAspect)aspect);
-    */
     public static void internal_native_SetAspect(long this_addr, int aspect) {
         try {
             FFMHandles.internal_native_SetAspect__JI.invokeExact(this_addr, aspect);
@@ -150,10 +119,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)JGPU::WGPUTexelCopyTextureInfo::Obtain();
-    */
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

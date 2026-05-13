@@ -37,10 +37,6 @@ public class WGPUInstance extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         return internal_native_IsValid(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-return nativeObject->IsValid();
-*/
     public static boolean internal_native_IsValid(long this_addr) {
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
@@ -69,10 +61,6 @@ return nativeObject->IsValid();
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -85,10 +73,6 @@ nativeObject->Release();
         internal_native_RequestAdapter(native_address, options.native_address, mode.getValue(), callback.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestAdapterCallback* )callback_addr);
-*/
     public static void internal_native_RequestAdapter(long this_addr, long options_addr, int mode, long callback_addr) {
         try {
             FFMHandles.internal_native_RequestAdapter__JJIJ.invokeExact(this_addr, options_addr, mode, callback_addr);
@@ -106,11 +90,6 @@ nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (:
         return WGPUSurface_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateWebSurface(canvas);
-return (int64_t)obj;
-*/
     public static long internal_native_CreateWebSurface_addr(long this_addr, String canvas) {
         try {
             return (long) FFMHandles.internal_native_CreateWebSurface_addr__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(canvas));
@@ -128,11 +107,6 @@ return (int64_t)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateWindowsSurface((void*)hwnd_addr);
-return (int64_t)obj;
-*/
     public static long internal_native_CreateWindowsSurface_addr(long this_addr, long hwnd_addr) {
         try {
             return (long) FFMHandles.internal_native_CreateWindowsSurface_addr__JJ.invokeExact(this_addr, hwnd_addr);
@@ -150,11 +124,6 @@ return (int64_t)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateLinuxSurface(isWayland, (void*)windowOrSurface_addr, (void*)display_addr);
-return (int64_t)obj;
-*/
     public static long internal_native_CreateLinuxSurface_addr(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr) {
         try {
             return (long) FFMHandles.internal_native_CreateLinuxSurface_addr__JZJJ.invokeExact(this_addr, isWayland, windowOrSurface_addr, display_addr);
@@ -172,11 +141,6 @@ return (int64_t)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateMacSurface((void*)metalLayer_addr);
-return (int64_t)obj;
-*/
     public static long internal_native_CreateMacSurface_addr(long this_addr, long metalLayer_addr) {
         try {
             return (long) FFMHandles.internal_native_CreateMacSurface_addr__JJ.invokeExact(this_addr, metalLayer_addr);
@@ -194,11 +158,6 @@ return (int64_t)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateAndroidSurface((WGPUAndroidWindow* )surface_addr);
-return (int64_t)obj;
-*/
     public static long internal_native_CreateAndroidSurface_addr(long this_addr, long surface_addr) {
         try {
             return (long) FFMHandles.internal_native_CreateAndroidSurface_addr__JJ.invokeExact(this_addr, surface_addr);
@@ -211,10 +170,6 @@ return (int64_t)obj;
         internal_native_ProcessEvents(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->ProcessEvents();
-*/
     public static void internal_native_ProcessEvents(long this_addr) {
         try {
             FFMHandles.internal_native_ProcessEvents__J.invokeExact(this_addr);
@@ -234,10 +189,6 @@ nativeObject->ProcessEvents();
         return WGPUWaitStatus.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-return (int)nativeObject->WaitAny((JGPU::WGPUVectorFutureWaitInfo* )futureVector_addr, (int)timeoutNS);
-*/
     public static int internal_native_WaitAny(long this_addr, long futureVector_addr, int timeoutNS) {
         try {
             return (int) FFMHandles.internal_native_WaitAny__JJI.invokeExact(this_addr, futureVector_addr, timeoutNS);

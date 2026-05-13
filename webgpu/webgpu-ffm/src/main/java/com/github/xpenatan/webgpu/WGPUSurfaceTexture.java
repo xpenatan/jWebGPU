@@ -26,9 +26,6 @@ public class WGPUSurfaceTexture extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUSurfaceTexture();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUSurfaceTexture();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceTexture* nativeObject = (JGPU::WGPUSurfaceTexture*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_GetTexture(native_address, texture.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceTexture* nativeObject = (JGPU::WGPUSurfaceTexture*)this_addr;
-nativeObject->GetTexture((JGPU::WGPUTexture* )texture_addr);
-*/
     public static void internal_native_GetTexture(long this_addr, long texture_addr) {
         try {
             FFMHandles.internal_native_GetTexture__JJ.invokeExact(this_addr, texture_addr);
@@ -94,10 +83,6 @@ nativeObject->GetTexture((JGPU::WGPUTexture* )texture_addr);
         return WGPUSurfaceGetCurrentTextureStatus.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceTexture* nativeObject = (JGPU::WGPUSurfaceTexture*)this_addr;
-return (int)nativeObject->GetStatus();
-*/
     public static int internal_native_GetStatus(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetStatus__J.invokeExact(this_addr);
@@ -116,9 +101,6 @@ return (int)nativeObject->GetStatus();
         return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUSurfaceTexture::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

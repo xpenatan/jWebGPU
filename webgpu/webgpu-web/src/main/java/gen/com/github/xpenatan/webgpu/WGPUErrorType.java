@@ -40,39 +40,21 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorType_NoError;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorType_NoError;")
     private static native int WGPUErrorType_NoError_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorType_Validation;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorType_Validation;")
     private static native int WGPUErrorType_Validation_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorType_OutOfMemory;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorType_OutOfMemory;")
     private static native int WGPUErrorType_OutOfMemory_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorType_Internal;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorType_Internal;")
     private static native int WGPUErrorType_Internal_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorType_Unknown;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorType_Unknown;")
     private static native int WGPUErrorType_Unknown_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorType_Force32;")
     private static native int WGPUErrorType_Force32_NATIVE();
 }

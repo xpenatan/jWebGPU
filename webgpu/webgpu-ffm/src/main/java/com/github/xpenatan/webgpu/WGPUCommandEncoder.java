@@ -26,9 +26,6 @@ public class WGPUCommandEncoder extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUCommandEncoder();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUCommandEncoder();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -87,10 +76,6 @@ nativeObject->SetLabel(value);
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -103,10 +88,6 @@ nativeObject->Release();
         internal_native_BeginComputePass(native_address, descriptor.native_address, computePassEncoder.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->BeginComputePass((JGPU::WGPUComputePassDescriptor* )descriptor_addr, (JGPU::WGPUComputePassEncoder* )computePassEncoder_addr);
-*/
     public static void internal_native_BeginComputePass(long this_addr, long descriptor_addr, long computePassEncoder_addr) {
         try {
             FFMHandles.internal_native_BeginComputePass__JJJ.invokeExact(this_addr, descriptor_addr, computePassEncoder_addr);
@@ -119,10 +100,6 @@ nativeObject->BeginComputePass((JGPU::WGPUComputePassDescriptor* )descriptor_add
         internal_native_BeginRenderPass(native_address, renderPassDescriptor.native_address, renderPassEncoder.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->BeginRenderPass((JGPU::WGPURenderPassDescriptor* )renderPassDescriptor_addr, (JGPU::WGPURenderPassEncoder* )renderPassEncoder_addr);
-*/
     public static void internal_native_BeginRenderPass(long this_addr, long renderPassDescriptor_addr, long renderPassEncoder_addr) {
         try {
             FFMHandles.internal_native_BeginRenderPass__JJJ.invokeExact(this_addr, renderPassDescriptor_addr, renderPassEncoder_addr);
@@ -135,10 +112,6 @@ nativeObject->BeginRenderPass((JGPU::WGPURenderPassDescriptor* )renderPassDescri
         internal_native_ClearBuffer(native_address, buffer.native_address, offset, size);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->ClearBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)offset, (int)size);
-*/
     public static void internal_native_ClearBuffer(long this_addr, long buffer_addr, int offset, int size) {
         try {
             FFMHandles.internal_native_ClearBuffer__JJII.invokeExact(this_addr, buffer_addr, offset, size);
@@ -151,10 +124,6 @@ nativeObject->ClearBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)offset, (int)siz
         internal_native_CopyBufferToBuffer(native_address, source.native_address, sourceOffset, destination.native_address, destinationOffset, size);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyBufferToBuffer((JGPU::WGPUBuffer* )source_addr, (int)sourceOffset, (JGPU::WGPUBuffer* )destination_addr, (int)destinationOffset, (int)size);
-*/
     public static void internal_native_CopyBufferToBuffer(long this_addr, long source_addr, int sourceOffset, long destination_addr, int destinationOffset, int size) {
         try {
             FFMHandles.internal_native_CopyBufferToBuffer__JJIJII.invokeExact(this_addr, source_addr, sourceOffset, destination_addr, destinationOffset, size);
@@ -167,10 +136,6 @@ nativeObject->CopyBufferToBuffer((JGPU::WGPUBuffer* )source_addr, (int)sourceOff
         internal_native_CopyBufferToTexture(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyBufferToTexture((JGPU::WGPUTexelCopyBufferInfo* )source_addr, (JGPU::WGPUTexelCopyTextureInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
-*/
     public static void internal_native_CopyBufferToTexture(long this_addr, long source_addr, long destination_addr, long copySize_addr) {
         try {
             FFMHandles.internal_native_CopyBufferToTexture__JJJJ.invokeExact(this_addr, source_addr, destination_addr, copySize_addr);
@@ -183,10 +148,6 @@ nativeObject->CopyBufferToTexture((JGPU::WGPUTexelCopyBufferInfo* )source_addr, 
         internal_native_CopyTextureToBuffer(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyTextureToBuffer((JGPU::WGPUTexelCopyTextureInfo* )source_addr, (JGPU::WGPUTexelCopyBufferInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
-*/
     public static void internal_native_CopyTextureToBuffer(long this_addr, long source_addr, long destination_addr, long copySize_addr) {
         try {
             FFMHandles.internal_native_CopyTextureToBuffer__JJJJ.invokeExact(this_addr, source_addr, destination_addr, copySize_addr);
@@ -199,10 +160,6 @@ nativeObject->CopyTextureToBuffer((JGPU::WGPUTexelCopyTextureInfo* )source_addr,
         internal_native_CopyTextureToTexture(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyTextureToTexture((JGPU::WGPUTexelCopyTextureInfo* )source_addr, (JGPU::WGPUTexelCopyTextureInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
-*/
     public static void internal_native_CopyTextureToTexture(long this_addr, long source_addr, long destination_addr, long copySize_addr) {
         try {
             FFMHandles.internal_native_CopyTextureToTexture__JJJJ.invokeExact(this_addr, source_addr, destination_addr, copySize_addr);
@@ -215,10 +172,6 @@ nativeObject->CopyTextureToTexture((JGPU::WGPUTexelCopyTextureInfo* )source_addr
         internal_native_Finish(native_address, descriptor.native_address, commandBuffer.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->Finish((JGPU::WGPUCommandBufferDescriptor* )descriptor_addr, (JGPU::WGPUCommandBuffer* )commandBuffer_addr);
-*/
     public static void internal_native_Finish(long this_addr, long descriptor_addr, long commandBuffer_addr) {
         try {
             FFMHandles.internal_native_Finish__JJJ.invokeExact(this_addr, descriptor_addr, commandBuffer_addr);
@@ -231,10 +184,6 @@ nativeObject->Finish((JGPU::WGPUCommandBufferDescriptor* )descriptor_addr, (JGPU
         internal_native_InsertDebugMarker(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->InsertDebugMarker(value);
-*/
     public static void internal_native_InsertDebugMarker(long this_addr, String value) {
         try {
             FFMHandles.internal_native_InsertDebugMarker__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -247,10 +196,6 @@ nativeObject->InsertDebugMarker(value);
         internal_native_PopDebugGroup(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->PopDebugGroup();
-*/
     public static void internal_native_PopDebugGroup(long this_addr) {
         try {
             FFMHandles.internal_native_PopDebugGroup__J.invokeExact(this_addr);
@@ -263,10 +208,6 @@ nativeObject->PopDebugGroup();
         internal_native_PushDebugGroup(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->PushDebugGroup(value);
-*/
     public static void internal_native_PushDebugGroup(long this_addr, String value) {
         try {
             FFMHandles.internal_native_PushDebugGroup__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -279,10 +220,6 @@ nativeObject->PushDebugGroup(value);
         internal_native_ResolveQuerySet(native_address, querySet.native_address, firstQuery, queryCount, destination.native_address, destinationOffset);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->ResolveQuerySet((JGPU::WGPUQuerySet* )querySet_addr, (int)firstQuery, (int)queryCount, (JGPU::WGPUBuffer* )destination_addr, (int)destinationOffset);
-*/
     public static void internal_native_ResolveQuerySet(long this_addr, long querySet_addr, int firstQuery, int queryCount, long destination_addr, int destinationOffset) {
         try {
             FFMHandles.internal_native_ResolveQuerySet__JJIIJI.invokeExact(this_addr, querySet_addr, firstQuery, queryCount, destination_addr, destinationOffset);
@@ -295,10 +232,6 @@ nativeObject->ResolveQuerySet((JGPU::WGPUQuerySet* )querySet_addr, (int)firstQue
         internal_native_WriteTimestamp(native_address, querySet.native_address, queryIndex);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->WriteTimestamp((JGPU::WGPUQuerySet* )querySet_addr, (int)queryIndex);
-*/
     public static void internal_native_WriteTimestamp(long this_addr, long querySet_addr, int queryIndex) {
         try {
             FFMHandles.internal_native_WriteTimestamp__JJI.invokeExact(this_addr, querySet_addr, queryIndex);
@@ -311,10 +244,6 @@ nativeObject->WriteTimestamp((JGPU::WGPUQuerySet* )querySet_addr, (int)queryInde
         return internal_native_IsValid(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-return nativeObject->IsValid();
-*/
     public static boolean internal_native_IsValid(long this_addr) {
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
@@ -333,9 +262,6 @@ return nativeObject->IsValid();
         return WGPUCommandEncoder_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUCommandEncoder::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

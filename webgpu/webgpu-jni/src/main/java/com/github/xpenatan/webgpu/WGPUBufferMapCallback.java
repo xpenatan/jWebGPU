@@ -12,28 +12,6 @@ public class WGPUBufferMapCallback extends NativeObject {
 
     static public final WGPUBufferMapCallback NULL = WGPUBufferMapCallback.native_new();
 
-    /*[-JNI;-NATIVE]
-	static jmethodID WGPUBufferMapCallbackImpl_OnCallbackIS_ID;
-
-class WGPUBufferMapCallbackImpl : public JGPU::WGPUBufferMapCallback {
-private:
-	JNIEnv* env;
-	jobject obj;
-public:
-void setupCallback(JNIEnv* env, jobject obj) {
-	this->env = env;
-	this->obj = env->NewGlobalRef(obj);
-	static jclass jClassID = 0;
-	if(jClassID == 0) {
-		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPUBufferMapCallbackImpl_OnCallbackIS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(ILjava/lang/String;)V");
-	}
-}
-virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
-   env->CallVoidMethod(obj, WGPUBufferMapCallbackImpl_OnCallbackIS_ID, status, env->NewStringUTF(message));
-}
-};
-*/
     @Deprecated()
     protected WGPUBufferMapCallback(byte b, char c) {
     }
@@ -49,10 +27,6 @@ virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUBufferMapCallbackImpl* nativeObject = (WGPUBufferMapCallbackImpl*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUBufferMapCallback() {
@@ -81,14 +55,7 @@ delete nativeObject;
         onCallback(status_addr_enum, message_addr);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new WGPUBufferMapCallbackImpl();
-*/
     public static native long internal_native_create_addr();
 
-    /*[-JNI;-NATIVE]
-WGPUBufferMapCallbackImpl* nativeObject = (WGPUBufferMapCallbackImpl*)this_addr;
-nativeObject->setupCallback(env, object);
-*/
     public native void internal_native_setupCallback(long this_addr);
 }

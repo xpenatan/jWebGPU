@@ -34,27 +34,15 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCreatePipelineAsyncStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCreatePipelineAsyncStatus_Success;")
     private static native int WGPUCreatePipelineAsyncStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCreatePipelineAsyncStatus_ValidationError;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCreatePipelineAsyncStatus_ValidationError;")
     private static native int WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCreatePipelineAsyncStatus_InternalError;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCreatePipelineAsyncStatus_InternalError;")
     private static native int WGPUCreatePipelineAsyncStatus_InternalError_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCreatePipelineAsyncStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCreatePipelineAsyncStatus_Force32;")
     private static native int WGPUCreatePipelineAsyncStatus_Force32_NATIVE();
 }

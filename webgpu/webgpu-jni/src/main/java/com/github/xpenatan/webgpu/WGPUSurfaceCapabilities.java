@@ -21,9 +21,6 @@ public class WGPUSurfaceCapabilities extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSurfaceCapabilities();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -44,10 +41,6 @@ return (jlong)new JGPU::WGPUSurfaceCapabilities();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceCapabilities* nativeObject = (JGPU::WGPUSurfaceCapabilities*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUVectorTextureFormat getFormats() {
@@ -60,11 +53,6 @@ delete nativeObject;
         return WGPUVectorTextureFormat_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSurfaceCapabilities* nativeObject = (JGPU::WGPUSurfaceCapabilities*)this_addr;
-static JGPU::WGPUVectorTextureFormat copy_addr;
-copy_addr = nativeObject->GetFormats();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetFormats_addr(long this_addr);
 
     public static WGPUSurfaceCapabilities obtain() {
@@ -77,8 +65,5 @@ return (jlong)&copy_addr;*/
         return WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSurfaceCapabilities::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

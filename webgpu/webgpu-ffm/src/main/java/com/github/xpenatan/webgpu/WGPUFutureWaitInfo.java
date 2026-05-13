@@ -39,10 +39,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFutureWaitInfo* nativeObject = (JGPU::WGPUFutureWaitInfo*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -55,10 +51,6 @@ delete nativeObject;
         internal_native_SetFuture(native_address, future.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFutureWaitInfo* nativeObject = (JGPU::WGPUFutureWaitInfo*)this_addr;
-nativeObject->SetFuture((JGPU::WGPUFuture* )future_addr);
-*/
     public static void internal_native_SetFuture(long this_addr, long future_addr) {
         try {
             FFMHandles.internal_native_SetFuture__JJ.invokeExact(this_addr, future_addr);
@@ -77,9 +69,6 @@ nativeObject->SetFuture((JGPU::WGPUFuture* )future_addr);
         return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUFutureWaitInfo::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

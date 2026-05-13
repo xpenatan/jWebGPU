@@ -28,16 +28,9 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_SetWindow(native_address, surfacePtr);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-              return 0;
-    */
     @org.teavm.jso.JSBody(params = {"surface"}, script = "return 0;")
     private static native long internal_getAndroidSurface(Object surface);
 
-    /*
-      [-TEAVM;-NATIVE]
-    */
     private static native void internal_native_SetWindow(int this_addr, long surfaceAddr);
 
     public WGPUAndroidWindow() {
@@ -45,11 +38,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = new jWebGPU.WGPUAndroidWindow();
-      return jWebGPU.getPointer(jsObj);
-    */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUAndroidWindow();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -57,11 +45,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAndroidWindow);
-      jWebGPU.destroy(jsObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAndroidWindow);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -69,11 +52,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_InitLogcat(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAndroidWindow);
-      jsObj.InitLogcat();
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAndroidWindow);jsObj.InitLogcat();")
     public static native void internal_native_InitLogcat(int this_addr);
 }

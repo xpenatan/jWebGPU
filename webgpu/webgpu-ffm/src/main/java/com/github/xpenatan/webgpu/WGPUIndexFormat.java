@@ -41,9 +41,6 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUIndexFormat_Undefined;
-*/
     private static int WGPUIndexFormat_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUIndexFormat_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUIndexFormat_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUIndexFormat_Uint16;
-*/
     private static int WGPUIndexFormat_Uint16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUIndexFormat_Uint16_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUIndexFormat_Uint16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUIndexFormat_Uint32;
-*/
     private static int WGPUIndexFormat_Uint32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUIndexFormat_Uint32_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUIndexFormat_Uint32;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUIndexFormat_Force32;
-*/
     private static int WGPUIndexFormat_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUIndexFormat_Force32_NATIVE__.invokeExact();

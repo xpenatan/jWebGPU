@@ -34,27 +34,15 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMipmapFilterMode_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMipmapFilterMode_Undefined;")
     private static native int WGPUMipmapFilterMode_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMipmapFilterMode_Nearest;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMipmapFilterMode_Nearest;")
     private static native int WGPUMipmapFilterMode_Nearest_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMipmapFilterMode_Linear;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMipmapFilterMode_Linear;")
     private static native int WGPUMipmapFilterMode_Linear_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMipmapFilterMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMipmapFilterMode_Force32;")
     private static native int WGPUMipmapFilterMode_Force32_NATIVE();
 }

@@ -26,9 +26,6 @@ public class WGPUTextureBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUTextureBindingLayout();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUTextureBindingLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetSampleType(native_address, sampleType.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetSampleType((::WGPUTextureSampleType)sampleType);
-*/
     public static void internal_native_SetSampleType(long this_addr, int sampleType) {
         try {
             FFMHandles.internal_native_SetSampleType__JI.invokeExact(this_addr, sampleType);
@@ -103,10 +88,6 @@ nativeObject->SetSampleType((::WGPUTextureSampleType)sampleType);
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
-*/
     public static void internal_native_SetViewDimension(long this_addr, int viewDimension) {
         try {
             FFMHandles.internal_native_SetViewDimension__JI.invokeExact(this_addr, viewDimension);
@@ -119,10 +100,6 @@ nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
         internal_native_SetMultisampled(native_address, multisampled);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetMultisampled((int)multisampled);
-*/
     public static void internal_native_SetMultisampled(long this_addr, int multisampled) {
         try {
             FFMHandles.internal_native_SetMultisampled__JI.invokeExact(this_addr, multisampled);
@@ -141,9 +118,6 @@ nativeObject->SetMultisampled((int)multisampled);
         return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUTextureBindingLayout::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

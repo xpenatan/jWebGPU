@@ -47,9 +47,6 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPresentMode_Undefined;
-*/
     private static int WGPUPresentMode_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPresentMode_Undefined_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUPresentMode_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPresentMode_Fifo;
-*/
     private static int WGPUPresentMode_Fifo_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPresentMode_Fifo_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUPresentMode_Fifo;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPresentMode_FifoRelaxed;
-*/
     private static int WGPUPresentMode_FifoRelaxed_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPresentMode_FifoRelaxed_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUPresentMode_FifoRelaxed;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPresentMode_Immediate;
-*/
     private static int WGPUPresentMode_Immediate_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPresentMode_Immediate_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUPresentMode_Immediate;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPresentMode_Mailbox;
-*/
     private static int WGPUPresentMode_Mailbox_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPresentMode_Mailbox_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUPresentMode_Mailbox;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPresentMode_Force32;
-*/
     private static int WGPUPresentMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPresentMode_Force32_NATIVE__.invokeExact();

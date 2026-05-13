@@ -44,63 +44,33 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_Undefined;")
     private static native int WGPUBackendType_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_Null;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_Null;")
     private static native int WGPUBackendType_Null_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_WebGPU;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_WebGPU;")
     private static native int WGPUBackendType_WebGPU_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_D3D11;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_D3D11;")
     private static native int WGPUBackendType_D3D11_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_D3D12;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_D3D12;")
     private static native int WGPUBackendType_D3D12_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_Metal;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_Metal;")
     private static native int WGPUBackendType_Metal_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_Vulkan;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_Vulkan;")
     private static native int WGPUBackendType_Vulkan_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_OpenGL;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_OpenGL;")
     private static native int WGPUBackendType_OpenGL_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_OpenGLES;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_OpenGLES;")
     private static native int WGPUBackendType_OpenGLES_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBackendType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBackendType_Force32;")
     private static native int WGPUBackendType_Force32_NATIVE();
 }

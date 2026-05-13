@@ -47,9 +47,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorType_NoError;
-*/
     private static int WGPUErrorType_NoError_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorType_NoError_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUErrorType_NoError;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorType_Validation;
-*/
     private static int WGPUErrorType_Validation_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorType_Validation_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUErrorType_Validation;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorType_OutOfMemory;
-*/
     private static int WGPUErrorType_OutOfMemory_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorType_OutOfMemory_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUErrorType_OutOfMemory;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorType_Internal;
-*/
     private static int WGPUErrorType_Internal_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorType_Internal_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUErrorType_Internal;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorType_Unknown;
-*/
     private static int WGPUErrorType_Unknown_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorType_Unknown_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUErrorType_Unknown;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorType_Force32;
-*/
     private static int WGPUErrorType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorType_Force32_NATIVE__.invokeExact();

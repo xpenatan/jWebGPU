@@ -33,10 +33,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)new JGPU::WGPUExtent3D();
-    */
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -49,11 +45,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -66,11 +57,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetWidth(native_address, width);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      nativeObject->SetWidth((int)width);
-    */
     public static void internal_native_SetWidth(long this_addr, int width) {
         try {
             FFMHandles.internal_native_SetWidth__JI.invokeExact(this_addr, width);
@@ -83,11 +69,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetHeight(native_address, height);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      nativeObject->SetHeight((int)height);
-    */
     public static void internal_native_SetHeight(long this_addr, int height) {
         try {
             FFMHandles.internal_native_SetHeight__JI.invokeExact(this_addr, height);
@@ -100,11 +81,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetDepthOrArrayLayers(native_address, depthOrArrayLayers);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      nativeObject->SetDepthOrArrayLayers((int)depthOrArrayLayers);
-    */
     public static void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers) {
         try {
             FFMHandles.internal_native_SetDepthOrArrayLayers__JI.invokeExact(this_addr, depthOrArrayLayers);
@@ -123,10 +99,6 @@ public class WGPUExtent3D extends NativeObject {
         return WGPUExtent3D_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)JGPU::WGPUExtent3D::Obtain();
-    */
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

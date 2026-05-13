@@ -26,9 +26,6 @@ public class WGPUCompilationInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUCompilationInfo();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUCompilationInfo();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCompilationInfo* nativeObject = (JGPU::WGPUCompilationInfo*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         return internal_native_GetMessageCount(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCompilationInfo* nativeObject = (JGPU::WGPUCompilationInfo*)this_addr;
-return nativeObject->GetMessageCount();
-*/
     public static int internal_native_GetMessageCount(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMessageCount__J.invokeExact(this_addr);
@@ -93,11 +82,6 @@ return nativeObject->GetMessageCount();
         return WGPUCompilationMessage_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUCompilationInfo* nativeObject = (JGPU::WGPUCompilationInfo*)this_addr;
-thread_local static JGPU::WGPUCompilationMessage copy_addr;
-copy_addr = nativeObject->GetMessage((int)index);
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetMessage_addr(long this_addr, int index) {
         try {
             return (long) FFMHandles.internal_native_GetMessage_addr__JI.invokeExact(this_addr, index);

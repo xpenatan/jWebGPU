@@ -17,9 +17,6 @@ public class WGPUQuerySet extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUQuerySet();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -40,60 +37,36 @@ return (jlong)new JGPU::WGPUQuerySet();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void addRef() {
         internal_native_AddRef(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->AddRef();
-*/
     public static native void internal_native_AddRef(long this_addr);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->Release();
-*/
     public static native void internal_native_Release(long this_addr);
 
     public void destroy() {
         internal_native_Destroy(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-nativeObject->Destroy();
-*/
     public static native void internal_native_Destroy(long this_addr);
 
     public int getCount() {
         return internal_native_GetCount(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-return nativeObject->GetCount();
-*/
     public static native int internal_native_GetCount(long this_addr);
 
     public WGPUQueryType getType() {
@@ -107,19 +80,11 @@ return nativeObject->GetCount();
         return WGPUQueryType.CUSTOM.setValue(value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-return (int)nativeObject->GetType();
-*/
     public static native int internal_native_GetType(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUQuerySet* nativeObject = (JGPU::WGPUQuerySet*)this_addr;
-return nativeObject->IsValid();
-*/
     public static native boolean internal_native_IsValid(long this_addr);
 }

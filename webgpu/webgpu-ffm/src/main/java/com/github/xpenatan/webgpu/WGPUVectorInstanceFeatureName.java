@@ -26,9 +26,6 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUVectorInstanceFeatureName();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUVectorInstanceFeatureName();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorInstanceFeatureName* nativeObject = (JGPU::WGPUVectorInstanceFeatureName*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         return internal_native_size(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorInstanceFeatureName* nativeObject = (JGPU::WGPUVectorInstanceFeatureName*)this_addr;
-return nativeObject->size();
-*/
     public static int internal_native_size(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_size__J.invokeExact(this_addr);
@@ -87,10 +76,6 @@ return nativeObject->size();
         internal_native_clear(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorInstanceFeatureName* nativeObject = (JGPU::WGPUVectorInstanceFeatureName*)this_addr;
-nativeObject->clear();
-*/
     public static void internal_native_clear(long this_addr) {
         try {
             FFMHandles.internal_native_clear__J.invokeExact(this_addr);
@@ -103,10 +88,6 @@ nativeObject->clear();
         internal_native_push_back(native_address, featureName.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorInstanceFeatureName* nativeObject = (JGPU::WGPUVectorInstanceFeatureName*)this_addr;
-nativeObject->push_back((::WGPUInstanceFeatureName)featureName);
-*/
     public static void internal_native_push_back(long this_addr, int featureName) {
         try {
             FFMHandles.internal_native_push_back__JI.invokeExact(this_addr, featureName);
@@ -125,9 +106,6 @@ nativeObject->push_back((::WGPUInstanceFeatureName)featureName);
         return WGPUVectorInstanceFeatureName_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUVectorInstanceFeatureName::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

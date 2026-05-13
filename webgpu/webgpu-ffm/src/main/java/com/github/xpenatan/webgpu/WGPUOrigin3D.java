@@ -26,9 +26,6 @@ public class WGPUOrigin3D extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUOrigin3D();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUOrigin3D();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_Set(native_address, x, y, z);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->Set((int)x, (int)y, (int)z);
-*/
     public static void internal_native_Set(long this_addr, int x, int y, int z) {
         try {
             FFMHandles.internal_native_Set__JIII.invokeExact(this_addr, x, y, z);
@@ -87,10 +76,6 @@ nativeObject->Set((int)x, (int)y, (int)z);
         internal_native_SetX(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->SetX((int)value);
-*/
     public static void internal_native_SetX(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetX__JI.invokeExact(this_addr, value);
@@ -103,10 +88,6 @@ nativeObject->SetX((int)value);
         internal_native_SetY(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->SetY((int)value);
-*/
     public static void internal_native_SetY(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetY__JI.invokeExact(this_addr, value);
@@ -119,10 +100,6 @@ nativeObject->SetY((int)value);
         internal_native_SetZ(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUOrigin3D* nativeObject = (JGPU::WGPUOrigin3D*)this_addr;
-nativeObject->SetZ((int)value);
-*/
     public static void internal_native_SetZ(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetZ__JI.invokeExact(this_addr, value);
@@ -141,9 +118,6 @@ nativeObject->SetZ((int)value);
         return WGPUOrigin3D_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUOrigin3D::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

@@ -21,10 +21,6 @@ public class WGPURenderPassColorAttachment extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPURenderPassColorAttachment();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPURenderPassColorAttachment();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -46,10 +42,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -57,10 +49,6 @@ jWebGPU.destroy(jsObj);
         internal_native_Reset(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.Reset();
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.Reset();")
     public static native void internal_native_Reset(int this_addr);
 
@@ -68,10 +56,6 @@ jsObj.Reset();
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
@@ -79,10 +63,6 @@ jsObj.SetNextInChain(chainedStruct_addr);
         internal_native_SetView(native_address, textureView.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.SetView(textureView_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "textureView_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetView(textureView_addr);")
     public static native void internal_native_SetView(int this_addr, int textureView_addr);
 
@@ -90,10 +70,6 @@ jsObj.SetView(textureView_addr);
         internal_native_SetResolveTarget(native_address, textureView.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.SetResolveTarget(textureView_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "textureView_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetResolveTarget(textureView_addr);")
     public static native void internal_native_SetResolveTarget(int this_addr, int textureView_addr);
 
@@ -101,10 +77,6 @@ jsObj.SetResolveTarget(textureView_addr);
         internal_native_SetLoadOp(native_address, loadOp.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.SetLoadOp(loadOp);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "loadOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetLoadOp(loadOp);")
     public static native void internal_native_SetLoadOp(int this_addr, int loadOp);
 
@@ -112,10 +84,6 @@ jsObj.SetLoadOp(loadOp);
         internal_native_SetStoreOp(native_address, storeOp.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.SetStoreOp(storeOp);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "storeOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetStoreOp(storeOp);")
     public static native void internal_native_SetStoreOp(int this_addr, int storeOp);
 
@@ -129,12 +97,6 @@ jsObj.SetStoreOp(storeOp);
         return WGPUColor_TEMP_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-var returnedJSObj = jsObj.GetClearValue();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);var returnedJSObj = jsObj.GetClearValue();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetClearValue_addr(int this_addr);
 
@@ -142,10 +104,6 @@ return jWebGPU.getPointer(returnedJSObj);
         internal_native_SetDepthSlice(native_address, depthSlice);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);
-jsObj.SetDepthSlice(depthSlice);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "depthSlice"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassColorAttachment);jsObj.SetDepthSlice(depthSlice);")
     public static native void internal_native_SetDepthSlice(int this_addr, int depthSlice);
 
@@ -159,11 +117,6 @@ jsObj.SetDepthSlice(depthSlice);
         return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassColorAttachment.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

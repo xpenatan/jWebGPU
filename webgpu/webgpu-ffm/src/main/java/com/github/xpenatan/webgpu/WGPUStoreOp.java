@@ -41,9 +41,6 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStoreOp_Undefined;
-*/
     private static int WGPUStoreOp_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStoreOp_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUStoreOp_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStoreOp_Store;
-*/
     private static int WGPUStoreOp_Store_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStoreOp_Store_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUStoreOp_Store;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStoreOp_Discard;
-*/
     private static int WGPUStoreOp_Discard_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStoreOp_Discard_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUStoreOp_Discard;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStoreOp_Force32;
-*/
     private static int WGPUStoreOp_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStoreOp_Force32_NATIVE__.invokeExact();

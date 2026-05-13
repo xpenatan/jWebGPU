@@ -37,10 +37,6 @@ public class WGPUVertexState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -69,10 +61,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
-*/
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
         try {
             FFMHandles.internal_native_SetModule__JJ.invokeExact(this_addr, shaderModule_addr);
@@ -85,10 +73,6 @@ nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetEntryPoint(entryPoint);
-*/
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
         try {
             FFMHandles.internal_native_SetEntryPoint__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(entryPoint));
@@ -101,10 +85,6 @@ nativeObject->SetEntryPoint(entryPoint);
         internal_native_SetConstants(native_address, constants.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
-*/
     public static void internal_native_SetConstants(long this_addr, long constants_addr) {
         try {
             FFMHandles.internal_native_SetConstants__JJ.invokeExact(this_addr, constants_addr);
@@ -117,10 +97,6 @@ nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
         internal_native_SetBuffers(native_address, buffers.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexState* nativeObject = (JGPU::WGPUVertexState*)this_addr;
-nativeObject->SetBuffers((JGPU::WGPUVectorVertexBufferLayout* )buffers_addr);
-*/
     public static void internal_native_SetBuffers(long this_addr, long buffers_addr) {
         try {
             FFMHandles.internal_native_SetBuffers__JJ.invokeExact(this_addr, buffers_addr);

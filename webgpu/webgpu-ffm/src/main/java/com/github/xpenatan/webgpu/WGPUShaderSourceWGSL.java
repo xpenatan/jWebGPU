@@ -28,9 +28,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUShaderSourceWGSL();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -57,10 +54,6 @@ return (int64_t)new JGPU::WGPUShaderSourceWGSL();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUShaderSourceWGSL* nativeObject = (JGPU::WGPUShaderSourceWGSL*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -73,10 +66,6 @@ delete nativeObject;
         internal_native_SetCode(native_address, code);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUShaderSourceWGSL* nativeObject = (JGPU::WGPUShaderSourceWGSL*)this_addr;
-nativeObject->SetCode(code);
-*/
     public static void internal_native_SetCode(long this_addr, String code) {
         try {
             FFMHandles.internal_native_SetCode__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(code));
@@ -95,11 +84,6 @@ nativeObject->SetCode(code);
         return WGPUChainedStruct_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUShaderSourceWGSL* nativeObject = (JGPU::WGPUShaderSourceWGSL*)this_addr;
-thread_local static JGPU::WGPUChainedStruct copy_addr;
-copy_addr = nativeObject->GetChain();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetChain_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetChain_addr__J.invokeExact(this_addr);
@@ -118,9 +102,6 @@ return (int64_t)&copy_addr;*/
         return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUShaderSourceWGSL::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

@@ -52,9 +52,6 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_None;
-*/
     private static int WGPUBufferUsage_None_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_None_NATIVE__.invokeExact();
@@ -63,9 +60,6 @@ return (int64_t)WGPUBufferUsage_None;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_MapRead;
-*/
     private static int WGPUBufferUsage_MapRead_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_MapRead_NATIVE__.invokeExact();
@@ -74,9 +68,6 @@ return (int64_t)WGPUBufferUsage_MapRead;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_MapWrite;
-*/
     private static int WGPUBufferUsage_MapWrite_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_MapWrite_NATIVE__.invokeExact();
@@ -85,9 +76,6 @@ return (int64_t)WGPUBufferUsage_MapWrite;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_CopySrc;
-*/
     private static int WGPUBufferUsage_CopySrc_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_CopySrc_NATIVE__.invokeExact();
@@ -96,9 +84,6 @@ return (int64_t)WGPUBufferUsage_CopySrc;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_CopyDst;
-*/
     private static int WGPUBufferUsage_CopyDst_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_CopyDst_NATIVE__.invokeExact();
@@ -107,9 +92,6 @@ return (int64_t)WGPUBufferUsage_CopyDst;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_Index;
-*/
     private static int WGPUBufferUsage_Index_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_Index_NATIVE__.invokeExact();
@@ -118,9 +100,6 @@ return (int64_t)WGPUBufferUsage_Index;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_Vertex;
-*/
     private static int WGPUBufferUsage_Vertex_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_Vertex_NATIVE__.invokeExact();
@@ -129,9 +108,6 @@ return (int64_t)WGPUBufferUsage_Vertex;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_Uniform;
-*/
     private static int WGPUBufferUsage_Uniform_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_Uniform_NATIVE__.invokeExact();
@@ -140,9 +116,6 @@ return (int64_t)WGPUBufferUsage_Uniform;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_Storage;
-*/
     private static int WGPUBufferUsage_Storage_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_Storage_NATIVE__.invokeExact();
@@ -151,9 +124,6 @@ return (int64_t)WGPUBufferUsage_Storage;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_Indirect;
-*/
     private static int WGPUBufferUsage_Indirect_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_Indirect_NATIVE__.invokeExact();
@@ -162,9 +132,6 @@ return (int64_t)WGPUBufferUsage_Indirect;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferUsage_QueryResolve;
-*/
     private static int WGPUBufferUsage_QueryResolve_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferUsage_QueryResolve_NATIVE__.invokeExact();

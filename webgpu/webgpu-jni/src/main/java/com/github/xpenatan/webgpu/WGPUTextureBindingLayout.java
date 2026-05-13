@@ -19,9 +19,6 @@ public class WGPUTextureBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUTextureBindingLayout();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,50 +39,30 @@ return (jlong)new JGPU::WGPUTextureBindingLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setSampleType(WGPUTextureSampleType sampleType) {
         internal_native_SetSampleType(native_address, sampleType.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetSampleType((::WGPUTextureSampleType)sampleType);
-*/
     public static native void internal_native_SetSampleType(long this_addr, int sampleType);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetViewDimension((::WGPUTextureViewDimension)viewDimension);
-*/
     public static native void internal_native_SetViewDimension(long this_addr, int viewDimension);
 
     public void setMultisampled(int multisampled) {
         internal_native_SetMultisampled(native_address, multisampled);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureBindingLayout* nativeObject = (JGPU::WGPUTextureBindingLayout*)this_addr;
-nativeObject->SetMultisampled((int)multisampled);
-*/
     public static native void internal_native_SetMultisampled(long this_addr, int multisampled);
 
     public static WGPUTextureBindingLayout obtain() {
@@ -98,8 +75,5 @@ nativeObject->SetMultisampled((int)multisampled);
         return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureBindingLayout::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

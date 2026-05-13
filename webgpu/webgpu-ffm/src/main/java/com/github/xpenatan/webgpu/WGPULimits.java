@@ -26,9 +26,6 @@ public class WGPULimits extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPULimits();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPULimits();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetMaxTextureDimension1D(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxTextureDimension1D((int)value);
-*/
     public static void internal_native_SetMaxTextureDimension1D(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxTextureDimension1D__JI.invokeExact(this_addr, value);
@@ -87,10 +76,6 @@ nativeObject->SetMaxTextureDimension1D((int)value);
         return internal_native_GetMaxTextureDimension1D(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxTextureDimension1D();
-*/
     public static int internal_native_GetMaxTextureDimension1D(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureDimension1D__J.invokeExact(this_addr);
@@ -103,10 +88,6 @@ return nativeObject->GetMaxTextureDimension1D();
         internal_native_SetMaxTextureDimension2D(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxTextureDimension2D((int)value);
-*/
     public static void internal_native_SetMaxTextureDimension2D(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxTextureDimension2D__JI.invokeExact(this_addr, value);
@@ -119,10 +100,6 @@ nativeObject->SetMaxTextureDimension2D((int)value);
         return internal_native_GetMaxTextureDimension2D(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxTextureDimension2D();
-*/
     public static int internal_native_GetMaxTextureDimension2D(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureDimension2D__J.invokeExact(this_addr);
@@ -135,10 +112,6 @@ return nativeObject->GetMaxTextureDimension2D();
         internal_native_SetMaxTextureDimension3D(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxTextureDimension3D((int)value);
-*/
     public static void internal_native_SetMaxTextureDimension3D(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxTextureDimension3D__JI.invokeExact(this_addr, value);
@@ -151,10 +124,6 @@ nativeObject->SetMaxTextureDimension3D((int)value);
         return internal_native_GetMaxTextureDimension3D(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxTextureDimension3D();
-*/
     public static int internal_native_GetMaxTextureDimension3D(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureDimension3D__J.invokeExact(this_addr);
@@ -167,10 +136,6 @@ return nativeObject->GetMaxTextureDimension3D();
         internal_native_SetMaxTextureArrayLayers(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxTextureArrayLayers((int)value);
-*/
     public static void internal_native_SetMaxTextureArrayLayers(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxTextureArrayLayers__JI.invokeExact(this_addr, value);
@@ -183,10 +148,6 @@ nativeObject->SetMaxTextureArrayLayers((int)value);
         return internal_native_GetMaxTextureArrayLayers(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxTextureArrayLayers();
-*/
     public static int internal_native_GetMaxTextureArrayLayers(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxTextureArrayLayers__J.invokeExact(this_addr);
@@ -199,10 +160,6 @@ return nativeObject->GetMaxTextureArrayLayers();
         internal_native_SetMaxBindGroups(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxBindGroups((int)value);
-*/
     public static void internal_native_SetMaxBindGroups(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxBindGroups__JI.invokeExact(this_addr, value);
@@ -215,10 +172,6 @@ nativeObject->SetMaxBindGroups((int)value);
         return internal_native_GetMaxBindGroups(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxBindGroups();
-*/
     public static int internal_native_GetMaxBindGroups(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxBindGroups__J.invokeExact(this_addr);
@@ -231,10 +184,6 @@ return nativeObject->GetMaxBindGroups();
         internal_native_SetMaxBindGroupsPlusVertexBuffers(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxBindGroupsPlusVertexBuffers((int)value);
-*/
     public static void internal_native_SetMaxBindGroupsPlusVertexBuffers(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxBindGroupsPlusVertexBuffers__JI.invokeExact(this_addr, value);
@@ -247,10 +196,6 @@ nativeObject->SetMaxBindGroupsPlusVertexBuffers((int)value);
         return internal_native_GetMaxBindGroupsPlusVertexBuffers(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxBindGroupsPlusVertexBuffers();
-*/
     public static int internal_native_GetMaxBindGroupsPlusVertexBuffers(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxBindGroupsPlusVertexBuffers__J.invokeExact(this_addr);
@@ -263,10 +208,6 @@ return nativeObject->GetMaxBindGroupsPlusVertexBuffers();
         internal_native_SetMaxBindingsPerBindGroup(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxBindingsPerBindGroup((int)value);
-*/
     public static void internal_native_SetMaxBindingsPerBindGroup(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxBindingsPerBindGroup__JI.invokeExact(this_addr, value);
@@ -279,10 +220,6 @@ nativeObject->SetMaxBindingsPerBindGroup((int)value);
         return internal_native_GetMaxBindingsPerBindGroup(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxBindingsPerBindGroup();
-*/
     public static int internal_native_GetMaxBindingsPerBindGroup(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxBindingsPerBindGroup__J.invokeExact(this_addr);
@@ -295,10 +232,6 @@ return nativeObject->GetMaxBindingsPerBindGroup();
         internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxDynamicUniformBuffersPerPipelineLayout((int)value);
-*/
     public static void internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI.invokeExact(this_addr, value);
@@ -311,10 +244,6 @@ nativeObject->SetMaxDynamicUniformBuffersPerPipelineLayout((int)value);
         return internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxDynamicUniformBuffersPerPipelineLayout();
-*/
     public static int internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J.invokeExact(this_addr);
@@ -327,10 +256,6 @@ return nativeObject->GetMaxDynamicUniformBuffersPerPipelineLayout();
         internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxDynamicStorageBuffersPerPipelineLayout((int)value);
-*/
     public static void internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI.invokeExact(this_addr, value);
@@ -343,10 +268,6 @@ nativeObject->SetMaxDynamicStorageBuffersPerPipelineLayout((int)value);
         return internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxDynamicStorageBuffersPerPipelineLayout();
-*/
     public static int internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J.invokeExact(this_addr);
@@ -359,10 +280,6 @@ return nativeObject->GetMaxDynamicStorageBuffersPerPipelineLayout();
         internal_native_SetMaxSampledTexturesPerShaderStage(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxSampledTexturesPerShaderStage((int)value);
-*/
     public static void internal_native_SetMaxSampledTexturesPerShaderStage(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxSampledTexturesPerShaderStage__JI.invokeExact(this_addr, value);
@@ -375,10 +292,6 @@ nativeObject->SetMaxSampledTexturesPerShaderStage((int)value);
         return internal_native_GetMaxSampledTexturesPerShaderStage(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxSampledTexturesPerShaderStage();
-*/
     public static int internal_native_GetMaxSampledTexturesPerShaderStage(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxSampledTexturesPerShaderStage__J.invokeExact(this_addr);
@@ -391,10 +304,6 @@ return nativeObject->GetMaxSampledTexturesPerShaderStage();
         internal_native_SetMaxSamplersPerShaderStage(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxSamplersPerShaderStage((int)value);
-*/
     public static void internal_native_SetMaxSamplersPerShaderStage(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxSamplersPerShaderStage__JI.invokeExact(this_addr, value);
@@ -407,10 +316,6 @@ nativeObject->SetMaxSamplersPerShaderStage((int)value);
         return internal_native_GetMaxSamplersPerShaderStage(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxSamplersPerShaderStage();
-*/
     public static int internal_native_GetMaxSamplersPerShaderStage(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxSamplersPerShaderStage__J.invokeExact(this_addr);
@@ -423,10 +328,6 @@ return nativeObject->GetMaxSamplersPerShaderStage();
         internal_native_SetMaxStorageBuffersPerShaderStage(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxStorageBuffersPerShaderStage((int)value);
-*/
     public static void internal_native_SetMaxStorageBuffersPerShaderStage(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxStorageBuffersPerShaderStage__JI.invokeExact(this_addr, value);
@@ -439,10 +340,6 @@ nativeObject->SetMaxStorageBuffersPerShaderStage((int)value);
         return internal_native_GetMaxStorageBuffersPerShaderStage(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxStorageBuffersPerShaderStage();
-*/
     public static int internal_native_GetMaxStorageBuffersPerShaderStage(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxStorageBuffersPerShaderStage__J.invokeExact(this_addr);
@@ -455,10 +352,6 @@ return nativeObject->GetMaxStorageBuffersPerShaderStage();
         internal_native_SetMaxStorageTexturesPerShaderStage(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxStorageTexturesPerShaderStage((int)value);
-*/
     public static void internal_native_SetMaxStorageTexturesPerShaderStage(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxStorageTexturesPerShaderStage__JI.invokeExact(this_addr, value);
@@ -471,10 +364,6 @@ nativeObject->SetMaxStorageTexturesPerShaderStage((int)value);
         return internal_native_GetMaxStorageTexturesPerShaderStage(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxStorageTexturesPerShaderStage();
-*/
     public static int internal_native_GetMaxStorageTexturesPerShaderStage(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxStorageTexturesPerShaderStage__J.invokeExact(this_addr);
@@ -487,10 +376,6 @@ return nativeObject->GetMaxStorageTexturesPerShaderStage();
         internal_native_SetMaxUniformBuffersPerShaderStage(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxUniformBuffersPerShaderStage((int)value);
-*/
     public static void internal_native_SetMaxUniformBuffersPerShaderStage(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxUniformBuffersPerShaderStage__JI.invokeExact(this_addr, value);
@@ -503,10 +388,6 @@ nativeObject->SetMaxUniformBuffersPerShaderStage((int)value);
         return internal_native_GetMaxUniformBuffersPerShaderStage(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxUniformBuffersPerShaderStage();
-*/
     public static int internal_native_GetMaxUniformBuffersPerShaderStage(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxUniformBuffersPerShaderStage__J.invokeExact(this_addr);
@@ -519,10 +400,6 @@ return nativeObject->GetMaxUniformBuffersPerShaderStage();
         internal_native_SetMaxUniformBufferBindingSize(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxUniformBufferBindingSize((int)value);
-*/
     public static void internal_native_SetMaxUniformBufferBindingSize(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxUniformBufferBindingSize__JI.invokeExact(this_addr, value);
@@ -535,10 +412,6 @@ nativeObject->SetMaxUniformBufferBindingSize((int)value);
         return internal_native_GetMaxUniformBufferBindingSize(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxUniformBufferBindingSize();
-*/
     public static int internal_native_GetMaxUniformBufferBindingSize(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxUniformBufferBindingSize__J.invokeExact(this_addr);
@@ -551,10 +424,6 @@ return nativeObject->GetMaxUniformBufferBindingSize();
         internal_native_SetMaxStorageBufferBindingSize(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxStorageBufferBindingSize((int)value);
-*/
     public static void internal_native_SetMaxStorageBufferBindingSize(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxStorageBufferBindingSize__JI.invokeExact(this_addr, value);
@@ -567,10 +436,6 @@ nativeObject->SetMaxStorageBufferBindingSize((int)value);
         return internal_native_GetMaxStorageBufferBindingSize(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxStorageBufferBindingSize();
-*/
     public static int internal_native_GetMaxStorageBufferBindingSize(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxStorageBufferBindingSize__J.invokeExact(this_addr);
@@ -583,10 +448,6 @@ return nativeObject->GetMaxStorageBufferBindingSize();
         internal_native_SetMinUniformBufferOffsetAlignment(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMinUniformBufferOffsetAlignment((int)value);
-*/
     public static void internal_native_SetMinUniformBufferOffsetAlignment(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMinUniformBufferOffsetAlignment__JI.invokeExact(this_addr, value);
@@ -599,10 +460,6 @@ nativeObject->SetMinUniformBufferOffsetAlignment((int)value);
         return internal_native_GetMinUniformBufferOffsetAlignment(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMinUniformBufferOffsetAlignment();
-*/
     public static int internal_native_GetMinUniformBufferOffsetAlignment(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMinUniformBufferOffsetAlignment__J.invokeExact(this_addr);
@@ -615,10 +472,6 @@ return nativeObject->GetMinUniformBufferOffsetAlignment();
         internal_native_SetMinStorageBufferOffsetAlignment(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMinStorageBufferOffsetAlignment((int)value);
-*/
     public static void internal_native_SetMinStorageBufferOffsetAlignment(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMinStorageBufferOffsetAlignment__JI.invokeExact(this_addr, value);
@@ -631,10 +484,6 @@ nativeObject->SetMinStorageBufferOffsetAlignment((int)value);
         return internal_native_GetMinStorageBufferOffsetAlignment(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMinStorageBufferOffsetAlignment();
-*/
     public static int internal_native_GetMinStorageBufferOffsetAlignment(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMinStorageBufferOffsetAlignment__J.invokeExact(this_addr);
@@ -647,10 +496,6 @@ return nativeObject->GetMinStorageBufferOffsetAlignment();
         internal_native_SetMaxVertexBuffers(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxVertexBuffers((int)value);
-*/
     public static void internal_native_SetMaxVertexBuffers(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxVertexBuffers__JI.invokeExact(this_addr, value);
@@ -663,10 +508,6 @@ nativeObject->SetMaxVertexBuffers((int)value);
         return internal_native_GetMaxVertexBuffers(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxVertexBuffers();
-*/
     public static int internal_native_GetMaxVertexBuffers(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxVertexBuffers__J.invokeExact(this_addr);
@@ -679,10 +520,6 @@ return nativeObject->GetMaxVertexBuffers();
         internal_native_SetMaxBufferSize(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxBufferSize(value);
-*/
     public static void internal_native_SetMaxBufferSize(long this_addr, long value) {
         try {
             FFMHandles.internal_native_SetMaxBufferSize__JJ.invokeExact(this_addr, value);
@@ -695,10 +532,6 @@ nativeObject->SetMaxBufferSize(value);
         return internal_native_GetMaxBufferSize(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxBufferSize();
-*/
     public static int internal_native_GetMaxBufferSize(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxBufferSize__J.invokeExact(this_addr);
@@ -711,10 +544,6 @@ return nativeObject->GetMaxBufferSize();
         internal_native_SetMaxVertexAttributes(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxVertexAttributes((int)value);
-*/
     public static void internal_native_SetMaxVertexAttributes(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxVertexAttributes__JI.invokeExact(this_addr, value);
@@ -727,10 +556,6 @@ nativeObject->SetMaxVertexAttributes((int)value);
         return internal_native_GetMaxVertexAttributes(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxVertexAttributes();
-*/
     public static int internal_native_GetMaxVertexAttributes(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxVertexAttributes__J.invokeExact(this_addr);
@@ -743,10 +568,6 @@ return nativeObject->GetMaxVertexAttributes();
         internal_native_SetMaxVertexBufferArrayStride(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxVertexBufferArrayStride((int)value);
-*/
     public static void internal_native_SetMaxVertexBufferArrayStride(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxVertexBufferArrayStride__JI.invokeExact(this_addr, value);
@@ -759,10 +580,6 @@ nativeObject->SetMaxVertexBufferArrayStride((int)value);
         return internal_native_GetMaxVertexBufferArrayStride(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxVertexBufferArrayStride();
-*/
     public static int internal_native_GetMaxVertexBufferArrayStride(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxVertexBufferArrayStride__J.invokeExact(this_addr);
@@ -775,10 +592,6 @@ return nativeObject->GetMaxVertexBufferArrayStride();
         internal_native_SetMaxInterStageShaderVariables(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxInterStageShaderVariables((int)value);
-*/
     public static void internal_native_SetMaxInterStageShaderVariables(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxInterStageShaderVariables__JI.invokeExact(this_addr, value);
@@ -791,10 +604,6 @@ nativeObject->SetMaxInterStageShaderVariables((int)value);
         return internal_native_GetMaxInterStageShaderVariables(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxInterStageShaderVariables();
-*/
     public static int internal_native_GetMaxInterStageShaderVariables(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxInterStageShaderVariables__J.invokeExact(this_addr);
@@ -807,10 +616,6 @@ return nativeObject->GetMaxInterStageShaderVariables();
         internal_native_SetMaxColorAttachments(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxColorAttachments((int)value);
-*/
     public static void internal_native_SetMaxColorAttachments(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxColorAttachments__JI.invokeExact(this_addr, value);
@@ -823,10 +628,6 @@ nativeObject->SetMaxColorAttachments((int)value);
         return internal_native_GetMaxColorAttachments(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxColorAttachments();
-*/
     public static int internal_native_GetMaxColorAttachments(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxColorAttachments__J.invokeExact(this_addr);
@@ -839,10 +640,6 @@ return nativeObject->GetMaxColorAttachments();
         internal_native_SetMaxColorAttachmentBytesPerSample(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxColorAttachmentBytesPerSample((int)value);
-*/
     public static void internal_native_SetMaxColorAttachmentBytesPerSample(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxColorAttachmentBytesPerSample__JI.invokeExact(this_addr, value);
@@ -855,10 +652,6 @@ nativeObject->SetMaxColorAttachmentBytesPerSample((int)value);
         return internal_native_GetMaxColorAttachmentBytesPerSample(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxColorAttachmentBytesPerSample();
-*/
     public static int internal_native_GetMaxColorAttachmentBytesPerSample(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxColorAttachmentBytesPerSample__J.invokeExact(this_addr);
@@ -871,10 +664,6 @@ return nativeObject->GetMaxColorAttachmentBytesPerSample();
         internal_native_SetMaxComputeWorkgroupStorageSize(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxComputeWorkgroupStorageSize((int)value);
-*/
     public static void internal_native_SetMaxComputeWorkgroupStorageSize(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupStorageSize__JI.invokeExact(this_addr, value);
@@ -887,10 +676,6 @@ nativeObject->SetMaxComputeWorkgroupStorageSize((int)value);
         return internal_native_GetMaxComputeWorkgroupStorageSize(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxComputeWorkgroupStorageSize();
-*/
     public static int internal_native_GetMaxComputeWorkgroupStorageSize(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupStorageSize__J.invokeExact(this_addr);
@@ -903,10 +688,6 @@ return nativeObject->GetMaxComputeWorkgroupStorageSize();
         internal_native_SetMaxComputeInvocationsPerWorkgroup(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxComputeInvocationsPerWorkgroup((int)value);
-*/
     public static void internal_native_SetMaxComputeInvocationsPerWorkgroup(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxComputeInvocationsPerWorkgroup__JI.invokeExact(this_addr, value);
@@ -919,10 +700,6 @@ nativeObject->SetMaxComputeInvocationsPerWorkgroup((int)value);
         return internal_native_GetMaxComputeInvocationsPerWorkgroup(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxComputeInvocationsPerWorkgroup();
-*/
     public static int internal_native_GetMaxComputeInvocationsPerWorkgroup(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeInvocationsPerWorkgroup__J.invokeExact(this_addr);
@@ -935,10 +712,6 @@ return nativeObject->GetMaxComputeInvocationsPerWorkgroup();
         internal_native_SetMaxComputeWorkgroupSizeX(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxComputeWorkgroupSizeX((int)value);
-*/
     public static void internal_native_SetMaxComputeWorkgroupSizeX(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeX__JI.invokeExact(this_addr, value);
@@ -951,10 +724,6 @@ nativeObject->SetMaxComputeWorkgroupSizeX((int)value);
         return internal_native_GetMaxComputeWorkgroupSizeX(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxComputeWorkgroupSizeX();
-*/
     public static int internal_native_GetMaxComputeWorkgroupSizeX(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeX__J.invokeExact(this_addr);
@@ -967,10 +736,6 @@ return nativeObject->GetMaxComputeWorkgroupSizeX();
         internal_native_SetMaxComputeWorkgroupSizeY(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxComputeWorkgroupSizeY((int)value);
-*/
     public static void internal_native_SetMaxComputeWorkgroupSizeY(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeY__JI.invokeExact(this_addr, value);
@@ -983,10 +748,6 @@ nativeObject->SetMaxComputeWorkgroupSizeY((int)value);
         return internal_native_GetMaxComputeWorkgroupSizeY(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxComputeWorkgroupSizeY();
-*/
     public static int internal_native_GetMaxComputeWorkgroupSizeY(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeY__J.invokeExact(this_addr);
@@ -999,10 +760,6 @@ return nativeObject->GetMaxComputeWorkgroupSizeY();
         internal_native_SetMaxComputeWorkgroupSizeZ(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxComputeWorkgroupSizeZ((int)value);
-*/
     public static void internal_native_SetMaxComputeWorkgroupSizeZ(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeZ__JI.invokeExact(this_addr, value);
@@ -1015,10 +772,6 @@ nativeObject->SetMaxComputeWorkgroupSizeZ((int)value);
         return internal_native_GetMaxComputeWorkgroupSizeZ(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxComputeWorkgroupSizeZ();
-*/
     public static int internal_native_GetMaxComputeWorkgroupSizeZ(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeZ__J.invokeExact(this_addr);
@@ -1031,10 +784,6 @@ return nativeObject->GetMaxComputeWorkgroupSizeZ();
         internal_native_SetMaxComputeWorkgroupsPerDimension(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-nativeObject->SetMaxComputeWorkgroupsPerDimension((int)value);
-*/
     public static void internal_native_SetMaxComputeWorkgroupsPerDimension(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetMaxComputeWorkgroupsPerDimension__JI.invokeExact(this_addr, value);
@@ -1047,10 +796,6 @@ nativeObject->SetMaxComputeWorkgroupsPerDimension((int)value);
         return internal_native_GetMaxComputeWorkgroupsPerDimension(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPULimits* nativeObject = (JGPU::WGPULimits*)this_addr;
-return nativeObject->GetMaxComputeWorkgroupsPerDimension();
-*/
     public static int internal_native_GetMaxComputeWorkgroupsPerDimension(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupsPerDimension__J.invokeExact(this_addr);
@@ -1069,9 +814,6 @@ return nativeObject->GetMaxComputeWorkgroupsPerDimension();
         return WGPULimits_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPULimits::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

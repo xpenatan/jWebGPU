@@ -22,9 +22,6 @@ public class WGPUCompilationMessage extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUCompilationMessage();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -45,10 +42,6 @@ return (jlong)new JGPU::WGPUCompilationMessage();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public NativeString getMessage() {
@@ -61,11 +54,6 @@ delete nativeObject;
         return NativeString_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-static NativeString copy_addr;
-copy_addr = nativeObject->GetMessage();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetMessage_addr(long this_addr);
 
     public WGPUCompilationMessageType getType() {
@@ -79,50 +67,30 @@ return (jlong)&copy_addr;*/
         return WGPUCompilationMessageType.CUSTOM.setValue(value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-return (int)nativeObject->GetType();
-*/
     public static native int internal_native_GetType(long this_addr);
 
     public int getLineNum() {
         return internal_native_GetLineNum(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-return nativeObject->GetLineNum();
-*/
     public static native int internal_native_GetLineNum(long this_addr);
 
     public int getLinePos() {
         return internal_native_GetLinePos(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-return nativeObject->GetLinePos();
-*/
     public static native int internal_native_GetLinePos(long this_addr);
 
     public int getOffset() {
         return internal_native_GetOffset(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-return nativeObject->GetOffset();
-*/
     public static native int internal_native_GetOffset(long this_addr);
 
     public int getLength() {
         return internal_native_GetLength(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCompilationMessage* nativeObject = (JGPU::WGPUCompilationMessage*)this_addr;
-return nativeObject->GetLength();
-*/
     public static native int internal_native_GetLength(long this_addr);
 
     public static WGPUCompilationMessage obtain() {
@@ -135,8 +103,5 @@ return nativeObject->GetLength();
         return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUCompilationMessage::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

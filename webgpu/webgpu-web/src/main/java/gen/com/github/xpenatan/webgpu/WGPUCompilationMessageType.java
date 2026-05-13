@@ -34,27 +34,15 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompilationMessageType_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompilationMessageType_Error;")
     private static native int WGPUCompilationMessageType_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompilationMessageType_Warning;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompilationMessageType_Warning;")
     private static native int WGPUCompilationMessageType_Warning_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompilationMessageType_Info;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompilationMessageType_Info;")
     private static native int WGPUCompilationMessageType_Info_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompilationMessageType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompilationMessageType_Force32;")
     private static native int WGPUCompilationMessageType_Force32_NATIVE();
 }

@@ -26,54 +26,30 @@ public class WGPUExtent3D extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)new JGPU::WGPUExtent3D();
-    */
     public static native long internal_native_create_addr();
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      delete nativeObject;
-    */
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setWidth(int width) {
         internal_native_SetWidth(native_address, width);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      nativeObject->SetWidth((int)width);
-    */
     public static native void internal_native_SetWidth(long this_addr, int width);
 
     public void setHeight(int height) {
         internal_native_SetHeight(native_address, height);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      nativeObject->SetHeight((int)height);
-    */
     public static native void internal_native_SetHeight(long this_addr, int height);
 
     public void setDepthOrArrayLayers(int depthOrArrayLayers) {
         internal_native_SetDepthOrArrayLayers(native_address, depthOrArrayLayers);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUExtent3D* nativeObject = (JGPU::WGPUExtent3D*)this_addr;
-      nativeObject->SetDepthOrArrayLayers((int)depthOrArrayLayers);
-    */
     public static native void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers);
 
     public static WGPUExtent3D obtain() {
@@ -86,9 +62,5 @@ public class WGPUExtent3D extends NativeObject {
         return WGPUExtent3D_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)JGPU::WGPUExtent3D::Obtain();
-    */
     public static native long internal_native_Obtain_addr();
 }

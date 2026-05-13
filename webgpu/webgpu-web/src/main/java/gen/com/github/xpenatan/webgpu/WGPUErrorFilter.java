@@ -34,27 +34,15 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorFilter_Validation;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorFilter_Validation;")
     private static native int WGPUErrorFilter_Validation_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorFilter_OutOfMemory;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorFilter_OutOfMemory;")
     private static native int WGPUErrorFilter_OutOfMemory_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorFilter_Internal;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorFilter_Internal;")
     private static native int WGPUErrorFilter_Internal_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUErrorFilter_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUErrorFilter_Force32;")
     private static native int WGPUErrorFilter_Force32_NATIVE();
 }

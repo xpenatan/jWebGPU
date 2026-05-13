@@ -40,10 +40,6 @@ public class WGPUStringView extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStringView* nativeObject = (JGPU::WGPUStringView*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -62,11 +58,6 @@ delete nativeObject;
         return NativeString_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStringView* nativeObject = (JGPU::WGPUStringView*)this_addr;
-thread_local static NativeString copy_addr;
-copy_addr = nativeObject->GetString();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetString_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetString_addr__J.invokeExact(this_addr);

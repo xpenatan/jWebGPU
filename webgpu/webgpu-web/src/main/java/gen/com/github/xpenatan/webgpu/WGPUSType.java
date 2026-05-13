@@ -46,75 +46,39 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_ShaderSourceSPIRV;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_ShaderSourceSPIRV;")
     private static native int WGPUSType_ShaderSourceSPIRV_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_ShaderSourceWGSL;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_ShaderSourceWGSL;")
     private static native int WGPUSType_ShaderSourceWGSL_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_RenderPassMaxDrawCount;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_RenderPassMaxDrawCount;")
     private static native int WGPUSType_RenderPassMaxDrawCount_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceSourceMetalLayer;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceMetalLayer;")
     private static native int WGPUSType_SurfaceSourceMetalLayer_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceSourceWindowsHWND;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceWindowsHWND;")
     private static native int WGPUSType_SurfaceSourceWindowsHWND_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceSourceXlibWindow;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceXlibWindow;")
     private static native int WGPUSType_SurfaceSourceXlibWindow_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceSourceWaylandSurface;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceWaylandSurface;")
     private static native int WGPUSType_SurfaceSourceWaylandSurface_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceSourceAndroidNativeWindow;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceAndroidNativeWindow;")
     private static native int WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceSourceXCBWindow;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceSourceXCBWindow;")
     private static native int WGPUSType_SurfaceSourceXCBWindow_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_SurfaceColorManagement;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_SurfaceColorManagement;")
     private static native int WGPUSType_SurfaceColorManagement_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_RequestAdapterWebXROptions;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_RequestAdapterWebXROptions;")
     private static native int WGPUSType_RequestAdapterWebXROptions_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSType_Force32;")
     private static native int WGPUSType_Force32_NATIVE();
 }

@@ -34,27 +34,15 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCallbackMode_WaitAnyOnly;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCallbackMode_WaitAnyOnly;")
     private static native int WGPUCallbackMode_WaitAnyOnly_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCallbackMode_AllowProcessEvents;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCallbackMode_AllowProcessEvents;")
     private static native int WGPUCallbackMode_AllowProcessEvents_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCallbackMode_AllowSpontaneous;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCallbackMode_AllowSpontaneous;")
     private static native int WGPUCallbackMode_AllowSpontaneous_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCallbackMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCallbackMode_Force32;")
     private static native int WGPUCallbackMode_Force32_NATIVE();
 }

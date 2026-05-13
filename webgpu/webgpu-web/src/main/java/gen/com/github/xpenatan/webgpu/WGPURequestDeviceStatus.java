@@ -34,21 +34,12 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestDeviceStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestDeviceStatus_Success;")
     private static native int WGPURequestDeviceStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestDeviceStatus_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestDeviceStatus_Error;")
     private static native int WGPURequestDeviceStatus_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestDeviceStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestDeviceStatus_Force32;")
     private static native int WGPURequestDeviceStatus_Force32_NATIVE();
 }

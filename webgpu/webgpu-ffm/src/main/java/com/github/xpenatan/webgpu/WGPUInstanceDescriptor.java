@@ -26,9 +26,6 @@ public class WGPUInstanceDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUInstanceDescriptor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUInstanceDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetRequiredFeatures((JGPU::WGPUVectorInstanceFeatureName* )requiredFeatures_addr);
-*/
     public static void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr) {
         try {
             FFMHandles.internal_native_SetRequiredFeatures__JJ.invokeExact(this_addr, requiredFeatures_addr);
@@ -103,10 +88,6 @@ nativeObject->SetRequiredFeatures((JGPU::WGPUVectorInstanceFeatureName* )require
         internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetRequiredLimits((JGPU::WGPUVectorInstanceLimits* )requiredLimits_addr);
-*/
     public static void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr) {
         try {
             FFMHandles.internal_native_SetRequiredLimits__JJ.invokeExact(this_addr, requiredLimits_addr);
@@ -125,9 +106,6 @@ nativeObject->SetRequiredLimits((JGPU::WGPUVectorInstanceLimits* )requiredLimits
         return WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUInstanceDescriptor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

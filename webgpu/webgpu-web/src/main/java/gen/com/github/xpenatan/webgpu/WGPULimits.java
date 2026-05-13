@@ -19,10 +19,6 @@ public class WGPULimits extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPULimits();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPULimits();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -44,10 +40,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -55,10 +47,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetMaxTextureDimension1D(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxTextureDimension1D(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxTextureDimension1D(value);")
     public static native void internal_native_SetMaxTextureDimension1D(int this_addr, int value);
 
@@ -66,11 +54,6 @@ jsObj.SetMaxTextureDimension1D(value);
         return internal_native_GetMaxTextureDimension1D(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxTextureDimension1D();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxTextureDimension1D();return returnedJSObj;")
     public static native int internal_native_GetMaxTextureDimension1D(int this_addr);
 
@@ -78,10 +61,6 @@ return returnedJSObj;
         internal_native_SetMaxTextureDimension2D(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxTextureDimension2D(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxTextureDimension2D(value);")
     public static native void internal_native_SetMaxTextureDimension2D(int this_addr, int value);
 
@@ -89,11 +68,6 @@ jsObj.SetMaxTextureDimension2D(value);
         return internal_native_GetMaxTextureDimension2D(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxTextureDimension2D();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxTextureDimension2D();return returnedJSObj;")
     public static native int internal_native_GetMaxTextureDimension2D(int this_addr);
 
@@ -101,10 +75,6 @@ return returnedJSObj;
         internal_native_SetMaxTextureDimension3D(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxTextureDimension3D(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxTextureDimension3D(value);")
     public static native void internal_native_SetMaxTextureDimension3D(int this_addr, int value);
 
@@ -112,11 +82,6 @@ jsObj.SetMaxTextureDimension3D(value);
         return internal_native_GetMaxTextureDimension3D(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxTextureDimension3D();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxTextureDimension3D();return returnedJSObj;")
     public static native int internal_native_GetMaxTextureDimension3D(int this_addr);
 
@@ -124,10 +89,6 @@ return returnedJSObj;
         internal_native_SetMaxTextureArrayLayers(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxTextureArrayLayers(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxTextureArrayLayers(value);")
     public static native void internal_native_SetMaxTextureArrayLayers(int this_addr, int value);
 
@@ -135,11 +96,6 @@ jsObj.SetMaxTextureArrayLayers(value);
         return internal_native_GetMaxTextureArrayLayers(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxTextureArrayLayers();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxTextureArrayLayers();return returnedJSObj;")
     public static native int internal_native_GetMaxTextureArrayLayers(int this_addr);
 
@@ -147,10 +103,6 @@ return returnedJSObj;
         internal_native_SetMaxBindGroups(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxBindGroups(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxBindGroups(value);")
     public static native void internal_native_SetMaxBindGroups(int this_addr, int value);
 
@@ -158,11 +110,6 @@ jsObj.SetMaxBindGroups(value);
         return internal_native_GetMaxBindGroups(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxBindGroups();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxBindGroups();return returnedJSObj;")
     public static native int internal_native_GetMaxBindGroups(int this_addr);
 
@@ -170,10 +117,6 @@ return returnedJSObj;
         internal_native_SetMaxBindGroupsPlusVertexBuffers(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxBindGroupsPlusVertexBuffers(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxBindGroupsPlusVertexBuffers(value);")
     public static native void internal_native_SetMaxBindGroupsPlusVertexBuffers(int this_addr, int value);
 
@@ -181,11 +124,6 @@ jsObj.SetMaxBindGroupsPlusVertexBuffers(value);
         return internal_native_GetMaxBindGroupsPlusVertexBuffers(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxBindGroupsPlusVertexBuffers();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxBindGroupsPlusVertexBuffers();return returnedJSObj;")
     public static native int internal_native_GetMaxBindGroupsPlusVertexBuffers(int this_addr);
 
@@ -193,10 +131,6 @@ return returnedJSObj;
         internal_native_SetMaxBindingsPerBindGroup(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxBindingsPerBindGroup(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxBindingsPerBindGroup(value);")
     public static native void internal_native_SetMaxBindingsPerBindGroup(int this_addr, int value);
 
@@ -204,11 +138,6 @@ jsObj.SetMaxBindingsPerBindGroup(value);
         return internal_native_GetMaxBindingsPerBindGroup(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxBindingsPerBindGroup();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxBindingsPerBindGroup();return returnedJSObj;")
     public static native int internal_native_GetMaxBindingsPerBindGroup(int this_addr);
 
@@ -216,10 +145,6 @@ return returnedJSObj;
         internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxDynamicUniformBuffersPerPipelineLayout(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxDynamicUniformBuffersPerPipelineLayout(value);")
     public static native void internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(int this_addr, int value);
 
@@ -227,11 +152,6 @@ jsObj.SetMaxDynamicUniformBuffersPerPipelineLayout(value);
         return internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxDynamicUniformBuffersPerPipelineLayout();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxDynamicUniformBuffersPerPipelineLayout();return returnedJSObj;")
     public static native int internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(int this_addr);
 
@@ -239,10 +159,6 @@ return returnedJSObj;
         internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxDynamicStorageBuffersPerPipelineLayout(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxDynamicStorageBuffersPerPipelineLayout(value);")
     public static native void internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(int this_addr, int value);
 
@@ -250,11 +166,6 @@ jsObj.SetMaxDynamicStorageBuffersPerPipelineLayout(value);
         return internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxDynamicStorageBuffersPerPipelineLayout();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxDynamicStorageBuffersPerPipelineLayout();return returnedJSObj;")
     public static native int internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(int this_addr);
 
@@ -262,10 +173,6 @@ return returnedJSObj;
         internal_native_SetMaxSampledTexturesPerShaderStage(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxSampledTexturesPerShaderStage(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxSampledTexturesPerShaderStage(value);")
     public static native void internal_native_SetMaxSampledTexturesPerShaderStage(int this_addr, int value);
 
@@ -273,11 +180,6 @@ jsObj.SetMaxSampledTexturesPerShaderStage(value);
         return internal_native_GetMaxSampledTexturesPerShaderStage(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxSampledTexturesPerShaderStage();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxSampledTexturesPerShaderStage();return returnedJSObj;")
     public static native int internal_native_GetMaxSampledTexturesPerShaderStage(int this_addr);
 
@@ -285,10 +187,6 @@ return returnedJSObj;
         internal_native_SetMaxSamplersPerShaderStage(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxSamplersPerShaderStage(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxSamplersPerShaderStage(value);")
     public static native void internal_native_SetMaxSamplersPerShaderStage(int this_addr, int value);
 
@@ -296,11 +194,6 @@ jsObj.SetMaxSamplersPerShaderStage(value);
         return internal_native_GetMaxSamplersPerShaderStage(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxSamplersPerShaderStage();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxSamplersPerShaderStage();return returnedJSObj;")
     public static native int internal_native_GetMaxSamplersPerShaderStage(int this_addr);
 
@@ -308,10 +201,6 @@ return returnedJSObj;
         internal_native_SetMaxStorageBuffersPerShaderStage(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxStorageBuffersPerShaderStage(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxStorageBuffersPerShaderStage(value);")
     public static native void internal_native_SetMaxStorageBuffersPerShaderStage(int this_addr, int value);
 
@@ -319,11 +208,6 @@ jsObj.SetMaxStorageBuffersPerShaderStage(value);
         return internal_native_GetMaxStorageBuffersPerShaderStage(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxStorageBuffersPerShaderStage();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxStorageBuffersPerShaderStage();return returnedJSObj;")
     public static native int internal_native_GetMaxStorageBuffersPerShaderStage(int this_addr);
 
@@ -331,10 +215,6 @@ return returnedJSObj;
         internal_native_SetMaxStorageTexturesPerShaderStage(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxStorageTexturesPerShaderStage(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxStorageTexturesPerShaderStage(value);")
     public static native void internal_native_SetMaxStorageTexturesPerShaderStage(int this_addr, int value);
 
@@ -342,11 +222,6 @@ jsObj.SetMaxStorageTexturesPerShaderStage(value);
         return internal_native_GetMaxStorageTexturesPerShaderStage(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxStorageTexturesPerShaderStage();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxStorageTexturesPerShaderStage();return returnedJSObj;")
     public static native int internal_native_GetMaxStorageTexturesPerShaderStage(int this_addr);
 
@@ -354,10 +229,6 @@ return returnedJSObj;
         internal_native_SetMaxUniformBuffersPerShaderStage(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxUniformBuffersPerShaderStage(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxUniformBuffersPerShaderStage(value);")
     public static native void internal_native_SetMaxUniformBuffersPerShaderStage(int this_addr, int value);
 
@@ -365,11 +236,6 @@ jsObj.SetMaxUniformBuffersPerShaderStage(value);
         return internal_native_GetMaxUniformBuffersPerShaderStage(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxUniformBuffersPerShaderStage();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxUniformBuffersPerShaderStage();return returnedJSObj;")
     public static native int internal_native_GetMaxUniformBuffersPerShaderStage(int this_addr);
 
@@ -377,10 +243,6 @@ return returnedJSObj;
         internal_native_SetMaxUniformBufferBindingSize(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxUniformBufferBindingSize(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxUniformBufferBindingSize(value);")
     public static native void internal_native_SetMaxUniformBufferBindingSize(int this_addr, int value);
 
@@ -388,11 +250,6 @@ jsObj.SetMaxUniformBufferBindingSize(value);
         return internal_native_GetMaxUniformBufferBindingSize(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxUniformBufferBindingSize();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxUniformBufferBindingSize();return returnedJSObj;")
     public static native int internal_native_GetMaxUniformBufferBindingSize(int this_addr);
 
@@ -400,10 +257,6 @@ return returnedJSObj;
         internal_native_SetMaxStorageBufferBindingSize(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxStorageBufferBindingSize(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxStorageBufferBindingSize(value);")
     public static native void internal_native_SetMaxStorageBufferBindingSize(int this_addr, int value);
 
@@ -411,11 +264,6 @@ jsObj.SetMaxStorageBufferBindingSize(value);
         return internal_native_GetMaxStorageBufferBindingSize(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxStorageBufferBindingSize();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxStorageBufferBindingSize();return returnedJSObj;")
     public static native int internal_native_GetMaxStorageBufferBindingSize(int this_addr);
 
@@ -423,10 +271,6 @@ return returnedJSObj;
         internal_native_SetMinUniformBufferOffsetAlignment(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMinUniformBufferOffsetAlignment(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMinUniformBufferOffsetAlignment(value);")
     public static native void internal_native_SetMinUniformBufferOffsetAlignment(int this_addr, int value);
 
@@ -434,11 +278,6 @@ jsObj.SetMinUniformBufferOffsetAlignment(value);
         return internal_native_GetMinUniformBufferOffsetAlignment(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMinUniformBufferOffsetAlignment();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMinUniformBufferOffsetAlignment();return returnedJSObj;")
     public static native int internal_native_GetMinUniformBufferOffsetAlignment(int this_addr);
 
@@ -446,10 +285,6 @@ return returnedJSObj;
         internal_native_SetMinStorageBufferOffsetAlignment(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMinStorageBufferOffsetAlignment(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMinStorageBufferOffsetAlignment(value);")
     public static native void internal_native_SetMinStorageBufferOffsetAlignment(int this_addr, int value);
 
@@ -457,11 +292,6 @@ jsObj.SetMinStorageBufferOffsetAlignment(value);
         return internal_native_GetMinStorageBufferOffsetAlignment(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMinStorageBufferOffsetAlignment();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMinStorageBufferOffsetAlignment();return returnedJSObj;")
     public static native int internal_native_GetMinStorageBufferOffsetAlignment(int this_addr);
 
@@ -469,10 +299,6 @@ return returnedJSObj;
         internal_native_SetMaxVertexBuffers(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxVertexBuffers(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxVertexBuffers(value);")
     public static native void internal_native_SetMaxVertexBuffers(int this_addr, int value);
 
@@ -480,11 +306,6 @@ jsObj.SetMaxVertexBuffers(value);
         return internal_native_GetMaxVertexBuffers(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxVertexBuffers();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxVertexBuffers();return returnedJSObj;")
     public static native int internal_native_GetMaxVertexBuffers(int this_addr);
 
@@ -492,10 +313,6 @@ return returnedJSObj;
         internal_native_SetMaxBufferSize(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxBufferSize(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxBufferSize(value);")
     public static native void internal_native_SetMaxBufferSize(int this_addr, long value);
 
@@ -503,11 +320,6 @@ jsObj.SetMaxBufferSize(value);
         return internal_native_GetMaxBufferSize(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxBufferSize();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxBufferSize();return returnedJSObj;")
     public static native int internal_native_GetMaxBufferSize(int this_addr);
 
@@ -515,10 +327,6 @@ return returnedJSObj;
         internal_native_SetMaxVertexAttributes(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxVertexAttributes(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxVertexAttributes(value);")
     public static native void internal_native_SetMaxVertexAttributes(int this_addr, int value);
 
@@ -526,11 +334,6 @@ jsObj.SetMaxVertexAttributes(value);
         return internal_native_GetMaxVertexAttributes(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxVertexAttributes();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxVertexAttributes();return returnedJSObj;")
     public static native int internal_native_GetMaxVertexAttributes(int this_addr);
 
@@ -538,10 +341,6 @@ return returnedJSObj;
         internal_native_SetMaxVertexBufferArrayStride(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxVertexBufferArrayStride(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxVertexBufferArrayStride(value);")
     public static native void internal_native_SetMaxVertexBufferArrayStride(int this_addr, int value);
 
@@ -549,11 +348,6 @@ jsObj.SetMaxVertexBufferArrayStride(value);
         return internal_native_GetMaxVertexBufferArrayStride(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxVertexBufferArrayStride();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxVertexBufferArrayStride();return returnedJSObj;")
     public static native int internal_native_GetMaxVertexBufferArrayStride(int this_addr);
 
@@ -561,10 +355,6 @@ return returnedJSObj;
         internal_native_SetMaxInterStageShaderVariables(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxInterStageShaderVariables(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxInterStageShaderVariables(value);")
     public static native void internal_native_SetMaxInterStageShaderVariables(int this_addr, int value);
 
@@ -572,11 +362,6 @@ jsObj.SetMaxInterStageShaderVariables(value);
         return internal_native_GetMaxInterStageShaderVariables(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxInterStageShaderVariables();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxInterStageShaderVariables();return returnedJSObj;")
     public static native int internal_native_GetMaxInterStageShaderVariables(int this_addr);
 
@@ -584,10 +369,6 @@ return returnedJSObj;
         internal_native_SetMaxColorAttachments(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxColorAttachments(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxColorAttachments(value);")
     public static native void internal_native_SetMaxColorAttachments(int this_addr, int value);
 
@@ -595,11 +376,6 @@ jsObj.SetMaxColorAttachments(value);
         return internal_native_GetMaxColorAttachments(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxColorAttachments();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxColorAttachments();return returnedJSObj;")
     public static native int internal_native_GetMaxColorAttachments(int this_addr);
 
@@ -607,10 +383,6 @@ return returnedJSObj;
         internal_native_SetMaxColorAttachmentBytesPerSample(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxColorAttachmentBytesPerSample(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxColorAttachmentBytesPerSample(value);")
     public static native void internal_native_SetMaxColorAttachmentBytesPerSample(int this_addr, int value);
 
@@ -618,11 +390,6 @@ jsObj.SetMaxColorAttachmentBytesPerSample(value);
         return internal_native_GetMaxColorAttachmentBytesPerSample(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxColorAttachmentBytesPerSample();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxColorAttachmentBytesPerSample();return returnedJSObj;")
     public static native int internal_native_GetMaxColorAttachmentBytesPerSample(int this_addr);
 
@@ -630,10 +397,6 @@ return returnedJSObj;
         internal_native_SetMaxComputeWorkgroupStorageSize(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxComputeWorkgroupStorageSize(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxComputeWorkgroupStorageSize(value);")
     public static native void internal_native_SetMaxComputeWorkgroupStorageSize(int this_addr, int value);
 
@@ -641,11 +404,6 @@ jsObj.SetMaxComputeWorkgroupStorageSize(value);
         return internal_native_GetMaxComputeWorkgroupStorageSize(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxComputeWorkgroupStorageSize();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeWorkgroupStorageSize();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeWorkgroupStorageSize(int this_addr);
 
@@ -653,10 +411,6 @@ return returnedJSObj;
         internal_native_SetMaxComputeInvocationsPerWorkgroup(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxComputeInvocationsPerWorkgroup(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxComputeInvocationsPerWorkgroup(value);")
     public static native void internal_native_SetMaxComputeInvocationsPerWorkgroup(int this_addr, int value);
 
@@ -664,11 +418,6 @@ jsObj.SetMaxComputeInvocationsPerWorkgroup(value);
         return internal_native_GetMaxComputeInvocationsPerWorkgroup(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxComputeInvocationsPerWorkgroup();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeInvocationsPerWorkgroup();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeInvocationsPerWorkgroup(int this_addr);
 
@@ -676,10 +425,6 @@ return returnedJSObj;
         internal_native_SetMaxComputeWorkgroupSizeX(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxComputeWorkgroupSizeX(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxComputeWorkgroupSizeX(value);")
     public static native void internal_native_SetMaxComputeWorkgroupSizeX(int this_addr, int value);
 
@@ -687,11 +432,6 @@ jsObj.SetMaxComputeWorkgroupSizeX(value);
         return internal_native_GetMaxComputeWorkgroupSizeX(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxComputeWorkgroupSizeX();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeWorkgroupSizeX();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeWorkgroupSizeX(int this_addr);
 
@@ -699,10 +439,6 @@ return returnedJSObj;
         internal_native_SetMaxComputeWorkgroupSizeY(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxComputeWorkgroupSizeY(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxComputeWorkgroupSizeY(value);")
     public static native void internal_native_SetMaxComputeWorkgroupSizeY(int this_addr, int value);
 
@@ -710,11 +446,6 @@ jsObj.SetMaxComputeWorkgroupSizeY(value);
         return internal_native_GetMaxComputeWorkgroupSizeY(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxComputeWorkgroupSizeY();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeWorkgroupSizeY();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeWorkgroupSizeY(int this_addr);
 
@@ -722,10 +453,6 @@ return returnedJSObj;
         internal_native_SetMaxComputeWorkgroupSizeZ(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxComputeWorkgroupSizeZ(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxComputeWorkgroupSizeZ(value);")
     public static native void internal_native_SetMaxComputeWorkgroupSizeZ(int this_addr, int value);
 
@@ -733,11 +460,6 @@ jsObj.SetMaxComputeWorkgroupSizeZ(value);
         return internal_native_GetMaxComputeWorkgroupSizeZ(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxComputeWorkgroupSizeZ();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeWorkgroupSizeZ();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeWorkgroupSizeZ(int this_addr);
 
@@ -745,10 +467,6 @@ return returnedJSObj;
         internal_native_SetMaxComputeWorkgroupsPerDimension(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-jsObj.SetMaxComputeWorkgroupsPerDimension(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);jsObj.SetMaxComputeWorkgroupsPerDimension(value);")
     public static native void internal_native_SetMaxComputeWorkgroupsPerDimension(int this_addr, int value);
 
@@ -756,11 +474,6 @@ jsObj.SetMaxComputeWorkgroupsPerDimension(value);
         return internal_native_GetMaxComputeWorkgroupsPerDimension(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);
-var returnedJSObj = jsObj.GetMaxComputeWorkgroupsPerDimension();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPULimits);var returnedJSObj = jsObj.GetMaxComputeWorkgroupsPerDimension();return returnedJSObj;")
     public static native int internal_native_GetMaxComputeWorkgroupsPerDimension(int this_addr);
 
@@ -774,11 +487,6 @@ return returnedJSObj;
         return WGPULimits_TEMP_STATIC_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPULimits.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

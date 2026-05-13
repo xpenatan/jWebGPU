@@ -41,9 +41,6 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUQueueWorkDoneStatus_Success;
-*/
     private static int WGPUQueueWorkDoneStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUQueueWorkDoneStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUQueueWorkDoneStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUQueueWorkDoneStatus_Error;
-*/
     private static int WGPUQueueWorkDoneStatus_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPUQueueWorkDoneStatus_Error_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUQueueWorkDoneStatus_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUQueueWorkDoneStatus_Force32;
-*/
     private static int WGPUQueueWorkDoneStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUQueueWorkDoneStatus_Force32_NATIVE__.invokeExact();

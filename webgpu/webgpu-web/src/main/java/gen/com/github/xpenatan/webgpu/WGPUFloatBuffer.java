@@ -29,11 +29,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_put(native_address, values, offset, size);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-              var jsObj = [MODULE].wrapPointer(this_addr, [MODULE].WGPUFloatBuffer);
-              jsObj.put__2(values, offset, size);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "values", "offset", "size"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer); jsObj.put__2(values, offset, size);")
     private static native void internal_put(int this_addr, float[] values, int offset, int size);
 
@@ -41,11 +36,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jWebGPU.destroy(jsObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -59,13 +49,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.getByteBuffer();
-      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
-      return jWebGPU.getPointer(returnedJSObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.getByteBuffer();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_getByteBuffer_addr(int this_addr);
 
@@ -73,11 +56,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_put__0(native_address, value);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.put__0(value);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.put__0(value);")
     public static native void internal_native_put__0(int this_addr, float value);
 
@@ -85,11 +63,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_put__1(native_address, index, value);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.put__1(index, value);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.put__1(index, value);")
     public static native void internal_native_put__1(int this_addr, int index, float value);
 
@@ -97,12 +70,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_get(native_address, index);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.get(index);
-      return returnedJSObj;
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.get(index);return returnedJSObj;")
     public static native float internal_native_get(int this_addr, int index);
 
@@ -110,12 +77,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_get(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.get();
-      return returnedJSObj;
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.get();return returnedJSObj;")
     public static native float internal_native_get(int this_addr);
 
@@ -123,12 +84,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_remaining(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.remaining();
-      return returnedJSObj;
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.remaining();return returnedJSObj;")
     public static native int internal_native_remaining(int this_addr);
 
@@ -136,12 +91,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_getCapacity(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.getCapacity();
-      return returnedJSObj;
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.getCapacity();return returnedJSObj;")
     public static native int internal_native_getCapacity(int this_addr);
 
@@ -149,11 +98,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_clear(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.clear();
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.clear();")
     public static native void internal_native_clear(int this_addr);
 
@@ -161,11 +105,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_limit(native_address, newLimit);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.limit(newLimit);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "newLimit"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.limit(newLimit);")
     public static native void internal_native_limit(int this_addr, int newLimit);
 
@@ -173,12 +112,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_getLimit(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.getLimit();
-      return returnedJSObj;
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.getLimit();return returnedJSObj;")
     public static native int internal_native_getLimit(int this_addr);
 
@@ -186,11 +119,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_position(native_address, newPosition);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.position(newPosition);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "newPosition"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.position(newPosition);")
     public static native void internal_native_position(int this_addr, int newPosition);
 
@@ -198,12 +126,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_getPosition(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      var returnedJSObj = jsObj.getPosition();
-      return returnedJSObj;
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);var returnedJSObj = jsObj.getPosition();return returnedJSObj;")
     public static native int internal_native_getPosition(int this_addr);
 
@@ -211,11 +133,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_flip(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);
-      jsObj.flip();
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFloatBuffer);jsObj.flip();")
     public static native void internal_native_flip(int this_addr);
 }

@@ -19,9 +19,6 @@ public class WGPUCommandEncoder extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUCommandEncoder();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,170 +39,102 @@ return (jlong)new JGPU::WGPUCommandEncoder();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->Release();
-*/
     public static native void internal_native_Release(long this_addr);
 
     public void beginComputePass(WGPUComputePassDescriptor descriptor, WGPUComputePassEncoder computePassEncoder) {
         internal_native_BeginComputePass(native_address, descriptor.native_address, computePassEncoder.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->BeginComputePass((JGPU::WGPUComputePassDescriptor* )descriptor_addr, (JGPU::WGPUComputePassEncoder* )computePassEncoder_addr);
-*/
     public static native void internal_native_BeginComputePass(long this_addr, long descriptor_addr, long computePassEncoder_addr);
 
     public void beginRenderPass(WGPURenderPassDescriptor renderPassDescriptor, WGPURenderPassEncoder renderPassEncoder) {
         internal_native_BeginRenderPass(native_address, renderPassDescriptor.native_address, renderPassEncoder.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->BeginRenderPass((JGPU::WGPURenderPassDescriptor* )renderPassDescriptor_addr, (JGPU::WGPURenderPassEncoder* )renderPassEncoder_addr);
-*/
     public static native void internal_native_BeginRenderPass(long this_addr, long renderPassDescriptor_addr, long renderPassEncoder_addr);
 
     public void clearBuffer(WGPUBuffer buffer, int offset, int size) {
         internal_native_ClearBuffer(native_address, buffer.native_address, offset, size);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->ClearBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)offset, (int)size);
-*/
     public static native void internal_native_ClearBuffer(long this_addr, long buffer_addr, int offset, int size);
 
     public void copyBufferToBuffer(WGPUBuffer source, int sourceOffset, WGPUBuffer destination, int destinationOffset, int size) {
         internal_native_CopyBufferToBuffer(native_address, source.native_address, sourceOffset, destination.native_address, destinationOffset, size);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyBufferToBuffer((JGPU::WGPUBuffer* )source_addr, (int)sourceOffset, (JGPU::WGPUBuffer* )destination_addr, (int)destinationOffset, (int)size);
-*/
     public static native void internal_native_CopyBufferToBuffer(long this_addr, long source_addr, int sourceOffset, long destination_addr, int destinationOffset, int size);
 
     public void copyBufferToTexture(WGPUTexelCopyBufferInfo source, WGPUTexelCopyTextureInfo destination, WGPUExtent3D copySize) {
         internal_native_CopyBufferToTexture(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyBufferToTexture((JGPU::WGPUTexelCopyBufferInfo* )source_addr, (JGPU::WGPUTexelCopyTextureInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
-*/
     public static native void internal_native_CopyBufferToTexture(long this_addr, long source_addr, long destination_addr, long copySize_addr);
 
     public void copyTextureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize) {
         internal_native_CopyTextureToBuffer(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyTextureToBuffer((JGPU::WGPUTexelCopyTextureInfo* )source_addr, (JGPU::WGPUTexelCopyBufferInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
-*/
     public static native void internal_native_CopyTextureToBuffer(long this_addr, long source_addr, long destination_addr, long copySize_addr);
 
     public void copyTextureToTexture(WGPUTexelCopyTextureInfo source, WGPUTexelCopyTextureInfo destination, WGPUExtent3D copySize) {
         internal_native_CopyTextureToTexture(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->CopyTextureToTexture((JGPU::WGPUTexelCopyTextureInfo* )source_addr, (JGPU::WGPUTexelCopyTextureInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
-*/
     public static native void internal_native_CopyTextureToTexture(long this_addr, long source_addr, long destination_addr, long copySize_addr);
 
     public void finish(WGPUCommandBufferDescriptor descriptor, WGPUCommandBuffer commandBuffer) {
         internal_native_Finish(native_address, descriptor.native_address, commandBuffer.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->Finish((JGPU::WGPUCommandBufferDescriptor* )descriptor_addr, (JGPU::WGPUCommandBuffer* )commandBuffer_addr);
-*/
     public static native void internal_native_Finish(long this_addr, long descriptor_addr, long commandBuffer_addr);
 
     public void insertDebugMarker(String value) {
         internal_native_InsertDebugMarker(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->InsertDebugMarker(value);
-*/
     public static native void internal_native_InsertDebugMarker(long this_addr, String value);
 
     public void popDebugGroup() {
         internal_native_PopDebugGroup(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->PopDebugGroup();
-*/
     public static native void internal_native_PopDebugGroup(long this_addr);
 
     public void pushDebugGroup(String value) {
         internal_native_PushDebugGroup(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->PushDebugGroup(value);
-*/
     public static native void internal_native_PushDebugGroup(long this_addr, String value);
 
     public void resolveQuerySet(WGPUQuerySet querySet, int firstQuery, int queryCount, WGPUBuffer destination, int destinationOffset) {
         internal_native_ResolveQuerySet(native_address, querySet.native_address, firstQuery, queryCount, destination.native_address, destinationOffset);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->ResolveQuerySet((JGPU::WGPUQuerySet* )querySet_addr, (int)firstQuery, (int)queryCount, (JGPU::WGPUBuffer* )destination_addr, (int)destinationOffset);
-*/
     public static native void internal_native_ResolveQuerySet(long this_addr, long querySet_addr, int firstQuery, int queryCount, long destination_addr, int destinationOffset);
 
     public void writeTimestamp(WGPUQuerySet querySet, int queryIndex) {
         internal_native_WriteTimestamp(native_address, querySet.native_address, queryIndex);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->WriteTimestamp((JGPU::WGPUQuerySet* )querySet_addr, (int)queryIndex);
-*/
     public static native void internal_native_WriteTimestamp(long this_addr, long querySet_addr, int queryIndex);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-return nativeObject->IsValid();
-*/
     public static native boolean internal_native_IsValid(long this_addr);
 
     public static WGPUCommandEncoder obtain() {
@@ -218,8 +147,5 @@ return nativeObject->IsValid();
         return WGPUCommandEncoder_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUCommandEncoder::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

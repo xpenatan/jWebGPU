@@ -26,9 +26,6 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURenderPassDepthStencilAttachment();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPURenderPassDepthStencilAttachment();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetView(native_address, textureView.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetView((JGPU::WGPUTextureView* )textureView_addr);
-*/
     public static void internal_native_SetView(long this_addr, long textureView_addr) {
         try {
             FFMHandles.internal_native_SetView__JJ.invokeExact(this_addr, textureView_addr);
@@ -87,10 +76,6 @@ nativeObject->SetView((JGPU::WGPUTextureView* )textureView_addr);
         internal_native_SetDepthLoadOp(native_address, loadOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthLoadOp((::WGPULoadOp)loadOp);
-*/
     public static void internal_native_SetDepthLoadOp(long this_addr, int loadOp) {
         try {
             FFMHandles.internal_native_SetDepthLoadOp__JI.invokeExact(this_addr, loadOp);
@@ -103,10 +88,6 @@ nativeObject->SetDepthLoadOp((::WGPULoadOp)loadOp);
         internal_native_SetDepthStoreOp(native_address, storeOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthStoreOp((::WGPUStoreOp)storeOp);
-*/
     public static void internal_native_SetDepthStoreOp(long this_addr, int storeOp) {
         try {
             FFMHandles.internal_native_SetDepthStoreOp__JI.invokeExact(this_addr, storeOp);
@@ -119,10 +100,6 @@ nativeObject->SetDepthStoreOp((::WGPUStoreOp)storeOp);
         internal_native_SetDepthClearValue(native_address, depthClearValue);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthClearValue((float)depthClearValue);
-*/
     public static void internal_native_SetDepthClearValue(long this_addr, float depthClearValue) {
         try {
             FFMHandles.internal_native_SetDepthClearValue__JF.invokeExact(this_addr, depthClearValue);
@@ -135,10 +112,6 @@ nativeObject->SetDepthClearValue((float)depthClearValue);
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetDepthReadOnly(depthReadOnly);
-*/
     public static void internal_native_SetDepthReadOnly(long this_addr, boolean depthReadOnly) {
         try {
             FFMHandles.internal_native_SetDepthReadOnly__JZ.invokeExact(this_addr, depthReadOnly);
@@ -151,10 +124,6 @@ nativeObject->SetDepthReadOnly(depthReadOnly);
         internal_native_SetStencilLoadOp(native_address, loadOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilLoadOp((::WGPULoadOp)loadOp);
-*/
     public static void internal_native_SetStencilLoadOp(long this_addr, int loadOp) {
         try {
             FFMHandles.internal_native_SetStencilLoadOp__JI.invokeExact(this_addr, loadOp);
@@ -167,10 +136,6 @@ nativeObject->SetStencilLoadOp((::WGPULoadOp)loadOp);
         internal_native_SetStencilStoreOp(native_address, storeOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilStoreOp((::WGPUStoreOp)storeOp);
-*/
     public static void internal_native_SetStencilStoreOp(long this_addr, int storeOp) {
         try {
             FFMHandles.internal_native_SetStencilStoreOp__JI.invokeExact(this_addr, storeOp);
@@ -183,10 +148,6 @@ nativeObject->SetStencilStoreOp((::WGPUStoreOp)storeOp);
         internal_native_SetStencilClearValue(native_address, stencilClearValue);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilClearValue((int)stencilClearValue);
-*/
     public static void internal_native_SetStencilClearValue(long this_addr, int stencilClearValue) {
         try {
             FFMHandles.internal_native_SetStencilClearValue__JI.invokeExact(this_addr, stencilClearValue);
@@ -199,10 +160,6 @@ nativeObject->SetStencilClearValue((int)stencilClearValue);
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDepthStencilAttachment* nativeObject = (JGPU::WGPURenderPassDepthStencilAttachment*)this_addr;
-nativeObject->SetStencilReadOnly(stencilReadOnly);
-*/
     public static void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly) {
         try {
             FFMHandles.internal_native_SetStencilReadOnly__JZ.invokeExact(this_addr, stencilReadOnly);
@@ -221,9 +178,6 @@ nativeObject->SetStencilReadOnly(stencilReadOnly);
         return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPURenderPassDepthStencilAttachment::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

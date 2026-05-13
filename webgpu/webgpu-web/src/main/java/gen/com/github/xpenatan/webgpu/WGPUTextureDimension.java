@@ -39,33 +39,18 @@ public enum WGPUTextureDimension implements NativeEnum<WGPUTextureDimension> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureDimension_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureDimension_Undefined;")
     private static native int WGPUTextureDimension_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureDimension_1D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureDimension_1D;")
     private static native int WGPUTextureDimension_1D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureDimension_2D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureDimension_2D;")
     private static native int WGPUTextureDimension_2D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureDimension_3D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureDimension_3D;")
     private static native int WGPUTextureDimension_3D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureDimension_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureDimension_Force32;")
     private static native int WGPUTextureDimension_Force32_NATIVE();
 }

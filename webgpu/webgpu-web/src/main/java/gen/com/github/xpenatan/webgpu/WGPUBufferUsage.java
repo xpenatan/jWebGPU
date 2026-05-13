@@ -45,69 +45,36 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_None;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_None;")
     private static native int WGPUBufferUsage_None_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_MapRead;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_MapRead;")
     private static native int WGPUBufferUsage_MapRead_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_MapWrite;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_MapWrite;")
     private static native int WGPUBufferUsage_MapWrite_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_CopySrc;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_CopySrc;")
     private static native int WGPUBufferUsage_CopySrc_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_CopyDst;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_CopyDst;")
     private static native int WGPUBufferUsage_CopyDst_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_Index;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_Index;")
     private static native int WGPUBufferUsage_Index_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_Vertex;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_Vertex;")
     private static native int WGPUBufferUsage_Vertex_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_Uniform;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_Uniform;")
     private static native int WGPUBufferUsage_Uniform_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_Storage;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_Storage;")
     private static native int WGPUBufferUsage_Storage_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_Indirect;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_Indirect;")
     private static native int WGPUBufferUsage_Indirect_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferUsage_QueryResolve;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferUsage_QueryResolve;")
     private static native int WGPUBufferUsage_QueryResolve_NATIVE();
 }

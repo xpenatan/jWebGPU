@@ -30,9 +30,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUTexelCopyBufferInfo();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -59,10 +56,6 @@ return (int64_t)new JGPU::WGPUTexelCopyBufferInfo();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -81,11 +74,6 @@ delete nativeObject;
         return WGPUTexelCopyBufferLayout_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-thread_local static JGPU::WGPUTexelCopyBufferLayout copy_addr;
-copy_addr = nativeObject->GetLayout();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetLayout_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetLayout_addr__J.invokeExact(this_addr);
@@ -104,11 +92,6 @@ return (int64_t)&copy_addr;*/
         return WGPUBuffer_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-thread_local static JGPU::WGPUBuffer copy_addr;
-copy_addr = nativeObject->GetBuffer();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetBuffer_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetBuffer_addr__J.invokeExact(this_addr);
@@ -121,10 +104,6 @@ return (int64_t)&copy_addr;*/
         internal_native_SetBuffer(native_address, buffer.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-nativeObject->SetBuffer((JGPU::WGPUBuffer* )buffer_addr);
-*/
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
         try {
             FFMHandles.internal_native_SetBuffer__JJ.invokeExact(this_addr, buffer_addr);
@@ -143,9 +122,6 @@ nativeObject->SetBuffer((JGPU::WGPUBuffer* )buffer_addr);
         return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUTexelCopyBufferInfo::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

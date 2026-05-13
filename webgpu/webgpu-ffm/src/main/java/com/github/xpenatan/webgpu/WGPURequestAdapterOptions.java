@@ -26,9 +26,6 @@ public class WGPURequestAdapterOptions extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURequestAdapterOptions();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPURequestAdapterOptions();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetFeatureLevel(native_address, featureLevel.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
-nativeObject->SetFeatureLevel((::WGPUFeatureLevel)featureLevel);
-*/
     public static void internal_native_SetFeatureLevel(long this_addr, int featureLevel) {
         try {
             FFMHandles.internal_native_SetFeatureLevel__JI.invokeExact(this_addr, featureLevel);
@@ -103,10 +88,6 @@ nativeObject->SetFeatureLevel((::WGPUFeatureLevel)featureLevel);
         internal_native_SetPowerPreference(native_address, powerPreference.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
-nativeObject->SetPowerPreference((::WGPUPowerPreference)powerPreference);
-*/
     public static void internal_native_SetPowerPreference(long this_addr, int powerPreference) {
         try {
             FFMHandles.internal_native_SetPowerPreference__JI.invokeExact(this_addr, powerPreference);
@@ -119,10 +100,6 @@ nativeObject->SetPowerPreference((::WGPUPowerPreference)powerPreference);
         internal_native_SetBackendType(native_address, backendType.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
-nativeObject->SetBackendType((::WGPUBackendType)backendType);
-*/
     public static void internal_native_SetBackendType(long this_addr, int backendType) {
         try {
             FFMHandles.internal_native_SetBackendType__JI.invokeExact(this_addr, backendType);
@@ -135,10 +112,6 @@ nativeObject->SetBackendType((::WGPUBackendType)backendType);
         internal_native_SetCompatibleSurface(native_address, compatibleSurface.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURequestAdapterOptions* nativeObject = (JGPU::WGPURequestAdapterOptions*)this_addr;
-nativeObject->SetCompatibleSurface((JGPU::WGPUSurface* )compatibleSurface_addr);
-*/
     public static void internal_native_SetCompatibleSurface(long this_addr, long compatibleSurface_addr) {
         try {
             FFMHandles.internal_native_SetCompatibleSurface__JJ.invokeExact(this_addr, compatibleSurface_addr);
@@ -157,9 +130,6 @@ nativeObject->SetCompatibleSurface((JGPU::WGPUSurface* )compatibleSurface_addr);
         return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPURequestAdapterOptions::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

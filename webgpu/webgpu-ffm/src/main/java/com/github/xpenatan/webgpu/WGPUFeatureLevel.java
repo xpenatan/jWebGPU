@@ -41,9 +41,6 @@ public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureLevel_Compatibility;
-*/
     private static int WGPUFeatureLevel_Compatibility_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureLevel_Compatibility_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUFeatureLevel_Compatibility;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureLevel_Core;
-*/
     private static int WGPUFeatureLevel_Core_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureLevel_Core_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUFeatureLevel_Core;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureLevel_Force32;
-*/
     private static int WGPUFeatureLevel_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureLevel_Force32_NATIVE__.invokeExact();

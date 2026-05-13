@@ -19,9 +19,6 @@ public class WGPUVertexAttribute extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVertexAttribute();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUVertexAttribute();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setFormat(WGPUVertexFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-nativeObject->SetFormat((::WGPUVertexFormat)format);
-*/
     public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setOffset(int offset) {
         internal_native_SetOffset(native_address, offset);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-nativeObject->SetOffset((int)offset);
-*/
     public static native void internal_native_SetOffset(long this_addr, int offset);
 
     public void setShaderLocation(int shaderLocation) {
         internal_native_SetShaderLocation(native_address, shaderLocation);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-nativeObject->SetShaderLocation((int)shaderLocation);
-*/
     public static native void internal_native_SetShaderLocation(long this_addr, int shaderLocation);
 
     public static WGPUVertexAttribute obtain() {
@@ -88,8 +69,5 @@ nativeObject->SetShaderLocation((int)shaderLocation);
         return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVertexAttribute::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

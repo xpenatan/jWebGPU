@@ -37,10 +37,6 @@ public class WGPUAdapter extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -69,10 +61,6 @@ nativeObject->Release();
         internal_native_RequestDevice(native_address, options.native_address, mode.getValue(), callback.native_address, errorCallback.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-nativeObject->RequestDevice((JGPU::WGPUDeviceDescriptor* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestDeviceCallback* )callback_addr, (JGPU::WGPUUncapturedErrorCallback* )errorCallback_addr);
-*/
     public static void internal_native_RequestDevice(long this_addr, long options_addr, int mode, long callback_addr, long errorCallback_addr) {
         try {
             FFMHandles.internal_native_RequestDevice__JJIJJ.invokeExact(this_addr, options_addr, mode, callback_addr, errorCallback_addr);
@@ -85,10 +73,6 @@ nativeObject->RequestDevice((JGPU::WGPUDeviceDescriptor* )options_addr, (::WGPUC
         return internal_native_GetInfo(native_address, adapterInfo.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-return nativeObject->GetInfo((JGPU::WGPUAdapterInfo* )adapterInfo_addr);
-*/
     public static boolean internal_native_GetInfo(long this_addr, long adapterInfo_addr) {
         try {
             return (boolean) FFMHandles.internal_native_GetInfo__JJ.invokeExact(this_addr, adapterInfo_addr);
@@ -101,10 +85,6 @@ return nativeObject->GetInfo((JGPU::WGPUAdapterInfo* )adapterInfo_addr);
         return internal_native_HasFeature(native_address, featureName.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-return nativeObject->HasFeature((::WGPUFeatureName)featureName);
-*/
     public static boolean internal_native_HasFeature(long this_addr, int featureName) {
         try {
             return (boolean) FFMHandles.internal_native_HasFeature__JI.invokeExact(this_addr, featureName);
@@ -124,10 +104,6 @@ return nativeObject->HasFeature((::WGPUFeatureName)featureName);
         return WGPUStatus.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapter* nativeObject = (JGPU::WGPUAdapter*)this_addr;
-return (int)nativeObject->GetLimits((JGPU::WGPULimits* )limits_addr);
-*/
     public static int internal_native_GetLimits(long this_addr, long limits_addr) {
         try {
             return (int) FFMHandles.internal_native_GetLimits__JJ.invokeExact(this_addr, limits_addr);

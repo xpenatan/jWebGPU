@@ -46,9 +46,6 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAddressMode_Undefined;
-*/
     private static int WGPUAddressMode_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAddressMode_Undefined_NATIVE__.invokeExact();
@@ -57,9 +54,6 @@ return (int64_t)WGPUAddressMode_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAddressMode_ClampToEdge;
-*/
     private static int WGPUAddressMode_ClampToEdge_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAddressMode_ClampToEdge_NATIVE__.invokeExact();
@@ -68,9 +62,6 @@ return (int64_t)WGPUAddressMode_ClampToEdge;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAddressMode_Repeat;
-*/
     private static int WGPUAddressMode_Repeat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAddressMode_Repeat_NATIVE__.invokeExact();
@@ -79,9 +70,6 @@ return (int64_t)WGPUAddressMode_Repeat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAddressMode_MirrorRepeat;
-*/
     private static int WGPUAddressMode_MirrorRepeat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAddressMode_MirrorRepeat_NATIVE__.invokeExact();
@@ -90,9 +78,6 @@ return (int64_t)WGPUAddressMode_MirrorRepeat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAddressMode_Force32;
-*/
     private static int WGPUAddressMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAddressMode_Force32_NATIVE__.invokeExact();

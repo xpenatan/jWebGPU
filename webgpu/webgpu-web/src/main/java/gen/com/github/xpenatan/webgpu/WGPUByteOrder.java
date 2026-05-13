@@ -34,15 +34,9 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.BigEndian;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.BigEndian;")
     private static native int BigEndian_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.LittleEndian;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.LittleEndian;")
     private static native int LittleEndian_NATIVE();
 }

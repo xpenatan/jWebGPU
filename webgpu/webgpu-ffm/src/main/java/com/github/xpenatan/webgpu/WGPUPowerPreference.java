@@ -41,9 +41,6 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPowerPreference_Undefined;
-*/
     private static int WGPUPowerPreference_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPowerPreference_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUPowerPreference_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPowerPreference_LowPower;
-*/
     private static int WGPUPowerPreference_LowPower_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPowerPreference_LowPower_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUPowerPreference_LowPower;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPowerPreference_HighPerformance;
-*/
     private static int WGPUPowerPreference_HighPerformance_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPowerPreference_HighPerformance_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUPowerPreference_HighPerformance;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPowerPreference_Force32;
-*/
     private static int WGPUPowerPreference_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPowerPreference_Force32_NATIVE__.invokeExact();

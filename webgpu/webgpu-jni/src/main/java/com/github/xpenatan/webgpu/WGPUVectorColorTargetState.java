@@ -19,9 +19,6 @@ public class WGPUVectorColorTargetState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorColorTargetState();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUVectorColorTargetState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
-return nativeObject->size();
-*/
     public static native int internal_native_size(long this_addr);
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
-nativeObject->clear();
-*/
     public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUColorTargetState colorTargetState) {
         internal_native_push_back(native_address, colorTargetState.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorColorTargetState* nativeObject = (JGPU::WGPUVectorColorTargetState*)this_addr;
-nativeObject->push_back(*((JGPU::WGPUColorTargetState* )colorTargetState_addr));
-*/
     public static native void internal_native_push_back(long this_addr, long colorTargetState_addr);
 
     public static WGPUVectorColorTargetState obtain() {
@@ -88,8 +69,5 @@ nativeObject->push_back(*((JGPU::WGPUColorTargetState* )colorTargetState_addr));
         return WGPUVectorColorTargetState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorColorTargetState::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

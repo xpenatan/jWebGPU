@@ -39,10 +39,6 @@ public class WGPULongBuffer extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -61,10 +57,6 @@ delete nativeObject;
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return (int64_t)&nativeObject->getByteBuffer();
-*/
     public static long internal_native_getByteBuffer_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_getByteBuffer_addr__J.invokeExact(this_addr);
@@ -77,10 +69,6 @@ return (int64_t)&nativeObject->getByteBuffer();
         internal_native_put__0(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-nativeObject->put(value);
-*/
     public static void internal_native_put__0(long this_addr, long value) {
         try {
             FFMHandles.internal_native_put__0__JJ.invokeExact(this_addr, value);
@@ -93,10 +81,6 @@ nativeObject->put(value);
         internal_native_put__1(native_address, index, value);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-nativeObject->put((int)index, value);
-*/
     public static void internal_native_put__1(long this_addr, int index, long value) {
         try {
             FFMHandles.internal_native_put__1__JIJ.invokeExact(this_addr, index, value);
@@ -109,10 +93,6 @@ nativeObject->put((int)index, value);
         return internal_native_get(native_address, index);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return nativeObject->get((int)index);
-*/
     public static long internal_native_get(long this_addr, int index) {
         try {
             return (long) FFMHandles.internal_native_get__JI.invokeExact(this_addr, index);
@@ -125,10 +105,6 @@ return nativeObject->get((int)index);
         return internal_native_get(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return nativeObject->get();
-*/
     public static long internal_native_get(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_get__J.invokeExact(this_addr);
@@ -141,10 +117,6 @@ return nativeObject->get();
         return internal_native_remaining(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return nativeObject->remaining();
-*/
     public static int internal_native_remaining(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_remaining__J.invokeExact(this_addr);
@@ -157,10 +129,6 @@ return nativeObject->remaining();
         return internal_native_getCapacity(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return nativeObject->getCapacity();
-*/
     public static int internal_native_getCapacity(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_getCapacity__J.invokeExact(this_addr);
@@ -173,10 +141,6 @@ return nativeObject->getCapacity();
         internal_native_clear(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-nativeObject->clear();
-*/
     public static void internal_native_clear(long this_addr) {
         try {
             FFMHandles.internal_native_clear__J.invokeExact(this_addr);
@@ -189,10 +153,6 @@ nativeObject->clear();
         internal_native_limit(native_address, newLimit);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-nativeObject->limit((int)newLimit);
-*/
     public static void internal_native_limit(long this_addr, int newLimit) {
         try {
             FFMHandles.internal_native_limit__JI.invokeExact(this_addr, newLimit);
@@ -205,10 +165,6 @@ nativeObject->limit((int)newLimit);
         return internal_native_getLimit(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return nativeObject->getLimit();
-*/
     public static int internal_native_getLimit(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_getLimit__J.invokeExact(this_addr);
@@ -221,10 +177,6 @@ return nativeObject->getLimit();
         internal_native_position(native_address, newPosition);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-nativeObject->position((int)newPosition);
-*/
     public static void internal_native_position(long this_addr, int newPosition) {
         try {
             FFMHandles.internal_native_position__JI.invokeExact(this_addr, newPosition);
@@ -237,10 +189,6 @@ nativeObject->position((int)newPosition);
         return internal_native_getPosition(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-return nativeObject->getPosition();
-*/
     public static int internal_native_getPosition(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_getPosition__J.invokeExact(this_addr);
@@ -253,10 +201,6 @@ return nativeObject->getPosition();
         internal_native_flip(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPULongBuffer* nativeObject = (WGPULongBuffer*)this_addr;
-nativeObject->flip();
-*/
     public static void internal_native_flip(long this_addr) {
         try {
             FFMHandles.internal_native_flip__J.invokeExact(this_addr);

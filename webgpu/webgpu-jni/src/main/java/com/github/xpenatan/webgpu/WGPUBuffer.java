@@ -28,12 +28,6 @@ public class WGPUBuffer extends NativeObject {
         internal_native_getConstMappedRange(native_address, offset, size, out);
     }
 
-    /*
-      [-JNI;-NATIVE]
-              JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-              void* bufferAddress = env->GetDirectBufferAddress(out);
-              nativeObject->GetConstMappedRange((int)offset, (int)size, bufferAddress);
-    */
     private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out);
 
     public WGPUBuffer() {
@@ -41,54 +35,30 @@ public class WGPUBuffer extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      return (jlong)new JGPU::WGPUBuffer();
-    */
     public static native long internal_native_create_addr();
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      delete nativeObject;
-    */
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->SetLabel(value);
-    */
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->Release();
-    */
     public static native void internal_native_Release(long this_addr);
 
     public void destroy() {
         internal_native_Destroy(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->Destroy();
-    */
     public static native void internal_native_Destroy(long this_addr);
 
     public WGPUFuture mapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback) {
@@ -101,13 +71,6 @@ public class WGPUBuffer extends NativeObject {
         return WGPUFuture_TEMP_GEN_0;
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      static JGPU::WGPUFuture copy_addr;
-      copy_addr = nativeObject->MapAsync((::WGPUMapMode)mode, (int)offset, (int)size, (::WGPUCallbackMode)callbackMode, (JGPU::WGPUBufferMapCallback* )callback_addr);
-      return (jlong)&copy_addr;
-    */
     public static native long internal_native_MapAsync_addr(long this_addr, int mode, int offset, int size, int callbackMode, long callback_addr);
 
     public WGPUByteBuffer getMappedRange(int offset, int size) {
@@ -120,33 +83,18 @@ public class WGPUBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return (jlong)&nativeObject->GetMappedRange((int)offset, (int)size);
-    */
     public static native long internal_native_GetMappedRange_addr(long this_addr, int offset, int size);
 
     public void unmap() {
         internal_native_Unmap(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->Unmap();
-    */
     public static native void internal_native_Unmap(long this_addr);
 
     public int getSize() {
         return internal_native_GetSize(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return nativeObject->GetSize();
-    */
     public static native int internal_native_GetSize(long this_addr);
 
     public WGPUBufferUsage getUsage() {
@@ -160,21 +108,11 @@ public class WGPUBuffer extends NativeObject {
         return WGPUBufferUsage.CUSTOM.setValue(value);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return (int)nativeObject->GetUsage();
-    */
     public static native int internal_native_GetUsage(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*
-      [-JNI;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return nativeObject->IsValid();
-    */
     public static native boolean internal_native_IsValid(long this_addr);
 }

@@ -34,21 +34,12 @@ public enum WGPUStatus implements NativeEnum<WGPUStatus> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStatus_Success;")
     private static native int WGPUStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStatus_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStatus_Error;")
     private static native int WGPUStatus_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStatus_Force32;")
     private static native int WGPUStatus_Force32_NATIVE();
 }

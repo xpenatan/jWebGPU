@@ -17,10 +17,6 @@ public class WGPUPipelineLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPUPipelineLayout();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUPipelineLayout();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -42,10 +38,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -53,10 +45,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);
-jsObj.SetLabel(value);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);jsObj.SetLabel(value);")
     public static native void internal_native_SetLabel(int this_addr, String value);
 
@@ -64,10 +52,6 @@ jsObj.SetLabel(value);
         internal_native_Release(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);
-jsObj.Release();
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
@@ -75,11 +59,6 @@ jsObj.Release();
         return internal_native_IsValid(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);
-var returnedJSObj = jsObj.IsValid();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPipelineLayout);var returnedJSObj = jsObj.IsValid();return returnedJSObj;")
     public static native boolean internal_native_IsValid(int this_addr);
 }

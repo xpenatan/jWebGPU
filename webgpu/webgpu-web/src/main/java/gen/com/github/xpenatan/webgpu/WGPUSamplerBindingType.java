@@ -40,39 +40,21 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSamplerBindingType_BindingNotUsed;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSamplerBindingType_BindingNotUsed;")
     private static native int WGPUSamplerBindingType_BindingNotUsed_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSamplerBindingType_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSamplerBindingType_Undefined;")
     private static native int WGPUSamplerBindingType_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSamplerBindingType_Filtering;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSamplerBindingType_Filtering;")
     private static native int WGPUSamplerBindingType_Filtering_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSamplerBindingType_NonFiltering;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSamplerBindingType_NonFiltering;")
     private static native int WGPUSamplerBindingType_NonFiltering_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSamplerBindingType_Comparison;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSamplerBindingType_Comparison;")
     private static native int WGPUSamplerBindingType_Comparison_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSamplerBindingType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSamplerBindingType_Force32;")
     private static native int WGPUSamplerBindingType_Force32_NATIVE();
 }

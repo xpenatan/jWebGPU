@@ -19,9 +19,6 @@ public class WGPUVectorFeatureName extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorFeatureName();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUVectorFeatureName();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFeatureName* nativeObject = (JGPU::WGPUVectorFeatureName*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFeatureName* nativeObject = (JGPU::WGPUVectorFeatureName*)this_addr;
-return nativeObject->size();
-*/
     public static native int internal_native_size(long this_addr);
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFeatureName* nativeObject = (JGPU::WGPUVectorFeatureName*)this_addr;
-nativeObject->clear();
-*/
     public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUFeatureName featureName) {
         internal_native_push_back(native_address, featureName.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorFeatureName* nativeObject = (JGPU::WGPUVectorFeatureName*)this_addr;
-nativeObject->push_back((::WGPUFeatureName)featureName);
-*/
     public static native void internal_native_push_back(long this_addr, int featureName);
 
     public static WGPUVectorFeatureName obtain() {
@@ -88,8 +69,5 @@ nativeObject->push_back((::WGPUFeatureName)featureName);
         return WGPUVectorFeatureName_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorFeatureName::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

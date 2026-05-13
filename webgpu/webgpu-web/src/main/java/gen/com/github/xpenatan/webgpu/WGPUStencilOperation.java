@@ -44,63 +44,33 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_Undefined;")
     private static native int WGPUStencilOperation_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_Keep;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_Keep;")
     private static native int WGPUStencilOperation_Keep_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_Zero;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_Zero;")
     private static native int WGPUStencilOperation_Zero_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_Replace;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_Replace;")
     private static native int WGPUStencilOperation_Replace_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_Invert;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_Invert;")
     private static native int WGPUStencilOperation_Invert_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_IncrementClamp;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_IncrementClamp;")
     private static native int WGPUStencilOperation_IncrementClamp_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_DecrementClamp;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_DecrementClamp;")
     private static native int WGPUStencilOperation_DecrementClamp_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_IncrementWrap;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_IncrementWrap;")
     private static native int WGPUStencilOperation_IncrementWrap_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_DecrementWrap;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_DecrementWrap;")
     private static native int WGPUStencilOperation_DecrementWrap_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStencilOperation_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStencilOperation_Force32;")
     private static native int WGPUStencilOperation_Force32_NATIVE();
 }

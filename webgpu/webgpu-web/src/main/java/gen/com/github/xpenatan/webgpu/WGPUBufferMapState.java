@@ -34,27 +34,15 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferMapState_Unmapped;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferMapState_Unmapped;")
     private static native int WGPUBufferMapState_Unmapped_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferMapState_Pending;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferMapState_Pending;")
     private static native int WGPUBufferMapState_Pending_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferMapState_Mapped;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferMapState_Mapped;")
     private static native int WGPUBufferMapState_Mapped_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferMapState_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferMapState_Force32;")
     private static native int WGPUBufferMapState_Force32_NATIVE();
 }

@@ -48,9 +48,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_Undefined;
-*/
     private static int WGPUPrimitiveTopology_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_Undefined_NATIVE__.invokeExact();
@@ -59,9 +56,6 @@ return (int64_t)WGPUPrimitiveTopology_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_PointList;
-*/
     private static int WGPUPrimitiveTopology_PointList_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_PointList_NATIVE__.invokeExact();
@@ -70,9 +64,6 @@ return (int64_t)WGPUPrimitiveTopology_PointList;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_LineList;
-*/
     private static int WGPUPrimitiveTopology_LineList_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_LineList_NATIVE__.invokeExact();
@@ -81,9 +72,6 @@ return (int64_t)WGPUPrimitiveTopology_LineList;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_LineStrip;
-*/
     private static int WGPUPrimitiveTopology_LineStrip_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_LineStrip_NATIVE__.invokeExact();
@@ -92,9 +80,6 @@ return (int64_t)WGPUPrimitiveTopology_LineStrip;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_TriangleList;
-*/
     private static int WGPUPrimitiveTopology_TriangleList_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_TriangleList_NATIVE__.invokeExact();
@@ -103,9 +88,6 @@ return (int64_t)WGPUPrimitiveTopology_TriangleList;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_TriangleStrip;
-*/
     private static int WGPUPrimitiveTopology_TriangleStrip_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_TriangleStrip_NATIVE__.invokeExact();
@@ -114,9 +96,6 @@ return (int64_t)WGPUPrimitiveTopology_TriangleStrip;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPrimitiveTopology_Force32;
-*/
     private static int WGPUPrimitiveTopology_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPrimitiveTopology_Force32_NATIVE__.invokeExact();

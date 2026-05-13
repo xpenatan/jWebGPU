@@ -30,10 +30,6 @@ public class WGPUQueueDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueueDescriptor);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueueDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -41,10 +37,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueueDescriptor);
-jsObj.SetLabel(label);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueueDescriptor);jsObj.SetLabel(label);")
     public static native void internal_native_SetLabel(int this_addr, String label);
 
@@ -52,10 +44,6 @@ jsObj.SetLabel(label);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueueDescriptor);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueueDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 }

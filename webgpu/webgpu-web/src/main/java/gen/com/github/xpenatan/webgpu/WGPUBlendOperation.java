@@ -41,45 +41,24 @@ public enum WGPUBlendOperation implements NativeEnum<WGPUBlendOperation> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_Undefined;")
     private static native int WGPUBlendOperation_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_Add;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_Add;")
     private static native int WGPUBlendOperation_Add_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_Subtract;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_Subtract;")
     private static native int WGPUBlendOperation_Subtract_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_ReverseSubtract;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_ReverseSubtract;")
     private static native int WGPUBlendOperation_ReverseSubtract_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_Min;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_Min;")
     private static native int WGPUBlendOperation_Min_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_Max;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_Max;")
     private static native int WGPUBlendOperation_Max_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendOperation_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendOperation_Force32;")
     private static native int WGPUBlendOperation_Force32_NATIVE();
 }

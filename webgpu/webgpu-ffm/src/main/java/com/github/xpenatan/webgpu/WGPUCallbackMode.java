@@ -41,9 +41,6 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCallbackMode_WaitAnyOnly;
-*/
     private static int WGPUCallbackMode_WaitAnyOnly_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCallbackMode_WaitAnyOnly_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUCallbackMode_WaitAnyOnly;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCallbackMode_AllowProcessEvents;
-*/
     private static int WGPUCallbackMode_AllowProcessEvents_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCallbackMode_AllowProcessEvents_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUCallbackMode_AllowProcessEvents;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCallbackMode_AllowSpontaneous;
-*/
     private static int WGPUCallbackMode_AllowSpontaneous_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCallbackMode_AllowSpontaneous_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUCallbackMode_AllowSpontaneous;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCallbackMode_Force32;
-*/
     private static int WGPUCallbackMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCallbackMode_Force32_NATIVE__.invokeExact();

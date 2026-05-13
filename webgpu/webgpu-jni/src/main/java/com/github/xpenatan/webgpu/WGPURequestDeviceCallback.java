@@ -12,28 +12,6 @@ public class WGPURequestDeviceCallback extends NativeObject {
 
     static public final WGPURequestDeviceCallback NULL = WGPURequestDeviceCallback.native_new();
 
-    /*[-JNI;-NATIVE]
-	static jmethodID WGPURequestDeviceCallbackImpl_OnCallbackIJS_ID;
-
-class WGPURequestDeviceCallbackImpl : public JGPU::WGPURequestDeviceCallback {
-private:
-	JNIEnv* env;
-	jobject obj;
-public:
-void setupCallback(JNIEnv* env, jobject obj) {
-	this->env = env;
-	this->obj = env->NewGlobalRef(obj);
-	static jclass jClassID = 0;
-	if(jClassID == 0) {
-		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WGPURequestDeviceCallbackImpl_OnCallbackIJS_ID = env->GetMethodID(jClassID, "internal_onCallback", "(IJLjava/lang/String;)V");
-	}
-}
-virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device, const char* message) {
-   env->CallVoidMethod(obj, WGPURequestDeviceCallbackImpl_OnCallbackIJS_ID, status, (jlong)device, env->NewStringUTF(message));
-}
-};
-*/
     @Deprecated()
     protected WGPURequestDeviceCallback(byte b, char c) {
     }
@@ -49,10 +27,6 @@ virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPURequestDeviceCallbackImpl* nativeObject = (WGPURequestDeviceCallbackImpl*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPURequestDeviceCallback() {
@@ -83,14 +57,7 @@ delete nativeObject;
         onCallback(status_addr_enum, device_addr_new, message_addr);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new WGPURequestDeviceCallbackImpl();
-*/
     public static native long internal_native_create_addr();
 
-    /*[-JNI;-NATIVE]
-WGPURequestDeviceCallbackImpl* nativeObject = (WGPURequestDeviceCallbackImpl*)this_addr;
-nativeObject->setupCallback(env, object);
-*/
     public native void internal_native_setupCallback(long this_addr);
 }

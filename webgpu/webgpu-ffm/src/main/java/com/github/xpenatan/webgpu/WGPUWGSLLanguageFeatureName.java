@@ -46,9 +46,6 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures;
-*/
     private static int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE__.invokeExact();
@@ -57,9 +54,6 @@ return (int64_t)WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct;
-*/
     private static int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE__.invokeExact();
@@ -68,9 +62,6 @@ return (int64_t)WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters;
-*/
     private static int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE__.invokeExact();
@@ -79,9 +70,6 @@ return (int64_t)WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWGSLLanguageFeatureName_PointerCompositeAccess;
-*/
     private static int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE__.invokeExact();
@@ -90,9 +78,6 @@ return (int64_t)WGPUWGSLLanguageFeatureName_PointerCompositeAccess;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWGSLLanguageFeatureName_Force32;
-*/
     private static int WGPUWGSLLanguageFeatureName_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_Force32_NATIVE__.invokeExact();

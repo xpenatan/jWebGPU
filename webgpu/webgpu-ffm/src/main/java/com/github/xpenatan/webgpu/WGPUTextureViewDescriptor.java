@@ -26,9 +26,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUTextureViewDescriptor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUTextureViewDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -87,10 +76,6 @@ nativeObject->SetLabel(value);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -103,10 +88,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
@@ -119,10 +100,6 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
         internal_native_SetDimension(native_address, dimension.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetDimension((::WGPUTextureViewDimension)dimension);
-*/
     public static void internal_native_SetDimension(long this_addr, int dimension) {
         try {
             FFMHandles.internal_native_SetDimension__JI.invokeExact(this_addr, dimension);
@@ -135,10 +112,6 @@ nativeObject->SetDimension((::WGPUTextureViewDimension)dimension);
         internal_native_SetBaseMipLevel(native_address, baseMipLevel);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetBaseMipLevel((int)baseMipLevel);
-*/
     public static void internal_native_SetBaseMipLevel(long this_addr, int baseMipLevel) {
         try {
             FFMHandles.internal_native_SetBaseMipLevel__JI.invokeExact(this_addr, baseMipLevel);
@@ -151,10 +124,6 @@ nativeObject->SetBaseMipLevel((int)baseMipLevel);
         internal_native_SetMipLevelCount(native_address, mipLevelCount);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetMipLevelCount((int)mipLevelCount);
-*/
     public static void internal_native_SetMipLevelCount(long this_addr, int mipLevelCount) {
         try {
             FFMHandles.internal_native_SetMipLevelCount__JI.invokeExact(this_addr, mipLevelCount);
@@ -167,10 +136,6 @@ nativeObject->SetMipLevelCount((int)mipLevelCount);
         internal_native_SetBaseArrayLayer(native_address, baseArrayLayer);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetBaseArrayLayer((int)baseArrayLayer);
-*/
     public static void internal_native_SetBaseArrayLayer(long this_addr, int baseArrayLayer) {
         try {
             FFMHandles.internal_native_SetBaseArrayLayer__JI.invokeExact(this_addr, baseArrayLayer);
@@ -183,10 +148,6 @@ nativeObject->SetBaseArrayLayer((int)baseArrayLayer);
         internal_native_SetArrayLayerCount(native_address, arrayLayerCount);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetArrayLayerCount((int)arrayLayerCount);
-*/
     public static void internal_native_SetArrayLayerCount(long this_addr, int arrayLayerCount) {
         try {
             FFMHandles.internal_native_SetArrayLayerCount__JI.invokeExact(this_addr, arrayLayerCount);
@@ -199,10 +160,6 @@ nativeObject->SetArrayLayerCount((int)arrayLayerCount);
         internal_native_SetAspect(native_address, aspect.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetAspect((::WGPUTextureAspect)aspect);
-*/
     public static void internal_native_SetAspect(long this_addr, int aspect) {
         try {
             FFMHandles.internal_native_SetAspect__JI.invokeExact(this_addr, aspect);
@@ -215,10 +172,6 @@ nativeObject->SetAspect((::WGPUTextureAspect)aspect);
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureViewDescriptor* nativeObject = (JGPU::WGPUTextureViewDescriptor*)this_addr;
-nativeObject->SetUsage((::WGPUTextureUsage)usage);
-*/
     public static void internal_native_SetUsage(long this_addr, int usage) {
         try {
             FFMHandles.internal_native_SetUsage__JI.invokeExact(this_addr, usage);
@@ -237,9 +190,6 @@ nativeObject->SetUsage((::WGPUTextureUsage)usage);
         return WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUTextureViewDescriptor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

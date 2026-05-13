@@ -34,27 +34,15 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFrontFace_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFrontFace_Undefined;")
     private static native int WGPUFrontFace_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFrontFace_CCW;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFrontFace_CCW;")
     private static native int WGPUFrontFace_CCW_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFrontFace_CW;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFrontFace_CW;")
     private static native int WGPUFrontFace_CW_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFrontFace_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFrontFace_Force32;")
     private static native int WGPUFrontFace_Force32_NATIVE();
 }

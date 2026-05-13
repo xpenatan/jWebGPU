@@ -33,10 +33,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)new JGPU::WGPUTexelCopyBufferLayout();
-    */
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -49,11 +45,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -66,11 +57,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_SetOffset(native_address, offset);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      nativeObject->SetOffset((int)offset);
-    */
     public static void internal_native_SetOffset(long this_addr, int offset) {
         try {
             FFMHandles.internal_native_SetOffset__JI.invokeExact(this_addr, offset);
@@ -83,11 +69,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_SetBytesPerRow(native_address, bytesPerRow);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      nativeObject->SetBytesPerRow((int)bytesPerRow);
-    */
     public static void internal_native_SetBytesPerRow(long this_addr, int bytesPerRow) {
         try {
             FFMHandles.internal_native_SetBytesPerRow__JI.invokeExact(this_addr, bytesPerRow);
@@ -100,11 +81,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_SetRowsPerImage(native_address, rowsPerImage);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUTexelCopyBufferLayout* nativeObject = (JGPU::WGPUTexelCopyBufferLayout*)this_addr;
-      nativeObject->SetRowsPerImage((int)rowsPerImage);
-    */
     public static void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage) {
         try {
             FFMHandles.internal_native_SetRowsPerImage__JI.invokeExact(this_addr, rowsPerImage);
@@ -123,10 +99,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)JGPU::WGPUTexelCopyBufferLayout::Obtain();
-    */
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

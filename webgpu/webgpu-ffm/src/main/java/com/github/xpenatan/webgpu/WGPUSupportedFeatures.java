@@ -26,9 +26,6 @@ public class WGPUSupportedFeatures extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUSupportedFeatures();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUSupportedFeatures();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         return internal_native_GetFeatureCount(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-return nativeObject->GetFeatureCount();
-*/
     public static int internal_native_GetFeatureCount(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetFeatureCount__J.invokeExact(this_addr);
@@ -94,10 +83,6 @@ return nativeObject->GetFeatureCount();
         return WGPUFeatureName.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-return (int)nativeObject->GetFeatureAt((int)index);
-*/
     public static int internal_native_GetFeatureAt(long this_addr, int index) {
         try {
             return (int) FFMHandles.internal_native_GetFeatureAt__JI.invokeExact(this_addr, index);
@@ -116,9 +101,6 @@ return (int)nativeObject->GetFeatureAt((int)index);
         return WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUSupportedFeatures::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

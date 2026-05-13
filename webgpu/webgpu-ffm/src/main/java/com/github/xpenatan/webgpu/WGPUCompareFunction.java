@@ -51,9 +51,6 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Undefined;
-*/
     private static int WGPUCompareFunction_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Undefined_NATIVE__.invokeExact();
@@ -62,9 +59,6 @@ return (int64_t)WGPUCompareFunction_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Never;
-*/
     private static int WGPUCompareFunction_Never_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Never_NATIVE__.invokeExact();
@@ -73,9 +67,6 @@ return (int64_t)WGPUCompareFunction_Never;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Less;
-*/
     private static int WGPUCompareFunction_Less_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Less_NATIVE__.invokeExact();
@@ -84,9 +75,6 @@ return (int64_t)WGPUCompareFunction_Less;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Equal;
-*/
     private static int WGPUCompareFunction_Equal_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Equal_NATIVE__.invokeExact();
@@ -95,9 +83,6 @@ return (int64_t)WGPUCompareFunction_Equal;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_LessEqual;
-*/
     private static int WGPUCompareFunction_LessEqual_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_LessEqual_NATIVE__.invokeExact();
@@ -106,9 +91,6 @@ return (int64_t)WGPUCompareFunction_LessEqual;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Greater;
-*/
     private static int WGPUCompareFunction_Greater_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Greater_NATIVE__.invokeExact();
@@ -117,9 +99,6 @@ return (int64_t)WGPUCompareFunction_Greater;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_NotEqual;
-*/
     private static int WGPUCompareFunction_NotEqual_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_NotEqual_NATIVE__.invokeExact();
@@ -128,9 +107,6 @@ return (int64_t)WGPUCompareFunction_NotEqual;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_GreaterEqual;
-*/
     private static int WGPUCompareFunction_GreaterEqual_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_GreaterEqual_NATIVE__.invokeExact();
@@ -139,9 +115,6 @@ return (int64_t)WGPUCompareFunction_GreaterEqual;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Always;
-*/
     private static int WGPUCompareFunction_Always_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Always_NATIVE__.invokeExact();
@@ -150,9 +123,6 @@ return (int64_t)WGPUCompareFunction_Always;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompareFunction_Force32;
-*/
     private static int WGPUCompareFunction_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompareFunction_Force32_NATIVE__.invokeExact();

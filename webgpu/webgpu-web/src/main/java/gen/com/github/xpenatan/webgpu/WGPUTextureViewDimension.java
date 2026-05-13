@@ -42,51 +42,27 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_Undefined;")
     private static native int WGPUTextureViewDimension_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_1D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_1D;")
     private static native int WGPUTextureViewDimension_1D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_2D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_2D;")
     private static native int WGPUTextureViewDimension_2D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_2DArray;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_2DArray;")
     private static native int WGPUTextureViewDimension_2DArray_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_Cube;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_Cube;")
     private static native int WGPUTextureViewDimension_Cube_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_CubeArray;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_CubeArray;")
     private static native int WGPUTextureViewDimension_CubeArray_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_3D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_3D;")
     private static native int WGPUTextureViewDimension_3D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureViewDimension_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureViewDimension_Force32;")
     private static native int WGPUTextureViewDimension_Force32_NATIVE();
 }

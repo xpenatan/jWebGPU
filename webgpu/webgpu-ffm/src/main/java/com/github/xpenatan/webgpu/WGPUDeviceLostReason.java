@@ -41,9 +41,6 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUDeviceLostReason_Unknown;
-*/
     private static int WGPUDeviceLostReason_Unknown_NATIVE() {
         try {
             return (int) FFMHandles.WGPUDeviceLostReason_Unknown_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUDeviceLostReason_Unknown;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUDeviceLostReason_Destroyed;
-*/
     private static int WGPUDeviceLostReason_Destroyed_NATIVE() {
         try {
             return (int) FFMHandles.WGPUDeviceLostReason_Destroyed_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUDeviceLostReason_Destroyed;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUDeviceLostReason_FailedCreation;
-*/
     private static int WGPUDeviceLostReason_FailedCreation_NATIVE() {
         try {
             return (int) FFMHandles.WGPUDeviceLostReason_FailedCreation_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUDeviceLostReason_FailedCreation;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUDeviceLostReason_Force32;
-*/
     private static int WGPUDeviceLostReason_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUDeviceLostReason_Force32_NATIVE__.invokeExact();

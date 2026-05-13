@@ -16,10 +16,6 @@ import com.github.xpenatan.jparser.runtime.RuntimeLoader;
  */
 public class JWebGPULoader {
 
-    /*
-      [-FFM;-NATIVE]
-              #include "jWebGPU.h"
-    */
     private static JWebGPUBackend backend;
 
     public static void init(JParserLibraryLoaderListener listener) {

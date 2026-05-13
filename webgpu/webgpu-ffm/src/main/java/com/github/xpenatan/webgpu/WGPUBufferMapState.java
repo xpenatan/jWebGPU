@@ -41,9 +41,6 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferMapState_Unmapped;
-*/
     private static int WGPUBufferMapState_Unmapped_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferMapState_Unmapped_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUBufferMapState_Unmapped;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferMapState_Pending;
-*/
     private static int WGPUBufferMapState_Pending_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferMapState_Pending_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUBufferMapState_Pending;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferMapState_Mapped;
-*/
     private static int WGPUBufferMapState_Mapped_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferMapState_Mapped_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUBufferMapState_Mapped;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferMapState_Force32;
-*/
     private static int WGPUBufferMapState_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferMapState_Force32_NATIVE__.invokeExact();

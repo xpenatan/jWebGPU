@@ -28,9 +28,6 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUComputePipelineDescriptor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -57,10 +54,6 @@ return (int64_t)new JGPU::WGPUComputePipelineDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -73,10 +66,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -89,10 +78,6 @@ nativeObject->SetLabel(label);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -105,10 +90,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetLayout(native_address, layout.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDescriptor*)this_addr;
-nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )layout_addr);
-*/
     public static void internal_native_SetLayout(long this_addr, long layout_addr) {
         try {
             FFMHandles.internal_native_SetLayout__JJ.invokeExact(this_addr, layout_addr);
@@ -127,11 +108,6 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )layout_addr);
         return WGPUComputeState_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUComputePipelineDescriptor* nativeObject = (JGPU::WGPUComputePipelineDescriptor*)this_addr;
-thread_local static JGPU::WGPUComputeState copy_addr;
-copy_addr = nativeObject->GetCompute();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetCompute_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetCompute_addr__J.invokeExact(this_addr);
@@ -150,9 +126,6 @@ return (int64_t)&copy_addr;*/
         return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUComputePipelineDescriptor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

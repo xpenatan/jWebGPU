@@ -34,21 +34,12 @@ public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureLevel_Compatibility;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureLevel_Compatibility;")
     private static native int WGPUFeatureLevel_Compatibility_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureLevel_Core;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureLevel_Core;")
     private static native int WGPUFeatureLevel_Core_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureLevel_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureLevel_Force32;")
     private static native int WGPUFeatureLevel_Force32_NATIVE();
 }

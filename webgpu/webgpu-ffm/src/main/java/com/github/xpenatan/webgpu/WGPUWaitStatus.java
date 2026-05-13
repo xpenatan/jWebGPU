@@ -41,9 +41,6 @@ public enum WGPUWaitStatus implements NativeEnum<WGPUWaitStatus> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWaitStatus_Success;
-*/
     private static int WGPUWaitStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWaitStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUWaitStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWaitStatus_TimedOut;
-*/
     private static int WGPUWaitStatus_TimedOut_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWaitStatus_TimedOut_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUWaitStatus_TimedOut;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUWaitStatus_Force32;
-*/
     private static int WGPUWaitStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWaitStatus_Force32_NATIVE__.invokeExact();

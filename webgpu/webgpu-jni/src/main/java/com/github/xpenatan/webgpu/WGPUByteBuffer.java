@@ -27,9 +27,6 @@ public class WGPUByteBuffer extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new WGPUByteBuffer((int)capacity);
-*/
     public static native long internal_native_create_int_addr(int capacity);
 
     /**
@@ -50,10 +47,6 @@ return (jlong)new WGPUByteBuffer((int)capacity);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public static WGPUByteBuffer obtain(int capacity) {
@@ -66,179 +59,108 @@ delete nativeObject;
         return WGPUByteBuffer_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUByteBuffer::Obtain((int)capacity);
-*/
     public static native long internal_native_Obtain_addr(int capacity);
 
     public void order(WGPUByteOrder order) {
         internal_native_order(native_address, order.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->order((::WGPUByteOrder)order);
-*/
     public static native void internal_native_order(long this_addr, int order);
 
     public byte get(int index) {
         return internal_native_get(native_address, index);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->get((int)index);
-*/
     public static native byte internal_native_get(long this_addr, int index);
 
     public void put(byte value) {
         internal_native_put__0(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->put(value);
-*/
     public static native void internal_native_put__0(long this_addr, byte value);
 
     public void put(int index, byte value) {
         internal_native_put__1(native_address, index, value);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->put((int)index, value);
-*/
     public static native void internal_native_put__1(long this_addr, int index, byte value);
 
     public byte get() {
         return internal_native_get(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->get();
-*/
     public static native byte internal_native_get(long this_addr);
 
     public void putInt(int byteIndex, int value) {
         internal_native_putInt(native_address, byteIndex, value);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->putInt((int)byteIndex, (int)value);
-*/
     public static native void internal_native_putInt(long this_addr, int byteIndex, int value);
 
     public int getInt(int byteIndex) {
         return internal_native_getInt(native_address, byteIndex);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->getInt((int)byteIndex);
-*/
     public static native int internal_native_getInt(long this_addr, int byteIndex);
 
     public void putFloat(int byteIndex, float value) {
         internal_native_putFloat(native_address, byteIndex, value);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->putFloat((int)byteIndex, (float)value);
-*/
     public static native void internal_native_putFloat(long this_addr, int byteIndex, float value);
 
     public float getFloat(int byteIndex) {
         return internal_native_getFloat(native_address, byteIndex);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->getFloat((int)byteIndex);
-*/
     public static native float internal_native_getFloat(long this_addr, int byteIndex);
 
     public int remaining() {
         return internal_native_remaining(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->remaining();
-*/
     public static native int internal_native_remaining(long this_addr);
 
     public int getCapacity() {
         return internal_native_getCapacity(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->getCapacity();
-*/
     public static native int internal_native_getCapacity(long this_addr);
 
     public void position(int newPosition) {
         internal_native_position(native_address, newPosition);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->position((int)newPosition);
-*/
     public static native void internal_native_position(long this_addr, int newPosition);
 
     public int getPosition() {
         return internal_native_getPosition(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->getPosition();
-*/
     public static native int internal_native_getPosition(long this_addr);
 
     public void limit(int newLimit) {
         internal_native_limit(native_address, newLimit);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->limit((int)newLimit);
-*/
     public static native void internal_native_limit(long this_addr, int newLimit);
 
     public int getLimit() {
         return internal_native_getLimit(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return nativeObject->getLimit();
-*/
     public static native int internal_native_getLimit(long this_addr);
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->clear();
-*/
     public static native void internal_native_clear(long this_addr);
 
     public void flip() {
         internal_native_flip(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-nativeObject->flip();
-*/
     public static native void internal_native_flip(long this_addr);
 
     public WGPUFloatBuffer asFloatBuffer() {
@@ -251,10 +173,6 @@ nativeObject->flip();
         return WGPUFloatBuffer_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return (jlong)&nativeObject->asFloatBuffer();
-*/
     public static native long internal_native_asFloatBuffer_addr(long this_addr);
 
     public WGPUIntBuffer asIntBuffer() {
@@ -267,10 +185,6 @@ return (jlong)&nativeObject->asFloatBuffer();
         return WGPUIntBuffer_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return (jlong)&nativeObject->asIntBuffer();
-*/
     public static native long internal_native_asIntBuffer_addr(long this_addr);
 
     public WGPULongBuffer asLongBuffer() {
@@ -283,10 +197,6 @@ return (jlong)&nativeObject->asIntBuffer();
         return WGPULongBuffer_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return (jlong)&nativeObject->asLongBuffer();
-*/
     public static native long internal_native_asLongBuffer_addr(long this_addr);
 
     public WGPUShortBuffer asShortBuffer() {
@@ -299,9 +209,5 @@ return (jlong)&nativeObject->asLongBuffer();
         return WGPUShortBuffer_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-WGPUByteBuffer* nativeObject = (WGPUByteBuffer*)this_addr;
-return (jlong)&nativeObject->asShortBuffer();
-*/
     public static native long internal_native_asShortBuffer_addr(long this_addr);
 }

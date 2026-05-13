@@ -19,9 +19,6 @@ public class WGPUSupportedFeatures extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSupportedFeatures();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,20 +39,12 @@ return (jlong)new JGPU::WGPUSupportedFeatures();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public int getFeatureCount() {
         return internal_native_GetFeatureCount(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-return nativeObject->GetFeatureCount();
-*/
     public static native int internal_native_GetFeatureCount(long this_addr);
 
     public WGPUFeatureName getFeatureAt(int index) {
@@ -69,10 +58,6 @@ return nativeObject->GetFeatureCount();
         return WGPUFeatureName.CUSTOM.setValue(value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSupportedFeatures* nativeObject = (JGPU::WGPUSupportedFeatures*)this_addr;
-return (int)nativeObject->GetFeatureAt((int)index);
-*/
     public static native int internal_native_GetFeatureAt(long this_addr, int index);
 
     public static WGPUSupportedFeatures obtain() {
@@ -85,8 +70,5 @@ return (int)nativeObject->GetFeatureAt((int)index);
         return WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSupportedFeatures::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

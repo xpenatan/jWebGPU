@@ -23,9 +23,6 @@ public class WGPUBlendState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUBlendState();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -46,10 +43,6 @@ return (jlong)new JGPU::WGPUBlendState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUBlendComponent getColor() {
@@ -62,11 +55,6 @@ delete nativeObject;
         return WGPUBlendComponent_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
-static JGPU::WGPUBlendComponent copy_addr;
-copy_addr = nativeObject->GetColor();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetColor_addr(long this_addr);
 
     public WGPUBlendComponent getAlpha() {
@@ -79,11 +67,6 @@ return (jlong)&copy_addr;*/
         return WGPUBlendComponent_TEMP_GEN_1;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
-static JGPU::WGPUBlendComponent copy_addr;
-copy_addr = nativeObject->GetAlpha();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetAlpha_addr(long this_addr);
 
     public static WGPUBlendState obtain() {
@@ -96,8 +79,5 @@ return (jlong)&copy_addr;*/
         return WGPUBlendState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBlendState::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

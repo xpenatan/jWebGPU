@@ -51,105 +51,54 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_DepthClipControl;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_DepthClipControl;")
     private static native int WGPUFeatureName_DepthClipControl_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_Depth32FloatStencil8;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_Depth32FloatStencil8;")
     private static native int WGPUFeatureName_Depth32FloatStencil8_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_TimestampQuery;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_TimestampQuery;")
     private static native int WGPUFeatureName_TimestampQuery_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_TextureCompressionBC;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_TextureCompressionBC;")
     private static native int WGPUFeatureName_TextureCompressionBC_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_TextureCompressionBCSliced3D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_TextureCompressionBCSliced3D;")
     private static native int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_TextureCompressionETC2;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_TextureCompressionETC2;")
     private static native int WGPUFeatureName_TextureCompressionETC2_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_TextureCompressionASTC;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_TextureCompressionASTC;")
     private static native int WGPUFeatureName_TextureCompressionASTC_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_TextureCompressionASTCSliced3D;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_TextureCompressionASTCSliced3D;")
     private static native int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_IndirectFirstInstance;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_IndirectFirstInstance;")
     private static native int WGPUFeatureName_IndirectFirstInstance_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_ShaderF16;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_ShaderF16;")
     private static native int WGPUFeatureName_ShaderF16_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_RG11B10UfloatRenderable;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_RG11B10UfloatRenderable;")
     private static native int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_BGRA8UnormStorage;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_BGRA8UnormStorage;")
     private static native int WGPUFeatureName_BGRA8UnormStorage_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_Float32Filterable;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_Float32Filterable;")
     private static native int WGPUFeatureName_Float32Filterable_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_Float32Blendable;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_Float32Blendable;")
     private static native int WGPUFeatureName_Float32Blendable_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_ClipDistances;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_ClipDistances;")
     private static native int WGPUFeatureName_ClipDistances_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_DualSourceBlending;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_DualSourceBlending;")
     private static native int WGPUFeatureName_DualSourceBlending_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFeatureName_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFeatureName_Force32;")
     private static native int WGPUFeatureName_Force32_NATIVE();
 }

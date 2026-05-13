@@ -41,9 +41,6 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFrontFace_Undefined;
-*/
     private static int WGPUFrontFace_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFrontFace_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUFrontFace_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFrontFace_CCW;
-*/
     private static int WGPUFrontFace_CCW_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFrontFace_CCW_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUFrontFace_CCW;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFrontFace_CW;
-*/
     private static int WGPUFrontFace_CW_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFrontFace_CW_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUFrontFace_CW;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFrontFace_Force32;
-*/
     private static int WGPUFrontFace_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFrontFace_Force32_NATIVE__.invokeExact();

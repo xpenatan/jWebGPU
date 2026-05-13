@@ -138,9 +138,6 @@ public enum WGPUTextureFormat implements NativeEnum<WGPUTextureFormat> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Undefined;
-*/
     private static int WGPUTextureFormat_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Undefined_NATIVE__.invokeExact();
@@ -149,9 +146,6 @@ return (int64_t)WGPUTextureFormat_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R8Unorm;
-*/
     private static int WGPUTextureFormat_R8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Unorm_NATIVE__.invokeExact();
@@ -160,9 +154,6 @@ return (int64_t)WGPUTextureFormat_R8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R8Snorm;
-*/
     private static int WGPUTextureFormat_R8Snorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Snorm_NATIVE__.invokeExact();
@@ -171,9 +162,6 @@ return (int64_t)WGPUTextureFormat_R8Snorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R8Uint;
-*/
     private static int WGPUTextureFormat_R8Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Uint_NATIVE__.invokeExact();
@@ -182,9 +170,6 @@ return (int64_t)WGPUTextureFormat_R8Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R8Sint;
-*/
     private static int WGPUTextureFormat_R8Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R8Sint_NATIVE__.invokeExact();
@@ -193,9 +178,6 @@ return (int64_t)WGPUTextureFormat_R8Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R16Uint;
-*/
     private static int WGPUTextureFormat_R16Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R16Uint_NATIVE__.invokeExact();
@@ -204,9 +186,6 @@ return (int64_t)WGPUTextureFormat_R16Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R16Sint;
-*/
     private static int WGPUTextureFormat_R16Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R16Sint_NATIVE__.invokeExact();
@@ -215,9 +194,6 @@ return (int64_t)WGPUTextureFormat_R16Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R16Float;
-*/
     private static int WGPUTextureFormat_R16Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R16Float_NATIVE__.invokeExact();
@@ -226,9 +202,6 @@ return (int64_t)WGPUTextureFormat_R16Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG8Unorm;
-*/
     private static int WGPUTextureFormat_RG8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Unorm_NATIVE__.invokeExact();
@@ -237,9 +210,6 @@ return (int64_t)WGPUTextureFormat_RG8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG8Snorm;
-*/
     private static int WGPUTextureFormat_RG8Snorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Snorm_NATIVE__.invokeExact();
@@ -248,9 +218,6 @@ return (int64_t)WGPUTextureFormat_RG8Snorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG8Uint;
-*/
     private static int WGPUTextureFormat_RG8Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Uint_NATIVE__.invokeExact();
@@ -259,9 +226,6 @@ return (int64_t)WGPUTextureFormat_RG8Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG8Sint;
-*/
     private static int WGPUTextureFormat_RG8Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG8Sint_NATIVE__.invokeExact();
@@ -270,9 +234,6 @@ return (int64_t)WGPUTextureFormat_RG8Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R32Float;
-*/
     private static int WGPUTextureFormat_R32Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R32Float_NATIVE__.invokeExact();
@@ -281,9 +242,6 @@ return (int64_t)WGPUTextureFormat_R32Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R32Uint;
-*/
     private static int WGPUTextureFormat_R32Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R32Uint_NATIVE__.invokeExact();
@@ -292,9 +250,6 @@ return (int64_t)WGPUTextureFormat_R32Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_R32Sint;
-*/
     private static int WGPUTextureFormat_R32Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_R32Sint_NATIVE__.invokeExact();
@@ -303,9 +258,6 @@ return (int64_t)WGPUTextureFormat_R32Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG16Uint;
-*/
     private static int WGPUTextureFormat_RG16Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG16Uint_NATIVE__.invokeExact();
@@ -314,9 +266,6 @@ return (int64_t)WGPUTextureFormat_RG16Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG16Sint;
-*/
     private static int WGPUTextureFormat_RG16Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG16Sint_NATIVE__.invokeExact();
@@ -325,9 +274,6 @@ return (int64_t)WGPUTextureFormat_RG16Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG16Float;
-*/
     private static int WGPUTextureFormat_RG16Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG16Float_NATIVE__.invokeExact();
@@ -336,9 +282,6 @@ return (int64_t)WGPUTextureFormat_RG16Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA8Unorm;
-*/
     private static int WGPUTextureFormat_RGBA8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Unorm_NATIVE__.invokeExact();
@@ -347,9 +290,6 @@ return (int64_t)WGPUTextureFormat_RGBA8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA8UnormSrgb;
-*/
     private static int WGPUTextureFormat_RGBA8UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8UnormSrgb_NATIVE__.invokeExact();
@@ -358,9 +298,6 @@ return (int64_t)WGPUTextureFormat_RGBA8UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA8Snorm;
-*/
     private static int WGPUTextureFormat_RGBA8Snorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Snorm_NATIVE__.invokeExact();
@@ -369,9 +306,6 @@ return (int64_t)WGPUTextureFormat_RGBA8Snorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA8Uint;
-*/
     private static int WGPUTextureFormat_RGBA8Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Uint_NATIVE__.invokeExact();
@@ -380,9 +314,6 @@ return (int64_t)WGPUTextureFormat_RGBA8Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA8Sint;
-*/
     private static int WGPUTextureFormat_RGBA8Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA8Sint_NATIVE__.invokeExact();
@@ -391,9 +322,6 @@ return (int64_t)WGPUTextureFormat_RGBA8Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BGRA8Unorm;
-*/
     private static int WGPUTextureFormat_BGRA8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BGRA8Unorm_NATIVE__.invokeExact();
@@ -402,9 +330,6 @@ return (int64_t)WGPUTextureFormat_BGRA8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BGRA8UnormSrgb;
-*/
     private static int WGPUTextureFormat_BGRA8UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BGRA8UnormSrgb_NATIVE__.invokeExact();
@@ -413,9 +338,6 @@ return (int64_t)WGPUTextureFormat_BGRA8UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGB10A2Uint;
-*/
     private static int WGPUTextureFormat_RGB10A2Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGB10A2Uint_NATIVE__.invokeExact();
@@ -424,9 +346,6 @@ return (int64_t)WGPUTextureFormat_RGB10A2Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGB10A2Unorm;
-*/
     private static int WGPUTextureFormat_RGB10A2Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGB10A2Unorm_NATIVE__.invokeExact();
@@ -435,9 +354,6 @@ return (int64_t)WGPUTextureFormat_RGB10A2Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG11B10Ufloat;
-*/
     private static int WGPUTextureFormat_RG11B10Ufloat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG11B10Ufloat_NATIVE__.invokeExact();
@@ -446,9 +362,6 @@ return (int64_t)WGPUTextureFormat_RG11B10Ufloat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGB9E5Ufloat;
-*/
     private static int WGPUTextureFormat_RGB9E5Ufloat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGB9E5Ufloat_NATIVE__.invokeExact();
@@ -457,9 +370,6 @@ return (int64_t)WGPUTextureFormat_RGB9E5Ufloat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG32Float;
-*/
     private static int WGPUTextureFormat_RG32Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG32Float_NATIVE__.invokeExact();
@@ -468,9 +378,6 @@ return (int64_t)WGPUTextureFormat_RG32Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG32Uint;
-*/
     private static int WGPUTextureFormat_RG32Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG32Uint_NATIVE__.invokeExact();
@@ -479,9 +386,6 @@ return (int64_t)WGPUTextureFormat_RG32Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RG32Sint;
-*/
     private static int WGPUTextureFormat_RG32Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RG32Sint_NATIVE__.invokeExact();
@@ -490,9 +394,6 @@ return (int64_t)WGPUTextureFormat_RG32Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA16Uint;
-*/
     private static int WGPUTextureFormat_RGBA16Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA16Uint_NATIVE__.invokeExact();
@@ -501,9 +402,6 @@ return (int64_t)WGPUTextureFormat_RGBA16Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA16Sint;
-*/
     private static int WGPUTextureFormat_RGBA16Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA16Sint_NATIVE__.invokeExact();
@@ -512,9 +410,6 @@ return (int64_t)WGPUTextureFormat_RGBA16Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA16Float;
-*/
     private static int WGPUTextureFormat_RGBA16Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA16Float_NATIVE__.invokeExact();
@@ -523,9 +418,6 @@ return (int64_t)WGPUTextureFormat_RGBA16Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA32Float;
-*/
     private static int WGPUTextureFormat_RGBA32Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA32Float_NATIVE__.invokeExact();
@@ -534,9 +426,6 @@ return (int64_t)WGPUTextureFormat_RGBA32Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA32Uint;
-*/
     private static int WGPUTextureFormat_RGBA32Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA32Uint_NATIVE__.invokeExact();
@@ -545,9 +434,6 @@ return (int64_t)WGPUTextureFormat_RGBA32Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_RGBA32Sint;
-*/
     private static int WGPUTextureFormat_RGBA32Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_RGBA32Sint_NATIVE__.invokeExact();
@@ -556,9 +442,6 @@ return (int64_t)WGPUTextureFormat_RGBA32Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Stencil8;
-*/
     private static int WGPUTextureFormat_Stencil8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Stencil8_NATIVE__.invokeExact();
@@ -567,9 +450,6 @@ return (int64_t)WGPUTextureFormat_Stencil8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Depth16Unorm;
-*/
     private static int WGPUTextureFormat_Depth16Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth16Unorm_NATIVE__.invokeExact();
@@ -578,9 +458,6 @@ return (int64_t)WGPUTextureFormat_Depth16Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Depth24Plus;
-*/
     private static int WGPUTextureFormat_Depth24Plus_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth24Plus_NATIVE__.invokeExact();
@@ -589,9 +466,6 @@ return (int64_t)WGPUTextureFormat_Depth24Plus;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Depth24PlusStencil8;
-*/
     private static int WGPUTextureFormat_Depth24PlusStencil8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth24PlusStencil8_NATIVE__.invokeExact();
@@ -600,9 +474,6 @@ return (int64_t)WGPUTextureFormat_Depth24PlusStencil8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Depth32Float;
-*/
     private static int WGPUTextureFormat_Depth32Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth32Float_NATIVE__.invokeExact();
@@ -611,9 +482,6 @@ return (int64_t)WGPUTextureFormat_Depth32Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Depth32FloatStencil8;
-*/
     private static int WGPUTextureFormat_Depth32FloatStencil8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Depth32FloatStencil8_NATIVE__.invokeExact();
@@ -622,9 +490,6 @@ return (int64_t)WGPUTextureFormat_Depth32FloatStencil8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC1RGBAUnorm;
-*/
     private static int WGPUTextureFormat_BC1RGBAUnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC1RGBAUnorm_NATIVE__.invokeExact();
@@ -633,9 +498,6 @@ return (int64_t)WGPUTextureFormat_BC1RGBAUnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC1RGBAUnormSrgb;
-*/
     private static int WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE__.invokeExact();
@@ -644,9 +506,6 @@ return (int64_t)WGPUTextureFormat_BC1RGBAUnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC2RGBAUnorm;
-*/
     private static int WGPUTextureFormat_BC2RGBAUnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC2RGBAUnorm_NATIVE__.invokeExact();
@@ -655,9 +514,6 @@ return (int64_t)WGPUTextureFormat_BC2RGBAUnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC2RGBAUnormSrgb;
-*/
     private static int WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE__.invokeExact();
@@ -666,9 +522,6 @@ return (int64_t)WGPUTextureFormat_BC2RGBAUnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC3RGBAUnorm;
-*/
     private static int WGPUTextureFormat_BC3RGBAUnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC3RGBAUnorm_NATIVE__.invokeExact();
@@ -677,9 +530,6 @@ return (int64_t)WGPUTextureFormat_BC3RGBAUnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC3RGBAUnormSrgb;
-*/
     private static int WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE__.invokeExact();
@@ -688,9 +538,6 @@ return (int64_t)WGPUTextureFormat_BC3RGBAUnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC4RUnorm;
-*/
     private static int WGPUTextureFormat_BC4RUnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC4RUnorm_NATIVE__.invokeExact();
@@ -699,9 +546,6 @@ return (int64_t)WGPUTextureFormat_BC4RUnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC4RSnorm;
-*/
     private static int WGPUTextureFormat_BC4RSnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC4RSnorm_NATIVE__.invokeExact();
@@ -710,9 +554,6 @@ return (int64_t)WGPUTextureFormat_BC4RSnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC5RGUnorm;
-*/
     private static int WGPUTextureFormat_BC5RGUnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC5RGUnorm_NATIVE__.invokeExact();
@@ -721,9 +562,6 @@ return (int64_t)WGPUTextureFormat_BC5RGUnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC5RGSnorm;
-*/
     private static int WGPUTextureFormat_BC5RGSnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC5RGSnorm_NATIVE__.invokeExact();
@@ -732,9 +570,6 @@ return (int64_t)WGPUTextureFormat_BC5RGSnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC6HRGBUfloat;
-*/
     private static int WGPUTextureFormat_BC6HRGBUfloat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC6HRGBUfloat_NATIVE__.invokeExact();
@@ -743,9 +578,6 @@ return (int64_t)WGPUTextureFormat_BC6HRGBUfloat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC6HRGBFloat;
-*/
     private static int WGPUTextureFormat_BC6HRGBFloat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC6HRGBFloat_NATIVE__.invokeExact();
@@ -754,9 +586,6 @@ return (int64_t)WGPUTextureFormat_BC6HRGBFloat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC7RGBAUnorm;
-*/
     private static int WGPUTextureFormat_BC7RGBAUnorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC7RGBAUnorm_NATIVE__.invokeExact();
@@ -765,9 +594,6 @@ return (int64_t)WGPUTextureFormat_BC7RGBAUnorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_BC7RGBAUnormSrgb;
-*/
     private static int WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE__.invokeExact();
@@ -776,9 +602,6 @@ return (int64_t)WGPUTextureFormat_BC7RGBAUnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ETC2RGB8Unorm;
-*/
     private static int WGPUTextureFormat_ETC2RGB8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8Unorm_NATIVE__.invokeExact();
@@ -787,9 +610,6 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ETC2RGB8UnormSrgb;
-*/
     private static int WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE__.invokeExact();
@@ -798,9 +618,6 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ETC2RGB8A1Unorm;
-*/
     private static int WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE__.invokeExact();
@@ -809,9 +626,6 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8A1Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ETC2RGB8A1UnormSrgb;
-*/
     private static int WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE__.invokeExact();
@@ -820,9 +634,6 @@ return (int64_t)WGPUTextureFormat_ETC2RGB8A1UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ETC2RGBA8Unorm;
-*/
     private static int WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE__.invokeExact();
@@ -831,9 +642,6 @@ return (int64_t)WGPUTextureFormat_ETC2RGBA8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ETC2RGBA8UnormSrgb;
-*/
     private static int WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE__.invokeExact();
@@ -842,9 +650,6 @@ return (int64_t)WGPUTextureFormat_ETC2RGBA8UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_EACR11Unorm;
-*/
     private static int WGPUTextureFormat_EACR11Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACR11Unorm_NATIVE__.invokeExact();
@@ -853,9 +658,6 @@ return (int64_t)WGPUTextureFormat_EACR11Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_EACR11Snorm;
-*/
     private static int WGPUTextureFormat_EACR11Snorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACR11Snorm_NATIVE__.invokeExact();
@@ -864,9 +666,6 @@ return (int64_t)WGPUTextureFormat_EACR11Snorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_EACRG11Unorm;
-*/
     private static int WGPUTextureFormat_EACRG11Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACRG11Unorm_NATIVE__.invokeExact();
@@ -875,9 +674,6 @@ return (int64_t)WGPUTextureFormat_EACRG11Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_EACRG11Snorm;
-*/
     private static int WGPUTextureFormat_EACRG11Snorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_EACRG11Snorm_NATIVE__.invokeExact();
@@ -886,9 +682,6 @@ return (int64_t)WGPUTextureFormat_EACRG11Snorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC4x4Unorm;
-*/
     private static int WGPUTextureFormat_ASTC4x4Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC4x4Unorm_NATIVE__.invokeExact();
@@ -897,9 +690,6 @@ return (int64_t)WGPUTextureFormat_ASTC4x4Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC4x4UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE__.invokeExact();
@@ -908,9 +698,6 @@ return (int64_t)WGPUTextureFormat_ASTC4x4UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC5x4Unorm;
-*/
     private static int WGPUTextureFormat_ASTC5x4Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x4Unorm_NATIVE__.invokeExact();
@@ -919,9 +706,6 @@ return (int64_t)WGPUTextureFormat_ASTC5x4Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC5x4UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE__.invokeExact();
@@ -930,9 +714,6 @@ return (int64_t)WGPUTextureFormat_ASTC5x4UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC5x5Unorm;
-*/
     private static int WGPUTextureFormat_ASTC5x5Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x5Unorm_NATIVE__.invokeExact();
@@ -941,9 +722,6 @@ return (int64_t)WGPUTextureFormat_ASTC5x5Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC5x5UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE__.invokeExact();
@@ -952,9 +730,6 @@ return (int64_t)WGPUTextureFormat_ASTC5x5UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC6x5Unorm;
-*/
     private static int WGPUTextureFormat_ASTC6x5Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x5Unorm_NATIVE__.invokeExact();
@@ -963,9 +738,6 @@ return (int64_t)WGPUTextureFormat_ASTC6x5Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC6x5UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE__.invokeExact();
@@ -974,9 +746,6 @@ return (int64_t)WGPUTextureFormat_ASTC6x5UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC6x6Unorm;
-*/
     private static int WGPUTextureFormat_ASTC6x6Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x6Unorm_NATIVE__.invokeExact();
@@ -985,9 +754,6 @@ return (int64_t)WGPUTextureFormat_ASTC6x6Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC6x6UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE__.invokeExact();
@@ -996,9 +762,6 @@ return (int64_t)WGPUTextureFormat_ASTC6x6UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC8x5Unorm;
-*/
     private static int WGPUTextureFormat_ASTC8x5Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x5Unorm_NATIVE__.invokeExact();
@@ -1007,9 +770,6 @@ return (int64_t)WGPUTextureFormat_ASTC8x5Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC8x5UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE__.invokeExact();
@@ -1018,9 +778,6 @@ return (int64_t)WGPUTextureFormat_ASTC8x5UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC8x6Unorm;
-*/
     private static int WGPUTextureFormat_ASTC8x6Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x6Unorm_NATIVE__.invokeExact();
@@ -1029,9 +786,6 @@ return (int64_t)WGPUTextureFormat_ASTC8x6Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC8x6UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE__.invokeExact();
@@ -1040,9 +794,6 @@ return (int64_t)WGPUTextureFormat_ASTC8x6UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC8x8Unorm;
-*/
     private static int WGPUTextureFormat_ASTC8x8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x8Unorm_NATIVE__.invokeExact();
@@ -1051,9 +802,6 @@ return (int64_t)WGPUTextureFormat_ASTC8x8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC8x8UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE__.invokeExact();
@@ -1062,9 +810,6 @@ return (int64_t)WGPUTextureFormat_ASTC8x8UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x5Unorm;
-*/
     private static int WGPUTextureFormat_ASTC10x5Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x5Unorm_NATIVE__.invokeExact();
@@ -1073,9 +818,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x5Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x5UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE__.invokeExact();
@@ -1084,9 +826,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x5UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x6Unorm;
-*/
     private static int WGPUTextureFormat_ASTC10x6Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x6Unorm_NATIVE__.invokeExact();
@@ -1095,9 +834,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x6Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x6UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE__.invokeExact();
@@ -1106,9 +842,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x6UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x8Unorm;
-*/
     private static int WGPUTextureFormat_ASTC10x8Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x8Unorm_NATIVE__.invokeExact();
@@ -1117,9 +850,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x8Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x8UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE__.invokeExact();
@@ -1128,9 +858,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x8UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x10Unorm;
-*/
     private static int WGPUTextureFormat_ASTC10x10Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x10Unorm_NATIVE__.invokeExact();
@@ -1139,9 +866,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x10Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC10x10UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE__.invokeExact();
@@ -1150,9 +874,6 @@ return (int64_t)WGPUTextureFormat_ASTC10x10UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC12x10Unorm;
-*/
     private static int WGPUTextureFormat_ASTC12x10Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x10Unorm_NATIVE__.invokeExact();
@@ -1161,9 +882,6 @@ return (int64_t)WGPUTextureFormat_ASTC12x10Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC12x10UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE__.invokeExact();
@@ -1172,9 +890,6 @@ return (int64_t)WGPUTextureFormat_ASTC12x10UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC12x12Unorm;
-*/
     private static int WGPUTextureFormat_ASTC12x12Unorm_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x12Unorm_NATIVE__.invokeExact();
@@ -1183,9 +898,6 @@ return (int64_t)WGPUTextureFormat_ASTC12x12Unorm;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_ASTC12x12UnormSrgb;
-*/
     private static int WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE__.invokeExact();
@@ -1194,9 +906,6 @@ return (int64_t)WGPUTextureFormat_ASTC12x12UnormSrgb;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureFormat_Force32;
-*/
     private static int WGPUTextureFormat_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureFormat_Force32_NATIVE__.invokeExact();

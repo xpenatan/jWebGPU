@@ -41,9 +41,6 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMipmapFilterMode_Undefined;
-*/
     private static int WGPUMipmapFilterMode_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMipmapFilterMode_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUMipmapFilterMode_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMipmapFilterMode_Nearest;
-*/
     private static int WGPUMipmapFilterMode_Nearest_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMipmapFilterMode_Nearest_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUMipmapFilterMode_Nearest;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMipmapFilterMode_Linear;
-*/
     private static int WGPUMipmapFilterMode_Linear_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMipmapFilterMode_Linear_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUMipmapFilterMode_Linear;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMipmapFilterMode_Force32;
-*/
     private static int WGPUMipmapFilterMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMipmapFilterMode_Force32_NATIVE__.invokeExact();

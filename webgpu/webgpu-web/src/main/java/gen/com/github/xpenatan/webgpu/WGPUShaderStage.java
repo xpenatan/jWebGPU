@@ -34,27 +34,15 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUShaderStage_None;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUShaderStage_None;")
     private static native int WGPUShaderStage_None_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUShaderStage_Vertex;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUShaderStage_Vertex;")
     private static native int WGPUShaderStage_Vertex_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUShaderStage_Fragment;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUShaderStage_Fragment;")
     private static native int WGPUShaderStage_Fragment_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUShaderStage_Compute;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUShaderStage_Compute;")
     private static native int WGPUShaderStage_Compute_NATIVE();
 }

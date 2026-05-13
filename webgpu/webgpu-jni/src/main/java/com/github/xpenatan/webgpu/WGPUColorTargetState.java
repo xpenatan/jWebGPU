@@ -19,9 +19,6 @@ public class WGPUColorTargetState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUColorTargetState();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,50 +39,30 @@ return (jlong)new JGPU::WGPUColorTargetState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
     public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setBlend(WGPUBlendState blendState) {
         internal_native_SetBlend(native_address, blendState.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetBlend((JGPU::WGPUBlendState* )blendState_addr);
-*/
     public static native void internal_native_SetBlend(long this_addr, long blendState_addr);
 
     public void setWriteMask(WGPUColorWriteMask writeMask) {
         internal_native_SetWriteMask(native_address, writeMask.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetWriteMask((::WGPUColorWriteMask)writeMask);
-*/
     public static native void internal_native_SetWriteMask(long this_addr, int writeMask);
 
     public static WGPUColorTargetState obtain() {
@@ -98,8 +75,5 @@ nativeObject->SetWriteMask((::WGPUColorWriteMask)writeMask);
         return WGPUColorTargetState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUColorTargetState::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

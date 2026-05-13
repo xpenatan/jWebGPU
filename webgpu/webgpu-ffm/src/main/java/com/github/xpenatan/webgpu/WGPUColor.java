@@ -26,9 +26,6 @@ public class WGPUColor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUColor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUColor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetColor(native_address, r, g, b, a);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-nativeObject->SetColor((float)r, (float)g, (float)b, (float)a);
-*/
     public static void internal_native_SetColor(long this_addr, float r, float g, float b, float a) {
         try {
             FFMHandles.internal_native_SetColor__JFFFF.invokeExact(this_addr, r, g, b, a);
@@ -87,10 +76,6 @@ nativeObject->SetColor((float)r, (float)g, (float)b, (float)a);
         internal_native_SetR(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-nativeObject->SetR((float)value);
-*/
     public static void internal_native_SetR(long this_addr, float value) {
         try {
             FFMHandles.internal_native_SetR__JF.invokeExact(this_addr, value);
@@ -103,10 +88,6 @@ nativeObject->SetR((float)value);
         internal_native_SetG(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-nativeObject->SetG((float)value);
-*/
     public static void internal_native_SetG(long this_addr, float value) {
         try {
             FFMHandles.internal_native_SetG__JF.invokeExact(this_addr, value);
@@ -119,10 +100,6 @@ nativeObject->SetG((float)value);
         internal_native_SetB(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-nativeObject->SetB((float)value);
-*/
     public static void internal_native_SetB(long this_addr, float value) {
         try {
             FFMHandles.internal_native_SetB__JF.invokeExact(this_addr, value);
@@ -135,10 +112,6 @@ nativeObject->SetB((float)value);
         internal_native_SetA(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-nativeObject->SetA((float)value);
-*/
     public static void internal_native_SetA(long this_addr, float value) {
         try {
             FFMHandles.internal_native_SetA__JF.invokeExact(this_addr, value);
@@ -151,10 +124,6 @@ nativeObject->SetA((float)value);
         return internal_native_GetR(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-return nativeObject->GetR();
-*/
     public static float internal_native_GetR(long this_addr) {
         try {
             return (float) FFMHandles.internal_native_GetR__J.invokeExact(this_addr);
@@ -167,10 +136,6 @@ return nativeObject->GetR();
         return internal_native_GetG(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-return nativeObject->GetG();
-*/
     public static float internal_native_GetG(long this_addr) {
         try {
             return (float) FFMHandles.internal_native_GetG__J.invokeExact(this_addr);
@@ -183,10 +148,6 @@ return nativeObject->GetG();
         return internal_native_GetB(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-return nativeObject->GetB();
-*/
     public static float internal_native_GetB(long this_addr) {
         try {
             return (float) FFMHandles.internal_native_GetB__J.invokeExact(this_addr);
@@ -199,10 +160,6 @@ return nativeObject->GetB();
         return internal_native_GetA(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColor* nativeObject = (JGPU::WGPUColor*)this_addr;
-return nativeObject->GetA();
-*/
     public static float internal_native_GetA(long this_addr) {
         try {
             return (float) FFMHandles.internal_native_GetA__J.invokeExact(this_addr);
@@ -221,9 +178,6 @@ return nativeObject->GetA();
         return WGPUColor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUColor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

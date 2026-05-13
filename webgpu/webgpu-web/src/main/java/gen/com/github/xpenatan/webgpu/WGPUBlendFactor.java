@@ -53,117 +53,60 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Undefined;")
     private static native int WGPUBlendFactor_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Zero;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Zero;")
     private static native int WGPUBlendFactor_Zero_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_One;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_One;")
     private static native int WGPUBlendFactor_One_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Src;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Src;")
     private static native int WGPUBlendFactor_Src_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusSrc;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusSrc;")
     private static native int WGPUBlendFactor_OneMinusSrc_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_SrcAlpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_SrcAlpha;")
     private static native int WGPUBlendFactor_SrcAlpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusSrcAlpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusSrcAlpha;")
     private static native int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Dst;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Dst;")
     private static native int WGPUBlendFactor_Dst_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusDst;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusDst;")
     private static native int WGPUBlendFactor_OneMinusDst_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_DstAlpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_DstAlpha;")
     private static native int WGPUBlendFactor_DstAlpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusDstAlpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusDstAlpha;")
     private static native int WGPUBlendFactor_OneMinusDstAlpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_SrcAlphaSaturated;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_SrcAlphaSaturated;")
     private static native int WGPUBlendFactor_SrcAlphaSaturated_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Constant;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Constant;")
     private static native int WGPUBlendFactor_Constant_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusConstant;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusConstant;")
     private static native int WGPUBlendFactor_OneMinusConstant_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Src1;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Src1;")
     private static native int WGPUBlendFactor_Src1_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusSrc1;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusSrc1;")
     private static native int WGPUBlendFactor_OneMinusSrc1_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Src1Alpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Src1Alpha;")
     private static native int WGPUBlendFactor_Src1Alpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_OneMinusSrc1Alpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_OneMinusSrc1Alpha;")
     private static native int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBlendFactor_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBlendFactor_Force32;")
     private static native int WGPUBlendFactor_Force32_NATIVE();
 }

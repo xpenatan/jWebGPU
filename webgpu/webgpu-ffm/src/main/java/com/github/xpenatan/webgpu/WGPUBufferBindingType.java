@@ -47,9 +47,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferBindingType_BindingNotUsed;
-*/
     private static int WGPUBufferBindingType_BindingNotUsed_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferBindingType_BindingNotUsed_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUBufferBindingType_BindingNotUsed;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferBindingType_Undefined;
-*/
     private static int WGPUBufferBindingType_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Undefined_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUBufferBindingType_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferBindingType_Uniform;
-*/
     private static int WGPUBufferBindingType_Uniform_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Uniform_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUBufferBindingType_Uniform;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferBindingType_Storage;
-*/
     private static int WGPUBufferBindingType_Storage_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Storage_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUBufferBindingType_Storage;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferBindingType_ReadOnlyStorage;
-*/
     private static int WGPUBufferBindingType_ReadOnlyStorage_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferBindingType_ReadOnlyStorage_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUBufferBindingType_ReadOnlyStorage;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBufferBindingType_Force32;
-*/
     private static int WGPUBufferBindingType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBufferBindingType_Force32_NATIVE__.invokeExact();

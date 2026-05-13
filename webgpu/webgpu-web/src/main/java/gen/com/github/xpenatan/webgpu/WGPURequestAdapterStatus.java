@@ -34,27 +34,15 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestAdapterStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestAdapterStatus_Success;")
     private static native int WGPURequestAdapterStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestAdapterStatus_Unavailable;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestAdapterStatus_Unavailable;")
     private static native int WGPURequestAdapterStatus_Unavailable_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestAdapterStatus_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestAdapterStatus_Error;")
     private static native int WGPURequestAdapterStatus_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPURequestAdapterStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPURequestAdapterStatus_Force32;")
     private static native int WGPURequestAdapterStatus_Force32_NATIVE();
 }

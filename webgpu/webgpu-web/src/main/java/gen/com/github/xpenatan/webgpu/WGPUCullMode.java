@@ -39,33 +39,18 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCullMode_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCullMode_Undefined;")
     private static native int WGPUCullMode_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCullMode_None;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCullMode_None;")
     private static native int WGPUCullMode_None_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCullMode_Front;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCullMode_Front;")
     private static native int WGPUCullMode_Front_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCullMode_Back;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCullMode_Back;")
     private static native int WGPUCullMode_Back_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCullMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCullMode_Force32;")
     private static native int WGPUCullMode_Force32_NATIVE();
 }

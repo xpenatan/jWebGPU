@@ -58,9 +58,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_DepthClipControl;
-*/
     private static int WGPUFeatureName_DepthClipControl_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_DepthClipControl_NATIVE__.invokeExact();
@@ -69,9 +66,6 @@ return (int64_t)WGPUFeatureName_DepthClipControl;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_Depth32FloatStencil8;
-*/
     private static int WGPUFeatureName_Depth32FloatStencil8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_Depth32FloatStencil8_NATIVE__.invokeExact();
@@ -80,9 +74,6 @@ return (int64_t)WGPUFeatureName_Depth32FloatStencil8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_TimestampQuery;
-*/
     private static int WGPUFeatureName_TimestampQuery_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_TimestampQuery_NATIVE__.invokeExact();
@@ -91,9 +82,6 @@ return (int64_t)WGPUFeatureName_TimestampQuery;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_TextureCompressionBC;
-*/
     private static int WGPUFeatureName_TextureCompressionBC_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionBC_NATIVE__.invokeExact();
@@ -102,9 +90,6 @@ return (int64_t)WGPUFeatureName_TextureCompressionBC;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_TextureCompressionBCSliced3D;
-*/
     private static int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE__.invokeExact();
@@ -113,9 +98,6 @@ return (int64_t)WGPUFeatureName_TextureCompressionBCSliced3D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_TextureCompressionETC2;
-*/
     private static int WGPUFeatureName_TextureCompressionETC2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionETC2_NATIVE__.invokeExact();
@@ -124,9 +106,6 @@ return (int64_t)WGPUFeatureName_TextureCompressionETC2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_TextureCompressionASTC;
-*/
     private static int WGPUFeatureName_TextureCompressionASTC_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionASTC_NATIVE__.invokeExact();
@@ -135,9 +114,6 @@ return (int64_t)WGPUFeatureName_TextureCompressionASTC;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_TextureCompressionASTCSliced3D;
-*/
     private static int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE__.invokeExact();
@@ -146,9 +122,6 @@ return (int64_t)WGPUFeatureName_TextureCompressionASTCSliced3D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_IndirectFirstInstance;
-*/
     private static int WGPUFeatureName_IndirectFirstInstance_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_IndirectFirstInstance_NATIVE__.invokeExact();
@@ -157,9 +130,6 @@ return (int64_t)WGPUFeatureName_IndirectFirstInstance;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_ShaderF16;
-*/
     private static int WGPUFeatureName_ShaderF16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_ShaderF16_NATIVE__.invokeExact();
@@ -168,9 +138,6 @@ return (int64_t)WGPUFeatureName_ShaderF16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_RG11B10UfloatRenderable;
-*/
     private static int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_RG11B10UfloatRenderable_NATIVE__.invokeExact();
@@ -179,9 +146,6 @@ return (int64_t)WGPUFeatureName_RG11B10UfloatRenderable;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_BGRA8UnormStorage;
-*/
     private static int WGPUFeatureName_BGRA8UnormStorage_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_BGRA8UnormStorage_NATIVE__.invokeExact();
@@ -190,9 +154,6 @@ return (int64_t)WGPUFeatureName_BGRA8UnormStorage;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_Float32Filterable;
-*/
     private static int WGPUFeatureName_Float32Filterable_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_Float32Filterable_NATIVE__.invokeExact();
@@ -201,9 +162,6 @@ return (int64_t)WGPUFeatureName_Float32Filterable;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_Float32Blendable;
-*/
     private static int WGPUFeatureName_Float32Blendable_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_Float32Blendable_NATIVE__.invokeExact();
@@ -212,9 +170,6 @@ return (int64_t)WGPUFeatureName_Float32Blendable;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_ClipDistances;
-*/
     private static int WGPUFeatureName_ClipDistances_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_ClipDistances_NATIVE__.invokeExact();
@@ -223,9 +178,6 @@ return (int64_t)WGPUFeatureName_ClipDistances;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_DualSourceBlending;
-*/
     private static int WGPUFeatureName_DualSourceBlending_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_DualSourceBlending_NATIVE__.invokeExact();
@@ -234,9 +186,6 @@ return (int64_t)WGPUFeatureName_DualSourceBlending;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFeatureName_Force32;
-*/
     private static int WGPUFeatureName_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFeatureName_Force32_NATIVE__.invokeExact();

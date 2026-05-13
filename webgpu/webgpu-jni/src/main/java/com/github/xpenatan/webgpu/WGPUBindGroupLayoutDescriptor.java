@@ -19,9 +19,6 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUBindGroupLayoutDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUBindGroupLayoutDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupLayoutDescriptor* nativeObject = (JGPU::WGPUBindGroupLayoutDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupLayoutDescriptor* nativeObject = (JGPU::WGPUBindGroupLayoutDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupLayoutDescriptor* nativeObject = (JGPU::WGPUBindGroupLayoutDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setEntries(WGPUVectorBindGroupLayoutEntry entries) {
         internal_native_SetEntries(native_address, entries.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupLayoutDescriptor* nativeObject = (JGPU::WGPUBindGroupLayoutDescriptor*)this_addr;
-nativeObject->SetEntries((JGPU::WGPUVectorBindGroupLayoutEntry* )entries_addr);
-*/
     public static native void internal_native_SetEntries(long this_addr, long entries_addr);
 
     public static WGPUBindGroupLayoutDescriptor obtain() {
@@ -88,8 +69,5 @@ nativeObject->SetEntries((JGPU::WGPUVectorBindGroupLayoutEntry* )entries_addr);
         return WGPUBindGroupLayoutDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBindGroupLayoutDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

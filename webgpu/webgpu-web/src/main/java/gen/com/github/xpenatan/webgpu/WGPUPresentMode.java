@@ -40,39 +40,21 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPresentMode_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPresentMode_Undefined;")
     private static native int WGPUPresentMode_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPresentMode_Fifo;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPresentMode_Fifo;")
     private static native int WGPUPresentMode_Fifo_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPresentMode_FifoRelaxed;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPresentMode_FifoRelaxed;")
     private static native int WGPUPresentMode_FifoRelaxed_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPresentMode_Immediate;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPresentMode_Immediate;")
     private static native int WGPUPresentMode_Immediate_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPresentMode_Mailbox;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPresentMode_Mailbox;")
     private static native int WGPUPresentMode_Mailbox_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPresentMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPresentMode_Force32;")
     private static native int WGPUPresentMode_Force32_NATIVE();
 }

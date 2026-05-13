@@ -40,39 +40,21 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureUsage_None;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureUsage_None;")
     private static native int WGPUTextureUsage_None_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureUsage_CopySrc;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureUsage_CopySrc;")
     private static native int WGPUTextureUsage_CopySrc_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureUsage_CopyDst;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureUsage_CopyDst;")
     private static native int WGPUTextureUsage_CopyDst_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureUsage_TextureBinding;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureUsage_TextureBinding;")
     private static native int WGPUTextureUsage_TextureBinding_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureUsage_StorageBinding;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureUsage_StorageBinding;")
     private static native int WGPUTextureUsage_StorageBinding_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureUsage_RenderAttachment;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureUsage_RenderAttachment;")
     private static native int WGPUTextureUsage_RenderAttachment_NATIVE();
 }

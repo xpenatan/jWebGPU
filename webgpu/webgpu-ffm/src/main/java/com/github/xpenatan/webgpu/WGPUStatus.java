@@ -41,9 +41,6 @@ public enum WGPUStatus implements NativeEnum<WGPUStatus> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStatus_Success;
-*/
     private static int WGPUStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStatus_Error;
-*/
     private static int WGPUStatus_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStatus_Error_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUStatus_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStatus_Force32;
-*/
     private static int WGPUStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStatus_Force32_NATIVE__.invokeExact();

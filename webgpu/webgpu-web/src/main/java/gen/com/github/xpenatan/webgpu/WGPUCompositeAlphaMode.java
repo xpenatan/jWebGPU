@@ -40,39 +40,21 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompositeAlphaMode_Auto;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompositeAlphaMode_Auto;")
     private static native int WGPUCompositeAlphaMode_Auto_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompositeAlphaMode_Opaque;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompositeAlphaMode_Opaque;")
     private static native int WGPUCompositeAlphaMode_Opaque_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompositeAlphaMode_Premultiplied;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompositeAlphaMode_Premultiplied;")
     private static native int WGPUCompositeAlphaMode_Premultiplied_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompositeAlphaMode_Unpremultiplied;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompositeAlphaMode_Unpremultiplied;")
     private static native int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompositeAlphaMode_Inherit;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompositeAlphaMode_Inherit;")
     private static native int WGPUCompositeAlphaMode_Inherit_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompositeAlphaMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompositeAlphaMode_Force32;")
     private static native int WGPUCompositeAlphaMode_Force32_NATIVE();
 }

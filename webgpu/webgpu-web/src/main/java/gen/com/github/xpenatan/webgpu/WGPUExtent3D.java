@@ -26,11 +26,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = new jWebGPU.WGPUExtent3D();
-      return jWebGPU.getPointer(jsObj);
-    */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUExtent3D();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -38,11 +33,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);
-      jWebGPU.destroy(jsObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -50,11 +40,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetWidth(native_address, width);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);
-      jsObj.SetWidth(width);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "width"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetWidth(width);")
     public static native void internal_native_SetWidth(int this_addr, int width);
 
@@ -62,11 +47,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetHeight(native_address, height);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);
-      jsObj.SetHeight(height);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "height"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetHeight(height);")
     public static native void internal_native_SetHeight(int this_addr, int height);
 
@@ -74,11 +54,6 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetDepthOrArrayLayers(native_address, depthOrArrayLayers);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);
-      jsObj.SetDepthOrArrayLayers(depthOrArrayLayers);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "depthOrArrayLayers"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetDepthOrArrayLayers(depthOrArrayLayers);")
     public static native void internal_native_SetDepthOrArrayLayers(int this_addr, int depthOrArrayLayers);
 
@@ -92,12 +67,6 @@ public class WGPUExtent3D extends NativeObject {
         return WGPUExtent3D_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();
-      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
-      return jWebGPU.getPointer(returnedJSObj);
-    */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

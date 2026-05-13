@@ -39,33 +39,18 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAddressMode_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAddressMode_Undefined;")
     private static native int WGPUAddressMode_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAddressMode_ClampToEdge;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAddressMode_ClampToEdge;")
     private static native int WGPUAddressMode_ClampToEdge_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAddressMode_Repeat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAddressMode_Repeat;")
     private static native int WGPUAddressMode_Repeat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAddressMode_MirrorRepeat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAddressMode_MirrorRepeat;")
     private static native int WGPUAddressMode_MirrorRepeat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAddressMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAddressMode_Force32;")
     private static native int WGPUAddressMode_Force32_NATIVE();
 }

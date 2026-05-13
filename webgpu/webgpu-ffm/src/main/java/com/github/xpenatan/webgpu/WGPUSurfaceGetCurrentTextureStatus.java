@@ -48,9 +48,6 @@ public enum WGPUSurfaceGetCurrentTextureStatus implements NativeEnum<WGPUSurface
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE__.invokeExact();
@@ -59,9 +56,6 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE__.invokeExact();
@@ -70,9 +64,6 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Timeout;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE__.invokeExact();
@@ -81,9 +72,6 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Timeout;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Outdated;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE__.invokeExact();
@@ -92,9 +80,6 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Outdated;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Lost;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE__.invokeExact();
@@ -103,9 +88,6 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Lost;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Error;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE__.invokeExact();
@@ -114,9 +96,6 @@ return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSurfaceGetCurrentTextureStatus_Force32;
-*/
     private static int WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE__.invokeExact();

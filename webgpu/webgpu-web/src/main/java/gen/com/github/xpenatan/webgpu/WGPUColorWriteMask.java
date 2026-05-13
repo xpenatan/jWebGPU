@@ -40,39 +40,21 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUColorWriteMask_None;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUColorWriteMask_None;")
     private static native int WGPUColorWriteMask_None_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUColorWriteMask_Red;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUColorWriteMask_Red;")
     private static native int WGPUColorWriteMask_Red_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUColorWriteMask_Green;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUColorWriteMask_Green;")
     private static native int WGPUColorWriteMask_Green_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUColorWriteMask_Blue;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUColorWriteMask_Blue;")
     private static native int WGPUColorWriteMask_Blue_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUColorWriteMask_Alpha;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUColorWriteMask_Alpha;")
     private static native int WGPUColorWriteMask_Alpha_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUColorWriteMask_All;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUColorWriteMask_All;")
     private static native int WGPUColorWriteMask_All_NATIVE();
 }

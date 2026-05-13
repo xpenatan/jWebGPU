@@ -47,9 +47,6 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompositeAlphaMode_Auto;
-*/
     private static int WGPUCompositeAlphaMode_Auto_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompositeAlphaMode_Auto_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUCompositeAlphaMode_Auto;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompositeAlphaMode_Opaque;
-*/
     private static int WGPUCompositeAlphaMode_Opaque_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompositeAlphaMode_Opaque_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUCompositeAlphaMode_Opaque;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompositeAlphaMode_Premultiplied;
-*/
     private static int WGPUCompositeAlphaMode_Premultiplied_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompositeAlphaMode_Premultiplied_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUCompositeAlphaMode_Premultiplied;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompositeAlphaMode_Unpremultiplied;
-*/
     private static int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompositeAlphaMode_Unpremultiplied_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUCompositeAlphaMode_Unpremultiplied;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompositeAlphaMode_Inherit;
-*/
     private static int WGPUCompositeAlphaMode_Inherit_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompositeAlphaMode_Inherit_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUCompositeAlphaMode_Inherit;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompositeAlphaMode_Force32;
-*/
     private static int WGPUCompositeAlphaMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompositeAlphaMode_Force32_NATIVE__.invokeExact();

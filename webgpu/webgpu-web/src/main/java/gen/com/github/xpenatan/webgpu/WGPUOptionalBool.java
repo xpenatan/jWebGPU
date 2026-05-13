@@ -34,27 +34,15 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUOptionalBool_False;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUOptionalBool_False;")
     private static native int WGPUOptionalBool_False_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUOptionalBool_True;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUOptionalBool_True;")
     private static native int WGPUOptionalBool_True_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUOptionalBool_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUOptionalBool_Undefined;")
     private static native int WGPUOptionalBool_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUOptionalBool_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUOptionalBool_Force32;")
     private static native int WGPUOptionalBool_Force32_NATIVE();
 }

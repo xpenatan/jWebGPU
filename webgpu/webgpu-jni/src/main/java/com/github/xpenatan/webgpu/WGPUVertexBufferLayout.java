@@ -19,9 +19,6 @@ public class WGPUVertexBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVertexBufferLayout();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUVertexBufferLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setAttributes(WGPUVectorVertexAttribute values) {
         internal_native_SetAttributes(native_address, values.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetAttributes((JGPU::WGPUVectorVertexAttribute* )values_addr);
-*/
     public static native void internal_native_SetAttributes(long this_addr, long values_addr);
 
     public void setArrayStride(int offset) {
         internal_native_SetArrayStride(native_address, offset);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetArrayStride((int)offset);
-*/
     public static native void internal_native_SetArrayStride(long this_addr, int offset);
 
     public void setStepMode(WGPUVertexStepMode stepMode) {
         internal_native_SetStepMode(native_address, stepMode.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
-*/
     public static native void internal_native_SetStepMode(long this_addr, int stepMode);
 
     public static WGPUVertexBufferLayout obtain() {
@@ -88,8 +69,5 @@ nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
         return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVertexBufferLayout::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

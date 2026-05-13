@@ -19,9 +19,6 @@ public class WGPUVectorVertexAttribute extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUVectorVertexAttribute();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUVectorVertexAttribute();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-return nativeObject->size();
-*/
     public static native int internal_native_size(long this_addr);
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-nativeObject->clear();
-*/
     public static native void internal_native_clear(long this_addr);
 
     public void push_back(WGPUVertexAttribute colorAttachment) {
         internal_native_push_back(native_address, colorAttachment.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUVectorVertexAttribute* nativeObject = (JGPU::WGPUVectorVertexAttribute*)this_addr;
-nativeObject->push_back(*((JGPU::WGPUVertexAttribute* )colorAttachment_addr));
-*/
     public static native void internal_native_push_back(long this_addr, long colorAttachment_addr);
 
     public static WGPUVectorVertexAttribute obtain() {
@@ -88,8 +69,5 @@ nativeObject->push_back(*((JGPU::WGPUVertexAttribute* )colorAttachment_addr));
         return WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUVectorVertexAttribute::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

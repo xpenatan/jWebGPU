@@ -37,10 +37,6 @@ public class WGPUChainedStruct extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetNext(native_address, value.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
-nativeObject->SetNext((JGPU::WGPUChainedStruct* )value_addr);
-*/
     public static void internal_native_SetNext(long this_addr, long value_addr) {
         try {
             FFMHandles.internal_native_SetNext__JJ.invokeExact(this_addr, value_addr);
@@ -69,10 +61,6 @@ nativeObject->SetNext((JGPU::WGPUChainedStruct* )value_addr);
         internal_native_SetSType(native_address, type.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUChainedStruct* nativeObject = (JGPU::WGPUChainedStruct*)this_addr;
-nativeObject->SetSType((::WGPUSType)type);
-*/
     public static void internal_native_SetSType(long this_addr, int type) {
         try {
             FFMHandles.internal_native_SetSType__JI.invokeExact(this_addr, type);

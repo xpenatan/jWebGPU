@@ -40,39 +40,21 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferBindingType_BindingNotUsed;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferBindingType_BindingNotUsed;")
     private static native int WGPUBufferBindingType_BindingNotUsed_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferBindingType_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferBindingType_Undefined;")
     private static native int WGPUBufferBindingType_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferBindingType_Uniform;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferBindingType_Uniform;")
     private static native int WGPUBufferBindingType_Uniform_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferBindingType_Storage;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferBindingType_Storage;")
     private static native int WGPUBufferBindingType_Storage_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferBindingType_ReadOnlyStorage;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferBindingType_ReadOnlyStorage;")
     private static native int WGPUBufferBindingType_ReadOnlyStorage_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUBufferBindingType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUBufferBindingType_Force32;")
     private static native int WGPUBufferBindingType_Force32_NATIVE();
 }

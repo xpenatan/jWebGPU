@@ -19,10 +19,6 @@ public class WGPUVectorRenderBundle extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPUVectorRenderBundle();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUVectorRenderBundle();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -44,10 +40,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -55,11 +47,6 @@ jWebGPU.destroy(jsObj);
         return internal_native_size(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);
-var returnedJSObj = jsObj.size();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);var returnedJSObj = jsObj.size();return returnedJSObj;")
     public static native int internal_native_size(int this_addr);
 
@@ -67,10 +54,6 @@ return returnedJSObj;
         internal_native_clear(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);
-jsObj.clear();
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);jsObj.clear();")
     public static native void internal_native_clear(int this_addr);
 
@@ -78,10 +61,6 @@ jsObj.clear();
         internal_native_push_back(native_address, renderBundle.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);
-jsObj.push_back(renderBundle_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "renderBundle_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVectorRenderBundle);jsObj.push_back(renderBundle_addr);")
     public static native void internal_native_push_back(int this_addr, int renderBundle_addr);
 
@@ -95,11 +74,6 @@ jsObj.push_back(renderBundle_addr);
         return WGPUVectorRenderBundle_TEMP_STATIC_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUVectorRenderBundle.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVectorRenderBundle.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

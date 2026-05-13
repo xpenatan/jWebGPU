@@ -53,9 +53,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_ShaderSourceSPIRV;
-*/
     private static int WGPUSType_ShaderSourceSPIRV_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_ShaderSourceSPIRV_NATIVE__.invokeExact();
@@ -64,9 +61,6 @@ return (int64_t)WGPUSType_ShaderSourceSPIRV;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_ShaderSourceWGSL;
-*/
     private static int WGPUSType_ShaderSourceWGSL_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_ShaderSourceWGSL_NATIVE__.invokeExact();
@@ -75,9 +69,6 @@ return (int64_t)WGPUSType_ShaderSourceWGSL;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_RenderPassMaxDrawCount;
-*/
     private static int WGPUSType_RenderPassMaxDrawCount_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_RenderPassMaxDrawCount_NATIVE__.invokeExact();
@@ -86,9 +77,6 @@ return (int64_t)WGPUSType_RenderPassMaxDrawCount;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceSourceMetalLayer;
-*/
     private static int WGPUSType_SurfaceSourceMetalLayer_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceMetalLayer_NATIVE__.invokeExact();
@@ -97,9 +85,6 @@ return (int64_t)WGPUSType_SurfaceSourceMetalLayer;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceSourceWindowsHWND;
-*/
     private static int WGPUSType_SurfaceSourceWindowsHWND_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceWindowsHWND_NATIVE__.invokeExact();
@@ -108,9 +93,6 @@ return (int64_t)WGPUSType_SurfaceSourceWindowsHWND;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceSourceXlibWindow;
-*/
     private static int WGPUSType_SurfaceSourceXlibWindow_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceXlibWindow_NATIVE__.invokeExact();
@@ -119,9 +101,6 @@ return (int64_t)WGPUSType_SurfaceSourceXlibWindow;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceSourceWaylandSurface;
-*/
     private static int WGPUSType_SurfaceSourceWaylandSurface_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceWaylandSurface_NATIVE__.invokeExact();
@@ -130,9 +109,6 @@ return (int64_t)WGPUSType_SurfaceSourceWaylandSurface;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceSourceAndroidNativeWindow;
-*/
     private static int WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__.invokeExact();
@@ -141,9 +117,6 @@ return (int64_t)WGPUSType_SurfaceSourceAndroidNativeWindow;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceSourceXCBWindow;
-*/
     private static int WGPUSType_SurfaceSourceXCBWindow_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceSourceXCBWindow_NATIVE__.invokeExact();
@@ -152,9 +125,6 @@ return (int64_t)WGPUSType_SurfaceSourceXCBWindow;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_SurfaceColorManagement;
-*/
     private static int WGPUSType_SurfaceColorManagement_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_SurfaceColorManagement_NATIVE__.invokeExact();
@@ -163,9 +133,6 @@ return (int64_t)WGPUSType_SurfaceColorManagement;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_RequestAdapterWebXROptions;
-*/
     private static int WGPUSType_RequestAdapterWebXROptions_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_RequestAdapterWebXROptions_NATIVE__.invokeExact();
@@ -174,9 +141,6 @@ return (int64_t)WGPUSType_RequestAdapterWebXROptions;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSType_Force32;
-*/
     private static int WGPUSType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSType_Force32_NATIVE__.invokeExact();

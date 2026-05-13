@@ -42,51 +42,27 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_BindingNotUsed;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_BindingNotUsed;")
     private static native int WGPUTextureSampleType_BindingNotUsed_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_Undefined;")
     private static native int WGPUTextureSampleType_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_Float;")
     private static native int WGPUTextureSampleType_Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_UnfilterableFloat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_UnfilterableFloat;")
     private static native int WGPUTextureSampleType_UnfilterableFloat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_Depth;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_Depth;")
     private static native int WGPUTextureSampleType_Depth_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_Sint;")
     private static native int WGPUTextureSampleType_Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_Uint;")
     private static native int WGPUTextureSampleType_Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureSampleType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureSampleType_Force32;")
     private static native int WGPUTextureSampleType_Force32_NATIVE();
 }

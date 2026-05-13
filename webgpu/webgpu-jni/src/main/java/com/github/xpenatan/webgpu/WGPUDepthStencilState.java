@@ -23,9 +23,6 @@ public class WGPUDepthStencilState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUDepthStencilState();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -46,100 +43,60 @@ return (jlong)new JGPU::WGPUDepthStencilState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
     public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
         internal_native_SetDepthWriteEnabled(native_address, depthWriteEnabled.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetDepthWriteEnabled((::WGPUOptionalBool)depthWriteEnabled);
-*/
     public static native void internal_native_SetDepthWriteEnabled(long this_addr, int depthWriteEnabled);
 
     public void setDepthCompare(WGPUCompareFunction depthCompare) {
         internal_native_SetDepthCompare(native_address, depthCompare.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetDepthCompare((::WGPUCompareFunction)depthCompare);
-*/
     public static native void internal_native_SetDepthCompare(long this_addr, int depthCompare);
 
     public void setDepthBiasSlopeScale(float depthBiasSlopeScale) {
         internal_native_SetDepthBiasSlopeScale(native_address, depthBiasSlopeScale);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetDepthBiasSlopeScale((float)depthBiasSlopeScale);
-*/
     public static native void internal_native_SetDepthBiasSlopeScale(long this_addr, float depthBiasSlopeScale);
 
     public void setDepthBiasClamp(float depthBiasClamp) {
         internal_native_SetDepthBiasClamp(native_address, depthBiasClamp);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetDepthBiasClamp((float)depthBiasClamp);
-*/
     public static native void internal_native_SetDepthBiasClamp(long this_addr, float depthBiasClamp);
 
     public void setStencilReadMask(int stencilReadMask) {
         internal_native_SetStencilReadMask(native_address, stencilReadMask);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetStencilReadMask((int)stencilReadMask);
-*/
     public static native void internal_native_SetStencilReadMask(long this_addr, int stencilReadMask);
 
     public void setStencilWriteMask(int stencilWriteMask) {
         internal_native_SetStencilWriteMask(native_address, stencilWriteMask);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetStencilWriteMask((int)stencilWriteMask);
-*/
     public static native void internal_native_SetStencilWriteMask(long this_addr, int stencilWriteMask);
 
     public void setDepthBias(int depthBias) {
         internal_native_SetDepthBias(native_address, depthBias);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-nativeObject->SetDepthBias((int)depthBias);
-*/
     public static native void internal_native_SetDepthBias(long this_addr, int depthBias);
 
     public WGPUStencilFaceState getStencilFront() {
@@ -152,11 +109,6 @@ nativeObject->SetDepthBias((int)depthBias);
         return WGPUStencilFaceState_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-static JGPU::WGPUStencilFaceState copy_addr;
-copy_addr = nativeObject->GetStencilFront();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetStencilFront_addr(long this_addr);
 
     public WGPUStencilFaceState getStencilBack() {
@@ -169,11 +121,6 @@ return (jlong)&copy_addr;*/
         return WGPUStencilFaceState_TEMP_GEN_1;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUDepthStencilState* nativeObject = (JGPU::WGPUDepthStencilState*)this_addr;
-static JGPU::WGPUStencilFaceState copy_addr;
-copy_addr = nativeObject->GetStencilBack();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetStencilBack_addr(long this_addr);
 
     public static WGPUDepthStencilState obtain() {
@@ -186,8 +133,5 @@ return (jlong)&copy_addr;*/
         return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUDepthStencilState::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

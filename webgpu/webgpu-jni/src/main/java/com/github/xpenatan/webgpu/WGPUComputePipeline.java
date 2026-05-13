@@ -19,9 +19,6 @@ public class WGPUComputePipeline extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUComputePipeline();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,30 +39,18 @@ return (jlong)new JGPU::WGPUComputePipeline();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
-nativeObject->Release();
-*/
     public static native void internal_native_Release(long this_addr);
 
     public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
@@ -78,20 +63,11 @@ nativeObject->Release();
         return WGPUBindGroupLayout_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
-static JGPU::WGPUBindGroupLayout copy_addr;
-copy_addr = nativeObject->GetBindGroupLayout((int)groupIndex);
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePipeline* nativeObject = (JGPU::WGPUComputePipeline*)this_addr;
-return nativeObject->IsValid();
-*/
     public static native boolean internal_native_IsValid(long this_addr);
 }

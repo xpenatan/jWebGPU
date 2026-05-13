@@ -46,9 +46,6 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCullMode_Undefined;
-*/
     private static int WGPUCullMode_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCullMode_Undefined_NATIVE__.invokeExact();
@@ -57,9 +54,6 @@ return (int64_t)WGPUCullMode_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCullMode_None;
-*/
     private static int WGPUCullMode_None_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCullMode_None_NATIVE__.invokeExact();
@@ -68,9 +62,6 @@ return (int64_t)WGPUCullMode_None;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCullMode_Front;
-*/
     private static int WGPUCullMode_Front_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCullMode_Front_NATIVE__.invokeExact();
@@ -79,9 +70,6 @@ return (int64_t)WGPUCullMode_Front;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCullMode_Back;
-*/
     private static int WGPUCullMode_Back_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCullMode_Back_NATIVE__.invokeExact();
@@ -90,9 +78,6 @@ return (int64_t)WGPUCullMode_Back;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCullMode_Force32;
-*/
     private static int WGPUCullMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCullMode_Force32_NATIVE__.invokeExact();

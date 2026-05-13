@@ -41,45 +41,24 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_Windows;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_Windows;")
     private static native int WGPU_Windows_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_Mac;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_Mac;")
     private static native int WGPU_Mac_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_Linux;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_Linux;")
     private static native int WGPU_Linux_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_iOS;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_iOS;")
     private static native int WGPU_iOS_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_Android;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_Android;")
     private static native int WGPU_Android_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_Web;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_Web;")
     private static native int WGPU_Web_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPU_Unknown;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPU_Unknown;")
     private static native int WGPU_Unknown_NATIVE();
 }

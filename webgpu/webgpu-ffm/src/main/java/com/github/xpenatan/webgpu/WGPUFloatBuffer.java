@@ -49,42 +49,6 @@ public class WGPUFloatBuffer extends NativeObject {
     private WGPUFloatBuffer(byte b, char c) {
     }
 
-    /*
-      [-FFM;-NATIVE]
-              extern "C" {
-              FFM_EXPORT void jparser_com_github_xpenatan_webgpu_WGPUFloatBuffer_internal_1putFFM__JJII(int64_t this_addr, float* values_ptr, int32_t offset, int32_t size) {
-                  WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-                  nativeObject->put(values_ptr, offset, size);
-              }
-              }
-    */
-    /*
-      [-FFM;-ADD]
-              private static final class FFMBufferHandles {
-                  private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
-                  private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
-     
-                  static final java.lang.invoke.MethodHandle put = LINKER.downcallHandle(
-                          LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUFloatBuffer_internal_1putFFM__JJII").orElseThrow(),
-                          java.lang.foreign.FunctionDescriptor.ofVoid(
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.ADDRESS,
-                                  java.lang.foreign.ValueLayout.JAVA_INT,
-                                  java.lang.foreign.ValueLayout.JAVA_INT
-                          )
-                  );
-              }
-    */
-    /*
-      [-FFM;-REPLACE_BLOCK]
-              {
-                  long bytes = (long) values.length * Float.BYTES;
-                  java.lang.foreign.MemorySegment seg = java.lang.foreign.Arena.global().allocate(bytes);
-                  java.nio.FloatBuffer fb = seg.asByteBuffer().order(java.nio.ByteOrder.nativeOrder()).asFloatBuffer();
-                  fb.put(values);
-                  internal_put(native_address, seg, offset, size);
-              }
-    */
     public void put(float[] values, int offset, int size) {
         long bytes = (long) values.length * Float.BYTES;
         java.lang.foreign.MemorySegment seg = java.lang.foreign.Arena.global().allocate(bytes);
@@ -97,11 +61,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -120,11 +79,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return (int64_t)&nativeObject->getByteBuffer();
-    */
     public static long internal_native_getByteBuffer_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_getByteBuffer_addr__J.invokeExact(this_addr);
@@ -137,11 +91,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_put__0(native_address, value);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      nativeObject->put((float)value);
-    */
     public static void internal_native_put__0(long this_addr, float value) {
         try {
             FFMHandles.internal_native_put__0__JF.invokeExact(this_addr, value);
@@ -154,11 +103,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_put__1(native_address, index, value);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      nativeObject->put((int)index, (float)value);
-    */
     public static void internal_native_put__1(long this_addr, int index, float value) {
         try {
             FFMHandles.internal_native_put__1__JIF.invokeExact(this_addr, index, value);
@@ -171,11 +115,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_get(native_address, index);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return nativeObject->get((int)index);
-    */
     public static float internal_native_get(long this_addr, int index) {
         try {
             return (float) FFMHandles.internal_native_get__JI.invokeExact(this_addr, index);
@@ -188,11 +127,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_get(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return nativeObject->get();
-    */
     public static float internal_native_get(long this_addr) {
         try {
             return (float) FFMHandles.internal_native_get__J.invokeExact(this_addr);
@@ -205,11 +139,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_remaining(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return nativeObject->remaining();
-    */
     public static int internal_native_remaining(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_remaining__J.invokeExact(this_addr);
@@ -222,11 +151,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_getCapacity(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return nativeObject->getCapacity();
-    */
     public static int internal_native_getCapacity(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_getCapacity__J.invokeExact(this_addr);
@@ -239,11 +163,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_clear(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      nativeObject->clear();
-    */
     public static void internal_native_clear(long this_addr) {
         try {
             FFMHandles.internal_native_clear__J.invokeExact(this_addr);
@@ -256,11 +175,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_limit(native_address, newLimit);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      nativeObject->limit((int)newLimit);
-    */
     public static void internal_native_limit(long this_addr, int newLimit) {
         try {
             FFMHandles.internal_native_limit__JI.invokeExact(this_addr, newLimit);
@@ -273,11 +187,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_getLimit(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return nativeObject->getLimit();
-    */
     public static int internal_native_getLimit(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_getLimit__J.invokeExact(this_addr);
@@ -290,11 +199,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_position(native_address, newPosition);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      nativeObject->position((int)newPosition);
-    */
     public static void internal_native_position(long this_addr, int newPosition) {
         try {
             FFMHandles.internal_native_position__JI.invokeExact(this_addr, newPosition);
@@ -307,11 +211,6 @@ public class WGPUFloatBuffer extends NativeObject {
         return internal_native_getPosition(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      return nativeObject->getPosition();
-    */
     public static int internal_native_getPosition(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_getPosition__J.invokeExact(this_addr);
@@ -324,11 +223,6 @@ public class WGPUFloatBuffer extends NativeObject {
         internal_native_flip(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUFloatBuffer* nativeObject = (WGPUFloatBuffer*)this_addr;
-      nativeObject->flip();
-    */
     public static void internal_native_flip(long this_addr) {
         try {
             FFMHandles.internal_native_flip__J.invokeExact(this_addr);

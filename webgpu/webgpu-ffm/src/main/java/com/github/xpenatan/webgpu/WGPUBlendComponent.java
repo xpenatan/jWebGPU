@@ -37,10 +37,6 @@ public class WGPUBlendComponent extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetOperation(native_address, operation.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-nativeObject->SetOperation((::WGPUBlendOperation)operation);
-*/
     public static void internal_native_SetOperation(long this_addr, int operation) {
         try {
             FFMHandles.internal_native_SetOperation__JI.invokeExact(this_addr, operation);
@@ -76,10 +68,6 @@ nativeObject->SetOperation((::WGPUBlendOperation)operation);
         return WGPUBlendOperation.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-return (int)nativeObject->GetOperation();
-*/
     public static int internal_native_GetOperation(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetOperation__J.invokeExact(this_addr);
@@ -92,10 +80,6 @@ return (int)nativeObject->GetOperation();
         internal_native_SetSrcFactor(native_address, factor.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-nativeObject->SetSrcFactor((::WGPUBlendFactor)factor);
-*/
     public static void internal_native_SetSrcFactor(long this_addr, int factor) {
         try {
             FFMHandles.internal_native_SetSrcFactor__JI.invokeExact(this_addr, factor);
@@ -115,10 +99,6 @@ nativeObject->SetSrcFactor((::WGPUBlendFactor)factor);
         return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-return (int)nativeObject->GetSrcFactor();
-*/
     public static int internal_native_GetSrcFactor(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetSrcFactor__J.invokeExact(this_addr);
@@ -131,10 +111,6 @@ return (int)nativeObject->GetSrcFactor();
         internal_native_SetDstFactor(native_address, factor.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-nativeObject->SetDstFactor((::WGPUBlendFactor)factor);
-*/
     public static void internal_native_SetDstFactor(long this_addr, int factor) {
         try {
             FFMHandles.internal_native_SetDstFactor__JI.invokeExact(this_addr, factor);
@@ -154,10 +130,6 @@ nativeObject->SetDstFactor((::WGPUBlendFactor)factor);
         return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendComponent* nativeObject = (JGPU::WGPUBlendComponent*)this_addr;
-return (int)nativeObject->GetDstFactor();
-*/
     public static int internal_native_GetDstFactor(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetDstFactor__J.invokeExact(this_addr);

@@ -30,9 +30,5 @@ public class WGPUFuture extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUFuture* nativeObject = (JGPU::WGPUFuture*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 }

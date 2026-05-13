@@ -34,9 +34,6 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUBindGroupLayoutEntry();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -63,10 +60,6 @@ return (int64_t)new JGPU::WGPUBindGroupLayoutEntry();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -79,10 +72,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -95,10 +84,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetBinding(native_address, binding);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetBinding((int)binding);
-*/
     public static void internal_native_SetBinding(long this_addr, int binding) {
         try {
             FFMHandles.internal_native_SetBinding__JI.invokeExact(this_addr, binding);
@@ -111,10 +96,6 @@ nativeObject->SetBinding((int)binding);
         internal_native_SetVisibility(native_address, visibility.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetVisibility((::WGPUShaderStage)visibility);
-*/
     public static void internal_native_SetVisibility(long this_addr, int visibility) {
         try {
             FFMHandles.internal_native_SetVisibility__JI.invokeExact(this_addr, visibility);
@@ -127,10 +108,6 @@ nativeObject->SetVisibility((::WGPUShaderStage)visibility);
         internal_native_SetBuffer(native_address, buffer.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetBuffer((JGPU::WGPUBufferBindingLayout* )buffer_addr);
-*/
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
         try {
             FFMHandles.internal_native_SetBuffer__JJ.invokeExact(this_addr, buffer_addr);
@@ -143,10 +120,6 @@ nativeObject->SetBuffer((JGPU::WGPUBufferBindingLayout* )buffer_addr);
         internal_native_SetSampler(native_address, sampler.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetSampler((JGPU::WGPUSamplerBindingLayout* )sampler_addr);
-*/
     public static void internal_native_SetSampler(long this_addr, long sampler_addr) {
         try {
             FFMHandles.internal_native_SetSampler__JJ.invokeExact(this_addr, sampler_addr);
@@ -159,10 +132,6 @@ nativeObject->SetSampler((JGPU::WGPUSamplerBindingLayout* )sampler_addr);
         internal_native_SetTexture(native_address, texture.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetTexture((JGPU::WGPUTextureBindingLayout* )texture_addr);
-*/
     public static void internal_native_SetTexture(long this_addr, long texture_addr) {
         try {
             FFMHandles.internal_native_SetTexture__JJ.invokeExact(this_addr, texture_addr);
@@ -175,10 +144,6 @@ nativeObject->SetTexture((JGPU::WGPUTextureBindingLayout* )texture_addr);
         internal_native_SetStorageTexture(native_address, storageTexture.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-nativeObject->SetStorageTexture((JGPU::WGPUStorageTextureBindingLayout* )storageTexture_addr);
-*/
     public static void internal_native_SetStorageTexture(long this_addr, long storageTexture_addr) {
         try {
             FFMHandles.internal_native_SetStorageTexture__JJ.invokeExact(this_addr, storageTexture_addr);
@@ -197,11 +162,6 @@ nativeObject->SetStorageTexture((JGPU::WGPUStorageTextureBindingLayout* )storage
         return WGPUBufferBindingLayout_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-thread_local static JGPU::WGPUBufferBindingLayout copy_addr;
-copy_addr = nativeObject->GetBuffer();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetBuffer_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetBuffer_addr__J.invokeExact(this_addr);
@@ -220,11 +180,6 @@ return (int64_t)&copy_addr;*/
         return WGPUSamplerBindingLayout_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-thread_local static JGPU::WGPUSamplerBindingLayout copy_addr;
-copy_addr = nativeObject->GetSampler();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetSampler_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetSampler_addr__J.invokeExact(this_addr);
@@ -243,11 +198,6 @@ return (int64_t)&copy_addr;*/
         return WGPUStorageTextureBindingLayout_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-thread_local static JGPU::WGPUStorageTextureBindingLayout copy_addr;
-copy_addr = nativeObject->GetStorageTexture();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetStorageTexture_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetStorageTexture_addr__J.invokeExact(this_addr);
@@ -266,11 +216,6 @@ return (int64_t)&copy_addr;*/
         return WGPUTextureBindingLayout_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBindGroupLayoutEntry* nativeObject = (JGPU::WGPUBindGroupLayoutEntry*)this_addr;
-thread_local static JGPU::WGPUTextureBindingLayout copy_addr;
-copy_addr = nativeObject->GetTexture();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetTexture_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetTexture_addr__J.invokeExact(this_addr);
@@ -289,9 +234,6 @@ return (int64_t)&copy_addr;*/
         return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUBindGroupLayoutEntry::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

@@ -41,9 +41,6 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestAdapterStatus_Success;
-*/
     private static int WGPURequestAdapterStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestAdapterStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPURequestAdapterStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestAdapterStatus_Unavailable;
-*/
     private static int WGPURequestAdapterStatus_Unavailable_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestAdapterStatus_Unavailable_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPURequestAdapterStatus_Unavailable;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestAdapterStatus_Error;
-*/
     private static int WGPURequestAdapterStatus_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestAdapterStatus_Error_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPURequestAdapterStatus_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestAdapterStatus_Force32;
-*/
     private static int WGPURequestAdapterStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestAdapterStatus_Force32_NATIVE__.invokeExact();

@@ -41,9 +41,6 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUToneMappingMode_Standard;
-*/
     private static int WGPUToneMappingMode_Standard_NATIVE() {
         try {
             return (int) FFMHandles.WGPUToneMappingMode_Standard_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUToneMappingMode_Standard;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUToneMappingMode_Extended;
-*/
     private static int WGPUToneMappingMode_Extended_NATIVE() {
         try {
             return (int) FFMHandles.WGPUToneMappingMode_Extended_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUToneMappingMode_Extended;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUToneMappingMode_Force32;
-*/
     private static int WGPUToneMappingMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUToneMappingMode_Force32_NATIVE__.invokeExact();
