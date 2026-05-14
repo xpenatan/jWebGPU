@@ -34,11 +34,19 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
         return CUSTOM;
     }
 
-    private static native int WGPURequestAdapterStatus_Success_NATIVE();
+    private static int WGPURequestAdapterStatus_Success_NATIVE() {
+        return n.n2806652160.n2040399981();
+    }
 
-    private static native int WGPURequestAdapterStatus_Unavailable_NATIVE();
+    private static int WGPURequestAdapterStatus_Unavailable_NATIVE() {
+        return n.n2806652160.n1491775930();
+    }
 
-    private static native int WGPURequestAdapterStatus_Error_NATIVE();
+    private static int WGPURequestAdapterStatus_Error_NATIVE() {
+        return n.n2806652160.n1266667122();
+    }
 
-    private static native int WGPURequestAdapterStatus_Force32_NATIVE();
+    private static int WGPURequestAdapterStatus_Force32_NATIVE() {
+        return n.n2806652160.n3761755124();
+    }
 }

@@ -34,11 +34,19 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
         return CUSTOM;
     }
 
-    private static native int WGPUDeviceLostReason_Unknown_NATIVE();
+    private static int WGPUDeviceLostReason_Unknown_NATIVE() {
+        return n.n826163116.n1161476788();
+    }
 
-    private static native int WGPUDeviceLostReason_Destroyed_NATIVE();
+    private static int WGPUDeviceLostReason_Destroyed_NATIVE() {
+        return n.n826163116.n4274150531();
+    }
 
-    private static native int WGPUDeviceLostReason_FailedCreation_NATIVE();
+    private static int WGPUDeviceLostReason_FailedCreation_NATIVE() {
+        return n.n826163116.n759626078();
+    }
 
-    private static native int WGPUDeviceLostReason_Force32_NATIVE();
+    private static int WGPUDeviceLostReason_Force32_NATIVE() {
+        return n.n826163116.n2679460084();
+    }
 }

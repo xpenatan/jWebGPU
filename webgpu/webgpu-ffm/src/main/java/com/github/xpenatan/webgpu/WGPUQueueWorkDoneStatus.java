@@ -67,10 +67,10 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUQueueWorkDoneStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUQueueWorkDoneStatus_WGPUQueueWorkDoneStatus_1Success_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUQueueWorkDoneStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4156934551", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUQueueWorkDoneStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUQueueWorkDoneStatus_WGPUQueueWorkDoneStatus_1Error_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUQueueWorkDoneStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2283393564", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUQueueWorkDoneStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUQueueWorkDoneStatus_WGPUQueueWorkDoneStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUQueueWorkDoneStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1583322398", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

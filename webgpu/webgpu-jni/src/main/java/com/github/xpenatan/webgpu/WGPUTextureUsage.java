@@ -40,15 +40,27 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
         return CUSTOM;
     }
 
-    private static native int WGPUTextureUsage_None_NATIVE();
+    private static int WGPUTextureUsage_None_NATIVE() {
+        return n.n1129731700.n1946110170();
+    }
 
-    private static native int WGPUTextureUsage_CopySrc_NATIVE();
+    private static int WGPUTextureUsage_CopySrc_NATIVE() {
+        return n.n1129731700.n3221113881();
+    }
 
-    private static native int WGPUTextureUsage_CopyDst_NATIVE();
+    private static int WGPUTextureUsage_CopyDst_NATIVE() {
+        return n.n1129731700.n3547112186();
+    }
 
-    private static native int WGPUTextureUsage_TextureBinding_NATIVE();
+    private static int WGPUTextureUsage_TextureBinding_NATIVE() {
+        return n.n1129731700.n2068087180();
+    }
 
-    private static native int WGPUTextureUsage_StorageBinding_NATIVE();
+    private static int WGPUTextureUsage_StorageBinding_NATIVE() {
+        return n.n1129731700.n519940140();
+    }
 
-    private static native int WGPUTextureUsage_RenderAttachment_NATIVE();
+    private static int WGPUTextureUsage_RenderAttachment_NATIVE() {
+        return n.n1129731700.n2934002171();
+    }
 }

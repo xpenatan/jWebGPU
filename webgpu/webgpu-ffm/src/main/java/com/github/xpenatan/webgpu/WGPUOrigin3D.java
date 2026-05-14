@@ -128,18 +128,18 @@ public class WGPUOrigin3D extends NativeObject {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1create_1addr__", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2847736997", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1deleteNative__J", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3320468409", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Set__JIII = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1Set__JIII", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_Set__JIII = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3086776124", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetX__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1SetX__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetX__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1114527304", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetY__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1SetY__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetY__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n918013799", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetZ__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1SetZ__JI", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetZ__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n721500294", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUOrigin3D_internal_1native_1Obtain_1addr__", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2001319342", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }

@@ -75,12 +75,12 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Unknown_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDeviceLostReason_WGPUDeviceLostReason_1Unknown_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Unknown_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1161476788", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Destroyed_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDeviceLostReason_WGPUDeviceLostReason_1Destroyed_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Destroyed_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4274150531", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_FailedCreation_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDeviceLostReason_WGPUDeviceLostReason_1FailedCreation_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_FailedCreation_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n759626078", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUDeviceLostReason_WGPUDeviceLostReason_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2679460084", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

@@ -22,7 +22,9 @@ public class WGPUCompilationMessage extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n471511922.n4288171160();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -42,7 +44,9 @@ public class WGPUCompilationMessage extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n471511922.n2813135782(this_addr);
+    }
 
     public NativeString getMessage() {
         long addr = internal_native_GetMessage_addr(native_address);
@@ -54,7 +58,9 @@ public class WGPUCompilationMessage extends NativeObject {
         return NativeString_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetMessage_addr(long this_addr);
+    public static long internal_native_GetMessage_addr(long this_addr) {
+        return n.n471511922.n4154726345(this_addr);
+    }
 
     public WGPUCompilationMessageType getType() {
         int value = internal_native_GetType(native_address);
@@ -67,31 +73,41 @@ public class WGPUCompilationMessage extends NativeObject {
         return WGPUCompilationMessageType.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetType(long this_addr);
+    public static int internal_native_GetType(long this_addr) {
+        return n.n471511922.n3127436888(this_addr);
+    }
 
     public int getLineNum() {
         return internal_native_GetLineNum(native_address);
     }
 
-    public static native int internal_native_GetLineNum(long this_addr);
+    public static int internal_native_GetLineNum(long this_addr) {
+        return n.n471511922.n1877193388(this_addr);
+    }
 
     public int getLinePos() {
         return internal_native_GetLinePos(native_address);
     }
 
-    public static native int internal_native_GetLinePos(long this_addr);
+    public static int internal_native_GetLinePos(long this_addr) {
+        return n.n471511922.n209566878(this_addr);
+    }
 
     public int getOffset() {
         return internal_native_GetOffset(native_address);
     }
 
-    public static native int internal_native_GetOffset(long this_addr);
+    public static int internal_native_GetOffset(long this_addr) {
+        return n.n471511922.n3945779743(this_addr);
+    }
 
     public int getLength() {
         return internal_native_GetLength(native_address);
     }
 
-    public static native int internal_native_GetLength(long this_addr);
+    public static int internal_native_GetLength(long this_addr) {
+        return n.n471511922.n13694892(this_addr);
+    }
 
     public static WGPUCompilationMessage obtain() {
         long addr = internal_native_Obtain_addr();
@@ -103,5 +119,7 @@ public class WGPUCompilationMessage extends NativeObject {
         return WGPUCompilationMessage_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n471511922.n3441753505();
+    }
 }

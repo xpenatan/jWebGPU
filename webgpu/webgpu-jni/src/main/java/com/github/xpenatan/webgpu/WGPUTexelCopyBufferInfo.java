@@ -23,7 +23,9 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2725924899.n2576406919();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -43,7 +45,9 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2725924899.n117586967(this_addr);
+    }
 
     public WGPUTexelCopyBufferLayout getLayout() {
         long addr = internal_native_GetLayout_addr(native_address);
@@ -55,7 +59,9 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         return WGPUTexelCopyBufferLayout_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetLayout_addr(long this_addr);
+    public static long internal_native_GetLayout_addr(long this_addr) {
+        return n.n2725924899.n3438783337(this_addr);
+    }
 
     public WGPUBuffer getBuffer() {
         long addr = internal_native_GetBuffer_addr(native_address);
@@ -67,13 +73,17 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         return WGPUBuffer_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetBuffer_addr(long this_addr);
+    public static long internal_native_GetBuffer_addr(long this_addr) {
+        return n.n2725924899.n930373887(this_addr);
+    }
 
     public void setBuffer(WGPUBuffer buffer) {
         internal_native_SetBuffer(native_address, buffer.native_address);
     }
 
-    public static native void internal_native_SetBuffer(long this_addr, long buffer_addr);
+    public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
+        n.n2725924899.n1462903443(this_addr, buffer_addr);
+    }
 
     public static WGPUTexelCopyBufferInfo obtain() {
         long addr = internal_native_Obtain_addr();
@@ -85,5 +95,7 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2725924899.n1729989264();
+    }
 }

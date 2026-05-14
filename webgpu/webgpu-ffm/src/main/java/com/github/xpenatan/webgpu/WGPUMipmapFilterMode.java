@@ -75,12 +75,12 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUMipmapFilterMode_WGPUMipmapFilterMode_1Undefined_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1710823898", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Nearest_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUMipmapFilterMode_WGPUMipmapFilterMode_1Nearest_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Nearest_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3696937960", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Linear_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUMipmapFilterMode_WGPUMipmapFilterMode_1Linear_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Linear_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2148273191", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUMipmapFilterMode_WGPUMipmapFilterMode_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMipmapFilterMode_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4151521812", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

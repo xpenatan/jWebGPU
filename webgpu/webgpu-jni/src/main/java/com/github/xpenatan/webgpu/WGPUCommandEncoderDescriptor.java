@@ -19,7 +19,9 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n45830606.n3975289788();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n45830606.n2727023362(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n45830606.n2378682955(this_addr, value);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n45830606.n1969249931(this_addr, chainedStruct_addr);
+    }
 
     public static WGPUCommandEncoderDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -63,5 +71,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
         return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n45830606.n3128872133();
+    }
 }

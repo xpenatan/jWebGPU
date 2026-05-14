@@ -67,10 +67,10 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURequestDeviceStatus_WGPURequestDeviceStatus_1Success_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2952556505", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURequestDeviceStatus_WGPURequestDeviceStatus_1Error_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3068731614", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPURequestDeviceStatus_WGPURequestDeviceStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n378944352", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

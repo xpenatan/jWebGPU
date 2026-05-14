@@ -26,31 +26,41 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4053196127.n3002312139();
+    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4053196127.n193493587(this_addr);
+    }
 
     public void setOffset(int offset) {
         internal_native_SetOffset(native_address, offset);
     }
 
-    public static native void internal_native_SetOffset(long this_addr, int offset);
+    public static void internal_native_SetOffset(long this_addr, int offset) {
+        n.n4053196127.n2603238217(this_addr, offset);
+    }
 
     public void setBytesPerRow(int bytesPerRow) {
         internal_native_SetBytesPerRow(native_address, bytesPerRow);
     }
 
-    public static native void internal_native_SetBytesPerRow(long this_addr, int bytesPerRow);
+    public static void internal_native_SetBytesPerRow(long this_addr, int bytesPerRow) {
+        n.n4053196127.n780642770(this_addr, bytesPerRow);
+    }
 
     public void setRowsPerImage(int rowsPerImage) {
         internal_native_SetRowsPerImage(native_address, rowsPerImage);
     }
 
-    public static native void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage);
+    public static void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage) {
+        n.n4053196127.n836140133(this_addr, rowsPerImage);
+    }
 
     public static WGPUTexelCopyBufferLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -62,5 +72,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4053196127.n2155894484();
+    }
 }

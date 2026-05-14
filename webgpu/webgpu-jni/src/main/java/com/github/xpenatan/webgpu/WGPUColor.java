@@ -19,7 +19,9 @@ public class WGPUColor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n839246325.n4106203381();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,61 +41,81 @@ public class WGPUColor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n839246325.n372693353(this_addr);
+    }
 
     public void setColor(float r, float g, float b, float a) {
         internal_native_SetColor(native_address, r, g, b, a);
     }
 
-    public static native void internal_native_SetColor(long this_addr, float r, float g, float b, float a);
+    public static void internal_native_SetColor(long this_addr, float r, float g, float b, float a) {
+        n.n839246325.n1279477866(this_addr, r, g, b, a);
+    }
 
     public void setR(float value) {
         internal_native_SetR(native_address, value);
     }
 
-    public static native void internal_native_SetR(long this_addr, float value);
+    public static void internal_native_SetR(long this_addr, float value) {
+        n.n839246325.n1039073259(this_addr, value);
+    }
 
     public void setG(float value) {
         internal_native_SetG(native_address, value);
     }
 
-    public static native void internal_native_SetG(long this_addr, float value);
+    public static void internal_native_SetG(long this_addr, float value) {
+        n.n839246325.n3914130646(this_addr, value);
+    }
 
     public void setB(float value) {
         internal_native_SetB(native_address, value);
     }
 
-    public static native void internal_native_SetB(long this_addr, float value);
+    public static void internal_native_SetB(long this_addr, float value) {
+        n.n839246325.n3268717051(this_addr, value);
+    }
 
     public void setA(float value) {
         internal_native_SetA(native_address, value);
     }
 
-    public static native void internal_native_SetA(long this_addr, float value);
+    public static void internal_native_SetA(long this_addr, float value) {
+        n.n839246325.n3139634332(this_addr, value);
+    }
 
     public float getR() {
         return internal_native_GetR(native_address);
     }
 
-    public static native float internal_native_GetR(long this_addr);
+    public static float internal_native_GetR(long this_addr) {
+        return n.n839246325.n3780998767(this_addr);
+    }
 
     public float getG() {
         return internal_native_GetG(native_address);
     }
 
-    public static native float internal_native_GetG(long this_addr);
+    public static float internal_native_GetG(long this_addr) {
+        return n.n839246325.n3466078106(this_addr);
+    }
 
     public float getB() {
         return internal_native_GetB(native_address);
     }
 
-    public static native float internal_native_GetB(long this_addr);
+    public static float internal_native_GetB(long this_addr) {
+        return n.n839246325.n3322932351(this_addr);
+    }
 
     public float getA() {
         return internal_native_GetA(native_address);
     }
 
-    public static native float internal_native_GetA(long this_addr);
+    public static float internal_native_GetA(long this_addr) {
+        return n.n839246325.n3294303200(this_addr);
+    }
 
     public static WGPUColor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -105,5 +127,7 @@ public class WGPUColor extends NativeObject {
         return WGPUColor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n839246325.n3259785726();
+    }
 }

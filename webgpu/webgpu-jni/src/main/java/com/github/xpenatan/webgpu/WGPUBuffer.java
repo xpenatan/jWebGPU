@@ -28,38 +28,50 @@ public class WGPUBuffer extends NativeObject {
         internal_native_getConstMappedRange(native_address, offset, size, out);
     }
 
-    private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out);
+    private static void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out) {
+        n.n223556590.n1164600159(this_addr, offset, size, out);
+    }
 
     public WGPUBuffer() {
         long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n223556590.n3805474204();
+    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n223556590.n2076339490(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n223556590.n1042859051(this_addr, value);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n223556590.n169604453(this_addr);
+    }
 
     public void destroy() {
         internal_native_Destroy(native_address);
     }
 
-    public static native void internal_native_Destroy(long this_addr);
+    public static void internal_native_Destroy(long this_addr) {
+        n.n223556590.n820346194(this_addr);
+    }
 
     public WGPUFuture mapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback) {
         long addr = internal_native_MapAsync_addr(native_address, mode.getValue(), offset, size, callbackMode.getValue(), callback.native_address);
@@ -71,7 +83,9 @@ public class WGPUBuffer extends NativeObject {
         return WGPUFuture_TEMP_GEN_0;
     }
 
-    public static native long internal_native_MapAsync_addr(long this_addr, int mode, int offset, int size, int callbackMode, long callback_addr);
+    public static long internal_native_MapAsync_addr(long this_addr, int mode, int offset, int size, int callbackMode, long callback_addr) {
+        return n.n223556590.n635017184(this_addr, mode, offset, size, callbackMode, callback_addr);
+    }
 
     public WGPUByteBuffer getMappedRange(int offset, int size) {
         long addr = internal_native_GetMappedRange_addr(native_address, offset, size);
@@ -83,19 +97,25 @@ public class WGPUBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetMappedRange_addr(long this_addr, int offset, int size);
+    public static long internal_native_GetMappedRange_addr(long this_addr, int offset, int size) {
+        return n.n223556590.n1103509462(this_addr, offset, size);
+    }
 
     public void unmap() {
         internal_native_Unmap(native_address);
     }
 
-    public static native void internal_native_Unmap(long this_addr);
+    public static void internal_native_Unmap(long this_addr) {
+        n.n223556590.n3870351305(this_addr);
+    }
 
     public int getSize() {
         return internal_native_GetSize(native_address);
     }
 
-    public static native int internal_native_GetSize(long this_addr);
+    public static int internal_native_GetSize(long this_addr) {
+        return n.n223556590.n2622135029(this_addr);
+    }
 
     public WGPUBufferUsage getUsage() {
         int value = internal_native_GetUsage(native_address);
@@ -108,11 +128,15 @@ public class WGPUBuffer extends NativeObject {
         return WGPUBufferUsage.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetUsage(long this_addr);
+    public static int internal_native_GetUsage(long this_addr) {
+        return n.n223556590.n3199711833(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n223556590.n4260838234(this_addr);
+    }
 }

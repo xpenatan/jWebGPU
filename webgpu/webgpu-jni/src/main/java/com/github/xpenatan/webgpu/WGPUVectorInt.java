@@ -19,7 +19,9 @@ public class WGPUVectorInt extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n913124670.n1161639500();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUVectorInt extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n913124670.n349835890(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n913124670.n874776435(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n913124670.n1599156335(this_addr);
+    }
 
     public void push_back(int value) {
         internal_native_push_back(native_address, value);
     }
 
-    public static native void internal_native_push_back(long this_addr, int value);
+    public static void internal_native_push_back(long this_addr, int value) {
+        n.n913124670.n3188920691(this_addr, value);
+    }
 
     public int get(int index) {
         return internal_native_get(native_address, index);
     }
 
-    public static native int internal_native_get(long this_addr, int index);
+    public static int internal_native_get(long this_addr, int index) {
+        return n.n913124670.n3014972233(this_addr, index);
+    }
 
     public static WGPUVectorInt obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUVectorInt extends NativeObject {
         return WGPUVectorInt_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n913124670.n315221845();
+    }
 }

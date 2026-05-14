@@ -53,41 +53,79 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
         return CUSTOM;
     }
 
-    private static native int WGPUBlendFactor_Undefined_NATIVE();
+    private static int WGPUBlendFactor_Undefined_NATIVE() {
+        return n.n2240823826.n2794388856();
+    }
 
-    private static native int WGPUBlendFactor_Zero_NATIVE();
+    private static int WGPUBlendFactor_Zero_NATIVE() {
+        return n.n2240823826.n4188334412();
+    }
 
-    private static native int WGPUBlendFactor_One_NATIVE();
+    private static int WGPUBlendFactor_One_NATIVE() {
+        return n.n2240823826.n796235278();
+    }
 
-    private static native int WGPUBlendFactor_Src_NATIVE();
+    private static int WGPUBlendFactor_Src_NATIVE() {
+        return n.n2240823826.n732252044();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusSrc_NATIVE();
+    private static int WGPUBlendFactor_OneMinusSrc_NATIVE() {
+        return n.n2240823826.n1226081666();
+    }
 
-    private static native int WGPUBlendFactor_SrcAlpha_NATIVE();
+    private static int WGPUBlendFactor_SrcAlpha_NATIVE() {
+        return n.n2240823826.n3542559614();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE();
+    private static int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE() {
+        return n.n2240823826.n2122200904();
+    }
 
-    private static native int WGPUBlendFactor_Dst_NATIVE();
+    private static int WGPUBlendFactor_Dst_NATIVE() {
+        return n.n2240823826.n1058250349();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusDst_NATIVE();
+    private static int WGPUBlendFactor_OneMinusDst_NATIVE() {
+        return n.n2240823826.n1552079971();
+    }
 
-    private static native int WGPUBlendFactor_DstAlpha_NATIVE();
+    private static int WGPUBlendFactor_DstAlpha_NATIVE() {
+        return n.n2240823826.n4113627453();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusDstAlpha_NATIVE();
+    private static int WGPUBlendFactor_OneMinusDstAlpha_NATIVE() {
+        return n.n2240823826.n2693268743();
+    }
 
-    private static native int WGPUBlendFactor_SrcAlphaSaturated_NATIVE();
+    private static int WGPUBlendFactor_SrcAlphaSaturated_NATIVE() {
+        return n.n2240823826.n1227434499();
+    }
 
-    private static native int WGPUBlendFactor_Constant_NATIVE();
+    private static int WGPUBlendFactor_Constant_NATIVE() {
+        return n.n2240823826.n898208584();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusConstant_NATIVE();
+    private static int WGPUBlendFactor_OneMinusConstant_NATIVE() {
+        return n.n2240823826.n3772817170();
+    }
 
-    private static native int WGPUBlendFactor_Src1_NATIVE();
+    private static int WGPUBlendFactor_Src1_NATIVE() {
+        return n.n2240823826.n444986481();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusSrc1_NATIVE();
+    private static int WGPUBlendFactor_OneMinusSrc1_NATIVE() {
+        return n.n2240823826.n2868802875();
+    }
 
-    private static native int WGPUBlendFactor_Src1Alpha_NATIVE();
+    private static int WGPUBlendFactor_Src1Alpha_NATIVE() {
+        return n.n2240823826.n949470649();
+    }
 
-    private static native int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE();
+    private static int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE() {
+        return n.n2240823826.n4162990895();
+    }
 
-    private static native int WGPUBlendFactor_Force32_NATIVE();
+    private static int WGPUBlendFactor_Force32_NATIVE() {
+        return n.n2240823826.n885613874();
+    }
 }

@@ -30,17 +30,23 @@ public class WGPUQueueDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1210092402.n1950147494(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n1210092402.n4048457511(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n1210092402.n189091175(this_addr, chainedStruct_addr);
+    }
 }

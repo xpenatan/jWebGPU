@@ -19,7 +19,9 @@ public class WGPUSamplerDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3104894249.n3154600513();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,79 +41,105 @@ public class WGPUSamplerDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3104894249.n1321605021(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n3104894249.n902087632(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3104894249.n181339536(this_addr, chainedStruct_addr);
+    }
 
     public void setAddressModeU(WGPUAddressMode addressModeU) {
         internal_native_SetAddressModeU(native_address, addressModeU.getValue());
     }
 
-    public static native void internal_native_SetAddressModeU(long this_addr, int addressModeU);
+    public static void internal_native_SetAddressModeU(long this_addr, int addressModeU) {
+        n.n3104894249.n3895983988(this_addr, addressModeU);
+    }
 
     public void setAddressModeV(WGPUAddressMode addressModeV) {
         internal_native_SetAddressModeV(native_address, addressModeV.getValue());
     }
 
-    public static native void internal_native_SetAddressModeV(long this_addr, int addressModeV);
+    public static void internal_native_SetAddressModeV(long this_addr, int addressModeV) {
+        n.n3104894249.n3699470483(this_addr, addressModeV);
+    }
 
     public void setAddressModeW(WGPUAddressMode addressModeW) {
         internal_native_SetAddressModeW(native_address, addressModeW.getValue());
     }
 
-    public static native void internal_native_SetAddressModeW(long this_addr, int addressModeW);
+    public static void internal_native_SetAddressModeW(long this_addr, int addressModeW) {
+        n.n3104894249.n3502956978(this_addr, addressModeW);
+    }
 
     public void setMagFilter(WGPUFilterMode magFilter) {
         internal_native_SetMagFilter(native_address, magFilter.getValue());
     }
 
-    public static native void internal_native_SetMagFilter(long this_addr, int magFilter);
+    public static void internal_native_SetMagFilter(long this_addr, int magFilter) {
+        n.n3104894249.n1573530201(this_addr, magFilter);
+    }
 
     public void setMinFilter(WGPUFilterMode minFilter) {
         internal_native_SetMinFilter(native_address, minFilter.getValue());
     }
 
-    public static native void internal_native_SetMinFilter(long this_addr, int minFilter);
+    public static void internal_native_SetMinFilter(long this_addr, int minFilter) {
+        n.n3104894249.n236333946(this_addr, minFilter);
+    }
 
     public void setMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
         internal_native_SetMipmapFilter(native_address, mipmapFilter.getValue());
     }
 
-    public static native void internal_native_SetMipmapFilter(long this_addr, int mipmapFilter);
+    public static void internal_native_SetMipmapFilter(long this_addr, int mipmapFilter) {
+        n.n3104894249.n803618066(this_addr, mipmapFilter);
+    }
 
     public void setLodMinClamp(float lodMinClamp) {
         internal_native_SetLodMinClamp(native_address, lodMinClamp);
     }
 
-    public static native void internal_native_SetLodMinClamp(long this_addr, float lodMinClamp);
+    public static void internal_native_SetLodMinClamp(long this_addr, float lodMinClamp) {
+        n.n3104894249.n355046759(this_addr, lodMinClamp);
+    }
 
     public void setLodMaxClamp(float lodMaxClamp) {
         internal_native_SetLodMaxClamp(native_address, lodMaxClamp);
     }
 
-    public static native void internal_native_SetLodMaxClamp(long this_addr, float lodMaxClamp);
+    public static void internal_native_SetLodMaxClamp(long this_addr, float lodMaxClamp) {
+        n.n3104894249.n389886073(this_addr, lodMaxClamp);
+    }
 
     public void setCompare(WGPUCompareFunction compare) {
         internal_native_SetCompare(native_address, compare.getValue());
     }
 
-    public static native void internal_native_SetCompare(long this_addr, int compare);
+    public static void internal_native_SetCompare(long this_addr, int compare) {
+        n.n3104894249.n1095198623(this_addr, compare);
+    }
 
     public void setMaxAnisotropy(int maxAnisotropy) {
         internal_native_SetMaxAnisotropy(native_address, maxAnisotropy);
     }
 
-    public static native void internal_native_SetMaxAnisotropy(long this_addr, int maxAnisotropy);
+    public static void internal_native_SetMaxAnisotropy(long this_addr, int maxAnisotropy) {
+        n.n3104894249.n2638065950(this_addr, maxAnisotropy);
+    }
 
     public static WGPUSamplerDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -123,5 +151,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
         return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3104894249.n2308182858();
+    }
 }

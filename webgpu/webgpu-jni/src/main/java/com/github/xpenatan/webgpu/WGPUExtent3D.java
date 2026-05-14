@@ -26,31 +26,41 @@ public class WGPUExtent3D extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4085649225.n907211809();
+    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4085649225.n1351266749(this_addr);
+    }
 
     public void setWidth(int width) {
         internal_native_SetWidth(native_address, width);
     }
 
-    public static native void internal_native_SetWidth(long this_addr, int width);
+    public static void internal_native_SetWidth(long this_addr, int width) {
+        n.n4085649225.n1613812798(this_addr, width);
+    }
 
     public void setHeight(int height) {
         internal_native_SetHeight(native_address, height);
     }
 
-    public static native void internal_native_SetHeight(long this_addr, int height);
+    public static void internal_native_SetHeight(long this_addr, int height) {
+        n.n4085649225.n3446977291(this_addr, height);
+    }
 
     public void setDepthOrArrayLayers(int depthOrArrayLayers) {
         internal_native_SetDepthOrArrayLayers(native_address, depthOrArrayLayers);
     }
 
-    public static native void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers);
+    public static void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers) {
+        n.n4085649225.n2772254813(this_addr, depthOrArrayLayers);
+    }
 
     public static WGPUExtent3D obtain() {
         long addr = internal_native_Obtain_addr();
@@ -62,5 +72,7 @@ public class WGPUExtent3D extends NativeObject {
         return WGPUExtent3D_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4085649225.n60794154();
+    }
 }

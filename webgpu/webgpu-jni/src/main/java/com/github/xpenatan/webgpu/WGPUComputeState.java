@@ -30,29 +30,39 @@ public class WGPUComputeState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n720403400.n2749447804(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n720403400.n3139646929(this_addr, chainedStruct_addr);
+    }
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    public static native void internal_native_SetModule(long this_addr, long shaderModule_addr);
+    public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
+        n.n720403400.n2863295204(this_addr, shaderModule_addr);
+    }
 
     public void setEntryPoint(String entryPoint) {
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    public static native void internal_native_SetEntryPoint(long this_addr, String entryPoint);
+    public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
+        n.n720403400.n86234475(this_addr, entryPoint);
+    }
 
     public void setConstants(WGPUVectorConstantEntry values) {
         internal_native_SetConstants(native_address, values.native_address);
     }
 
-    public static native void internal_native_SetConstants(long this_addr, long values_addr);
+    public static void internal_native_SetConstants(long this_addr, long values_addr) {
+        n.n720403400.n2142146423(this_addr, values_addr);
+    }
 }

@@ -23,7 +23,9 @@ public class WGPUDepthStencilState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1735259690.n964666592();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -43,61 +45,81 @@ public class WGPUDepthStencilState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1735259690.n729391198(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n1735259690.n4283781551(this_addr, chainedStruct_addr);
+    }
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    public static native void internal_native_SetFormat(long this_addr, int format);
+    public static void internal_native_SetFormat(long this_addr, int format) {
+        n.n1735259690.n3990543290(this_addr, format);
+    }
 
     public void setDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
         internal_native_SetDepthWriteEnabled(native_address, depthWriteEnabled.getValue());
     }
 
-    public static native void internal_native_SetDepthWriteEnabled(long this_addr, int depthWriteEnabled);
+    public static void internal_native_SetDepthWriteEnabled(long this_addr, int depthWriteEnabled) {
+        n.n1735259690.n1040292800(this_addr, depthWriteEnabled);
+    }
 
     public void setDepthCompare(WGPUCompareFunction depthCompare) {
         internal_native_SetDepthCompare(native_address, depthCompare.getValue());
     }
 
-    public static native void internal_native_SetDepthCompare(long this_addr, int depthCompare);
+    public static void internal_native_SetDepthCompare(long this_addr, int depthCompare) {
+        n.n1735259690.n1037902575(this_addr, depthCompare);
+    }
 
     public void setDepthBiasSlopeScale(float depthBiasSlopeScale) {
         internal_native_SetDepthBiasSlopeScale(native_address, depthBiasSlopeScale);
     }
 
-    public static native void internal_native_SetDepthBiasSlopeScale(long this_addr, float depthBiasSlopeScale);
+    public static void internal_native_SetDepthBiasSlopeScale(long this_addr, float depthBiasSlopeScale) {
+        n.n1735259690.n3203604183(this_addr, depthBiasSlopeScale);
+    }
 
     public void setDepthBiasClamp(float depthBiasClamp) {
         internal_native_SetDepthBiasClamp(native_address, depthBiasClamp);
     }
 
-    public static native void internal_native_SetDepthBiasClamp(long this_addr, float depthBiasClamp);
+    public static void internal_native_SetDepthBiasClamp(long this_addr, float depthBiasClamp) {
+        n.n1735259690.n1053616735(this_addr, depthBiasClamp);
+    }
 
     public void setStencilReadMask(int stencilReadMask) {
         internal_native_SetStencilReadMask(native_address, stencilReadMask);
     }
 
-    public static native void internal_native_SetStencilReadMask(long this_addr, int stencilReadMask);
+    public static void internal_native_SetStencilReadMask(long this_addr, int stencilReadMask) {
+        n.n1735259690.n1898742695(this_addr, stencilReadMask);
+    }
 
     public void setStencilWriteMask(int stencilWriteMask) {
         internal_native_SetStencilWriteMask(native_address, stencilWriteMask);
     }
 
-    public static native void internal_native_SetStencilWriteMask(long this_addr, int stencilWriteMask);
+    public static void internal_native_SetStencilWriteMask(long this_addr, int stencilWriteMask) {
+        n.n1735259690.n219691554(this_addr, stencilWriteMask);
+    }
 
     public void setDepthBias(int depthBias) {
         internal_native_SetDepthBias(native_address, depthBias);
     }
 
-    public static native void internal_native_SetDepthBias(long this_addr, int depthBias);
+    public static void internal_native_SetDepthBias(long this_addr, int depthBias) {
+        n.n1735259690.n3857024073(this_addr, depthBias);
+    }
 
     public WGPUStencilFaceState getStencilFront() {
         long addr = internal_native_GetStencilFront_addr(native_address);
@@ -109,7 +131,9 @@ public class WGPUDepthStencilState extends NativeObject {
         return WGPUStencilFaceState_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetStencilFront_addr(long this_addr);
+    public static long internal_native_GetStencilFront_addr(long this_addr) {
+        return n.n1735259690.n3747493459(this_addr);
+    }
 
     public WGPUStencilFaceState getStencilBack() {
         long addr = internal_native_GetStencilBack_addr(native_address);
@@ -121,7 +145,9 @@ public class WGPUDepthStencilState extends NativeObject {
         return WGPUStencilFaceState_TEMP_GEN_1;
     }
 
-    public static native long internal_native_GetStencilBack_addr(long this_addr);
+    public static long internal_native_GetStencilBack_addr(long this_addr) {
+        return n.n1735259690.n1605407949(this_addr);
+    }
 
     public static WGPUDepthStencilState obtain() {
         long addr = internal_native_Obtain_addr();
@@ -133,5 +159,7 @@ public class WGPUDepthStencilState extends NativeObject {
         return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1735259690.n118248937();
+    }
 }

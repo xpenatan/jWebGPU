@@ -25,7 +25,9 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4146613269.n2944596693();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -45,19 +47,25 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4146613269.n2908142473(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n4146613269.n3619194980(this_addr, value);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n4146613269.n1298554916(this_addr, chainedStruct_addr);
+    }
 
     public WGPUVertexState getVertex() {
         long addr = internal_native_GetVertex_addr(native_address);
@@ -69,7 +77,9 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPUVertexState_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetVertex_addr(long this_addr);
+    public static long internal_native_GetVertex_addr(long this_addr) {
+        return n.n4146613269.n3141631061(this_addr);
+    }
 
     public WGPUPrimitiveState getPrimitive() {
         long addr = internal_native_GetPrimitive_addr(native_address);
@@ -81,19 +91,25 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPUPrimitiveState_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetPrimitive_addr(long this_addr);
+    public static long internal_native_GetPrimitive_addr(long this_addr) {
+        return n.n4146613269.n3175293990(this_addr);
+    }
 
     public void setFragment(WGPUFragmentState fragmentState) {
         internal_native_SetFragment(native_address, fragmentState.native_address);
     }
 
-    public static native void internal_native_SetFragment(long this_addr, long fragmentState_addr);
+    public static void internal_native_SetFragment(long this_addr, long fragmentState_addr) {
+        n.n4146613269.n148256341(this_addr, fragmentState_addr);
+    }
 
     public void setDepthStencil(WGPUDepthStencilState depthStencilState) {
         internal_native_SetDepthStencil(native_address, depthStencilState.native_address);
     }
 
-    public static native void internal_native_SetDepthStencil(long this_addr, long depthStencilState_addr);
+    public static void internal_native_SetDepthStencil(long this_addr, long depthStencilState_addr) {
+        n.n4146613269.n2076298174(this_addr, depthStencilState_addr);
+    }
 
     public WGPUMultisampleState getMultisample() {
         long addr = internal_native_GetMultisample_addr(native_address);
@@ -105,13 +121,17 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPUMultisampleState_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetMultisample_addr(long this_addr);
+    public static long internal_native_GetMultisample_addr(long this_addr) {
+        return n.n4146613269.n234020514(this_addr);
+    }
 
     public void setLayout(WGPUPipelineLayout pipelineLayout) {
         internal_native_SetLayout(native_address, pipelineLayout.native_address);
     }
 
-    public static native void internal_native_SetLayout(long this_addr, long pipelineLayout_addr);
+    public static void internal_native_SetLayout(long this_addr, long pipelineLayout_addr) {
+        n.n4146613269.n1340594159(this_addr, pipelineLayout_addr);
+    }
 
     public static WGPURenderPipelineDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -123,5 +143,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4146613269.n2098179038();
+    }
 }

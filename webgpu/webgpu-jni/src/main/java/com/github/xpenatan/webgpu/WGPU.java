@@ -36,7 +36,9 @@ public class WGPU extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2026632718.n631416642(this_addr);
+    }
 
     public static WGPUPlatformType getPlatformType() {
         int value = internal_native_GetPlatformType();
@@ -49,7 +51,9 @@ public class WGPU extends NativeObject {
         return WGPUPlatformType.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetPlatformType();
+    public static int internal_native_GetPlatformType() {
+        return n.n2026632718.n2960845837();
+    }
 
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         long addr = internal_native_SetupInstance_addr(descriptor.native_address);
@@ -60,7 +64,9 @@ public class WGPU extends NativeObject {
         return WGPUInstance_NEW;
     }
 
-    public static native long internal_native_SetupInstance_addr(long descriptor_addr);
+    public static long internal_native_SetupInstance_addr(long descriptor_addr) {
+        return n.n2026632718.n2319395686(descriptor_addr);
+    }
 
     public static WGPUInstance setupInstance() {
         long addr = internal_native_SetupInstance_addr();
@@ -72,7 +78,9 @@ public class WGPU extends NativeObject {
         return WGPUInstance_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_SetupInstance_addr();
+    public static long internal_native_SetupInstance_addr() {
+        return n.n2026632718.n2433182186();
+    }
 
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {
         long addr = internal_native_loadImage_addr(buffer.native_address, desiredChannels);
@@ -84,7 +92,9 @@ public class WGPU extends NativeObject {
         return STBImage_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_loadImage_addr(long buffer_addr, int desiredChannels);
+    public static long internal_native_loadImage_addr(long buffer_addr, int desiredChannels) {
+        return n.n2026632718.n3982398316(buffer_addr, desiredChannels);
+    }
 
     public static STBImage loadImage(WGPUByteBuffer buffer) {
         long addr = internal_native_loadImage_addr(buffer.native_address);
@@ -96,5 +106,7 @@ public class WGPU extends NativeObject {
         return STBImage_TEMP_STATIC_GEN_1;
     }
 
-    public static native long internal_native_loadImage_addr(long buffer_addr);
+    public static long internal_native_loadImage_addr(long buffer_addr) {
+        return n.n2026632718.n575600553(buffer_addr);
+    }
 }

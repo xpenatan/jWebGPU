@@ -19,7 +19,9 @@ public class WGPUFragmentState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3736724659.n1309298423();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,61 +41,81 @@ public class WGPUFragmentState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3736724659.n2622008487(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3736724659.n83267910(this_addr, chainedStruct_addr);
+    }
 
     public void setEntryPoint(String entryPoint) {
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    public static native void internal_native_SetEntryPoint(long this_addr, String entryPoint);
+    public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
+        n.n3736724659.n4122732694(this_addr, entryPoint);
+    }
 
     public void setTargets(WGPUVectorColorTargetState targets) {
         internal_native_SetTargets__0(native_address, targets.native_address);
     }
 
-    public static native void internal_native_SetTargets__0(long this_addr, long targets_addr);
+    public static void internal_native_SetTargets__0(long this_addr, long targets_addr) {
+        n.n3736724659.n3285506033(this_addr, targets_addr);
+    }
 
     public void setTargets(WGPUColorTargetState target01) {
         internal_native_SetTargets__1(native_address, target01.native_address);
     }
 
-    public static native void internal_native_SetTargets__1(long this_addr, long target01_addr);
+    public static void internal_native_SetTargets__1(long this_addr, long target01_addr) {
+        n.n3736724659.n1488554674(this_addr, target01_addr);
+    }
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02) {
         internal_native_SetTargets__2(native_address, target01.native_address, target02.native_address);
     }
 
-    public static native void internal_native_SetTargets__2(long this_addr, long target01_addr, long target02_addr);
+    public static void internal_native_SetTargets__2(long this_addr, long target01_addr, long target02_addr) {
+        n.n3736724659.n3281781525(this_addr, target01_addr, target02_addr);
+    }
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03) {
         internal_native_SetTargets__3(native_address, target01.native_address, target02.native_address, target03.native_address);
     }
 
-    public static native void internal_native_SetTargets__3(long this_addr, long target01_addr, long target02_addr, long target03_addr);
+    public static void internal_native_SetTargets__3(long this_addr, long target01_addr, long target02_addr, long target03_addr) {
+        n.n3736724659.n1870358580(this_addr, target01_addr, target02_addr, target03_addr);
+    }
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03, WGPUColorTargetState target04) {
         internal_native_SetTargets__4(native_address, target01.native_address, target02.native_address, target03.native_address, target04.native_address);
     }
 
-    public static native void internal_native_SetTargets__4(long this_addr, long target01_addr, long target02_addr, long target03_addr, long target04_addr);
+    public static void internal_native_SetTargets__4(long this_addr, long target01_addr, long target02_addr, long target03_addr, long target04_addr) {
+        n.n3736724659.n3667508243(this_addr, target01_addr, target02_addr, target03_addr, target04_addr);
+    }
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    public static native void internal_native_SetModule(long this_addr, long shaderModule_addr);
+    public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
+        n.n3736724659.n653195855(this_addr, shaderModule_addr);
+    }
 
     public void setConstants(WGPUVectorConstantEntry constants) {
         internal_native_SetConstants(native_address, constants.native_address);
     }
 
-    public static native void internal_native_SetConstants(long this_addr, long constants_addr);
+    public static void internal_native_SetConstants(long this_addr, long constants_addr) {
+        n.n3736724659.n2921088044(this_addr, constants_addr);
+    }
 
     public static WGPUFragmentState obtain() {
         long addr = internal_native_Obtain_addr();
@@ -105,5 +127,7 @@ public class WGPUFragmentState extends NativeObject {
         return WGPUFragmentState_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3736724659.n462880768();
+    }
 }

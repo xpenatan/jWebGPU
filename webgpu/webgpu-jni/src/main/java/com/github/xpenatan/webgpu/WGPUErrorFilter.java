@@ -34,11 +34,19 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
         return CUSTOM;
     }
 
-    private static native int WGPUErrorFilter_Validation_NATIVE();
+    private static int WGPUErrorFilter_Validation_NATIVE() {
+        return n.n3529367730.n3288915549();
+    }
 
-    private static native int WGPUErrorFilter_OutOfMemory_NATIVE();
+    private static int WGPUErrorFilter_OutOfMemory_NATIVE() {
+        return n.n3529367730.n2662457870();
+    }
 
-    private static native int WGPUErrorFilter_Internal_NATIVE();
+    private static int WGPUErrorFilter_Internal_NATIVE() {
+        return n.n3529367730.n382040097();
+    }
 
-    private static native int WGPUErrorFilter_Force32_NATIVE();
+    private static int WGPUErrorFilter_Force32_NATIVE() {
+        return n.n3529367730.n779149938();
+    }
 }

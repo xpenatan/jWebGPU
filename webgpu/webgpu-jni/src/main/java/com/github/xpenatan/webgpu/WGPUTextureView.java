@@ -19,7 +19,9 @@ public class WGPUTextureView extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2391767922.n2008581272();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUTextureView extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2391767922.n3538932646(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n2391767922.n712351527(this_addr, label);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n2391767922.n2667678817(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n2391767922.n2463945302(this_addr);
+    }
 
     public static WGPUTextureView obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUTextureView extends NativeObject {
         return WGPUTextureView_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2391767922.n1162163617();
+    }
 }

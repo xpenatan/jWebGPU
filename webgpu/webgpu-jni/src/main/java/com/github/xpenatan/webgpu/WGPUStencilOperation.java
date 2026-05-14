@@ -44,23 +44,43 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
         return CUSTOM;
     }
 
-    private static native int WGPUStencilOperation_Undefined_NATIVE();
+    private static int WGPUStencilOperation_Undefined_NATIVE() {
+        return n.n2398583097.n3096060634();
+    }
 
-    private static native int WGPUStencilOperation_Keep_NATIVE();
+    private static int WGPUStencilOperation_Keep_NATIVE() {
+        return n.n2398583097.n1948085895();
+    }
 
-    private static native int WGPUStencilOperation_Zero_NATIVE();
+    private static int WGPUStencilOperation_Zero_NATIVE() {
+        return n.n2398583097.n3137105578();
+    }
 
-    private static native int WGPUStencilOperation_Replace_NATIVE();
+    private static int WGPUStencilOperation_Replace_NATIVE() {
+        return n.n2398583097.n1818157374();
+    }
 
-    private static native int WGPUStencilOperation_Invert_NATIVE();
+    private static int WGPUStencilOperation_Invert_NATIVE() {
+        return n.n2398583097.n2737566424();
+    }
 
-    private static native int WGPUStencilOperation_IncrementClamp_NATIVE();
+    private static int WGPUStencilOperation_IncrementClamp_NATIVE() {
+        return n.n2398583097.n2592537486();
+    }
 
-    private static native int WGPUStencilOperation_DecrementClamp_NATIVE();
+    private static int WGPUStencilOperation_DecrementClamp_NATIVE() {
+        return n.n2398583097.n2290726122();
+    }
 
-    private static native int WGPUStencilOperation_IncrementWrap_NATIVE();
+    private static int WGPUStencilOperation_IncrementWrap_NATIVE() {
+        return n.n2398583097.n2074658531();
+    }
 
-    private static native int WGPUStencilOperation_DecrementWrap_NATIVE();
+    private static int WGPUStencilOperation_DecrementWrap_NATIVE() {
+        return n.n2398583097.n402354695();
+    }
 
-    private static native int WGPUStencilOperation_Force32_NATIVE();
+    private static int WGPUStencilOperation_Force32_NATIVE() {
+        return n.n2398583097.n2628942612();
+    }
 }

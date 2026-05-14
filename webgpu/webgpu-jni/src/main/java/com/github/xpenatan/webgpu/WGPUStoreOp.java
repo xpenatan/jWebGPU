@@ -34,11 +34,19 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
         return CUSTOM;
     }
 
-    private static native int WGPUStoreOp_Undefined_NATIVE();
+    private static int WGPUStoreOp_Undefined_NATIVE() {
+        return n.n523019444.n3414115900();
+    }
 
-    private static native int WGPUStoreOp_Store_NATIVE();
+    private static int WGPUStoreOp_Store_NATIVE() {
+        return n.n523019444.n591273933();
+    }
 
-    private static native int WGPUStoreOp_Discard_NATIVE();
+    private static int WGPUStoreOp_Discard_NATIVE() {
+        return n.n523019444.n125059338();
+    }
 
-    private static native int WGPUStoreOp_Force32_NATIVE();
+    private static int WGPUStoreOp_Force32_NATIVE() {
+        return n.n523019444.n1476202230();
+    }
 }

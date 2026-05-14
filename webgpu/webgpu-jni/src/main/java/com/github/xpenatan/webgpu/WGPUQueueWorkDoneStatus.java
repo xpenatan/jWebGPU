@@ -34,9 +34,15 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
         return CUSTOM;
     }
 
-    private static native int WGPUQueueWorkDoneStatus_Success_NATIVE();
+    private static int WGPUQueueWorkDoneStatus_Success_NATIVE() {
+        return n.n349992584.n4156934551();
+    }
 
-    private static native int WGPUQueueWorkDoneStatus_Error_NATIVE();
+    private static int WGPUQueueWorkDoneStatus_Error_NATIVE() {
+        return n.n349992584.n2283393564();
+    }
 
-    private static native int WGPUQueueWorkDoneStatus_Force32_NATIVE();
+    private static int WGPUQueueWorkDoneStatus_Force32_NATIVE() {
+        return n.n349992584.n1583322398();
+    }
 }

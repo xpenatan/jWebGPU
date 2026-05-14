@@ -19,7 +19,9 @@ public class WGPUComputePassDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3410848009.n2966876769();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUComputePassDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3410848009.n4090207101(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n3410848009.n4069667824(this_addr, value);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3410848009.n3307693488(this_addr, chainedStruct_addr);
+    }
 
     public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
-    public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
+    public static void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr) {
+        n.n3410848009.n2041305073(this_addr, timestampWrites_addr);
+    }
 
     public static WGPUComputePassDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUComputePassDescriptor extends NativeObject {
         return WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3410848009.n2120459114();
+    }
 }

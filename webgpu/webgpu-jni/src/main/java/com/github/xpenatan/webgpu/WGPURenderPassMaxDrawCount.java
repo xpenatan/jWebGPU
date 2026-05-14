@@ -19,7 +19,9 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4267601212.n2558172942();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4267601212.n46781168(this_addr);
+    }
 
     public void setMaxDrawCount(int maxDrawCount) {
         internal_native_SetMaxDrawCount(native_address, maxDrawCount);
     }
 
-    public static native void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount);
+    public static void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount) {
+        n.n4267601212.n685366584(this_addr, maxDrawCount);
+    }
 
     public int getMaxDrawCount() {
         return internal_native_GetMaxDrawCount(native_address);
     }
 
-    public static native int internal_native_GetMaxDrawCount(long this_addr);
+    public static int internal_native_GetMaxDrawCount(long this_addr) {
+        return n.n4267601212.n328792833(this_addr);
+    }
 
     public static WGPURenderPassMaxDrawCount obtain() {
         long addr = internal_native_Obtain_addr();
@@ -63,5 +71,7 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         return WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4267601212.n1711755287();
+    }
 }

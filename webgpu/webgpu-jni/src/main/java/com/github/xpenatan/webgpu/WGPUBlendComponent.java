@@ -30,13 +30,17 @@ public class WGPUBlendComponent extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3928389978.n854939534(this_addr);
+    }
 
     public void setOperation(WGPUBlendOperation operation) {
         internal_native_SetOperation(native_address, operation.getValue());
     }
 
-    public static native void internal_native_SetOperation(long this_addr, int operation);
+    public static void internal_native_SetOperation(long this_addr, int operation) {
+        n.n3928389978.n427907726(this_addr, operation);
+    }
 
     public WGPUBlendOperation getOperation() {
         int value = internal_native_GetOperation(native_address);
@@ -49,13 +53,17 @@ public class WGPUBlendComponent extends NativeObject {
         return WGPUBlendOperation.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetOperation(long this_addr);
+    public static int internal_native_GetOperation(long this_addr) {
+        return n.n3928389978.n1219508159(this_addr);
+    }
 
     public void setSrcFactor(WGPUBlendFactor factor) {
         internal_native_SetSrcFactor(native_address, factor.getValue());
     }
 
-    public static native void internal_native_SetSrcFactor(long this_addr, int factor);
+    public static void internal_native_SetSrcFactor(long this_addr, int factor) {
+        n.n3928389978.n3881242914(this_addr, factor);
+    }
 
     public WGPUBlendFactor getSrcFactor() {
         int value = internal_native_GetSrcFactor(native_address);
@@ -68,13 +76,17 @@ public class WGPUBlendComponent extends NativeObject {
         return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetSrcFactor(long this_addr);
+    public static int internal_native_GetSrcFactor(long this_addr) {
+        return n.n3928389978.n2876266579(this_addr);
+    }
 
     public void setDstFactor(WGPUBlendFactor factor) {
         internal_native_SetDstFactor(native_address, factor.getValue());
     }
 
-    public static native void internal_native_SetDstFactor(long this_addr, int factor);
+    public static void internal_native_SetDstFactor(long this_addr, int factor) {
+        n.n3928389978.n2921622305(this_addr, factor);
+    }
 
     public WGPUBlendFactor getDstFactor() {
         int value = internal_native_GetDstFactor(native_address);
@@ -87,5 +99,7 @@ public class WGPUBlendComponent extends NativeObject {
         return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetDstFactor(long this_addr);
+    public static int internal_native_GetDstFactor(long this_addr) {
+        return n.n3928389978.n3770714578(this_addr);
+    }
 }

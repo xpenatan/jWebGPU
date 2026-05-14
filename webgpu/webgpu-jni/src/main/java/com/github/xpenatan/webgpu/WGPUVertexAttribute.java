@@ -19,7 +19,9 @@ public class WGPUVertexAttribute extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2968704362.n2737180064();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVertexAttribute extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2968704362.n2570497950(this_addr);
+    }
 
     public void setFormat(WGPUVertexFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    public static native void internal_native_SetFormat(long this_addr, int format);
+    public static void internal_native_SetFormat(long this_addr, int format) {
+        n.n2968704362.n935310458(this_addr, format);
+    }
 
     public void setOffset(int offset) {
         internal_native_SetOffset(native_address, offset);
     }
 
-    public static native void internal_native_SetOffset(long this_addr, int offset);
+    public static void internal_native_SetOffset(long this_addr, int offset) {
+        n.n2968704362.n3275929438(this_addr, offset);
+    }
 
     public void setShaderLocation(int shaderLocation) {
         internal_native_SetShaderLocation(native_address, shaderLocation);
     }
 
-    public static native void internal_native_SetShaderLocation(long this_addr, int shaderLocation);
+    public static void internal_native_SetShaderLocation(long this_addr, int shaderLocation) {
+        n.n2968704362.n84286231(this_addr, shaderLocation);
+    }
 
     public static WGPUVertexAttribute obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVertexAttribute extends NativeObject {
         return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2968704362.n1890762409();
+    }
 }

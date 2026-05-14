@@ -17,7 +17,9 @@ public class WGPUMultisampleState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2664928348.n2052869102();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,29 +39,39 @@ public class WGPUMultisampleState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2664928348.n626078224(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n2664928348.n1520030653(this_addr, chainedStruct_addr);
+    }
 
     public void setCount(int count) {
         internal_native_SetCount(native_address, count);
     }
 
-    public static native void internal_native_SetCount(long this_addr, int count);
+    public static void internal_native_SetCount(long this_addr, int count) {
+        n.n2664928348.n2677461864(this_addr, count);
+    }
 
     public void setMask(int mask) {
         internal_native_SetMask(native_address, mask);
     }
 
-    public static native void internal_native_SetMask(long this_addr, int mask);
+    public static void internal_native_SetMask(long this_addr, int mask) {
+        n.n2664928348.n819752435(this_addr, mask);
+    }
 
     public void setAlphaToCoverageEnabled(boolean alphaToCoverageEnabled) {
         internal_native_SetAlphaToCoverageEnabled(native_address, alphaToCoverageEnabled);
     }
 
-    public static native void internal_native_SetAlphaToCoverageEnabled(long this_addr, boolean alphaToCoverageEnabled);
+    public static void internal_native_SetAlphaToCoverageEnabled(long this_addr, boolean alphaToCoverageEnabled) {
+        n.n2664928348.n296018968(this_addr, alphaToCoverageEnabled);
+    }
 }

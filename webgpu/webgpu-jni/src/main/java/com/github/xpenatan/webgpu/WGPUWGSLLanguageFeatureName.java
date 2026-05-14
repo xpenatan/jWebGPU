@@ -39,13 +39,23 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
         return CUSTOM;
     }
 
-    private static native int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE();
+    private static int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE() {
+        return n.n1633747570.n981636423();
+    }
 
-    private static native int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE();
+    private static int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE() {
+        return n.n1633747570.n2703982092();
+    }
 
-    private static native int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE();
+    private static int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE() {
+        return n.n1633747570.n297786651();
+    }
 
-    private static native int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE();
+    private static int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE() {
+        return n.n1633747570.n2395642290();
+    }
 
-    private static native int WGPUWGSLLanguageFeatureName_Force32_NATIVE();
+    private static int WGPUWGSLLanguageFeatureName_Force32_NATIVE() {
+        return n.n1633747570.n2157127538();
+    }
 }

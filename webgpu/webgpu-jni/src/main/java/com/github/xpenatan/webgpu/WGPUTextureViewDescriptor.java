@@ -19,7 +19,9 @@ public class WGPUTextureViewDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1639974017.n612280809();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,67 +41,89 @@ public class WGPUTextureViewDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1639974017.n3748747509(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n1639974017.n2129519480(this_addr, value);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n1639974017.n1435504952(this_addr, chainedStruct_addr);
+    }
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    public static native void internal_native_SetFormat(long this_addr, int format);
+    public static void internal_native_SetFormat(long this_addr, int format) {
+        n.n1639974017.n3101308419(this_addr, format);
+    }
 
     public void setDimension(WGPUTextureViewDimension dimension) {
         internal_native_SetDimension(native_address, dimension.getValue());
     }
 
-    public static native void internal_native_SetDimension(long this_addr, int dimension);
+    public static void internal_native_SetDimension(long this_addr, int dimension) {
+        n.n1639974017.n2600552278(this_addr, dimension);
+    }
 
     public void setBaseMipLevel(int baseMipLevel) {
         internal_native_SetBaseMipLevel(native_address, baseMipLevel);
     }
 
-    public static native void internal_native_SetBaseMipLevel(long this_addr, int baseMipLevel);
+    public static void internal_native_SetBaseMipLevel(long this_addr, int baseMipLevel) {
+        n.n1639974017.n1999159929(this_addr, baseMipLevel);
+    }
 
     public void setMipLevelCount(int mipLevelCount) {
         internal_native_SetMipLevelCount(native_address, mipLevelCount);
     }
 
-    public static native void internal_native_SetMipLevelCount(long this_addr, int mipLevelCount);
+    public static void internal_native_SetMipLevelCount(long this_addr, int mipLevelCount) {
+        n.n1639974017.n2895172349(this_addr, mipLevelCount);
+    }
 
     public void setBaseArrayLayer(int baseArrayLayer) {
         internal_native_SetBaseArrayLayer(native_address, baseArrayLayer);
     }
 
-    public static native void internal_native_SetBaseArrayLayer(long this_addr, int baseArrayLayer);
+    public static void internal_native_SetBaseArrayLayer(long this_addr, int baseArrayLayer) {
+        n.n1639974017.n2158437137(this_addr, baseArrayLayer);
+    }
 
     public void setArrayLayerCount(int arrayLayerCount) {
         internal_native_SetArrayLayerCount(native_address, arrayLayerCount);
     }
 
-    public static native void internal_native_SetArrayLayerCount(long this_addr, int arrayLayerCount);
+    public static void internal_native_SetArrayLayerCount(long this_addr, int arrayLayerCount) {
+        n.n1639974017.n920795557(this_addr, arrayLayerCount);
+    }
 
     public void setAspect(WGPUTextureAspect aspect) {
         internal_native_SetAspect(native_address, aspect.getValue());
     }
 
-    public static native void internal_native_SetAspect(long this_addr, int aspect);
+    public static void internal_native_SetAspect(long this_addr, int aspect) {
+        n.n1639974017.n2386458306(this_addr, aspect);
+    }
 
     public void setUsage(WGPUTextureUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    public static native void internal_native_SetUsage(long this_addr, int usage);
+    public static void internal_native_SetUsage(long this_addr, int usage) {
+        n.n1639974017.n4176204283(this_addr, usage);
+    }
 
     public static WGPUTextureViewDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -111,5 +135,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
         return WGPUTextureViewDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1639974017.n4060830450();
+    }
 }

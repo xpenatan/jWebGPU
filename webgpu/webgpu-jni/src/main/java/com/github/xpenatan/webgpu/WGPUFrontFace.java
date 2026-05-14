@@ -34,11 +34,19 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
         return CUSTOM;
     }
 
-    private static native int WGPUFrontFace_Undefined_NATIVE();
+    private static int WGPUFrontFace_Undefined_NATIVE() {
+        return n.n2840987064.n184946436();
+    }
 
-    private static native int WGPUFrontFace_CCW_NATIVE();
+    private static int WGPUFrontFace_CCW_NATIVE() {
+        return n.n2840987064.n2583645515();
+    }
 
-    private static native int WGPUFrontFace_CW_NATIVE();
+    private static int WGPUFrontFace_CW_NATIVE() {
+        return n.n2840987064.n2474405484();
+    }
 
-    private static native int WGPUFrontFace_Force32_NATIVE();
+    private static int WGPUFrontFace_Force32_NATIVE() {
+        return n.n2840987064.n2058316222();
+    }
 }

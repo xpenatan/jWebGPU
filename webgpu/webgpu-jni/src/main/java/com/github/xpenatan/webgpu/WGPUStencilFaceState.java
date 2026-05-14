@@ -30,29 +30,39 @@ public class WGPUStencilFaceState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3248296966.n702957370(this_addr);
+    }
 
     public void setCompare(WGPUCompareFunction compare) {
         internal_native_SetCompare(native_address, compare.getValue());
     }
 
-    public static native void internal_native_SetCompare(long this_addr, int compare);
+    public static void internal_native_SetCompare(long this_addr, int compare) {
+        n.n3248296966.n3575260156(this_addr, compare);
+    }
 
     public void setFailOp(WGPUStencilOperation failOp) {
         internal_native_SetFailOp(native_address, failOp.getValue());
     }
 
-    public static native void internal_native_SetFailOp(long this_addr, int failOp);
+    public static void internal_native_SetFailOp(long this_addr, int failOp) {
+        n.n3248296966.n2941965238(this_addr, failOp);
+    }
 
     public void setDepthFailOp(WGPUStencilOperation depthFailOp) {
         internal_native_SetDepthFailOp(native_address, depthFailOp.getValue());
     }
 
-    public static native void internal_native_SetDepthFailOp(long this_addr, int depthFailOp);
+    public static void internal_native_SetDepthFailOp(long this_addr, int depthFailOp) {
+        n.n3248296966.n1262861375(this_addr, depthFailOp);
+    }
 
     public void setPassOp(WGPUStencilOperation passOp) {
         internal_native_SetPassOp(native_address, passOp.getValue());
     }
 
-    public static native void internal_native_SetPassOp(long this_addr, int passOp);
+    public static void internal_native_SetPassOp(long this_addr, int passOp) {
+        n.n3248296966.n3102130403(this_addr, passOp);
+    }
 }

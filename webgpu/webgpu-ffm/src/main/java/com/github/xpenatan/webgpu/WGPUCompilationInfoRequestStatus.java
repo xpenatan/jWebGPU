@@ -59,8 +59,8 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUCompilationInfoRequestStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompilationInfoRequestStatus_WGPUCompilationInfoRequestStatus_1Success_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompilationInfoRequestStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1939524909", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompilationInfoRequestStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUCompilationInfoRequestStatus_WGPUCompilationInfoRequestStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompilationInfoRequestStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3660880052", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

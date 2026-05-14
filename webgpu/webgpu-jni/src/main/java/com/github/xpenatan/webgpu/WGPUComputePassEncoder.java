@@ -19,7 +19,9 @@ public class WGPUComputePassEncoder extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1923638722.n896891976();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,79 +41,105 @@ public class WGPUComputePassEncoder extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1923638722.n4094306806(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n1923638722.n1649927895(this_addr, label);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n1923638722.n1555989521(this_addr);
+    }
 
     public void setDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
         internal_native_SetDispatchWorkgroups(native_address, workgroupCountX, workgroupCountY, workgroupCountZ);
     }
 
-    public static native void internal_native_SetDispatchWorkgroups(long this_addr, int workgroupCountX, int workgroupCountY, int workgroupCountZ);
+    public static void internal_native_SetDispatchWorkgroups(long this_addr, int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
+        n.n1923638722.n4265836000(this_addr, workgroupCountX, workgroupCountY, workgroupCountZ);
+    }
 
     public void dispatchWorkgroupsIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
         internal_native_DispatchWorkgroupsIndirect(native_address, indirectBuffer.native_address, indirectOffset);
     }
 
-    public static native void internal_native_DispatchWorkgroupsIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset);
+    public static void internal_native_DispatchWorkgroupsIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
+        n.n1923638722.n457790880(this_addr, indirectBuffer_addr, indirectOffset);
+    }
 
     public void end() {
         internal_native_End(native_address);
     }
 
-    public static native void internal_native_End(long this_addr);
+    public static void internal_native_End(long this_addr) {
+        n.n1923638722.n1326901181(this_addr);
+    }
 
     public void insertDebugMarker(String value) {
         internal_native_InsertDebugMarker(native_address, value);
     }
 
-    public static native void internal_native_InsertDebugMarker(long this_addr, String value);
+    public static void internal_native_InsertDebugMarker(long this_addr, String value) {
+        n.n1923638722.n3493802649(this_addr, value);
+    }
 
     public void popDebugGroup() {
         internal_native_PopDebugGroup(native_address);
     }
 
-    public static native void internal_native_PopDebugGroup(long this_addr);
+    public static void internal_native_PopDebugGroup(long this_addr) {
+        n.n1923638722.n2491142331(this_addr);
+    }
 
     public void pushDebugGroup(String groupLabel) {
         internal_native_PushDebugGroup(native_address, groupLabel);
     }
 
-    public static native void internal_native_PushDebugGroup(long this_addr, String groupLabel);
+    public static void internal_native_PushDebugGroup(long this_addr, String groupLabel) {
+        n.n1923638722.n722806731(this_addr, groupLabel);
+    }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group, WGPUVectorInt offsets) {
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address, offsets.native_address);
     }
 
-    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long offsets_addr);
+    public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long offsets_addr) {
+        n.n1923638722.n3613368251(this_addr, groupIndex, group_addr, offsets_addr);
+    }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group) {
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
     }
 
-    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr);
+    public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
+        n.n1923638722.n3007893773(this_addr, groupIndex, group_addr);
+    }
 
     public void setPipeline(WGPUComputePipeline pipeline) {
         internal_native_SetPipeline(native_address, pipeline.native_address);
     }
 
-    public static native void internal_native_SetPipeline(long this_addr, long pipeline_addr);
+    public static void internal_native_SetPipeline(long this_addr, long pipeline_addr) {
+        n.n1923638722.n1283043348(this_addr, pipeline_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n1923638722.n1352256006(this_addr);
+    }
 
     public static WGPUComputePassEncoder obtain() {
         long addr = internal_native_Obtain_addr();
@@ -123,5 +151,7 @@ public class WGPUComputePassEncoder extends NativeObject {
         return WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1923638722.n50474321();
+    }
 }

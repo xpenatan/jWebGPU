@@ -34,11 +34,19 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
         return CUSTOM;
     }
 
-    private static native int WGPUCallbackMode_WaitAnyOnly_NATIVE();
+    private static int WGPUCallbackMode_WaitAnyOnly_NATIVE() {
+        return n.n471713974.n3325349037();
+    }
 
-    private static native int WGPUCallbackMode_AllowProcessEvents_NATIVE();
+    private static int WGPUCallbackMode_AllowProcessEvents_NATIVE() {
+        return n.n471713974.n638162177();
+    }
 
-    private static native int WGPUCallbackMode_AllowSpontaneous_NATIVE();
+    private static int WGPUCallbackMode_AllowSpontaneous_NATIVE() {
+        return n.n471713974.n1938751430();
+    }
 
-    private static native int WGPUCallbackMode_Force32_NATIVE();
+    private static int WGPUCallbackMode_Force32_NATIVE() {
+        return n.n471713974.n1497950644();
+    }
 }

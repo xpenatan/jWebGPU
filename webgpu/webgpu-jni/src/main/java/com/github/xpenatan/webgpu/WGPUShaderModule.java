@@ -19,7 +19,9 @@ public class WGPUShaderModule extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n500395999.n275653451();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUShaderModule extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n500395999.n847277267(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n500395999.n646372058(this_addr, label);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n500395999.n934750996(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n500395999.n731017481(this_addr);
+    }
 
     public void setCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback) {
         internal_native_SetCallback(native_address, callbackMode.getValue(), callback.native_address);
     }
 
-    public static native void internal_native_SetCallback(long this_addr, int callbackMode, long callback_addr);
+    public static void internal_native_SetCallback(long this_addr, int callbackMode, long callback_addr) {
+        n.n500395999.n3195512305(this_addr, callbackMode, callback_addr);
+    }
 
     public static WGPUShaderModule obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUShaderModule extends NativeObject {
         return WGPUShaderModule_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n500395999.n3724203092();
+    }
 }

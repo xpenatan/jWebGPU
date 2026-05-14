@@ -19,7 +19,9 @@ public class WGPURenderPassDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3114408132.n1517682822();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,73 +41,97 @@ public class WGPURenderPassDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3114408132.n2559089784(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n3114408132.n3106360597(this_addr, value);
+    }
 
     public void reset() {
         internal_native_Reset(native_address);
     }
 
-    public static native void internal_native_Reset(long this_addr);
+    public static void internal_native_Reset(long this_addr) {
+        n.n3114408132.n2841560967(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3114408132.n2609996885(this_addr, chainedStruct_addr);
+    }
 
     public void setColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments) {
         internal_native_SetColorAttachments__0(native_address, colorAttachments.native_address);
     }
 
-    public static native void internal_native_SetColorAttachments__0(long this_addr, long colorAttachments_addr);
+    public static void internal_native_SetColorAttachments__0(long this_addr, long colorAttachments_addr) {
+        n.n3114408132.n3332780687(this_addr, colorAttachments_addr);
+    }
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01) {
         internal_native_SetColorAttachments__1(native_address, colorAttachment01.native_address);
     }
 
-    public static native void internal_native_SetColorAttachments__1(long this_addr, long colorAttachment01_addr);
+    public static void internal_native_SetColorAttachments__1(long this_addr, long colorAttachment01_addr) {
+        n.n3114408132.n1535829328(this_addr, colorAttachment01_addr);
+    }
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02) {
         internal_native_SetColorAttachments__2(native_address, colorAttachment01.native_address, colorAttachment02.native_address);
     }
 
-    public static native void internal_native_SetColorAttachments__2(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr);
+    public static void internal_native_SetColorAttachments__2(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr) {
+        n.n3114408132.n2100337463(this_addr, colorAttachment01_addr, colorAttachment02_addr);
+    }
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03) {
         internal_native_SetColorAttachments__3(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address);
     }
 
-    public static native void internal_native_SetColorAttachments__3(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr);
+    public static void internal_native_SetColorAttachments__3(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr) {
+        n.n3114408132.n755668306(this_addr, colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr);
+    }
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03, WGPURenderPassColorAttachment colorAttachment04) {
         internal_native_SetColorAttachments__4(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address, colorAttachment04.native_address);
     }
 
-    public static native void internal_native_SetColorAttachments__4(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr, long colorAttachment04_addr);
+    public static void internal_native_SetColorAttachments__4(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr, long colorAttachment04_addr) {
+        n.n3114408132.n1001394613(this_addr, colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr, colorAttachment04_addr);
+    }
 
     public void setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment attachment) {
         internal_native_SetDepthStencilAttachment(native_address, attachment.native_address);
     }
 
-    public static native void internal_native_SetDepthStencilAttachment(long this_addr, long attachment_addr);
+    public static void internal_native_SetDepthStencilAttachment(long this_addr, long attachment_addr) {
+        n.n3114408132.n497890032(this_addr, attachment_addr);
+    }
 
     public void setOcclusionQuerySet(WGPUQuerySet occlusionQuerySet) {
         internal_native_SetOcclusionQuerySet(native_address, occlusionQuerySet.native_address);
     }
 
-    public static native void internal_native_SetOcclusionQuerySet(long this_addr, long occlusionQuerySet_addr);
+    public static void internal_native_SetOcclusionQuerySet(long this_addr, long occlusionQuerySet_addr) {
+        n.n3114408132.n487593683(this_addr, occlusionQuerySet_addr);
+    }
 
     public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
-    public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
+    public static void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr) {
+        n.n3114408132.n4160486422(this_addr, timestampWrites_addr);
+    }
 
     public static WGPURenderPassDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -117,5 +143,7 @@ public class WGPURenderPassDescriptor extends NativeObject {
         return WGPURenderPassDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3114408132.n671265167();
+    }
 }

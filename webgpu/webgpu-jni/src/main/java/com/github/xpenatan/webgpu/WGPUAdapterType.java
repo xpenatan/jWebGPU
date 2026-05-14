@@ -39,13 +39,23 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
         return CUSTOM;
     }
 
-    private static native int WGPUAdapterType_DiscreteGPU_NATIVE();
+    private static int WGPUAdapterType_DiscreteGPU_NATIVE() {
+        return n.n1363371067.n2762845421();
+    }
 
-    private static native int WGPUAdapterType_IntegratedGPU_NATIVE();
+    private static int WGPUAdapterType_IntegratedGPU_NATIVE() {
+        return n.n1363371067.n3779294547();
+    }
 
-    private static native int WGPUAdapterType_CPU_NATIVE();
+    private static int WGPUAdapterType_CPU_NATIVE() {
+        return n.n1363371067.n205449890();
+    }
 
-    private static native int WGPUAdapterType_Unknown_NATIVE();
+    private static int WGPUAdapterType_Unknown_NATIVE() {
+        return n.n1363371067.n1760214340();
+    }
 
-    private static native int WGPUAdapterType_Force32_NATIVE();
+    private static int WGPUAdapterType_Force32_NATIVE() {
+        return n.n1363371067.n3278197636();
+    }
 }

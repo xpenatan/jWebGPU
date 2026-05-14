@@ -39,13 +39,23 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
         return CUSTOM;
     }
 
-    private static native int WGPUAddressMode_Undefined_NATIVE();
+    private static int WGPUAddressMode_Undefined_NATIVE() {
+        return n.n3695455433.n651347302();
+    }
 
-    private static native int WGPUAddressMode_ClampToEdge_NATIVE();
+    private static int WGPUAddressMode_ClampToEdge_NATIVE() {
+        return n.n3695455433.n2718327945();
+    }
 
-    private static native int WGPUAddressMode_Repeat_NATIVE();
+    private static int WGPUAddressMode_Repeat_NATIVE() {
+        return n.n3695455433.n2845029521();
+    }
 
-    private static native int WGPUAddressMode_MirrorRepeat_NATIVE();
+    private static int WGPUAddressMode_MirrorRepeat_NATIVE() {
+        return n.n3695455433.n3293593136();
+    }
 
-    private static native int WGPUAddressMode_Force32_NATIVE();
+    private static int WGPUAddressMode_Force32_NATIVE() {
+        return n.n3695455433.n2778353824();
+    }
 }

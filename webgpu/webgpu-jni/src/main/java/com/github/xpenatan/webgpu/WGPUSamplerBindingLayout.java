@@ -19,7 +19,9 @@ public class WGPUSamplerBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1446294037.n2287490261();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPUSamplerBindingLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1446294037.n2781454729(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n1446294037.n2667887140(this_addr, chainedStruct_addr);
+    }
 
     public void setType(WGPUSamplerBindingType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    public static native void internal_native_SetType(long this_addr, int type);
+    public static void internal_native_SetType(long this_addr, int type) {
+        n.n1446294037.n606182092(this_addr, type);
+    }
 
     public static WGPUSamplerBindingLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -63,5 +71,7 @@ public class WGPUSamplerBindingLayout extends NativeObject {
         return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1446294037.n1441072606();
+    }
 }

@@ -23,7 +23,9 @@ public class WGPUBlendState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n223401838.n663878172();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -43,7 +45,9 @@ public class WGPUBlendState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n223401838.n2868326562(this_addr);
+    }
 
     public WGPUBlendComponent getColor() {
         long addr = internal_native_GetColor_addr(native_address);
@@ -55,7 +59,9 @@ public class WGPUBlendState extends NativeObject {
         return WGPUBlendComponent_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetColor_addr(long this_addr);
+    public static long internal_native_GetColor_addr(long this_addr) {
+        return n.n223401838.n1259605289(this_addr);
+    }
 
     public WGPUBlendComponent getAlpha() {
         long addr = internal_native_GetAlpha_addr(native_address);
@@ -67,7 +73,9 @@ public class WGPUBlendState extends NativeObject {
         return WGPUBlendComponent_TEMP_GEN_1;
     }
 
-    public static native long internal_native_GetAlpha_addr(long this_addr);
+    public static long internal_native_GetAlpha_addr(long this_addr) {
+        return n.n223401838.n2462355812(this_addr);
+    }
 
     public static WGPUBlendState obtain() {
         long addr = internal_native_Obtain_addr();
@@ -79,5 +87,7 @@ public class WGPUBlendState extends NativeObject {
         return WGPUBlendState_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n223401838.n4112427813();
+    }
 }

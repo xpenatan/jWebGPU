@@ -19,7 +19,9 @@ public class WGPUInstanceDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3411007634.n1122417528();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUInstanceDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3411007634.n2020665542(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3411007634.n110576711(this_addr, chainedStruct_addr);
+    }
 
     public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
         internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
     }
 
-    public static native void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr);
+    public static void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr) {
+        n.n3411007634.n2315937470(this_addr, requiredFeatures_addr);
+    }
 
     public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
         internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
     }
 
-    public static native void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr);
+    public static void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr) {
+        n.n3411007634.n2483595545(this_addr, requiredLimits_addr);
+    }
 
     public static WGPUInstanceDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUInstanceDescriptor extends NativeObject {
         return WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3411007634.n275999873();
+    }
 }

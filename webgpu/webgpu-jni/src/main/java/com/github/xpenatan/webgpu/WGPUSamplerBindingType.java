@@ -40,15 +40,27 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
         return CUSTOM;
     }
 
-    private static native int WGPUSamplerBindingType_BindingNotUsed_NATIVE();
+    private static int WGPUSamplerBindingType_BindingNotUsed_NATIVE() {
+        return n.n3201762533.n332085485();
+    }
 
-    private static native int WGPUSamplerBindingType_Undefined_NATIVE();
+    private static int WGPUSamplerBindingType_Undefined_NATIVE() {
+        return n.n3201762533.n505577178();
+    }
 
-    private static native int WGPUSamplerBindingType_Filtering_NATIVE();
+    private static int WGPUSamplerBindingType_Filtering_NATIVE() {
+        return n.n3201762533.n3369458932();
+    }
 
-    private static native int WGPUSamplerBindingType_NonFiltering_NATIVE();
+    private static int WGPUSamplerBindingType_NonFiltering_NATIVE() {
+        return n.n3201762533.n1395742751();
+    }
 
-    private static native int WGPUSamplerBindingType_Comparison_NATIVE();
+    private static int WGPUSamplerBindingType_Comparison_NATIVE() {
+        return n.n3201762533.n2339119627();
+    }
 
-    private static native int WGPUSamplerBindingType_Force32_NATIVE();
+    private static int WGPUSamplerBindingType_Force32_NATIVE() {
+        return n.n3201762533.n78763796();
+    }
 }

@@ -44,23 +44,43 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
         return CUSTOM;
     }
 
-    private static native int WGPUCompareFunction_Undefined_NATIVE();
+    private static int WGPUCompareFunction_Undefined_NATIVE() {
+        return n.n1621263343.n1907959474();
+    }
 
-    private static native int WGPUCompareFunction_Never_NATIVE();
+    private static int WGPUCompareFunction_Never_NATIVE() {
+        return n.n1621263343.n1849598446();
+    }
 
-    private static native int WGPUCompareFunction_Less_NATIVE();
+    private static int WGPUCompareFunction_Less_NATIVE() {
+        return n.n1621263343.n3840181699();
+    }
 
-    private static native int WGPUCompareFunction_Equal_NATIVE();
+    private static int WGPUCompareFunction_Equal_NATIVE() {
+        return n.n1621263343.n2287081110();
+    }
 
-    private static native int WGPUCompareFunction_LessEqual_NATIVE();
+    private static int WGPUCompareFunction_LessEqual_NATIVE() {
+        return n.n1621263343.n2911090557();
+    }
 
-    private static native int WGPUCompareFunction_Greater_NATIVE();
+    private static int WGPUCompareFunction_Greater_NATIVE() {
+        return n.n1621263343.n2235895388();
+    }
 
-    private static native int WGPUCompareFunction_NotEqual_NATIVE();
+    private static int WGPUCompareFunction_NotEqual_NATIVE() {
+        return n.n1621263343.n1645167179();
+    }
 
-    private static native int WGPUCompareFunction_GreaterEqual_NATIVE();
+    private static int WGPUCompareFunction_GreaterEqual_NATIVE() {
+        return n.n1621263343.n1632478852();
+    }
 
-    private static native int WGPUCompareFunction_Always_NATIVE();
+    private static int WGPUCompareFunction_Always_NATIVE() {
+        return n.n1621263343.n3559876409();
+    }
 
-    private static native int WGPUCompareFunction_Force32_NATIVE();
+    private static int WGPUCompareFunction_Force32_NATIVE() {
+        return n.n1621263343.n822121708();
+    }
 }

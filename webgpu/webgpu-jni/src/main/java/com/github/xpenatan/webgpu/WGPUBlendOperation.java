@@ -41,17 +41,31 @@ public enum WGPUBlendOperation implements NativeEnum<WGPUBlendOperation> {
         return CUSTOM;
     }
 
-    private static native int WGPUBlendOperation_Undefined_NATIVE();
+    private static int WGPUBlendOperation_Undefined_NATIVE() {
+        return n.n2696032708.n1764787066();
+    }
 
-    private static native int WGPUBlendOperation_Add_NATIVE();
+    private static int WGPUBlendOperation_Add_NATIVE() {
+        return n.n2696032708.n2408031435();
+    }
 
-    private static native int WGPUBlendOperation_Subtract_NATIVE();
+    private static int WGPUBlendOperation_Subtract_NATIVE() {
+        return n.n2696032708.n4015197302();
+    }
 
-    private static native int WGPUBlendOperation_ReverseSubtract_NATIVE();
+    private static int WGPUBlendOperation_ReverseSubtract_NATIVE() {
+        return n.n2696032708.n1879843136();
+    }
 
-    private static native int WGPUBlendOperation_Min_NATIVE();
+    private static int WGPUBlendOperation_Min_NATIVE() {
+        return n.n2696032708.n442208636();
+    }
 
-    private static native int WGPUBlendOperation_Max_NATIVE();
+    private static int WGPUBlendOperation_Max_NATIVE() {
+        return n.n2696032708.n1119641230();
+    }
 
-    private static native int WGPUBlendOperation_Force32_NATIVE();
+    private static int WGPUBlendOperation_Force32_NATIVE() {
+        return n.n2696032708.n3065545652();
+    }
 }

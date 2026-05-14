@@ -19,7 +19,9 @@ public class WGPUVectorFeatureName extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n447337712.n914703322();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVectorFeatureName extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n447337712.n3521269156(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n447337712.n3249247397(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n447337712.n2193312125(this_addr);
+    }
 
     public void push_back(WGPUFeatureName featureName) {
         internal_native_push_back(native_address, featureName.getValue());
     }
 
-    public static native void internal_native_push_back(long this_addr, int featureName);
+    public static void internal_native_push_back(long this_addr, int featureName) {
+        n.n447337712.n2719104129(this_addr, featureName);
+    }
 
     public static WGPUVectorFeatureName obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVectorFeatureName extends NativeObject {
         return WGPUVectorFeatureName_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n447337712.n68285667();
+    }
 }

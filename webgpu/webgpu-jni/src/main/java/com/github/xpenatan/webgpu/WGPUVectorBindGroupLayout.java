@@ -19,7 +19,9 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3598468315.n2698952655();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3598468315.n2102461135(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n3598468315.n1051436240(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n3598468315.n2780642994(this_addr);
+    }
 
     public void push_back(WGPUBindGroupLayout groupLayout) {
         internal_native_push_back(native_address, groupLayout.native_address);
     }
 
-    public static native void internal_native_push_back(long this_addr, long groupLayout_addr);
+    public static void internal_native_push_back(long this_addr, long groupLayout_addr) {
+        n.n3598468315.n718064277(this_addr, groupLayout_addr);
+    }
 
     public static WGPUVectorBindGroupLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
         return WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3598468315.n1852535000();
+    }
 }

@@ -34,11 +34,19 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
         return CUSTOM;
     }
 
-    private static native int WGPUPowerPreference_Undefined_NATIVE();
+    private static int WGPUPowerPreference_Undefined_NATIVE() {
+        return n.n1382253522.n1557270904();
+    }
 
-    private static native int WGPUPowerPreference_LowPower_NATIVE();
+    private static int WGPUPowerPreference_LowPower_NATIVE() {
+        return n.n1382253522.n162023605();
+    }
 
-    private static native int WGPUPowerPreference_HighPerformance_NATIVE();
+    private static int WGPUPowerPreference_HighPerformance_NATIVE() {
+        return n.n1382253522.n2145300950();
+    }
 
-    private static native int WGPUPowerPreference_Force32_NATIVE();
+    private static int WGPUPowerPreference_Force32_NATIVE() {
+        return n.n1382253522.n146897202();
+    }
 }

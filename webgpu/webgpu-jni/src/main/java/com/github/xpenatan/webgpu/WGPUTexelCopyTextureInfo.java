@@ -28,25 +28,33 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1263208436.n1583849302();
+    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1263208436.n1675214760(this_addr);
+    }
 
     public void setTexture(WGPUTexture texture) {
         internal_native_SetTexture(native_address, texture.native_address);
     }
 
-    public static native void internal_native_SetTexture(long this_addr, long texture_addr);
+    public static void internal_native_SetTexture(long this_addr, long texture_addr) {
+        n.n1263208436.n869110167(this_addr, texture_addr);
+    }
 
     public void setMipLevel(int mipLevel) {
         internal_native_SetMipLevel(native_address, mipLevel);
     }
 
-    public static native void internal_native_SetMipLevel(long this_addr, int mipLevel);
+    public static void internal_native_SetMipLevel(long this_addr, int mipLevel) {
+        n.n1263208436.n2928282935(this_addr, mipLevel);
+    }
 
     public WGPUOrigin3D getOrigin() {
         long addr = internal_native_GetOrigin_addr(native_address);
@@ -58,13 +66,17 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUOrigin3D_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetOrigin_addr(long this_addr);
+    public static long internal_native_GetOrigin_addr(long this_addr) {
+        return n.n1263208436.n2191488950(this_addr);
+    }
 
     public void setAspect(WGPUTextureAspect aspect) {
         internal_native_SetAspect(native_address, aspect.getValue());
     }
 
-    public static native void internal_native_SetAspect(long this_addr, int aspect);
+    public static void internal_native_SetAspect(long this_addr, int aspect) {
+        n.n1263208436.n2531452527(this_addr, aspect);
+    }
 
     public static WGPUTexelCopyTextureInfo obtain() {
         long addr = internal_native_Obtain_addr();
@@ -76,5 +88,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1263208436.n737431647();
+    }
 }

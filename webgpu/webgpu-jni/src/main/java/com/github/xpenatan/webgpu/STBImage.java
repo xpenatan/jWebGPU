@@ -32,7 +32,9 @@ public class STBImage extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2658705555.n1044410503(this_addr);
+    }
 
     public WGPUByteBuffer getPixels() {
         long addr = internal_native_GetPixels_addr(native_address);
@@ -44,23 +46,31 @@ public class STBImage extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetPixels_addr(long this_addr);
+    public static long internal_native_GetPixels_addr(long this_addr) {
+        return n.n2658705555.n1971175324(this_addr);
+    }
 
     public int getWidth() {
         return internal_native_GetWidth(native_address);
     }
 
-    public static native int internal_native_GetWidth(long this_addr);
+    public static int internal_native_GetWidth(long this_addr) {
+        return n.n2658705555.n972740409(this_addr);
+    }
 
     public int getHeight() {
         return internal_native_GetHeight(native_address);
     }
 
-    public static native int internal_native_GetHeight(long this_addr);
+    public static int internal_native_GetHeight(long this_addr) {
+        return n.n2658705555.n217321674(this_addr);
+    }
 
     public int getFormat() {
         return internal_native_GetFormat(native_address);
     }
 
-    public static native int internal_native_GetFormat(long this_addr);
+    public static int internal_native_GetFormat(long this_addr) {
+        return n.n2658705555.n2708237306(this_addr);
+    }
 }

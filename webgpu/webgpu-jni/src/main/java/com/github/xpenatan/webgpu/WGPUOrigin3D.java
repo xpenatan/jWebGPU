@@ -19,7 +19,9 @@ public class WGPUOrigin3D extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2990600261.n2847736997();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUOrigin3D extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2990600261.n3320468409(this_addr);
+    }
 
     public void set(int x, int y, int z) {
         internal_native_Set(native_address, x, y, z);
     }
 
-    public static native void internal_native_Set(long this_addr, int x, int y, int z);
+    public static void internal_native_Set(long this_addr, int x, int y, int z) {
+        n.n2990600261.n3086776124(this_addr, x, y, z);
+    }
 
     public void setX(int value) {
         internal_native_SetX(native_address, value);
     }
 
-    public static native void internal_native_SetX(long this_addr, int value);
+    public static void internal_native_SetX(long this_addr, int value) {
+        n.n2990600261.n1114527304(this_addr, value);
+    }
 
     public void setY(int value) {
         internal_native_SetY(native_address, value);
     }
 
-    public static native void internal_native_SetY(long this_addr, int value);
+    public static void internal_native_SetY(long this_addr, int value) {
+        n.n2990600261.n918013799(this_addr, value);
+    }
 
     public void setZ(int value) {
         internal_native_SetZ(native_address, value);
     }
 
-    public static native void internal_native_SetZ(long this_addr, int value);
+    public static void internal_native_SetZ(long this_addr, int value) {
+        n.n2990600261.n721500294(this_addr, value);
+    }
 
     public static WGPUOrigin3D obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUOrigin3D extends NativeObject {
         return WGPUOrigin3D_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2990600261.n2001319342();
+    }
 }

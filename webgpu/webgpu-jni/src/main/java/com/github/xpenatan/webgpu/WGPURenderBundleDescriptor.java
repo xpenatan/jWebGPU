@@ -19,7 +19,9 @@ public class WGPURenderBundleDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3586179829.n2786881525();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPURenderBundleDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3586179829.n3422124649(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n3586179829.n4103789956(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3586179829.n3638109508(this_addr, chainedStruct_addr);
+    }
 
     public static WGPURenderBundleDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -63,5 +71,7 @@ public class WGPURenderBundleDescriptor extends NativeObject {
         return WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3586179829.n1940463870();
+    }
 }

@@ -27,7 +27,9 @@ public class WGPURequestDeviceCallback extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4055028668.n3924072816(this_addr);
+    }
 
     public WGPURequestDeviceCallback() {
         long addr = internal_native_create_addr();
@@ -57,7 +59,9 @@ public class WGPURequestDeviceCallback extends NativeObject {
         onCallback(status_addr_enum, device_addr_new, message_addr);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4055028668.n4166895758();
+    }
 
     public native void internal_native_setupCallback(long this_addr);
 }

@@ -51,37 +51,71 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
         return CUSTOM;
     }
 
-    private static native int WGPUFeatureName_DepthClipControl_NATIVE();
+    private static int WGPUFeatureName_DepthClipControl_NATIVE() {
+        return n.n400817075.n3448659404();
+    }
 
-    private static native int WGPUFeatureName_Depth32FloatStencil8_NATIVE();
+    private static int WGPUFeatureName_Depth32FloatStencil8_NATIVE() {
+        return n.n400817075.n336434648();
+    }
 
-    private static native int WGPUFeatureName_TimestampQuery_NATIVE();
+    private static int WGPUFeatureName_TimestampQuery_NATIVE() {
+        return n.n400817075.n4262974708();
+    }
 
-    private static native int WGPUFeatureName_TextureCompressionBC_NATIVE();
+    private static int WGPUFeatureName_TextureCompressionBC_NATIVE() {
+        return n.n400817075.n2809902958();
+    }
 
-    private static native int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE();
+    private static int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE() {
+        return n.n400817075.n1419894673();
+    }
 
-    private static native int WGPUFeatureName_TextureCompressionETC2_NATIVE();
+    private static int WGPUFeatureName_TextureCompressionETC2_NATIVE() {
+        return n.n400817075.n2741507499();
+    }
 
-    private static native int WGPUFeatureName_TextureCompressionASTC_NATIVE();
+    private static int WGPUFeatureName_TextureCompressionASTC_NATIVE() {
+        return n.n400817075.n19443598();
+    }
 
-    private static native int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE();
+    private static int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE() {
+        return n.n400817075.n375699377();
+    }
 
-    private static native int WGPUFeatureName_IndirectFirstInstance_NATIVE();
+    private static int WGPUFeatureName_IndirectFirstInstance_NATIVE() {
+        return n.n400817075.n394261665();
+    }
 
-    private static native int WGPUFeatureName_ShaderF16_NATIVE();
+    private static int WGPUFeatureName_ShaderF16_NATIVE() {
+        return n.n400817075.n1727920592();
+    }
 
-    private static native int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE();
+    private static int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE() {
+        return n.n400817075.n2116666413();
+    }
 
-    private static native int WGPUFeatureName_BGRA8UnormStorage_NATIVE();
+    private static int WGPUFeatureName_BGRA8UnormStorage_NATIVE() {
+        return n.n400817075.n1879765560();
+    }
 
-    private static native int WGPUFeatureName_Float32Filterable_NATIVE();
+    private static int WGPUFeatureName_Float32Filterable_NATIVE() {
+        return n.n400817075.n3946489047();
+    }
 
-    private static native int WGPUFeatureName_Float32Blendable_NATIVE();
+    private static int WGPUFeatureName_Float32Blendable_NATIVE() {
+        return n.n400817075.n4021905490();
+    }
 
-    private static native int WGPUFeatureName_ClipDistances_NATIVE();
+    private static int WGPUFeatureName_ClipDistances_NATIVE() {
+        return n.n400817075.n3029564056();
+    }
 
-    private static native int WGPUFeatureName_DualSourceBlending_NATIVE();
+    private static int WGPUFeatureName_DualSourceBlending_NATIVE() {
+        return n.n400817075.n1433950826();
+    }
 
-    private static native int WGPUFeatureName_Force32_NATIVE();
+    private static int WGPUFeatureName_Force32_NATIVE() {
+        return n.n400817075.n3476861556();
+    }
 }

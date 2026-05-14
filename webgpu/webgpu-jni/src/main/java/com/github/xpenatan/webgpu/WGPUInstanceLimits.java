@@ -19,7 +19,9 @@ public class WGPUInstanceLimits extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n611269307.n2273449455();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPUInstanceLimits extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n611269307.n1005486255(this_addr);
+    }
 
     public void setTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
         internal_native_SetTimedWaitAnyMaxCount(native_address, timedWaitAnyMaxCount);
     }
 
-    public static native void internal_native_SetTimedWaitAnyMaxCount(long this_addr, int timedWaitAnyMaxCount);
+    public static void internal_native_SetTimedWaitAnyMaxCount(long this_addr, int timedWaitAnyMaxCount) {
+        n.n611269307.n2654769173(this_addr, timedWaitAnyMaxCount);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n611269307.n702784574(this_addr, chainedStruct_addr);
+    }
 
     public static WGPUInstanceLimits obtain() {
         long addr = internal_native_Obtain_addr();
@@ -63,5 +71,7 @@ public class WGPUInstanceLimits extends NativeObject {
         return WGPUInstanceLimits_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n611269307.n1427031800();
+    }
 }

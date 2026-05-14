@@ -34,9 +34,15 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
         return CUSTOM;
     }
 
-    private static native int WGPUToneMappingMode_Standard_NATIVE();
+    private static int WGPUToneMappingMode_Standard_NATIVE() {
+        return n.n110434001.n2502798499();
+    }
 
-    private static native int WGPUToneMappingMode_Extended_NATIVE();
+    private static int WGPUToneMappingMode_Extended_NATIVE() {
+        return n.n110434001.n2875178783();
+    }
 
-    private static native int WGPUToneMappingMode_Force32_NATIVE();
+    private static int WGPUToneMappingMode_Force32_NATIVE() {
+        return n.n110434001.n4013911472();
+    }
 }

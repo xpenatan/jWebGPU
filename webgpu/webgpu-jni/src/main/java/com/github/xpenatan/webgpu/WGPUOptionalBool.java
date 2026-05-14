@@ -34,11 +34,19 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
         return CUSTOM;
     }
 
-    private static native int WGPUOptionalBool_False_NATIVE();
+    private static int WGPUOptionalBool_False_NATIVE() {
+        return n.n169209752.n3186573453();
+    }
 
-    private static native int WGPUOptionalBool_True_NATIVE();
+    private static int WGPUOptionalBool_True_NATIVE() {
+        return n.n169209752.n2249505968();
+    }
 
-    private static native int WGPUOptionalBool_Undefined_NATIVE();
+    private static int WGPUOptionalBool_Undefined_NATIVE() {
+        return n.n169209752.n1968847290();
+    }
 
-    private static native int WGPUOptionalBool_Force32_NATIVE();
+    private static int WGPUOptionalBool_Force32_NATIVE() {
+        return n.n169209752.n576375284();
+    }
 }

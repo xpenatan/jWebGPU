@@ -19,7 +19,9 @@ public class WGPUBufferDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n134500861.n402431469();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,37 +41,49 @@ public class WGPUBufferDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n134500861.n4150216561(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n134500861.n810128252(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n134500861.n2446073660(this_addr, chainedStruct_addr);
+    }
 
     public void setUsage(WGPUBufferUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    public static native void internal_native_SetUsage(long this_addr, int usage);
+    public static void internal_native_SetUsage(long this_addr, int usage) {
+        n.n134500861.n282706039(this_addr, usage);
+    }
 
     public void setSize(long size) {
         internal_native_SetSize(native_address, size);
     }
 
-    public static native void internal_native_SetSize(long this_addr, long size);
+    public static void internal_native_SetSize(long this_addr, long size) {
+        n.n134500861.n881527086(this_addr, size);
+    }
 
     public void setMappedAtCreation(boolean mappedAtCreation) {
         internal_native_SetMappedAtCreation(native_address, mappedAtCreation);
     }
 
-    public static native void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation);
+    public static void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation) {
+        n.n134500861.n2257847154(this_addr, mappedAtCreation);
+    }
 
     public static WGPUBufferDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -81,5 +95,7 @@ public class WGPUBufferDescriptor extends NativeObject {
         return WGPUBufferDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n134500861.n3850981110();
+    }
 }

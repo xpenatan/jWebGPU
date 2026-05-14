@@ -34,11 +34,19 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
         return CUSTOM;
     }
 
-    private static native int WGPUBufferMapState_Unmapped_NATIVE();
+    private static int WGPUBufferMapState_Unmapped_NATIVE() {
+        return n.n2448224931.n4115752398();
+    }
 
-    private static native int WGPUBufferMapState_Pending_NATIVE();
+    private static int WGPUBufferMapState_Pending_NATIVE() {
+        return n.n2448224931.n3498290017();
+    }
 
-    private static native int WGPUBufferMapState_Mapped_NATIVE();
+    private static int WGPUBufferMapState_Mapped_NATIVE() {
+        return n.n2448224931.n3116471797();
+    }
 
-    private static native int WGPUBufferMapState_Force32_NATIVE();
+    private static int WGPUBufferMapState_Force32_NATIVE() {
+        return n.n2448224931.n2152399188();
+    }
 }

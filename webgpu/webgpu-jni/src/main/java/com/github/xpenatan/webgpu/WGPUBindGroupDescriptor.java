@@ -19,7 +19,9 @@ public class WGPUBindGroupDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4258041955.n1838252359();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUBindGroupDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4258041955.n4092882007(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n4258041955.n2153413846(this_addr, value);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n4258041955.n842320790(this_addr, chainedStruct_addr);
+    }
 
     public void setLayout(WGPUBindGroupLayout layout) {
         internal_native_SetLayout(native_address, layout.native_address);
     }
 
-    public static native void internal_native_SetLayout(long this_addr, long layout_addr);
+    public static void internal_native_SetLayout(long this_addr, long layout_addr) {
+        n.n4258041955.n1708952893(this_addr, layout_addr);
+    }
 
     public void setEntries(WGPUVectorBindGroupEntry entries) {
         internal_native_SetEntries(native_address, entries.native_address);
     }
 
-    public static native void internal_native_SetEntries(long this_addr, long entries_addr);
+    public static void internal_native_SetEntries(long this_addr, long entries_addr) {
+        n.n4258041955.n1598985149(this_addr, entries_addr);
+    }
 
     public static WGPUBindGroupDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
         return WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4258041955.n991834704();
+    }
 }

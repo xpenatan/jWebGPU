@@ -34,11 +34,19 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
         return CUSTOM;
     }
 
-    private static native int WGPULoadOp_Undefined_NATIVE();
+    private static int WGPULoadOp_Undefined_NATIVE() {
+        return n.n504155413.n4294069722();
+    }
 
-    private static native int WGPULoadOp_Load_NATIVE();
+    private static int WGPULoadOp_Load_NATIVE() {
+        return n.n504155413.n625740776();
+    }
 
-    private static native int WGPULoadOp_Clear_NATIVE();
+    private static int WGPULoadOp_Clear_NATIVE() {
+        return n.n504155413.n4162729943();
+    }
 
-    private static native int WGPULoadOp_Force32_NATIVE();
+    private static int WGPULoadOp_Force32_NATIVE() {
+        return n.n504155413.n1713989140();
+    }
 }

@@ -42,19 +42,35 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
         return CUSTOM;
     }
 
-    private static native int WGPUTextureViewDimension_Undefined_NATIVE();
+    private static int WGPUTextureViewDimension_Undefined_NATIVE() {
+        return n.n2861355540.n3619832378();
+    }
 
-    private static native int WGPUTextureViewDimension_1D_NATIVE();
+    private static int WGPUTextureViewDimension_1D_NATIVE() {
+        return n.n2861355540.n2849086133();
+    }
 
-    private static native int WGPUTextureViewDimension_2D_NATIVE();
+    private static int WGPUTextureViewDimension_2D_NATIVE() {
+        return n.n2861355540.n2652572628();
+    }
 
-    private static native int WGPUTextureViewDimension_2DArray_NATIVE();
+    private static int WGPUTextureViewDimension_2DArray_NATIVE() {
+        return n.n2861355540.n585394737();
+    }
 
-    private static native int WGPUTextureViewDimension_Cube_NATIVE();
+    private static int WGPUTextureViewDimension_Cube_NATIVE() {
+        return n.n2861355540.n2522356695();
+    }
 
-    private static native int WGPUTextureViewDimension_CubeArray_NATIVE();
+    private static int WGPUTextureViewDimension_CubeArray_NATIVE() {
+        return n.n2861355540.n460317710();
+    }
 
-    private static native int WGPUTextureViewDimension_3D_NATIVE();
+    private static int WGPUTextureViewDimension_3D_NATIVE() {
+        return n.n2861355540.n2456059123();
+    }
 
-    private static native int WGPUTextureViewDimension_Force32_NATIVE();
+    private static int WGPUTextureViewDimension_Force32_NATIVE() {
+        return n.n2861355540.n3089822324();
+    }
 }

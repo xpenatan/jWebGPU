@@ -19,7 +19,9 @@ public class WGPUVertexBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1746241020.n800800334();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVertexBufferLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1746241020.n3008019376(this_addr);
+    }
 
     public void setAttributes(WGPUVectorVertexAttribute values) {
         internal_native_SetAttributes(native_address, values.native_address);
     }
 
-    public static native void internal_native_SetAttributes(long this_addr, long values_addr);
+    public static void internal_native_SetAttributes(long this_addr, long values_addr) {
+        n.n1746241020.n760489539(this_addr, values_addr);
+    }
 
     public void setArrayStride(int offset) {
         internal_native_SetArrayStride(native_address, offset);
     }
 
-    public static native void internal_native_SetArrayStride(long this_addr, int offset);
+    public static void internal_native_SetArrayStride(long this_addr, int offset) {
+        n.n1746241020.n2270653925(this_addr, offset);
+    }
 
     public void setStepMode(WGPUVertexStepMode stepMode) {
         internal_native_SetStepMode(native_address, stepMode.getValue());
     }
 
-    public static native void internal_native_SetStepMode(long this_addr, int stepMode);
+    public static void internal_native_SetStepMode(long this_addr, int stepMode) {
+        n.n1746241020.n44224016(this_addr, stepMode);
+    }
 
     public static WGPUVertexBufferLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
         return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1746241020.n4249349975();
+    }
 }

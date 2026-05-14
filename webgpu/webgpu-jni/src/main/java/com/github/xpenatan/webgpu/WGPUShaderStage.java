@@ -34,11 +34,19 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
         return CUSTOM;
     }
 
-    private static native int WGPUShaderStage_None_NATIVE();
+    private static int WGPUShaderStage_None_NATIVE() {
+        return n.n3069869867.n1502561002();
+    }
 
-    private static native int WGPUShaderStage_Vertex_NATIVE();
+    private static int WGPUShaderStage_Vertex_NATIVE() {
+        return n.n3069869867.n3069599318();
+    }
 
-    private static native int WGPUShaderStage_Fragment_NATIVE();
+    private static int WGPUShaderStage_Fragment_NATIVE() {
+        return n.n3069869867.n2445486082();
+    }
 
-    private static native int WGPUShaderStage_Compute_NATIVE();
+    private static int WGPUShaderStage_Compute_NATIVE() {
+        return n.n3069869867.n4100911633();
+    }
 }

@@ -19,7 +19,9 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2232430437.n1897896325();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,49 +41,65 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2232430437.n1463929561(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n2232430437.n1759737620(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n2232430437.n1562015444(this_addr, chainedStruct_addr);
+    }
 
     public void setColorFormats(WGPUVectorTextureFormat colorFormats) {
         internal_native_SetColorFormats(native_address, colorFormats.native_address);
     }
 
-    public static native void internal_native_SetColorFormats(long this_addr, long colorFormats_addr);
+    public static void internal_native_SetColorFormats(long this_addr, long colorFormats_addr) {
+        n.n2232430437.n478538766(this_addr, colorFormats_addr);
+    }
 
     public void setDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
         internal_native_SetDepthStencilFormat(native_address, depthStencilFormat.getValue());
     }
 
-    public static native void internal_native_SetDepthStencilFormat(long this_addr, int depthStencilFormat);
+    public static void internal_native_SetDepthStencilFormat(long this_addr, int depthStencilFormat) {
+        n.n2232430437.n10669414(this_addr, depthStencilFormat);
+    }
 
     public void setSampleCount(int sampleCount) {
         internal_native_SetSampleCount(native_address, sampleCount);
     }
 
-    public static native void internal_native_SetSampleCount(long this_addr, int sampleCount);
+    public static void internal_native_SetSampleCount(long this_addr, int sampleCount) {
+        n.n2232430437.n3828010171(this_addr, sampleCount);
+    }
 
     public void setDepthReadOnly(int depthReadOnly) {
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    public static native void internal_native_SetDepthReadOnly(long this_addr, int depthReadOnly);
+    public static void internal_native_SetDepthReadOnly(long this_addr, int depthReadOnly) {
+        n.n2232430437.n2554353339(this_addr, depthReadOnly);
+    }
 
     public void setStencilReadOnly(int stencilReadOnly) {
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    public static native void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly);
+    public static void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly) {
+        n.n2232430437.n486068130(this_addr, stencilReadOnly);
+    }
 
     public static WGPURenderBundleEncoderDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -93,5 +111,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2232430437.n1051478670();
+    }
 }

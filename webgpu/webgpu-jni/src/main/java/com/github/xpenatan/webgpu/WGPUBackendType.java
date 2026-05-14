@@ -44,23 +44,43 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
         return CUSTOM;
     }
 
-    private static native int WGPUBackendType_Undefined_NATIVE();
+    private static int WGPUBackendType_Undefined_NATIVE() {
+        return n.n528981248.n2561529940();
+    }
 
-    private static native int WGPUBackendType_Null_NATIVE();
+    private static int WGPUBackendType_Null_NATIVE() {
+        return n.n528981248.n3956878543();
+    }
 
-    private static native int WGPUBackendType_WebGPU_NATIVE();
+    private static int WGPUBackendType_WebGPU_NATIVE() {
+        return n.n528981248.n799815296();
+    }
 
-    private static native int WGPUBackendType_D3D11_NATIVE();
+    private static int WGPUBackendType_D3D11_NATIVE() {
+        return n.n528981248.n2201670585();
+    }
 
-    private static native int WGPUBackendType_D3D12_NATIVE();
+    private static int WGPUBackendType_D3D12_NATIVE() {
+        return n.n528981248.n394216122();
+    }
 
-    private static native int WGPUBackendType_Metal_NATIVE();
+    private static int WGPUBackendType_Metal_NATIVE() {
+        return n.n528981248.n1257548299();
+    }
 
-    private static native int WGPUBackendType_Vulkan_NATIVE();
+    private static int WGPUBackendType_Vulkan_NATIVE() {
+        return n.n528981248.n648529907();
+    }
 
-    private static native int WGPUBackendType_OpenGL_NATIVE();
+    private static int WGPUBackendType_OpenGL_NATIVE() {
+        return n.n528981248.n1498315639();
+    }
 
-    private static native int WGPUBackendType_OpenGLES_NATIVE();
+    private static int WGPUBackendType_OpenGLES_NATIVE() {
+        return n.n528981248.n918183397();
+    }
 
-    private static native int WGPUBackendType_Force32_NATIVE();
+    private static int WGPUBackendType_Force32_NATIVE() {
+        return n.n528981248.n2337883918();
+    }
 }

@@ -40,15 +40,27 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
         return CUSTOM;
     }
 
-    private static native int WGPUErrorType_NoError_NATIVE();
+    private static int WGPUErrorType_NoError_NATIVE() {
+        return n.n3043207924.n2394693747();
+    }
 
-    private static native int WGPUErrorType_Validation_NATIVE();
+    private static int WGPUErrorType_Validation_NATIVE() {
+        return n.n3043207924.n2330259225();
+    }
 
-    private static native int WGPUErrorType_OutOfMemory_NATIVE();
+    private static int WGPUErrorType_OutOfMemory_NATIVE() {
+        return n.n3043207924.n3008882898();
+    }
 
-    private static native int WGPUErrorType_Internal_NATIVE();
+    private static int WGPUErrorType_Internal_NATIVE() {
+        return n.n3043207924.n296126429();
+    }
 
-    private static native int WGPUErrorType_Unknown_NATIVE();
+    private static int WGPUErrorType_Unknown_NATIVE() {
+        return n.n3043207924.n4246099190();
+    }
 
-    private static native int WGPUErrorType_Force32_NATIVE();
+    private static int WGPUErrorType_Force32_NATIVE() {
+        return n.n3043207924.n1469115190();
+    }
 }

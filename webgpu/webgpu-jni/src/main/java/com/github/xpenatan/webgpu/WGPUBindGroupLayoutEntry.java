@@ -27,7 +27,9 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2567268596.n1341447766();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -47,49 +49,65 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2567268596.n3820740776(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n2567268596.n723651109(this_addr, chainedStruct_addr);
+    }
 
     public void setBinding(int binding) {
         internal_native_SetBinding(native_address, binding);
     }
 
-    public static native void internal_native_SetBinding(long this_addr, int binding);
+    public static void internal_native_SetBinding(long this_addr, int binding) {
+        n.n2567268596.n4185881674(this_addr, binding);
+    }
 
     public void setVisibility(WGPUShaderStage visibility) {
         internal_native_SetVisibility(native_address, visibility.getValue());
     }
 
-    public static native void internal_native_SetVisibility(long this_addr, int visibility);
+    public static void internal_native_SetVisibility(long this_addr, int visibility) {
+        n.n2567268596.n3566592501(this_addr, visibility);
+    }
 
     public void setBuffer(WGPUBufferBindingLayout buffer) {
         internal_native_SetBuffer(native_address, buffer.native_address);
     }
 
-    public static native void internal_native_SetBuffer(long this_addr, long buffer_addr);
+    public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
+        n.n2567268596.n3960792804(this_addr, buffer_addr);
+    }
 
     public void setSampler(WGPUSamplerBindingLayout sampler) {
         internal_native_SetSampler(native_address, sampler.native_address);
     }
 
-    public static native void internal_native_SetSampler(long this_addr, long sampler_addr);
+    public static void internal_native_SetSampler(long this_addr, long sampler_addr) {
+        n.n2567268596.n2916235076(this_addr, sampler_addr);
+    }
 
     public void setTexture(WGPUTextureBindingLayout texture) {
         internal_native_SetTexture(native_address, texture.native_address);
     }
 
-    public static native void internal_native_SetTexture(long this_addr, long texture_addr);
+    public static void internal_native_SetTexture(long this_addr, long texture_addr) {
+        n.n2567268596.n531353751(this_addr, texture_addr);
+    }
 
     public void setStorageTexture(WGPUStorageTextureBindingLayout storageTexture) {
         internal_native_SetStorageTexture(native_address, storageTexture.native_address);
     }
 
-    public static native void internal_native_SetStorageTexture(long this_addr, long storageTexture_addr);
+    public static void internal_native_SetStorageTexture(long this_addr, long storageTexture_addr) {
+        n.n2567268596.n2075050180(this_addr, storageTexture_addr);
+    }
 
     public WGPUBufferBindingLayout getBuffer() {
         long addr = internal_native_GetBuffer_addr(native_address);
@@ -101,7 +119,9 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         return WGPUBufferBindingLayout_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetBuffer_addr(long this_addr);
+    public static long internal_native_GetBuffer_addr(long this_addr) {
+        return n.n2567268596.n3428263248(this_addr);
+    }
 
     public WGPUSamplerBindingLayout getSampler() {
         long addr = internal_native_GetSampler_addr(native_address);
@@ -113,7 +133,9 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         return WGPUSamplerBindingLayout_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetSampler_addr(long this_addr);
+    public static long internal_native_GetSampler_addr(long this_addr) {
+        return n.n2567268596.n1450901064(this_addr);
+    }
 
     public WGPUStorageTextureBindingLayout getStorageTexture() {
         long addr = internal_native_GetStorageTexture_addr(native_address);
@@ -125,7 +147,9 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         return WGPUStorageTextureBindingLayout_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetStorageTexture_addr(long this_addr);
+    public static long internal_native_GetStorageTexture_addr(long this_addr) {
+        return n.n2567268596.n1344326448(this_addr);
+    }
 
     public WGPUTextureBindingLayout getTexture() {
         long addr = internal_native_GetTexture_addr(native_address);
@@ -137,7 +161,9 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         return WGPUTextureBindingLayout_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetTexture_addr(long this_addr);
+    public static long internal_native_GetTexture_addr(long this_addr) {
+        return n.n2567268596.n3360987035(this_addr);
+    }
 
     public static WGPUBindGroupLayoutEntry obtain() {
         long addr = internal_native_Obtain_addr();
@@ -149,5 +175,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
         return WGPUBindGroupLayoutEntry_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2567268596.n495030111();
+    }
 }

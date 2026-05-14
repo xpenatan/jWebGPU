@@ -17,7 +17,9 @@ public class WGPUConstantEntry extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1824316352.n2040753930();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,5 +39,7 @@ public class WGPUConstantEntry extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1824316352.n2211422324(this_addr);
+    }
 }

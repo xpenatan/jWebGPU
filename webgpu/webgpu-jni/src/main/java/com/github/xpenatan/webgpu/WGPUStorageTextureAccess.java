@@ -40,15 +40,27 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
         return CUSTOM;
     }
 
-    private static native int WGPUStorageTextureAccess_BindingNotUsed_NATIVE();
+    private static int WGPUStorageTextureAccess_BindingNotUsed_NATIVE() {
+        return n.n548444882.n708175821();
+    }
 
-    private static native int WGPUStorageTextureAccess_Undefined_NATIVE();
+    private static int WGPUStorageTextureAccess_Undefined_NATIVE() {
+        return n.n548444882.n2076050426();
+    }
 
-    private static native int WGPUStorageTextureAccess_WriteOnly_NATIVE();
+    private static int WGPUStorageTextureAccess_WriteOnly_NATIVE() {
+        return n.n548444882.n3249699797();
+    }
 
-    private static native int WGPUStorageTextureAccess_ReadOnly_NATIVE();
+    private static int WGPUStorageTextureAccess_ReadOnly_NATIVE() {
+        return n.n548444882.n1102800196();
+    }
 
-    private static native int WGPUStorageTextureAccess_ReadWrite_NATIVE();
+    private static int WGPUStorageTextureAccess_ReadWrite_NATIVE() {
+        return n.n548444882.n4091254163();
+    }
 
-    private static native int WGPUStorageTextureAccess_Force32_NATIVE();
+    private static int WGPUStorageTextureAccess_Force32_NATIVE() {
+        return n.n548444882.n934028340();
+    }
 }

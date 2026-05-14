@@ -19,7 +19,9 @@ public class WGPUBufferBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3963038913.n3345181097();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUBufferBindingLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3963038913.n2689495349(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3963038913.n1720922360(this_addr, chainedStruct_addr);
+    }
 
     public void setType(WGPUBufferBindingType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    public static native void internal_native_SetType(long this_addr, int type);
+    public static void internal_native_SetType(long this_addr, int type) {
+        n.n3963038913.n187573664(this_addr, type);
+    }
 
     public void setHasDynamicOffset(int hasDynamicOffset) {
         internal_native_SetHasDynamicOffset(native_address, hasDynamicOffset);
     }
 
-    public static native void internal_native_SetHasDynamicOffset(long this_addr, int hasDynamicOffset);
+    public static void internal_native_SetHasDynamicOffset(long this_addr, int hasDynamicOffset) {
+        n.n3963038913.n697143010(this_addr, hasDynamicOffset);
+    }
 
     public void setMinBindingSize(int minBindingSize) {
         internal_native_SetMinBindingSize(native_address, minBindingSize);
     }
 
-    public static native void internal_native_SetMinBindingSize(long this_addr, int minBindingSize);
+    public static void internal_native_SetMinBindingSize(long this_addr, int minBindingSize) {
+        n.n3963038913.n3387562214(this_addr, minBindingSize);
+    }
 
     public static WGPUBufferBindingLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
         return WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3963038913.n2498763442();
+    }
 }

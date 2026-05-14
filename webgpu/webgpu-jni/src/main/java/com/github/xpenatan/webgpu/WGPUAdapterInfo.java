@@ -28,7 +28,9 @@ public class WGPUAdapterInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1363032495.n3964627835();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +50,9 @@ public class WGPUAdapterInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1363032495.n3390358179(this_addr);
+    }
 
     public NativeString getVendor() {
         long addr = internal_native_GetVendor_addr(native_address);
@@ -60,13 +64,17 @@ public class WGPUAdapterInfo extends NativeObject {
         return NativeString_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetVendor_addr(long this_addr);
+    public static long internal_native_GetVendor_addr(long this_addr) {
+        return n.n1363032495.n8838035(this_addr);
+    }
 
     public int getVendorID() {
         return internal_native_GetVendorID(native_address);
     }
 
-    public static native int internal_native_GetVendorID(long this_addr);
+    public static int internal_native_GetVendorID(long this_addr) {
+        return n.n1363032495.n1295450930(this_addr);
+    }
 
     public NativeString getArchitecture() {
         long addr = internal_native_GetArchitecture_addr(native_address);
@@ -78,7 +86,9 @@ public class WGPUAdapterInfo extends NativeObject {
         return NativeString_TEMP_GEN_1;
     }
 
-    public static native long internal_native_GetArchitecture_addr(long this_addr);
+    public static long internal_native_GetArchitecture_addr(long this_addr) {
+        return n.n1363032495.n1712449438(this_addr);
+    }
 
     public NativeString getDevice() {
         long addr = internal_native_GetDevice_addr(native_address);
@@ -90,13 +100,17 @@ public class WGPUAdapterInfo extends NativeObject {
         return NativeString_TEMP_GEN_2;
     }
 
-    public static native long internal_native_GetDevice_addr(long this_addr);
+    public static long internal_native_GetDevice_addr(long this_addr) {
+        return n.n1363032495.n4023507745(this_addr);
+    }
 
     public int getDeviceID() {
         return internal_native_GetDeviceID(native_address);
     }
 
-    public static native int internal_native_GetDeviceID(long this_addr);
+    public static int internal_native_GetDeviceID(long this_addr) {
+        return n.n1363032495.n3136347748(this_addr);
+    }
 
     public NativeString getDescription() {
         long addr = internal_native_GetDescription_addr(native_address);
@@ -108,7 +122,9 @@ public class WGPUAdapterInfo extends NativeObject {
         return NativeString_TEMP_GEN_3;
     }
 
-    public static native long internal_native_GetDescription_addr(long this_addr);
+    public static long internal_native_GetDescription_addr(long this_addr) {
+        return n.n1363032495.n1606685409(this_addr);
+    }
 
     public WGPUBackendType getBackendType() {
         int value = internal_native_GetBackendType(native_address);
@@ -121,7 +137,9 @@ public class WGPUAdapterInfo extends NativeObject {
         return WGPUBackendType.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetBackendType(long this_addr);
+    public static int internal_native_GetBackendType(long this_addr) {
+        return n.n1363032495.n1380460525(this_addr);
+    }
 
     public WGPUAdapterType getAdapterType() {
         int value = internal_native_GetAdapterType(native_address);
@@ -134,7 +152,9 @@ public class WGPUAdapterInfo extends NativeObject {
         return WGPUAdapterType.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetAdapterType(long this_addr);
+    public static int internal_native_GetAdapterType(long this_addr) {
+        return n.n1363032495.n4135497106(this_addr);
+    }
 
     public static WGPUAdapterInfo obtain() {
         long addr = internal_native_Obtain_addr();
@@ -146,5 +166,7 @@ public class WGPUAdapterInfo extends NativeObject {
         return WGPUAdapterInfo_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1363032495.n3118210180();
+    }
 }

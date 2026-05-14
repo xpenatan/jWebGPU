@@ -19,7 +19,9 @@ public class WGPUCompilationInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n786784547.n3228264583();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,13 +41,17 @@ public class WGPUCompilationInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n786784547.n493423895(this_addr);
+    }
 
     public int getMessageCount() {
         return internal_native_GetMessageCount(native_address);
     }
 
-    public static native int internal_native_GetMessageCount(long this_addr);
+    public static int internal_native_GetMessageCount(long this_addr) {
+        return n.n786784547.n924943353(this_addr);
+    }
 
     public WGPUCompilationMessage getMessage(int index) {
         long addr = internal_native_GetMessage_addr(native_address, index);
@@ -57,5 +63,7 @@ public class WGPUCompilationInfo extends NativeObject {
         return WGPUCompilationMessage_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetMessage_addr(long this_addr, int index);
+    public static long internal_native_GetMessage_addr(long this_addr, int index) {
+        return n.n786784547.n1866223867(this_addr, index);
+    }
 }

@@ -39,13 +39,23 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
         return CUSTOM;
     }
 
-    private static native int WGPUTextureAspect_Undefined_NATIVE();
+    private static int WGPUTextureAspect_Undefined_NATIVE() {
+        return n.n89806309.n318159134();
+    }
 
-    private static native int WGPUTextureAspect_All_NATIVE();
+    private static int WGPUTextureAspect_All_NATIVE() {
+        return n.n89806309.n91154031();
+    }
 
-    private static native int WGPUTextureAspect_StencilOnly_NATIVE();
+    private static int WGPUTextureAspect_StencilOnly_NATIVE() {
+        return n.n89806309.n3700830550();
+    }
 
-    private static native int WGPUTextureAspect_DepthOnly_NATIVE();
+    private static int WGPUTextureAspect_DepthOnly_NATIVE() {
+        return n.n89806309.n678456797();
+    }
 
-    private static native int WGPUTextureAspect_Force32_NATIVE();
+    private static int WGPUTextureAspect_Force32_NATIVE() {
+        return n.n89806309.n4212642392();
+    }
 }

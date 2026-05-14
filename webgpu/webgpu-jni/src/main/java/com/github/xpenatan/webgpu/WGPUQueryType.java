@@ -34,9 +34,15 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
         return CUSTOM;
     }
 
-    private static native int WGPUQueryType_Occlusion_NATIVE();
+    private static int WGPUQueryType_Occlusion_NATIVE() {
+        return n.n906793396.n920004409();
+    }
 
-    private static native int WGPUQueryType_Timestamp_NATIVE();
+    private static int WGPUQueryType_Timestamp_NATIVE() {
+        return n.n906793396.n747655618();
+    }
 
-    private static native int WGPUQueryType_Force32_NATIVE();
+    private static int WGPUQueryType_Force32_NATIVE() {
+        return n.n906793396.n1648158902();
+    }
 }

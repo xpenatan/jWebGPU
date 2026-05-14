@@ -17,7 +17,9 @@ public class WGPUSampler extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4272133658.n1793280752();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,23 +39,31 @@ public class WGPUSampler extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4272133658.n3216720974(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n4272133658.n956337535(this_addr, label);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n4272133658.n2452378297(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n4272133658.n2248644782(this_addr);
+    }
 }

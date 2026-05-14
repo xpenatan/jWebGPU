@@ -32,25 +32,33 @@ public class WGPUPassTimestampWrites extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2027449323.n4218381791(this_addr);
+    }
 
     public void setQuerySet(WGPUQuerySet value) {
         internal_native_SetQuerySet(native_address, value.native_address);
     }
 
-    public static native void internal_native_SetQuerySet(long this_addr, long value_addr);
+    public static void internal_native_SetQuerySet(long this_addr, long value_addr) {
+        n.n2027449323.n1043156309(this_addr, value_addr);
+    }
 
     public void setBeginningOfPassWriteIndex(int value) {
         internal_native_SetBeginningOfPassWriteIndex(native_address, value);
     }
 
-    public static native void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value);
+    public static void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value) {
+        n.n2027449323.n1433419534(this_addr, value);
+    }
 
     public void setEndOfPassWriteIndex(int value) {
         internal_native_SetEndOfPassWriteIndex(native_address, value);
     }
 
-    public static native void internal_native_SetEndOfPassWriteIndex(long this_addr, int value);
+    public static void internal_native_SetEndOfPassWriteIndex(long this_addr, int value) {
+        n.n2027449323.n2031042832(this_addr, value);
+    }
 
     public static WGPUPassTimestampWrites obtain() {
         long addr = internal_native_Obtain_addr();
@@ -62,5 +70,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
         return WGPUPassTimestampWrites_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2027449323.n310338504();
+    }
 }

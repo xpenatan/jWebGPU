@@ -19,7 +19,9 @@ public class WGPUVectorRenderBundle extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n45566281.n2137258529();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVectorRenderBundle extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n45566281.n1861053373(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n45566281.n742316990(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n45566281.n1787880836(this_addr);
+    }
 
     public void push_back(WGPURenderBundle renderBundle) {
         internal_native_push_back(native_address, renderBundle.native_address);
     }
 
-    public static native void internal_native_push_back(long this_addr, long renderBundle_addr);
+    public static void internal_native_push_back(long this_addr, long renderBundle_addr) {
+        n.n45566281.n653438979(this_addr, renderBundle_addr);
+    }
 
     public static WGPUVectorRenderBundle obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVectorRenderBundle extends NativeObject {
         return WGPUVectorRenderBundle_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n45566281.n1290840874();
+    }
 }

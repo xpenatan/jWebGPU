@@ -19,7 +19,9 @@ public class WGPUQuerySetDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3902144567.n4040200691();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUQuerySetDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3902144567.n320923435(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n3902144567.n964960642(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3902144567.n1063533122(this_addr, chainedStruct_addr);
+    }
 
     public void setType(WGPUQueryType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    public static native void internal_native_SetType(long this_addr, int type);
+    public static void internal_native_SetType(long this_addr, int type) {
+        n.n3902144567.n3990493418(this_addr, type);
+    }
 
     public void setCount(int count) {
         internal_native_SetCount(native_address, count);
     }
 
-    public static native void internal_native_SetCount(long this_addr, int count);
+    public static void internal_native_SetCount(long this_addr, int count) {
+        n.n3902144567.n2372307075(this_addr, count);
+    }
 
     public static WGPUQuerySetDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUQuerySetDescriptor extends NativeObject {
         return WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3902144567.n3193783036();
+    }
 }

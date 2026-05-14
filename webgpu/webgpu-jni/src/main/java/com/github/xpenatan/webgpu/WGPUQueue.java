@@ -24,65 +24,87 @@ public class WGPUQueue extends NativeObject {
         internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, byteBuffer, dataSize);
     }
 
-    private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize);
+    private static void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
+        n.n852347811.n2996603652(this_addr, buffer_addr, bufferOffset, byteBuffer, dataSize);
+    }
 
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
         internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), byteBuffer, dataSize, dataLayout.native_address, writeSize.native_address);
     }
 
-    private static native void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr);
+    private static void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr) {
+        n.n852347811.n2566581228(this_addr, destination_addr, byteBuffer, dataSize, dataLayout_addr, writeSize_addr);
+    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n852347811.n1394005911(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n852347811.n1723419030(this_addr, value);
+    }
 
     public void submit(WGPUVectorCommandBuffer commandVector) {
         internal_native_Submit__0(native_address, commandVector.native_address);
     }
 
-    public static native void internal_native_Submit__0(long this_addr, long commandVector_addr);
+    public static void internal_native_Submit__0(long this_addr, long commandVector_addr) {
+        n.n852347811.n2120061065(this_addr, commandVector_addr);
+    }
 
     public void submit(WGPUCommandBuffer commandBuffer) {
         internal_native_Submit__1(native_address, commandBuffer.native_address);
     }
 
-    public static native void internal_native_Submit__1(long this_addr, long commandBuffer_addr);
+    public static void internal_native_Submit__1(long this_addr, long commandBuffer_addr) {
+        n.n852347811.n323109706(this_addr, commandBuffer_addr);
+    }
 
     public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02) {
         internal_native_Submit__2(native_address, commandBuffer01.native_address, commandBuffer02.native_address);
     }
 
-    public static native void internal_native_Submit__2(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr);
+    public static void internal_native_Submit__2(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr) {
+        n.n852347811.n1562831229(this_addr, commandBuffer01_addr, commandBuffer02_addr);
+    }
 
     public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03) {
         internal_native_Submit__3(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address);
     }
 
-    public static native void internal_native_Submit__3(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr);
+    public static void internal_native_Submit__3(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr) {
+        n.n852347811.n1749566156(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr);
+    }
 
     public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03, WGPUCommandBuffer commandBuffer04) {
         internal_native_Submit__4(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address, commandBuffer04.native_address);
     }
 
-    public static native void internal_native_Submit__4(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr, long commandBuffer04_addr);
+    public static void internal_native_Submit__4(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr, long commandBuffer04_addr) {
+        n.n852347811.n2233843835(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr, commandBuffer04_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n852347811.n573707728(this_addr);
+    }
 
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, NativeObject bytes, int dataSize) {
         internal_native_WriteBuffer__1(native_address, buffer.native_address, bufferOffset, bytes.native_void_address, dataSize);
     }
 
-    public static native void internal_native_WriteBuffer__1(long this_addr, long buffer_addr, int bufferOffset, long bytes_addr, int dataSize);
+    public static void internal_native_WriteBuffer__1(long this_addr, long buffer_addr, int bufferOffset, long bytes_addr, int dataSize) {
+        n.n852347811.n2585260167(this_addr, buffer_addr, bufferOffset, bytes_addr, dataSize);
+    }
 }

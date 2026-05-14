@@ -19,7 +19,9 @@ public class WGPURenderPassEncoder extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1478576103.n1802807363();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,151 +41,201 @@ public class WGPURenderPassEncoder extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1478576103.n2988327643(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n1478576103.n118810578(this_addr, value);
+    }
 
     public void addRef() {
         internal_native_AddRef(native_address);
     }
 
-    public static native void internal_native_AddRef(long this_addr);
+    public static void internal_native_AddRef(long this_addr) {
+        n.n1478576103.n1375664619(this_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n1478576103.n2461904908(this_addr);
+    }
 
     public void end() {
         internal_native_End(native_address);
     }
 
-    public static native void internal_native_End(long this_addr);
+    public static void internal_native_End(long this_addr) {
+        n.n1478576103.n543770936(this_addr);
+    }
 
     public void setPipeline(WGPURenderPipeline renderPipeline) {
         internal_native_SetPipeline(native_address, renderPipeline.native_address);
     }
 
-    public static native void internal_native_SetPipeline(long this_addr, long renderPipeline_addr);
+    public static void internal_native_SetPipeline(long this_addr, long renderPipeline_addr) {
+        n.n1478576103.n1063046777(this_addr, renderPipeline_addr);
+    }
 
     public void beginOcclusionQuery(int queryIndex) {
         internal_native_BeginOcclusionQuery(native_address, queryIndex);
     }
 
-    public static native void internal_native_BeginOcclusionQuery(long this_addr, int queryIndex);
+    public static void internal_native_BeginOcclusionQuery(long this_addr, int queryIndex) {
+        n.n1478576103.n1773756978(this_addr, queryIndex);
+    }
 
     public void draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
         internal_native_Draw(native_address, vertexCount, instanceCount, firstVertex, firstInstance);
     }
 
-    public static native void internal_native_Draw(long this_addr, int vertexCount, int instanceCount, int firstVertex, int firstInstance);
+    public static void internal_native_Draw(long this_addr, int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
+        n.n1478576103.n1952172901(this_addr, vertexCount, instanceCount, firstVertex, firstInstance);
+    }
 
     public void drawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
         internal_native_DrawIndexed(native_address, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
     }
 
-    public static native void internal_native_DrawIndexed(long this_addr, int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance);
+    public static void internal_native_DrawIndexed(long this_addr, int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
+        n.n1478576103.n4226945685(this_addr, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
+    }
 
     public void drawIndexedIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
         internal_native_DrawIndexedIndirect(native_address, indirectBuffer.native_address, indirectOffset);
     }
 
-    public static native void internal_native_DrawIndexedIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset);
+    public static void internal_native_DrawIndexedIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
+        n.n1478576103.n3408486227(this_addr, indirectBuffer_addr, indirectOffset);
+    }
 
     public void drawIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
         internal_native_DrawIndirect(native_address, indirectBuffer.native_address, indirectOffset);
     }
 
-    public static native void internal_native_DrawIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset);
+    public static void internal_native_DrawIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
+        n.n1478576103.n2160265632(this_addr, indirectBuffer_addr, indirectOffset);
+    }
 
     public void endOcclusionQuery() {
         internal_native_EndOcclusionQuery(native_address);
     }
 
-    public static native void internal_native_EndOcclusionQuery(long this_addr);
+    public static void internal_native_EndOcclusionQuery(long this_addr) {
+        n.n1478576103.n1171405501(this_addr);
+    }
 
     public void executeBundles(WGPUVectorRenderBundle bundles) {
         internal_native_ExecuteBundles(native_address, bundles.native_address);
     }
 
-    public static native void internal_native_ExecuteBundles(long this_addr, long bundles_addr);
+    public static void internal_native_ExecuteBundles(long this_addr, long bundles_addr) {
+        n.n1478576103.n3738016999(this_addr, bundles_addr);
+    }
 
     public void insertDebugMarker(String value) {
         internal_native_InsertDebugMarker(native_address, value);
     }
 
-    public static native void internal_native_InsertDebugMarker(long this_addr, String value);
+    public static void internal_native_InsertDebugMarker(long this_addr, String value) {
+        n.n1478576103.n3022265342(this_addr, value);
+    }
 
     public void popDebugGroup() {
         internal_native_PopDebugGroup(native_address);
     }
 
-    public static native void internal_native_PopDebugGroup(long this_addr);
+    public static void internal_native_PopDebugGroup(long this_addr) {
+        n.n1478576103.n2565526646(this_addr);
+    }
 
     public void pushDebugGroup(String value) {
         internal_native_PushDebugGroup(native_address, value);
     }
 
-    public static native void internal_native_PushDebugGroup(long this_addr, String value);
+    public static void internal_native_PushDebugGroup(long this_addr, String value) {
+        n.n1478576103.n1808679046(this_addr, value);
+    }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group, WGPUVectorInt dynamicOffsets) {
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address, dynamicOffsets.native_address);
     }
 
-    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long dynamicOffsets_addr);
+    public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long dynamicOffsets_addr) {
+        n.n1478576103.n1437582304(this_addr, groupIndex, group_addr, dynamicOffsets_addr);
+    }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group) {
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
     }
 
-    public static native void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr);
+    public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
+        n.n1478576103.n4093766088(this_addr, groupIndex, group_addr);
+    }
 
     public void setBlendConstant(WGPUColor color) {
         internal_native_SetBlendConstant(native_address, color.native_address);
     }
 
-    public static native void internal_native_SetBlendConstant(long this_addr, long color_addr);
+    public static void internal_native_SetBlendConstant(long this_addr, long color_addr) {
+        n.n1478576103.n3589513278(this_addr, color_addr);
+    }
 
     public void setIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, int offset, int size) {
         internal_native_SetIndexBuffer(native_address, buffer.native_address, format.getValue(), offset, size);
     }
 
-    public static native void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, int format, int offset, int size);
+    public static void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, int format, int offset, int size) {
+        n.n1478576103.n1794433700(this_addr, buffer_addr, format, offset, size);
+    }
 
     public void setScissorRect(int x, int y, int width, int height) {
         internal_native_SetScissorRect(native_address, x, y, width, height);
     }
 
-    public static native void internal_native_SetScissorRect(long this_addr, int x, int y, int width, int height);
+    public static void internal_native_SetScissorRect(long this_addr, int x, int y, int width, int height) {
+        n.n1478576103.n2859152523(this_addr, x, y, width, height);
+    }
 
     public void setStencilReference(int reference) {
         internal_native_SetStencilReference(native_address, reference);
     }
 
-    public static native void internal_native_SetStencilReference(long this_addr, int reference);
+    public static void internal_native_SetStencilReference(long this_addr, int reference) {
+        n.n1478576103.n1020985253(this_addr, reference);
+    }
 
     public void setVertexBuffer(int slot, WGPUBuffer buffer, int offset, int size) {
         internal_native_SetVertexBuffer(native_address, slot, buffer.native_address, offset, size);
     }
 
-    public static native void internal_native_SetVertexBuffer(long this_addr, int slot, long buffer_addr, int offset, int size);
+    public static void internal_native_SetVertexBuffer(long this_addr, int slot, long buffer_addr, int offset, int size) {
+        n.n1478576103.n2527032318(this_addr, slot, buffer_addr, offset, size);
+    }
 
     public void setViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
         internal_native_SetViewport(native_address, x, y, width, height, minDepth, maxDepth);
     }
 
-    public static native void internal_native_SetViewport(long this_addr, float x, float y, float width, float height, float minDepth, float maxDepth);
+    public static void internal_native_SetViewport(long this_addr, float x, float y, float width, float height, float minDepth, float maxDepth) {
+        n.n1478576103.n2894513323(this_addr, x, y, width, height, minDepth, maxDepth);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n1478576103.n2258171393(this_addr);
+    }
 
     public static WGPURenderPassEncoder obtain() {
         long addr = internal_native_Obtain_addr();
@@ -195,5 +247,7 @@ public class WGPURenderPassEncoder extends NativeObject {
         return WGPURenderPassEncoder_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1478576103.n956389708();
+    }
 }

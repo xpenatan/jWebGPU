@@ -30,17 +30,23 @@ public class WGPUChainedStruct extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4221163431.n2906841755(this_addr);
+    }
 
     public void setNext(WGPUChainedStruct value) {
         internal_native_SetNext(native_address, value.native_address);
     }
 
-    public static native void internal_native_SetNext(long this_addr, long value_addr);
+    public static void internal_native_SetNext(long this_addr, long value_addr) {
+        n.n4221163431.n1896925386(this_addr, value_addr);
+    }
 
     public void setSType(WGPUSType type) {
         internal_native_SetSType(native_address, type.getValue());
     }
 
-    public static native void internal_native_SetSType(long this_addr, int type);
+    public static void internal_native_SetSType(long this_addr, int type) {
+        n.n4221163431.n366332021(this_addr, type);
+    }
 }

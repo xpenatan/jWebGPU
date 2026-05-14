@@ -21,7 +21,9 @@ public class WGPURenderPassColorAttachment extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3141831857.n3305590713();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -41,43 +43,57 @@ public class WGPURenderPassColorAttachment extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3141831857.n1182258469(this_addr);
+    }
 
     public void reset() {
         internal_native_Reset(native_address);
     }
 
-    public static native void internal_native_Reset(long this_addr);
+    public static void internal_native_Reset(long this_addr) {
+        n.n3141831857.n2320516986(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3141831857.n2814279432(this_addr, chainedStruct_addr);
+    }
 
     public void setView(WGPUTextureView textureView) {
         internal_native_SetView(native_address, textureView.native_address);
     }
 
-    public static native void internal_native_SetView(long this_addr, long textureView_addr);
+    public static void internal_native_SetView(long this_addr, long textureView_addr) {
+        n.n3141831857.n4290704518(this_addr, textureView_addr);
+    }
 
     public void setResolveTarget(WGPUTextureView textureView) {
         internal_native_SetResolveTarget(native_address, textureView.native_address);
     }
 
-    public static native void internal_native_SetResolveTarget(long this_addr, long textureView_addr);
+    public static void internal_native_SetResolveTarget(long this_addr, long textureView_addr) {
+        n.n3141831857.n3867406012(this_addr, textureView_addr);
+    }
 
     public void setLoadOp(WGPULoadOp loadOp) {
         internal_native_SetLoadOp(native_address, loadOp.getValue());
     }
 
-    public static native void internal_native_SetLoadOp(long this_addr, int loadOp);
+    public static void internal_native_SetLoadOp(long this_addr, int loadOp) {
+        n.n3141831857.n3902482531(this_addr, loadOp);
+    }
 
     public void setStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetStoreOp(native_address, storeOp.getValue());
     }
 
-    public static native void internal_native_SetStoreOp(long this_addr, int storeOp);
+    public static void internal_native_SetStoreOp(long this_addr, int storeOp) {
+        n.n3141831857.n3511842314(this_addr, storeOp);
+    }
 
     public WGPUColor getClearValue() {
         long addr = internal_native_GetClearValue_addr(native_address);
@@ -89,13 +105,17 @@ public class WGPURenderPassColorAttachment extends NativeObject {
         return WGPUColor_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetClearValue_addr(long this_addr);
+    public static long internal_native_GetClearValue_addr(long this_addr) {
+        return n.n3141831857.n349193713(this_addr);
+    }
 
     public void setDepthSlice(int depthSlice) {
         internal_native_SetDepthSlice(native_address, depthSlice);
     }
 
-    public static native void internal_native_SetDepthSlice(long this_addr, int depthSlice);
+    public static void internal_native_SetDepthSlice(long this_addr, int depthSlice) {
+        n.n3141831857.n313339579(this_addr, depthSlice);
+    }
 
     public static WGPURenderPassColorAttachment obtain() {
         long addr = internal_native_Obtain_addr();
@@ -107,5 +127,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
         return WGPURenderPassColorAttachment_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3141831857.n2459173058();
+    }
 }

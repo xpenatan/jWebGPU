@@ -30,5 +30,7 @@ public class WGPUFuture extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n338505073.n4291315173(this_addr);
+    }
 }

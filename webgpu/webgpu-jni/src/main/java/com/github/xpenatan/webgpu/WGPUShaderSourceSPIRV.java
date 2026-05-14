@@ -19,7 +19,9 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3144003586.n3063896584();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,7 +41,9 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3144003586.n723838006(this_addr);
+    }
 
     public static WGPUShaderSourceSPIRV obtain() {
         long addr = internal_native_Obtain_addr();
@@ -51,5 +55,7 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
         return WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3144003586.n2217478929();
+    }
 }

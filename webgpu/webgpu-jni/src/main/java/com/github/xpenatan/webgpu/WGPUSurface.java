@@ -30,47 +30,63 @@ public class WGPUSurface extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n554058431.n3022423987(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n554058431.n2270712826(this_addr, value);
+    }
 
     public void unconfigure() {
         internal_native_Unconfigure(native_address);
     }
 
-    public static native void internal_native_Unconfigure(long this_addr);
+    public static void internal_native_Unconfigure(long this_addr) {
+        n.n554058431.n4199178766(this_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n554058431.n3584279604(this_addr);
+    }
 
     public void configure(WGPUSurfaceConfiguration config) {
         internal_native_Configure(native_address, config.native_address);
     }
 
-    public static native void internal_native_Configure(long this_addr, long config_addr);
+    public static void internal_native_Configure(long this_addr, long config_addr) {
+        n.n554058431.n1840329171(this_addr, config_addr);
+    }
 
     public void getCapabilities(WGPUAdapter adapter, WGPUSurfaceCapabilities surfaceCapabilities) {
         internal_native_GetCapabilities(native_address, adapter.native_address, surfaceCapabilities.native_address);
     }
 
-    public static native void internal_native_GetCapabilities(long this_addr, long adapter_addr, long surfaceCapabilities_addr);
+    public static void internal_native_GetCapabilities(long this_addr, long adapter_addr, long surfaceCapabilities_addr) {
+        n.n554058431.n1426243695(this_addr, adapter_addr, surfaceCapabilities_addr);
+    }
 
     public void getCurrentTexture(WGPUSurfaceTexture surfaceTexture) {
         internal_native_GetCurrentTexture(native_address, surfaceTexture.native_address);
     }
 
-    public static native void internal_native_GetCurrentTexture(long this_addr, long surfaceTexture_addr);
+    public static void internal_native_GetCurrentTexture(long this_addr, long surfaceTexture_addr) {
+        n.n554058431.n379694533(this_addr, surfaceTexture_addr);
+    }
 
     public void present() {
         internal_native_Present(native_address);
     }
 
-    public static native void internal_native_Present(long this_addr);
+    public static void internal_native_Present(long this_addr) {
+        n.n554058431.n1949811712(this_addr);
+    }
 }

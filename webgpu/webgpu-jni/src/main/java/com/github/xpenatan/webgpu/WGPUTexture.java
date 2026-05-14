@@ -19,7 +19,9 @@ public class WGPUTexture extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n989473581.n3808531133();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPUTexture extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n989473581.n809686177(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n989473581.n1756674124(this_addr, label);
+    }
 
     public void createView(WGPUTextureViewDescriptor textureViewDescriptor, WGPUTextureView textureView) {
         internal_native_CreateView(native_address, textureViewDescriptor.native_address, textureView.native_address);
     }
 
-    public static native void internal_native_CreateView(long this_addr, long textureViewDescriptor_addr, long textureView_addr);
+    public static void internal_native_CreateView(long this_addr, long textureViewDescriptor_addr, long textureView_addr) {
+        n.n989473581.n2108514562(this_addr, textureViewDescriptor_addr, textureView_addr);
+    }
 
     public WGPUTextureFormat getFormat() {
         int value = internal_native_GetFormat(native_address);
@@ -64,25 +72,33 @@ public class WGPUTexture extends NativeObject {
         return WGPUTextureFormat.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetFormat(long this_addr);
+    public static int internal_native_GetFormat(long this_addr) {
+        return n.n989473581.n2755661344(this_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n989473581.n172661382(this_addr);
+    }
 
     public void destroy() {
         internal_native_Destroy(native_address);
     }
 
-    public static native void internal_native_Destroy(long this_addr);
+    public static void internal_native_Destroy(long this_addr) {
+        n.n989473581.n823403123(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n989473581.n4263895163(this_addr);
+    }
 
     public static WGPUTexture obtain() {
         long addr = internal_native_Obtain_addr();
@@ -94,5 +110,7 @@ public class WGPUTexture extends NativeObject {
         return WGPUTexture_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n989473581.n2962113478();
+    }
 }

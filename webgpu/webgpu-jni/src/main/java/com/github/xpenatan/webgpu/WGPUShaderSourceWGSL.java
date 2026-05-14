@@ -21,7 +21,9 @@ public class WGPUShaderSourceWGSL extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n378624951.n3758941811();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -41,13 +43,17 @@ public class WGPUShaderSourceWGSL extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n378624951.n2061853355(this_addr);
+    }
 
     public void setCode(String code) {
         internal_native_SetCode(native_address, code);
     }
 
-    public static native void internal_native_SetCode(long this_addr, String code);
+    public static void internal_native_SetCode(long this_addr, String code) {
+        n.n378624951.n1727015689(this_addr, code);
+    }
 
     public WGPUChainedStruct getChain() {
         long addr = internal_native_GetChain_addr(native_address);
@@ -59,7 +65,9 @@ public class WGPUShaderSourceWGSL extends NativeObject {
         return WGPUChainedStruct_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetChain_addr(long this_addr);
+    public static long internal_native_GetChain_addr(long this_addr) {
+        return n.n378624951.n2323490334(this_addr);
+    }
 
     public static WGPUShaderSourceWGSL obtain() {
         long addr = internal_native_Obtain_addr();
@@ -71,5 +79,7 @@ public class WGPUShaderSourceWGSL extends NativeObject {
         return WGPUShaderSourceWGSL_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n378624951.n2912524156();
+    }
 }

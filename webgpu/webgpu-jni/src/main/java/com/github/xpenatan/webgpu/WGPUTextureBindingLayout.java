@@ -19,7 +19,9 @@ public class WGPUTextureBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n795751394.n310370856();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUTextureBindingLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n795751394.n2230611990(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n795751394.n2780553975(this_addr, chainedStruct_addr);
+    }
 
     public void setSampleType(WGPUTextureSampleType sampleType) {
         internal_native_SetSampleType(native_address, sampleType.getValue());
     }
 
-    public static native void internal_native_SetSampleType(long this_addr, int sampleType);
+    public static void internal_native_SetSampleType(long this_addr, int sampleType) {
+        n.n795751394.n1629783701(this_addr, sampleType);
+    }
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
-    public static native void internal_native_SetViewDimension(long this_addr, int viewDimension);
+    public static void internal_native_SetViewDimension(long this_addr, int viewDimension) {
+        n.n795751394.n92462204(this_addr, viewDimension);
+    }
 
     public void setMultisampled(int multisampled) {
         internal_native_SetMultisampled(native_address, multisampled);
     }
 
-    public static native void internal_native_SetMultisampled(long this_addr, int multisampled);
+    public static void internal_native_SetMultisampled(long this_addr, int multisampled) {
+        n.n795751394.n467104536(this_addr, multisampled);
+    }
 
     public static WGPUTextureBindingLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
         return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n795751394.n3758920497();
+    }
 }

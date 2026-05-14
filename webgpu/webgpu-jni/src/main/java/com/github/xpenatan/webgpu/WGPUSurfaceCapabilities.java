@@ -21,7 +21,9 @@ public class WGPUSurfaceCapabilities extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n882212885.n3088205525();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -41,7 +43,9 @@ public class WGPUSurfaceCapabilities extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n882212885.n1450635145(this_addr);
+    }
 
     public WGPUVectorTextureFormat getFormats() {
         long addr = internal_native_GetFormats_addr(native_address);
@@ -53,7 +57,9 @@ public class WGPUSurfaceCapabilities extends NativeObject {
         return WGPUVectorTextureFormat_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetFormats_addr(long this_addr);
+    public static long internal_native_GetFormats_addr(long this_addr) {
+        return n.n882212885.n3461948955(this_addr);
+    }
 
     public static WGPUSurfaceCapabilities obtain() {
         long addr = internal_native_Obtain_addr();
@@ -65,5 +71,7 @@ public class WGPUSurfaceCapabilities extends NativeObject {
         return WGPUSurfaceCapabilities_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n882212885.n2241787870();
+    }
 }

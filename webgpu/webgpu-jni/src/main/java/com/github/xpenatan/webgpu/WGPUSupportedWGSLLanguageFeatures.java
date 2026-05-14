@@ -19,7 +19,9 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n879215934.n2271845964();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,13 +41,17 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n879215934.n3324947058(this_addr);
+    }
 
     public int getFeatureCount() {
         return internal_native_GetFeatureCount(native_address);
     }
 
-    public static native int internal_native_GetFeatureCount(long this_addr);
+    public static int internal_native_GetFeatureCount(long this_addr) {
+        return n.n879215934.n3060662509(this_addr);
+    }
 
     public WGPUWGSLLanguageFeatureName getFeatureAt(int index) {
         int value = internal_native_GetFeatureAt(native_address, index);
@@ -58,7 +64,9 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
         return WGPUWGSLLanguageFeatureName.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetFeatureAt(long this_addr, int index);
+    public static int internal_native_GetFeatureAt(long this_addr, int index) {
+        return n.n879215934.n3494682436(this_addr, index);
+    }
 
     public static WGPUSupportedWGSLLanguageFeatures obtain() {
         long addr = internal_native_Obtain_addr();
@@ -70,5 +78,7 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
         return WGPUSupportedWGSLLanguageFeatures_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n879215934.n1425428309();
+    }
 }

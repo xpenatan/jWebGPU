@@ -19,7 +19,9 @@ public class WGPUVectorCommandBuffer extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1753151994.n3495752464();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVectorCommandBuffer extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1753151994.n3265638446(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n1753151994.n3017220399(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n1753151994.n3590409779(this_addr);
+    }
 
     public void push_back(WGPUCommandBuffer entry) {
         internal_native_push_back(native_address, entry.native_address);
     }
 
-    public static native void internal_native_push_back(long this_addr, long entry_addr);
+    public static void internal_native_push_back(long this_addr, long entry_addr) {
+        n.n1753151994.n1839963188(this_addr, entry_addr);
+    }
 
     public static WGPUVectorCommandBuffer obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVectorCommandBuffer extends NativeObject {
         return WGPUVectorCommandBuffer_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1753151994.n2649334809();
+    }
 }

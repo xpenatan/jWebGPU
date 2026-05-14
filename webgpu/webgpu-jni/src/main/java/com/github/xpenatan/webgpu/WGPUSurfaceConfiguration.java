@@ -19,7 +19,9 @@ public class WGPUSurfaceConfiguration extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2382434423.n489318835();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,61 +41,81 @@ public class WGPUSurfaceConfiguration extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2382434423.n3757565803(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n2382434423.n2599973378(this_addr, chainedStruct_addr);
+    }
 
     public void setWidth(int width) {
         internal_native_SetWidth(native_address, width);
     }
 
-    public static native void internal_native_SetWidth(long this_addr, int width);
+    public static void internal_native_SetWidth(long this_addr, int width) {
+        n.n2382434423.n4020111852(this_addr, width);
+    }
 
     public void setHeight(int height) {
         internal_native_SetHeight(native_address, height);
     }
 
-    public static native void internal_native_SetHeight(long this_addr, int height);
+    public static void internal_native_SetHeight(long this_addr, int height) {
+        n.n2382434423.n732836637(this_addr, height);
+    }
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    public static native void internal_native_SetFormat(long this_addr, int format);
+    public static void internal_native_SetFormat(long this_addr, int format) {
+        n.n2382434423.n3374675533(this_addr, format);
+    }
 
     public void setViewFormats(WGPUVectorTextureFormat formats) {
         internal_native_SetViewFormats(native_address, formats.native_address);
     }
 
-    public static native void internal_native_SetViewFormats(long this_addr, long formats_addr);
+    public static void internal_native_SetViewFormats(long this_addr, long formats_addr) {
+        n.n2382434423.n3181587280(this_addr, formats_addr);
+    }
 
     public void setUsage(WGPUTextureUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    public static native void internal_native_SetUsage(long this_addr, int usage);
+    public static void internal_native_SetUsage(long this_addr, int usage) {
+        n.n2382434423.n4185022577(this_addr, usage);
+    }
 
     public void setDevice(WGPUDevice device) {
         internal_native_SetDevice(native_address, device.native_address);
     }
 
-    public static native void internal_native_SetDevice(long this_addr, long device_addr);
+    public static void internal_native_SetDevice(long this_addr, long device_addr) {
+        n.n2382434423.n960278397(this_addr, device_addr);
+    }
 
     public void setPresentMode(WGPUPresentMode presentMode) {
         internal_native_SetPresentMode(native_address, presentMode.getValue());
     }
 
-    public static native void internal_native_SetPresentMode(long this_addr, int presentMode);
+    public static void internal_native_SetPresentMode(long this_addr, int presentMode) {
+        n.n2382434423.n3781369972(this_addr, presentMode);
+    }
 
     public void setAlphaMode(WGPUCompositeAlphaMode alphaMode) {
         internal_native_SetAlphaMode(native_address, alphaMode.getValue());
     }
 
-    public static native void internal_native_SetAlphaMode(long this_addr, int alphaMode);
+    public static void internal_native_SetAlphaMode(long this_addr, int alphaMode) {
+        n.n2382434423.n1756002929(this_addr, alphaMode);
+    }
 
     public static WGPUSurfaceConfiguration obtain() {
         long addr = internal_native_Obtain_addr();
@@ -105,5 +127,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
         return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2382434423.n3937868476();
+    }
 }

@@ -34,11 +34,19 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
         return CUSTOM;
     }
 
-    private static native int WGPUIndexFormat_Undefined_NATIVE();
+    private static int WGPUIndexFormat_Undefined_NATIVE() {
+        return n.n1744675963.n1803911114();
+    }
 
-    private static native int WGPUIndexFormat_Uint16_NATIVE();
+    private static int WGPUIndexFormat_Uint16_NATIVE() {
+        return n.n1744675963.n1778270737();
+    }
 
-    private static native int WGPUIndexFormat_Uint32_NATIVE();
+    private static int WGPUIndexFormat_Uint32_NATIVE() {
+        return n.n1744675963.n25126987();
+    }
 
-    private static native int WGPUIndexFormat_Force32_NATIVE();
+    private static int WGPUIndexFormat_Force32_NATIVE() {
+        return n.n1744675963.n3686814724();
+    }
 }

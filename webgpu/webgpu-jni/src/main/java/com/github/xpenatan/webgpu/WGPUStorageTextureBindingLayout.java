@@ -19,7 +19,9 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4044071137.n3060328841();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4044071137.n2182995285(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n4044071137.n2834817240(this_addr, chainedStruct_addr);
+    }
 
     public void setAccess(WGPUStorageTextureAccess access) {
         internal_native_SetAccess(native_address, access.getValue());
     }
 
-    public static native void internal_native_SetAccess(long this_addr, int access);
+    public static void internal_native_SetAccess(long this_addr, int access) {
+        n.n4044071137.n1621117654(this_addr, access);
+    }
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    public static native void internal_native_SetFormat(long this_addr, int format);
+    public static void internal_native_SetFormat(long this_addr, int format) {
+        n.n4044071137.n1807629731(this_addr, format);
+    }
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
-    public static native void internal_native_SetViewDimension(long this_addr, int viewDimension);
+    public static void internal_native_SetViewDimension(long this_addr, int viewDimension) {
+        n.n4044071137.n1774623419(this_addr, viewDimension);
+    }
 
     public static WGPUStorageTextureBindingLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
         return WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4044071137.n2213911186();
+    }
 }

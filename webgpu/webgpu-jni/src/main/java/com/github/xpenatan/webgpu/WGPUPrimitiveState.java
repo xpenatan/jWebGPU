@@ -30,35 +30,47 @@ public class WGPUPrimitiveState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3829911960.n3477020748(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3829911960.n3431639553(this_addr, chainedStruct_addr);
+    }
 
     public void setTopology(WGPUPrimitiveTopology value) {
         internal_native_SetTopology(native_address, value.getValue());
     }
 
-    public static native void internal_native_SetTopology(long this_addr, int value);
+    public static void internal_native_SetTopology(long this_addr, int value) {
+        n.n3829911960.n3113475092(this_addr, value);
+    }
 
     public void setStripIndexFormat(WGPUIndexFormat value) {
         internal_native_SetStripIndexFormat(native_address, value.getValue());
     }
 
-    public static native void internal_native_SetStripIndexFormat(long this_addr, int value);
+    public static void internal_native_SetStripIndexFormat(long this_addr, int value) {
+        n.n3829911960.n1048626066(this_addr, value);
+    }
 
     public void setFrontFace(WGPUFrontFace value) {
         internal_native_SetFrontFace(native_address, value.getValue());
     }
 
-    public static native void internal_native_SetFrontFace(long this_addr, int value);
+    public static void internal_native_SetFrontFace(long this_addr, int value) {
+        n.n3829911960.n2946802797(this_addr, value);
+    }
 
     public void setCullMode(WGPUCullMode value) {
         internal_native_SetCullMode(native_address, value.getValue());
     }
 
-    public static native void internal_native_SetCullMode(long this_addr, int value);
+    public static void internal_native_SetCullMode(long this_addr, int value) {
+        n.n3829911960.n3831993102(this_addr, value);
+    }
 }

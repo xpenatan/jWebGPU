@@ -19,7 +19,9 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1911112865.n3513966025();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1911112865.n2959249685(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n1911112865.n1065015574(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n1911112865.n3201602348(this_addr);
+    }
 
     public void push_back(WGPUBindGroupEntry entry) {
         internal_native_push_back(native_address, entry.native_address);
     }
 
-    public static native void internal_native_push_back(long this_addr, long entry_addr);
+    public static void internal_native_push_back(long this_addr, long entry_addr) {
+        n.n1911112865.n3753107291(this_addr, entry_addr);
+    }
 
     public static WGPUVectorBindGroupEntry obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
         return WGPUVectorBindGroupEntry_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1911112865.n2667548370();
+    }
 }

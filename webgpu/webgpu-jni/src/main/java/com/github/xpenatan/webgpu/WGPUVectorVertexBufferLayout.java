@@ -19,7 +19,9 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1298218527.n3846569227();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1298218527.n1598728979(this_addr);
+    }
 
     public int size() {
         return internal_native_size(native_address);
     }
 
-    public static native int internal_native_size(long this_addr);
+    public static int internal_native_size(long this_addr) {
+        return n.n1298218527.n862179604(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n1298218527.n1208654574(this_addr);
+    }
 
     public void push_back(WGPUVertexBufferLayout vertexBufferLayout) {
         internal_native_push_back(native_address, vertexBufferLayout.native_address);
     }
 
-    public static native void internal_native_push_back(long this_addr, long vertexBufferLayout_addr);
+    public static void internal_native_push_back(long this_addr, long vertexBufferLayout_addr) {
+        n.n1298218527.n1962766809(this_addr, vertexBufferLayout_addr);
+    }
 
     public static WGPUVectorVertexBufferLayout obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
         return WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1298218527.n3000151572();
+    }
 }

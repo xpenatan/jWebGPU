@@ -34,11 +34,19 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
         return CUSTOM;
     }
 
-    private static native int WGPUMapAsyncStatus_Success_NATIVE();
+    private static int WGPUMapAsyncStatus_Success_NATIVE() {
+        return n.n1948079168.n538857133();
+    }
 
-    private static native int WGPUMapAsyncStatus_Error_NATIVE();
+    private static int WGPUMapAsyncStatus_Error_NATIVE() {
+        return n.n1948079168.n366781618();
+    }
 
-    private static native int WGPUMapAsyncStatus_Aborted_NATIVE();
+    private static int WGPUMapAsyncStatus_Aborted_NATIVE() {
+        return n.n1948079168.n1512547961();
+    }
 
-    private static native int WGPUMapAsyncStatus_Force32_NATIVE();
+    private static int WGPUMapAsyncStatus_Force32_NATIVE() {
+        return n.n1948079168.n2260212276();
+    }
 }

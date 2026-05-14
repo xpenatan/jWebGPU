@@ -19,7 +19,9 @@ public class WGPUComputePipeline extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2190906379.n1281031839();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,19 +41,25 @@ public class WGPUComputePipeline extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2190906379.n3468396031(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n2190906379.n3890029102(this_addr, value);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n2190906379.n1940129384(this_addr);
+    }
 
     public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
         long addr = internal_native_GetBindGroupLayout_addr(native_address, groupIndex);
@@ -63,11 +71,15 @@ public class WGPUComputePipeline extends NativeObject {
         return WGPUBindGroupLayout_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex);
+    public static long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex) {
+        return n.n2190906379.n1597494104(this_addr, groupIndex);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n2190906379.n1736395869(this_addr);
+    }
 }

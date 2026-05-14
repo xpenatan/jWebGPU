@@ -30,25 +30,33 @@ public class WGPUInstance extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2166685891.n108577975(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n2166685891.n2956180133(this_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n2166685891.n3159913648(this_addr);
+    }
 
     public void requestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback) {
         internal_native_RequestAdapter(native_address, options.native_address, mode.getValue(), callback.native_address);
     }
 
-    public static native void internal_native_RequestAdapter(long this_addr, long options_addr, int mode, long callback_addr);
+    public static void internal_native_RequestAdapter(long this_addr, long options_addr, int mode, long callback_addr) {
+        n.n2166685891.n3824260566(this_addr, options_addr, mode, callback_addr);
+    }
 
     public WGPUSurface createWebSurface(String canvas) {
         long addr = internal_native_CreateWebSurface_addr(native_address, canvas);
@@ -59,7 +67,9 @@ public class WGPUInstance extends NativeObject {
         return WGPUSurface_NEW;
     }
 
-    public static native long internal_native_CreateWebSurface_addr(long this_addr, String canvas);
+    public static long internal_native_CreateWebSurface_addr(long this_addr, String canvas) {
+        return n.n2166685891.n392143361(this_addr, canvas);
+    }
 
     public WGPUSurface createWindowsSurface(NativeObject hwnd) {
         long addr = internal_native_CreateWindowsSurface_addr(native_address, hwnd.native_void_address);
@@ -70,7 +80,9 @@ public class WGPUInstance extends NativeObject {
         return WGPUSurface_NEW;
     }
 
-    public static native long internal_native_CreateWindowsSurface_addr(long this_addr, long hwnd_addr);
+    public static long internal_native_CreateWindowsSurface_addr(long this_addr, long hwnd_addr) {
+        return n.n2166685891.n2492084155(this_addr, hwnd_addr);
+    }
 
     public WGPUSurface createLinuxSurface(boolean isWayland, NativeObject windowOrSurface, NativeObject display) {
         long addr = internal_native_CreateLinuxSurface_addr(native_address, isWayland, windowOrSurface.native_void_address, display.native_void_address);
@@ -81,7 +93,9 @@ public class WGPUInstance extends NativeObject {
         return WGPUSurface_NEW;
     }
 
-    public static native long internal_native_CreateLinuxSurface_addr(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr);
+    public static long internal_native_CreateLinuxSurface_addr(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr) {
+        return n.n2166685891.n1433734904(this_addr, isWayland, windowOrSurface_addr, display_addr);
+    }
 
     public WGPUSurface createMacSurface(NativeObject metalLayer) {
         long addr = internal_native_CreateMacSurface_addr(native_address, metalLayer.native_void_address);
@@ -92,7 +106,9 @@ public class WGPUInstance extends NativeObject {
         return WGPUSurface_NEW;
     }
 
-    public static native long internal_native_CreateMacSurface_addr(long this_addr, long metalLayer_addr);
+    public static long internal_native_CreateMacSurface_addr(long this_addr, long metalLayer_addr) {
+        return n.n2166685891.n2040245255(this_addr, metalLayer_addr);
+    }
 
     public WGPUSurface createAndroidSurface(WGPUAndroidWindow surface) {
         long addr = internal_native_CreateAndroidSurface_addr(native_address, surface.native_address);
@@ -103,13 +119,17 @@ public class WGPUInstance extends NativeObject {
         return WGPUSurface_NEW;
     }
 
-    public static native long internal_native_CreateAndroidSurface_addr(long this_addr, long surface_addr);
+    public static long internal_native_CreateAndroidSurface_addr(long this_addr, long surface_addr) {
+        return n.n2166685891.n2004601511(this_addr, surface_addr);
+    }
 
     public void processEvents() {
         internal_native_ProcessEvents(native_address);
     }
 
-    public static native void internal_native_ProcessEvents(long this_addr);
+    public static void internal_native_ProcessEvents(long this_addr) {
+        n.n2166685891.n2099761583(this_addr);
+    }
 
     public WGPUWaitStatus waitAny(WGPUVectorFutureWaitInfo futureVector, int timeoutNS) {
         int value = internal_native_WaitAny(native_address, futureVector.native_address, timeoutNS);
@@ -122,5 +142,7 @@ public class WGPUInstance extends NativeObject {
         return WGPUWaitStatus.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_WaitAny(long this_addr, long futureVector_addr, int timeoutNS);
+    public static int internal_native_WaitAny(long this_addr, long futureVector_addr, int timeoutNS) {
+        return n.n2166685891.n612723307(this_addr, futureVector_addr, timeoutNS);
+    }
 }

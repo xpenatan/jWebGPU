@@ -34,11 +34,19 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
         return CUSTOM;
     }
 
-    private static native int WGPUMipmapFilterMode_Undefined_NATIVE();
+    private static int WGPUMipmapFilterMode_Undefined_NATIVE() {
+        return n.n1656036369.n1710823898();
+    }
 
-    private static native int WGPUMipmapFilterMode_Nearest_NATIVE();
+    private static int WGPUMipmapFilterMode_Nearest_NATIVE() {
+        return n.n1656036369.n3696937960();
+    }
 
-    private static native int WGPUMipmapFilterMode_Linear_NATIVE();
+    private static int WGPUMipmapFilterMode_Linear_NATIVE() {
+        return n.n1656036369.n2148273191();
+    }
 
-    private static native int WGPUMipmapFilterMode_Force32_NATIVE();
+    private static int WGPUMipmapFilterMode_Force32_NATIVE() {
+        return n.n1656036369.n4151521812();
+    }
 }

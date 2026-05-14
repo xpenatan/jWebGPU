@@ -19,7 +19,9 @@ public class WGPURequestAdapterOptions extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1754520400.n899766650();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,37 +41,49 @@ public class WGPURequestAdapterOptions extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1754520400.n3407002628(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n1754520400.n1834676041(this_addr, chainedStruct_addr);
+    }
 
     public void setFeatureLevel(WGPUFeatureLevel featureLevel) {
         internal_native_SetFeatureLevel(native_address, featureLevel.getValue());
     }
 
-    public static native void internal_native_SetFeatureLevel(long this_addr, int featureLevel);
+    public static void internal_native_SetFeatureLevel(long this_addr, int featureLevel) {
+        n.n1754520400.n447618173(this_addr, featureLevel);
+    }
 
     public void setPowerPreference(WGPUPowerPreference powerPreference) {
         internal_native_SetPowerPreference(native_address, powerPreference.getValue());
     }
 
-    public static native void internal_native_SetPowerPreference(long this_addr, int powerPreference);
+    public static void internal_native_SetPowerPreference(long this_addr, int powerPreference) {
+        n.n1754520400.n3724485067(this_addr, powerPreference);
+    }
 
     public void setBackendType(WGPUBackendType backendType) {
         internal_native_SetBackendType(native_address, backendType.getValue());
     }
 
-    public static native void internal_native_SetBackendType(long this_addr, int backendType);
+    public static void internal_native_SetBackendType(long this_addr, int backendType) {
+        n.n1754520400.n627891549(this_addr, backendType);
+    }
 
     public void setCompatibleSurface(WGPUSurface compatibleSurface) {
         internal_native_SetCompatibleSurface(native_address, compatibleSurface.native_address);
     }
 
-    public static native void internal_native_SetCompatibleSurface(long this_addr, long compatibleSurface_addr);
+    public static void internal_native_SetCompatibleSurface(long this_addr, long compatibleSurface_addr) {
+        n.n1754520400.n1421786201(this_addr, compatibleSurface_addr);
+    }
 
     public static WGPURequestAdapterOptions obtain() {
         long addr = internal_native_Obtain_addr();
@@ -81,5 +95,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
         return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1754520400.n53348995();
+    }
 }

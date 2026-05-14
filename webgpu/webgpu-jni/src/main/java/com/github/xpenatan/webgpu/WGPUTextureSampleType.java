@@ -42,19 +42,35 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
         return CUSTOM;
     }
 
-    private static native int WGPUTextureSampleType_BindingNotUsed_NATIVE();
+    private static int WGPUTextureSampleType_BindingNotUsed_NATIVE() {
+        return n.n1611548433.n2307808721();
+    }
 
-    private static native int WGPUTextureSampleType_Undefined_NATIVE();
+    private static int WGPUTextureSampleType_Undefined_NATIVE() {
+        return n.n1611548433.n1991039862();
+    }
 
-    private static native int WGPUTextureSampleType_Float_NATIVE();
+    private static int WGPUTextureSampleType_Float_NATIVE() {
+        return n.n1611548433.n1150869634();
+    }
 
-    private static native int WGPUTextureSampleType_UnfilterableFloat_NATIVE();
+    private static int WGPUTextureSampleType_UnfilterableFloat_NATIVE() {
+        return n.n1611548433.n1509389847();
+    }
 
-    private static native int WGPUTextureSampleType_Depth_NATIVE();
+    private static int WGPUTextureSampleType_Depth_NATIVE() {
+        return n.n1611548433.n4107940329();
+    }
 
-    private static native int WGPUTextureSampleType_Sint_NATIVE();
+    private static int WGPUTextureSampleType_Sint_NATIVE() {
+        return n.n1611548433.n1553952898();
+    }
 
-    private static native int WGPUTextureSampleType_Uint_NATIVE();
+    private static int WGPUTextureSampleType_Uint_NATIVE() {
+        return n.n1611548433.n1812118336();
+    }
 
-    private static native int WGPUTextureSampleType_Force32_NATIVE();
+    private static int WGPUTextureSampleType_Force32_NATIVE() {
+        return n.n1611548433.n4129467056();
+    }
 }

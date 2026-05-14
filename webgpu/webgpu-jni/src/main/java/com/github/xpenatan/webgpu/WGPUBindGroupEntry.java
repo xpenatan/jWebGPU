@@ -19,7 +19,9 @@ public class WGPUBindGroupEntry extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3289252606.n1206466700();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,55 +41,73 @@ public class WGPUBindGroupEntry extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3289252606.n3029694514(this_addr);
+    }
 
     public void reset() {
         internal_native_Reset(native_address);
     }
 
-    public static native void internal_native_Reset(long this_addr);
+    public static void internal_native_Reset(long this_addr) {
+        n.n3289252606.n338446605(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n3289252606.n889373531(this_addr, chainedStruct_addr);
+    }
 
     public void setBinding(int binding) {
         internal_native_SetBinding(native_address, binding);
     }
 
-    public static native void internal_native_SetBinding(long this_addr, int binding);
+    public static void internal_native_SetBinding(long this_addr, int binding) {
+        n.n3289252606.n4199635284(this_addr, binding);
+    }
 
     public void setBuffer(WGPUBuffer buffer) {
         internal_native_SetBuffer(native_address, buffer.native_address);
     }
 
-    public static native void internal_native_SetBuffer(long this_addr, long buffer_addr);
+    public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
+        n.n3289252606.n3974546414(this_addr, buffer_addr);
+    }
 
     public void setOffset(long offset) {
         internal_native_SetOffset(native_address, offset);
     }
 
-    public static native void internal_native_SetOffset(long this_addr, long offset);
+    public static void internal_native_SetOffset(long this_addr, long offset) {
+        n.n3289252606.n1675921537(this_addr, offset);
+    }
 
     public void setSize(long size) {
         internal_native_SetSize(native_address, size);
     }
 
-    public static native void internal_native_SetSize(long this_addr, long size);
+    public static void internal_native_SetSize(long this_addr, long size) {
+        n.n3289252606.n4055972335(this_addr, size);
+    }
 
     public void setSampler(WGPUSampler sampler) {
         internal_native_SetSampler(native_address, sampler.native_address);
     }
 
-    public static native void internal_native_SetSampler(long this_addr, long sampler_addr);
+    public static void internal_native_SetSampler(long this_addr, long sampler_addr) {
+        n.n3289252606.n3342596986(this_addr, sampler_addr);
+    }
 
     public void setTextureView(WGPUTextureView textureView) {
         internal_native_SetTextureView(native_address, textureView.native_address);
     }
 
-    public static native void internal_native_SetTextureView(long this_addr, long textureView_addr);
+    public static void internal_native_SetTextureView(long this_addr, long textureView_addr) {
+        n.n3289252606.n2197420754(this_addr, textureView_addr);
+    }
 
     public static WGPUBindGroupEntry obtain() {
         long addr = internal_native_Obtain_addr();
@@ -99,5 +119,7 @@ public class WGPUBindGroupEntry extends NativeObject {
         return WGPUBindGroupEntry_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n3289252606.n360049045();
+    }
 }

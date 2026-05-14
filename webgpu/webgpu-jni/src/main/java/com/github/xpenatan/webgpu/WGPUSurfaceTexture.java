@@ -19,7 +19,9 @@ public class WGPUSurfaceTexture extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n1770153308.n3759086318();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,13 +41,17 @@ public class WGPUSurfaceTexture extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1770153308.n3121070864(this_addr);
+    }
 
     public void getTexture(WGPUTexture texture) {
         internal_native_GetTexture(native_address, texture.native_address);
     }
 
-    public static native void internal_native_GetTexture(long this_addr, long texture_addr);
+    public static void internal_native_GetTexture(long this_addr, long texture_addr) {
+        n.n1770153308.n752216251(this_addr, texture_addr);
+    }
 
     public WGPUSurfaceGetCurrentTextureStatus getStatus() {
         int value = internal_native_GetStatus(native_address);
@@ -58,7 +64,9 @@ public class WGPUSurfaceTexture extends NativeObject {
         return WGPUSurfaceGetCurrentTextureStatus.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetStatus(long this_addr);
+    public static int internal_native_GetStatus(long this_addr) {
+        return n.n1770153308.n134036214(this_addr);
+    }
 
     public static WGPUSurfaceTexture obtain() {
         long addr = internal_native_Obtain_addr();
@@ -70,5 +78,7 @@ public class WGPUSurfaceTexture extends NativeObject {
         return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n1770153308.n2912668663();
+    }
 }

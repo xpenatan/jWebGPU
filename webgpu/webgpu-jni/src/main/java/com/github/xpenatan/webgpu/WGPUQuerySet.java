@@ -17,7 +17,9 @@ public class WGPUQuerySet extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n444891816.n3909161250();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,37 +39,49 @@ public class WGPUQuerySet extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n444891816.n3231419740(this_addr);
+    }
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String value);
+    public static void internal_native_SetLabel(long this_addr, String value) {
+        n.n444891816.n760611249(this_addr, value);
+    }
 
     public void addRef() {
         internal_native_AddRef(native_address);
     }
 
-    public static native void internal_native_AddRef(long this_addr);
+    public static void internal_native_AddRef(long this_addr) {
+        n.n444891816.n2967632172(this_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n444891816.n273291499(this_addr);
+    }
 
     public void destroy() {
         internal_native_Destroy(native_address);
     }
 
-    public static native void internal_native_Destroy(long this_addr);
+    public static void internal_native_Destroy(long this_addr) {
+        n.n444891816.n924033240(this_addr);
+    }
 
     public int getCount() {
         return internal_native_GetCount(native_address);
     }
 
-    public static native int internal_native_GetCount(long this_addr);
+    public static int internal_native_GetCount(long this_addr) {
+        return n.n444891816.n2844666085(this_addr);
+    }
 
     public WGPUQueryType getType() {
         int value = internal_native_GetType(native_address);
@@ -80,11 +94,15 @@ public class WGPUQuerySet extends NativeObject {
         return WGPUQueryType.CUSTOM.setValue(value);
     }
 
-    public static native int internal_native_GetType(long this_addr);
+    public static int internal_native_GetType(long this_addr) {
+        return n.n444891816.n2748426978(this_addr);
+    }
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    public static native boolean internal_native_IsValid(long this_addr);
+    public static boolean internal_native_IsValid(long this_addr) {
+        return n.n444891816.n69557984(this_addr);
+    }
 }

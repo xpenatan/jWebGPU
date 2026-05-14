@@ -19,7 +19,9 @@ public class WGPUColorTargetState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n783753291.n759224927();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,31 +41,41 @@ public class WGPUColorTargetState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n783753291.n2984837695(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n783753291.n3438231726(this_addr, chainedStruct_addr);
+    }
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    public static native void internal_native_SetFormat(long this_addr, int format);
+    public static void internal_native_SetFormat(long this_addr, int format) {
+        n.n783753291.n894940665(this_addr, format);
+    }
 
     public void setBlend(WGPUBlendState blendState) {
         internal_native_SetBlend(native_address, blendState.native_address);
     }
 
-    public static native void internal_native_SetBlend(long this_addr, long blendState_addr);
+    public static void internal_native_SetBlend(long this_addr, long blendState_addr) {
+        n.n783753291.n599184534(this_addr, blendState_addr);
+    }
 
     public void setWriteMask(WGPUColorWriteMask writeMask) {
         internal_native_SetWriteMask(native_address, writeMask.getValue());
     }
 
-    public static native void internal_native_SetWriteMask(long this_addr, int writeMask);
+    public static void internal_native_SetWriteMask(long this_addr, int writeMask) {
+        n.n783753291.n3067728699(this_addr, writeMask);
+    }
 
     public static WGPUColorTargetState obtain() {
         long addr = internal_native_Obtain_addr();
@@ -75,5 +87,7 @@ public class WGPUColorTargetState extends NativeObject {
         return WGPUColorTargetState_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n783753291.n4207774568();
+    }
 }

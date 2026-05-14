@@ -27,7 +27,9 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n691569224.n2433197308(this_addr);
+    }
 
     public WGPUUncapturedErrorCallback() {
         long addr = internal_native_create_addr();
@@ -55,7 +57,9 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
         onCallback(errorType_addr_enum, message_addr);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n691569224.n101496194();
+    }
 
     public native void internal_native_setupCallback(long this_addr);
 }

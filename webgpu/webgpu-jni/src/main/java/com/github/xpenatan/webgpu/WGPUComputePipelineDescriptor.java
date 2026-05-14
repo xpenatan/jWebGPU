@@ -21,7 +21,9 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n2792878554.n638682928();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -41,25 +43,33 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n2792878554.n2705895438(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n2792878554.n21924287(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n2792878554.n3474340863(this_addr, chainedStruct_addr);
+    }
 
     public void setLayout(WGPUPipelineLayout layout) {
         internal_native_SetLayout(native_address, layout.native_address);
     }
 
-    public static native void internal_native_SetLayout(long this_addr, long layout_addr);
+    public static void internal_native_SetLayout(long this_addr, long layout_addr) {
+        n.n2792878554.n254721844(this_addr, layout_addr);
+    }
 
     public WGPUComputeState getCompute() {
         long addr = internal_native_GetCompute_addr(native_address);
@@ -71,7 +81,9 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
         return WGPUComputeState_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetCompute_addr(long this_addr);
+    public static long internal_native_GetCompute_addr(long this_addr) {
+        return n.n2792878554.n226051729(this_addr);
+    }
 
     public static WGPUComputePipelineDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -83,5 +95,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
         return WGPUComputePipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n2792878554.n4087232569();
+    }
 }

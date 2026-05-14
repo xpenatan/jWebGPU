@@ -106,18 +106,18 @@ public enum WGPUSurfaceGetCurrentTextureStatus implements NativeEnum<WGPUSurface
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1SuccessOptimal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3131115713", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1SuccessSuboptimal_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3925540207", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Timeout_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2451621931", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Outdated_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3375392938", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Lost_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2727360998", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Error_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1569019602", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("jparser_com_github_xpenatan_webgpu_WGPUSurfaceGetCurrentTextureStatus_WGPUSurfaceGetCurrentTextureStatus_1Force32_1NATIVE__", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2264712276", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

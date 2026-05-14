@@ -32,13 +32,17 @@ public class WGPUFutureWaitInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n593115220.n2909067272(this_addr);
+    }
 
     public void setFuture(WGPUFuture future) {
         internal_native_SetFuture(native_address, future.native_address);
     }
 
-    public static native void internal_native_SetFuture(long this_addr, long future_addr);
+    public static void internal_native_SetFuture(long this_addr, long future_addr) {
+        n.n593115220.n2648422407(this_addr, future_addr);
+    }
 
     public static WGPUFutureWaitInfo obtain() {
         long addr = internal_native_Obtain_addr();
@@ -50,5 +54,7 @@ public class WGPUFutureWaitInfo extends NativeObject {
         return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n593115220.n53705727();
+    }
 }

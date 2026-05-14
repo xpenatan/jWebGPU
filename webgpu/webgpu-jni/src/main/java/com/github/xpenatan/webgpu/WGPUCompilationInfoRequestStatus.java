@@ -34,7 +34,11 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
         return CUSTOM;
     }
 
-    private static native int WGPUCompilationInfoRequestStatus_Success_NATIVE();
+    private static int WGPUCompilationInfoRequestStatus_Success_NATIVE() {
+        return n.n1529956094.n1939524909();
+    }
 
-    private static native int WGPUCompilationInfoRequestStatus_Force32_NATIVE();
+    private static int WGPUCompilationInfoRequestStatus_Force32_NATIVE() {
+        return n.n1529956094.n3660880052();
+    }
 }

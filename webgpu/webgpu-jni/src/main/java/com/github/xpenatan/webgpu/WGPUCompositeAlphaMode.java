@@ -40,15 +40,27 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
         return CUSTOM;
     }
 
-    private static native int WGPUCompositeAlphaMode_Auto_NATIVE();
+    private static int WGPUCompositeAlphaMode_Auto_NATIVE() {
+        return n.n616931336.n4165359121();
+    }
 
-    private static native int WGPUCompositeAlphaMode_Opaque_NATIVE();
+    private static int WGPUCompositeAlphaMode_Opaque_NATIVE() {
+        return n.n616931336.n2061960067();
+    }
 
-    private static native int WGPUCompositeAlphaMode_Premultiplied_NATIVE();
+    private static int WGPUCompositeAlphaMode_Premultiplied_NATIVE() {
+        return n.n616931336.n483231424();
+    }
 
-    private static native int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE();
+    private static int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE() {
+        return n.n616931336.n654428359();
+    }
 
-    private static native int WGPUCompositeAlphaMode_Inherit_NATIVE();
+    private static int WGPUCompositeAlphaMode_Inherit_NATIVE() {
+        return n.n616931336.n3728592165();
+    }
 
-    private static native int WGPUCompositeAlphaMode_Force32_NATIVE();
+    private static int WGPUCompositeAlphaMode_Force32_NATIVE() {
+        return n.n616931336.n2743386036();
+    }
 }

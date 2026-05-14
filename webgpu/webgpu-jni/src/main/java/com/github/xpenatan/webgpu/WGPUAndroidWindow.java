@@ -28,26 +28,36 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_SetWindow(native_address, surfacePtr);
     }
 
-    private static native long internal_getAndroidSurface(Object surface);
+    private static long internal_getAndroidSurface(Object surface) {
+        return n.n3690999761.n1644656126(surface);
+    }
 
-    private static native void internal_native_SetWindow(long this_addr, long surfaceAddr);
+    private static void internal_native_SetWindow(long this_addr, long surfaceAddr) {
+        n.n3690999761.n830779121(this_addr, surfaceAddr);
+    }
 
     public WGPUAndroidWindow() {
         long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n3690999761.n151519385();
+    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n3690999761.n1436725317(this_addr);
+    }
 
     public void initLogcat() {
         internal_native_InitLogcat(native_address);
     }
 
-    public static native void internal_native_InitLogcat(long this_addr);
+    public static void internal_native_InitLogcat(long this_addr) {
+        n.n3690999761.n3571676741(this_addr);
+    }
 }

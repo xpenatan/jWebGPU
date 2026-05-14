@@ -27,7 +27,9 @@ public class WGPUBufferMapCallback extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n738943219.n141236455(this_addr);
+    }
 
     public WGPUBufferMapCallback() {
         long addr = internal_native_create_addr();
@@ -55,7 +57,9 @@ public class WGPUBufferMapCallback extends NativeObject {
         onCallback(status_addr_enum, message_addr);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n738943219.n1017461431();
+    }
 
     public native void internal_native_setupCallback(long this_addr);
 }

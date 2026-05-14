@@ -32,25 +32,33 @@ public class WGPUDevice extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n266518020.n3364876728(this_addr);
+    }
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    public static native void internal_native_Release(long this_addr);
+    public static void internal_native_Release(long this_addr) {
+        n.n266518020.n1229417231(this_addr);
+    }
 
     public void createBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut) {
         internal_native_CreateBindGroup(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateBindGroup(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateBindGroup(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n976554704(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut) {
         internal_native_CreateBindGroupLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateBindGroupLayout(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateBindGroupLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n2035541062(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public WGPUBuffer createBuffer(WGPUBufferDescriptor descriptor) {
         long addr = internal_native_CreateBuffer__0_addr(native_address, descriptor.native_address);
@@ -61,91 +69,121 @@ public class WGPUDevice extends NativeObject {
         return WGPUBuffer_NEW;
     }
 
-    public static native long internal_native_CreateBuffer__0_addr(long this_addr, long descriptor_addr);
+    public static long internal_native_CreateBuffer__0_addr(long this_addr, long descriptor_addr) {
+        return n.n266518020.n1881626826(this_addr, descriptor_addr);
+    }
 
     public void createBuffer(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut) {
         internal_native_CreateBuffer__1(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateBuffer__1(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateBuffer__1(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n65445665(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut) {
         internal_native_CreateCommandEncoder(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateCommandEncoder(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateCommandEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n1019050349(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut) {
         internal_native_CreateComputePipeline(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateComputePipeline(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateComputePipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n976022201(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
         internal_native_CreatePipelineLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreatePipelineLayout(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreatePipelineLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n2480616178(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createQuerySet(WGPUQuerySetDescriptor descriptor, WGPUQuerySet valueOut) {
         internal_native_CreateQuerySet(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateQuerySet(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateQuerySet(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n623129508(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createRenderBundleEncoder(WGPURenderBundleEncoderDescriptor descriptor, WGPURenderBundleEncoder valueOut) {
         internal_native_CreateRenderBundleEncoder(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateRenderBundleEncoder(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateRenderBundleEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n1766028814(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createRenderPipeline(WGPURenderPipelineDescriptor descriptor, WGPURenderPipeline valueOut) {
         internal_native_CreateRenderPipeline(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n1082446726(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut) {
         internal_native_CreateSampler(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateSampler(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateSampler(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n2420806858(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void createShaderModule(WGPUShaderModuleDescriptor descriptor, WGPUShaderModule shaderModule) {
         internal_native_CreateShaderModule(native_address, descriptor.native_address, shaderModule.native_address);
     }
 
-    public static native void internal_native_CreateShaderModule(long this_addr, long descriptor_addr, long shaderModule_addr);
+    public static void internal_native_CreateShaderModule(long this_addr, long descriptor_addr, long shaderModule_addr) {
+        n.n266518020.n392988557(this_addr, descriptor_addr, shaderModule_addr);
+    }
 
     public void createTexture(WGPUTextureDescriptor descriptor, WGPUTexture valueOut) {
         internal_native_CreateTexture(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    public static native void internal_native_CreateTexture(long this_addr, long descriptor_addr, long valueOut_addr);
+    public static void internal_native_CreateTexture(long this_addr, long descriptor_addr, long valueOut_addr) {
+        n.n266518020.n19584855(this_addr, descriptor_addr, valueOut_addr);
+    }
 
     public void destroy() {
         internal_native_Destroy(native_address);
     }
 
-    public static native void internal_native_Destroy(long this_addr);
+    public static void internal_native_Destroy(long this_addr) {
+        n.n266518020.n1880158972(this_addr);
+    }
 
     public void getFeatures(WGPUSupportedFeatures features) {
         internal_native_GetFeatures(native_address, features.native_address);
     }
 
-    public static native void internal_native_GetFeatures(long this_addr, long features_addr);
+    public static void internal_native_GetFeatures(long this_addr, long features_addr) {
+        n.n266518020.n216365221(this_addr, features_addr);
+    }
 
     public boolean hasFeature(WGPUFeatureName feature) {
         return internal_native_HasFeature(native_address, feature.getValue());
     }
 
-    public static native boolean internal_native_HasFeature(long this_addr, int feature);
+    public static boolean internal_native_HasFeature(long this_addr, int feature) {
+        return n.n266518020.n376083009(this_addr, feature);
+    }
 
     public void getLimits(WGPULimits limits) {
         internal_native_GetLimits(native_address, limits.native_address);
     }
 
-    public static native void internal_native_GetLimits(long this_addr, long limits_addr);
+    public static void internal_native_GetLimits(long this_addr, long limits_addr) {
+        n.n266518020.n3799845056(this_addr, limits_addr);
+    }
 
     public WGPUQueue getQueue() {
         long addr = internal_native_GetQueue_addr(native_address);
@@ -157,5 +195,7 @@ public class WGPUDevice extends NativeObject {
         return WGPUQueue_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetQueue_addr(long this_addr);
+    public static long internal_native_GetQueue_addr(long this_addr) {
+        return n.n266518020.n784176897(this_addr);
+    }
 }

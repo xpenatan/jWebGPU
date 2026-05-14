@@ -34,7 +34,11 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
         return CUSTOM;
     }
 
-    private static native int BigEndian_NATIVE();
+    private static int BigEndian_NATIVE() {
+        return n.n647673016.n2512452957();
+    }
 
-    private static native int LittleEndian_NATIVE();
+    private static int LittleEndian_NATIVE() {
+        return n.n647673016.n3725765659();
+    }
 }

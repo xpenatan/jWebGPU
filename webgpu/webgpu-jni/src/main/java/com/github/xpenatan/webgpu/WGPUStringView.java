@@ -33,7 +33,9 @@ public class WGPUStringView extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n945927940.n605072056(this_addr);
+    }
 
     public NativeString getString() {
         long addr = internal_native_GetString_addr(native_address);
@@ -45,5 +47,7 @@ public class WGPUStringView extends NativeObject {
         return NativeString_TEMP_GEN_0;
     }
 
-    public static native long internal_native_GetString_addr(long this_addr);
+    public static long internal_native_GetString_addr(long this_addr) {
+        return n.n945927940.n751805937(this_addr);
+    }
 }

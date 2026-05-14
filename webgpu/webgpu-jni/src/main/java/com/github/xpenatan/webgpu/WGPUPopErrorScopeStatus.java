@@ -34,7 +34,11 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
         return CUSTOM;
     }
 
-    private static native int WGPUPopErrorScopeStatus_Success_NATIVE();
+    private static int WGPUPopErrorScopeStatus_Success_NATIVE() {
+        return n.n2843257793.n911684873();
+    }
 
-    private static native int WGPUPopErrorScopeStatus_Force32_NATIVE();
+    private static int WGPUPopErrorScopeStatus_Force32_NATIVE() {
+        return n.n2843257793.n2633040016();
+    }
 }

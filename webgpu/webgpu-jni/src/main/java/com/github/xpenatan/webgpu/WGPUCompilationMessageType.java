@@ -34,11 +34,19 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
         return CUSTOM;
     }
 
-    private static native int WGPUCompilationMessageType_Error_NATIVE();
+    private static int WGPUCompilationMessageType_Error_NATIVE() {
+        return n.n1610067404.n1475541554();
+    }
 
-    private static native int WGPUCompilationMessageType_Warning_NATIVE();
+    private static int WGPUCompilationMessageType_Warning_NATIVE() {
+        return n.n1610067404.n3779922630();
+    }
 
-    private static native int WGPUCompilationMessageType_Info_NATIVE();
+    private static int WGPUCompilationMessageType_Info_NATIVE() {
+        return n.n1610067404.n3810926096();
+    }
 
-    private static native int WGPUCompilationMessageType_Force32_NATIVE();
+    private static int WGPUCompilationMessageType_Force32_NATIVE() {
+        return n.n1610067404.n2626621364();
+    }
 }

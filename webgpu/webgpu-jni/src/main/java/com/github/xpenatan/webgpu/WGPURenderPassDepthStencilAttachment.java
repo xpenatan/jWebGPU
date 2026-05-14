@@ -19,7 +19,9 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n4054886737.n80475929();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,61 +41,81 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4054886737.n3730098629(this_addr);
+    }
 
     public void setView(WGPUTextureView textureView) {
         internal_native_SetView(native_address, textureView.native_address);
     }
 
-    public static native void internal_native_SetView(long this_addr, long textureView_addr);
+    public static void internal_native_SetView(long this_addr, long textureView_addr) {
+        n.n4054886737.n2543577382(this_addr, textureView_addr);
+    }
 
     public void setDepthLoadOp(WGPULoadOp loadOp) {
         internal_native_SetDepthLoadOp(native_address, loadOp.getValue());
     }
 
-    public static native void internal_native_SetDepthLoadOp(long this_addr, int loadOp);
+    public static void internal_native_SetDepthLoadOp(long this_addr, int loadOp) {
+        n.n4054886737.n3689746370(this_addr, loadOp);
+    }
 
     public void setDepthStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetDepthStoreOp(native_address, storeOp.getValue());
     }
 
-    public static native void internal_native_SetDepthStoreOp(long this_addr, int storeOp);
+    public static void internal_native_SetDepthStoreOp(long this_addr, int storeOp) {
+        n.n4054886737.n1211988619(this_addr, storeOp);
+    }
 
     public void setDepthClearValue(float depthClearValue) {
         internal_native_SetDepthClearValue(native_address, depthClearValue);
     }
 
-    public static native void internal_native_SetDepthClearValue(long this_addr, float depthClearValue);
+    public static void internal_native_SetDepthClearValue(long this_addr, float depthClearValue) {
+        n.n4054886737.n617761938(this_addr, depthClearValue);
+    }
 
     public void setDepthReadOnly(boolean depthReadOnly) {
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    public static native void internal_native_SetDepthReadOnly(long this_addr, boolean depthReadOnly);
+    public static void internal_native_SetDepthReadOnly(long this_addr, boolean depthReadOnly) {
+        n.n4054886737.n722854368(this_addr, depthReadOnly);
+    }
 
     public void setStencilLoadOp(WGPULoadOp loadOp) {
         internal_native_SetStencilLoadOp(native_address, loadOp.getValue());
     }
 
-    public static native void internal_native_SetStencilLoadOp(long this_addr, int loadOp);
+    public static void internal_native_SetStencilLoadOp(long this_addr, int loadOp) {
+        n.n4054886737.n1209846633(this_addr, loadOp);
+    }
 
     public void setStencilStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetStencilStoreOp(native_address, storeOp.getValue());
     }
 
-    public static native void internal_native_SetStencilStoreOp(long this_addr, int storeOp);
+    public static void internal_native_SetStencilStoreOp(long this_addr, int storeOp) {
+        n.n4054886737.n1644508100(this_addr, storeOp);
+    }
 
     public void setStencilClearValue(int stencilClearValue) {
         internal_native_SetStencilClearValue(native_address, stencilClearValue);
     }
 
-    public static native void internal_native_SetStencilClearValue(long this_addr, int stencilClearValue);
+    public static void internal_native_SetStencilClearValue(long this_addr, int stencilClearValue) {
+        n.n4054886737.n2548066252(this_addr, stencilClearValue);
+    }
 
     public void setStencilReadOnly(boolean stencilReadOnly) {
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    public static native void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly);
+    public static void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly) {
+        n.n4054886737.n662570055(this_addr, stencilReadOnly);
+    }
 
     public static WGPURenderPassDepthStencilAttachment obtain() {
         long addr = internal_native_Obtain_addr();
@@ -105,5 +127,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
         return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n4054886737.n3529025570();
+    }
 }

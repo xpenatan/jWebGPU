@@ -34,9 +34,15 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
         return CUSTOM;
     }
 
-    private static native int WGPURequestDeviceStatus_Success_NATIVE();
+    private static int WGPURequestDeviceStatus_Success_NATIVE() {
+        return n.n2767779113.n2952556505();
+    }
 
-    private static native int WGPURequestDeviceStatus_Error_NATIVE();
+    private static int WGPURequestDeviceStatus_Error_NATIVE() {
+        return n.n2767779113.n3068731614();
+    }
 
-    private static native int WGPURequestDeviceStatus_Force32_NATIVE();
+    private static int WGPURequestDeviceStatus_Force32_NATIVE() {
+        return n.n2767779113.n378944352();
+    }
 }

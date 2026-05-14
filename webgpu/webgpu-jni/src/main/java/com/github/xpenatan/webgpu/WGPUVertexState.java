@@ -30,35 +30,47 @@ public class WGPUVertexState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n4188505695.n640607059(this_addr);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n4188505695.n4145135898(this_addr, chainedStruct_addr);
+    }
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    public static native void internal_native_SetModule(long this_addr, long shaderModule_addr);
+    public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
+        n.n4188505695.n3491902971(this_addr, shaderModule_addr);
+    }
 
     public void setEntryPoint(String entryPoint) {
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    public static native void internal_native_SetEntryPoint(long this_addr, String entryPoint);
+    public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
+        n.n4188505695.n1191621442(this_addr, entryPoint);
+    }
 
     public void setConstants(WGPUVectorConstantEntry constants) {
         internal_native_SetConstants(native_address, constants.native_address);
     }
 
-    public static native void internal_native_SetConstants(long this_addr, long constants_addr);
+    public static void internal_native_SetConstants(long this_addr, long constants_addr) {
+        n.n4188505695.n2938722560(this_addr, constants_addr);
+    }
 
     public void setBuffers(WGPUVectorVertexBufferLayout buffers) {
         internal_native_SetBuffers(native_address, buffers.native_address);
     }
 
-    public static native void internal_native_SetBuffers(long this_addr, long buffers_addr);
+    public static void internal_native_SetBuffers(long this_addr, long buffers_addr) {
+        n.n4188505695.n3816712996(this_addr, buffers_addr);
+    }
 }

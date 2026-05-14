@@ -19,7 +19,9 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    public static native long internal_native_create_addr();
+    public static long internal_native_create_addr() {
+        return n.n18282793.n2446120513();
+    }
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -39,25 +41,33 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n18282793.n1044980637(this_addr);
+    }
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    public static native void internal_native_SetLabel(long this_addr, String label);
+    public static void internal_native_SetLabel(long this_addr, String label) {
+        n.n18282793.n2027304912(this_addr, label);
+    }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
+    public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
+        n.n18282793.n3221649808(this_addr, chainedStruct_addr);
+    }
 
     public void setBindGroupLayouts(WGPUVectorBindGroupLayout bindGroupLayouts) {
         internal_native_SetBindGroupLayouts(native_address, bindGroupLayouts.native_address);
     }
 
-    public static native void internal_native_SetBindGroupLayouts(long this_addr, long bindGroupLayouts_addr);
+    public static void internal_native_SetBindGroupLayouts(long this_addr, long bindGroupLayouts_addr) {
+        n.n18282793.n1216535616(this_addr, bindGroupLayouts_addr);
+    }
 
     public static WGPUPipelineLayoutDescriptor obtain() {
         long addr = internal_native_Obtain_addr();
@@ -69,5 +79,7 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
         return WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    public static native long internal_native_Obtain_addr();
+    public static long internal_native_Obtain_addr() {
+        return n.n18282793.n1599702858();
+    }
 }

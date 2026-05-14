@@ -32,7 +32,9 @@ public class WGPULongBuffer extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    public static native void internal_native_deleteNative(long this_addr);
+    public static void internal_native_deleteNative(long this_addr) {
+        n.n1366266506.n4217119934(this_addr);
+    }
 
     public WGPUByteBuffer getByteBuffer() {
         long addr = internal_native_getByteBuffer_addr(native_address);
@@ -44,77 +46,103 @@ public class WGPULongBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    public static native long internal_native_getByteBuffer_addr(long this_addr);
+    public static long internal_native_getByteBuffer_addr(long this_addr) {
+        return n.n1366266506.n1291881006(this_addr);
+    }
 
     public void put(long value) {
         internal_native_put__0(native_address, value);
     }
 
-    public static native void internal_native_put__0(long this_addr, long value);
+    public static void internal_native_put__0(long this_addr, long value) {
+        n.n1366266506.n3202960169(this_addr, value);
+    }
 
     public void put(int index, long value) {
         internal_native_put__1(native_address, index, value);
     }
 
-    public static native void internal_native_put__1(long this_addr, int index, long value);
+    public static void internal_native_put__1(long this_addr, int index, long value) {
+        n.n1366266506.n974104199(this_addr, index, value);
+    }
 
     public long get(int index) {
         return internal_native_get(native_address, index);
     }
 
-    public static native long internal_native_get(long this_addr, int index);
+    public static long internal_native_get(long this_addr, int index) {
+        return n.n1366266506.n585859453(this_addr, index);
+    }
 
     public long get() {
         return internal_native_get(native_address);
     }
 
-    public static native long internal_native_get(long this_addr);
+    public static long internal_native_get(long this_addr) {
+        return n.n1366266506.n2774505018(this_addr);
+    }
 
     public int remaining() {
         return internal_native_remaining(native_address);
     }
 
-    public static native int internal_native_remaining(long this_addr);
+    public static int internal_native_remaining(long this_addr) {
+        return n.n1366266506.n1075583386(this_addr);
+    }
 
     public int getCapacity() {
         return internal_native_getCapacity(native_address);
     }
 
-    public static native int internal_native_getCapacity(long this_addr);
+    public static int internal_native_getCapacity(long this_addr) {
+        return n.n1366266506.n1550005152(this_addr);
+    }
 
     public void clear() {
         internal_native_clear(native_address);
     }
 
-    public static native void internal_native_clear(long this_addr);
+    public static void internal_native_clear(long this_addr) {
+        n.n1366266506.n1761991587(this_addr);
+    }
 
     public void limit(int newLimit) {
         internal_native_limit(native_address, newLimit);
     }
 
-    public static native void internal_native_limit(long this_addr, int newLimit);
+    public static void internal_native_limit(long this_addr, int newLimit) {
+        n.n1366266506.n1748471992(this_addr, newLimit);
+    }
 
     public int getLimit() {
         return internal_native_getLimit(native_address);
     }
 
-    public static native int internal_native_getLimit(long this_addr);
+    public static int internal_native_getLimit(long this_addr) {
+        return n.n1366266506.n4064830011(this_addr);
+    }
 
     public void position(int newPosition) {
         internal_native_position(native_address, newPosition);
     }
 
-    public static native void internal_native_position(long this_addr, int newPosition);
+    public static void internal_native_position(long this_addr, int newPosition) {
+        n.n1366266506.n3171583578(this_addr, newPosition);
+    }
 
     public int getPosition() {
         return internal_native_getPosition(native_address);
     }
 
-    public static native int internal_native_getPosition(long this_addr);
+    public static int internal_native_getPosition(long this_addr) {
+        return n.n1366266506.n50470033(this_addr);
+    }
 
     public void flip() {
         internal_native_flip(native_address);
     }
 
-    public static native void internal_native_flip(long this_addr);
+    public static void internal_native_flip(long this_addr) {
+        n.n1366266506.n4026034387(this_addr);
+    }
 }
