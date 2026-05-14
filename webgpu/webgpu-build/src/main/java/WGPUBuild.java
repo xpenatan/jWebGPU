@@ -9,6 +9,9 @@ import com.github.xpenatan.jParser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jParser.builder.tool.BuilderTool;
 import com.github.xpenatan.jParser.cpp.JNIClassData;
 import com.github.xpenatan.jParser.ffm.FFMClassData;
+import com.github.xpenatan.jParser.ffm.FFMCriticalMethodData;
+import com.github.xpenatan.jParser.ffm.FFMCriticalMethodListener;
+import com.github.xpenatan.jParser.ffm.FFMCriticalMode;
 import com.github.xpenatan.jParser.idl.IDLReader;
 import com.github.xpenatan.jParser.idl.IDLRenaming;
 import java.io.File;
@@ -34,8 +37,29 @@ public class WGPUBuild {
         BuildToolOptions op = new BuildToolOptions(data, args);
         op.addAdditionalIDLRefPath(IDLReader.getRuntimeHelperFile());
 
-//        op.jniClassData.symbolNameMode = JNIClassData.SymbolNameMode.OBFUSCATED;
-//        op.ffmClassData.symbolNameMode = FFMClassData.SymbolNameMode.OBFUSCATED;
+        op.jniClassData.symbolNameMode = JNIClassData.SymbolNameMode.OBFUSCATED;
+        op.ffmClassData.symbolNameMode = FFMClassData.SymbolNameMode.OBFUSCATED;
+        op.ffmClassData.methodListener = new FFMCriticalMethodListener() {
+            @Override
+            public FFMCriticalMode onCriticalMode(FFMCriticalMethodData methodData) {
+                String javaMethodName = methodData.javaMethodName;
+//                boolean critical = javaMethodName.contains("_addr") ||
+//                        javaMethodName.contains("_Set") ||
+//                        javaMethodName.contains("_Get") ||
+//                        javaMethodName.contains("_put") ||
+//                        javaMethodName.contains("_get") ||
+//                        javaMethodName.contains("_Release") ||
+//                        javaMethodName.contains("_Destroy") ||
+//                        javaMethodName.contains("_IsValid") ||
+//                        javaMethodName.endsWith("_NATIVE") ||
+//                        javaMethodName.contains("deleteNative");
+//
+//                if(critical) {
+//                    return FFMCriticalMode.ENABLE;
+//                }
+                return null;
+            }
+        };
 
         BuilderTool.build(op, new BuildToolListener() {
             @Override
