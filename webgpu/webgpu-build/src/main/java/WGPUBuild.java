@@ -7,6 +7,8 @@ import com.github.xpenatan.jParser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jParser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jParser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jParser.builder.tool.BuilderTool;
+import com.github.xpenatan.jParser.cpp.JNIClassData;
+import com.github.xpenatan.jParser.ffm.FFMClassData;
 import com.github.xpenatan.jParser.idl.IDLReader;
 import com.github.xpenatan.jParser.idl.IDLRenaming;
 import java.io.File;
@@ -31,6 +33,9 @@ public class WGPUBuild {
         data.modulePrefix = modulePrefix;
         BuildToolOptions op = new BuildToolOptions(data, args);
         op.addAdditionalIDLRefPath(IDLReader.getRuntimeHelperFile());
+
+        op.jniClassData.symbolNameMode = JNIClassData.SymbolNameMode.OBFUSCATED;
+        op.ffmClassData.symbolNameMode = FFMClassData.SymbolNameMode.OBFUSCATED;
 
         BuilderTool.build(op, new BuildToolListener() {
             @Override
