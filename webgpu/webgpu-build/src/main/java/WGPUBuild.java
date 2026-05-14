@@ -34,8 +34,8 @@ public class WGPUBuild {
         BuildToolOptions op = new BuildToolOptions(data, args);
         op.addAdditionalIDLRefPath(IDLReader.getRuntimeHelperFile());
 
-        op.jniClassData.symbolNameMode = JNIClassData.SymbolNameMode.OBFUSCATED;
-        op.ffmClassData.symbolNameMode = FFMClassData.SymbolNameMode.OBFUSCATED;
+//        op.jniClassData.symbolNameMode = JNIClassData.SymbolNameMode.OBFUSCATED;
+//        op.ffmClassData.symbolNameMode = FFMClassData.SymbolNameMode.OBFUSCATED;
 
         BuilderTool.build(op, new BuildToolListener() {
             @Override
