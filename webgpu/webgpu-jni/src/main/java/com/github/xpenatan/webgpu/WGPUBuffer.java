@@ -29,7 +29,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     private static void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out) {
-        n.n223556590.n1164600159(this_addr, offset, size, out);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_getConstMappedRange(this_addr, offset, size, out);
     }
 
     public WGPUBuffer() {
@@ -38,7 +38,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n223556590.n3805474204();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_create_addr();
     }
 
     protected void deleteNative() {
@@ -46,7 +46,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n223556590.n2076339490(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String value) {
@@ -54,7 +54,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        n.n223556590.n1042859051(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_SetLabel(this_addr, value);
     }
 
     public void release() {
@@ -62,7 +62,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n223556590.n169604453(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_Release(this_addr);
     }
 
     public void destroy() {
@@ -70,7 +70,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static void internal_native_Destroy(long this_addr) {
-        n.n223556590.n820346194(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_Destroy(this_addr);
     }
 
     public WGPUFuture mapAsync(WGPUMapMode mode, int offset, int size, WGPUCallbackMode callbackMode, WGPUBufferMapCallback callback) {
@@ -84,7 +84,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static long internal_native_MapAsync_addr(long this_addr, int mode, int offset, int size, int callbackMode, long callback_addr) {
-        return n.n223556590.n635017184(this_addr, mode, offset, size, callbackMode, callback_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_MapAsync_addr(this_addr, mode, offset, size, callbackMode, callback_addr);
     }
 
     public WGPUByteBuffer getMappedRange(int offset, int size) {
@@ -98,7 +98,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static long internal_native_GetMappedRange_addr(long this_addr, int offset, int size) {
-        return n.n223556590.n1103509462(this_addr, offset, size);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_GetMappedRange_addr(this_addr, offset, size);
     }
 
     public void unmap() {
@@ -106,7 +106,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static void internal_native_Unmap(long this_addr) {
-        n.n223556590.n3870351305(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_Unmap(this_addr);
     }
 
     public int getSize() {
@@ -114,7 +114,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static int internal_native_GetSize(long this_addr) {
-        return n.n223556590.n2622135029(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_GetSize(this_addr);
     }
 
     public WGPUBufferUsage getUsage() {
@@ -129,7 +129,7 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static int internal_native_GetUsage(long this_addr) {
-        return n.n223556590.n3199711833(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_GetUsage(this_addr);
     }
 
     public boolean isValid() {
@@ -137,6 +137,6 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return n.n223556590.n4260838234(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBuffer.internal_native_IsValid(this_addr);
     }
 }

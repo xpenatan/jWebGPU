@@ -132,390 +132,390 @@ public enum WGPUTextureFormat implements NativeEnum<WGPUTextureFormat> {
     }
 
     private static int WGPUTextureFormat_Undefined_NATIVE() {
-        return n.n229325188.n2665435932();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Undefined_NATIVE();
     }
 
     private static int WGPUTextureFormat_R8Unorm_NATIVE() {
-        return n.n229325188.n1039090583();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_R8Snorm_NATIVE() {
-        return n.n229325188.n1625896597();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R8Snorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_R8Uint_NATIVE() {
-        return n.n229325188.n2195973760();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R8Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_R8Sint_NATIVE() {
-        return n.n229325188.n1937808322();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R8Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_R16Uint_NATIVE() {
-        return n.n229325188.n772072541();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R16Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_R16Sint_NATIVE() {
-        return n.n229325188.n513907103();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R16Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_R16Float_NATIVE() {
-        return n.n229325188.n3269188357();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R16Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG8Unorm_NATIVE() {
-        return n.n229325188.n1938077230();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG8Snorm_NATIVE() {
-        return n.n229325188.n2524883244();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG8Snorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG8Uint_NATIVE() {
-        return n.n229325188.n1947878665();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG8Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG8Sint_NATIVE() {
-        return n.n229325188.n1689713227();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG8Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_R32Float_NATIVE() {
-        return n.n229325188.n4011559179();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R32Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_R32Uint_NATIVE() {
-        return n.n229325188.n934567319();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R32Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_R32Sint_NATIVE() {
-        return n.n229325188.n676401881();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_R32Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG16Uint_NATIVE() {
-        return n.n229325188.n1671059188();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG16Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG16Sint_NATIVE() {
-        return n.n229325188.n1412893750();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG16Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG16Float_NATIVE() {
-        return n.n229325188.n1073003342();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG16Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA8Unorm_NATIVE() {
-        return n.n229325188.n2476928109();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA8UnormSrgb_NATIVE() {
-        return n.n229325188.n638229127();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA8UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA8Snorm_NATIVE() {
-        return n.n229325188.n3063734123();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA8Snorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA8Uint_NATIVE() {
-        return n.n229325188.n441240298();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA8Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA8Sint_NATIVE() {
-        return n.n229325188.n183074860();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA8Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_BGRA8Unorm_NATIVE() {
-        return n.n229325188.n1671604333();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BGRA8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BGRA8UnormSrgb_NATIVE() {
-        return n.n229325188.n936138375();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BGRA8UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGB10A2Uint_NATIVE() {
-        return n.n229325188.n4233617155();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGB10A2Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGB10A2Unorm_NATIVE() {
-        return n.n229325188.n4076493684();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGB10A2Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG11B10Ufloat_NATIVE() {
-        return n.n229325188.n2235321535();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG11B10Ufloat_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGB9E5Ufloat_NATIVE() {
-        return n.n229325188.n1083752003();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGB9E5Ufloat_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG32Float_NATIVE() {
-        return n.n229325188.n1815374164();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG32Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG32Uint_NATIVE() {
-        return n.n229325188.n1833553966();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG32Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RG32Sint_NATIVE() {
-        return n.n229325188.n1575388528();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RG32Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA16Uint_NATIVE() {
-        return n.n229325188.n2209910067();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA16Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA16Sint_NATIVE() {
-        return n.n229325188.n1951744629();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA16Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA16Float_NATIVE() {
-        return n.n229325188.n597511407();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA16Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA32Float_NATIVE() {
-        return n.n229325188.n1339882229();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA32Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA32Uint_NATIVE() {
-        return n.n229325188.n2372404845();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA32Uint_NATIVE();
     }
 
     private static int WGPUTextureFormat_RGBA32Sint_NATIVE() {
-        return n.n229325188.n2114239407();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_RGBA32Sint_NATIVE();
     }
 
     private static int WGPUTextureFormat_Stencil8_NATIVE() {
-        return n.n229325188.n3784206204();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Stencil8_NATIVE();
     }
 
     private static int WGPUTextureFormat_Depth16Unorm_NATIVE() {
-        return n.n229325188.n309124585();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Depth16Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_Depth24Plus_NATIVE() {
-        return n.n229325188.n1221328075();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Depth24Plus_NATIVE();
     }
 
     private static int WGPUTextureFormat_Depth24PlusStencil8_NATIVE() {
-        return n.n229325188.n3321371111();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Depth24PlusStencil8_NATIVE();
     }
 
     private static int WGPUTextureFormat_Depth32Float_NATIVE() {
-        return n.n229325188.n177890714();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Depth32Float_NATIVE();
     }
 
     private static int WGPUTextureFormat_Depth32FloatStencil8_NATIVE() {
-        return n.n229325188.n2318681014();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Depth32FloatStencil8_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC1RGBAUnorm_NATIVE() {
-        return n.n229325188.n1952330285();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC1RGBAUnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE() {
-        return n.n229325188.n137166919();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC2RGBAUnorm_NATIVE() {
-        return n.n229325188.n955257932();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC2RGBAUnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE() {
-        return n.n229325188.n2394077926();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC3RGBAUnorm_NATIVE() {
-        return n.n229325188.n4253152875();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC3RGBAUnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE() {
-        return n.n229325188.n356021637();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC4RUnorm_NATIVE() {
-        return n.n229325188.n2767574590();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC4RUnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC4RSnorm_NATIVE() {
-        return n.n229325188.n3354380604();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC4RSnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC5RGUnorm_NATIVE() {
-        return n.n229325188.n3339054280();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC5RGUnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC5RGSnorm_NATIVE() {
-        return n.n229325188.n3925860294();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC5RGSnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC6HRGBUfloat_NATIVE() {
-        return n.n229325188.n2301181581();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC6HRGBUfloat_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC6HRGBFloat_NATIVE() {
-        return n.n229325188.n1156460514();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC6HRGBFloat_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC7RGBAUnorm_NATIVE() {
-        return n.n229325188.n264863463();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC7RGBAUnorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE() {
-        return n.n229325188.n793731073();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ETC2RGB8Unorm_NATIVE() {
-        return n.n229325188.n1801609908();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ETC2RGB8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE() {
-        return n.n229325188.n2298975566();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE() {
-        return n.n229325188.n235168100();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE() {
-        return n.n229325188.n4163550206();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE() {
-        return n.n229325188.n3645963563();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE() {
-        return n.n229325188.n3500547141();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_EACR11Unorm_NATIVE() {
-        return n.n229325188.n748804466();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_EACR11Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_EACR11Snorm_NATIVE() {
-        return n.n229325188.n1335610480();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_EACR11Snorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_EACRG11Unorm_NATIVE() {
-        return n.n229325188.n1287794613();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_EACRG11Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_EACRG11Snorm_NATIVE() {
-        return n.n229325188.n1874600627();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_EACRG11Snorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC4x4Unorm_NATIVE() {
-        return n.n229325188.n1267864866();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC4x4Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE() {
-        return n.n229325188.n2350670012();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC5x4Unorm_NATIVE() {
-        return n.n229325188.n757330689();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC5x4Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE() {
-        return n.n229325188.n1941845787();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC5x5Unorm_NATIVE() {
-        return n.n229325188.n251772064();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC5x5Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE() {
-        return n.n229325188.n944773434();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC6x5Unorm_NATIVE() {
-        return n.n229325188.n4036205183();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC6x5Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE() {
-        return n.n229325188.n535949209();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC6x6Unorm_NATIVE() {
-        return n.n229325188.n3530646558();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC6x6Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE() {
-        return n.n229325188.n3833844152();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC8x5Unorm_NATIVE() {
-        return n.n229325188.n3015136829();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC8x5Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE() {
-        return n.n229325188.n4013268055();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC8x6Unorm_NATIVE() {
-        return n.n229325188.n2509578204();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC8x6Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE() {
-        return n.n229325188.n3016195702();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC8x8Unorm_NATIVE() {
-        return n.n229325188.n1498460954();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC8x8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE() {
-        return n.n229325188.n1022050996();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x5Unorm_NATIVE() {
-        return n.n229325188.n2886449120();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x5Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE() {
-        return n.n229325188.n4251612282();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x6Unorm_NATIVE() {
-        return n.n229325188.n2380890495();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x6Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE() {
-        return n.n229325188.n3254539929();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x8Unorm_NATIVE() {
-        return n.n229325188.n1369773245();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x8Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE() {
-        return n.n229325188.n1260395223();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x10Unorm_NATIVE() {
-        return n.n229325188.n247438138();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x10Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE() {
-        return n.n229325188.n1382619860();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC12x10Unorm_NATIVE() {
-        return n.n229325188.n2954057532();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC12x10Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE() {
-        return n.n229325188.n1805321686();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC12x12Unorm_NATIVE() {
-        return n.n229325188.n1942940282();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC12x12Unorm_NATIVE();
     }
 
     private static int WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE() {
-        return n.n229325188.n4106144276();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE();
     }
 
     private static int WGPUTextureFormat_Force32_NATIVE() {
-        return n.n229325188.n599446486();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureFormat.WGPUTextureFormat_Force32_NATIVE();
     }
 }

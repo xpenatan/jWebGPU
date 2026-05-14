@@ -20,7 +20,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1746241020.n800800334();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexBufferLayout.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1746241020.n3008019376(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexBufferLayout.internal_native_deleteNative(this_addr);
     }
 
     public void setAttributes(WGPUVectorVertexAttribute values) {
@@ -50,7 +50,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_SetAttributes(long this_addr, long values_addr) {
-        n.n1746241020.n760489539(this_addr, values_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexBufferLayout.internal_native_SetAttributes(this_addr, values_addr);
     }
 
     public void setArrayStride(int offset) {
@@ -58,7 +58,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_SetArrayStride(long this_addr, int offset) {
-        n.n1746241020.n2270653925(this_addr, offset);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexBufferLayout.internal_native_SetArrayStride(this_addr, offset);
     }
 
     public void setStepMode(WGPUVertexStepMode stepMode) {
@@ -66,7 +66,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_SetStepMode(long this_addr, int stepMode) {
-        n.n1746241020.n44224016(this_addr, stepMode);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexBufferLayout.internal_native_SetStepMode(this_addr, stepMode);
     }
 
     public static WGPUVertexBufferLayout obtain() {
@@ -80,6 +80,6 @@ public class WGPUVertexBufferLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1746241020.n4249349975();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexBufferLayout.internal_native_Obtain_addr();
     }
 }

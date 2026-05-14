@@ -33,7 +33,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n266518020.n3364876728(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_deleteNative(this_addr);
     }
 
     public void release() {
@@ -41,7 +41,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n266518020.n1229417231(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_Release(this_addr);
     }
 
     public void createBindGroup(WGPUBindGroupDescriptor descriptor, WGPUBindGroup valueOut) {
@@ -49,7 +49,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateBindGroup(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n976554704(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateBindGroup(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createBindGroupLayout(WGPUBindGroupLayoutDescriptor descriptor, WGPUBindGroupLayout valueOut) {
@@ -57,7 +57,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateBindGroupLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n2035541062(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateBindGroupLayout(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public WGPUBuffer createBuffer(WGPUBufferDescriptor descriptor) {
@@ -70,7 +70,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static long internal_native_CreateBuffer__0_addr(long this_addr, long descriptor_addr) {
-        return n.n266518020.n1881626826(this_addr, descriptor_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateBuffer__0_addr(this_addr, descriptor_addr);
     }
 
     public void createBuffer(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut) {
@@ -78,7 +78,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateBuffer__1(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n65445665(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateBuffer__1(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut) {
@@ -86,7 +86,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateCommandEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n1019050349(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateCommandEncoder(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut) {
@@ -94,7 +94,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateComputePipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n976022201(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateComputePipeline(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
@@ -102,7 +102,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreatePipelineLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n2480616178(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreatePipelineLayout(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createQuerySet(WGPUQuerySetDescriptor descriptor, WGPUQuerySet valueOut) {
@@ -110,7 +110,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateQuerySet(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n623129508(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateQuerySet(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createRenderBundleEncoder(WGPURenderBundleEncoderDescriptor descriptor, WGPURenderBundleEncoder valueOut) {
@@ -118,7 +118,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateRenderBundleEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n1766028814(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateRenderBundleEncoder(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createRenderPipeline(WGPURenderPipelineDescriptor descriptor, WGPURenderPipeline valueOut) {
@@ -126,7 +126,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n1082446726(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateRenderPipeline(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut) {
@@ -134,7 +134,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateSampler(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n2420806858(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateSampler(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void createShaderModule(WGPUShaderModuleDescriptor descriptor, WGPUShaderModule shaderModule) {
@@ -142,7 +142,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateShaderModule(long this_addr, long descriptor_addr, long shaderModule_addr) {
-        n.n266518020.n392988557(this_addr, descriptor_addr, shaderModule_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateShaderModule(this_addr, descriptor_addr, shaderModule_addr);
     }
 
     public void createTexture(WGPUTextureDescriptor descriptor, WGPUTexture valueOut) {
@@ -150,7 +150,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_CreateTexture(long this_addr, long descriptor_addr, long valueOut_addr) {
-        n.n266518020.n19584855(this_addr, descriptor_addr, valueOut_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_CreateTexture(this_addr, descriptor_addr, valueOut_addr);
     }
 
     public void destroy() {
@@ -158,7 +158,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_Destroy(long this_addr) {
-        n.n266518020.n1880158972(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_Destroy(this_addr);
     }
 
     public void getFeatures(WGPUSupportedFeatures features) {
@@ -166,7 +166,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_GetFeatures(long this_addr, long features_addr) {
-        n.n266518020.n216365221(this_addr, features_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_GetFeatures(this_addr, features_addr);
     }
 
     public boolean hasFeature(WGPUFeatureName feature) {
@@ -174,7 +174,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static boolean internal_native_HasFeature(long this_addr, int feature) {
-        return n.n266518020.n376083009(this_addr, feature);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_HasFeature(this_addr, feature);
     }
 
     public void getLimits(WGPULimits limits) {
@@ -182,7 +182,7 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static void internal_native_GetLimits(long this_addr, long limits_addr) {
-        n.n266518020.n3799845056(this_addr, limits_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_GetLimits(this_addr, limits_addr);
     }
 
     public WGPUQueue getQueue() {
@@ -196,6 +196,6 @@ public class WGPUDevice extends NativeObject {
     }
 
     public static long internal_native_GetQueue_addr(long this_addr) {
-        return n.n266518020.n784176897(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDevice.internal_native_GetQueue_addr(this_addr);
     }
 }

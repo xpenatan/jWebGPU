@@ -28,7 +28,7 @@ public class WGPUBufferMapCallback extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n738943219.n141236455(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferMapCallback.internal_native_deleteNative(this_addr);
     }
 
     public WGPUBufferMapCallback() {
@@ -58,7 +58,7 @@ public class WGPUBufferMapCallback extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n738943219.n1017461431();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferMapCallback.internal_native_create_addr();
     }
 
     public native void internal_native_setupCallback(long this_addr);

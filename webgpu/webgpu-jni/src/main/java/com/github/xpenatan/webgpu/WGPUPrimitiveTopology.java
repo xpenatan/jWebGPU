@@ -42,30 +42,30 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
     }
 
     private static int WGPUPrimitiveTopology_Undefined_NATIVE() {
-        return n.n3126379528.n2497487524();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_Undefined_NATIVE();
     }
 
     private static int WGPUPrimitiveTopology_PointList_NATIVE() {
-        return n.n3126379528.n2031130018();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_PointList_NATIVE();
     }
 
     private static int WGPUPrimitiveTopology_LineList_NATIVE() {
-        return n.n3126379528.n3393290666();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_LineList_NATIVE();
     }
 
     private static int WGPUPrimitiveTopology_LineStrip_NATIVE() {
-        return n.n3126379528.n2457012440();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_LineStrip_NATIVE();
     }
 
     private static int WGPUPrimitiveTopology_TriangleList_NATIVE() {
-        return n.n3126379528.n4236481726();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_TriangleList_NATIVE();
     }
 
     private static int WGPUPrimitiveTopology_TriangleStrip_NATIVE() {
-        return n.n3126379528.n2826131524();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_TriangleStrip_NATIVE();
     }
 
     private static int WGPUPrimitiveTopology_Force32_NATIVE() {
-        return n.n3126379528.n1381393758();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveTopology.WGPUPrimitiveTopology_Force32_NATIVE();
     }
 }

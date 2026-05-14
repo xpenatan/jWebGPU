@@ -54,78 +54,78 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
     }
 
     private static int WGPUBlendFactor_Undefined_NATIVE() {
-        return n.n2240823826.n2794388856();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Undefined_NATIVE();
     }
 
     private static int WGPUBlendFactor_Zero_NATIVE() {
-        return n.n2240823826.n4188334412();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Zero_NATIVE();
     }
 
     private static int WGPUBlendFactor_One_NATIVE() {
-        return n.n2240823826.n796235278();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_One_NATIVE();
     }
 
     private static int WGPUBlendFactor_Src_NATIVE() {
-        return n.n2240823826.n732252044();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Src_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusSrc_NATIVE() {
-        return n.n2240823826.n1226081666();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusSrc_NATIVE();
     }
 
     private static int WGPUBlendFactor_SrcAlpha_NATIVE() {
-        return n.n2240823826.n3542559614();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_SrcAlpha_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE() {
-        return n.n2240823826.n2122200904();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusSrcAlpha_NATIVE();
     }
 
     private static int WGPUBlendFactor_Dst_NATIVE() {
-        return n.n2240823826.n1058250349();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Dst_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusDst_NATIVE() {
-        return n.n2240823826.n1552079971();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusDst_NATIVE();
     }
 
     private static int WGPUBlendFactor_DstAlpha_NATIVE() {
-        return n.n2240823826.n4113627453();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_DstAlpha_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusDstAlpha_NATIVE() {
-        return n.n2240823826.n2693268743();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusDstAlpha_NATIVE();
     }
 
     private static int WGPUBlendFactor_SrcAlphaSaturated_NATIVE() {
-        return n.n2240823826.n1227434499();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_SrcAlphaSaturated_NATIVE();
     }
 
     private static int WGPUBlendFactor_Constant_NATIVE() {
-        return n.n2240823826.n898208584();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Constant_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusConstant_NATIVE() {
-        return n.n2240823826.n3772817170();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusConstant_NATIVE();
     }
 
     private static int WGPUBlendFactor_Src1_NATIVE() {
-        return n.n2240823826.n444986481();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Src1_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusSrc1_NATIVE() {
-        return n.n2240823826.n2868802875();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusSrc1_NATIVE();
     }
 
     private static int WGPUBlendFactor_Src1Alpha_NATIVE() {
-        return n.n2240823826.n949470649();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Src1Alpha_NATIVE();
     }
 
     private static int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE() {
-        return n.n2240823826.n4162990895();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE();
     }
 
     private static int WGPUBlendFactor_Force32_NATIVE() {
-        return n.n2240823826.n885613874();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendFactor.WGPUBlendFactor_Force32_NATIVE();
     }
 }

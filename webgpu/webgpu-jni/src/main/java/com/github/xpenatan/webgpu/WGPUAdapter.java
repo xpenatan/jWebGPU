@@ -31,7 +31,7 @@ public class WGPUAdapter extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1256782177.n319100373(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAdapter.internal_native_deleteNative(this_addr);
     }
 
     public void release() {
@@ -39,7 +39,7 @@ public class WGPUAdapter extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n1256782177.n4266223826(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAdapter.internal_native_Release(this_addr);
     }
 
     public void requestDevice(WGPUDeviceDescriptor options, WGPUCallbackMode mode, WGPURequestDeviceCallback callback, WGPUUncapturedErrorCallback errorCallback) {
@@ -47,7 +47,7 @@ public class WGPUAdapter extends NativeObject {
     }
 
     public static void internal_native_RequestDevice(long this_addr, long options_addr, int mode, long callback_addr, long errorCallback_addr) {
-        n.n1256782177.n2821076631(this_addr, options_addr, mode, callback_addr, errorCallback_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAdapter.internal_native_RequestDevice(this_addr, options_addr, mode, callback_addr, errorCallback_addr);
     }
 
     public boolean getInfo(WGPUAdapterInfo adapterInfo) {
@@ -55,7 +55,7 @@ public class WGPUAdapter extends NativeObject {
     }
 
     public static boolean internal_native_GetInfo(long this_addr, long adapterInfo_addr) {
-        return n.n1256782177.n2502803443(this_addr, adapterInfo_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapter.internal_native_GetInfo(this_addr, adapterInfo_addr);
     }
 
     public boolean hasFeature(WGPUFeatureName featureName) {
@@ -63,7 +63,7 @@ public class WGPUAdapter extends NativeObject {
     }
 
     public static boolean internal_native_HasFeature(long this_addr, int featureName) {
-        return n.n1256782177.n2552701726(this_addr, featureName);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapter.internal_native_HasFeature(this_addr, featureName);
     }
 
     public WGPUStatus getLimits(WGPULimits limits) {
@@ -78,6 +78,6 @@ public class WGPUAdapter extends NativeObject {
     }
 
     public static int internal_native_GetLimits(long this_addr, long limits_addr) {
-        return n.n1256782177.n1681496477(this_addr, limits_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapter.internal_native_GetLimits(this_addr, limits_addr);
     }
 }

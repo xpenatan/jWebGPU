@@ -27,7 +27,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n4053196127.n3002312139();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferLayout.internal_native_create_addr();
     }
 
     protected void deleteNative() {
@@ -35,7 +35,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n4053196127.n193493587(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferLayout.internal_native_deleteNative(this_addr);
     }
 
     public void setOffset(int offset) {
@@ -43,7 +43,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
     }
 
     public static void internal_native_SetOffset(long this_addr, int offset) {
-        n.n4053196127.n2603238217(this_addr, offset);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferLayout.internal_native_SetOffset(this_addr, offset);
     }
 
     public void setBytesPerRow(int bytesPerRow) {
@@ -51,7 +51,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
     }
 
     public static void internal_native_SetBytesPerRow(long this_addr, int bytesPerRow) {
-        n.n4053196127.n780642770(this_addr, bytesPerRow);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferLayout.internal_native_SetBytesPerRow(this_addr, bytesPerRow);
     }
 
     public void setRowsPerImage(int rowsPerImage) {
@@ -59,7 +59,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
     }
 
     public static void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage) {
-        n.n4053196127.n836140133(this_addr, rowsPerImage);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferLayout.internal_native_SetRowsPerImage(this_addr, rowsPerImage);
     }
 
     public static WGPUTexelCopyBufferLayout obtain() {
@@ -73,6 +73,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n4053196127.n2155894484();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferLayout.internal_native_Obtain_addr();
     }
 }

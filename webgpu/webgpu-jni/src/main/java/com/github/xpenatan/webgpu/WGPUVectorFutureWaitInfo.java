@@ -20,7 +20,7 @@ public class WGPUVectorFutureWaitInfo extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3509942775.n3207622707();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFutureWaitInfo.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorFutureWaitInfo extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3509942775.n2838622443(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFutureWaitInfo.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorFutureWaitInfo extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n3509942775.n3782897388(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFutureWaitInfo.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorFutureWaitInfo extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n3509942775.n1556592662(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFutureWaitInfo.internal_native_clear(this_addr);
     }
 
     public void push_back(WGPUFutureWaitInfo entry) {
@@ -66,7 +66,7 @@ public class WGPUVectorFutureWaitInfo extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long entry_addr) {
-        n.n3509942775.n3794444721(this_addr, entry_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFutureWaitInfo.internal_native_push_back(this_addr, entry_addr);
     }
 
     public static WGPUVectorFutureWaitInfo obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorFutureWaitInfo extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3509942775.n2361205052();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFutureWaitInfo.internal_native_Obtain_addr();
     }
 }

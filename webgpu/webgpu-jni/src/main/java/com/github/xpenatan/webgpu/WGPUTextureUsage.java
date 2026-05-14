@@ -41,26 +41,26 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
     }
 
     private static int WGPUTextureUsage_None_NATIVE() {
-        return n.n1129731700.n1946110170();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureUsage.WGPUTextureUsage_None_NATIVE();
     }
 
     private static int WGPUTextureUsage_CopySrc_NATIVE() {
-        return n.n1129731700.n3221113881();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureUsage.WGPUTextureUsage_CopySrc_NATIVE();
     }
 
     private static int WGPUTextureUsage_CopyDst_NATIVE() {
-        return n.n1129731700.n3547112186();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureUsage.WGPUTextureUsage_CopyDst_NATIVE();
     }
 
     private static int WGPUTextureUsage_TextureBinding_NATIVE() {
-        return n.n1129731700.n2068087180();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureUsage.WGPUTextureUsage_TextureBinding_NATIVE();
     }
 
     private static int WGPUTextureUsage_StorageBinding_NATIVE() {
-        return n.n1129731700.n519940140();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureUsage.WGPUTextureUsage_StorageBinding_NATIVE();
     }
 
     private static int WGPUTextureUsage_RenderAttachment_NATIVE() {
-        return n.n1129731700.n2934002171();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureUsage.WGPUTextureUsage_RenderAttachment_NATIVE();
     }
 }

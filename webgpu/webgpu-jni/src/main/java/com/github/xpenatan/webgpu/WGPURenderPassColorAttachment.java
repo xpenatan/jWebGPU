@@ -22,7 +22,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3141831857.n3305590713();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_create_addr();
     }
 
     /**
@@ -44,7 +44,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3141831857.n1182258469(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_deleteNative(this_addr);
     }
 
     public void reset() {
@@ -52,7 +52,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_Reset(long this_addr) {
-        n.n3141831857.n2320516986(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_Reset(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -60,7 +60,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n3141831857.n2814279432(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setView(WGPUTextureView textureView) {
@@ -68,7 +68,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_SetView(long this_addr, long textureView_addr) {
-        n.n3141831857.n4290704518(this_addr, textureView_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_SetView(this_addr, textureView_addr);
     }
 
     public void setResolveTarget(WGPUTextureView textureView) {
@@ -76,7 +76,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_SetResolveTarget(long this_addr, long textureView_addr) {
-        n.n3141831857.n3867406012(this_addr, textureView_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_SetResolveTarget(this_addr, textureView_addr);
     }
 
     public void setLoadOp(WGPULoadOp loadOp) {
@@ -84,7 +84,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_SetLoadOp(long this_addr, int loadOp) {
-        n.n3141831857.n3902482531(this_addr, loadOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_SetLoadOp(this_addr, loadOp);
     }
 
     public void setStoreOp(WGPUStoreOp storeOp) {
@@ -92,7 +92,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_SetStoreOp(long this_addr, int storeOp) {
-        n.n3141831857.n3511842314(this_addr, storeOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_SetStoreOp(this_addr, storeOp);
     }
 
     public WGPUColor getClearValue() {
@@ -106,7 +106,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static long internal_native_GetClearValue_addr(long this_addr) {
-        return n.n3141831857.n349193713(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_GetClearValue_addr(this_addr);
     }
 
     public void setDepthSlice(int depthSlice) {
@@ -114,7 +114,7 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_SetDepthSlice(long this_addr, int depthSlice) {
-        n.n3141831857.n313339579(this_addr, depthSlice);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_SetDepthSlice(this_addr, depthSlice);
     }
 
     public static WGPURenderPassColorAttachment obtain() {
@@ -128,6 +128,6 @@ public class WGPURenderPassColorAttachment extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3141831857.n2459173058();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassColorAttachment.internal_native_Obtain_addr();
     }
 }

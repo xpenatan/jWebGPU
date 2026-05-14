@@ -41,26 +41,26 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
     }
 
     private static int WGPUColorWriteMask_None_NATIVE() {
-        return n.n3186388214.n2467120090();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorWriteMask.WGPUColorWriteMask_None_NATIVE();
     }
 
     private static int WGPUColorWriteMask_Red_NATIVE() {
-        return n.n3186388214.n3103576955();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorWriteMask.WGPUColorWriteMask_Red_NATIVE();
     }
 
     private static int WGPUColorWriteMask_Green_NATIVE() {
-        return n.n3186388214.n1239510765();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorWriteMask.WGPUColorWriteMask_Green_NATIVE();
     }
 
     private static int WGPUColorWriteMask_Blue_NATIVE() {
-        return n.n3186388214.n638419708();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorWriteMask.WGPUColorWriteMask_Blue_NATIVE();
     }
 
     private static int WGPUColorWriteMask_Alpha_NATIVE() {
-        return n.n3186388214.n1071367752();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorWriteMask.WGPUColorWriteMask_Alpha_NATIVE();
     }
 
     private static int WGPUColorWriteMask_All_NATIVE() {
-        return n.n3186388214.n636650635();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorWriteMask.WGPUColorWriteMask_All_NATIVE();
     }
 }

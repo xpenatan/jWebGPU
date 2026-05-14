@@ -46,46 +46,46 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
     }
 
     private static int WGPUBufferUsage_None_NATIVE() {
-        return n.n4038696531.n3399882394();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_None_NATIVE();
     }
 
     private static int WGPUBufferUsage_MapRead_NATIVE() {
-        return n.n4038696531.n1291391548();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_MapRead_NATIVE();
     }
 
     private static int WGPUBufferUsage_MapWrite_NATIVE() {
-        return n.n4038696531.n971192901();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_MapWrite_NATIVE();
     }
 
     private static int WGPUBufferUsage_CopySrc_NATIVE() {
-        return n.n4038696531.n2099226201();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_CopySrc_NATIVE();
     }
 
     private static int WGPUBufferUsage_CopyDst_NATIVE() {
-        return n.n4038696531.n2425224506();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_CopyDst_NATIVE();
     }
 
     private static int WGPUBufferUsage_Index_NATIVE() {
-        return n.n4038696531.n4184477436();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_Index_NATIVE();
     }
 
     private static int WGPUBufferUsage_Vertex_NATIVE() {
-        return n.n4038696531.n1034356230();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_Vertex_NATIVE();
     }
 
     private static int WGPUBufferUsage_Uniform_NATIVE() {
-        return n.n4038696531.n3902457054();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_Uniform_NATIVE();
     }
 
     private static int WGPUBufferUsage_Storage_NATIVE() {
-        return n.n4038696531.n766473893();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_Storage_NATIVE();
     }
 
     private static int WGPUBufferUsage_Indirect_NATIVE() {
-        return n.n4038696531.n2518703280();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_Indirect_NATIVE();
     }
 
     private static int WGPUBufferUsage_QueryResolve_NATIVE() {
-        return n.n4038696531.n56348518();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferUsage.WGPUBufferUsage_QueryResolve_NATIVE();
     }
 }

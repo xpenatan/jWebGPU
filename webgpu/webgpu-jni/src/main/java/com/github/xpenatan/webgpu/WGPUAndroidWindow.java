@@ -29,11 +29,11 @@ public class WGPUAndroidWindow extends NativeObject {
     }
 
     private static long internal_getAndroidSurface(Object surface) {
-        return n.n3690999761.n1644656126(surface);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAndroidWindow.internal_getAndroidSurface(surface);
     }
 
     private static void internal_native_SetWindow(long this_addr, long surfaceAddr) {
-        n.n3690999761.n830779121(this_addr, surfaceAddr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAndroidWindow.internal_native_SetWindow(this_addr, surfaceAddr);
     }
 
     public WGPUAndroidWindow() {
@@ -42,7 +42,7 @@ public class WGPUAndroidWindow extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3690999761.n151519385();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAndroidWindow.internal_native_create_addr();
     }
 
     protected void deleteNative() {
@@ -50,7 +50,7 @@ public class WGPUAndroidWindow extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3690999761.n1436725317(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAndroidWindow.internal_native_deleteNative(this_addr);
     }
 
     public void initLogcat() {
@@ -58,6 +58,6 @@ public class WGPUAndroidWindow extends NativeObject {
     }
 
     public static void internal_native_InitLogcat(long this_addr) {
-        n.n3690999761.n3571676741(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAndroidWindow.internal_native_InitLogcat(this_addr);
     }
 }

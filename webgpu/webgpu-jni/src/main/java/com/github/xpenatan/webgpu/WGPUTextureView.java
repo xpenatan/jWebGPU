@@ -20,7 +20,7 @@ public class WGPUTextureView extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2391767922.n2008581272();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureView.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUTextureView extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2391767922.n3538932646(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureView.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUTextureView extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n2391767922.n712351527(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureView.internal_native_SetLabel(this_addr, label);
     }
 
     public void release() {
@@ -58,7 +58,7 @@ public class WGPUTextureView extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n2391767922.n2667678817(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureView.internal_native_Release(this_addr);
     }
 
     public boolean isValid() {
@@ -66,7 +66,7 @@ public class WGPUTextureView extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return n.n2391767922.n2463945302(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureView.internal_native_IsValid(this_addr);
     }
 
     public static WGPUTextureView obtain() {
@@ -80,6 +80,6 @@ public class WGPUTextureView extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2391767922.n1162163617();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureView.internal_native_Obtain_addr();
     }
 }

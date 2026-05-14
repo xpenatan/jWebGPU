@@ -20,7 +20,7 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1298218527.n3846569227();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexBufferLayout.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1298218527.n1598728979(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexBufferLayout.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n1298218527.n862179604(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexBufferLayout.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n1298218527.n1208654574(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexBufferLayout.internal_native_clear(this_addr);
     }
 
     public void push_back(WGPUVertexBufferLayout vertexBufferLayout) {
@@ -66,7 +66,7 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long vertexBufferLayout_addr) {
-        n.n1298218527.n1962766809(this_addr, vertexBufferLayout_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexBufferLayout.internal_native_push_back(this_addr, vertexBufferLayout_addr);
     }
 
     public static WGPUVectorVertexBufferLayout obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorVertexBufferLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1298218527.n3000151572();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexBufferLayout.internal_native_Obtain_addr();
     }
 }

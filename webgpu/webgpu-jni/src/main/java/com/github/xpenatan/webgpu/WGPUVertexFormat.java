@@ -77,170 +77,170 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
     }
 
     private static int WGPUVertexFormat_Uint8_NATIVE() {
-        return n.n618360809.n2291528872();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint8_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint8x2_NATIVE() {
-        return n.n618360809.n1071089890();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint8x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint8x4_NATIVE() {
-        return n.n618360809.n1751148260();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint8x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint8_NATIVE() {
-        return n.n618360809.n2878334886();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint8_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint8x2_NATIVE() {
-        return n.n618360809.n2350953568();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint8x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint8x4_NATIVE() {
-        return n.n618360809.n3031011938();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint8x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm8_NATIVE() {
-        return n.n618360809.n2201337769();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm8_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm8x2_NATIVE() {
-        return n.n618360809.n296785827();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm8x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm8x4_NATIVE() {
-        return n.n618360809.n976844197();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm8x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Snorm8_NATIVE() {
-        return n.n618360809.n3212455019();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Snorm8_NATIVE();
     }
 
     private static int WGPUVertexFormat_Snorm8x2_NATIVE() {
-        return n.n618360809.n1317854181();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Snorm8x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Snorm8x4_NATIVE() {
-        return n.n618360809.n1997912551();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Snorm8x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint16_NATIVE() {
-        return n.n618360809.n2466184705();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint16_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint16x2_NATIVE() {
-        return n.n618360809.n1411620859();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint16x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint16x4_NATIVE() {
-        return n.n618360809.n2091679229();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint16x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint16_NATIVE() {
-        return n.n618360809.n3477301955();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint16_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint16x2_NATIVE() {
-        return n.n618360809.n2432689213();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint16x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint16x4_NATIVE() {
-        return n.n618360809.n3112747583();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint16x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm16_NATIVE() {
-        return n.n618360809.n3965227808();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm16_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm16x2_NATIVE() {
-        return n.n618360809.n3177998682();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm16x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm16x4_NATIVE() {
-        return n.n618360809.n3858057052();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm16x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Snorm16_NATIVE() {
-        return n.n618360809.n950124190();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Snorm16_NATIVE();
     }
 
     private static int WGPUVertexFormat_Snorm16x2_NATIVE() {
-        return n.n618360809.n471379288();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Snorm16x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Snorm16x4_NATIVE() {
-        return n.n618360809.n1151437658();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Snorm16x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float16_NATIVE() {
-        return n.n618360809.n1949740555();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float16_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float16x2_NATIVE() {
-        return n.n618360809.n3324999045();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float16x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float16x4_NATIVE() {
-        return n.n618360809.n4005057415();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float16x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float32_NATIVE() {
-        return n.n618360809.n196596805();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float32_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float32x2_NATIVE() {
-        return n.n618360809.n2181035327();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float32x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float32x3_NATIVE() {
-        return n.n618360809.n373580864();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float32x3_NATIVE();
     }
 
     private static int WGPUVertexFormat_Float32x4_NATIVE() {
-        return n.n618360809.n2861093697();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Float32x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint32_NATIVE() {
-        return n.n618360809.n713040955();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint32_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint32x2_NATIVE() {
-        return n.n618360809.n267657141();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint32x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint32x3_NATIVE() {
-        return n.n618360809.n2755169974();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint32x3_NATIVE();
     }
 
     private static int WGPUVertexFormat_Uint32x4_NATIVE() {
-        return n.n618360809.n947715511();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Uint32x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint32_NATIVE() {
-        return n.n618360809.n1724158205();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint32_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint32x2_NATIVE() {
-        return n.n618360809.n1288725495();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint32x2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint32x3_NATIVE() {
-        return n.n618360809.n3776238328();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint32x3_NATIVE();
     }
 
     private static int WGPUVertexFormat_Sint32x4_NATIVE() {
-        return n.n618360809.n1968783865();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Sint32x4_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm10_10_10_2_NATIVE() {
-        return n.n618360809.n1445616909();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm10_10_10_2_NATIVE();
     }
 
     private static int WGPUVertexFormat_Unorm8x4BGRA_NATIVE() {
-        return n.n618360809.n1933258585();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Unorm8x4BGRA_NATIVE();
     }
 
     private static int WGPUVertexFormat_Force32_NATIVE() {
-        return n.n618360809.n3537311252();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexFormat.WGPUVertexFormat_Force32_NATIVE();
     }
 }

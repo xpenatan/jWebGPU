@@ -20,7 +20,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n4054886737.n80475929();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n4054886737.n3730098629(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_deleteNative(this_addr);
     }
 
     public void setView(WGPUTextureView textureView) {
@@ -50,7 +50,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetView(long this_addr, long textureView_addr) {
-        n.n4054886737.n2543577382(this_addr, textureView_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetView(this_addr, textureView_addr);
     }
 
     public void setDepthLoadOp(WGPULoadOp loadOp) {
@@ -58,7 +58,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetDepthLoadOp(long this_addr, int loadOp) {
-        n.n4054886737.n3689746370(this_addr, loadOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetDepthLoadOp(this_addr, loadOp);
     }
 
     public void setDepthStoreOp(WGPUStoreOp storeOp) {
@@ -66,7 +66,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetDepthStoreOp(long this_addr, int storeOp) {
-        n.n4054886737.n1211988619(this_addr, storeOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetDepthStoreOp(this_addr, storeOp);
     }
 
     public void setDepthClearValue(float depthClearValue) {
@@ -74,7 +74,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetDepthClearValue(long this_addr, float depthClearValue) {
-        n.n4054886737.n617761938(this_addr, depthClearValue);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetDepthClearValue(this_addr, depthClearValue);
     }
 
     public void setDepthReadOnly(boolean depthReadOnly) {
@@ -82,7 +82,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetDepthReadOnly(long this_addr, boolean depthReadOnly) {
-        n.n4054886737.n722854368(this_addr, depthReadOnly);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetDepthReadOnly(this_addr, depthReadOnly);
     }
 
     public void setStencilLoadOp(WGPULoadOp loadOp) {
@@ -90,7 +90,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetStencilLoadOp(long this_addr, int loadOp) {
-        n.n4054886737.n1209846633(this_addr, loadOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetStencilLoadOp(this_addr, loadOp);
     }
 
     public void setStencilStoreOp(WGPUStoreOp storeOp) {
@@ -98,7 +98,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetStencilStoreOp(long this_addr, int storeOp) {
-        n.n4054886737.n1644508100(this_addr, storeOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetStencilStoreOp(this_addr, storeOp);
     }
 
     public void setStencilClearValue(int stencilClearValue) {
@@ -106,7 +106,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetStencilClearValue(long this_addr, int stencilClearValue) {
-        n.n4054886737.n2548066252(this_addr, stencilClearValue);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetStencilClearValue(this_addr, stencilClearValue);
     }
 
     public void setStencilReadOnly(boolean stencilReadOnly) {
@@ -114,7 +114,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly) {
-        n.n4054886737.n662570055(this_addr, stencilReadOnly);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_SetStencilReadOnly(this_addr, stencilReadOnly);
     }
 
     public static WGPURenderPassDepthStencilAttachment obtain() {
@@ -128,6 +128,6 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n4054886737.n3529025570();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassDepthStencilAttachment.internal_native_Obtain_addr();
     }
 }

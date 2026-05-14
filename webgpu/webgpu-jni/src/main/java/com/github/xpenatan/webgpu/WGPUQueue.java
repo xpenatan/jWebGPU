@@ -25,7 +25,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     private static void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
-        n.n852347811.n2996603652(this_addr, buffer_addr, bufferOffset, byteBuffer, dataSize);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_WriteBuffer(this_addr, buffer_addr, bufferOffset, byteBuffer, dataSize);
     }
 
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
@@ -33,7 +33,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     private static void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr) {
-        n.n852347811.n2566581228(this_addr, destination_addr, byteBuffer, dataSize, dataLayout_addr, writeSize_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_WriteTexture(this_addr, destination_addr, byteBuffer, dataSize, dataLayout_addr, writeSize_addr);
     }
 
     protected void deleteNative() {
@@ -41,7 +41,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n852347811.n1394005911(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String value) {
@@ -49,7 +49,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        n.n852347811.n1723419030(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_SetLabel(this_addr, value);
     }
 
     public void submit(WGPUVectorCommandBuffer commandVector) {
@@ -57,7 +57,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_Submit__0(long this_addr, long commandVector_addr) {
-        n.n852347811.n2120061065(this_addr, commandVector_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_Submit__0(this_addr, commandVector_addr);
     }
 
     public void submit(WGPUCommandBuffer commandBuffer) {
@@ -65,7 +65,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_Submit__1(long this_addr, long commandBuffer_addr) {
-        n.n852347811.n323109706(this_addr, commandBuffer_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_Submit__1(this_addr, commandBuffer_addr);
     }
 
     public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02) {
@@ -73,7 +73,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_Submit__2(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr) {
-        n.n852347811.n1562831229(this_addr, commandBuffer01_addr, commandBuffer02_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_Submit__2(this_addr, commandBuffer01_addr, commandBuffer02_addr);
     }
 
     public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03) {
@@ -81,7 +81,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_Submit__3(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr) {
-        n.n852347811.n1749566156(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_Submit__3(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr);
     }
 
     public void submit(WGPUCommandBuffer commandBuffer01, WGPUCommandBuffer commandBuffer02, WGPUCommandBuffer commandBuffer03, WGPUCommandBuffer commandBuffer04) {
@@ -89,7 +89,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_Submit__4(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr, long commandBuffer04_addr) {
-        n.n852347811.n2233843835(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr, commandBuffer04_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_Submit__4(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr, commandBuffer04_addr);
     }
 
     public void release() {
@@ -97,7 +97,7 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n852347811.n573707728(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_Release(this_addr);
     }
 
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, NativeObject bytes, int dataSize) {
@@ -105,6 +105,6 @@ public class WGPUQueue extends NativeObject {
     }
 
     public static void internal_native_WriteBuffer__1(long this_addr, long buffer_addr, int bufferOffset, long bytes_addr, int dataSize) {
-        n.n852347811.n2585260167(this_addr, buffer_addr, bufferOffset, bytes_addr, dataSize);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueue.internal_native_WriteBuffer__1(this_addr, buffer_addr, bufferOffset, bytes_addr, dataSize);
     }
 }

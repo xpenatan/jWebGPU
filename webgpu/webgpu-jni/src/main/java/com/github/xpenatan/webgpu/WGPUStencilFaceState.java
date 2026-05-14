@@ -31,7 +31,7 @@ public class WGPUStencilFaceState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3248296966.n702957370(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUStencilFaceState.internal_native_deleteNative(this_addr);
     }
 
     public void setCompare(WGPUCompareFunction compare) {
@@ -39,7 +39,7 @@ public class WGPUStencilFaceState extends NativeObject {
     }
 
     public static void internal_native_SetCompare(long this_addr, int compare) {
-        n.n3248296966.n3575260156(this_addr, compare);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUStencilFaceState.internal_native_SetCompare(this_addr, compare);
     }
 
     public void setFailOp(WGPUStencilOperation failOp) {
@@ -47,7 +47,7 @@ public class WGPUStencilFaceState extends NativeObject {
     }
 
     public static void internal_native_SetFailOp(long this_addr, int failOp) {
-        n.n3248296966.n2941965238(this_addr, failOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUStencilFaceState.internal_native_SetFailOp(this_addr, failOp);
     }
 
     public void setDepthFailOp(WGPUStencilOperation depthFailOp) {
@@ -55,7 +55,7 @@ public class WGPUStencilFaceState extends NativeObject {
     }
 
     public static void internal_native_SetDepthFailOp(long this_addr, int depthFailOp) {
-        n.n3248296966.n1262861375(this_addr, depthFailOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUStencilFaceState.internal_native_SetDepthFailOp(this_addr, depthFailOp);
     }
 
     public void setPassOp(WGPUStencilOperation passOp) {
@@ -63,6 +63,6 @@ public class WGPUStencilFaceState extends NativeObject {
     }
 
     public static void internal_native_SetPassOp(long this_addr, int passOp) {
-        n.n3248296966.n3102130403(this_addr, passOp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUStencilFaceState.internal_native_SetPassOp(this_addr, passOp);
     }
 }

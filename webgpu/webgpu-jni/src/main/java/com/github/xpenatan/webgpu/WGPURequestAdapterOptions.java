@@ -20,7 +20,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1754520400.n899766650();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1754520400.n3407002628(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n1754520400.n1834676041(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setFeatureLevel(WGPUFeatureLevel featureLevel) {
@@ -58,7 +58,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static void internal_native_SetFeatureLevel(long this_addr, int featureLevel) {
-        n.n1754520400.n447618173(this_addr, featureLevel);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_SetFeatureLevel(this_addr, featureLevel);
     }
 
     public void setPowerPreference(WGPUPowerPreference powerPreference) {
@@ -66,7 +66,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static void internal_native_SetPowerPreference(long this_addr, int powerPreference) {
-        n.n1754520400.n3724485067(this_addr, powerPreference);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_SetPowerPreference(this_addr, powerPreference);
     }
 
     public void setBackendType(WGPUBackendType backendType) {
@@ -74,7 +74,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static void internal_native_SetBackendType(long this_addr, int backendType) {
-        n.n1754520400.n627891549(this_addr, backendType);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_SetBackendType(this_addr, backendType);
     }
 
     public void setCompatibleSurface(WGPUSurface compatibleSurface) {
@@ -82,7 +82,7 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static void internal_native_SetCompatibleSurface(long this_addr, long compatibleSurface_addr) {
-        n.n1754520400.n1421786201(this_addr, compatibleSurface_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_SetCompatibleSurface(this_addr, compatibleSurface_addr);
     }
 
     public static WGPURequestAdapterOptions obtain() {
@@ -96,6 +96,6 @@ public class WGPURequestAdapterOptions extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1754520400.n53348995();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterOptions.internal_native_Obtain_addr();
     }
 }

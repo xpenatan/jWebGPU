@@ -29,7 +29,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1263208436.n1583849302();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_create_addr();
     }
 
     protected void deleteNative() {
@@ -37,7 +37,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1263208436.n1675214760(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_deleteNative(this_addr);
     }
 
     public void setTexture(WGPUTexture texture) {
@@ -45,7 +45,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static void internal_native_SetTexture(long this_addr, long texture_addr) {
-        n.n1263208436.n869110167(this_addr, texture_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_SetTexture(this_addr, texture_addr);
     }
 
     public void setMipLevel(int mipLevel) {
@@ -53,7 +53,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static void internal_native_SetMipLevel(long this_addr, int mipLevel) {
-        n.n1263208436.n2928282935(this_addr, mipLevel);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_SetMipLevel(this_addr, mipLevel);
     }
 
     public WGPUOrigin3D getOrigin() {
@@ -67,7 +67,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static long internal_native_GetOrigin_addr(long this_addr) {
-        return n.n1263208436.n2191488950(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_GetOrigin_addr(this_addr);
     }
 
     public void setAspect(WGPUTextureAspect aspect) {
@@ -75,7 +75,7 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static void internal_native_SetAspect(long this_addr, int aspect) {
-        n.n1263208436.n2531452527(this_addr, aspect);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_SetAspect(this_addr, aspect);
     }
 
     public static WGPUTexelCopyTextureInfo obtain() {
@@ -89,6 +89,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1263208436.n737431647();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyTextureInfo.internal_native_Obtain_addr();
     }
 }

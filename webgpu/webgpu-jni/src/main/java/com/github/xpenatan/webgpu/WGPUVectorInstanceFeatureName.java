@@ -20,7 +20,7 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3005606427.n111026831();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceFeatureName.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3005606427.n1501648911(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceFeatureName.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n3005606427.n3190110736(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceFeatureName.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n3005606427.n360075634(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceFeatureName.internal_native_clear(this_addr);
     }
 
     public void push_back(WGPUInstanceFeatureName featureName) {
@@ -66,7 +66,7 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, int featureName) {
-        n.n3005606427.n240418678(this_addr, featureName);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceFeatureName.internal_native_push_back(this_addr, featureName);
     }
 
     public static WGPUVectorInstanceFeatureName obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorInstanceFeatureName extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3005606427.n3559576472();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceFeatureName.internal_native_Obtain_addr();
     }
 }

@@ -20,7 +20,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n498977734.n1301578948();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n498977734.n2443775738(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_deleteNative(this_addr);
     }
 
     public void setMaxTextureDimension1D(int value) {
@@ -50,7 +50,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxTextureDimension1D(long this_addr, int value) {
-        n.n498977734.n3722772543(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxTextureDimension1D(this_addr, value);
     }
 
     public int getMaxTextureDimension1D() {
@@ -58,7 +58,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxTextureDimension1D(long this_addr) {
-        return n.n498977734.n85725168(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxTextureDimension1D(this_addr);
     }
 
     public void setMaxTextureDimension2D(int value) {
@@ -66,7 +66,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxTextureDimension2D(long this_addr, int value) {
-        n.n498977734.n1925821184(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxTextureDimension2D(this_addr, value);
     }
 
     public int getMaxTextureDimension2D() {
@@ -74,7 +74,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxTextureDimension2D(long this_addr) {
-        return n.n498977734.n973228849(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxTextureDimension2D(this_addr);
     }
 
     public void setMaxTextureDimension3D(int value) {
@@ -82,7 +82,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxTextureDimension3D(long this_addr, int value) {
-        n.n498977734.n128869825(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxTextureDimension3D(this_addr, value);
     }
 
     public int getMaxTextureDimension3D() {
@@ -90,7 +90,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxTextureDimension3D(long this_addr) {
-        return n.n498977734.n1860732530(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxTextureDimension3D(this_addr);
     }
 
     public void setMaxTextureArrayLayers(int value) {
@@ -98,7 +98,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxTextureArrayLayers(long this_addr, int value) {
-        n.n498977734.n2609152925(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxTextureArrayLayers(this_addr, value);
     }
 
     public int getMaxTextureArrayLayers() {
@@ -106,7 +106,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxTextureArrayLayers(long this_addr) {
-        return n.n498977734.n508555854(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxTextureArrayLayers(this_addr);
     }
 
     public void setMaxBindGroups(int value) {
@@ -114,7 +114,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxBindGroups(long this_addr, int value) {
-        n.n498977734.n4019208492(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxBindGroups(this_addr, value);
     }
 
     public int getMaxBindGroups() {
@@ -122,7 +122,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxBindGroups(long this_addr) {
-        return n.n498977734.n1188168541(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxBindGroups(this_addr);
     }
 
     public void setMaxBindGroupsPlusVertexBuffers(int value) {
@@ -130,7 +130,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxBindGroupsPlusVertexBuffers(long this_addr, int value) {
-        n.n498977734.n3377697461(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxBindGroupsPlusVertexBuffers(this_addr, value);
     }
 
     public int getMaxBindGroupsPlusVertexBuffers() {
@@ -138,7 +138,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxBindGroupsPlusVertexBuffers(long this_addr) {
-        return n.n498977734.n156347390(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxBindGroupsPlusVertexBuffers(this_addr);
     }
 
     public void setMaxBindingsPerBindGroup(int value) {
@@ -146,7 +146,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxBindingsPerBindGroup(long this_addr, int value) {
-        n.n498977734.n857115658(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxBindingsPerBindGroup(this_addr, value);
     }
 
     public int getMaxBindingsPerBindGroup() {
@@ -154,7 +154,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxBindingsPerBindGroup(long this_addr) {
-        return n.n498977734.n3082718267(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxBindingsPerBindGroup(this_addr);
     }
 
     public void setMaxDynamicUniformBuffersPerPipelineLayout(int value) {
@@ -162,7 +162,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(long this_addr, int value) {
-        n.n498977734.n3171651410(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(this_addr, value);
     }
 
     public int getMaxDynamicUniformBuffersPerPipelineLayout() {
@@ -170,7 +170,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(long this_addr) {
-        return n.n498977734.n1400807043(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(this_addr);
     }
 
     public void setMaxDynamicStorageBuffersPerPipelineLayout(int value) {
@@ -178,7 +178,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(long this_addr, int value) {
-        n.n498977734.n1222613867(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(this_addr, value);
     }
 
     public int getMaxDynamicStorageBuffersPerPipelineLayout() {
@@ -186,7 +186,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(long this_addr) {
-        return n.n498977734.n3404111644(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(this_addr);
     }
 
     public void setMaxSampledTexturesPerShaderStage(int value) {
@@ -194,7 +194,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxSampledTexturesPerShaderStage(long this_addr, int value) {
-        n.n498977734.n3461219915(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxSampledTexturesPerShaderStage(this_addr, value);
     }
 
     public int getMaxSampledTexturesPerShaderStage() {
@@ -202,7 +202,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxSampledTexturesPerShaderStage(long this_addr) {
-        return n.n498977734.n604596116(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxSampledTexturesPerShaderStage(this_addr);
     }
 
     public void setMaxSamplersPerShaderStage(int value) {
@@ -210,7 +210,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxSamplersPerShaderStage(long this_addr, int value) {
-        n.n498977734.n1806906454(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxSamplersPerShaderStage(this_addr, value);
     }
 
     public int getMaxSamplersPerShaderStage() {
@@ -218,7 +218,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxSamplersPerShaderStage(long this_addr) {
-        return n.n498977734.n3338653063(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxSamplersPerShaderStage(this_addr);
     }
 
     public void setMaxStorageBuffersPerShaderStage(int value) {
@@ -226,7 +226,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxStorageBuffersPerShaderStage(long this_addr, int value) {
-        n.n498977734.n1604430953(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxStorageBuffersPerShaderStage(this_addr, value);
     }
 
     public int getMaxStorageBuffersPerShaderStage() {
@@ -234,7 +234,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxStorageBuffersPerShaderStage(long this_addr) {
-        return n.n498977734.n424443930(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxStorageBuffersPerShaderStage(this_addr);
     }
 
     public void setMaxStorageTexturesPerShaderStage(int value) {
@@ -242,7 +242,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxStorageTexturesPerShaderStage(long this_addr, int value) {
-        n.n498977734.n3715429290(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxStorageTexturesPerShaderStage(this_addr, value);
     }
 
     public int getMaxStorageTexturesPerShaderStage() {
@@ -250,7 +250,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxStorageTexturesPerShaderStage(long this_addr) {
-        return n.n498977734.n4047756403(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxStorageTexturesPerShaderStage(this_addr);
     }
 
     public void setMaxUniformBuffersPerShaderStage(int value) {
@@ -258,7 +258,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxUniformBuffersPerShaderStage(long this_addr, int value) {
-        n.n498977734.n3926497762(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxUniformBuffersPerShaderStage(this_addr, value);
     }
 
     public int getMaxUniformBuffersPerShaderStage() {
@@ -266,7 +266,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxUniformBuffersPerShaderStage(long this_addr) {
-        return n.n498977734.n3291484691(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxUniformBuffersPerShaderStage(this_addr);
     }
 
     public void setMaxUniformBufferBindingSize(int value) {
@@ -274,7 +274,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxUniformBufferBindingSize(long this_addr, int value) {
-        n.n498977734.n588756683(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxUniformBufferBindingSize(this_addr, value);
     }
 
     public int getMaxUniformBufferBindingSize() {
@@ -282,7 +282,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxUniformBufferBindingSize(long this_addr) {
-        return n.n498977734.n2709366140(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxUniformBufferBindingSize(this_addr);
     }
 
     public void setMaxStorageBufferBindingSize(int value) {
@@ -290,7 +290,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxStorageBufferBindingSize(long this_addr, int value) {
-        n.n498977734.n2016683218(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxStorageBufferBindingSize(this_addr, value);
     }
 
     public int getMaxStorageBufferBindingSize() {
@@ -298,7 +298,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxStorageBufferBindingSize(long this_addr) {
-        return n.n498977734.n26750723(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxStorageBufferBindingSize(this_addr);
     }
 
     public void setMinUniformBufferOffsetAlignment(int value) {
@@ -306,7 +306,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMinUniformBufferOffsetAlignment(long this_addr, int value) {
-        n.n498977734.n1081042035(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMinUniformBufferOffsetAlignment(this_addr, value);
     }
 
     public int getMinUniformBufferOffsetAlignment() {
@@ -314,7 +314,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMinUniformBufferOffsetAlignment(long this_addr) {
-        return n.n498977734.n2885405988(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMinUniformBufferOffsetAlignment(this_addr);
     }
 
     public void setMinStorageBufferOffsetAlignment(int value) {
@@ -322,7 +322,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMinStorageBufferOffsetAlignment(long this_addr, int value) {
-        n.n498977734.n3053942522(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMinStorageBufferOffsetAlignment(this_addr, value);
     }
 
     public int getMinStorageBufferOffsetAlignment() {
@@ -330,7 +330,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMinStorageBufferOffsetAlignment(long this_addr) {
-        return n.n498977734.n18365227(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMinStorageBufferOffsetAlignment(this_addr);
     }
 
     public void setMaxVertexBuffers(int value) {
@@ -338,7 +338,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxVertexBuffers(long this_addr, int value) {
-        n.n498977734.n90362794(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxVertexBuffers(this_addr, value);
     }
 
     public int getMaxVertexBuffers() {
@@ -346,7 +346,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxVertexBuffers(long this_addr) {
-        return n.n498977734.n1081496691(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxVertexBuffers(this_addr);
     }
 
     public void setMaxBufferSize(long value) {
@@ -354,7 +354,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxBufferSize(long this_addr, long value) {
-        n.n498977734.n3629832399(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxBufferSize(this_addr, value);
     }
 
     public int getMaxBufferSize() {
@@ -362,7 +362,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxBufferSize(long this_addr) {
-        return n.n498977734.n3462379885(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxBufferSize(this_addr);
     }
 
     public void setMaxVertexAttributes(int value) {
@@ -370,7 +370,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxVertexAttributes(long this_addr, int value) {
-        n.n498977734.n3704919362(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxVertexAttributes(this_addr, value);
     }
 
     public int getMaxVertexAttributes() {
@@ -378,7 +378,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxVertexAttributes(long this_addr) {
-        return n.n498977734.n1136561011(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxVertexAttributes(this_addr);
     }
 
     public void setMaxVertexBufferArrayStride(int value) {
@@ -386,7 +386,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxVertexBufferArrayStride(long this_addr, int value) {
-        n.n498977734.n1421093387(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxVertexBufferArrayStride(this_addr, value);
     }
 
     public int getMaxVertexBufferArrayStride() {
@@ -394,7 +394,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxVertexBufferArrayStride(long this_addr) {
-        return n.n498977734.n2759951444(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxVertexBufferArrayStride(this_addr);
     }
 
     public void setMaxInterStageShaderVariables(int value) {
@@ -402,7 +402,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxInterStageShaderVariables(long this_addr, int value) {
-        n.n498977734.n2834773641(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxInterStageShaderVariables(this_addr, value);
     }
 
     public int getMaxInterStageShaderVariables() {
@@ -410,7 +410,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxInterStageShaderVariables(long this_addr) {
-        return n.n498977734.n4015066322(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxInterStageShaderVariables(this_addr);
     }
 
     public void setMaxColorAttachments(int value) {
@@ -418,7 +418,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxColorAttachments(long this_addr, int value) {
-        n.n498977734.n705302352(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxColorAttachments(this_addr, value);
     }
 
     public int getMaxColorAttachments() {
@@ -426,7 +426,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxColorAttachments(long this_addr) {
-        return n.n498977734.n1777286273(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxColorAttachments(this_addr);
     }
 
     public void setMaxColorAttachmentBytesPerSample(int value) {
@@ -434,7 +434,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxColorAttachmentBytesPerSample(long this_addr, int value) {
-        n.n498977734.n2410835831(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxColorAttachmentBytesPerSample(this_addr, value);
     }
 
     public int getMaxColorAttachmentBytesPerSample() {
@@ -442,7 +442,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxColorAttachmentBytesPerSample(long this_addr) {
-        return n.n498977734.n3020506816(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxColorAttachmentBytesPerSample(this_addr);
     }
 
     public void setMaxComputeWorkgroupStorageSize(int value) {
@@ -450,7 +450,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxComputeWorkgroupStorageSize(long this_addr, int value) {
-        n.n498977734.n921736404(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxComputeWorkgroupStorageSize(this_addr, value);
     }
 
     public int getMaxComputeWorkgroupStorageSize() {
@@ -458,7 +458,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxComputeWorkgroupStorageSize(long this_addr) {
-        return n.n498977734.n382375325(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxComputeWorkgroupStorageSize(this_addr);
     }
 
     public void setMaxComputeInvocationsPerWorkgroup(int value) {
@@ -466,7 +466,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxComputeInvocationsPerWorkgroup(long this_addr, int value) {
-        n.n498977734.n2257167712(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxComputeInvocationsPerWorkgroup(this_addr, value);
     }
 
     public int getMaxComputeInvocationsPerWorkgroup() {
@@ -474,7 +474,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxComputeInvocationsPerWorkgroup(long this_addr) {
-        return n.n498977734.n764878737(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxComputeInvocationsPerWorkgroup(this_addr);
     }
 
     public void setMaxComputeWorkgroupSizeX(int value) {
@@ -482,7 +482,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxComputeWorkgroupSizeX(long this_addr, int value) {
-        n.n498977734.n2985211801(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxComputeWorkgroupSizeX(this_addr, value);
     }
 
     public int getMaxComputeWorkgroupSizeX() {
@@ -490,7 +490,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxComputeWorkgroupSizeX(long this_addr) {
-        return n.n498977734.n2391227362(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxComputeWorkgroupSizeX(this_addr);
     }
 
     public void setMaxComputeWorkgroupSizeY(int value) {
@@ -498,7 +498,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxComputeWorkgroupSizeY(long this_addr, int value) {
-        n.n498977734.n2788698296(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxComputeWorkgroupSizeY(this_addr, value);
     }
 
     public int getMaxComputeWorkgroupSizeY() {
@@ -506,7 +506,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxComputeWorkgroupSizeY(long this_addr) {
-        return n.n498977734.n2419856513(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxComputeWorkgroupSizeY(this_addr);
     }
 
     public void setMaxComputeWorkgroupSizeZ(int value) {
@@ -514,7 +514,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxComputeWorkgroupSizeZ(long this_addr, int value) {
-        n.n498977734.n2592184791(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxComputeWorkgroupSizeZ(this_addr, value);
     }
 
     public int getMaxComputeWorkgroupSizeZ() {
@@ -522,7 +522,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxComputeWorkgroupSizeZ(long this_addr) {
-        return n.n498977734.n2448485664(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxComputeWorkgroupSizeZ(this_addr);
     }
 
     public void setMaxComputeWorkgroupsPerDimension(int value) {
@@ -530,7 +530,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static void internal_native_SetMaxComputeWorkgroupsPerDimension(long this_addr, int value) {
-        n.n498977734.n563444660(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_SetMaxComputeWorkgroupsPerDimension(this_addr, value);
     }
 
     public int getMaxComputeWorkgroupsPerDimension() {
@@ -538,7 +538,7 @@ public class WGPULimits extends NativeObject {
     }
 
     public static int internal_native_GetMaxComputeWorkgroupsPerDimension(long this_addr) {
-        return n.n498977734.n2704144765(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_GetMaxComputeWorkgroupsPerDimension(this_addr);
     }
 
     public static WGPULimits obtain() {
@@ -552,6 +552,6 @@ public class WGPULimits extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n498977734.n455161293();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULimits.internal_native_Obtain_addr();
     }
 }

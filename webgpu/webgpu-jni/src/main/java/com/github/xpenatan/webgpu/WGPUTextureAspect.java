@@ -40,22 +40,22 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
     }
 
     private static int WGPUTextureAspect_Undefined_NATIVE() {
-        return n.n89806309.n318159134();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureAspect.WGPUTextureAspect_Undefined_NATIVE();
     }
 
     private static int WGPUTextureAspect_All_NATIVE() {
-        return n.n89806309.n91154031();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureAspect.WGPUTextureAspect_All_NATIVE();
     }
 
     private static int WGPUTextureAspect_StencilOnly_NATIVE() {
-        return n.n89806309.n3700830550();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureAspect.WGPUTextureAspect_StencilOnly_NATIVE();
     }
 
     private static int WGPUTextureAspect_DepthOnly_NATIVE() {
-        return n.n89806309.n678456797();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureAspect.WGPUTextureAspect_DepthOnly_NATIVE();
     }
 
     private static int WGPUTextureAspect_Force32_NATIVE() {
-        return n.n89806309.n4212642392();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureAspect.WGPUTextureAspect_Force32_NATIVE();
     }
 }

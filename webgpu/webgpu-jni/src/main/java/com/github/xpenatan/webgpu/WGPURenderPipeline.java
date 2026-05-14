@@ -18,7 +18,7 @@ public class WGPURenderPipeline extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3140250630.n2773798020();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipeline.internal_native_create_addr();
     }
 
     /**
@@ -40,7 +40,7 @@ public class WGPURenderPipeline extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3140250630.n2174721850(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipeline.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -48,7 +48,7 @@ public class WGPURenderPipeline extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n3140250630.n2784049939(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipeline.internal_native_SetLabel(this_addr, label);
     }
 
     public void release() {
@@ -56,7 +56,7 @@ public class WGPURenderPipeline extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n3140250630.n3432895565(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipeline.internal_native_Release(this_addr);
     }
 
     public boolean isValid() {
@@ -64,6 +64,6 @@ public class WGPURenderPipeline extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return n.n3140250630.n3229162050(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipeline.internal_native_IsValid(this_addr);
     }
 }

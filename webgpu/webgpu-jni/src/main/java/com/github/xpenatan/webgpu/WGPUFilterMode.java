@@ -35,18 +35,18 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
     }
 
     private static int WGPUFilterMode_Undefined_NATIVE() {
-        return n.n965678569.n633754714();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFilterMode.WGPUFilterMode_Undefined_NATIVE();
     }
 
     private static int WGPUFilterMode_Nearest_NATIVE() {
-        return n.n965678569.n3946096232();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFilterMode.WGPUFilterMode_Nearest_NATIVE();
     }
 
     private static int WGPUFilterMode_Linear_NATIVE() {
-        return n.n965678569.n2571952551();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFilterMode.WGPUFilterMode_Linear_NATIVE();
     }
 
     private static int WGPUFilterMode_Force32_NATIVE() {
-        return n.n965678569.n105712788();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFilterMode.WGPUFilterMode_Force32_NATIVE();
     }
 }

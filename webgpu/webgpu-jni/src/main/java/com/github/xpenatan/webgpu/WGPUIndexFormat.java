@@ -35,18 +35,18 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
     }
 
     private static int WGPUIndexFormat_Undefined_NATIVE() {
-        return n.n1744675963.n1803911114();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUIndexFormat.WGPUIndexFormat_Undefined_NATIVE();
     }
 
     private static int WGPUIndexFormat_Uint16_NATIVE() {
-        return n.n1744675963.n1778270737();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUIndexFormat.WGPUIndexFormat_Uint16_NATIVE();
     }
 
     private static int WGPUIndexFormat_Uint32_NATIVE() {
-        return n.n1744675963.n25126987();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUIndexFormat.WGPUIndexFormat_Uint32_NATIVE();
     }
 
     private static int WGPUIndexFormat_Force32_NATIVE() {
-        return n.n1744675963.n3686814724();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUIndexFormat.WGPUIndexFormat_Force32_NATIVE();
     }
 }

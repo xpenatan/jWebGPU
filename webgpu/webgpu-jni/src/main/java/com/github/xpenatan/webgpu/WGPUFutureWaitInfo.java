@@ -33,7 +33,7 @@ public class WGPUFutureWaitInfo extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n593115220.n2909067272(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFutureWaitInfo.internal_native_deleteNative(this_addr);
     }
 
     public void setFuture(WGPUFuture future) {
@@ -41,7 +41,7 @@ public class WGPUFutureWaitInfo extends NativeObject {
     }
 
     public static void internal_native_SetFuture(long this_addr, long future_addr) {
-        n.n593115220.n2648422407(this_addr, future_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFutureWaitInfo.internal_native_SetFuture(this_addr, future_addr);
     }
 
     public static WGPUFutureWaitInfo obtain() {
@@ -55,6 +55,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n593115220.n53705727();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFutureWaitInfo.internal_native_Obtain_addr();
     }
 }

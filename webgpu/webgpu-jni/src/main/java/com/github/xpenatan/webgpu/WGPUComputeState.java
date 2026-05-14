@@ -31,7 +31,7 @@ public class WGPUComputeState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n720403400.n2749447804(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUComputeState.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -39,7 +39,7 @@ public class WGPUComputeState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n720403400.n3139646929(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUComputeState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setModule(WGPUShaderModule shaderModule) {
@@ -47,7 +47,7 @@ public class WGPUComputeState extends NativeObject {
     }
 
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
-        n.n720403400.n2863295204(this_addr, shaderModule_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUComputeState.internal_native_SetModule(this_addr, shaderModule_addr);
     }
 
     public void setEntryPoint(String entryPoint) {
@@ -55,7 +55,7 @@ public class WGPUComputeState extends NativeObject {
     }
 
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
-        n.n720403400.n86234475(this_addr, entryPoint);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUComputeState.internal_native_SetEntryPoint(this_addr, entryPoint);
     }
 
     public void setConstants(WGPUVectorConstantEntry values) {
@@ -63,6 +63,6 @@ public class WGPUComputeState extends NativeObject {
     }
 
     public static void internal_native_SetConstants(long this_addr, long values_addr) {
-        n.n720403400.n2142146423(this_addr, values_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUComputeState.internal_native_SetConstants(this_addr, values_addr);
     }
 }

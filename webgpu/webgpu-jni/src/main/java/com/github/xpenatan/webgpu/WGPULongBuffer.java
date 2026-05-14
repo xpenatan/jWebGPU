@@ -33,7 +33,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1366266506.n4217119934(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_deleteNative(this_addr);
     }
 
     public WGPUByteBuffer getByteBuffer() {
@@ -47,7 +47,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static long internal_native_getByteBuffer_addr(long this_addr) {
-        return n.n1366266506.n1291881006(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_getByteBuffer_addr(this_addr);
     }
 
     public void put(long value) {
@@ -55,7 +55,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_put__0(long this_addr, long value) {
-        n.n1366266506.n3202960169(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_put__0(this_addr, value);
     }
 
     public void put(int index, long value) {
@@ -63,7 +63,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_put__1(long this_addr, int index, long value) {
-        n.n1366266506.n974104199(this_addr, index, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_put__1(this_addr, index, value);
     }
 
     public long get(int index) {
@@ -71,7 +71,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static long internal_native_get(long this_addr, int index) {
-        return n.n1366266506.n585859453(this_addr, index);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_get(this_addr, index);
     }
 
     public long get() {
@@ -79,7 +79,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static long internal_native_get(long this_addr) {
-        return n.n1366266506.n2774505018(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_get(this_addr);
     }
 
     public int remaining() {
@@ -87,7 +87,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static int internal_native_remaining(long this_addr) {
-        return n.n1366266506.n1075583386(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_remaining(this_addr);
     }
 
     public int getCapacity() {
@@ -95,7 +95,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static int internal_native_getCapacity(long this_addr) {
-        return n.n1366266506.n1550005152(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_getCapacity(this_addr);
     }
 
     public void clear() {
@@ -103,7 +103,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n1366266506.n1761991587(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_clear(this_addr);
     }
 
     public void limit(int newLimit) {
@@ -111,7 +111,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_limit(long this_addr, int newLimit) {
-        n.n1366266506.n1748471992(this_addr, newLimit);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_limit(this_addr, newLimit);
     }
 
     public int getLimit() {
@@ -119,7 +119,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static int internal_native_getLimit(long this_addr) {
-        return n.n1366266506.n4064830011(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_getLimit(this_addr);
     }
 
     public void position(int newPosition) {
@@ -127,7 +127,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_position(long this_addr, int newPosition) {
-        n.n1366266506.n3171583578(this_addr, newPosition);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_position(this_addr, newPosition);
     }
 
     public int getPosition() {
@@ -135,7 +135,7 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static int internal_native_getPosition(long this_addr) {
-        return n.n1366266506.n50470033(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_getPosition(this_addr);
     }
 
     public void flip() {
@@ -143,6 +143,6 @@ public class WGPULongBuffer extends NativeObject {
     }
 
     public static void internal_native_flip(long this_addr) {
-        n.n1366266506.n4026034387(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPULongBuffer.internal_native_flip(this_addr);
     }
 }

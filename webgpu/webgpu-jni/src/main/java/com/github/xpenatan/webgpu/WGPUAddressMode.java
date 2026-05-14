@@ -40,22 +40,22 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
     }
 
     private static int WGPUAddressMode_Undefined_NATIVE() {
-        return n.n3695455433.n651347302();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAddressMode.WGPUAddressMode_Undefined_NATIVE();
     }
 
     private static int WGPUAddressMode_ClampToEdge_NATIVE() {
-        return n.n3695455433.n2718327945();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAddressMode.WGPUAddressMode_ClampToEdge_NATIVE();
     }
 
     private static int WGPUAddressMode_Repeat_NATIVE() {
-        return n.n3695455433.n2845029521();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAddressMode.WGPUAddressMode_Repeat_NATIVE();
     }
 
     private static int WGPUAddressMode_MirrorRepeat_NATIVE() {
-        return n.n3695455433.n3293593136();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAddressMode.WGPUAddressMode_MirrorRepeat_NATIVE();
     }
 
     private static int WGPUAddressMode_Force32_NATIVE() {
-        return n.n3695455433.n2778353824();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAddressMode.WGPUAddressMode_Force32_NATIVE();
     }
 }

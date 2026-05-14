@@ -20,7 +20,7 @@ public class WGPUVectorConstantEntry extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3580975549.n3085020717();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorConstantEntry.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorConstantEntry extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3580975549.n962223921(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorConstantEntry.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorConstantEntry extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n3580975549.n3024126770(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorConstantEntry.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorConstantEntry extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n3580975549.n3804507280(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorConstantEntry.internal_native_clear(this_addr);
     }
 
     public void push_back(WGPUConstantEntry constantEntry) {
@@ -66,7 +66,7 @@ public class WGPUVectorConstantEntry extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long constantEntry_addr) {
-        n.n3580975549.n166762103(this_addr, constantEntry_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorConstantEntry.internal_native_push_back(this_addr, constantEntry_addr);
     }
 
     public static WGPUVectorConstantEntry obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorConstantEntry extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3580975549.n2238603062();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorConstantEntry.internal_native_Obtain_addr();
     }
 }

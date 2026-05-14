@@ -22,7 +22,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2010560659.n49841943();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_create_addr();
     }
 
     /**
@@ -44,7 +44,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2010560659.n2451081351(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -52,7 +52,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n2010560659.n2357637798(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_SetLabel(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -60,7 +60,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n2010560659.n1051826534(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setRequiredLimits(WGPULimits limits) {
@@ -68,7 +68,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetRequiredLimits(long this_addr, long limits_addr) {
-        n.n2010560659.n1415596954(this_addr, limits_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_SetRequiredLimits(this_addr, limits_addr);
     }
 
     public void setRequiredFeatures(WGPUVectorFeatureName features) {
@@ -76,7 +76,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetRequiredFeatures(long this_addr, long features_addr) {
-        n.n2010560659.n2466475263(this_addr, features_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_SetRequiredFeatures(this_addr, features_addr);
     }
 
     public WGPUQueueDescriptor getDefaultQueue() {
@@ -90,7 +90,7 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static long internal_native_GetDefaultQueue_addr(long this_addr) {
-        return n.n2010560659.n3773143871(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_GetDefaultQueue_addr(this_addr);
     }
 
     public static WGPUDeviceDescriptor obtain() {
@@ -104,6 +104,6 @@ public class WGPUDeviceDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2010560659.n3498391584();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceDescriptor.internal_native_Obtain_addr();
     }
 }

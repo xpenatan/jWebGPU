@@ -20,7 +20,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3736724659.n1309298423();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3736724659.n2622008487(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n3736724659.n83267910(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setEntryPoint(String entryPoint) {
@@ -58,7 +58,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
-        n.n3736724659.n4122732694(this_addr, entryPoint);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetEntryPoint(this_addr, entryPoint);
     }
 
     public void setTargets(WGPUVectorColorTargetState targets) {
@@ -66,7 +66,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetTargets__0(long this_addr, long targets_addr) {
-        n.n3736724659.n3285506033(this_addr, targets_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetTargets__0(this_addr, targets_addr);
     }
 
     public void setTargets(WGPUColorTargetState target01) {
@@ -74,7 +74,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetTargets__1(long this_addr, long target01_addr) {
-        n.n3736724659.n1488554674(this_addr, target01_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetTargets__1(this_addr, target01_addr);
     }
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02) {
@@ -82,7 +82,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetTargets__2(long this_addr, long target01_addr, long target02_addr) {
-        n.n3736724659.n3281781525(this_addr, target01_addr, target02_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetTargets__2(this_addr, target01_addr, target02_addr);
     }
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03) {
@@ -90,7 +90,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetTargets__3(long this_addr, long target01_addr, long target02_addr, long target03_addr) {
-        n.n3736724659.n1870358580(this_addr, target01_addr, target02_addr, target03_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetTargets__3(this_addr, target01_addr, target02_addr, target03_addr);
     }
 
     public void setTargets(WGPUColorTargetState target01, WGPUColorTargetState target02, WGPUColorTargetState target03, WGPUColorTargetState target04) {
@@ -98,7 +98,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetTargets__4(long this_addr, long target01_addr, long target02_addr, long target03_addr, long target04_addr) {
-        n.n3736724659.n3667508243(this_addr, target01_addr, target02_addr, target03_addr, target04_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetTargets__4(this_addr, target01_addr, target02_addr, target03_addr, target04_addr);
     }
 
     public void setModule(WGPUShaderModule shaderModule) {
@@ -106,7 +106,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
-        n.n3736724659.n653195855(this_addr, shaderModule_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetModule(this_addr, shaderModule_addr);
     }
 
     public void setConstants(WGPUVectorConstantEntry constants) {
@@ -114,7 +114,7 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static void internal_native_SetConstants(long this_addr, long constants_addr) {
-        n.n3736724659.n2921088044(this_addr, constants_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_SetConstants(this_addr, constants_addr);
     }
 
     public static WGPUFragmentState obtain() {
@@ -128,6 +128,6 @@ public class WGPUFragmentState extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3736724659.n462880768();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFragmentState.internal_native_Obtain_addr();
     }
 }

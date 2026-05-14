@@ -35,14 +35,14 @@ public enum WGPUWaitStatus implements NativeEnum<WGPUWaitStatus> {
     }
 
     private static int WGPUWaitStatus_Success_NATIVE() {
-        return n.n2048309877.n3007256461();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUWaitStatus.WGPUWaitStatus_Success_NATIVE();
     }
 
     private static int WGPUWaitStatus_TimedOut_NATIVE() {
-        return n.n2048309877.n2680167321();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUWaitStatus.WGPUWaitStatus_TimedOut_NATIVE();
     }
 
     private static int WGPUWaitStatus_Force32_NATIVE() {
-        return n.n2048309877.n433644308();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUWaitStatus.WGPUWaitStatus_Force32_NATIVE();
     }
 }

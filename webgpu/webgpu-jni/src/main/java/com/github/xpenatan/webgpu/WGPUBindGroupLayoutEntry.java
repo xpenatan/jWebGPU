@@ -28,7 +28,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2567268596.n1341447766();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_create_addr();
     }
 
     /**
@@ -50,7 +50,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2567268596.n3820740776(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n2567268596.n723651109(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setBinding(int binding) {
@@ -66,7 +66,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetBinding(long this_addr, int binding) {
-        n.n2567268596.n4185881674(this_addr, binding);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetBinding(this_addr, binding);
     }
 
     public void setVisibility(WGPUShaderStage visibility) {
@@ -74,7 +74,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetVisibility(long this_addr, int visibility) {
-        n.n2567268596.n3566592501(this_addr, visibility);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetVisibility(this_addr, visibility);
     }
 
     public void setBuffer(WGPUBufferBindingLayout buffer) {
@@ -82,7 +82,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
-        n.n2567268596.n3960792804(this_addr, buffer_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetBuffer(this_addr, buffer_addr);
     }
 
     public void setSampler(WGPUSamplerBindingLayout sampler) {
@@ -90,7 +90,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetSampler(long this_addr, long sampler_addr) {
-        n.n2567268596.n2916235076(this_addr, sampler_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetSampler(this_addr, sampler_addr);
     }
 
     public void setTexture(WGPUTextureBindingLayout texture) {
@@ -98,7 +98,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetTexture(long this_addr, long texture_addr) {
-        n.n2567268596.n531353751(this_addr, texture_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetTexture(this_addr, texture_addr);
     }
 
     public void setStorageTexture(WGPUStorageTextureBindingLayout storageTexture) {
@@ -106,7 +106,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static void internal_native_SetStorageTexture(long this_addr, long storageTexture_addr) {
-        n.n2567268596.n2075050180(this_addr, storageTexture_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_SetStorageTexture(this_addr, storageTexture_addr);
     }
 
     public WGPUBufferBindingLayout getBuffer() {
@@ -120,7 +120,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static long internal_native_GetBuffer_addr(long this_addr) {
-        return n.n2567268596.n3428263248(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_GetBuffer_addr(this_addr);
     }
 
     public WGPUSamplerBindingLayout getSampler() {
@@ -134,7 +134,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static long internal_native_GetSampler_addr(long this_addr) {
-        return n.n2567268596.n1450901064(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_GetSampler_addr(this_addr);
     }
 
     public WGPUStorageTextureBindingLayout getStorageTexture() {
@@ -148,7 +148,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static long internal_native_GetStorageTexture_addr(long this_addr) {
-        return n.n2567268596.n1344326448(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_GetStorageTexture_addr(this_addr);
     }
 
     public WGPUTextureBindingLayout getTexture() {
@@ -162,7 +162,7 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static long internal_native_GetTexture_addr(long this_addr) {
-        return n.n2567268596.n3360987035(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_GetTexture_addr(this_addr);
     }
 
     public static WGPUBindGroupLayoutEntry obtain() {
@@ -176,6 +176,6 @@ public class WGPUBindGroupLayoutEntry extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2567268596.n495030111();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutEntry.internal_native_Obtain_addr();
     }
 }

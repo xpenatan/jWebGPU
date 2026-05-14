@@ -35,10 +35,10 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
     }
 
     private static int WGPUCompilationInfoRequestStatus_Success_NATIVE() {
-        return n.n1529956094.n1939524909();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationInfoRequestStatus.WGPUCompilationInfoRequestStatus_Success_NATIVE();
     }
 
     private static int WGPUCompilationInfoRequestStatus_Force32_NATIVE() {
-        return n.n1529956094.n3660880052();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationInfoRequestStatus.WGPUCompilationInfoRequestStatus_Force32_NATIVE();
     }
 }

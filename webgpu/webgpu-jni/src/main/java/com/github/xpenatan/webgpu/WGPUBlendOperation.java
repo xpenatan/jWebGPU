@@ -42,30 +42,30 @@ public enum WGPUBlendOperation implements NativeEnum<WGPUBlendOperation> {
     }
 
     private static int WGPUBlendOperation_Undefined_NATIVE() {
-        return n.n2696032708.n1764787066();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_Undefined_NATIVE();
     }
 
     private static int WGPUBlendOperation_Add_NATIVE() {
-        return n.n2696032708.n2408031435();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_Add_NATIVE();
     }
 
     private static int WGPUBlendOperation_Subtract_NATIVE() {
-        return n.n2696032708.n4015197302();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_Subtract_NATIVE();
     }
 
     private static int WGPUBlendOperation_ReverseSubtract_NATIVE() {
-        return n.n2696032708.n1879843136();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_ReverseSubtract_NATIVE();
     }
 
     private static int WGPUBlendOperation_Min_NATIVE() {
-        return n.n2696032708.n442208636();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_Min_NATIVE();
     }
 
     private static int WGPUBlendOperation_Max_NATIVE() {
-        return n.n2696032708.n1119641230();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_Max_NATIVE();
     }
 
     private static int WGPUBlendOperation_Force32_NATIVE() {
-        return n.n2696032708.n3065545652();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendOperation.WGPUBlendOperation_Force32_NATIVE();
     }
 }

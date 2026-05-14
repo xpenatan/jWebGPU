@@ -20,7 +20,7 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3144003586.n3063896584();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceSPIRV.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3144003586.n723838006(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceSPIRV.internal_native_deleteNative(this_addr);
     }
 
     public static WGPUShaderSourceSPIRV obtain() {
@@ -56,6 +56,6 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3144003586.n2217478929();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceSPIRV.internal_native_Obtain_addr();
     }
 }

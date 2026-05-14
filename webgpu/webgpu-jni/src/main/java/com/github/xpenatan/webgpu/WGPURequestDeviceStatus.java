@@ -35,14 +35,14 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
     }
 
     private static int WGPURequestDeviceStatus_Success_NATIVE() {
-        return n.n2767779113.n2952556505();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestDeviceStatus.WGPURequestDeviceStatus_Success_NATIVE();
     }
 
     private static int WGPURequestDeviceStatus_Error_NATIVE() {
-        return n.n2767779113.n3068731614();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestDeviceStatus.WGPURequestDeviceStatus_Error_NATIVE();
     }
 
     private static int WGPURequestDeviceStatus_Force32_NATIVE() {
-        return n.n2767779113.n378944352();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestDeviceStatus.WGPURequestDeviceStatus_Force32_NATIVE();
     }
 }

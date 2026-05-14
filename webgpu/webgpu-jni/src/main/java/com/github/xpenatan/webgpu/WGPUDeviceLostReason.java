@@ -35,18 +35,18 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
     }
 
     private static int WGPUDeviceLostReason_Unknown_NATIVE() {
-        return n.n826163116.n1161476788();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceLostReason.WGPUDeviceLostReason_Unknown_NATIVE();
     }
 
     private static int WGPUDeviceLostReason_Destroyed_NATIVE() {
-        return n.n826163116.n4274150531();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceLostReason.WGPUDeviceLostReason_Destroyed_NATIVE();
     }
 
     private static int WGPUDeviceLostReason_FailedCreation_NATIVE() {
-        return n.n826163116.n759626078();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceLostReason.WGPUDeviceLostReason_FailedCreation_NATIVE();
     }
 
     private static int WGPUDeviceLostReason_Force32_NATIVE() {
-        return n.n826163116.n2679460084();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDeviceLostReason.WGPUDeviceLostReason_Force32_NATIVE();
     }
 }

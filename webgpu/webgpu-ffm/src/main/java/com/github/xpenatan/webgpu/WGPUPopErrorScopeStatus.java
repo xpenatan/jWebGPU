@@ -59,8 +59,8 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUPopErrorScopeStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n911684873", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUPopErrorScopeStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpupoperrorscopestatus_wgpupoperrorscopestatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUPopErrorScopeStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2633040016", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUPopErrorScopeStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpupoperrorscopestatus_wgpupoperrorscopestatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

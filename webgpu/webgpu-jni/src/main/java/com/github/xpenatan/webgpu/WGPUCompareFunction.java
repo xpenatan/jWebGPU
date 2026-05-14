@@ -45,42 +45,42 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
     }
 
     private static int WGPUCompareFunction_Undefined_NATIVE() {
-        return n.n1621263343.n1907959474();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Undefined_NATIVE();
     }
 
     private static int WGPUCompareFunction_Never_NATIVE() {
-        return n.n1621263343.n1849598446();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Never_NATIVE();
     }
 
     private static int WGPUCompareFunction_Less_NATIVE() {
-        return n.n1621263343.n3840181699();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Less_NATIVE();
     }
 
     private static int WGPUCompareFunction_Equal_NATIVE() {
-        return n.n1621263343.n2287081110();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Equal_NATIVE();
     }
 
     private static int WGPUCompareFunction_LessEqual_NATIVE() {
-        return n.n1621263343.n2911090557();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_LessEqual_NATIVE();
     }
 
     private static int WGPUCompareFunction_Greater_NATIVE() {
-        return n.n1621263343.n2235895388();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Greater_NATIVE();
     }
 
     private static int WGPUCompareFunction_NotEqual_NATIVE() {
-        return n.n1621263343.n1645167179();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_NotEqual_NATIVE();
     }
 
     private static int WGPUCompareFunction_GreaterEqual_NATIVE() {
-        return n.n1621263343.n1632478852();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_GreaterEqual_NATIVE();
     }
 
     private static int WGPUCompareFunction_Always_NATIVE() {
-        return n.n1621263343.n3559876409();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Always_NATIVE();
     }
 
     private static int WGPUCompareFunction_Force32_NATIVE() {
-        return n.n1621263343.n822121708();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompareFunction.WGPUCompareFunction_Force32_NATIVE();
     }
 }

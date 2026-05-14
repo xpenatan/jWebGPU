@@ -20,7 +20,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1639974017.n612280809();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1639974017.n3748747509(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String value) {
@@ -50,7 +50,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        n.n1639974017.n2129519480(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetLabel(this_addr, value);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n1639974017.n1435504952(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setFormat(WGPUTextureFormat format) {
@@ -66,7 +66,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetFormat(long this_addr, int format) {
-        n.n1639974017.n3101308419(this_addr, format);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetFormat(this_addr, format);
     }
 
     public void setDimension(WGPUTextureViewDimension dimension) {
@@ -74,7 +74,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetDimension(long this_addr, int dimension) {
-        n.n1639974017.n2600552278(this_addr, dimension);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetDimension(this_addr, dimension);
     }
 
     public void setBaseMipLevel(int baseMipLevel) {
@@ -82,7 +82,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetBaseMipLevel(long this_addr, int baseMipLevel) {
-        n.n1639974017.n1999159929(this_addr, baseMipLevel);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetBaseMipLevel(this_addr, baseMipLevel);
     }
 
     public void setMipLevelCount(int mipLevelCount) {
@@ -90,7 +90,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetMipLevelCount(long this_addr, int mipLevelCount) {
-        n.n1639974017.n2895172349(this_addr, mipLevelCount);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetMipLevelCount(this_addr, mipLevelCount);
     }
 
     public void setBaseArrayLayer(int baseArrayLayer) {
@@ -98,7 +98,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetBaseArrayLayer(long this_addr, int baseArrayLayer) {
-        n.n1639974017.n2158437137(this_addr, baseArrayLayer);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetBaseArrayLayer(this_addr, baseArrayLayer);
     }
 
     public void setArrayLayerCount(int arrayLayerCount) {
@@ -106,7 +106,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetArrayLayerCount(long this_addr, int arrayLayerCount) {
-        n.n1639974017.n920795557(this_addr, arrayLayerCount);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetArrayLayerCount(this_addr, arrayLayerCount);
     }
 
     public void setAspect(WGPUTextureAspect aspect) {
@@ -114,7 +114,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetAspect(long this_addr, int aspect) {
-        n.n1639974017.n2386458306(this_addr, aspect);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetAspect(this_addr, aspect);
     }
 
     public void setUsage(WGPUTextureUsage usage) {
@@ -122,7 +122,7 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetUsage(long this_addr, int usage) {
-        n.n1639974017.n4176204283(this_addr, usage);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_SetUsage(this_addr, usage);
     }
 
     public static WGPUTextureViewDescriptor obtain() {
@@ -136,6 +136,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1639974017.n4060830450();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDescriptor.internal_native_Obtain_addr();
     }
 }

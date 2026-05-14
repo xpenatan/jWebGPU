@@ -35,18 +35,18 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
     }
 
     private static int WGPUBufferMapState_Unmapped_NATIVE() {
-        return n.n2448224931.n4115752398();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferMapState.WGPUBufferMapState_Unmapped_NATIVE();
     }
 
     private static int WGPUBufferMapState_Pending_NATIVE() {
-        return n.n2448224931.n3498290017();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferMapState.WGPUBufferMapState_Pending_NATIVE();
     }
 
     private static int WGPUBufferMapState_Mapped_NATIVE() {
-        return n.n2448224931.n3116471797();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferMapState.WGPUBufferMapState_Mapped_NATIVE();
     }
 
     private static int WGPUBufferMapState_Force32_NATIVE() {
-        return n.n2448224931.n2152399188();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferMapState.WGPUBufferMapState_Force32_NATIVE();
     }
 }

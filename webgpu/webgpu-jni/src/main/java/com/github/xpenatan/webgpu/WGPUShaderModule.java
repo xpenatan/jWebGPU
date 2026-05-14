@@ -20,7 +20,7 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n500395999.n275653451();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n500395999.n847277267(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n500395999.n646372058(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_SetLabel(this_addr, label);
     }
 
     public void release() {
@@ -58,7 +58,7 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        n.n500395999.n934750996(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_Release(this_addr);
     }
 
     public boolean isValid() {
@@ -66,7 +66,7 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return n.n500395999.n731017481(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_IsValid(this_addr);
     }
 
     public void setCallback(WGPUCallbackMode callbackMode, WGPUCompilationInfoCallback callback) {
@@ -74,7 +74,7 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static void internal_native_SetCallback(long this_addr, int callbackMode, long callback_addr) {
-        n.n500395999.n3195512305(this_addr, callbackMode, callback_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_SetCallback(this_addr, callbackMode, callback_addr);
     }
 
     public static WGPUShaderModule obtain() {
@@ -88,6 +88,6 @@ public class WGPUShaderModule extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n500395999.n3724203092();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderModule.internal_native_Obtain_addr();
     }
 }

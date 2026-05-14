@@ -20,7 +20,7 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1985984385.n3829389033();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1985984385.n2590264309(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n1985984385.n1020621814(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n1985984385.n1825395788(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_clear(this_addr);
     }
 
     public void push_back(WGPUTextureFormat textureFormat) {
@@ -66,7 +66,7 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, int textureFormat) {
-        n.n1985984385.n3922724944(this_addr, textureFormat);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_push_back(this_addr, textureFormat);
     }
 
     public WGPUTextureFormat get(int index) {
@@ -81,7 +81,7 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static int internal_native_get(long this_addr, int index) {
-        return n.n1985984385.n1387754470(this_addr, index);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_get(this_addr, index);
     }
 
     public static WGPUVectorTextureFormat obtain() {
@@ -95,6 +95,6 @@ public class WGPUVectorTextureFormat extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1985984385.n2982971378();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorTextureFormat.internal_native_Obtain_addr();
     }
 }

@@ -35,14 +35,14 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
     }
 
     private static int WGPUToneMappingMode_Standard_NATIVE() {
-        return n.n110434001.n2502798499();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUToneMappingMode.WGPUToneMappingMode_Standard_NATIVE();
     }
 
     private static int WGPUToneMappingMode_Extended_NATIVE() {
-        return n.n110434001.n2875178783();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUToneMappingMode.WGPUToneMappingMode_Extended_NATIVE();
     }
 
     private static int WGPUToneMappingMode_Force32_NATIVE() {
-        return n.n110434001.n4013911472();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUToneMappingMode.WGPUToneMappingMode_Force32_NATIVE();
     }
 }

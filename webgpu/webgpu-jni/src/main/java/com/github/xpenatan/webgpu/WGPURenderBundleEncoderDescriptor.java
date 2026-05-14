@@ -20,7 +20,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2232430437.n1897896325();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2232430437.n1463929561(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n2232430437.n1759737620(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetLabel(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n2232430437.n1562015444(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setColorFormats(WGPUVectorTextureFormat colorFormats) {
@@ -66,7 +66,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetColorFormats(long this_addr, long colorFormats_addr) {
-        n.n2232430437.n478538766(this_addr, colorFormats_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetColorFormats(this_addr, colorFormats_addr);
     }
 
     public void setDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
@@ -74,7 +74,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetDepthStencilFormat(long this_addr, int depthStencilFormat) {
-        n.n2232430437.n10669414(this_addr, depthStencilFormat);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetDepthStencilFormat(this_addr, depthStencilFormat);
     }
 
     public void setSampleCount(int sampleCount) {
@@ -82,7 +82,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetSampleCount(long this_addr, int sampleCount) {
-        n.n2232430437.n3828010171(this_addr, sampleCount);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetSampleCount(this_addr, sampleCount);
     }
 
     public void setDepthReadOnly(int depthReadOnly) {
@@ -90,7 +90,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetDepthReadOnly(long this_addr, int depthReadOnly) {
-        n.n2232430437.n2554353339(this_addr, depthReadOnly);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetDepthReadOnly(this_addr, depthReadOnly);
     }
 
     public void setStencilReadOnly(int stencilReadOnly) {
@@ -98,7 +98,7 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly) {
-        n.n2232430437.n486068130(this_addr, stencilReadOnly);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_SetStencilReadOnly(this_addr, stencilReadOnly);
     }
 
     public static WGPURenderBundleEncoderDescriptor obtain() {
@@ -112,6 +112,6 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2232430437.n1051478670();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderBundleEncoderDescriptor.internal_native_Obtain_addr();
     }
 }

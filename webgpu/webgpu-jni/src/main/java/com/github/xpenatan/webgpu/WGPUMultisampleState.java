@@ -18,7 +18,7 @@ public class WGPUMultisampleState extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2664928348.n2052869102();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUMultisampleState.internal_native_create_addr();
     }
 
     /**
@@ -40,7 +40,7 @@ public class WGPUMultisampleState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2664928348.n626078224(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUMultisampleState.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -48,7 +48,7 @@ public class WGPUMultisampleState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n2664928348.n1520030653(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUMultisampleState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setCount(int count) {
@@ -56,7 +56,7 @@ public class WGPUMultisampleState extends NativeObject {
     }
 
     public static void internal_native_SetCount(long this_addr, int count) {
-        n.n2664928348.n2677461864(this_addr, count);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUMultisampleState.internal_native_SetCount(this_addr, count);
     }
 
     public void setMask(int mask) {
@@ -64,7 +64,7 @@ public class WGPUMultisampleState extends NativeObject {
     }
 
     public static void internal_native_SetMask(long this_addr, int mask) {
-        n.n2664928348.n819752435(this_addr, mask);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUMultisampleState.internal_native_SetMask(this_addr, mask);
     }
 
     public void setAlphaToCoverageEnabled(boolean alphaToCoverageEnabled) {
@@ -72,6 +72,6 @@ public class WGPUMultisampleState extends NativeObject {
     }
 
     public static void internal_native_SetAlphaToCoverageEnabled(long this_addr, boolean alphaToCoverageEnabled) {
-        n.n2664928348.n296018968(this_addr, alphaToCoverageEnabled);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUMultisampleState.internal_native_SetAlphaToCoverageEnabled(this_addr, alphaToCoverageEnabled);
     }
 }

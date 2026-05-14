@@ -20,7 +20,7 @@ public class WGPUSamplerBindingLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1446294037.n2287490261();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerBindingLayout.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUSamplerBindingLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1446294037.n2781454729(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerBindingLayout.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUSamplerBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n1446294037.n2667887140(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerBindingLayout.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setType(WGPUSamplerBindingType type) {
@@ -58,7 +58,7 @@ public class WGPUSamplerBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetType(long this_addr, int type) {
-        n.n1446294037.n606182092(this_addr, type);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerBindingLayout.internal_native_SetType(this_addr, type);
     }
 
     public static WGPUSamplerBindingLayout obtain() {
@@ -72,6 +72,6 @@ public class WGPUSamplerBindingLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1446294037.n1441072606();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerBindingLayout.internal_native_Obtain_addr();
     }
 }

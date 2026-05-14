@@ -35,18 +35,18 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
     }
 
     private static int WGPUCreatePipelineAsyncStatus_Success_NATIVE() {
-        return n.n341129346.n3363542091();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_Success_NATIVE();
     }
 
     private static int WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE() {
-        return n.n341129346.n356787031();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE();
     }
 
     private static int WGPUCreatePipelineAsyncStatus_InternalError_NATIVE() {
-        return n.n341129346.n2455559187();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_InternalError_NATIVE();
     }
 
     private static int WGPUCreatePipelineAsyncStatus_Force32_NATIVE() {
-        return n.n341129346.n789929938();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_Force32_NATIVE();
     }
 }

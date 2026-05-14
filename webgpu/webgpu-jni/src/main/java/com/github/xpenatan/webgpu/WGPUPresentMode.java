@@ -41,26 +41,26 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
     }
 
     private static int WGPUPresentMode_Undefined_NATIVE() {
-        return n.n3847900688.n296669812();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPresentMode.WGPUPresentMode_Undefined_NATIVE();
     }
 
     private static int WGPUPresentMode_Fifo_NATIVE() {
-        return n.n3847900688.n2101049588();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPresentMode.WGPUPresentMode_Fifo_NATIVE();
     }
 
     private static int WGPUPresentMode_FifoRelaxed_NATIVE() {
-        return n.n3847900688.n1623297895();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPresentMode.WGPUPresentMode_FifoRelaxed_NATIVE();
     }
 
     private static int WGPUPresentMode_Immediate_NATIVE() {
-        return n.n3847900688.n147601365();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPresentMode.WGPUPresentMode_Immediate_NATIVE();
     }
 
     private static int WGPUPresentMode_Mailbox_NATIVE() {
-        return n.n3847900688.n4183000408();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPresentMode.WGPUPresentMode_Mailbox_NATIVE();
     }
 
     private static int WGPUPresentMode_Force32_NATIVE() {
-        return n.n3847900688.n4002564398();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPresentMode.WGPUPresentMode_Force32_NATIVE();
     }
 }

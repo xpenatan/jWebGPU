@@ -40,22 +40,22 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
     }
 
     private static int WGPUCullMode_Undefined_NATIVE() {
-        return n.n2008929891.n1810141466();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCullMode.WGPUCullMode_Undefined_NATIVE();
     }
 
     private static int WGPUCullMode_None_NATIVE() {
-        return n.n2008929891.n3031382266();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCullMode.WGPUCullMode_None_NATIVE();
     }
 
     private static int WGPUCullMode_Front_NATIVE() {
-        return n.n2008929891.n1327081203();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCullMode.WGPUCullMode_Front_NATIVE();
     }
 
     private static int WGPUCullMode_Back_NATIVE() {
-        return n.n2008929891.n776761257();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCullMode.WGPUCullMode_Back_NATIVE();
     }
 
     private static int WGPUCullMode_Force32_NATIVE() {
-        return n.n2008929891.n3025369428();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCullMode.WGPUCullMode_Force32_NATIVE();
     }
 }

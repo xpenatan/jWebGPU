@@ -24,7 +24,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1735259690.n964666592();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_create_addr();
     }
 
     /**
@@ -46,7 +46,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1735259690.n729391198(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -54,7 +54,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n1735259690.n4283781551(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setFormat(WGPUTextureFormat format) {
@@ -62,7 +62,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetFormat(long this_addr, int format) {
-        n.n1735259690.n3990543290(this_addr, format);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetFormat(this_addr, format);
     }
 
     public void setDepthWriteEnabled(WGPUOptionalBool depthWriteEnabled) {
@@ -70,7 +70,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetDepthWriteEnabled(long this_addr, int depthWriteEnabled) {
-        n.n1735259690.n1040292800(this_addr, depthWriteEnabled);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetDepthWriteEnabled(this_addr, depthWriteEnabled);
     }
 
     public void setDepthCompare(WGPUCompareFunction depthCompare) {
@@ -78,7 +78,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetDepthCompare(long this_addr, int depthCompare) {
-        n.n1735259690.n1037902575(this_addr, depthCompare);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetDepthCompare(this_addr, depthCompare);
     }
 
     public void setDepthBiasSlopeScale(float depthBiasSlopeScale) {
@@ -86,7 +86,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetDepthBiasSlopeScale(long this_addr, float depthBiasSlopeScale) {
-        n.n1735259690.n3203604183(this_addr, depthBiasSlopeScale);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetDepthBiasSlopeScale(this_addr, depthBiasSlopeScale);
     }
 
     public void setDepthBiasClamp(float depthBiasClamp) {
@@ -94,7 +94,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetDepthBiasClamp(long this_addr, float depthBiasClamp) {
-        n.n1735259690.n1053616735(this_addr, depthBiasClamp);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetDepthBiasClamp(this_addr, depthBiasClamp);
     }
 
     public void setStencilReadMask(int stencilReadMask) {
@@ -102,7 +102,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetStencilReadMask(long this_addr, int stencilReadMask) {
-        n.n1735259690.n1898742695(this_addr, stencilReadMask);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetStencilReadMask(this_addr, stencilReadMask);
     }
 
     public void setStencilWriteMask(int stencilWriteMask) {
@@ -110,7 +110,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetStencilWriteMask(long this_addr, int stencilWriteMask) {
-        n.n1735259690.n219691554(this_addr, stencilWriteMask);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetStencilWriteMask(this_addr, stencilWriteMask);
     }
 
     public void setDepthBias(int depthBias) {
@@ -118,7 +118,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static void internal_native_SetDepthBias(long this_addr, int depthBias) {
-        n.n1735259690.n3857024073(this_addr, depthBias);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_SetDepthBias(this_addr, depthBias);
     }
 
     public WGPUStencilFaceState getStencilFront() {
@@ -132,7 +132,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static long internal_native_GetStencilFront_addr(long this_addr) {
-        return n.n1735259690.n3747493459(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_GetStencilFront_addr(this_addr);
     }
 
     public WGPUStencilFaceState getStencilBack() {
@@ -146,7 +146,7 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static long internal_native_GetStencilBack_addr(long this_addr) {
-        return n.n1735259690.n1605407949(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_GetStencilBack_addr(this_addr);
     }
 
     public static WGPUDepthStencilState obtain() {
@@ -160,6 +160,6 @@ public class WGPUDepthStencilState extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1735259690.n118248937();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUDepthStencilState.internal_native_Obtain_addr();
     }
 }

@@ -20,7 +20,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n795751394.n310370856();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n795751394.n2230611990(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n795751394.n2780553975(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setSampleType(WGPUTextureSampleType sampleType) {
@@ -58,7 +58,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetSampleType(long this_addr, int sampleType) {
-        n.n795751394.n1629783701(this_addr, sampleType);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_SetSampleType(this_addr, sampleType);
     }
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
@@ -66,7 +66,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetViewDimension(long this_addr, int viewDimension) {
-        n.n795751394.n92462204(this_addr, viewDimension);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_SetViewDimension(this_addr, viewDimension);
     }
 
     public void setMultisampled(int multisampled) {
@@ -74,7 +74,7 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetMultisampled(long this_addr, int multisampled) {
-        n.n795751394.n467104536(this_addr, multisampled);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_SetMultisampled(this_addr, multisampled);
     }
 
     public static WGPUTextureBindingLayout obtain() {
@@ -88,6 +88,6 @@ public class WGPUTextureBindingLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n795751394.n3758920497();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureBindingLayout.internal_native_Obtain_addr();
     }
 }

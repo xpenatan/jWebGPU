@@ -20,7 +20,7 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n4267601212.n2558172942();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassMaxDrawCount.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n4267601212.n46781168(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassMaxDrawCount.internal_native_deleteNative(this_addr);
     }
 
     public void setMaxDrawCount(int maxDrawCount) {
@@ -50,7 +50,7 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
     }
 
     public static void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount) {
-        n.n4267601212.n685366584(this_addr, maxDrawCount);
+        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassMaxDrawCount.internal_native_SetMaxDrawCount(this_addr, maxDrawCount);
     }
 
     public int getMaxDrawCount() {
@@ -58,7 +58,7 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
     }
 
     public static int internal_native_GetMaxDrawCount(long this_addr) {
-        return n.n4267601212.n328792833(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassMaxDrawCount.internal_native_GetMaxDrawCount(this_addr);
     }
 
     public static WGPURenderPassMaxDrawCount obtain() {
@@ -72,6 +72,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n4267601212.n1711755287();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassMaxDrawCount.internal_native_Obtain_addr();
     }
 }

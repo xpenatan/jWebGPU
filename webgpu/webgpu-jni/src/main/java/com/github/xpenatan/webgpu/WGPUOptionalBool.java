@@ -35,18 +35,18 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
     }
 
     private static int WGPUOptionalBool_False_NATIVE() {
-        return n.n169209752.n3186573453();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUOptionalBool.WGPUOptionalBool_False_NATIVE();
     }
 
     private static int WGPUOptionalBool_True_NATIVE() {
-        return n.n169209752.n2249505968();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUOptionalBool.WGPUOptionalBool_True_NATIVE();
     }
 
     private static int WGPUOptionalBool_Undefined_NATIVE() {
-        return n.n169209752.n1968847290();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUOptionalBool.WGPUOptionalBool_Undefined_NATIVE();
     }
 
     private static int WGPUOptionalBool_Force32_NATIVE() {
-        return n.n169209752.n576375284();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUOptionalBool.WGPUOptionalBool_Force32_NATIVE();
     }
 }

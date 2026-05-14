@@ -31,6 +31,6 @@ public class WGPUFuture extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n338505073.n4291315173(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUFuture.internal_native_deleteNative(this_addr);
     }
 }

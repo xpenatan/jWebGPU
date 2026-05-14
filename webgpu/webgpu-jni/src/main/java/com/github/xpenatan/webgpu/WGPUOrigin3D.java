@@ -20,7 +20,7 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2990600261.n2847736997();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2990600261.n3320468409(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_deleteNative(this_addr);
     }
 
     public void set(int x, int y, int z) {
@@ -50,7 +50,7 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static void internal_native_Set(long this_addr, int x, int y, int z) {
-        n.n2990600261.n3086776124(this_addr, x, y, z);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_Set(this_addr, x, y, z);
     }
 
     public void setX(int value) {
@@ -58,7 +58,7 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static void internal_native_SetX(long this_addr, int value) {
-        n.n2990600261.n1114527304(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_SetX(this_addr, value);
     }
 
     public void setY(int value) {
@@ -66,7 +66,7 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static void internal_native_SetY(long this_addr, int value) {
-        n.n2990600261.n918013799(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_SetY(this_addr, value);
     }
 
     public void setZ(int value) {
@@ -74,7 +74,7 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static void internal_native_SetZ(long this_addr, int value) {
-        n.n2990600261.n721500294(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_SetZ(this_addr, value);
     }
 
     public static WGPUOrigin3D obtain() {
@@ -88,6 +88,6 @@ public class WGPUOrigin3D extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2990600261.n2001319342();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUOrigin3D.internal_native_Obtain_addr();
     }
 }

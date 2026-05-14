@@ -20,7 +20,7 @@ public class WGPUVectorRenderBundle extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n45566281.n2137258529();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderBundle.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorRenderBundle extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n45566281.n1861053373(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderBundle.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorRenderBundle extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n45566281.n742316990(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderBundle.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorRenderBundle extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n45566281.n1787880836(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderBundle.internal_native_clear(this_addr);
     }
 
     public void push_back(WGPURenderBundle renderBundle) {
@@ -66,7 +66,7 @@ public class WGPUVectorRenderBundle extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long renderBundle_addr) {
-        n.n45566281.n653438979(this_addr, renderBundle_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderBundle.internal_native_push_back(this_addr, renderBundle_addr);
     }
 
     public static WGPUVectorRenderBundle obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorRenderBundle extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n45566281.n1290840874();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderBundle.internal_native_Obtain_addr();
     }
 }

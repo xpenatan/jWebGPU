@@ -20,7 +20,7 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n913124670.n1161639500();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n913124670.n349835890(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_deleteNative(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return n.n913124670.n874776435(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_size(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        n.n913124670.n1599156335(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_clear(this_addr);
     }
 
     public void push_back(int value) {
@@ -66,7 +66,7 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, int value) {
-        n.n913124670.n3188920691(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_push_back(this_addr, value);
     }
 
     public int get(int index) {
@@ -74,7 +74,7 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static int internal_native_get(long this_addr, int index) {
-        return n.n913124670.n3014972233(this_addr, index);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_get(this_addr, index);
     }
 
     public static WGPUVectorInt obtain() {
@@ -88,6 +88,6 @@ public class WGPUVectorInt extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n913124670.n315221845();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInt.internal_native_Obtain_addr();
     }
 }

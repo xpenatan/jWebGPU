@@ -27,7 +27,7 @@ public class WGPUExtent3D extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n4085649225.n907211809();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUExtent3D.internal_native_create_addr();
     }
 
     protected void deleteNative() {
@@ -35,7 +35,7 @@ public class WGPUExtent3D extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n4085649225.n1351266749(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUExtent3D.internal_native_deleteNative(this_addr);
     }
 
     public void setWidth(int width) {
@@ -43,7 +43,7 @@ public class WGPUExtent3D extends NativeObject {
     }
 
     public static void internal_native_SetWidth(long this_addr, int width) {
-        n.n4085649225.n1613812798(this_addr, width);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUExtent3D.internal_native_SetWidth(this_addr, width);
     }
 
     public void setHeight(int height) {
@@ -51,7 +51,7 @@ public class WGPUExtent3D extends NativeObject {
     }
 
     public static void internal_native_SetHeight(long this_addr, int height) {
-        n.n4085649225.n3446977291(this_addr, height);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUExtent3D.internal_native_SetHeight(this_addr, height);
     }
 
     public void setDepthOrArrayLayers(int depthOrArrayLayers) {
@@ -59,7 +59,7 @@ public class WGPUExtent3D extends NativeObject {
     }
 
     public static void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers) {
-        n.n4085649225.n2772254813(this_addr, depthOrArrayLayers);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUExtent3D.internal_native_SetDepthOrArrayLayers(this_addr, depthOrArrayLayers);
     }
 
     public static WGPUExtent3D obtain() {
@@ -73,6 +73,6 @@ public class WGPUExtent3D extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n4085649225.n60794154();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUExtent3D.internal_native_Obtain_addr();
     }
 }

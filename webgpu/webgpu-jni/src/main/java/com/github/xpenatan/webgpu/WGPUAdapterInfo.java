@@ -29,7 +29,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n1363032495.n3964627835();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_create_addr();
     }
 
     /**
@@ -51,7 +51,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1363032495.n3390358179(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_deleteNative(this_addr);
     }
 
     public NativeString getVendor() {
@@ -65,7 +65,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static long internal_native_GetVendor_addr(long this_addr) {
-        return n.n1363032495.n8838035(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetVendor_addr(this_addr);
     }
 
     public int getVendorID() {
@@ -73,7 +73,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static int internal_native_GetVendorID(long this_addr) {
-        return n.n1363032495.n1295450930(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetVendorID(this_addr);
     }
 
     public NativeString getArchitecture() {
@@ -87,7 +87,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static long internal_native_GetArchitecture_addr(long this_addr) {
-        return n.n1363032495.n1712449438(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetArchitecture_addr(this_addr);
     }
 
     public NativeString getDevice() {
@@ -101,7 +101,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static long internal_native_GetDevice_addr(long this_addr) {
-        return n.n1363032495.n4023507745(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetDevice_addr(this_addr);
     }
 
     public int getDeviceID() {
@@ -109,7 +109,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static int internal_native_GetDeviceID(long this_addr) {
-        return n.n1363032495.n3136347748(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetDeviceID(this_addr);
     }
 
     public NativeString getDescription() {
@@ -123,7 +123,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static long internal_native_GetDescription_addr(long this_addr) {
-        return n.n1363032495.n1606685409(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetDescription_addr(this_addr);
     }
 
     public WGPUBackendType getBackendType() {
@@ -138,7 +138,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static int internal_native_GetBackendType(long this_addr) {
-        return n.n1363032495.n1380460525(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetBackendType(this_addr);
     }
 
     public WGPUAdapterType getAdapterType() {
@@ -153,7 +153,7 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static int internal_native_GetAdapterType(long this_addr) {
-        return n.n1363032495.n4135497106(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_GetAdapterType(this_addr);
     }
 
     public static WGPUAdapterInfo obtain() {
@@ -167,6 +167,6 @@ public class WGPUAdapterInfo extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n1363032495.n3118210180();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterInfo.internal_native_Obtain_addr();
     }
 }

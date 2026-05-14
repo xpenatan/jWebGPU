@@ -20,7 +20,7 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n18282793.n2446120513();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayoutDescriptor.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n18282793.n1044980637(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayoutDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n18282793.n2027304912(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayoutDescriptor.internal_native_SetLabel(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n18282793.n3221649808(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayoutDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setBindGroupLayouts(WGPUVectorBindGroupLayout bindGroupLayouts) {
@@ -66,7 +66,7 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetBindGroupLayouts(long this_addr, long bindGroupLayouts_addr) {
-        n.n18282793.n1216535616(this_addr, bindGroupLayouts_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayoutDescriptor.internal_native_SetBindGroupLayouts(this_addr, bindGroupLayouts_addr);
     }
 
     public static WGPUPipelineLayoutDescriptor obtain() {
@@ -80,6 +80,6 @@ public class WGPUPipelineLayoutDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n18282793.n1599702858();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayoutDescriptor.internal_native_Obtain_addr();
     }
 }

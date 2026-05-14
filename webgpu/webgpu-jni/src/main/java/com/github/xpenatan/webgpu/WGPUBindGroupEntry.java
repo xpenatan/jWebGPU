@@ -20,7 +20,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n3289252606.n1206466700();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n3289252606.n3029694514(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_deleteNative(this_addr);
     }
 
     public void reset() {
@@ -50,7 +50,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_Reset(long this_addr) {
-        n.n3289252606.n338446605(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_Reset(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n3289252606.n889373531(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setBinding(int binding) {
@@ -66,7 +66,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetBinding(long this_addr, int binding) {
-        n.n3289252606.n4199635284(this_addr, binding);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetBinding(this_addr, binding);
     }
 
     public void setBuffer(WGPUBuffer buffer) {
@@ -74,7 +74,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
-        n.n3289252606.n3974546414(this_addr, buffer_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetBuffer(this_addr, buffer_addr);
     }
 
     public void setOffset(long offset) {
@@ -82,7 +82,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetOffset(long this_addr, long offset) {
-        n.n3289252606.n1675921537(this_addr, offset);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetOffset(this_addr, offset);
     }
 
     public void setSize(long size) {
@@ -90,7 +90,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetSize(long this_addr, long size) {
-        n.n3289252606.n4055972335(this_addr, size);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetSize(this_addr, size);
     }
 
     public void setSampler(WGPUSampler sampler) {
@@ -98,7 +98,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetSampler(long this_addr, long sampler_addr) {
-        n.n3289252606.n3342596986(this_addr, sampler_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetSampler(this_addr, sampler_addr);
     }
 
     public void setTextureView(WGPUTextureView textureView) {
@@ -106,7 +106,7 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static void internal_native_SetTextureView(long this_addr, long textureView_addr) {
-        n.n3289252606.n2197420754(this_addr, textureView_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_SetTextureView(this_addr, textureView_addr);
     }
 
     public static WGPUBindGroupEntry obtain() {
@@ -120,6 +120,6 @@ public class WGPUBindGroupEntry extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n3289252606.n360049045();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupEntry.internal_native_Obtain_addr();
     }
 }

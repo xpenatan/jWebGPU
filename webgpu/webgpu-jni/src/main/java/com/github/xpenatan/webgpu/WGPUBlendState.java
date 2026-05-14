@@ -24,7 +24,7 @@ public class WGPUBlendState extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n223401838.n663878172();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendState.internal_native_create_addr();
     }
 
     /**
@@ -46,7 +46,7 @@ public class WGPUBlendState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n223401838.n2868326562(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBlendState.internal_native_deleteNative(this_addr);
     }
 
     public WGPUBlendComponent getColor() {
@@ -60,7 +60,7 @@ public class WGPUBlendState extends NativeObject {
     }
 
     public static long internal_native_GetColor_addr(long this_addr) {
-        return n.n223401838.n1259605289(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendState.internal_native_GetColor_addr(this_addr);
     }
 
     public WGPUBlendComponent getAlpha() {
@@ -74,7 +74,7 @@ public class WGPUBlendState extends NativeObject {
     }
 
     public static long internal_native_GetAlpha_addr(long this_addr) {
-        return n.n223401838.n2462355812(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendState.internal_native_GetAlpha_addr(this_addr);
     }
 
     public static WGPUBlendState obtain() {
@@ -88,6 +88,6 @@ public class WGPUBlendState extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n223401838.n4112427813();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendState.internal_native_Obtain_addr();
     }
 }

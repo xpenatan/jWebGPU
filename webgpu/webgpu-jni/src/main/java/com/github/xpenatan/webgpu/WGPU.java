@@ -37,7 +37,7 @@ public class WGPU extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2026632718.n631416642(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPU.internal_native_deleteNative(this_addr);
     }
 
     public static WGPUPlatformType getPlatformType() {
@@ -52,7 +52,7 @@ public class WGPU extends NativeObject {
     }
 
     public static int internal_native_GetPlatformType() {
-        return n.n2026632718.n2960845837();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPU.internal_native_GetPlatformType();
     }
 
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
@@ -65,7 +65,7 @@ public class WGPU extends NativeObject {
     }
 
     public static long internal_native_SetupInstance_addr(long descriptor_addr) {
-        return n.n2026632718.n2319395686(descriptor_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPU.internal_native_SetupInstance_addr(descriptor_addr);
     }
 
     public static WGPUInstance setupInstance() {
@@ -79,7 +79,7 @@ public class WGPU extends NativeObject {
     }
 
     public static long internal_native_SetupInstance_addr() {
-        return n.n2026632718.n2433182186();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPU.internal_native_SetupInstance_addr();
     }
 
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {
@@ -93,7 +93,7 @@ public class WGPU extends NativeObject {
     }
 
     public static long internal_native_loadImage_addr(long buffer_addr, int desiredChannels) {
-        return n.n2026632718.n3982398316(buffer_addr, desiredChannels);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPU.internal_native_loadImage_addr(buffer_addr, desiredChannels);
     }
 
     public static STBImage loadImage(WGPUByteBuffer buffer) {
@@ -107,6 +107,6 @@ public class WGPU extends NativeObject {
     }
 
     public static long internal_native_loadImage_addr(long buffer_addr) {
-        return n.n2026632718.n575600553(buffer_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPU.internal_native_loadImage_addr(buffer_addr);
     }
 }

@@ -24,7 +24,7 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n2725924899.n2576406919();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferInfo.internal_native_create_addr();
     }
 
     /**
@@ -46,7 +46,7 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2725924899.n117586967(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferInfo.internal_native_deleteNative(this_addr);
     }
 
     public WGPUTexelCopyBufferLayout getLayout() {
@@ -60,7 +60,7 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
     }
 
     public static long internal_native_GetLayout_addr(long this_addr) {
-        return n.n2725924899.n3438783337(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferInfo.internal_native_GetLayout_addr(this_addr);
     }
 
     public WGPUBuffer getBuffer() {
@@ -74,7 +74,7 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
     }
 
     public static long internal_native_GetBuffer_addr(long this_addr) {
-        return n.n2725924899.n930373887(this_addr);
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferInfo.internal_native_GetBuffer_addr(this_addr);
     }
 
     public void setBuffer(WGPUBuffer buffer) {
@@ -82,7 +82,7 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
     }
 
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
-        n.n2725924899.n1462903443(this_addr, buffer_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferInfo.internal_native_SetBuffer(this_addr, buffer_addr);
     }
 
     public static WGPUTexelCopyBufferInfo obtain() {
@@ -96,6 +96,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2725924899.n1729989264();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUTexelCopyBufferInfo.internal_native_Obtain_addr();
     }
 }

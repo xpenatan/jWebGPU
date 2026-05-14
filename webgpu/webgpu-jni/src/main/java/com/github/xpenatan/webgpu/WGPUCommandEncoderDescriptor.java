@@ -20,7 +20,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n45830606.n3975289788();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCommandEncoderDescriptor.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n45830606.n2727023362(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUCommandEncoderDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String value) {
@@ -50,7 +50,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        n.n45830606.n2378682955(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUCommandEncoderDescriptor.internal_native_SetLabel(this_addr, value);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n45830606.n1969249931(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUCommandEncoderDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public static WGPUCommandEncoderDescriptor obtain() {
@@ -72,6 +72,6 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n45830606.n3128872133();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUCommandEncoderDescriptor.internal_native_Obtain_addr();
     }
 }

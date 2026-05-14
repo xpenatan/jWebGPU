@@ -20,7 +20,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return n.n4258041955.n1838252359();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_create_addr();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n4258041955.n4092882007(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String value) {
@@ -50,7 +50,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        n.n4258041955.n2153413846(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_SetLabel(this_addr, value);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n4258041955.n842320790(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setLayout(WGPUBindGroupLayout layout) {
@@ -66,7 +66,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLayout(long this_addr, long layout_addr) {
-        n.n4258041955.n1708952893(this_addr, layout_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_SetLayout(this_addr, layout_addr);
     }
 
     public void setEntries(WGPUVectorBindGroupEntry entries) {
@@ -74,7 +74,7 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetEntries(long this_addr, long entries_addr) {
-        n.n4258041955.n1598985149(this_addr, entries_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_SetEntries(this_addr, entries_addr);
     }
 
     public static WGPUBindGroupDescriptor obtain() {
@@ -88,6 +88,6 @@ public class WGPUBindGroupDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n4258041955.n991834704();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupDescriptor.internal_native_Obtain_addr();
     }
 }

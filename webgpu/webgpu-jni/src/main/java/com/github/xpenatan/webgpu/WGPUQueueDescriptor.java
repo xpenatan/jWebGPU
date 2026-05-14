@@ -31,7 +31,7 @@ public class WGPUQueueDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n1210092402.n1950147494(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueueDescriptor.internal_native_deleteNative(this_addr);
     }
 
     public void setLabel(String label) {
@@ -39,7 +39,7 @@ public class WGPUQueueDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        n.n1210092402.n4048457511(this_addr, label);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueueDescriptor.internal_native_SetLabel(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -47,6 +47,6 @@ public class WGPUQueueDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n1210092402.n189091175(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUQueueDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 }

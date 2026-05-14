@@ -35,18 +35,18 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
     }
 
     private static int WGPUFrontFace_Undefined_NATIVE() {
-        return n.n2840987064.n184946436();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFrontFace.WGPUFrontFace_Undefined_NATIVE();
     }
 
     private static int WGPUFrontFace_CCW_NATIVE() {
-        return n.n2840987064.n2583645515();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFrontFace.WGPUFrontFace_CCW_NATIVE();
     }
 
     private static int WGPUFrontFace_CW_NATIVE() {
-        return n.n2840987064.n2474405484();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFrontFace.WGPUFrontFace_CW_NATIVE();
     }
 
     private static int WGPUFrontFace_Force32_NATIVE() {
-        return n.n2840987064.n2058316222();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUFrontFace.WGPUFrontFace_Force32_NATIVE();
     }
 }

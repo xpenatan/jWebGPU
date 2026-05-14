@@ -31,7 +31,7 @@ public class WGPUVertexState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n4188505695.n640607059(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexState.internal_native_deleteNative(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -39,7 +39,7 @@ public class WGPUVertexState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        n.n4188505695.n4145135898(this_addr, chainedStruct_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
     }
 
     public void setModule(WGPUShaderModule shaderModule) {
@@ -47,7 +47,7 @@ public class WGPUVertexState extends NativeObject {
     }
 
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
-        n.n4188505695.n3491902971(this_addr, shaderModule_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexState.internal_native_SetModule(this_addr, shaderModule_addr);
     }
 
     public void setEntryPoint(String entryPoint) {
@@ -55,7 +55,7 @@ public class WGPUVertexState extends NativeObject {
     }
 
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
-        n.n4188505695.n1191621442(this_addr, entryPoint);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexState.internal_native_SetEntryPoint(this_addr, entryPoint);
     }
 
     public void setConstants(WGPUVectorConstantEntry constants) {
@@ -63,7 +63,7 @@ public class WGPUVertexState extends NativeObject {
     }
 
     public static void internal_native_SetConstants(long this_addr, long constants_addr) {
-        n.n4188505695.n2938722560(this_addr, constants_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexState.internal_native_SetConstants(this_addr, constants_addr);
     }
 
     public void setBuffers(WGPUVectorVertexBufferLayout buffers) {
@@ -71,6 +71,6 @@ public class WGPUVertexState extends NativeObject {
     }
 
     public static void internal_native_SetBuffers(long this_addr, long buffers_addr) {
-        n.n4188505695.n3816712996(this_addr, buffers_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexState.internal_native_SetBuffers(this_addr, buffers_addr);
     }
 }

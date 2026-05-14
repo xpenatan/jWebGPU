@@ -33,7 +33,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        n.n2027449323.n4218381791(this_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPassTimestampWrites.internal_native_deleteNative(this_addr);
     }
 
     public void setQuerySet(WGPUQuerySet value) {
@@ -41,7 +41,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
     }
 
     public static void internal_native_SetQuerySet(long this_addr, long value_addr) {
-        n.n2027449323.n1043156309(this_addr, value_addr);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPassTimestampWrites.internal_native_SetQuerySet(this_addr, value_addr);
     }
 
     public void setBeginningOfPassWriteIndex(int value) {
@@ -49,7 +49,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
     }
 
     public static void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value) {
-        n.n2027449323.n1433419534(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPassTimestampWrites.internal_native_SetBeginningOfPassWriteIndex(this_addr, value);
     }
 
     public void setEndOfPassWriteIndex(int value) {
@@ -57,7 +57,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
     }
 
     public static void internal_native_SetEndOfPassWriteIndex(long this_addr, int value) {
-        n.n2027449323.n2031042832(this_addr, value);
+        com.github.xpenatan.webgpu.natives.JNI_WGPUPassTimestampWrites.internal_native_SetEndOfPassWriteIndex(this_addr, value);
     }
 
     public static WGPUPassTimestampWrites obtain() {
@@ -71,6 +71,6 @@ public class WGPUPassTimestampWrites extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return n.n2027449323.n310338504();
+        return com.github.xpenatan.webgpu.natives.JNI_WGPUPassTimestampWrites.internal_native_Obtain_addr();
     }
 }
