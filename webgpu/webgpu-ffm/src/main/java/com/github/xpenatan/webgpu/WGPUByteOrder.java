@@ -59,8 +59,8 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle BigEndian_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpubyteorder_bigendian_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle BigEndian_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubyteorder_bigendian_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle LittleEndian_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpubyteorder_littleendian_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle LittleEndian_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubyteorder_littleendian_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

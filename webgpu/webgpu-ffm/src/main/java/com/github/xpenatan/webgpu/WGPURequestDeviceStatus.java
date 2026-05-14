@@ -67,10 +67,10 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpurequestdevicestatus_wgpurequestdevicestatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurequestdevicestatus_wgpurequestdevicestatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpurequestdevicestatus_wgpurequestdevicestatus_error_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurequestdevicestatus_wgpurequestdevicestatus_error_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpurequestdevicestatus_wgpurequestdevicestatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPURequestDeviceStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurequestdevicestatus_wgpurequestdevicestatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }
