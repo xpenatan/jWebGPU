@@ -34,15 +34,9 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPopErrorScopeStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPopErrorScopeStatus_Success;")
     private static native int WGPUPopErrorScopeStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPopErrorScopeStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPopErrorScopeStatus_Force32;")
     private static native int WGPUPopErrorScopeStatus_Force32_NATIVE();
 }

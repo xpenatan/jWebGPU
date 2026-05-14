@@ -54,69 +54,11 @@ public class WGPUQueue extends NativeObject {
     private WGPUQueue(byte v, char c) {
     }
 
-    /*
-      [-FFM;-NATIVE]
-              extern "C" {
-              FFM_EXPORT void jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteBufferFFM__JJIJI(int64_t this_addr, int64_t buffer_addr, int32_t bufferOffset, int64_t data_ptr, int32_t dataSize) {
-                  JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-                  nativeObject->WriteBuffer((JGPU::WGPUBuffer*)buffer_addr, bufferOffset, (void*)data_ptr, dataSize);
-              }
-     
-              FFM_EXPORT void jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteTextureFFM__JJJIJJ(int64_t this_addr, int64_t destination_addr, int64_t data_ptr, int32_t dataSize, int64_t dataLayout_addr, int64_t writeSize_addr) {
-                  JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-                  nativeObject->WriteTexture((JGPU::WGPUTexelCopyTextureInfo*)destination_addr, (void*)data_ptr, dataSize, (JGPU::WGPUTexelCopyBufferLayout*)dataLayout_addr, (JGPU::WGPUExtent3D*)writeSize_addr);
-              }
-              }
-    */
-    /*
-      [-FFM;-ADD]
-              private static final class FFMBufferHandles {
-                  private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
-                  private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
-     
-                  static final java.lang.invoke.MethodHandle writeBuffer = LINKER.downcallHandle(
-                          LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteBufferFFM__JJIJI").orElseThrow(),
-                          java.lang.foreign.FunctionDescriptor.ofVoid(
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_INT,
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_INT
-                          )
-                  );
-     
-                  static final java.lang.invoke.MethodHandle writeTexture = LINKER.downcallHandle(
-                          LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUQueue_internal_1native_1WriteTextureFFM__JJJIJJ").orElseThrow(),
-                          java.lang.foreign.FunctionDescriptor.ofVoid(
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_INT,
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_LONG
-                          )
-                  );
-              }
-    */
-    /*
-      [-FFM;-REPLACE_BLOCK]
-              {
-                  long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
-                  internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, dataAddress, dataSize);
-              }
-    */
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
         long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
         internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, dataAddress, dataSize);
     }
 
-    /*
-      [-FFM;-REPLACE_BLOCK]
-              {
-                  long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
-                  internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), dataAddress, dataSize, dataLayout.native_address, writeSize.native_address);
-              }
-    */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
         long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
         internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), dataAddress, dataSize, dataLayout.native_address, writeSize.native_address);
@@ -126,11 +68,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -143,11 +80,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->SetLabel(value);
-    */
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -160,11 +92,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__0(native_address, commandVector.native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Submit((JGPU::WGPUVectorCommandBuffer* )commandVector_addr);
-    */
     public static void internal_native_Submit__0(long this_addr, long commandVector_addr) {
         try {
             FFMHandles.internal_native_Submit__0__JJ.invokeExact(this_addr, commandVector_addr);
@@ -177,11 +104,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__1(native_address, commandBuffer.native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer_addr);
-    */
     public static void internal_native_Submit__1(long this_addr, long commandBuffer_addr) {
         try {
             FFMHandles.internal_native_Submit__1__JJ.invokeExact(this_addr, commandBuffer_addr);
@@ -194,11 +116,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__2(native_address, commandBuffer01.native_address, commandBuffer02.native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer01_addr, (JGPU::WGPUCommandBuffer* )commandBuffer02_addr);
-    */
     public static void internal_native_Submit__2(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr) {
         try {
             FFMHandles.internal_native_Submit__2__JJJ.invokeExact(this_addr, commandBuffer01_addr, commandBuffer02_addr);
@@ -211,11 +128,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__3(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer01_addr, (JGPU::WGPUCommandBuffer* )commandBuffer02_addr, (JGPU::WGPUCommandBuffer* )commandBuffer03_addr);
-    */
     public static void internal_native_Submit__3(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr) {
         try {
             FFMHandles.internal_native_Submit__3__JJJJ.invokeExact(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr);
@@ -228,11 +140,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__4(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address, commandBuffer04.native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Submit((JGPU::WGPUCommandBuffer* )commandBuffer01_addr, (JGPU::WGPUCommandBuffer* )commandBuffer02_addr, (JGPU::WGPUCommandBuffer* )commandBuffer03_addr, (JGPU::WGPUCommandBuffer* )commandBuffer04_addr);
-    */
     public static void internal_native_Submit__4(long this_addr, long commandBuffer01_addr, long commandBuffer02_addr, long commandBuffer03_addr, long commandBuffer04_addr) {
         try {
             FFMHandles.internal_native_Submit__4__JJJJJ.invokeExact(this_addr, commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr, commandBuffer04_addr);
@@ -245,11 +152,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Release(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->Release();
-    */
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -262,11 +164,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_WriteBuffer__1(native_address, buffer.native_address, bufferOffset, bytes.native_void_address, dataSize);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
-      nativeObject->WriteBuffer((JGPU::WGPUBuffer* )buffer_addr, (int)bufferOffset, (void*)bytes_addr, (int)dataSize);
-    */
     public static void internal_native_WriteBuffer__1(long this_addr, long buffer_addr, int bufferOffset, long bytes_addr, int dataSize) {
         try {
             FFMHandles.internal_native_WriteBuffer__1__JJIJI.invokeExact(this_addr, buffer_addr, bufferOffset, bytes_addr, dataSize);

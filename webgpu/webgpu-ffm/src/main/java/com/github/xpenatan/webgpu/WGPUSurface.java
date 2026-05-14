@@ -37,10 +37,6 @@ public class WGPUSurface extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -69,10 +61,6 @@ nativeObject->SetLabel(value);
         internal_native_Unconfigure(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Unconfigure();
-*/
     public static void internal_native_Unconfigure(long this_addr) {
         try {
             FFMHandles.internal_native_Unconfigure__J.invokeExact(this_addr);
@@ -85,10 +73,6 @@ nativeObject->Unconfigure();
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -101,10 +85,6 @@ nativeObject->Release();
         internal_native_Configure(native_address, config.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Configure((JGPU::WGPUSurfaceConfiguration* )config_addr);
-*/
     public static void internal_native_Configure(long this_addr, long config_addr) {
         try {
             FFMHandles.internal_native_Configure__JJ.invokeExact(this_addr, config_addr);
@@ -117,10 +97,6 @@ nativeObject->Configure((JGPU::WGPUSurfaceConfiguration* )config_addr);
         internal_native_GetCapabilities(native_address, adapter.native_address, surfaceCapabilities.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->GetCapabilities((JGPU::WGPUAdapter* )adapter_addr, (JGPU::WGPUSurfaceCapabilities* )surfaceCapabilities_addr);
-*/
     public static void internal_native_GetCapabilities(long this_addr, long adapter_addr, long surfaceCapabilities_addr) {
         try {
             FFMHandles.internal_native_GetCapabilities__JJJ.invokeExact(this_addr, adapter_addr, surfaceCapabilities_addr);
@@ -133,10 +109,6 @@ nativeObject->GetCapabilities((JGPU::WGPUAdapter* )adapter_addr, (JGPU::WGPUSurf
         internal_native_GetCurrentTexture(native_address, surfaceTexture.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->GetCurrentTexture((JGPU::WGPUSurfaceTexture* )surfaceTexture_addr);
-*/
     public static void internal_native_GetCurrentTexture(long this_addr, long surfaceTexture_addr) {
         try {
             FFMHandles.internal_native_GetCurrentTexture__JJ.invokeExact(this_addr, surfaceTexture_addr);
@@ -149,10 +121,6 @@ nativeObject->GetCurrentTexture((JGPU::WGPUSurfaceTexture* )surfaceTexture_addr)
         internal_native_Present(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurface* nativeObject = (JGPU::WGPUSurface*)this_addr;
-nativeObject->Present();
-*/
     public static void internal_native_Present(long this_addr) {
         try {
             FFMHandles.internal_native_Present__J.invokeExact(this_addr);

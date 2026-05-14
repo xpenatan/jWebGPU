@@ -17,10 +17,6 @@ public class WGPUMultisampleState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPUMultisampleState();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUMultisampleState();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -42,10 +38,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -53,10 +45,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
@@ -64,10 +52,6 @@ jsObj.SetNextInChain(chainedStruct_addr);
         internal_native_SetCount(native_address, count);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);
-jsObj.SetCount(count);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "count"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetCount(count);")
     public static native void internal_native_SetCount(int this_addr, int count);
 
@@ -75,10 +59,6 @@ jsObj.SetCount(count);
         internal_native_SetMask(native_address, mask);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);
-jsObj.SetMask(mask);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "mask"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetMask(mask);")
     public static native void internal_native_SetMask(int this_addr, int mask);
 
@@ -86,10 +66,6 @@ jsObj.SetMask(mask);
         internal_native_SetAlphaToCoverageEnabled(native_address, alphaToCoverageEnabled);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);
-jsObj.SetAlphaToCoverageEnabled(alphaToCoverageEnabled);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "alphaToCoverageEnabled"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetAlphaToCoverageEnabled(alphaToCoverageEnabled);")
     public static native void internal_native_SetAlphaToCoverageEnabled(int this_addr, boolean alphaToCoverageEnabled);
 }

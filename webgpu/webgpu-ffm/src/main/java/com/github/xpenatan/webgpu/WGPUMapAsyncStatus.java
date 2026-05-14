@@ -41,9 +41,6 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapAsyncStatus_Success;
-*/
     private static int WGPUMapAsyncStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapAsyncStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUMapAsyncStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapAsyncStatus_Error;
-*/
     private static int WGPUMapAsyncStatus_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapAsyncStatus_Error_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUMapAsyncStatus_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapAsyncStatus_Aborted;
-*/
     private static int WGPUMapAsyncStatus_Aborted_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapAsyncStatus_Aborted_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUMapAsyncStatus_Aborted;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapAsyncStatus_Force32;
-*/
     private static int WGPUMapAsyncStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapAsyncStatus_Force32_NATIVE__.invokeExact();

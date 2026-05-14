@@ -27,21 +27,6 @@ public class WGPURequestDeviceCallback extends NativeObject {
 
     static public final WGPURequestDeviceCallback NULL = WGPURequestDeviceCallback.native_new();
 
-    /*[-FFM;-NATIVE]
-typedef void (*fp_WGPURequestDeviceCallbackImpl_OnCallback_IJLjava_lang_Object_2)(int32_t, int64_t, const char*);
-
-class WGPURequestDeviceCallbackImpl : public JGPU::WGPURequestDeviceCallback {
-private:
-	fp_WGPURequestDeviceCallbackImpl_OnCallback_IJLjava_lang_Object_2 OnCallback_ptr;
-public:
-	void setupCallback(fp_WGPURequestDeviceCallbackImpl_OnCallback_IJLjava_lang_Object_2 OnCallback) {
-		this->OnCallback_ptr = OnCallback;
-	}
-	virtual void OnCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device, const char* message) {
-		OnCallback_ptr(static_cast<int32_t>(status), (int64_t)device, message);
-	}
-};
-*/
     @Deprecated()
     protected WGPURequestDeviceCallback(byte b, char c) {
     }
@@ -58,10 +43,6 @@ public:
         releaseUpcallResources();
     }
 
-    /*[-FFM;-NATIVE]
-WGPURequestDeviceCallbackImpl* nativeObject = (WGPURequestDeviceCallbackImpl*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -107,9 +88,6 @@ delete nativeObject;
         onCallback(status_addr_enum, device_addr_new, message_addr);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new WGPURequestDeviceCallbackImpl();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -134,10 +112,6 @@ return (int64_t)new WGPURequestDeviceCallbackImpl();
         }
     }
 
-    /*[-FFM;-NATIVE]
-WGPURequestDeviceCallbackImpl* nativeObject = (WGPURequestDeviceCallbackImpl*)this_addr;
-nativeObject->setupCallback((fp_WGPURequestDeviceCallbackImpl_OnCallback_IJLjava_lang_Object_2)OnCallback_fp);
-*/
     public static void internal_native_setupCallback(long this_addr, long OnCallback_fp) {
         try {
             FFMHandles.internal_native_setupCallback__JJ.invokeExact(this_addr, OnCallback_fp);

@@ -41,45 +41,24 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_Undefined;")
     private static native int WGPUPrimitiveTopology_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_PointList;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_PointList;")
     private static native int WGPUPrimitiveTopology_PointList_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_LineList;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_LineList;")
     private static native int WGPUPrimitiveTopology_LineList_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_LineStrip;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_LineStrip;")
     private static native int WGPUPrimitiveTopology_LineStrip_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_TriangleList;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_TriangleList;")
     private static native int WGPUPrimitiveTopology_TriangleList_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_TriangleStrip;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_TriangleStrip;")
     private static native int WGPUPrimitiveTopology_TriangleStrip_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPrimitiveTopology_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPrimitiveTopology_Force32;")
     private static native int WGPUPrimitiveTopology_Force32_NATIVE();
 }

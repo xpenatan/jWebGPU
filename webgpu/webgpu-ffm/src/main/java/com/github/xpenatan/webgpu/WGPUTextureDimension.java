@@ -46,9 +46,6 @@ public enum WGPUTextureDimension implements NativeEnum<WGPUTextureDimension> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureDimension_Undefined;
-*/
     private static int WGPUTextureDimension_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureDimension_Undefined_NATIVE__.invokeExact();
@@ -57,9 +54,6 @@ return (int64_t)WGPUTextureDimension_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureDimension_1D;
-*/
     private static int WGPUTextureDimension_1D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureDimension_1D_NATIVE__.invokeExact();
@@ -68,9 +62,6 @@ return (int64_t)WGPUTextureDimension_1D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureDimension_2D;
-*/
     private static int WGPUTextureDimension_2D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureDimension_2D_NATIVE__.invokeExact();
@@ -79,9 +70,6 @@ return (int64_t)WGPUTextureDimension_2D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureDimension_3D;
-*/
     private static int WGPUTextureDimension_3D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureDimension_3D_NATIVE__.invokeExact();
@@ -90,9 +78,6 @@ return (int64_t)WGPUTextureDimension_3D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureDimension_Force32;
-*/
     private static int WGPUTextureDimension_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureDimension_Force32_NATIVE__.invokeExact();

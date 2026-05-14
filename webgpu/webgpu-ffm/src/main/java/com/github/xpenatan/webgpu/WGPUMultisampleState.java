@@ -24,9 +24,6 @@ public class WGPUMultisampleState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUMultisampleState();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -53,10 +50,6 @@ return (int64_t)new JGPU::WGPUMultisampleState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -69,10 +62,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -85,10 +74,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetCount(native_address, count);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetCount((int)count);
-*/
     public static void internal_native_SetCount(long this_addr, int count) {
         try {
             FFMHandles.internal_native_SetCount__JI.invokeExact(this_addr, count);
@@ -101,10 +86,6 @@ nativeObject->SetCount((int)count);
         internal_native_SetMask(native_address, mask);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetMask((int)mask);
-*/
     public static void internal_native_SetMask(long this_addr, int mask) {
         try {
             FFMHandles.internal_native_SetMask__JI.invokeExact(this_addr, mask);
@@ -117,10 +98,6 @@ nativeObject->SetMask((int)mask);
         internal_native_SetAlphaToCoverageEnabled(native_address, alphaToCoverageEnabled);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetAlphaToCoverageEnabled(alphaToCoverageEnabled);
-*/
     public static void internal_native_SetAlphaToCoverageEnabled(long this_addr, boolean alphaToCoverageEnabled) {
         try {
             FFMHandles.internal_native_SetAlphaToCoverageEnabled__JZ.invokeExact(this_addr, alphaToCoverageEnabled);

@@ -26,9 +26,6 @@ public class WGPUFragmentState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUFragmentState();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUFragmentState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetEntryPoint(entryPoint);
-*/
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
         try {
             FFMHandles.internal_native_SetEntryPoint__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(entryPoint));
@@ -103,10 +88,6 @@ nativeObject->SetEntryPoint(entryPoint);
         internal_native_SetTargets__0(native_address, targets.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetTargets((JGPU::WGPUVectorColorTargetState* )targets_addr);
-*/
     public static void internal_native_SetTargets__0(long this_addr, long targets_addr) {
         try {
             FFMHandles.internal_native_SetTargets__0__JJ.invokeExact(this_addr, targets_addr);
@@ -119,10 +100,6 @@ nativeObject->SetTargets((JGPU::WGPUVectorColorTargetState* )targets_addr);
         internal_native_SetTargets__1(native_address, target01.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr);
-*/
     public static void internal_native_SetTargets__1(long this_addr, long target01_addr) {
         try {
             FFMHandles.internal_native_SetTargets__1__JJ.invokeExact(this_addr, target01_addr);
@@ -135,10 +112,6 @@ nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr);
         internal_native_SetTargets__2(native_address, target01.native_address, target02.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGPUColorTargetState* )target02_addr);
-*/
     public static void internal_native_SetTargets__2(long this_addr, long target01_addr, long target02_addr) {
         try {
             FFMHandles.internal_native_SetTargets__2__JJJ.invokeExact(this_addr, target01_addr, target02_addr);
@@ -151,10 +124,6 @@ nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGP
         internal_native_SetTargets__3(native_address, target01.native_address, target02.native_address, target03.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGPUColorTargetState* )target02_addr, (JGPU::WGPUColorTargetState* )target03_addr);
-*/
     public static void internal_native_SetTargets__3(long this_addr, long target01_addr, long target02_addr, long target03_addr) {
         try {
             FFMHandles.internal_native_SetTargets__3__JJJJ.invokeExact(this_addr, target01_addr, target02_addr, target03_addr);
@@ -167,10 +136,6 @@ nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGP
         internal_native_SetTargets__4(native_address, target01.native_address, target02.native_address, target03.native_address, target04.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGPUColorTargetState* )target02_addr, (JGPU::WGPUColorTargetState* )target03_addr, (JGPU::WGPUColorTargetState* )target04_addr);
-*/
     public static void internal_native_SetTargets__4(long this_addr, long target01_addr, long target02_addr, long target03_addr, long target04_addr) {
         try {
             FFMHandles.internal_native_SetTargets__4__JJJJJ.invokeExact(this_addr, target01_addr, target02_addr, target03_addr, target04_addr);
@@ -183,10 +148,6 @@ nativeObject->SetTargets((JGPU::WGPUColorTargetState* )target01_addr, (JGPU::WGP
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
-*/
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
         try {
             FFMHandles.internal_native_SetModule__JJ.invokeExact(this_addr, shaderModule_addr);
@@ -199,10 +160,6 @@ nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
         internal_native_SetConstants(native_address, constants.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUFragmentState* nativeObject = (JGPU::WGPUFragmentState*)this_addr;
-nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
-*/
     public static void internal_native_SetConstants(long this_addr, long constants_addr) {
         try {
             FFMHandles.internal_native_SetConstants__JJ.invokeExact(this_addr, constants_addr);
@@ -221,9 +178,6 @@ nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )constants_addr);
         return WGPUFragmentState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUFragmentState::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

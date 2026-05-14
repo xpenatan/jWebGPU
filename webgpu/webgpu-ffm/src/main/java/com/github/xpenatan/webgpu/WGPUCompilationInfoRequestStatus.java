@@ -41,9 +41,6 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompilationInfoRequestStatus_Success;
-*/
     private static int WGPUCompilationInfoRequestStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompilationInfoRequestStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUCompilationInfoRequestStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompilationInfoRequestStatus_Force32;
-*/
     private static int WGPUCompilationInfoRequestStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompilationInfoRequestStatus_Force32_NATIVE__.invokeExact();

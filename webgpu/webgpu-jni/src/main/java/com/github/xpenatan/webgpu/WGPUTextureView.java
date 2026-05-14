@@ -19,9 +19,6 @@ public class WGPUTextureView extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUTextureView();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUTextureView();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-nativeObject->Release();
-*/
     public static native void internal_native_Release(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-return nativeObject->IsValid();
-*/
     public static native boolean internal_native_IsValid(long this_addr);
 
     public static WGPUTextureView obtain() {
@@ -88,8 +69,5 @@ return nativeObject->IsValid();
         return WGPUTextureView_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureView::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

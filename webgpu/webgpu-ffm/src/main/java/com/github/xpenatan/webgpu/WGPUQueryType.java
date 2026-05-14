@@ -41,9 +41,6 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUQueryType_Occlusion;
-*/
     private static int WGPUQueryType_Occlusion_NATIVE() {
         try {
             return (int) FFMHandles.WGPUQueryType_Occlusion_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUQueryType_Occlusion;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUQueryType_Timestamp;
-*/
     private static int WGPUQueryType_Timestamp_NATIVE() {
         try {
             return (int) FFMHandles.WGPUQueryType_Timestamp_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUQueryType_Timestamp;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUQueryType_Force32;
-*/
     private static int WGPUQueryType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUQueryType_Force32_NATIVE__.invokeExact();

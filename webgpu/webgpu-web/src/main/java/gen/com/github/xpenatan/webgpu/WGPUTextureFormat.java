@@ -131,585 +131,294 @@ public enum WGPUTextureFormat implements NativeEnum<WGPUTextureFormat> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Undefined;")
     private static native int WGPUTextureFormat_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R8Unorm;")
     private static native int WGPUTextureFormat_R8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R8Snorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R8Snorm;")
     private static native int WGPUTextureFormat_R8Snorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R8Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R8Uint;")
     private static native int WGPUTextureFormat_R8Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R8Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R8Sint;")
     private static native int WGPUTextureFormat_R8Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R16Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R16Uint;")
     private static native int WGPUTextureFormat_R16Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R16Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R16Sint;")
     private static native int WGPUTextureFormat_R16Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R16Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R16Float;")
     private static native int WGPUTextureFormat_R16Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG8Unorm;")
     private static native int WGPUTextureFormat_RG8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG8Snorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG8Snorm;")
     private static native int WGPUTextureFormat_RG8Snorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG8Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG8Uint;")
     private static native int WGPUTextureFormat_RG8Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG8Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG8Sint;")
     private static native int WGPUTextureFormat_RG8Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R32Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R32Float;")
     private static native int WGPUTextureFormat_R32Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R32Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R32Uint;")
     private static native int WGPUTextureFormat_R32Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_R32Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_R32Sint;")
     private static native int WGPUTextureFormat_R32Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG16Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG16Uint;")
     private static native int WGPUTextureFormat_RG16Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG16Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG16Sint;")
     private static native int WGPUTextureFormat_RG16Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG16Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG16Float;")
     private static native int WGPUTextureFormat_RG16Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA8Unorm;")
     private static native int WGPUTextureFormat_RGBA8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA8UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA8UnormSrgb;")
     private static native int WGPUTextureFormat_RGBA8UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA8Snorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA8Snorm;")
     private static native int WGPUTextureFormat_RGBA8Snorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA8Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA8Uint;")
     private static native int WGPUTextureFormat_RGBA8Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA8Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA8Sint;")
     private static native int WGPUTextureFormat_RGBA8Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BGRA8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BGRA8Unorm;")
     private static native int WGPUTextureFormat_BGRA8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BGRA8UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BGRA8UnormSrgb;")
     private static native int WGPUTextureFormat_BGRA8UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGB10A2Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGB10A2Uint;")
     private static native int WGPUTextureFormat_RGB10A2Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGB10A2Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGB10A2Unorm;")
     private static native int WGPUTextureFormat_RGB10A2Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG11B10Ufloat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG11B10Ufloat;")
     private static native int WGPUTextureFormat_RG11B10Ufloat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGB9E5Ufloat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGB9E5Ufloat;")
     private static native int WGPUTextureFormat_RGB9E5Ufloat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG32Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG32Float;")
     private static native int WGPUTextureFormat_RG32Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG32Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG32Uint;")
     private static native int WGPUTextureFormat_RG32Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RG32Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RG32Sint;")
     private static native int WGPUTextureFormat_RG32Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA16Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA16Uint;")
     private static native int WGPUTextureFormat_RGBA16Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA16Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA16Sint;")
     private static native int WGPUTextureFormat_RGBA16Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA16Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA16Float;")
     private static native int WGPUTextureFormat_RGBA16Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA32Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA32Float;")
     private static native int WGPUTextureFormat_RGBA32Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA32Uint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA32Uint;")
     private static native int WGPUTextureFormat_RGBA32Uint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_RGBA32Sint;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_RGBA32Sint;")
     private static native int WGPUTextureFormat_RGBA32Sint_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Stencil8;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Stencil8;")
     private static native int WGPUTextureFormat_Stencil8_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Depth16Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Depth16Unorm;")
     private static native int WGPUTextureFormat_Depth16Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Depth24Plus;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Depth24Plus;")
     private static native int WGPUTextureFormat_Depth24Plus_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Depth24PlusStencil8;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Depth24PlusStencil8;")
     private static native int WGPUTextureFormat_Depth24PlusStencil8_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Depth32Float;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Depth32Float;")
     private static native int WGPUTextureFormat_Depth32Float_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Depth32FloatStencil8;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Depth32FloatStencil8;")
     private static native int WGPUTextureFormat_Depth32FloatStencil8_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC1RGBAUnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC1RGBAUnorm;")
     private static native int WGPUTextureFormat_BC1RGBAUnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC1RGBAUnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC1RGBAUnormSrgb;")
     private static native int WGPUTextureFormat_BC1RGBAUnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC2RGBAUnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC2RGBAUnorm;")
     private static native int WGPUTextureFormat_BC2RGBAUnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC2RGBAUnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC2RGBAUnormSrgb;")
     private static native int WGPUTextureFormat_BC2RGBAUnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC3RGBAUnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC3RGBAUnorm;")
     private static native int WGPUTextureFormat_BC3RGBAUnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC3RGBAUnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC3RGBAUnormSrgb;")
     private static native int WGPUTextureFormat_BC3RGBAUnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC4RUnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC4RUnorm;")
     private static native int WGPUTextureFormat_BC4RUnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC4RSnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC4RSnorm;")
     private static native int WGPUTextureFormat_BC4RSnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC5RGUnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC5RGUnorm;")
     private static native int WGPUTextureFormat_BC5RGUnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC5RGSnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC5RGSnorm;")
     private static native int WGPUTextureFormat_BC5RGSnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC6HRGBUfloat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC6HRGBUfloat;")
     private static native int WGPUTextureFormat_BC6HRGBUfloat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC6HRGBFloat;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC6HRGBFloat;")
     private static native int WGPUTextureFormat_BC6HRGBFloat_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC7RGBAUnorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC7RGBAUnorm;")
     private static native int WGPUTextureFormat_BC7RGBAUnorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_BC7RGBAUnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_BC7RGBAUnormSrgb;")
     private static native int WGPUTextureFormat_BC7RGBAUnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ETC2RGB8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ETC2RGB8Unorm;")
     private static native int WGPUTextureFormat_ETC2RGB8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ETC2RGB8UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ETC2RGB8UnormSrgb;")
     private static native int WGPUTextureFormat_ETC2RGB8UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ETC2RGB8A1Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ETC2RGB8A1Unorm;")
     private static native int WGPUTextureFormat_ETC2RGB8A1Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ETC2RGB8A1UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ETC2RGB8A1UnormSrgb;")
     private static native int WGPUTextureFormat_ETC2RGB8A1UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ETC2RGBA8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ETC2RGBA8Unorm;")
     private static native int WGPUTextureFormat_ETC2RGBA8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ETC2RGBA8UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ETC2RGBA8UnormSrgb;")
     private static native int WGPUTextureFormat_ETC2RGBA8UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_EACR11Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_EACR11Unorm;")
     private static native int WGPUTextureFormat_EACR11Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_EACR11Snorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_EACR11Snorm;")
     private static native int WGPUTextureFormat_EACR11Snorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_EACRG11Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_EACRG11Unorm;")
     private static native int WGPUTextureFormat_EACRG11Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_EACRG11Snorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_EACRG11Snorm;")
     private static native int WGPUTextureFormat_EACRG11Snorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC4x4Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC4x4Unorm;")
     private static native int WGPUTextureFormat_ASTC4x4Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC4x4UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC4x4UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC4x4UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC5x4Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC5x4Unorm;")
     private static native int WGPUTextureFormat_ASTC5x4Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC5x4UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC5x4UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC5x4UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC5x5Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC5x5Unorm;")
     private static native int WGPUTextureFormat_ASTC5x5Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC5x5UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC5x5UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC5x5UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC6x5Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC6x5Unorm;")
     private static native int WGPUTextureFormat_ASTC6x5Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC6x5UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC6x5UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC6x5UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC6x6Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC6x6Unorm;")
     private static native int WGPUTextureFormat_ASTC6x6Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC6x6UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC6x6UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC6x6UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC8x5Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC8x5Unorm;")
     private static native int WGPUTextureFormat_ASTC8x5Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC8x5UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC8x5UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC8x5UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC8x6Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC8x6Unorm;")
     private static native int WGPUTextureFormat_ASTC8x6Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC8x6UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC8x6UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC8x6UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC8x8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC8x8Unorm;")
     private static native int WGPUTextureFormat_ASTC8x8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC8x8UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC8x8UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC8x8UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x5Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x5Unorm;")
     private static native int WGPUTextureFormat_ASTC10x5Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x5UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x5UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC10x5UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x6Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x6Unorm;")
     private static native int WGPUTextureFormat_ASTC10x6Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x6UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x6UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC10x6UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x8Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x8Unorm;")
     private static native int WGPUTextureFormat_ASTC10x8Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x8UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x8UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC10x8UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x10Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x10Unorm;")
     private static native int WGPUTextureFormat_ASTC10x10Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC10x10UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC10x10UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC10x10UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC12x10Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC12x10Unorm;")
     private static native int WGPUTextureFormat_ASTC12x10Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC12x10UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC12x10UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC12x10UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC12x12Unorm;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC12x12Unorm;")
     private static native int WGPUTextureFormat_ASTC12x12Unorm_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_ASTC12x12UnormSrgb;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_ASTC12x12UnormSrgb;")
     private static native int WGPUTextureFormat_ASTC12x12UnormSrgb_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureFormat_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureFormat_Force32;")
     private static native int WGPUTextureFormat_Force32_NATIVE();
 }

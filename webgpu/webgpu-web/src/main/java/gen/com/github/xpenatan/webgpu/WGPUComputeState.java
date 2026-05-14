@@ -30,10 +30,6 @@ public class WGPUComputeState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -41,10 +37,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
@@ -52,10 +44,6 @@ jsObj.SetNextInChain(chainedStruct_addr);
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);
-jsObj.SetModule(shaderModule_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "shaderModule_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetModule(shaderModule_addr);")
     public static native void internal_native_SetModule(int this_addr, int shaderModule_addr);
 
@@ -63,10 +51,6 @@ jsObj.SetModule(shaderModule_addr);
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);
-jsObj.SetEntryPoint(entryPoint);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "entryPoint"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetEntryPoint(entryPoint);")
     public static native void internal_native_SetEntryPoint(int this_addr, String entryPoint);
 
@@ -74,10 +58,6 @@ jsObj.SetEntryPoint(entryPoint);
         internal_native_SetConstants(native_address, values.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);
-jsObj.SetConstants(values_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "values_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetConstants(values_addr);")
     public static native void internal_native_SetConstants(int this_addr, int values_addr);
 }

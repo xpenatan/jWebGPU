@@ -83,9 +83,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint8;
-*/
     private static int WGPUVertexFormat_Uint8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint8_NATIVE__.invokeExact();
@@ -94,9 +91,6 @@ return (int64_t)WGPUVertexFormat_Uint8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint8x2;
-*/
     private static int WGPUVertexFormat_Uint8x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint8x2_NATIVE__.invokeExact();
@@ -105,9 +99,6 @@ return (int64_t)WGPUVertexFormat_Uint8x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint8x4;
-*/
     private static int WGPUVertexFormat_Uint8x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint8x4_NATIVE__.invokeExact();
@@ -116,9 +107,6 @@ return (int64_t)WGPUVertexFormat_Uint8x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint8;
-*/
     private static int WGPUVertexFormat_Sint8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint8_NATIVE__.invokeExact();
@@ -127,9 +115,6 @@ return (int64_t)WGPUVertexFormat_Sint8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint8x2;
-*/
     private static int WGPUVertexFormat_Sint8x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint8x2_NATIVE__.invokeExact();
@@ -138,9 +123,6 @@ return (int64_t)WGPUVertexFormat_Sint8x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint8x4;
-*/
     private static int WGPUVertexFormat_Sint8x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint8x4_NATIVE__.invokeExact();
@@ -149,9 +131,6 @@ return (int64_t)WGPUVertexFormat_Sint8x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm8;
-*/
     private static int WGPUVertexFormat_Unorm8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8_NATIVE__.invokeExact();
@@ -160,9 +139,6 @@ return (int64_t)WGPUVertexFormat_Unorm8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm8x2;
-*/
     private static int WGPUVertexFormat_Unorm8x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x2_NATIVE__.invokeExact();
@@ -171,9 +147,6 @@ return (int64_t)WGPUVertexFormat_Unorm8x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm8x4;
-*/
     private static int WGPUVertexFormat_Unorm8x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x4_NATIVE__.invokeExact();
@@ -182,9 +155,6 @@ return (int64_t)WGPUVertexFormat_Unorm8x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Snorm8;
-*/
     private static int WGPUVertexFormat_Snorm8_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm8_NATIVE__.invokeExact();
@@ -193,9 +163,6 @@ return (int64_t)WGPUVertexFormat_Snorm8;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Snorm8x2;
-*/
     private static int WGPUVertexFormat_Snorm8x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm8x2_NATIVE__.invokeExact();
@@ -204,9 +171,6 @@ return (int64_t)WGPUVertexFormat_Snorm8x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Snorm8x4;
-*/
     private static int WGPUVertexFormat_Snorm8x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm8x4_NATIVE__.invokeExact();
@@ -215,9 +179,6 @@ return (int64_t)WGPUVertexFormat_Snorm8x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint16;
-*/
     private static int WGPUVertexFormat_Uint16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint16_NATIVE__.invokeExact();
@@ -226,9 +187,6 @@ return (int64_t)WGPUVertexFormat_Uint16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint16x2;
-*/
     private static int WGPUVertexFormat_Uint16x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint16x2_NATIVE__.invokeExact();
@@ -237,9 +195,6 @@ return (int64_t)WGPUVertexFormat_Uint16x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint16x4;
-*/
     private static int WGPUVertexFormat_Uint16x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint16x4_NATIVE__.invokeExact();
@@ -248,9 +203,6 @@ return (int64_t)WGPUVertexFormat_Uint16x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint16;
-*/
     private static int WGPUVertexFormat_Sint16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint16_NATIVE__.invokeExact();
@@ -259,9 +211,6 @@ return (int64_t)WGPUVertexFormat_Sint16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint16x2;
-*/
     private static int WGPUVertexFormat_Sint16x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint16x2_NATIVE__.invokeExact();
@@ -270,9 +219,6 @@ return (int64_t)WGPUVertexFormat_Sint16x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint16x4;
-*/
     private static int WGPUVertexFormat_Sint16x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint16x4_NATIVE__.invokeExact();
@@ -281,9 +227,6 @@ return (int64_t)WGPUVertexFormat_Sint16x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm16;
-*/
     private static int WGPUVertexFormat_Unorm16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm16_NATIVE__.invokeExact();
@@ -292,9 +235,6 @@ return (int64_t)WGPUVertexFormat_Unorm16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm16x2;
-*/
     private static int WGPUVertexFormat_Unorm16x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm16x2_NATIVE__.invokeExact();
@@ -303,9 +243,6 @@ return (int64_t)WGPUVertexFormat_Unorm16x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm16x4;
-*/
     private static int WGPUVertexFormat_Unorm16x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm16x4_NATIVE__.invokeExact();
@@ -314,9 +251,6 @@ return (int64_t)WGPUVertexFormat_Unorm16x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Snorm16;
-*/
     private static int WGPUVertexFormat_Snorm16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm16_NATIVE__.invokeExact();
@@ -325,9 +259,6 @@ return (int64_t)WGPUVertexFormat_Snorm16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Snorm16x2;
-*/
     private static int WGPUVertexFormat_Snorm16x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm16x2_NATIVE__.invokeExact();
@@ -336,9 +267,6 @@ return (int64_t)WGPUVertexFormat_Snorm16x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Snorm16x4;
-*/
     private static int WGPUVertexFormat_Snorm16x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Snorm16x4_NATIVE__.invokeExact();
@@ -347,9 +275,6 @@ return (int64_t)WGPUVertexFormat_Snorm16x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float16;
-*/
     private static int WGPUVertexFormat_Float16_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float16_NATIVE__.invokeExact();
@@ -358,9 +283,6 @@ return (int64_t)WGPUVertexFormat_Float16;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float16x2;
-*/
     private static int WGPUVertexFormat_Float16x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float16x2_NATIVE__.invokeExact();
@@ -369,9 +291,6 @@ return (int64_t)WGPUVertexFormat_Float16x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float16x4;
-*/
     private static int WGPUVertexFormat_Float16x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float16x4_NATIVE__.invokeExact();
@@ -380,9 +299,6 @@ return (int64_t)WGPUVertexFormat_Float16x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float32;
-*/
     private static int WGPUVertexFormat_Float32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32_NATIVE__.invokeExact();
@@ -391,9 +307,6 @@ return (int64_t)WGPUVertexFormat_Float32;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float32x2;
-*/
     private static int WGPUVertexFormat_Float32x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32x2_NATIVE__.invokeExact();
@@ -402,9 +315,6 @@ return (int64_t)WGPUVertexFormat_Float32x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float32x3;
-*/
     private static int WGPUVertexFormat_Float32x3_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32x3_NATIVE__.invokeExact();
@@ -413,9 +323,6 @@ return (int64_t)WGPUVertexFormat_Float32x3;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Float32x4;
-*/
     private static int WGPUVertexFormat_Float32x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Float32x4_NATIVE__.invokeExact();
@@ -424,9 +331,6 @@ return (int64_t)WGPUVertexFormat_Float32x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint32;
-*/
     private static int WGPUVertexFormat_Uint32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32_NATIVE__.invokeExact();
@@ -435,9 +339,6 @@ return (int64_t)WGPUVertexFormat_Uint32;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint32x2;
-*/
     private static int WGPUVertexFormat_Uint32x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32x2_NATIVE__.invokeExact();
@@ -446,9 +347,6 @@ return (int64_t)WGPUVertexFormat_Uint32x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint32x3;
-*/
     private static int WGPUVertexFormat_Uint32x3_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32x3_NATIVE__.invokeExact();
@@ -457,9 +355,6 @@ return (int64_t)WGPUVertexFormat_Uint32x3;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Uint32x4;
-*/
     private static int WGPUVertexFormat_Uint32x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Uint32x4_NATIVE__.invokeExact();
@@ -468,9 +363,6 @@ return (int64_t)WGPUVertexFormat_Uint32x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint32;
-*/
     private static int WGPUVertexFormat_Sint32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32_NATIVE__.invokeExact();
@@ -479,9 +371,6 @@ return (int64_t)WGPUVertexFormat_Sint32;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint32x2;
-*/
     private static int WGPUVertexFormat_Sint32x2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32x2_NATIVE__.invokeExact();
@@ -490,9 +379,6 @@ return (int64_t)WGPUVertexFormat_Sint32x2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint32x3;
-*/
     private static int WGPUVertexFormat_Sint32x3_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32x3_NATIVE__.invokeExact();
@@ -501,9 +387,6 @@ return (int64_t)WGPUVertexFormat_Sint32x3;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Sint32x4;
-*/
     private static int WGPUVertexFormat_Sint32x4_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Sint32x4_NATIVE__.invokeExact();
@@ -512,9 +395,6 @@ return (int64_t)WGPUVertexFormat_Sint32x4;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm10_10_10_2;
-*/
     private static int WGPUVertexFormat_Unorm10_10_10_2_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm10_10_10_2_NATIVE__.invokeExact();
@@ -523,9 +403,6 @@ return (int64_t)WGPUVertexFormat_Unorm10_10_10_2;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Unorm8x4BGRA;
-*/
     private static int WGPUVertexFormat_Unorm8x4BGRA_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x4BGRA_NATIVE__.invokeExact();
@@ -534,9 +411,6 @@ return (int64_t)WGPUVertexFormat_Unorm8x4BGRA;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexFormat_Force32;
-*/
     private static int WGPUVertexFormat_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexFormat_Force32_NATIVE__.invokeExact();

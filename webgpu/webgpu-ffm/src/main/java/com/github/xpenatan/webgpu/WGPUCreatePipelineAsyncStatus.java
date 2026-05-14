@@ -41,9 +41,6 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCreatePipelineAsyncStatus_Success;
-*/
     private static int WGPUCreatePipelineAsyncStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUCreatePipelineAsyncStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCreatePipelineAsyncStatus_ValidationError;
-*/
     private static int WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUCreatePipelineAsyncStatus_ValidationError;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCreatePipelineAsyncStatus_InternalError;
-*/
     private static int WGPUCreatePipelineAsyncStatus_InternalError_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_InternalError_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUCreatePipelineAsyncStatus_InternalError;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCreatePipelineAsyncStatus_Force32;
-*/
     private static int WGPUCreatePipelineAsyncStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_Force32_NATIVE__.invokeExact();

@@ -19,9 +19,6 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUCommandEncoderDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,30 +39,18 @@ return (jlong)new JGPU::WGPUCommandEncoderDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoderDescriptor* nativeObject = (JGPU::WGPUCommandEncoderDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoderDescriptor* nativeObject = (JGPU::WGPUCommandEncoderDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUCommandEncoderDescriptor* nativeObject = (JGPU::WGPUCommandEncoderDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public static WGPUCommandEncoderDescriptor obtain() {
@@ -78,8 +63,5 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         return WGPUCommandEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUCommandEncoderDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

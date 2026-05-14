@@ -30,9 +30,6 @@ public class WGPUBlendState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUBlendState();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -59,10 +56,6 @@ return (int64_t)new JGPU::WGPUBlendState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -81,11 +74,6 @@ delete nativeObject;
         return WGPUBlendComponent_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
-thread_local static JGPU::WGPUBlendComponent copy_addr;
-copy_addr = nativeObject->GetColor();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetColor_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetColor_addr__J.invokeExact(this_addr);
@@ -104,11 +92,6 @@ return (int64_t)&copy_addr;*/
         return WGPUBlendComponent_TEMP_GEN_1;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBlendState* nativeObject = (JGPU::WGPUBlendState*)this_addr;
-thread_local static JGPU::WGPUBlendComponent copy_addr;
-copy_addr = nativeObject->GetAlpha();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetAlpha_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetAlpha_addr__J.invokeExact(this_addr);
@@ -127,9 +110,6 @@ return (int64_t)&copy_addr;*/
         return WGPUBlendState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUBlendState::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

@@ -34,27 +34,15 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUIndexFormat_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUIndexFormat_Undefined;")
     private static native int WGPUIndexFormat_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUIndexFormat_Uint16;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUIndexFormat_Uint16;")
     private static native int WGPUIndexFormat_Uint16_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUIndexFormat_Uint32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUIndexFormat_Uint32;")
     private static native int WGPUIndexFormat_Uint32_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUIndexFormat_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUIndexFormat_Force32;")
     private static native int WGPUIndexFormat_Force32_NATIVE();
 }

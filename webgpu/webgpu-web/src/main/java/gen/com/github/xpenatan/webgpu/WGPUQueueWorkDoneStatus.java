@@ -34,21 +34,12 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUQueueWorkDoneStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUQueueWorkDoneStatus_Success;")
     private static native int WGPUQueueWorkDoneStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUQueueWorkDoneStatus_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUQueueWorkDoneStatus_Error;")
     private static native int WGPUQueueWorkDoneStatus_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUQueueWorkDoneStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUQueueWorkDoneStatus_Force32;")
     private static native int WGPUQueueWorkDoneStatus_Force32_NATIVE();
 }

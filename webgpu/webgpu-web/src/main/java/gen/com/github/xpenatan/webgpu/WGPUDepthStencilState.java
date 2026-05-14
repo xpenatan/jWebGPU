@@ -23,10 +23,6 @@ public class WGPUDepthStencilState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPUDepthStencilState();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUDepthStencilState();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -48,10 +44,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -59,10 +51,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
@@ -70,10 +58,6 @@ jsObj.SetNextInChain(chainedStruct_addr);
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetFormat(format);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetFormat(format);")
     public static native void internal_native_SetFormat(int this_addr, int format);
 
@@ -81,10 +65,6 @@ jsObj.SetFormat(format);
         internal_native_SetDepthWriteEnabled(native_address, depthWriteEnabled.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetDepthWriteEnabled(depthWriteEnabled);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "depthWriteEnabled"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetDepthWriteEnabled(depthWriteEnabled);")
     public static native void internal_native_SetDepthWriteEnabled(int this_addr, int depthWriteEnabled);
 
@@ -92,10 +72,6 @@ jsObj.SetDepthWriteEnabled(depthWriteEnabled);
         internal_native_SetDepthCompare(native_address, depthCompare.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetDepthCompare(depthCompare);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "depthCompare"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetDepthCompare(depthCompare);")
     public static native void internal_native_SetDepthCompare(int this_addr, int depthCompare);
 
@@ -103,10 +79,6 @@ jsObj.SetDepthCompare(depthCompare);
         internal_native_SetDepthBiasSlopeScale(native_address, depthBiasSlopeScale);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetDepthBiasSlopeScale(depthBiasSlopeScale);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "depthBiasSlopeScale"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetDepthBiasSlopeScale(depthBiasSlopeScale);")
     public static native void internal_native_SetDepthBiasSlopeScale(int this_addr, float depthBiasSlopeScale);
 
@@ -114,10 +86,6 @@ jsObj.SetDepthBiasSlopeScale(depthBiasSlopeScale);
         internal_native_SetDepthBiasClamp(native_address, depthBiasClamp);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetDepthBiasClamp(depthBiasClamp);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "depthBiasClamp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetDepthBiasClamp(depthBiasClamp);")
     public static native void internal_native_SetDepthBiasClamp(int this_addr, float depthBiasClamp);
 
@@ -125,10 +93,6 @@ jsObj.SetDepthBiasClamp(depthBiasClamp);
         internal_native_SetStencilReadMask(native_address, stencilReadMask);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetStencilReadMask(stencilReadMask);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "stencilReadMask"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetStencilReadMask(stencilReadMask);")
     public static native void internal_native_SetStencilReadMask(int this_addr, int stencilReadMask);
 
@@ -136,10 +100,6 @@ jsObj.SetStencilReadMask(stencilReadMask);
         internal_native_SetStencilWriteMask(native_address, stencilWriteMask);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetStencilWriteMask(stencilWriteMask);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "stencilWriteMask"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetStencilWriteMask(stencilWriteMask);")
     public static native void internal_native_SetStencilWriteMask(int this_addr, int stencilWriteMask);
 
@@ -147,10 +107,6 @@ jsObj.SetStencilWriteMask(stencilWriteMask);
         internal_native_SetDepthBias(native_address, depthBias);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-jsObj.SetDepthBias(depthBias);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "depthBias"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);jsObj.SetDepthBias(depthBias);")
     public static native void internal_native_SetDepthBias(int this_addr, int depthBias);
 
@@ -164,12 +120,6 @@ jsObj.SetDepthBias(depthBias);
         return WGPUStencilFaceState_TEMP_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-var returnedJSObj = jsObj.GetStencilFront();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);var returnedJSObj = jsObj.GetStencilFront();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetStencilFront_addr(int this_addr);
 
@@ -183,12 +133,6 @@ return jWebGPU.getPointer(returnedJSObj);
         return WGPUStencilFaceState_TEMP_GEN_1;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);
-var returnedJSObj = jsObj.GetStencilBack();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDepthStencilState);var returnedJSObj = jsObj.GetStencilBack();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetStencilBack_addr(int this_addr);
 
@@ -202,11 +146,6 @@ return jWebGPU.getPointer(returnedJSObj);
         return WGPUDepthStencilState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUDepthStencilState.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUDepthStencilState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

@@ -39,33 +39,18 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureAspect_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureAspect_Undefined;")
     private static native int WGPUTextureAspect_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureAspect_All;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureAspect_All;")
     private static native int WGPUTextureAspect_All_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureAspect_StencilOnly;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureAspect_StencilOnly;")
     private static native int WGPUTextureAspect_StencilOnly_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureAspect_DepthOnly;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureAspect_DepthOnly;")
     private static native int WGPUTextureAspect_DepthOnly_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUTextureAspect_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUTextureAspect_Force32;")
     private static native int WGPUTextureAspect_Force32_NATIVE();
 }

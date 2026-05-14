@@ -19,9 +19,6 @@ public class WGPURenderPassDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderPassDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,120 +39,72 @@ return (jlong)new JGPU::WGPURenderPassDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void reset() {
         internal_native_Reset(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->Reset();
-*/
     public static native void internal_native_Reset(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setColorAttachments(WGPUVectorRenderPassColorAttachment colorAttachments) {
         internal_native_SetColorAttachments__0(native_address, colorAttachments.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPUVectorRenderPassColorAttachment* )colorAttachments_addr);
-*/
     public static native void internal_native_SetColorAttachments__0(long this_addr, long colorAttachments_addr);
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01) {
         internal_native_SetColorAttachments__1(native_address, colorAttachment01.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr);
-*/
     public static native void internal_native_SetColorAttachments__1(long this_addr, long colorAttachment01_addr);
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02) {
         internal_native_SetColorAttachments__2(native_address, colorAttachment01.native_address, colorAttachment02.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment02_addr);
-*/
     public static native void internal_native_SetColorAttachments__2(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr);
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03) {
         internal_native_SetColorAttachments__3(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment02_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment03_addr);
-*/
     public static native void internal_native_SetColorAttachments__3(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr);
 
     public void setColorAttachments(WGPURenderPassColorAttachment colorAttachment01, WGPURenderPassColorAttachment colorAttachment02, WGPURenderPassColorAttachment colorAttachment03, WGPURenderPassColorAttachment colorAttachment04) {
         internal_native_SetColorAttachments__4(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address, colorAttachment04.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment02_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment03_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment04_addr);
-*/
     public static native void internal_native_SetColorAttachments__4(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr, long colorAttachment04_addr);
 
     public void setDepthStencilAttachment(WGPURenderPassDepthStencilAttachment attachment) {
         internal_native_SetDepthStencilAttachment(native_address, attachment.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetDepthStencilAttachment((JGPU::WGPURenderPassDepthStencilAttachment* )attachment_addr);
-*/
     public static native void internal_native_SetDepthStencilAttachment(long this_addr, long attachment_addr);
 
     public void setOcclusionQuerySet(WGPUQuerySet occlusionQuerySet) {
         internal_native_SetOcclusionQuerySet(native_address, occlusionQuerySet.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetOcclusionQuerySet((JGPU::WGPUQuerySet* )occlusionQuerySet_addr);
-*/
     public static native void internal_native_SetOcclusionQuerySet(long this_addr, long occlusionQuerySet_addr);
 
     public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrites_addr);
-*/
     public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
 
     public static WGPURenderPassDescriptor obtain() {
@@ -168,8 +117,5 @@ nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrite
         return WGPURenderPassDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

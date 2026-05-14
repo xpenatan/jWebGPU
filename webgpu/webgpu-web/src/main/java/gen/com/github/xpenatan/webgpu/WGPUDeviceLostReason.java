@@ -34,27 +34,15 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUDeviceLostReason_Unknown;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUDeviceLostReason_Unknown;")
     private static native int WGPUDeviceLostReason_Unknown_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUDeviceLostReason_Destroyed;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUDeviceLostReason_Destroyed;")
     private static native int WGPUDeviceLostReason_Destroyed_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUDeviceLostReason_FailedCreation;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUDeviceLostReason_FailedCreation;")
     private static native int WGPUDeviceLostReason_FailedCreation_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUDeviceLostReason_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUDeviceLostReason_Force32;")
     private static native int WGPUDeviceLostReason_Force32_NATIVE();
 }

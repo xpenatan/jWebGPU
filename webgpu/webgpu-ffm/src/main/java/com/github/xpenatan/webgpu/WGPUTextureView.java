@@ -26,9 +26,6 @@ public class WGPUTextureView extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUTextureView();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUTextureView();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -87,10 +76,6 @@ nativeObject->SetLabel(label);
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -103,10 +88,6 @@ nativeObject->Release();
         return internal_native_IsValid(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUTextureView* nativeObject = (JGPU::WGPUTextureView*)this_addr;
-return nativeObject->IsValid();
-*/
     public static boolean internal_native_IsValid(long this_addr) {
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
@@ -125,9 +106,6 @@ return nativeObject->IsValid();
         return WGPUTextureView_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUTextureView::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

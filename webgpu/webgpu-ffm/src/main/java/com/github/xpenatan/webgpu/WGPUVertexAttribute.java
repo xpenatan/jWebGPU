@@ -26,9 +26,6 @@ public class WGPUVertexAttribute extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUVertexAttribute();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUVertexAttribute();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-nativeObject->SetFormat((::WGPUVertexFormat)format);
-*/
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
@@ -87,10 +76,6 @@ nativeObject->SetFormat((::WGPUVertexFormat)format);
         internal_native_SetOffset(native_address, offset);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-nativeObject->SetOffset((int)offset);
-*/
     public static void internal_native_SetOffset(long this_addr, int offset) {
         try {
             FFMHandles.internal_native_SetOffset__JI.invokeExact(this_addr, offset);
@@ -103,10 +88,6 @@ nativeObject->SetOffset((int)offset);
         internal_native_SetShaderLocation(native_address, shaderLocation);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexAttribute* nativeObject = (JGPU::WGPUVertexAttribute*)this_addr;
-nativeObject->SetShaderLocation((int)shaderLocation);
-*/
     public static void internal_native_SetShaderLocation(long this_addr, int shaderLocation) {
         try {
             FFMHandles.internal_native_SetShaderLocation__JI.invokeExact(this_addr, shaderLocation);
@@ -125,9 +106,6 @@ nativeObject->SetShaderLocation((int)shaderLocation);
         return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUVertexAttribute::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

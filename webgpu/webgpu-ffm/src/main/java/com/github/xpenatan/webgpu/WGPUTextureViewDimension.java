@@ -49,9 +49,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_Undefined;
-*/
     private static int WGPUTextureViewDimension_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_Undefined_NATIVE__.invokeExact();
@@ -60,9 +57,6 @@ return (int64_t)WGPUTextureViewDimension_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_1D;
-*/
     private static int WGPUTextureViewDimension_1D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_1D_NATIVE__.invokeExact();
@@ -71,9 +65,6 @@ return (int64_t)WGPUTextureViewDimension_1D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_2D;
-*/
     private static int WGPUTextureViewDimension_2D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_2D_NATIVE__.invokeExact();
@@ -82,9 +73,6 @@ return (int64_t)WGPUTextureViewDimension_2D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_2DArray;
-*/
     private static int WGPUTextureViewDimension_2DArray_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_2DArray_NATIVE__.invokeExact();
@@ -93,9 +81,6 @@ return (int64_t)WGPUTextureViewDimension_2DArray;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_Cube;
-*/
     private static int WGPUTextureViewDimension_Cube_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_Cube_NATIVE__.invokeExact();
@@ -104,9 +89,6 @@ return (int64_t)WGPUTextureViewDimension_Cube;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_CubeArray;
-*/
     private static int WGPUTextureViewDimension_CubeArray_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_CubeArray_NATIVE__.invokeExact();
@@ -115,9 +97,6 @@ return (int64_t)WGPUTextureViewDimension_CubeArray;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_3D;
-*/
     private static int WGPUTextureViewDimension_3D_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_3D_NATIVE__.invokeExact();
@@ -126,9 +105,6 @@ return (int64_t)WGPUTextureViewDimension_3D;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureViewDimension_Force32;
-*/
     private static int WGPUTextureViewDimension_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureViewDimension_Force32_NATIVE__.invokeExact();

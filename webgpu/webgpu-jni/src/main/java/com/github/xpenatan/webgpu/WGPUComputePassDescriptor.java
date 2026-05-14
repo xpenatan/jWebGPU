@@ -19,9 +19,6 @@ public class WGPUComputePassDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUComputePassDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUComputePassDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePassDescriptor* nativeObject = (JGPU::WGPUComputePassDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePassDescriptor* nativeObject = (JGPU::WGPUComputePassDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePassDescriptor* nativeObject = (JGPU::WGPUComputePassDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputePassDescriptor* nativeObject = (JGPU::WGPUComputePassDescriptor*)this_addr;
-nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrites_addr);
-*/
     public static native void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr);
 
     public static WGPUComputePassDescriptor obtain() {
@@ -88,8 +69,5 @@ nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrite
         return WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUComputePassDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

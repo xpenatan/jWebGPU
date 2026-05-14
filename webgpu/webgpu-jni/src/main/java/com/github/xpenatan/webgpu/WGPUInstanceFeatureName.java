@@ -34,23 +34,11 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
         return CUSTOM;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUInstanceFeatureName_TimedWaitAny;
-*/
     private static native int WGPUInstanceFeatureName_TimedWaitAny_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUInstanceFeatureName_ShaderSourceSPIRV;
-*/
     private static native int WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUInstanceFeatureName_MultipleDevicesPerAdapter;
-*/
     private static native int WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE();
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPUInstanceFeatureName_Force32;
-*/
     private static native int WGPUInstanceFeatureName_Force32_NATIVE();
 }

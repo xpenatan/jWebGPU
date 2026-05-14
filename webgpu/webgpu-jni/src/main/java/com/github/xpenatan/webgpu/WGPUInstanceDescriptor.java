@@ -19,9 +19,6 @@ public class WGPUInstanceDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUInstanceDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,40 +39,24 @@ return (jlong)new JGPU::WGPUInstanceDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
         internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetRequiredFeatures((JGPU::WGPUVectorInstanceFeatureName* )requiredFeatures_addr);
-*/
     public static native void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr);
 
     public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
         internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceDescriptor* nativeObject = (JGPU::WGPUInstanceDescriptor*)this_addr;
-nativeObject->SetRequiredLimits((JGPU::WGPUVectorInstanceLimits* )requiredLimits_addr);
-*/
     public static native void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr);
 
     public static WGPUInstanceDescriptor obtain() {
@@ -88,8 +69,5 @@ nativeObject->SetRequiredLimits((JGPU::WGPUVectorInstanceLimits* )requiredLimits
         return WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUInstanceDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

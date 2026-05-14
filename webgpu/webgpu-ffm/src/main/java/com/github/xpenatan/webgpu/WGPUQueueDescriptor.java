@@ -37,10 +37,6 @@ public class WGPUQueueDescriptor extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUQueueDescriptor* nativeObject = (JGPU::WGPUQueueDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUQueueDescriptor* nativeObject = (JGPU::WGPUQueueDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -69,10 +61,6 @@ nativeObject->SetLabel(label);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUQueueDescriptor* nativeObject = (JGPU::WGPUQueueDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);

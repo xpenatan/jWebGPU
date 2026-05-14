@@ -32,10 +32,6 @@ public class STBImage extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUByteBuffer getPixels() {
@@ -48,40 +44,23 @@ delete nativeObject;
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-WGPUByteBuffer* obj = nativeObject->GetPixels();
-return (jlong)obj;
-*/
     public static native long internal_native_GetPixels_addr(long this_addr);
 
     public int getWidth() {
         return internal_native_GetWidth(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetWidth();
-*/
     public static native int internal_native_GetWidth(long this_addr);
 
     public int getHeight() {
         return internal_native_GetHeight(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetHeight();
-*/
     public static native int internal_native_GetHeight(long this_addr);
 
     public int getFormat() {
         return internal_native_GetFormat(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetFormat();
-*/
     public static native int internal_native_GetFormat(long this_addr);
 }

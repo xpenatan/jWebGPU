@@ -34,27 +34,15 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapAsyncStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapAsyncStatus_Success;")
     private static native int WGPUMapAsyncStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapAsyncStatus_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapAsyncStatus_Error;")
     private static native int WGPUMapAsyncStatus_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapAsyncStatus_Aborted;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapAsyncStatus_Aborted;")
     private static native int WGPUMapAsyncStatus_Aborted_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapAsyncStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapAsyncStatus_Force32;")
     private static native int WGPUMapAsyncStatus_Force32_NATIVE();
 }

@@ -41,9 +41,6 @@ public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapMode_None;
-*/
     private static int WGPUMapMode_None_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapMode_None_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUMapMode_None;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapMode_Read;
-*/
     private static int WGPUMapMode_Read_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapMode_Read_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUMapMode_Read;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUMapMode_Write;
-*/
     private static int WGPUMapMode_Write_NATIVE() {
         try {
             return (int) FFMHandles.WGPUMapMode_Write_NATIVE__.invokeExact();

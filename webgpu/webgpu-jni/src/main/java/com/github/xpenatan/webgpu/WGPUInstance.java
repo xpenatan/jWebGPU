@@ -30,40 +30,24 @@ public class WGPUInstance extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-return nativeObject->IsValid();
-*/
     public static native boolean internal_native_IsValid(long this_addr);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->Release();
-*/
     public static native void internal_native_Release(long this_addr);
 
     public void requestAdapter(WGPURequestAdapterOptions options, WGPUCallbackMode mode, WGPURequestAdapterCallback callback) {
         internal_native_RequestAdapter(native_address, options.native_address, mode.getValue(), callback.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (::WGPUCallbackMode)mode, (JGPU::WGPURequestAdapterCallback* )callback_addr);
-*/
     public static native void internal_native_RequestAdapter(long this_addr, long options_addr, int mode, long callback_addr);
 
     public WGPUSurface createWebSurface(String canvas) {
@@ -75,11 +59,6 @@ nativeObject->RequestAdapter((JGPU::WGPURequestAdapterOptions* )options_addr, (:
         return WGPUSurface_NEW;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateWebSurface(canvas);
-return (jlong)obj;
-*/
     public static native long internal_native_CreateWebSurface_addr(long this_addr, String canvas);
 
     public WGPUSurface createWindowsSurface(NativeObject hwnd) {
@@ -91,11 +70,6 @@ return (jlong)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateWindowsSurface((void*)hwnd_addr);
-return (jlong)obj;
-*/
     public static native long internal_native_CreateWindowsSurface_addr(long this_addr, long hwnd_addr);
 
     public WGPUSurface createLinuxSurface(boolean isWayland, NativeObject windowOrSurface, NativeObject display) {
@@ -107,11 +81,6 @@ return (jlong)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateLinuxSurface(isWayland, (void*)windowOrSurface_addr, (void*)display_addr);
-return (jlong)obj;
-*/
     public static native long internal_native_CreateLinuxSurface_addr(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr);
 
     public WGPUSurface createMacSurface(NativeObject metalLayer) {
@@ -123,11 +92,6 @@ return (jlong)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateMacSurface((void*)metalLayer_addr);
-return (jlong)obj;
-*/
     public static native long internal_native_CreateMacSurface_addr(long this_addr, long metalLayer_addr);
 
     public WGPUSurface createAndroidSurface(WGPUAndroidWindow surface) {
@@ -139,21 +103,12 @@ return (jlong)obj;
         return WGPUSurface_NEW;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-JGPU::WGPUSurface* obj = nativeObject->CreateAndroidSurface((WGPUAndroidWindow* )surface_addr);
-return (jlong)obj;
-*/
     public static native long internal_native_CreateAndroidSurface_addr(long this_addr, long surface_addr);
 
     public void processEvents() {
         internal_native_ProcessEvents(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-nativeObject->ProcessEvents();
-*/
     public static native void internal_native_ProcessEvents(long this_addr);
 
     public WGPUWaitStatus waitAny(WGPUVectorFutureWaitInfo futureVector, int timeoutNS) {
@@ -167,9 +122,5 @@ nativeObject->ProcessEvents();
         return WGPUWaitStatus.CUSTOM.setValue(value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstance* nativeObject = (JGPU::WGPUInstance*)this_addr;
-return (int)nativeObject->WaitAny((JGPU::WGPUVectorFutureWaitInfo* )futureVector_addr, (int)timeoutNS);
-*/
     public static native int internal_native_WaitAny(long this_addr, long futureVector_addr, int timeoutNS);
 }

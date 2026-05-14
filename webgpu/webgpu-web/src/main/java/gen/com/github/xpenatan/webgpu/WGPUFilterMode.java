@@ -34,27 +34,15 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFilterMode_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFilterMode_Undefined;")
     private static native int WGPUFilterMode_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFilterMode_Nearest;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFilterMode_Nearest;")
     private static native int WGPUFilterMode_Nearest_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFilterMode_Linear;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFilterMode_Linear;")
     private static native int WGPUFilterMode_Linear_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUFilterMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUFilterMode_Force32;")
     private static native int WGPUFilterMode_Force32_NATIVE();
 }

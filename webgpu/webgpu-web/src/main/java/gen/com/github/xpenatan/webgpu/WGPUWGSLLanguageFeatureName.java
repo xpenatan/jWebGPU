@@ -39,33 +39,18 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures;")
     private static native int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct;")
     private static native int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters;")
     private static native int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWGSLLanguageFeatureName_PointerCompositeAccess;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_PointerCompositeAccess;")
     private static native int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWGSLLanguageFeatureName_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_Force32;")
     private static native int WGPUWGSLLanguageFeatureName_Force32_NATIVE();
 }

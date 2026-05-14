@@ -26,11 +26,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = new jWebGPU.WGPUTexelCopyBufferLayout();
-      return jWebGPU.getPointer(jsObj);
-    */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUTexelCopyBufferLayout();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -38,11 +33,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);
-      jWebGPU.destroy(jsObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -50,11 +40,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_SetOffset(native_address, offset);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);
-      jsObj.SetOffset(offset);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "offset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);jsObj.SetOffset(offset);")
     public static native void internal_native_SetOffset(int this_addr, int offset);
 
@@ -62,11 +47,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_SetBytesPerRow(native_address, bytesPerRow);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);
-      jsObj.SetBytesPerRow(bytesPerRow);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "bytesPerRow"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);jsObj.SetBytesPerRow(bytesPerRow);")
     public static native void internal_native_SetBytesPerRow(int this_addr, int bytesPerRow);
 
@@ -74,11 +54,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         internal_native_SetRowsPerImage(native_address, rowsPerImage);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);
-      jsObj.SetRowsPerImage(rowsPerImage);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "rowsPerImage"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyBufferLayout);jsObj.SetRowsPerImage(rowsPerImage);")
     public static native void internal_native_SetRowsPerImage(int this_addr, int rowsPerImage);
 
@@ -92,12 +67,6 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
         return WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var returnedJSObj = jWebGPU.WGPUTexelCopyBufferLayout.prototype.Obtain();
-      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
-      return jWebGPU.getPointer(returnedJSObj);
-    */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexelCopyBufferLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

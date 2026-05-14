@@ -41,9 +41,6 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPULoadOp_Undefined;
-*/
     private static int WGPULoadOp_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPULoadOp_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPULoadOp_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPULoadOp_Load;
-*/
     private static int WGPULoadOp_Load_NATIVE() {
         try {
             return (int) FFMHandles.WGPULoadOp_Load_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPULoadOp_Load;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPULoadOp_Clear;
-*/
     private static int WGPULoadOp_Clear_NATIVE() {
         try {
             return (int) FFMHandles.WGPULoadOp_Clear_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPULoadOp_Clear;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPULoadOp_Force32;
-*/
     private static int WGPULoadOp_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPULoadOp_Force32_NATIVE__.invokeExact();

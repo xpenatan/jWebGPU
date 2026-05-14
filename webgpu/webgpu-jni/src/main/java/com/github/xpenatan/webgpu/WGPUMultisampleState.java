@@ -17,9 +17,6 @@ public class WGPUMultisampleState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUMultisampleState();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -40,49 +37,29 @@ return (jlong)new JGPU::WGPUMultisampleState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setCount(int count) {
         internal_native_SetCount(native_address, count);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetCount((int)count);
-*/
     public static native void internal_native_SetCount(long this_addr, int count);
 
     public void setMask(int mask) {
         internal_native_SetMask(native_address, mask);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetMask((int)mask);
-*/
     public static native void internal_native_SetMask(long this_addr, int mask);
 
     public void setAlphaToCoverageEnabled(boolean alphaToCoverageEnabled) {
         internal_native_SetAlphaToCoverageEnabled(native_address, alphaToCoverageEnabled);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUMultisampleState* nativeObject = (JGPU::WGPUMultisampleState*)this_addr;
-nativeObject->SetAlphaToCoverageEnabled(alphaToCoverageEnabled);
-*/
     public static native void internal_native_SetAlphaToCoverageEnabled(long this_addr, boolean alphaToCoverageEnabled);
 }

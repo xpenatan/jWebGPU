@@ -60,9 +60,6 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Undefined;
-*/
     private static int WGPUBlendFactor_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Undefined_NATIVE__.invokeExact();
@@ -71,9 +68,6 @@ return (int64_t)WGPUBlendFactor_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Zero;
-*/
     private static int WGPUBlendFactor_Zero_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Zero_NATIVE__.invokeExact();
@@ -82,9 +76,6 @@ return (int64_t)WGPUBlendFactor_Zero;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_One;
-*/
     private static int WGPUBlendFactor_One_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_One_NATIVE__.invokeExact();
@@ -93,9 +84,6 @@ return (int64_t)WGPUBlendFactor_One;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Src;
-*/
     private static int WGPUBlendFactor_Src_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Src_NATIVE__.invokeExact();
@@ -104,9 +92,6 @@ return (int64_t)WGPUBlendFactor_Src;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusSrc;
-*/
     private static int WGPUBlendFactor_OneMinusSrc_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc_NATIVE__.invokeExact();
@@ -115,9 +100,6 @@ return (int64_t)WGPUBlendFactor_OneMinusSrc;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_SrcAlpha;
-*/
     private static int WGPUBlendFactor_SrcAlpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_SrcAlpha_NATIVE__.invokeExact();
@@ -126,9 +108,6 @@ return (int64_t)WGPUBlendFactor_SrcAlpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusSrcAlpha;
-*/
     private static int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrcAlpha_NATIVE__.invokeExact();
@@ -137,9 +116,6 @@ return (int64_t)WGPUBlendFactor_OneMinusSrcAlpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Dst;
-*/
     private static int WGPUBlendFactor_Dst_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Dst_NATIVE__.invokeExact();
@@ -148,9 +124,6 @@ return (int64_t)WGPUBlendFactor_Dst;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusDst;
-*/
     private static int WGPUBlendFactor_OneMinusDst_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusDst_NATIVE__.invokeExact();
@@ -159,9 +132,6 @@ return (int64_t)WGPUBlendFactor_OneMinusDst;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_DstAlpha;
-*/
     private static int WGPUBlendFactor_DstAlpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_DstAlpha_NATIVE__.invokeExact();
@@ -170,9 +140,6 @@ return (int64_t)WGPUBlendFactor_DstAlpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusDstAlpha;
-*/
     private static int WGPUBlendFactor_OneMinusDstAlpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusDstAlpha_NATIVE__.invokeExact();
@@ -181,9 +148,6 @@ return (int64_t)WGPUBlendFactor_OneMinusDstAlpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_SrcAlphaSaturated;
-*/
     private static int WGPUBlendFactor_SrcAlphaSaturated_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_SrcAlphaSaturated_NATIVE__.invokeExact();
@@ -192,9 +156,6 @@ return (int64_t)WGPUBlendFactor_SrcAlphaSaturated;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Constant;
-*/
     private static int WGPUBlendFactor_Constant_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Constant_NATIVE__.invokeExact();
@@ -203,9 +164,6 @@ return (int64_t)WGPUBlendFactor_Constant;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusConstant;
-*/
     private static int WGPUBlendFactor_OneMinusConstant_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusConstant_NATIVE__.invokeExact();
@@ -214,9 +172,6 @@ return (int64_t)WGPUBlendFactor_OneMinusConstant;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Src1;
-*/
     private static int WGPUBlendFactor_Src1_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Src1_NATIVE__.invokeExact();
@@ -225,9 +180,6 @@ return (int64_t)WGPUBlendFactor_Src1;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusSrc1;
-*/
     private static int WGPUBlendFactor_OneMinusSrc1_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc1_NATIVE__.invokeExact();
@@ -236,9 +188,6 @@ return (int64_t)WGPUBlendFactor_OneMinusSrc1;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Src1Alpha;
-*/
     private static int WGPUBlendFactor_Src1Alpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Src1Alpha_NATIVE__.invokeExact();
@@ -247,9 +196,6 @@ return (int64_t)WGPUBlendFactor_Src1Alpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_OneMinusSrc1Alpha;
-*/
     private static int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE__.invokeExact();
@@ -258,9 +204,6 @@ return (int64_t)WGPUBlendFactor_OneMinusSrc1Alpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendFactor_Force32;
-*/
     private static int WGPUBlendFactor_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendFactor_Force32_NATIVE__.invokeExact();

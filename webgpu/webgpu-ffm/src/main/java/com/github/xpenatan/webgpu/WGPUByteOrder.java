@@ -41,9 +41,6 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)BigEndian;
-*/
     private static int BigEndian_NATIVE() {
         try {
             return (int) FFMHandles.BigEndian_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)BigEndian;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)LittleEndian;
-*/
     private static int LittleEndian_NATIVE() {
         try {
             return (int) FFMHandles.LittleEndian_NATIVE__.invokeExact();

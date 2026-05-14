@@ -19,9 +19,6 @@ public class WGPUInstanceLimits extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUInstanceLimits();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,30 +39,18 @@ return (jlong)new JGPU::WGPUInstanceLimits();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceLimits* nativeObject = (JGPU::WGPUInstanceLimits*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
         internal_native_SetTimedWaitAnyMaxCount(native_address, timedWaitAnyMaxCount);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceLimits* nativeObject = (JGPU::WGPUInstanceLimits*)this_addr;
-nativeObject->SetTimedWaitAnyMaxCount((int)timedWaitAnyMaxCount);
-*/
     public static native void internal_native_SetTimedWaitAnyMaxCount(long this_addr, int timedWaitAnyMaxCount);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUInstanceLimits* nativeObject = (JGPU::WGPUInstanceLimits*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public static WGPUInstanceLimits obtain() {
@@ -78,8 +63,5 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         return WGPUInstanceLimits_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUInstanceLimits::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

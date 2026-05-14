@@ -34,27 +34,15 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStoreOp_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStoreOp_Undefined;")
     private static native int WGPUStoreOp_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStoreOp_Store;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStoreOp_Store;")
     private static native int WGPUStoreOp_Store_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStoreOp_Discard;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStoreOp_Discard;")
     private static native int WGPUStoreOp_Discard_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStoreOp_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStoreOp_Force32;")
     private static native int WGPUStoreOp_Force32_NATIVE();
 }

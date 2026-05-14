@@ -39,10 +39,6 @@ public class WGPUPassTimestampWrites extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -55,10 +51,6 @@ delete nativeObject;
         internal_native_SetQuerySet(native_address, value.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
-nativeObject->SetQuerySet((JGPU::WGPUQuerySet* )value_addr);
-*/
     public static void internal_native_SetQuerySet(long this_addr, long value_addr) {
         try {
             FFMHandles.internal_native_SetQuerySet__JJ.invokeExact(this_addr, value_addr);
@@ -71,10 +63,6 @@ nativeObject->SetQuerySet((JGPU::WGPUQuerySet* )value_addr);
         internal_native_SetBeginningOfPassWriteIndex(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
-nativeObject->SetBeginningOfPassWriteIndex((int)value);
-*/
     public static void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetBeginningOfPassWriteIndex__JI.invokeExact(this_addr, value);
@@ -87,10 +75,6 @@ nativeObject->SetBeginningOfPassWriteIndex((int)value);
         internal_native_SetEndOfPassWriteIndex(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPassTimestampWrites* nativeObject = (JGPU::WGPUPassTimestampWrites*)this_addr;
-nativeObject->SetEndOfPassWriteIndex((int)value);
-*/
     public static void internal_native_SetEndOfPassWriteIndex(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetEndOfPassWriteIndex__JI.invokeExact(this_addr, value);
@@ -109,9 +93,6 @@ nativeObject->SetEndOfPassWriteIndex((int)value);
         return WGPUPassTimestampWrites_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUPassTimestampWrites::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

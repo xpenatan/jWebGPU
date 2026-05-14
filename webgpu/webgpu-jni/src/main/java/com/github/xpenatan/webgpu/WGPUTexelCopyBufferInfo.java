@@ -23,9 +23,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUTexelCopyBufferInfo();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -46,10 +43,6 @@ return (jlong)new JGPU::WGPUTexelCopyBufferInfo();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public WGPUTexelCopyBufferLayout getLayout() {
@@ -62,11 +55,6 @@ delete nativeObject;
         return WGPUTexelCopyBufferLayout_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-static JGPU::WGPUTexelCopyBufferLayout copy_addr;
-copy_addr = nativeObject->GetLayout();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetLayout_addr(long this_addr);
 
     public WGPUBuffer getBuffer() {
@@ -79,21 +67,12 @@ return (jlong)&copy_addr;*/
         return WGPUBuffer_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-static JGPU::WGPUBuffer copy_addr;
-copy_addr = nativeObject->GetBuffer();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetBuffer_addr(long this_addr);
 
     public void setBuffer(WGPUBuffer buffer) {
         internal_native_SetBuffer(native_address, buffer.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTexelCopyBufferInfo* nativeObject = (JGPU::WGPUTexelCopyBufferInfo*)this_addr;
-nativeObject->SetBuffer((JGPU::WGPUBuffer* )buffer_addr);
-*/
     public static native void internal_native_SetBuffer(long this_addr, long buffer_addr);
 
     public static WGPUTexelCopyBufferInfo obtain() {
@@ -106,8 +85,5 @@ nativeObject->SetBuffer((JGPU::WGPUBuffer* )buffer_addr);
         return WGPUTexelCopyBufferInfo_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTexelCopyBufferInfo::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

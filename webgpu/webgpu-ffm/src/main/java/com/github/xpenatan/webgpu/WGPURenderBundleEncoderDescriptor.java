@@ -26,9 +26,6 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURenderBundleEncoderDescriptor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPURenderBundleEncoderDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -87,10 +76,6 @@ nativeObject->SetLabel(label);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -103,10 +88,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetColorFormats(native_address, colorFormats.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetColorFormats((JGPU::WGPUVectorTextureFormat* )colorFormats_addr);
-*/
     public static void internal_native_SetColorFormats(long this_addr, long colorFormats_addr) {
         try {
             FFMHandles.internal_native_SetColorFormats__JJ.invokeExact(this_addr, colorFormats_addr);
@@ -119,10 +100,6 @@ nativeObject->SetColorFormats((JGPU::WGPUVectorTextureFormat* )colorFormats_addr
         internal_native_SetDepthStencilFormat(native_address, depthStencilFormat.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetDepthStencilFormat((::WGPUTextureFormat)depthStencilFormat);
-*/
     public static void internal_native_SetDepthStencilFormat(long this_addr, int depthStencilFormat) {
         try {
             FFMHandles.internal_native_SetDepthStencilFormat__JI.invokeExact(this_addr, depthStencilFormat);
@@ -135,10 +112,6 @@ nativeObject->SetDepthStencilFormat((::WGPUTextureFormat)depthStencilFormat);
         internal_native_SetSampleCount(native_address, sampleCount);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetSampleCount((int)sampleCount);
-*/
     public static void internal_native_SetSampleCount(long this_addr, int sampleCount) {
         try {
             FFMHandles.internal_native_SetSampleCount__JI.invokeExact(this_addr, sampleCount);
@@ -151,10 +124,6 @@ nativeObject->SetSampleCount((int)sampleCount);
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetDepthReadOnly((int)depthReadOnly);
-*/
     public static void internal_native_SetDepthReadOnly(long this_addr, int depthReadOnly) {
         try {
             FFMHandles.internal_native_SetDepthReadOnly__JI.invokeExact(this_addr, depthReadOnly);
@@ -167,10 +136,6 @@ nativeObject->SetDepthReadOnly((int)depthReadOnly);
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetStencilReadOnly((int)stencilReadOnly);
-*/
     public static void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly) {
         try {
             FFMHandles.internal_native_SetStencilReadOnly__JI.invokeExact(this_addr, stencilReadOnly);
@@ -189,9 +154,6 @@ nativeObject->SetStencilReadOnly((int)stencilReadOnly);
         return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPURenderBundleEncoderDescriptor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

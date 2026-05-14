@@ -26,9 +26,6 @@ public class WGPUBufferBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUBufferBindingLayout();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUBufferBindingLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetType(native_address, type.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetType((::WGPUBufferBindingType)type);
-*/
     public static void internal_native_SetType(long this_addr, int type) {
         try {
             FFMHandles.internal_native_SetType__JI.invokeExact(this_addr, type);
@@ -103,10 +88,6 @@ nativeObject->SetType((::WGPUBufferBindingType)type);
         internal_native_SetHasDynamicOffset(native_address, hasDynamicOffset);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetHasDynamicOffset((int)hasDynamicOffset);
-*/
     public static void internal_native_SetHasDynamicOffset(long this_addr, int hasDynamicOffset) {
         try {
             FFMHandles.internal_native_SetHasDynamicOffset__JI.invokeExact(this_addr, hasDynamicOffset);
@@ -119,10 +100,6 @@ nativeObject->SetHasDynamicOffset((int)hasDynamicOffset);
         internal_native_SetMinBindingSize(native_address, minBindingSize);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetMinBindingSize((int)minBindingSize);
-*/
     public static void internal_native_SetMinBindingSize(long this_addr, int minBindingSize) {
         try {
             FFMHandles.internal_native_SetMinBindingSize__JI.invokeExact(this_addr, minBindingSize);
@@ -141,9 +118,6 @@ nativeObject->SetMinBindingSize((int)minBindingSize);
         return WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUBufferBindingLayout::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

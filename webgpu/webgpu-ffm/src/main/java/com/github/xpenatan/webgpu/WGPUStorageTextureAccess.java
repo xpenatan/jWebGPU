@@ -47,9 +47,6 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStorageTextureAccess_BindingNotUsed;
-*/
     private static int WGPUStorageTextureAccess_BindingNotUsed_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStorageTextureAccess_BindingNotUsed_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUStorageTextureAccess_BindingNotUsed;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStorageTextureAccess_Undefined;
-*/
     private static int WGPUStorageTextureAccess_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStorageTextureAccess_Undefined_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUStorageTextureAccess_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStorageTextureAccess_WriteOnly;
-*/
     private static int WGPUStorageTextureAccess_WriteOnly_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStorageTextureAccess_WriteOnly_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUStorageTextureAccess_WriteOnly;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStorageTextureAccess_ReadOnly;
-*/
     private static int WGPUStorageTextureAccess_ReadOnly_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStorageTextureAccess_ReadOnly_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUStorageTextureAccess_ReadOnly;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStorageTextureAccess_ReadWrite;
-*/
     private static int WGPUStorageTextureAccess_ReadWrite_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStorageTextureAccess_ReadWrite_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUStorageTextureAccess_ReadWrite;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStorageTextureAccess_Force32;
-*/
     private static int WGPUStorageTextureAccess_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStorageTextureAccess_Force32_NATIVE__.invokeExact();

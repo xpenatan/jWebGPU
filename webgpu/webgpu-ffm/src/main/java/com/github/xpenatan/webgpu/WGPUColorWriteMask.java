@@ -47,9 +47,6 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUColorWriteMask_None;
-*/
     private static int WGPUColorWriteMask_None_NATIVE() {
         try {
             return (int) FFMHandles.WGPUColorWriteMask_None_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUColorWriteMask_None;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUColorWriteMask_Red;
-*/
     private static int WGPUColorWriteMask_Red_NATIVE() {
         try {
             return (int) FFMHandles.WGPUColorWriteMask_Red_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUColorWriteMask_Red;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUColorWriteMask_Green;
-*/
     private static int WGPUColorWriteMask_Green_NATIVE() {
         try {
             return (int) FFMHandles.WGPUColorWriteMask_Green_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUColorWriteMask_Green;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUColorWriteMask_Blue;
-*/
     private static int WGPUColorWriteMask_Blue_NATIVE() {
         try {
             return (int) FFMHandles.WGPUColorWriteMask_Blue_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUColorWriteMask_Blue;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUColorWriteMask_Alpha;
-*/
     private static int WGPUColorWriteMask_Alpha_NATIVE() {
         try {
             return (int) FFMHandles.WGPUColorWriteMask_Alpha_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUColorWriteMask_Alpha;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUColorWriteMask_All;
-*/
     private static int WGPUColorWriteMask_All_NATIVE() {
         try {
             return (int) FFMHandles.WGPUColorWriteMask_All_NATIVE__.invokeExact();

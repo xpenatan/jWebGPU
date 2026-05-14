@@ -17,9 +17,6 @@ public class WGPURenderBundle extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderBundle();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -40,39 +37,23 @@ return (jlong)new JGPU::WGPURenderBundle();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundle* nativeObject = (JGPU::WGPURenderBundle*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundle* nativeObject = (JGPU::WGPURenderBundle*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundle* nativeObject = (JGPU::WGPURenderBundle*)this_addr;
-nativeObject->Release();
-*/
     public static native void internal_native_Release(long this_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundle* nativeObject = (JGPU::WGPURenderBundle*)this_addr;
-return nativeObject->IsValid();
-*/
     public static native boolean internal_native_IsValid(long this_addr);
 }

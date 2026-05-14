@@ -34,21 +34,12 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUQueryType_Occlusion;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUQueryType_Occlusion;")
     private static native int WGPUQueryType_Occlusion_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUQueryType_Timestamp;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUQueryType_Timestamp;")
     private static native int WGPUQueryType_Timestamp_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUQueryType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUQueryType_Force32;")
     private static native int WGPUQueryType_Force32_NATIVE();
 }

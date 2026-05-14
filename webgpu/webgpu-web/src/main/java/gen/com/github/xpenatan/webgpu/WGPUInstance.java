@@ -30,10 +30,6 @@ public class WGPUInstance extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -41,11 +37,6 @@ jWebGPU.destroy(jsObj);
         return internal_native_IsValid(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.IsValid();
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.IsValid();return returnedJSObj;")
     public static native boolean internal_native_IsValid(int this_addr);
 
@@ -53,10 +44,6 @@ return returnedJSObj;
         internal_native_Release(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-jsObj.Release();
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
@@ -64,10 +51,6 @@ jsObj.Release();
         internal_native_RequestAdapter(native_address, options.native_address, mode.getValue(), callback.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-jsObj.RequestAdapter(options_addr, mode, callback_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "options_addr", "mode", "callback_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);jsObj.RequestAdapter(options_addr, mode, callback_addr);")
     public static native void internal_native_RequestAdapter(int this_addr, int options_addr, int mode, int callback_addr);
 
@@ -80,12 +63,6 @@ jsObj.RequestAdapter(options_addr, mode, callback_addr);
         return WGPUSurface_NEW;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.CreateWebSurface(canvas);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "canvas"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateWebSurface(canvas);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateWebSurface_addr(int this_addr, String canvas);
 
@@ -98,12 +75,6 @@ return jWebGPU.getPointer(returnedJSObj);
         return WGPUSurface_NEW;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.CreateWindowsSurface(hwnd_addr);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "hwnd_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateWindowsSurface(hwnd_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateWindowsSurface_addr(int this_addr, int hwnd_addr);
 
@@ -116,12 +87,6 @@ return jWebGPU.getPointer(returnedJSObj);
         return WGPUSurface_NEW;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.CreateLinuxSurface(isWayland, windowOrSurface_addr, display_addr);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "isWayland", "windowOrSurface_addr", "display_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateLinuxSurface(isWayland, windowOrSurface_addr, display_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateLinuxSurface_addr(int this_addr, boolean isWayland, int windowOrSurface_addr, int display_addr);
 
@@ -134,12 +99,6 @@ return jWebGPU.getPointer(returnedJSObj);
         return WGPUSurface_NEW;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.CreateMacSurface(metalLayer_addr);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "metalLayer_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateMacSurface(metalLayer_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateMacSurface_addr(int this_addr, int metalLayer_addr);
 
@@ -152,12 +111,6 @@ return jWebGPU.getPointer(returnedJSObj);
         return WGPUSurface_NEW;
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.CreateAndroidSurface(surface_addr);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "surface_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.CreateAndroidSurface(surface_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_CreateAndroidSurface_addr(int this_addr, int surface_addr);
 
@@ -165,10 +118,6 @@ return jWebGPU.getPointer(returnedJSObj);
         internal_native_ProcessEvents(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-jsObj.ProcessEvents();
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);jsObj.ProcessEvents();")
     public static native void internal_native_ProcessEvents(int this_addr);
 
@@ -183,11 +132,6 @@ jsObj.ProcessEvents();
         return WGPUWaitStatus.CUSTOM.setValue(value);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);
-var returnedJSObj = jsObj.WaitAny(futureVector_addr, timeoutNS);
-return returnedJSObj;
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "futureVector_addr", "timeoutNS"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstance);var returnedJSObj = jsObj.WaitAny(futureVector_addr, timeoutNS);return returnedJSObj;")
     public static native int internal_native_WaitAny(int this_addr, int futureVector_addr, int timeoutNS);
 }

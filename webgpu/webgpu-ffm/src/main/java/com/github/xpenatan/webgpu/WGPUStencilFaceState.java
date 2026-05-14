@@ -37,10 +37,6 @@ public class WGPUStencilFaceState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetCompare(native_address, compare.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
-nativeObject->SetCompare((::WGPUCompareFunction)compare);
-*/
     public static void internal_native_SetCompare(long this_addr, int compare) {
         try {
             FFMHandles.internal_native_SetCompare__JI.invokeExact(this_addr, compare);
@@ -69,10 +61,6 @@ nativeObject->SetCompare((::WGPUCompareFunction)compare);
         internal_native_SetFailOp(native_address, failOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
-nativeObject->SetFailOp((::WGPUStencilOperation)failOp);
-*/
     public static void internal_native_SetFailOp(long this_addr, int failOp) {
         try {
             FFMHandles.internal_native_SetFailOp__JI.invokeExact(this_addr, failOp);
@@ -85,10 +73,6 @@ nativeObject->SetFailOp((::WGPUStencilOperation)failOp);
         internal_native_SetDepthFailOp(native_address, depthFailOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
-nativeObject->SetDepthFailOp((::WGPUStencilOperation)depthFailOp);
-*/
     public static void internal_native_SetDepthFailOp(long this_addr, int depthFailOp) {
         try {
             FFMHandles.internal_native_SetDepthFailOp__JI.invokeExact(this_addr, depthFailOp);
@@ -101,10 +85,6 @@ nativeObject->SetDepthFailOp((::WGPUStencilOperation)depthFailOp);
         internal_native_SetPassOp(native_address, passOp.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUStencilFaceState* nativeObject = (JGPU::WGPUStencilFaceState*)this_addr;
-nativeObject->SetPassOp((::WGPUStencilOperation)passOp);
-*/
     public static void internal_native_SetPassOp(long this_addr, int passOp) {
         try {
             FFMHandles.internal_native_SetPassOp__JI.invokeExact(this_addr, passOp);

@@ -24,9 +24,6 @@ public class WGPURenderBundleEncoder extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURenderBundleEncoder();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -53,10 +50,6 @@ return (int64_t)new JGPU::WGPURenderBundleEncoder();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -69,10 +62,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -85,10 +74,6 @@ nativeObject->SetLabel(label);
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -101,10 +86,6 @@ nativeObject->Release();
         internal_native_SetPipeline(native_address, renderPipeline.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetPipeline((JGPU::WGPURenderPipeline* )renderPipeline_addr);
-*/
     public static void internal_native_SetPipeline(long this_addr, long renderPipeline_addr) {
         try {
             FFMHandles.internal_native_SetPipeline__JJ.invokeExact(this_addr, renderPipeline_addr);
@@ -117,10 +98,6 @@ nativeObject->SetPipeline((JGPU::WGPURenderPipeline* )renderPipeline_addr);
         internal_native_Draw(native_address, vertexCount, instanceCount, firstVertex, firstInstance);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->Draw((int)vertexCount, (int)instanceCount, (int)firstVertex, (int)firstInstance);
-*/
     public static void internal_native_Draw(long this_addr, int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
         try {
             FFMHandles.internal_native_Draw__JIIII.invokeExact(this_addr, vertexCount, instanceCount, firstVertex, firstInstance);
@@ -133,10 +110,6 @@ nativeObject->Draw((int)vertexCount, (int)instanceCount, (int)firstVertex, (int)
         internal_native_DrawIndexed(native_address, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->DrawIndexed((int)indexCount, (int)instanceCount, (int)firstIndex, (int)baseVertex, (int)firstInstance);
-*/
     public static void internal_native_DrawIndexed(long this_addr, int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
         try {
             FFMHandles.internal_native_DrawIndexed__JIIIII.invokeExact(this_addr, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
@@ -149,10 +122,6 @@ nativeObject->DrawIndexed((int)indexCount, (int)instanceCount, (int)firstIndex, 
         internal_native_DrawIndirect(native_address, indirectBuffer.native_address, indirectOffset);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->DrawIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)indirectOffset);
-*/
     public static void internal_native_DrawIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
         try {
             FFMHandles.internal_native_DrawIndirect__JJI.invokeExact(this_addr, indirectBuffer_addr, indirectOffset);
@@ -165,10 +134,6 @@ nativeObject->DrawIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)indirec
         internal_native_DrawIndexedIndirect(native_address, indirectBuffer.native_address, indirectOffset);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->DrawIndexedIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)indirectOffset);
-*/
     public static void internal_native_DrawIndexedIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
         try {
             FFMHandles.internal_native_DrawIndexedIndirect__JJI.invokeExact(this_addr, indirectBuffer_addr, indirectOffset);
@@ -181,10 +146,6 @@ nativeObject->DrawIndexedIndirect((JGPU::WGPUBuffer* )indirectBuffer_addr, (int)
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address, dynamicOffsets.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (JGPU::WGPUVectorInt* )dynamicOffsets_addr);
-*/
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long dynamicOffsets_addr) {
         try {
             FFMHandles.internal_native_SetBindGroup__JIJJ.invokeExact(this_addr, groupIndex, group_addr, dynamicOffsets_addr);
@@ -197,10 +158,6 @@ nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr, (
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
-*/
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
         try {
             FFMHandles.internal_native_SetBindGroup__JIJ.invokeExact(this_addr, groupIndex, group_addr);
@@ -213,10 +170,6 @@ nativeObject->SetBindGroup((int)groupIndex, (JGPU::WGPUBindGroup* )group_addr);
         internal_native_SetVertexBuffer(native_address, slot, buffer.native_address, offset, size);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetVertexBuffer((int)slot, (JGPU::WGPUBuffer* )buffer_addr, (int)offset, (int)size);
-*/
     public static void internal_native_SetVertexBuffer(long this_addr, int slot, long buffer_addr, int offset, int size) {
         try {
             FFMHandles.internal_native_SetVertexBuffer__JIJII.invokeExact(this_addr, slot, buffer_addr, offset, size);
@@ -229,10 +182,6 @@ nativeObject->SetVertexBuffer((int)slot, (JGPU::WGPUBuffer* )buffer_addr, (int)o
         internal_native_SetIndexBuffer(native_address, buffer.native_address, format.getValue(), offset, size);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->SetIndexBuffer((JGPU::WGPUBuffer* )buffer_addr, (::WGPUIndexFormat)format, (int)offset, (int)size);
-*/
     public static void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, int format, int offset, int size) {
         try {
             FFMHandles.internal_native_SetIndexBuffer__JJIII.invokeExact(this_addr, buffer_addr, format, offset, size);
@@ -245,10 +194,6 @@ nativeObject->SetIndexBuffer((JGPU::WGPUBuffer* )buffer_addr, (::WGPUIndexFormat
         internal_native_InsertDebugMarker(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->InsertDebugMarker(label);
-*/
     public static void internal_native_InsertDebugMarker(long this_addr, String label) {
         try {
             FFMHandles.internal_native_InsertDebugMarker__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -261,10 +206,6 @@ nativeObject->InsertDebugMarker(label);
         internal_native_PopDebugGroup(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->PopDebugGroup();
-*/
     public static void internal_native_PopDebugGroup(long this_addr) {
         try {
             FFMHandles.internal_native_PopDebugGroup__J.invokeExact(this_addr);
@@ -277,10 +218,6 @@ nativeObject->PopDebugGroup();
         internal_native_PushDebugGroup(native_address, label);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->PushDebugGroup(label);
-*/
     public static void internal_native_PushDebugGroup(long this_addr, String label) {
         try {
             FFMHandles.internal_native_PushDebugGroup__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
@@ -293,10 +230,6 @@ nativeObject->PushDebugGroup(label);
         internal_native_Finish(native_address, descriptor.native_address, bundleOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-nativeObject->Finish((JGPU::WGPURenderBundleDescriptor* )descriptor_addr, (JGPU::WGPURenderBundle* )bundleOut_addr);
-*/
     public static void internal_native_Finish(long this_addr, long descriptor_addr, long bundleOut_addr) {
         try {
             FFMHandles.internal_native_Finish__JJJ.invokeExact(this_addr, descriptor_addr, bundleOut_addr);
@@ -309,10 +242,6 @@ nativeObject->Finish((JGPU::WGPURenderBundleDescriptor* )descriptor_addr, (JGPU:
         return internal_native_IsValid(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
-return nativeObject->IsValid();
-*/
     public static boolean internal_native_IsValid(long this_addr) {
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);

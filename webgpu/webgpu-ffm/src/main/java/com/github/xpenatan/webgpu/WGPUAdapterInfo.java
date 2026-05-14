@@ -35,9 +35,6 @@ public class WGPUAdapterInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUAdapterInfo();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -64,10 +61,6 @@ return (int64_t)new JGPU::WGPUAdapterInfo();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -86,11 +79,6 @@ delete nativeObject;
         return NativeString_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-thread_local static NativeString copy_addr;
-copy_addr = nativeObject->GetVendor();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetVendor_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetVendor_addr__J.invokeExact(this_addr);
@@ -103,10 +91,6 @@ return (int64_t)&copy_addr;*/
         return internal_native_GetVendorID(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-return nativeObject->GetVendorID();
-*/
     public static int internal_native_GetVendorID(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetVendorID__J.invokeExact(this_addr);
@@ -125,11 +109,6 @@ return nativeObject->GetVendorID();
         return NativeString_TEMP_GEN_1;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-thread_local static NativeString copy_addr;
-copy_addr = nativeObject->GetArchitecture();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetArchitecture_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetArchitecture_addr__J.invokeExact(this_addr);
@@ -148,11 +127,6 @@ return (int64_t)&copy_addr;*/
         return NativeString_TEMP_GEN_2;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-thread_local static NativeString copy_addr;
-copy_addr = nativeObject->GetDevice();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetDevice_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetDevice_addr__J.invokeExact(this_addr);
@@ -165,10 +139,6 @@ return (int64_t)&copy_addr;*/
         return internal_native_GetDeviceID(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-return nativeObject->GetDeviceID();
-*/
     public static int internal_native_GetDeviceID(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetDeviceID__J.invokeExact(this_addr);
@@ -187,11 +157,6 @@ return nativeObject->GetDeviceID();
         return NativeString_TEMP_GEN_3;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-thread_local static NativeString copy_addr;
-copy_addr = nativeObject->GetDescription();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetDescription_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetDescription_addr__J.invokeExact(this_addr);
@@ -211,10 +176,6 @@ return (int64_t)&copy_addr;*/
         return WGPUBackendType.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-return (int)nativeObject->GetBackendType();
-*/
     public static int internal_native_GetBackendType(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetBackendType__J.invokeExact(this_addr);
@@ -234,10 +195,6 @@ return (int)nativeObject->GetBackendType();
         return WGPUAdapterType.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUAdapterInfo* nativeObject = (JGPU::WGPUAdapterInfo*)this_addr;
-return (int)nativeObject->GetAdapterType();
-*/
     public static int internal_native_GetAdapterType(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetAdapterType__J.invokeExact(this_addr);
@@ -256,9 +213,6 @@ return (int)nativeObject->GetAdapterType();
         return WGPUAdapterInfo_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUAdapterInfo::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

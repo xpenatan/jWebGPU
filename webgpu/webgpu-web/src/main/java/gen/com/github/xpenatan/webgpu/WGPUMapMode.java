@@ -34,21 +34,12 @@ public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapMode_None;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapMode_None;")
     private static native int WGPUMapMode_None_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapMode_Read;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapMode_Read;")
     private static native int WGPUMapMode_Read_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUMapMode_Write;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUMapMode_Write;")
     private static native int WGPUMapMode_Write_NATIVE();
 }

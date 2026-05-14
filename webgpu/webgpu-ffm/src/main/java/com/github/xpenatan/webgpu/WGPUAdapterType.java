@@ -46,9 +46,6 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAdapterType_DiscreteGPU;
-*/
     private static int WGPUAdapterType_DiscreteGPU_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAdapterType_DiscreteGPU_NATIVE__.invokeExact();
@@ -57,9 +54,6 @@ return (int64_t)WGPUAdapterType_DiscreteGPU;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAdapterType_IntegratedGPU;
-*/
     private static int WGPUAdapterType_IntegratedGPU_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAdapterType_IntegratedGPU_NATIVE__.invokeExact();
@@ -68,9 +62,6 @@ return (int64_t)WGPUAdapterType_IntegratedGPU;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAdapterType_CPU;
-*/
     private static int WGPUAdapterType_CPU_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAdapterType_CPU_NATIVE__.invokeExact();
@@ -79,9 +70,6 @@ return (int64_t)WGPUAdapterType_CPU;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAdapterType_Unknown;
-*/
     private static int WGPUAdapterType_Unknown_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAdapterType_Unknown_NATIVE__.invokeExact();
@@ -90,9 +78,6 @@ return (int64_t)WGPUAdapterType_Unknown;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUAdapterType_Force32;
-*/
     private static int WGPUAdapterType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUAdapterType_Force32_NATIVE__.invokeExact();

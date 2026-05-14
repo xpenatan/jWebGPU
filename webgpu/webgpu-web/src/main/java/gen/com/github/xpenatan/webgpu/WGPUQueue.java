@@ -39,59 +39,20 @@ public class WGPUQueue extends NativeObject {
         )
         private static native org.teavm.jso.JSObject internal_native_getJsObject(int this_addr);
 
-    /*
-      [-TEAVM;-REPLACE_BLOCK]
-              {
-                  org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
-                  internal_native_WriteBuffer(native_object, buffer.native_object, bufferOffset, array, dataSize);
-              }
-    */
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
         org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
         internal_native_WriteBuffer(native_object, buffer.native_object, bufferOffset, array, dataSize);
     }
 
-    /*
-      [-TEAVM;-REPLACE]
-              @org.teavm.jso.JSBody(params = { "this_addr", "buffer_addr", "bufferOffset", "bytes_addr", "dataSize" }, script = "" +
-                  "this_addr.writeBuffer(buffer_addr, bufferOffset, bytes_addr, 0, dataSize);"
-              )
-              private static native void internal_native_WriteBuffer(org.teavm.jso.JSObject this_addr, org.teavm.jso.JSObject buffer_addr, int bufferOffset, org.teavm.jso.JSObject bytes_addr, int dataSize);
-    */
-    /*
-      [-TEAVM;-REPLACE_BLOCK]
-              {
-                  org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
-                  internal_native_WriteTexture(native_object, destination.native_address, array, dataSize, dataLayout.native_address, writeSize.native_address);
-              }
-    */
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
         org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
         internal_native_WriteTexture(native_object, destination.native_address, array, dataSize, dataLayout.native_address, writeSize.native_address);
     }
 
-    /*
-      [-TEAVM;-REPLACE]
-              @org.teavm.jso.JSBody(params = {"this_addr", "destination_addr", "bytes_addr", "dataSize", "dataLayout_addr", "writeSize_addr"}, script = "" +
-                  "var destinationJS = [MODULE].wrapPointer(destination_addr, [MODULE].WGPUTexelCopyTextureInfo);" +
-                  "var dataLayoutJS = [MODULE].wrapPointer(dataLayout_addr, [MODULE].WGPUTexelCopyBufferLayout);" +
-                  "var writeSizeJS = [MODULE].wrapPointer(writeSize_addr, [MODULE].WGPUExtent3D);" +
-                  "var destination = runtime.WebGPU.makeTexelCopyTextureInfo(destinationJS.GetPtr());" +
-                  "var dataLayout = runtime.WebGPU.makeTexelCopyBufferLayout(dataLayoutJS.Get());" +
-                  "var writeSize = runtime.WebGPU.makeExtent3D(writeSizeJS.Get());" +
-                  "this_addr.writeTexture(destination, bytes_addr, dataLayout, writeSize);"
-              )
-              private static native void internal_native_WriteTexture(org.teavm.jso.JSObject this_addr, int destination_addr, org.teavm.jso.JSObject bytes_addr, int dataSize, int dataLayout_addr, int writeSize_addr);
-    */
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jWebGPU.destroy(jsObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -99,11 +60,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.SetLabel(value);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.SetLabel(value);")
     public static native void internal_native_SetLabel(int this_addr, String value);
 
@@ -111,11 +67,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__0(native_address, commandVector.native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.Submit__0(commandVector_addr);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "commandVector_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Submit__0(commandVector_addr);")
     public static native void internal_native_Submit__0(int this_addr, int commandVector_addr);
 
@@ -123,11 +74,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__1(native_address, commandBuffer.native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.Submit__1(commandBuffer_addr);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "commandBuffer_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Submit__1(commandBuffer_addr);")
     public static native void internal_native_Submit__1(int this_addr, int commandBuffer_addr);
 
@@ -135,11 +81,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__2(native_address, commandBuffer01.native_address, commandBuffer02.native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.Submit__2(commandBuffer01_addr, commandBuffer02_addr);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "commandBuffer01_addr", "commandBuffer02_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Submit__2(commandBuffer01_addr, commandBuffer02_addr);")
     public static native void internal_native_Submit__2(int this_addr, int commandBuffer01_addr, int commandBuffer02_addr);
 
@@ -147,11 +88,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__3(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.Submit__3(commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "commandBuffer01_addr", "commandBuffer02_addr", "commandBuffer03_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Submit__3(commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr);")
     public static native void internal_native_Submit__3(int this_addr, int commandBuffer01_addr, int commandBuffer02_addr, int commandBuffer03_addr);
 
@@ -159,11 +95,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Submit__4(native_address, commandBuffer01.native_address, commandBuffer02.native_address, commandBuffer03.native_address, commandBuffer04.native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.Submit__4(commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr, commandBuffer04_addr);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "commandBuffer01_addr", "commandBuffer02_addr", "commandBuffer03_addr", "commandBuffer04_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Submit__4(commandBuffer01_addr, commandBuffer02_addr, commandBuffer03_addr, commandBuffer04_addr);")
     public static native void internal_native_Submit__4(int this_addr, int commandBuffer01_addr, int commandBuffer02_addr, int commandBuffer03_addr, int commandBuffer04_addr);
 
@@ -171,11 +102,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_Release(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.Release();
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
@@ -183,11 +109,6 @@ public class WGPUQueue extends NativeObject {
         internal_native_WriteBuffer__1(native_address, buffer.native_address, bufferOffset, bytes.native_void_address, dataSize);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);
-      jsObj.WriteBuffer__1(buffer_addr, bufferOffset, bytes_addr, dataSize);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "buffer_addr", "bufferOffset", "bytes_addr", "dataSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQueue);jsObj.WriteBuffer__1(buffer_addr, bufferOffset, bytes_addr, dataSize);")
     public static native void internal_native_WriteBuffer__1(int this_addr, int buffer_addr, int bufferOffset, int bytes_addr, int dataSize);
 }

@@ -41,9 +41,6 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorFilter_Validation;
-*/
     private static int WGPUErrorFilter_Validation_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorFilter_Validation_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUErrorFilter_Validation;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorFilter_OutOfMemory;
-*/
     private static int WGPUErrorFilter_OutOfMemory_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorFilter_OutOfMemory_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUErrorFilter_OutOfMemory;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorFilter_Internal;
-*/
     private static int WGPUErrorFilter_Internal_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorFilter_Internal_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUErrorFilter_Internal;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUErrorFilter_Force32;
-*/
     private static int WGPUErrorFilter_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUErrorFilter_Force32_NATIVE__.invokeExact();

@@ -30,49 +30,29 @@ public class WGPUComputeState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
-nativeObject->SetModule((JGPU::WGPUShaderModule* )shaderModule_addr);
-*/
     public static native void internal_native_SetModule(long this_addr, long shaderModule_addr);
 
     public void setEntryPoint(String entryPoint) {
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
-nativeObject->SetEntryPoint(entryPoint);
-*/
     public static native void internal_native_SetEntryPoint(long this_addr, String entryPoint);
 
     public void setConstants(WGPUVectorConstantEntry values) {
         internal_native_SetConstants(native_address, values.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUComputeState* nativeObject = (JGPU::WGPUComputeState*)this_addr;
-nativeObject->SetConstants((JGPU::WGPUVectorConstantEntry* )values_addr);
-*/
     public static native void internal_native_SetConstants(long this_addr, long values_addr);
 }

@@ -29,21 +29,6 @@ public class WGPUCompilationInfoCallback extends NativeObject {
 
     static public final WGPUCompilationInfoCallback NULL = WGPUCompilationInfoCallback.native_new();
 
-    /*[-FFM;-NATIVE]
-typedef void (*fp_WGPUCompilationInfoCallbackImpl_OnCallback_IJ)(int32_t, int64_t);
-
-class WGPUCompilationInfoCallbackImpl : public JGPU::WGPUCompilationInfoCallback {
-private:
-	fp_WGPUCompilationInfoCallbackImpl_OnCallback_IJ OnCallback_ptr;
-public:
-	void setupCallback(fp_WGPUCompilationInfoCallbackImpl_OnCallback_IJ OnCallback) {
-		this->OnCallback_ptr = OnCallback;
-	}
-	virtual void OnCallback(WGPUCompilationInfoRequestStatus status, JGPU::WGPUCompilationInfo* compilationInfo) {
-		OnCallback_ptr(static_cast<int32_t>(status), (int64_t)compilationInfo);
-	}
-};
-*/
     @Deprecated()
     protected WGPUCompilationInfoCallback(byte b, char c) {
     }
@@ -60,10 +45,6 @@ public:
         releaseUpcallResources();
     }
 
-    /*[-FFM;-NATIVE]
-WGPUCompilationInfoCallbackImpl* nativeObject = (WGPUCompilationInfoCallbackImpl*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -109,9 +90,6 @@ delete nativeObject;
         onCallback(status_addr_enum, WGPUCompilationInfo_TEMP_STATIC_GEN_0);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new WGPUCompilationInfoCallbackImpl();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -136,10 +114,6 @@ return (int64_t)new WGPUCompilationInfoCallbackImpl();
         }
     }
 
-    /*[-FFM;-NATIVE]
-WGPUCompilationInfoCallbackImpl* nativeObject = (WGPUCompilationInfoCallbackImpl*)this_addr;
-nativeObject->setupCallback((fp_WGPUCompilationInfoCallbackImpl_OnCallback_IJ)OnCallback_fp);
-*/
     public static void internal_native_setupCallback(long this_addr, long OnCallback_fp) {
         try {
             FFMHandles.internal_native_setupCallback__JJ.invokeExact(this_addr, OnCallback_fp);

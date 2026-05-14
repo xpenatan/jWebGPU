@@ -19,9 +19,6 @@ public class WGPUBufferBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUBufferBindingLayout();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,50 +39,30 @@ return (jlong)new JGPU::WGPUBufferBindingLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setType(WGPUBufferBindingType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetType((::WGPUBufferBindingType)type);
-*/
     public static native void internal_native_SetType(long this_addr, int type);
 
     public void setHasDynamicOffset(int hasDynamicOffset) {
         internal_native_SetHasDynamicOffset(native_address, hasDynamicOffset);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetHasDynamicOffset((int)hasDynamicOffset);
-*/
     public static native void internal_native_SetHasDynamicOffset(long this_addr, int hasDynamicOffset);
 
     public void setMinBindingSize(int minBindingSize) {
         internal_native_SetMinBindingSize(native_address, minBindingSize);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBufferBindingLayout* nativeObject = (JGPU::WGPUBufferBindingLayout*)this_addr;
-nativeObject->SetMinBindingSize((int)minBindingSize);
-*/
     public static native void internal_native_SetMinBindingSize(long this_addr, int minBindingSize);
 
     public static WGPUBufferBindingLayout obtain() {
@@ -98,8 +75,5 @@ nativeObject->SetMinBindingSize((int)minBindingSize);
         return WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBufferBindingLayout::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

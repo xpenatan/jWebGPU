@@ -39,10 +39,6 @@ public class STBImage extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -61,11 +57,6 @@ delete nativeObject;
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-WGPUByteBuffer* obj = nativeObject->GetPixels();
-return (int64_t)obj;
-*/
     public static long internal_native_GetPixels_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetPixels_addr__J.invokeExact(this_addr);
@@ -78,10 +69,6 @@ return (int64_t)obj;
         return internal_native_GetWidth(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetWidth();
-*/
     public static int internal_native_GetWidth(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetWidth__J.invokeExact(this_addr);
@@ -94,10 +81,6 @@ return nativeObject->GetWidth();
         return internal_native_GetHeight(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetHeight();
-*/
     public static int internal_native_GetHeight(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetHeight__J.invokeExact(this_addr);
@@ -110,10 +93,6 @@ return nativeObject->GetHeight();
         return internal_native_GetFormat(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-STBImage* nativeObject = (STBImage*)this_addr;
-return nativeObject->GetFormat();
-*/
     public static int internal_native_GetFormat(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetFormat__J.invokeExact(this_addr);

@@ -41,9 +41,6 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPopErrorScopeStatus_Success;
-*/
     private static int WGPUPopErrorScopeStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPopErrorScopeStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUPopErrorScopeStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUPopErrorScopeStatus_Force32;
-*/
     private static int WGPUPopErrorScopeStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUPopErrorScopeStatus_Force32_NATIVE__.invokeExact();

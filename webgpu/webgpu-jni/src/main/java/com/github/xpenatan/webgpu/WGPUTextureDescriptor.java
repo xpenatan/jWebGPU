@@ -21,9 +21,6 @@ public class WGPUTextureDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUTextureDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -44,50 +41,30 @@ return (jlong)new JGPU::WGPUTextureDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setUsage(WGPUTextureUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetUsage((::WGPUTextureUsage)usage);
-*/
     public static native void internal_native_SetUsage(long this_addr, int usage);
 
     public void setDimension(WGPUTextureDimension dimension) {
         internal_native_SetDimension(native_address, dimension.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetDimension((::WGPUTextureDimension)dimension);
-*/
     public static native void internal_native_SetDimension(long this_addr, int dimension);
 
     public WGPUExtent3D getSize() {
@@ -100,51 +77,30 @@ nativeObject->SetDimension((::WGPUTextureDimension)dimension);
         return WGPUExtent3D_TEMP_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-static JGPU::WGPUExtent3D copy_addr;
-copy_addr = nativeObject->GetSize();
-return (jlong)&copy_addr;*/
     public static native long internal_native_GetSize_addr(long this_addr);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
     public static native void internal_native_SetFormat(long this_addr, int format);
 
     public void setMipLevelCount(int mipLevelCount) {
         internal_native_SetMipLevelCount(native_address, mipLevelCount);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetMipLevelCount((int)mipLevelCount);
-*/
     public static native void internal_native_SetMipLevelCount(long this_addr, int mipLevelCount);
 
     public void setSampleCount(int sampleCount) {
         internal_native_SetSampleCount(native_address, sampleCount);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetSampleCount((int)sampleCount);
-*/
     public static native void internal_native_SetSampleCount(long this_addr, int sampleCount);
 
     public void setViewFormats(WGPUVectorTextureFormat viewFormats) {
         internal_native_SetViewFormats(native_address, viewFormats.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUTextureDescriptor* nativeObject = (JGPU::WGPUTextureDescriptor*)this_addr;
-nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )viewFormats_addr);
-*/
     public static native void internal_native_SetViewFormats(long this_addr, long viewFormats_addr);
 
     public static WGPUTextureDescriptor obtain() {
@@ -157,8 +113,5 @@ nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )viewFormats_addr);
         return WGPUTextureDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUTextureDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

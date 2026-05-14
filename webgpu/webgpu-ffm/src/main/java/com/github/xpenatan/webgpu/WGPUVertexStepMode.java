@@ -41,9 +41,6 @@ public enum WGPUVertexStepMode implements NativeEnum<WGPUVertexStepMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexStepMode_Undefined;
-*/
     private static int WGPUVertexStepMode_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexStepMode_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUVertexStepMode_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexStepMode_Vertex;
-*/
     private static int WGPUVertexStepMode_Vertex_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexStepMode_Vertex_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUVertexStepMode_Vertex;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexStepMode_Instance;
-*/
     private static int WGPUVertexStepMode_Instance_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexStepMode_Instance_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUVertexStepMode_Instance;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUVertexStepMode_Force32;
-*/
     private static int WGPUVertexStepMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUVertexStepMode_Force32_NATIVE__.invokeExact();

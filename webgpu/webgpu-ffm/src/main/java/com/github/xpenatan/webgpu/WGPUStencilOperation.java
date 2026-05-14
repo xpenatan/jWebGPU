@@ -51,9 +51,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_Undefined;
-*/
     private static int WGPUStencilOperation_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_Undefined_NATIVE__.invokeExact();
@@ -62,9 +59,6 @@ return (int64_t)WGPUStencilOperation_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_Keep;
-*/
     private static int WGPUStencilOperation_Keep_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_Keep_NATIVE__.invokeExact();
@@ -73,9 +67,6 @@ return (int64_t)WGPUStencilOperation_Keep;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_Zero;
-*/
     private static int WGPUStencilOperation_Zero_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_Zero_NATIVE__.invokeExact();
@@ -84,9 +75,6 @@ return (int64_t)WGPUStencilOperation_Zero;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_Replace;
-*/
     private static int WGPUStencilOperation_Replace_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_Replace_NATIVE__.invokeExact();
@@ -95,9 +83,6 @@ return (int64_t)WGPUStencilOperation_Replace;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_Invert;
-*/
     private static int WGPUStencilOperation_Invert_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_Invert_NATIVE__.invokeExact();
@@ -106,9 +91,6 @@ return (int64_t)WGPUStencilOperation_Invert;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_IncrementClamp;
-*/
     private static int WGPUStencilOperation_IncrementClamp_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_IncrementClamp_NATIVE__.invokeExact();
@@ -117,9 +99,6 @@ return (int64_t)WGPUStencilOperation_IncrementClamp;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_DecrementClamp;
-*/
     private static int WGPUStencilOperation_DecrementClamp_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_DecrementClamp_NATIVE__.invokeExact();
@@ -128,9 +107,6 @@ return (int64_t)WGPUStencilOperation_DecrementClamp;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_IncrementWrap;
-*/
     private static int WGPUStencilOperation_IncrementWrap_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_IncrementWrap_NATIVE__.invokeExact();
@@ -139,9 +115,6 @@ return (int64_t)WGPUStencilOperation_IncrementWrap;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_DecrementWrap;
-*/
     private static int WGPUStencilOperation_DecrementWrap_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_DecrementWrap_NATIVE__.invokeExact();
@@ -150,9 +123,6 @@ return (int64_t)WGPUStencilOperation_DecrementWrap;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUStencilOperation_Force32;
-*/
     private static int WGPUStencilOperation_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUStencilOperation_Force32_NATIVE__.invokeExact();

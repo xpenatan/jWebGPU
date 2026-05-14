@@ -40,39 +40,21 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStorageTextureAccess_BindingNotUsed;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStorageTextureAccess_BindingNotUsed;")
     private static native int WGPUStorageTextureAccess_BindingNotUsed_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStorageTextureAccess_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStorageTextureAccess_Undefined;")
     private static native int WGPUStorageTextureAccess_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStorageTextureAccess_WriteOnly;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStorageTextureAccess_WriteOnly;")
     private static native int WGPUStorageTextureAccess_WriteOnly_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStorageTextureAccess_ReadOnly;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStorageTextureAccess_ReadOnly;")
     private static native int WGPUStorageTextureAccess_ReadOnly_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStorageTextureAccess_ReadWrite;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStorageTextureAccess_ReadWrite;")
     private static native int WGPUStorageTextureAccess_ReadWrite_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUStorageTextureAccess_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUStorageTextureAccess_Force32;")
     private static native int WGPUStorageTextureAccess_Force32_NATIVE();
 }

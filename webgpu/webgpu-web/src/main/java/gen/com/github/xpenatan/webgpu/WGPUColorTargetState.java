@@ -19,10 +19,6 @@ public class WGPUColorTargetState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPUColorTargetState();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUColorTargetState();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -44,10 +40,6 @@ return jWebGPU.getPointer(jsObj);
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -55,10 +47,6 @@ jWebGPU.destroy(jsObj);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);
-jsObj.SetNextInChain(chainedStruct_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
@@ -66,10 +54,6 @@ jsObj.SetNextInChain(chainedStruct_addr);
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);
-jsObj.SetFormat(format);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);jsObj.SetFormat(format);")
     public static native void internal_native_SetFormat(int this_addr, int format);
 
@@ -77,10 +61,6 @@ jsObj.SetFormat(format);
         internal_native_SetBlend(native_address, blendState.native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);
-jsObj.SetBlend(blendState_addr);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "blendState_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);jsObj.SetBlend(blendState_addr);")
     public static native void internal_native_SetBlend(int this_addr, int blendState_addr);
 
@@ -88,10 +68,6 @@ jsObj.SetBlend(blendState_addr);
         internal_native_SetWriteMask(native_address, writeMask.getValue());
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);
-jsObj.SetWriteMask(writeMask);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr", "writeMask"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUColorTargetState);jsObj.SetWriteMask(writeMask);")
     public static native void internal_native_SetWriteMask(int this_addr, int writeMask);
 
@@ -105,11 +81,6 @@ jsObj.SetWriteMask(writeMask);
         return WGPUColorTargetState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jWebGPU.WGPUColorTargetState.prototype.Obtain();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jWebGPU.getPointer(returnedJSObj);
-*/
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUColorTargetState.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

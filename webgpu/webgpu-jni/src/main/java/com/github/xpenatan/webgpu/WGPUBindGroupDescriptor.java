@@ -19,9 +19,6 @@ public class WGPUBindGroupDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUBindGroupDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,50 +39,30 @@ return (jlong)new JGPU::WGPUBindGroupDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupDescriptor* nativeObject = (JGPU::WGPUBindGroupDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String value) {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupDescriptor* nativeObject = (JGPU::WGPUBindGroupDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static native void internal_native_SetLabel(long this_addr, String value);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupDescriptor* nativeObject = (JGPU::WGPUBindGroupDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setLayout(WGPUBindGroupLayout layout) {
         internal_native_SetLayout(native_address, layout.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupDescriptor* nativeObject = (JGPU::WGPUBindGroupDescriptor*)this_addr;
-nativeObject->SetLayout((JGPU::WGPUBindGroupLayout* )layout_addr);
-*/
     public static native void internal_native_SetLayout(long this_addr, long layout_addr);
 
     public void setEntries(WGPUVectorBindGroupEntry entries) {
         internal_native_SetEntries(native_address, entries.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUBindGroupDescriptor* nativeObject = (JGPU::WGPUBindGroupDescriptor*)this_addr;
-nativeObject->SetEntries((JGPU::WGPUVectorBindGroupEntry* )entries_addr);
-*/
     public static native void internal_native_SetEntries(long this_addr, long entries_addr);
 
     public static WGPUBindGroupDescriptor obtain() {
@@ -98,8 +75,5 @@ nativeObject->SetEntries((JGPU::WGPUVectorBindGroupEntry* )entries_addr);
         return WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUBindGroupDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

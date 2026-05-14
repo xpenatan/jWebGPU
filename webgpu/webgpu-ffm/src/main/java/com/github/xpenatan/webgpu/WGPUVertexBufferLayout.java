@@ -26,9 +26,6 @@ public class WGPUVertexBufferLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUVertexBufferLayout();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUVertexBufferLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetAttributes(native_address, values.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetAttributes((JGPU::WGPUVectorVertexAttribute* )values_addr);
-*/
     public static void internal_native_SetAttributes(long this_addr, long values_addr) {
         try {
             FFMHandles.internal_native_SetAttributes__JJ.invokeExact(this_addr, values_addr);
@@ -87,10 +76,6 @@ nativeObject->SetAttributes((JGPU::WGPUVectorVertexAttribute* )values_addr);
         internal_native_SetArrayStride(native_address, offset);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetArrayStride((int)offset);
-*/
     public static void internal_native_SetArrayStride(long this_addr, int offset) {
         try {
             FFMHandles.internal_native_SetArrayStride__JI.invokeExact(this_addr, offset);
@@ -103,10 +88,6 @@ nativeObject->SetArrayStride((int)offset);
         internal_native_SetStepMode(native_address, stepMode.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVertexBufferLayout* nativeObject = (JGPU::WGPUVertexBufferLayout*)this_addr;
-nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
-*/
     public static void internal_native_SetStepMode(long this_addr, int stepMode) {
         try {
             FFMHandles.internal_native_SetStepMode__JI.invokeExact(this_addr, stepMode);
@@ -125,9 +106,6 @@ nativeObject->SetStepMode((::WGPUVertexStepMode)stepMode);
         return WGPUVertexBufferLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUVertexBufferLayout::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

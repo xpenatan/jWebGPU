@@ -48,9 +48,6 @@ public enum WGPUBlendOperation implements NativeEnum<WGPUBlendOperation> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_Undefined;
-*/
     private static int WGPUBlendOperation_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_Undefined_NATIVE__.invokeExact();
@@ -59,9 +56,6 @@ return (int64_t)WGPUBlendOperation_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_Add;
-*/
     private static int WGPUBlendOperation_Add_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_Add_NATIVE__.invokeExact();
@@ -70,9 +64,6 @@ return (int64_t)WGPUBlendOperation_Add;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_Subtract;
-*/
     private static int WGPUBlendOperation_Subtract_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_Subtract_NATIVE__.invokeExact();
@@ -81,9 +72,6 @@ return (int64_t)WGPUBlendOperation_Subtract;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_ReverseSubtract;
-*/
     private static int WGPUBlendOperation_ReverseSubtract_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_ReverseSubtract_NATIVE__.invokeExact();
@@ -92,9 +80,6 @@ return (int64_t)WGPUBlendOperation_ReverseSubtract;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_Min;
-*/
     private static int WGPUBlendOperation_Min_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_Min_NATIVE__.invokeExact();
@@ -103,9 +88,6 @@ return (int64_t)WGPUBlendOperation_Min;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_Max;
-*/
     private static int WGPUBlendOperation_Max_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_Max_NATIVE__.invokeExact();
@@ -114,9 +96,6 @@ return (int64_t)WGPUBlendOperation_Max;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBlendOperation_Force32;
-*/
     private static int WGPUBlendOperation_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBlendOperation_Force32_NATIVE__.invokeExact();

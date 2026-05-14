@@ -48,39 +48,6 @@ public class WGPUBuffer extends NativeObject {
     private WGPUBuffer(byte v, char c) {
     }
 
-    /*
-      [-FFM;-NATIVE]
-              extern "C" {
-              FFM_EXPORT void jparser_com_github_xpenatan_webgpu_WGPUBuffer_internal_1native_1getConstMappedRangeFFM__JIIJ(int64_t this_addr, int32_t offset, int32_t size, void* out_ptr) {
-                  JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-                  nativeObject->GetConstMappedRange((int)offset, (int)size, out_ptr);
-              }
-              }
-    */
-    /*
-      [-FFM;-ADD]
-              private static final class FFMBufferHandles {
-                  private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
-                  private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
-     
-                  static final java.lang.invoke.MethodHandle getConstMappedRange = LINKER.downcallHandle(
-                          LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUBuffer_internal_1native_1getConstMappedRangeFFM__JIIJ").orElseThrow(),
-                          java.lang.foreign.FunctionDescriptor.ofVoid(
-                                  java.lang.foreign.ValueLayout.JAVA_LONG,
-                                  java.lang.foreign.ValueLayout.JAVA_INT,
-                                  java.lang.foreign.ValueLayout.JAVA_INT,
-                                  java.lang.foreign.ValueLayout.ADDRESS
-                          )
-                  );
-              }
-    */
-    /*
-      [-FFM;-REPLACE_BLOCK]
-              {
-                  java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofBuffer(out);
-                  internal_native_getConstMappedRange(native_address, offset, size, seg);
-              }
-    */
     public void getConstMappedRange(int offset, int size, ByteBuffer out) {
         java.lang.foreign.MemorySegment seg = java.lang.foreign.MemorySegment.ofBuffer(out);
         internal_native_getConstMappedRange(native_address, offset, size, seg);
@@ -91,10 +58,6 @@ public class WGPUBuffer extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)new JGPU::WGPUBuffer();
-    */
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -107,11 +70,6 @@ public class WGPUBuffer extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -124,11 +82,6 @@ public class WGPUBuffer extends NativeObject {
         internal_native_SetLabel(native_address, value);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->SetLabel(value);
-    */
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -141,11 +94,6 @@ public class WGPUBuffer extends NativeObject {
         internal_native_Release(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->Release();
-    */
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -158,11 +106,6 @@ public class WGPUBuffer extends NativeObject {
         internal_native_Destroy(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->Destroy();
-    */
     public static void internal_native_Destroy(long this_addr) {
         try {
             FFMHandles.internal_native_Destroy__J.invokeExact(this_addr);
@@ -181,13 +124,6 @@ public class WGPUBuffer extends NativeObject {
         return WGPUFuture_TEMP_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      thread_local static JGPU::WGPUFuture copy_addr;
-      copy_addr = nativeObject->MapAsync((::WGPUMapMode)mode, (int)offset, (int)size, (::WGPUCallbackMode)callbackMode, (JGPU::WGPUBufferMapCallback* )callback_addr);
-      return (int64_t)&copy_addr;
-    */
     public static long internal_native_MapAsync_addr(long this_addr, int mode, int offset, int size, int callbackMode, long callback_addr) {
         try {
             return (long) FFMHandles.internal_native_MapAsync_addr__JIIIIJ.invokeExact(this_addr, mode, offset, size, callbackMode, callback_addr);
@@ -206,11 +142,6 @@ public class WGPUBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return (int64_t)&nativeObject->GetMappedRange((int)offset, (int)size);
-    */
     public static long internal_native_GetMappedRange_addr(long this_addr, int offset, int size) {
         try {
             return (long) FFMHandles.internal_native_GetMappedRange_addr__JII.invokeExact(this_addr, offset, size);
@@ -223,11 +154,6 @@ public class WGPUBuffer extends NativeObject {
         internal_native_Unmap(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      nativeObject->Unmap();
-    */
     public static void internal_native_Unmap(long this_addr) {
         try {
             FFMHandles.internal_native_Unmap__J.invokeExact(this_addr);
@@ -240,11 +166,6 @@ public class WGPUBuffer extends NativeObject {
         return internal_native_GetSize(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return nativeObject->GetSize();
-    */
     public static int internal_native_GetSize(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetSize__J.invokeExact(this_addr);
@@ -264,11 +185,6 @@ public class WGPUBuffer extends NativeObject {
         return WGPUBufferUsage.CUSTOM.setValue(value);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return (int)nativeObject->GetUsage();
-    */
     public static int internal_native_GetUsage(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetUsage__J.invokeExact(this_addr);
@@ -281,11 +197,6 @@ public class WGPUBuffer extends NativeObject {
         return internal_native_IsValid(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
-      return nativeObject->IsValid();
-    */
     public static boolean internal_native_IsValid(long this_addr) {
         try {
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);

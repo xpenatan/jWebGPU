@@ -41,9 +41,6 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUOptionalBool_False;
-*/
     private static int WGPUOptionalBool_False_NATIVE() {
         try {
             return (int) FFMHandles.WGPUOptionalBool_False_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUOptionalBool_False;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUOptionalBool_True;
-*/
     private static int WGPUOptionalBool_True_NATIVE() {
         try {
             return (int) FFMHandles.WGPUOptionalBool_True_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUOptionalBool_True;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUOptionalBool_Undefined;
-*/
     private static int WGPUOptionalBool_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUOptionalBool_Undefined_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUOptionalBool_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUOptionalBool_Force32;
-*/
     private static int WGPUOptionalBool_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUOptionalBool_Force32_NATIVE__.invokeExact();

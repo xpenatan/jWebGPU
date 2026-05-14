@@ -27,21 +27,6 @@ public class WGPUBufferMapCallback extends NativeObject {
 
     static public final WGPUBufferMapCallback NULL = WGPUBufferMapCallback.native_new();
 
-    /*[-FFM;-NATIVE]
-typedef void (*fp_WGPUBufferMapCallbackImpl_OnCallback_ILjava_lang_Object_2)(int32_t, const char*);
-
-class WGPUBufferMapCallbackImpl : public JGPU::WGPUBufferMapCallback {
-private:
-	fp_WGPUBufferMapCallbackImpl_OnCallback_ILjava_lang_Object_2 OnCallback_ptr;
-public:
-	void setupCallback(fp_WGPUBufferMapCallbackImpl_OnCallback_ILjava_lang_Object_2 OnCallback) {
-		this->OnCallback_ptr = OnCallback;
-	}
-	virtual void OnCallback(WGPUMapAsyncStatus status, const char* message) {
-		OnCallback_ptr(static_cast<int32_t>(status), message);
-	}
-};
-*/
     @Deprecated()
     protected WGPUBufferMapCallback(byte b, char c) {
     }
@@ -58,10 +43,6 @@ public:
         releaseUpcallResources();
     }
 
-    /*[-FFM;-NATIVE]
-WGPUBufferMapCallbackImpl* nativeObject = (WGPUBufferMapCallbackImpl*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -105,9 +86,6 @@ delete nativeObject;
         onCallback(status_addr_enum, message_addr);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new WGPUBufferMapCallbackImpl();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -132,10 +110,6 @@ return (int64_t)new WGPUBufferMapCallbackImpl();
         }
     }
 
-    /*[-FFM;-NATIVE]
-WGPUBufferMapCallbackImpl* nativeObject = (WGPUBufferMapCallbackImpl*)this_addr;
-nativeObject->setupCallback((fp_WGPUBufferMapCallbackImpl_OnCallback_ILjava_lang_Object_2)OnCallback_fp);
-*/
     public static void internal_native_setupCallback(long this_addr, long OnCallback_fp) {
         try {
             FFMHandles.internal_native_setupCallback__JJ.invokeExact(this_addr, OnCallback_fp);

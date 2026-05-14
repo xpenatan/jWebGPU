@@ -34,21 +34,12 @@ public enum WGPUWaitStatus implements NativeEnum<WGPUWaitStatus> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWaitStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWaitStatus_Success;")
     private static native int WGPUWaitStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWaitStatus_TimedOut;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWaitStatus_TimedOut;")
     private static native int WGPUWaitStatus_TimedOut_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUWaitStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWaitStatus_Force32;")
     private static native int WGPUWaitStatus_Force32_NATIVE();
 }

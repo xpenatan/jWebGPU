@@ -19,9 +19,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderPassMaxDrawCount();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,30 +39,18 @@ return (jlong)new JGPU::WGPURenderPassMaxDrawCount();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setMaxDrawCount(int maxDrawCount) {
         internal_native_SetMaxDrawCount(native_address, maxDrawCount);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-nativeObject->SetMaxDrawCount((int)maxDrawCount);
-*/
     public static native void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount);
 
     public int getMaxDrawCount() {
         return internal_native_GetMaxDrawCount(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-return nativeObject->GetMaxDrawCount();
-*/
     public static native int internal_native_GetMaxDrawCount(long this_addr);
 
     public static WGPURenderPassMaxDrawCount obtain() {
@@ -78,8 +63,5 @@ return nativeObject->GetMaxDrawCount();
         return WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderPassMaxDrawCount::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

@@ -19,9 +19,6 @@ public class WGPUSamplerBindingLayout extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUSamplerBindingLayout();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,30 +39,18 @@ return (jlong)new JGPU::WGPUSamplerBindingLayout();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerBindingLayout* nativeObject = (JGPU::WGPUSamplerBindingLayout*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerBindingLayout* nativeObject = (JGPU::WGPUSamplerBindingLayout*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setType(WGPUSamplerBindingType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUSamplerBindingLayout* nativeObject = (JGPU::WGPUSamplerBindingLayout*)this_addr;
-nativeObject->SetType((::WGPUSamplerBindingType)type);
-*/
     public static native void internal_native_SetType(long this_addr, int type);
 
     public static WGPUSamplerBindingLayout obtain() {
@@ -78,8 +63,5 @@ nativeObject->SetType((::WGPUSamplerBindingType)type);
         return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUSamplerBindingLayout::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

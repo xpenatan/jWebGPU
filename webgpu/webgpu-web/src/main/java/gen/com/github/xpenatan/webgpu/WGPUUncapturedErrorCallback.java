@@ -31,10 +31,6 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUUncapturedErrorCallbackImpl);
-jWebGPU.destroy(jsObj);
-*/
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUUncapturedErrorCallbackImpl);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -70,10 +66,6 @@ jWebGPU.destroy(jsObj);
         onCallback(errorType_addr_enum, message_addr);
     }
 
-    /*[-TEAVM;-NATIVE]
-var jsObj = new jWebGPU.WGPUUncapturedErrorCallbackImpl();
-return jWebGPU.getPointer(jsObj);
-*/
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUUncapturedErrorCallbackImpl();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 

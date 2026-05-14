@@ -41,9 +41,6 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestDeviceStatus_Success;
-*/
     private static int WGPURequestDeviceStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestDeviceStatus_Success_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPURequestDeviceStatus_Success;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestDeviceStatus_Error;
-*/
     private static int WGPURequestDeviceStatus_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestDeviceStatus_Error_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPURequestDeviceStatus_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPURequestDeviceStatus_Force32;
-*/
     private static int WGPURequestDeviceStatus_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPURequestDeviceStatus_Force32_NATIVE__.invokeExact();

@@ -26,9 +26,6 @@ public class WGPUVectorTextureFormat extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUVectorTextureFormat();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUVectorTextureFormat();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         return internal_native_size(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-return nativeObject->size();
-*/
     public static int internal_native_size(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_size__J.invokeExact(this_addr);
@@ -87,10 +76,6 @@ return nativeObject->size();
         internal_native_clear(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-nativeObject->clear();
-*/
     public static void internal_native_clear(long this_addr) {
         try {
             FFMHandles.internal_native_clear__J.invokeExact(this_addr);
@@ -103,10 +88,6 @@ nativeObject->clear();
         internal_native_push_back(native_address, textureFormat.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-nativeObject->push_back((::WGPUTextureFormat)textureFormat);
-*/
     public static void internal_native_push_back(long this_addr, int textureFormat) {
         try {
             FFMHandles.internal_native_push_back__JI.invokeExact(this_addr, textureFormat);
@@ -126,10 +107,6 @@ nativeObject->push_back((::WGPUTextureFormat)textureFormat);
         return WGPUTextureFormat.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUVectorTextureFormat* nativeObject = (JGPU::WGPUVectorTextureFormat*)this_addr;
-return (int)nativeObject->get((int)index);
-*/
     public static int internal_native_get(long this_addr, int index) {
         try {
             return (int) FFMHandles.internal_native_get__JI.invokeExact(this_addr, index);
@@ -148,9 +125,6 @@ return (int)nativeObject->get((int)index);
         return WGPUVectorTextureFormat_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUVectorTextureFormat::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

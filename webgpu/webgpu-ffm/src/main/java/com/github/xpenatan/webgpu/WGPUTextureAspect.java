@@ -46,9 +46,6 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureAspect_Undefined;
-*/
     private static int WGPUTextureAspect_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureAspect_Undefined_NATIVE__.invokeExact();
@@ -57,9 +54,6 @@ return (int64_t)WGPUTextureAspect_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureAspect_All;
-*/
     private static int WGPUTextureAspect_All_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureAspect_All_NATIVE__.invokeExact();
@@ -68,9 +62,6 @@ return (int64_t)WGPUTextureAspect_All;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureAspect_StencilOnly;
-*/
     private static int WGPUTextureAspect_StencilOnly_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureAspect_StencilOnly_NATIVE__.invokeExact();
@@ -79,9 +70,6 @@ return (int64_t)WGPUTextureAspect_StencilOnly;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureAspect_DepthOnly;
-*/
     private static int WGPUTextureAspect_DepthOnly_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureAspect_DepthOnly_NATIVE__.invokeExact();
@@ -90,9 +78,6 @@ return (int64_t)WGPUTextureAspect_DepthOnly;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureAspect_Force32;
-*/
     private static int WGPUTextureAspect_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureAspect_Force32_NATIVE__.invokeExact();

@@ -41,9 +41,6 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUShaderStage_None;
-*/
     private static int WGPUShaderStage_None_NATIVE() {
         try {
             return (int) FFMHandles.WGPUShaderStage_None_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUShaderStage_None;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUShaderStage_Vertex;
-*/
     private static int WGPUShaderStage_Vertex_NATIVE() {
         try {
             return (int) FFMHandles.WGPUShaderStage_Vertex_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUShaderStage_Vertex;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUShaderStage_Fragment;
-*/
     private static int WGPUShaderStage_Fragment_NATIVE() {
         try {
             return (int) FFMHandles.WGPUShaderStage_Fragment_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUShaderStage_Fragment;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUShaderStage_Compute;
-*/
     private static int WGPUShaderStage_Compute_NATIVE() {
         try {
             return (int) FFMHandles.WGPUShaderStage_Compute_NATIVE__.invokeExact();

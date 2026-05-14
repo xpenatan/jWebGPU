@@ -44,63 +44,33 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Undefined;")
     private static native int WGPUCompareFunction_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Never;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Never;")
     private static native int WGPUCompareFunction_Never_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Less;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Less;")
     private static native int WGPUCompareFunction_Less_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Equal;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Equal;")
     private static native int WGPUCompareFunction_Equal_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_LessEqual;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_LessEqual;")
     private static native int WGPUCompareFunction_LessEqual_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Greater;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Greater;")
     private static native int WGPUCompareFunction_Greater_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_NotEqual;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_NotEqual;")
     private static native int WGPUCompareFunction_NotEqual_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_GreaterEqual;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_GreaterEqual;")
     private static native int WGPUCompareFunction_GreaterEqual_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Always;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Always;")
     private static native int WGPUCompareFunction_Always_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompareFunction_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompareFunction_Force32;")
     private static native int WGPUCompareFunction_Force32_NATIVE();
 }

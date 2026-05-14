@@ -34,15 +34,9 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompilationInfoRequestStatus_Success;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompilationInfoRequestStatus_Success;")
     private static native int WGPUCompilationInfoRequestStatus_Success_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUCompilationInfoRequestStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUCompilationInfoRequestStatus_Force32;")
     private static native int WGPUCompilationInfoRequestStatus_Force32_NATIVE();
 }

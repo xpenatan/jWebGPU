@@ -41,9 +41,6 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUInstanceFeatureName_TimedWaitAny;
-*/
     private static int WGPUInstanceFeatureName_TimedWaitAny_NATIVE() {
         try {
             return (int) FFMHandles.WGPUInstanceFeatureName_TimedWaitAny_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUInstanceFeatureName_TimedWaitAny;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUInstanceFeatureName_ShaderSourceSPIRV;
-*/
     private static int WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE() {
         try {
             return (int) FFMHandles.WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUInstanceFeatureName_ShaderSourceSPIRV;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUInstanceFeatureName_MultipleDevicesPerAdapter;
-*/
     private static int WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE() {
         try {
             return (int) FFMHandles.WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUInstanceFeatureName_MultipleDevicesPerAdapter;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUInstanceFeatureName_Force32;
-*/
     private static int WGPUInstanceFeatureName_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUInstanceFeatureName_Force32_NATIVE__.invokeExact();

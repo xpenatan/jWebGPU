@@ -37,10 +37,6 @@ public class WGPUPrimitiveState extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -53,10 +49,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -69,10 +61,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetTopology(native_address, value.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetTopology((::WGPUPrimitiveTopology)value);
-*/
     public static void internal_native_SetTopology(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetTopology__JI.invokeExact(this_addr, value);
@@ -85,10 +73,6 @@ nativeObject->SetTopology((::WGPUPrimitiveTopology)value);
         internal_native_SetStripIndexFormat(native_address, value.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetStripIndexFormat((::WGPUIndexFormat)value);
-*/
     public static void internal_native_SetStripIndexFormat(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetStripIndexFormat__JI.invokeExact(this_addr, value);
@@ -101,10 +85,6 @@ nativeObject->SetStripIndexFormat((::WGPUIndexFormat)value);
         internal_native_SetFrontFace(native_address, value.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetFrontFace((::WGPUFrontFace)value);
-*/
     public static void internal_native_SetFrontFace(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetFrontFace__JI.invokeExact(this_addr, value);
@@ -117,10 +97,6 @@ nativeObject->SetFrontFace((::WGPUFrontFace)value);
         internal_native_SetCullMode(native_address, value.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUPrimitiveState* nativeObject = (JGPU::WGPUPrimitiveState*)this_addr;
-nativeObject->SetCullMode((::WGPUCullMode)value);
-*/
     public static void internal_native_SetCullMode(long this_addr, int value) {
         try {
             FFMHandles.internal_native_SetCullMode__JI.invokeExact(this_addr, value);

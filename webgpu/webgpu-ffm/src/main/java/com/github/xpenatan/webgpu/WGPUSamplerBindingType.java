@@ -47,9 +47,6 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSamplerBindingType_BindingNotUsed;
-*/
     private static int WGPUSamplerBindingType_BindingNotUsed_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSamplerBindingType_BindingNotUsed_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUSamplerBindingType_BindingNotUsed;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSamplerBindingType_Undefined;
-*/
     private static int WGPUSamplerBindingType_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSamplerBindingType_Undefined_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUSamplerBindingType_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSamplerBindingType_Filtering;
-*/
     private static int WGPUSamplerBindingType_Filtering_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSamplerBindingType_Filtering_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUSamplerBindingType_Filtering;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSamplerBindingType_NonFiltering;
-*/
     private static int WGPUSamplerBindingType_NonFiltering_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSamplerBindingType_NonFiltering_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUSamplerBindingType_NonFiltering;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSamplerBindingType_Comparison;
-*/
     private static int WGPUSamplerBindingType_Comparison_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSamplerBindingType_Comparison_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUSamplerBindingType_Comparison;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUSamplerBindingType_Force32;
-*/
     private static int WGPUSamplerBindingType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUSamplerBindingType_Force32_NATIVE__.invokeExact();

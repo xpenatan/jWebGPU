@@ -26,9 +26,6 @@ public class WGPUSurfaceConfiguration extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUSurfaceConfiguration();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUSurfaceConfiguration();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetWidth(native_address, width);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetWidth((int)width);
-*/
     public static void internal_native_SetWidth(long this_addr, int width) {
         try {
             FFMHandles.internal_native_SetWidth__JI.invokeExact(this_addr, width);
@@ -103,10 +88,6 @@ nativeObject->SetWidth((int)width);
         internal_native_SetHeight(native_address, height);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetHeight((int)height);
-*/
     public static void internal_native_SetHeight(long this_addr, int height) {
         try {
             FFMHandles.internal_native_SetHeight__JI.invokeExact(this_addr, height);
@@ -119,10 +100,6 @@ nativeObject->SetHeight((int)height);
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
@@ -135,10 +112,6 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
         internal_native_SetViewFormats(native_address, formats.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )formats_addr);
-*/
     public static void internal_native_SetViewFormats(long this_addr, long formats_addr) {
         try {
             FFMHandles.internal_native_SetViewFormats__JJ.invokeExact(this_addr, formats_addr);
@@ -151,10 +124,6 @@ nativeObject->SetViewFormats((JGPU::WGPUVectorTextureFormat* )formats_addr);
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetUsage((::WGPUTextureUsage)usage);
-*/
     public static void internal_native_SetUsage(long this_addr, int usage) {
         try {
             FFMHandles.internal_native_SetUsage__JI.invokeExact(this_addr, usage);
@@ -167,10 +136,6 @@ nativeObject->SetUsage((::WGPUTextureUsage)usage);
         internal_native_SetDevice(native_address, device.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetDevice((JGPU::WGPUDevice* )device_addr);
-*/
     public static void internal_native_SetDevice(long this_addr, long device_addr) {
         try {
             FFMHandles.internal_native_SetDevice__JJ.invokeExact(this_addr, device_addr);
@@ -183,10 +148,6 @@ nativeObject->SetDevice((JGPU::WGPUDevice* )device_addr);
         internal_native_SetPresentMode(native_address, presentMode.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetPresentMode((::WGPUPresentMode)presentMode);
-*/
     public static void internal_native_SetPresentMode(long this_addr, int presentMode) {
         try {
             FFMHandles.internal_native_SetPresentMode__JI.invokeExact(this_addr, presentMode);
@@ -199,10 +160,6 @@ nativeObject->SetPresentMode((::WGPUPresentMode)presentMode);
         internal_native_SetAlphaMode(native_address, alphaMode.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUSurfaceConfiguration* nativeObject = (JGPU::WGPUSurfaceConfiguration*)this_addr;
-nativeObject->SetAlphaMode((::WGPUCompositeAlphaMode)alphaMode);
-*/
     public static void internal_native_SetAlphaMode(long this_addr, int alphaMode) {
         try {
             FFMHandles.internal_native_SetAlphaMode__JI.invokeExact(this_addr, alphaMode);
@@ -221,9 +178,6 @@ nativeObject->SetAlphaMode((::WGPUCompositeAlphaMode)alphaMode);
         return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUSurfaceConfiguration::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

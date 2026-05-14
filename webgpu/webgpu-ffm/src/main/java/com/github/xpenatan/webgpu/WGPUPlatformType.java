@@ -48,9 +48,6 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_Windows;
-*/
     private static int WGPU_Windows_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_Windows_NATIVE__.invokeExact();
@@ -59,9 +56,6 @@ return (int64_t)WGPU_Windows;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_Mac;
-*/
     private static int WGPU_Mac_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_Mac_NATIVE__.invokeExact();
@@ -70,9 +64,6 @@ return (int64_t)WGPU_Mac;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_Linux;
-*/
     private static int WGPU_Linux_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_Linux_NATIVE__.invokeExact();
@@ -81,9 +72,6 @@ return (int64_t)WGPU_Linux;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_iOS;
-*/
     private static int WGPU_iOS_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_iOS_NATIVE__.invokeExact();
@@ -92,9 +80,6 @@ return (int64_t)WGPU_iOS;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_Android;
-*/
     private static int WGPU_Android_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_Android_NATIVE__.invokeExact();
@@ -103,9 +88,6 @@ return (int64_t)WGPU_Android;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_Web;
-*/
     private static int WGPU_Web_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_Web_NATIVE__.invokeExact();
@@ -114,9 +96,6 @@ return (int64_t)WGPU_Web;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU_Unknown;
-*/
     private static int WGPU_Unknown_NATIVE() {
         try {
             return (int) FFMHandles.WGPU_Unknown_NATIVE__.invokeExact();

@@ -41,9 +41,6 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFilterMode_Undefined;
-*/
     private static int WGPUFilterMode_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFilterMode_Undefined_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUFilterMode_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFilterMode_Nearest;
-*/
     private static int WGPUFilterMode_Nearest_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFilterMode_Nearest_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUFilterMode_Nearest;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFilterMode_Linear;
-*/
     private static int WGPUFilterMode_Linear_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFilterMode_Linear_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUFilterMode_Linear;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUFilterMode_Force32;
-*/
     private static int WGPUFilterMode_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUFilterMode_Force32_NATIVE__.invokeExact();

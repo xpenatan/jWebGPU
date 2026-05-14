@@ -41,45 +41,24 @@ public enum WGPUSurfaceGetCurrentTextureStatus implements NativeEnum<WGPUSurface
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Timeout;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Timeout;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Outdated;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Outdated;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Lost;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Lost;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Error;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Error;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUSurfaceGetCurrentTextureStatus_Force32;")
     private static native int WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE();
 }

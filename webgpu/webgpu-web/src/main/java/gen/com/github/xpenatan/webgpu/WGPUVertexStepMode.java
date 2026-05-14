@@ -34,27 +34,15 @@ public enum WGPUVertexStepMode implements NativeEnum<WGPUVertexStepMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUVertexStepMode_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUVertexStepMode_Undefined;")
     private static native int WGPUVertexStepMode_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUVertexStepMode_Vertex;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUVertexStepMode_Vertex;")
     private static native int WGPUVertexStepMode_Vertex_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUVertexStepMode_Instance;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUVertexStepMode_Instance;")
     private static native int WGPUVertexStepMode_Instance_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUVertexStepMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUVertexStepMode_Force32;")
     private static native int WGPUVertexStepMode_Force32_NATIVE();
 }

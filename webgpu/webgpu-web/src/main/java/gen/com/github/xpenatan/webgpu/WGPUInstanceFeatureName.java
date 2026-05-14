@@ -34,27 +34,15 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUInstanceFeatureName_TimedWaitAny;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUInstanceFeatureName_TimedWaitAny;")
     private static native int WGPUInstanceFeatureName_TimedWaitAny_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUInstanceFeatureName_ShaderSourceSPIRV;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUInstanceFeatureName_ShaderSourceSPIRV;")
     private static native int WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUInstanceFeatureName_MultipleDevicesPerAdapter;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUInstanceFeatureName_MultipleDevicesPerAdapter;")
     private static native int WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUInstanceFeatureName_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUInstanceFeatureName_Force32;")
     private static native int WGPUInstanceFeatureName_Force32_NATIVE();
 }

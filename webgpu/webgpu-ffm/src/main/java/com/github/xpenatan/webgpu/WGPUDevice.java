@@ -39,10 +39,6 @@ public class WGPUDevice extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -55,10 +51,6 @@ delete nativeObject;
         internal_native_Release(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->Release();
-*/
     public static void internal_native_Release(long this_addr) {
         try {
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
@@ -71,10 +63,6 @@ nativeObject->Release();
         internal_native_CreateBindGroup(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateBindGroup((JGPU::WGPUBindGroupDescriptor* )descriptor_addr, (JGPU::WGPUBindGroup* )valueOut_addr);
-*/
     public static void internal_native_CreateBindGroup(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateBindGroup__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -87,10 +75,6 @@ nativeObject->CreateBindGroup((JGPU::WGPUBindGroupDescriptor* )descriptor_addr, 
         internal_native_CreateBindGroupLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateBindGroupLayout((JGPU::WGPUBindGroupLayoutDescriptor* )descriptor_addr, (JGPU::WGPUBindGroupLayout* )valueOut_addr);
-*/
     public static void internal_native_CreateBindGroupLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateBindGroupLayout__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -108,11 +92,6 @@ nativeObject->CreateBindGroupLayout((JGPU::WGPUBindGroupLayoutDescriptor* )descr
         return WGPUBuffer_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-JGPU::WGPUBuffer* obj = nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr);
-return (int64_t)obj;
-*/
     public static long internal_native_CreateBuffer__0_addr(long this_addr, long descriptor_addr) {
         try {
             return (long) FFMHandles.internal_native_CreateBuffer__0_addr__JJ.invokeExact(this_addr, descriptor_addr);
@@ -125,10 +104,6 @@ return (int64_t)obj;
         internal_native_CreateBuffer__1(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr, (JGPU::WGPUBuffer* )valueOut_addr);
-*/
     public static void internal_native_CreateBuffer__1(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateBuffer__1__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -141,10 +116,6 @@ nativeObject->CreateBuffer((JGPU::WGPUBufferDescriptor* )descriptor_addr, (JGPU:
         internal_native_CreateCommandEncoder(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateCommandEncoder((JGPU::WGPUCommandEncoderDescriptor* )descriptor_addr, (JGPU::WGPUCommandEncoder* )valueOut_addr);
-*/
     public static void internal_native_CreateCommandEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateCommandEncoder__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -157,10 +128,6 @@ nativeObject->CreateCommandEncoder((JGPU::WGPUCommandEncoderDescriptor* )descrip
         internal_native_CreateComputePipeline(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateComputePipeline((JGPU::WGPUComputePipelineDescriptor* )descriptor_addr, (JGPU::WGPUComputePipeline* )valueOut_addr);
-*/
     public static void internal_native_CreateComputePipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateComputePipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -173,10 +140,6 @@ nativeObject->CreateComputePipeline((JGPU::WGPUComputePipelineDescriptor* )descr
         internal_native_CreatePipelineLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreatePipelineLayout((JGPU::WGPUPipelineLayoutDescriptor* )descriptor_addr, (JGPU::WGPUPipelineLayout* )valueOut_addr);
-*/
     public static void internal_native_CreatePipelineLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreatePipelineLayout__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -189,10 +152,6 @@ nativeObject->CreatePipelineLayout((JGPU::WGPUPipelineLayoutDescriptor* )descrip
         internal_native_CreateQuerySet(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateQuerySet((JGPU::WGPUQuerySetDescriptor* )descriptor_addr, (JGPU::WGPUQuerySet* )valueOut_addr);
-*/
     public static void internal_native_CreateQuerySet(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateQuerySet__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -205,10 +164,6 @@ nativeObject->CreateQuerySet((JGPU::WGPUQuerySetDescriptor* )descriptor_addr, (J
         internal_native_CreateRenderBundleEncoder(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateRenderBundleEncoder((JGPU::WGPURenderBundleEncoderDescriptor* )descriptor_addr, (JGPU::WGPURenderBundleEncoder* )valueOut_addr);
-*/
     public static void internal_native_CreateRenderBundleEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateRenderBundleEncoder__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -221,10 +176,6 @@ nativeObject->CreateRenderBundleEncoder((JGPU::WGPURenderBundleEncoderDescriptor
         internal_native_CreateRenderPipeline(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateRenderPipeline((JGPU::WGPURenderPipelineDescriptor* )descriptor_addr, (JGPU::WGPURenderPipeline* )valueOut_addr);
-*/
     public static void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateRenderPipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -237,10 +188,6 @@ nativeObject->CreateRenderPipeline((JGPU::WGPURenderPipelineDescriptor* )descrip
         internal_native_CreateSampler(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateSampler((JGPU::WGPUSamplerDescriptor* )descriptor_addr, (JGPU::WGPUSampler* )valueOut_addr);
-*/
     public static void internal_native_CreateSampler(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateSampler__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -253,10 +200,6 @@ nativeObject->CreateSampler((JGPU::WGPUSamplerDescriptor* )descriptor_addr, (JGP
         internal_native_CreateShaderModule(native_address, descriptor.native_address, shaderModule.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateShaderModule((JGPU::WGPUShaderModuleDescriptor* )descriptor_addr, (JGPU::WGPUShaderModule* )shaderModule_addr);
-*/
     public static void internal_native_CreateShaderModule(long this_addr, long descriptor_addr, long shaderModule_addr) {
         try {
             FFMHandles.internal_native_CreateShaderModule__JJJ.invokeExact(this_addr, descriptor_addr, shaderModule_addr);
@@ -269,10 +212,6 @@ nativeObject->CreateShaderModule((JGPU::WGPUShaderModuleDescriptor* )descriptor_
         internal_native_CreateTexture(native_address, descriptor.native_address, valueOut.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->CreateTexture((JGPU::WGPUTextureDescriptor* )descriptor_addr, (JGPU::WGPUTexture* )valueOut_addr);
-*/
     public static void internal_native_CreateTexture(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateTexture__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
@@ -285,10 +224,6 @@ nativeObject->CreateTexture((JGPU::WGPUTextureDescriptor* )descriptor_addr, (JGP
         internal_native_Destroy(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->Destroy();
-*/
     public static void internal_native_Destroy(long this_addr) {
         try {
             FFMHandles.internal_native_Destroy__J.invokeExact(this_addr);
@@ -301,10 +236,6 @@ nativeObject->Destroy();
         internal_native_GetFeatures(native_address, features.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->GetFeatures((JGPU::WGPUSupportedFeatures* )features_addr);
-*/
     public static void internal_native_GetFeatures(long this_addr, long features_addr) {
         try {
             FFMHandles.internal_native_GetFeatures__JJ.invokeExact(this_addr, features_addr);
@@ -317,10 +248,6 @@ nativeObject->GetFeatures((JGPU::WGPUSupportedFeatures* )features_addr);
         return internal_native_HasFeature(native_address, feature.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-return nativeObject->HasFeature((::WGPUFeatureName)feature);
-*/
     public static boolean internal_native_HasFeature(long this_addr, int feature) {
         try {
             return (boolean) FFMHandles.internal_native_HasFeature__JI.invokeExact(this_addr, feature);
@@ -333,10 +260,6 @@ return nativeObject->HasFeature((::WGPUFeatureName)feature);
         internal_native_GetLimits(native_address, limits.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-nativeObject->GetLimits((JGPU::WGPULimits* )limits_addr);
-*/
     public static void internal_native_GetLimits(long this_addr, long limits_addr) {
         try {
             FFMHandles.internal_native_GetLimits__JJ.invokeExact(this_addr, limits_addr);
@@ -355,11 +278,6 @@ nativeObject->GetLimits((JGPU::WGPULimits* )limits_addr);
         return WGPUQueue_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUDevice* nativeObject = (JGPU::WGPUDevice*)this_addr;
-JGPU::WGPUQueue* obj = nativeObject->GetQueue();
-return (int64_t)obj;
-*/
     public static long internal_native_GetQueue_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetQueue_addr__J.invokeExact(this_addr);

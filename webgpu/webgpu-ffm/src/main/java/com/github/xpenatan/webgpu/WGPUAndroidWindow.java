@@ -44,10 +44,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      return (int64_t)new WGPUAndroidWindow();
-    */
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -60,11 +56,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUAndroidWindow* nativeObject = (WGPUAndroidWindow*)this_addr;
-      delete nativeObject;
-    */
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -77,11 +68,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_InitLogcat(native_address);
     }
 
-    /*
-      [-FFM;-NATIVE]
-      WGPUAndroidWindow* nativeObject = (WGPUAndroidWindow*)this_addr;
-      nativeObject->InitLogcat();
-    */
     public static void internal_native_InitLogcat(long this_addr) {
         try {
             FFMHandles.internal_native_InitLogcat__J.invokeExact(this_addr);

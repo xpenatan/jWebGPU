@@ -36,10 +36,6 @@ public class WGPU extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-WGPU* nativeObject = (WGPU*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public static WGPUPlatformType getPlatformType() {
@@ -53,9 +49,6 @@ delete nativeObject;
         return WGPUPlatformType.CUSTOM.setValue(value);
     }
 
-    /*[-JNI;-NATIVE]
-return (int)WGPU::GetPlatformType();
-*/
     public static native int internal_native_GetPlatformType();
 
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
@@ -67,9 +60,6 @@ return (int)WGPU::GetPlatformType();
         return WGPUInstance_NEW;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::SetupInstance((JGPU::WGPUInstanceDescriptor* )descriptor_addr);
-*/
     public static native long internal_native_SetupInstance_addr(long descriptor_addr);
 
     public static WGPUInstance setupInstance() {
@@ -82,9 +72,6 @@ return (jlong)WGPU::SetupInstance((JGPU::WGPUInstanceDescriptor* )descriptor_add
         return WGPUInstance_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::SetupInstance();
-*/
     public static native long internal_native_SetupInstance_addr();
 
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {
@@ -97,9 +84,6 @@ return (jlong)WGPU::SetupInstance();
         return STBImage_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::loadImage((WGPUByteBuffer* )buffer_addr, (int)desiredChannels);
-*/
     public static native long internal_native_loadImage_addr(long buffer_addr, int desiredChannels);
 
     public static STBImage loadImage(WGPUByteBuffer buffer) {
@@ -112,8 +96,5 @@ return (jlong)WGPU::loadImage((WGPUByteBuffer* )buffer_addr, (int)desiredChannel
         return STBImage_TEMP_STATIC_GEN_1;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)WGPU::loadImage((WGPUByteBuffer* )buffer_addr);
-*/
     public static native long internal_native_loadImage_addr(long buffer_addr);
 }

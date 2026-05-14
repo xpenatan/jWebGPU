@@ -49,9 +49,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_BindingNotUsed;
-*/
     private static int WGPUTextureSampleType_BindingNotUsed_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_BindingNotUsed_NATIVE__.invokeExact();
@@ -60,9 +57,6 @@ return (int64_t)WGPUTextureSampleType_BindingNotUsed;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_Undefined;
-*/
     private static int WGPUTextureSampleType_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Undefined_NATIVE__.invokeExact();
@@ -71,9 +65,6 @@ return (int64_t)WGPUTextureSampleType_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_Float;
-*/
     private static int WGPUTextureSampleType_Float_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Float_NATIVE__.invokeExact();
@@ -82,9 +73,6 @@ return (int64_t)WGPUTextureSampleType_Float;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_UnfilterableFloat;
-*/
     private static int WGPUTextureSampleType_UnfilterableFloat_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_UnfilterableFloat_NATIVE__.invokeExact();
@@ -93,9 +81,6 @@ return (int64_t)WGPUTextureSampleType_UnfilterableFloat;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_Depth;
-*/
     private static int WGPUTextureSampleType_Depth_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Depth_NATIVE__.invokeExact();
@@ -104,9 +89,6 @@ return (int64_t)WGPUTextureSampleType_Depth;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_Sint;
-*/
     private static int WGPUTextureSampleType_Sint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Sint_NATIVE__.invokeExact();
@@ -115,9 +97,6 @@ return (int64_t)WGPUTextureSampleType_Sint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_Uint;
-*/
     private static int WGPUTextureSampleType_Uint_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Uint_NATIVE__.invokeExact();
@@ -126,9 +105,6 @@ return (int64_t)WGPUTextureSampleType_Uint;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureSampleType_Force32;
-*/
     private static int WGPUTextureSampleType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureSampleType_Force32_NATIVE__.invokeExact();

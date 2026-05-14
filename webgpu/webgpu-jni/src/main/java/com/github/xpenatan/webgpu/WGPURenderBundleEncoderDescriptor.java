@@ -19,9 +19,6 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPURenderBundleEncoderDescriptor();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,80 +39,48 @@ return (jlong)new JGPU::WGPURenderBundleEncoderDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public void setLabel(String label) {
         internal_native_SetLabel(native_address, label);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetLabel(label);
-*/
     public static native void internal_native_SetLabel(long this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static native void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr);
 
     public void setColorFormats(WGPUVectorTextureFormat colorFormats) {
         internal_native_SetColorFormats(native_address, colorFormats.native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetColorFormats((JGPU::WGPUVectorTextureFormat* )colorFormats_addr);
-*/
     public static native void internal_native_SetColorFormats(long this_addr, long colorFormats_addr);
 
     public void setDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
         internal_native_SetDepthStencilFormat(native_address, depthStencilFormat.getValue());
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetDepthStencilFormat((::WGPUTextureFormat)depthStencilFormat);
-*/
     public static native void internal_native_SetDepthStencilFormat(long this_addr, int depthStencilFormat);
 
     public void setSampleCount(int sampleCount) {
         internal_native_SetSampleCount(native_address, sampleCount);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetSampleCount((int)sampleCount);
-*/
     public static native void internal_native_SetSampleCount(long this_addr, int sampleCount);
 
     public void setDepthReadOnly(int depthReadOnly) {
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetDepthReadOnly((int)depthReadOnly);
-*/
     public static native void internal_native_SetDepthReadOnly(long this_addr, int depthReadOnly);
 
     public void setStencilReadOnly(int stencilReadOnly) {
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPURenderBundleEncoderDescriptor* nativeObject = (JGPU::WGPURenderBundleEncoderDescriptor*)this_addr;
-nativeObject->SetStencilReadOnly((int)stencilReadOnly);
-*/
     public static native void internal_native_SetStencilReadOnly(long this_addr, int stencilReadOnly);
 
     public static WGPURenderBundleEncoderDescriptor obtain() {
@@ -128,8 +93,5 @@ nativeObject->SetStencilReadOnly((int)stencilReadOnly);
         return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPURenderBundleEncoderDescriptor::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

@@ -41,9 +41,6 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompilationMessageType_Error;
-*/
     private static int WGPUCompilationMessageType_Error_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompilationMessageType_Error_NATIVE__.invokeExact();
@@ -52,9 +49,6 @@ return (int64_t)WGPUCompilationMessageType_Error;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompilationMessageType_Warning;
-*/
     private static int WGPUCompilationMessageType_Warning_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompilationMessageType_Warning_NATIVE__.invokeExact();
@@ -63,9 +57,6 @@ return (int64_t)WGPUCompilationMessageType_Warning;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompilationMessageType_Info;
-*/
     private static int WGPUCompilationMessageType_Info_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompilationMessageType_Info_NATIVE__.invokeExact();
@@ -74,9 +65,6 @@ return (int64_t)WGPUCompilationMessageType_Info;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUCompilationMessageType_Force32;
-*/
     private static int WGPUCompilationMessageType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCompilationMessageType_Force32_NATIVE__.invokeExact();

@@ -39,33 +39,18 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAdapterType_DiscreteGPU;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAdapterType_DiscreteGPU;")
     private static native int WGPUAdapterType_DiscreteGPU_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAdapterType_IntegratedGPU;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAdapterType_IntegratedGPU;")
     private static native int WGPUAdapterType_IntegratedGPU_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAdapterType_CPU;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAdapterType_CPU;")
     private static native int WGPUAdapterType_CPU_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAdapterType_Unknown;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAdapterType_Unknown;")
     private static native int WGPUAdapterType_Unknown_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUAdapterType_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUAdapterType_Force32;")
     private static native int WGPUAdapterType_Force32_NATIVE();
 }

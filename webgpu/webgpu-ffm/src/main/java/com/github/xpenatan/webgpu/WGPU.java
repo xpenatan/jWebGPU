@@ -43,10 +43,6 @@ public class WGPU extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-WGPU* nativeObject = (WGPU*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -66,9 +62,6 @@ delete nativeObject;
         return WGPUPlatformType.CUSTOM.setValue(value);
     }
 
-    /*[-FFM;-NATIVE]
-return (int)WGPU::GetPlatformType();
-*/
     public static int internal_native_GetPlatformType() {
         try {
             return (int) FFMHandles.internal_native_GetPlatformType__.invokeExact();
@@ -86,9 +79,6 @@ return (int)WGPU::GetPlatformType();
         return WGPUInstance_NEW;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU::SetupInstance((JGPU::WGPUInstanceDescriptor* )descriptor_addr);
-*/
     public static long internal_native_SetupInstance_addr(long descriptor_addr) {
         try {
             return (long) FFMHandles.internal_native_SetupInstance_addr__J.invokeExact(descriptor_addr);
@@ -107,9 +97,6 @@ return (int64_t)WGPU::SetupInstance((JGPU::WGPUInstanceDescriptor* )descriptor_a
         return WGPUInstance_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU::SetupInstance();
-*/
     public static long internal_native_SetupInstance_addr() {
         try {
             return (long) FFMHandles.internal_native_SetupInstance_addr__.invokeExact();
@@ -128,9 +115,6 @@ return (int64_t)WGPU::SetupInstance();
         return STBImage_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU::loadImage((WGPUByteBuffer* )buffer_addr, (int)desiredChannels);
-*/
     public static long internal_native_loadImage_addr(long buffer_addr, int desiredChannels) {
         try {
             return (long) FFMHandles.internal_native_loadImage_addr__JI.invokeExact(buffer_addr, desiredChannels);
@@ -149,9 +133,6 @@ return (int64_t)WGPU::loadImage((WGPUByteBuffer* )buffer_addr, (int)desiredChann
         return STBImage_TEMP_STATIC_GEN_1;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPU::loadImage((WGPUByteBuffer* )buffer_addr);
-*/
     public static long internal_native_loadImage_addr(long buffer_addr) {
         try {
             return (long) FFMHandles.internal_native_loadImage_addr__J.invokeExact(buffer_addr);

@@ -34,27 +34,15 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPULoadOp_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPULoadOp_Undefined;")
     private static native int WGPULoadOp_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPULoadOp_Load;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPULoadOp_Load;")
     private static native int WGPULoadOp_Load_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPULoadOp_Clear;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPULoadOp_Clear;")
     private static native int WGPULoadOp_Clear_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPULoadOp_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPULoadOp_Force32;")
     private static native int WGPULoadOp_Force32_NATIVE();
 }

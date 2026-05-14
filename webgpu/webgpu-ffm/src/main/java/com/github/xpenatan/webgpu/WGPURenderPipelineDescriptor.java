@@ -32,9 +32,6 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURenderPipelineDescriptor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -61,10 +58,6 @@ return (int64_t)new JGPU::WGPURenderPipelineDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -77,10 +70,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -93,10 +82,6 @@ nativeObject->SetLabel(value);
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -115,11 +100,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         return WGPUVertexState_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-thread_local static JGPU::WGPUVertexState copy_addr;
-copy_addr = nativeObject->GetVertex();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetVertex_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetVertex_addr__J.invokeExact(this_addr);
@@ -138,11 +118,6 @@ return (int64_t)&copy_addr;*/
         return WGPUPrimitiveState_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-thread_local static JGPU::WGPUPrimitiveState copy_addr;
-copy_addr = nativeObject->GetPrimitive();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetPrimitive_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetPrimitive_addr__J.invokeExact(this_addr);
@@ -155,10 +130,6 @@ return (int64_t)&copy_addr;*/
         internal_native_SetFragment(native_address, fragmentState.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-nativeObject->SetFragment((JGPU::WGPUFragmentState* )fragmentState_addr);
-*/
     public static void internal_native_SetFragment(long this_addr, long fragmentState_addr) {
         try {
             FFMHandles.internal_native_SetFragment__JJ.invokeExact(this_addr, fragmentState_addr);
@@ -171,10 +142,6 @@ nativeObject->SetFragment((JGPU::WGPUFragmentState* )fragmentState_addr);
         internal_native_SetDepthStencil(native_address, depthStencilState.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-nativeObject->SetDepthStencil((JGPU::WGPUDepthStencilState* )depthStencilState_addr);
-*/
     public static void internal_native_SetDepthStencil(long this_addr, long depthStencilState_addr) {
         try {
             FFMHandles.internal_native_SetDepthStencil__JJ.invokeExact(this_addr, depthStencilState_addr);
@@ -193,11 +160,6 @@ nativeObject->SetDepthStencil((JGPU::WGPUDepthStencilState* )depthStencilState_a
         return WGPUMultisampleState_TEMP_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-thread_local static JGPU::WGPUMultisampleState copy_addr;
-copy_addr = nativeObject->GetMultisample();
-return (int64_t)&copy_addr;*/
     public static long internal_native_GetMultisample_addr(long this_addr) {
         try {
             return (long) FFMHandles.internal_native_GetMultisample_addr__J.invokeExact(this_addr);
@@ -210,10 +172,6 @@ return (int64_t)&copy_addr;*/
         internal_native_SetLayout(native_address, pipelineLayout.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPipelineDescriptor* nativeObject = (JGPU::WGPURenderPipelineDescriptor*)this_addr;
-nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )pipelineLayout_addr);
-*/
     public static void internal_native_SetLayout(long this_addr, long pipelineLayout_addr) {
         try {
             FFMHandles.internal_native_SetLayout__JJ.invokeExact(this_addr, pipelineLayout_addr);
@@ -232,9 +190,6 @@ nativeObject->SetLayout((JGPU::WGPUPipelineLayout* )pipelineLayout_addr);
         return WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPURenderPipelineDescriptor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

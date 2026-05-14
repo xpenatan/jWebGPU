@@ -26,9 +26,6 @@ public class WGPUColorTargetState extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPUColorTargetState();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPUColorTargetState();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -87,10 +76,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetFormat((::WGPUTextureFormat)format);
-*/
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
@@ -103,10 +88,6 @@ nativeObject->SetFormat((::WGPUTextureFormat)format);
         internal_native_SetBlend(native_address, blendState.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetBlend((JGPU::WGPUBlendState* )blendState_addr);
-*/
     public static void internal_native_SetBlend(long this_addr, long blendState_addr) {
         try {
             FFMHandles.internal_native_SetBlend__JJ.invokeExact(this_addr, blendState_addr);
@@ -119,10 +100,6 @@ nativeObject->SetBlend((JGPU::WGPUBlendState* )blendState_addr);
         internal_native_SetWriteMask(native_address, writeMask.getValue());
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPUColorTargetState* nativeObject = (JGPU::WGPUColorTargetState*)this_addr;
-nativeObject->SetWriteMask((::WGPUColorWriteMask)writeMask);
-*/
     public static void internal_native_SetWriteMask(long this_addr, int writeMask) {
         try {
             FFMHandles.internal_native_SetWriteMask__JI.invokeExact(this_addr, writeMask);
@@ -141,9 +118,6 @@ nativeObject->SetWriteMask((::WGPUColorWriteMask)writeMask);
         return WGPUColorTargetState_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPUColorTargetState::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

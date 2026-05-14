@@ -51,9 +51,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_Undefined;
-*/
     private static int WGPUBackendType_Undefined_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_Undefined_NATIVE__.invokeExact();
@@ -62,9 +59,6 @@ return (int64_t)WGPUBackendType_Undefined;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_Null;
-*/
     private static int WGPUBackendType_Null_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_Null_NATIVE__.invokeExact();
@@ -73,9 +67,6 @@ return (int64_t)WGPUBackendType_Null;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_WebGPU;
-*/
     private static int WGPUBackendType_WebGPU_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_WebGPU_NATIVE__.invokeExact();
@@ -84,9 +75,6 @@ return (int64_t)WGPUBackendType_WebGPU;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_D3D11;
-*/
     private static int WGPUBackendType_D3D11_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_D3D11_NATIVE__.invokeExact();
@@ -95,9 +83,6 @@ return (int64_t)WGPUBackendType_D3D11;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_D3D12;
-*/
     private static int WGPUBackendType_D3D12_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_D3D12_NATIVE__.invokeExact();
@@ -106,9 +91,6 @@ return (int64_t)WGPUBackendType_D3D12;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_Metal;
-*/
     private static int WGPUBackendType_Metal_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_Metal_NATIVE__.invokeExact();
@@ -117,9 +99,6 @@ return (int64_t)WGPUBackendType_Metal;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_Vulkan;
-*/
     private static int WGPUBackendType_Vulkan_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_Vulkan_NATIVE__.invokeExact();
@@ -128,9 +107,6 @@ return (int64_t)WGPUBackendType_Vulkan;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_OpenGL;
-*/
     private static int WGPUBackendType_OpenGL_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_OpenGL_NATIVE__.invokeExact();
@@ -139,9 +115,6 @@ return (int64_t)WGPUBackendType_OpenGL;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_OpenGLES;
-*/
     private static int WGPUBackendType_OpenGLES_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_OpenGLES_NATIVE__.invokeExact();
@@ -150,9 +123,6 @@ return (int64_t)WGPUBackendType_OpenGLES;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUBackendType_Force32;
-*/
     private static int WGPUBackendType_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUBackendType_Force32_NATIVE__.invokeExact();

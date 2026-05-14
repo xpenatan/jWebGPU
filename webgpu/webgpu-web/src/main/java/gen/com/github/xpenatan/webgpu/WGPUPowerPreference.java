@@ -34,27 +34,15 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPowerPreference_Undefined;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPowerPreference_Undefined;")
     private static native int WGPUPowerPreference_Undefined_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPowerPreference_LowPower;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPowerPreference_LowPower;")
     private static native int WGPUPowerPreference_LowPower_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPowerPreference_HighPerformance;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPowerPreference_HighPerformance;")
     private static native int WGPUPowerPreference_HighPerformance_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUPowerPreference_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUPowerPreference_Force32;")
     private static native int WGPUPowerPreference_Force32_NATIVE();
 }

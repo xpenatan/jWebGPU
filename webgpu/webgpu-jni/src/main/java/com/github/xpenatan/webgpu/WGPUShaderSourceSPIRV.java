@@ -19,9 +19,6 @@ public class WGPUShaderSourceSPIRV extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)new JGPU::WGPUShaderSourceSPIRV();
-*/
     public static native long internal_native_create_addr();
 
     /**
@@ -42,10 +39,6 @@ return (jlong)new JGPU::WGPUShaderSourceSPIRV();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-JNI;-NATIVE]
-JGPU::WGPUShaderSourceSPIRV* nativeObject = (JGPU::WGPUShaderSourceSPIRV*)this_addr;
-delete nativeObject;
-*/
     public static native void internal_native_deleteNative(long this_addr);
 
     public static WGPUShaderSourceSPIRV obtain() {
@@ -58,8 +51,5 @@ delete nativeObject;
         return WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
     }
 
-    /*[-JNI;-NATIVE]
-return (jlong)JGPU::WGPUShaderSourceSPIRV::Obtain();
-*/
     public static native long internal_native_Obtain_addr();
 }

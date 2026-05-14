@@ -26,9 +26,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURenderPassMaxDrawCount();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPURenderPassMaxDrawCount();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetMaxDrawCount(native_address, maxDrawCount);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-nativeObject->SetMaxDrawCount((int)maxDrawCount);
-*/
     public static void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount) {
         try {
             FFMHandles.internal_native_SetMaxDrawCount__JI.invokeExact(this_addr, maxDrawCount);
@@ -87,10 +76,6 @@ nativeObject->SetMaxDrawCount((int)maxDrawCount);
         return internal_native_GetMaxDrawCount(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassMaxDrawCount* nativeObject = (JGPU::WGPURenderPassMaxDrawCount*)this_addr;
-return nativeObject->GetMaxDrawCount();
-*/
     public static int internal_native_GetMaxDrawCount(long this_addr) {
         try {
             return (int) FFMHandles.internal_native_GetMaxDrawCount__J.invokeExact(this_addr);
@@ -109,9 +94,6 @@ return nativeObject->GetMaxDrawCount();
         return WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPURenderPassMaxDrawCount::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

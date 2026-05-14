@@ -47,9 +47,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
         return CUSTOM;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureUsage_None;
-*/
     private static int WGPUTextureUsage_None_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureUsage_None_NATIVE__.invokeExact();
@@ -58,9 +55,6 @@ return (int64_t)WGPUTextureUsage_None;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureUsage_CopySrc;
-*/
     private static int WGPUTextureUsage_CopySrc_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureUsage_CopySrc_NATIVE__.invokeExact();
@@ -69,9 +63,6 @@ return (int64_t)WGPUTextureUsage_CopySrc;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureUsage_CopyDst;
-*/
     private static int WGPUTextureUsage_CopyDst_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureUsage_CopyDst_NATIVE__.invokeExact();
@@ -80,9 +71,6 @@ return (int64_t)WGPUTextureUsage_CopyDst;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureUsage_TextureBinding;
-*/
     private static int WGPUTextureUsage_TextureBinding_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureUsage_TextureBinding_NATIVE__.invokeExact();
@@ -91,9 +79,6 @@ return (int64_t)WGPUTextureUsage_TextureBinding;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureUsage_StorageBinding;
-*/
     private static int WGPUTextureUsage_StorageBinding_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureUsage_StorageBinding_NATIVE__.invokeExact();
@@ -102,9 +87,6 @@ return (int64_t)WGPUTextureUsage_StorageBinding;
         }
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)WGPUTextureUsage_RenderAttachment;
-*/
     private static int WGPUTextureUsage_RenderAttachment_NATIVE() {
         try {
             return (int) FFMHandles.WGPUTextureUsage_RenderAttachment_NATIVE__.invokeExact();

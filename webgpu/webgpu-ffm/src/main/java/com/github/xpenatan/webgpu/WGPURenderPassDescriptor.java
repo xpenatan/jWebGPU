@@ -26,9 +26,6 @@ public class WGPURenderPassDescriptor extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)new JGPU::WGPURenderPassDescriptor();
-*/
     public static long internal_native_create_addr() {
         try {
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
@@ -55,10 +52,6 @@ return (int64_t)new JGPU::WGPURenderPassDescriptor();
         internal_native_deleteNative(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-delete nativeObject;
-*/
     public static void internal_native_deleteNative(long this_addr) {
         try {
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
@@ -71,10 +64,6 @@ delete nativeObject;
         internal_native_SetLabel(native_address, value);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetLabel(value);
-*/
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
@@ -87,10 +76,6 @@ nativeObject->SetLabel(value);
         internal_native_Reset(native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->Reset();
-*/
     public static void internal_native_Reset(long this_addr) {
         try {
             FFMHandles.internal_native_Reset__J.invokeExact(this_addr);
@@ -103,10 +88,6 @@ nativeObject->Reset();
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
-*/
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
@@ -119,10 +100,6 @@ nativeObject->SetNextInChain((JGPU::WGPUChainedStruct* )chainedStruct_addr);
         internal_native_SetColorAttachments__0(native_address, colorAttachments.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPUVectorRenderPassColorAttachment* )colorAttachments_addr);
-*/
     public static void internal_native_SetColorAttachments__0(long this_addr, long colorAttachments_addr) {
         try {
             FFMHandles.internal_native_SetColorAttachments__0__JJ.invokeExact(this_addr, colorAttachments_addr);
@@ -135,10 +112,6 @@ nativeObject->SetColorAttachments((JGPU::WGPUVectorRenderPassColorAttachment* )c
         internal_native_SetColorAttachments__1(native_address, colorAttachment01.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr);
-*/
     public static void internal_native_SetColorAttachments__1(long this_addr, long colorAttachment01_addr) {
         try {
             FFMHandles.internal_native_SetColorAttachments__1__JJ.invokeExact(this_addr, colorAttachment01_addr);
@@ -151,10 +124,6 @@ nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAt
         internal_native_SetColorAttachments__2(native_address, colorAttachment01.native_address, colorAttachment02.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment02_addr);
-*/
     public static void internal_native_SetColorAttachments__2(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr) {
         try {
             FFMHandles.internal_native_SetColorAttachments__2__JJJ.invokeExact(this_addr, colorAttachment01_addr, colorAttachment02_addr);
@@ -167,10 +136,6 @@ nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAt
         internal_native_SetColorAttachments__3(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment02_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment03_addr);
-*/
     public static void internal_native_SetColorAttachments__3(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr) {
         try {
             FFMHandles.internal_native_SetColorAttachments__3__JJJJ.invokeExact(this_addr, colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr);
@@ -183,10 +148,6 @@ nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAt
         internal_native_SetColorAttachments__4(native_address, colorAttachment01.native_address, colorAttachment02.native_address, colorAttachment03.native_address, colorAttachment04.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAttachment01_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment02_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment03_addr, (JGPU::WGPURenderPassColorAttachment* )colorAttachment04_addr);
-*/
     public static void internal_native_SetColorAttachments__4(long this_addr, long colorAttachment01_addr, long colorAttachment02_addr, long colorAttachment03_addr, long colorAttachment04_addr) {
         try {
             FFMHandles.internal_native_SetColorAttachments__4__JJJJJ.invokeExact(this_addr, colorAttachment01_addr, colorAttachment02_addr, colorAttachment03_addr, colorAttachment04_addr);
@@ -199,10 +160,6 @@ nativeObject->SetColorAttachments((JGPU::WGPURenderPassColorAttachment* )colorAt
         internal_native_SetDepthStencilAttachment(native_address, attachment.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetDepthStencilAttachment((JGPU::WGPURenderPassDepthStencilAttachment* )attachment_addr);
-*/
     public static void internal_native_SetDepthStencilAttachment(long this_addr, long attachment_addr) {
         try {
             FFMHandles.internal_native_SetDepthStencilAttachment__JJ.invokeExact(this_addr, attachment_addr);
@@ -215,10 +172,6 @@ nativeObject->SetDepthStencilAttachment((JGPU::WGPURenderPassDepthStencilAttachm
         internal_native_SetOcclusionQuerySet(native_address, occlusionQuerySet.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetOcclusionQuerySet((JGPU::WGPUQuerySet* )occlusionQuerySet_addr);
-*/
     public static void internal_native_SetOcclusionQuerySet(long this_addr, long occlusionQuerySet_addr) {
         try {
             FFMHandles.internal_native_SetOcclusionQuerySet__JJ.invokeExact(this_addr, occlusionQuerySet_addr);
@@ -231,10 +184,6 @@ nativeObject->SetOcclusionQuerySet((JGPU::WGPUQuerySet* )occlusionQuerySet_addr)
         internal_native_SetTimestampWrites(native_address, timestampWrites.native_address);
     }
 
-    /*[-FFM;-NATIVE]
-JGPU::WGPURenderPassDescriptor* nativeObject = (JGPU::WGPURenderPassDescriptor*)this_addr;
-nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrites_addr);
-*/
     public static void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr) {
         try {
             FFMHandles.internal_native_SetTimestampWrites__JJ.invokeExact(this_addr, timestampWrites_addr);
@@ -253,9 +202,6 @@ nativeObject->SetTimestampWrites((JGPU::WGPUPassTimestampWrites* )timestampWrite
         return WGPURenderPassDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    /*[-FFM;-NATIVE]
-return (int64_t)JGPU::WGPURenderPassDescriptor::Obtain();
-*/
     public static long internal_native_Obtain_addr() {
         try {
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();

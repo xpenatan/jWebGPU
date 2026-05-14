@@ -28,11 +28,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_reset(addr, true);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = new jWebGPU.WGPUTexelCopyTextureInfo();
-      return jWebGPU.getPointer(jsObj);
-    */
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUTexelCopyTextureInfo();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
@@ -40,11 +35,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_deleteNative(native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);
-      jWebGPU.destroy(jsObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
@@ -52,11 +42,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetTexture(native_address, texture.native_address);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);
-      jsObj.SetTexture(texture_addr);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "texture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.SetTexture(texture_addr);")
     public static native void internal_native_SetTexture(int this_addr, int texture_addr);
 
@@ -64,11 +49,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetMipLevel(native_address, mipLevel);
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);
-      jsObj.SetMipLevel(mipLevel);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "mipLevel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.SetMipLevel(mipLevel);")
     public static native void internal_native_SetMipLevel(int this_addr, int mipLevel);
 
@@ -82,13 +62,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUOrigin3D_TEMP_GEN_0;
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);
-      var returnedJSObj = jsObj.GetOrigin();
-      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
-      return jWebGPU.getPointer(returnedJSObj);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);var returnedJSObj = jsObj.GetOrigin();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetOrigin_addr(int this_addr);
 
@@ -96,11 +69,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetAspect(native_address, aspect.getValue());
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);
-      jsObj.SetAspect(aspect);
-    */
     @org.teavm.jso.JSBody(params = {"this_addr", "aspect"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.SetAspect(aspect);")
     public static native void internal_native_SetAspect(int this_addr, int aspect);
 
@@ -114,12 +82,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
     }
 
-    /*
-      [-TEAVM;-NATIVE]
-      var returnedJSObj = jWebGPU.WGPUTexelCopyTextureInfo.prototype.Obtain();
-      if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
-      return jWebGPU.getPointer(returnedJSObj);
-    */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexelCopyTextureInfo.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

@@ -34,21 +34,12 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
         return CUSTOM;
     }
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUToneMappingMode_Standard;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUToneMappingMode_Standard;")
     private static native int WGPUToneMappingMode_Standard_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUToneMappingMode_Extended;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUToneMappingMode_Extended;")
     private static native int WGPUToneMappingMode_Extended_NATIVE();
 
-    /*[-TEAVM;-NATIVE]
-return jWebGPU.WGPUToneMappingMode_Force32;
-*/
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUToneMappingMode_Force32;")
     private static native int WGPUToneMappingMode_Force32_NATIVE();
 }
