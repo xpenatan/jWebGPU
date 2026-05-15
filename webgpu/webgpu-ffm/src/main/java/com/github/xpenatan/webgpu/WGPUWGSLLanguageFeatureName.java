@@ -88,14 +88,14 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_readonlyandreadwritestoragetextures_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_readonlyandreadwritestoragetextures_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_packed4x8integerdotproduct_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_packed4x8integerdotproduct_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_unrestrictedpointerparameters_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_unrestrictedpointerparameters_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_pointercompositeaccess_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_pointercompositeaccess_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuwgsllanguagefeaturename_wgpuwgsllanguagefeaturename_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

@@ -75,12 +75,12 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_validationerror_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_validationerror_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_InternalError_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_internalerror_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_InternalError_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_internalerror_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucreatepipelineasyncstatus_wgpucreatepipelineasyncstatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }
