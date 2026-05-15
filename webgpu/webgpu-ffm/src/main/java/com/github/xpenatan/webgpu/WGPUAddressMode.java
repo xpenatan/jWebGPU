@@ -88,14 +88,14 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUAddressMode_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_undefined_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUAddressMode_Undefined_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_undefined_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUAddressMode_ClampToEdge_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_clamptoedge_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUAddressMode_ClampToEdge_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_clamptoedge_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUAddressMode_Repeat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_repeat_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUAddressMode_Repeat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_repeat_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUAddressMode_MirrorRepeat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_mirrorrepeat_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUAddressMode_MirrorRepeat_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_mirrorrepeat_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUAddressMode_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUAddressMode_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuaddressmode_wgpuaddressmode_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

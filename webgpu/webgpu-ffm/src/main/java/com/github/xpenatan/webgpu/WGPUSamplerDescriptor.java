@@ -224,7 +224,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpusamplerdescriptor_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpusamplerdescriptor_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpusamplerdescriptor_deletenative", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
@@ -252,6 +252,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_SetMaxAnisotropy__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpusamplerdescriptor_setmaxanisotropy", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpusamplerdescriptor_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpusamplerdescriptor_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }

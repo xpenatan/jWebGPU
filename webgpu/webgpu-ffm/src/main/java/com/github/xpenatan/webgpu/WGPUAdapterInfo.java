@@ -223,26 +223,26 @@ public class WGPUAdapterInfo extends NativeObject {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuadapterinfo_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_deletenative", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetVendor_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getvendor_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetVendor_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuadapterinfo_getvendor_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetVendorID__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getvendorid", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetArchitecture_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getarchitecture_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetArchitecture_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuadapterinfo_getarchitecture_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetDevice_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getdevice_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetDevice_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuadapterinfo_getdevice_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetDeviceID__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getdeviceid", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetDescription_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getdescription_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetDescription_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuadapterinfo_getdescription_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetBackendType__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getbackendtype", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetAdapterType__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_getadaptertype", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpuadapterinfo_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuadapterinfo_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }

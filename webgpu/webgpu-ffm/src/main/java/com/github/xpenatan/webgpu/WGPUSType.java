@@ -151,28 +151,28 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceSPIRV_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_shadersourcespirv_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceSPIRV_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_shadersourcespirv_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceWGSL_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_shadersourcewgsl_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_ShaderSourceWGSL_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_shadersourcewgsl_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_RenderPassMaxDrawCount_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_renderpassmaxdrawcount_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_RenderPassMaxDrawCount_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_renderpassmaxdrawcount_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceMetalLayer_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcemetallayer_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceMetalLayer_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcemetallayer_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWindowsHWND_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcewindowshwnd_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWindowsHWND_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcewindowshwnd_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXlibWindow_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcexlibwindow_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXlibWindow_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcexlibwindow_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWaylandSurface_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcewaylandsurface_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceWaylandSurface_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcewaylandsurface_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourceandroidnativewindow_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourceandroidnativewindow_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXCBWindow_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcexcbwindow_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceSourceXCBWindow_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacesourcexcbwindow_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceColorManagement_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacecolormanagement_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_SurfaceColorManagement_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_surfacecolormanagement_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_RequestAdapterWebXROptions_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_requestadapterwebxroptions_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_RequestAdapterWebXROptions_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_requestadapterwebxroptions_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUSType_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpustype_wgpustype_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUSType_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpustype_wgpustype_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

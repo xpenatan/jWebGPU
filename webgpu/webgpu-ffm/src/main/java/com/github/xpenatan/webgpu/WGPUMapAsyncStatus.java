@@ -75,12 +75,12 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_success_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_error_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Error_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_error_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Aborted_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_aborted_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Aborted_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_aborted_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUMapAsyncStatus_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpumapasyncstatus_wgpumapasyncstatus_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

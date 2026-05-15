@@ -104,7 +104,7 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurenderpassmaxdrawcount_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpurenderpassmaxdrawcount_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurenderpassmaxdrawcount_deletenative", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
@@ -112,6 +112,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_GetMaxDrawCount__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurenderpassmaxdrawcount_getmaxdrawcount", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpurenderpassmaxdrawcount_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpurenderpassmaxdrawcount_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }

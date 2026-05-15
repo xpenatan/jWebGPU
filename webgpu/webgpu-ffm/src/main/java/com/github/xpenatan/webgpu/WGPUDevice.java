@@ -296,7 +296,7 @@ public class WGPUDevice extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_CreateBindGroupLayout__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpudevice_createbindgrouplayout", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__0_addr__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpudevice_createbuffer__0_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__0_addr__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpudevice_createbuffer__0_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_CreateBuffer__1__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpudevice_createbuffer__1", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
@@ -326,6 +326,6 @@ public class WGPUDevice extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_GetLimits__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpudevice_getlimits", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetQueue_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpudevice_getqueue_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetQueue_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpudevice_getqueue_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
     }
 }

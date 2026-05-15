@@ -207,7 +207,7 @@ public class WGPUBuffer extends NativeObject {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubuffer_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpubuffer_create_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubuffer_deletenative", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
@@ -217,9 +217,9 @@ public class WGPUBuffer extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_Destroy__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubuffer_destroy", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_MapAsync_addr__JIIIIJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubuffer_mapasync_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_MapAsync_addr__JIIIIJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpubuffer_mapasync_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMappedRange_addr__JII = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubuffer_getmappedrange_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_GetMappedRange_addr__JII = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpubuffer_getmappedrange_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle internal_native_Unmap__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpubuffer_unmap", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 

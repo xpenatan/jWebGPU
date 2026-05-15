@@ -75,12 +75,12 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUShaderStage_None_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_none_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUShaderStage_None_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_none_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUShaderStage_Vertex_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_vertex_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUShaderStage_Vertex_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_vertex_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUShaderStage_Fragment_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_fragment_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUShaderStage_Fragment_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_fragment_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUShaderStage_Compute_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_compute_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUShaderStage_Compute_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpushaderstage_wgpushaderstage_compute_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

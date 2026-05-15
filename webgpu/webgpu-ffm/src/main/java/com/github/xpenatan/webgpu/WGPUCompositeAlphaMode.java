@@ -97,16 +97,16 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Auto_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_auto_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Auto_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_auto_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Opaque_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_opaque_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Opaque_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_opaque_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Premultiplied_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_premultiplied_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Premultiplied_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_premultiplied_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Unpremultiplied_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_unpremultiplied_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Unpremultiplied_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_unpremultiplied_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Inherit_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_inherit_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Inherit_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_inherit_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUCompositeAlphaMode_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpucompositealphamode_wgpucompositealphamode_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

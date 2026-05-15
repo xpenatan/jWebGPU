@@ -83,6 +83,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_SetFuture__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpufuturewaitinfo_setfuture", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("com_github_xpenatan_webgpu_wgpufuturewaitinfo_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpufuturewaitinfo_obtain_addr", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
 }
