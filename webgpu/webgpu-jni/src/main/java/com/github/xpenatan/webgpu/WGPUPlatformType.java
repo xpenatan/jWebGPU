@@ -42,30 +42,30 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
     }
 
     private static int WGPU_Windows_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_Windows_NATIVE();
+        return n.n2798034811.n1799491552();
     }
 
     private static int WGPU_Mac_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_Mac_NATIVE();
+        return n.n2798034811.n560679468();
     }
 
     private static int WGPU_Linux_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_Linux_NATIVE();
+        return n.n2798034811.n1533372177();
     }
 
     private static int WGPU_iOS_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_iOS_NATIVE();
+        return n.n2798034811.n4177392394();
     }
 
     private static int WGPU_Android_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_Android_NATIVE();
+        return n.n2798034811.n709752780();
     }
 
     private static int WGPU_Web_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_Web_NATIVE();
+        return n.n2798034811.n792435505();
     }
 
     private static int WGPU_Unknown_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPlatformType.WGPU_Unknown_NATIVE();
+        return n.n2798034811.n3169936039();
     }
 }

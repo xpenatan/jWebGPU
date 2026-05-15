@@ -20,7 +20,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_create_addr();
+        return n.n134500861.n402431469();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_deleteNative(this_addr);
+        n.n134500861.n4150216561(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_SetLabel(this_addr, label);
+        n.n134500861.n810128252(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n134500861.n2446073660(this_addr, chainedStruct_addr);
     }
 
     public void setUsage(WGPUBufferUsage usage) {
@@ -66,7 +66,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetUsage(long this_addr, int usage) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_SetUsage(this_addr, usage);
+        n.n134500861.n282706039(this_addr, usage);
     }
 
     public void setSize(long size) {
@@ -74,7 +74,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetSize(long this_addr, long size) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_SetSize(this_addr, size);
+        n.n134500861.n881527086(this_addr, size);
     }
 
     public void setMappedAtCreation(boolean mappedAtCreation) {
@@ -82,7 +82,7 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_SetMappedAtCreation(this_addr, mappedAtCreation);
+        n.n134500861.n2257847154(this_addr, mappedAtCreation);
     }
 
     public static WGPUBufferDescriptor obtain() {
@@ -96,6 +96,6 @@ public class WGPUBufferDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferDescriptor.internal_native_Obtain_addr();
+        return n.n134500861.n3850981110();
     }
 }

@@ -35,14 +35,14 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
     }
 
     private static int WGPUQueryType_Occlusion_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQueryType.WGPUQueryType_Occlusion_NATIVE();
+        return n.n906793396.n920004409();
     }
 
     private static int WGPUQueryType_Timestamp_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQueryType.WGPUQueryType_Timestamp_NATIVE();
+        return n.n906793396.n747655618();
     }
 
     private static int WGPUQueryType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQueryType.WGPUQueryType_Force32_NATIVE();
+        return n.n906793396.n1648158902();
     }
 }

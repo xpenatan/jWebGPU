@@ -20,7 +20,7 @@ public class WGPUVertexAttribute extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexAttribute.internal_native_create_addr();
+        return n.n2968704362.n2737180064();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexAttribute.internal_native_deleteNative(this_addr);
+        n.n2968704362.n2570497950(this_addr);
     }
 
     public void setFormat(WGPUVertexFormat format) {
@@ -50,7 +50,7 @@ public class WGPUVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_SetFormat(long this_addr, int format) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexAttribute.internal_native_SetFormat(this_addr, format);
+        n.n2968704362.n935310458(this_addr, format);
     }
 
     public void setOffset(int offset) {
@@ -58,7 +58,7 @@ public class WGPUVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_SetOffset(long this_addr, int offset) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexAttribute.internal_native_SetOffset(this_addr, offset);
+        n.n2968704362.n3275929438(this_addr, offset);
     }
 
     public void setShaderLocation(int shaderLocation) {
@@ -66,7 +66,7 @@ public class WGPUVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_SetShaderLocation(long this_addr, int shaderLocation) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVertexAttribute.internal_native_SetShaderLocation(this_addr, shaderLocation);
+        n.n2968704362.n84286231(this_addr, shaderLocation);
     }
 
     public static WGPUVertexAttribute obtain() {
@@ -80,6 +80,6 @@ public class WGPUVertexAttribute extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexAttribute.internal_native_Obtain_addr();
+        return n.n2968704362.n1890762409();
     }
 }

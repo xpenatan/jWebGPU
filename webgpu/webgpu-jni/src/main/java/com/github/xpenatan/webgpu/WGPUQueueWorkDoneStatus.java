@@ -35,14 +35,14 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
     }
 
     private static int WGPUQueueWorkDoneStatus_Success_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQueueWorkDoneStatus.WGPUQueueWorkDoneStatus_Success_NATIVE();
+        return n.n349992584.n4156934551();
     }
 
     private static int WGPUQueueWorkDoneStatus_Error_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQueueWorkDoneStatus.WGPUQueueWorkDoneStatus_Error_NATIVE();
+        return n.n349992584.n2283393564();
     }
 
     private static int WGPUQueueWorkDoneStatus_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQueueWorkDoneStatus.WGPUQueueWorkDoneStatus_Force32_NATIVE();
+        return n.n349992584.n1583322398();
     }
 }

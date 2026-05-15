@@ -52,70 +52,70 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
     }
 
     private static int WGPUFeatureName_DepthClipControl_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_DepthClipControl_NATIVE();
+        return n.n400817075.n3448659404();
     }
 
     private static int WGPUFeatureName_Depth32FloatStencil8_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_Depth32FloatStencil8_NATIVE();
+        return n.n400817075.n336434648();
     }
 
     private static int WGPUFeatureName_TimestampQuery_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_TimestampQuery_NATIVE();
+        return n.n400817075.n4262974708();
     }
 
     private static int WGPUFeatureName_TextureCompressionBC_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_TextureCompressionBC_NATIVE();
+        return n.n400817075.n2809902958();
     }
 
     private static int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE();
+        return n.n400817075.n1419894673();
     }
 
     private static int WGPUFeatureName_TextureCompressionETC2_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_TextureCompressionETC2_NATIVE();
+        return n.n400817075.n2741507499();
     }
 
     private static int WGPUFeatureName_TextureCompressionASTC_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_TextureCompressionASTC_NATIVE();
+        return n.n400817075.n19443598();
     }
 
     private static int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE();
+        return n.n400817075.n375699377();
     }
 
     private static int WGPUFeatureName_IndirectFirstInstance_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_IndirectFirstInstance_NATIVE();
+        return n.n400817075.n394261665();
     }
 
     private static int WGPUFeatureName_ShaderF16_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_ShaderF16_NATIVE();
+        return n.n400817075.n1727920592();
     }
 
     private static int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_RG11B10UfloatRenderable_NATIVE();
+        return n.n400817075.n2116666413();
     }
 
     private static int WGPUFeatureName_BGRA8UnormStorage_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_BGRA8UnormStorage_NATIVE();
+        return n.n400817075.n1879765560();
     }
 
     private static int WGPUFeatureName_Float32Filterable_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_Float32Filterable_NATIVE();
+        return n.n400817075.n3946489047();
     }
 
     private static int WGPUFeatureName_Float32Blendable_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_Float32Blendable_NATIVE();
+        return n.n400817075.n4021905490();
     }
 
     private static int WGPUFeatureName_ClipDistances_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_ClipDistances_NATIVE();
+        return n.n400817075.n3029564056();
     }
 
     private static int WGPUFeatureName_DualSourceBlending_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_DualSourceBlending_NATIVE();
+        return n.n400817075.n1433950826();
     }
 
     private static int WGPUFeatureName_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureName.WGPUFeatureName_Force32_NATIVE();
+        return n.n400817075.n3476861556();
     }
 }

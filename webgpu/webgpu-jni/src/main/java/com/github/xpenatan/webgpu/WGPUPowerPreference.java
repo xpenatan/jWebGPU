@@ -35,18 +35,18 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
     }
 
     private static int WGPUPowerPreference_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPowerPreference.WGPUPowerPreference_Undefined_NATIVE();
+        return n.n1382253522.n1557270904();
     }
 
     private static int WGPUPowerPreference_LowPower_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPowerPreference.WGPUPowerPreference_LowPower_NATIVE();
+        return n.n1382253522.n162023605();
     }
 
     private static int WGPUPowerPreference_HighPerformance_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPowerPreference.WGPUPowerPreference_HighPerformance_NATIVE();
+        return n.n1382253522.n2145300950();
     }
 
     private static int WGPUPowerPreference_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPowerPreference.WGPUPowerPreference_Force32_NATIVE();
+        return n.n1382253522.n146897202();
     }
 }

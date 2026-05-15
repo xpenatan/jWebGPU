@@ -18,7 +18,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_create_addr();
+        return n.n444891816.n3909161250();
     }
 
     /**
@@ -40,7 +40,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_deleteNative(this_addr);
+        n.n444891816.n3231419740(this_addr);
     }
 
     public void setLabel(String value) {
@@ -48,7 +48,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_SetLabel(this_addr, value);
+        n.n444891816.n760611249(this_addr, value);
     }
 
     public void addRef() {
@@ -56,7 +56,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static void internal_native_AddRef(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_AddRef(this_addr);
+        n.n444891816.n2967632172(this_addr);
     }
 
     public void release() {
@@ -64,7 +64,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_Release(this_addr);
+        n.n444891816.n273291499(this_addr);
     }
 
     public void destroy() {
@@ -72,7 +72,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static void internal_native_Destroy(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_Destroy(this_addr);
+        n.n444891816.n924033240(this_addr);
     }
 
     public int getCount() {
@@ -80,7 +80,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static int internal_native_GetCount(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_GetCount(this_addr);
+        return n.n444891816.n2844666085(this_addr);
     }
 
     public WGPUQueryType getType() {
@@ -95,7 +95,7 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static int internal_native_GetType(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_GetType(this_addr);
+        return n.n444891816.n2748426978(this_addr);
     }
 
     public boolean isValid() {
@@ -103,6 +103,6 @@ public class WGPUQuerySet extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUQuerySet.internal_native_IsValid(this_addr);
+        return n.n444891816.n69557984(this_addr);
     }
 }

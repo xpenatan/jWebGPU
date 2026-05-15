@@ -23,7 +23,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_create_addr();
+        return n.n471511922.n4288171160();
     }
 
     /**
@@ -45,7 +45,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_deleteNative(this_addr);
+        n.n471511922.n2813135782(this_addr);
     }
 
     public NativeString getMessage() {
@@ -59,7 +59,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static long internal_native_GetMessage_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_GetMessage_addr(this_addr);
+        return n.n471511922.n4154726345(this_addr);
     }
 
     public WGPUCompilationMessageType getType() {
@@ -74,7 +74,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static int internal_native_GetType(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_GetType(this_addr);
+        return n.n471511922.n3127436888(this_addr);
     }
 
     public int getLineNum() {
@@ -82,7 +82,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static int internal_native_GetLineNum(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_GetLineNum(this_addr);
+        return n.n471511922.n1877193388(this_addr);
     }
 
     public int getLinePos() {
@@ -90,7 +90,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static int internal_native_GetLinePos(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_GetLinePos(this_addr);
+        return n.n471511922.n209566878(this_addr);
     }
 
     public int getOffset() {
@@ -98,7 +98,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static int internal_native_GetOffset(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_GetOffset(this_addr);
+        return n.n471511922.n3945779743(this_addr);
     }
 
     public int getLength() {
@@ -106,7 +106,7 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static int internal_native_GetLength(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_GetLength(this_addr);
+        return n.n471511922.n13694892(this_addr);
     }
 
     public static WGPUCompilationMessage obtain() {
@@ -120,6 +120,6 @@ public class WGPUCompilationMessage extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessage.internal_native_Obtain_addr();
+        return n.n471511922.n3441753505();
     }
 }

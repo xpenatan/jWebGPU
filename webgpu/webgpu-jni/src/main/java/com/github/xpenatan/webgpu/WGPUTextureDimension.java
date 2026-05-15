@@ -40,22 +40,22 @@ public enum WGPUTextureDimension implements NativeEnum<WGPUTextureDimension> {
     }
 
     private static int WGPUTextureDimension_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureDimension.WGPUTextureDimension_Undefined_NATIVE();
+        return n.n4217152697.n3686027994();
     }
 
     private static int WGPUTextureDimension_1D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureDimension.WGPUTextureDimension_1D_NATIVE();
+        return n.n4217152697.n3700096533();
     }
 
     private static int WGPUTextureDimension_2D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureDimension.WGPUTextureDimension_2D_NATIVE();
+        return n.n4217152697.n3503583028();
     }
 
     private static int WGPUTextureDimension_3D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureDimension.WGPUTextureDimension_3D_NATIVE();
+        return n.n4217152697.n3307069523();
     }
 
     private static int WGPUTextureDimension_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureDimension.WGPUTextureDimension_Force32_NATIVE();
+        return n.n4217152697.n3836259092();
     }
 }

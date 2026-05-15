@@ -20,7 +20,7 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorBindGroupLayout.internal_native_create_addr();
+        return n.n3598468315.n2698952655();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorBindGroupLayout.internal_native_deleteNative(this_addr);
+        n.n3598468315.n2102461135(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorBindGroupLayout.internal_native_size(this_addr);
+        return n.n3598468315.n1051436240(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorBindGroupLayout.internal_native_clear(this_addr);
+        n.n3598468315.n2780642994(this_addr);
     }
 
     public void push_back(WGPUBindGroupLayout groupLayout) {
@@ -66,7 +66,7 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long groupLayout_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorBindGroupLayout.internal_native_push_back(this_addr, groupLayout_addr);
+        n.n3598468315.n718064277(this_addr, groupLayout_addr);
     }
 
     public static WGPUVectorBindGroupLayout obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorBindGroupLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorBindGroupLayout.internal_native_Obtain_addr();
+        return n.n3598468315.n1852535000();
     }
 }

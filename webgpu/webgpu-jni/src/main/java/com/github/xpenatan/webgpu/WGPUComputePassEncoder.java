@@ -20,7 +20,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_create_addr();
+        return n.n1923638722.n896891976();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_deleteNative(this_addr);
+        n.n1923638722.n4094306806(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_SetLabel(this_addr, label);
+        n.n1923638722.n1649927895(this_addr, label);
     }
 
     public void release() {
@@ -58,7 +58,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_Release(this_addr);
+        n.n1923638722.n1555989521(this_addr);
     }
 
     public void setDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
@@ -66,7 +66,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetDispatchWorkgroups(long this_addr, int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_SetDispatchWorkgroups(this_addr, workgroupCountX, workgroupCountY, workgroupCountZ);
+        n.n1923638722.n4265836000(this_addr, workgroupCountX, workgroupCountY, workgroupCountZ);
     }
 
     public void dispatchWorkgroupsIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
@@ -74,7 +74,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_DispatchWorkgroupsIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_DispatchWorkgroupsIndirect(this_addr, indirectBuffer_addr, indirectOffset);
+        n.n1923638722.n457790880(this_addr, indirectBuffer_addr, indirectOffset);
     }
 
     public void end() {
@@ -82,7 +82,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_End(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_End(this_addr);
+        n.n1923638722.n1326901181(this_addr);
     }
 
     public void insertDebugMarker(String value) {
@@ -90,7 +90,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_InsertDebugMarker(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_InsertDebugMarker(this_addr, value);
+        n.n1923638722.n3493802649(this_addr, value);
     }
 
     public void popDebugGroup() {
@@ -98,7 +98,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_PopDebugGroup(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_PopDebugGroup(this_addr);
+        n.n1923638722.n2491142331(this_addr);
     }
 
     public void pushDebugGroup(String groupLabel) {
@@ -106,7 +106,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_PushDebugGroup(long this_addr, String groupLabel) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_PushDebugGroup(this_addr, groupLabel);
+        n.n1923638722.n722806731(this_addr, groupLabel);
     }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group, WGPUVectorInt offsets) {
@@ -114,7 +114,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long offsets_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_SetBindGroup(this_addr, groupIndex, group_addr, offsets_addr);
+        n.n1923638722.n3613368251(this_addr, groupIndex, group_addr, offsets_addr);
     }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group) {
@@ -122,7 +122,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_SetBindGroup(this_addr, groupIndex, group_addr);
+        n.n1923638722.n3007893773(this_addr, groupIndex, group_addr);
     }
 
     public void setPipeline(WGPUComputePipeline pipeline) {
@@ -130,7 +130,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetPipeline(long this_addr, long pipeline_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_SetPipeline(this_addr, pipeline_addr);
+        n.n1923638722.n1283043348(this_addr, pipeline_addr);
     }
 
     public boolean isValid() {
@@ -138,7 +138,7 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_IsValid(this_addr);
+        return n.n1923638722.n1352256006(this_addr);
     }
 
     public static WGPUComputePassEncoder obtain() {
@@ -152,6 +152,6 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassEncoder.internal_native_Obtain_addr();
+        return n.n1923638722.n50474321();
     }
 }

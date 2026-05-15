@@ -35,10 +35,10 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
     }
 
     private static int BigEndian_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUByteOrder.BigEndian_NATIVE();
+        return n.n647673016.n2512452957();
     }
 
     private static int LittleEndian_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUByteOrder.LittleEndian_NATIVE();
+        return n.n647673016.n3725765659();
     }
 }

@@ -22,7 +22,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_create_addr();
+        return n.n2792878554.n638682928();
     }
 
     /**
@@ -44,7 +44,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_deleteNative(this_addr);
+        n.n2792878554.n2705895438(this_addr);
     }
 
     public void setLabel(String label) {
@@ -52,7 +52,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_SetLabel(this_addr, label);
+        n.n2792878554.n21924287(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -60,7 +60,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n2792878554.n3474340863(this_addr, chainedStruct_addr);
     }
 
     public void setLayout(WGPUPipelineLayout layout) {
@@ -68,7 +68,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLayout(long this_addr, long layout_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_SetLayout(this_addr, layout_addr);
+        n.n2792878554.n254721844(this_addr, layout_addr);
     }
 
     public WGPUComputeState getCompute() {
@@ -82,7 +82,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_GetCompute_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_GetCompute_addr(this_addr);
+        return n.n2792878554.n226051729(this_addr);
     }
 
     public static WGPUComputePipelineDescriptor obtain() {
@@ -96,6 +96,6 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipelineDescriptor.internal_native_Obtain_addr();
+        return n.n2792878554.n4087232569();
     }
 }

@@ -35,14 +35,14 @@ public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
     }
 
     private static int WGPUMapMode_None_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUMapMode.WGPUMapMode_None_NATIVE();
+        return n.n3243809585.n961409886();
     }
 
     private static int WGPUMapMode_Read_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUMapMode.WGPUMapMode_Read_NATIVE();
+        return n.n3243809585.n2334547900();
     }
 
     private static int WGPUMapMode_Write_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUMapMode.WGPUMapMode_Write_NATIVE();
+        return n.n3243809585.n3244268741();
     }
 }

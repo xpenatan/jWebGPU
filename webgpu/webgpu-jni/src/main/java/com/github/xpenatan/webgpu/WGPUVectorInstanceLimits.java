@@ -20,7 +20,7 @@ public class WGPUVectorInstanceLimits extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceLimits.internal_native_create_addr();
+        return n.n3528096862.n285981484();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorInstanceLimits extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceLimits.internal_native_deleteNative(this_addr);
+        n.n3528096862.n935041426(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorInstanceLimits extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceLimits.internal_native_size(this_addr);
+        return n.n3528096862.n3020861075(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorInstanceLimits extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceLimits.internal_native_clear(this_addr);
+        n.n3528096862.n3703270735(this_addr);
     }
 
     public void push_back(WGPUInstanceLimits featureName) {
@@ -66,7 +66,7 @@ public class WGPUVectorInstanceLimits extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long featureName_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceLimits.internal_native_push_back(this_addr, featureName_addr);
+        n.n3528096862.n4109155480(this_addr, featureName_addr);
     }
 
     public static WGPUVectorInstanceLimits obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorInstanceLimits extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorInstanceLimits.internal_native_Obtain_addr();
+        return n.n3528096862.n3734531125();
     }
 }

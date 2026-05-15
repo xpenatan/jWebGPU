@@ -35,18 +35,18 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
     }
 
     private static int WGPUCompilationMessageType_Error_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessageType.WGPUCompilationMessageType_Error_NATIVE();
+        return n.n1610067404.n1475541554();
     }
 
     private static int WGPUCompilationMessageType_Warning_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessageType.WGPUCompilationMessageType_Warning_NATIVE();
+        return n.n1610067404.n3779922630();
     }
 
     private static int WGPUCompilationMessageType_Info_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessageType.WGPUCompilationMessageType_Info_NATIVE();
+        return n.n1610067404.n3810926096();
     }
 
     private static int WGPUCompilationMessageType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationMessageType.WGPUCompilationMessageType_Force32_NATIVE();
+        return n.n1610067404.n2626621364();
     }
 }

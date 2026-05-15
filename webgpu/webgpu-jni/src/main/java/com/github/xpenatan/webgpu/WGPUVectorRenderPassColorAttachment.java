@@ -20,7 +20,7 @@ public class WGPUVectorRenderPassColorAttachment extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderPassColorAttachment.internal_native_create_addr();
+        return n.n1738733358.n1892217436();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorRenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderPassColorAttachment.internal_native_deleteNative(this_addr);
+        n.n1738733358.n1385259106(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorRenderPassColorAttachment extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderPassColorAttachment.internal_native_size(this_addr);
+        return n.n1738733358.n4282402147(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorRenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderPassColorAttachment.internal_native_clear(this_addr);
+        n.n1738733358.n4156338303(this_addr);
     }
 
     public void push_back(WGPURenderPassColorAttachment colorAttachment) {
@@ -66,7 +66,7 @@ public class WGPUVectorRenderPassColorAttachment extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long colorAttachment_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderPassColorAttachment.internal_native_push_back(this_addr, colorAttachment_addr);
+        n.n1738733358.n2976649064(this_addr, colorAttachment_addr);
     }
 
     public static WGPUVectorRenderPassColorAttachment obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorRenderPassColorAttachment extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorRenderPassColorAttachment.internal_native_Obtain_addr();
+        return n.n1738733358.n1045799781();
     }
 }

@@ -18,7 +18,7 @@ public class WGPUSampler extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSampler.internal_native_create_addr();
+        return n.n4272133658.n1793280752();
     }
 
     /**
@@ -40,7 +40,7 @@ public class WGPUSampler extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSampler.internal_native_deleteNative(this_addr);
+        n.n4272133658.n3216720974(this_addr);
     }
 
     public void setLabel(String label) {
@@ -48,7 +48,7 @@ public class WGPUSampler extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSampler.internal_native_SetLabel(this_addr, label);
+        n.n4272133658.n956337535(this_addr, label);
     }
 
     public void release() {
@@ -56,7 +56,7 @@ public class WGPUSampler extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSampler.internal_native_Release(this_addr);
+        n.n4272133658.n2452378297(this_addr);
     }
 
     public boolean isValid() {
@@ -64,6 +64,6 @@ public class WGPUSampler extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSampler.internal_native_IsValid(this_addr);
+        return n.n4272133658.n2248644782(this_addr);
     }
 }

@@ -34,7 +34,7 @@ public class WGPUStringView extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUStringView.internal_native_deleteNative(this_addr);
+        n.n945927940.n605072056(this_addr);
     }
 
     public NativeString getString() {
@@ -48,6 +48,6 @@ public class WGPUStringView extends NativeObject {
     }
 
     public static long internal_native_GetString_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStringView.internal_native_GetString_addr(this_addr);
+        return n.n945927940.n751805937(this_addr);
     }
 }

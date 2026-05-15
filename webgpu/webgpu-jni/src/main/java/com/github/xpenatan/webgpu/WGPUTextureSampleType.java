@@ -43,34 +43,34 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
     }
 
     private static int WGPUTextureSampleType_BindingNotUsed_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_BindingNotUsed_NATIVE();
+        return n.n1611548433.n2307808721();
     }
 
     private static int WGPUTextureSampleType_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_Undefined_NATIVE();
+        return n.n1611548433.n1991039862();
     }
 
     private static int WGPUTextureSampleType_Float_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_Float_NATIVE();
+        return n.n1611548433.n1150869634();
     }
 
     private static int WGPUTextureSampleType_UnfilterableFloat_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_UnfilterableFloat_NATIVE();
+        return n.n1611548433.n1509389847();
     }
 
     private static int WGPUTextureSampleType_Depth_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_Depth_NATIVE();
+        return n.n1611548433.n4107940329();
     }
 
     private static int WGPUTextureSampleType_Sint_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_Sint_NATIVE();
+        return n.n1611548433.n1553952898();
     }
 
     private static int WGPUTextureSampleType_Uint_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_Uint_NATIVE();
+        return n.n1611548433.n1812118336();
     }
 
     private static int WGPUTextureSampleType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureSampleType.WGPUTextureSampleType_Force32_NATIVE();
+        return n.n1611548433.n4129467056();
     }
 }

@@ -28,7 +28,7 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUUncapturedErrorCallback.internal_native_deleteNative(this_addr);
+        n.n691569224.n2433197308(this_addr);
     }
 
     public WGPUUncapturedErrorCallback() {
@@ -58,7 +58,7 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUUncapturedErrorCallback.internal_native_create_addr();
+        return n.n691569224.n101496194();
     }
 
     public native void internal_native_setupCallback(long this_addr);

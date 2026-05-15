@@ -41,26 +41,26 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
     }
 
     private static int WGPUStorageTextureAccess_BindingNotUsed_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureAccess.WGPUStorageTextureAccess_BindingNotUsed_NATIVE();
+        return n.n548444882.n708175821();
     }
 
     private static int WGPUStorageTextureAccess_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureAccess.WGPUStorageTextureAccess_Undefined_NATIVE();
+        return n.n548444882.n2076050426();
     }
 
     private static int WGPUStorageTextureAccess_WriteOnly_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureAccess.WGPUStorageTextureAccess_WriteOnly_NATIVE();
+        return n.n548444882.n3249699797();
     }
 
     private static int WGPUStorageTextureAccess_ReadOnly_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureAccess.WGPUStorageTextureAccess_ReadOnly_NATIVE();
+        return n.n548444882.n1102800196();
     }
 
     private static int WGPUStorageTextureAccess_ReadWrite_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureAccess.WGPUStorageTextureAccess_ReadWrite_NATIVE();
+        return n.n548444882.n4091254163();
     }
 
     private static int WGPUStorageTextureAccess_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureAccess.WGPUStorageTextureAccess_Force32_NATIVE();
+        return n.n548444882.n934028340();
     }
 }

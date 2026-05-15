@@ -47,50 +47,50 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
     }
 
     private static int WGPUSType_ShaderSourceSPIRV_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_ShaderSourceSPIRV_NATIVE();
+        return n.n853230815.n1032150706();
     }
 
     private static int WGPUSType_ShaderSourceWGSL_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_ShaderSourceWGSL_NATIVE();
+        return n.n853230815.n2152968915();
     }
 
     private static int WGPUSType_RenderPassMaxDrawCount_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_RenderPassMaxDrawCount_NATIVE();
+        return n.n853230815.n3290728152();
     }
 
     private static int WGPUSType_SurfaceSourceMetalLayer_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceSourceMetalLayer_NATIVE();
+        return n.n853230815.n276615956();
     }
 
     private static int WGPUSType_SurfaceSourceWindowsHWND_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceSourceWindowsHWND_NATIVE();
+        return n.n853230815.n2022773258();
     }
 
     private static int WGPUSType_SurfaceSourceXlibWindow_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceSourceXlibWindow_NATIVE();
+        return n.n853230815.n2065367783();
     }
 
     private static int WGPUSType_SurfaceSourceWaylandSurface_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceSourceWaylandSurface_NATIVE();
+        return n.n853230815.n4143304573();
     }
 
     private static int WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE();
+        return n.n853230815.n3217988344();
     }
 
     private static int WGPUSType_SurfaceSourceXCBWindow_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceSourceXCBWindow_NATIVE();
+        return n.n853230815.n3636523945();
     }
 
     private static int WGPUSType_SurfaceColorManagement_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_SurfaceColorManagement_NATIVE();
+        return n.n853230815.n2275901923();
     }
 
     private static int WGPUSType_RequestAdapterWebXROptions_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_RequestAdapterWebXROptions_NATIVE();
+        return n.n853230815.n4099252378();
     }
 
     private static int WGPUSType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSType.WGPUSType_Force32_NATIVE();
+        return n.n853230815.n255113676();
     }
 }

@@ -20,7 +20,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_create_addr();
+        return n.n3104894249.n3154600513();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_deleteNative(this_addr);
+        n.n3104894249.n1321605021(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetLabel(this_addr, label);
+        n.n3104894249.n902087632(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n3104894249.n181339536(this_addr, chainedStruct_addr);
     }
 
     public void setAddressModeU(WGPUAddressMode addressModeU) {
@@ -66,7 +66,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetAddressModeU(long this_addr, int addressModeU) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetAddressModeU(this_addr, addressModeU);
+        n.n3104894249.n3895983988(this_addr, addressModeU);
     }
 
     public void setAddressModeV(WGPUAddressMode addressModeV) {
@@ -74,7 +74,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetAddressModeV(long this_addr, int addressModeV) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetAddressModeV(this_addr, addressModeV);
+        n.n3104894249.n3699470483(this_addr, addressModeV);
     }
 
     public void setAddressModeW(WGPUAddressMode addressModeW) {
@@ -82,7 +82,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetAddressModeW(long this_addr, int addressModeW) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetAddressModeW(this_addr, addressModeW);
+        n.n3104894249.n3502956978(this_addr, addressModeW);
     }
 
     public void setMagFilter(WGPUFilterMode magFilter) {
@@ -90,7 +90,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetMagFilter(long this_addr, int magFilter) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetMagFilter(this_addr, magFilter);
+        n.n3104894249.n1573530201(this_addr, magFilter);
     }
 
     public void setMinFilter(WGPUFilterMode minFilter) {
@@ -98,7 +98,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetMinFilter(long this_addr, int minFilter) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetMinFilter(this_addr, minFilter);
+        n.n3104894249.n236333946(this_addr, minFilter);
     }
 
     public void setMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
@@ -106,7 +106,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetMipmapFilter(long this_addr, int mipmapFilter) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetMipmapFilter(this_addr, mipmapFilter);
+        n.n3104894249.n803618066(this_addr, mipmapFilter);
     }
 
     public void setLodMinClamp(float lodMinClamp) {
@@ -114,7 +114,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLodMinClamp(long this_addr, float lodMinClamp) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetLodMinClamp(this_addr, lodMinClamp);
+        n.n3104894249.n355046759(this_addr, lodMinClamp);
     }
 
     public void setLodMaxClamp(float lodMaxClamp) {
@@ -122,7 +122,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLodMaxClamp(long this_addr, float lodMaxClamp) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetLodMaxClamp(this_addr, lodMaxClamp);
+        n.n3104894249.n389886073(this_addr, lodMaxClamp);
     }
 
     public void setCompare(WGPUCompareFunction compare) {
@@ -130,7 +130,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetCompare(long this_addr, int compare) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetCompare(this_addr, compare);
+        n.n3104894249.n1095198623(this_addr, compare);
     }
 
     public void setMaxAnisotropy(int maxAnisotropy) {
@@ -138,7 +138,7 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetMaxAnisotropy(long this_addr, int maxAnisotropy) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_SetMaxAnisotropy(this_addr, maxAnisotropy);
+        n.n3104894249.n2638065950(this_addr, maxAnisotropy);
     }
 
     public static WGPUSamplerDescriptor obtain() {
@@ -152,6 +152,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSamplerDescriptor.internal_native_Obtain_addr();
+        return n.n3104894249.n2308182858();
     }
 }

@@ -20,7 +20,7 @@ public class WGPUComputePassDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassDescriptor.internal_native_create_addr();
+        return n.n3410848009.n2966876769();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUComputePassDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassDescriptor.internal_native_deleteNative(this_addr);
+        n.n3410848009.n4090207101(this_addr);
     }
 
     public void setLabel(String value) {
@@ -50,7 +50,7 @@ public class WGPUComputePassDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassDescriptor.internal_native_SetLabel(this_addr, value);
+        n.n3410848009.n4069667824(this_addr, value);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUComputePassDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n3410848009.n3307693488(this_addr, chainedStruct_addr);
     }
 
     public void setTimestampWrites(WGPUPassTimestampWrites timestampWrites) {
@@ -66,7 +66,7 @@ public class WGPUComputePassDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetTimestampWrites(long this_addr, long timestampWrites_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassDescriptor.internal_native_SetTimestampWrites(this_addr, timestampWrites_addr);
+        n.n3410848009.n2041305073(this_addr, timestampWrites_addr);
     }
 
     public static WGPUComputePassDescriptor obtain() {
@@ -80,6 +80,6 @@ public class WGPUComputePassDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePassDescriptor.internal_native_Obtain_addr();
+        return n.n3410848009.n2120459114();
     }
 }

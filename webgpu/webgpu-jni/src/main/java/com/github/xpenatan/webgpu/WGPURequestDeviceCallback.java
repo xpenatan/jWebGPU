@@ -28,7 +28,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURequestDeviceCallback.internal_native_deleteNative(this_addr);
+        n.n4055028668.n3924072816(this_addr);
     }
 
     public WGPURequestDeviceCallback() {
@@ -60,7 +60,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestDeviceCallback.internal_native_create_addr();
+        return n.n4055028668.n4166895758();
     }
 
     public native void internal_native_setupCallback(long this_addr);

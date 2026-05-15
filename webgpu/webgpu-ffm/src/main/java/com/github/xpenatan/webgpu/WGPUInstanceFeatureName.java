@@ -75,12 +75,12 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
 
     private static final class FFMHandles {
 
-        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_TimedWaitAny_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuinstancefeaturename_wgpuinstancefeaturename_timedwaitany_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_TimedWaitAny_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2748810252", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuinstancefeaturename_wgpuinstancefeaturename_shadersourcespirv_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n447031600", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuinstancefeaturename_wgpuinstancefeaturename_multipledevicesperadapter_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2096323519", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("com_github_xpenatan_webgpu_wgpuinstancefeaturename_wgpuinstancefeaturename_force32_native", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUInstanceFeatureName_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3201952202", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }
 }

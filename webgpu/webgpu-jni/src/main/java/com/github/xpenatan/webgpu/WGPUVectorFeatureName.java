@@ -20,7 +20,7 @@ public class WGPUVectorFeatureName extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFeatureName.internal_native_create_addr();
+        return n.n447337712.n914703322();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorFeatureName extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFeatureName.internal_native_deleteNative(this_addr);
+        n.n447337712.n3521269156(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorFeatureName extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFeatureName.internal_native_size(this_addr);
+        return n.n447337712.n3249247397(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorFeatureName extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFeatureName.internal_native_clear(this_addr);
+        n.n447337712.n2193312125(this_addr);
     }
 
     public void push_back(WGPUFeatureName featureName) {
@@ -66,7 +66,7 @@ public class WGPUVectorFeatureName extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, int featureName) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFeatureName.internal_native_push_back(this_addr, featureName);
+        n.n447337712.n2719104129(this_addr, featureName);
     }
 
     public static WGPUVectorFeatureName obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorFeatureName extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorFeatureName.internal_native_Obtain_addr();
+        return n.n447337712.n68285667();
     }
 }

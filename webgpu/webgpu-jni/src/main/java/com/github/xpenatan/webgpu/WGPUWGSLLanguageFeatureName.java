@@ -40,22 +40,22 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
     }
 
     private static int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE();
+        return n.n1633747570.n981636423();
     }
 
     private static int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE();
+        return n.n1633747570.n2703982092();
     }
 
     private static int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE();
+        return n.n1633747570.n297786651();
     }
 
     private static int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE();
+        return n.n1633747570.n2395642290();
     }
 
     private static int WGPUWGSLLanguageFeatureName_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_Force32_NATIVE();
+        return n.n1633747570.n2157127538();
     }
 }

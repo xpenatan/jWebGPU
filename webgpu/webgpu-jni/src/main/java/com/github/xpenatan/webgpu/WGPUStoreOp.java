@@ -35,18 +35,18 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
     }
 
     private static int WGPUStoreOp_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStoreOp.WGPUStoreOp_Undefined_NATIVE();
+        return n.n523019444.n3414115900();
     }
 
     private static int WGPUStoreOp_Store_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStoreOp.WGPUStoreOp_Store_NATIVE();
+        return n.n523019444.n591273933();
     }
 
     private static int WGPUStoreOp_Discard_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStoreOp.WGPUStoreOp_Discard_NATIVE();
+        return n.n523019444.n125059338();
     }
 
     private static int WGPUStoreOp_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStoreOp.WGPUStoreOp_Force32_NATIVE();
+        return n.n523019444.n1476202230();
     }
 }

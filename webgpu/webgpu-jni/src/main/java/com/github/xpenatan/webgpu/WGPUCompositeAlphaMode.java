@@ -41,26 +41,26 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
     }
 
     private static int WGPUCompositeAlphaMode_Auto_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Auto_NATIVE();
+        return n.n616931336.n4165359121();
     }
 
     private static int WGPUCompositeAlphaMode_Opaque_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Opaque_NATIVE();
+        return n.n616931336.n2061960067();
     }
 
     private static int WGPUCompositeAlphaMode_Premultiplied_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Premultiplied_NATIVE();
+        return n.n616931336.n483231424();
     }
 
     private static int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Unpremultiplied_NATIVE();
+        return n.n616931336.n654428359();
     }
 
     private static int WGPUCompositeAlphaMode_Inherit_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Inherit_NATIVE();
+        return n.n616931336.n3728592165();
     }
 
     private static int WGPUCompositeAlphaMode_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Force32_NATIVE();
+        return n.n616931336.n2743386036();
     }
 }

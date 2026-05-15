@@ -20,7 +20,7 @@ public class WGPUInstanceLimits extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceLimits.internal_native_create_addr();
+        return n.n611269307.n2273449455();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUInstanceLimits extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceLimits.internal_native_deleteNative(this_addr);
+        n.n611269307.n1005486255(this_addr);
     }
 
     public void setTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
@@ -50,7 +50,7 @@ public class WGPUInstanceLimits extends NativeObject {
     }
 
     public static void internal_native_SetTimedWaitAnyMaxCount(long this_addr, int timedWaitAnyMaxCount) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceLimits.internal_native_SetTimedWaitAnyMaxCount(this_addr, timedWaitAnyMaxCount);
+        n.n611269307.n2654769173(this_addr, timedWaitAnyMaxCount);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUInstanceLimits extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceLimits.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n611269307.n702784574(this_addr, chainedStruct_addr);
     }
 
     public static WGPUInstanceLimits obtain() {
@@ -72,6 +72,6 @@ public class WGPUInstanceLimits extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceLimits.internal_native_Obtain_addr();
+        return n.n611269307.n1427031800();
     }
 }

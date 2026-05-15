@@ -20,7 +20,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_create_addr();
+        return n.n4044071137.n3060328841();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_deleteNative(this_addr);
+        n.n4044071137.n2182995285(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n4044071137.n2834817240(this_addr, chainedStruct_addr);
     }
 
     public void setAccess(WGPUStorageTextureAccess access) {
@@ -58,7 +58,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetAccess(long this_addr, int access) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_SetAccess(this_addr, access);
+        n.n4044071137.n1621117654(this_addr, access);
     }
 
     public void setFormat(WGPUTextureFormat format) {
@@ -66,7 +66,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetFormat(long this_addr, int format) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_SetFormat(this_addr, format);
+        n.n4044071137.n1807629731(this_addr, format);
     }
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
@@ -74,7 +74,7 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetViewDimension(long this_addr, int viewDimension) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_SetViewDimension(this_addr, viewDimension);
+        n.n4044071137.n1774623419(this_addr, viewDimension);
     }
 
     public static WGPUStorageTextureBindingLayout obtain() {
@@ -88,6 +88,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStorageTextureBindingLayout.internal_native_Obtain_addr();
+        return n.n4044071137.n2213911186();
     }
 }

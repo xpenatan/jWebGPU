@@ -20,7 +20,7 @@ public class WGPUVectorColorTargetState extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorColorTargetState.internal_native_create_addr();
+        return n.n3536356654.n2062951516();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorColorTargetState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorColorTargetState.internal_native_deleteNative(this_addr);
+        n.n3536356654.n4006833762(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorColorTargetState extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorColorTargetState.internal_native_size(this_addr);
+        return n.n3536356654.n225465187(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorColorTargetState extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorColorTargetState.internal_native_clear(this_addr);
+        n.n3536356654.n2945344127(this_addr);
     }
 
     public void push_back(WGPUColorTargetState colorTargetState) {
@@ -66,7 +66,7 @@ public class WGPUVectorColorTargetState extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long colorTargetState_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorColorTargetState.internal_native_push_back(this_addr, colorTargetState_addr);
+        n.n3536356654.n1164090728(this_addr, colorTargetState_addr);
     }
 
     public static WGPUVectorColorTargetState obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorColorTargetState extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorColorTargetState.internal_native_Obtain_addr();
+        return n.n3536356654.n1216533861();
     }
 }

@@ -20,7 +20,7 @@ public class WGPUInstanceDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceDescriptor.internal_native_create_addr();
+        return n.n3411007634.n1122417528();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUInstanceDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceDescriptor.internal_native_deleteNative(this_addr);
+        n.n3411007634.n2020665542(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUInstanceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n3411007634.n110576711(this_addr, chainedStruct_addr);
     }
 
     public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
@@ -58,7 +58,7 @@ public class WGPUInstanceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetRequiredFeatures(long this_addr, long requiredFeatures_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceDescriptor.internal_native_SetRequiredFeatures(this_addr, requiredFeatures_addr);
+        n.n3411007634.n2315937470(this_addr, requiredFeatures_addr);
     }
 
     public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
@@ -66,7 +66,7 @@ public class WGPUInstanceDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetRequiredLimits(long this_addr, long requiredLimits_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceDescriptor.internal_native_SetRequiredLimits(this_addr, requiredLimits_addr);
+        n.n3411007634.n2483595545(this_addr, requiredLimits_addr);
     }
 
     public static WGPUInstanceDescriptor obtain() {
@@ -80,6 +80,6 @@ public class WGPUInstanceDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceDescriptor.internal_native_Obtain_addr();
+        return n.n3411007634.n275999873();
     }
 }

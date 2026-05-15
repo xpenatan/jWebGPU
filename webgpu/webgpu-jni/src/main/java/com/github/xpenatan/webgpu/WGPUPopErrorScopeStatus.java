@@ -35,10 +35,10 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
     }
 
     private static int WGPUPopErrorScopeStatus_Success_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPopErrorScopeStatus.WGPUPopErrorScopeStatus_Success_NATIVE();
+        return n.n2843257793.n911684873();
     }
 
     private static int WGPUPopErrorScopeStatus_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPopErrorScopeStatus.WGPUPopErrorScopeStatus_Force32_NATIVE();
+        return n.n2843257793.n2633040016();
     }
 }

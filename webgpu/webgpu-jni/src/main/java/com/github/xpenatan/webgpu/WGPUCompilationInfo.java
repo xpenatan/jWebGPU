@@ -20,7 +20,7 @@ public class WGPUCompilationInfo extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationInfo.internal_native_create_addr();
+        return n.n786784547.n3228264583();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUCompilationInfo extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationInfo.internal_native_deleteNative(this_addr);
+        n.n786784547.n493423895(this_addr);
     }
 
     public int getMessageCount() {
@@ -50,7 +50,7 @@ public class WGPUCompilationInfo extends NativeObject {
     }
 
     public static int internal_native_GetMessageCount(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationInfo.internal_native_GetMessageCount(this_addr);
+        return n.n786784547.n924943353(this_addr);
     }
 
     public WGPUCompilationMessage getMessage(int index) {
@@ -64,6 +64,6 @@ public class WGPUCompilationInfo extends NativeObject {
     }
 
     public static long internal_native_GetMessage_addr(long this_addr, int index) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCompilationInfo.internal_native_GetMessage_addr(this_addr, index);
+        return n.n786784547.n1866223867(this_addr, index);
     }
 }

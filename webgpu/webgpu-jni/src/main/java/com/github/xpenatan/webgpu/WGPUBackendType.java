@@ -45,42 +45,42 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
     }
 
     private static int WGPUBackendType_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_Undefined_NATIVE();
+        return n.n528981248.n2561529940();
     }
 
     private static int WGPUBackendType_Null_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_Null_NATIVE();
+        return n.n528981248.n3956878543();
     }
 
     private static int WGPUBackendType_WebGPU_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_WebGPU_NATIVE();
+        return n.n528981248.n799815296();
     }
 
     private static int WGPUBackendType_D3D11_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_D3D11_NATIVE();
+        return n.n528981248.n2201670585();
     }
 
     private static int WGPUBackendType_D3D12_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_D3D12_NATIVE();
+        return n.n528981248.n394216122();
     }
 
     private static int WGPUBackendType_Metal_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_Metal_NATIVE();
+        return n.n528981248.n1257548299();
     }
 
     private static int WGPUBackendType_Vulkan_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_Vulkan_NATIVE();
+        return n.n528981248.n648529907();
     }
 
     private static int WGPUBackendType_OpenGL_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_OpenGL_NATIVE();
+        return n.n528981248.n1498315639();
     }
 
     private static int WGPUBackendType_OpenGLES_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_OpenGLES_NATIVE();
+        return n.n528981248.n918183397();
     }
 
     private static int WGPUBackendType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBackendType.WGPUBackendType_Force32_NATIVE();
+        return n.n528981248.n2337883918();
     }
 }

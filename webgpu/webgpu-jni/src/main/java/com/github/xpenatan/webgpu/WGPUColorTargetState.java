@@ -20,7 +20,7 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_create_addr();
+        return n.n783753291.n759224927();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_deleteNative(this_addr);
+        n.n783753291.n2984837695(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n783753291.n3438231726(this_addr, chainedStruct_addr);
     }
 
     public void setFormat(WGPUTextureFormat format) {
@@ -58,7 +58,7 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static void internal_native_SetFormat(long this_addr, int format) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_SetFormat(this_addr, format);
+        n.n783753291.n894940665(this_addr, format);
     }
 
     public void setBlend(WGPUBlendState blendState) {
@@ -66,7 +66,7 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static void internal_native_SetBlend(long this_addr, long blendState_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_SetBlend(this_addr, blendState_addr);
+        n.n783753291.n599184534(this_addr, blendState_addr);
     }
 
     public void setWriteMask(WGPUColorWriteMask writeMask) {
@@ -74,7 +74,7 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static void internal_native_SetWriteMask(long this_addr, int writeMask) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_SetWriteMask(this_addr, writeMask);
+        n.n783753291.n3067728699(this_addr, writeMask);
     }
 
     public static WGPUColorTargetState obtain() {
@@ -88,6 +88,6 @@ public class WGPUColorTargetState extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUColorTargetState.internal_native_Obtain_addr();
+        return n.n783753291.n4207774568();
     }
 }

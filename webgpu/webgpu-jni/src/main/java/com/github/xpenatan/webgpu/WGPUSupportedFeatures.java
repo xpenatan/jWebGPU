@@ -20,7 +20,7 @@ public class WGPUSupportedFeatures extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSupportedFeatures.internal_native_create_addr();
+        return n.n3009803933.n1578679629();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUSupportedFeatures extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSupportedFeatures.internal_native_deleteNative(this_addr);
+        n.n3009803933.n2899297297(this_addr);
     }
 
     public int getFeatureCount() {
@@ -50,7 +50,7 @@ public class WGPUSupportedFeatures extends NativeObject {
     }
 
     public static int internal_native_GetFeatureCount(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSupportedFeatures.internal_native_GetFeatureCount(this_addr);
+        return n.n3009803933.n1272090350(this_addr);
     }
 
     public WGPUFeatureName getFeatureAt(int index) {
@@ -65,7 +65,7 @@ public class WGPUSupportedFeatures extends NativeObject {
     }
 
     public static int internal_native_GetFeatureAt(long this_addr, int index) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSupportedFeatures.internal_native_GetFeatureAt(this_addr, index);
+        return n.n3009803933.n3883520355(this_addr, index);
     }
 
     public static WGPUSupportedFeatures obtain() {
@@ -79,6 +79,6 @@ public class WGPUSupportedFeatures extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSupportedFeatures.internal_native_Obtain_addr();
+        return n.n3009803933.n732261974();
     }
 }

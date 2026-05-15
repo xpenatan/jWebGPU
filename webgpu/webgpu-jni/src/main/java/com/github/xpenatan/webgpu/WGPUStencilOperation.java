@@ -45,42 +45,42 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
     }
 
     private static int WGPUStencilOperation_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_Undefined_NATIVE();
+        return n.n2398583097.n3096060634();
     }
 
     private static int WGPUStencilOperation_Keep_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_Keep_NATIVE();
+        return n.n2398583097.n1948085895();
     }
 
     private static int WGPUStencilOperation_Zero_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_Zero_NATIVE();
+        return n.n2398583097.n3137105578();
     }
 
     private static int WGPUStencilOperation_Replace_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_Replace_NATIVE();
+        return n.n2398583097.n1818157374();
     }
 
     private static int WGPUStencilOperation_Invert_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_Invert_NATIVE();
+        return n.n2398583097.n2737566424();
     }
 
     private static int WGPUStencilOperation_IncrementClamp_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_IncrementClamp_NATIVE();
+        return n.n2398583097.n2592537486();
     }
 
     private static int WGPUStencilOperation_DecrementClamp_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_DecrementClamp_NATIVE();
+        return n.n2398583097.n2290726122();
     }
 
     private static int WGPUStencilOperation_IncrementWrap_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_IncrementWrap_NATIVE();
+        return n.n2398583097.n2074658531();
     }
 
     private static int WGPUStencilOperation_DecrementWrap_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_DecrementWrap_NATIVE();
+        return n.n2398583097.n402354695();
     }
 
     private static int WGPUStencilOperation_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStencilOperation.WGPUStencilOperation_Force32_NATIVE();
+        return n.n2398583097.n2628942612();
     }
 }

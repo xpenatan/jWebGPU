@@ -35,14 +35,14 @@ public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
     }
 
     private static int WGPUFeatureLevel_Compatibility_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureLevel.WGPUFeatureLevel_Compatibility_NATIVE();
+        return n.n3833675612.n3983035482();
     }
 
     private static int WGPUFeatureLevel_Core_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureLevel.WGPUFeatureLevel_Core_NATIVE();
+        return n.n3833675612.n1466574145();
     }
 
     private static int WGPUFeatureLevel_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUFeatureLevel.WGPUFeatureLevel_Force32_NATIVE();
+        return n.n3833675612.n3978480244();
     }
 }

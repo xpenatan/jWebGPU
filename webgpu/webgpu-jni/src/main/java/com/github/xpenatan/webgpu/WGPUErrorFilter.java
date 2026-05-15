@@ -35,18 +35,18 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
     }
 
     private static int WGPUErrorFilter_Validation_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUErrorFilter.WGPUErrorFilter_Validation_NATIVE();
+        return n.n3529367730.n3288915549();
     }
 
     private static int WGPUErrorFilter_OutOfMemory_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUErrorFilter.WGPUErrorFilter_OutOfMemory_NATIVE();
+        return n.n3529367730.n2662457870();
     }
 
     private static int WGPUErrorFilter_Internal_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUErrorFilter.WGPUErrorFilter_Internal_NATIVE();
+        return n.n3529367730.n382040097();
     }
 
     private static int WGPUErrorFilter_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUErrorFilter.WGPUErrorFilter_Force32_NATIVE();
+        return n.n3529367730.n779149938();
     }
 }

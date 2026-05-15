@@ -43,34 +43,34 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
     }
 
     private static int WGPUTextureViewDimension_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_Undefined_NATIVE();
+        return n.n2861355540.n3619832378();
     }
 
     private static int WGPUTextureViewDimension_1D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_1D_NATIVE();
+        return n.n2861355540.n2849086133();
     }
 
     private static int WGPUTextureViewDimension_2D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_2D_NATIVE();
+        return n.n2861355540.n2652572628();
     }
 
     private static int WGPUTextureViewDimension_2DArray_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_2DArray_NATIVE();
+        return n.n2861355540.n585394737();
     }
 
     private static int WGPUTextureViewDimension_Cube_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_Cube_NATIVE();
+        return n.n2861355540.n2522356695();
     }
 
     private static int WGPUTextureViewDimension_CubeArray_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_CubeArray_NATIVE();
+        return n.n2861355540.n460317710();
     }
 
     private static int WGPUTextureViewDimension_3D_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_3D_NATIVE();
+        return n.n2861355540.n2456059123();
     }
 
     private static int WGPUTextureViewDimension_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUTextureViewDimension.WGPUTextureViewDimension_Force32_NATIVE();
+        return n.n2861355540.n3089822324();
     }
 }

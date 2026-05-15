@@ -41,26 +41,26 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
     }
 
     private static int WGPUBufferBindingType_BindingNotUsed_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingType.WGPUBufferBindingType_BindingNotUsed_NATIVE();
+        return n.n1313880721.n2619750097();
     }
 
     private static int WGPUBufferBindingType_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingType.WGPUBufferBindingType_Undefined_NATIVE();
+        return n.n1313880721.n2026988150();
     }
 
     private static int WGPUBufferBindingType_Uniform_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingType.WGPUBufferBindingType_Uniform_NATIVE();
+        return n.n1313880721.n2801499866();
     }
 
     private static int WGPUBufferBindingType_Storage_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingType.WGPUBufferBindingType_Storage_NATIVE();
+        return n.n1313880721.n3960484001();
     }
 
     private static int WGPUBufferBindingType_ReadOnlyStorage_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingType.WGPUBufferBindingType_ReadOnlyStorage_NATIVE();
+        return n.n1313880721.n934430175();
     }
 
     private static int WGPUBufferBindingType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingType.WGPUBufferBindingType_Force32_NATIVE();
+        return n.n1313880721.n1975316912();
     }
 }

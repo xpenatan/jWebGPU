@@ -20,7 +20,7 @@ public class WGPUComputePipeline extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipeline.internal_native_create_addr();
+        return n.n2190906379.n1281031839();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUComputePipeline extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipeline.internal_native_deleteNative(this_addr);
+        n.n2190906379.n3468396031(this_addr);
     }
 
     public void setLabel(String value) {
@@ -50,7 +50,7 @@ public class WGPUComputePipeline extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipeline.internal_native_SetLabel(this_addr, value);
+        n.n2190906379.n3890029102(this_addr, value);
     }
 
     public void release() {
@@ -58,7 +58,7 @@ public class WGPUComputePipeline extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipeline.internal_native_Release(this_addr);
+        n.n2190906379.n1940129384(this_addr);
     }
 
     public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
@@ -72,7 +72,7 @@ public class WGPUComputePipeline extends NativeObject {
     }
 
     public static long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipeline.internal_native_GetBindGroupLayout_addr(this_addr, groupIndex);
+        return n.n2190906379.n1597494104(this_addr, groupIndex);
     }
 
     public boolean isValid() {
@@ -80,6 +80,6 @@ public class WGPUComputePipeline extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUComputePipeline.internal_native_IsValid(this_addr);
+        return n.n2190906379.n1736395869(this_addr);
     }
 }

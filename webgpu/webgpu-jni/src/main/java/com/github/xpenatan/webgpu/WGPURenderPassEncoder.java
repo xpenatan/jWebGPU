@@ -20,7 +20,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_create_addr();
+        return n.n1478576103.n1802807363();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_deleteNative(this_addr);
+        n.n1478576103.n2988327643(this_addr);
     }
 
     public void setLabel(String value) {
@@ -50,7 +50,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetLabel(this_addr, value);
+        n.n1478576103.n118810578(this_addr, value);
     }
 
     public void addRef() {
@@ -58,7 +58,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_AddRef(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_AddRef(this_addr);
+        n.n1478576103.n1375664619(this_addr);
     }
 
     public void release() {
@@ -66,7 +66,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_Release(this_addr);
+        n.n1478576103.n2461904908(this_addr);
     }
 
     public void end() {
@@ -74,7 +74,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_End(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_End(this_addr);
+        n.n1478576103.n543770936(this_addr);
     }
 
     public void setPipeline(WGPURenderPipeline renderPipeline) {
@@ -82,7 +82,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetPipeline(long this_addr, long renderPipeline_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetPipeline(this_addr, renderPipeline_addr);
+        n.n1478576103.n1063046777(this_addr, renderPipeline_addr);
     }
 
     public void beginOcclusionQuery(int queryIndex) {
@@ -90,7 +90,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_BeginOcclusionQuery(long this_addr, int queryIndex) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_BeginOcclusionQuery(this_addr, queryIndex);
+        n.n1478576103.n1773756978(this_addr, queryIndex);
     }
 
     public void draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
@@ -98,7 +98,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_Draw(long this_addr, int vertexCount, int instanceCount, int firstVertex, int firstInstance) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_Draw(this_addr, vertexCount, instanceCount, firstVertex, firstInstance);
+        n.n1478576103.n1952172901(this_addr, vertexCount, instanceCount, firstVertex, firstInstance);
     }
 
     public void drawIndexed(int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
@@ -106,7 +106,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_DrawIndexed(long this_addr, int indexCount, int instanceCount, int firstIndex, int baseVertex, int firstInstance) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_DrawIndexed(this_addr, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
+        n.n1478576103.n4226945685(this_addr, indexCount, instanceCount, firstIndex, baseVertex, firstInstance);
     }
 
     public void drawIndexedIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
@@ -114,7 +114,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_DrawIndexedIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_DrawIndexedIndirect(this_addr, indirectBuffer_addr, indirectOffset);
+        n.n1478576103.n3408486227(this_addr, indirectBuffer_addr, indirectOffset);
     }
 
     public void drawIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
@@ -122,7 +122,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_DrawIndirect(long this_addr, long indirectBuffer_addr, int indirectOffset) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_DrawIndirect(this_addr, indirectBuffer_addr, indirectOffset);
+        n.n1478576103.n2160265632(this_addr, indirectBuffer_addr, indirectOffset);
     }
 
     public void endOcclusionQuery() {
@@ -130,7 +130,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_EndOcclusionQuery(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_EndOcclusionQuery(this_addr);
+        n.n1478576103.n1171405501(this_addr);
     }
 
     public void executeBundles(WGPUVectorRenderBundle bundles) {
@@ -138,7 +138,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_ExecuteBundles(long this_addr, long bundles_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_ExecuteBundles(this_addr, bundles_addr);
+        n.n1478576103.n3738016999(this_addr, bundles_addr);
     }
 
     public void insertDebugMarker(String value) {
@@ -146,7 +146,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_InsertDebugMarker(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_InsertDebugMarker(this_addr, value);
+        n.n1478576103.n3022265342(this_addr, value);
     }
 
     public void popDebugGroup() {
@@ -154,7 +154,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_PopDebugGroup(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_PopDebugGroup(this_addr);
+        n.n1478576103.n2565526646(this_addr);
     }
 
     public void pushDebugGroup(String value) {
@@ -162,7 +162,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_PushDebugGroup(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_PushDebugGroup(this_addr, value);
+        n.n1478576103.n1808679046(this_addr, value);
     }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group, WGPUVectorInt dynamicOffsets) {
@@ -170,7 +170,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long dynamicOffsets_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetBindGroup(this_addr, groupIndex, group_addr, dynamicOffsets_addr);
+        n.n1478576103.n1437582304(this_addr, groupIndex, group_addr, dynamicOffsets_addr);
     }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group) {
@@ -178,7 +178,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetBindGroup(this_addr, groupIndex, group_addr);
+        n.n1478576103.n4093766088(this_addr, groupIndex, group_addr);
     }
 
     public void setBlendConstant(WGPUColor color) {
@@ -186,7 +186,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetBlendConstant(long this_addr, long color_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetBlendConstant(this_addr, color_addr);
+        n.n1478576103.n3589513278(this_addr, color_addr);
     }
 
     public void setIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, int offset, int size) {
@@ -194,7 +194,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetIndexBuffer(long this_addr, long buffer_addr, int format, int offset, int size) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetIndexBuffer(this_addr, buffer_addr, format, offset, size);
+        n.n1478576103.n1794433700(this_addr, buffer_addr, format, offset, size);
     }
 
     public void setScissorRect(int x, int y, int width, int height) {
@@ -202,7 +202,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetScissorRect(long this_addr, int x, int y, int width, int height) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetScissorRect(this_addr, x, y, width, height);
+        n.n1478576103.n2859152523(this_addr, x, y, width, height);
     }
 
     public void setStencilReference(int reference) {
@@ -210,7 +210,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetStencilReference(long this_addr, int reference) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetStencilReference(this_addr, reference);
+        n.n1478576103.n1020985253(this_addr, reference);
     }
 
     public void setVertexBuffer(int slot, WGPUBuffer buffer, int offset, int size) {
@@ -218,7 +218,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetVertexBuffer(long this_addr, int slot, long buffer_addr, int offset, int size) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetVertexBuffer(this_addr, slot, buffer_addr, offset, size);
+        n.n1478576103.n2527032318(this_addr, slot, buffer_addr, offset, size);
     }
 
     public void setViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
@@ -226,7 +226,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static void internal_native_SetViewport(long this_addr, float x, float y, float width, float height, float minDepth, float maxDepth) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_SetViewport(this_addr, x, y, width, height, minDepth, maxDepth);
+        n.n1478576103.n2894513323(this_addr, x, y, width, height, minDepth, maxDepth);
     }
 
     public boolean isValid() {
@@ -234,7 +234,7 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_IsValid(this_addr);
+        return n.n1478576103.n2258171393(this_addr);
     }
 
     public static WGPURenderPassEncoder obtain() {
@@ -248,6 +248,6 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPassEncoder.internal_native_Obtain_addr();
+        return n.n1478576103.n956389708();
     }
 }

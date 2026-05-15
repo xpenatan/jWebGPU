@@ -35,14 +35,14 @@ public enum WGPUStatus implements NativeEnum<WGPUStatus> {
     }
 
     private static int WGPUStatus_Success_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStatus.WGPUStatus_Success_NATIVE();
+        return n.n709193632.n4285588909();
     }
 
     private static int WGPUStatus_Error_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStatus.WGPUStatus_Error_NATIVE();
+        return n.n709193632.n115932082();
     }
 
     private static int WGPUStatus_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUStatus.WGPUStatus_Force32_NATIVE();
+        return n.n709193632.n1711976756();
     }
 }

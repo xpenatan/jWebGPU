@@ -35,18 +35,18 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
     }
 
     private static int WGPUCallbackMode_WaitAnyOnly_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCallbackMode.WGPUCallbackMode_WaitAnyOnly_NATIVE();
+        return n.n471713974.n3325349037();
     }
 
     private static int WGPUCallbackMode_AllowProcessEvents_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCallbackMode.WGPUCallbackMode_AllowProcessEvents_NATIVE();
+        return n.n471713974.n638162177();
     }
 
     private static int WGPUCallbackMode_AllowSpontaneous_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCallbackMode.WGPUCallbackMode_AllowSpontaneous_NATIVE();
+        return n.n471713974.n1938751430();
     }
 
     private static int WGPUCallbackMode_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUCallbackMode.WGPUCallbackMode_Force32_NATIVE();
+        return n.n471713974.n1497950644();
     }
 }

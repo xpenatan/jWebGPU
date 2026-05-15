@@ -42,30 +42,30 @@ public enum WGPUSurfaceGetCurrentTextureStatus implements NativeEnum<WGPUSurface
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_SuccessOptimal_NATIVE();
+        return n.n660183723.n3131115713();
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_SuccessSuboptimal_NATIVE();
+        return n.n660183723.n3925540207();
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_Timeout_NATIVE();
+        return n.n660183723.n2451621931();
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_Outdated_NATIVE();
+        return n.n660183723.n3375392938();
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_Lost_NATIVE();
+        return n.n660183723.n2727360998();
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_Error_NATIVE();
+        return n.n660183723.n1569019602();
     }
 
     private static int WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceGetCurrentTextureStatus.WGPUSurfaceGetCurrentTextureStatus_Force32_NATIVE();
+        return n.n660183723.n2264712276();
     }
 }

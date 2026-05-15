@@ -31,7 +31,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_deleteNative(this_addr);
+        n.n554058431.n3022423987(this_addr);
     }
 
     public void setLabel(String value) {
@@ -39,7 +39,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_SetLabel(this_addr, value);
+        n.n554058431.n2270712826(this_addr, value);
     }
 
     public void unconfigure() {
@@ -47,7 +47,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_Unconfigure(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_Unconfigure(this_addr);
+        n.n554058431.n4199178766(this_addr);
     }
 
     public void release() {
@@ -55,7 +55,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_Release(this_addr);
+        n.n554058431.n3584279604(this_addr);
     }
 
     public void configure(WGPUSurfaceConfiguration config) {
@@ -63,7 +63,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_Configure(long this_addr, long config_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_Configure(this_addr, config_addr);
+        n.n554058431.n1840329171(this_addr, config_addr);
     }
 
     public void getCapabilities(WGPUAdapter adapter, WGPUSurfaceCapabilities surfaceCapabilities) {
@@ -71,7 +71,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_GetCapabilities(long this_addr, long adapter_addr, long surfaceCapabilities_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_GetCapabilities(this_addr, adapter_addr, surfaceCapabilities_addr);
+        n.n554058431.n1426243695(this_addr, adapter_addr, surfaceCapabilities_addr);
     }
 
     public void getCurrentTexture(WGPUSurfaceTexture surfaceTexture) {
@@ -79,7 +79,7 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_GetCurrentTexture(long this_addr, long surfaceTexture_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_GetCurrentTexture(this_addr, surfaceTexture_addr);
+        n.n554058431.n379694533(this_addr, surfaceTexture_addr);
     }
 
     public void present() {
@@ -87,6 +87,6 @@ public class WGPUSurface extends NativeObject {
     }
 
     public static void internal_native_Present(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurface.internal_native_Present(this_addr);
+        n.n554058431.n1949811712(this_addr);
     }
 }

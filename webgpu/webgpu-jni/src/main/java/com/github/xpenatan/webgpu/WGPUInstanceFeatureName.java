@@ -35,18 +35,18 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
     }
 
     private static int WGPUInstanceFeatureName_TimedWaitAny_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceFeatureName.WGPUInstanceFeatureName_TimedWaitAny_NATIVE();
+        return n.n4009401822.n2748810252();
     }
 
     private static int WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceFeatureName.WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE();
+        return n.n4009401822.n447031600();
     }
 
     private static int WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceFeatureName.WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE();
+        return n.n4009401822.n2096323519();
     }
 
     private static int WGPUInstanceFeatureName_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUInstanceFeatureName.WGPUInstanceFeatureName_Force32_NATIVE();
+        return n.n4009401822.n3201952202();
     }
 }

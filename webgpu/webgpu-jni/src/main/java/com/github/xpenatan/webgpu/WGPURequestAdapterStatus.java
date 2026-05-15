@@ -35,18 +35,18 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
     }
 
     private static int WGPURequestAdapterStatus_Success_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterStatus.WGPURequestAdapterStatus_Success_NATIVE();
+        return n.n2806652160.n2040399981();
     }
 
     private static int WGPURequestAdapterStatus_Unavailable_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterStatus.WGPURequestAdapterStatus_Unavailable_NATIVE();
+        return n.n2806652160.n1491775930();
     }
 
     private static int WGPURequestAdapterStatus_Error_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterStatus.WGPURequestAdapterStatus_Error_NATIVE();
+        return n.n2806652160.n1266667122();
     }
 
     private static int WGPURequestAdapterStatus_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURequestAdapterStatus.WGPURequestAdapterStatus_Force32_NATIVE();
+        return n.n2806652160.n3761755124();
     }
 }

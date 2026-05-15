@@ -20,7 +20,7 @@ public class WGPUVectorVertexAttribute extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexAttribute.internal_native_create_addr();
+        return n.n3196045351.n1255215107();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexAttribute.internal_native_deleteNative(this_addr);
+        n.n3196045351.n386708251(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorVertexAttribute extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexAttribute.internal_native_size(this_addr);
+        return n.n3196045351.n3633471772(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexAttribute.internal_native_clear(this_addr);
+        n.n3196045351.n1219365862(this_addr);
     }
 
     public void push_back(WGPUVertexAttribute colorAttachment) {
@@ -66,7 +66,7 @@ public class WGPUVectorVertexAttribute extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long colorAttachment_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexAttribute.internal_native_push_back(this_addr, colorAttachment_addr);
+        n.n3196045351.n1146984417(this_addr, colorAttachment_addr);
     }
 
     public static WGPUVectorVertexAttribute obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorVertexAttribute extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorVertexAttribute.internal_native_Obtain_addr();
+        return n.n3196045351.n408797452();
     }
 }

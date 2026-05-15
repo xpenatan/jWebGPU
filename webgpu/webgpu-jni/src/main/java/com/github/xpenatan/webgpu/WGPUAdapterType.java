@@ -40,22 +40,22 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
     }
 
     private static int WGPUAdapterType_DiscreteGPU_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterType.WGPUAdapterType_DiscreteGPU_NATIVE();
+        return n.n1363371067.n2762845421();
     }
 
     private static int WGPUAdapterType_IntegratedGPU_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterType.WGPUAdapterType_IntegratedGPU_NATIVE();
+        return n.n1363371067.n3779294547();
     }
 
     private static int WGPUAdapterType_CPU_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterType.WGPUAdapterType_CPU_NATIVE();
+        return n.n1363371067.n205449890();
     }
 
     private static int WGPUAdapterType_Unknown_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterType.WGPUAdapterType_Unknown_NATIVE();
+        return n.n1363371067.n1760214340();
     }
 
     private static int WGPUAdapterType_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUAdapterType.WGPUAdapterType_Force32_NATIVE();
+        return n.n1363371067.n3278197636();
     }
 }

@@ -26,7 +26,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_create_addr();
+        return n.n4146613269.n2944596693();
     }
 
     /**
@@ -48,7 +48,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_deleteNative(this_addr);
+        n.n4146613269.n2908142473(this_addr);
     }
 
     public void setLabel(String value) {
@@ -56,7 +56,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_SetLabel(this_addr, value);
+        n.n4146613269.n3619194980(this_addr, value);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -64,7 +64,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n4146613269.n1298554916(this_addr, chainedStruct_addr);
     }
 
     public WGPUVertexState getVertex() {
@@ -78,7 +78,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_GetVertex_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_GetVertex_addr(this_addr);
+        return n.n4146613269.n3141631061(this_addr);
     }
 
     public WGPUPrimitiveState getPrimitive() {
@@ -92,7 +92,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_GetPrimitive_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_GetPrimitive_addr(this_addr);
+        return n.n4146613269.n3175293990(this_addr);
     }
 
     public void setFragment(WGPUFragmentState fragmentState) {
@@ -100,7 +100,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetFragment(long this_addr, long fragmentState_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_SetFragment(this_addr, fragmentState_addr);
+        n.n4146613269.n148256341(this_addr, fragmentState_addr);
     }
 
     public void setDepthStencil(WGPUDepthStencilState depthStencilState) {
@@ -108,7 +108,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetDepthStencil(long this_addr, long depthStencilState_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_SetDepthStencil(this_addr, depthStencilState_addr);
+        n.n4146613269.n2076298174(this_addr, depthStencilState_addr);
     }
 
     public WGPUMultisampleState getMultisample() {
@@ -122,7 +122,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_GetMultisample_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_GetMultisample_addr(this_addr);
+        return n.n4146613269.n234020514(this_addr);
     }
 
     public void setLayout(WGPUPipelineLayout pipelineLayout) {
@@ -130,7 +130,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLayout(long this_addr, long pipelineLayout_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_SetLayout(this_addr, pipelineLayout_addr);
+        n.n4146613269.n1340594159(this_addr, pipelineLayout_addr);
     }
 
     public static WGPURenderPipelineDescriptor obtain() {
@@ -144,6 +144,6 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPURenderPipelineDescriptor.internal_native_Obtain_addr();
+        return n.n4146613269.n2098179038();
     }
 }

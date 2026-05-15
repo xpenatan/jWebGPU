@@ -20,7 +20,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_create_addr();
+        return n.n3963038913.n3345181097();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_deleteNative(this_addr);
+        n.n3963038913.n2689495349(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n3963038913.n1720922360(this_addr, chainedStruct_addr);
     }
 
     public void setType(WGPUBufferBindingType type) {
@@ -58,7 +58,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetType(long this_addr, int type) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_SetType(this_addr, type);
+        n.n3963038913.n187573664(this_addr, type);
     }
 
     public void setHasDynamicOffset(int hasDynamicOffset) {
@@ -66,7 +66,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetHasDynamicOffset(long this_addr, int hasDynamicOffset) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_SetHasDynamicOffset(this_addr, hasDynamicOffset);
+        n.n3963038913.n697143010(this_addr, hasDynamicOffset);
     }
 
     public void setMinBindingSize(int minBindingSize) {
@@ -74,7 +74,7 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static void internal_native_SetMinBindingSize(long this_addr, int minBindingSize) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_SetMinBindingSize(this_addr, minBindingSize);
+        n.n3963038913.n3387562214(this_addr, minBindingSize);
     }
 
     public static WGPUBufferBindingLayout obtain() {
@@ -88,6 +88,6 @@ public class WGPUBufferBindingLayout extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBufferBindingLayout.internal_native_Obtain_addr();
+        return n.n3963038913.n2498763442();
     }
 }

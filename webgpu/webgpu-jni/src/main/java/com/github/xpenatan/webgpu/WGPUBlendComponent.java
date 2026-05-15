@@ -31,7 +31,7 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_deleteNative(this_addr);
+        n.n3928389978.n854939534(this_addr);
     }
 
     public void setOperation(WGPUBlendOperation operation) {
@@ -39,7 +39,7 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static void internal_native_SetOperation(long this_addr, int operation) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_SetOperation(this_addr, operation);
+        n.n3928389978.n427907726(this_addr, operation);
     }
 
     public WGPUBlendOperation getOperation() {
@@ -54,7 +54,7 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static int internal_native_GetOperation(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_GetOperation(this_addr);
+        return n.n3928389978.n1219508159(this_addr);
     }
 
     public void setSrcFactor(WGPUBlendFactor factor) {
@@ -62,7 +62,7 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static void internal_native_SetSrcFactor(long this_addr, int factor) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_SetSrcFactor(this_addr, factor);
+        n.n3928389978.n3881242914(this_addr, factor);
     }
 
     public WGPUBlendFactor getSrcFactor() {
@@ -77,7 +77,7 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static int internal_native_GetSrcFactor(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_GetSrcFactor(this_addr);
+        return n.n3928389978.n2876266579(this_addr);
     }
 
     public void setDstFactor(WGPUBlendFactor factor) {
@@ -85,7 +85,7 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static void internal_native_SetDstFactor(long this_addr, int factor) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_SetDstFactor(this_addr, factor);
+        n.n3928389978.n2921622305(this_addr, factor);
     }
 
     public WGPUBlendFactor getDstFactor() {
@@ -100,6 +100,6 @@ public class WGPUBlendComponent extends NativeObject {
     }
 
     public static int internal_native_GetDstFactor(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBlendComponent.internal_native_GetDstFactor(this_addr);
+        return n.n3928389978.n3770714578(this_addr);
     }
 }

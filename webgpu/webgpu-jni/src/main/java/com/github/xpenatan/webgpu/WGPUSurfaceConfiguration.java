@@ -20,7 +20,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_create_addr();
+        return n.n2382434423.n489318835();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_deleteNative(this_addr);
+        n.n2382434423.n3757565803(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -50,7 +50,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n2382434423.n2599973378(this_addr, chainedStruct_addr);
     }
 
     public void setWidth(int width) {
@@ -58,7 +58,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetWidth(long this_addr, int width) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetWidth(this_addr, width);
+        n.n2382434423.n4020111852(this_addr, width);
     }
 
     public void setHeight(int height) {
@@ -66,7 +66,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetHeight(long this_addr, int height) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetHeight(this_addr, height);
+        n.n2382434423.n732836637(this_addr, height);
     }
 
     public void setFormat(WGPUTextureFormat format) {
@@ -74,7 +74,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetFormat(long this_addr, int format) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetFormat(this_addr, format);
+        n.n2382434423.n3374675533(this_addr, format);
     }
 
     public void setViewFormats(WGPUVectorTextureFormat formats) {
@@ -82,7 +82,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetViewFormats(long this_addr, long formats_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetViewFormats(this_addr, formats_addr);
+        n.n2382434423.n3181587280(this_addr, formats_addr);
     }
 
     public void setUsage(WGPUTextureUsage usage) {
@@ -90,7 +90,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetUsage(long this_addr, int usage) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetUsage(this_addr, usage);
+        n.n2382434423.n4185022577(this_addr, usage);
     }
 
     public void setDevice(WGPUDevice device) {
@@ -98,7 +98,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetDevice(long this_addr, long device_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetDevice(this_addr, device_addr);
+        n.n2382434423.n960278397(this_addr, device_addr);
     }
 
     public void setPresentMode(WGPUPresentMode presentMode) {
@@ -106,7 +106,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetPresentMode(long this_addr, int presentMode) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetPresentMode(this_addr, presentMode);
+        n.n2382434423.n3781369972(this_addr, presentMode);
     }
 
     public void setAlphaMode(WGPUCompositeAlphaMode alphaMode) {
@@ -114,7 +114,7 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static void internal_native_SetAlphaMode(long this_addr, int alphaMode) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_SetAlphaMode(this_addr, alphaMode);
+        n.n2382434423.n1756002929(this_addr, alphaMode);
     }
 
     public static WGPUSurfaceConfiguration obtain() {
@@ -128,6 +128,6 @@ public class WGPUSurfaceConfiguration extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUSurfaceConfiguration.internal_native_Obtain_addr();
+        return n.n2382434423.n3937868476();
     }
 }

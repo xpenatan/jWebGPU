@@ -20,7 +20,7 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutDescriptor.internal_native_create_addr();
+        return n.n2826204205.n2629298621();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutDescriptor.internal_native_deleteNative(this_addr);
+        n.n2826204205.n2380979617(this_addr);
     }
 
     public void setLabel(String label) {
@@ -50,7 +50,7 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutDescriptor.internal_native_SetLabel(this_addr, label);
+        n.n2826204205.n1310986060(this_addr, label);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -58,7 +58,7 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutDescriptor.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n2826204205.n56898316(this_addr, chainedStruct_addr);
     }
 
     public void setEntries(WGPUVectorBindGroupLayoutEntry entries) {
@@ -66,7 +66,7 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetEntries(long this_addr, long entries_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutDescriptor.internal_native_SetEntries(this_addr, entries_addr);
+        n.n2826204205.n756557363(this_addr, entries_addr);
     }
 
     public static WGPUBindGroupLayoutDescriptor obtain() {
@@ -80,6 +80,6 @@ public class WGPUBindGroupLayoutDescriptor extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUBindGroupLayoutDescriptor.internal_native_Obtain_addr();
+        return n.n2826204205.n1782880966();
     }
 }

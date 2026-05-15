@@ -35,18 +35,18 @@ public enum WGPUVertexStepMode implements NativeEnum<WGPUVertexStepMode> {
     }
 
     private static int WGPUVertexStepMode_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexStepMode.WGPUVertexStepMode_Undefined_NATIVE();
+        return n.n2493493761.n3112771674();
     }
 
     private static int WGPUVertexStepMode_Vertex_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexStepMode.WGPUVertexStepMode_Vertex_NATIVE();
+        return n.n2493493761.n1491650854();
     }
 
     private static int WGPUVertexStepMode_Instance_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexStepMode.WGPUVertexStepMode_Instance_NATIVE();
+        return n.n2493493761.n1826208791();
     }
 
     private static int WGPUVertexStepMode_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVertexStepMode.WGPUVertexStepMode_Force32_NATIVE();
+        return n.n2493493761.n72538260();
     }
 }

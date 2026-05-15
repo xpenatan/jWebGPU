@@ -33,7 +33,7 @@ public class STBImage extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_STBImage.internal_native_deleteNative(this_addr);
+        n.n2658705555.n1044410503(this_addr);
     }
 
     public WGPUByteBuffer getPixels() {
@@ -47,7 +47,7 @@ public class STBImage extends NativeObject {
     }
 
     public static long internal_native_GetPixels_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_STBImage.internal_native_GetPixels_addr(this_addr);
+        return n.n2658705555.n1971175324(this_addr);
     }
 
     public int getWidth() {
@@ -55,7 +55,7 @@ public class STBImage extends NativeObject {
     }
 
     public static int internal_native_GetWidth(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_STBImage.internal_native_GetWidth(this_addr);
+        return n.n2658705555.n972740409(this_addr);
     }
 
     public int getHeight() {
@@ -63,7 +63,7 @@ public class STBImage extends NativeObject {
     }
 
     public static int internal_native_GetHeight(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_STBImage.internal_native_GetHeight(this_addr);
+        return n.n2658705555.n217321674(this_addr);
     }
 
     public int getFormat() {
@@ -71,6 +71,6 @@ public class STBImage extends NativeObject {
     }
 
     public static int internal_native_GetFormat(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_STBImage.internal_native_GetFormat(this_addr);
+        return n.n2658705555.n2708237306(this_addr);
     }
 }

@@ -31,7 +31,7 @@ public class WGPUPrimitiveState extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveState.internal_native_deleteNative(this_addr);
+        n.n3829911960.n3477020748(this_addr);
     }
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
@@ -39,7 +39,7 @@ public class WGPUPrimitiveState extends NativeObject {
     }
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveState.internal_native_SetNextInChain(this_addr, chainedStruct_addr);
+        n.n3829911960.n3431639553(this_addr, chainedStruct_addr);
     }
 
     public void setTopology(WGPUPrimitiveTopology value) {
@@ -47,7 +47,7 @@ public class WGPUPrimitiveState extends NativeObject {
     }
 
     public static void internal_native_SetTopology(long this_addr, int value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveState.internal_native_SetTopology(this_addr, value);
+        n.n3829911960.n3113475092(this_addr, value);
     }
 
     public void setStripIndexFormat(WGPUIndexFormat value) {
@@ -55,7 +55,7 @@ public class WGPUPrimitiveState extends NativeObject {
     }
 
     public static void internal_native_SetStripIndexFormat(long this_addr, int value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveState.internal_native_SetStripIndexFormat(this_addr, value);
+        n.n3829911960.n1048626066(this_addr, value);
     }
 
     public void setFrontFace(WGPUFrontFace value) {
@@ -63,7 +63,7 @@ public class WGPUPrimitiveState extends NativeObject {
     }
 
     public static void internal_native_SetFrontFace(long this_addr, int value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveState.internal_native_SetFrontFace(this_addr, value);
+        n.n3829911960.n2946802797(this_addr, value);
     }
 
     public void setCullMode(WGPUCullMode value) {
@@ -71,6 +71,6 @@ public class WGPUPrimitiveState extends NativeObject {
     }
 
     public static void internal_native_SetCullMode(long this_addr, int value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPrimitiveState.internal_native_SetCullMode(this_addr, value);
+        n.n3829911960.n3831993102(this_addr, value);
     }
 }

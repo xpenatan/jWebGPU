@@ -18,7 +18,7 @@ public class WGPUPipelineLayout extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayout.internal_native_create_addr();
+        return n.n3901268506.n3207184112();
     }
 
     /**
@@ -40,7 +40,7 @@ public class WGPUPipelineLayout extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayout.internal_native_deleteNative(this_addr);
+        n.n3901268506.n425545806(this_addr);
     }
 
     public void setLabel(String value) {
@@ -48,7 +48,7 @@ public class WGPUPipelineLayout extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayout.internal_native_SetLabel(this_addr, value);
+        n.n3901268506.n3918725503(this_addr, value);
     }
 
     public void release() {
@@ -56,7 +56,7 @@ public class WGPUPipelineLayout extends NativeObject {
     }
 
     public static void internal_native_Release(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayout.internal_native_Release(this_addr);
+        n.n3901268506.n3866281657(this_addr);
     }
 
     public boolean isValid() {
@@ -64,6 +64,6 @@ public class WGPUPipelineLayout extends NativeObject {
     }
 
     public static boolean internal_native_IsValid(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUPipelineLayout.internal_native_IsValid(this_addr);
+        return n.n3901268506.n3662548142(this_addr);
     }
 }

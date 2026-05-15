@@ -35,18 +35,18 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
     }
 
     private static int WGPULoadOp_Undefined_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPULoadOp.WGPULoadOp_Undefined_NATIVE();
+        return n.n504155413.n4294069722();
     }
 
     private static int WGPULoadOp_Load_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPULoadOp.WGPULoadOp_Load_NATIVE();
+        return n.n504155413.n625740776();
     }
 
     private static int WGPULoadOp_Clear_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPULoadOp.WGPULoadOp_Clear_NATIVE();
+        return n.n504155413.n4162729943();
     }
 
     private static int WGPULoadOp_Force32_NATIVE() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPULoadOp.WGPULoadOp_Force32_NATIVE();
+        return n.n504155413.n1713989140();
     }
 }

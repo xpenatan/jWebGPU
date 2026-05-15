@@ -20,7 +20,7 @@ public class WGPUVectorCommandBuffer extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorCommandBuffer.internal_native_create_addr();
+        return n.n1753151994.n3495752464();
     }
 
     /**
@@ -42,7 +42,7 @@ public class WGPUVectorCommandBuffer extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorCommandBuffer.internal_native_deleteNative(this_addr);
+        n.n1753151994.n3265638446(this_addr);
     }
 
     public int size() {
@@ -50,7 +50,7 @@ public class WGPUVectorCommandBuffer extends NativeObject {
     }
 
     public static int internal_native_size(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorCommandBuffer.internal_native_size(this_addr);
+        return n.n1753151994.n3017220399(this_addr);
     }
 
     public void clear() {
@@ -58,7 +58,7 @@ public class WGPUVectorCommandBuffer extends NativeObject {
     }
 
     public static void internal_native_clear(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorCommandBuffer.internal_native_clear(this_addr);
+        n.n1753151994.n3590409779(this_addr);
     }
 
     public void push_back(WGPUCommandBuffer entry) {
@@ -66,7 +66,7 @@ public class WGPUVectorCommandBuffer extends NativeObject {
     }
 
     public static void internal_native_push_back(long this_addr, long entry_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUVectorCommandBuffer.internal_native_push_back(this_addr, entry_addr);
+        n.n1753151994.n1839963188(this_addr, entry_addr);
     }
 
     public static WGPUVectorCommandBuffer obtain() {
@@ -80,6 +80,6 @@ public class WGPUVectorCommandBuffer extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUVectorCommandBuffer.internal_native_Obtain_addr();
+        return n.n1753151994.n2649334809();
     }
 }

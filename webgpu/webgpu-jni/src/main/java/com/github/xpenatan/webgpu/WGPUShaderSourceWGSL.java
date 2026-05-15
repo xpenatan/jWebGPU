@@ -22,7 +22,7 @@ public class WGPUShaderSourceWGSL extends NativeObject {
     }
 
     public static long internal_native_create_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceWGSL.internal_native_create_addr();
+        return n.n378624951.n3758941811();
     }
 
     /**
@@ -44,7 +44,7 @@ public class WGPUShaderSourceWGSL extends NativeObject {
     }
 
     public static void internal_native_deleteNative(long this_addr) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceWGSL.internal_native_deleteNative(this_addr);
+        n.n378624951.n2061853355(this_addr);
     }
 
     public void setCode(String code) {
@@ -52,7 +52,7 @@ public class WGPUShaderSourceWGSL extends NativeObject {
     }
 
     public static void internal_native_SetCode(long this_addr, String code) {
-        com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceWGSL.internal_native_SetCode(this_addr, code);
+        n.n378624951.n1727015689(this_addr, code);
     }
 
     public WGPUChainedStruct getChain() {
@@ -66,7 +66,7 @@ public class WGPUShaderSourceWGSL extends NativeObject {
     }
 
     public static long internal_native_GetChain_addr(long this_addr) {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceWGSL.internal_native_GetChain_addr(this_addr);
+        return n.n378624951.n2323490334(this_addr);
     }
 
     public static WGPUShaderSourceWGSL obtain() {
@@ -80,6 +80,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
     }
 
     public static long internal_native_Obtain_addr() {
-        return com.github.xpenatan.webgpu.natives.JNI_WGPUShaderSourceWGSL.internal_native_Obtain_addr();
+        return n.n378624951.n2912524156();
     }
 }
