@@ -170,19 +170,19 @@ public class WGPUCompilationMessage extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4288171160", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2813135782", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2813135782", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetMessage_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4154726345", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetType__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3127436888", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetType__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3127436888", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetLineNum__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1877193388", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetLineNum__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1877193388", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetLinePos__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n209566878", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetLinePos__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n209566878", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetOffset__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3945779743", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetOffset__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3945779743", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetLength__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n13694892", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetLength__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n13694892", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3441753505", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }

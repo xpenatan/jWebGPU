@@ -39,24 +39,28 @@ public class WGPUBuild {
 
         op.jniClassData.symbolNameMode = JNIClassData.SymbolNameMode.OBFUSCATED;
         op.ffmClassData.symbolNameMode = FFMClassData.SymbolNameMode.OBFUSCATED;
+        op.ffmClassData.logMethod = true;
         op.ffmClassData.methodListener = new FFMCriticalMethodListener() {
             @Override
             public FFMCriticalMode onCriticalMode(FFMCriticalMethodData methodData) {
-                String javaMethodName = methodData.javaMethodName;
-//                boolean critical = javaMethodName.contains("_addr") ||
-//                        javaMethodName.contains("_Set") ||
-//                        javaMethodName.contains("_Get") ||
-//                        javaMethodName.contains("_put") ||
-//                        javaMethodName.contains("_get") ||
-//                        javaMethodName.contains("_Release") ||
-//                        javaMethodName.contains("_Destroy") ||
-//                        javaMethodName.contains("_IsValid") ||
-//                        javaMethodName.endsWith("_NATIVE") ||
-//                        javaMethodName.contains("deleteNative");
+                if(methodData.className.startsWith("WGPUVector")) {
+                    return FFMCriticalMode.ENABLE;
+                }
+                String javaMethodName = methodData.javaMethodName.toLowerCase();
+                boolean critical = javaMethodName.contains("_addr") ||
+                        javaMethodName.contains("_set") ||
+                        javaMethodName.contains("_get") ||
+                        javaMethodName.contains("_put") ||
+                        javaMethodName.contains("_has") ||
+                        javaMethodName.contains("_create") ||
+                        javaMethodName.contains("_release") ||
+                        javaMethodName.contains("_destroy") ||
+                        javaMethodName.contains("_isvalid") ||
+                        javaMethodName.contains("deletenative");
 //
-//                if(critical) {
-//                    return FFMCriticalMode.ENABLE;
-//                }
+                if(critical) {
+                    return FFMCriticalMode.ENABLE;
+                }
                 return null;
             }
         };

@@ -826,131 +826,131 @@ public class WGPULimits extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1301578948", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2443775738", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2443775738", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension1D__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3722772543", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension1D__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3722772543", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension1D__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n85725168", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension1D__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n85725168", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension2D__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1925821184", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension2D__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1925821184", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension2D__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n973228849", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension2D__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n973228849", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension3D__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n128869825", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureDimension3D__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n128869825", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension3D__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1860732530", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureDimension3D__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1860732530", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureArrayLayers__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2609152925", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxTextureArrayLayers__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2609152925", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureArrayLayers__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n508555854", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxTextureArrayLayers__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n508555854", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroups__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n4019208492", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroups__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4019208492", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroups__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1188168541", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroups__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1188168541", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroupsPlusVertexBuffers__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3377697461", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindGroupsPlusVertexBuffers__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3377697461", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroupsPlusVertexBuffers__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n156347390", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindGroupsPlusVertexBuffers__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n156347390", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindingsPerBindGroup__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n857115658", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBindingsPerBindGroup__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n857115658", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindingsPerBindGroup__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3082718267", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBindingsPerBindGroup__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3082718267", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3171651410", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3171651410", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1400807043", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1400807043", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1222613867", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1222613867", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3404111644", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3404111644", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxSampledTexturesPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3461219915", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxSampledTexturesPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3461219915", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxSampledTexturesPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n604596116", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxSampledTexturesPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n604596116", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxSamplersPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1806906454", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxSamplersPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1806906454", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxSamplersPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3338653063", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxSamplersPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3338653063", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBuffersPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1604430953", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBuffersPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1604430953", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBuffersPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n424443930", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBuffersPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n424443930", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageTexturesPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3715429290", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageTexturesPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3715429290", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageTexturesPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n4047756403", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageTexturesPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4047756403", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBuffersPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3926497762", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBuffersPerShaderStage__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3926497762", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBuffersPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3291484691", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBuffersPerShaderStage__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3291484691", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBufferBindingSize__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n588756683", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxUniformBufferBindingSize__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n588756683", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBufferBindingSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2709366140", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxUniformBufferBindingSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2709366140", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBufferBindingSize__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2016683218", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxStorageBufferBindingSize__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2016683218", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBufferBindingSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n26750723", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxStorageBufferBindingSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n26750723", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMinUniformBufferOffsetAlignment__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1081042035", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMinUniformBufferOffsetAlignment__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1081042035", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMinUniformBufferOffsetAlignment__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2885405988", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMinUniformBufferOffsetAlignment__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2885405988", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMinStorageBufferOffsetAlignment__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3053942522", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMinStorageBufferOffsetAlignment__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3053942522", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMinStorageBufferOffsetAlignment__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n18365227", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMinStorageBufferOffsetAlignment__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n18365227", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBuffers__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n90362794", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBuffers__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n90362794", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBuffers__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1081496691", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBuffers__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1081496691", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxBufferSize__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3629832399", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxBufferSize__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3629832399", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxBufferSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3462379885", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxBufferSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3462379885", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexAttributes__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3704919362", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexAttributes__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3704919362", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexAttributes__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1136561011", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexAttributes__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1136561011", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBufferArrayStride__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1421093387", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxVertexBufferArrayStride__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1421093387", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBufferArrayStride__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2759951444", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxVertexBufferArrayStride__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2759951444", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxInterStageShaderVariables__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2834773641", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxInterStageShaderVariables__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2834773641", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxInterStageShaderVariables__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n4015066322", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxInterStageShaderVariables__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4015066322", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachments__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n705302352", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachments__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n705302352", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachments__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1777286273", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachments__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1777286273", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachmentBytesPerSample__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2410835831", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxColorAttachmentBytesPerSample__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2410835831", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachmentBytesPerSample__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3020506816", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxColorAttachmentBytesPerSample__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3020506816", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupStorageSize__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n921736404", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupStorageSize__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n921736404", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupStorageSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n382375325", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupStorageSize__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n382375325", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeInvocationsPerWorkgroup__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2257167712", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeInvocationsPerWorkgroup__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2257167712", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeInvocationsPerWorkgroup__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n764878737", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeInvocationsPerWorkgroup__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n764878737", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeX__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2985211801", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeX__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2985211801", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeX__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2391227362", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeX__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2391227362", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeY__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2788698296", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeY__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2788698296", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeY__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2419856513", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeY__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2419856513", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeZ__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2592184791", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupSizeZ__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2592184791", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeZ__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2448485664", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupSizeZ__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2448485664", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupsPerDimension__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n563444660", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_SetMaxComputeWorkgroupsPerDimension__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n563444660", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupsPerDimension__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2704144765", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_GetMaxComputeWorkgroupsPerDimension__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2704144765", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_Obtain_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n455161293", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
     }
