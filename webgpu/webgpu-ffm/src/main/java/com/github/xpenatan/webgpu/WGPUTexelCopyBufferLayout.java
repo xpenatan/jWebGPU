@@ -35,6 +35,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3002312139", "WGPUTexelCopyBufferLayout.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -47,6 +48,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n193493587", "WGPUTexelCopyBufferLayout.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
 
     public static void internal_native_SetOffset(long this_addr, int offset) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2603238217", "WGPUTexelCopyBufferLayout.internal_native_SetOffset");
             FFMHandles.internal_native_SetOffset__JI.invokeExact(this_addr, offset);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -71,6 +74,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
 
     public static void internal_native_SetBytesPerRow(long this_addr, int bytesPerRow) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n780642770", "WGPUTexelCopyBufferLayout.internal_native_SetBytesPerRow");
             FFMHandles.internal_native_SetBytesPerRow__JI.invokeExact(this_addr, bytesPerRow);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -83,6 +87,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
 
     public static void internal_native_SetRowsPerImage(long this_addr, int rowsPerImage) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n836140133", "WGPUTexelCopyBufferLayout.internal_native_SetRowsPerImage");
             FFMHandles.internal_native_SetRowsPerImage__JI.invokeExact(this_addr, rowsPerImage);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -101,6 +106,7 @@ public class WGPUTexelCopyBufferLayout extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2155894484", "WGPUTexelCopyBufferLayout.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

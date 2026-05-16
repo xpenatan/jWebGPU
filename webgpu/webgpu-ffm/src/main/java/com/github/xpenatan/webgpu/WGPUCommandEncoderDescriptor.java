@@ -28,6 +28,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3975289788", "WGPUCommandEncoderDescriptor.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2727023362", "WGPUCommandEncoderDescriptor.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2378682955", "WGPUCommandEncoderDescriptor.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1969249931", "WGPUCommandEncoderDescriptor.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -96,6 +100,7 @@ public class WGPUCommandEncoderDescriptor extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3128872133", "WGPUCommandEncoderDescriptor.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

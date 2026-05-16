@@ -28,6 +28,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n80475929", "WGPURenderPassDepthStencilAttachment.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3730098629", "WGPURenderPassDepthStencilAttachment.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetView(long this_addr, long textureView_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2543577382", "WGPURenderPassDepthStencilAttachment.internal_native_SetView");
             FFMHandles.internal_native_SetView__JJ.invokeExact(this_addr, textureView_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetDepthLoadOp(long this_addr, int loadOp) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3689746370", "WGPURenderPassDepthStencilAttachment.internal_native_SetDepthLoadOp");
             FFMHandles.internal_native_SetDepthLoadOp__JI.invokeExact(this_addr, loadOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -90,6 +94,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetDepthStoreOp(long this_addr, int storeOp) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1211988619", "WGPURenderPassDepthStencilAttachment.internal_native_SetDepthStoreOp");
             FFMHandles.internal_native_SetDepthStoreOp__JI.invokeExact(this_addr, storeOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -102,6 +107,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetDepthClearValue(long this_addr, float depthClearValue) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n617761938", "WGPURenderPassDepthStencilAttachment.internal_native_SetDepthClearValue");
             FFMHandles.internal_native_SetDepthClearValue__JF.invokeExact(this_addr, depthClearValue);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -114,6 +120,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetDepthReadOnly(long this_addr, boolean depthReadOnly) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n722854368", "WGPURenderPassDepthStencilAttachment.internal_native_SetDepthReadOnly");
             FFMHandles.internal_native_SetDepthReadOnly__JZ.invokeExact(this_addr, depthReadOnly);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -126,6 +133,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetStencilLoadOp(long this_addr, int loadOp) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1209846633", "WGPURenderPassDepthStencilAttachment.internal_native_SetStencilLoadOp");
             FFMHandles.internal_native_SetStencilLoadOp__JI.invokeExact(this_addr, loadOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -138,6 +146,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetStencilStoreOp(long this_addr, int storeOp) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1644508100", "WGPURenderPassDepthStencilAttachment.internal_native_SetStencilStoreOp");
             FFMHandles.internal_native_SetStencilStoreOp__JI.invokeExact(this_addr, storeOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -150,6 +159,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetStencilClearValue(long this_addr, int stencilClearValue) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2548066252", "WGPURenderPassDepthStencilAttachment.internal_native_SetStencilClearValue");
             FFMHandles.internal_native_SetStencilClearValue__JI.invokeExact(this_addr, stencilClearValue);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -162,6 +172,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static void internal_native_SetStencilReadOnly(long this_addr, boolean stencilReadOnly) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n662570055", "WGPURenderPassDepthStencilAttachment.internal_native_SetStencilReadOnly");
             FFMHandles.internal_native_SetStencilReadOnly__JZ.invokeExact(this_addr, stencilReadOnly);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -180,6 +191,7 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3529025570", "WGPURenderPassDepthStencilAttachment.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -43,6 +43,7 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
 
     private static int WGPUQueueWorkDoneStatus_Success_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4156934551", "WGPUQueueWorkDoneStatus.WGPUQueueWorkDoneStatus_Success_NATIVE");
             return (int) FFMHandles.WGPUQueueWorkDoneStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
 
     private static int WGPUQueueWorkDoneStatus_Error_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2283393564", "WGPUQueueWorkDoneStatus.WGPUQueueWorkDoneStatus_Error_NATIVE");
             return (int) FFMHandles.WGPUQueueWorkDoneStatus_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUQueueWorkDoneStatus implements NativeEnum<WGPUQueueWorkDoneStatu
 
     private static int WGPUQueueWorkDoneStatus_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1583322398", "WGPUQueueWorkDoneStatus.WGPUQueueWorkDoneStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPUQueueWorkDoneStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

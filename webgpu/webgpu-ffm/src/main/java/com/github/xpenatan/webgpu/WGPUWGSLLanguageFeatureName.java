@@ -48,6 +48,7 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static int WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n981636423", "WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE");
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_ReadonlyAndReadwriteStorageTextures_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -56,6 +57,7 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static int WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2703982092", "WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE");
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -64,6 +66,7 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n297786651", "WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE");
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -72,6 +75,7 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2395642290", "WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE");
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,6 +84,7 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static int WGPUWGSLLanguageFeatureName_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2157127538", "WGPUWGSLLanguageFeatureName.WGPUWGSLLanguageFeatureName_Force32_NATIVE");
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

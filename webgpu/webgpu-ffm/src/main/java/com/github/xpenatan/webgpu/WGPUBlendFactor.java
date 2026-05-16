@@ -62,6 +62,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2794388856", "WGPUBlendFactor.WGPUBlendFactor_Undefined_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,6 +71,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Zero_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4188334412", "WGPUBlendFactor.WGPUBlendFactor_Zero_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Zero_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +80,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_One_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n796235278", "WGPUBlendFactor.WGPUBlendFactor_One_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_One_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -86,6 +89,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Src_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n732252044", "WGPUBlendFactor.WGPUBlendFactor_Src_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Src_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,6 +98,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusSrc_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1226081666", "WGPUBlendFactor.WGPUBlendFactor_OneMinusSrc_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -102,6 +107,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_SrcAlpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3542559614", "WGPUBlendFactor.WGPUBlendFactor_SrcAlpha_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_SrcAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -110,6 +116,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusSrcAlpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2122200904", "WGPUBlendFactor.WGPUBlendFactor_OneMinusSrcAlpha_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrcAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -118,6 +125,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Dst_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1058250349", "WGPUBlendFactor.WGPUBlendFactor_Dst_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Dst_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -126,6 +134,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusDst_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1552079971", "WGPUBlendFactor.WGPUBlendFactor_OneMinusDst_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusDst_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -134,6 +143,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_DstAlpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4113627453", "WGPUBlendFactor.WGPUBlendFactor_DstAlpha_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_DstAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -142,6 +152,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusDstAlpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2693268743", "WGPUBlendFactor.WGPUBlendFactor_OneMinusDstAlpha_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusDstAlpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -150,6 +161,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_SrcAlphaSaturated_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1227434499", "WGPUBlendFactor.WGPUBlendFactor_SrcAlphaSaturated_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_SrcAlphaSaturated_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -158,6 +170,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Constant_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n898208584", "WGPUBlendFactor.WGPUBlendFactor_Constant_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Constant_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -166,6 +179,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusConstant_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3772817170", "WGPUBlendFactor.WGPUBlendFactor_OneMinusConstant_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusConstant_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -174,6 +188,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Src1_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n444986481", "WGPUBlendFactor.WGPUBlendFactor_Src1_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Src1_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -182,6 +197,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusSrc1_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2868802875", "WGPUBlendFactor.WGPUBlendFactor_OneMinusSrc1_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc1_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -190,6 +206,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Src1Alpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n949470649", "WGPUBlendFactor.WGPUBlendFactor_Src1Alpha_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Src1Alpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -198,6 +215,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4162990895", "WGPUBlendFactor.WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_OneMinusSrc1Alpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -206,6 +224,7 @@ public enum WGPUBlendFactor implements NativeEnum<WGPUBlendFactor> {
 
     private static int WGPUBlendFactor_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n885613874", "WGPUBlendFactor.WGPUBlendFactor_Force32_NATIVE");
             return (int) FFMHandles.WGPUBlendFactor_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

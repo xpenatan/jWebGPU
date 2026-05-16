@@ -26,6 +26,7 @@ public class WGPUConstantEntry extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2040753930", "WGPUConstantEntry.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,6 +53,7 @@ public class WGPUConstantEntry extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2211422324", "WGPUConstantEntry.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

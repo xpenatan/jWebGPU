@@ -28,6 +28,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n402431469", "WGPUBufferDescriptor.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4150216561", "WGPUBufferDescriptor.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n810128252", "WGPUBufferDescriptor.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2446073660", "WGPUBufferDescriptor.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -90,6 +94,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static void internal_native_SetUsage(long this_addr, int usage) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n282706039", "WGPUBufferDescriptor.internal_native_SetUsage");
             FFMHandles.internal_native_SetUsage__JI.invokeExact(this_addr, usage);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -102,6 +107,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static void internal_native_SetSize(long this_addr, long size) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n881527086", "WGPUBufferDescriptor.internal_native_SetSize");
             FFMHandles.internal_native_SetSize__JJ.invokeExact(this_addr, size);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -114,6 +120,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static void internal_native_SetMappedAtCreation(long this_addr, boolean mappedAtCreation) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2257847154", "WGPUBufferDescriptor.internal_native_SetMappedAtCreation");
             FFMHandles.internal_native_SetMappedAtCreation__JZ.invokeExact(this_addr, mappedAtCreation);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -132,6 +139,7 @@ public class WGPUBufferDescriptor extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3850981110", "WGPUBufferDescriptor.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -43,6 +43,7 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
 
     private static int WGPUToneMappingMode_Standard_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2502798499", "WGPUToneMappingMode.WGPUToneMappingMode_Standard_NATIVE");
             return (int) FFMHandles.WGPUToneMappingMode_Standard_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
 
     private static int WGPUToneMappingMode_Extended_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2875178783", "WGPUToneMappingMode.WGPUToneMappingMode_Extended_NATIVE");
             return (int) FFMHandles.WGPUToneMappingMode_Extended_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUToneMappingMode implements NativeEnum<WGPUToneMappingMode> {
 
     private static int WGPUToneMappingMode_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4013911472", "WGPUToneMappingMode.WGPUToneMappingMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUToneMappingMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

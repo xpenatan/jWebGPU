@@ -43,6 +43,7 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
 
     private static int WGPUErrorFilter_Validation_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3288915549", "WGPUErrorFilter.WGPUErrorFilter_Validation_NATIVE");
             return (int) FFMHandles.WGPUErrorFilter_Validation_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
 
     private static int WGPUErrorFilter_OutOfMemory_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2662457870", "WGPUErrorFilter.WGPUErrorFilter_OutOfMemory_NATIVE");
             return (int) FFMHandles.WGPUErrorFilter_OutOfMemory_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
 
     private static int WGPUErrorFilter_Internal_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n382040097", "WGPUErrorFilter.WGPUErrorFilter_Internal_NATIVE");
             return (int) FFMHandles.WGPUErrorFilter_Internal_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPUErrorFilter implements NativeEnum<WGPUErrorFilter> {
 
     private static int WGPUErrorFilter_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n779149938", "WGPUErrorFilter.WGPUErrorFilter_Force32_NATIVE");
             return (int) FFMHandles.WGPUErrorFilter_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

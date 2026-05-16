@@ -43,6 +43,7 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
 
     private static int WGPUCreatePipelineAsyncStatus_Success_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3363542091", "WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_Success_NATIVE");
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
 
     private static int WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n356787031", "WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE");
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
 
     private static int WGPUCreatePipelineAsyncStatus_InternalError_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2455559187", "WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_InternalError_NATIVE");
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_InternalError_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
 
     private static int WGPUCreatePipelineAsyncStatus_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n789929938", "WGPUCreatePipelineAsyncStatus.WGPUCreatePipelineAsyncStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

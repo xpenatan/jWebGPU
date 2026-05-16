@@ -41,6 +41,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4218381791", "WGPUPassTimestampWrites.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -53,6 +54,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
 
     public static void internal_native_SetQuerySet(long this_addr, long value_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1043156309", "WGPUPassTimestampWrites.internal_native_SetQuerySet");
             FFMHandles.internal_native_SetQuerySet__JJ.invokeExact(this_addr, value_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,6 +67,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
 
     public static void internal_native_SetBeginningOfPassWriteIndex(long this_addr, int value) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1433419534", "WGPUPassTimestampWrites.internal_native_SetBeginningOfPassWriteIndex");
             FFMHandles.internal_native_SetBeginningOfPassWriteIndex__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -77,6 +80,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
 
     public static void internal_native_SetEndOfPassWriteIndex(long this_addr, int value) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2031042832", "WGPUPassTimestampWrites.internal_native_SetEndOfPassWriteIndex");
             FFMHandles.internal_native_SetEndOfPassWriteIndex__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -95,6 +99,7 @@ public class WGPUPassTimestampWrites extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n310338504", "WGPUPassTimestampWrites.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

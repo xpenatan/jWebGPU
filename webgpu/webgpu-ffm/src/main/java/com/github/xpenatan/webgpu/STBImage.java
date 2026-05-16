@@ -41,6 +41,7 @@ public class STBImage extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1044410503", "STBImage.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +60,7 @@ public class STBImage extends NativeObject {
 
     public static long internal_native_GetPixels_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1971175324", "STBImage.internal_native_GetPixels_addr");
             return (long) FFMHandles.internal_native_GetPixels_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -71,6 +73,7 @@ public class STBImage extends NativeObject {
 
     public static int internal_native_GetWidth(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n972740409", "STBImage.internal_native_GetWidth");
             return (int) FFMHandles.internal_native_GetWidth__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -83,6 +86,7 @@ public class STBImage extends NativeObject {
 
     public static int internal_native_GetHeight(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n217321674", "STBImage.internal_native_GetHeight");
             return (int) FFMHandles.internal_native_GetHeight__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -95,6 +99,7 @@ public class STBImage extends NativeObject {
 
     public static int internal_native_GetFormat(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2708237306", "STBImage.internal_native_GetFormat");
             return (int) FFMHandles.internal_native_GetFormat__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

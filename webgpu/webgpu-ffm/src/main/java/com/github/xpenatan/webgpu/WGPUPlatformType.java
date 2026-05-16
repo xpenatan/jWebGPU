@@ -50,6 +50,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_Windows_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1799491552", "WGPUPlatformType.WGPU_Windows_NATIVE");
             return (int) FFMHandles.WGPU_Windows_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -58,6 +59,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_Mac_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n560679468", "WGPUPlatformType.WGPU_Mac_NATIVE");
             return (int) FFMHandles.WGPU_Mac_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_Linux_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1533372177", "WGPUPlatformType.WGPU_Linux_NATIVE");
             return (int) FFMHandles.WGPU_Linux_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -74,6 +77,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_iOS_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4177392394", "WGPUPlatformType.WGPU_iOS_NATIVE");
             return (int) FFMHandles.WGPU_iOS_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -82,6 +86,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_Android_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n709752780", "WGPUPlatformType.WGPU_Android_NATIVE");
             return (int) FFMHandles.WGPU_Android_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -90,6 +95,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_Web_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n792435505", "WGPUPlatformType.WGPU_Web_NATIVE");
             return (int) FFMHandles.WGPU_Web_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -98,6 +104,7 @@ public enum WGPUPlatformType implements NativeEnum<WGPUPlatformType> {
 
     private static int WGPU_Unknown_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3169936039", "WGPUPlatformType.WGPU_Unknown_NATIVE");
             return (int) FFMHandles.WGPU_Unknown_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

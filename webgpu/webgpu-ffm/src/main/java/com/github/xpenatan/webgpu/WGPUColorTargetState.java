@@ -28,6 +28,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n759224927", "WGPUColorTargetState.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2984837695", "WGPUColorTargetState.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3438231726", "WGPUColorTargetState.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n894940665", "WGPUColorTargetState.internal_native_SetFormat");
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -90,6 +94,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static void internal_native_SetBlend(long this_addr, long blendState_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n599184534", "WGPUColorTargetState.internal_native_SetBlend");
             FFMHandles.internal_native_SetBlend__JJ.invokeExact(this_addr, blendState_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -102,6 +107,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static void internal_native_SetWriteMask(long this_addr, int writeMask) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3067728699", "WGPUColorTargetState.internal_native_SetWriteMask");
             FFMHandles.internal_native_SetWriteMask__JI.invokeExact(this_addr, writeMask);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,6 +126,7 @@ public class WGPUColorTargetState extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4207774568", "WGPUColorTargetState.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

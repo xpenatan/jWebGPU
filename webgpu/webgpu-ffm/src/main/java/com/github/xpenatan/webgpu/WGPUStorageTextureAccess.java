@@ -49,6 +49,7 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
 
     private static int WGPUStorageTextureAccess_BindingNotUsed_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n708175821", "WGPUStorageTextureAccess.WGPUStorageTextureAccess_BindingNotUsed_NATIVE");
             return (int) FFMHandles.WGPUStorageTextureAccess_BindingNotUsed_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,6 +58,7 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
 
     private static int WGPUStorageTextureAccess_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2076050426", "WGPUStorageTextureAccess.WGPUStorageTextureAccess_Undefined_NATIVE");
             return (int) FFMHandles.WGPUStorageTextureAccess_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,6 +67,7 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
 
     private static int WGPUStorageTextureAccess_WriteOnly_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3249699797", "WGPUStorageTextureAccess.WGPUStorageTextureAccess_WriteOnly_NATIVE");
             return (int) FFMHandles.WGPUStorageTextureAccess_WriteOnly_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,6 +76,7 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
 
     private static int WGPUStorageTextureAccess_ReadOnly_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1102800196", "WGPUStorageTextureAccess.WGPUStorageTextureAccess_ReadOnly_NATIVE");
             return (int) FFMHandles.WGPUStorageTextureAccess_ReadOnly_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +85,7 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
 
     private static int WGPUStorageTextureAccess_ReadWrite_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4091254163", "WGPUStorageTextureAccess.WGPUStorageTextureAccess_ReadWrite_NATIVE");
             return (int) FFMHandles.WGPUStorageTextureAccess_ReadWrite_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,6 +94,7 @@ public enum WGPUStorageTextureAccess implements NativeEnum<WGPUStorageTextureAcc
 
     private static int WGPUStorageTextureAccess_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n934028340", "WGPUStorageTextureAccess.WGPUStorageTextureAccess_Force32_NATIVE");
             return (int) FFMHandles.WGPUStorageTextureAccess_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -49,6 +49,7 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     private static int WGPUPresentMode_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n296669812", "WGPUPresentMode.WGPUPresentMode_Undefined_NATIVE");
             return (int) FFMHandles.WGPUPresentMode_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,6 +58,7 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     private static int WGPUPresentMode_Fifo_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2101049588", "WGPUPresentMode.WGPUPresentMode_Fifo_NATIVE");
             return (int) FFMHandles.WGPUPresentMode_Fifo_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,6 +67,7 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     private static int WGPUPresentMode_FifoRelaxed_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1623297895", "WGPUPresentMode.WGPUPresentMode_FifoRelaxed_NATIVE");
             return (int) FFMHandles.WGPUPresentMode_FifoRelaxed_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,6 +76,7 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     private static int WGPUPresentMode_Immediate_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n147601365", "WGPUPresentMode.WGPUPresentMode_Immediate_NATIVE");
             return (int) FFMHandles.WGPUPresentMode_Immediate_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +85,7 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     private static int WGPUPresentMode_Mailbox_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4183000408", "WGPUPresentMode.WGPUPresentMode_Mailbox_NATIVE");
             return (int) FFMHandles.WGPUPresentMode_Mailbox_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,6 +94,7 @@ public enum WGPUPresentMode implements NativeEnum<WGPUPresentMode> {
 
     private static int WGPUPresentMode_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4002564398", "WGPUPresentMode.WGPUPresentMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUPresentMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

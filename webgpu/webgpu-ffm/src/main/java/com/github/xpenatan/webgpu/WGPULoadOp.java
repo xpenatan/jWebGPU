@@ -43,6 +43,7 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
 
     private static int WGPULoadOp_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4294069722", "WGPULoadOp.WGPULoadOp_Undefined_NATIVE");
             return (int) FFMHandles.WGPULoadOp_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
 
     private static int WGPULoadOp_Load_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n625740776", "WGPULoadOp.WGPULoadOp_Load_NATIVE");
             return (int) FFMHandles.WGPULoadOp_Load_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
 
     private static int WGPULoadOp_Clear_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4162729943", "WGPULoadOp.WGPULoadOp_Clear_NATIVE");
             return (int) FFMHandles.WGPULoadOp_Clear_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPULoadOp implements NativeEnum<WGPULoadOp> {
 
     private static int WGPULoadOp_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1713989140", "WGPULoadOp.WGPULoadOp_Force32_NATIVE");
             return (int) FFMHandles.WGPULoadOp_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

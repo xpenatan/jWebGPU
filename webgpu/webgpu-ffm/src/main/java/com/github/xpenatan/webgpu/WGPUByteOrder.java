@@ -43,6 +43,7 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
 
     private static int BigEndian_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2512452957", "WGPUByteOrder.BigEndian_NATIVE");
             return (int) FFMHandles.BigEndian_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUByteOrder implements NativeEnum<WGPUByteOrder> {
 
     private static int LittleEndian_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3725765659", "WGPUByteOrder.LittleEndian_NATIVE");
             return (int) FFMHandles.LittleEndian_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

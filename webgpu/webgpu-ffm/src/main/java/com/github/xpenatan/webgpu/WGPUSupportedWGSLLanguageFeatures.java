@@ -28,6 +28,7 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2271845964", "WGPUSupportedWGSLLanguageFeatures.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3324947058", "WGPUSupportedWGSLLanguageFeatures.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
 
     public static int internal_native_GetFeatureCount(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3060662509", "WGPUSupportedWGSLLanguageFeatures.internal_native_GetFeatureCount");
             return (int) FFMHandles.internal_native_GetFeatureCount__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -85,6 +88,7 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
 
     public static int internal_native_GetFeatureAt(long this_addr, int index) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3494682436", "WGPUSupportedWGSLLanguageFeatures.internal_native_GetFeatureAt");
             return (int) FFMHandles.internal_native_GetFeatureAt__JI.invokeExact(this_addr, index);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -103,6 +107,7 @@ public class WGPUSupportedWGSLLanguageFeatures extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1425428309", "WGPUSupportedWGSLLanguageFeatures.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

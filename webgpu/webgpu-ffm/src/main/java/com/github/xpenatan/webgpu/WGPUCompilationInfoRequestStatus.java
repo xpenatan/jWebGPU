@@ -43,6 +43,7 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
 
     private static int WGPUCompilationInfoRequestStatus_Success_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1939524909", "WGPUCompilationInfoRequestStatus.WGPUCompilationInfoRequestStatus_Success_NATIVE");
             return (int) FFMHandles.WGPUCompilationInfoRequestStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUCompilationInfoRequestStatus implements NativeEnum<WGPUCompilati
 
     private static int WGPUCompilationInfoRequestStatus_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3660880052", "WGPUCompilationInfoRequestStatus.WGPUCompilationInfoRequestStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPUCompilationInfoRequestStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

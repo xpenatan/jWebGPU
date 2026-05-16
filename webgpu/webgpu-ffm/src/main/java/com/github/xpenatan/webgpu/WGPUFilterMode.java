@@ -43,6 +43,7 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
 
     private static int WGPUFilterMode_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n633754714", "WGPUFilterMode.WGPUFilterMode_Undefined_NATIVE");
             return (int) FFMHandles.WGPUFilterMode_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
 
     private static int WGPUFilterMode_Nearest_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3946096232", "WGPUFilterMode.WGPUFilterMode_Nearest_NATIVE");
             return (int) FFMHandles.WGPUFilterMode_Nearest_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
 
     private static int WGPUFilterMode_Linear_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2571952551", "WGPUFilterMode.WGPUFilterMode_Linear_NATIVE");
             return (int) FFMHandles.WGPUFilterMode_Linear_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPUFilterMode implements NativeEnum<WGPUFilterMode> {
 
     private static int WGPUFilterMode_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n105712788", "WGPUFilterMode.WGPUFilterMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUFilterMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

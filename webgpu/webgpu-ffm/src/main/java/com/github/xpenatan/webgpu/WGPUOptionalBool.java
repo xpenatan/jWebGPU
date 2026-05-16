@@ -43,6 +43,7 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
 
     private static int WGPUOptionalBool_False_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3186573453", "WGPUOptionalBool.WGPUOptionalBool_False_NATIVE");
             return (int) FFMHandles.WGPUOptionalBool_False_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
 
     private static int WGPUOptionalBool_True_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2249505968", "WGPUOptionalBool.WGPUOptionalBool_True_NATIVE");
             return (int) FFMHandles.WGPUOptionalBool_True_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
 
     private static int WGPUOptionalBool_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1968847290", "WGPUOptionalBool.WGPUOptionalBool_Undefined_NATIVE");
             return (int) FFMHandles.WGPUOptionalBool_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPUOptionalBool implements NativeEnum<WGPUOptionalBool> {
 
     private static int WGPUOptionalBool_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n576375284", "WGPUOptionalBool.WGPUOptionalBool_Force32_NATIVE");
             return (int) FFMHandles.WGPUOptionalBool_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

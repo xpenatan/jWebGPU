@@ -30,6 +30,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n638682928", "WGPUComputePipelineDescriptor.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -56,6 +57,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2705895438", "WGPUComputePipelineDescriptor.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,6 +70,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n21924287", "WGPUComputePipelineDescriptor.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,6 +83,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3474340863", "WGPUComputePipelineDescriptor.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -92,6 +96,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static void internal_native_SetLayout(long this_addr, long layout_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n254721844", "WGPUComputePipelineDescriptor.internal_native_SetLayout");
             FFMHandles.internal_native_SetLayout__JJ.invokeExact(this_addr, layout_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -110,6 +115,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static long internal_native_GetCompute_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n226051729", "WGPUComputePipelineDescriptor.internal_native_GetCompute_addr");
             return (long) FFMHandles.internal_native_GetCompute_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -128,6 +134,7 @@ public class WGPUComputePipelineDescriptor extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4087232569", "WGPUComputePipelineDescriptor.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

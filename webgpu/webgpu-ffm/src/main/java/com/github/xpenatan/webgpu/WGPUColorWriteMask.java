@@ -49,6 +49,7 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     private static int WGPUColorWriteMask_None_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2467120090", "WGPUColorWriteMask.WGPUColorWriteMask_None_NATIVE");
             return (int) FFMHandles.WGPUColorWriteMask_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,6 +58,7 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     private static int WGPUColorWriteMask_Red_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3103576955", "WGPUColorWriteMask.WGPUColorWriteMask_Red_NATIVE");
             return (int) FFMHandles.WGPUColorWriteMask_Red_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,6 +67,7 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     private static int WGPUColorWriteMask_Green_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1239510765", "WGPUColorWriteMask.WGPUColorWriteMask_Green_NATIVE");
             return (int) FFMHandles.WGPUColorWriteMask_Green_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,6 +76,7 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     private static int WGPUColorWriteMask_Blue_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n638419708", "WGPUColorWriteMask.WGPUColorWriteMask_Blue_NATIVE");
             return (int) FFMHandles.WGPUColorWriteMask_Blue_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +85,7 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     private static int WGPUColorWriteMask_Alpha_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1071367752", "WGPUColorWriteMask.WGPUColorWriteMask_Alpha_NATIVE");
             return (int) FFMHandles.WGPUColorWriteMask_Alpha_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,6 +94,7 @@ public enum WGPUColorWriteMask implements NativeEnum<WGPUColorWriteMask> {
 
     private static int WGPUColorWriteMask_All_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n636650635", "WGPUColorWriteMask.WGPUColorWriteMask_All_NATIVE");
             return (int) FFMHandles.WGPUColorWriteMask_All_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

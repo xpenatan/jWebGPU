@@ -28,6 +28,7 @@ public class WGPUComputePipeline extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1281031839", "WGPUComputePipeline.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUComputePipeline extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3468396031", "WGPUComputePipeline.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUComputePipeline extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3890029102", "WGPUComputePipeline.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPUComputePipeline extends NativeObject {
 
     public static void internal_native_Release(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1940129384", "WGPUComputePipeline.internal_native_Release");
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -96,6 +100,7 @@ public class WGPUComputePipeline extends NativeObject {
 
     public static long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1597494104", "WGPUComputePipeline.internal_native_GetBindGroupLayout_addr");
             return (long) FFMHandles.internal_native_GetBindGroupLayout_addr__JI.invokeExact(this_addr, groupIndex);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -108,6 +113,7 @@ public class WGPUComputePipeline extends NativeObject {
 
     public static boolean internal_native_IsValid(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1736395869", "WGPUComputePipeline.internal_native_IsValid");
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

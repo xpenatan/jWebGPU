@@ -43,6 +43,7 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
 
     private static int WGPUShaderStage_None_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1502561002", "WGPUShaderStage.WGPUShaderStage_None_NATIVE");
             return (int) FFMHandles.WGPUShaderStage_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
 
     private static int WGPUShaderStage_Vertex_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3069599318", "WGPUShaderStage.WGPUShaderStage_Vertex_NATIVE");
             return (int) FFMHandles.WGPUShaderStage_Vertex_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
 
     private static int WGPUShaderStage_Fragment_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2445486082", "WGPUShaderStage.WGPUShaderStage_Fragment_NATIVE");
             return (int) FFMHandles.WGPUShaderStage_Fragment_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPUShaderStage implements NativeEnum<WGPUShaderStage> {
 
     private static int WGPUShaderStage_Compute_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4100911633", "WGPUShaderStage.WGPUShaderStage_Compute_NATIVE");
             return (int) FFMHandles.WGPUShaderStage_Compute_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

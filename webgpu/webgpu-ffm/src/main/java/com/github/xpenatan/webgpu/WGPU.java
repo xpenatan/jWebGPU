@@ -45,6 +45,7 @@ public class WGPU extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n631416642", "WGPU.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -64,6 +65,7 @@ public class WGPU extends NativeObject {
 
     public static int internal_native_GetPlatformType() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2960845837", "WGPU.internal_native_GetPlatformType");
             return (int) FFMHandles.internal_native_GetPlatformType__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +83,7 @@ public class WGPU extends NativeObject {
 
     public static long internal_native_SetupInstance_addr(long descriptor_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2319395686", "WGPU.internal_native_SetupInstance_addr");
             return (long) FFMHandles.internal_native_SetupInstance_addr__J.invokeExact(descriptor_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -99,6 +102,7 @@ public class WGPU extends NativeObject {
 
     public static long internal_native_SetupInstance_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2433182186", "WGPU.internal_native_SetupInstance_addr");
             return (long) FFMHandles.internal_native_SetupInstance_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -117,6 +121,7 @@ public class WGPU extends NativeObject {
 
     public static long internal_native_loadImage_addr(long buffer_addr, int desiredChannels) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3982398316", "WGPU.internal_native_loadImage_addr");
             return (long) FFMHandles.internal_native_loadImage_addr__JI.invokeExact(buffer_addr, desiredChannels);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -135,6 +140,7 @@ public class WGPU extends NativeObject {
 
     public static long internal_native_loadImage_addr(long buffer_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n575600553", "WGPU.internal_native_loadImage_addr");
             return (long) FFMHandles.internal_native_loadImage_addr__J.invokeExact(buffer_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

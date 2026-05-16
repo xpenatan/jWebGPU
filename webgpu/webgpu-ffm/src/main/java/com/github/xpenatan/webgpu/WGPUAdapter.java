@@ -39,6 +39,7 @@ public class WGPUAdapter extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n319100373", "WGPUAdapter.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public class WGPUAdapter extends NativeObject {
 
     public static void internal_native_Release(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4266223826", "WGPUAdapter.internal_native_Release");
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -75,6 +77,7 @@ public class WGPUAdapter extends NativeObject {
 
     public static boolean internal_native_GetInfo(long this_addr, long adapterInfo_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2502803443", "WGPUAdapter.internal_native_GetInfo");
             return (boolean) FFMHandles.internal_native_GetInfo__JJ.invokeExact(this_addr, adapterInfo_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -87,6 +90,7 @@ public class WGPUAdapter extends NativeObject {
 
     public static boolean internal_native_HasFeature(long this_addr, int featureName) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2552701726", "WGPUAdapter.internal_native_HasFeature");
             return (boolean) FFMHandles.internal_native_HasFeature__JI.invokeExact(this_addr, featureName);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -106,6 +110,7 @@ public class WGPUAdapter extends NativeObject {
 
     public static int internal_native_GetLimits(long this_addr, long limits_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1681496477", "WGPUAdapter.internal_native_GetLimits");
             return (int) FFMHandles.internal_native_GetLimits__JJ.invokeExact(this_addr, limits_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

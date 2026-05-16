@@ -28,6 +28,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n800800334", "WGPUVertexBufferLayout.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3008019376", "WGPUVertexBufferLayout.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
 
     public static void internal_native_SetAttributes(long this_addr, long values_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n760489539", "WGPUVertexBufferLayout.internal_native_SetAttributes");
             FFMHandles.internal_native_SetAttributes__JJ.invokeExact(this_addr, values_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
 
     public static void internal_native_SetArrayStride(long this_addr, int offset) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2270653925", "WGPUVertexBufferLayout.internal_native_SetArrayStride");
             FFMHandles.internal_native_SetArrayStride__JI.invokeExact(this_addr, offset);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -90,6 +94,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
 
     public static void internal_native_SetStepMode(long this_addr, int stepMode) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n44224016", "WGPUVertexBufferLayout.internal_native_SetStepMode");
             FFMHandles.internal_native_SetStepMode__JI.invokeExact(this_addr, stepMode);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -108,6 +113,7 @@ public class WGPUVertexBufferLayout extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4249349975", "WGPUVertexBufferLayout.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

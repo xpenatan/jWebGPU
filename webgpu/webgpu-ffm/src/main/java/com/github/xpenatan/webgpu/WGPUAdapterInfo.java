@@ -37,6 +37,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3964627835", "WGPUAdapterInfo.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -63,6 +64,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3390358179", "WGPUAdapterInfo.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +83,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static long internal_native_GetVendor_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n8838035", "WGPUAdapterInfo.internal_native_GetVendor_addr");
             return (long) FFMHandles.internal_native_GetVendor_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -93,6 +96,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static int internal_native_GetVendorID(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1295450930", "WGPUAdapterInfo.internal_native_GetVendorID");
             return (int) FFMHandles.internal_native_GetVendorID__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -111,6 +115,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static long internal_native_GetArchitecture_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1712449438", "WGPUAdapterInfo.internal_native_GetArchitecture_addr");
             return (long) FFMHandles.internal_native_GetArchitecture_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -129,6 +134,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static long internal_native_GetDevice_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4023507745", "WGPUAdapterInfo.internal_native_GetDevice_addr");
             return (long) FFMHandles.internal_native_GetDevice_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -141,6 +147,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static int internal_native_GetDeviceID(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3136347748", "WGPUAdapterInfo.internal_native_GetDeviceID");
             return (int) FFMHandles.internal_native_GetDeviceID__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,6 +166,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static long internal_native_GetDescription_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1606685409", "WGPUAdapterInfo.internal_native_GetDescription_addr");
             return (long) FFMHandles.internal_native_GetDescription_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -178,6 +186,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static int internal_native_GetBackendType(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1380460525", "WGPUAdapterInfo.internal_native_GetBackendType");
             return (int) FFMHandles.internal_native_GetBackendType__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -197,6 +206,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static int internal_native_GetAdapterType(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4135497106", "WGPUAdapterInfo.internal_native_GetAdapterType");
             return (int) FFMHandles.internal_native_GetAdapterType__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -215,6 +225,7 @@ public class WGPUAdapterInfo extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3118210180", "WGPUAdapterInfo.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

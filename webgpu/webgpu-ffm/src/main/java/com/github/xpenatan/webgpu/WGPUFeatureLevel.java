@@ -43,6 +43,7 @@ public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
 
     private static int WGPUFeatureLevel_Compatibility_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3983035482", "WGPUFeatureLevel.WGPUFeatureLevel_Compatibility_NATIVE");
             return (int) FFMHandles.WGPUFeatureLevel_Compatibility_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
 
     private static int WGPUFeatureLevel_Core_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1466574145", "WGPUFeatureLevel.WGPUFeatureLevel_Core_NATIVE");
             return (int) FFMHandles.WGPUFeatureLevel_Core_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUFeatureLevel implements NativeEnum<WGPUFeatureLevel> {
 
     private static int WGPUFeatureLevel_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3978480244", "WGPUFeatureLevel.WGPUFeatureLevel_Force32_NATIVE");
             return (int) FFMHandles.WGPUFeatureLevel_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -54,6 +54,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_None_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3399882394", "WGPUBufferUsage.WGPUBufferUsage_None_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -62,6 +63,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_MapRead_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1291391548", "WGPUBufferUsage.WGPUBufferUsage_MapRead_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_MapRead_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,6 +72,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_MapWrite_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n971192901", "WGPUBufferUsage.WGPUBufferUsage_MapWrite_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_MapWrite_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_CopySrc_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2099226201", "WGPUBufferUsage.WGPUBufferUsage_CopySrc_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_CopySrc_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -86,6 +90,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_CopyDst_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2425224506", "WGPUBufferUsage.WGPUBufferUsage_CopyDst_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_CopyDst_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,6 +99,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_Index_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4184477436", "WGPUBufferUsage.WGPUBufferUsage_Index_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_Index_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -102,6 +108,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_Vertex_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1034356230", "WGPUBufferUsage.WGPUBufferUsage_Vertex_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_Vertex_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -110,6 +117,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_Uniform_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3902457054", "WGPUBufferUsage.WGPUBufferUsage_Uniform_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_Uniform_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -118,6 +126,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_Storage_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n766473893", "WGPUBufferUsage.WGPUBufferUsage_Storage_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_Storage_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -126,6 +135,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_Indirect_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2518703280", "WGPUBufferUsage.WGPUBufferUsage_Indirect_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_Indirect_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -134,6 +144,7 @@ public enum WGPUBufferUsage implements NativeEnum<WGPUBufferUsage> {
 
     private static int WGPUBufferUsage_QueryResolve_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n56348518", "WGPUBufferUsage.WGPUBufferUsage_QueryResolve_NATIVE");
             return (int) FFMHandles.WGPUBufferUsage_QueryResolve_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

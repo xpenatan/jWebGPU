@@ -43,6 +43,7 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
 
     private static int WGPUQueryType_Occlusion_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n920004409", "WGPUQueryType.WGPUQueryType_Occlusion_NATIVE");
             return (int) FFMHandles.WGPUQueryType_Occlusion_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
 
     private static int WGPUQueryType_Timestamp_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n747655618", "WGPUQueryType.WGPUQueryType_Timestamp_NATIVE");
             return (int) FFMHandles.WGPUQueryType_Timestamp_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUQueryType implements NativeEnum<WGPUQueryType> {
 
     private static int WGPUQueryType_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1648158902", "WGPUQueryType.WGPUQueryType_Force32_NATIVE");
             return (int) FFMHandles.WGPUQueryType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

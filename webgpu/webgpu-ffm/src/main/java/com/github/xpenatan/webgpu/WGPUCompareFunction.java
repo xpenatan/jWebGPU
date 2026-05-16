@@ -53,6 +53,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1907959474", "WGPUCompareFunction.WGPUCompareFunction_Undefined_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,6 +62,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Never_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1849598446", "WGPUCompareFunction.WGPUCompareFunction_Never_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Never_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -69,6 +71,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Less_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3840181699", "WGPUCompareFunction.WGPUCompareFunction_Less_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Less_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -77,6 +80,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Equal_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2287081110", "WGPUCompareFunction.WGPUCompareFunction_Equal_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Equal_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -85,6 +89,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_LessEqual_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2911090557", "WGPUCompareFunction.WGPUCompareFunction_LessEqual_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_LessEqual_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -93,6 +98,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Greater_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2235895388", "WGPUCompareFunction.WGPUCompareFunction_Greater_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Greater_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -101,6 +107,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_NotEqual_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1645167179", "WGPUCompareFunction.WGPUCompareFunction_NotEqual_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_NotEqual_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -109,6 +116,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_GreaterEqual_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1632478852", "WGPUCompareFunction.WGPUCompareFunction_GreaterEqual_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_GreaterEqual_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -117,6 +125,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Always_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3559876409", "WGPUCompareFunction.WGPUCompareFunction_Always_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Always_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -125,6 +134,7 @@ public enum WGPUCompareFunction implements NativeEnum<WGPUCompareFunction> {
 
     private static int WGPUCompareFunction_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n822121708", "WGPUCompareFunction.WGPUCompareFunction_Force32_NATIVE");
             return (int) FFMHandles.WGPUCompareFunction_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -43,6 +43,7 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
 
     private static int WGPUBufferMapState_Unmapped_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4115752398", "WGPUBufferMapState.WGPUBufferMapState_Unmapped_NATIVE");
             return (int) FFMHandles.WGPUBufferMapState_Unmapped_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -51,6 +52,7 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
 
     private static int WGPUBufferMapState_Pending_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3498290017", "WGPUBufferMapState.WGPUBufferMapState_Pending_NATIVE");
             return (int) FFMHandles.WGPUBufferMapState_Pending_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +61,7 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
 
     private static int WGPUBufferMapState_Mapped_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3116471797", "WGPUBufferMapState.WGPUBufferMapState_Mapped_NATIVE");
             return (int) FFMHandles.WGPUBufferMapState_Mapped_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +70,7 @@ public enum WGPUBufferMapState implements NativeEnum<WGPUBufferMapState> {
 
     private static int WGPUBufferMapState_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2152399188", "WGPUBufferMapState.WGPUBufferMapState_Force32_NATIVE");
             return (int) FFMHandles.WGPUBufferMapState_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

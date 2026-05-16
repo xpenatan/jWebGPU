@@ -41,6 +41,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3905269282", "WGPUShortBuffer.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +60,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static long internal_native_getByteBuffer_addr(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2806937746", "WGPUShortBuffer.internal_native_getByteBuffer_addr");
             return (long) FFMHandles.internal_native_getByteBuffer_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -71,6 +73,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static void internal_native_put__0(long this_addr, short value) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n201924307", "WGPUShortBuffer.internal_native_put__0");
             FFMHandles.internal_native_put__0__JS.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -83,6 +86,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static void internal_native_put__1(long this_addr, int index, short value) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2839731509", "WGPUShortBuffer.internal_native_put__1");
             FFMHandles.internal_native_put__1__JIS.invokeExact(this_addr, index, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -95,6 +99,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static short internal_native_get(long this_addr, int index) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2911021465", "WGPUShortBuffer.internal_native_get");
             return (short) FFMHandles.internal_native_get__JI.invokeExact(this_addr, index);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,6 +112,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static short internal_native_get(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2821139542", "WGPUShortBuffer.internal_native_get");
             return (short) FFMHandles.internal_native_get__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -131,6 +137,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static int internal_native_getCapacity(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4172344764", "WGPUShortBuffer.internal_native_getCapacity");
             return (int) FFMHandles.internal_native_getCapacity__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -167,6 +174,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static int internal_native_getLimit(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3130408351", "WGPUShortBuffer.internal_native_getLimit");
             return (int) FFMHandles.internal_native_getLimit__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -191,6 +199,7 @@ public class WGPUShortBuffer extends NativeObject {
 
     public static int internal_native_getPosition(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2672809645", "WGPUShortBuffer.internal_native_getPosition");
             return (int) FFMHandles.internal_native_getPosition__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

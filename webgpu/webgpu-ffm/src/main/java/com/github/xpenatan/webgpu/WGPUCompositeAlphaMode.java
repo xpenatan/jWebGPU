@@ -49,6 +49,7 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static int WGPUCompositeAlphaMode_Auto_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4165359121", "WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Auto_NATIVE");
             return (int) FFMHandles.WGPUCompositeAlphaMode_Auto_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,6 +58,7 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static int WGPUCompositeAlphaMode_Opaque_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2061960067", "WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Opaque_NATIVE");
             return (int) FFMHandles.WGPUCompositeAlphaMode_Opaque_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,6 +67,7 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static int WGPUCompositeAlphaMode_Premultiplied_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n483231424", "WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Premultiplied_NATIVE");
             return (int) FFMHandles.WGPUCompositeAlphaMode_Premultiplied_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,6 +76,7 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static int WGPUCompositeAlphaMode_Unpremultiplied_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n654428359", "WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Unpremultiplied_NATIVE");
             return (int) FFMHandles.WGPUCompositeAlphaMode_Unpremultiplied_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +85,7 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static int WGPUCompositeAlphaMode_Inherit_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3728592165", "WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Inherit_NATIVE");
             return (int) FFMHandles.WGPUCompositeAlphaMode_Inherit_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,6 +94,7 @@ public enum WGPUCompositeAlphaMode implements NativeEnum<WGPUCompositeAlphaMode>
 
     private static int WGPUCompositeAlphaMode_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2743386036", "WGPUCompositeAlphaMode.WGPUCompositeAlphaMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUCompositeAlphaMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

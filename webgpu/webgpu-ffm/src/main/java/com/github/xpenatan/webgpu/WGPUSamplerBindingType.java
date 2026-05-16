@@ -49,6 +49,7 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
 
     private static int WGPUSamplerBindingType_BindingNotUsed_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n332085485", "WGPUSamplerBindingType.WGPUSamplerBindingType_BindingNotUsed_NATIVE");
             return (int) FFMHandles.WGPUSamplerBindingType_BindingNotUsed_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,6 +58,7 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
 
     private static int WGPUSamplerBindingType_Undefined_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n505577178", "WGPUSamplerBindingType.WGPUSamplerBindingType_Undefined_NATIVE");
             return (int) FFMHandles.WGPUSamplerBindingType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,6 +67,7 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
 
     private static int WGPUSamplerBindingType_Filtering_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3369458932", "WGPUSamplerBindingType.WGPUSamplerBindingType_Filtering_NATIVE");
             return (int) FFMHandles.WGPUSamplerBindingType_Filtering_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,6 +76,7 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
 
     private static int WGPUSamplerBindingType_NonFiltering_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1395742751", "WGPUSamplerBindingType.WGPUSamplerBindingType_NonFiltering_NATIVE");
             return (int) FFMHandles.WGPUSamplerBindingType_NonFiltering_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,6 +85,7 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
 
     private static int WGPUSamplerBindingType_Comparison_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2339119627", "WGPUSamplerBindingType.WGPUSamplerBindingType_Comparison_NATIVE");
             return (int) FFMHandles.WGPUSamplerBindingType_Comparison_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,6 +94,7 @@ public enum WGPUSamplerBindingType implements NativeEnum<WGPUSamplerBindingType>
 
     private static int WGPUSamplerBindingType_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n78763796", "WGPUSamplerBindingType.WGPUSamplerBindingType_Force32_NATIVE");
             return (int) FFMHandles.WGPUSamplerBindingType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

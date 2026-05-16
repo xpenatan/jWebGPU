@@ -43,6 +43,7 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
 
     private static int WGPUDeviceLostReason_Unknown_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1161476788", "WGPUDeviceLostReason.WGPUDeviceLostReason_Unknown_NATIVE");
             return (int) FFMHandles.WGPUDeviceLostReason_Unknown_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,6 +60,7 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
 
     private static int WGPUDeviceLostReason_FailedCreation_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n759626078", "WGPUDeviceLostReason.WGPUDeviceLostReason_FailedCreation_NATIVE");
             return (int) FFMHandles.WGPUDeviceLostReason_FailedCreation_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,6 +69,7 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
 
     private static int WGPUDeviceLostReason_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2679460084", "WGPUDeviceLostReason.WGPUDeviceLostReason_Force32_NATIVE");
             return (int) FFMHandles.WGPUDeviceLostReason_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

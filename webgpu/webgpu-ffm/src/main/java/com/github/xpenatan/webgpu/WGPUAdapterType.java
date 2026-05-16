@@ -48,6 +48,7 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
 
     private static int WGPUAdapterType_DiscreteGPU_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2762845421", "WGPUAdapterType.WGPUAdapterType_DiscreteGPU_NATIVE");
             return (int) FFMHandles.WGPUAdapterType_DiscreteGPU_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -56,6 +57,7 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
 
     private static int WGPUAdapterType_IntegratedGPU_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3779294547", "WGPUAdapterType.WGPUAdapterType_IntegratedGPU_NATIVE");
             return (int) FFMHandles.WGPUAdapterType_IntegratedGPU_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -64,6 +66,7 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
 
     private static int WGPUAdapterType_CPU_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n205449890", "WGPUAdapterType.WGPUAdapterType_CPU_NATIVE");
             return (int) FFMHandles.WGPUAdapterType_CPU_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -72,6 +75,7 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
 
     private static int WGPUAdapterType_Unknown_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1760214340", "WGPUAdapterType.WGPUAdapterType_Unknown_NATIVE");
             return (int) FFMHandles.WGPUAdapterType_Unknown_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,6 +84,7 @@ public enum WGPUAdapterType implements NativeEnum<WGPUAdapterType> {
 
     private static int WGPUAdapterType_Force32_NATIVE() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3278197636", "WGPUAdapterType.WGPUAdapterType_Force32_NATIVE");
             return (int) FFMHandles.WGPUAdapterType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

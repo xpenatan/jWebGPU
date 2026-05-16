@@ -28,6 +28,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n896891976", "WGPUComputePassEncoder.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,6 +55,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4094306806", "WGPUComputePassEncoder.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,6 +68,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1649927895", "WGPUComputePassEncoder.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,6 +81,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_Release(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1555989521", "WGPUComputePassEncoder.internal_native_Release");
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -90,6 +94,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_SetDispatchWorkgroups(long this_addr, int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4265836000", "WGPUComputePassEncoder.internal_native_SetDispatchWorkgroups");
             FFMHandles.internal_native_SetDispatchWorkgroups__JIII.invokeExact(this_addr, workgroupCountX, workgroupCountY, workgroupCountZ);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -162,6 +167,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr, long offsets_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3613368251", "WGPUComputePassEncoder.internal_native_SetBindGroup");
             FFMHandles.internal_native_SetBindGroup__JIJJ.invokeExact(this_addr, groupIndex, group_addr, offsets_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -174,6 +180,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3007893773", "WGPUComputePassEncoder.internal_native_SetBindGroup");
             FFMHandles.internal_native_SetBindGroup__JIJ.invokeExact(this_addr, groupIndex, group_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -186,6 +193,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_SetPipeline(long this_addr, long pipeline_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1283043348", "WGPUComputePassEncoder.internal_native_SetPipeline");
             FFMHandles.internal_native_SetPipeline__JJ.invokeExact(this_addr, pipeline_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -198,6 +206,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static boolean internal_native_IsValid(long this_addr) {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1352256006", "WGPUComputePassEncoder.internal_native_IsValid");
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -216,6 +225,7 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
+            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n50474321", "WGPUComputePassEncoder.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
