@@ -35,7 +35,6 @@ public class WGPUExtent3D extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n907211809", "WGPUExtent3D.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -48,7 +47,6 @@ public class WGPUExtent3D extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1351266749", "WGPUExtent3D.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public class WGPUExtent3D extends NativeObject {
 
     public static void internal_native_SetWidth(long this_addr, int width) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1613812798", "WGPUExtent3D.internal_native_SetWidth");
             FFMHandles.internal_native_SetWidth__JI.invokeExact(this_addr, width);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -74,7 +71,6 @@ public class WGPUExtent3D extends NativeObject {
 
     public static void internal_native_SetHeight(long this_addr, int height) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3446977291", "WGPUExtent3D.internal_native_SetHeight");
             FFMHandles.internal_native_SetHeight__JI.invokeExact(this_addr, height);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -87,7 +83,6 @@ public class WGPUExtent3D extends NativeObject {
 
     public static void internal_native_SetDepthOrArrayLayers(long this_addr, int depthOrArrayLayers) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2772254813", "WGPUExtent3D.internal_native_SetDepthOrArrayLayers");
             FFMHandles.internal_native_SetDepthOrArrayLayers__JI.invokeExact(this_addr, depthOrArrayLayers);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -106,7 +101,6 @@ public class WGPUExtent3D extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n60794154", "WGPUExtent3D.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

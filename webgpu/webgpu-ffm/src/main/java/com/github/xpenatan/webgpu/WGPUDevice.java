@@ -41,7 +41,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3364876728", "WGPUDevice.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,7 +53,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_Release(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1229417231", "WGPUDevice.internal_native_Release");
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,7 +65,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateBindGroup(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n976554704", "WGPUDevice.internal_native_CreateBindGroup");
             FFMHandles.internal_native_CreateBindGroup__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,7 +77,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateBindGroupLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2035541062", "WGPUDevice.internal_native_CreateBindGroupLayout");
             FFMHandles.internal_native_CreateBindGroupLayout__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -98,7 +94,6 @@ public class WGPUDevice extends NativeObject {
 
     public static long internal_native_CreateBuffer__0_addr(long this_addr, long descriptor_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1881626826", "WGPUDevice.internal_native_CreateBuffer__0_addr");
             return (long) FFMHandles.internal_native_CreateBuffer__0_addr__JJ.invokeExact(this_addr, descriptor_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -111,7 +106,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateBuffer__1(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n65445665", "WGPUDevice.internal_native_CreateBuffer__1");
             FFMHandles.internal_native_CreateBuffer__1__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -124,7 +118,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateCommandEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1019050349", "WGPUDevice.internal_native_CreateCommandEncoder");
             FFMHandles.internal_native_CreateCommandEncoder__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -137,7 +130,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateComputePipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n976022201", "WGPUDevice.internal_native_CreateComputePipeline");
             FFMHandles.internal_native_CreateComputePipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -150,7 +142,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreatePipelineLayout(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2480616178", "WGPUDevice.internal_native_CreatePipelineLayout");
             FFMHandles.internal_native_CreatePipelineLayout__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -163,7 +154,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateQuerySet(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n623129508", "WGPUDevice.internal_native_CreateQuerySet");
             FFMHandles.internal_native_CreateQuerySet__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -176,7 +166,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateRenderBundleEncoder(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1766028814", "WGPUDevice.internal_native_CreateRenderBundleEncoder");
             FFMHandles.internal_native_CreateRenderBundleEncoder__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -189,7 +178,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1082446726", "WGPUDevice.internal_native_CreateRenderPipeline");
             FFMHandles.internal_native_CreateRenderPipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -202,7 +190,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateSampler(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2420806858", "WGPUDevice.internal_native_CreateSampler");
             FFMHandles.internal_native_CreateSampler__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -215,7 +202,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateShaderModule(long this_addr, long descriptor_addr, long shaderModule_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n392988557", "WGPUDevice.internal_native_CreateShaderModule");
             FFMHandles.internal_native_CreateShaderModule__JJJ.invokeExact(this_addr, descriptor_addr, shaderModule_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -228,7 +214,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateTexture(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n19584855", "WGPUDevice.internal_native_CreateTexture");
             FFMHandles.internal_native_CreateTexture__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -253,7 +238,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_GetFeatures(long this_addr, long features_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n216365221", "WGPUDevice.internal_native_GetFeatures");
             FFMHandles.internal_native_GetFeatures__JJ.invokeExact(this_addr, features_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -266,7 +250,6 @@ public class WGPUDevice extends NativeObject {
 
     public static boolean internal_native_HasFeature(long this_addr, int feature) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n376083009", "WGPUDevice.internal_native_HasFeature");
             return (boolean) FFMHandles.internal_native_HasFeature__JI.invokeExact(this_addr, feature);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -279,7 +262,6 @@ public class WGPUDevice extends NativeObject {
 
     public static void internal_native_GetLimits(long this_addr, long limits_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3799845056", "WGPUDevice.internal_native_GetLimits");
             FFMHandles.internal_native_GetLimits__JJ.invokeExact(this_addr, limits_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -298,7 +280,6 @@ public class WGPUDevice extends NativeObject {
 
     public static long internal_native_GetQueue_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n784176897", "WGPUDevice.internal_native_GetQueue_addr");
             return (long) FFMHandles.internal_native_GetQueue_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

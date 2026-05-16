@@ -28,7 +28,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3060328841", "WGPUStorageTextureBindingLayout.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2182995285", "WGPUStorageTextureBindingLayout.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2834817240", "WGPUStorageTextureBindingLayout.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static void internal_native_SetAccess(long this_addr, int access) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1621117654", "WGPUStorageTextureBindingLayout.internal_native_SetAccess");
             FFMHandles.internal_native_SetAccess__JI.invokeExact(this_addr, access);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1807629731", "WGPUStorageTextureBindingLayout.internal_native_SetFormat");
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +102,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static void internal_native_SetViewDimension(long this_addr, int viewDimension) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1774623419", "WGPUStorageTextureBindingLayout.internal_native_SetViewDimension");
             FFMHandles.internal_native_SetViewDimension__JI.invokeExact(this_addr, viewDimension);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -126,7 +120,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2213911186", "WGPUStorageTextureBindingLayout.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

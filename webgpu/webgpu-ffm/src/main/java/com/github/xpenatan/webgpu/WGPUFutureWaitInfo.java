@@ -41,7 +41,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2909067272", "WGPUFutureWaitInfo.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -54,7 +53,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
 
     public static void internal_native_SetFuture(long this_addr, long future_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2648422407", "WGPUFutureWaitInfo.internal_native_SetFuture");
             FFMHandles.internal_native_SetFuture__JJ.invokeExact(this_addr, future_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,7 +71,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n53705727", "WGPUFutureWaitInfo.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -55,7 +55,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_ShaderSourceSPIRV_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1032150706", "WGPUSType.WGPUSType_ShaderSourceSPIRV_NATIVE");
             return (int) FFMHandles.WGPUSType_ShaderSourceSPIRV_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -64,7 +63,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_ShaderSourceWGSL_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2152968915", "WGPUSType.WGPUSType_ShaderSourceWGSL_NATIVE");
             return (int) FFMHandles.WGPUSType_ShaderSourceWGSL_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,7 +71,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_RenderPassMaxDrawCount_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3290728152", "WGPUSType.WGPUSType_RenderPassMaxDrawCount_NATIVE");
             return (int) FFMHandles.WGPUSType_RenderPassMaxDrawCount_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -82,7 +79,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceSourceMetalLayer_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n276615956", "WGPUSType.WGPUSType_SurfaceSourceMetalLayer_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceSourceMetalLayer_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -91,7 +87,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceSourceWindowsHWND_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2022773258", "WGPUSType.WGPUSType_SurfaceSourceWindowsHWND_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceSourceWindowsHWND_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -100,7 +95,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceSourceXlibWindow_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2065367783", "WGPUSType.WGPUSType_SurfaceSourceXlibWindow_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceSourceXlibWindow_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -109,7 +103,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceSourceWaylandSurface_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4143304573", "WGPUSType.WGPUSType_SurfaceSourceWaylandSurface_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceSourceWaylandSurface_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -118,7 +111,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3217988344", "WGPUSType.WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceSourceAndroidNativeWindow_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -127,7 +119,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceSourceXCBWindow_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3636523945", "WGPUSType.WGPUSType_SurfaceSourceXCBWindow_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceSourceXCBWindow_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -136,7 +127,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_SurfaceColorManagement_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2275901923", "WGPUSType.WGPUSType_SurfaceColorManagement_NATIVE");
             return (int) FFMHandles.WGPUSType_SurfaceColorManagement_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -145,7 +135,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_RequestAdapterWebXROptions_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4099252378", "WGPUSType.WGPUSType_RequestAdapterWebXROptions_NATIVE");
             return (int) FFMHandles.WGPUSType_RequestAdapterWebXROptions_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -154,7 +143,6 @@ public enum WGPUSType implements NativeEnum<WGPUSType> {
 
     private static int WGPUSType_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n255113676", "WGPUSType.WGPUSType_Force32_NATIVE");
             return (int) FFMHandles.WGPUSType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

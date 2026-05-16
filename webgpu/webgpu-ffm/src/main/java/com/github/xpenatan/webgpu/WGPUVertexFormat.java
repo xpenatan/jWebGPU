@@ -85,7 +85,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint8_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2291528872", "WGPUVertexFormat.WGPUVertexFormat_Uint8_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint8_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +93,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint8x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1071089890", "WGPUVertexFormat.WGPUVertexFormat_Uint8x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -103,7 +101,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint8x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1751148260", "WGPUVertexFormat.WGPUVertexFormat_Uint8x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -112,7 +109,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint8_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2878334886", "WGPUVertexFormat.WGPUVertexFormat_Sint8_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint8_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -121,7 +117,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint8x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2350953568", "WGPUVertexFormat.WGPUVertexFormat_Sint8x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -130,7 +125,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint8x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3031011938", "WGPUVertexFormat.WGPUVertexFormat_Sint8x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -139,7 +133,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm8_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2201337769", "WGPUVertexFormat.WGPUVertexFormat_Unorm8_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm8_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -148,7 +141,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm8x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n296785827", "WGPUVertexFormat.WGPUVertexFormat_Unorm8x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -157,7 +149,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm8x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n976844197", "WGPUVertexFormat.WGPUVertexFormat_Unorm8x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -166,7 +157,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Snorm8_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3212455019", "WGPUVertexFormat.WGPUVertexFormat_Snorm8_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Snorm8_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -175,7 +165,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Snorm8x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1317854181", "WGPUVertexFormat.WGPUVertexFormat_Snorm8x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Snorm8x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -184,7 +173,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Snorm8x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1997912551", "WGPUVertexFormat.WGPUVertexFormat_Snorm8x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Snorm8x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -193,7 +181,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2466184705", "WGPUVertexFormat.WGPUVertexFormat_Uint16_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -202,7 +189,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint16x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1411620859", "WGPUVertexFormat.WGPUVertexFormat_Uint16x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -211,7 +197,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint16x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2091679229", "WGPUVertexFormat.WGPUVertexFormat_Uint16x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -220,7 +205,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3477301955", "WGPUVertexFormat.WGPUVertexFormat_Sint16_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -229,7 +213,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint16x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2432689213", "WGPUVertexFormat.WGPUVertexFormat_Sint16x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -238,7 +221,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint16x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3112747583", "WGPUVertexFormat.WGPUVertexFormat_Sint16x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -247,7 +229,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3965227808", "WGPUVertexFormat.WGPUVertexFormat_Unorm16_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -256,7 +237,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm16x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3177998682", "WGPUVertexFormat.WGPUVertexFormat_Unorm16x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -265,7 +245,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm16x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3858057052", "WGPUVertexFormat.WGPUVertexFormat_Unorm16x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -274,7 +253,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Snorm16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n950124190", "WGPUVertexFormat.WGPUVertexFormat_Snorm16_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Snorm16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -283,7 +261,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Snorm16x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n471379288", "WGPUVertexFormat.WGPUVertexFormat_Snorm16x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Snorm16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -292,7 +269,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Snorm16x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1151437658", "WGPUVertexFormat.WGPUVertexFormat_Snorm16x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Snorm16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -301,7 +277,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1949740555", "WGPUVertexFormat.WGPUVertexFormat_Float16_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -310,7 +285,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float16x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3324999045", "WGPUVertexFormat.WGPUVertexFormat_Float16x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float16x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -319,7 +293,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float16x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4005057415", "WGPUVertexFormat.WGPUVertexFormat_Float16x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float16x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -328,7 +301,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n196596805", "WGPUVertexFormat.WGPUVertexFormat_Float32_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -337,7 +309,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float32x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2181035327", "WGPUVertexFormat.WGPUVertexFormat_Float32x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float32x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -346,7 +317,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float32x3_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n373580864", "WGPUVertexFormat.WGPUVertexFormat_Float32x3_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float32x3_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -355,7 +325,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Float32x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2861093697", "WGPUVertexFormat.WGPUVertexFormat_Float32x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Float32x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -364,7 +333,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n713040955", "WGPUVertexFormat.WGPUVertexFormat_Uint32_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -373,7 +341,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint32x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n267657141", "WGPUVertexFormat.WGPUVertexFormat_Uint32x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint32x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -382,7 +349,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint32x3_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2755169974", "WGPUVertexFormat.WGPUVertexFormat_Uint32x3_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint32x3_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -391,7 +357,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Uint32x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n947715511", "WGPUVertexFormat.WGPUVertexFormat_Uint32x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Uint32x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -400,7 +365,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1724158205", "WGPUVertexFormat.WGPUVertexFormat_Sint32_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -409,7 +373,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint32x2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1288725495", "WGPUVertexFormat.WGPUVertexFormat_Sint32x2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint32x2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -418,7 +381,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint32x3_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3776238328", "WGPUVertexFormat.WGPUVertexFormat_Sint32x3_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint32x3_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -427,7 +389,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Sint32x4_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1968783865", "WGPUVertexFormat.WGPUVertexFormat_Sint32x4_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Sint32x4_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -436,7 +397,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm10_10_10_2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1445616909", "WGPUVertexFormat.WGPUVertexFormat_Unorm10_10_10_2_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm10_10_10_2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -445,7 +405,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Unorm8x4BGRA_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1933258585", "WGPUVertexFormat.WGPUVertexFormat_Unorm8x4BGRA_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Unorm8x4BGRA_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -454,7 +413,6 @@ public enum WGPUVertexFormat implements NativeEnum<WGPUVertexFormat> {
 
     private static int WGPUVertexFormat_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3537311252", "WGPUVertexFormat.WGPUVertexFormat_Force32_NATIVE");
             return (int) FFMHandles.WGPUVertexFormat_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -43,7 +43,6 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
 
     private static int WGPUCompilationMessageType_Error_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1475541554", "WGPUCompilationMessageType.WGPUCompilationMessageType_Error_NATIVE");
             return (int) FFMHandles.WGPUCompilationMessageType_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
 
     private static int WGPUCompilationMessageType_Warning_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3779922630", "WGPUCompilationMessageType.WGPUCompilationMessageType_Warning_NATIVE");
             return (int) FFMHandles.WGPUCompilationMessageType_Warning_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
 
     private static int WGPUCompilationMessageType_Info_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3810926096", "WGPUCompilationMessageType.WGPUCompilationMessageType_Info_NATIVE");
             return (int) FFMHandles.WGPUCompilationMessageType_Info_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUCompilationMessageType implements NativeEnum<WGPUCompilationMess
 
     private static int WGPUCompilationMessageType_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2626621364", "WGPUCompilationMessageType.WGPUCompilationMessageType_Force32_NATIVE");
             return (int) FFMHandles.WGPUCompilationMessageType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

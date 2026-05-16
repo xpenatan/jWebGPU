@@ -30,7 +30,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3758941811", "WGPUShaderSourceWGSL.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,7 +56,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2061853355", "WGPUShaderSourceWGSL.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +68,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
 
     public static void internal_native_SetCode(long this_addr, String code) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1727015689", "WGPUShaderSourceWGSL.internal_native_SetCode");
             FFMHandles.internal_native_SetCode__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(code));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,7 +86,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
 
     public static long internal_native_GetChain_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2323490334", "WGPUShaderSourceWGSL.internal_native_GetChain_addr");
             return (long) FFMHandles.internal_native_GetChain_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -108,7 +104,6 @@ public class WGPUShaderSourceWGSL extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2912524156", "WGPUShaderSourceWGSL.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

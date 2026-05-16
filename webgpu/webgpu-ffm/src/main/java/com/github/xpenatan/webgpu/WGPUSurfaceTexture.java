@@ -28,7 +28,6 @@ public class WGPUSurfaceTexture extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3759086318", "WGPUSurfaceTexture.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUSurfaceTexture extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3121070864", "WGPUSurfaceTexture.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUSurfaceTexture extends NativeObject {
 
     public static void internal_native_GetTexture(long this_addr, long texture_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n752216251", "WGPUSurfaceTexture.internal_native_GetTexture");
             FFMHandles.internal_native_GetTexture__JJ.invokeExact(this_addr, texture_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -88,7 +85,6 @@ public class WGPUSurfaceTexture extends NativeObject {
 
     public static int internal_native_GetStatus(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n134036214", "WGPUSurfaceTexture.internal_native_GetStatus");
             return (int) FFMHandles.internal_native_GetStatus__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +103,6 @@ public class WGPUSurfaceTexture extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2912668663", "WGPUSurfaceTexture.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

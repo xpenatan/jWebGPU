@@ -48,7 +48,6 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
 
     private static int WGPUTextureAspect_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n318159134", "WGPUTextureAspect.WGPUTextureAspect_Undefined_NATIVE");
             return (int) FFMHandles.WGPUTextureAspect_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,7 +56,6 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
 
     private static int WGPUTextureAspect_All_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n91154031", "WGPUTextureAspect.WGPUTextureAspect_All_NATIVE");
             return (int) FFMHandles.WGPUTextureAspect_All_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,7 +64,6 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
 
     private static int WGPUTextureAspect_StencilOnly_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3700830550", "WGPUTextureAspect.WGPUTextureAspect_StencilOnly_NATIVE");
             return (int) FFMHandles.WGPUTextureAspect_StencilOnly_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -75,7 +72,6 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
 
     private static int WGPUTextureAspect_DepthOnly_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n678456797", "WGPUTextureAspect.WGPUTextureAspect_DepthOnly_NATIVE");
             return (int) FFMHandles.WGPUTextureAspect_DepthOnly_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -84,7 +80,6 @@ public enum WGPUTextureAspect implements NativeEnum<WGPUTextureAspect> {
 
     private static int WGPUTextureAspect_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4212642392", "WGPUTextureAspect.WGPUTextureAspect_Force32_NATIVE");
             return (int) FFMHandles.WGPUTextureAspect_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

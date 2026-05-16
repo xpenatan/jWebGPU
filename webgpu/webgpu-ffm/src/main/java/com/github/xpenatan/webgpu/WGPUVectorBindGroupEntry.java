@@ -28,7 +28,6 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3513966025", "WGPUVectorBindGroupEntry.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2959249685", "WGPUVectorBindGroupEntry.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
 
     public static int internal_native_size(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1065015574", "WGPUVectorBindGroupEntry.internal_native_size");
             return (int) FFMHandles.internal_native_size__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
 
     public static void internal_native_clear(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3201602348", "WGPUVectorBindGroupEntry.internal_native_clear");
             FFMHandles.internal_native_clear__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
 
     public static void internal_native_push_back(long this_addr, long entry_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3753107291", "WGPUVectorBindGroupEntry.internal_native_push_back");
             FFMHandles.internal_native_push_back__JJ.invokeExact(this_addr, entry_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -113,7 +108,6 @@ public class WGPUVectorBindGroupEntry extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2667548370", "WGPUVectorBindGroupEntry.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

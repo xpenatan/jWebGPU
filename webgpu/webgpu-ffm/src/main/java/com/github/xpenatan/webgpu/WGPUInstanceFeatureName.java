@@ -43,7 +43,6 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
 
     private static int WGPUInstanceFeatureName_TimedWaitAny_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2748810252", "WGPUInstanceFeatureName.WGPUInstanceFeatureName_TimedWaitAny_NATIVE");
             return (int) FFMHandles.WGPUInstanceFeatureName_TimedWaitAny_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
 
     private static int WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n447031600", "WGPUInstanceFeatureName.WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE");
             return (int) FFMHandles.WGPUInstanceFeatureName_ShaderSourceSPIRV_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
 
     private static int WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2096323519", "WGPUInstanceFeatureName.WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE");
             return (int) FFMHandles.WGPUInstanceFeatureName_MultipleDevicesPerAdapter_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUInstanceFeatureName implements NativeEnum<WGPUInstanceFeatureNam
 
     private static int WGPUInstanceFeatureName_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3201952202", "WGPUInstanceFeatureName.WGPUInstanceFeatureName_Force32_NATIVE");
             return (int) FFMHandles.WGPUInstanceFeatureName_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

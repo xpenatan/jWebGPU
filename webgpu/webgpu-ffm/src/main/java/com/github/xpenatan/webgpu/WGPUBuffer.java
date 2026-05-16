@@ -60,7 +60,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3805474204", "WGPUBuffer.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -73,7 +72,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2076339490", "WGPUBuffer.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -86,7 +84,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1042859051", "WGPUBuffer.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -99,7 +96,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static void internal_native_Release(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n169604453", "WGPUBuffer.internal_native_Release");
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -148,7 +144,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static long internal_native_GetMappedRange_addr(long this_addr, int offset, int size) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1103509462", "WGPUBuffer.internal_native_GetMappedRange_addr");
             return (long) FFMHandles.internal_native_GetMappedRange_addr__JII.invokeExact(this_addr, offset, size);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -173,7 +168,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static int internal_native_GetSize(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2622135029", "WGPUBuffer.internal_native_GetSize");
             return (int) FFMHandles.internal_native_GetSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -193,7 +187,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static int internal_native_GetUsage(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3199711833", "WGPUBuffer.internal_native_GetUsage");
             return (int) FFMHandles.internal_native_GetUsage__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -206,7 +199,6 @@ public class WGPUBuffer extends NativeObject {
 
     public static boolean internal_native_IsValid(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4260838234", "WGPUBuffer.internal_native_IsValid");
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

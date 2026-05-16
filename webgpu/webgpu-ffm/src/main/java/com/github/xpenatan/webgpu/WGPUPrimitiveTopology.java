@@ -50,7 +50,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2497487524", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_Undefined_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,7 +58,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_PointList_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2031130018", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_PointList_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_PointList_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_LineList_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3393290666", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_LineList_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_LineList_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -77,7 +74,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_LineStrip_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2457012440", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_LineStrip_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_LineStrip_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -86,7 +82,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_TriangleList_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4236481726", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_TriangleList_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_TriangleList_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -95,7 +90,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_TriangleStrip_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2826131524", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_TriangleStrip_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_TriangleStrip_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -104,7 +98,6 @@ public enum WGPUPrimitiveTopology implements NativeEnum<WGPUPrimitiveTopology> {
 
     private static int WGPUPrimitiveTopology_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1381393758", "WGPUPrimitiveTopology.WGPUPrimitiveTopology_Force32_NATIVE");
             return (int) FFMHandles.WGPUPrimitiveTopology_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -28,7 +28,6 @@ public class WGPUColor extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4106203381", "WGPUColor.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUColor extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n372693353", "WGPUColor.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUColor extends NativeObject {
 
     public static void internal_native_SetColor(long this_addr, float r, float g, float b, float a) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1279477866", "WGPUColor.internal_native_SetColor");
             FFMHandles.internal_native_SetColor__JFFFF.invokeExact(this_addr, r, g, b, a);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPUColor extends NativeObject {
 
     public static void internal_native_SetR(long this_addr, float value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1039073259", "WGPUColor.internal_native_SetR");
             FFMHandles.internal_native_SetR__JF.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPUColor extends NativeObject {
 
     public static void internal_native_SetG(long this_addr, float value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3914130646", "WGPUColor.internal_native_SetG");
             FFMHandles.internal_native_SetG__JF.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +102,6 @@ public class WGPUColor extends NativeObject {
 
     public static void internal_native_SetB(long this_addr, float value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3268717051", "WGPUColor.internal_native_SetB");
             FFMHandles.internal_native_SetB__JF.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,7 +114,6 @@ public class WGPUColor extends NativeObject {
 
     public static void internal_native_SetA(long this_addr, float value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3139634332", "WGPUColor.internal_native_SetA");
             FFMHandles.internal_native_SetA__JF.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -133,7 +126,6 @@ public class WGPUColor extends NativeObject {
 
     public static float internal_native_GetR(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3780998767", "WGPUColor.internal_native_GetR");
             return (float) FFMHandles.internal_native_GetR__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -146,7 +138,6 @@ public class WGPUColor extends NativeObject {
 
     public static float internal_native_GetG(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3466078106", "WGPUColor.internal_native_GetG");
             return (float) FFMHandles.internal_native_GetG__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +150,6 @@ public class WGPUColor extends NativeObject {
 
     public static float internal_native_GetB(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3322932351", "WGPUColor.internal_native_GetB");
             return (float) FFMHandles.internal_native_GetB__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -172,7 +162,6 @@ public class WGPUColor extends NativeObject {
 
     public static float internal_native_GetA(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3294303200", "WGPUColor.internal_native_GetA");
             return (float) FFMHandles.internal_native_GetA__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -191,7 +180,6 @@ public class WGPUColor extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3259785726", "WGPUColor.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

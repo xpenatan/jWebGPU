@@ -28,7 +28,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1206466700", "WGPUBindGroupEntry.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3029694514", "WGPUBindGroupEntry.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,7 +78,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n889373531", "WGPUBindGroupEntry.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -93,7 +90,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetBinding(long this_addr, int binding) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4199635284", "WGPUBindGroupEntry.internal_native_SetBinding");
             FFMHandles.internal_native_SetBinding__JI.invokeExact(this_addr, binding);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -106,7 +102,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3974546414", "WGPUBindGroupEntry.internal_native_SetBuffer");
             FFMHandles.internal_native_SetBuffer__JJ.invokeExact(this_addr, buffer_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -119,7 +114,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetOffset(long this_addr, long offset) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1675921537", "WGPUBindGroupEntry.internal_native_SetOffset");
             FFMHandles.internal_native_SetOffset__JJ.invokeExact(this_addr, offset);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -132,7 +126,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetSize(long this_addr, long size) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4055972335", "WGPUBindGroupEntry.internal_native_SetSize");
             FFMHandles.internal_native_SetSize__JJ.invokeExact(this_addr, size);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -145,7 +138,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetSampler(long this_addr, long sampler_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3342596986", "WGPUBindGroupEntry.internal_native_SetSampler");
             FFMHandles.internal_native_SetSampler__JJ.invokeExact(this_addr, sampler_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -158,7 +150,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static void internal_native_SetTextureView(long this_addr, long textureView_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2197420754", "WGPUBindGroupEntry.internal_native_SetTextureView");
             FFMHandles.internal_native_SetTextureView__JJ.invokeExact(this_addr, textureView_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -177,7 +168,6 @@ public class WGPUBindGroupEntry extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n360049045", "WGPUBindGroupEntry.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

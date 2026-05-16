@@ -43,7 +43,6 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
 
     private static int WGPUMipmapFilterMode_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1710823898", "WGPUMipmapFilterMode.WGPUMipmapFilterMode_Undefined_NATIVE");
             return (int) FFMHandles.WGPUMipmapFilterMode_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
 
     private static int WGPUMipmapFilterMode_Nearest_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3696937960", "WGPUMipmapFilterMode.WGPUMipmapFilterMode_Nearest_NATIVE");
             return (int) FFMHandles.WGPUMipmapFilterMode_Nearest_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
 
     private static int WGPUMipmapFilterMode_Linear_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2148273191", "WGPUMipmapFilterMode.WGPUMipmapFilterMode_Linear_NATIVE");
             return (int) FFMHandles.WGPUMipmapFilterMode_Linear_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUMipmapFilterMode implements NativeEnum<WGPUMipmapFilterMode> {
 
     private static int WGPUMipmapFilterMode_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4151521812", "WGPUMipmapFilterMode.WGPUMipmapFilterMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUMipmapFilterMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

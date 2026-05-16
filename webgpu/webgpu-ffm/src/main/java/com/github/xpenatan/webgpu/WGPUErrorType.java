@@ -49,7 +49,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
 
     private static int WGPUErrorType_NoError_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2394693747", "WGPUErrorType.WGPUErrorType_NoError_NATIVE");
             return (int) FFMHandles.WGPUErrorType_NoError_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -58,7 +57,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
 
     private static int WGPUErrorType_Validation_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2330259225", "WGPUErrorType.WGPUErrorType_Validation_NATIVE");
             return (int) FFMHandles.WGPUErrorType_Validation_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,7 +65,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
 
     private static int WGPUErrorType_OutOfMemory_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3008882898", "WGPUErrorType.WGPUErrorType_OutOfMemory_NATIVE");
             return (int) FFMHandles.WGPUErrorType_OutOfMemory_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -76,7 +73,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
 
     private static int WGPUErrorType_Internal_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n296126429", "WGPUErrorType.WGPUErrorType_Internal_NATIVE");
             return (int) FFMHandles.WGPUErrorType_Internal_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -85,7 +81,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
 
     private static int WGPUErrorType_Unknown_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4246099190", "WGPUErrorType.WGPUErrorType_Unknown_NATIVE");
             return (int) FFMHandles.WGPUErrorType_Unknown_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +89,6 @@ public enum WGPUErrorType implements NativeEnum<WGPUErrorType> {
 
     private static int WGPUErrorType_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1469115190", "WGPUErrorType.WGPUErrorType_Force32_NATIVE");
             return (int) FFMHandles.WGPUErrorType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

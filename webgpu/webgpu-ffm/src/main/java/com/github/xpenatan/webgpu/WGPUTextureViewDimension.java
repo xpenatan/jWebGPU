@@ -51,7 +51,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3619832378", "WGPUTextureViewDimension.WGPUTextureViewDimension_Undefined_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -60,7 +59,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_1D_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2849086133", "WGPUTextureViewDimension.WGPUTextureViewDimension_1D_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_1D_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -69,7 +67,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_2D_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2652572628", "WGPUTextureViewDimension.WGPUTextureViewDimension_2D_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_2D_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,7 +75,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_2DArray_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n585394737", "WGPUTextureViewDimension.WGPUTextureViewDimension_2DArray_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_2DArray_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -87,7 +83,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_Cube_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2522356695", "WGPUTextureViewDimension.WGPUTextureViewDimension_Cube_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_Cube_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -96,7 +91,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_CubeArray_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n460317710", "WGPUTextureViewDimension.WGPUTextureViewDimension_CubeArray_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_CubeArray_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -105,7 +99,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_3D_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2456059123", "WGPUTextureViewDimension.WGPUTextureViewDimension_3D_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_3D_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -114,7 +107,6 @@ public enum WGPUTextureViewDimension implements NativeEnum<WGPUTextureViewDimens
 
     private static int WGPUTextureViewDimension_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3089822324", "WGPUTextureViewDimension.WGPUTextureViewDimension_Force32_NATIVE");
             return (int) FFMHandles.WGPUTextureViewDimension_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

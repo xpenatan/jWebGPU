@@ -43,7 +43,6 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
 
     private static int WGPUCallbackMode_WaitAnyOnly_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3325349037", "WGPUCallbackMode.WGPUCallbackMode_WaitAnyOnly_NATIVE");
             return (int) FFMHandles.WGPUCallbackMode_WaitAnyOnly_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
 
     private static int WGPUCallbackMode_AllowProcessEvents_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n638162177", "WGPUCallbackMode.WGPUCallbackMode_AllowProcessEvents_NATIVE");
             return (int) FFMHandles.WGPUCallbackMode_AllowProcessEvents_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
 
     private static int WGPUCallbackMode_AllowSpontaneous_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1938751430", "WGPUCallbackMode.WGPUCallbackMode_AllowSpontaneous_NATIVE");
             return (int) FFMHandles.WGPUCallbackMode_AllowSpontaneous_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUCallbackMode implements NativeEnum<WGPUCallbackMode> {
 
     private static int WGPUCallbackMode_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1497950644", "WGPUCallbackMode.WGPUCallbackMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUCallbackMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

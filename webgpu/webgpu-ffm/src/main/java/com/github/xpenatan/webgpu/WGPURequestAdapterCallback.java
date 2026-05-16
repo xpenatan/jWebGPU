@@ -45,7 +45,6 @@ public class WGPURequestAdapterCallback extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3940606407", "WGPURequestAdapterCallback.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -91,7 +90,6 @@ public class WGPURequestAdapterCallback extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2787993047", "WGPURequestAdapterCallback.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -116,7 +114,6 @@ public class WGPURequestAdapterCallback extends NativeObject {
 
     public static void internal_native_setupCallback(long this_addr, long OnCallback_fp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3836326531", "WGPURequestAdapterCallback.internal_native_setupCallback");
             FFMHandles.internal_native_setupCallback__JJ.invokeExact(this_addr, OnCallback_fp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -49,7 +49,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     private static int WGPUBufferBindingType_BindingNotUsed_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2619750097", "WGPUBufferBindingType.WGPUBufferBindingType_BindingNotUsed_NATIVE");
             return (int) FFMHandles.WGPUBufferBindingType_BindingNotUsed_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -58,7 +57,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     private static int WGPUBufferBindingType_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2026988150", "WGPUBufferBindingType.WGPUBufferBindingType_Undefined_NATIVE");
             return (int) FFMHandles.WGPUBufferBindingType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,7 +65,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     private static int WGPUBufferBindingType_Uniform_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2801499866", "WGPUBufferBindingType.WGPUBufferBindingType_Uniform_NATIVE");
             return (int) FFMHandles.WGPUBufferBindingType_Uniform_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -76,7 +73,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     private static int WGPUBufferBindingType_Storage_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3960484001", "WGPUBufferBindingType.WGPUBufferBindingType_Storage_NATIVE");
             return (int) FFMHandles.WGPUBufferBindingType_Storage_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -85,7 +81,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     private static int WGPUBufferBindingType_ReadOnlyStorage_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n934430175", "WGPUBufferBindingType.WGPUBufferBindingType_ReadOnlyStorage_NATIVE");
             return (int) FFMHandles.WGPUBufferBindingType_ReadOnlyStorage_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +89,6 @@ public enum WGPUBufferBindingType implements NativeEnum<WGPUBufferBindingType> {
 
     private static int WGPUBufferBindingType_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1975316912", "WGPUBufferBindingType.WGPUBufferBindingType_Force32_NATIVE");
             return (int) FFMHandles.WGPUBufferBindingType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -39,7 +39,6 @@ public class WGPUChainedStruct extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2906841755", "WGPUChainedStruct.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public class WGPUChainedStruct extends NativeObject {
 
     public static void internal_native_SetNext(long this_addr, long value_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1896925386", "WGPUChainedStruct.internal_native_SetNext");
             FFMHandles.internal_native_SetNext__JJ.invokeExact(this_addr, value_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,7 +63,6 @@ public class WGPUChainedStruct extends NativeObject {
 
     public static void internal_native_SetSType(long this_addr, int type) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n366332021", "WGPUChainedStruct.internal_native_SetSType");
             FFMHandles.internal_native_SetSType__JI.invokeExact(this_addr, type);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

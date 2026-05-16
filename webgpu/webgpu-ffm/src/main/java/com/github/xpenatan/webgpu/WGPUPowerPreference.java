@@ -43,7 +43,6 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
 
     private static int WGPUPowerPreference_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1557270904", "WGPUPowerPreference.WGPUPowerPreference_Undefined_NATIVE");
             return (int) FFMHandles.WGPUPowerPreference_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
 
     private static int WGPUPowerPreference_LowPower_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n162023605", "WGPUPowerPreference.WGPUPowerPreference_LowPower_NATIVE");
             return (int) FFMHandles.WGPUPowerPreference_LowPower_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
 
     private static int WGPUPowerPreference_HighPerformance_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2145300950", "WGPUPowerPreference.WGPUPowerPreference_HighPerformance_NATIVE");
             return (int) FFMHandles.WGPUPowerPreference_HighPerformance_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUPowerPreference implements NativeEnum<WGPUPowerPreference> {
 
     private static int WGPUPowerPreference_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n146897202", "WGPUPowerPreference.WGPUPowerPreference_Force32_NATIVE");
             return (int) FFMHandles.WGPUPowerPreference_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

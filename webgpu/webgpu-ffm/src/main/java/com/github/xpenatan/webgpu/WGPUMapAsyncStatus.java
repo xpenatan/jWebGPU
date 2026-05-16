@@ -43,7 +43,6 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
 
     private static int WGPUMapAsyncStatus_Success_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n538857133", "WGPUMapAsyncStatus.WGPUMapAsyncStatus_Success_NATIVE");
             return (int) FFMHandles.WGPUMapAsyncStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
 
     private static int WGPUMapAsyncStatus_Error_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n366781618", "WGPUMapAsyncStatus.WGPUMapAsyncStatus_Error_NATIVE");
             return (int) FFMHandles.WGPUMapAsyncStatus_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
 
     private static int WGPUMapAsyncStatus_Aborted_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1512547961", "WGPUMapAsyncStatus.WGPUMapAsyncStatus_Aborted_NATIVE");
             return (int) FFMHandles.WGPUMapAsyncStatus_Aborted_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUMapAsyncStatus implements NativeEnum<WGPUMapAsyncStatus> {
 
     private static int WGPUMapAsyncStatus_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2260212276", "WGPUMapAsyncStatus.WGPUMapAsyncStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPUMapAsyncStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

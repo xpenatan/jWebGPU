@@ -43,7 +43,6 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
 
     private static int WGPUFrontFace_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n184946436", "WGPUFrontFace.WGPUFrontFace_Undefined_NATIVE");
             return (int) FFMHandles.WGPUFrontFace_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
 
     private static int WGPUFrontFace_CCW_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2583645515", "WGPUFrontFace.WGPUFrontFace_CCW_NATIVE");
             return (int) FFMHandles.WGPUFrontFace_CCW_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
 
     private static int WGPUFrontFace_CW_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2474405484", "WGPUFrontFace.WGPUFrontFace_CW_NATIVE");
             return (int) FFMHandles.WGPUFrontFace_CW_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUFrontFace implements NativeEnum<WGPUFrontFace> {
 
     private static int WGPUFrontFace_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2058316222", "WGPUFrontFace.WGPUFrontFace_Force32_NATIVE");
             return (int) FFMHandles.WGPUFrontFace_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

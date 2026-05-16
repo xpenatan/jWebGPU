@@ -32,7 +32,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2576406919", "WGPUTexelCopyBufferInfo.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -59,7 +58,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n117586967", "WGPUTexelCopyBufferInfo.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,7 +76,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     public static long internal_native_GetLayout_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3438783337", "WGPUTexelCopyBufferInfo.internal_native_GetLayout_addr");
             return (long) FFMHandles.internal_native_GetLayout_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -97,7 +94,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     public static long internal_native_GetBuffer_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n930373887", "WGPUTexelCopyBufferInfo.internal_native_GetBuffer_addr");
             return (long) FFMHandles.internal_native_GetBuffer_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -110,7 +106,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     public static void internal_native_SetBuffer(long this_addr, long buffer_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1462903443", "WGPUTexelCopyBufferInfo.internal_native_SetBuffer");
             FFMHandles.internal_native_SetBuffer__JJ.invokeExact(this_addr, buffer_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -129,7 +124,6 @@ public class WGPUTexelCopyBufferInfo extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1729989264", "WGPUTexelCopyBufferInfo.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

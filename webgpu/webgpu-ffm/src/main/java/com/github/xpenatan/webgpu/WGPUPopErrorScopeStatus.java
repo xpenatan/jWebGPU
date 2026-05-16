@@ -43,7 +43,6 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
 
     private static int WGPUPopErrorScopeStatus_Success_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n911684873", "WGPUPopErrorScopeStatus.WGPUPopErrorScopeStatus_Success_NATIVE");
             return (int) FFMHandles.WGPUPopErrorScopeStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUPopErrorScopeStatus implements NativeEnum<WGPUPopErrorScopeStatu
 
     private static int WGPUPopErrorScopeStatus_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2633040016", "WGPUPopErrorScopeStatus.WGPUPopErrorScopeStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPUPopErrorScopeStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

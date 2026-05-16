@@ -48,7 +48,6 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     private static int WGPUAddressMode_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n651347302", "WGPUAddressMode.WGPUAddressMode_Undefined_NATIVE");
             return (int) FFMHandles.WGPUAddressMode_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,7 +56,6 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     private static int WGPUAddressMode_ClampToEdge_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2718327945", "WGPUAddressMode.WGPUAddressMode_ClampToEdge_NATIVE");
             return (int) FFMHandles.WGPUAddressMode_ClampToEdge_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,7 +64,6 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     private static int WGPUAddressMode_Repeat_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2845029521", "WGPUAddressMode.WGPUAddressMode_Repeat_NATIVE");
             return (int) FFMHandles.WGPUAddressMode_Repeat_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -75,7 +72,6 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     private static int WGPUAddressMode_MirrorRepeat_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3293593136", "WGPUAddressMode.WGPUAddressMode_MirrorRepeat_NATIVE");
             return (int) FFMHandles.WGPUAddressMode_MirrorRepeat_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -84,7 +80,6 @@ public enum WGPUAddressMode implements NativeEnum<WGPUAddressMode> {
 
     private static int WGPUAddressMode_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2778353824", "WGPUAddressMode.WGPUAddressMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUAddressMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

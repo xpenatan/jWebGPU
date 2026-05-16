@@ -53,7 +53,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2561529940", "WGPUBackendType.WGPUBackendType_Undefined_NATIVE");
             return (int) FFMHandles.WGPUBackendType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -62,7 +61,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_Null_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3956878543", "WGPUBackendType.WGPUBackendType_Null_NATIVE");
             return (int) FFMHandles.WGPUBackendType_Null_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -71,7 +69,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_WebGPU_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n799815296", "WGPUBackendType.WGPUBackendType_WebGPU_NATIVE");
             return (int) FFMHandles.WGPUBackendType_WebGPU_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,7 +77,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_D3D11_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2201670585", "WGPUBackendType.WGPUBackendType_D3D11_NATIVE");
             return (int) FFMHandles.WGPUBackendType_D3D11_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,7 +85,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_D3D12_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n394216122", "WGPUBackendType.WGPUBackendType_D3D12_NATIVE");
             return (int) FFMHandles.WGPUBackendType_D3D12_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -98,7 +93,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_Metal_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1257548299", "WGPUBackendType.WGPUBackendType_Metal_NATIVE");
             return (int) FFMHandles.WGPUBackendType_Metal_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +101,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_Vulkan_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n648529907", "WGPUBackendType.WGPUBackendType_Vulkan_NATIVE");
             return (int) FFMHandles.WGPUBackendType_Vulkan_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -116,7 +109,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_OpenGL_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1498315639", "WGPUBackendType.WGPUBackendType_OpenGL_NATIVE");
             return (int) FFMHandles.WGPUBackendType_OpenGL_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -125,7 +117,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_OpenGLES_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n918183397", "WGPUBackendType.WGPUBackendType_OpenGLES_NATIVE");
             return (int) FFMHandles.WGPUBackendType_OpenGLES_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -134,7 +125,6 @@ public enum WGPUBackendType implements NativeEnum<WGPUBackendType> {
 
     private static int WGPUBackendType_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2337883918", "WGPUBackendType.WGPUBackendType_Force32_NATIVE");
             return (int) FFMHandles.WGPUBackendType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

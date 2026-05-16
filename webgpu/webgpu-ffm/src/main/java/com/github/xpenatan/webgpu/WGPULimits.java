@@ -28,7 +28,6 @@ public class WGPULimits extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1301578948", "WGPULimits.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2443775738", "WGPULimits.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxTextureDimension1D(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3722772543", "WGPULimits.internal_native_SetMaxTextureDimension1D");
             FFMHandles.internal_native_SetMaxTextureDimension1D__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxTextureDimension1D(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n85725168", "WGPULimits.internal_native_GetMaxTextureDimension1D");
             return (int) FFMHandles.internal_native_GetMaxTextureDimension1D__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxTextureDimension2D(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1925821184", "WGPULimits.internal_native_SetMaxTextureDimension2D");
             FFMHandles.internal_native_SetMaxTextureDimension2D__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +102,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxTextureDimension2D(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n973228849", "WGPULimits.internal_native_GetMaxTextureDimension2D");
             return (int) FFMHandles.internal_native_GetMaxTextureDimension2D__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,7 +114,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxTextureDimension3D(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n128869825", "WGPULimits.internal_native_SetMaxTextureDimension3D");
             FFMHandles.internal_native_SetMaxTextureDimension3D__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -133,7 +126,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxTextureDimension3D(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1860732530", "WGPULimits.internal_native_GetMaxTextureDimension3D");
             return (int) FFMHandles.internal_native_GetMaxTextureDimension3D__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -146,7 +138,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxTextureArrayLayers(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2609152925", "WGPULimits.internal_native_SetMaxTextureArrayLayers");
             FFMHandles.internal_native_SetMaxTextureArrayLayers__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +150,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxTextureArrayLayers(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n508555854", "WGPULimits.internal_native_GetMaxTextureArrayLayers");
             return (int) FFMHandles.internal_native_GetMaxTextureArrayLayers__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -172,7 +162,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxBindGroups(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4019208492", "WGPULimits.internal_native_SetMaxBindGroups");
             FFMHandles.internal_native_SetMaxBindGroups__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -185,7 +174,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxBindGroups(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1188168541", "WGPULimits.internal_native_GetMaxBindGroups");
             return (int) FFMHandles.internal_native_GetMaxBindGroups__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -198,7 +186,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxBindGroupsPlusVertexBuffers(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3377697461", "WGPULimits.internal_native_SetMaxBindGroupsPlusVertexBuffers");
             FFMHandles.internal_native_SetMaxBindGroupsPlusVertexBuffers__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -211,7 +198,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxBindGroupsPlusVertexBuffers(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n156347390", "WGPULimits.internal_native_GetMaxBindGroupsPlusVertexBuffers");
             return (int) FFMHandles.internal_native_GetMaxBindGroupsPlusVertexBuffers__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -224,7 +210,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxBindingsPerBindGroup(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n857115658", "WGPULimits.internal_native_SetMaxBindingsPerBindGroup");
             FFMHandles.internal_native_SetMaxBindingsPerBindGroup__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -237,7 +222,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxBindingsPerBindGroup(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3082718267", "WGPULimits.internal_native_GetMaxBindingsPerBindGroup");
             return (int) FFMHandles.internal_native_GetMaxBindingsPerBindGroup__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -250,7 +234,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3171651410", "WGPULimits.internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout");
             FFMHandles.internal_native_SetMaxDynamicUniformBuffersPerPipelineLayout__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -263,7 +246,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1400807043", "WGPULimits.internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout");
             return (int) FFMHandles.internal_native_GetMaxDynamicUniformBuffersPerPipelineLayout__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -276,7 +258,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1222613867", "WGPULimits.internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout");
             FFMHandles.internal_native_SetMaxDynamicStorageBuffersPerPipelineLayout__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -289,7 +270,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3404111644", "WGPULimits.internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout");
             return (int) FFMHandles.internal_native_GetMaxDynamicStorageBuffersPerPipelineLayout__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -302,7 +282,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxSampledTexturesPerShaderStage(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3461219915", "WGPULimits.internal_native_SetMaxSampledTexturesPerShaderStage");
             FFMHandles.internal_native_SetMaxSampledTexturesPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -315,7 +294,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxSampledTexturesPerShaderStage(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n604596116", "WGPULimits.internal_native_GetMaxSampledTexturesPerShaderStage");
             return (int) FFMHandles.internal_native_GetMaxSampledTexturesPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -328,7 +306,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxSamplersPerShaderStage(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1806906454", "WGPULimits.internal_native_SetMaxSamplersPerShaderStage");
             FFMHandles.internal_native_SetMaxSamplersPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -341,7 +318,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxSamplersPerShaderStage(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3338653063", "WGPULimits.internal_native_GetMaxSamplersPerShaderStage");
             return (int) FFMHandles.internal_native_GetMaxSamplersPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -354,7 +330,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxStorageBuffersPerShaderStage(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1604430953", "WGPULimits.internal_native_SetMaxStorageBuffersPerShaderStage");
             FFMHandles.internal_native_SetMaxStorageBuffersPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -367,7 +342,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxStorageBuffersPerShaderStage(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n424443930", "WGPULimits.internal_native_GetMaxStorageBuffersPerShaderStage");
             return (int) FFMHandles.internal_native_GetMaxStorageBuffersPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -380,7 +354,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxStorageTexturesPerShaderStage(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3715429290", "WGPULimits.internal_native_SetMaxStorageTexturesPerShaderStage");
             FFMHandles.internal_native_SetMaxStorageTexturesPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -393,7 +366,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxStorageTexturesPerShaderStage(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4047756403", "WGPULimits.internal_native_GetMaxStorageTexturesPerShaderStage");
             return (int) FFMHandles.internal_native_GetMaxStorageTexturesPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -406,7 +378,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxUniformBuffersPerShaderStage(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3926497762", "WGPULimits.internal_native_SetMaxUniformBuffersPerShaderStage");
             FFMHandles.internal_native_SetMaxUniformBuffersPerShaderStage__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -419,7 +390,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxUniformBuffersPerShaderStage(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3291484691", "WGPULimits.internal_native_GetMaxUniformBuffersPerShaderStage");
             return (int) FFMHandles.internal_native_GetMaxUniformBuffersPerShaderStage__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -432,7 +402,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxUniformBufferBindingSize(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n588756683", "WGPULimits.internal_native_SetMaxUniformBufferBindingSize");
             FFMHandles.internal_native_SetMaxUniformBufferBindingSize__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -445,7 +414,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxUniformBufferBindingSize(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2709366140", "WGPULimits.internal_native_GetMaxUniformBufferBindingSize");
             return (int) FFMHandles.internal_native_GetMaxUniformBufferBindingSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -458,7 +426,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxStorageBufferBindingSize(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2016683218", "WGPULimits.internal_native_SetMaxStorageBufferBindingSize");
             FFMHandles.internal_native_SetMaxStorageBufferBindingSize__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -471,7 +438,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxStorageBufferBindingSize(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n26750723", "WGPULimits.internal_native_GetMaxStorageBufferBindingSize");
             return (int) FFMHandles.internal_native_GetMaxStorageBufferBindingSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -484,7 +450,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMinUniformBufferOffsetAlignment(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1081042035", "WGPULimits.internal_native_SetMinUniformBufferOffsetAlignment");
             FFMHandles.internal_native_SetMinUniformBufferOffsetAlignment__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -497,7 +462,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMinUniformBufferOffsetAlignment(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2885405988", "WGPULimits.internal_native_GetMinUniformBufferOffsetAlignment");
             return (int) FFMHandles.internal_native_GetMinUniformBufferOffsetAlignment__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -510,7 +474,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMinStorageBufferOffsetAlignment(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3053942522", "WGPULimits.internal_native_SetMinStorageBufferOffsetAlignment");
             FFMHandles.internal_native_SetMinStorageBufferOffsetAlignment__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -523,7 +486,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMinStorageBufferOffsetAlignment(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n18365227", "WGPULimits.internal_native_GetMinStorageBufferOffsetAlignment");
             return (int) FFMHandles.internal_native_GetMinStorageBufferOffsetAlignment__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -536,7 +498,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxVertexBuffers(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n90362794", "WGPULimits.internal_native_SetMaxVertexBuffers");
             FFMHandles.internal_native_SetMaxVertexBuffers__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -549,7 +510,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxVertexBuffers(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1081496691", "WGPULimits.internal_native_GetMaxVertexBuffers");
             return (int) FFMHandles.internal_native_GetMaxVertexBuffers__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -562,7 +522,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxBufferSize(long this_addr, long value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3629832399", "WGPULimits.internal_native_SetMaxBufferSize");
             FFMHandles.internal_native_SetMaxBufferSize__JJ.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -575,7 +534,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxBufferSize(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3462379885", "WGPULimits.internal_native_GetMaxBufferSize");
             return (int) FFMHandles.internal_native_GetMaxBufferSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -588,7 +546,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxVertexAttributes(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3704919362", "WGPULimits.internal_native_SetMaxVertexAttributes");
             FFMHandles.internal_native_SetMaxVertexAttributes__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -601,7 +558,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxVertexAttributes(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1136561011", "WGPULimits.internal_native_GetMaxVertexAttributes");
             return (int) FFMHandles.internal_native_GetMaxVertexAttributes__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -614,7 +570,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxVertexBufferArrayStride(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1421093387", "WGPULimits.internal_native_SetMaxVertexBufferArrayStride");
             FFMHandles.internal_native_SetMaxVertexBufferArrayStride__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -627,7 +582,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxVertexBufferArrayStride(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2759951444", "WGPULimits.internal_native_GetMaxVertexBufferArrayStride");
             return (int) FFMHandles.internal_native_GetMaxVertexBufferArrayStride__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -640,7 +594,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxInterStageShaderVariables(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2834773641", "WGPULimits.internal_native_SetMaxInterStageShaderVariables");
             FFMHandles.internal_native_SetMaxInterStageShaderVariables__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -653,7 +606,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxInterStageShaderVariables(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4015066322", "WGPULimits.internal_native_GetMaxInterStageShaderVariables");
             return (int) FFMHandles.internal_native_GetMaxInterStageShaderVariables__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -666,7 +618,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxColorAttachments(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n705302352", "WGPULimits.internal_native_SetMaxColorAttachments");
             FFMHandles.internal_native_SetMaxColorAttachments__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -679,7 +630,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxColorAttachments(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1777286273", "WGPULimits.internal_native_GetMaxColorAttachments");
             return (int) FFMHandles.internal_native_GetMaxColorAttachments__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -692,7 +642,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxColorAttachmentBytesPerSample(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2410835831", "WGPULimits.internal_native_SetMaxColorAttachmentBytesPerSample");
             FFMHandles.internal_native_SetMaxColorAttachmentBytesPerSample__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -705,7 +654,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxColorAttachmentBytesPerSample(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3020506816", "WGPULimits.internal_native_GetMaxColorAttachmentBytesPerSample");
             return (int) FFMHandles.internal_native_GetMaxColorAttachmentBytesPerSample__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -718,7 +666,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxComputeWorkgroupStorageSize(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n921736404", "WGPULimits.internal_native_SetMaxComputeWorkgroupStorageSize");
             FFMHandles.internal_native_SetMaxComputeWorkgroupStorageSize__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -731,7 +678,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxComputeWorkgroupStorageSize(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n382375325", "WGPULimits.internal_native_GetMaxComputeWorkgroupStorageSize");
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupStorageSize__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -744,7 +690,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxComputeInvocationsPerWorkgroup(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2257167712", "WGPULimits.internal_native_SetMaxComputeInvocationsPerWorkgroup");
             FFMHandles.internal_native_SetMaxComputeInvocationsPerWorkgroup__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -757,7 +702,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxComputeInvocationsPerWorkgroup(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n764878737", "WGPULimits.internal_native_GetMaxComputeInvocationsPerWorkgroup");
             return (int) FFMHandles.internal_native_GetMaxComputeInvocationsPerWorkgroup__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -770,7 +714,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxComputeWorkgroupSizeX(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2985211801", "WGPULimits.internal_native_SetMaxComputeWorkgroupSizeX");
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeX__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -783,7 +726,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxComputeWorkgroupSizeX(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2391227362", "WGPULimits.internal_native_GetMaxComputeWorkgroupSizeX");
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeX__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -796,7 +738,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxComputeWorkgroupSizeY(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2788698296", "WGPULimits.internal_native_SetMaxComputeWorkgroupSizeY");
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeY__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -809,7 +750,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxComputeWorkgroupSizeY(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2419856513", "WGPULimits.internal_native_GetMaxComputeWorkgroupSizeY");
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeY__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -822,7 +762,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxComputeWorkgroupSizeZ(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2592184791", "WGPULimits.internal_native_SetMaxComputeWorkgroupSizeZ");
             FFMHandles.internal_native_SetMaxComputeWorkgroupSizeZ__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -835,7 +774,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxComputeWorkgroupSizeZ(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2448485664", "WGPULimits.internal_native_GetMaxComputeWorkgroupSizeZ");
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupSizeZ__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -848,7 +786,6 @@ public class WGPULimits extends NativeObject {
 
     public static void internal_native_SetMaxComputeWorkgroupsPerDimension(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n563444660", "WGPULimits.internal_native_SetMaxComputeWorkgroupsPerDimension");
             FFMHandles.internal_native_SetMaxComputeWorkgroupsPerDimension__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -861,7 +798,6 @@ public class WGPULimits extends NativeObject {
 
     public static int internal_native_GetMaxComputeWorkgroupsPerDimension(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2704144765", "WGPULimits.internal_native_GetMaxComputeWorkgroupsPerDimension");
             return (int) FFMHandles.internal_native_GetMaxComputeWorkgroupsPerDimension__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -880,7 +816,6 @@ public class WGPULimits extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n455161293", "WGPULimits.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -39,7 +39,6 @@ public class WGPUStencilFaceState extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n702957370", "WGPUStencilFaceState.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public class WGPUStencilFaceState extends NativeObject {
 
     public static void internal_native_SetCompare(long this_addr, int compare) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3575260156", "WGPUStencilFaceState.internal_native_SetCompare");
             FFMHandles.internal_native_SetCompare__JI.invokeExact(this_addr, compare);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,7 +63,6 @@ public class WGPUStencilFaceState extends NativeObject {
 
     public static void internal_native_SetFailOp(long this_addr, int failOp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2941965238", "WGPUStencilFaceState.internal_native_SetFailOp");
             FFMHandles.internal_native_SetFailOp__JI.invokeExact(this_addr, failOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,7 +75,6 @@ public class WGPUStencilFaceState extends NativeObject {
 
     public static void internal_native_SetDepthFailOp(long this_addr, int depthFailOp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1262861375", "WGPUStencilFaceState.internal_native_SetDepthFailOp");
             FFMHandles.internal_native_SetDepthFailOp__JI.invokeExact(this_addr, depthFailOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -91,7 +87,6 @@ public class WGPUStencilFaceState extends NativeObject {
 
     public static void internal_native_SetPassOp(long this_addr, int passOp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3102130403", "WGPUStencilFaceState.internal_native_SetPassOp");
             FFMHandles.internal_native_SetPassOp__JI.invokeExact(this_addr, passOp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

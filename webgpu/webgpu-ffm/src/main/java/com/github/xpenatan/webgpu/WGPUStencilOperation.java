@@ -53,7 +53,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3096060634", "WGPUStencilOperation.WGPUStencilOperation_Undefined_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -62,7 +61,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_Keep_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1948085895", "WGPUStencilOperation.WGPUStencilOperation_Keep_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_Keep_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -71,7 +69,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_Zero_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3137105578", "WGPUStencilOperation.WGPUStencilOperation_Zero_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_Zero_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -80,7 +77,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_Replace_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1818157374", "WGPUStencilOperation.WGPUStencilOperation_Replace_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_Replace_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -89,7 +85,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_Invert_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2737566424", "WGPUStencilOperation.WGPUStencilOperation_Invert_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_Invert_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -98,7 +93,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_IncrementClamp_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2592537486", "WGPUStencilOperation.WGPUStencilOperation_IncrementClamp_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_IncrementClamp_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +101,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_DecrementClamp_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2290726122", "WGPUStencilOperation.WGPUStencilOperation_DecrementClamp_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_DecrementClamp_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -116,7 +109,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_IncrementWrap_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2074658531", "WGPUStencilOperation.WGPUStencilOperation_IncrementWrap_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_IncrementWrap_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -125,7 +117,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_DecrementWrap_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n402354695", "WGPUStencilOperation.WGPUStencilOperation_DecrementWrap_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_DecrementWrap_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -134,7 +125,6 @@ public enum WGPUStencilOperation implements NativeEnum<WGPUStencilOperation> {
 
     private static int WGPUStencilOperation_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2628942612", "WGPUStencilOperation.WGPUStencilOperation_Force32_NATIVE");
             return (int) FFMHandles.WGPUStencilOperation_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -28,7 +28,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3154600513", "WGPUSamplerDescriptor.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1321605021", "WGPUSamplerDescriptor.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String label) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n902087632", "WGPUSamplerDescriptor.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n181339536", "WGPUSamplerDescriptor.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetAddressModeU(long this_addr, int addressModeU) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3895983988", "WGPUSamplerDescriptor.internal_native_SetAddressModeU");
             FFMHandles.internal_native_SetAddressModeU__JI.invokeExact(this_addr, addressModeU);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +102,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetAddressModeV(long this_addr, int addressModeV) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3699470483", "WGPUSamplerDescriptor.internal_native_SetAddressModeV");
             FFMHandles.internal_native_SetAddressModeV__JI.invokeExact(this_addr, addressModeV);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,7 +114,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetAddressModeW(long this_addr, int addressModeW) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3502956978", "WGPUSamplerDescriptor.internal_native_SetAddressModeW");
             FFMHandles.internal_native_SetAddressModeW__JI.invokeExact(this_addr, addressModeW);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -133,7 +126,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetMagFilter(long this_addr, int magFilter) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1573530201", "WGPUSamplerDescriptor.internal_native_SetMagFilter");
             FFMHandles.internal_native_SetMagFilter__JI.invokeExact(this_addr, magFilter);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -146,7 +138,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetMinFilter(long this_addr, int minFilter) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n236333946", "WGPUSamplerDescriptor.internal_native_SetMinFilter");
             FFMHandles.internal_native_SetMinFilter__JI.invokeExact(this_addr, minFilter);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +150,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetMipmapFilter(long this_addr, int mipmapFilter) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n803618066", "WGPUSamplerDescriptor.internal_native_SetMipmapFilter");
             FFMHandles.internal_native_SetMipmapFilter__JI.invokeExact(this_addr, mipmapFilter);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -172,7 +162,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetLodMinClamp(long this_addr, float lodMinClamp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n355046759", "WGPUSamplerDescriptor.internal_native_SetLodMinClamp");
             FFMHandles.internal_native_SetLodMinClamp__JF.invokeExact(this_addr, lodMinClamp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -185,7 +174,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetLodMaxClamp(long this_addr, float lodMaxClamp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n389886073", "WGPUSamplerDescriptor.internal_native_SetLodMaxClamp");
             FFMHandles.internal_native_SetLodMaxClamp__JF.invokeExact(this_addr, lodMaxClamp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -198,7 +186,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetCompare(long this_addr, int compare) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1095198623", "WGPUSamplerDescriptor.internal_native_SetCompare");
             FFMHandles.internal_native_SetCompare__JI.invokeExact(this_addr, compare);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -211,7 +198,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static void internal_native_SetMaxAnisotropy(long this_addr, int maxAnisotropy) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2638065950", "WGPUSamplerDescriptor.internal_native_SetMaxAnisotropy");
             FFMHandles.internal_native_SetMaxAnisotropy__JI.invokeExact(this_addr, maxAnisotropy);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -230,7 +216,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2308182858", "WGPUSamplerDescriptor.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

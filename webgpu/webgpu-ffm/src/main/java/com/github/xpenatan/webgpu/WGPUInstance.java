@@ -39,7 +39,6 @@ public class WGPUInstance extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n108577975", "WGPUInstance.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public class WGPUInstance extends NativeObject {
 
     public static boolean internal_native_IsValid(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2956180133", "WGPUInstance.internal_native_IsValid");
             return (boolean) FFMHandles.internal_native_IsValid__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,7 +63,6 @@ public class WGPUInstance extends NativeObject {
 
     public static void internal_native_Release(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3159913648", "WGPUInstance.internal_native_Release");
             FFMHandles.internal_native_Release__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -95,7 +92,6 @@ public class WGPUInstance extends NativeObject {
 
     public static long internal_native_CreateWebSurface_addr(long this_addr, String canvas) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n392143361", "WGPUInstance.internal_native_CreateWebSurface_addr");
             return (long) FFMHandles.internal_native_CreateWebSurface_addr__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(canvas));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -113,7 +109,6 @@ public class WGPUInstance extends NativeObject {
 
     public static long internal_native_CreateWindowsSurface_addr(long this_addr, long hwnd_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2492084155", "WGPUInstance.internal_native_CreateWindowsSurface_addr");
             return (long) FFMHandles.internal_native_CreateWindowsSurface_addr__JJ.invokeExact(this_addr, hwnd_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -131,7 +126,6 @@ public class WGPUInstance extends NativeObject {
 
     public static long internal_native_CreateLinuxSurface_addr(long this_addr, boolean isWayland, long windowOrSurface_addr, long display_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1433734904", "WGPUInstance.internal_native_CreateLinuxSurface_addr");
             return (long) FFMHandles.internal_native_CreateLinuxSurface_addr__JZJJ.invokeExact(this_addr, isWayland, windowOrSurface_addr, display_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -149,7 +143,6 @@ public class WGPUInstance extends NativeObject {
 
     public static long internal_native_CreateMacSurface_addr(long this_addr, long metalLayer_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2040245255", "WGPUInstance.internal_native_CreateMacSurface_addr");
             return (long) FFMHandles.internal_native_CreateMacSurface_addr__JJ.invokeExact(this_addr, metalLayer_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -167,7 +160,6 @@ public class WGPUInstance extends NativeObject {
 
     public static long internal_native_CreateAndroidSurface_addr(long this_addr, long surface_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2004601511", "WGPUInstance.internal_native_CreateAndroidSurface_addr");
             return (long) FFMHandles.internal_native_CreateAndroidSurface_addr__JJ.invokeExact(this_addr, surface_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

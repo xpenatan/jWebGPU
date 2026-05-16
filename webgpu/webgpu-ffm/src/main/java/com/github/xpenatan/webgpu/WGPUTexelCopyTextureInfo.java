@@ -37,7 +37,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1583849302", "WGPUTexelCopyTextureInfo.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -50,7 +49,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1675214760", "WGPUTexelCopyTextureInfo.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -63,7 +61,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static void internal_native_SetTexture(long this_addr, long texture_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n869110167", "WGPUTexelCopyTextureInfo.internal_native_SetTexture");
             FFMHandles.internal_native_SetTexture__JJ.invokeExact(this_addr, texture_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -76,7 +73,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static void internal_native_SetMipLevel(long this_addr, int mipLevel) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2928282935", "WGPUTexelCopyTextureInfo.internal_native_SetMipLevel");
             FFMHandles.internal_native_SetMipLevel__JI.invokeExact(this_addr, mipLevel);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -95,7 +91,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static long internal_native_GetOrigin_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2191488950", "WGPUTexelCopyTextureInfo.internal_native_GetOrigin_addr");
             return (long) FFMHandles.internal_native_GetOrigin_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -108,7 +103,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static void internal_native_SetAspect(long this_addr, int aspect) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2531452527", "WGPUTexelCopyTextureInfo.internal_native_SetAspect");
             FFMHandles.internal_native_SetAspect__JI.invokeExact(this_addr, aspect);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -127,7 +121,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n737431647", "WGPUTexelCopyTextureInfo.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

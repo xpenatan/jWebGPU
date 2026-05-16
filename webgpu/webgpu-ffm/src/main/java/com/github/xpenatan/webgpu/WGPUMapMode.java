@@ -43,7 +43,6 @@ public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
 
     private static int WGPUMapMode_None_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n961409886", "WGPUMapMode.WGPUMapMode_None_NATIVE");
             return (int) FFMHandles.WGPUMapMode_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
 
     private static int WGPUMapMode_Read_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2334547900", "WGPUMapMode.WGPUMapMode_Read_NATIVE");
             return (int) FFMHandles.WGPUMapMode_Read_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUMapMode implements NativeEnum<WGPUMapMode> {
 
     private static int WGPUMapMode_Write_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3244268741", "WGPUMapMode.WGPUMapMode_Write_NATIVE");
             return (int) FFMHandles.WGPUMapMode_Write_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

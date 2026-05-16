@@ -28,7 +28,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1309298423", "WGPUFragmentState.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2622008487", "WGPUFragmentState.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n83267910", "WGPUFragmentState.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4122732694", "WGPUFragmentState.internal_native_SetEntryPoint");
             FFMHandles.internal_native_SetEntryPoint__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(entryPoint));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetTargets__0(long this_addr, long targets_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3285506033", "WGPUFragmentState.internal_native_SetTargets__0");
             FFMHandles.internal_native_SetTargets__0__JJ.invokeExact(this_addr, targets_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +102,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetTargets__1(long this_addr, long target01_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1488554674", "WGPUFragmentState.internal_native_SetTargets__1");
             FFMHandles.internal_native_SetTargets__1__JJ.invokeExact(this_addr, target01_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,7 +114,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetTargets__2(long this_addr, long target01_addr, long target02_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3281781525", "WGPUFragmentState.internal_native_SetTargets__2");
             FFMHandles.internal_native_SetTargets__2__JJJ.invokeExact(this_addr, target01_addr, target02_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -133,7 +126,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetTargets__3(long this_addr, long target01_addr, long target02_addr, long target03_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1870358580", "WGPUFragmentState.internal_native_SetTargets__3");
             FFMHandles.internal_native_SetTargets__3__JJJJ.invokeExact(this_addr, target01_addr, target02_addr, target03_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -146,7 +138,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetTargets__4(long this_addr, long target01_addr, long target02_addr, long target03_addr, long target04_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3667508243", "WGPUFragmentState.internal_native_SetTargets__4");
             FFMHandles.internal_native_SetTargets__4__JJJJJ.invokeExact(this_addr, target01_addr, target02_addr, target03_addr, target04_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +150,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetModule(long this_addr, long shaderModule_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n653195855", "WGPUFragmentState.internal_native_SetModule");
             FFMHandles.internal_native_SetModule__JJ.invokeExact(this_addr, shaderModule_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -172,7 +162,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static void internal_native_SetConstants(long this_addr, long constants_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2921088044", "WGPUFragmentState.internal_native_SetConstants");
             FFMHandles.internal_native_SetConstants__JJ.invokeExact(this_addr, constants_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -191,7 +180,6 @@ public class WGPUFragmentState extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n462880768", "WGPUFragmentState.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

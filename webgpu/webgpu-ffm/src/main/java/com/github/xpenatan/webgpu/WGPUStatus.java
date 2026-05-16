@@ -43,7 +43,6 @@ public enum WGPUStatus implements NativeEnum<WGPUStatus> {
 
     private static int WGPUStatus_Success_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4285588909", "WGPUStatus.WGPUStatus_Success_NATIVE");
             return (int) FFMHandles.WGPUStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUStatus implements NativeEnum<WGPUStatus> {
 
     private static int WGPUStatus_Error_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n115932082", "WGPUStatus.WGPUStatus_Error_NATIVE");
             return (int) FFMHandles.WGPUStatus_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUStatus implements NativeEnum<WGPUStatus> {
 
     private static int WGPUStatus_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1711976756", "WGPUStatus.WGPUStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPUStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

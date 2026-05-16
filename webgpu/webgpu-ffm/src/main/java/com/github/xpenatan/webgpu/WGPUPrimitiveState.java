@@ -39,7 +39,6 @@ public class WGPUPrimitiveState extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3477020748", "WGPUPrimitiveState.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public class WGPUPrimitiveState extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3431639553", "WGPUPrimitiveState.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -65,7 +63,6 @@ public class WGPUPrimitiveState extends NativeObject {
 
     public static void internal_native_SetTopology(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3113475092", "WGPUPrimitiveState.internal_native_SetTopology");
             FFMHandles.internal_native_SetTopology__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,7 +75,6 @@ public class WGPUPrimitiveState extends NativeObject {
 
     public static void internal_native_SetStripIndexFormat(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1048626066", "WGPUPrimitiveState.internal_native_SetStripIndexFormat");
             FFMHandles.internal_native_SetStripIndexFormat__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -91,7 +87,6 @@ public class WGPUPrimitiveState extends NativeObject {
 
     public static void internal_native_SetFrontFace(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2946802797", "WGPUPrimitiveState.internal_native_SetFrontFace");
             FFMHandles.internal_native_SetFrontFace__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -104,7 +99,6 @@ public class WGPUPrimitiveState extends NativeObject {
 
     public static void internal_native_SetCullMode(long this_addr, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3831993102", "WGPUPrimitiveState.internal_native_SetCullMode");
             FFMHandles.internal_native_SetCullMode__JI.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

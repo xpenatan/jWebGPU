@@ -49,7 +49,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
 
     private static int WGPUTextureUsage_None_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1946110170", "WGPUTextureUsage.WGPUTextureUsage_None_NATIVE");
             return (int) FFMHandles.WGPUTextureUsage_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -58,7 +57,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
 
     private static int WGPUTextureUsage_CopySrc_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3221113881", "WGPUTextureUsage.WGPUTextureUsage_CopySrc_NATIVE");
             return (int) FFMHandles.WGPUTextureUsage_CopySrc_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -67,7 +65,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
 
     private static int WGPUTextureUsage_CopyDst_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3547112186", "WGPUTextureUsage.WGPUTextureUsage_CopyDst_NATIVE");
             return (int) FFMHandles.WGPUTextureUsage_CopyDst_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -76,7 +73,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
 
     private static int WGPUTextureUsage_TextureBinding_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2068087180", "WGPUTextureUsage.WGPUTextureUsage_TextureBinding_NATIVE");
             return (int) FFMHandles.WGPUTextureUsage_TextureBinding_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -85,7 +81,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
 
     private static int WGPUTextureUsage_StorageBinding_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n519940140", "WGPUTextureUsage.WGPUTextureUsage_StorageBinding_NATIVE");
             return (int) FFMHandles.WGPUTextureUsage_StorageBinding_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +89,6 @@ public enum WGPUTextureUsage implements NativeEnum<WGPUTextureUsage> {
 
     private static int WGPUTextureUsage_RenderAttachment_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2934002171", "WGPUTextureUsage.WGPUTextureUsage_RenderAttachment_NATIVE");
             return (int) FFMHandles.WGPUTextureUsage_RenderAttachment_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

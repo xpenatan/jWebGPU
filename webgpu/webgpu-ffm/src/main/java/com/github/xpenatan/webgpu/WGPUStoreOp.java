@@ -43,7 +43,6 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
 
     private static int WGPUStoreOp_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3414115900", "WGPUStoreOp.WGPUStoreOp_Undefined_NATIVE");
             return (int) FFMHandles.WGPUStoreOp_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
 
     private static int WGPUStoreOp_Store_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n591273933", "WGPUStoreOp.WGPUStoreOp_Store_NATIVE");
             return (int) FFMHandles.WGPUStoreOp_Store_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
 
     private static int WGPUStoreOp_Discard_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n125059338", "WGPUStoreOp.WGPUStoreOp_Discard_NATIVE");
             return (int) FFMHandles.WGPUStoreOp_Discard_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUStoreOp implements NativeEnum<WGPUStoreOp> {
 
     private static int WGPUStoreOp_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1476202230", "WGPUStoreOp.WGPUStoreOp_Force32_NATIVE");
             return (int) FFMHandles.WGPUStoreOp_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

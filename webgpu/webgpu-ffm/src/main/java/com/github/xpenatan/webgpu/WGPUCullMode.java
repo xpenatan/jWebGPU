@@ -48,7 +48,6 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
 
     private static int WGPUCullMode_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1810141466", "WGPUCullMode.WGPUCullMode_Undefined_NATIVE");
             return (int) FFMHandles.WGPUCullMode_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -57,7 +56,6 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
 
     private static int WGPUCullMode_None_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3031382266", "WGPUCullMode.WGPUCullMode_None_NATIVE");
             return (int) FFMHandles.WGPUCullMode_None_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -66,7 +64,6 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
 
     private static int WGPUCullMode_Front_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1327081203", "WGPUCullMode.WGPUCullMode_Front_NATIVE");
             return (int) FFMHandles.WGPUCullMode_Front_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -75,7 +72,6 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
 
     private static int WGPUCullMode_Back_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n776761257", "WGPUCullMode.WGPUCullMode_Back_NATIVE");
             return (int) FFMHandles.WGPUCullMode_Back_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -84,7 +80,6 @@ public enum WGPUCullMode implements NativeEnum<WGPUCullMode> {
 
     private static int WGPUCullMode_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3025369428", "WGPUCullMode.WGPUCullMode_Force32_NATIVE");
             return (int) FFMHandles.WGPUCullMode_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

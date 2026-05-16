@@ -51,7 +51,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_BindingNotUsed_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2307808721", "WGPUTextureSampleType.WGPUTextureSampleType_BindingNotUsed_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_BindingNotUsed_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -60,7 +59,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1991039862", "WGPUTextureSampleType.WGPUTextureSampleType_Undefined_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -69,7 +67,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_Float_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1150869634", "WGPUTextureSampleType.WGPUTextureSampleType_Float_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_Float_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,7 +75,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_UnfilterableFloat_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1509389847", "WGPUTextureSampleType.WGPUTextureSampleType_UnfilterableFloat_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_UnfilterableFloat_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -87,7 +83,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_Depth_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4107940329", "WGPUTextureSampleType.WGPUTextureSampleType_Depth_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_Depth_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -96,7 +91,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_Sint_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1553952898", "WGPUTextureSampleType.WGPUTextureSampleType_Sint_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_Sint_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -105,7 +99,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_Uint_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1812118336", "WGPUTextureSampleType.WGPUTextureSampleType_Uint_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_Uint_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -114,7 +107,6 @@ public enum WGPUTextureSampleType implements NativeEnum<WGPUTextureSampleType> {
 
     private static int WGPUTextureSampleType_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4129467056", "WGPUTextureSampleType.WGPUTextureSampleType_Force32_NATIVE");
             return (int) FFMHandles.WGPUTextureSampleType_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -36,7 +36,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static long internal_native_create_int_addr(int capacity) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3148949451", "WGPUByteBuffer.internal_native_create_int_addr");
             return (long) FFMHandles.internal_native_create_int_addr__I.invokeExact(capacity);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -63,7 +62,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1707950922", "WGPUByteBuffer.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -82,7 +80,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static long internal_native_Obtain_addr(int capacity) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n788167506", "WGPUByteBuffer.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__I.invokeExact(capacity);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +104,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static byte internal_native_get(long this_addr, int index) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2743892849", "WGPUByteBuffer.internal_native_get");
             return (byte) FFMHandles.internal_native_get__JI.invokeExact(this_addr, index);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,7 +116,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static void internal_native_put__0(long this_addr, byte value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2983183785", "WGPUByteBuffer.internal_native_put__0");
             FFMHandles.internal_native_put__0__JB.invokeExact(this_addr, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -133,7 +128,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static void internal_native_put__1(long this_addr, int index, byte value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4225566471", "WGPUByteBuffer.internal_native_put__1");
             FFMHandles.internal_native_put__1__JIB.invokeExact(this_addr, index, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -146,7 +140,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static byte internal_native_get(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3872631342", "WGPUByteBuffer.internal_native_get");
             return (byte) FFMHandles.internal_native_get__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +152,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static void internal_native_putInt(long this_addr, int byteIndex, int value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1632936786", "WGPUByteBuffer.internal_native_putInt");
             FFMHandles.internal_native_putInt__JII.invokeExact(this_addr, byteIndex, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -172,7 +164,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static int internal_native_getInt(long this_addr, int byteIndex) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3276903510", "WGPUByteBuffer.internal_native_getInt");
             return (int) FFMHandles.internal_native_getInt__JI.invokeExact(this_addr, byteIndex);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -185,7 +176,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static void internal_native_putFloat(long this_addr, int byteIndex, float value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1271108146", "WGPUByteBuffer.internal_native_putFloat");
             FFMHandles.internal_native_putFloat__JIF.invokeExact(this_addr, byteIndex, value);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -198,7 +188,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static float internal_native_getFloat(long this_addr, int byteIndex) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1235325449", "WGPUByteBuffer.internal_native_getFloat");
             return (float) FFMHandles.internal_native_getFloat__JI.invokeExact(this_addr, byteIndex);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -223,7 +212,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static int internal_native_getCapacity(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1330516884", "WGPUByteBuffer.internal_native_getCapacity");
             return (int) FFMHandles.internal_native_getCapacity__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -248,7 +236,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static int internal_native_getPosition(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4125949061", "WGPUByteBuffer.internal_native_getPosition");
             return (int) FFMHandles.internal_native_getPosition__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -273,7 +260,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static int internal_native_getLimit(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2244388551", "WGPUByteBuffer.internal_native_getLimit");
             return (int) FFMHandles.internal_native_getLimit__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -316,7 +302,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static long internal_native_asFloatBuffer_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3174802310", "WGPUByteBuffer.internal_native_asFloatBuffer_addr");
             return (long) FFMHandles.internal_native_asFloatBuffer_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -335,7 +320,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static long internal_native_asIntBuffer_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2802307993", "WGPUByteBuffer.internal_native_asIntBuffer_addr");
             return (long) FFMHandles.internal_native_asIntBuffer_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -354,7 +338,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static long internal_native_asLongBuffer_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n482309666", "WGPUByteBuffer.internal_native_asLongBuffer_addr");
             return (long) FFMHandles.internal_native_asLongBuffer_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -373,7 +356,6 @@ public class WGPUByteBuffer extends NativeObject {
 
     public static long internal_native_asShortBuffer_addr(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3492332966", "WGPUByteBuffer.internal_native_asShortBuffer_addr");
             return (long) FFMHandles.internal_native_asShortBuffer_addr__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -39,7 +39,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n854939534", "WGPUBlendComponent.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static void internal_native_SetOperation(long this_addr, int operation) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n427907726", "WGPUBlendComponent.internal_native_SetOperation");
             FFMHandles.internal_native_SetOperation__JI.invokeExact(this_addr, operation);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -72,7 +70,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static int internal_native_GetOperation(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1219508159", "WGPUBlendComponent.internal_native_GetOperation");
             return (int) FFMHandles.internal_native_GetOperation__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -85,7 +82,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static void internal_native_SetSrcFactor(long this_addr, int factor) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3881242914", "WGPUBlendComponent.internal_native_SetSrcFactor");
             FFMHandles.internal_native_SetSrcFactor__JI.invokeExact(this_addr, factor);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -105,7 +101,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static int internal_native_GetSrcFactor(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2876266579", "WGPUBlendComponent.internal_native_GetSrcFactor");
             return (int) FFMHandles.internal_native_GetSrcFactor__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -118,7 +113,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static void internal_native_SetDstFactor(long this_addr, int factor) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2921622305", "WGPUBlendComponent.internal_native_SetDstFactor");
             FFMHandles.internal_native_SetDstFactor__JI.invokeExact(this_addr, factor);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -138,7 +132,6 @@ public class WGPUBlendComponent extends NativeObject {
 
     public static int internal_native_GetDstFactor(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3770714578", "WGPUBlendComponent.internal_native_GetDstFactor");
             return (int) FFMHandles.internal_native_GetDstFactor__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

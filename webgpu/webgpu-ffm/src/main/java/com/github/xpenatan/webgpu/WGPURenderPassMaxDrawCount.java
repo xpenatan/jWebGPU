@@ -28,7 +28,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2558172942", "WGPURenderPassMaxDrawCount.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n46781168", "WGPURenderPassMaxDrawCount.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     public static void internal_native_SetMaxDrawCount(long this_addr, int maxDrawCount) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n685366584", "WGPURenderPassMaxDrawCount.internal_native_SetMaxDrawCount");
             FFMHandles.internal_native_SetMaxDrawCount__JI.invokeExact(this_addr, maxDrawCount);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     public static int internal_native_GetMaxDrawCount(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n328792833", "WGPURenderPassMaxDrawCount.internal_native_GetMaxDrawCount");
             return (int) FFMHandles.internal_native_GetMaxDrawCount__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -100,7 +96,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1711755287", "WGPURenderPassMaxDrawCount.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

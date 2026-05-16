@@ -28,7 +28,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n612280809", "WGPUTextureViewDescriptor.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -55,7 +54,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3748747509", "WGPUTextureViewDescriptor.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -68,7 +66,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetLabel(long this_addr, String value) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2129519480", "WGPUTextureViewDescriptor.internal_native_SetLabel");
             FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -81,7 +78,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetNextInChain(long this_addr, long chainedStruct_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1435504952", "WGPUTextureViewDescriptor.internal_native_SetNextInChain");
             FFMHandles.internal_native_SetNextInChain__JJ.invokeExact(this_addr, chainedStruct_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -94,7 +90,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetFormat(long this_addr, int format) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3101308419", "WGPUTextureViewDescriptor.internal_native_SetFormat");
             FFMHandles.internal_native_SetFormat__JI.invokeExact(this_addr, format);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -107,7 +102,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetDimension(long this_addr, int dimension) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2600552278", "WGPUTextureViewDescriptor.internal_native_SetDimension");
             FFMHandles.internal_native_SetDimension__JI.invokeExact(this_addr, dimension);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -120,7 +114,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetBaseMipLevel(long this_addr, int baseMipLevel) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1999159929", "WGPUTextureViewDescriptor.internal_native_SetBaseMipLevel");
             FFMHandles.internal_native_SetBaseMipLevel__JI.invokeExact(this_addr, baseMipLevel);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -133,7 +126,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetMipLevelCount(long this_addr, int mipLevelCount) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2895172349", "WGPUTextureViewDescriptor.internal_native_SetMipLevelCount");
             FFMHandles.internal_native_SetMipLevelCount__JI.invokeExact(this_addr, mipLevelCount);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -146,7 +138,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetBaseArrayLayer(long this_addr, int baseArrayLayer) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2158437137", "WGPUTextureViewDescriptor.internal_native_SetBaseArrayLayer");
             FFMHandles.internal_native_SetBaseArrayLayer__JI.invokeExact(this_addr, baseArrayLayer);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +150,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetArrayLayerCount(long this_addr, int arrayLayerCount) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n920795557", "WGPUTextureViewDescriptor.internal_native_SetArrayLayerCount");
             FFMHandles.internal_native_SetArrayLayerCount__JI.invokeExact(this_addr, arrayLayerCount);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -172,7 +162,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetAspect(long this_addr, int aspect) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2386458306", "WGPUTextureViewDescriptor.internal_native_SetAspect");
             FFMHandles.internal_native_SetAspect__JI.invokeExact(this_addr, aspect);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -185,7 +174,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static void internal_native_SetUsage(long this_addr, int usage) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4176204283", "WGPUTextureViewDescriptor.internal_native_SetUsage");
             FFMHandles.internal_native_SetUsage__JI.invokeExact(this_addr, usage);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -204,7 +192,6 @@ public class WGPUTextureViewDescriptor extends NativeObject {
 
     public static long internal_native_Obtain_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4060830450", "WGPUTextureViewDescriptor.internal_native_Obtain_addr");
             return (long) FFMHandles.internal_native_Obtain_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

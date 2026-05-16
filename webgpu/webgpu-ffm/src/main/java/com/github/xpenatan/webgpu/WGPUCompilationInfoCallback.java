@@ -47,7 +47,6 @@ public class WGPUCompilationInfoCallback extends NativeObject {
 
     public static void internal_native_deleteNative(long this_addr) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n92349756", "WGPUCompilationInfoCallback.internal_native_deleteNative");
             FFMHandles.internal_native_deleteNative__J.invokeExact(this_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -93,7 +92,6 @@ public class WGPUCompilationInfoCallback extends NativeObject {
 
     public static long internal_native_create_addr() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4013165890", "WGPUCompilationInfoCallback.internal_native_create_addr");
             return (long) FFMHandles.internal_native_create_addr__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -118,7 +116,6 @@ public class WGPUCompilationInfoCallback extends NativeObject {
 
     public static void internal_native_setupCallback(long this_addr, long OnCallback_fp) {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4127509048", "WGPUCompilationInfoCallback.internal_native_setupCallback");
             FFMHandles.internal_native_setupCallback__JJ.invokeExact(this_addr, OnCallback_fp);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -60,7 +60,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_DepthClipControl_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3448659404", "WGPUFeatureName.WGPUFeatureName_DepthClipControl_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_DepthClipControl_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -69,7 +68,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_Depth32FloatStencil8_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n336434648", "WGPUFeatureName.WGPUFeatureName_Depth32FloatStencil8_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_Depth32FloatStencil8_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -78,7 +76,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_TimestampQuery_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4262974708", "WGPUFeatureName.WGPUFeatureName_TimestampQuery_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_TimestampQuery_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -87,7 +84,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_TextureCompressionBC_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2809902958", "WGPUFeatureName.WGPUFeatureName_TextureCompressionBC_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionBC_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -96,7 +92,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1419894673", "WGPUFeatureName.WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionBCSliced3D_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -105,7 +100,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_TextureCompressionETC2_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2741507499", "WGPUFeatureName.WGPUFeatureName_TextureCompressionETC2_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionETC2_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -114,7 +108,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_TextureCompressionASTC_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n19443598", "WGPUFeatureName.WGPUFeatureName_TextureCompressionASTC_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionASTC_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -123,7 +116,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n375699377", "WGPUFeatureName.WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_TextureCompressionASTCSliced3D_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -132,7 +124,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_IndirectFirstInstance_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n394261665", "WGPUFeatureName.WGPUFeatureName_IndirectFirstInstance_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_IndirectFirstInstance_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -141,7 +132,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_ShaderF16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1727920592", "WGPUFeatureName.WGPUFeatureName_ShaderF16_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_ShaderF16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -150,7 +140,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_RG11B10UfloatRenderable_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2116666413", "WGPUFeatureName.WGPUFeatureName_RG11B10UfloatRenderable_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_RG11B10UfloatRenderable_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -159,7 +148,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_BGRA8UnormStorage_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1879765560", "WGPUFeatureName.WGPUFeatureName_BGRA8UnormStorage_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_BGRA8UnormStorage_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -168,7 +156,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_Float32Filterable_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3946489047", "WGPUFeatureName.WGPUFeatureName_Float32Filterable_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_Float32Filterable_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -177,7 +164,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_Float32Blendable_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n4021905490", "WGPUFeatureName.WGPUFeatureName_Float32Blendable_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_Float32Blendable_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -186,7 +172,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_ClipDistances_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3029564056", "WGPUFeatureName.WGPUFeatureName_ClipDistances_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_ClipDistances_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -195,7 +180,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_DualSourceBlending_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1433950826", "WGPUFeatureName.WGPUFeatureName_DualSourceBlending_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_DualSourceBlending_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -204,7 +188,6 @@ public enum WGPUFeatureName implements NativeEnum<WGPUFeatureName> {
 
     private static int WGPUFeatureName_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3476861556", "WGPUFeatureName.WGPUFeatureName_Force32_NATIVE");
             return (int) FFMHandles.WGPUFeatureName_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

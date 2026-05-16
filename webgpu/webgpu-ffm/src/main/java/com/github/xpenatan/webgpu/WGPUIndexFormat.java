@@ -43,7 +43,6 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
 
     private static int WGPUIndexFormat_Undefined_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1803911114", "WGPUIndexFormat.WGPUIndexFormat_Undefined_NATIVE");
             return (int) FFMHandles.WGPUIndexFormat_Undefined_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
 
     private static int WGPUIndexFormat_Uint16_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1778270737", "WGPUIndexFormat.WGPUIndexFormat_Uint16_NATIVE");
             return (int) FFMHandles.WGPUIndexFormat_Uint16_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
 
     private static int WGPUIndexFormat_Uint32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n25126987", "WGPUIndexFormat.WGPUIndexFormat_Uint32_NATIVE");
             return (int) FFMHandles.WGPUIndexFormat_Uint32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPUIndexFormat implements NativeEnum<WGPUIndexFormat> {
 
     private static int WGPUIndexFormat_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3686814724", "WGPUIndexFormat.WGPUIndexFormat_Force32_NATIVE");
             return (int) FFMHandles.WGPUIndexFormat_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

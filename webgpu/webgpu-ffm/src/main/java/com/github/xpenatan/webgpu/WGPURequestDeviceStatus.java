@@ -43,7 +43,6 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
 
     private static int WGPURequestDeviceStatus_Success_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2952556505", "WGPURequestDeviceStatus.WGPURequestDeviceStatus_Success_NATIVE");
             return (int) FFMHandles.WGPURequestDeviceStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
 
     private static int WGPURequestDeviceStatus_Error_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3068731614", "WGPURequestDeviceStatus.WGPURequestDeviceStatus_Error_NATIVE");
             return (int) FFMHandles.WGPURequestDeviceStatus_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPURequestDeviceStatus implements NativeEnum<WGPURequestDeviceStatu
 
     private static int WGPURequestDeviceStatus_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n378944352", "WGPURequestDeviceStatus.WGPURequestDeviceStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPURequestDeviceStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);

@@ -43,7 +43,6 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
 
     private static int WGPURequestAdapterStatus_Success_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n2040399981", "WGPURequestAdapterStatus.WGPURequestAdapterStatus_Success_NATIVE");
             return (int) FFMHandles.WGPURequestAdapterStatus_Success_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -52,7 +51,6 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
 
     private static int WGPURequestAdapterStatus_Unavailable_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1491775930", "WGPURequestAdapterStatus.WGPURequestAdapterStatus_Unavailable_NATIVE");
             return (int) FFMHandles.WGPURequestAdapterStatus_Unavailable_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -61,7 +59,6 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
 
     private static int WGPURequestAdapterStatus_Error_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n1266667122", "WGPURequestAdapterStatus.WGPURequestAdapterStatus_Error_NATIVE");
             return (int) FFMHandles.WGPURequestAdapterStatus_Error_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
@@ -70,7 +67,6 @@ public enum WGPURequestAdapterStatus implements NativeEnum<WGPURequestAdapterSta
 
     private static int WGPURequestAdapterStatus_Force32_NATIVE() {
         try {
-            com.github.xpenatan.jparser.runtime.helper.FFMCriticalCrashTrace.mark("n3761755124", "WGPURequestAdapterStatus.WGPURequestAdapterStatus_Force32_NATIVE");
             return (int) FFMHandles.WGPURequestAdapterStatus_Force32_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
