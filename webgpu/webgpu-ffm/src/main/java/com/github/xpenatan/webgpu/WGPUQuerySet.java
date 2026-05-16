@@ -161,7 +161,7 @@ public class WGPUQuerySet extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_Release__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n273291499", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_Destroy__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n924033240", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+        static final java.lang.invoke.MethodHandle internal_native_Destroy__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n924033240", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetCount__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2844666085", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 

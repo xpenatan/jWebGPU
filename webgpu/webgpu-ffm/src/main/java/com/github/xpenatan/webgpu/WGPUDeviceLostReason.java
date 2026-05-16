@@ -77,7 +77,7 @@ public enum WGPUDeviceLostReason implements NativeEnum<WGPUDeviceLostReason> {
 
         static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Unknown_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1161476788", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
-        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Destroyed_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n4274150531", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_Destroyed_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n4274150531", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle WGPUDeviceLostReason_FailedCreation_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n759626078", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
