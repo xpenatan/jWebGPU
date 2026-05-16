@@ -47,6 +47,11 @@ public class WGPUBuild {
                     return FFMCriticalMode.ENABLE;
                 }
                 String javaMethodName = methodData.javaMethodName.toLowerCase();
+
+                if(javaMethodName.contains("mapasync_addr")) {
+                    return FFMCriticalMode.DISABLE;
+                }
+
                 boolean critical = javaMethodName.contains("_addr") ||
                         javaMethodName.contains("_set") ||
                         javaMethodName.contains("_get") ||
