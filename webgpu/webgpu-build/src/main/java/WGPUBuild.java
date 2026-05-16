@@ -48,7 +48,7 @@ public class WGPUBuild {
                 }
                 String javaMethodName = methodData.javaMethodName.toLowerCase();
 
-                if(javaMethodName.contains("mapasync_addr")) {
+                if(javaMethodName.contains("_destroy") || javaMethodName.contains("mapasync_addr")) {
                     return FFMCriticalMode.DISABLE;
                 }
 
@@ -59,7 +59,6 @@ public class WGPUBuild {
                         javaMethodName.contains("_has") ||
                         javaMethodName.contains("_create") ||
                         javaMethodName.contains("_release") ||
-                        javaMethodName.contains("_destroy") ||
                         javaMethodName.contains("_isvalid") ||
                         javaMethodName.contains("deletenative");
 //
