@@ -27,6 +27,7 @@ It keeps one Java-facing API shape and generates target-specific glue/code for:
 ## Table of Contents
 
 - [Quick Start](#quick-start)
+- [Ecosystem](#ecosystem)
 - [Project Structure](#project-structure)
 - [Build Commands](#build-commands)
   - [JNI](#jni)
@@ -49,6 +50,10 @@ Before local builds, ensure your environment is set up for your target:
 - JNI/FFM Windows native builds: Visual Studio C++ tools.
 - TeaVM web builds: emscripten.
 - Android builds: Android NDK.
+
+## Ecosystem
+
+For LibGDX projects, [gdx-webgpu](https://github.com/MonstrousSoftware/gdx-webgpu) is a more feature-complete backend extension built on top of jWebGPU. It provides LibGDX-style WebGPU graphics classes and platform launchers for desktop, web, and Android applications.
 
 ## Project Structure
 
