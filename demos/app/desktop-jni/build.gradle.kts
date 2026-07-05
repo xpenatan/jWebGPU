@@ -19,17 +19,20 @@ dependencies {
         api("com.github.xpenatan.jWebGPU:webgpu-jni-desktop:-SNAPSHOT")
     }
     else {
-        api(project(":webgpu:webgpu-jni"))
+        api(project(":webgpu:shared:jni"))
+        api(project(":webgpu:desktop:jni"))
     }
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.app.Main"
+val jwebgpuBackend = providers.gradleProperty("jwebgpuBackend").orElse("wgpu")
 
 tasks.register<JavaExec>("webgpu_demo_app_run_desktop_jni") {
     group = "demos"
     description = "Run desktop demo using JNI bridge"
     mainClass.set(mainClassName)
     classpath = sourceSets["main"].runtimeClasspath
+    systemProperty("jwebgpu.backend", jwebgpuBackend.get())
     systemProperty("studio.capture", "false")
     systemProperty("studio.capture.shadow", "false")
     systemProperty("studio.capture.shadow.diagnostics", "false")

@@ -16,20 +16,21 @@ dependencies {
 
     if(LibExt.exampleUseRepoLibs) {
         api("com.github.xpenatan.jWebGPU:webgpu-ffm:-SNAPSHOT")
-        api("com.github.xpenatan.jWebGPU:webgpu-ffm-desktop:-SNAPSHOT")
     }
     else {
-        api(project(":webgpu:webgpu-ffm"))
+        api(project(":webgpu:desktop:ffm"))
     }
 }
 
 val mainClassName = "com.github.xpenatan.webgpu.demo.app.Main"
+val jwebgpuBackend = providers.gradleProperty("jwebgpuBackend").orElse("wgpu")
 
 tasks.register<JavaExec>("webgpu_demo_app_run_desktop_ffm") {
     group = "demos"
     description = "Run desktop demo using FFM bridge"
     mainClass.set(mainClassName)
     classpath = sourceSets["main"].runtimeClasspath
+    systemProperty("jwebgpu.backend", jwebgpuBackend.get())
     jvmArgs("--enable-native-access=ALL-UNNAMED")
     systemProperty("studio.capture", "false")
     systemProperty("studio.capture.shadow", "false")

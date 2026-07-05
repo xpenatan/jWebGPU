@@ -20,7 +20,11 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
+        mavenLocal {
+            content {
+                excludeGroup("com.github.xpenatan.jParser")
+            }
+        }
         google()
         mavenCentral()
         maven { url = uri("https://central.sonatype.com/repository/maven-snapshots/") }

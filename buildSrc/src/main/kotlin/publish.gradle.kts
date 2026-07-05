@@ -3,11 +3,12 @@ import java.nio.file.Paths
 import java.net.URLEncoder
 
 var libProjects = mutableSetOf(
-    project(":webgpu:webgpu-core"),
-    project(":webgpu:webgpu-jni"),
-    project(":webgpu:webgpu-ffm"),
-    project(":webgpu:webgpu-web"),
-    project(":webgpu:webgpu-android"),
+    project(":webgpu:core"),
+    project(":webgpu:shared:jni"),
+    project(":webgpu:desktop:jni"),
+    project(":webgpu:desktop:ffm"),
+    project(":webgpu:web:wasm"),
+    project(":webgpu:android:jni"),
 )
 
 val taskNames = gradle.startParameter.taskNames

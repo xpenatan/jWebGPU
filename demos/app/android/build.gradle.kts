@@ -2,6 +2,15 @@ plugins {
     id("com.android.application")
 }
 
+val releaseKeystoreFile = file(System.getenv("KEYSTORE_FILE") ?: "keystore.jks")
+val releaseStorePassword = System.getenv("KEYSTORE_PASSWORD")
+val releaseKeyAlias = System.getenv("KEY_ALIAS")
+val releaseKeyPassword = System.getenv("KEY_PASSWORD")
+val hasReleaseSigning = releaseKeystoreFile.exists()
+        && !releaseStorePassword.isNullOrBlank()
+        && !releaseKeyAlias.isNullOrBlank()
+        && !releaseKeyPassword.isNullOrBlank()
+
 android {
     namespace = "com.github.xpenatan.webgpu.demo"
     compileSdk = 36
@@ -15,17 +24,21 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            storeFile = file(System.getenv("KEYSTORE_FILE") ?: "keystore.jks")
-            storePassword = System.getenv("KEYSTORE_PASSWORD")
-            keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
+        if(hasReleaseSigning) {
+            create("release") {
+                storeFile = releaseKeystoreFile
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
         }
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            if(hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }

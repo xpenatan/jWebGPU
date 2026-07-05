@@ -14,6 +14,6 @@ dependencies {
         compileOnlyApi("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
     }
     else {
-        compileOnlyApi(project(":webgpu:webgpu-core"))
+        compileOnlyApi(project(":webgpu:core"))
     }
 }

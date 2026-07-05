@@ -33,6 +33,6 @@ dependencies {
         api("com.github.xpenatan.jWebGPU:webgpu-android:-SNAPSHOT")
     }
     else {
-        api(project(":webgpu:webgpu-android"))
+        api(project(":webgpu:android:jni"))
     }
 }

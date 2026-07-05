@@ -17,8 +17,8 @@ dependencies {
         api("com.github.xpenatan.jWebGPU:webgpu-web_wasm:-SNAPSHOT")
     }
     else {
-        api(project(":webgpu:webgpu-core"))
-        api(project(":webgpu:webgpu-web"))
+        api(project(":webgpu:core"))
+        api(project(":webgpu:web:wasm"))
     }
     implementation("com.github.xpenatan:jMultiplatform:${LibExt.jMultiplatform}")
 

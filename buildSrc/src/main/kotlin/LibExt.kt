@@ -11,18 +11,18 @@ object LibExt {
         }
 
     const val javaMainTarget = "1.8"
-    const val javaWebTarget = "11"
+    const val javaWebTarget = "17"
     const val javaFFMTarget = "25"
 
     //Library dependencies
-    const val jParserVersion = "1.1.4"
-    const val teaVMVersion = "0.14.0"
+    const val jParserVersion = "-SNAPSHOT"
+    const val teaVMVersion = "0.15.0"
     const val jMultiplatform = "0.1.3"
 
     //Example dependencies
     const val jUnitVersion = "4.12"
 
-    const val exampleUseRepoLibs = true
+    const val exampleUseRepoLibs = false
 }
 
 private fun getVersion(): String {

@@ -22,7 +22,7 @@ dependencies {
         compileOnly("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
     }
     else {
-        compileOnly(project(":webgpu:webgpu-core"))
+        compileOnly(project(":webgpu:core"))
     }
 
     implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))

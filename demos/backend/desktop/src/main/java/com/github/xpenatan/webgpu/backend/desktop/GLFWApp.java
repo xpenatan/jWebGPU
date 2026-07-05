@@ -5,6 +5,7 @@ import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
+import java.util.Locale;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
@@ -30,7 +31,7 @@ public class GLFWApp {
     public GLFWApp(ApplicationListener applicationInterface) {
         openWindow();
 
-        JWebGPULoader.init(JWebGPUBackend.DAWN, (isSuccess, e) -> {
+        JWebGPULoader.init(resolveBackend(), (isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;
@@ -150,6 +151,19 @@ public class GLFWApp {
         }
         else if(osName.contains("mac")) {
             wgpu.surface = wgpu.instance.createMacSurface(voidHandle);
+        }
+    }
+
+    private JWebGPUBackend resolveBackend() {
+        String backendName = System.getProperty("jwebgpu.backend", "wgpu").trim();
+        if(backendName.isEmpty()) {
+            return JWebGPUBackend.WGPU;
+        }
+        try {
+            return JWebGPUBackend.valueOf(backendName.toUpperCase(Locale.ROOT));
+        }
+        catch(IllegalArgumentException e) {
+            throw new IllegalArgumentException("Unsupported jwebgpu.backend: " + backendName + ". Expected wgpu or dawn.", e);
         }
     }
 }

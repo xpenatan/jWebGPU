@@ -12,65 +12,37 @@ jWebGPU is a Java binding stack for WebGPU APIs across desktop, Android, and web
 - Browser example: [Studio demo](https://xpenatan.github.io/jWebGPU/index.html?demo=studio)
 - Android app: [Google Play](https://play.google.com/store/apps/details?id=com.github.xpenatan.webgpu.demo)
 
-## What this project is for
+## What This Project Is For
 
 - Build and ship WebGPU-capable Java apps across multiple runtimes.
-- Reuse the same API model while swapping backend/runtime packaging per platform.
-- Generate and package bindings from `webgpu-base` + IDL/native sources.
+- Reuse the same Java-facing API while swapping backend/runtime packaging per platform.
+- Generate bindings from `webgpu/base` templates plus `webgpu/builder` IDL/native sources using the jParser Gradle plugin.
 
-It keeps one Java-facing API shape and generates target-specific glue/code for:
+Targets:
+
 - JNI desktop runtime
 - FFM desktop runtime
 - TeaVM/WebAssembly web runtime
 - Android JNI runtime
 
-## Table of Contents
-
-- [Quick Start](#quick-start)
-- [Ecosystem](#ecosystem)
-- [Project Structure](#project-structure)
-- [Build Commands](#build-commands)
-  - [JNI](#jni)
-  - [FFM](#ffm)
-  - [TeaVM Web](#teavm-web)
-  - [Android JNI](#android-jni)
-- [Run Examples](#run-examples)
-- [CI Build Matrix](#ci-build-matrix)
-- [Development Notes](#development-notes)
-- [Installation](#installation)
-- [License](#license)
-
-## Quick Start
-
-Use `./gradlew` on macOS/Linux and `gradlew.bat` on Windows.
-
-Windows examples in this README use `gradlew.bat`.
-
-Before local builds, ensure your environment is set up for your target:
-- JNI/FFM Windows native builds: Visual Studio C++ tools.
-- TeaVM web builds: emscripten.
-- Android builds: Android NDK.
-
-## Ecosystem
-
-For LibGDX projects, [gdx-webgpu](https://github.com/MonstrousSoftware/gdx-webgpu) is a more feature-complete backend extension built on top of jWebGPU. It provides LibGDX-style WebGPU graphics classes and platform launchers for desktop, web, and Android applications.
-
 ## Project Structure
 
 Canonical modules are defined in `settings.gradle.kts`.
 
-### Core library modules
+Library modules:
 
-- `:webgpu:webgpu-base` - hand-authored Java templates and directive blocks.
-- `:webgpu:webgpu-build` - generation and native build driver (`WGPUBuild`).
-- `:webgpu:webgpu-core` - generated Java API layer.
-- `:webgpu:webgpu-jni` - JNI runtime packaging.
-- `:webgpu:webgpu-ffm` - FFM runtime packaging.
-- `:webgpu:webgpu-web` - TeaVM/Web runtime packaging.
-- `:webgpu:webgpu-android` - Android runtime packaging.
-- `:webgpu:webgpu-download` - native dependency download tasks.
+- `:webgpu:download` - native dependency download tasks.
+- `:webgpu:dawn` - experimental Dawn source build helpers.
+- `:webgpu:builder` - jParser plugin configuration and native build driver.
+- `:webgpu:base` - hand-authored Java templates and directive blocks.
+- `:webgpu:core` - generated Java API layer.
+- `:webgpu:shared:jni` - generated JNI Java runtime.
+- `:webgpu:desktop:jni` - desktop JNI native packaging.
+- `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging.
+- `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging.
+- `:webgpu:android:jni` - Android JNI runtime packaging.
 
-### Example app modules
+Demo modules:
 
 - `:demos:app:desktop-jni`
 - `:demos:app:desktop-ffm`
@@ -79,112 +51,77 @@ Canonical modules are defined in `settings.gradle.kts`.
 
 ## Build Commands
 
-### JNI
+Download tasks are manual prerequisites for native builds. `jParser_build_*` tasks do not run them automatically.
 
-#### Windows (wgpu + dawn)
-
-```powershell
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_glfw_windows
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_windows_x86_64_wgpu
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_jni
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_jni
-```
-
-#### Linux (wgpu)
-
-```bash
-./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_glfw_windows
-./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_jni
-```
-
-#### macOS (wgpu x86_64 + arm64)
-
-```bash
-./gradlew :webgpu:webgpu-download:webgpu_download_macos_x86_64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_macos_aarch64_wgpu
-./gradlew :webgpu:webgpu-download:webgpu_download_glfw_windows
-./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_jni
-./gradlew :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_jni
-```
-
-### FFM
-
-#### Windows (wgpu + dawn)
+Generate Java bindings:
 
 ```powershell
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_ffm
+.\gradlew.bat :webgpu:builder:jParser_generate
 ```
 
-#### Linux (wgpu)
-
-```bash
-./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_ffm
-```
-
-#### macOS (wgpu x86_64 + arm64)
-
-```bash
-./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_ffm
-./gradlew :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_ffm
-```
-
-### TeaVM Web
+Windows JNI/FFM:
 
 ```powershell
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_web_dawn_wasm
+.\gradlew.bat :webgpu:download:webgpu_download_glfw_windows
+.\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_jni
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm
 ```
 
-### Android JNI
+Linux JNI/FFM:
+
+```bash
+./gradlew :webgpu:download:webgpu_download_linux_x86_64_wgpu
+./gradlew :webgpu:download:webgpu_download_glfw_windows
+./gradlew :webgpu:builder:jParser_build_linux64_jni
+./gradlew :webgpu:builder:jParser_build_linux64_ffm
+```
+
+macOS JNI/FFM:
+
+```bash
+./gradlew :webgpu:download:webgpu_download_macos_x86_64_wgpu
+./gradlew :webgpu:download:webgpu_download_macos_aarch64_wgpu
+./gradlew :webgpu:download:webgpu_download_glfw_windows
+./gradlew :webgpu:builder:jParser_build_mac64_jni
+./gradlew :webgpu:builder:jParser_build_macArm_jni
+./gradlew :webgpu:builder:jParser_build_mac64_ffm
+./gradlew :webgpu:builder:jParser_build_macArm_ffm
+```
+
+TeaVM/WebAssembly:
 
 ```powershell
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_x86_64_wgpu
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_i686_wgpu
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu
-.\gradlew.bat :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
-.\gradlew.bat :webgpu:webgpu-build:webgpu_build_project_android_wgpu_jni
+.\gradlew.bat :webgpu:download:webgpu_download_emdawnwebgpu
+.\gradlew.bat :webgpu:builder:jParser_build_web_wasm
 ```
 
-Generated native outputs are placed under `webgpu/webgpu-build/build/c++/libs/`.
+Android JNI:
 
-## Run Examples
+```powershell
+.\gradlew.bat :webgpu:download:webgpu_download_android_x86_64_wgpu
+.\gradlew.bat :webgpu:download:webgpu_download_android_i686_wgpu
+.\gradlew.bat :webgpu:download:webgpu_download_android_armv7_wgpu
+.\gradlew.bat :webgpu:download:webgpu_download_android_aarch64_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_android_jni
+```
 
-Desktop and web demo tasks are explicitly declared in demo module Gradle files.
+Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
+
+## Run Demos
 
 ```powershell
 .\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
 .\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm
 .\gradlew.bat :demos:app:web:webgpu_demo_app_run_web
-```
-
-Android demo install (provided by Android plugin tasking):
-
-```powershell
 .\gradlew.bat :demos:app:android:installDebug
 ```
 
-## CI Build Matrix
-
-From `.github/workflows/build_and_upload.yml`:
-
-- Windows: JNI + FFM (`wgpu` and `dawn`).
-- Linux: JNI + FFM (`wgpu`).
-- macOS: JNI + FFM (`wgpu`).
-- TeaVM: web build with `webgpu_build_project_web_dawn_wasm`.
-- Android: JNI build with `webgpu_build_project_android_wgpu_jni`.
-
 ## Development Notes
 
-- Primary edit locations:
-  - `webgpu/webgpu-base/src/main/java/**`
-  - `webgpu/webgpu-build/src/main/cpp/**`
-- Avoid manual edits in generated targets:
-  - `webgpu/webgpu-core/src/main/java/**`
-  - `webgpu/webgpu-ffm/src/main/java/**`
-  - `webgpu/webgpu-web/src/main/java/**`
+- Edit binding templates in `webgpu/base/src/main/java/**`.
+- Edit IDL and native glue in `webgpu/builder/src/main/cpp/**`.
+- Do not hand-edit generated Java under `webgpu/core`, `webgpu/shared/jni`, `webgpu/desktop/ffm`, or `webgpu/web/wasm`.
 
 ## Installation
 
@@ -196,11 +133,17 @@ dependencies {
 
     // Choose one runtime target
     implementation("com.github.xpenatan.jWebGPU:webgpu-jni:<version>")
+    implementation("com.github.xpenatan.jWebGPU:webgpu-jni-desktop:<version>")
+
     // implementation("com.github.xpenatan.jWebGPU:webgpu-ffm:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android:<version>")
 }
 ```
+
+## Ecosystem
+
+For LibGDX projects, [gdx-webgpu](https://github.com/MonstrousSoftware/gdx-webgpu) is a higher-level backend extension built on top of jWebGPU.
 
 ## Support
 

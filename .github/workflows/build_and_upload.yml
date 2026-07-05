@@ -48,19 +48,19 @@ jobs:
           value: $env:PATH;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-download:webgpu_download_windows_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows :webgpu:webgpu-download:webgpu_download_windows_x86_64_dawn
+        run: ./gradlew :webgpu:download:webgpu_download_windows_x86_64_wgpu :webgpu:download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_jni :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_jni
+        run: ./gradlew :webgpu:builder:jParser_build_windows64_jni
 
       - name: Build FFM project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_windows64_wgpu_ffm :webgpu:webgpu-build:webgpu_build_project_windows64_dawn_ffm
+        run: ./gradlew :webgpu:builder:jParser_build_windows64_ffm
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: windows-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
   build_linux:
     name: Build Linux
@@ -85,19 +85,19 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-download:webgpu_download_linux_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows
+        run: ./gradlew :webgpu:download:webgpu_download_linux_x86_64_wgpu :webgpu:download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_jni
+        run: ./gradlew :webgpu:builder:jParser_build_linux64_jni
 
       - name: Build FFM project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_linux64_wgpu_ffm
+        run: ./gradlew :webgpu:builder:jParser_build_linux64_ffm
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: linux-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
   build_mac:
     name: Build Mac
@@ -122,19 +122,19 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-download:webgpu_download_macos_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_macos_aarch64_wgpu :webgpu:webgpu-download:webgpu_download_glfw_windows
+        run: ./gradlew :webgpu:download:webgpu_download_macos_x86_64_wgpu :webgpu:download:webgpu_download_macos_aarch64_wgpu :webgpu:download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_jni :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_jni
+        run: ./gradlew :webgpu:builder:jParser_build_mac64_jni :webgpu:builder:jParser_build_macArm_jni
 
       - name: Build FFM project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_mac64_wgpu_ffm :webgpu:webgpu-build:webgpu_build_project_macArm_wgpu_ffm
+        run: ./gradlew :webgpu:builder:jParser_build_mac64_ffm :webgpu:builder:jParser_build_macArm_ffm
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: mac-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
   build_teavm:
     name: Build TeaVM
@@ -164,16 +164,16 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-download:webgpu_download_emdawnwebgpu
+        run: ./gradlew :webgpu:download:webgpu_download_emdawnwebgpu
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_web_dawn_wasm
+        run: ./gradlew :webgpu:builder:jParser_build_web_wasm
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: teavm-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
   build_android:
     name: Build Android
@@ -206,10 +206,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:webgpu-download:webgpu_download_android_x86_64_wgpu :webgpu:webgpu-download:webgpu_download_android_i686_wgpu :webgpu:webgpu-download:webgpu_download_android_armv7_wgpu :webgpu:webgpu-download:webgpu_download_android_aarch64_wgpu
+        run: ./gradlew :webgpu:download:webgpu_download_android_x86_64_wgpu :webgpu:download:webgpu_download_android_i686_wgpu :webgpu:download:webgpu_download_android_armv7_wgpu :webgpu:download:webgpu_download_android_aarch64_wgpu
 
       - name: Build project
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project_android_wgpu_jni
+        run: ./gradlew :webgpu:builder:jParser_build_android_jni
         env:
           NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
@@ -217,7 +217,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: android-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
   upload_natives:
     name: Upload Natives
@@ -264,34 +264,34 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: windows-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
       - name: Download linux natives
         uses: actions/download-artifact@v8
         with:
           name: linux-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
       - name: Download mac natives
         uses: actions/download-artifact@v8
         with:
           name: mac-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
       - name: Download android natives
         uses: actions/download-artifact@v8
         with:
           name: android-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
       - name: Download teavm natives
         uses: actions/download-artifact@v8
         with:
           name: teavm-natives
-          path: ./webgpu/webgpu-build/build/c++/libs/
+          path: ./webgpu/builder/build/c++/libs/
 
       - name: Generate classes
-        run: ./gradlew :webgpu:webgpu-build:webgpu_build_project
+        run: ./gradlew :webgpu:builder:jParser_generate
 
       - name: Configure Git
         run: |
