@@ -15,6 +15,12 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
     Packed4x8IntegerDotProduct(WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE()),
     UnrestrictedPointerParameters(WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE()),
     PointerCompositeAccess(WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE()),
+    UniformBufferStandardLayout(WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE()),
+    SubgroupId(WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE()),
+    TextureAndSamplerLet(WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE()),
+    SubgroupUniformity(WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE()),
+    TextureFormatsTier1(WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE()),
+    LinearIndexing(WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE()),
     Force32(WGPUWGSLLanguageFeatureName_Force32_NATIVE());
 
     private int value;
@@ -50,6 +56,24 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_PointerCompositeAccess;")
     private static native int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE();
+
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout;")
+    private static native int WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE();
+
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_SubgroupId;")
+    private static native int WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE();
+
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_TextureAndSamplerLet;")
+    private static native int WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE();
+
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_SubgroupUniformity;")
+    private static native int WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE();
+
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_TextureFormatsTier1;")
+    private static native int WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE();
+
+    @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_LinearIndexing;")
+    private static native int WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE();
 
     @org.teavm.jso.JSBody(script = "return jWebGPU.WGPUWGSLLanguageFeatureName_Force32;")
     private static native int WGPUWGSLLanguageFeatureName_Force32_NATIVE();

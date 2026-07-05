@@ -7,8 +7,11 @@
 package n;
 
 import com.github.xpenatan.webgpu.*;
+import java.nio.ByteBuffer;
 
 final public class n1478576103 {
+
+    static native public void n2334112485(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize);
 
     public static native long n1802807363();
 
@@ -49,6 +52,8 @@ final public class n1478576103 {
     public static native void n4093766088(long this_addr, int groupIndex, long group_addr);
 
     public static native void n3589513278(long this_addr, long color_addr);
+
+    public static native void n2357134904(long this_addr, int offset, long bytes_addr, int dataSize);
 
     public static native void n1794433700(long this_addr, long buffer_addr, int format, int offset, int size);
 

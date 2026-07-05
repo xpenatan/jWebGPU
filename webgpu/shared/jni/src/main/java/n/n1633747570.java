@@ -18,5 +18,17 @@ final public class n1633747570 {
 
     static native public int n2395642290();
 
+    static native public int n484458339();
+
+    static native public int n3017110942();
+
+    static native public int n1063861811();
+
+    static native public int n1472577277();
+
+    static native public int n533390134();
+
+    static native public int n106404345();
+
     static native public int n2157127538();
 }

@@ -15,6 +15,12 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
     Packed4x8IntegerDotProduct(WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE()),
     UnrestrictedPointerParameters(WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE()),
     PointerCompositeAccess(WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE()),
+    UniformBufferStandardLayout(WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE()),
+    SubgroupId(WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE()),
+    TextureAndSamplerLet(WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE()),
+    SubgroupUniformity(WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE()),
+    TextureFormatsTier1(WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE()),
+    LinearIndexing(WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE()),
     Force32(WGPUWGSLLanguageFeatureName_Force32_NATIVE());
 
     private int value;
@@ -46,6 +52,18 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
     private static native int WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE();
 
     private static native int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE();
+
+    private static native int WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE();
+
+    private static native int WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE();
+
+    private static native int WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE();
+
+    private static native int WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE();
+
+    private static native int WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE();
+
+    private static native int WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE();
 
     private static native int WGPUWGSLLanguageFeatureName_Force32_NATIVE();
 }

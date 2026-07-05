@@ -6,13 +6,30 @@
 
 package gen.web.com.github.xpenatan.webgpu;
 
+import java.nio.ByteBuffer;
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPUComputePassEncoder extends NativeObject {
 
     static private WGPUComputePassEncoder WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
 
+    @org.teavm.jso.JSBody(params = { "this_addr", "offset", "bytes_addr", "dataSize" }, script = "" + "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);" + "var ptr = runtime._malloc(dataSize);" + "runtime.HEAPU8.set(bytes_addr.subarray(0, dataSize), ptr);" + "jsObj.setImmediates(offset, ptr, dataSize);" + "runtime._free(ptr);")
+    private static native void internal_native_SetImmediates(int this_addr, int offset, org.teavm.jso.JSObject bytes_addr, int dataSize);
+
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
+
+    public static WGPUComputePassEncoder native_new() {
+        return new WGPUComputePassEncoder((byte) 0, (char) 0);
+    }
+
+    @Deprecated
+    protected WGPUComputePassEncoder(byte b, char c) {
+    }
+
+    public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
+        org.teavm.jso.typedarrays.Int8Array array = org.teavm.jso.typedarrays.Int8Array.fromJavaBuffer(byteBuffer);
+        internal_native_SetImmediates(native_address, offset, array, dataSize);
+    }
 
     public WGPUComputePassEncoder() {
         int addr = internal_native_create_addr();
@@ -21,20 +38,6 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPUComputePassEncoder();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUComputePassEncoder(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUComputePassEncoder native_new() {
-        return new WGPUComputePassEncoder((byte) 0, (char) 0);
-    }
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);
@@ -112,6 +115,13 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setBindGroup(groupIndex, group_addr);")
     public static native void internal_native_SetBindGroup(int this_addr, int groupIndex, int group_addr);
+
+    public void setImmediates(int offset, NativeObject bytes, int dataSize) {
+        internal_native_SetImmediates__1(native_address, offset, bytes.native_void_address, dataSize);
+    }
+
+    @org.teavm.jso.JSBody(params = {"this_addr", "offset", "bytes_addr", "dataSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setImmediates(offset, bytes_addr, dataSize);")
+    public static native void internal_native_SetImmediates__1(int this_addr, int offset, int bytes_addr, int dataSize);
 
     public void setPipeline(WGPUComputePipeline pipeline) {
         internal_native_SetPipeline(native_address, pipeline.native_address);

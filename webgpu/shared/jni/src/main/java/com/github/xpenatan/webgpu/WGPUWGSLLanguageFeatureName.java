@@ -15,6 +15,12 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
     Packed4x8IntegerDotProduct(WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE()),
     UnrestrictedPointerParameters(WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE()),
     PointerCompositeAccess(WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE()),
+    UniformBufferStandardLayout(WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE()),
+    SubgroupId(WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE()),
+    TextureAndSamplerLet(WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE()),
+    SubgroupUniformity(WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE()),
+    TextureFormatsTier1(WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE()),
+    LinearIndexing(WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE()),
     Force32(WGPUWGSLLanguageFeatureName_Force32_NATIVE());
 
     private int value;
@@ -53,6 +59,30 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
 
     private static int WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE() {
         return n.n1633747570.n2395642290();
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE() {
+        return n.n1633747570.n484458339();
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE() {
+        return n.n1633747570.n3017110942();
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE() {
+        return n.n1633747570.n1063861811();
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE() {
+        return n.n1633747570.n1472577277();
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE() {
+        return n.n1633747570.n533390134();
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE() {
+        return n.n1633747570.n106404345();
     }
 
     private static int WGPUWGSLLanguageFeatureName_Force32_NATIVE() {

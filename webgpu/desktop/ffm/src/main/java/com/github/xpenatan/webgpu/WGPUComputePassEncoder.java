@@ -6,6 +6,7 @@
 
 package com.github.xpenatan.webgpu;
 
+import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.ValueLayout;
@@ -19,7 +20,37 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     static private WGPUComputePassEncoder WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
 
+    private static final class FFMImmediateHandles {
+
+        private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
+
+        private static final java.lang.foreign.Linker LINKER = java.lang.foreign.Linker.nativeLinker();
+
+        static final java.lang.invoke.MethodHandle setImmediates = LINKER.downcallHandle(LOOKUP.find("jparser_com_github_xpenatan_webgpu_WGPUComputePassEncoder_internal_1native_1SetImmediatesFFM__JIJI").orElseThrow(), java.lang.foreign.FunctionDescriptor.ofVoid(java.lang.foreign.ValueLayout.JAVA_LONG, java.lang.foreign.ValueLayout.JAVA_INT, java.lang.foreign.ValueLayout.JAVA_LONG, java.lang.foreign.ValueLayout.JAVA_INT));
+    }
+
+    private static void internal_native_SetImmediates(long this_addr, int offset, long data_ptr, int dataSize) {
+        try {
+            FFMImmediateHandles.setImmediates.invokeExact(this_addr, offset, data_ptr, dataSize);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
+
+    public static WGPUComputePassEncoder native_new() {
+        return new WGPUComputePassEncoder((byte) 0, (char) 0);
+    }
+
+    @Deprecated
+    protected WGPUComputePassEncoder(byte b, char c) {
+    }
+
+    public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
+        long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+        internal_native_SetImmediates(native_address, offset, dataAddress, dataSize);
+    }
 
     public WGPUComputePassEncoder() {
         long addr = internal_native_create_addr();
@@ -32,20 +63,6 @@ public class WGPUComputePassEncoder extends NativeObject {
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
-    }
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUComputePassEncoder(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUComputePassEncoder native_new() {
-        return new WGPUComputePassEncoder((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -180,6 +197,18 @@ public class WGPUComputePassEncoder extends NativeObject {
         }
     }
 
+    public void setImmediates(int offset, NativeObject bytes, int dataSize) {
+        internal_native_SetImmediates__1(native_address, offset, bytes.native_void_address, dataSize);
+    }
+
+    public static void internal_native_SetImmediates__1(long this_addr, int offset, long bytes_addr, int dataSize) {
+        try {
+            FFMHandles.internal_native_SetImmediates__1__JIJI.invokeExact(this_addr, offset, bytes_addr, dataSize);
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
     public void setPipeline(WGPUComputePipeline pipeline) {
         internal_native_SetPipeline(native_address, pipeline.native_address);
     }
@@ -247,6 +276,8 @@ public class WGPUComputePassEncoder extends NativeObject {
         static final java.lang.invoke.MethodHandle internal_native_SetBindGroup__JIJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3613368251", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_SetBindGroup__JIJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3007893773", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_SetImmediates__1__JIJI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1549850749", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle internal_native_SetPipeline__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1283043348", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 

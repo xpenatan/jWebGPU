@@ -22,6 +22,12 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
     Packed4x8IntegerDotProduct(WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct_NATIVE()),
     UnrestrictedPointerParameters(WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE()),
     PointerCompositeAccess(WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE()),
+    UniformBufferStandardLayout(WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE()),
+    SubgroupId(WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE()),
+    TextureAndSamplerLet(WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE()),
+    SubgroupUniformity(WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE()),
+    TextureFormatsTier1(WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE()),
+    LinearIndexing(WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE()),
     Force32(WGPUWGSLLanguageFeatureName_Force32_NATIVE());
 
     private int value;
@@ -78,6 +84,54 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
         }
     }
 
+    private static int WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    private static int WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
     private static int WGPUWGSLLanguageFeatureName_Force32_NATIVE() {
         try {
             return (int) FFMHandles.WGPUWGSLLanguageFeatureName_Force32_NATIVE__.invokeExact();
@@ -95,6 +149,18 @@ public enum WGPUWGSLLanguageFeatureName implements NativeEnum<WGPUWGSLLanguageFe
         static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n297786651", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_PointerCompositeAccess_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2395642290", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n484458339", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_SubgroupId_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3017110942", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_TextureAndSamplerLet_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1063861811", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_SubgroupUniformity_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1472577277", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_TextureFormatsTier1_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n533390134", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_LinearIndexing_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n106404345", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle WGPUWGSLLanguageFeatureName_Force32_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2157127538", FunctionDescriptor.of(ValueLayout.JAVA_INT));
     }

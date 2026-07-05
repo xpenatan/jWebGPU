@@ -1112,6 +1112,8 @@ interface WGPURenderBundleEncoder {
     void DrawIndirect(WGPUBuffer indirectBuffer, long indirectOffset);
     void DrawIndexedIndirect(WGPUBuffer indirectBuffer, long indirectOffset);
     void SetBindGroup(long groupIndex, WGPUBindGroup group, optional WGPUVectorInt dynamicOffsets);
+    [BindTo="SetImmediates"] void SetImmediates__0(long offset, octet[] bytes, long dataSize); //[-SKIP]
+    [BindTo="SetImmediates"] void SetImmediates__1(long offset, any bytes, long dataSize);
     void SetVertexBuffer(long slot, WGPUBuffer buffer, long offset, long size);
     void SetIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
     void InsertDebugMarker([Const] DOMString label);
@@ -1180,6 +1182,8 @@ interface WGPURenderPassEncoder {
     void PushDebugGroup([Const] DOMString value);
     void SetBindGroup(long groupIndex, WGPUBindGroup group, optional WGPUVectorInt dynamicOffsets);
     void SetBlendConstant(WGPUColor color);
+    [BindTo="SetImmediates"] void SetImmediates__0(long offset, octet[] bytes, long dataSize); //[-SKIP]
+    [BindTo="SetImmediates"] void SetImmediates__1(long offset, any bytes, long dataSize);
     void SetIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, long offset, long size);
     void SetScissorRect(long x, long y, long width, long height);
     void SetStencilReference(long reference);
@@ -1221,6 +1225,8 @@ interface WGPUComputePassEncoder {
     void PopDebugGroup();
     void PushDebugGroup([Const] DOMString groupLabel);
     void SetBindGroup(long groupIndex, WGPUBindGroup group, optional WGPUVectorInt offsets);
+    [BindTo="SetImmediates"] void SetImmediates__0(long offset, octet[] bytes, long dataSize); //[-SKIP]
+    [BindTo="SetImmediates"] void SetImmediates__1(long offset, any bytes, long dataSize);
     void SetPipeline(WGPUComputePipeline pipeline);
     boolean IsValid();
     static WGPUComputePassEncoder Obtain();
@@ -2017,6 +2023,12 @@ enum WGPUWGSLLanguageFeatureName {
     "WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct",           //[-RENAME=Packed4x8IntegerDotProduct]
     "WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters",        //[-RENAME=UnrestrictedPointerParameters]
     "WGPUWGSLLanguageFeatureName_PointerCompositeAccess",               //[-RENAME=PointerCompositeAccess]
+    "WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout",           //[-RENAME=UniformBufferStandardLayout]
+    "WGPUWGSLLanguageFeatureName_SubgroupId",                            //[-RENAME=SubgroupId]
+    "WGPUWGSLLanguageFeatureName_TextureAndSamplerLet",                  //[-RENAME=TextureAndSamplerLet]
+    "WGPUWGSLLanguageFeatureName_SubgroupUniformity",                    //[-RENAME=SubgroupUniformity]
+    "WGPUWGSLLanguageFeatureName_TextureFormatsTier1",                   //[-RENAME=TextureFormatsTier1]
+    "WGPUWGSLLanguageFeatureName_LinearIndexing",                        //[-RENAME=LinearIndexing]
     // "WGPUWGSLLanguageFeatureName_SizedBindingArray",   // TODO missing in wgpu-native header
     "WGPUWGSLLanguageFeatureName_Force32"                               //[-RENAME=Force32]
 };

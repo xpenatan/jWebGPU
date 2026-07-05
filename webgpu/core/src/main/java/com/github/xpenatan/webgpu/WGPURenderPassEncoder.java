@@ -6,27 +6,28 @@
 
 package com.github.xpenatan.webgpu;
 
+import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPURenderPassEncoder extends NativeObject {
 
     static public final WGPURenderPassEncoder NULL = WGPURenderPassEncoder.native_new();
 
-    public WGPURenderPassEncoder() {
+    public static WGPURenderPassEncoder native_new() {
+        return new WGPURenderPassEncoder((byte) 0, (char) 0);
     }
 
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
+    @Deprecated
     protected WGPURenderPassEncoder(byte b, char c) {
     }
 
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPURenderPassEncoder native_new() {
-        return new WGPURenderPassEncoder((byte) 0, (char) 0);
+    public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
+        internal_native_SetImmediates(native_address, offset, byteBuffer, dataSize);
+    }
+
+    private static native void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize);
+
+    public WGPURenderPassEncoder() {
     }
 
     public void setLabel(String value) {
@@ -81,6 +82,9 @@ public class WGPURenderPassEncoder extends NativeObject {
     }
 
     public void setBlendConstant(WGPUColor color) {
+    }
+
+    public void setImmediates(int offset, NativeObject bytes, int dataSize) {
     }
 
     public void setIndexBuffer(WGPUBuffer buffer, WGPUIndexFormat format, int offset, int size) {

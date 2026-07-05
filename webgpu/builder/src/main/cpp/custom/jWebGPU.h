@@ -1573,6 +1573,7 @@ class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, :
         void DrawIndirect(WGPUBuffer* indirectBuffer, int indirectOffset);
         void DrawIndexedIndirect(WGPUBuffer* indirectBuffer, int indirectOffset);
         void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets = NULL);
+        void SetImmediates(int offset, void const* data, int size);
         void SetVertexBuffer(int slot, WGPUBuffer* buffer, int offset, int size);
         void SetIndexBuffer(WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
         void InsertDebugMarker(const char* label);
@@ -1648,6 +1649,7 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
         void PushDebugGroup(const char* label);
         void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* dynamicOffsets = NULL);
         void SetBlendConstant(WGPUColor* color);
+        void SetImmediates(int offset, void const* data, int size);
         void SetIndexBuffer(WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size);
         void SetScissorRect(int x, int y, int width, int height);
         void SetStencilReference(int reference);
@@ -1703,6 +1705,7 @@ class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::W
         void PopDebugGroup();
         void PushDebugGroup(const char* groupLabel);
         void SetBindGroup(int groupIndex, WGPUBindGroup* group, WGPUVectorInt* offsets = NULL);
+        void SetImmediates(int offset, void const* data, int size);
         void SetLabel(const char* label);
         void SetPipeline(WGPUComputePipeline* pipeline);
         bool IsValid();

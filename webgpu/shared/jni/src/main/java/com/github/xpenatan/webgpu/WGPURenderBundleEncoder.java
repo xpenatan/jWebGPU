@@ -6,11 +6,28 @@
 
 package com.github.xpenatan.webgpu;
 
+import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPURenderBundleEncoder extends NativeObject {
 
     static public final WGPURenderBundleEncoder NULL = WGPURenderBundleEncoder.native_new();
+
+    public static WGPURenderBundleEncoder native_new() {
+        return new WGPURenderBundleEncoder((byte) 0, (char) 0);
+    }
+
+    @Deprecated
+    protected WGPURenderBundleEncoder(byte b, char c) {
+    }
+
+    public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
+        internal_native_SetImmediates(native_address, offset, byteBuffer, dataSize);
+    }
+
+    private static void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize) {
+        n.n3853071190.n2738511124(this_addr, offset, byteBuffer, dataSize);
+    }
 
     public WGPURenderBundleEncoder() {
         long addr = internal_native_create_addr();
@@ -19,20 +36,6 @@ public class WGPURenderBundleEncoder extends NativeObject {
 
     public static long internal_native_create_addr() {
         return n.n3853071190.n1270286132();
-    }
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPURenderBundleEncoder(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPURenderBundleEncoder native_new() {
-        return new WGPURenderBundleEncoder((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -113,6 +116,14 @@ public class WGPURenderBundleEncoder extends NativeObject {
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
         n.n3853071190.n1633079033(this_addr, groupIndex, group_addr);
+    }
+
+    public void setImmediates(int offset, NativeObject bytes, int dataSize) {
+        internal_native_SetImmediates__1(native_address, offset, bytes.native_void_address, dataSize);
+    }
+
+    public static void internal_native_SetImmediates__1(long this_addr, int offset, long bytes_addr, int dataSize) {
+        n.n3853071190.n4265093737(this_addr, offset, bytes_addr, dataSize);
     }
 
     public void setVertexBuffer(int slot, WGPUBuffer buffer, int offset, int size) {

@@ -3145,6 +3145,10 @@ void JGPU::WGPURenderBundleEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindG
     wgpuRenderBundleEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
 
+void JGPU::WGPURenderBundleEncoder::SetImmediates(int offset, void const* data, int size) {
+    wgpuRenderBundleEncoderSetImmediates(Get(), offset, data, size);
+}
+
 void JGPU::WGPURenderBundleEncoder::SetVertexBuffer(int slot, JGPU::WGPUBuffer* buffer, int offset, int size) {
     wgpuRenderBundleEncoderSetVertexBuffer(Get(), slot, buffer->Get(), offset, size);
 }
@@ -3385,6 +3389,10 @@ void JGPU::WGPURenderPassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGro
 
 void JGPU::WGPURenderPassEncoder::SetBlendConstant(JGPU::WGPUColor* color) {
     wgpuRenderPassEncoderSetBlendConstant(Get(), color != NULL ? color->Get() : NULL);
+}
+
+void JGPU::WGPURenderPassEncoder::SetImmediates(int offset, void const* data, int size) {
+    wgpuRenderPassEncoderSetImmediates(Get(), offset, data, size);
 }
 
 void JGPU::WGPURenderPassEncoder::SetIndexBuffer(JGPU::WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
@@ -3741,6 +3749,10 @@ void JGPU::WGPUComputePassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGr
         dynamicOffsets = (uint32_t*)offsets->data();
     }
     wgpuComputePassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
+}
+
+void JGPU::WGPUComputePassEncoder::SetImmediates(int offset, void const* data, int size) {
+    wgpuComputePassEncoderSetImmediates(Get(), offset, data, size);
 }
 
 void JGPU::WGPUComputePassEncoder::SetLabel(const char* label) {

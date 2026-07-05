@@ -6,6 +6,7 @@
 
 package com.github.xpenatan.webgpu;
 
+import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPUComputePassEncoder extends NativeObject {
@@ -14,6 +15,22 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 
+    public static WGPUComputePassEncoder native_new() {
+        return new WGPUComputePassEncoder((byte) 0, (char) 0);
+    }
+
+    @Deprecated
+    protected WGPUComputePassEncoder(byte b, char c) {
+    }
+
+    public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
+        internal_native_SetImmediates(native_address, offset, byteBuffer, dataSize);
+    }
+
+    private static void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize) {
+        n.n1923638722.n53741184(this_addr, offset, byteBuffer, dataSize);
+    }
+
     public WGPUComputePassEncoder() {
         long addr = internal_native_create_addr();
         internal_reset(addr, true);
@@ -21,20 +38,6 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static long internal_native_create_addr() {
         return n.n1923638722.n896891976();
-    }
-
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
-    protected WGPUComputePassEncoder(byte b, char c) {
-    }
-
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUComputePassEncoder native_new() {
-        return new WGPUComputePassEncoder((byte) 0, (char) 0);
     }
 
     protected void deleteNative() {
@@ -123,6 +126,14 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     public static void internal_native_SetBindGroup(long this_addr, int groupIndex, long group_addr) {
         n.n1923638722.n3007893773(this_addr, groupIndex, group_addr);
+    }
+
+    public void setImmediates(int offset, NativeObject bytes, int dataSize) {
+        internal_native_SetImmediates__1(native_address, offset, bytes.native_void_address, dataSize);
+    }
+
+    public static void internal_native_SetImmediates__1(long this_addr, int offset, long bytes_addr, int dataSize) {
+        n.n1923638722.n1549850749(this_addr, offset, bytes_addr, dataSize);
     }
 
     public void setPipeline(WGPUComputePipeline pipeline) {

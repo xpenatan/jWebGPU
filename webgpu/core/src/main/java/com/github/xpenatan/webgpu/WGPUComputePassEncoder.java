@@ -6,27 +6,28 @@
 
 package com.github.xpenatan.webgpu;
 
+import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPUComputePassEncoder extends NativeObject {
 
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 
-    public WGPUComputePassEncoder() {
+    public static WGPUComputePassEncoder native_new() {
+        return new WGPUComputePassEncoder((byte) 0, (char) 0);
     }
 
-    /**
-     * Dummy constructor, used internally to creates objects without C++ pointer
-     */
-    @Deprecated()
+    @Deprecated
     protected WGPUComputePassEncoder(byte b, char c) {
     }
 
-    /**
-     * @return An empty instance without a native address
-     */
-    public static WGPUComputePassEncoder native_new() {
-        return new WGPUComputePassEncoder((byte) 0, (char) 0);
+    public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
+        internal_native_SetImmediates(native_address, offset, byteBuffer, dataSize);
+    }
+
+    private static native void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize);
+
+    public WGPUComputePassEncoder() {
     }
 
     public void setLabel(String label) {
@@ -57,6 +58,9 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group) {
+    }
+
+    public void setImmediates(int offset, NativeObject bytes, int dataSize) {
     }
 
     public void setPipeline(WGPUComputePipeline pipeline) {
