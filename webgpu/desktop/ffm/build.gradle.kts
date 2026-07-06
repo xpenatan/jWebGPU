@@ -2,7 +2,7 @@ plugins {
     id("java-library")
 }
 
-val moduleName = "webgpu-ffm"
+val moduleName = "webgpu-desktop-ffm"
 
 base {
     archivesName.set(moduleName)
