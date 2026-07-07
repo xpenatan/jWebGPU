@@ -39,6 +39,9 @@ dependencies {
     api(project(":webgpu:shared:jni"))
     api("com.github.xpenatan.jParser:runtime-jni:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:runtime-android:${LibExt.jParserVersion}")
+    listOf("x86", "x86_64", "armeabi_v7a", "arm64_v8a").forEach { abi ->
+        api("com.github.xpenatan.jParser:runtime-android_$abi:${LibExt.jParserVersion}")
+    }
     api("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 }

@@ -93,7 +93,7 @@ tasks.register<JavaExec>("webgpu_demo_app_build") {
     description = "Generates JavaScript and copies webapp resources to build/dist"
     mainClass.set("com.github.xpenatan.webgpu.demo.app.Build")
     classpath = sourceSets["main"].runtimeClasspath
-    dependsOn("copyWebappToDist")
+    finalizedBy("copyWebappToDist")
 }
 
 tasks.register("webgpu_demo_app_run_web") {
@@ -102,6 +102,7 @@ tasks.register("webgpu_demo_app_run_web") {
     val list = listOf("webgpu_demo_app_build", "jettyRun")
     dependsOn(list)
     tasks.findByName("jettyRun")?.mustRunAfter("webgpu_demo_app_build")
+    tasks.findByName("jettyRun")?.mustRunAfter("copyWebappToDist")
 }
 
 afterEvaluate {

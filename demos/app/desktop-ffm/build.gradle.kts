@@ -15,7 +15,7 @@ dependencies {
     implementation(project(":demos:backend:desktop"))
 
     if(LibExt.exampleUseRepoLibs) {
-        api("com.github.xpenatan.jWebGPU:webgpu-ffm:-SNAPSHOT")
+        api("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:-SNAPSHOT")
     }
     else {
         api(project(":webgpu:desktop:ffm"))

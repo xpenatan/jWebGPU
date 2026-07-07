@@ -9,37 +9,81 @@ base {
 }
 
 val nativeRoot = file("$projectDir/../../builder/build/c++/libs")
-val wgpuNativePaths = listOf(
-    "$nativeRoot/wgpu/windows/vc/jni/jWebGPU64.dll",
-    "$nativeRoot/linux/jni/libjWebGPU64.so",
-    "$nativeRoot/mac/jni/libjWebGPU64.dylib",
-    "$nativeRoot/mac/arm/jni/libjWebGPUarm64.dylib"
-)
-val dawnNativePaths = listOf(
-    "$nativeRoot/dawn/windows/vc/jni/jWebGPU64.dll",
-    "$projectDir/../../download/build/dawn-x64/webgpu_dawn.dll"
+
+data class DesktopNativePlatform(
+    val name: String,
+    val wgpuNativeFile: String,
+    val dawnNativeFiles: List<String> = emptyList(),
 )
 
+val platforms = listOf(
+    DesktopNativePlatform(
+        "windows_x64",
+        "$nativeRoot/wgpu/windows/vc/jni/jWebGPU64.dll",
+        listOf(
+            "$nativeRoot/dawn/windows/vc/jni/jWebGPU64.dll",
+            "$projectDir/../../download/build/dawn-x64/webgpu_dawn.dll"
+        )
+    ),
+    DesktopNativePlatform("linux_x64", "$nativeRoot/linux/jni/libjWebGPU64.so"),
+    DesktopNativePlatform("mac_x64", "$nativeRoot/mac/jni/libjWebGPU64.dylib"),
+    DesktopNativePlatform("mac_arm64", "$nativeRoot/mac/arm/jni/libjWebGPUarm64.dylib"),
+)
+
+val taskNames = gradle.startParameter.taskNames
+fun isTaskRequested(taskName: String): Boolean {
+    return taskNames.any { it == taskName || it.endsWith(":$taskName") }
+}
+val isPrepareDeployTask = isTaskRequested("prepareReleaseDeploy") || isTaskRequested("prepareSnapshotDeploy")
+val isPublishTask = taskNames.any { it.contains("publish", ignoreCase = true) }
+val includeNativesInMainJar = !(isPrepareDeployTask || isPublishTask)
+
+val nativeJars = platforms.map { platform ->
+    platform.name to tasks.register<Jar>("nativeJar_${platform.name}") {
+        from(platform.wgpuNativeFile) {
+            into("native/wgpu")
+        }
+        from(platform.dawnNativeFiles) {
+            into("native/dawn")
+        }
+        archiveBaseName.set("$moduleName-${platform.name}")
+        archiveClassifier.set("")
+        doFirst {
+            val missingFiles = (listOf(platform.wgpuNativeFile) + platform.dawnNativeFiles)
+                .map(::file)
+                .filterNot { it.isFile }
+            if(missingFiles.isNotEmpty()) {
+                logger.warn("Missing desktop JNI native libraries for ${platform.name}: ${missingFiles.joinToString { it.absolutePath }}")
+            }
+        }
+    }
+}
+
 tasks.named<Jar>("jar") {
-    from(provider {
-        wgpuNativePaths.map(::file).filter { it.exists() }
-    }) {
-        into("native/wgpu")
+    inputs.property("includeNativesInMainJar", includeNativesInMainJar)
+    if(includeNativesInMainJar) {
+        platforms.forEach { platform ->
+            from(platform.wgpuNativeFile) {
+                into("native/wgpu")
+            }
+            from(platform.dawnNativeFiles) {
+                into("native/dawn")
+            }
+        }
     }
-    from(provider {
-        dawnNativePaths.map(::file).filter { it.exists() }
-    }) {
-        into("native/dawn")
-    }
+}
+
+val nativeRuntime by configurations.creating {
+    isCanBeConsumed = true
+    isCanBeResolved = false
+}
+
+artifacts {
+    nativeJars.forEach { add(nativeRuntime.name, it.second) }
 }
 
 dependencies {
     api(project(":webgpu:shared:jni"))
-
-    implementation("com.github.xpenatan.jParser:runtime-jni_windows_x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni_linux_x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni_mac_x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-jni_mac_arm64:${LibExt.jParserVersion}")
 
     testImplementation("junit:junit:${LibExt.jUnitVersion}")
 }
@@ -61,6 +105,15 @@ publishing {
             groupId = LibExt.groupId
             version = LibExt.libVersion
             from(components["java"])
+        }
+
+        nativeJars.forEach { (platform, nativeJar) ->
+            create<MavenPublication>("mavenNative_${platform}") {
+                artifactId = "${moduleName}_$platform"
+                groupId = LibExt.groupId
+                version = LibExt.libVersion
+                artifact(nativeJar)
+            }
         }
     }
 }
