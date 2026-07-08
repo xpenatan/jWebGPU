@@ -1,3 +1,5 @@
+import org.gradle.api.GradleException
+
 plugins {
     id("java-library")
 }
@@ -25,9 +27,9 @@ val platforms = listOf(
             "$projectDir/../../download/build/dawn-x64/webgpu_dawn.dll"
         )
     ),
-    DesktopNativePlatform("linux_x64", "$nativeRoot/linux/ffm/libjWebGPU64.so"),
-    DesktopNativePlatform("mac_x64", "$nativeRoot/mac/ffm/libjWebGPU64.dylib"),
-    DesktopNativePlatform("mac_arm64", "$nativeRoot/mac/arm/ffm/libjWebGPUarm64.dylib"),
+    DesktopNativePlatform("linux_x64", "$nativeRoot/wgpu/linux/ffm/libjWebGPU64.so"),
+    DesktopNativePlatform("mac_x64", "$nativeRoot/wgpu/mac/ffm/libjWebGPU64.dylib"),
+    DesktopNativePlatform("mac_arm64", "$nativeRoot/wgpu/mac/arm/ffm/libjWebGPUarm64.dylib"),
 )
 
 val taskNames = gradle.startParameter.taskNames
@@ -58,7 +60,7 @@ val nativeJars = platforms.map { platform ->
                 .map(::file)
                 .filterNot { it.isFile }
             if(missingFiles.isNotEmpty()) {
-                logger.warn("Missing desktop FFM native libraries for ${platform.name}: ${missingFiles.joinToString { it.absolutePath }}")
+                throw GradleException("Missing desktop FFM native libraries for ${platform.name}: ${missingFiles.joinToString { it.absolutePath }}")
             }
         }
     }

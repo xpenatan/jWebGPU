@@ -64,8 +64,9 @@ Windows JNI/FFM:
 ```powershell
 .\gradlew.bat :webgpu:download:webgpu_download_glfw_windows
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
-.\gradlew.bat :webgpu:builder:jParser_build_windows64_jni
-.\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm
+.\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_jni_wgpu :webgpu:builder:jParser_build_windows64_jni_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu :webgpu:builder:jParser_build_windows64_ffm_dawn
 ```
 
 Linux JNI/FFM:
@@ -73,8 +74,8 @@ Linux JNI/FFM:
 ```bash
 ./gradlew :webgpu:download:webgpu_download_linux_x86_64_wgpu
 ./gradlew :webgpu:download:webgpu_download_glfw_windows
-./gradlew :webgpu:builder:jParser_build_linux64_jni
-./gradlew :webgpu:builder:jParser_build_linux64_ffm
+./gradlew :webgpu:builder:jParser_build_linux64_jni_wgpu
+./gradlew :webgpu:builder:jParser_build_linux64_ffm_wgpu
 ```
 
 macOS JNI/FFM:
@@ -83,10 +84,8 @@ macOS JNI/FFM:
 ./gradlew :webgpu:download:webgpu_download_macos_x86_64_wgpu
 ./gradlew :webgpu:download:webgpu_download_macos_aarch64_wgpu
 ./gradlew :webgpu:download:webgpu_download_glfw_windows
-./gradlew :webgpu:builder:jParser_build_mac64_jni
-./gradlew :webgpu:builder:jParser_build_macArm_jni
-./gradlew :webgpu:builder:jParser_build_mac64_ffm
-./gradlew :webgpu:builder:jParser_build_macArm_ffm
+./gradlew :webgpu:builder:jParser_build_mac64_jni_wgpu :webgpu:builder:jParser_build_macArm_jni_wgpu
+./gradlew :webgpu:builder:jParser_build_mac64_ffm_wgpu :webgpu:builder:jParser_build_macArm_ffm_wgpu
 ```
 
 TeaVM/WebAssembly:
@@ -135,7 +134,7 @@ dependencies {
     implementation("com.github.xpenatan.jWebGPU:webgpu-jni:<version>")
     implementation("com.github.xpenatan.jWebGPU:webgpu-jni-desktop:<version>")
 
-    // implementation("com.github.xpenatan.jWebGPU:webgpu-ffm:<version>")
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android:<version>")
 }

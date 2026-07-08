@@ -75,11 +75,14 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 ```powershell
 .\gradlew.bat :webgpu:download:webgpu_download_glfw_windows
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
+.\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_dawn
 .\gradlew.bat :webgpu:download:webgpu_download_emdawnwebgpu
 
 .\gradlew.bat :webgpu:builder:jParser_generate
-.\gradlew.bat :webgpu:builder:jParser_build_windows64_jni
-.\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_jni_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_jni_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_web_wasm
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni
 

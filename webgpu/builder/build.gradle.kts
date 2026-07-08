@@ -127,7 +127,7 @@ jParser {
         }
 
         listOf(JParserTargets.LINUX64_JNI, JParserTargets.LINUX64_FFM).forEach { targetName ->
-            target(targetName) {
+            targetVariant(targetName, "wgpu") {
                 includeDefaultSources.set(false)
                 includeCustomSources.set(false)
                 headerDir(File(wgpuLinuxDir, "include").normalizedPath())
@@ -142,7 +142,7 @@ jParser {
             JParserTargets.MAC_ARM_JNI to wgpuMacArmDir,
             JParserTargets.MAC_ARM_FFM to wgpuMacArmDir
         ).forEach { (targetName, wgpuDir) ->
-            target(targetName) {
+            targetVariant(targetName, "wgpu") {
                 includeDefaultSources.set(false)
                 includeCustomSources.set(false)
                 headerDir(File(wgpuDir, "include").normalizedPath())

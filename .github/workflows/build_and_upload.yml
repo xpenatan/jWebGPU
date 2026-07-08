@@ -48,13 +48,13 @@ jobs:
           value: $env:PATH;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build
 
       - name: Download sources
-        run: ./gradlew :webgpu:download:webgpu_download_windows_x86_64_wgpu :webgpu:download:webgpu_download_glfw_windows
+        run: ./gradlew :webgpu:download:webgpu_download_windows_x86_64_wgpu :webgpu:download:webgpu_download_windows_x86_64_dawn :webgpu:download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:builder:jParser_build_windows64_jni
+        run: ./gradlew :webgpu:builder:jParser_build_windows64_jni_wgpu :webgpu:builder:jParser_build_windows64_jni_dawn
 
       - name: Build FFM project
-        run: ./gradlew :webgpu:builder:jParser_build_windows64_ffm
+        run: ./gradlew :webgpu:builder:jParser_build_windows64_ffm_wgpu :webgpu:builder:jParser_build_windows64_ffm_dawn
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
@@ -88,10 +88,10 @@ jobs:
         run: ./gradlew :webgpu:download:webgpu_download_linux_x86_64_wgpu :webgpu:download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:builder:jParser_build_linux64_jni
+        run: ./gradlew :webgpu:builder:jParser_build_linux64_jni_wgpu
 
       - name: Build FFM project
-        run: ./gradlew :webgpu:builder:jParser_build_linux64_ffm
+        run: ./gradlew :webgpu:builder:jParser_build_linux64_ffm_wgpu
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
@@ -125,10 +125,10 @@ jobs:
         run: ./gradlew :webgpu:download:webgpu_download_macos_x86_64_wgpu :webgpu:download:webgpu_download_macos_aarch64_wgpu :webgpu:download:webgpu_download_glfw_windows
 
       - name: Build project
-        run: ./gradlew :webgpu:builder:jParser_build_mac64_jni :webgpu:builder:jParser_build_macArm_jni
+        run: ./gradlew :webgpu:builder:jParser_build_mac64_jni_wgpu :webgpu:builder:jParser_build_macArm_jni_wgpu
 
       - name: Build FFM project
-        run: ./gradlew :webgpu:builder:jParser_build_mac64_ffm :webgpu:builder:jParser_build_macArm_ffm
+        run: ./gradlew :webgpu:builder:jParser_build_mac64_ffm_wgpu :webgpu:builder:jParser_build_macArm_ffm_wgpu
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
