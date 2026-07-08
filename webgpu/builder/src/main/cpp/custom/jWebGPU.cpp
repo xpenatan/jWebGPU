@@ -3146,7 +3146,15 @@ void JGPU::WGPURenderBundleEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindG
 }
 
 void JGPU::WGPURenderBundleEncoder::SetImmediates(int offset, void const* data, int size) {
+#if defined(__EMSCRIPTEN__)
+    (void)offset;
+    (void)data;
+    (void)size;
+#elif defined(JWEBGPU_DAWN)
+    wgpuRenderBundleEncoderSetImmediateData(Get(), offset, data, size);
+#else
     wgpuRenderBundleEncoderSetImmediates(Get(), offset, data, size);
+#endif
 }
 
 void JGPU::WGPURenderBundleEncoder::SetVertexBuffer(int slot, JGPU::WGPUBuffer* buffer, int offset, int size) {
@@ -3392,7 +3400,15 @@ void JGPU::WGPURenderPassEncoder::SetBlendConstant(JGPU::WGPUColor* color) {
 }
 
 void JGPU::WGPURenderPassEncoder::SetImmediates(int offset, void const* data, int size) {
+#if defined(__EMSCRIPTEN__)
+    (void)offset;
+    (void)data;
+    (void)size;
+#elif defined(JWEBGPU_DAWN)
+    wgpuRenderPassEncoderSetImmediateData(Get(), offset, data, size);
+#else
     wgpuRenderPassEncoderSetImmediates(Get(), offset, data, size);
+#endif
 }
 
 void JGPU::WGPURenderPassEncoder::SetIndexBuffer(JGPU::WGPUBuffer* buffer, WGPUIndexFormat format, int offset, int size) {
@@ -3752,7 +3768,15 @@ void JGPU::WGPUComputePassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGr
 }
 
 void JGPU::WGPUComputePassEncoder::SetImmediates(int offset, void const* data, int size) {
+#if defined(__EMSCRIPTEN__)
+    (void)offset;
+    (void)data;
+    (void)size;
+#elif defined(JWEBGPU_DAWN)
+    wgpuComputePassEncoderSetImmediateData(Get(), offset, data, size);
+#else
     wgpuComputePassEncoderSetImmediates(Get(), offset, data, size);
+#endif
 }
 
 void JGPU::WGPUComputePassEncoder::SetLabel(const char* label) {

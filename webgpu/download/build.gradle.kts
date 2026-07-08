@@ -7,10 +7,28 @@ plugins {
 }
 
 val WGPU_VERSION = "29.0.1.1"
-val emdawnVersion = "v20260623.191042"
-val buildDawnVersion = "2026-06-28"
+val dawnNativesVersion = providers.gradleProperty("dawnNativesVersion").orElse("7458").get()
+val dawnNativesTag = "dawn-$dawnNativesVersion"
+val dawnNativesReleaseUrl = "https://github.com/xpenatan/dawn-natives/releases/download/$dawnNativesTag"
 
 val buildDir = layout.buildDirectory.get().asFile
+
+fun downloadZip(url: String, zipFile: File) {
+    println("URL: $url")
+    zipFile.parentFile.mkdirs()
+    URL(url).openStream().use { input ->
+        Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
+    }
+}
+
+fun extractZip(zipFile: File, outputDir: File) {
+    project.delete(outputDir)
+    outputDir.mkdirs()
+    project.copy {
+        from(project.zipTree(zipFile))
+        into(outputDir)
+    }
+}
 
 fun registerDownloadTask(platform: String, os: String, arch: String) {
     val taskName = "webgpu_download_${platform}_wgpu"
@@ -20,70 +38,46 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
         doLast {
             val zipName = "wgpu-$os-$arch.zip"
             val url = "https://github.com/gfx-rs/wgpu-native/releases/download/v$WGPU_VERSION/$zipName"
-            println("URL: $url")
             val tmpDir = buildDir.resolve("tmp")
-            tmpDir.mkdirs()
             val zipFile = tmpDir.resolve("wgpu-$platform.zip")
-            // Download the file
-            URL(url).openStream().use { input ->
-                Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
-            }
-            // Extract to build/bin_release64
             val nativesDir = buildDir.resolve(platform)
-            nativesDir.mkdirs()
-            project.copy {
-                from(project.zipTree(zipFile))
-                into(nativesDir)
-            }
+            downloadZip(url, zipFile)
+            extractZip(zipFile, nativesDir)
+        }
+    }
+}
+
+fun registerDawnNativesDownloadTask(platform: String, packageName: String) {
+    tasks.register("webgpu_download_${platform}_dawn") {
+        group = "webgpu"
+        description = "Download $packageName from xpenatan/dawn-natives $dawnNativesTag"
+        doLast {
+            val url = "$dawnNativesReleaseUrl/$packageName.zip"
+            val zipFile = buildDir.resolve("tmp/$packageName.zip")
+            val nativesDir = buildDir.resolve(packageName)
+            downloadZip(url, zipFile)
+            extractZip(zipFile, nativesDir)
         }
     }
 }
 
 tasks.register("webgpu_download_emdawnwebgpu") {
     group = "webgpu"
-    description = "Download emdawnwebgpu headers"
+    description = "Download Emdawnwebgpu from xpenatan/dawn-natives $dawnNativesTag"
     doLast {
-        var url = "https://github.com/google/dawn/releases/download/${emdawnVersion}/emdawnwebgpu_pkg-${emdawnVersion}.zip"
-        println("URL: $url")
-        val tmpDir = buildDir.resolve("tmp")
-        tmpDir.mkdirs()
-        val zipFile = tmpDir.resolve("emdawnwebgpu.zip")
-        // Download the file
-        URL(url).openStream().use { input ->
-            Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
-        }
-        // Extract to build/bin_release64
-        val nativesDir = buildDir.resolve("")
-        nativesDir.mkdirs()
-        project.copy {
-            from(project.zipTree(zipFile))
-            into(nativesDir)
-        }
+        val packageName = "dawn-natives-web-emdawnwebgpu"
+        val url = "$dawnNativesReleaseUrl/$packageName.zip"
+        val zipFile = buildDir.resolve("tmp/$packageName.zip")
+        val nativesDir = buildDir.resolve(packageName)
+        downloadZip(url, zipFile)
+        extractZip(zipFile, nativesDir)
     }
 }
 
-tasks.register("webgpu_download_windows_x86_64_dawn") {
-    group = "webgpu"
-    description = "Download windows64 dawn headers"
-    doLast {
-        var url = "https://github.com/mmozeiko/build-dawn/releases/download/${buildDawnVersion}/dawn-x64-${buildDawnVersion}.zip"
-        println("URL: $url")
-        val tmpDir = buildDir.resolve("tmp")
-        tmpDir.mkdirs()
-        val zipFile = tmpDir.resolve("win64dawn.zip")
-        // Download the file
-        URL(url).openStream().use { input ->
-            Files.copy(input, zipFile.toPath(), StandardCopyOption.REPLACE_EXISTING)
-        }
-        // Extract to build/bin_release64
-        val nativesDir = buildDir.resolve("")
-        nativesDir.mkdirs()
-        project.copy {
-            from(project.zipTree(zipFile))
-            into(nativesDir)
-        }
-    }
-}
+registerDawnNativesDownloadTask("windows_x86_64", "dawn-natives-windows-x64-msvc")
+registerDawnNativesDownloadTask("linux_x86_64", "dawn-natives-linux-x64-gcc")
+registerDawnNativesDownloadTask("macos_x86_64", "dawn-natives-macos-x64")
+registerDawnNativesDownloadTask("macos_aarch64", "dawn-natives-macos-arm64")
 
 tasks.register("webgpu_download_glfw_windows") {
     group = "webgpu"

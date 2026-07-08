@@ -73,9 +73,10 @@ Linux JNI/FFM:
 
 ```bash
 ./gradlew :webgpu:download:webgpu_download_linux_x86_64_wgpu
+./gradlew :webgpu:download:webgpu_download_linux_x86_64_dawn
 ./gradlew :webgpu:download:webgpu_download_glfw_windows
-./gradlew :webgpu:builder:jParser_build_linux64_jni_wgpu
-./gradlew :webgpu:builder:jParser_build_linux64_ffm_wgpu
+./gradlew :webgpu:builder:jParser_build_linux64_jni_wgpu :webgpu:builder:jParser_build_linux64_jni_dawn
+./gradlew :webgpu:builder:jParser_build_linux64_ffm_wgpu :webgpu:builder:jParser_build_linux64_ffm_dawn
 ```
 
 macOS JNI/FFM:
@@ -83,9 +84,11 @@ macOS JNI/FFM:
 ```bash
 ./gradlew :webgpu:download:webgpu_download_macos_x86_64_wgpu
 ./gradlew :webgpu:download:webgpu_download_macos_aarch64_wgpu
+./gradlew :webgpu:download:webgpu_download_macos_x86_64_dawn
+./gradlew :webgpu:download:webgpu_download_macos_aarch64_dawn
 ./gradlew :webgpu:download:webgpu_download_glfw_windows
-./gradlew :webgpu:builder:jParser_build_mac64_jni_wgpu :webgpu:builder:jParser_build_macArm_jni_wgpu
-./gradlew :webgpu:builder:jParser_build_mac64_ffm_wgpu :webgpu:builder:jParser_build_macArm_ffm_wgpu
+./gradlew :webgpu:builder:jParser_build_mac64_jni_wgpu :webgpu:builder:jParser_build_mac64_jni_dawn :webgpu:builder:jParser_build_macArm_jni_wgpu :webgpu:builder:jParser_build_macArm_jni_dawn
+./gradlew :webgpu:builder:jParser_build_mac64_ffm_wgpu :webgpu:builder:jParser_build_mac64_ffm_dawn :webgpu:builder:jParser_build_macArm_ffm_wgpu :webgpu:builder:jParser_build_macArm_ffm_dawn
 ```
 
 TeaVM/WebAssembly:

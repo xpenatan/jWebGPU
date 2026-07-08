@@ -22,14 +22,23 @@ val platforms = listOf(
     DesktopNativePlatform(
         "windows_x64",
         "$nativeRoot/wgpu/windows/vc/ffm/jWebGPU64.dll",
-        listOf(
-            "$nativeRoot/dawn/windows/vc/ffm/jWebGPU64.dll",
-            "$projectDir/../../download/build/dawn-x64/webgpu_dawn.dll"
-        )
+        listOf("$nativeRoot/dawn/windows/vc/ffm/jWebGPU64.dll")
     ),
-    DesktopNativePlatform("linux_x64", "$nativeRoot/wgpu/linux/ffm/libjWebGPU64.so"),
-    DesktopNativePlatform("mac_x64", "$nativeRoot/wgpu/mac/ffm/libjWebGPU64.dylib"),
-    DesktopNativePlatform("mac_arm64", "$nativeRoot/wgpu/mac/arm/ffm/libjWebGPUarm64.dylib"),
+    DesktopNativePlatform(
+        "linux_x64",
+        "$nativeRoot/wgpu/linux/ffm/libjWebGPU64.so",
+        listOf("$nativeRoot/dawn/linux/ffm/libjWebGPU64.so")
+    ),
+    DesktopNativePlatform(
+        "mac_x64",
+        "$nativeRoot/wgpu/mac/ffm/libjWebGPU64.dylib",
+        listOf("$nativeRoot/dawn/mac/ffm/libjWebGPU64.dylib")
+    ),
+    DesktopNativePlatform(
+        "mac_arm64",
+        "$nativeRoot/wgpu/mac/arm/ffm/libjWebGPUarm64.dylib",
+        listOf("$nativeRoot/dawn/mac/arm/ffm/libjWebGPUarm64.dylib")
+    ),
 )
 
 val taskNames = gradle.startParameter.taskNames

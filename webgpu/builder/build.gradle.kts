@@ -22,11 +22,16 @@ val wgpuWindowsDir = File(downloadBuildDir, "windows_x86_64")
 val wgpuLinuxDir = File(downloadBuildDir, "linux_x86_64")
 val wgpuMacDir = File(downloadBuildDir, "macos_x86_64")
 val wgpuMacArmDir = File(downloadBuildDir, "macos_aarch64")
-val dawnWindowsDir = File(downloadBuildDir, "dawn-x64")
+val dawnWindowsDir = File(downloadBuildDir, "dawn-natives-windows-x64-msvc")
+val dawnLinuxDir = File(downloadBuildDir, "dawn-natives-linux-x64-gcc")
+val dawnMacDir = File(downloadBuildDir, "dawn-natives-macos-x64")
+val dawnMacArmDir = File(downloadBuildDir, "dawn-natives-macos-arm64")
 val glfwIncludeDir = File(downloadBuildDir, "GLFW")
-val emdawnDir = File(downloadBuildDir, "emdawnwebgpu_pkg")
+val emdawnDir = File(downloadBuildDir, "dawn-natives-web-emdawnwebgpu")
 
 val windowsSystemLibraries = listOf(
+    "onecore_apiset.lib",
+    "dxguid.lib",
     "ws2_32.lib",
     "userenv.lib",
     "ntdll.lib",
@@ -54,12 +59,70 @@ fun JParserTargetHooks.configureWindowsWGPU() {
 fun JParserTargetHooks.configureWindowsDawn() {
     includeDefaultSources.set(false)
     includeCustomSources.set(false)
-    headerDir(dawnWindowsDir.normalizedPath())
+    headerDir(File(dawnWindowsDir, "include").normalizedPath())
     headerDir(glfwIncludeDir.normalizedPath())
     compileFlag("/MD")
     compileFlag("/EHsc")
-    linkerFlag(File(dawnWindowsDir, "webgpu_dawn.lib").normalizedPath())
+    compileFlag("/Zc:preprocessor")
+    compileFlag("/DJWEBGPU_DAWN")
+    linkerFlag(File(dawnWindowsDir, "lib/webgpu_dawn.lib").normalizedPath())
     windowsSystemLibraries.forEach(::linkerFlag)
+}
+
+fun JParserTargetHooks.configureLinuxWGPU() {
+    includeDefaultSources.set(false)
+    includeCustomSources.set(false)
+    headerDir(File(wgpuLinuxDir, "include").normalizedPath())
+    headerDir(glfwIncludeDir.normalizedPath())
+    linkerFlag(File(wgpuLinuxDir, "lib/libwgpu_native.a").normalizedPath())
+}
+
+fun JParserTargetHooks.configureLinuxDawn() {
+    includeDefaultSources.set(false)
+    includeCustomSources.set(false)
+    headerDir(File(dawnLinuxDir, "include").normalizedPath())
+    headerDir(glfwIncludeDir.normalizedPath())
+    compileFlag("-DJWEBGPU_DAWN")
+    linkerFlag(File(dawnLinuxDir, "lib/libwebgpu_dawn.a").normalizedPath())
+    linkerFlag("-pthread")
+    linkerFlag("-ldl")
+}
+
+fun JParserTargetHooks.configureMacWGPU(wgpuDir: File) {
+    includeDefaultSources.set(false)
+    includeCustomSources.set(false)
+    headerDir(File(wgpuDir, "include").normalizedPath())
+    headerDir(glfwIncludeDir.normalizedPath())
+    compileFlag("-x")
+    compileFlag("objective-c++")
+    linkerFlag("-framework")
+    linkerFlag("Metal")
+    linkerFlag("-framework")
+    linkerFlag("Foundation")
+    linkerFlag("-framework")
+    linkerFlag("Cocoa")
+    linkerFlag("-framework")
+    linkerFlag("QuartzCore")
+    linkerFlag("-framework")
+    linkerFlag("CoreFoundation")
+    linkerFlag("-framework")
+    linkerFlag("IOKit")
+    linkerFlag(File(wgpuDir, "lib/libwgpu_native.a").normalizedPath())
+}
+
+fun JParserTargetHooks.configureMacDawn(dawnDir: File) {
+    includeDefaultSources.set(false)
+    includeCustomSources.set(false)
+    headerDir(File(dawnDir, "include").normalizedPath())
+    headerDir(glfwIncludeDir.normalizedPath())
+    compileFlag("-x")
+    compileFlag("objective-c++")
+    compileFlag("-DJWEBGPU_DAWN")
+    linkerFlag(File(dawnDir, "lib/libwebgpu_dawn.a").normalizedPath())
+    listOf("Cocoa", "IOKit", "Foundation", "IOSurface", "QuartzCore", "Metal").forEach { framework ->
+        linkerFlag("-framework")
+        linkerFlag(framework)
+    }
 }
 
 val androidArchives = mapOf(
@@ -128,11 +191,10 @@ jParser {
 
         listOf(JParserTargets.LINUX64_JNI, JParserTargets.LINUX64_FFM).forEach { targetName ->
             targetVariant(targetName, "wgpu") {
-                includeDefaultSources.set(false)
-                includeCustomSources.set(false)
-                headerDir(File(wgpuLinuxDir, "include").normalizedPath())
-                headerDir(glfwIncludeDir.normalizedPath())
-                linkerFlag(File(wgpuLinuxDir, "lib/libwgpu_native.a").normalizedPath())
+                configureLinuxWGPU()
+            }
+            targetVariant(targetName, "dawn") {
+                configureLinuxDawn()
             }
         }
 
@@ -143,25 +205,18 @@ jParser {
             JParserTargets.MAC_ARM_FFM to wgpuMacArmDir
         ).forEach { (targetName, wgpuDir) ->
             targetVariant(targetName, "wgpu") {
-                includeDefaultSources.set(false)
-                includeCustomSources.set(false)
-                headerDir(File(wgpuDir, "include").normalizedPath())
-                headerDir(glfwIncludeDir.normalizedPath())
-                compileFlag("-x")
-                compileFlag("objective-c++")
-                linkerFlag("-framework")
-                linkerFlag("Metal")
-                linkerFlag("-framework")
-                linkerFlag("Foundation")
-                linkerFlag("-framework")
-                linkerFlag("Cocoa")
-                linkerFlag("-framework")
-                linkerFlag("QuartzCore")
-                linkerFlag("-framework")
-                linkerFlag("CoreFoundation")
-                linkerFlag("-framework")
-                linkerFlag("IOKit")
-                linkerFlag(File(wgpuDir, "lib/libwgpu_native.a").normalizedPath())
+                configureMacWGPU(wgpuDir)
+            }
+        }
+
+        mapOf(
+            JParserTargets.MAC64_JNI to dawnMacDir,
+            JParserTargets.MAC64_FFM to dawnMacDir,
+            JParserTargets.MAC_ARM_JNI to dawnMacArmDir,
+            JParserTargets.MAC_ARM_FFM to dawnMacArmDir
+        ).forEach { (targetName, dawnDir) ->
+            targetVariant(targetName, "dawn") {
+                configureMacDawn(dawnDir)
             }
         }
 

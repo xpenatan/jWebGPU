@@ -76,6 +76,9 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:download:webgpu_download_glfw_windows
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_dawn
+.\gradlew.bat :webgpu:download:webgpu_download_linux_x86_64_dawn
+.\gradlew.bat :webgpu:download:webgpu_download_macos_x86_64_dawn
+.\gradlew.bat :webgpu:download:webgpu_download_macos_aarch64_dawn
 .\gradlew.bat :webgpu:download:webgpu_download_emdawnwebgpu
 
 .\gradlew.bat :webgpu:builder:jParser_generate
@@ -83,6 +86,12 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_linux64_jni_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_linux64_ffm_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_mac64_jni_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_mac64_ffm_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_macArm_jni_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_macArm_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_web_wasm
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni
 

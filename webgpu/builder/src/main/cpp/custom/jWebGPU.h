@@ -48,10 +48,22 @@
 #define WGPUTextureUsage_StorageBinding JWGPUTextureUsage_StorageBinding
 #define WGPUTextureUsage_RenderAttachment JWGPUTextureUsage_RenderAttachment
 
-#if __has_include("webgpu/webgpu.h")
+#if defined(JWEBGPU_DAWN) && __has_include("dawn/webgpu.h")
+#include "dawn/webgpu.h"
+#elif __has_include("webgpu/webgpu.h")
 #include "webgpu/webgpu.h"
 #else
 #include "webgpu.h"
+#endif
+
+#if defined(JWEBGPU_DAWN) || defined(__EMSCRIPTEN__)
+// Dawn 7458 and emdawnwebgpu omit these wgpu-native WGSL feature enum constants.
+#define WGPUWGSLLanguageFeatureName_UniformBufferStandardLayout ((WGPUWGSLLanguageFeatureName)0x00000005)
+#define WGPUWGSLLanguageFeatureName_SubgroupId ((WGPUWGSLLanguageFeatureName)0x00000006)
+#define WGPUWGSLLanguageFeatureName_TextureAndSamplerLet ((WGPUWGSLLanguageFeatureName)0x00000007)
+#define WGPUWGSLLanguageFeatureName_SubgroupUniformity ((WGPUWGSLLanguageFeatureName)0x00000008)
+#define WGPUWGSLLanguageFeatureName_TextureFormatsTier1 ((WGPUWGSLLanguageFeatureName)0x00000009)
+#define WGPUWGSLLanguageFeatureName_LinearIndexing ((WGPUWGSLLanguageFeatureName)0x0000000A)
 #endif
 
 // Undefine WGPUBufferUsage macros
