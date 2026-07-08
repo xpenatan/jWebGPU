@@ -27,7 +27,6 @@ pluginManagement {
 
 rootProject.name = "jWebGPU"
 
-include(":webgpu:dawn") // Experimental module to build Dawn source
 include(":webgpu:download") // Module to download native dependencies
 
 include(":webgpu:builder")

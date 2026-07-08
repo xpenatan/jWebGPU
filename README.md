@@ -32,7 +32,6 @@ Canonical modules are defined in `settings.gradle.kts`.
 Library modules:
 
 - `:webgpu:download` - native dependency download tasks.
-- `:webgpu:dawn` - experimental Dawn source build helpers.
 - `:webgpu:builder` - jParser plugin configuration and native build driver.
 - `:webgpu:base` - hand-authored Java templates and directive blocks.
 - `:webgpu:core` - generated Java API layer.
