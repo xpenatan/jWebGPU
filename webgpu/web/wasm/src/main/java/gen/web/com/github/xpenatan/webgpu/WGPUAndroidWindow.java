@@ -52,6 +52,6 @@ public class WGPUAndroidWindow extends NativeObject {
         internal_native_InitLogcat(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAndroidWindow);jsObj.initLogcat();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUAndroidWindow);jsObj.InitLogcat();")
     public static native void internal_native_InitLogcat(int this_addr);
 }

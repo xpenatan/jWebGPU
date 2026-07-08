@@ -61,7 +61,7 @@ public class WGPUByteBuffer extends NativeObject {
         return WGPUByteBuffer_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"capacity"}, script = "var returnedJSObj = jWebGPU.WGPUByteBuffer.prototype.obtain(capacity);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"capacity"}, script = "var returnedJSObj = jWebGPU.WGPUByteBuffer.prototype.Obtain(capacity);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr(int capacity);
 
     public void order(WGPUByteOrder order) {
@@ -82,14 +82,14 @@ public class WGPUByteBuffer extends NativeObject {
         internal_native_put__0(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put__0(value);")
     public static native void internal_native_put__0(int this_addr, byte value);
 
     public void put(int index, byte value) {
         internal_native_put__1(native_address, index, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put(index, value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUByteBuffer);jsObj.put__1(index, value);")
     public static native void internal_native_put__1(int this_addr, int index, byte value);
 
     public byte get() {

@@ -47,28 +47,28 @@ public class WGPUOrigin3D extends NativeObject {
         internal_native_Set(native_address, x, y, z);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "x", "y", "z"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.set(x, y, z);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "x", "y", "z"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.Set(x, y, z);")
     public static native void internal_native_Set(int this_addr, int x, int y, int z);
 
     public void setX(int value) {
         internal_native_SetX(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.setX(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.SetX(value);")
     public static native void internal_native_SetX(int this_addr, int value);
 
     public void setY(int value) {
         internal_native_SetY(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.setY(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.SetY(value);")
     public static native void internal_native_SetY(int this_addr, int value);
 
     public void setZ(int value) {
         internal_native_SetZ(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.setZ(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUOrigin3D);jsObj.SetZ(value);")
     public static native void internal_native_SetZ(int this_addr, int value);
 
     public static WGPUOrigin3D obtain() {
@@ -81,6 +81,6 @@ public class WGPUOrigin3D extends NativeObject {
         return WGPUOrigin3D_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUOrigin3D.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUOrigin3D.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

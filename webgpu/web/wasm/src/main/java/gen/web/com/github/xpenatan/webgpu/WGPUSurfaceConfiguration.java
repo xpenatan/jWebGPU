@@ -47,63 +47,63 @@ public class WGPUSurfaceConfiguration extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setWidth(int width) {
         internal_native_SetWidth(native_address, width);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "width"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setWidth(width);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "width"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetWidth(width);")
     public static native void internal_native_SetWidth(int this_addr, int width);
 
     public void setHeight(int height) {
         internal_native_SetHeight(native_address, height);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "height"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setHeight(height);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "height"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetHeight(height);")
     public static native void internal_native_SetHeight(int this_addr, int height);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setFormat(format);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetFormat(format);")
     public static native void internal_native_SetFormat(int this_addr, int format);
 
     public void setViewFormats(WGPUVectorTextureFormat formats) {
         internal_native_SetViewFormats(native_address, formats.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "formats_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setViewFormats(formats_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "formats_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetViewFormats(formats_addr);")
     public static native void internal_native_SetViewFormats(int this_addr, int formats_addr);
 
     public void setUsage(WGPUTextureUsage usage) {
         internal_native_SetUsage(native_address, usage.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "usage"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setUsage(usage);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "usage"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetUsage(usage);")
     public static native void internal_native_SetUsage(int this_addr, int usage);
 
     public void setDevice(WGPUDevice device) {
         internal_native_SetDevice(native_address, device.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "device_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setDevice(device_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "device_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetDevice(device_addr);")
     public static native void internal_native_SetDevice(int this_addr, int device_addr);
 
     public void setPresentMode(WGPUPresentMode presentMode) {
         internal_native_SetPresentMode(native_address, presentMode.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "presentMode"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setPresentMode(presentMode);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "presentMode"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetPresentMode(presentMode);")
     public static native void internal_native_SetPresentMode(int this_addr, int presentMode);
 
     public void setAlphaMode(WGPUCompositeAlphaMode alphaMode) {
         internal_native_SetAlphaMode(native_address, alphaMode.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "alphaMode"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.setAlphaMode(alphaMode);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "alphaMode"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceConfiguration);jsObj.SetAlphaMode(alphaMode);")
     public static native void internal_native_SetAlphaMode(int this_addr, int alphaMode);
 
     public static WGPUSurfaceConfiguration obtain() {
@@ -116,6 +116,6 @@ public class WGPUSurfaceConfiguration extends NativeObject {
         return WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSurfaceConfiguration.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSurfaceConfiguration.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

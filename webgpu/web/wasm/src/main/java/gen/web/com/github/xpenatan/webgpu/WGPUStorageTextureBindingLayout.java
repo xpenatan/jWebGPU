@@ -47,28 +47,28 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setAccess(WGPUStorageTextureAccess access) {
         internal_native_SetAccess(native_address, access.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "access"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.setAccess(access);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "access"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.SetAccess(access);")
     public static native void internal_native_SetAccess(int this_addr, int access);
 
     public void setFormat(WGPUTextureFormat format) {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.setFormat(format);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.SetFormat(format);")
     public static native void internal_native_SetFormat(int this_addr, int format);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "viewDimension"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.setViewDimension(viewDimension);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "viewDimension"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStorageTextureBindingLayout);jsObj.SetViewDimension(viewDimension);")
     public static native void internal_native_SetViewDimension(int this_addr, int viewDimension);
 
     public static WGPUStorageTextureBindingLayout obtain() {
@@ -81,6 +81,6 @@ public class WGPUStorageTextureBindingLayout extends NativeObject {
         return WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUStorageTextureBindingLayout.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUStorageTextureBindingLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

@@ -47,7 +47,7 @@ public class WGPUSurfaceTexture extends NativeObject {
         internal_native_GetTexture(native_address, texture.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "texture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceTexture);jsObj.getTexture(texture_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "texture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceTexture);jsObj.GetTexture(texture_addr);")
     public static native void internal_native_GetTexture(int this_addr, int texture_addr);
 
     public WGPUSurfaceGetCurrentTextureStatus getStatus() {
@@ -61,7 +61,7 @@ public class WGPUSurfaceTexture extends NativeObject {
         return WGPUSurfaceGetCurrentTextureStatus.CUSTOM.setValue(value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceTexture);var returnedJSObj = jsObj.getStatus();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurfaceTexture);var returnedJSObj = jsObj.GetStatus();return returnedJSObj;")
     public static native int internal_native_GetStatus(int this_addr);
 
     public static WGPUSurfaceTexture obtain() {
@@ -74,6 +74,6 @@ public class WGPUSurfaceTexture extends NativeObject {
         return WGPUSurfaceTexture_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSurfaceTexture.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSurfaceTexture.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

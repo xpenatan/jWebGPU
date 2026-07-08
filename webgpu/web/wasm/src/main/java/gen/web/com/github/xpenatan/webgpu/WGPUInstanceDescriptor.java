@@ -47,21 +47,21 @@ public class WGPUInstanceDescriptor extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures) {
         internal_native_SetRequiredFeatures(native_address, requiredFeatures.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "requiredFeatures_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.setRequiredFeatures(requiredFeatures_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "requiredFeatures_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetRequiredFeatures(requiredFeatures_addr);")
     public static native void internal_native_SetRequiredFeatures(int this_addr, int requiredFeatures_addr);
 
     public void setRequiredLimits(WGPUVectorInstanceLimits requiredLimits) {
         internal_native_SetRequiredLimits(native_address, requiredLimits.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "requiredLimits_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.setRequiredLimits(requiredLimits_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "requiredLimits_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetRequiredLimits(requiredLimits_addr);")
     public static native void internal_native_SetRequiredLimits(int this_addr, int requiredLimits_addr);
 
     public static WGPUInstanceDescriptor obtain() {
@@ -74,6 +74,6 @@ public class WGPUInstanceDescriptor extends NativeObject {
         return WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUInstanceDescriptor.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUInstanceDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

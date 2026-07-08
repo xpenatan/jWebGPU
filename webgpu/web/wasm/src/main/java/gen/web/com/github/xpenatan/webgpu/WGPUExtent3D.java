@@ -40,21 +40,21 @@ public class WGPUExtent3D extends NativeObject {
         internal_native_SetWidth(native_address, width);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "width"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.setWidth(width);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "width"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetWidth(width);")
     public static native void internal_native_SetWidth(int this_addr, int width);
 
     public void setHeight(int height) {
         internal_native_SetHeight(native_address, height);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "height"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.setHeight(height);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "height"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetHeight(height);")
     public static native void internal_native_SetHeight(int this_addr, int height);
 
     public void setDepthOrArrayLayers(int depthOrArrayLayers) {
         internal_native_SetDepthOrArrayLayers(native_address, depthOrArrayLayers);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthOrArrayLayers"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.setDepthOrArrayLayers(depthOrArrayLayers);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthOrArrayLayers"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUExtent3D);jsObj.SetDepthOrArrayLayers(depthOrArrayLayers);")
     public static native void internal_native_SetDepthOrArrayLayers(int this_addr, int depthOrArrayLayers);
 
     public static WGPUExtent3D obtain() {
@@ -67,6 +67,6 @@ public class WGPUExtent3D extends NativeObject {
         return WGPUExtent3D_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUExtent3D.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

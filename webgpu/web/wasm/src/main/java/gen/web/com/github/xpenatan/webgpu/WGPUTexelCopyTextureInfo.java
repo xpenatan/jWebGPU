@@ -42,14 +42,14 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         internal_native_SetTexture(native_address, texture.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "texture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.setTexture(texture_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "texture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.SetTexture(texture_addr);")
     public static native void internal_native_SetTexture(int this_addr, int texture_addr);
 
     public void setMipLevel(int mipLevel) {
         internal_native_SetMipLevel(native_address, mipLevel);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "mipLevel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.setMipLevel(mipLevel);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "mipLevel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.SetMipLevel(mipLevel);")
     public static native void internal_native_SetMipLevel(int this_addr, int mipLevel);
 
     public WGPUOrigin3D getOrigin() {
@@ -62,14 +62,14 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUOrigin3D_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);var returnedJSObj = jsObj.getOrigin();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);var returnedJSObj = jsObj.GetOrigin();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetOrigin_addr(int this_addr);
 
     public void setAspect(WGPUTextureAspect aspect) {
         internal_native_SetAspect(native_address, aspect.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "aspect"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.setAspect(aspect);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "aspect"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTexelCopyTextureInfo);jsObj.SetAspect(aspect);")
     public static native void internal_native_SetAspect(int this_addr, int aspect);
 
     public static WGPUTexelCopyTextureInfo obtain() {
@@ -82,6 +82,6 @@ public class WGPUTexelCopyTextureInfo extends NativeObject {
         return WGPUTexelCopyTextureInfo_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexelCopyTextureInfo.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTexelCopyTextureInfo.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

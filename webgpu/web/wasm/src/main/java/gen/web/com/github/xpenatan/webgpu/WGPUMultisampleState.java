@@ -45,27 +45,27 @@ public class WGPUMultisampleState extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setCount(int count) {
         internal_native_SetCount(native_address, count);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "count"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.setCount(count);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "count"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetCount(count);")
     public static native void internal_native_SetCount(int this_addr, int count);
 
     public void setMask(int mask) {
         internal_native_SetMask(native_address, mask);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "mask"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.setMask(mask);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "mask"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetMask(mask);")
     public static native void internal_native_SetMask(int this_addr, int mask);
 
     public void setAlphaToCoverageEnabled(boolean alphaToCoverageEnabled) {
         internal_native_SetAlphaToCoverageEnabled(native_address, alphaToCoverageEnabled);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "alphaToCoverageEnabled"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.setAlphaToCoverageEnabled(alphaToCoverageEnabled);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "alphaToCoverageEnabled"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUMultisampleState);jsObj.SetAlphaToCoverageEnabled(alphaToCoverageEnabled);")
     public static native void internal_native_SetAlphaToCoverageEnabled(int this_addr, boolean alphaToCoverageEnabled);
 }

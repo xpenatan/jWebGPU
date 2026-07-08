@@ -47,7 +47,7 @@ public class WGPUSupportedFeatures extends NativeObject {
         return internal_native_GetFeatureCount(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSupportedFeatures);var returnedJSObj = jsObj.getFeatureCount();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSupportedFeatures);var returnedJSObj = jsObj.GetFeatureCount();return returnedJSObj;")
     public static native int internal_native_GetFeatureCount(int this_addr);
 
     public WGPUFeatureName getFeatureAt(int index) {
@@ -61,7 +61,7 @@ public class WGPUSupportedFeatures extends NativeObject {
         return WGPUFeatureName.CUSTOM.setValue(value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSupportedFeatures);var returnedJSObj = jsObj.getFeatureAt(index);return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSupportedFeatures);var returnedJSObj = jsObj.GetFeatureAt(index);return returnedJSObj;")
     public static native int internal_native_GetFeatureAt(int this_addr, int index);
 
     public static WGPUSupportedFeatures obtain() {
@@ -74,6 +74,6 @@ public class WGPUSupportedFeatures extends NativeObject {
         return WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSupportedFeatures.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSupportedFeatures.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

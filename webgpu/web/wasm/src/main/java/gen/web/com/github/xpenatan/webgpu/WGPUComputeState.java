@@ -37,27 +37,27 @@ public class WGPUComputeState extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "shaderModule_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.setModule(shaderModule_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "shaderModule_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetModule(shaderModule_addr);")
     public static native void internal_native_SetModule(int this_addr, int shaderModule_addr);
 
     public void setEntryPoint(String entryPoint) {
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "entryPoint"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.setEntryPoint(entryPoint);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "entryPoint"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetEntryPoint(entryPoint);")
     public static native void internal_native_SetEntryPoint(int this_addr, String entryPoint);
 
     public void setConstants(WGPUVectorConstantEntry values) {
         internal_native_SetConstants(native_address, values.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "values_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.setConstants(values_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "values_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputeState);jsObj.SetConstants(values_addr);")
     public static native void internal_native_SetConstants(int this_addr, int values_addr);
 }

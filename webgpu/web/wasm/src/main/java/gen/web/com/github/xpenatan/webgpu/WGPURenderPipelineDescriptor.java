@@ -53,14 +53,14 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         internal_native_SetLabel(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.setLabel(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.SetLabel(value);")
     public static native void internal_native_SetLabel(int this_addr, String value);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public WGPUVertexState getVertex() {
@@ -73,7 +73,7 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPUVertexState_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);var returnedJSObj = jsObj.getVertex();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);var returnedJSObj = jsObj.GetVertex();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetVertex_addr(int this_addr);
 
     public WGPUPrimitiveState getPrimitive() {
@@ -86,21 +86,21 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPUPrimitiveState_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);var returnedJSObj = jsObj.getPrimitive();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);var returnedJSObj = jsObj.GetPrimitive();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetPrimitive_addr(int this_addr);
 
     public void setFragment(WGPUFragmentState fragmentState) {
         internal_native_SetFragment(native_address, fragmentState.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "fragmentState_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.setFragment(fragmentState_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "fragmentState_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.SetFragment(fragmentState_addr);")
     public static native void internal_native_SetFragment(int this_addr, int fragmentState_addr);
 
     public void setDepthStencil(WGPUDepthStencilState depthStencilState) {
         internal_native_SetDepthStencil(native_address, depthStencilState.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthStencilState_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.setDepthStencil(depthStencilState_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthStencilState_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.SetDepthStencil(depthStencilState_addr);")
     public static native void internal_native_SetDepthStencil(int this_addr, int depthStencilState_addr);
 
     public WGPUMultisampleState getMultisample() {
@@ -113,14 +113,14 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPUMultisampleState_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);var returnedJSObj = jsObj.getMultisample();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);var returnedJSObj = jsObj.GetMultisample();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetMultisample_addr(int this_addr);
 
     public void setLayout(WGPUPipelineLayout pipelineLayout) {
         internal_native_SetLayout(native_address, pipelineLayout.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "pipelineLayout_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.setLayout(pipelineLayout_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "pipelineLayout_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPipelineDescriptor);jsObj.SetLayout(pipelineLayout_addr);")
     public static native void internal_native_SetLayout(int this_addr, int pipelineLayout_addr);
 
     public static WGPURenderPipelineDescriptor obtain() {
@@ -133,6 +133,6 @@ public class WGPURenderPipelineDescriptor extends NativeObject {
         return WGPURenderPipelineDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPipelineDescriptor.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPipelineDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

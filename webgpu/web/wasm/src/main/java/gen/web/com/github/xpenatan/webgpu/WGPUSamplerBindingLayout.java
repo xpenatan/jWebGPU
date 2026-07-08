@@ -47,14 +47,14 @@ public class WGPUSamplerBindingLayout extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerBindingLayout);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerBindingLayout);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setType(WGPUSamplerBindingType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerBindingLayout);jsObj.setType(type);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerBindingLayout);jsObj.SetType(type);")
     public static native void internal_native_SetType(int this_addr, int type);
 
     public static WGPUSamplerBindingLayout obtain() {
@@ -67,6 +67,6 @@ public class WGPUSamplerBindingLayout extends NativeObject {
         return WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerBindingLayout.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerBindingLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

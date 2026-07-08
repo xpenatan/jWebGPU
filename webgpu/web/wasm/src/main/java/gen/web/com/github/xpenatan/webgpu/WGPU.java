@@ -50,7 +50,7 @@ public class WGPU extends NativeObject {
         return WGPUPlatformType.CUSTOM.setValue(value);
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.getPlatformType();return returnedJSObj;")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.GetPlatformType();return returnedJSObj;")
     public static native int internal_native_GetPlatformType();
 
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
@@ -62,7 +62,7 @@ public class WGPU extends NativeObject {
         return WGPUInstance_NEW;
     }
 
-    @org.teavm.jso.JSBody(params = {"descriptor_addr"}, script = "var returnedJSObj = jWebGPU.WGPU.prototype.setupInstance(descriptor_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"descriptor_addr"}, script = "var returnedJSObj = jWebGPU.WGPU.prototype.SetupInstance(descriptor_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_SetupInstance_addr(int descriptor_addr);
 
     public static WGPUInstance setupInstance() {
@@ -75,7 +75,7 @@ public class WGPU extends NativeObject {
         return WGPUInstance_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.setupInstance();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.SetupInstance();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_SetupInstance_addr();
 
     public static STBImage loadImage(WGPUByteBuffer buffer, int desiredChannels) {

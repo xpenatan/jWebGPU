@@ -50,91 +50,91 @@ public class WGPUComputePassEncoder extends NativeObject {
         internal_native_SetLabel(native_address, label);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setLabel(label);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.SetLabel(label);")
     public static native void internal_native_SetLabel(int this_addr, String label);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.release();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
     public void setDispatchWorkgroups(int workgroupCountX, int workgroupCountY, int workgroupCountZ) {
         internal_native_SetDispatchWorkgroups(native_address, workgroupCountX, workgroupCountY, workgroupCountZ);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "workgroupCountX", "workgroupCountY", "workgroupCountZ"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setDispatchWorkgroups(workgroupCountX, workgroupCountY, workgroupCountZ);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "workgroupCountX", "workgroupCountY", "workgroupCountZ"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.SetDispatchWorkgroups(workgroupCountX, workgroupCountY, workgroupCountZ);")
     public static native void internal_native_SetDispatchWorkgroups(int this_addr, int workgroupCountX, int workgroupCountY, int workgroupCountZ);
 
     public void dispatchWorkgroupsIndirect(WGPUBuffer indirectBuffer, int indirectOffset) {
         internal_native_DispatchWorkgroupsIndirect(native_address, indirectBuffer.native_address, indirectOffset);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "indirectBuffer_addr", "indirectOffset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.dispatchWorkgroupsIndirect(indirectBuffer_addr, indirectOffset);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "indirectBuffer_addr", "indirectOffset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.DispatchWorkgroupsIndirect(indirectBuffer_addr, indirectOffset);")
     public static native void internal_native_DispatchWorkgroupsIndirect(int this_addr, int indirectBuffer_addr, int indirectOffset);
 
     public void end() {
         internal_native_End(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.end();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.End();")
     public static native void internal_native_End(int this_addr);
 
     public void insertDebugMarker(String value) {
         internal_native_InsertDebugMarker(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.insertDebugMarker(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.InsertDebugMarker(value);")
     public static native void internal_native_InsertDebugMarker(int this_addr, String value);
 
     public void popDebugGroup() {
         internal_native_PopDebugGroup(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.popDebugGroup();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.PopDebugGroup();")
     public static native void internal_native_PopDebugGroup(int this_addr);
 
     public void pushDebugGroup(String groupLabel) {
         internal_native_PushDebugGroup(native_address, groupLabel);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "groupLabel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.pushDebugGroup(groupLabel);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "groupLabel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.PushDebugGroup(groupLabel);")
     public static native void internal_native_PushDebugGroup(int this_addr, String groupLabel);
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group, WGPUVectorInt offsets) {
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address, offsets.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr", "offsets_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setBindGroup(groupIndex, group_addr, offsets_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr", "offsets_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.SetBindGroup(groupIndex, group_addr, offsets_addr);")
     public static native void internal_native_SetBindGroup(int this_addr, int groupIndex, int group_addr, int offsets_addr);
 
     public void setBindGroup(int groupIndex, WGPUBindGroup group) {
         internal_native_SetBindGroup(native_address, groupIndex, group.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setBindGroup(groupIndex, group_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "group_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.SetBindGroup(groupIndex, group_addr);")
     public static native void internal_native_SetBindGroup(int this_addr, int groupIndex, int group_addr);
 
     public void setImmediates(int offset, NativeObject bytes, int dataSize) {
         internal_native_SetImmediates__1(native_address, offset, bytes.native_void_address, dataSize);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "offset", "bytes_addr", "dataSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setImmediates(offset, bytes_addr, dataSize);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "offset", "bytes_addr", "dataSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.SetImmediates__1(offset, bytes_addr, dataSize);")
     public static native void internal_native_SetImmediates__1(int this_addr, int offset, int bytes_addr, int dataSize);
 
     public void setPipeline(WGPUComputePipeline pipeline) {
         internal_native_SetPipeline(native_address, pipeline.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "pipeline_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.setPipeline(pipeline_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "pipeline_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);jsObj.SetPipeline(pipeline_addr);")
     public static native void internal_native_SetPipeline(int this_addr, int pipeline_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);var returnedJSObj = jsObj.isValid();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePassEncoder);var returnedJSObj = jsObj.IsValid();return returnedJSObj;")
     public static native boolean internal_native_IsValid(int this_addr);
 
     public static WGPUComputePassEncoder obtain() {
@@ -147,6 +147,6 @@ public class WGPUComputePassEncoder extends NativeObject {
         return WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePassEncoder.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUComputePassEncoder.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

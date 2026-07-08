@@ -37,7 +37,7 @@ public class WGPUBlendComponent extends NativeObject {
         internal_native_SetOperation(native_address, operation.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "operation"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);jsObj.setOperation(operation);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "operation"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);jsObj.SetOperation(operation);")
     public static native void internal_native_SetOperation(int this_addr, int operation);
 
     public WGPUBlendOperation getOperation() {
@@ -51,14 +51,14 @@ public class WGPUBlendComponent extends NativeObject {
         return WGPUBlendOperation.CUSTOM.setValue(value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);var returnedJSObj = jsObj.getOperation();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);var returnedJSObj = jsObj.GetOperation();return returnedJSObj;")
     public static native int internal_native_GetOperation(int this_addr);
 
     public void setSrcFactor(WGPUBlendFactor factor) {
         internal_native_SetSrcFactor(native_address, factor.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "factor"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);jsObj.setSrcFactor(factor);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "factor"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);jsObj.SetSrcFactor(factor);")
     public static native void internal_native_SetSrcFactor(int this_addr, int factor);
 
     public WGPUBlendFactor getSrcFactor() {
@@ -72,14 +72,14 @@ public class WGPUBlendComponent extends NativeObject {
         return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);var returnedJSObj = jsObj.getSrcFactor();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);var returnedJSObj = jsObj.GetSrcFactor();return returnedJSObj;")
     public static native int internal_native_GetSrcFactor(int this_addr);
 
     public void setDstFactor(WGPUBlendFactor factor) {
         internal_native_SetDstFactor(native_address, factor.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "factor"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);jsObj.setDstFactor(factor);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "factor"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);jsObj.SetDstFactor(factor);")
     public static native void internal_native_SetDstFactor(int this_addr, int factor);
 
     public WGPUBlendFactor getDstFactor() {
@@ -93,6 +93,6 @@ public class WGPUBlendComponent extends NativeObject {
         return WGPUBlendFactor.CUSTOM.setValue(value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);var returnedJSObj = jsObj.getDstFactor();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBlendComponent);var returnedJSObj = jsObj.GetDstFactor();return returnedJSObj;")
     public static native int internal_native_GetDstFactor(int this_addr);
 }

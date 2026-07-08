@@ -47,84 +47,84 @@ public class WGPUSamplerDescriptor extends NativeObject {
         internal_native_SetLabel(native_address, label);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setLabel(label);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetLabel(label);")
     public static native void internal_native_SetLabel(int this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setAddressModeU(WGPUAddressMode addressModeU) {
         internal_native_SetAddressModeU(native_address, addressModeU.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "addressModeU"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setAddressModeU(addressModeU);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "addressModeU"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetAddressModeU(addressModeU);")
     public static native void internal_native_SetAddressModeU(int this_addr, int addressModeU);
 
     public void setAddressModeV(WGPUAddressMode addressModeV) {
         internal_native_SetAddressModeV(native_address, addressModeV.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "addressModeV"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setAddressModeV(addressModeV);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "addressModeV"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetAddressModeV(addressModeV);")
     public static native void internal_native_SetAddressModeV(int this_addr, int addressModeV);
 
     public void setAddressModeW(WGPUAddressMode addressModeW) {
         internal_native_SetAddressModeW(native_address, addressModeW.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "addressModeW"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setAddressModeW(addressModeW);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "addressModeW"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetAddressModeW(addressModeW);")
     public static native void internal_native_SetAddressModeW(int this_addr, int addressModeW);
 
     public void setMagFilter(WGPUFilterMode magFilter) {
         internal_native_SetMagFilter(native_address, magFilter.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "magFilter"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setMagFilter(magFilter);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "magFilter"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetMagFilter(magFilter);")
     public static native void internal_native_SetMagFilter(int this_addr, int magFilter);
 
     public void setMinFilter(WGPUFilterMode minFilter) {
         internal_native_SetMinFilter(native_address, minFilter.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "minFilter"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setMinFilter(minFilter);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "minFilter"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetMinFilter(minFilter);")
     public static native void internal_native_SetMinFilter(int this_addr, int minFilter);
 
     public void setMipmapFilter(WGPUMipmapFilterMode mipmapFilter) {
         internal_native_SetMipmapFilter(native_address, mipmapFilter.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "mipmapFilter"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setMipmapFilter(mipmapFilter);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "mipmapFilter"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetMipmapFilter(mipmapFilter);")
     public static native void internal_native_SetMipmapFilter(int this_addr, int mipmapFilter);
 
     public void setLodMinClamp(float lodMinClamp) {
         internal_native_SetLodMinClamp(native_address, lodMinClamp);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "lodMinClamp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setLodMinClamp(lodMinClamp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "lodMinClamp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetLodMinClamp(lodMinClamp);")
     public static native void internal_native_SetLodMinClamp(int this_addr, float lodMinClamp);
 
     public void setLodMaxClamp(float lodMaxClamp) {
         internal_native_SetLodMaxClamp(native_address, lodMaxClamp);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "lodMaxClamp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setLodMaxClamp(lodMaxClamp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "lodMaxClamp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetLodMaxClamp(lodMaxClamp);")
     public static native void internal_native_SetLodMaxClamp(int this_addr, float lodMaxClamp);
 
     public void setCompare(WGPUCompareFunction compare) {
         internal_native_SetCompare(native_address, compare.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "compare"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setCompare(compare);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "compare"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetCompare(compare);")
     public static native void internal_native_SetCompare(int this_addr, int compare);
 
     public void setMaxAnisotropy(int maxAnisotropy) {
         internal_native_SetMaxAnisotropy(native_address, maxAnisotropy);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "maxAnisotropy"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.setMaxAnisotropy(maxAnisotropy);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "maxAnisotropy"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSamplerDescriptor);jsObj.SetMaxAnisotropy(maxAnisotropy);")
     public static native void internal_native_SetMaxAnisotropy(int this_addr, int maxAnisotropy);
 
     public static WGPUSamplerDescriptor obtain() {
@@ -137,6 +137,6 @@ public class WGPUSamplerDescriptor extends NativeObject {
         return WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUSamplerDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

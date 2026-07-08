@@ -47,28 +47,28 @@ public class WGPUQuerySetDescriptor extends NativeObject {
         internal_native_SetLabel(native_address, label);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.setLabel(label);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.SetLabel(label);")
     public static native void internal_native_SetLabel(int this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setType(WGPUQueryType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.setType(type);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.SetType(type);")
     public static native void internal_native_SetType(int this_addr, int type);
 
     public void setCount(int count) {
         internal_native_SetCount(native_address, count);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "count"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.setCount(count);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "count"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUQuerySetDescriptor);jsObj.SetCount(count);")
     public static native void internal_native_SetCount(int this_addr, int count);
 
     public static WGPUQuerySetDescriptor obtain() {
@@ -81,6 +81,6 @@ public class WGPUQuerySetDescriptor extends NativeObject {
         return WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUQuerySetDescriptor.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUQuerySetDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

@@ -47,28 +47,28 @@ public class WGPUTextureBindingLayout extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setSampleType(WGPUTextureSampleType sampleType) {
         internal_native_SetSampleType(native_address, sampleType.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "sampleType"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.setSampleType(sampleType);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "sampleType"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.SetSampleType(sampleType);")
     public static native void internal_native_SetSampleType(int this_addr, int sampleType);
 
     public void setViewDimension(WGPUTextureViewDimension viewDimension) {
         internal_native_SetViewDimension(native_address, viewDimension.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "viewDimension"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.setViewDimension(viewDimension);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "viewDimension"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.SetViewDimension(viewDimension);")
     public static native void internal_native_SetViewDimension(int this_addr, int viewDimension);
 
     public void setMultisampled(int multisampled) {
         internal_native_SetMultisampled(native_address, multisampled);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "multisampled"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.setMultisampled(multisampled);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "multisampled"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUTextureBindingLayout);jsObj.SetMultisampled(multisampled);")
     public static native void internal_native_SetMultisampled(int this_addr, int multisampled);
 
     public static WGPUTextureBindingLayout obtain() {
@@ -81,6 +81,6 @@ public class WGPUTextureBindingLayout extends NativeObject {
         return WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTextureBindingLayout.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUTextureBindingLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

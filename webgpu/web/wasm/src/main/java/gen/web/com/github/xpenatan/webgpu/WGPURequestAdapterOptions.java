@@ -47,35 +47,35 @@ public class WGPURequestAdapterOptions extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setFeatureLevel(WGPUFeatureLevel featureLevel) {
         internal_native_SetFeatureLevel(native_address, featureLevel.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "featureLevel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.setFeatureLevel(featureLevel);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "featureLevel"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.SetFeatureLevel(featureLevel);")
     public static native void internal_native_SetFeatureLevel(int this_addr, int featureLevel);
 
     public void setPowerPreference(WGPUPowerPreference powerPreference) {
         internal_native_SetPowerPreference(native_address, powerPreference.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "powerPreference"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.setPowerPreference(powerPreference);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "powerPreference"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.SetPowerPreference(powerPreference);")
     public static native void internal_native_SetPowerPreference(int this_addr, int powerPreference);
 
     public void setBackendType(WGPUBackendType backendType) {
         internal_native_SetBackendType(native_address, backendType.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "backendType"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.setBackendType(backendType);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "backendType"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.SetBackendType(backendType);")
     public static native void internal_native_SetBackendType(int this_addr, int backendType);
 
     public void setCompatibleSurface(WGPUSurface compatibleSurface) {
         internal_native_SetCompatibleSurface(native_address, compatibleSurface.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "compatibleSurface_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.setCompatibleSurface(compatibleSurface_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "compatibleSurface_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestAdapterOptions);jsObj.SetCompatibleSurface(compatibleSurface_addr);")
     public static native void internal_native_SetCompatibleSurface(int this_addr, int compatibleSurface_addr);
 
     public static WGPURequestAdapterOptions obtain() {
@@ -88,6 +88,6 @@ public class WGPURequestAdapterOptions extends NativeObject {
         return WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURequestAdapterOptions.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURequestAdapterOptions.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

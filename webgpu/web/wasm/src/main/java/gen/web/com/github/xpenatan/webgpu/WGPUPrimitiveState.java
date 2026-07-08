@@ -37,34 +37,34 @@ public class WGPUPrimitiveState extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setTopology(WGPUPrimitiveTopology value) {
         internal_native_SetTopology(native_address, value.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.setTopology(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.SetTopology(value);")
     public static native void internal_native_SetTopology(int this_addr, int value);
 
     public void setStripIndexFormat(WGPUIndexFormat value) {
         internal_native_SetStripIndexFormat(native_address, value.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.setStripIndexFormat(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.SetStripIndexFormat(value);")
     public static native void internal_native_SetStripIndexFormat(int this_addr, int value);
 
     public void setFrontFace(WGPUFrontFace value) {
         internal_native_SetFrontFace(native_address, value.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.setFrontFace(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.SetFrontFace(value);")
     public static native void internal_native_SetFrontFace(int this_addr, int value);
 
     public void setCullMode(WGPUCullMode value) {
         internal_native_SetCullMode(native_address, value.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.setCullMode(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUPrimitiveState);jsObj.SetCullMode(value);")
     public static native void internal_native_SetCullMode(int this_addr, int value);
 }

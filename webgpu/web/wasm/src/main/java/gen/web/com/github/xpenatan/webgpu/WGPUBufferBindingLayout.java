@@ -47,28 +47,28 @@ public class WGPUBufferBindingLayout extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setType(WGPUBufferBindingType type) {
         internal_native_SetType(native_address, type.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.setType(type);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.SetType(type);")
     public static native void internal_native_SetType(int this_addr, int type);
 
     public void setHasDynamicOffset(int hasDynamicOffset) {
         internal_native_SetHasDynamicOffset(native_address, hasDynamicOffset);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "hasDynamicOffset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.setHasDynamicOffset(hasDynamicOffset);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "hasDynamicOffset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.SetHasDynamicOffset(hasDynamicOffset);")
     public static native void internal_native_SetHasDynamicOffset(int this_addr, int hasDynamicOffset);
 
     public void setMinBindingSize(int minBindingSize) {
         internal_native_SetMinBindingSize(native_address, minBindingSize);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "minBindingSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.setMinBindingSize(minBindingSize);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "minBindingSize"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBufferBindingLayout);jsObj.SetMinBindingSize(minBindingSize);")
     public static native void internal_native_SetMinBindingSize(int this_addr, int minBindingSize);
 
     public static WGPUBufferBindingLayout obtain() {
@@ -81,6 +81,6 @@ public class WGPUBufferBindingLayout extends NativeObject {
         return WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBufferBindingLayout.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBufferBindingLayout.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

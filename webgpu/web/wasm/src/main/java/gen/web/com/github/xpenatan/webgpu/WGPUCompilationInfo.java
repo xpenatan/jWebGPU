@@ -47,7 +47,7 @@ public class WGPUCompilationInfo extends NativeObject {
         return internal_native_GetMessageCount(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationInfo);var returnedJSObj = jsObj.getMessageCount();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationInfo);var returnedJSObj = jsObj.GetMessageCount();return returnedJSObj;")
     public static native int internal_native_GetMessageCount(int this_addr);
 
     public WGPUCompilationMessage getMessage(int index) {
@@ -60,6 +60,6 @@ public class WGPUCompilationInfo extends NativeObject {
         return WGPUCompilationMessage_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationInfo);var returnedJSObj = jsObj.getMessage(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCompilationInfo);var returnedJSObj = jsObj.GetMessage(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetMessage_addr(int this_addr, int index);
 }

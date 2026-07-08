@@ -52,14 +52,14 @@ public class WGPUShortBuffer extends NativeObject {
         internal_native_put__0(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put__0(value);")
     public static native void internal_native_put__0(int this_addr, short value);
 
     public void put(int index, short value) {
         internal_native_put__1(native_address, index, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put(index, value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUShortBuffer);jsObj.put__1(index, value);")
     public static native void internal_native_put__1(int this_addr, int index, short value);
 
     public short get(int index) {

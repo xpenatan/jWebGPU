@@ -37,34 +37,34 @@ public class WGPUVertexState extends NativeObject {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setModule(WGPUShaderModule shaderModule) {
         internal_native_SetModule(native_address, shaderModule.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "shaderModule_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.setModule(shaderModule_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "shaderModule_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.SetModule(shaderModule_addr);")
     public static native void internal_native_SetModule(int this_addr, int shaderModule_addr);
 
     public void setEntryPoint(String entryPoint) {
         internal_native_SetEntryPoint(native_address, entryPoint);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "entryPoint"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.setEntryPoint(entryPoint);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "entryPoint"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.SetEntryPoint(entryPoint);")
     public static native void internal_native_SetEntryPoint(int this_addr, String entryPoint);
 
     public void setConstants(WGPUVectorConstantEntry constants) {
         internal_native_SetConstants(native_address, constants.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "constants_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.setConstants(constants_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "constants_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.SetConstants(constants_addr);")
     public static native void internal_native_SetConstants(int this_addr, int constants_addr);
 
     public void setBuffers(WGPUVectorVertexBufferLayout buffers) {
         internal_native_SetBuffers(native_address, buffers.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "buffers_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.setBuffers(buffers_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "buffers_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexState);jsObj.SetBuffers(buffers_addr);")
     public static native void internal_native_SetBuffers(int this_addr, int buffers_addr);
 }

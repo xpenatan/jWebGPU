@@ -47,14 +47,14 @@ public class WGPUInstanceLimits extends NativeObject {
         internal_native_SetTimedWaitAnyMaxCount(native_address, timedWaitAnyMaxCount);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "timedWaitAnyMaxCount"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceLimits);jsObj.setTimedWaitAnyMaxCount(timedWaitAnyMaxCount);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "timedWaitAnyMaxCount"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceLimits);jsObj.SetTimedWaitAnyMaxCount(timedWaitAnyMaxCount);")
     public static native void internal_native_SetTimedWaitAnyMaxCount(int this_addr, int timedWaitAnyMaxCount);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceLimits);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceLimits);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public static WGPUInstanceLimits obtain() {
@@ -67,6 +67,6 @@ public class WGPUInstanceLimits extends NativeObject {
         return WGPUInstanceLimits_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUInstanceLimits.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUInstanceLimits.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

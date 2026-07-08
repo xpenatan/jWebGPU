@@ -37,13 +37,13 @@ public class WGPUChainedStruct extends NativeObject {
         internal_native_SetNext(native_address, value.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUChainedStruct);jsObj.setNext(value_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUChainedStruct);jsObj.SetNext(value_addr);")
     public static native void internal_native_SetNext(int this_addr, int value_addr);
 
     public void setSType(WGPUSType type) {
         internal_native_SetSType(native_address, type.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUChainedStruct);jsObj.setSType(type);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "type"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUChainedStruct);jsObj.SetSType(type);")
     public static native void internal_native_SetSType(int this_addr, int type);
 }

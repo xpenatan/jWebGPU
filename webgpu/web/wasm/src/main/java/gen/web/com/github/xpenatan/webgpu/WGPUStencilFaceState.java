@@ -37,27 +37,27 @@ public class WGPUStencilFaceState extends NativeObject {
         internal_native_SetCompare(native_address, compare.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "compare"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.setCompare(compare);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "compare"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.SetCompare(compare);")
     public static native void internal_native_SetCompare(int this_addr, int compare);
 
     public void setFailOp(WGPUStencilOperation failOp) {
         internal_native_SetFailOp(native_address, failOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "failOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.setFailOp(failOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "failOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.SetFailOp(failOp);")
     public static native void internal_native_SetFailOp(int this_addr, int failOp);
 
     public void setDepthFailOp(WGPUStencilOperation depthFailOp) {
         internal_native_SetDepthFailOp(native_address, depthFailOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthFailOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.setDepthFailOp(depthFailOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthFailOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.SetDepthFailOp(depthFailOp);")
     public static native void internal_native_SetDepthFailOp(int this_addr, int depthFailOp);
 
     public void setPassOp(WGPUStencilOperation passOp) {
         internal_native_SetPassOp(native_address, passOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "passOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.setPassOp(passOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "passOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUStencilFaceState);jsObj.SetPassOp(passOp);")
     public static native void internal_native_SetPassOp(int this_addr, int passOp);
 }

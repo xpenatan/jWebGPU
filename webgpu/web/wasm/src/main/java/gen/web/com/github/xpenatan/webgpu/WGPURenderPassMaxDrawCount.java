@@ -47,14 +47,14 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         internal_native_SetMaxDrawCount(native_address, maxDrawCount);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "maxDrawCount"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassMaxDrawCount);jsObj.setMaxDrawCount(maxDrawCount);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "maxDrawCount"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassMaxDrawCount);jsObj.SetMaxDrawCount(maxDrawCount);")
     public static native void internal_native_SetMaxDrawCount(int this_addr, int maxDrawCount);
 
     public int getMaxDrawCount() {
         return internal_native_GetMaxDrawCount(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassMaxDrawCount);var returnedJSObj = jsObj.getMaxDrawCount();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassMaxDrawCount);var returnedJSObj = jsObj.GetMaxDrawCount();return returnedJSObj;")
     public static native int internal_native_GetMaxDrawCount(int this_addr);
 
     public static WGPURenderPassMaxDrawCount obtain() {
@@ -67,6 +67,6 @@ public class WGPURenderPassMaxDrawCount extends NativeObject {
         return WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassMaxDrawCount.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassMaxDrawCount.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

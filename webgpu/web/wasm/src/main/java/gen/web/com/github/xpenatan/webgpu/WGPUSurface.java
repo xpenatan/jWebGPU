@@ -37,48 +37,48 @@ public class WGPUSurface extends NativeObject {
         internal_native_SetLabel(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.setLabel(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.SetLabel(value);")
     public static native void internal_native_SetLabel(int this_addr, String value);
 
     public void unconfigure() {
         internal_native_Unconfigure(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.unconfigure();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.Unconfigure();")
     public static native void internal_native_Unconfigure(int this_addr);
 
     public void release() {
         internal_native_Release(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.release();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
     public void configure(WGPUSurfaceConfiguration config) {
         internal_native_Configure(native_address, config.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "config_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.configure(config_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "config_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.Configure(config_addr);")
     public static native void internal_native_Configure(int this_addr, int config_addr);
 
     public void getCapabilities(WGPUAdapter adapter, WGPUSurfaceCapabilities surfaceCapabilities) {
         internal_native_GetCapabilities(native_address, adapter.native_address, surfaceCapabilities.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "adapter_addr", "surfaceCapabilities_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.getCapabilities(adapter_addr, surfaceCapabilities_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "adapter_addr", "surfaceCapabilities_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.GetCapabilities(adapter_addr, surfaceCapabilities_addr);")
     public static native void internal_native_GetCapabilities(int this_addr, int adapter_addr, int surfaceCapabilities_addr);
 
     public void getCurrentTexture(WGPUSurfaceTexture surfaceTexture) {
         internal_native_GetCurrentTexture(native_address, surfaceTexture.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "surfaceTexture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.getCurrentTexture(surfaceTexture_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "surfaceTexture_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.GetCurrentTexture(surfaceTexture_addr);")
     public static native void internal_native_GetCurrentTexture(int this_addr, int surfaceTexture_addr);
 
     public void present() {
         internal_native_Present(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.present();")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUSurface);jsObj.Present();")
     public static native void internal_native_Present(int this_addr);
 }

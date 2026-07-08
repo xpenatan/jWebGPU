@@ -39,7 +39,7 @@ public class WGPUFutureWaitInfo extends NativeObject {
         internal_native_SetFuture(native_address, future.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "future_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFutureWaitInfo);jsObj.setFuture(future_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "future_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUFutureWaitInfo);jsObj.SetFuture(future_addr);")
     public static native void internal_native_SetFuture(int this_addr, int future_addr);
 
     public static WGPUFutureWaitInfo obtain() {
@@ -52,6 +52,6 @@ public class WGPUFutureWaitInfo extends NativeObject {
         return WGPUFutureWaitInfo_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUFutureWaitInfo.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUFutureWaitInfo.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

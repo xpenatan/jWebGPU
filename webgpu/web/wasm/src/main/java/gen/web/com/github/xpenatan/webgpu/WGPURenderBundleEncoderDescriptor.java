@@ -47,49 +47,49 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         internal_native_SetLabel(native_address, label);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setLabel(label);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "label"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetLabel(label);")
     public static native void internal_native_SetLabel(int this_addr, String label);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setColorFormats(WGPUVectorTextureFormat colorFormats) {
         internal_native_SetColorFormats(native_address, colorFormats.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "colorFormats_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setColorFormats(colorFormats_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "colorFormats_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetColorFormats(colorFormats_addr);")
     public static native void internal_native_SetColorFormats(int this_addr, int colorFormats_addr);
 
     public void setDepthStencilFormat(WGPUTextureFormat depthStencilFormat) {
         internal_native_SetDepthStencilFormat(native_address, depthStencilFormat.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthStencilFormat"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setDepthStencilFormat(depthStencilFormat);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthStencilFormat"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetDepthStencilFormat(depthStencilFormat);")
     public static native void internal_native_SetDepthStencilFormat(int this_addr, int depthStencilFormat);
 
     public void setSampleCount(int sampleCount) {
         internal_native_SetSampleCount(native_address, sampleCount);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "sampleCount"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setSampleCount(sampleCount);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "sampleCount"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetSampleCount(sampleCount);")
     public static native void internal_native_SetSampleCount(int this_addr, int sampleCount);
 
     public void setDepthReadOnly(int depthReadOnly) {
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setDepthReadOnly(depthReadOnly);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetDepthReadOnly(depthReadOnly);")
     public static native void internal_native_SetDepthReadOnly(int this_addr, int depthReadOnly);
 
     public void setStencilReadOnly(int stencilReadOnly) {
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "stencilReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.setStencilReadOnly(stencilReadOnly);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "stencilReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoderDescriptor);jsObj.SetStencilReadOnly(stencilReadOnly);")
     public static native void internal_native_SetStencilReadOnly(int this_addr, int stencilReadOnly);
 
     public static WGPURenderBundleEncoderDescriptor obtain() {
@@ -102,6 +102,6 @@ public class WGPURenderBundleEncoderDescriptor extends NativeObject {
         return WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderBundleEncoderDescriptor.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderBundleEncoderDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

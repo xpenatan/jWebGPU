@@ -47,21 +47,21 @@ public class WGPUVertexAttribute extends NativeObject {
         internal_native_SetFormat(native_address, format.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexAttribute);jsObj.setFormat(format);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "format"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexAttribute);jsObj.SetFormat(format);")
     public static native void internal_native_SetFormat(int this_addr, int format);
 
     public void setOffset(int offset) {
         internal_native_SetOffset(native_address, offset);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "offset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexAttribute);jsObj.setOffset(offset);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "offset"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexAttribute);jsObj.SetOffset(offset);")
     public static native void internal_native_SetOffset(int this_addr, int offset);
 
     public void setShaderLocation(int shaderLocation) {
         internal_native_SetShaderLocation(native_address, shaderLocation);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "shaderLocation"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexAttribute);jsObj.setShaderLocation(shaderLocation);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "shaderLocation"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUVertexAttribute);jsObj.SetShaderLocation(shaderLocation);")
     public static native void internal_native_SetShaderLocation(int this_addr, int shaderLocation);
 
     public static WGPUVertexAttribute obtain() {
@@ -74,6 +74,6 @@ public class WGPUVertexAttribute extends NativeObject {
         return WGPUVertexAttribute_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVertexAttribute.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUVertexAttribute.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

@@ -47,28 +47,28 @@ public class WGPUBindGroupDescriptor extends NativeObject {
         internal_native_SetLabel(native_address, value);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.setLabel(value);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.SetLabel(value);")
     public static native void internal_native_SetLabel(int this_addr, String value);
 
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.setNextInChain(chainedStruct_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "chainedStruct_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.SetNextInChain(chainedStruct_addr);")
     public static native void internal_native_SetNextInChain(int this_addr, int chainedStruct_addr);
 
     public void setLayout(WGPUBindGroupLayout layout) {
         internal_native_SetLayout(native_address, layout.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "layout_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.setLayout(layout_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "layout_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.SetLayout(layout_addr);")
     public static native void internal_native_SetLayout(int this_addr, int layout_addr);
 
     public void setEntries(WGPUVectorBindGroupEntry entries) {
         internal_native_SetEntries(native_address, entries.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "entries_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.setEntries(entries_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "entries_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUBindGroupDescriptor);jsObj.SetEntries(entries_addr);")
     public static native void internal_native_SetEntries(int this_addr, int entries_addr);
 
     public static WGPUBindGroupDescriptor obtain() {
@@ -81,6 +81,6 @@ public class WGPUBindGroupDescriptor extends NativeObject {
         return WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBindGroupDescriptor.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPUBindGroupDescriptor.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }

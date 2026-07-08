@@ -45,27 +45,27 @@ public class STBImage extends NativeObject {
         return WGPUByteBuffer_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.getPixels();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.GetPixels();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_GetPixels_addr(int this_addr);
 
     public int getWidth() {
         return internal_native_GetWidth(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.getWidth();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.GetWidth();return returnedJSObj;")
     public static native int internal_native_GetWidth(int this_addr);
 
     public int getHeight() {
         return internal_native_GetHeight(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.getHeight();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.GetHeight();return returnedJSObj;")
     public static native int internal_native_GetHeight(int this_addr);
 
     public int getFormat() {
         return internal_native_GetFormat(native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.getFormat();return returnedJSObj;")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.STBImage);var returnedJSObj = jsObj.GetFormat();return returnedJSObj;")
     public static native int internal_native_GetFormat(int this_addr);
 }

@@ -47,63 +47,63 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
         internal_native_SetView(native_address, textureView.native_address);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "textureView_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setView(textureView_addr);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "textureView_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetView(textureView_addr);")
     public static native void internal_native_SetView(int this_addr, int textureView_addr);
 
     public void setDepthLoadOp(WGPULoadOp loadOp) {
         internal_native_SetDepthLoadOp(native_address, loadOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "loadOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setDepthLoadOp(loadOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "loadOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetDepthLoadOp(loadOp);")
     public static native void internal_native_SetDepthLoadOp(int this_addr, int loadOp);
 
     public void setDepthStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetDepthStoreOp(native_address, storeOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "storeOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setDepthStoreOp(storeOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "storeOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetDepthStoreOp(storeOp);")
     public static native void internal_native_SetDepthStoreOp(int this_addr, int storeOp);
 
     public void setDepthClearValue(float depthClearValue) {
         internal_native_SetDepthClearValue(native_address, depthClearValue);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthClearValue"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setDepthClearValue(depthClearValue);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthClearValue"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetDepthClearValue(depthClearValue);")
     public static native void internal_native_SetDepthClearValue(int this_addr, float depthClearValue);
 
     public void setDepthReadOnly(boolean depthReadOnly) {
         internal_native_SetDepthReadOnly(native_address, depthReadOnly);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "depthReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setDepthReadOnly(depthReadOnly);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "depthReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetDepthReadOnly(depthReadOnly);")
     public static native void internal_native_SetDepthReadOnly(int this_addr, boolean depthReadOnly);
 
     public void setStencilLoadOp(WGPULoadOp loadOp) {
         internal_native_SetStencilLoadOp(native_address, loadOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "loadOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setStencilLoadOp(loadOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "loadOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetStencilLoadOp(loadOp);")
     public static native void internal_native_SetStencilLoadOp(int this_addr, int loadOp);
 
     public void setStencilStoreOp(WGPUStoreOp storeOp) {
         internal_native_SetStencilStoreOp(native_address, storeOp.getValue());
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "storeOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setStencilStoreOp(storeOp);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "storeOp"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetStencilStoreOp(storeOp);")
     public static native void internal_native_SetStencilStoreOp(int this_addr, int storeOp);
 
     public void setStencilClearValue(int stencilClearValue) {
         internal_native_SetStencilClearValue(native_address, stencilClearValue);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "stencilClearValue"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setStencilClearValue(stencilClearValue);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "stencilClearValue"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetStencilClearValue(stencilClearValue);")
     public static native void internal_native_SetStencilClearValue(int this_addr, int stencilClearValue);
 
     public void setStencilReadOnly(boolean stencilReadOnly) {
         internal_native_SetStencilReadOnly(native_address, stencilReadOnly);
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "stencilReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.setStencilReadOnly(stencilReadOnly);")
+    @org.teavm.jso.JSBody(params = {"this_addr", "stencilReadOnly"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderPassDepthStencilAttachment);jsObj.SetStencilReadOnly(stencilReadOnly);")
     public static native void internal_native_SetStencilReadOnly(int this_addr, boolean stencilReadOnly);
 
     public static WGPURenderPassDepthStencilAttachment obtain() {
@@ -116,6 +116,6 @@ public class WGPURenderPassDepthStencilAttachment extends NativeObject {
         return WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassDepthStencilAttachment.prototype.obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPURenderPassDepthStencilAttachment.prototype.Obtain();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
     public static native int internal_native_Obtain_addr();
 }
