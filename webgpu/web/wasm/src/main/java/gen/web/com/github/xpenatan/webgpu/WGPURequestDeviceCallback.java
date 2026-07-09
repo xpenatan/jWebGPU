@@ -44,7 +44,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
         OnCallback OnCallback = new OnCallback() {
 
             public void OnCallback(int status_addr, int device_addr, int message_addr) {
-                internal_onCallback(status_addr, device_addr, NativeUtils.getJSString(message_addr));
+                internal_OnCallback(status_addr, device_addr, NativeUtils.getJSString(message_addr));
             }
         };
         internal_native_setupCallback(native_address, OnCallback);
@@ -53,7 +53,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
     protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device, String message) {
     }
 
-    private void internal_onCallback(int status_addr, int device_addr, String message_addr) {
+    private void internal_OnCallback(int status_addr, int device_addr, String message_addr) {
         WGPURequestDeviceStatus status_addr_enum = WGPURequestDeviceStatus.CUSTOM.setValue(status_addr);
         WGPURequestDeviceStatus[] status_addr_enum_values = WGPURequestDeviceStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {

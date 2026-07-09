@@ -63,7 +63,7 @@ public class WGPUCompilationInfoCallback extends NativeObject {
         try {
             releaseUpcallResources();
             upcallArena = java.lang.foreign.Arena.ofShared();
-            java.lang.invoke.MethodHandle mh_OnCallback = callbackLookup.findVirtual(WGPUCompilationInfoCallback.class, "internal_onCallback", callbackMethodType_OnCallback).bindTo(this);
+            java.lang.invoke.MethodHandle mh_OnCallback = callbackLookup.findVirtual(WGPUCompilationInfoCallback.class, "internal_OnCallback", callbackMethodType_OnCallback).bindTo(this);
             upcallStub_OnCallback = callbackLinker.upcallStub(mh_OnCallback, callbackDescriptor_OnCallback, upcallArena);
             internal_native_setupCallback(native_address, upcallStub_OnCallback.address());
         } catch (Throwable e) {
@@ -74,7 +74,7 @@ public class WGPUCompilationInfoCallback extends NativeObject {
     protected void onCallback(WGPUCompilationInfoRequestStatus status, WGPUCompilationInfo compilationInfo) {
     }
 
-    private void internal_onCallback(int status_addr, long compilationInfo_addr) {
+    private void internal_OnCallback(int status_addr, long compilationInfo_addr) {
         WGPUCompilationInfoRequestStatus status_addr_enum = WGPUCompilationInfoRequestStatus.CUSTOM.setValue(status_addr);
         WGPUCompilationInfoRequestStatus[] status_addr_enum_values = WGPUCompilationInfoRequestStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {

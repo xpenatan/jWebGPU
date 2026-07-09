@@ -61,7 +61,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
         try {
             releaseUpcallResources();
             upcallArena = java.lang.foreign.Arena.ofShared();
-            java.lang.invoke.MethodHandle mh_OnCallback = callbackLookup.findVirtual(WGPURequestDeviceCallback.class, "internal_onCallback", callbackMethodType_OnCallback).bindTo(this);
+            java.lang.invoke.MethodHandle mh_OnCallback = callbackLookup.findVirtual(WGPURequestDeviceCallback.class, "internal_OnCallback", callbackMethodType_OnCallback).bindTo(this);
             upcallStub_OnCallback = callbackLinker.upcallStub(mh_OnCallback, callbackDescriptor_OnCallback, upcallArena);
             internal_native_setupCallback(native_address, upcallStub_OnCallback.address());
         } catch (Throwable e) {
@@ -72,7 +72,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
     protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device, String message) {
     }
 
-    private void internal_onCallback(int status_addr, long device_addr, java.lang.foreign.MemorySegment message_addr_seg) {
+    private void internal_OnCallback(int status_addr, long device_addr, java.lang.foreign.MemorySegment message_addr_seg) {
         String message_addr = message_addr_seg.reinterpret(Long.MAX_VALUE).getString(0);
         WGPURequestDeviceStatus status_addr_enum = WGPURequestDeviceStatus.CUSTOM.setValue(status_addr);
         WGPURequestDeviceStatus[] status_addr_enum_values = WGPURequestDeviceStatus.values();
