@@ -94,8 +94,10 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:builder:jParser_build_web_wasm
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni
 
-.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
-.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni_wgpu
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni_dawn
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm_wgpu
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm_dawn
 .\gradlew.bat :demos:app:web:webgpu_demo_app_run_web
 .\gradlew.bat :demos:app:android:installDebug
 ```

@@ -15,87 +15,100 @@ val nativeRoot = file("$projectDir/../../builder/build/c++/libs")
 data class DesktopNativePlatform(
     val name: String,
     val wgpuNativeFile: String,
-    val dawnNativeFiles: List<String> = emptyList(),
+    val dawnNativeFile: String,
 )
 
 val platforms = listOf(
     DesktopNativePlatform(
         "windows_x64",
         "$nativeRoot/wgpu/windows/vc/ffm/jWebGPU64.dll",
-        listOf("$nativeRoot/dawn/windows/vc/ffm/jWebGPU64.dll")
+        "$nativeRoot/dawn/windows/vc/ffm/jWebGPU64.dll"
     ),
     DesktopNativePlatform(
         "linux_x64",
         "$nativeRoot/wgpu/linux/ffm/libjWebGPU64.so",
-        listOf("$nativeRoot/dawn/linux/ffm/libjWebGPU64.so")
+        "$nativeRoot/dawn/linux/ffm/libjWebGPU64.so"
     ),
     DesktopNativePlatform(
         "mac_x64",
         "$nativeRoot/wgpu/mac/ffm/libjWebGPU64.dylib",
-        listOf("$nativeRoot/dawn/mac/ffm/libjWebGPU64.dylib")
+        "$nativeRoot/dawn/mac/ffm/libjWebGPU64.dylib"
     ),
     DesktopNativePlatform(
         "mac_arm64",
         "$nativeRoot/wgpu/mac/arm/ffm/libjWebGPUarm64.dylib",
-        listOf("$nativeRoot/dawn/mac/arm/ffm/libjWebGPUarm64.dylib")
+        "$nativeRoot/dawn/mac/arm/ffm/libjWebGPUarm64.dylib"
     ),
 )
+
+enum class DesktopNativeBackend(val id: String, val resourceDir: String) {
+    WGPU("wgpu", "native/wgpu"),
+    DAWN("dawn", "native/dawn"),
+}
+
+data class DesktopNativeJarSpec(
+    val backend: DesktopNativeBackend,
+    val platformName: String,
+    val nativeFile: String,
+) {
+    val taskName = "nativeJar_${backend.id}_$platformName"
+    val configName = "nativeRuntime_${backend.id}_$platformName"
+    val artifactId = "$moduleName-${backend.id}_$platformName"
+}
+
+val nativeJarSpecs = platforms.flatMap { platform ->
+    listOf(
+        DesktopNativeJarSpec(DesktopNativeBackend.WGPU, platform.name, platform.wgpuNativeFile),
+        DesktopNativeJarSpec(DesktopNativeBackend.DAWN, platform.name, platform.dawnNativeFile),
+    )
+}
 
 val taskNames = gradle.startParameter.taskNames
 fun isTaskRequested(taskName: String): Boolean {
     return taskNames.any { it == taskName || it.endsWith(":$taskName") }
 }
-val isPrepareDeployTask = isTaskRequested("prepareReleaseDeploy") || isTaskRequested("prepareSnapshotDeploy")
-val isPublishTask = taskNames.any { it.contains("publish", ignoreCase = true) }
-val isPublicationMetadataTask = taskNames.any {
-    it.contains("Publication", ignoreCase = true)
-            && (it.contains("generatePom", ignoreCase = true) || it.contains("generateMetadata", ignoreCase = true))
-}
-val includeNativesInMainJar = !(isPrepareDeployTask || isPublishTask)
-val includeNativeArtifactDependencies = isPrepareDeployTask || isPublishTask || isPublicationMetadataTask
 
-val nativeJars = platforms.map { platform ->
-    platform.name to tasks.register<Jar>("nativeJar_${platform.name}") {
-        from(platform.wgpuNativeFile) {
-            into("native/wgpu")
+val isStrictPublishTaskRequested = isTaskRequested("publish")
+        || isTaskRequested("publishRelease")
+        || isTaskRequested("publishTestRelease")
+        || isTaskRequested("uploadToMavenCentral")
+val isLocalPrepareReleaseDeploy = isTaskRequested("prepareReleaseDeploy") && !isStrictPublishTaskRequested
+
+val nativeJars = nativeJarSpecs.map { spec ->
+    spec to tasks.register<Jar>(spec.taskName) {
+        from(spec.nativeFile) {
+            into(spec.backend.resourceDir)
         }
-        from(platform.dawnNativeFiles) {
-            into("native/dawn")
-        }
-        archiveBaseName.set("$moduleName-${platform.name}")
+        archiveBaseName.set(spec.artifactId)
         archiveClassifier.set("")
         doFirst {
-            val missingFiles = (listOf(platform.wgpuNativeFile) + platform.dawnNativeFiles)
-                .map(::file)
-                .filterNot { it.isFile }
-            if(missingFiles.isNotEmpty()) {
-                throw GradleException("Missing desktop FFM native libraries for ${platform.name}: ${missingFiles.joinToString { it.absolutePath }}")
+            val nativeFile = file(spec.nativeFile)
+            if(!nativeFile.isFile) {
+                throw GradleException("Missing desktop FFM ${spec.backend.id} native library for ${spec.platformName}: ${nativeFile.absolutePath}")
             }
         }
     }
 }
 
-tasks.named<Jar>("jar") {
-    inputs.property("includeNativesInMainJar", includeNativesInMainJar)
-    if(includeNativesInMainJar) {
-        platforms.forEach { platform ->
-            from(platform.wgpuNativeFile) {
-                into("native/wgpu")
-            }
-            from(platform.dawnNativeFiles) {
-                into("native/dawn")
-            }
-        }
-    }
+val nativeJarSpecsToPublish = if(isLocalPrepareReleaseDeploy) {
+    nativeJarSpecs.filter { file(it.nativeFile).isFile }
 }
+else {
+    nativeJarSpecs
+}
+val nativeJarsBySpec = nativeJars.toMap()
 
-val nativeRuntime by configurations.creating {
-    isCanBeConsumed = true
-    isCanBeResolved = false
+nativeJarSpecs.forEach { spec ->
+    configurations.create(spec.configName) {
+        isCanBeConsumed = true
+        isCanBeResolved = false
+    }
 }
 
 artifacts {
-    nativeJars.forEach { add(nativeRuntime.name, it.second) }
+    nativeJars.forEach { (spec, nativeJar) ->
+        add(spec.configName, nativeJar)
+    }
 }
 
 dependencies {
@@ -107,11 +120,6 @@ dependencies {
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 
-    if(includeNativeArtifactDependencies) {
-        platforms.forEach { platform ->
-            runtimeOnly("${LibExt.groupId}:${moduleName}_${platform.name}:${LibExt.libVersion}")
-        }
-    }
 }
 
 sourceSets {
@@ -145,9 +153,10 @@ publishing {
             from(components["java"])
         }
 
-        nativeJars.forEach { (platform, nativeJar) ->
-            create<MavenPublication>("mavenNative_${platform}") {
-                artifactId = "${moduleName}_$platform"
+        nativeJarSpecsToPublish.forEach { spec ->
+            val nativeJar = nativeJarsBySpec.getValue(spec)
+            create<MavenPublication>("mavenNative_${spec.backend.id}_${spec.platformName}") {
+                artifactId = spec.artifactId
                 groupId = LibExt.groupId
                 version = LibExt.libVersion
                 artifact(nativeJar)

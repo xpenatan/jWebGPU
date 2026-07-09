@@ -24,14 +24,18 @@ public class GLFWApp {
 
     private WGPUApp wgpu;
     private int wGPUInit = 0;
+    private final JWebGPUBackend backend;
+    private final String bridgeName;
 
     int windowWidth = 800;
     int windowHeight = 600;
 
     public GLFWApp(ApplicationListener applicationInterface) {
+        backend = resolveBackend();
+        bridgeName = resolveBridgeName();
         openWindow();
 
-        JWebGPULoader.init(resolveBackend(), (isSuccess, e) -> {
+        JWebGPULoader.init(backend, (isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;
@@ -85,7 +89,7 @@ public class GLFWApp {
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API); // because we will use webgpu
 
         // Create the window
-        window = glfwCreateWindow(windowWidth, windowHeight, "LWJGL Window", NULL, NULL);
+        window = glfwCreateWindow(windowWidth, windowHeight, createWindowTitle(), NULL, NULL);
         if (window == NULL) {
             glfwTerminate();
             throw new RuntimeException("Failed to create GLFW window");
@@ -165,5 +169,24 @@ public class GLFWApp {
         catch(IllegalArgumentException e) {
             throw new IllegalArgumentException("Unsupported jwebgpu.backend: " + backendName + ". Expected wgpu or dawn.", e);
         }
+    }
+
+    private String resolveBridgeName() {
+        String bridge = System.getProperty("jwebgpu.bridge", "Desktop").trim();
+        if(bridge.isEmpty()) {
+            return "Desktop";
+        }
+        return bridge.toUpperCase(Locale.ROOT);
+    }
+
+    private String createWindowTitle() {
+        return "jWebGPU Demo - " + bridgeName + " " + formatBackendName(backend);
+    }
+
+    private String formatBackendName(JWebGPUBackend backend) {
+        if(backend == JWebGPUBackend.DAWN) {
+            return "Dawn";
+        }
+        return "WGPU";
     }
 }

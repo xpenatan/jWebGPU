@@ -41,13 +41,13 @@ public class WGPURequestDeviceCallback extends NativeObject {
     }
 
     private void setupCallback() {
-        onCallback onCallback = new onCallback() {
+        OnCallback OnCallback = new OnCallback() {
 
-            public void onCallback(int status_addr, int device_addr, int message_addr) {
+            public void OnCallback(int status_addr, int device_addr, int message_addr) {
                 internal_onCallback(status_addr, device_addr, NativeUtils.getJSString(message_addr));
             }
         };
-        internal_native_setupCallback(native_address, onCallback);
+        internal_native_setupCallback(native_address, OnCallback);
     }
 
     protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device, String message) {
@@ -71,12 +71,12 @@ public class WGPURequestDeviceCallback extends NativeObject {
     @org.teavm.jso.JSBody(script = "var jsObj = new jWebGPU.WGPURequestDeviceCallbackImpl();return jWebGPU.getPointer(jsObj);")
     public static native int internal_native_create_addr();
 
-    @org.teavm.jso.JSBody(params = { "this_addr", "onCallback" }, script = "var WGPURequestDeviceCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestDeviceCallbackImpl); WGPURequestDeviceCallbackImpl.onCallback = onCallback;")
-    public static native void internal_native_setupCallback(int this_addr, onCallback onCallback);
+    @org.teavm.jso.JSBody(params = { "this_addr", "OnCallback" }, script = "var WGPURequestDeviceCallbackImpl = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURequestDeviceCallbackImpl); WGPURequestDeviceCallbackImpl.OnCallback = OnCallback;")
+    public static native void internal_native_setupCallback(int this_addr, OnCallback OnCallback);
 
     @org.teavm.jso.JSFunctor()
-    public interface onCallback extends org.teavm.jso.JSObject {
+    public interface OnCallback extends org.teavm.jso.JSObject {
 
-        void onCallback(int status_addr, int device_addr, int message_addr);
+        void OnCallback(int status_addr, int device_addr, int message_addr);
     }
 }

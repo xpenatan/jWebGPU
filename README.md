@@ -112,8 +112,10 @@ Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
 ## Run Demos
 
 ```powershell
-.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni
-.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni_wgpu
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni_dawn
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm_wgpu
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm_dawn
 .\gradlew.bat :demos:app:web:webgpu_demo_app_run_web
 .\gradlew.bat :demos:app:android:installDebug
 ```
@@ -132,9 +134,10 @@ Use group ID `com.github.xpenatan.jWebGPU`.
 dependencies {
     implementation("com.github.xpenatan.jWebGPU:webgpu-core:<version>")
 
-    // Choose one runtime target
-    implementation("com.github.xpenatan.jWebGPU:webgpu-jni:<version>")
-    implementation("com.github.xpenatan.jWebGPU:webgpu-jni-desktop:<version>")
+    // Desktop JNI: choose one backend native artifact for your platform.
+    implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-jni:<version>")
+    runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-jni-wgpu_windows_x64:<version>")
+    // runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-jni-dawn_windows_x64:<version>")
 
     // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
