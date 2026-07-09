@@ -38,7 +38,7 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
     protected void onCallback(WGPUErrorType errorType, String message) {
     }
 
-    private void internal_onCallback(int errorType_addr, String message_addr) {
+    private void internal_OnCallback(int errorType_addr, String message_addr) {
         WGPUErrorType errorType_addr_enum = WGPUErrorType.CUSTOM.setValue(errorType_addr);
         WGPUErrorType[] errorType_addr_enum_values = WGPUErrorType.values();
         for (int i = 0; i < errorType_addr_enum_values.length; i++) {

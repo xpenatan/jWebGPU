@@ -44,7 +44,7 @@ public class WGPURequestAdapterCallback extends NativeObject {
     protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, String message) {
     }
 
-    private void internal_onCallback(int status_addr, long adapter_addr, String message_addr) {
+    private void internal_OnCallback(int status_addr, long adapter_addr, String message_addr) {
         WGPURequestAdapterStatus status_addr_enum = WGPURequestAdapterStatus.CUSTOM.setValue(status_addr);
         WGPURequestAdapterStatus[] status_addr_enum_values = WGPURequestAdapterStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {

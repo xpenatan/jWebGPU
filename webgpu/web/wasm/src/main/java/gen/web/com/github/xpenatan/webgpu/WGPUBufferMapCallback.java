@@ -44,7 +44,7 @@ public class WGPUBufferMapCallback extends NativeObject {
         OnCallback OnCallback = new OnCallback() {
 
             public void OnCallback(int status_addr, int message_addr) {
-                internal_onCallback(status_addr, NativeUtils.getJSString(message_addr));
+                internal_OnCallback(status_addr, NativeUtils.getJSString(message_addr));
             }
         };
         internal_native_setupCallback(native_address, OnCallback);
@@ -53,7 +53,7 @@ public class WGPUBufferMapCallback extends NativeObject {
     protected void onCallback(WGPUMapAsyncStatus status, String message) {
     }
 
-    private void internal_onCallback(int status_addr, String message_addr) {
+    private void internal_OnCallback(int status_addr, String message_addr) {
         WGPUMapAsyncStatus status_addr_enum = WGPUMapAsyncStatus.CUSTOM.setValue(status_addr);
         WGPUMapAsyncStatus[] status_addr_enum_values = WGPUMapAsyncStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {

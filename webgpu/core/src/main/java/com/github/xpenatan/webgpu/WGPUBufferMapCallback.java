@@ -38,7 +38,7 @@ public class WGPUBufferMapCallback extends NativeObject {
     protected void onCallback(WGPUMapAsyncStatus status, String message) {
     }
 
-    private void internal_onCallback(int status_addr, String message_addr) {
+    private void internal_OnCallback(int status_addr, String message_addr) {
         WGPUMapAsyncStatus status_addr_enum = WGPUMapAsyncStatus.CUSTOM.setValue(status_addr);
         WGPUMapAsyncStatus[] status_addr_enum_values = WGPUMapAsyncStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {

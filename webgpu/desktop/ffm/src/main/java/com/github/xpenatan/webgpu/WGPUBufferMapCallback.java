@@ -61,7 +61,7 @@ public class WGPUBufferMapCallback extends NativeObject {
         try {
             releaseUpcallResources();
             upcallArena = java.lang.foreign.Arena.ofShared();
-            java.lang.invoke.MethodHandle mh_OnCallback = callbackLookup.findVirtual(WGPUBufferMapCallback.class, "internal_onCallback", callbackMethodType_OnCallback).bindTo(this);
+            java.lang.invoke.MethodHandle mh_OnCallback = callbackLookup.findVirtual(WGPUBufferMapCallback.class, "internal_OnCallback", callbackMethodType_OnCallback).bindTo(this);
             upcallStub_OnCallback = callbackLinker.upcallStub(mh_OnCallback, callbackDescriptor_OnCallback, upcallArena);
             internal_native_setupCallback(native_address, upcallStub_OnCallback.address());
         } catch (Throwable e) {
@@ -72,7 +72,7 @@ public class WGPUBufferMapCallback extends NativeObject {
     protected void onCallback(WGPUMapAsyncStatus status, String message) {
     }
 
-    private void internal_onCallback(int status_addr, java.lang.foreign.MemorySegment message_addr_seg) {
+    private void internal_OnCallback(int status_addr, java.lang.foreign.MemorySegment message_addr_seg) {
         String message_addr = message_addr_seg.reinterpret(Long.MAX_VALUE).getString(0);
         WGPUMapAsyncStatus status_addr_enum = WGPUMapAsyncStatus.CUSTOM.setValue(status_addr);
         WGPUMapAsyncStatus[] status_addr_enum_values = WGPUMapAsyncStatus.values();

@@ -46,7 +46,7 @@ public class WGPUCompilationInfoCallback extends NativeObject {
     protected void onCallback(WGPUCompilationInfoRequestStatus status, WGPUCompilationInfo compilationInfo) {
     }
 
-    private void internal_onCallback(int status_addr, long compilationInfo_addr) {
+    private void internal_OnCallback(int status_addr, long compilationInfo_addr) {
         WGPUCompilationInfoRequestStatus status_addr_enum = WGPUCompilationInfoRequestStatus.CUSTOM.setValue(status_addr);
         WGPUCompilationInfoRequestStatus[] status_addr_enum_values = WGPUCompilationInfoRequestStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {

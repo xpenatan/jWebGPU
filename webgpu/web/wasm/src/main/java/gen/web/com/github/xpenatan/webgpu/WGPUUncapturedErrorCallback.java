@@ -44,7 +44,7 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
         OnCallback OnCallback = new OnCallback() {
 
             public void OnCallback(int errorType_addr, int message_addr) {
-                internal_onCallback(errorType_addr, NativeUtils.getJSString(message_addr));
+                internal_OnCallback(errorType_addr, NativeUtils.getJSString(message_addr));
             }
         };
         internal_native_setupCallback(native_address, OnCallback);
@@ -53,7 +53,7 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
     protected void onCallback(WGPUErrorType errorType, String message) {
     }
 
-    private void internal_onCallback(int errorType_addr, String message_addr) {
+    private void internal_OnCallback(int errorType_addr, String message_addr) {
         WGPUErrorType errorType_addr_enum = WGPUErrorType.CUSTOM.setValue(errorType_addr);
         WGPUErrorType[] errorType_addr_enum_values = WGPUErrorType.values();
         for (int i = 0; i < errorType_addr_enum_values.length; i++) {

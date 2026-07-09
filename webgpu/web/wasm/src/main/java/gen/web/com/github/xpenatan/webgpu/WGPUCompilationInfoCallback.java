@@ -45,7 +45,7 @@ public class WGPUCompilationInfoCallback extends NativeObject {
         OnCallback OnCallback = new OnCallback() {
 
             public void OnCallback(int status_addr, int compilationInfo_addr) {
-                internal_onCallback(status_addr, compilationInfo_addr);
+                internal_OnCallback(status_addr, compilationInfo_addr);
             }
         };
         internal_native_setupCallback(native_address, OnCallback);
@@ -54,7 +54,7 @@ public class WGPUCompilationInfoCallback extends NativeObject {
     protected void onCallback(WGPUCompilationInfoRequestStatus status, WGPUCompilationInfo compilationInfo) {
     }
 
-    private void internal_onCallback(int status_addr, int compilationInfo_addr) {
+    private void internal_OnCallback(int status_addr, int compilationInfo_addr) {
         WGPUCompilationInfoRequestStatus status_addr_enum = WGPUCompilationInfoRequestStatus.CUSTOM.setValue(status_addr);
         WGPUCompilationInfoRequestStatus[] status_addr_enum_values = WGPUCompilationInfoRequestStatus.values();
         for (int i = 0; i < status_addr_enum_values.length; i++) {
