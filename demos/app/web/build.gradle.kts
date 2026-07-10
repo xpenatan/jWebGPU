@@ -96,7 +96,7 @@ tasks.register<JavaExec>("webgpu_demo_app_build") {
     finalizedBy("copyWebappToDist")
 }
 
-tasks.register("webgpu_demo_app_run_web") {
+tasks.register("webgpu_demo_app_web_run") {
     group = "webgpu_demo_web"
     description = "Run web app"
     val list = listOf("webgpu_demo_app_build", "jettyRun")

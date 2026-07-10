@@ -75,5 +75,5 @@ fun registerDesktopRunTask(taskName: String, backend: DemoBackend, descriptionSu
     }
 }
 
-registerDesktopRunTask("webgpu_demo_app_run_desktop_ffm_wgpu", DemoBackend.WGPU, "WGPU")
-registerDesktopRunTask("webgpu_demo_app_run_desktop_ffm_dawn", DemoBackend.DAWN, "Dawn")
+registerDesktopRunTask("webgpu_demo_app_desktop_ffm_wgpu_run", DemoBackend.WGPU, "WGPU")
+registerDesktopRunTask("webgpu_demo_app_desktop_ffm_dawn_run", DemoBackend.DAWN, "Dawn")

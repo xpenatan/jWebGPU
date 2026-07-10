@@ -112,11 +112,11 @@ Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
 ## Run Demos
 
 ```powershell
-.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni_wgpu
-.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_run_desktop_jni_dawn
-.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm_wgpu
-.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_run_desktop_ffm_dawn
-.\gradlew.bat :demos:app:web:webgpu_demo_app_run_web
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_desktop_jni_wgpu_run
+.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_desktop_jni_dawn_run
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_desktop_ffm_wgpu_run
+.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_desktop_ffm_dawn_run
+.\gradlew.bat :demos:app:web:webgpu_demo_app_web_run
 .\gradlew.bat :demos:app:android:installDebug
 ```
 
