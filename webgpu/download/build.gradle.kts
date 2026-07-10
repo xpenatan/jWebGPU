@@ -78,6 +78,10 @@ registerDawnNativesDownloadTask("windows_x86_64", "dawn-natives-windows-x64-msvc
 registerDawnNativesDownloadTask("linux_x86_64", "dawn-natives-linux-x64-gcc")
 registerDawnNativesDownloadTask("macos_x86_64", "dawn-natives-macos-x64")
 registerDawnNativesDownloadTask("macos_aarch64", "dawn-natives-macos-arm64")
+registerDawnNativesDownloadTask("android_i686", "dawn-natives-android-x86")
+registerDawnNativesDownloadTask("android_x86_64", "dawn-natives-android-x86_64")
+registerDawnNativesDownloadTask("android_armv7", "dawn-natives-android-armeabi-v7a")
+registerDawnNativesDownloadTask("android_aarch64", "dawn-natives-android-arm64-v8a")
 
 tasks.register("webgpu_download_glfw_windows") {
     group = "webgpu"

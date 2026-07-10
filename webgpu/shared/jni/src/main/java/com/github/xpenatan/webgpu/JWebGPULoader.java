@@ -39,9 +39,6 @@ public class JWebGPULoader {
     private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
         String vm = System.getProperty("java.runtime.name");
         boolean isAndroid = vm != null && vm.contains("Android Runtime");
-        if (isAndroid) {
-            backend = JWebGPUBackend.WGPU;
-        }
         String subDir = null;
         if (backend == JWebGPUBackend.DAWN) {
             subDir = "native/dawn/";

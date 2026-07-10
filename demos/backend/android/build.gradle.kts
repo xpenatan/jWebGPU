@@ -11,6 +11,18 @@ android {
         minSdk = 29
     }
 
+    flavorDimensions += "backend"
+    productFlavors {
+        create("wgpu") {
+            dimension = "backend"
+            buildConfigField("String", "JWEBGPU_BACKEND", "\"WGPU\"")
+        }
+        create("dawn") {
+            dimension = "backend"
+            buildConfigField("String", "JWEBGPU_BACKEND", "\"DAWN\"")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -24,13 +36,18 @@ android {
             targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
         }
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
     api(project(":demos:backend:core"))
 
     if(LibExt.exampleUseRepoLibs) {
-        api("com.github.xpenatan.jWebGPU:webgpu-android:-SNAPSHOT")
+        add("wgpuApi", "com.github.xpenatan.jWebGPU:webgpu-android-wgpu:-SNAPSHOT")
+        add("dawnApi", "com.github.xpenatan.jWebGPU:webgpu-android-dawn:-SNAPSHOT")
     }
     else {
         api(project(":webgpu:android:jni"))

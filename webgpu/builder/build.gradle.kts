@@ -1,4 +1,5 @@
 import com.github.xpenatan.jParser.builder.tool.JParserSymbolNameMode
+import com.github.xpenatan.jParser.gradle.JParserNativeTargetVariantHooks
 import com.github.xpenatan.jParser.gradle.JParserTargetHooks
 import com.github.xpenatan.jParser.gradle.JParserTargets
 import com.github.xpenatan.jParser.idl.IDLRenaming
@@ -125,12 +126,50 @@ fun JParserTargetHooks.configureMacDawn(dawnDir: File) {
     }
 }
 
-val androidArchives = mapOf(
+val androidWGPUArchives = mapOf(
     "x86" to "android_i686",
     "x86_64" to "android_x86_64",
     "armeabi_v7a" to "android_armv7",
     "arm64_v8a" to "android_aarch64"
 )
+
+val androidDawnArchives = mapOf(
+    "x86" to "dawn-natives-android-x86",
+    "x86_64" to "dawn-natives-android-x86_64",
+    "armeabi_v7a" to "dawn-natives-android-armeabi-v7a",
+    "arm64_v8a" to "dawn-natives-android-arm64-v8a"
+)
+
+fun JParserNativeTargetVariantHooks.configureAndroidWGPU() {
+    includeDefaultSources.set(false)
+    includeCustomSources.set(false)
+    androidWGPUArchives.forEach { (abi, archiveDirName) ->
+        val archiveDir = File(downloadBuildDir, archiveDirName)
+        androidTarget(abi) {
+            headerDir(File(archiveDir, "include").normalizedPath())
+            linkerFlag(File(archiveDir, "lib/libwgpu_native.a").normalizedPath())
+            linkerFlag("-landroid")
+            linkerFlag("-llog")
+        }
+    }
+}
+
+fun JParserNativeTargetVariantHooks.configureAndroidDawn() {
+    includeDefaultSources.set(false)
+    includeCustomSources.set(false)
+    compileFlag("-DJWEBGPU_DAWN")
+    androidDawnArchives.forEach { (abi, archiveDirName) ->
+        val archiveDir = File(downloadBuildDir, archiveDirName)
+        androidTarget(abi) {
+            headerDir(File(archiveDir, "include").normalizedPath())
+            linkerFlag(File(archiveDir, "lib/libwebgpu_dawn.a").normalizedPath())
+            linkerFlag("-pthread")
+            linkerFlag("-ldl")
+            linkerFlag("-landroid")
+            linkerFlag("-llog")
+        }
+    }
+}
 
 java {
     sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
@@ -220,18 +259,12 @@ jParser {
             }
         }
 
-        target(JParserTargets.ANDROID_JNI) {
-            includeDefaultSources.set(false)
-            includeCustomSources.set(false)
-            linkerFlag("-landroid")
-            linkerFlag("-llog")
-            androidArchives.forEach { (abi, archiveDirName) ->
-                val archiveDir = File(downloadBuildDir, archiveDirName)
-                androidTarget(abi) {
-                    headerDir(File(archiveDir, "include").normalizedPath())
-                    linkerFlag(File(archiveDir, "lib/libwgpu_native.a").normalizedPath())
-                }
-            }
+        targetVariant(JParserTargets.ANDROID_JNI, "wgpu") {
+            configureAndroidWGPU()
+        }
+
+        targetVariant(JParserTargets.ANDROID_JNI, "dawn") {
+            configureAndroidDawn()
         }
 
         target(JParserTargets.WEB_WASM) {

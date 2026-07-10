@@ -2,7 +2,9 @@ plugins {
     id("com.android.library")
 }
 
-val moduleName = "webgpu-android"
+val legacyModuleName = "webgpu-android"
+val wgpuModuleName = "webgpu-android-wgpu"
+val dawnModuleName = "webgpu-android-dawn"
 
 android {
     namespace = "com.github.xpenatan.webgpu.android.jni"
@@ -12,9 +14,22 @@ android {
         minSdk = 29
     }
 
+    flavorDimensions += "backend"
+    productFlavors {
+        create("wgpu") {
+            dimension = "backend"
+        }
+        create("dawn") {
+            dimension = "backend"
+        }
+    }
+
     sourceSets {
-        named("main") {
-            jniLibs.srcDirs("$projectDir/../../builder/build/c++/libs/android")
+        named("wgpu") {
+            jniLibs.srcDirs("$projectDir/../../builder/build/c++/libs/wgpu/android")
+        }
+        named("dawn") {
+            jniLibs.srcDirs("$projectDir/../../builder/build/c++/libs/dawn/android")
         }
     }
 
@@ -31,7 +46,8 @@ android {
     }
 
     publishing {
-        singleVariant("release")
+        singleVariant("wgpuRelease")
+        singleVariant("dawnRelease")
     }
 }
 
@@ -49,7 +65,17 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            artifactId = moduleName
+            artifactId = legacyModuleName
+            groupId = LibExt.groupId
+            version = LibExt.libVersion
+        }
+        create<MavenPublication>("mavenWgpu") {
+            artifactId = wgpuModuleName
+            groupId = LibExt.groupId
+            version = LibExt.libVersion
+        }
+        create<MavenPublication>("mavenDawn") {
+            artifactId = dawnModuleName
             groupId = LibExt.groupId
             version = LibExt.libVersion
         }
@@ -59,7 +85,13 @@ publishing {
 afterEvaluate {
     publishing {
         publications.named<MavenPublication>("maven") {
-            from(components["release"])
+            from(components["wgpuRelease"])
+        }
+        publications.named<MavenPublication>("mavenWgpu") {
+            from(components["wgpuRelease"])
+        }
+        publications.named<MavenPublication>("mavenDawn") {
+            from(components["dawnRelease"])
         }
     }
 }

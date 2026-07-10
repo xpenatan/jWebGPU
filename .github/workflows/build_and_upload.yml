@@ -220,11 +220,11 @@ jobs:
           distribution: "corretto"
           java-version: 25
 
-      - name: Install NDK
+      - name: Install NDK r27 (27.0.12077973)
         id: setup-ndk
         uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r25c
+          ndk-version: r27
           add-to-path: false
           link-to-sdk: true
 
@@ -232,12 +232,24 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew :webgpu:download:webgpu_download_android_x86_64_wgpu :webgpu:download:webgpu_download_android_i686_wgpu :webgpu:download:webgpu_download_android_armv7_wgpu :webgpu:download:webgpu_download_android_aarch64_wgpu
+        run: >
+          ./gradlew
+          :webgpu:download:webgpu_download_android_x86_64_wgpu
+          :webgpu:download:webgpu_download_android_i686_wgpu
+          :webgpu:download:webgpu_download_android_armv7_wgpu
+          :webgpu:download:webgpu_download_android_aarch64_wgpu
+          :webgpu:download:webgpu_download_android_x86_64_dawn
+          :webgpu:download:webgpu_download_android_i686_dawn
+          :webgpu:download:webgpu_download_android_armv7_dawn
+          :webgpu:download:webgpu_download_android_aarch64_dawn
 
       - name: Build project
-        run: ./gradlew :webgpu:builder:jParser_build_android_jni
+        run: >
+          ./gradlew
+          :webgpu:builder:jParser_build_android_jni_wgpu
+          :webgpu:builder:jParser_build_android_jni_dawn
         env:
-          NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Upload natives
         uses: actions/upload-artifact@v7

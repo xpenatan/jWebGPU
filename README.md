@@ -39,7 +39,7 @@ Library modules:
 - `:webgpu:desktop:jni` - desktop JNI native packaging.
 - `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging.
 - `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging.
-- `:webgpu:android:jni` - Android JNI runtime packaging.
+- `:webgpu:android:jni` - WGPU/Dawn Android JNI runtime packaging.
 
 Demo modules:
 
@@ -104,7 +104,11 @@ Android JNI:
 .\gradlew.bat :webgpu:download:webgpu_download_android_i686_wgpu
 .\gradlew.bat :webgpu:download:webgpu_download_android_armv7_wgpu
 .\gradlew.bat :webgpu:download:webgpu_download_android_aarch64_wgpu
-.\gradlew.bat :webgpu:builder:jParser_build_android_jni
+.\gradlew.bat :webgpu:download:webgpu_download_android_x86_64_dawn
+.\gradlew.bat :webgpu:download:webgpu_download_android_i686_dawn
+.\gradlew.bat :webgpu:download:webgpu_download_android_armv7_dawn
+.\gradlew.bat :webgpu:download:webgpu_download_android_aarch64_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_android_jni_wgpu :webgpu:builder:jParser_build_android_jni_dawn
 ```
 
 Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
@@ -117,7 +121,8 @@ Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
 .\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_desktop_ffm_wgpu_run
 .\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_desktop_ffm_dawn_run
 .\gradlew.bat :demos:app:web:webgpu_demo_app_web_run
-.\gradlew.bat :demos:app:android:installDebug
+.\gradlew.bat :demos:app:android:installWgpuDebug
+.\gradlew.bat :demos:app:android:installDawnDebug
 ```
 
 ## Development Notes
@@ -141,9 +146,14 @@ dependencies {
 
     // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
-    // implementation("com.github.xpenatan.jWebGPU:webgpu-android:<version>")
+    // Android: choose exactly one backend AAR.
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-android-wgpu:<version>")
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-android-dawn:<version>")
+    // `webgpu-android` remains a compatibility alias for the WGPU AAR.
 }
 ```
+
+Android backend AARs are mutually exclusive because both package `libjWebGPU.so`. Applications using `webgpu-android-dawn` must initialize with `JWebGPULoader.init(JWebGPUBackend.DAWN, listener)`; the overload without a backend keeps WGPU as its default.
 
 ## Ecosystem
 

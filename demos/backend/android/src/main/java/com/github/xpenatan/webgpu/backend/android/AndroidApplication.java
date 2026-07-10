@@ -11,6 +11,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.WGPUAndroidWindow;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
@@ -33,7 +34,8 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
 
         wgpu = new WGPUApp();
 
-        JWebGPULoader.init((isSuccess, e) -> {
+        JWebGPUBackend backend = JWebGPUBackend.valueOf(BuildConfig.JWEBGPU_BACKEND);
+        JWebGPULoader.init(backend, (isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
                 wGPUInit = 1;

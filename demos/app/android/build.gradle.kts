@@ -23,6 +23,16 @@ android {
         versionName = "0.0.6"
     }
 
+    flavorDimensions += "backend"
+    productFlavors {
+        create("wgpu") {
+            dimension = "backend"
+        }
+        create("dawn") {
+            dimension = "backend"
+        }
+    }
+
     signingConfigs {
         if(hasReleaseSigning) {
             create("release") {
