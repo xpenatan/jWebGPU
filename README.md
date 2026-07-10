@@ -22,6 +22,7 @@ Targets:
 
 - JNI desktop runtime
 - FFM desktop runtime
+- TeaVM C desktop runtime bootstrap (Windows x64 WGPU)
 - TeaVM/WebAssembly web runtime
 - Android JNI runtime
 
@@ -36,6 +37,7 @@ Library modules:
 - `:webgpu:base` - hand-authored Java templates and directive blocks.
 - `:webgpu:core` - generated Java API layer.
 - `:webgpu:shared:jni` - generated JNI Java runtime.
+- `:webgpu:shared:c` - generated TeaVM C implementations and portable native resources.
 - `:webgpu:desktop:jni` - desktop JNI native packaging.
 - `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging.
 - `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging.
@@ -66,6 +68,15 @@ Windows JNI/FFM:
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_jni_wgpu :webgpu:builder:jParser_build_windows64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu :webgpu:builder:jParser_build_windows64_ffm_dawn
+```
+
+Windows TeaVM C bootstrap:
+
+```powershell
+.\gradlew.bat :webgpu:download:webgpu_download_glfw_windows
+.\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
+.\gradlew.bat :webgpu:shared:c:jar
 ```
 
 Linux JNI/FFM:

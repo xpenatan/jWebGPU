@@ -185,15 +185,18 @@ jParser {
     moduleBaseSuffix.set("base")
     moduleCoreSuffix.set("core")
     moduleJNISuffix.set("shared/jni")
+    moduleCSuffix.set("shared/c")
     moduleFFMSuffix.set("desktop/ffm")
     moduleWebSuffix.set("web/wasm")
     packageName.set("com.github.xpenatan.webgpu")
     cppSourcePath.set(customSourceDir.normalizedPath())
     jniSymbolNameMode.set(JParserSymbolNameMode.OBFUSCATED)
     ffmSymbolNameMode.set(JParserSymbolNameMode.OBFUSCATED)
+    teaVMCSymbolNameMode.set(JParserSymbolNameMode.OBFUSCATED)
     ffmLogMethod.set(true)
     jniCppStandard.set("c++17")
     ffmCppStandard.set("c++17")
+    teaVMCCppStandard.set("c++17")
     webCppStandard.set("c++17")
     idlRenaming(object : IDLRenaming {
         private val constructorNames: Set<String> by lazy {
@@ -226,6 +229,11 @@ jParser {
             targetVariant(targetName, "dawn") {
                 configureWindowsDawn()
             }
+        }
+
+        targetVariant(JParserTargets.WINDOWS64_TEAVM_C, "wgpu") {
+            configureWindowsWGPU()
+            compileFlag("/FI${File(customSourceDir, "jWebGPU.h").normalizedPath()}")
         }
 
         listOf(JParserTargets.LINUX64_JNI, JParserTargets.LINUX64_FFM).forEach { targetName ->

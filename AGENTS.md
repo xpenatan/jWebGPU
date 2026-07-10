@@ -35,6 +35,7 @@ Do not hand-edit generated Java in:
 
 - `webgpu/core/src/main/java/**`
 - `webgpu/shared/jni/src/main/java/**`
+- `webgpu/shared/c/src/main/java/**`
 - `webgpu/desktop/ffm/src/main/java/**`
 - `webgpu/web/wasm/src/main/java/**`
 
@@ -49,6 +50,7 @@ Library modules:
 - `:webgpu:base` - hand-authored Java templates and directive blocks
 - `:webgpu:core` - generated Java API layer
 - `:webgpu:shared:jni` - generated JNI Java runtime
+- `:webgpu:shared:c` - generated TeaVM C Java implementations and portable native resources
 - `:webgpu:desktop:jni` - desktop JNI native packaging
 - `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging
 - `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging
@@ -63,7 +65,7 @@ Demo app modules:
 
 ## 5) Native Block + IDL Conventions
 
-- Native bridge directives live in `webgpu/base` Java comments, for example `/*[-JNI;-NATIVE]*/`, `/*[-FFM;-NATIVE]*/`, and `/*[-TEAVM;-REPLACE]*/`.
+- Native bridge directives live in `webgpu/base` Java comments, for example `/*[-JNI;-NATIVE]*/`, `/*[-FFM;-NATIVE]*/`, `/*[-TEAVM;-REPLACE]*/`, and `/*[-TEAVM_C;-REPLACE]*/`.
 - IDL binding metadata lives in `webgpu/builder/src/main/cpp/jWebGPU.idl`, for example `[Ref]`, `[BindTo]`, `[-NEW_OBJECT]`, and `[-SKIP]`.
 - If generated output looks wrong, inspect in order: `jWebGPU.idl` -> `webgpu/base` directive blocks -> generated target file.
 
@@ -93,6 +95,7 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_linux64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_linux64_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_mac64_jni_dawn
