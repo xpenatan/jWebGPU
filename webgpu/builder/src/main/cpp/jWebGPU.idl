@@ -603,7 +603,6 @@ interface WGPUPrimitiveState {
 [Prefix="JGPU::"]
 interface WGPURenderPassDepthStencilAttachment {
     void WGPURenderPassDepthStencilAttachment();
-//    void SetNextInChain(WGPUChainedStruct chainedStruct); // TODO dont exist in wgpu-native
     void SetView(WGPUTextureView textureView);
     void SetDepthLoadOp(WGPULoadOp loadOp);
     void SetDepthStoreOp(WGPUStoreOp storeOp);

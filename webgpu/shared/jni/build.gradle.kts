@@ -12,10 +12,6 @@ dependencies {
     api("com.github.xpenatan.jParser:runtime-jni:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
-
-    listOf("windows_x64", "linux_x64", "mac_x64", "mac_arm64").forEach { platform ->
-        runtimeOnly("com.github.xpenatan.jParser:runtime-jni_$platform:${LibExt.jParserVersion}")
-    }
 }
 
 sourceSets {

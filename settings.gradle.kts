@@ -40,7 +40,7 @@ include(":webgpu:desktop:ffm")
 include(":webgpu:web:wasm")
 include(":webgpu:android:jni")
 
-// A temp backend code for testing
+// Backend implementations used by the demo applications
 include(":demos:backend:core")
 include(":demos:backend:desktop")
 include(":demos:backend:web")

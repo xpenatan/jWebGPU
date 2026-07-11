@@ -54,6 +54,7 @@ data class DesktopNativeJarSpec(
     val taskName = "nativeJar_${backend.id}_$platformName"
     val configName = "nativeRuntime_${backend.id}_$platformName"
     val artifactId = "$moduleName-${backend.id}_$platformName"
+    val jParserRuntimeArtifactId = "runtime-desktop-jni_$platformName"
 }
 
 val nativeJarSpecs = platforms.flatMap { platform ->
@@ -143,6 +144,14 @@ publishing {
                 groupId = LibExt.groupId
                 version = LibExt.libVersion
                 artifact(nativeJar)
+                pom.withXml {
+                    val dependenciesNode = asNode().appendNode("dependencies")
+                    val dependencyNode = dependenciesNode.appendNode("dependency")
+                    dependencyNode.appendNode("groupId", "com.github.xpenatan.jParser")
+                    dependencyNode.appendNode("artifactId", spec.jParserRuntimeArtifactId)
+                    dependencyNode.appendNode("version", LibExt.jParserVersion)
+                    dependencyNode.appendNode("scope", "runtime")
+                }
             }
         }
     }

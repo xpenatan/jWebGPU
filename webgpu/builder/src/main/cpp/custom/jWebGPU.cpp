@@ -1858,11 +1858,6 @@ JGPU::WGPURenderPassDepthStencilAttachment* JGPU::WGPURenderPassDepthStencilAtta
     return &obj;
 }
 
-void JGPU::WGPURenderPassDepthStencilAttachment::SetNextInChain(JGPU::WGPUChainedStruct* chainedStruct) {
-// TODO dont exist in wgpu-native
-//    Get().nextInChain = chainedStruct ? chainedStruct->Get() : nullptr;
-}
-
 void JGPU::WGPURenderPassDepthStencilAttachment::SetView(JGPU::WGPUTextureView* textureView) {
     Get().view = textureView ? textureView->Get() : nullptr;
 }
@@ -2258,15 +2253,6 @@ void JGPU::WGPUBindGroupEntry::SetTextureView(JGPU::WGPUTextureView* textureView
     Get().textureView = textureView ? textureView->Get() : nullptr;
 }
 
-// JGPU::WGPUInstanceCapabilities
-//void JGPU::WGPUInstanceCapabilities::SetTimedWaitAnyEnable(bool timedWaitAnyEnable) {
-//    Get()->timedWaitAnyEnable = timedWaitAnyEnable;
-//}
-//
-//void JGPU::WGPUInstanceCapabilities::SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount) {
-//    Get()->timedWaitAnyMaxCount = timedWaitAnyMaxCount;
-//}
-
 // JGPU::WGPURenderPassMaxDrawCount
 JGPU::WGPURenderPassMaxDrawCount* JGPU::WGPURenderPassMaxDrawCount::Obtain() {
     static JGPU::WGPURenderPassMaxDrawCount obj;
@@ -2288,18 +2274,6 @@ JGPU::WGPUShaderSourceSPIRV* JGPU::WGPUShaderSourceSPIRV::Obtain() {
     obj = JGPU::WGPUShaderSourceSPIRV();
     return &obj;
 }
-
-//void JGPU::WGPUShaderSourceSPIRV::SetCode(const uint32_t* code, size_t codeSize) {
-//    this->code.assign(code, code + codeSize);
-//    Get().codeSize = codeSize;
-//    Get().code = this->code.data();
-//}
-//
-//JGPU::WGPUChainedStruct JGPU::WGPUShaderSourceSPIRV::GetChain() {
-//    JGPU::WGPUChainedStruct chain;
-//    chain.Set(&Get().chain);
-//    return chain;
-//}
 
 // JGPU::WGPUShaderSourceSPIRV
 JGPU::WGPUSupportedWGSLLanguageFeatures* JGPU::WGPUSupportedWGSLLanguageFeatures::Obtain() {
@@ -2409,17 +2383,6 @@ void JGPU::WGPUInstanceDescriptor::SetRequiredLimits(JGPU::WGPUVectorInstanceLim
         Get().requiredLimits = NULL;
     }
 }
-
-//JGPU::WGPUInstanceCapabilities JGPU::WGPUInstanceDescriptor::GetFeatures() { // TODO dawn have different code
-//    #ifdef __EMSCRIPTEN__
-//        JGPU::WGPUInstanceCapabilities temp;
-//        temp.Set(&Get().capabilities);
-//    #else
-//        JGPU::WGPUInstanceCapabilities temp;
-//        temp.Set(&Get().features);
-//    #endif
-//    return temp;
-//}
 
 // JGPU::WGPURenderBundleDescriptor
 JGPU::WGPURenderBundleDescriptor* JGPU::WGPURenderBundleDescriptor::Obtain() {
@@ -3614,12 +3577,7 @@ JGPU::WGPUSurface* JGPU::WGPUInstance::CreateAndroidSurface(WGPUAndroidWindow* w
 }
 
 void JGPU::WGPUInstance::ProcessEvents() {
-    #ifdef __EMSCRIPTEN__
-        wgpuInstanceProcessEvents(Get());
-//        emscripten_sleep(100);
-    #else // __EMSCRIPTEN__
-        wgpuInstanceProcessEvents(Get());
-    #endif
+    wgpuInstanceProcessEvents(Get());
 }
 
 WGPUWaitStatus JGPU::WGPUInstance::WaitAny(JGPU::WGPUVectorFutureWaitInfo* futureVector, int timeoutNS) {

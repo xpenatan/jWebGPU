@@ -54,6 +54,7 @@ data class DesktopNativeJarSpec(
     val taskName = "nativeJar_${backend.id}_$platformName"
     val configName = "nativeRuntime_${backend.id}_$platformName"
     val artifactId = "$moduleName-${backend.id}_$platformName"
+    val jParserRuntimeArtifactId = "runtime-desktop-ffm_$platformName"
 }
 
 val nativeJarSpecs = platforms.flatMap { platform ->
@@ -112,11 +113,7 @@ artifacts {
 }
 
 dependencies {
-    implementation("com.github.xpenatan.jParser:runtime-ffm:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm_windows_x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm_linux_x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm_mac_x64:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:runtime-ffm_mac_arm64:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:runtime-desktop-ffm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
 
@@ -160,6 +157,14 @@ publishing {
                 groupId = LibExt.groupId
                 version = LibExt.libVersion
                 artifact(nativeJar)
+                pom.withXml {
+                    val dependenciesNode = asNode().appendNode("dependencies")
+                    val dependencyNode = dependenciesNode.appendNode("dependency")
+                    dependencyNode.appendNode("groupId", "com.github.xpenatan.jParser")
+                    dependencyNode.appendNode("artifactId", spec.jParserRuntimeArtifactId)
+                    dependencyNode.appendNode("version", LibExt.jParserVersion)
+                    dependencyNode.appendNode("scope", "runtime")
+                }
             }
         }
     }

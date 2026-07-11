@@ -1118,7 +1118,6 @@ class WGPURenderPassDepthStencilAttachment : public WGPUObjectBase<WGPURenderPas
     public:
         static WGPURenderPassDepthStencilAttachment* Obtain();
     public:
-        void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetView(WGPUTextureView* textureView);
         void SetDepthLoadOp(WGPULoadOp loadOp);
         void SetDepthStoreOp(WGPUStoreOp storeOp);
@@ -1272,12 +1271,6 @@ class WGPUBindGroupEntry : public WGPUObjectBase<WGPUBindGroupEntry, ::WGPUBindG
         void SetTextureView(WGPUTextureView* textureView);
 };
 
-//class WGPUInstanceCapabilities : public WGPUObjectBase<WGPUInstanceCapabilities, ::WGPUInstanceCapabilities*> {
-//    public:
-//        void SetTimedWaitAnyEnable(bool enable);
-//        void SetTimedWaitAnyMaxCount(int timedWaitAnyMaxCount);
-//};
-
 class WGPURenderPassMaxDrawCount : public WGPUObjectBase<WGPURenderPassMaxDrawCount, ::WGPURenderPassMaxDrawCount> {
     public:
         static WGPURenderPassMaxDrawCount* Obtain();
@@ -1289,10 +1282,6 @@ class WGPURenderPassMaxDrawCount : public WGPUObjectBase<WGPURenderPassMaxDrawCo
 class WGPUShaderSourceSPIRV : public WGPUObjectBase<WGPUShaderSourceSPIRV, ::WGPUShaderSourceSPIRV> {
     public:
         static WGPUShaderSourceSPIRV* Obtain();
-    public:
-    //TODO change to vector
-//        void SetCode(const int* code, int codeSize);
-//        WGPUChainedStruct GetChain();
 };
 
 class WGPUSupportedWGSLLanguageFeatures : public WGPUObjectBase<WGPUSupportedWGSLLanguageFeatures, ::WGPUSupportedWGSLLanguageFeatures> {
@@ -1338,7 +1327,6 @@ class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::W
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetRequiredFeatures(WGPUVectorInstanceFeatureName* requiredFeatures);
         void SetRequiredLimits(WGPUVectorInstanceLimits* requiredLimits);
-//        WGPUInstanceCapabilities GetFeatures(); // TODO dawn have different code
 };
 
 class WGPURenderBundleDescriptor : public WGPUObjectBase<WGPURenderBundleDescriptor, ::WGPURenderBundleDescriptor> {
@@ -1573,7 +1561,6 @@ class WGPUSampler : public WGPUObjectBase<WGPUSampler, ::WGPUSampler> {
 };
 
 class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, ::WGPURenderBundleEncoder> {
-// TODO implement methods
     public:
         static WGPURenderBundleEncoder* Obtain();
     public:

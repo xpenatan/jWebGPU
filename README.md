@@ -46,6 +46,11 @@ Library modules:
 
 Demo modules:
 
+- `:demos:backend:core`
+- `:demos:backend:desktop`
+- `:demos:backend:web`
+- `:demos:backend:android`
+- `:demos:app:core`
 - `:demos:app:desktop-jni`
 - `:demos:app:desktop-ffm`
 - `:demos:app:web`
@@ -142,7 +147,7 @@ Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
 
 - Edit binding templates in `webgpu/base/src/main/java/**`.
 - Edit IDL and native glue in `webgpu/builder/src/main/cpp/**`.
-- Do not hand-edit generated Java under `webgpu/core`, `webgpu/shared/jni`, `webgpu/desktop/ffm`, or `webgpu/web/wasm`.
+- Do not hand-edit generated Java under `webgpu/core`, `webgpu/shared/jni`, `webgpu/shared/c`, `webgpu/desktop/ffm`, or `webgpu/web/wasm`.
 
 ## Installation
 
@@ -157,10 +162,18 @@ dependencies {
     runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-jni-wgpu_windows_x64:<version>")
     // runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-jni-dawn_windows_x64:<version>")
 
+    // Desktop FFM: choose one backend native artifact for your platform.
     // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:<version>")
+    // runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm-wgpu_windows_x64:<version>")
+    // runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm-dawn_windows_x64:<version>")
+
     // TeaVM C, Windows x64 WGPU: includes webgpu-c and the jParser C runtime transitively.
     // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-c-wgpu_windows_x64:<version>")
+
+    // TeaVM/WebAssembly requires both the Java runtime and WebAssembly payload.
     // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-web_wasm:<version>")
+
     // Android: choose exactly one backend AAR.
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android-wgpu:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android-dawn:<version>")
