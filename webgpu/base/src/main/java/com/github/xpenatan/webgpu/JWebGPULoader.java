@@ -44,6 +44,12 @@ public class JWebGPULoader {
           JParserLibraryLoader.load("jWebGPU", listener);
       }
     */
+    /*[-TEAVM_C;-REPLACE]
+      private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+          JWebGPULoader.backend = backend;
+          JParserLibraryLoader.load("jWebGPU", listener);
+      }
+    */
     private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
         String vm = System.getProperty("java.runtime.name");
         boolean isAndroid = vm != null && vm.contains("Android Runtime");

@@ -56,11 +56,20 @@ jobs:
       - name: Build FFM project
         run: ./gradlew :webgpu:builder:jParser_build_windows64_ffm_wgpu :webgpu:builder:jParser_build_windows64_ffm_dawn
 
+      - name: Build TeaVM C project
+        run: ./gradlew :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
+
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: windows-natives
           path: ./webgpu/builder/build/c++/libs/
+
+      - name: Upload TeaVM C WGPU dependency
+        uses: actions/upload-artifact@v7
+        with:
+          name: windows-teavm-c-wgpu-dependency
+          path: ./webgpu/download/build/windows_x86_64/lib/wgpu_native.lib
 
   build_linux:
     name: Build Linux
@@ -303,6 +312,12 @@ jobs:
         with:
           name: windows-natives
           path: ./webgpu/builder/build/c++/libs/
+
+      - name: Download TeaVM C WGPU dependency
+        uses: actions/download-artifact@v8
+        with:
+          name: windows-teavm-c-wgpu-dependency
+          path: ./webgpu/download/build/windows_x86_64/lib/
 
       - name: Download linux natives
         uses: actions/download-artifact@v8

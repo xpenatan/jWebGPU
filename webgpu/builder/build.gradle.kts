@@ -46,12 +46,14 @@ val windowsSystemLibraries = listOf(
     "oleaut32.lib"
 )
 
-fun JParserTargetHooks.configureWindowsWGPU() {
+fun JParserTargetHooks.configureWindowsWGPU(msvcRuntime: String? = "/MD") {
     includeDefaultSources.set(false)
     includeCustomSources.set(false)
     headerDir(File(wgpuWindowsDir, "include").normalizedPath())
     headerDir(glfwIncludeDir.normalizedPath())
-    compileFlag("/MD")
+    if(msvcRuntime != null) {
+        compileFlag(msvcRuntime)
+    }
     compileFlag("/EHsc")
     linkerFlag(File(wgpuWindowsDir, "lib/wgpu_native.lib").normalizedPath())
     windowsSystemLibraries.forEach(::linkerFlag)
@@ -232,7 +234,8 @@ jParser {
         }
 
         targetVariant(JParserTargets.WINDOWS64_TEAVM_C, "wgpu") {
-            configureWindowsWGPU()
+            // jParser owns the TeaVM C CRT ABI and supplies /MT.
+            configureWindowsWGPU(msvcRuntime = null)
             compileFlag("/FI${File(customSourceDir, "jWebGPU.h").normalizedPath()}")
         }
 

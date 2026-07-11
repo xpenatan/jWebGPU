@@ -6,6 +6,7 @@ var libProjects = mutableSetOf(
     project(":webgpu:core"),
     project(":webgpu:shared:jni"),
     project(":webgpu:shared:c"),
+    project(":webgpu:desktop:c"),
     project(":webgpu:desktop:jni"),
     project(":webgpu:desktop:ffm"),
     project(":webgpu:web:wasm"),

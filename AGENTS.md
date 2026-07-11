@@ -51,6 +51,7 @@ Library modules:
 - `:webgpu:core` - generated Java API layer
 - `:webgpu:shared:jni` - generated JNI Java runtime
 - `:webgpu:shared:c` - generated TeaVM C Java implementations and portable native resources
+- `:webgpu:desktop:c` - desktop TeaVM C native-resource packaging
 - `:webgpu:desktop:jni` - desktop JNI native packaging
 - `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging
 - `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging
@@ -96,6 +97,7 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
+.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_windows_x64
 .\gradlew.bat :webgpu:builder:jParser_build_linux64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_linux64_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_mac64_jni_dawn

@@ -16,6 +16,11 @@ import com.github.xpenatan.jparser.runtime.RuntimeLoader;
  */
 public class JWebGPULoader {
 
+    private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
+        JWebGPULoader.backend = backend;
+        JParserLibraryLoader.load("jWebGPU", listener);
+    }
+
     private static JWebGPUBackend backend;
 
     public static void init(JParserLibraryLoaderListener listener) {
@@ -34,26 +39,6 @@ public class JWebGPULoader {
                 }
             }
         });
-    }
-
-    private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
-        String vm = System.getProperty("java.runtime.name");
-        boolean isAndroid = vm != null && vm.contains("Android Runtime");
-        String subDir = null;
-        if (backend == JWebGPUBackend.DAWN) {
-            subDir = "native/dawn/";
-        } else {
-            subDir = "native/wgpu/";
-        }
-        if (isAndroid) {
-            // path no supported
-            subDir = null;
-        }
-        final String path = subDir;
-        JWebGPULoader.backend = backend;
-        JParserLibraryLoaderOptions options = new JParserLibraryLoaderOptions();
-        options.path = path;
-        JParserLibraryLoader.load("jWebGPU", options, listener);
     }
 
     public static JWebGPUBackend getBackend() {

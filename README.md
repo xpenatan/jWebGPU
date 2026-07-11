@@ -38,6 +38,7 @@ Library modules:
 - `:webgpu:core` - generated Java API layer.
 - `:webgpu:shared:jni` - generated JNI Java runtime.
 - `:webgpu:shared:c` - generated TeaVM C implementations and portable native resources.
+- `:webgpu:desktop:c` - desktop TeaVM C native-resource packaging.
 - `:webgpu:desktop:jni` - desktop JNI native packaging.
 - `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging.
 - `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging.
@@ -77,6 +78,7 @@ Windows TeaVM C bootstrap:
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
 .\gradlew.bat :webgpu:shared:c:jar
+.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_windows_x64
 ```
 
 Linux JNI/FFM:
@@ -156,6 +158,8 @@ dependencies {
     // runtimeOnly("com.github.xpenatan.jWebGPU:webgpu-desktop-jni-dawn_windows_x64:<version>")
 
     // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:<version>")
+    // TeaVM C, Windows x64 WGPU: includes webgpu-c and the jParser C runtime transitively.
+    // implementation("com.github.xpenatan.jWebGPU:webgpu-desktop-c-wgpu_windows_x64:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-web:<version>")
     // Android: choose exactly one backend AAR.
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android-wgpu:<version>")
