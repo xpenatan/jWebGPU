@@ -44,8 +44,8 @@ public class WGPURequestDeviceCallback extends NativeObject {
         public abstract void call(int callbackId, int status_addr, long device_addr, org.teavm.interop.Address message_addr);
     }
 
-    @org.teavm.interop.Export(name = "teavmc_OnCallback")
-    private static void teavmc_OnCallback(int callbackId, int status_addr, long device_addr, org.teavm.interop.Address message_addr) {
+    @org.teavm.interop.Export(name = "teavmc_WGPURequestDeviceCallback_OnCallback")
+    private static void teavmc_WGPURequestDeviceCallback_OnCallback(int callbackId, int status_addr, long device_addr, org.teavm.interop.Address message_addr) {
         TEAVMC_CALLBACKS.get(callbackId).internal_OnCallback(status_addr, device_addr, teavmcCStringToString(message_addr));
     }
 
@@ -83,7 +83,7 @@ public class WGPURequestDeviceCallback extends NativeObject {
 
     private void setupCallback() {
         int callbackId = teavmcRegisterCallback();
-        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPURequestDeviceCallback.class, "teavmc_OnCallback"));
+        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPURequestDeviceCallback.class, "teavmc_WGPURequestDeviceCallback_OnCallback"));
     }
 
     protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device, String message) {

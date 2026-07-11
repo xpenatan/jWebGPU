@@ -31,8 +31,8 @@ public class WGPUCompilationInfoCallback extends NativeObject {
         public abstract void call(int callbackId, int status_addr, long compilationInfo_addr);
     }
 
-    @org.teavm.interop.Export(name = "teavmc_OnCallback")
-    private static void teavmc_OnCallback(int callbackId, int status_addr, long compilationInfo_addr) {
+    @org.teavm.interop.Export(name = "teavmc_WGPUCompilationInfoCallback_OnCallback")
+    private static void teavmc_WGPUCompilationInfoCallback_OnCallback(int callbackId, int status_addr, long compilationInfo_addr) {
         TEAVMC_CALLBACKS.get(callbackId).internal_OnCallback(status_addr, compilationInfo_addr);
     }
 
@@ -70,7 +70,7 @@ public class WGPUCompilationInfoCallback extends NativeObject {
 
     private void setupCallback() {
         int callbackId = teavmcRegisterCallback();
-        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPUCompilationInfoCallback.class, "teavmc_OnCallback"));
+        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPUCompilationInfoCallback.class, "teavmc_WGPUCompilationInfoCallback_OnCallback"));
     }
 
     protected void onCallback(WGPUCompilationInfoRequestStatus status, WGPUCompilationInfo compilationInfo) {

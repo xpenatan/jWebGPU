@@ -44,8 +44,8 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
         public abstract void call(int callbackId, int errorType_addr, org.teavm.interop.Address message_addr);
     }
 
-    @org.teavm.interop.Export(name = "teavmc_OnCallback")
-    private static void teavmc_OnCallback(int callbackId, int errorType_addr, org.teavm.interop.Address message_addr) {
+    @org.teavm.interop.Export(name = "teavmc_WGPUUncapturedErrorCallback_OnCallback")
+    private static void teavmc_WGPUUncapturedErrorCallback_OnCallback(int callbackId, int errorType_addr, org.teavm.interop.Address message_addr) {
         TEAVMC_CALLBACKS.get(callbackId).internal_OnCallback(errorType_addr, teavmcCStringToString(message_addr));
     }
 
@@ -83,7 +83,7 @@ public class WGPUUncapturedErrorCallback extends NativeObject {
 
     private void setupCallback() {
         int callbackId = teavmcRegisterCallback();
-        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPUUncapturedErrorCallback.class, "teavmc_OnCallback"));
+        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPUUncapturedErrorCallback.class, "teavmc_WGPUUncapturedErrorCallback_OnCallback"));
     }
 
     protected void onCallback(WGPUErrorType errorType, String message) {

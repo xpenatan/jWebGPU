@@ -44,8 +44,8 @@ public class WGPURequestAdapterCallback extends NativeObject {
         public abstract void call(int callbackId, int status_addr, long adapter_addr, org.teavm.interop.Address message_addr);
     }
 
-    @org.teavm.interop.Export(name = "teavmc_OnCallback")
-    private static void teavmc_OnCallback(int callbackId, int status_addr, long adapter_addr, org.teavm.interop.Address message_addr) {
+    @org.teavm.interop.Export(name = "teavmc_WGPURequestAdapterCallback_OnCallback")
+    private static void teavmc_WGPURequestAdapterCallback_OnCallback(int callbackId, int status_addr, long adapter_addr, org.teavm.interop.Address message_addr) {
         TEAVMC_CALLBACKS.get(callbackId).internal_OnCallback(status_addr, adapter_addr, teavmcCStringToString(message_addr));
     }
 
@@ -83,7 +83,7 @@ public class WGPURequestAdapterCallback extends NativeObject {
 
     private void setupCallback() {
         int callbackId = teavmcRegisterCallback();
-        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPURequestAdapterCallback.class, "teavmc_OnCallback"));
+        setupCallback(native_address, callbackId, org.teavm.interop.Function.get(TEAVMC_OnCallback_Function.class, WGPURequestAdapterCallback.class, "teavmc_WGPURequestAdapterCallback_OnCallback"));
     }
 
     protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, String message) {
