@@ -2,7 +2,6 @@ plugins {
     id("com.android.library")
 }
 
-val legacyModuleName = "webgpu-android"
 val wgpuModuleName = "webgpu-android-wgpu"
 val dawnModuleName = "webgpu-android-dawn"
 
@@ -64,11 +63,6 @@ dependencies {
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
-            artifactId = legacyModuleName
-            groupId = LibExt.groupId
-            version = LibExt.libVersion
-        }
         create<MavenPublication>("mavenWgpu") {
             artifactId = wgpuModuleName
             groupId = LibExt.groupId
@@ -84,9 +78,6 @@ publishing {
 
 afterEvaluate {
     publishing {
-        publications.named<MavenPublication>("maven") {
-            from(components["wgpuRelease"])
-        }
         publications.named<MavenPublication>("mavenWgpu") {
             from(components["wgpuRelease"])
         }

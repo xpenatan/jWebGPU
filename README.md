@@ -164,7 +164,6 @@ dependencies {
     // Android: choose exactly one backend AAR.
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android-wgpu:<version>")
     // implementation("com.github.xpenatan.jWebGPU:webgpu-android-dawn:<version>")
-    // `webgpu-android` remains a compatibility alias for the WGPU AAR.
 }
 ```
 
