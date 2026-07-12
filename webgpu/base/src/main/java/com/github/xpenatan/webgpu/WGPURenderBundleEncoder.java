@@ -24,6 +24,15 @@ public class WGPURenderBundleEncoder extends NativeObject {
         }
     */
 
+    /*[-TEAVM_C;-NATIVE]
+        extern "C" {
+        TEAVMC_EXPORT void jwebgpu_teavmc_render_bundle_encoder_set_immediates(int64_t this_addr, int32_t offset, int64_t data_ptr, int32_t dataSize) {
+            JGPU::WGPURenderBundleEncoder* nativeObject = (JGPU::WGPURenderBundleEncoder*)this_addr;
+            nativeObject->SetImmediates(offset, (void*)data_ptr, dataSize);
+        }
+        }
+    */
+
     /*[-FFM;-ADD]
         private static final class FFMImmediateHandles {
             private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
@@ -48,6 +57,12 @@ public class WGPURenderBundleEncoder extends NativeObject {
         }
     */
     /*[-FFM;-REPLACE_BLOCK]
+        {
+            long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+            internal_native_SetImmediates(native_address, offset, dataAddress, dataSize);
+        }
+    */
+    /*[-TEAVM_C;-REPLACE_BLOCK]
         {
             long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
             internal_native_SetImmediates(native_address, offset, dataAddress, dataSize);
@@ -81,6 +96,10 @@ public class WGPURenderBundleEncoder extends NativeObject {
                 throw new RuntimeException(e);
             }
         }
+    */
+    /*[-TEAVM_C;-REPLACE]
+        @org.teavm.interop.Import(name = "jwebgpu_teavmc_render_bundle_encoder_set_immediates")
+        private static native void internal_native_SetImmediates(long this_addr, int offset, long data_ptr, int dataSize);
     */
     private static native void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize);
 }

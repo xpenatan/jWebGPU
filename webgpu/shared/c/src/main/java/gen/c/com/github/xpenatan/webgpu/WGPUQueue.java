@@ -11,6 +11,12 @@ import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPUQueue extends NativeObject {
 
+    @org.teavm.interop.Import(name = "jwebgpu_teavmc_queue_write_buffer")
+    private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, long data_ptr, int dataSize);
+
+    @org.teavm.interop.Import(name = "jwebgpu_teavmc_queue_write_texture")
+    private static native void internal_native_WriteTexture(long this_addr, long destination_addr, long data_ptr, int dataSize, long dataLayout_addr, long writeSize_addr);
+
     public final static WGPUQueue NULL = native_new();
 
     public static WGPUQueue native_new() {
@@ -21,16 +27,14 @@ public class WGPUQueue extends NativeObject {
     }
 
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
-        internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, byteBuffer, dataSize);
+        long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+        internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, dataAddress, dataSize);
     }
-
-    private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize);
 
     public void writeTexture(WGPUTexelCopyTextureInfo destination, ByteBuffer byteBuffer, int dataSize, WGPUTexelCopyBufferLayout dataLayout, WGPUExtent3D writeSize) {
-        internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), byteBuffer, dataSize, dataLayout.native_address, writeSize.native_address);
+        long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+        internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), dataAddress, dataSize, dataLayout.native_address, writeSize.native_address);
     }
-
-    private static native void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr);
 
     protected void deleteNative() {
         internal_native_deleteNative(native_address);

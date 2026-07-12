@@ -11,6 +11,9 @@ import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPURenderBundleEncoder extends NativeObject {
 
+    @org.teavm.interop.Import(name = "jwebgpu_teavmc_render_bundle_encoder_set_immediates")
+    private static native void internal_native_SetImmediates(long this_addr, int offset, long data_ptr, int dataSize);
+
     static public final WGPURenderBundleEncoder NULL = WGPURenderBundleEncoder.native_new();
 
     public static WGPURenderBundleEncoder native_new() {
@@ -22,10 +25,9 @@ public class WGPURenderBundleEncoder extends NativeObject {
     }
 
     public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
-        internal_native_SetImmediates(native_address, offset, byteBuffer, dataSize);
+        long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+        internal_native_SetImmediates(native_address, offset, dataAddress, dataSize);
     }
-
-    private static native void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize);
 
     public WGPURenderBundleEncoder() {
         long addr = internal_native_create_addr();

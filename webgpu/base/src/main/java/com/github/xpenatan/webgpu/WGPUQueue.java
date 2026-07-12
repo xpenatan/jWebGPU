@@ -28,6 +28,20 @@ public class WGPUQueue extends NativeObject {
         }
     */
 
+    /*[-TEAVM_C;-NATIVE]
+        extern "C" {
+        TEAVMC_EXPORT void jwebgpu_teavmc_queue_write_buffer(int64_t this_addr, int64_t buffer_addr, int32_t bufferOffset, int64_t data_ptr, int32_t dataSize) {
+            JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+            nativeObject->WriteBuffer((JGPU::WGPUBuffer*)buffer_addr, bufferOffset, (void*)data_ptr, dataSize);
+        }
+
+        TEAVMC_EXPORT void jwebgpu_teavmc_queue_write_texture(int64_t this_addr, int64_t destination_addr, int64_t data_ptr, int32_t dataSize, int64_t dataLayout_addr, int64_t writeSize_addr) {
+            JGPU::WGPUQueue* nativeObject = (JGPU::WGPUQueue*)this_addr;
+            nativeObject->WriteTexture((JGPU::WGPUTexelCopyTextureInfo*)destination_addr, (void*)data_ptr, dataSize, (JGPU::WGPUTexelCopyBufferLayout*)dataLayout_addr, (JGPU::WGPUExtent3D*)writeSize_addr);
+        }
+        }
+    */
+
     /*[-FFM;-ADD]
         private static final class FFMBufferHandles {
             private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
@@ -86,6 +100,12 @@ public class WGPUQueue extends NativeObject {
             internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, dataAddress, dataSize);
         }
     */
+    /*[-TEAVM_C;-REPLACE_BLOCK]
+        {
+            long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+            internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, dataAddress, dataSize);
+        }
+    */
     public void writeBuffer(WGPUBuffer buffer, int bufferOffset, ByteBuffer byteBuffer, int dataSize) {
         internal_native_WriteBuffer(native_address, (buffer != null ? buffer.native_address : 0), bufferOffset, byteBuffer, dataSize);
     }
@@ -111,6 +131,10 @@ public class WGPUQueue extends NativeObject {
             }
         }
     */
+    /*[-TEAVM_C;-REPLACE]
+        @org.teavm.interop.Import(name = "jwebgpu_teavmc_queue_write_buffer")
+        private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, long data_ptr, int dataSize);
+    */
     private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, ByteBuffer byteBuffer, int dataSize);
 
     /*[-TEAVM;-REPLACE_BLOCK]
@@ -120,6 +144,12 @@ public class WGPUQueue extends NativeObject {
         }
     */
     /*[-FFM;-REPLACE_BLOCK]
+        {
+            long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+            internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), dataAddress, dataSize, dataLayout.native_address, writeSize.native_address);
+        }
+    */
+    /*[-TEAVM_C;-REPLACE_BLOCK]
         {
             long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
             internal_native_WriteTexture(native_address, (destination != null ? destination.native_address : 0), dataAddress, dataSize, dataLayout.native_address, writeSize.native_address);
@@ -155,6 +185,10 @@ public class WGPUQueue extends NativeObject {
                 throw new RuntimeException(e);
             }
         }
+    */
+    /*[-TEAVM_C;-REPLACE]
+        @org.teavm.interop.Import(name = "jwebgpu_teavmc_queue_write_texture")
+        private static native void internal_native_WriteTexture(long this_addr, long destination_addr, long data_ptr, int dataSize, long dataLayout_addr, long writeSize_addr);
     */
     private static native void internal_native_WriteTexture(long this_addr, long destination_addr, ByteBuffer byteBuffer, int dataSize, long dataLayout_addr, long writeSize_addr);
 }

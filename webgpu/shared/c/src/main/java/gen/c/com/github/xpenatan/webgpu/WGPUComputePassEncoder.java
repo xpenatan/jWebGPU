@@ -13,6 +13,9 @@ public class WGPUComputePassEncoder extends NativeObject {
 
     static private WGPUComputePassEncoder WGPUComputePassEncoder_TEMP_STATIC_GEN_0;
 
+    @org.teavm.interop.Import(name = "jwebgpu_teavmc_compute_pass_encoder_set_immediates")
+    private static native void internal_native_SetImmediates(long this_addr, int offset, long data_ptr, int dataSize);
+
     static public final WGPUComputePassEncoder NULL = WGPUComputePassEncoder.native_new();
 
     public static WGPUComputePassEncoder native_new() {
@@ -24,10 +27,9 @@ public class WGPUComputePassEncoder extends NativeObject {
     }
 
     public void setImmediates(int offset, ByteBuffer byteBuffer, int dataSize) {
-        internal_native_SetImmediates(native_address, offset, byteBuffer, dataSize);
+        long dataAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(byteBuffer);
+        internal_native_SetImmediates(native_address, offset, dataAddress, dataSize);
     }
-
-    private static native void internal_native_SetImmediates(long this_addr, int offset, ByteBuffer byteBuffer, int dataSize);
 
     public WGPUComputePassEncoder() {
         long addr = internal_native_create_addr();

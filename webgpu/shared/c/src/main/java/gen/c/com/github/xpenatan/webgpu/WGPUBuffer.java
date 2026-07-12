@@ -15,6 +15,9 @@ public class WGPUBuffer extends NativeObject {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 
+    @org.teavm.interop.Import(name = "jwebgpu_teavmc_buffer_get_const_mapped_range")
+    private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, long out_ptr);
+
     public final static WGPUBuffer NULL = native_new();
 
     public static WGPUBuffer native_new() {
@@ -25,10 +28,9 @@ public class WGPUBuffer extends NativeObject {
     }
 
     public void getConstMappedRange(int offset, int size, ByteBuffer out) {
-        internal_native_getConstMappedRange(native_address, offset, size, out);
+        long outAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(out);
+        internal_native_getConstMappedRange(native_address, offset, size, outAddress);
     }
-
-    private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out);
 
     public WGPUBuffer() {
         long addr = internal_native_create_addr();

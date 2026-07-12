@@ -23,6 +23,15 @@ public class WGPUBuffer extends NativeObject {
         }
     */
 
+    /*[-TEAVM_C;-NATIVE]
+        extern "C" {
+        TEAVMC_EXPORT void jwebgpu_teavmc_buffer_get_const_mapped_range(int64_t this_addr, int32_t offset, int32_t size, int64_t out_ptr) {
+            JGPU::WGPUBuffer* nativeObject = (JGPU::WGPUBuffer*)this_addr;
+            nativeObject->GetConstMappedRange(offset, size, (void*)out_ptr);
+        }
+        }
+    */
+
     /*[-FFM;-ADD]
         private static final class FFMBufferHandles {
             private static final java.lang.foreign.SymbolLookup LOOKUP = java.lang.foreign.SymbolLookup.loaderLookup();
@@ -69,6 +78,12 @@ public class WGPUBuffer extends NativeObject {
             internal_native_getConstMappedRange(native_address, offset, size, seg);
         }
     */
+    /*[-TEAVM_C;-REPLACE_BLOCK]
+        {
+            long outAddress = com.github.xpenatan.jparser.runtime.helper.NativeUtils.address(out);
+            internal_native_getConstMappedRange(native_address, offset, size, outAddress);
+        }
+    */
     public void getConstMappedRange(int offset, int size, ByteBuffer out) {
         internal_native_getConstMappedRange(native_address, offset, size, out);
     }
@@ -98,6 +113,10 @@ public class WGPUBuffer extends NativeObject {
                 throw new RuntimeException(e);
             }
         }
+    */
+    /*[-TEAVM_C;-REPLACE]
+        @org.teavm.interop.Import(name = "jwebgpu_teavmc_buffer_get_const_mapped_range")
+        private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, long out_ptr);
     */
     private static native void internal_native_getConstMappedRange(long this_addr, int offset, int size, ByteBuffer out);
 }
