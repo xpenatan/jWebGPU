@@ -69,7 +69,10 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: windows-teavm-c-wgpu-dependency
-          path: ./webgpu/download/build/windows_x86_64/lib/wgpu_native.lib
+          path: |
+            ./webgpu/download/build/windows_x86_64/lib/wgpu_native.lib
+            ./webgpu/download/build/windows_x86_64/include/webgpu/webgpu.h
+            ./webgpu/download/build/windows_x86_64/include/webgpu/wgpu.h
 
   build_linux:
     name: Build Linux
@@ -317,7 +320,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: windows-teavm-c-wgpu-dependency
-          path: ./webgpu/download/build/windows_x86_64/lib/
+          path: ./webgpu/download/build/windows_x86_64/
 
       - name: Download linux natives
         uses: actions/download-artifact@v8
