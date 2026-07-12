@@ -121,15 +121,11 @@
 
 #if _WIN32
     #include <windows.h>
-    #include <glfw3.h>
-    #include <glfw3native.h>
 #endif
 
 #ifdef __APPLE__
     #include <TargetConditionals.h>
     #ifdef TARGET_OS_MAC
-        #include <glfw3.h>
-        #include <glfw3native.h>
         #include <QuartzCore/CAMetalLayer.h>
         #include <Cocoa/Cocoa.h>
     #endif

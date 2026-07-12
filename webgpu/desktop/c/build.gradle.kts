@@ -15,6 +15,7 @@ base {
 
 val jWebGPUNativeRoot = file("$projectDir/../../builder/build/c++/libs/wgpu/windows/vc/teavm_c")
 val wgpuNativeRoot = file("$projectDir/../../download/build/windows_x86_64/lib")
+val wgpuNativeIncludeRoot = file("$projectDir/../../download/build/windows_x86_64/include")
 val nativeResourceRoot = "external_cpp/jparser/jwebgpu/native/$platformName"
 
 data class NativeResource(
@@ -31,6 +32,9 @@ val nativeResources = listOf(
 
 val nativeJar = tasks.register<Jar>("nativeJar_${backendName}_$platformName") {
     from("src/main/resources")
+    from(wgpuNativeIncludeRoot) {
+        into("$nativeResourceRoot/include")
+    }
     nativeResources.forEach { resource ->
         from(resource.source) {
             into(resource.destination)
@@ -39,7 +43,11 @@ val nativeJar = tasks.register<Jar>("nativeJar_${backendName}_$platformName") {
     archiveBaseName.set(nativeArtifactId)
     archiveClassifier.set("")
     doFirst {
-        val missingResources = nativeResources.map { it.source }.filterNot(File::isFile)
+        val requiredResources = nativeResources.map { it.source } + listOf(
+            File(wgpuNativeIncludeRoot, "webgpu/webgpu.h"),
+            File(wgpuNativeIncludeRoot, "webgpu/wgpu.h"),
+        )
+        val missingResources = requiredResources.filterNot(File::isFile)
         if(missingResources.isNotEmpty()) {
             throw GradleException(
                 "Missing desktop TeaVM C WGPU native payloads for $platformName:\n" +

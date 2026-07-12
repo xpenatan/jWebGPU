@@ -1,5 +1,5 @@
-# This hook sorts after the generated jParser binding hooks. It supplies only
-# the transitive dependencies needed by the Windows WGPU static library.
+# This hook sorts after the generated jParser binding hooks. It supplies the
+# Windows WGPU headers and linkage-specific native dependencies.
 if(NOT DEFINED JPARSER_TEAVMC_APP_TARGET OR "${JPARSER_TEAVMC_APP_TARGET}" STREQUAL "")
   if(DEFINED TEAVM_APP_TARGET AND NOT "${TEAVM_APP_TARGET}" STREQUAL "")
     set(JPARSER_TEAVMC_APP_TARGET "${TEAVM_APP_TARGET}")
@@ -12,9 +12,9 @@ if(NOT DEFINED JPARSER_JWEBGPU_TEAVMC_LINKAGE OR "${JPARSER_JWEBGPU_TEAVMC_LINKA
   message(FATAL_ERROR "Include jparser_jwebgpu_teavm_c.cmake before the jWebGPU WGPU dependency hook.")
 endif()
 
-if(JPARSER_JWEBGPU_TEAVMC_LINKAGE STREQUAL "STATIC" AND WIN32)
+if(WIN32)
   if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
-    message(FATAL_ERROR "The packaged jWebGPU WGPU TeaVM C static payload supports Windows x64 only.")
+    message(FATAL_ERROR "The packaged jWebGPU WGPU TeaVM C payload supports Windows x64 only.")
   endif()
 
   if(NOT DEFINED JPARSER_JWEBGPU_TEAVMC_ROOT OR "${JPARSER_JWEBGPU_TEAVMC_ROOT}" STREQUAL "")
@@ -24,6 +24,20 @@ if(JPARSER_JWEBGPU_TEAVMC_LINKAGE STREQUAL "STATIC" AND WIN32)
       "${JPARSER_JWEBGPU_TEAVMC_EXTERNAL_CPP_ROOT}/jparser/jwebgpu")
   endif()
 
+  if(NOT DEFINED JPARSER_JWEBGPU_WGPU_INCLUDE_DIR
+      OR "${JPARSER_JWEBGPU_WGPU_INCLUDE_DIR}" STREQUAL "")
+    set(JPARSER_JWEBGPU_WGPU_INCLUDE_DIR
+      "${JPARSER_JWEBGPU_TEAVMC_ROOT}/native/windows_x64/include")
+  endif()
+  if(NOT EXISTS "${JPARSER_JWEBGPU_WGPU_INCLUDE_DIR}/webgpu/webgpu.h")
+    message(FATAL_ERROR
+      "Missing packaged WGPU public headers: ${JPARSER_JWEBGPU_WGPU_INCLUDE_DIR}")
+  endif()
+  target_include_directories(${JPARSER_TEAVMC_APP_TARGET} PRIVATE
+    "${JPARSER_JWEBGPU_WGPU_INCLUDE_DIR}")
+endif()
+
+if(JPARSER_JWEBGPU_TEAVMC_LINKAGE STREQUAL "STATIC" AND WIN32)
   if(NOT DEFINED JPARSER_JWEBGPU_WGPU_NATIVE_LIBRARY
       OR "${JPARSER_JWEBGPU_WGPU_NATIVE_LIBRARY}" STREQUAL "")
     set(JPARSER_JWEBGPU_WGPU_NATIVE_LIBRARY
