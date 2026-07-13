@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.api.NativeObject;
 
 public class WGPU extends NativeObject {
 
-    static private WGPUInstance WGPUInstance_TEMP_STATIC_GEN_0;
-
     static private STBImage STBImage_TEMP_STATIC_GEN_0;
 
     static private STBImage STBImage_TEMP_STATIC_GEN_1;
@@ -72,10 +70,9 @@ public class WGPU extends NativeObject {
         long addr = internal_native_SetupInstance_addr();
         if (addr == 0)
             return WGPUInstance.NULL;
-        if (WGPUInstance_TEMP_STATIC_GEN_0 == null)
-            WGPUInstance_TEMP_STATIC_GEN_0 = WGPUInstance.native_new();
-        WGPUInstance_TEMP_STATIC_GEN_0.internal_reset(addr, false);
-        return WGPUInstance_TEMP_STATIC_GEN_0;
+        WGPUInstance WGPUInstance_NEW = WGPUInstance.native_new();
+        WGPUInstance_NEW.internal_reset(addr, true);
+        return WGPUInstance_NEW;
     }
 
     public static long internal_native_SetupInstance_addr() {
