@@ -21,11 +21,4 @@ dependencies {
         api(project(":webgpu:web:wasm"))
     }
     implementation("com.github.xpenatan:jMultiplatform:${LibExt.jMultiplatform}")
-
-    api("org.teavm:teavm-tooling:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-core:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-classlib:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-jso-apis:${LibExt.teaVMVersion}")
-    api("org.teavm:teavm-jso-impl:${LibExt.teaVMVersion}")
 }

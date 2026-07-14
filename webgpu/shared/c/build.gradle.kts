@@ -13,7 +13,6 @@ dependencies {
     api("com.github.xpenatan.jParser:runtime-c:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
-    api("org.teavm:teavm-core:${LibExt.teaVMVersion}")
 }
 
 sourceSets {
