@@ -30,6 +30,10 @@ public class WGPU extends NativeObject {
         return null;
     }
 
+    public static boolean isDawnBackend() {
+        return false;
+    }
+
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         return null;
     }

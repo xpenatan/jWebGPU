@@ -22,6 +22,7 @@ Must do in this order:
 - Pipeline shape: `base` hand-authored templates + `builder` IDL/native source + jParser Gradle plugin -> generated and packaged target modules.
 - Java API shape comes from `webgpu/base/src/main/java/**` plus `webgpu/builder/src/main/cpp/jWebGPU.idl`.
 - Custom native glue lives in `webgpu/builder/src/main/cpp/custom/jWebGPU.cpp/.h`.
+- TeaVM C backend consumer requirements belong in `consumer { ... }` declarations in `webgpu/builder/build.gradle.kts`. jParser generates them inside the standard `jparser_jwebgpu_teavm_c.cmake`; backend native artifacts package only headers/libraries and must not add handwritten ordered CMake hooks.
 
 ## 3) Source Of Truth
 
@@ -97,13 +98,27 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_dawn
 .\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_windows_x64
+.\gradlew.bat :webgpu:desktop:c:nativeJar_dawn_windows_x64
 .\gradlew.bat :webgpu:builder:jParser_build_linux64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_linux64_ffm_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_linux64_teavm_c_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_linux64_teavm_c_dawn
+.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_linux_x64
+.\gradlew.bat :webgpu:desktop:c:nativeJar_dawn_linux_x64
 .\gradlew.bat :webgpu:builder:jParser_build_mac64_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_mac64_ffm_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_macArm_jni_dawn
 .\gradlew.bat :webgpu:builder:jParser_build_macArm_ffm_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_mac64_teavm_c_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_mac64_teavm_c_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_macArm_teavm_c_wgpu
+.\gradlew.bat :webgpu:builder:jParser_build_macArm_teavm_c_dawn
+.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_mac_x64
+.\gradlew.bat :webgpu:desktop:c:nativeJar_dawn_mac_x64
+.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_mac_arm64
+.\gradlew.bat :webgpu:desktop:c:nativeJar_dawn_mac_arm64
 .\gradlew.bat :webgpu:builder:jParser_build_web_wasm
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni_dawn

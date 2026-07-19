@@ -1,6 +1,7 @@
 import com.github.xpenatan.jParser.builder.tool.JParserSymbolNameMode
 import com.github.xpenatan.jParser.gradle.JParserNativeTargetVariantHooks
 import com.github.xpenatan.jParser.gradle.JParserTargetHooks
+import com.github.xpenatan.jParser.gradle.JParserTeaVMCConsumerHooks
 import com.github.xpenatan.jParser.gradle.JParserTargets
 import com.github.xpenatan.jParser.idl.IDLRenaming
 import java.io.File
@@ -46,14 +47,39 @@ val windowsSystemLibraries = listOf(
     "oleaut32.lib"
 )
 
-fun JParserTargetHooks.configureWindowsWGPU(msvcRuntime: String? = "/MD") {
+fun JParserTeaVMCConsumerHooks.configureWGPUConsumer(staticLibraryFile: String) {
+    selectorResource("include/webgpu/wgpu.h")
+    headerDir("include")
+    staticLibrary("deps/$staticLibraryFile", "JPARSER_JWEBGPU_WGPU_NATIVE_LIBRARY")
+}
+
+fun JParserTeaVMCConsumerHooks.configureDawnConsumer(staticLibraryFile: String) {
+    selectorResource("include/dawn/webgpu.h")
+    headerDir("include")
+    compileDefinition("JWEBGPU_DAWN=1")
+    staticLibrary("deps/$staticLibraryFile", "JPARSER_JWEBGPU_DAWN_NATIVE_LIBRARY")
+}
+
+fun JParserTeaVMCConsumerHooks.linkWindowsBackendRequirements() {
+    windowsSystemLibraries.forEach(::staticLinkLibrary)
+}
+
+fun JParserTeaVMCConsumerHooks.linkLinuxBackendRequirements() {
+    staticLinkLibrary("pthread")
+    staticLinkLibrary("\${CMAKE_DL_LIBS}")
+}
+
+fun JParserTeaVMCConsumerHooks.linkMacBackendRequirements(frameworks: List<String>) {
+    frameworks.forEach { framework ->
+        staticLinkerFlag("SHELL:-framework $framework")
+    }
+}
+
+fun JParserTargetHooks.configureWindowsWGPU() {
     includeDefaultSources.set(false)
     includeCustomSources.set(false)
     headerDir(File(wgpuWindowsDir, "include").normalizedPath())
     headerDir(glfwIncludeDir.normalizedPath())
-    if(msvcRuntime != null) {
-        compileFlag(msvcRuntime)
-    }
     compileFlag("/EHsc")
     linkerFlag(File(wgpuWindowsDir, "lib/wgpu_native.lib").normalizedPath())
     windowsSystemLibraries.forEach(::linkerFlag)
@@ -64,7 +90,6 @@ fun JParserTargetHooks.configureWindowsDawn() {
     includeCustomSources.set(false)
     headerDir(File(dawnWindowsDir, "include").normalizedPath())
     headerDir(glfwIncludeDir.normalizedPath())
-    compileFlag("/MD")
     compileFlag("/EHsc")
     compileFlag("/Zc:preprocessor")
     compileFlag("/DJWEBGPU_DAWN")
@@ -224,19 +249,38 @@ jParser {
         listOf(JParserTargets.WINDOWS64_JNI, JParserTargets.WINDOWS64_FFM).forEach { targetName ->
             target(targetName) {
                 configureWindowsWGPU()
+                compileFlag("/MD")
             }
             targetVariant(targetName, "wgpu") {
                 configureWindowsWGPU()
+                compileFlag("/MD")
             }
             targetVariant(targetName, "dawn") {
                 configureWindowsDawn()
+                compileFlag("/MD")
             }
         }
 
         targetVariant(JParserTargets.WINDOWS64_TEAVM_C, "wgpu") {
-            // jParser owns the TeaVM C CRT ABI and supplies /MT.
-            configureWindowsWGPU(msvcRuntime = null)
-            compileFlag("/FI${File(customSourceDir, "jWebGPU.h").normalizedPath()}")
+            configureWindowsWGPU()
+            // Raw compiler policy stays at the target declaration. The
+            // published Windows bridge payload is currently the MD variant.
+            compileFlag("/MD")
+            forcedInclude(File(customSourceDir, "jWebGPU.h"))
+            consumer {
+                configureWGPUConsumer("wgpu_native.lib")
+                linkWindowsBackendRequirements()
+            }
+        }
+        targetVariant(JParserTargets.WINDOWS64_TEAVM_C, "dawn") {
+            configureWindowsDawn()
+            // The downloaded Dawn archive and published bridge use the dynamic CRT.
+            compileFlag("/MD")
+            forcedInclude(File(customSourceDir, "jWebGPU.h"))
+            consumer {
+                configureDawnConsumer("webgpu_dawn.lib")
+                linkWindowsBackendRequirements()
+            }
         }
 
         listOf(JParserTargets.LINUX64_JNI, JParserTargets.LINUX64_FFM).forEach { targetName ->
@@ -247,26 +291,74 @@ jParser {
                 configureLinuxDawn()
             }
         }
+        targetVariant(JParserTargets.LINUX64_TEAVM_C, "wgpu") {
+            configureLinuxWGPU()
+            forcedInclude(File(customSourceDir, "jWebGPU.h"))
+            consumer {
+                configureWGPUConsumer("libwgpu_native.a")
+                linkLinuxBackendRequirements()
+            }
+        }
+        targetVariant(JParserTargets.LINUX64_TEAVM_C, "dawn") {
+            configureLinuxDawn()
+            forcedInclude(File(customSourceDir, "jWebGPU.h"))
+            consumer {
+                configureDawnConsumer("libwebgpu_dawn.a")
+                linkLinuxBackendRequirements()
+            }
+        }
 
         mapOf(
             JParserTargets.MAC64_JNI to wgpuMacDir,
             JParserTargets.MAC64_FFM to wgpuMacDir,
+            JParserTargets.MAC64_TEAVM_C to wgpuMacDir,
             JParserTargets.MAC_ARM_JNI to wgpuMacArmDir,
-            JParserTargets.MAC_ARM_FFM to wgpuMacArmDir
+            JParserTargets.MAC_ARM_FFM to wgpuMacArmDir,
+            JParserTargets.MAC_ARM_TEAVM_C to wgpuMacArmDir
         ).forEach { (targetName, wgpuDir) ->
             targetVariant(targetName, "wgpu") {
                 configureMacWGPU(wgpuDir)
+                if(targetName == JParserTargets.MAC64_TEAVM_C || targetName == JParserTargets.MAC_ARM_TEAVM_C) {
+                    forcedInclude(File(customSourceDir, "jWebGPU.h"))
+                    consumer {
+                        configureWGPUConsumer("libwgpu_native.a")
+                        linkMacBackendRequirements(listOf(
+                            "Metal",
+                            "Foundation",
+                            "Cocoa",
+                            "QuartzCore",
+                            "CoreFoundation",
+                            "IOKit"
+                        ))
+                    }
+                }
             }
         }
 
         mapOf(
             JParserTargets.MAC64_JNI to dawnMacDir,
             JParserTargets.MAC64_FFM to dawnMacDir,
+            JParserTargets.MAC64_TEAVM_C to dawnMacDir,
             JParserTargets.MAC_ARM_JNI to dawnMacArmDir,
-            JParserTargets.MAC_ARM_FFM to dawnMacArmDir
+            JParserTargets.MAC_ARM_FFM to dawnMacArmDir,
+            JParserTargets.MAC_ARM_TEAVM_C to dawnMacArmDir
         ).forEach { (targetName, dawnDir) ->
             targetVariant(targetName, "dawn") {
                 configureMacDawn(dawnDir)
+                if(targetName == JParserTargets.MAC64_TEAVM_C || targetName == JParserTargets.MAC_ARM_TEAVM_C) {
+                    forcedInclude(File(customSourceDir, "jWebGPU.h"))
+                    consumer {
+                        configureDawnConsumer("libwebgpu_dawn.a")
+                        linkMacBackendRequirements(listOf(
+                            "Cocoa",
+                            "IOKit",
+                            "Foundation",
+                            "IOSurface",
+                            "QuartzCore",
+                            "Metal"
+                        ))
+                    }
+                }
             }
         }
 

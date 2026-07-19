@@ -76,14 +76,28 @@ Windows JNI/FFM:
 .\gradlew.bat :webgpu:builder:jParser_build_windows64_ffm_wgpu :webgpu:builder:jParser_build_windows64_ffm_dawn
 ```
 
-Windows TeaVM C bootstrap:
+Desktop TeaVM C publishes one artifact per native backend and host platform:
+
+| Backend | Windows x64 | Linux x64 | macOS x64 | macOS arm64 |
+| --- | --- | --- | --- | --- |
+| WGPU | `webgpu-desktop-c-wgpu_windows_x64` | `webgpu-desktop-c-wgpu_linux_x64` | `webgpu-desktop-c-wgpu_mac_x64` | `webgpu-desktop-c-wgpu_mac_arm64` |
+| Dawn | `webgpu-desktop-c-dawn_windows_x64` | `webgpu-desktop-c-dawn_linux_x64` | `webgpu-desktop-c-dawn_mac_x64` | `webgpu-desktop-c-dawn_mac_arm64` |
+
+Add exactly one matching artifact to a TeaVM C application. Backend selection is a build-time choice. Linkage is a separate consumer choice: `JPARSER_JWEBGPU_TEAVMC_LINKAGE` accepts `STATIC`, `SHARED_LINKED`, or `RUNTIME_LOADED`, and jParser defaults it to `STATIC` when the application does not select a mode.
+
+The WGPU/Dawn consumer requirements are declared in `webgpu/builder/build.gradle.kts`. jParser folds all platform/backend declarations into the existing generated `jparser_jwebgpu_teavm_c.cmake` inside `webgpu-c`; backend native artifacts contain only headers and native libraries, with no handwritten CMake hook. The packaged `include/webgpu/wgpu.h` or `include/dawn/webgpu.h` selector identifies the chosen backend. Supplying both backend artifacts, or neither matching artifact for the current platform, fails during CMake configuration instead of silently linking the wrong implementation.
+
+The published Windows static payloads currently use the dynamic MSVC runtime and are stored as the `md` variant. A static consumer therefore selects `/MD`. The shared bridge remains usable by `/MD` and `/MT` applications because the CRT stays behind the DLL boundary. A static `/MT` consumer can rebuild the jWebGPU bridge and selected WebGPU dependency with `/MT`, package them under the matching `mt` payload directory, or provide them with `JPARSER_JWEBGPU_TEAVMC_LIBRARY` and `JPARSER_JWEBGPU_{WGPU|DAWN}_NATIVE_LIBRARY`. jWebGPU does not silently change the application's runtime or linkage choice.
+
+Windows TeaVM C:
 
 ```powershell
 .\gradlew.bat :webgpu:download:webgpu_download_glfw_windows
 .\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_wgpu
-.\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
+.\gradlew.bat :webgpu:download:webgpu_download_windows_x86_64_dawn
+.\gradlew.bat :webgpu:builder:jParser_build_windows64_teavm_c_wgpu :webgpu:builder:jParser_build_windows64_teavm_c_dawn
 .\gradlew.bat :webgpu:shared:c:jar
-.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_windows_x64
+.\gradlew.bat :webgpu:desktop:c:nativeJar_wgpu_windows_x64 :webgpu:desktop:c:nativeJar_dawn_windows_x64
 ```
 
 Linux JNI/FFM:
@@ -96,6 +110,13 @@ Linux JNI/FFM:
 ./gradlew :webgpu:builder:jParser_build_linux64_ffm_wgpu :webgpu:builder:jParser_build_linux64_ffm_dawn
 ```
 
+Linux TeaVM C:
+
+```bash
+./gradlew :webgpu:builder:jParser_build_linux64_teavm_c_wgpu :webgpu:builder:jParser_build_linux64_teavm_c_dawn
+./gradlew :webgpu:desktop:c:nativeJar_wgpu_linux_x64 :webgpu:desktop:c:nativeJar_dawn_linux_x64
+```
+
 macOS JNI/FFM:
 
 ```bash
@@ -106,6 +127,13 @@ macOS JNI/FFM:
 ./gradlew :webgpu:download:webgpu_download_glfw_windows
 ./gradlew :webgpu:builder:jParser_build_mac64_jni_wgpu :webgpu:builder:jParser_build_mac64_jni_dawn :webgpu:builder:jParser_build_macArm_jni_wgpu :webgpu:builder:jParser_build_macArm_jni_dawn
 ./gradlew :webgpu:builder:jParser_build_mac64_ffm_wgpu :webgpu:builder:jParser_build_mac64_ffm_dawn :webgpu:builder:jParser_build_macArm_ffm_wgpu :webgpu:builder:jParser_build_macArm_ffm_dawn
+```
+
+macOS TeaVM C:
+
+```bash
+./gradlew :webgpu:builder:jParser_build_mac64_teavm_c_wgpu :webgpu:builder:jParser_build_mac64_teavm_c_dawn :webgpu:builder:jParser_build_macArm_teavm_c_wgpu :webgpu:builder:jParser_build_macArm_teavm_c_dawn
+./gradlew :webgpu:desktop:c:nativeJar_wgpu_mac_x64 :webgpu:desktop:c:nativeJar_dawn_mac_x64 :webgpu:desktop:c:nativeJar_wgpu_mac_arm64 :webgpu:desktop:c:nativeJar_dawn_mac_arm64
 ```
 
 TeaVM/WebAssembly:
@@ -130,6 +158,8 @@ Android JNI:
 ```
 
 Generated native outputs are placed under `webgpu/builder/build/c++/libs/`.
+
+Native compiler policy is configured through jParser's generic target hooks. The current Windows bridge payloads, and the downloaded Dawn archive they can statically link, use the dynamic CRT, so the producer target declarations pass `compileFlag("/MD")` explicitly; there is no jWebGPU or jParser `msvcRuntime` type. Rebuilding the bridge and dependencies with another compatible ABI only requires changing the ordinary compiler flag and packaging the result in the matching runtime directory. Linux, macOS, Android, and iOS use their normal toolchain options; MSVC `/MT` and `/MD` flags are Windows-only.
 
 ## Run Demos
 

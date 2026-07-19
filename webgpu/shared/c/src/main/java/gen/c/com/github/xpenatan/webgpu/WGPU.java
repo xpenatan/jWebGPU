@@ -51,6 +51,13 @@ public class WGPU extends NativeObject {
     @org.teavm.interop.Import(name = "n2960845837")
     public static native int internal_native_GetPlatformType();
 
+    public static boolean isDawnBackend() {
+        return internal_native_IsDawnBackend();
+    }
+
+    @org.teavm.interop.Import(name = "n2202340314")
+    public static native boolean internal_native_IsDawnBackend();
+
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         long addr = internal_native_SetupInstance_addr(descriptor.native_address);
         if (addr == 0)

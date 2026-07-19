@@ -2179,6 +2179,14 @@ WGPUPlatformType WGPU::GetPlatformType() {
     #endif
 }
 
+bool WGPU::IsDawnBackend() {
+    #if defined(JWEBGPU_DAWN)
+        return true;
+    #else
+        return false;
+    #endif
+}
+
 JGPU::WGPUInstance* WGPU::SetupInstance(JGPU::WGPUInstanceDescriptor* descriptor) {
     JGPU::WGPUInstance* instance = new JGPU::WGPUInstance();
     instance->Set(wgpuCreateInstance(descriptor != NULL ? &descriptor->Get() : NULL));

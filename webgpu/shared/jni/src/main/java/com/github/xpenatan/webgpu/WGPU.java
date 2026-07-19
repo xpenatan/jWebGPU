@@ -53,6 +53,14 @@ public class WGPU extends NativeObject {
         return n.n2026632718.n2960845837();
     }
 
+    public static boolean isDawnBackend() {
+        return internal_native_IsDawnBackend();
+    }
+
+    public static boolean internal_native_IsDawnBackend() {
+        return n.n2026632718.n2202340314();
+    }
+
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         long addr = internal_native_SetupInstance_addr(descriptor.native_address);
         if (addr == 0)

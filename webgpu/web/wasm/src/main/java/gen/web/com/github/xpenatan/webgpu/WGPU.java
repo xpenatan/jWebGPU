@@ -51,6 +51,13 @@ public class WGPU extends NativeObject {
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.GetPlatformType();return returnedJSObj;")
     public static native int internal_native_GetPlatformType();
 
+    public static boolean isDawnBackend() {
+        return internal_native_IsDawnBackend();
+    }
+
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jWebGPU.WGPU.prototype.IsDawnBackend();return returnedJSObj;")
+    public static native boolean internal_native_IsDawnBackend();
+
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         int addr = internal_native_SetupInstance_addr(descriptor.native_address);
         if (addr == 0)

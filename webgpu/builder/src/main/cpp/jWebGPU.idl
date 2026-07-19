@@ -5,6 +5,7 @@
 
 interface WGPU {
     static WGPUPlatformType GetPlatformType();
+    static boolean IsDawnBackend();
     static WGPUInstance SetupInstance(optional WGPUInstanceDescriptor descriptor); //[-NEW_OBJECT]
     static STBImage loadImage(WGPUByteBuffer buffer, optional long desiredChannels);
 };

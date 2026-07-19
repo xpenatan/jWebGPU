@@ -57,7 +57,7 @@ jobs:
         run: ./gradlew :webgpu:builder:jParser_build_windows64_ffm_wgpu :webgpu:builder:jParser_build_windows64_ffm_dawn
 
       - name: Build TeaVM C project
-        run: ./gradlew :webgpu:builder:jParser_build_windows64_teavm_c_wgpu
+        run: ./gradlew :webgpu:builder:jParser_build_windows64_teavm_c_wgpu :webgpu:builder:jParser_build_windows64_teavm_c_dawn
 
       - name: Upload natives
         uses: actions/upload-artifact@v7
@@ -65,14 +65,15 @@ jobs:
           name: windows-natives
           path: ./webgpu/builder/build/c++/libs/
 
-      - name: Upload TeaVM C WGPU dependency
+      - name: Upload Windows TeaVM C dependencies
         uses: actions/upload-artifact@v7
         with:
-          name: windows-teavm-c-wgpu-dependency
+          name: windows-teavm-c-dependencies
           path: |
             ./webgpu/download/build/windows_x86_64/lib/wgpu_native.lib
-            ./webgpu/download/build/windows_x86_64/include/webgpu/webgpu.h
-            ./webgpu/download/build/windows_x86_64/include/webgpu/wgpu.h
+            ./webgpu/download/build/windows_x86_64/include/
+            ./webgpu/download/build/dawn-natives-windows-x64-msvc/lib/webgpu_dawn.lib
+            ./webgpu/download/build/dawn-natives-windows-x64-msvc/include/
 
   build_linux:
     name: Build Linux
@@ -115,11 +116,27 @@ jobs:
           :webgpu:builder:jParser_build_linux64_ffm_wgpu
           :webgpu:builder:jParser_build_linux64_ffm_dawn
 
+      - name: Build TeaVM C project
+        run: >
+          ./gradlew
+          :webgpu:builder:jParser_build_linux64_teavm_c_wgpu
+          :webgpu:builder:jParser_build_linux64_teavm_c_dawn
+
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: linux-natives
           path: ./webgpu/builder/build/c++/libs/
+
+      - name: Upload Linux TeaVM C dependencies
+        uses: actions/upload-artifact@v7
+        with:
+          name: linux-teavm-c-dependencies
+          path: |
+            ./webgpu/download/build/linux_x86_64/lib/libwgpu_native.a
+            ./webgpu/download/build/linux_x86_64/include/
+            ./webgpu/download/build/dawn-natives-linux-x64-gcc/lib/libwebgpu_dawn.a
+            ./webgpu/download/build/dawn-natives-linux-x64-gcc/include/
 
   build_mac:
     name: Build Mac
@@ -168,11 +185,33 @@ jobs:
           :webgpu:builder:jParser_build_macArm_ffm_wgpu
           :webgpu:builder:jParser_build_macArm_ffm_dawn
 
+      - name: Build TeaVM C project
+        run: >
+          ./gradlew
+          :webgpu:builder:jParser_build_mac64_teavm_c_wgpu
+          :webgpu:builder:jParser_build_mac64_teavm_c_dawn
+          :webgpu:builder:jParser_build_macArm_teavm_c_wgpu
+          :webgpu:builder:jParser_build_macArm_teavm_c_dawn
+
       - name: Upload natives
         uses: actions/upload-artifact@v7
         with:
           name: mac-natives
           path: ./webgpu/builder/build/c++/libs/
+
+      - name: Upload macOS TeaVM C dependencies
+        uses: actions/upload-artifact@v7
+        with:
+          name: mac-teavm-c-dependencies
+          path: |
+            ./webgpu/download/build/macos_x86_64/lib/libwgpu_native.a
+            ./webgpu/download/build/macos_x86_64/include/
+            ./webgpu/download/build/macos_aarch64/lib/libwgpu_native.a
+            ./webgpu/download/build/macos_aarch64/include/
+            ./webgpu/download/build/dawn-natives-macos-x64/lib/libwebgpu_dawn.a
+            ./webgpu/download/build/dawn-natives-macos-x64/include/
+            ./webgpu/download/build/dawn-natives-macos-arm64/lib/libwebgpu_dawn.a
+            ./webgpu/download/build/dawn-natives-macos-arm64/include/
 
   build_teavm:
     name: Build TeaVM
@@ -316,11 +355,11 @@ jobs:
           name: windows-natives
           path: ./webgpu/builder/build/c++/libs/
 
-      - name: Download TeaVM C WGPU dependency
+      - name: Download Windows TeaVM C dependencies
         uses: actions/download-artifact@v8
         with:
-          name: windows-teavm-c-wgpu-dependency
-          path: ./webgpu/download/build/windows_x86_64/
+          name: windows-teavm-c-dependencies
+          path: ./webgpu/download/build/
 
       - name: Download linux natives
         uses: actions/download-artifact@v8
@@ -328,11 +367,23 @@ jobs:
           name: linux-natives
           path: ./webgpu/builder/build/c++/libs/
 
+      - name: Download Linux TeaVM C dependencies
+        uses: actions/download-artifact@v8
+        with:
+          name: linux-teavm-c-dependencies
+          path: ./webgpu/download/build/
+
       - name: Download mac natives
         uses: actions/download-artifact@v8
         with:
           name: mac-natives
           path: ./webgpu/builder/build/c++/libs/
+
+      - name: Download macOS TeaVM C dependencies
+        uses: actions/download-artifact@v8
+        with:
+          name: mac-teavm-c-dependencies
+          path: ./webgpu/download/build/
 
       - name: Download android natives
         uses: actions/download-artifact@v8
@@ -348,6 +399,19 @@ jobs:
 
       - name: Generate classes
         run: ./gradlew :webgpu:builder:jParser_generate
+
+      - name: Validate desktop TeaVM C artifacts
+        run: >
+          ./gradlew
+          :webgpu:shared:c:jar
+          :webgpu:desktop:c:nativeJar_wgpu_windows_x64
+          :webgpu:desktop:c:nativeJar_dawn_windows_x64
+          :webgpu:desktop:c:nativeJar_wgpu_linux_x64
+          :webgpu:desktop:c:nativeJar_dawn_linux_x64
+          :webgpu:desktop:c:nativeJar_wgpu_mac_x64
+          :webgpu:desktop:c:nativeJar_dawn_mac_x64
+          :webgpu:desktop:c:nativeJar_wgpu_mac_arm64
+          :webgpu:desktop:c:nativeJar_dawn_mac_arm64
 
       - name: Configure Git
         run: |

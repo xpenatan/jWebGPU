@@ -46,8 +46,24 @@ public class JWebGPULoader {
     */
     /*[-TEAVM_C;-REPLACE]
       private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {
-          JWebGPULoader.backend = backend;
-          JParserLibraryLoader.load("jWebGPU", listener);
+          JParserLibraryLoader.load("jWebGPU", new JParserLibraryLoaderListener() {
+              @Override
+              public void onLoad(boolean idl_isSuccess, Throwable idl_t) {
+                  if(!idl_isSuccess) {
+                      listener.onLoad(false, idl_t);
+                      return;
+                  }
+                  try {
+                      JWebGPULoader.backend = WGPU.isDawnBackend()
+                              ? JWebGPUBackend.DAWN
+                              : JWebGPUBackend.WGPU;
+                      listener.onLoad(true, null);
+                  }
+                  catch(Throwable throwable) {
+                      listener.onLoad(false, throwable);
+                  }
+              }
+          });
       }
     */
     private static void initInternal(JWebGPUBackend backend, JParserLibraryLoaderListener listener) {

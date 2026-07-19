@@ -14,6 +14,8 @@ final public class n2026632718 {
 
     public static native int n2960845837();
 
+    public static native boolean n2202340314();
+
     public static native long n2319395686(long descriptor_addr);
 
     public static native long n2433182186();

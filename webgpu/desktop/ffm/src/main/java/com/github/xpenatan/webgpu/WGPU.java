@@ -68,6 +68,18 @@ public class WGPU extends NativeObject {
         }
     }
 
+    public static boolean isDawnBackend() {
+        return internal_native_IsDawnBackend();
+    }
+
+    public static boolean internal_native_IsDawnBackend() {
+        try {
+            return (boolean) FFMHandles.internal_native_IsDawnBackend__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
     public static WGPUInstance setupInstance(WGPUInstanceDescriptor descriptor) {
         long addr = internal_native_SetupInstance_addr(descriptor.native_address);
         if (addr == 0)
@@ -143,6 +155,8 @@ public class WGPU extends NativeObject {
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n631416642", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_GetPlatformType__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2960845837", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle internal_native_IsDawnBackend__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2202340314", FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN));
 
         static final java.lang.invoke.MethodHandle internal_native_SetupInstance_addr__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n2319395686", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
