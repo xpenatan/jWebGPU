@@ -148,9 +148,7 @@ fun isTaskRequested(taskName: String): Boolean {
 
 val isStrictPublishTaskRequested = isTaskRequested("publish")
         || isTaskRequested("publishRelease")
-        || isTaskRequested("publishTestRelease")
-        || isTaskRequested("uploadToMavenCentral")
-val isLocalPrepareReleaseDeploy = isTaskRequested("prepareReleaseDeploy") && !isStrictPublishTaskRequested
+val isLocalPrepareRelease = isTaskRequested("prepareRelease") && !isStrictPublishTaskRequested
 
 val nativeJars = nativeJarSpecs.map { spec ->
     spec to tasks.register<Jar>(spec.taskName) {
@@ -186,7 +184,7 @@ val nativeJars = nativeJarSpecs.map { spec ->
     }
 }
 
-val nativeJarSpecsToPublish = if(isLocalPrepareReleaseDeploy) {
+val nativeJarSpecsToPublish = if(isLocalPrepareRelease) {
     nativeJarSpecs.filter { spec -> spec.requiredFiles().all(File::isFile) }
 }
 else {

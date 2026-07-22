@@ -1,13 +1,16 @@
 import java.io.File
-import java.util.*
+import java.util.Properties
 
 object LibExt {
     const val groupId = "com.github.xpenatan.jWebGPU"
     const val libName = "jWebGPU"
+    const val snapshotVersion = "-SNAPSHOT"
     var isRelease = false
-    var libVersion: String = ""
+    val releaseVersion: String
+        get() = readReleaseVersion()
+    val libVersion: String
         get() {
-            return getVersion()
+            return if(isRelease) releaseVersion else snapshotVersion
         }
 
     const val javaMainTarget = "1.8"
@@ -24,21 +27,13 @@ object LibExt {
     const val exampleUseRepoLibs = false
 }
 
-private fun getVersion(): String {
-    var libVersion = "-SNAPSHOT"
+private fun readReleaseVersion(): String {
     val file = File("gradle.properties")
     if(file.exists()) {
         val properties = Properties()
         properties.load(file.inputStream())
-        val version = properties.getProperty("version")
-        if(LibExt.isRelease) {
-            libVersion = version
-        }
+        return properties.getProperty("version")
+            ?: throw RuntimeException("version property should exist")
     }
-    else {
-        if(LibExt.isRelease) {
-            throw RuntimeException("properties should exist")
-        }
-    }
-    return libVersion
+    throw RuntimeException("properties should exist")
 }

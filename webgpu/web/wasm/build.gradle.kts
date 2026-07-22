@@ -23,9 +23,9 @@ val taskNames = gradle.startParameter.taskNames
 fun isTaskRequested(taskName: String): Boolean {
     return taskNames.any { it == taskName || it.endsWith(":$taskName") }
 }
-val isPrepareDeployTask = isTaskRequested("prepareReleaseDeploy") || isTaskRequested("prepareSnapshotDeploy")
+val isPrepareTask = isTaskRequested("prepareRelease") || isTaskRequested("prepareSnapshot")
 val isPublishTask = taskNames.any { it.contains("publish", ignoreCase = true) }
-val includeNativesInMainJar = !(isPrepareDeployTask || isPublishTask)
+val includeNativesInMainJar = !(isPrepareTask || isPublishTask)
 
 tasks.named<Jar>("jar") {
     if(includeNativesInMainJar) {
