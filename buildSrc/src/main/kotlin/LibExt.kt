@@ -18,7 +18,7 @@ object LibExt {
     const val javaFFMTarget = "25"
 
     //Library dependencies
-    const val jParserVersion = "-SNAPSHOT"
+    const val jParserVersion = "1.2.5"
     const val jMultiplatform = "0.1.3"
 
     //Example dependencies
