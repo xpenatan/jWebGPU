@@ -10,7 +10,6 @@ junit = "4.12"
 lwjgl = "3.3.4"
 easyPublishing = "0.1.0"
 androidGradlePlugin = "9.1.1"
-kotlin = "2.3.20"
 gretty = "4.1.10"
 wgpuNative = "29.0.1.1"
 dawnNatives = "7458"
@@ -54,5 +53,4 @@ easyPublishing = { id = "com.github.xpenatan.easy-publishing", version.ref = "ea
 jParser = { id = "com.github.xpenatan.jparser", version.ref = "jParser" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 gretty = { id = "org.gretty", version.ref = "gretty" }

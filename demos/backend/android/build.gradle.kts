@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
 }
 
 val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
@@ -10,6 +9,7 @@ val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
 android {
     namespace = "com.github.xpenatan.webgpu.backend.android"
     compileSdk = 36
+    enableKotlin = false
 
     defaultConfig {
         minSdk = 29
@@ -34,11 +34,9 @@ android {
         }
     }
 
-    kotlin {
-        compileOptions {
-            sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
-            targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
     }
 
     buildFeatures {
