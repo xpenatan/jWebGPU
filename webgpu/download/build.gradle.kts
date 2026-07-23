@@ -6,8 +6,10 @@ plugins {
     id("java")
 }
 
-val WGPU_VERSION = "29.0.1.1"
-val dawnNativesVersion = providers.gradleProperty("dawnNativesVersion").orElse("7458").get()
+val wgpuVersion = libs.versions.wgpuNative.get()
+val dawnNativesVersion = providers.gradleProperty("dawnNativesVersion")
+    .orElse(libs.versions.dawnNatives)
+    .get()
 val dawnNativesTag = "dawn-$dawnNativesVersion"
 val dawnNativesReleaseUrl = "https://github.com/xpenatan/dawn-natives/releases/download/$dawnNativesTag"
 
@@ -37,7 +39,7 @@ fun registerDownloadTask(platform: String, os: String, arch: String) {
         description = "Download wgpu-native binaries for $platform"
         doLast {
             val zipName = "wgpu-$os-$arch.zip"
-            val url = "https://github.com/gfx-rs/wgpu-native/releases/download/v$WGPU_VERSION/$zipName"
+            val url = "https://github.com/gfx-rs/wgpu-native/releases/download/v$wgpuVersion/$zipName"
             val tmpDir = buildDir.resolve("tmp")
             val zipFile = tmpDir.resolve("wgpu-$platform.zip")
             val nativesDir = buildDir.resolve(platform)
@@ -87,7 +89,7 @@ tasks.register("webgpu_download_glfw_windows") {
     group = "webgpu"
     description = "Download GLFW 3.4 binaries for Windows and extract only the include folder contents to glfw-windows"
     doLast {
-        val glfwVersion = "3.4"
+        val glfwVersion = libs.versions.glfw.get()
         val zipName = "glfw-$glfwVersion.bin.WIN64.zip"
         val url = "https://github.com/glfw/glfw/releases/download/$glfwVersion/$zipName"
         println("URL: $url")

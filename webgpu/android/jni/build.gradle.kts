@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.library")
+    alias(libs.plugins.androidLibrary)
 }
 
 val wgpuModuleName = "webgpu-android-wgpu"
@@ -33,8 +33,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-        targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
     }
 
     buildTypes {
@@ -52,26 +52,23 @@ android {
 
 dependencies {
     api(project(":webgpu:shared:jni"))
-    api("com.github.xpenatan.jParser:runtime-jni:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:runtime-android:${LibExt.jParserVersion}")
-    listOf("x86", "x86_64", "armeabi_v7a", "arm64_v8a").forEach { abi ->
-        api("com.github.xpenatan.jParser:runtime-android_$abi:${LibExt.jParserVersion}")
-    }
-    api("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
+    api(libs.jParserRuntimeJni)
+    api(libs.jParserRuntimeAndroid)
+    api(libs.jParserRuntimeAndroidX86)
+    api(libs.jParserRuntimeAndroidX8664)
+    api(libs.jParserRuntimeAndroidArmeabiV7a)
+    api(libs.jParserRuntimeAndroidArm64V8a)
+    api(libs.jParserApiCore)
+    api(libs.jParserLoaderCore)
 }
 
 publishing {
     publications {
         create<MavenPublication>("mavenWgpu") {
             artifactId = wgpuModuleName
-            groupId = LibExt.groupId
-            version = LibExt.libVersion
         }
         create<MavenPublication>("mavenDawn") {
             artifactId = dawnModuleName
-            groupId = LibExt.groupId
-            version = LibExt.libVersion
         }
     }
 }

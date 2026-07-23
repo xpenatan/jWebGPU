@@ -211,22 +211,20 @@ publishing {
             val nativeJar = nativeJarsBySpec.getValue(spec)
             create<MavenPublication>("mavenNative_${spec.backend.id}_${spec.platform.name}") {
                 artifactId = spec.artifactId
-                groupId = LibExt.groupId
-                version = LibExt.libVersion
                 artifact(nativeJar)
                 pom.withXml {
                     val dependenciesNode = asNode().appendNode("dependencies")
 
                     val webgpuCDependency = dependenciesNode.appendNode("dependency")
-                    webgpuCDependency.appendNode("groupId", LibExt.groupId)
+                    webgpuCDependency.appendNode("groupId", rootProject.group.toString())
                     webgpuCDependency.appendNode("artifactId", "webgpu-c")
-                    webgpuCDependency.appendNode("version", LibExt.libVersion)
+                    webgpuCDependency.appendNode("version", project.version.toString())
                     webgpuCDependency.appendNode("scope", "compile")
 
                     val jParserRuntimeDependency = dependenciesNode.appendNode("dependency")
                     jParserRuntimeDependency.appendNode("groupId", "com.github.xpenatan.jParser")
                     jParserRuntimeDependency.appendNode("artifactId", spec.platform.jParserRuntimeArtifactId)
-                    jParserRuntimeDependency.appendNode("version", LibExt.jParserVersion)
+                    jParserRuntimeDependency.appendNode("version", libs.versions.jParser.get())
                     jParserRuntimeDependency.appendNode("scope", "compile")
                 }
             }

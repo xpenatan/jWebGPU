@@ -6,18 +6,22 @@ plugins {
     id("java-library")
 }
 
+val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
+    .map(String::toBoolean)
+    .getOrElse(false)
+
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
 }
 
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:desktop"))
 
-    if(LibExt.exampleUseRepoLibs) {
-        api("com.github.xpenatan.jWebGPU:webgpu-jni:-SNAPSHOT")
-        api("com.github.xpenatan.jWebGPU:webgpu-desktop-jni:-SNAPSHOT")
+    if(exampleUseRepoLibs) {
+        api(libs.jWebGPUJni)
+        api(libs.jWebGPUDesktopJni)
     }
     else {
         api(project(":webgpu:shared:jni"))
@@ -60,9 +64,10 @@ fun registerDesktopRunTask(taskName: String, backend: DemoBackend, descriptionSu
         systemProperty("studio.capture.max", "1")
         systemProperty("studio.capture.path", "local-logs/screenshots")
 
-        if(LibExt.exampleUseRepoLibs) {
+        if(exampleUseRepoLibs) {
             val artifactId = "webgpu-desktop-jni-${backend.id}_$currentDesktopPlatform"
-            classpath(configurations.detachedConfiguration(dependencies.create("${LibExt.groupId}:$artifactId:${LibExt.libVersion}")))
+            val dependency = "${rootProject.group}:$artifactId:${libs.versions.snapshot.get()}"
+            classpath(configurations.detachedConfiguration(dependencies.create(dependency)))
         }
         else {
             val nativeJarTask = project(":webgpu:desktop:jni").tasks.named("nativeJar_${backend.id}_$currentDesktopPlatform")

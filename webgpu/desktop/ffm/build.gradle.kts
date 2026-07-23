@@ -111,9 +111,9 @@ artifacts {
 }
 
 dependencies {
-    implementation("com.github.xpenatan.jParser:runtime-desktop-ffm:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:api-core:${LibExt.jParserVersion}")
-    implementation("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
+    implementation(libs.jParserRuntimeDesktopFFM)
+    implementation(libs.jParserApiCore)
+    implementation(libs.jParserLoaderCore)
 
 }
 
@@ -130,8 +130,8 @@ tasks.named("clean") {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaFFM.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaFFM.get())
 }
 
 java {
@@ -143,8 +143,6 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             artifactId = moduleName
-            groupId = LibExt.groupId
-            version = LibExt.libVersion
             from(components["java"])
         }
 
@@ -152,15 +150,13 @@ publishing {
             val nativeJar = nativeJarsBySpec.getValue(spec)
             create<MavenPublication>("mavenNative_${spec.backend.id}_${spec.platformName}") {
                 artifactId = spec.artifactId
-                groupId = LibExt.groupId
-                version = LibExt.libVersion
                 artifact(nativeJar)
                 pom.withXml {
                     val dependenciesNode = asNode().appendNode("dependencies")
                     val dependencyNode = dependenciesNode.appendNode("dependency")
                     dependencyNode.appendNode("groupId", "com.github.xpenatan.jParser")
                     dependencyNode.appendNode("artifactId", spec.jParserRuntimeArtifactId)
-                    dependencyNode.appendNode("version", LibExt.jParserVersion)
+                    dependencyNode.appendNode("version", libs.versions.jParser.get())
                     dependencyNode.appendNode("scope", "runtime")
                 }
             }

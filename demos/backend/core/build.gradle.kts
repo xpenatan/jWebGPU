@@ -3,15 +3,19 @@ plugins {
     id("java-library")
 }
 
+val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
+    .map(String::toBoolean)
+    .getOrElse(false)
+
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
 }
 
 dependencies {
-    compileOnlyApi("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
-    if(LibExt.exampleUseRepoLibs) {
-        compileOnlyApi("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
+    compileOnlyApi(libs.jParserRuntimeCore)
+    if(exampleUseRepoLibs) {
+        compileOnlyApi(libs.jWebGPUCore)
     }
     else {
         compileOnlyApi(project(":webgpu:core"))

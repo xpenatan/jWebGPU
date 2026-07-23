@@ -6,7 +6,7 @@ import kotlin.sequences.forEach
 plugins {
     id("java")
     id("java-library")
-    id("org.gretty") version("4.1.10")
+    alias(libs.plugins.gretty)
 }
 
 project.extra["webAppDir"] = File(projectDir, "build/dist/webapp")
@@ -20,8 +20,8 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaWebTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaWebTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaWeb.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaWeb.get())
 }
 
 tasks.register<Copy>("copyWebappToDist") {

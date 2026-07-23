@@ -1,16 +1,13 @@
 pluginManagement {
-    val jParserPluginVersion = "-SNAPSHOT"
-
     resolutionStrategy {
         eachPlugin {
             if(requested.id.id == "com.github.xpenatan.jparser") {
-                useModule("com.github.xpenatan.jParser:jparser-gradle-plugin:$jParserPluginVersion")
+                val version = requireNotNull(requested.version) {
+                    "The com.github.xpenatan.jparser plugin must declare a version"
+                }
+                useModule("com.github.xpenatan.jParser:jparser-gradle-plugin:$version")
             }
         }
-    }
-
-    plugins {
-        id("com.github.xpenatan.jparser") version jParserPluginVersion
     }
 
     repositories {

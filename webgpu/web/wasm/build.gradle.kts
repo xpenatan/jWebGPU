@@ -37,9 +37,9 @@ tasks.named<Jar>("jar") {
 
 dependencies {
     api(project(":webgpu:core"))
-    api("com.github.xpenatan.jParser:runtime-core:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:runtime-web:${LibExt.jParserVersion}")
-    api("com.github.xpenatan.jParser:runtime-web_wasm:${LibExt.jParserVersion}")
+    api(libs.jParserRuntimeCore)
+    api(libs.jParserRuntimeWeb)
+    api(libs.jParserRuntimeWebWasm)
 }
 
 tasks.named("clean") {
@@ -49,8 +49,8 @@ tasks.named("clean") {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaWebTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaWebTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaWeb.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaWeb.get())
 }
 
 java {
@@ -62,15 +62,11 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             artifactId = moduleName
-            groupId = LibExt.groupId
-            version = LibExt.libVersion
             from(components["java"])
         }
 
         create<MavenPublication>("mavenWasm") {
             artifactId = "${moduleName}_wasm"
-            groupId = LibExt.groupId
-            version = LibExt.libVersion
             artifact(wasmJar)
         }
     }

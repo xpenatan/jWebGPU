@@ -6,17 +6,21 @@ plugins {
     id("java-library")
 }
 
+val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
+    .map(String::toBoolean)
+    .getOrElse(false)
+
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaFFMTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaFFM.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaFFM.get())
 }
 
 dependencies {
     implementation(project(":demos:app:core"))
     implementation(project(":demos:backend:desktop"))
 
-    if(LibExt.exampleUseRepoLibs) {
-        api("com.github.xpenatan.jWebGPU:webgpu-desktop-ffm:-SNAPSHOT")
+    if(exampleUseRepoLibs) {
+        api(libs.jWebGPUDesktopFFM)
     }
     else {
         api(project(":webgpu:desktop:ffm"))
@@ -59,9 +63,10 @@ fun registerDesktopRunTask(taskName: String, backend: DemoBackend, descriptionSu
         systemProperty("studio.capture.max", "1")
         systemProperty("studio.capture.path", "local-logs/screenshots")
 
-        if(LibExt.exampleUseRepoLibs) {
+        if(exampleUseRepoLibs) {
             val artifactId = "webgpu-desktop-ffm-${backend.id}_$currentDesktopPlatform"
-            classpath(configurations.detachedConfiguration(dependencies.create("${LibExt.groupId}:$artifactId:${LibExt.libVersion}")))
+            val dependency = "${rootProject.group}:$artifactId:${libs.versions.snapshot.get()}"
+            classpath(configurations.detachedConfiguration(dependencies.create(dependency)))
         }
         else {
             val nativeJarTask = project(":webgpu:desktop:ffm").tasks.named("nativeJar_${backend.id}_$currentDesktopPlatform")

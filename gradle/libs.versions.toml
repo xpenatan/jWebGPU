@@ -1,0 +1,55 @@
+[versions]
+jWebGPU = "0.3.3"
+snapshot = "-SNAPSHOT"
+javaMain = "1.8"
+javaWeb = "17"
+javaFFM = "25"
+jParser = "1.2.5"
+jMultiplatform = "0.1.3"
+junit = "4.12"
+lwjgl = "3.3.4"
+easyPublishing = "0.1.0"
+androidGradlePlugin = "9.1.1"
+kotlin = "2.3.20"
+gretty = "4.1.10"
+wgpuNative = "29.0.1.1"
+dawnNatives = "7458"
+glfw = "3.4"
+
+[libraries]
+jParserLoaderCore = { module = "com.github.xpenatan.jParser:loader-core", version.ref = "jParser" }
+jParserApiCore = { module = "com.github.xpenatan.jParser:api-core", version.ref = "jParser" }
+jParserRuntimeBase = { module = "com.github.xpenatan.jParser:runtime-base", version.ref = "jParser" }
+jParserRuntimeCore = { module = "com.github.xpenatan.jParser:runtime-core", version.ref = "jParser" }
+jParserRuntimeJni = { module = "com.github.xpenatan.jParser:runtime-jni", version.ref = "jParser" }
+jParserRuntimeAndroid = { module = "com.github.xpenatan.jParser:runtime-android", version.ref = "jParser" }
+jParserRuntimeAndroidX86 = { module = "com.github.xpenatan.jParser:runtime-android_x86", version.ref = "jParser" }
+jParserRuntimeAndroidX8664 = { module = "com.github.xpenatan.jParser:runtime-android_x86_64", version.ref = "jParser" }
+jParserRuntimeAndroidArmeabiV7a = { module = "com.github.xpenatan.jParser:runtime-android_armeabi_v7a", version.ref = "jParser" }
+jParserRuntimeAndroidArm64V8a = { module = "com.github.xpenatan.jParser:runtime-android_arm64_v8a", version.ref = "jParser" }
+jParserRuntimeC = { module = "com.github.xpenatan.jParser:runtime-c", version.ref = "jParser" }
+jParserRuntimeDesktopFFM = { module = "com.github.xpenatan.jParser:runtime-desktop-ffm", version.ref = "jParser" }
+jParserRuntimeWeb = { module = "com.github.xpenatan.jParser:runtime-web", version.ref = "jParser" }
+jParserRuntimeWebWasm = { module = "com.github.xpenatan.jParser:runtime-web_wasm", version.ref = "jParser" }
+jMultiplatform = { module = "com.github.xpenatan:jMultiplatform", version.ref = "jMultiplatform" }
+junit = { module = "junit:junit", version.ref = "junit" }
+lwjglBom = { module = "org.lwjgl:lwjgl-bom", version.ref = "lwjgl" }
+lwjglCore = { module = "org.lwjgl:lwjgl", version.ref = "lwjgl" }
+lwjglGlfw = { module = "org.lwjgl:lwjgl-glfw", version.ref = "lwjgl" }
+lwjglOpengl = { module = "org.lwjgl:lwjgl-opengl", version.ref = "lwjgl" }
+jWebGPUCore = { module = "com.github.xpenatan.jWebGPU:webgpu-core", version.ref = "snapshot" }
+jWebGPUJni = { module = "com.github.xpenatan.jWebGPU:webgpu-jni", version.ref = "snapshot" }
+jWebGPUDesktopJni = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-jni", version.ref = "snapshot" }
+jWebGPUDesktopFFM = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-ffm", version.ref = "snapshot" }
+jWebGPUWeb = { module = "com.github.xpenatan.jWebGPU:webgpu-web", version.ref = "snapshot" }
+jWebGPUWebWasm = { module = "com.github.xpenatan.jWebGPU:webgpu-web_wasm", version.ref = "snapshot" }
+jWebGPUAndroidWgpu = { module = "com.github.xpenatan.jWebGPU:webgpu-android-wgpu", version.ref = "snapshot" }
+jWebGPUAndroidDawn = { module = "com.github.xpenatan.jWebGPU:webgpu-android-dawn", version.ref = "snapshot" }
+
+[plugins]
+easyPublishing = { id = "com.github.xpenatan.easy-publishing", version.ref = "easyPublishing" }
+jParser = { id = "com.github.xpenatan.jparser", version.ref = "jParser" }
+androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+gretty = { id = "org.gretty", version.ref = "gretty" }

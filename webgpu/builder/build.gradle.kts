@@ -8,7 +8,7 @@ import java.io.File
 
 plugins {
     id("java-library")
-    id("com.github.xpenatan.jparser")
+    alias(libs.plugins.jParser)
 }
 
 fun File.normalizedPath(): String {
@@ -199,8 +199,8 @@ fun JParserNativeTargetVariantHooks.configureAndroidDawn() {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
 }
 
 jParser {

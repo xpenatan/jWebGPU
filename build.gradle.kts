@@ -1,23 +1,10 @@
 plugins {
     id("java")
-    id("com.github.xpenatan.easy-publishing") version "0.1.0"
+    alias(libs.plugins.easyPublishing)
 }
 
-LibExt.isRelease = rootProject.extra["easyPublishing.releaseRequested"] as Boolean
-
-buildscript {
-    repositories {
-        mavenCentral()
-        google()
-    }
-
-    val kotlinVersion = "2.3.20"
-
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.12.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-    }
-}
+val jWebGPUGroup = "com.github.xpenatan.jWebGPU"
+group = jWebGPUGroup
 
 allprojects {
     repositories {
@@ -53,9 +40,9 @@ easyPublishing {
         ":webgpu:android:jni",
     )
 
-    groupId.set(LibExt.groupId)
-    releaseVersion.set(LibExt.releaseVersion)
-    snapshotVersion.set(LibExt.snapshotVersion)
+    groupId.set(jWebGPUGroup)
+    releaseVersion.set(libs.versions.jWebGPU)
+    snapshotVersion.set(libs.versions.snapshot)
 
     snapshotRepositoryUrl.set("https://central.sonatype.com/repository/maven-snapshots/")
     releaseRepositoryUrl.set("https://central.sonatype.com")
@@ -64,7 +51,7 @@ easyPublishing {
     signingKey.set(providers.environmentVariable("SIGNING_KEY"))
     signingPassword.set(providers.environmentVariable("SIGNING_PASSWORD"))
 
-    pomName.set(LibExt.libName)
+    pomName.set("jWebGPU")
     pomDescription.set("WebGPU Java Bindings for wgpu-native and Dawn")
     projectUrl.set("https://github.com/xpenatan/jWebGPU")
 
@@ -79,9 +66,9 @@ easyPublishing {
 afterEvaluate {
     // These projects share leaf names. Keep their Gradle component identities distinct while
     // their Maven publications continue to use the public jWebGPU group configured above.
-    project(":webgpu:shared:jni").group = "${LibExt.groupId}.shared"
-    project(":webgpu:desktop:jni").group = "${LibExt.groupId}.desktop"
-    project(":webgpu:android:jni").group = "${LibExt.groupId}.android"
-    project(":webgpu:shared:c").group = "${LibExt.groupId}.shared"
-    project(":webgpu:desktop:c").group = "${LibExt.groupId}.desktop"
+    project(":webgpu:shared:jni").group = "$jWebGPUGroup.shared"
+    project(":webgpu:desktop:jni").group = "$jWebGPUGroup.desktop"
+    project(":webgpu:android:jni").group = "$jWebGPUGroup.android"
+    project(":webgpu:shared:c").group = "$jWebGPUGroup.shared"
+    project(":webgpu:desktop:c").group = "$jWebGPUGroup.desktop"
 }

@@ -1,7 +1,11 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
 }
+
+val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
+    .map(String::toBoolean)
+    .getOrElse(false)
 
 android {
     namespace = "com.github.xpenatan.webgpu.backend.android"
@@ -32,8 +36,8 @@ android {
 
     kotlin {
         compileOptions {
-            sourceCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
-            targetCompatibility = JavaVersion.toVersion(LibExt.javaMainTarget)
+            sourceCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
+            targetCompatibility = JavaVersion.toVersion(libs.versions.javaMain.get())
         }
     }
 
@@ -45,9 +49,9 @@ android {
 dependencies {
     api(project(":demos:backend:core"))
 
-    if(LibExt.exampleUseRepoLibs) {
-        add("wgpuApi", "com.github.xpenatan.jWebGPU:webgpu-android-wgpu:-SNAPSHOT")
-        add("dawnApi", "com.github.xpenatan.jWebGPU:webgpu-android-dawn:-SNAPSHOT")
+    if(exampleUseRepoLibs) {
+        add("wgpuApi", libs.jWebGPUAndroidWgpu)
+        add("dawnApi", libs.jWebGPUAndroidDawn)
     }
     else {
         api(project(":webgpu:android:jni"))

@@ -3,22 +3,26 @@ plugins {
     id("java-library")
 }
 
+val exampleUseRepoLibs = providers.gradleProperty("exampleUseRepoLibs")
+    .map(String::toBoolean)
+    .getOrElse(false)
+
 java {
-    sourceCompatibility = JavaVersion.toVersion(LibExt.javaWebTarget)
-    targetCompatibility = JavaVersion.toVersion(LibExt.javaWebTarget)
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.javaWeb.get())
+    targetCompatibility = JavaVersion.toVersion(libs.versions.javaWeb.get())
 }
 
 dependencies {
     api(project(":demos:backend:core"))
 
-    if(LibExt.exampleUseRepoLibs) {
-        api("com.github.xpenatan.jWebGPU:webgpu-core:-SNAPSHOT")
-        api("com.github.xpenatan.jWebGPU:webgpu-web:-SNAPSHOT")
-        api("com.github.xpenatan.jWebGPU:webgpu-web_wasm:-SNAPSHOT")
+    if(exampleUseRepoLibs) {
+        api(libs.jWebGPUCore)
+        api(libs.jWebGPUWeb)
+        api(libs.jWebGPUWebWasm)
     }
     else {
         api(project(":webgpu:core"))
         api(project(":webgpu:web:wasm"))
     }
-    implementation("com.github.xpenatan:jMultiplatform:${LibExt.jMultiplatform}")
+    implementation(libs.jMultiplatform)
 }
