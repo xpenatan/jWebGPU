@@ -1,6 +1,6 @@
 [versions]
-jWebGPU = "0.3.3"
-snapshot = "-SNAPSHOT"
+jWebGPURelease = "0.3.3"
+jWebGPUSnapshot = "-SNAPSHOT"
 javaMain = "1.8"
 javaWeb = "17"
 javaFFM = "25"
@@ -37,14 +37,17 @@ lwjglBom = { module = "org.lwjgl:lwjgl-bom", version.ref = "lwjgl" }
 lwjglCore = { module = "org.lwjgl:lwjgl", version.ref = "lwjgl" }
 lwjglGlfw = { module = "org.lwjgl:lwjgl-glfw", version.ref = "lwjgl" }
 lwjglOpengl = { module = "org.lwjgl:lwjgl-opengl", version.ref = "lwjgl" }
-jWebGPUCore = { module = "com.github.xpenatan.jWebGPU:webgpu-core", version.ref = "snapshot" }
-jWebGPUJni = { module = "com.github.xpenatan.jWebGPU:webgpu-jni", version.ref = "snapshot" }
-jWebGPUDesktopJni = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-jni", version.ref = "snapshot" }
-jWebGPUDesktopFFM = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-ffm", version.ref = "snapshot" }
-jWebGPUWeb = { module = "com.github.xpenatan.jWebGPU:webgpu-web", version.ref = "snapshot" }
-jWebGPUWebWasm = { module = "com.github.xpenatan.jWebGPU:webgpu-web_wasm", version.ref = "snapshot" }
-jWebGPUAndroidWgpu = { module = "com.github.xpenatan.jWebGPU:webgpu-android-wgpu", version.ref = "snapshot" }
-jWebGPUAndroidDawn = { module = "com.github.xpenatan.jWebGPU:webgpu-android-dawn", version.ref = "snapshot" }
+
+# Examples
+
+jWebGPUCore = { module = "com.github.xpenatan.jWebGPU:webgpu-core", version.ref = "jWebGPUSnapshot" }
+jWebGPUJni = { module = "com.github.xpenatan.jWebGPU:webgpu-jni", version.ref = "jWebGPUSnapshot" }
+jWebGPUDesktopJni = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-jni", version.ref = "jWebGPUSnapshot" }
+jWebGPUDesktopFFM = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-ffm", version.ref = "jWebGPUSnapshot" }
+jWebGPUWeb = { module = "com.github.xpenatan.jWebGPU:webgpu-web", version.ref = "jWebGPUSnapshot" }
+jWebGPUWebWasm = { module = "com.github.xpenatan.jWebGPU:webgpu-web_wasm", version.ref = "jWebGPUSnapshot" }
+jWebGPUAndroidWgpu = { module = "com.github.xpenatan.jWebGPU:webgpu-android-wgpu", version.ref = "jWebGPUSnapshot" }
+jWebGPUAndroidDawn = { module = "com.github.xpenatan.jWebGPU:webgpu-android-dawn", version.ref = "jWebGPUSnapshot" }
 
 [plugins]
 easyPublishing = { id = "com.github.xpenatan.easy-publishing", version.ref = "easyPublishing" }

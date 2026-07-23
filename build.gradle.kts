@@ -41,8 +41,8 @@ easyPublishing {
     )
 
     groupId.set(jWebGPUGroup)
-    releaseVersion.set(libs.versions.jWebGPU)
-    snapshotVersion.set(libs.versions.snapshot)
+    releaseVersion.set(libs.versions.jWebGPURelease)
+    snapshotVersion.set(libs.versions.jWebGPUSnapshot)
 
     snapshotRepositoryUrl.set("https://central.sonatype.com/repository/maven-snapshots/")
     releaseRepositoryUrl.set("https://central.sonatype.com")
