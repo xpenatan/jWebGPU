@@ -66,7 +66,7 @@ fun registerDesktopRunTask(taskName: String, backend: DemoBackend, descriptionSu
 
         if(exampleUseRepoLibs) {
             val artifactId = "webgpu-desktop-jni-${backend.id}_$currentDesktopPlatform"
-            val dependency = "${rootProject.group}:$artifactId:${libs.versions.jWebGPUSnapshot.get()}"
+            val dependency = "${libs.versions.jWebGPUGroup.get()}:$artifactId:${libs.versions.jWebGPUSnapshot.get()}"
             classpath(configurations.detachedConfiguration(dependencies.create(dependency)))
         }
         else {

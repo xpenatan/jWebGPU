@@ -216,7 +216,7 @@ publishing {
                     val dependenciesNode = asNode().appendNode("dependencies")
 
                     val webgpuCDependency = dependenciesNode.appendNode("dependency")
-                    webgpuCDependency.appendNode("groupId", rootProject.group.toString())
+                    webgpuCDependency.appendNode("groupId", libs.versions.jWebGPUGroup.get())
                     webgpuCDependency.appendNode("artifactId", "webgpu-c")
                     webgpuCDependency.appendNode("version", project.version.toString())
                     webgpuCDependency.appendNode("scope", "compile")

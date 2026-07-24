@@ -3,9 +3,6 @@ plugins {
     alias(libs.plugins.easyPublishing)
 }
 
-val jWebGPUGroup = "com.github.xpenatan.jWebGPU"
-group = jWebGPUGroup
-
 allprojects {
     repositories {
         mavenLocal {
@@ -40,7 +37,7 @@ easyPublishing {
         ":webgpu:android:jni",
     )
 
-    groupId.set(jWebGPUGroup)
+    groupId.set(libs.versions.jWebGPUGroup)
     releaseVersion.set(libs.versions.jWebGPURelease)
     snapshotVersion.set(libs.versions.jWebGPUSnapshot)
 
@@ -51,7 +48,7 @@ easyPublishing {
     signingKey.set(providers.environmentVariable("SIGNING_KEY"))
     signingPassword.set(providers.environmentVariable("SIGNING_PASSWORD"))
 
-    pomName.set("jWebGPU")
+    pomName.set(libs.versions.jWebGPUName)
     pomDescription.set("WebGPU Java Bindings for wgpu-native and Dawn")
     projectUrl.set("https://github.com/xpenatan/jWebGPU")
 
@@ -61,14 +58,4 @@ easyPublishing {
     scmUrl.set("https://github.com/xpenatan/jWebGPU")
     scmConnection.set("scm:git:https://github.com/xpenatan/jWebGPU.git")
     scmDeveloperConnection.set("scm:git:ssh://git@github.com/xpenatan/jWebGPU.git")
-}
-
-afterEvaluate {
-    // These projects share leaf names. Keep their Gradle component identities distinct while
-    // their Maven publications continue to use the public jWebGPU group configured above.
-    project(":webgpu:shared:jni").group = "$jWebGPUGroup.shared"
-    project(":webgpu:desktop:jni").group = "$jWebGPUGroup.desktop"
-    project(":webgpu:android:jni").group = "$jWebGPUGroup.android"
-    project(":webgpu:shared:c").group = "$jWebGPUGroup.shared"
-    project(":webgpu:desktop:c").group = "$jWebGPUGroup.desktop"
 }

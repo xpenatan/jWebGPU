@@ -1,6 +1,9 @@
 [versions]
+jWebGPUGroup = "com.github.xpenatan.jWebGPU"
+jWebGPUName = "jWebGPU"
 jWebGPURelease = "0.3.3"
 jWebGPUSnapshot = "-SNAPSHOT"
+
 javaMain = "1.8"
 javaWeb = "17"
 javaFFM = "25"
