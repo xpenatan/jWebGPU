@@ -13,7 +13,14 @@ pluginManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://central.sonatype.com/repository/maven-snapshots/") }
+        maven {
+            url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+            metadataSources {
+                mavenPom()
+                artifact()
+                ignoreGradleMetadataRedirection()
+            }
+        }
         gradlePluginPortal()
         maven {
             url = uri("http://teavm.org/maven/repository/")
