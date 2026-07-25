@@ -7,11 +7,13 @@ jWebGPUSnapshot = "-SNAPSHOT"
 javaMain = "1.8"
 javaWeb = "17"
 javaFFM = "25"
+
 jParser = "-SNAPSHOT"
 jMultiplatform = "0.1.3"
 junit = "4.12"
 lwjgl = "3.3.4"
 easyPublishing = "0.1.0"
+
 androidGradlePlugin = "9.1.1"
 gretty = "4.1.10"
 wgpuNative = "29.0.1.1"
