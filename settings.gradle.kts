@@ -1,31 +1,9 @@
 pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if(requested.id.id == "com.github.xpenatan.jparser") {
-                val version = requireNotNull(requested.version) {
-                    "The com.github.xpenatan.jparser plugin must declare a version"
-                }
-                useModule("com.github.xpenatan.jParser:jparser-gradle-plugin:$version")
-            }
-        }
-    }
-
     repositories {
+        maven("https://central.sonatype.com/repository/maven-snapshots/")
         google()
-        mavenCentral()
-        maven {
-            url = uri("https://central.sonatype.com/repository/maven-snapshots/")
-            metadataSources {
-                mavenPom()
-                artifact()
-                ignoreGradleMetadataRedirection()
-            }
-        }
         gradlePluginPortal()
-        maven {
-            url = uri("http://teavm.org/maven/repository/")
-            isAllowInsecureProtocol = true
-        }
+        mavenCentral()
     }
 }
 
