@@ -12,7 +12,7 @@ jParser = "-SNAPSHOT"
 jMultiplatform = "0.1.3"
 junit = "4.12"
 lwjgl = "3.3.4"
-easyPublishing = "0.1.1"
+easyPublishing = "0.1.2"
 
 androidGradlePlugin = "9.1.1"
 gretty = "4.1.10"
@@ -55,7 +55,7 @@ jWebGPUAndroidDawn = { module = "com.github.xpenatan.jWebGPU:webgpu-android-dawn
 
 [plugins]
 easyPublishing = { id = "com.github.xpenatan.easy-publishing", version.ref = "easyPublishing" }
-jParser = { id = "com.github.xpenatan.jparser", version.ref = "jParser" }
+jParser = { id = "com.github.xpenatan.jParser", version.ref = "jParser" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 gretty = { id = "org.gretty", version.ref = "gretty" }
