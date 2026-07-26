@@ -9,7 +9,7 @@ package gen.web.com.github.xpenatan.webgpu;
 import java.nio.ByteBuffer;
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBuffer extends NativeObject {
+public final class WGPUBuffer extends NativeObject {
 
     private WGPUFuture WGPUFuture_TEMP_GEN_0;
 

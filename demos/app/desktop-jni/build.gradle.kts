@@ -71,8 +71,12 @@ fun registerDesktopRunTask(taskName: String, backend: DemoBackend, descriptionSu
         }
         else {
             val nativeJarTask = project(":webgpu:desktop:jni").tasks.named("nativeJar_${backend.id}_$currentDesktopPlatform")
+            val jParserRuntimeArtifact = "runtime-desktop-jni_$currentDesktopPlatform"
+            val jParserRuntimeDependency =
+                "com.github.xpenatan.jParser:$jParserRuntimeArtifact:${libs.versions.jParser.get()}"
             dependsOn(nativeJarTask)
             classpath(files(nativeJarTask))
+            classpath(configurations.detachedConfiguration(dependencies.create(jParserRuntimeDependency)))
         }
 
         if(DefaultNativePlatform.getCurrentOperatingSystem().isMacOsX) {
