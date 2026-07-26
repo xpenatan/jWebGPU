@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorInstanceFeatureName extends NativeObject {
+public final class WGPUVectorInstanceFeatureName extends NativeObject {
 
     static private WGPUVectorInstanceFeatureName WGPUVectorInstanceFeatureName_TEMP_STATIC_GEN_0;
 

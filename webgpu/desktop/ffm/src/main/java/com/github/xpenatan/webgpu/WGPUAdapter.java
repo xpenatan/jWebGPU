@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUAdapter extends NativeObject {
+public final class WGPUAdapter extends NativeObject {
 
     static public final WGPUAdapter NULL = WGPUAdapter.native_new();
 

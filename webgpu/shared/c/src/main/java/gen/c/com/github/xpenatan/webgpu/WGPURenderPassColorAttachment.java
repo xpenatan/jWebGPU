@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassColorAttachment extends NativeObject {
+public final class WGPURenderPassColorAttachment extends NativeObject {
 
     private WGPUColor WGPUColor_TEMP_GEN_0;
 

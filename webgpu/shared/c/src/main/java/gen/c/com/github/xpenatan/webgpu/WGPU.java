@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPU extends NativeObject {
+public final class WGPU extends NativeObject {
 
     static private STBImage STBImage_TEMP_STATIC_GEN_0;
 

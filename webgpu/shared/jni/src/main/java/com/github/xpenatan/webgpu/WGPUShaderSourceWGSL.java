@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUShaderSourceWGSL extends NativeObject {
+public final class WGPUShaderSourceWGSL extends NativeObject {
 
     private WGPUChainedStruct WGPUChainedStruct_TEMP_GEN_0;
 

@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUDeviceDescriptor extends NativeObject {
+public final class WGPUDeviceDescriptor extends NativeObject {
 
     private WGPUQueueDescriptor WGPUQueueDescriptor_TEMP_GEN_0;
 

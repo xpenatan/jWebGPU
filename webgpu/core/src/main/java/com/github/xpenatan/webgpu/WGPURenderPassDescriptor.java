@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassDescriptor extends NativeObject {
+public final class WGPURenderPassDescriptor extends NativeObject {
 
     static public final WGPURenderPassDescriptor NULL = WGPURenderPassDescriptor.native_new();
 

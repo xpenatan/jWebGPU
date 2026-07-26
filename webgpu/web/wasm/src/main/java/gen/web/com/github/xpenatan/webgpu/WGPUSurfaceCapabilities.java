@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSurfaceCapabilities extends NativeObject {
+public final class WGPUSurfaceCapabilities extends NativeObject {
 
     private WGPUVectorTextureFormat WGPUVectorTextureFormat_TEMP_GEN_0;
 

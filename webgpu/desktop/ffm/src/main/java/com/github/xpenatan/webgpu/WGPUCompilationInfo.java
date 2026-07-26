@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUCompilationInfo extends NativeObject {
+public final class WGPUCompilationInfo extends NativeObject {
 
     private WGPUCompilationMessage WGPUCompilationMessage_TEMP_GEN_0;
 

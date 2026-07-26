@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTextureDescriptor extends NativeObject {
+public final class WGPUTextureDescriptor extends NativeObject {
 
     private WGPUExtent3D WGPUExtent3D_TEMP_GEN_0;
 

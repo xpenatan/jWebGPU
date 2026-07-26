@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBindGroupDescriptor extends NativeObject {
+public final class WGPUBindGroupDescriptor extends NativeObject {
 
     static private WGPUBindGroupDescriptor WGPUBindGroupDescriptor_TEMP_STATIC_GEN_0;
 

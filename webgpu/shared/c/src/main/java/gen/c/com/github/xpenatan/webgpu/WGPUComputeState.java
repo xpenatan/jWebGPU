@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUComputeState extends NativeObject {
+public final class WGPUComputeState extends NativeObject {
 
     static public final WGPUComputeState NULL = WGPUComputeState.native_new();
 

@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSurfaceCapabilities extends NativeObject {
+public final class WGPUSurfaceCapabilities extends NativeObject {
 
     static public final WGPUSurfaceCapabilities NULL = WGPUSurfaceCapabilities.native_new();
 

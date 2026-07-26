@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPURenderPassDepthStencilAttachment extends NativeObject {
+public final class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     static private WGPURenderPassDepthStencilAttachment WGPURenderPassDepthStencilAttachment_TEMP_STATIC_GEN_0;
 

@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorVertexAttribute extends NativeObject {
+public final class WGPUVectorVertexAttribute extends NativeObject {
 
     static private WGPUVectorVertexAttribute WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
 

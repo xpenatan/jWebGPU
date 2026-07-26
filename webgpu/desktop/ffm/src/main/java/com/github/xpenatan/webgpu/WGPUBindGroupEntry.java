@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUBindGroupEntry extends NativeObject {
+public final class WGPUBindGroupEntry extends NativeObject {
 
     static private WGPUBindGroupEntry WGPUBindGroupEntry_TEMP_STATIC_GEN_0;
 

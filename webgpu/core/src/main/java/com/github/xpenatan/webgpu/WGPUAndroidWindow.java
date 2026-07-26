@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUAndroidWindow extends NativeObject {
+public final class WGPUAndroidWindow extends NativeObject {
 
     public final static WGPUAndroidWindow NULL;
 

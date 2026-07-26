@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class STBImage extends NativeObject {
+public final class STBImage extends NativeObject {
 
     static public final STBImage NULL = STBImage.native_new();
 

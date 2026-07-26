@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUPipelineLayoutDescriptor extends NativeObject {
+public final class WGPUPipelineLayoutDescriptor extends NativeObject {
 
     static private WGPUPipelineLayoutDescriptor WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
 

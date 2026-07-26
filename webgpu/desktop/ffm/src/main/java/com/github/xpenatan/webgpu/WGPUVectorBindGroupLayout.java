@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUVectorBindGroupLayout extends NativeObject {
+public final class WGPUVectorBindGroupLayout extends NativeObject {
 
     static private WGPUVectorBindGroupLayout WGPUVectorBindGroupLayout_TEMP_STATIC_GEN_0;
 

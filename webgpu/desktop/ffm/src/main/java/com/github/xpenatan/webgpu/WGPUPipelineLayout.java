@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUPipelineLayout extends NativeObject {
+public final class WGPUPipelineLayout extends NativeObject {
 
     static public final WGPUPipelineLayout NULL = WGPUPipelineLayout.native_new();
 

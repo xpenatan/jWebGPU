@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUByteBuffer extends NativeObject {
+public final class WGPUByteBuffer extends NativeObject {
 
     static private WGPUByteBuffer WGPUByteBuffer_TEMP_STATIC_GEN_0;
 

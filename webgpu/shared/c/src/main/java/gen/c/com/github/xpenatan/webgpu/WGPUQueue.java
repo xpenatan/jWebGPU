@@ -9,7 +9,7 @@ package gen.c.com.github.xpenatan.webgpu;
 import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQueue extends NativeObject {
+public final class WGPUQueue extends NativeObject {
 
     @org.teavm.interop.Import(name = "jwebgpu_teavmc_queue_write_buffer")
     private static native void internal_native_WriteBuffer(long this_addr, long buffer_addr, int bufferOffset, long data_ptr, int dataSize);

@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUDevice extends NativeObject {
+public final class WGPUDevice extends NativeObject {
 
     static public final WGPUDevice NULL = WGPUDevice.native_new();
 

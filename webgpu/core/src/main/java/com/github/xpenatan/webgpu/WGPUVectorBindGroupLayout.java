@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorBindGroupLayout extends NativeObject {
+public final class WGPUVectorBindGroupLayout extends NativeObject {
 
     static public final WGPUVectorBindGroupLayout NULL = WGPUVectorBindGroupLayout.native_new();
 

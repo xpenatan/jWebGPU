@@ -9,7 +9,7 @@ package com.github.xpenatan.webgpu;
 import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassEncoder extends NativeObject {
+public final class WGPURenderPassEncoder extends NativeObject {
 
     static public final WGPURenderPassEncoder NULL = WGPURenderPassEncoder.native_new();
 

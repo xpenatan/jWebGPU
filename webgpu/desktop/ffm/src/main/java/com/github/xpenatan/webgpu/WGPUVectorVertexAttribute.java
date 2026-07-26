@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUVectorVertexAttribute extends NativeObject {
+public final class WGPUVectorVertexAttribute extends NativeObject {
 
     static private WGPUVectorVertexAttribute WGPUVectorVertexAttribute_TEMP_STATIC_GEN_0;
 

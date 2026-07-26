@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUTextureBindingLayout extends NativeObject {
+public final class WGPUTextureBindingLayout extends NativeObject {
 
     static private WGPUTextureBindingLayout WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
 

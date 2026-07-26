@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUPipelineLayoutDescriptor extends NativeObject {
+public final class WGPUPipelineLayoutDescriptor extends NativeObject {
 
     static private WGPUPipelineLayoutDescriptor WGPUPipelineLayoutDescriptor_TEMP_STATIC_GEN_0;
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUVectorInt extends NativeObject {
+public final class WGPUVectorInt extends NativeObject {
 
     static private WGPUVectorInt WGPUVectorInt_TEMP_STATIC_GEN_0;
 

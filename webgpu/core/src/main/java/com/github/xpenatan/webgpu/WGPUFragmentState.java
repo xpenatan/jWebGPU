@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUFragmentState extends NativeObject {
+public final class WGPUFragmentState extends NativeObject {
 
     static public final WGPUFragmentState NULL = WGPUFragmentState.native_new();
 

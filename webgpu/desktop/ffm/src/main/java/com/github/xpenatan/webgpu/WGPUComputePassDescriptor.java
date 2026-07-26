@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUComputePassDescriptor extends NativeObject {
+public final class WGPUComputePassDescriptor extends NativeObject {
 
     static private WGPUComputePassDescriptor WGPUComputePassDescriptor_TEMP_STATIC_GEN_0;
 

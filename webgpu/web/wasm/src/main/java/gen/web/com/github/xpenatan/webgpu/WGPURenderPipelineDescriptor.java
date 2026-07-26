@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPipelineDescriptor extends NativeObject {
+public final class WGPURenderPipelineDescriptor extends NativeObject {
 
     private WGPUVertexState WGPUVertexState_TEMP_GEN_0;
 

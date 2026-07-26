@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUSurfaceConfiguration extends NativeObject {
+public final class WGPUSurfaceConfiguration extends NativeObject {
 
     static private WGPUSurfaceConfiguration WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
 

@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUPrimitiveState extends NativeObject {
+public final class WGPUPrimitiveState extends NativeObject {
 
     static public final WGPUPrimitiveState NULL = WGPUPrimitiveState.native_new();
 

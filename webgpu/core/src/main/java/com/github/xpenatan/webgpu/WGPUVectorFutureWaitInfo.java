@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorFutureWaitInfo extends NativeObject {
+public final class WGPUVectorFutureWaitInfo extends NativeObject {
 
     static public final WGPUVectorFutureWaitInfo NULL = WGPUVectorFutureWaitInfo.native_new();
 

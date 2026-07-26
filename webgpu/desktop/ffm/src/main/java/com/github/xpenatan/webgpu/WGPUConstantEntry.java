@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUConstantEntry extends NativeObject {
+public final class WGPUConstantEntry extends NativeObject {
 
     static public final WGPUConstantEntry NULL = WGPUConstantEntry.native_new();
 

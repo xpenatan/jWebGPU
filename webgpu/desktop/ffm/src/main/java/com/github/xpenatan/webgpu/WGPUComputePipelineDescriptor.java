@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUComputePipelineDescriptor extends NativeObject {
+public final class WGPUComputePipelineDescriptor extends NativeObject {
 
     private WGPUComputeState WGPUComputeState_TEMP_GEN_0;
 

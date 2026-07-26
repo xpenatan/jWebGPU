@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUComputePipelineDescriptor extends NativeObject {
+public final class WGPUComputePipelineDescriptor extends NativeObject {
 
     private WGPUComputeState WGPUComputeState_TEMP_GEN_0;
 

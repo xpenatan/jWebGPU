@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSupportedFeatures extends NativeObject {
+public final class WGPUSupportedFeatures extends NativeObject {
 
     static private WGPUSupportedFeatures WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
 

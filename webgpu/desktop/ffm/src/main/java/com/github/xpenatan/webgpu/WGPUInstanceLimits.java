@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUInstanceLimits extends NativeObject {
+public final class WGPUInstanceLimits extends NativeObject {
 
     static private WGPUInstanceLimits WGPUInstanceLimits_TEMP_STATIC_GEN_0;
 

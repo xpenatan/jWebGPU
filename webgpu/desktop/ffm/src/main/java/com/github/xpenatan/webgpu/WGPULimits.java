@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPULimits extends NativeObject {
+public final class WGPULimits extends NativeObject {
 
     static private WGPULimits WGPULimits_TEMP_STATIC_GEN_0;
 

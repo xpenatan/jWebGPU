@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUTexture extends NativeObject {
+public final class WGPUTexture extends NativeObject {
 
     static private WGPUTexture WGPUTexture_TEMP_STATIC_GEN_0;
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUBufferBindingLayout extends NativeObject {
+public final class WGPUBufferBindingLayout extends NativeObject {
 
     static private WGPUBufferBindingLayout WGPUBufferBindingLayout_TEMP_STATIC_GEN_0;
 

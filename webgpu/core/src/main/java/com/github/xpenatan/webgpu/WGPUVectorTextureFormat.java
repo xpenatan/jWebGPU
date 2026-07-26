@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorTextureFormat extends NativeObject {
+public final class WGPUVectorTextureFormat extends NativeObject {
 
     static public final WGPUVectorTextureFormat NULL = WGPUVectorTextureFormat.native_new();
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUExtent3D extends NativeObject {
+public final class WGPUExtent3D extends NativeObject {
 
     static private WGPUExtent3D WGPUExtent3D_TEMP_STATIC_GEN_0;
 

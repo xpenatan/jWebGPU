@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassMaxDrawCount extends NativeObject {
+public final class WGPURenderPassMaxDrawCount extends NativeObject {
 
     static private WGPURenderPassMaxDrawCount WGPURenderPassMaxDrawCount_TEMP_STATIC_GEN_0;
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUShaderSourceSPIRV extends NativeObject {
+public final class WGPUShaderSourceSPIRV extends NativeObject {
 
     static private WGPUShaderSourceSPIRV WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
 

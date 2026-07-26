@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSamplerDescriptor extends NativeObject {
+public final class WGPUSamplerDescriptor extends NativeObject {
 
     static private WGPUSamplerDescriptor WGPUSamplerDescriptor_TEMP_STATIC_GEN_0;
 

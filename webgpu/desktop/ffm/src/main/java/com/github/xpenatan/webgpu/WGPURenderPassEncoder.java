@@ -16,7 +16,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPURenderPassEncoder extends NativeObject {
+public final class WGPURenderPassEncoder extends NativeObject {
 
     static private WGPURenderPassEncoder WGPURenderPassEncoder_TEMP_STATIC_GEN_0;
 

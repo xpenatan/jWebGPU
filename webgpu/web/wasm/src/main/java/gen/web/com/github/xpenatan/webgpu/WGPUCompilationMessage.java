@@ -9,7 +9,7 @@ package gen.web.com.github.xpenatan.webgpu;
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 import gen.web.com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUCompilationMessage extends NativeObject {
+public final class WGPUCompilationMessage extends NativeObject {
 
     private NativeString NativeString_TEMP_GEN_0;
 

@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUComputePipeline extends NativeObject {
+public final class WGPUComputePipeline extends NativeObject {
 
     private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
 

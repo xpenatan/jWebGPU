@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUVertexState extends NativeObject {
+public final class WGPUVertexState extends NativeObject {
 
     static public final WGPUVertexState NULL = WGPUVertexState.native_new();
 

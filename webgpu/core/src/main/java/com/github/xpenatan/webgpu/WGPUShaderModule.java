@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUShaderModule extends NativeObject {
+public final class WGPUShaderModule extends NativeObject {
 
     static public final WGPUShaderModule NULL = WGPUShaderModule.native_new();
 

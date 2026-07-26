@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPassDepthStencilAttachment extends NativeObject {
+public final class WGPURenderPassDepthStencilAttachment extends NativeObject {
 
     static public final WGPURenderPassDepthStencilAttachment NULL = WGPURenderPassDepthStencilAttachment.native_new();
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUSamplerBindingLayout extends NativeObject {
+public final class WGPUSamplerBindingLayout extends NativeObject {
 
     static private WGPUSamplerBindingLayout WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
 

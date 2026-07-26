@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTextureBindingLayout extends NativeObject {
+public final class WGPUTextureBindingLayout extends NativeObject {
 
     static private WGPUTextureBindingLayout WGPUTextureBindingLayout_TEMP_STATIC_GEN_0;
 

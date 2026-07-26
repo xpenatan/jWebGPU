@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUFloatBuffer extends NativeObject {
+public final class WGPUFloatBuffer extends NativeObject {
 
     private WGPUByteBuffer WGPUByteBuffer_TEMP_GEN_0;
 

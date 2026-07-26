@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSurfaceConfiguration extends NativeObject {
+public final class WGPUSurfaceConfiguration extends NativeObject {
 
     static private WGPUSurfaceConfiguration WGPUSurfaceConfiguration_TEMP_STATIC_GEN_0;
 

@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUShaderSourceSPIRV extends NativeObject {
+public final class WGPUShaderSourceSPIRV extends NativeObject {
 
     static private WGPUShaderSourceSPIRV WGPUShaderSourceSPIRV_TEMP_STATIC_GEN_0;
 

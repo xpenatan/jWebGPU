@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVertexState extends NativeObject {
+public final class WGPUVertexState extends NativeObject {
 
     static public final WGPUVertexState NULL = WGPUVertexState.native_new();
 

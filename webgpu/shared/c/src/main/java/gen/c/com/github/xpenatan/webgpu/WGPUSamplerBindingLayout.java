@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSamplerBindingLayout extends NativeObject {
+public final class WGPUSamplerBindingLayout extends NativeObject {
 
     static private WGPUSamplerBindingLayout WGPUSamplerBindingLayout_TEMP_STATIC_GEN_0;
 

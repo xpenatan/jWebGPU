@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUMultisampleState extends NativeObject {
+public final class WGPUMultisampleState extends NativeObject {
 
     static public final WGPUMultisampleState NULL = WGPUMultisampleState.native_new();
 

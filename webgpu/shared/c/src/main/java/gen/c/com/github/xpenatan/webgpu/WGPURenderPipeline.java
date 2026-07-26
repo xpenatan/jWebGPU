@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderPipeline extends NativeObject {
+public final class WGPURenderPipeline extends NativeObject {
 
     static public final WGPURenderPipeline NULL = WGPURenderPipeline.native_new();
 

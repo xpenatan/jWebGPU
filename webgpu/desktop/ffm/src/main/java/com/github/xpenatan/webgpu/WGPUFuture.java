@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUFuture extends NativeObject {
+public final class WGPUFuture extends NativeObject {
 
     static public final WGPUFuture NULL = WGPUFuture.native_new();
 

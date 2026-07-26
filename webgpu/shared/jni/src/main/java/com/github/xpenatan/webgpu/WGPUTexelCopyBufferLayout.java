@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTexelCopyBufferLayout extends NativeObject {
+public final class WGPUTexelCopyBufferLayout extends NativeObject {
 
     static private WGPUTexelCopyBufferLayout WGPUTexelCopyBufferLayout_TEMP_STATIC_GEN_0;
 

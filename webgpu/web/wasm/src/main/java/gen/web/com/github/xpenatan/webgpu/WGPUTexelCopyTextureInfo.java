@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTexelCopyTextureInfo extends NativeObject {
+public final class WGPUTexelCopyTextureInfo extends NativeObject {
 
     private WGPUOrigin3D WGPUOrigin3D_TEMP_GEN_0;
 

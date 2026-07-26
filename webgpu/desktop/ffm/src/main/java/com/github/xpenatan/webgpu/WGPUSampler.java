@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUSampler extends NativeObject {
+public final class WGPUSampler extends NativeObject {
 
     static public final WGPUSampler NULL = WGPUSampler.native_new();
 

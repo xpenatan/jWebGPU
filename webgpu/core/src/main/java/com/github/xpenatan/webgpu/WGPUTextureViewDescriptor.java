@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTextureViewDescriptor extends NativeObject {
+public final class WGPUTextureViewDescriptor extends NativeObject {
 
     static public final WGPUTextureViewDescriptor NULL = WGPUTextureViewDescriptor.native_new();
 

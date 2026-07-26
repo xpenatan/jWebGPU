@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUOrigin3D extends NativeObject {
+public final class WGPUOrigin3D extends NativeObject {
 
     static private WGPUOrigin3D WGPUOrigin3D_TEMP_STATIC_GEN_0;
 

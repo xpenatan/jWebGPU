@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTexelCopyTextureInfo extends NativeObject {
+public final class WGPUTexelCopyTextureInfo extends NativeObject {
 
     public final static WGPUTexelCopyTextureInfo NULL = native_new();
 

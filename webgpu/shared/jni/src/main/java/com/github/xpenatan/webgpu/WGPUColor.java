@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUColor extends NativeObject {
+public final class WGPUColor extends NativeObject {
 
     static private WGPUColor WGPUColor_TEMP_STATIC_GEN_0;
 

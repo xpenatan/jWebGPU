@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUSurface extends NativeObject {
+public final class WGPUSurface extends NativeObject {
 
     static public final WGPUSurface NULL = WGPUSurface.native_new();
 

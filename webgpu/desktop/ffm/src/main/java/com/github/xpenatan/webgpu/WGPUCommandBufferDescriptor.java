@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUCommandBufferDescriptor extends NativeObject {
+public final class WGPUCommandBufferDescriptor extends NativeObject {
 
     static private WGPUCommandBufferDescriptor WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0;
 

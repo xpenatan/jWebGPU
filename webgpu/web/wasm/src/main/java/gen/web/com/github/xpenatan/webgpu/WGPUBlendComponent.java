@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBlendComponent extends NativeObject {
+public final class WGPUBlendComponent extends NativeObject {
 
     static public final WGPUBlendComponent NULL = WGPUBlendComponent.native_new();
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUVectorRenderBundle extends NativeObject {
+public final class WGPUVectorRenderBundle extends NativeObject {
 
     static private WGPUVectorRenderBundle WGPUVectorRenderBundle_TEMP_STATIC_GEN_0;
 

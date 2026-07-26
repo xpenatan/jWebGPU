@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUSupportedFeatures extends NativeObject {
+public final class WGPUSupportedFeatures extends NativeObject {
 
     static private WGPUSupportedFeatures WGPUSupportedFeatures_TEMP_STATIC_GEN_0;
 

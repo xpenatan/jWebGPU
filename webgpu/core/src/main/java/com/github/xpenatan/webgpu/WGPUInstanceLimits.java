@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUInstanceLimits extends NativeObject {
+public final class WGPUInstanceLimits extends NativeObject {
 
     static public final WGPUInstanceLimits NULL = WGPUInstanceLimits.native_new();
 

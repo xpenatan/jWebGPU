@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUStorageTextureBindingLayout extends NativeObject {
+public final class WGPUStorageTextureBindingLayout extends NativeObject {
 
     static private WGPUStorageTextureBindingLayout WGPUStorageTextureBindingLayout_TEMP_STATIC_GEN_0;
 

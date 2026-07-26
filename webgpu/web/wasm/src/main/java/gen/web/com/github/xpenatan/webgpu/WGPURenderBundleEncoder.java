@@ -9,7 +9,7 @@ package gen.web.com.github.xpenatan.webgpu;
 import java.nio.ByteBuffer;
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderBundleEncoder extends NativeObject {
+public final class WGPURenderBundleEncoder extends NativeObject {
 
     @org.teavm.jso.JSBody(params = { "this_addr", "offset", "bytes_addr", "dataSize" }, script = "" + "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPURenderBundleEncoder);" + "var ptr = runtime._malloc(dataSize);" + "runtime.HEAPU8.set(bytes_addr.subarray(0, dataSize), ptr);" + "jsObj.setImmediates(offset, ptr, dataSize);" + "runtime._free(ptr);")
     private static native void internal_native_SetImmediates(int this_addr, int offset, org.teavm.jso.JSObject bytes_addr, int dataSize);

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPURenderPipeline extends NativeObject {
+public final class WGPURenderPipeline extends NativeObject {
 
     static public final WGPURenderPipeline NULL = WGPURenderPipeline.native_new();
 

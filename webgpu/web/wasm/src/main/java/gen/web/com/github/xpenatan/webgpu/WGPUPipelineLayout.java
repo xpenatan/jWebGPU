@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUPipelineLayout extends NativeObject {
+public final class WGPUPipelineLayout extends NativeObject {
 
     static public final WGPUPipelineLayout NULL = WGPUPipelineLayout.native_new();
 

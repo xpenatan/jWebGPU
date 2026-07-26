@@ -9,7 +9,7 @@ package gen.c.com.github.xpenatan.webgpu;
 import java.nio.ByteBuffer;
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderBundleEncoder extends NativeObject {
+public final class WGPURenderBundleEncoder extends NativeObject {
 
     @org.teavm.interop.Import(name = "jwebgpu_teavmc_render_bundle_encoder_set_immediates")
     private static native void internal_native_SetImmediates(long this_addr, int offset, long data_ptr, int dataSize);

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUColorTargetState extends NativeObject {
+public final class WGPUColorTargetState extends NativeObject {
 
     static private WGPUColorTargetState WGPUColorTargetState_TEMP_STATIC_GEN_0;
 

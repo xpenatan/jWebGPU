@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURenderBundleEncoderDescriptor extends NativeObject {
+public final class WGPURenderBundleEncoderDescriptor extends NativeObject {
 
     static private WGPURenderBundleEncoderDescriptor WGPURenderBundleEncoderDescriptor_TEMP_STATIC_GEN_0;
 

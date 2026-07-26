@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUBlendState extends NativeObject {
+public final class WGPUBlendState extends NativeObject {
 
     private WGPUBlendComponent WGPUBlendComponent_TEMP_GEN_0;
 

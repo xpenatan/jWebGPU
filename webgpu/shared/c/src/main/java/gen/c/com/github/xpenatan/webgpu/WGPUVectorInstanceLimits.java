@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorInstanceLimits extends NativeObject {
+public final class WGPUVectorInstanceLimits extends NativeObject {
 
     static private WGPUVectorInstanceLimits WGPUVectorInstanceLimits_TEMP_STATIC_GEN_0;
 

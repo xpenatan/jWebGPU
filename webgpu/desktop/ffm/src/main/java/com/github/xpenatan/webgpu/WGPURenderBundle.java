@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPURenderBundle extends NativeObject {
+public final class WGPURenderBundle extends NativeObject {
 
     static public final WGPURenderBundle NULL = WGPURenderBundle.native_new();
 

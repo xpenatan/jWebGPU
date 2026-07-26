@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUInstanceDescriptor extends NativeObject {
+public final class WGPUInstanceDescriptor extends NativeObject {
 
     static private WGPUInstanceDescriptor WGPUInstanceDescriptor_TEMP_STATIC_GEN_0;
 

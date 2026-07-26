@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQuerySet extends NativeObject {
+public final class WGPUQuerySet extends NativeObject {
 
     static public final WGPUQuerySet NULL = WGPUQuerySet.native_new();
 

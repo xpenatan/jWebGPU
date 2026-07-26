@@ -9,7 +9,7 @@ package com.github.xpenatan.webgpu;
 import com.github.xpenatan.jParser.api.NativeObject;
 import com.github.xpenatan.jparser.runtime.helper.NativeString;
 
-public class WGPUCompilationMessage extends NativeObject {
+public final class WGPUCompilationMessage extends NativeObject {
 
     static public final WGPUCompilationMessage NULL = WGPUCompilationMessage.native_new();
 

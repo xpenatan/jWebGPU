@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUExtent3D extends NativeObject {
+public final class WGPUExtent3D extends NativeObject {
 
     public final static WGPUExtent3D NULL = native_new();
 

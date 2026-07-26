@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUTextureDescriptor extends NativeObject {
+public final class WGPUTextureDescriptor extends NativeObject {
 
     private WGPUExtent3D WGPUExtent3D_TEMP_GEN_0;
 

@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUBlendComponent extends NativeObject {
+public final class WGPUBlendComponent extends NativeObject {
 
     static public final WGPUBlendComponent NULL = WGPUBlendComponent.native_new();
 

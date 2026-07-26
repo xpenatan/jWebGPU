@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUPassTimestampWrites extends NativeObject {
+public final class WGPUPassTimestampWrites extends NativeObject {
 
     static public final WGPUPassTimestampWrites NULL = WGPUPassTimestampWrites.native_new();
 

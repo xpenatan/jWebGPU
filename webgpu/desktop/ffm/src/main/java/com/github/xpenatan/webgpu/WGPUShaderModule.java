@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUShaderModule extends NativeObject {
+public final class WGPUShaderModule extends NativeObject {
 
     static private WGPUShaderModule WGPUShaderModule_TEMP_STATIC_GEN_0;
 

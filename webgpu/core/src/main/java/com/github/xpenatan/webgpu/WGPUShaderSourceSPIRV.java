@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUShaderSourceSPIRV extends NativeObject {
+public final class WGPUShaderSourceSPIRV extends NativeObject {
 
     static public final WGPUShaderSourceSPIRV NULL = WGPUShaderSourceSPIRV.native_new();
 

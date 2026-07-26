@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPULimits extends NativeObject {
+public final class WGPULimits extends NativeObject {
 
     static private WGPULimits WGPULimits_TEMP_STATIC_GEN_0;
 

@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUConstantEntry extends NativeObject {
+public final class WGPUConstantEntry extends NativeObject {
 
     static public final WGPUConstantEntry NULL = WGPUConstantEntry.native_new();
 

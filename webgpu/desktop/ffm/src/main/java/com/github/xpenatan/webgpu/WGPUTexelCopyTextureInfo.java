@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUTexelCopyTextureInfo extends NativeObject {
+public final class WGPUTexelCopyTextureInfo extends NativeObject {
 
     private WGPUOrigin3D WGPUOrigin3D_TEMP_GEN_0;
 

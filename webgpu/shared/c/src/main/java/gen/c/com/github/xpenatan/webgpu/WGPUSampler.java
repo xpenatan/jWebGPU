@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUSampler extends NativeObject {
+public final class WGPUSampler extends NativeObject {
 
     static public final WGPUSampler NULL = WGPUSampler.native_new();
 

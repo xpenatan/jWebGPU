@@ -16,7 +16,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUAdapterInfo extends NativeObject {
+public final class WGPUAdapterInfo extends NativeObject {
 
     private NativeString NativeString_TEMP_GEN_0;
 

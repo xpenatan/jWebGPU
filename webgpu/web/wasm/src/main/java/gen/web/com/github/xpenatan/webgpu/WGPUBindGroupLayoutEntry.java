@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBindGroupLayoutEntry extends NativeObject {
+public final class WGPUBindGroupLayoutEntry extends NativeObject {
 
     private WGPUBufferBindingLayout WGPUBufferBindingLayout_TEMP_GEN_0;
 

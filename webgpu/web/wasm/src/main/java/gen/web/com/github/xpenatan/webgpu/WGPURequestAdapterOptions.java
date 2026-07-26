@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPURequestAdapterOptions extends NativeObject {
+public final class WGPURequestAdapterOptions extends NativeObject {
 
     static private WGPURequestAdapterOptions WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
 

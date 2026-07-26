@@ -9,7 +9,7 @@ package gen.web.com.github.xpenatan.webgpu;
 import java.nio.ByteBuffer;
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQueue extends NativeObject {
+public final class WGPUQueue extends NativeObject {
 
     @org.teavm.jso.JSBody(params = { "this_addr", "buffer_addr", "bufferOffset", "bytes_addr", "dataSize" }, script = "" + "this_addr.writeBuffer(buffer_addr, bufferOffset, bytes_addr, 0, dataSize);")
     private static native void internal_native_WriteBuffer(org.teavm.jso.JSObject this_addr, org.teavm.jso.JSObject buffer_addr, int bufferOffset, org.teavm.jso.JSObject bytes_addr, int dataSize);

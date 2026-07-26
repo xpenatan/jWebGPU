@@ -8,7 +8,7 @@ package gen.c.com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQueueDescriptor extends NativeObject {
+public final class WGPUQueueDescriptor extends NativeObject {
 
     static public final WGPUQueueDescriptor NULL = WGPUQueueDescriptor.native_new();
 

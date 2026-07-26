@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUVectorCommandBuffer extends NativeObject {
+public final class WGPUVectorCommandBuffer extends NativeObject {
 
     static public final WGPUVectorCommandBuffer NULL = WGPUVectorCommandBuffer.native_new();
 

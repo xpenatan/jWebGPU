@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUMultisampleState extends NativeObject {
+public final class WGPUMultisampleState extends NativeObject {
 
     static public final WGPUMultisampleState NULL = WGPUMultisampleState.native_new();
 

@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBindGroup extends NativeObject {
+public final class WGPUBindGroup extends NativeObject {
 
     static public final WGPUBindGroup NULL = WGPUBindGroup.native_new();
 

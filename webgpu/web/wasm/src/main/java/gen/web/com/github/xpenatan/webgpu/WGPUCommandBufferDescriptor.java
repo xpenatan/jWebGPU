@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUCommandBufferDescriptor extends NativeObject {
+public final class WGPUCommandBufferDescriptor extends NativeObject {
 
     static private WGPUCommandBufferDescriptor WGPUCommandBufferDescriptor_TEMP_STATIC_GEN_0;
 

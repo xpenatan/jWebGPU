@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUQuerySet extends NativeObject {
+public final class WGPUQuerySet extends NativeObject {
 
     static public final WGPUQuerySet NULL = WGPUQuerySet.native_new();
 

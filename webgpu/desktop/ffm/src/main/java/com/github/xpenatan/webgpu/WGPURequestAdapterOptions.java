@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPURequestAdapterOptions extends NativeObject {
+public final class WGPURequestAdapterOptions extends NativeObject {
 
     static private WGPURequestAdapterOptions WGPURequestAdapterOptions_TEMP_STATIC_GEN_0;
 

@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUCompilationInfo extends NativeObject {
+public final class WGPUCompilationInfo extends NativeObject {
 
     private WGPUCompilationMessage WGPUCompilationMessage_TEMP_GEN_0;
 

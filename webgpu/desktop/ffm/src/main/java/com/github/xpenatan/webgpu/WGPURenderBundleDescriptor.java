@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPURenderBundleDescriptor extends NativeObject {
+public final class WGPURenderBundleDescriptor extends NativeObject {
 
     static private WGPURenderBundleDescriptor WGPURenderBundleDescriptor_TEMP_STATIC_GEN_0;
 

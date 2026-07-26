@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUVectorVertexBufferLayout extends NativeObject {
+public final class WGPUVectorVertexBufferLayout extends NativeObject {
 
     static private WGPUVectorVertexBufferLayout WGPUVectorVertexBufferLayout_TEMP_STATIC_GEN_0;
 

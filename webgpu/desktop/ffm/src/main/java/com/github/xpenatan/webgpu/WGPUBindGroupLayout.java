@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUBindGroupLayout extends NativeObject {
+public final class WGPUBindGroupLayout extends NativeObject {
 
     static public final WGPUBindGroupLayout NULL = WGPUBindGroupLayout.native_new();
 

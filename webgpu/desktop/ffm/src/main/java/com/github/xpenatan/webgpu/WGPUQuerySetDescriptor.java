@@ -15,7 +15,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
-public class WGPUQuerySetDescriptor extends NativeObject {
+public final class WGPUQuerySetDescriptor extends NativeObject {
 
     static private WGPUQuerySetDescriptor WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
 

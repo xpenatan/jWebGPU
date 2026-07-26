@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUQuerySetDescriptor extends NativeObject {
+public final class WGPUQuerySetDescriptor extends NativeObject {
 
     static private WGPUQuerySetDescriptor WGPUQuerySetDescriptor_TEMP_STATIC_GEN_0;
 

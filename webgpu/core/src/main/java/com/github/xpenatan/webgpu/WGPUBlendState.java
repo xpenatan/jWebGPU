@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBlendState extends NativeObject {
+public final class WGPUBlendState extends NativeObject {
 
     static public final WGPUBlendState NULL = WGPUBlendState.native_new();
 

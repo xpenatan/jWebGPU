@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUTexture extends NativeObject {
+public final class WGPUTexture extends NativeObject {
 
     static public final WGPUTexture NULL = WGPUTexture.native_new();
 

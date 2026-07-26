@@ -8,7 +8,7 @@ package gen.web.com.github.xpenatan.webgpu;
 
 import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUStencilFaceState extends NativeObject {
+public final class WGPUStencilFaceState extends NativeObject {
 
     static public final WGPUStencilFaceState NULL = WGPUStencilFaceState.native_new();
 

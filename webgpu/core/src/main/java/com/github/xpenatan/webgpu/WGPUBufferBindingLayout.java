@@ -8,7 +8,7 @@ package com.github.xpenatan.webgpu;
 
 import com.github.xpenatan.jParser.api.NativeObject;
 
-public class WGPUBufferBindingLayout extends NativeObject {
+public final class WGPUBufferBindingLayout extends NativeObject {
 
     static public final WGPUBufferBindingLayout NULL = WGPUBufferBindingLayout.native_new();
 
