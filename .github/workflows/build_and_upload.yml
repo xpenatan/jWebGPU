@@ -428,6 +428,11 @@ jobs:
           git commit -m "Commit generated code" || echo "No changes to commit"
           git push origin HEAD
 
+      - name: Resolve release commit
+        id: release_commit
+        shell: bash
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Upload Release to repository
         uses: nick-fields/retry@v4
         if: ${{ inputs.shouldUpload && inputs.isRelease }}
@@ -452,15 +457,17 @@ jobs:
         with:
           script: |
             const versionOutputs = ${{ toJSON(steps.version.outputs) }};
+            const releaseSha = ${{ toJSON(steps.release_commit.outputs.sha) }};
 
-            var version = versionOutputs.value;
+            const version = versionOutputs.value;
 
             console.log("Version: " + version);
+            console.log("Release commit: " + releaseSha);
 
-            var ref = "refs/tags/" + version
-            github.rest.git.createRef({
+            const ref = "refs/tags/" + version;
+            await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: ref,
-              sha: context.sha
+              sha: releaseSha
             });
