@@ -1,9 +1,10 @@
 pluginManagement {
     repositories {
-        maven("https://central.sonatype.com/repository/maven-snapshots/")
         google()
-        gradlePluginPortal()
+        maven { url = uri("https://central.sonatype.com/repository/maven-snapshots/") }
+        mavenLocal()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 
