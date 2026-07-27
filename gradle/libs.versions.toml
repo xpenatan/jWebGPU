@@ -8,7 +8,7 @@ javaMain = "1.8"
 javaWeb = "17"
 javaFFM = "25"
 
-jParser = "-SNAPSHOT"
+jParser = "1.2.8"
 jMultiplatform = "0.1.3"
 junit = "4.12"
 lwjgl = "3.3.4"
