@@ -444,7 +444,7 @@ jobs:
           command: ./gradlew publishSnapshot
 
       - name: Create Git tag
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         if: ${{ inputs.isRelease }}
         with:
           script: |
