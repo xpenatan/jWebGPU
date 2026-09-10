@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.api.NativeObject;
 
 public final class WGPUComputePipeline extends NativeObject {
 
-    private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
-
     static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
     public WGPUComputePipeline() {
@@ -57,18 +55,12 @@ public final class WGPUComputePipeline extends NativeObject {
     @org.teavm.interop.Import(name = "n1940129384")
     public static native void internal_native_Release(long this_addr);
 
-    public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
-        long addr = internal_native_GetBindGroupLayout_addr(native_address, groupIndex);
-        if (addr == 0)
-            return WGPUBindGroupLayout.NULL;
-        if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
-            WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
-        WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUBindGroupLayout_TEMP_GEN_0;
+    public void getBindGroupLayout(int groupIndex, WGPUBindGroupLayout layoutOut) {
+        internal_native_GetBindGroupLayout(native_address, groupIndex, layoutOut.native_address);
     }
 
-    @org.teavm.interop.Import(name = "n1597494104")
-    public static native long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex);
+    @org.teavm.interop.Import(name = "n546345274")
+    public static native void internal_native_GetBindGroupLayout(long this_addr, int groupIndex, long layoutOut_addr);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);
