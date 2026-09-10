@@ -1861,12 +1861,12 @@ class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBin
 class WGPUComputePipeline : public WGPUObjectBase<WGPUComputePipeline, ::WGPUComputePipeline> {
     private:
         std::string labelStorage;
+        WGPUBindGroupLayout bindGroupLayout;
     public:
         void SetLabel(const char* value);
         void AddRef();
         void Release();
-        // Writes a new native reference into caller-owned storage; release it before reuse/disposal.
-        void GetBindGroupLayout(int groupIndex, WGPUBindGroupLayout* layoutOut);
+        WGPUBindGroupLayout* GetBindGroupLayout(int groupIndex);
         bool IsValid();
 };
 

@@ -35,7 +35,8 @@ public final class WGPUComputePipeline extends NativeObject {
     public void release() {
     }
 
-    public void getBindGroupLayout(int groupIndex, WGPUBindGroupLayout layoutOut) {
+    public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
+        return null;
     }
 
     public boolean isValid() {

@@ -10,6 +10,8 @@ import gen.web.com.github.xpenatan.jParser.api.NativeObject;
 
 public final class WGPUComputePipeline extends NativeObject {
 
+    private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
+
     static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
     public WGPUComputePipeline() {
@@ -55,12 +57,18 @@ public final class WGPUComputePipeline extends NativeObject {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePipeline);jsObj.Release();")
     public static native void internal_native_Release(int this_addr);
 
-    public void getBindGroupLayout(int groupIndex, WGPUBindGroupLayout layoutOut) {
-        internal_native_GetBindGroupLayout(native_address, groupIndex, layoutOut.native_address);
+    public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
+        int addr = internal_native_GetBindGroupLayout_addr(native_address, groupIndex);
+        if (addr == 0)
+            return WGPUBindGroupLayout.NULL;
+        if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
+            WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
+        WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(addr, false);
+        return WGPUBindGroupLayout_TEMP_GEN_0;
     }
 
-    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex", "layoutOut_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePipeline);jsObj.GetBindGroupLayout(groupIndex, layoutOut_addr);")
-    public static native void internal_native_GetBindGroupLayout(int this_addr, int groupIndex, int layoutOut_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "groupIndex"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUComputePipeline);var returnedJSObj = jsObj.GetBindGroupLayout(groupIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jWebGPU.getPointer(returnedJSObj);")
+    public static native int internal_native_GetBindGroupLayout_addr(int this_addr, int groupIndex);
 
     public boolean isValid() {
         return internal_native_IsValid(native_address);

@@ -291,9 +291,9 @@ public class PlayingWithBuffers implements ApplicationListener {
         blendState.getColor().setSrcFactor(WGPUBlendFactor.SrcAlpha);
         blendState.getColor().setDstFactor(WGPUBlendFactor.OneMinusSrcAlpha);
         blendState.getColor().setOperation(WGPUBlendOperation.Add);
-        blendState.getColor().setSrcFactor(WGPUBlendFactor.Zero);
-        blendState.getColor().setDstFactor(WGPUBlendFactor.One);
-        blendState.getColor().setOperation(WGPUBlendOperation.Add);
+        blendState.getAlpha().setSrcFactor(WGPUBlendFactor.Zero);
+        blendState.getAlpha().setDstFactor(WGPUBlendFactor.One);
+        blendState.getAlpha().setOperation(WGPUBlendOperation.Add);
 
         WGPUColorTargetState colorTarget = WGPUColorTargetState.obtain();
         colorTarget.setFormat(surfaceFormat);

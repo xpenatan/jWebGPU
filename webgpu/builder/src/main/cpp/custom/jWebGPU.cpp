@@ -3977,8 +3977,9 @@ void JGPU::WGPUComputePipeline::SetLabel(const char* value) {
     wgpuComputePipelineSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
-void JGPU::WGPUComputePipeline::GetBindGroupLayout(int groupIndex, WGPUBindGroupLayout* layoutOut) {
-    layoutOut->Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
+JGPU::WGPUBindGroupLayout* JGPU::WGPUComputePipeline::GetBindGroupLayout(int groupIndex) {
+    bindGroupLayout.Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
+    return &bindGroupLayout;
 }
 
 bool JGPU::WGPUComputePipeline::IsValid() {

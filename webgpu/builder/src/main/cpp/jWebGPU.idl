@@ -1301,8 +1301,7 @@ interface WGPUComputePipeline {
     void WGPUComputePipeline();
     void SetLabel([Const] DOMString value);
     void Release();
-    // Acquires a native reference in layoutOut; release it before reusing or disposing layoutOut.
-    void GetBindGroupLayout(long groupIndex, WGPUBindGroupLayout layoutOut);
+    WGPUBindGroupLayout GetBindGroupLayout(long groupIndex);
     boolean IsValid();
 };
 
