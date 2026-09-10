@@ -74,8 +74,8 @@ public final class WGPUComputeState extends NativeObject {
     }
 
     public static void internal_native_SetEntryPoint(long this_addr, String entryPoint) {
-        try {
-            FFMHandles.internal_native_SetEntryPoint__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(entryPoint));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_SetEntryPoint__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (entryPoint == null ? MemorySegment.NULL : stringArena.allocateFrom(entryPoint)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }

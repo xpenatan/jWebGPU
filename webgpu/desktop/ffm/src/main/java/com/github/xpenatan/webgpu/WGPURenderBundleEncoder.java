@@ -80,8 +80,8 @@ public final class WGPURenderBundleEncoder extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        try {
-            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (label == null ? MemorySegment.NULL : stringArena.allocateFrom(label)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
@@ -224,8 +224,8 @@ public final class WGPURenderBundleEncoder extends NativeObject {
     }
 
     public static void internal_native_InsertDebugMarker(long this_addr, String label) {
-        try {
-            FFMHandles.internal_native_InsertDebugMarker__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_InsertDebugMarker__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (label == null ? MemorySegment.NULL : stringArena.allocateFrom(label)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
@@ -248,8 +248,8 @@ public final class WGPURenderBundleEncoder extends NativeObject {
     }
 
     public static void internal_native_PushDebugGroup(long this_addr, String label) {
-        try {
-            FFMHandles.internal_native_PushDebugGroup__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_PushDebugGroup__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (label == null ? MemorySegment.NULL : stringArena.allocateFrom(label)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }

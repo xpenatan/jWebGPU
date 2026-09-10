@@ -67,8 +67,8 @@ public final class WGPUShaderSourceWGSL extends NativeObject {
     }
 
     public static void internal_native_SetCode(long this_addr, String code) {
-        try {
-            FFMHandles.internal_native_SetCode__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(code));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_SetCode__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (code == null ? MemorySegment.NULL : stringArena.allocateFrom(code)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }

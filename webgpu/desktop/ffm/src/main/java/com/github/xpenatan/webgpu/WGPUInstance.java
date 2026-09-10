@@ -91,8 +91,8 @@ public final class WGPUInstance extends NativeObject {
     }
 
     public static long internal_native_CreateWebSurface_addr(long this_addr, String canvas) {
-        try {
-            return (long) FFMHandles.internal_native_CreateWebSurface_addr__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(canvas));
+        try (Arena stringArena = Arena.ofConfined()) {
+            return (long) FFMHandles.internal_native_CreateWebSurface_addr__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (canvas == null ? MemorySegment.NULL : stringArena.allocateFrom(canvas)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }

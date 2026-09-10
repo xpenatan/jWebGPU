@@ -83,8 +83,8 @@ public final class WGPUBuffer extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String value) {
-        try {
-            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(value));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (value == null ? MemorySegment.NULL : stringArena.allocateFrom(value)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }

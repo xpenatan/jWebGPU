@@ -65,8 +65,8 @@ public final class WGPURenderBundleDescriptor extends NativeObject {
     }
 
     public static void internal_native_SetLabel(long this_addr, String label) {
-        try {
-            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, com.github.xpenatan.jparser.runtime.helper.NativeUtils.toCString(label));
+        try (Arena stringArena = Arena.ofConfined()) {
+            FFMHandles.internal_native_SetLabel__JLjava_lang_String_2.invokeExact(this_addr, (MemorySegment) (label == null ? MemorySegment.NULL : stringArena.allocateFrom(label)));
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
