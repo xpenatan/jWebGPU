@@ -1493,8 +1493,8 @@ void JGPU::WGPUVertexState::SetModule(JGPU::WGPUShaderModule* shaderModule) {
 }
 
 void JGPU::WGPUVertexState::SetEntryPoint(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get()->entryPoint = stringView.Get();
+    entryPointStorage.assign(value != nullptr ? value : "");
+    Get()->entryPoint = {entryPointStorage.c_str(), entryPointStorage.size()};
 }
 
 void JGPU::WGPUVertexState::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
@@ -1527,8 +1527,8 @@ JGPU::WGPUShaderSourceWGSL* JGPU::WGPUShaderSourceWGSL::Obtain() {
 }
 
 void JGPU::WGPUShaderSourceWGSL::SetCode(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().code = stringView.Get();
+    codeStorage.assign(value != nullptr ? value : "");
+    Get().code = {codeStorage.c_str(), codeStorage.size()};
 }
 
 JGPU::WGPUChainedStruct JGPU::WGPUShaderSourceWGSL::GetChain() {
@@ -1617,8 +1617,8 @@ void JGPU::WGPUFragmentState::SetNextInChain(JGPU::WGPUChainedStruct* chainedStr
 }
 
 void JGPU::WGPUFragmentState::SetEntryPoint(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().entryPoint = stringView.Get();
+    entryPointStorage.assign(value != nullptr ? value : "");
+    Get().entryPoint = {entryPointStorage.c_str(), entryPointStorage.size()};
 }
 
 void JGPU::WGPUFragmentState::SetTargets(JGPU::WGPUVectorColorTargetState* values) {
@@ -2002,9 +2002,13 @@ void JGPU::WGPUTexelCopyBufferLayout::SetRowsPerImage(int rowsPerImage) {
 }
 
 // JGPU::WGPUTexelCopyBufferInfo
+JGPU::WGPUTexelCopyBufferInfo::WGPUTexelCopyBufferInfo() = default;
+JGPU::WGPUTexelCopyBufferInfo::~WGPUTexelCopyBufferInfo() = default;
+
 JGPU::WGPUTexelCopyBufferInfo* JGPU::WGPUTexelCopyBufferInfo::Obtain() {
     static JGPU::WGPUTexelCopyBufferInfo obj;
-    obj = JGPU::WGPUTexelCopyBufferInfo();
+    obj.Get() = {};
+    obj.buffer.reset();
     return &obj;
 }
 
@@ -2013,10 +2017,10 @@ JGPU::WGPUTexelCopyBufferLayout JGPU::WGPUTexelCopyBufferInfo::GetLayout() {
     return temp;
 }
 
-JGPU::WGPUBuffer JGPU::WGPUTexelCopyBufferInfo::GetBuffer() {
-    JGPU::WGPUBuffer temp;
-    temp.Set(Get().buffer);
-    return temp;
+JGPU::WGPUBuffer* JGPU::WGPUTexelCopyBufferInfo::GetBuffer() {
+    if (!buffer) buffer = std::make_unique<WGPUBuffer>();
+    buffer->Set(Get().buffer);
+    return buffer.get();
 }
 
 void JGPU::WGPUTexelCopyBufferInfo::SetBuffer(JGPU::WGPUBuffer* buffer) {
@@ -2405,8 +2409,8 @@ void JGPU::WGPURenderBundleDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* c
 }
 
 void JGPU::WGPURenderBundleDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 // JGPU::WGPURenderBundleEncoderDescriptor
@@ -2421,8 +2425,8 @@ void JGPU::WGPURenderBundleEncoderDescriptor::SetNextInChain(JGPU::WGPUChainedSt
 }
 
 void JGPU::WGPURenderBundleEncoderDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPURenderBundleEncoderDescriptor::SetColorFormats(JGPU::WGPUVectorTextureFormat* colorFormats) {
@@ -2464,8 +2468,8 @@ void JGPU::WGPUQuerySetDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chain
 }
 
 void JGPU::WGPUQuerySetDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUQuerySetDescriptor::SetType(WGPUQueryType type) {
@@ -2488,8 +2492,8 @@ void JGPU::WGPUSamplerDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chaine
 }
 
 void JGPU::WGPUSamplerDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUSamplerDescriptor::SetAddressModeU(WGPUAddressMode addressModeU) {
@@ -2544,8 +2548,8 @@ void JGPU::WGPUTextureViewDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* ch
 }
 
 void JGPU::WGPUTextureViewDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUTextureViewDescriptor::SetFormat(WGPUTextureFormat format) {
@@ -2592,8 +2596,8 @@ void JGPU::WGPUComputePassDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* ch
 }
 
 void JGPU::WGPUComputePassDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUComputePassDescriptor::SetTimestampWrites(JGPU::WGPUPassTimestampWrites* timestampWrites) {
@@ -2612,8 +2616,8 @@ void JGPU::WGPUTextureDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chaine
 }
 
 void JGPU::WGPUTextureDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUTextureDescriptor::SetUsage(WGPUTextureUsage usage) {
@@ -2674,8 +2678,8 @@ void JGPU::WGPURenderPassDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* cha
 }
 
 void JGPU::WGPURenderPassDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPURenderPassDescriptor::SetColorAttachments(JGPU::WGPUVectorRenderPassColorAttachment* values) {
@@ -2747,8 +2751,8 @@ void JGPU::WGPUCommandEncoderDescriptor::SetNextInChain(JGPU::WGPUChainedStruct*
 }
 
 void JGPU::WGPUCommandEncoderDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 // JGPU::WGPUCommandBufferDescriptor
@@ -2763,8 +2767,8 @@ void JGPU::WGPUCommandBufferDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* 
 }
 
 void JGPU::WGPUCommandBufferDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 // JGPU::WGPURenderPipelineDescriptor
@@ -2779,14 +2783,13 @@ void JGPU::WGPURenderPipelineDescriptor::SetNextInChain(JGPU::WGPUChainedStruct*
 }
 
 void JGPU::WGPURenderPipelineDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
-JGPU::WGPUVertexState JGPU::WGPURenderPipelineDescriptor::GetVertex() {
-    JGPU::WGPUVertexState temp;
-    temp.Set(&Get().vertex);
-    return temp;
+JGPU::WGPUVertexState* JGPU::WGPURenderPipelineDescriptor::GetVertex() {
+    vertexState.Set(&Get().vertex);
+    return &vertexState;
 }
 
 JGPU::WGPUPrimitiveState JGPU::WGPURenderPipelineDescriptor::GetPrimitive() {
@@ -2825,8 +2828,8 @@ void JGPU::WGPUShaderModuleDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* c
 }
 
 void JGPU::WGPUShaderModuleDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 // JGPU::WGPUBindGroupLayoutDescriptor
@@ -2841,8 +2844,8 @@ void JGPU::WGPUBindGroupLayoutDescriptor::SetNextInChain(JGPU::WGPUChainedStruct
 }
 
 void JGPU::WGPUBindGroupLayoutDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUBindGroupLayoutDescriptor::SetEntries(JGPU::WGPUVectorBindGroupLayoutEntry* entries) {
@@ -2872,8 +2875,8 @@ void JGPU::WGPUComputeState::SetModule(JGPU::WGPUShaderModule* module) {
 }
 
 void JGPU::WGPUComputeState::SetEntryPoint(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get()->entryPoint = stringView.Get();
+    entryPointStorage.assign(value != nullptr ? value : "");
+    Get()->entryPoint = {entryPointStorage.c_str(), entryPointStorage.size()};
 }
 
 void JGPU::WGPUComputeState::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
@@ -2899,18 +2902,17 @@ void JGPU::WGPUComputePipelineDescriptor::SetNextInChain(JGPU::WGPUChainedStruct
 }
 
 void JGPU::WGPUComputePipelineDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUComputePipelineDescriptor::SetLayout(WGPUPipelineLayout* pipelineLayout) {
     Get().layout = pipelineLayout != NULL ? pipelineLayout->Get() : NULL;
 }
 
-JGPU::WGPUComputeState JGPU::WGPUComputePipelineDescriptor::GetCompute() {
-    JGPU::WGPUComputeState temp;
-    temp.Set(&Get().compute);
-    return temp;
+JGPU::WGPUComputeState* JGPU::WGPUComputePipelineDescriptor::GetCompute() {
+    computeState.Set(&Get().compute);
+    return &computeState;
 }
 
 // JGPU::WGPUQueueDescriptor
@@ -2925,8 +2927,8 @@ void JGPU::WGPUQueueDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chainedS
 }
 
 void JGPU::WGPUQueueDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get()->label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get()->label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 // JGPU::WGPUBufferDescriptor
@@ -2941,8 +2943,8 @@ void JGPU::WGPUBufferDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chained
 }
 
 void JGPU::WGPUBufferDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUBufferDescriptor::SetUsage(WGPUBufferUsage usage) {
@@ -2969,8 +2971,8 @@ void JGPU::WGPUBindGroupDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chai
 }
 
 void JGPU::WGPUBindGroupDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUBindGroupDescriptor::SetLayout(JGPU::WGPUBindGroupLayout* layout) {
@@ -3000,8 +3002,8 @@ void JGPU::WGPUPipelineLayoutDescriptor::SetNextInChain(JGPU::WGPUChainedStruct*
 }
 
 void JGPU::WGPUPipelineLayoutDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUPipelineLayoutDescriptor::SetBindGroupLayouts(JGPU::WGPUVectorBindGroupLayout* bindGroupLayouts) {
@@ -3027,8 +3029,8 @@ void JGPU::WGPUDeviceDescriptor::SetNextInChain(JGPU::WGPUChainedStruct* chained
 }
 
 void JGPU::WGPUDeviceDescriptor::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    Get().label = stringView.Get();
+    labelStorage.assign(value != nullptr ? value : "");
+    Get().label = {labelStorage.c_str(), labelStorage.size()};
 }
 
 void JGPU::WGPUDeviceDescriptor::SetRequiredLimits(JGPU::WGPULimits* limits) {
@@ -3046,10 +3048,9 @@ void JGPU::WGPUDeviceDescriptor::SetRequiredFeatures(JGPU::WGPUVectorFeatureName
     }
 }
 
-JGPU::WGPUQueueDescriptor JGPU::WGPUDeviceDescriptor::GetDefaultQueue() {
-    JGPU::WGPUQueueDescriptor temp;
-    temp.Set(&Get().defaultQueue);
-    return temp;
+JGPU::WGPUQueueDescriptor* JGPU::WGPUDeviceDescriptor::GetDefaultQueue() {
+    defaultQueue.Set(&Get().defaultQueue);
+    return &defaultQueue;
 }
 
 // ################################### OPAQUE POINTER ###################################
@@ -3064,8 +3065,8 @@ void JGPU::WGPUSampler::Release() {
 }
 
 void JGPU::WGPUSampler::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuSamplerSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuSamplerSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 bool JGPU::WGPUSampler::IsValid() {
@@ -3152,8 +3153,8 @@ void JGPU::WGPURenderBundleEncoder::PushDebugGroup(const char* label) {
 }
 
 void JGPU::WGPURenderBundleEncoder::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuRenderBundleEncoderSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuRenderBundleEncoderSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPURenderBundleEncoder::Finish(JGPU::WGPURenderBundleDescriptor* descriptor, JGPU::WGPURenderBundle* bundleOut) {
@@ -3172,8 +3173,8 @@ JGPU::WGPUTextureView* JGPU::WGPUTextureView::Obtain() {
 }
 
 void JGPU::WGPUTextureView::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuTextureViewSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuTextureViewSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUTextureView::AddRef() {
@@ -3196,8 +3197,8 @@ JGPU::WGPUTexture* JGPU::WGPUTexture::Obtain() {
 }
 
 void JGPU::WGPUTexture::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuTextureSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuTextureSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUTexture::AddRef() {
@@ -3232,8 +3233,8 @@ JGPU::WGPUShaderModule* JGPU::WGPUShaderModule::Obtain() {
 }
 
 void JGPU::WGPUShaderModule::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuShaderModuleSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuShaderModuleSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUShaderModule::AddRef() {
@@ -3270,8 +3271,8 @@ JGPU::WGPURenderPipeline* JGPU::WGPURenderPipeline::Obtain() {
 }
 
 void JGPU::WGPURenderPipeline::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuRenderPipelineSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuRenderPipelineSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPURenderPipeline::AddRef() {
@@ -3388,8 +3389,8 @@ void JGPU::WGPURenderPassEncoder::SetIndexBuffer(JGPU::WGPUBuffer* buffer, WGPUI
 }
 
 void JGPU::WGPURenderPassEncoder::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuRenderPassEncoderSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuRenderPassEncoderSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPURenderPassEncoder::SetScissorRect(int x, int y, int width, int height) {
@@ -3434,8 +3435,8 @@ WGPUQueryType JGPU::WGPUQuerySet::GetType() {
 }
 
 void JGPU::WGPUQuerySet::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuQuerySetSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuQuerySetSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 bool JGPU::WGPUQuerySet::IsValid() {
@@ -3452,8 +3453,8 @@ void JGPU::WGPUPipelineLayout::Release() {
 }
 
 void JGPU::WGPUPipelineLayout::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuPipelineLayoutSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuPipelineLayoutSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 bool JGPU::WGPUPipelineLayout::IsValid() {
@@ -3747,8 +3748,8 @@ void JGPU::WGPUComputePassEncoder::SetImmediates(int offset, void const* data, i
 }
 
 void JGPU::WGPUComputePassEncoder::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuComputePassEncoderSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuComputePassEncoderSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUComputePassEncoder::SetPipeline(JGPU::WGPUComputePipeline* pipeline) {
@@ -3767,8 +3768,8 @@ JGPU::WGPUCommandBuffer* JGPU::WGPUCommandBuffer::Obtain() {
 }
 
 void JGPU::WGPUCommandBuffer::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuCommandBufferSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuCommandBufferSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUCommandBuffer::AddRef() {
@@ -3849,8 +3850,8 @@ void JGPU::WGPUCommandEncoder::ResolveQuerySet(JGPU::WGPUQuerySet* querySet, int
 }
 
 void JGPU::WGPUCommandEncoder::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuCommandEncoderSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuCommandEncoderSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUCommandEncoder::WriteTimestamp(JGPU::WGPUQuerySet* querySet, int queryIndex) {
@@ -3914,8 +3915,8 @@ WGPUByteBuffer& JGPU::WGPUBuffer::GetMappedRange(int offset, int size) {
 }
 
 void JGPU::WGPUBuffer::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuBufferSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuBufferSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUBuffer::Destroy() {
@@ -3936,8 +3937,8 @@ void JGPU::WGPUBindGroup::Release() {
 }
 
 void JGPU::WGPUBindGroup::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuBindGroupSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuBindGroupSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 bool JGPU::WGPUBindGroup::IsValid() {
@@ -3954,8 +3955,8 @@ void JGPU::WGPUBindGroupLayout::Release() {
 }
 
 void JGPU::WGPUBindGroupLayout::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuBindGroupLayoutSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuBindGroupLayoutSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 bool JGPU::WGPUBindGroupLayout::IsValid() {
@@ -3972,14 +3973,12 @@ void JGPU::WGPUComputePipeline::Release() {
 }
 
 void JGPU::WGPUComputePipeline::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuComputePipelineSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuComputePipelineSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
-JGPU::WGPUBindGroupLayout JGPU::WGPUComputePipeline::GetBindGroupLayout(int groupIndex) {
-    JGPU::WGPUBindGroupLayout temp;
-    temp.Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
-    return temp;
+void JGPU::WGPUComputePipeline::GetBindGroupLayout(int groupIndex, WGPUBindGroupLayout* layoutOut) {
+    layoutOut->Set(wgpuComputePipelineGetBindGroupLayout(Get(), groupIndex));
 }
 
 bool JGPU::WGPUComputePipeline::IsValid() {
@@ -3996,8 +3995,8 @@ void JGPU::WGPURenderBundle::Release() {
 }
 
 void JGPU::WGPURenderBundle::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuRenderBundleSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuRenderBundleSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 bool JGPU::WGPURenderBundle::IsValid() {
@@ -4050,8 +4049,8 @@ WGPUStatus JGPU::WGPUAdapter::GetLimits(JGPU::WGPULimits* limits) {
 
 // JGPU::WGPUSurface
 void JGPU::WGPUSurface::SetLabel(const char* label) {
-    JGPU::WGPUStringView stringView(label);
-    wgpuSurfaceSetLabel(Get(), stringView.Get());
+    labelStorage.assign(label != nullptr ? label : "");
+    wgpuSurfaceSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUSurface::AddRef() {
@@ -4092,8 +4091,8 @@ void JGPU::WGPUQueue::Release() {
 }
 
 void JGPU::WGPUQueue::SetLabel(const char* value) {
-    JGPU::WGPUStringView stringView(value);
-    wgpuQueueSetLabel(Get(), stringView.Get());
+    labelStorage.assign(value != nullptr ? value : "");
+    wgpuQueueSetLabel(Get(), {labelStorage.c_str(), labelStorage.size()});
 }
 
 void JGPU::WGPUQueue::Submit(JGPU::WGPUVectorCommandBuffer* commandVector) {

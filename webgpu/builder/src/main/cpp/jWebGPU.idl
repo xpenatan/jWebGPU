@@ -739,7 +739,8 @@ interface WGPUTexelCopyBufferLayout {
 interface WGPUTexelCopyBufferInfo {
     void WGPUTexelCopyBufferInfo();
     [Value] WGPUTexelCopyBufferLayout GetLayout();
-    [Value] WGPUBuffer GetBuffer();
+    // Borrowed from this descriptor until its reset/disposal; no native reference is acquired.
+    WGPUBuffer GetBuffer();
     void SetBuffer(WGPUBuffer buffer);
     static WGPUTexelCopyBufferInfo Obtain();
 };
@@ -945,7 +946,7 @@ interface WGPUComputePipelineDescriptor {
     void SetLabel([Const] DOMString label);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetLayout(WGPUPipelineLayout layout);
-    [Value] WGPUComputeState GetCompute();
+    WGPUComputeState GetCompute();
     static WGPUComputePipelineDescriptor Obtain();
 };
 
@@ -1000,7 +1001,7 @@ interface WGPUDeviceDescriptor {
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetRequiredLimits(WGPULimits limits);
     void SetRequiredFeatures(WGPUVectorFeatureName features);
-    [Value] WGPUQueueDescriptor GetDefaultQueue();
+    WGPUQueueDescriptor GetDefaultQueue();
     static WGPUDeviceDescriptor Obtain();
 };
 
@@ -1009,7 +1010,7 @@ interface WGPURenderPipelineDescriptor {
     void WGPURenderPipelineDescriptor();
     void SetLabel([Const] DOMString value);
     void SetNextInChain(WGPUChainedStruct chainedStruct);
-    [Value] WGPUVertexState GetVertex();
+    WGPUVertexState GetVertex();
     [Value] WGPUPrimitiveState GetPrimitive();
     void SetFragment(WGPUFragmentState fragmentState);
     void SetDepthStencil(WGPUDepthStencilState depthStencilState);
@@ -1300,7 +1301,8 @@ interface WGPUComputePipeline {
     void WGPUComputePipeline();
     void SetLabel([Const] DOMString value);
     void Release();
-    [Value] WGPUBindGroupLayout GetBindGroupLayout(long groupIndex);
+    // Acquires a native reference in layoutOut; release it before reusing or disposing layoutOut.
+    void GetBindGroupLayout(long groupIndex, WGPUBindGroupLayout layoutOut);
     boolean IsValid();
 };
 

@@ -17,8 +17,6 @@ import java.lang.invoke.MethodHandle;
 
 public final class WGPUComputePipeline extends NativeObject {
 
-    private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
-
     static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
     public WGPUComputePipeline() {
@@ -84,19 +82,13 @@ public final class WGPUComputePipeline extends NativeObject {
         }
     }
 
-    public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
-        long addr = internal_native_GetBindGroupLayout_addr(native_address, groupIndex);
-        if (addr == 0)
-            return WGPUBindGroupLayout.NULL;
-        if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
-            WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
-        WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUBindGroupLayout_TEMP_GEN_0;
+    public void getBindGroupLayout(int groupIndex, WGPUBindGroupLayout layoutOut) {
+        internal_native_GetBindGroupLayout(native_address, groupIndex, layoutOut.native_address);
     }
 
-    public static long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex) {
+    public static void internal_native_GetBindGroupLayout(long this_addr, int groupIndex, long layoutOut_addr) {
         try {
-            return (long) FFMHandles.internal_native_GetBindGroupLayout_addr__JI.invokeExact(this_addr, groupIndex);
+            FFMHandles.internal_native_GetBindGroupLayout__JIJ.invokeExact(this_addr, groupIndex, layoutOut_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
@@ -124,7 +116,7 @@ public final class WGPUComputePipeline extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_Release__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1940129384", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
 
-        static final java.lang.invoke.MethodHandle internal_native_GetBindGroupLayout_addr__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1597494104", FunctionDescriptor.of(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+        static final java.lang.invoke.MethodHandle internal_native_GetBindGroupLayout__JIJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n546345274", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_IsValid__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1736395869", FunctionDescriptor.of(ValueLayout.JAVA_BOOLEAN, ValueLayout.JAVA_LONG));
     }

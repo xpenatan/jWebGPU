@@ -10,8 +10,6 @@ import com.github.xpenatan.jParser.api.NativeObject;
 
 public final class WGPUComputePipeline extends NativeObject {
 
-    private WGPUBindGroupLayout WGPUBindGroupLayout_TEMP_GEN_0;
-
     static public final WGPUComputePipeline NULL = WGPUComputePipeline.native_new();
 
     public WGPUComputePipeline() {
@@ -61,18 +59,12 @@ public final class WGPUComputePipeline extends NativeObject {
         n.n2190906379.n1940129384(this_addr);
     }
 
-    public WGPUBindGroupLayout getBindGroupLayout(int groupIndex) {
-        long addr = internal_native_GetBindGroupLayout_addr(native_address, groupIndex);
-        if (addr == 0)
-            return WGPUBindGroupLayout.NULL;
-        if (WGPUBindGroupLayout_TEMP_GEN_0 == null)
-            WGPUBindGroupLayout_TEMP_GEN_0 = WGPUBindGroupLayout.native_new();
-        WGPUBindGroupLayout_TEMP_GEN_0.internal_reset(addr, false);
-        return WGPUBindGroupLayout_TEMP_GEN_0;
+    public void getBindGroupLayout(int groupIndex, WGPUBindGroupLayout layoutOut) {
+        internal_native_GetBindGroupLayout(native_address, groupIndex, layoutOut.native_address);
     }
 
-    public static long internal_native_GetBindGroupLayout_addr(long this_addr, int groupIndex) {
-        return n.n2190906379.n1597494104(this_addr, groupIndex);
+    public static void internal_native_GetBindGroupLayout(long this_addr, int groupIndex, long layoutOut_addr) {
+        n.n2190906379.n546345274(this_addr, groupIndex, layoutOut_addr);
     }
 
     public boolean isValid() {

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "RuntimeHelper.h"
+#include <memory>
+#include <string>
 #include <vector>
 
 // WGPUBufferUsage macros
@@ -752,8 +754,8 @@ class WGPUStringView : public WGPUObjectBase<WGPUStringView, ::WGPUStringView> {
             Set(stringView);
         }
         WGPUStringView(const char* value) {
-            Get().data = strdup(value);
-            Get().length = strlen(value);
+            Get().data = value != nullptr ? value : "";
+            Get().length = strlen(Get().data);
         }
         const std::string GetString();
 };
@@ -978,6 +980,8 @@ class WGPUVertexBufferLayout : public WGPUObjectBase<WGPUVertexBufferLayout, ::W
 };
 
 class WGPUVertexState : public WGPUObjectBase<WGPUVertexState, ::WGPUVertexState*> {
+    private:
+        std::string entryPointStorage;
     public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetModule(WGPUShaderModule* shaderModule);
@@ -987,6 +991,8 @@ class WGPUVertexState : public WGPUObjectBase<WGPUVertexState, ::WGPUVertexState
 };
 
 class WGPUShaderSourceWGSL : public WGPUObjectBase<WGPUShaderSourceWGSL, ::WGPUShaderSourceWGSL> {
+    private:
+        std::string codeStorage;
     public:
         static WGPUShaderSourceWGSL* Obtain();
     public:
@@ -1023,6 +1029,8 @@ class WGPUColorTargetState : public WGPUObjectBase<WGPUColorTargetState, ::WGPUC
 };
 
 class WGPUFragmentState : public WGPUObjectBase<WGPUFragmentState, ::WGPUFragmentState> {
+    private:
+        std::string entryPointStorage;
     public:
         static WGPUFragmentState* Obtain();
     public:
@@ -1199,11 +1207,15 @@ class WGPUTexelCopyBufferLayout : public WGPUObjectBase<WGPUTexelCopyBufferLayou
 };
 
 class WGPUTexelCopyBufferInfo : public WGPUObjectBase<WGPUTexelCopyBufferInfo, ::WGPUTexelCopyBufferInfo> {
+    private:
+        std::unique_ptr<WGPUBuffer> buffer;
     public:
         static WGPUTexelCopyBufferInfo* Obtain();
     public:
+        WGPUTexelCopyBufferInfo();
+        ~WGPUTexelCopyBufferInfo();
         WGPUTexelCopyBufferLayout GetLayout();
-        WGPUBuffer GetBuffer();
+        WGPUBuffer* GetBuffer();
         void SetBuffer(WGPUBuffer* buffer);
 };
 
@@ -1326,6 +1338,8 @@ class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::W
 };
 
 class WGPURenderBundleDescriptor : public WGPUObjectBase<WGPURenderBundleDescriptor, ::WGPURenderBundleDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPURenderBundleDescriptor* Obtain();
     public:
@@ -1334,6 +1348,8 @@ class WGPURenderBundleDescriptor : public WGPUObjectBase<WGPURenderBundleDescrip
 };
 
 class WGPURenderBundleEncoderDescriptor : public WGPUObjectBase<WGPURenderBundleEncoderDescriptor, ::WGPURenderBundleEncoderDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPURenderBundleEncoderDescriptor* Obtain();
     public:
@@ -1347,6 +1363,8 @@ class WGPURenderBundleEncoderDescriptor : public WGPUObjectBase<WGPURenderBundle
 };
 
 class WGPUQuerySetDescriptor : public WGPUObjectBase<WGPUQuerySetDescriptor, ::WGPUQuerySetDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUQuerySetDescriptor* Obtain();
     public:
@@ -1357,6 +1375,8 @@ class WGPUQuerySetDescriptor : public WGPUObjectBase<WGPUQuerySetDescriptor, ::W
 };
 
 class WGPUSamplerDescriptor : public WGPUObjectBase<WGPUSamplerDescriptor, ::WGPUSamplerDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUSamplerDescriptor* Obtain();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
@@ -1374,6 +1394,8 @@ class WGPUSamplerDescriptor : public WGPUObjectBase<WGPUSamplerDescriptor, ::WGP
 };
 
 class WGPUBindGroupLayoutDescriptor : public WGPUObjectBase<WGPUBindGroupLayoutDescriptor, ::WGPUBindGroupLayoutDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUBindGroupLayoutDescriptor* Obtain();
     public:
@@ -1383,6 +1405,8 @@ class WGPUBindGroupLayoutDescriptor : public WGPUObjectBase<WGPUBindGroupLayoutD
 };
 
 class WGPUComputeState : public WGPUObjectBase<WGPUComputeState, ::WGPUComputeState*> {
+    private:
+        std::string entryPointStorage;
     public:
         static WGPUComputeState* Obtain();
     public:
@@ -1393,16 +1417,22 @@ class WGPUComputeState : public WGPUObjectBase<WGPUComputeState, ::WGPUComputeSt
 };
 
 class WGPUComputePipelineDescriptor : public WGPUObjectBase<WGPUComputePipelineDescriptor, ::WGPUComputePipelineDescriptor> {
+    private:
+        std::string labelStorage;
+        WGPUComputeState computeState;
     public:
         static WGPUComputePipelineDescriptor* Obtain();
     public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
         void SetLayout(WGPUPipelineLayout* pipelineLayout);
-        WGPUComputeState GetCompute();
+        // Borrowed from this descriptor; do not delete or use after its reset/destruction.
+        WGPUComputeState* GetCompute();
 };
 
 class WGPUQueueDescriptor : public WGPUObjectBase<WGPUQueueDescriptor, ::WGPUQueueDescriptor*> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUQueueDescriptor* Obtain();
     public:
@@ -1411,6 +1441,8 @@ class WGPUQueueDescriptor : public WGPUObjectBase<WGPUQueueDescriptor, ::WGPUQue
 };
 
 class WGPUBufferDescriptor : public WGPUObjectBase<WGPUBufferDescriptor, ::WGPUBufferDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUBufferDescriptor* Obtain();
     public:
@@ -1422,6 +1454,8 @@ class WGPUBufferDescriptor : public WGPUObjectBase<WGPUBufferDescriptor, ::WGPUB
 };
 
 class WGPUBindGroupDescriptor : public WGPUObjectBase<WGPUBindGroupDescriptor, ::WGPUBindGroupDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUBindGroupDescriptor* Obtain();
     public:
@@ -1432,6 +1466,8 @@ class WGPUBindGroupDescriptor : public WGPUObjectBase<WGPUBindGroupDescriptor, :
 };
 
 class WGPUPipelineLayoutDescriptor : public WGPUObjectBase<WGPUPipelineLayoutDescriptor, ::WGPUPipelineLayoutDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUPipelineLayoutDescriptor* Obtain();
     public:
@@ -1441,6 +1477,9 @@ class WGPUPipelineLayoutDescriptor : public WGPUObjectBase<WGPUPipelineLayoutDes
 };
 
 class WGPUDeviceDescriptor : public WGPUObjectBase<WGPUDeviceDescriptor, ::WGPUDeviceDescriptor> {
+    private:
+        std::string labelStorage;
+        WGPUQueueDescriptor defaultQueue;
     public:
         static WGPUDeviceDescriptor* Obtain();
     public:
@@ -1448,10 +1487,13 @@ class WGPUDeviceDescriptor : public WGPUObjectBase<WGPUDeviceDescriptor, ::WGPUD
         void SetLabel(const char* value);
         void SetRequiredLimits(WGPULimits* limits);
         void SetRequiredFeatures(WGPUVectorFeatureName* features);
-        WGPUQueueDescriptor GetDefaultQueue();
+        // Borrowed from this descriptor; do not delete or use after its reset/destruction.
+        WGPUQueueDescriptor* GetDefaultQueue();
 };
 
 class WGPUShaderModuleDescriptor : public WGPUObjectBase<WGPUShaderModuleDescriptor, ::WGPUShaderModuleDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUShaderModuleDescriptor* Obtain();
     public:
@@ -1460,12 +1502,16 @@ class WGPUShaderModuleDescriptor : public WGPUObjectBase<WGPUShaderModuleDescrip
 };
 
 class WGPURenderPipelineDescriptor : public WGPUObjectBase<WGPURenderPipelineDescriptor, ::WGPURenderPipelineDescriptor> {
+    private:
+        std::string labelStorage;
+        WGPUVertexState vertexState;
     public:
         static WGPURenderPipelineDescriptor* Obtain();
     public:
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetLabel(const char* value);
-        WGPUVertexState GetVertex();
+        // Borrowed from this descriptor; do not delete or use after its reset/destruction.
+        WGPUVertexState* GetVertex();
         WGPUPrimitiveState GetPrimitive();
         void SetFragment(WGPUFragmentState* fragment);
         void SetDepthStencil(WGPUDepthStencilState* depthStencilState);
@@ -1474,6 +1520,8 @@ class WGPURenderPipelineDescriptor : public WGPUObjectBase<WGPURenderPipelineDes
 };
 
 class WGPUCommandEncoderDescriptor : public WGPUObjectBase<WGPUCommandEncoderDescriptor, ::WGPUCommandEncoderDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUCommandEncoderDescriptor* Obtain();
     public:
@@ -1482,6 +1530,8 @@ class WGPUCommandEncoderDescriptor : public WGPUObjectBase<WGPUCommandEncoderDes
 };
 
 class WGPUCommandBufferDescriptor : public WGPUObjectBase<WGPUCommandBufferDescriptor, ::WGPUCommandBufferDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUCommandBufferDescriptor* Obtain();
     public:
@@ -1490,6 +1540,8 @@ class WGPUCommandBufferDescriptor : public WGPUObjectBase<WGPUCommandBufferDescr
 };
 
 class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor, ::WGPURenderPassDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPURenderPassDescriptor* Obtain();
     public:
@@ -1507,6 +1559,8 @@ class WGPURenderPassDescriptor : public WGPUObjectBase<WGPURenderPassDescriptor,
 };
 
 class WGPUComputePassDescriptor : public WGPUObjectBase<WGPUComputePassDescriptor, ::WGPUComputePassDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUComputePassDescriptor* Obtain();
     public:
@@ -1516,6 +1570,8 @@ class WGPUComputePassDescriptor : public WGPUObjectBase<WGPUComputePassDescripto
 };
 
 class WGPUTextureDescriptor : public WGPUObjectBase<WGPUTextureDescriptor, ::WGPUTextureDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUTextureDescriptor* Obtain();
     public:
@@ -1531,6 +1587,8 @@ class WGPUTextureDescriptor : public WGPUObjectBase<WGPUTextureDescriptor, ::WGP
 };
 
 class WGPUTextureViewDescriptor : public WGPUObjectBase<WGPUTextureViewDescriptor, ::WGPUTextureViewDescriptor> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUTextureViewDescriptor* Obtain();
     public:
@@ -1549,6 +1607,8 @@ class WGPUTextureViewDescriptor : public WGPUObjectBase<WGPUTextureViewDescripto
 // ################################### OPAQUE POINTER ###################################
 
 class WGPUSampler : public WGPUObjectBase<WGPUSampler, ::WGPUSampler> {
+    private:
+        std::string labelStorage;
     public:
         void AddRef();
         void Release();
@@ -1557,6 +1617,8 @@ class WGPUSampler : public WGPUObjectBase<WGPUSampler, ::WGPUSampler> {
 };
 
 class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, ::WGPURenderBundleEncoder> {
+    private:
+        std::string labelStorage;
     public:
         static WGPURenderBundleEncoder* Obtain();
     public:
@@ -1580,6 +1642,8 @@ class WGPURenderBundleEncoder : public WGPUObjectBase<WGPURenderBundleEncoder, :
 };
 
 class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUTextureView* Obtain();
     public:
@@ -1590,6 +1654,8 @@ class WGPUTextureView : public WGPUObjectBase<WGPUTextureView, ::WGPUTextureView
 };
 
 class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUTexture* Obtain();
     public:
@@ -1603,6 +1669,8 @@ class WGPUTexture : public WGPUObjectBase<WGPUTexture, ::WGPUTexture> {
 };
 
 class WGPUShaderModule : public WGPUObjectBase<WGPUShaderModule, ::WGPUShaderModule> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUShaderModule* Obtain();
     public:
@@ -1614,6 +1682,8 @@ class WGPUShaderModule : public WGPUObjectBase<WGPUShaderModule, ::WGPUShaderMod
 };
 
 class WGPURenderPipeline : public WGPUObjectBase<WGPURenderPipeline, ::WGPURenderPipeline> {
+    private:
+        std::string labelStorage;
     public:
         static WGPURenderPipeline* Obtain();
     public:
@@ -1624,6 +1694,8 @@ class WGPURenderPipeline : public WGPUObjectBase<WGPURenderPipeline, ::WGPURende
 };
 
 class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGPURenderPassEncoder> {
+    private:
+        std::string labelStorage;
     public:
         static WGPURenderPassEncoder* Obtain();
     public:
@@ -1654,6 +1726,8 @@ class WGPURenderPassEncoder : public WGPUObjectBase<WGPURenderPassEncoder, ::WGP
 };
 
 class WGPUQuerySet : public WGPUObjectBase<WGPUQuerySet, ::WGPUQuerySet> {
+    private:
+        std::string labelStorage;
     public:
         void AddRef();
         void Release();
@@ -1665,6 +1739,8 @@ class WGPUQuerySet : public WGPUObjectBase<WGPUQuerySet, ::WGPUQuerySet> {
 };
 
 class WGPUPipelineLayout : public WGPUObjectBase<WGPUPipelineLayout, ::WGPUPipelineLayout> {
+    private:
+        std::string labelStorage;
     public:
         void AddRef();
         void Release();
@@ -1688,6 +1764,8 @@ class WGPUInstance : public WGPUObjectBase<WGPUInstance, ::WGPUInstance> {
 };
 
 class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::WGPUComputePassEncoder> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUComputePassEncoder* Obtain();
     public:
@@ -1707,6 +1785,8 @@ class WGPUComputePassEncoder : public WGPUObjectBase<WGPUComputePassEncoder, ::W
 };
 
 class WGPUCommandBuffer : public WGPUObjectBase<WGPUCommandBuffer, ::WGPUCommandBuffer> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUCommandBuffer* Obtain();
     public:
@@ -1717,6 +1797,8 @@ class WGPUCommandBuffer : public WGPUObjectBase<WGPUCommandBuffer, ::WGPUCommand
 };
 
 class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUCommandEncoder> {
+    private:
+        std::string labelStorage;
     public:
         static WGPUCommandEncoder* Obtain();
     public:
@@ -1740,6 +1822,8 @@ class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUComma
 };
 
 class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
+    private:
+        std::string labelStorage;
     public:
         void SetLabel(const char* label);
         void AddRef();
@@ -1755,6 +1839,8 @@ class WGPUBuffer : public WGPUObjectBase<WGPUBuffer, ::WGPUBuffer> {
 };
 
 class WGPUBindGroup : public WGPUObjectBase<WGPUBindGroup, ::WGPUBindGroup> {
+    private:
+        std::string labelStorage;
     public:
         void SetLabel(const char* value);
         void AddRef();
@@ -1763,6 +1849,8 @@ class WGPUBindGroup : public WGPUObjectBase<WGPUBindGroup, ::WGPUBindGroup> {
 };
 
 class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBindGroupLayout> {
+    private:
+        std::string labelStorage;
     public:
         void SetLabel(const char* value);
         void AddRef();
@@ -1771,15 +1859,20 @@ class WGPUBindGroupLayout : public WGPUObjectBase<WGPUBindGroupLayout, ::WGPUBin
 };
 
 class WGPUComputePipeline : public WGPUObjectBase<WGPUComputePipeline, ::WGPUComputePipeline> {
+    private:
+        std::string labelStorage;
     public:
         void SetLabel(const char* value);
         void AddRef();
         void Release();
-        WGPUBindGroupLayout GetBindGroupLayout(int groupIndex);
+        // Writes a new native reference into caller-owned storage; release it before reuse/disposal.
+        void GetBindGroupLayout(int groupIndex, WGPUBindGroupLayout* layoutOut);
         bool IsValid();
 };
 
 class WGPURenderBundle : public WGPUObjectBase<WGPURenderBundle, ::WGPURenderBundle> {
+    private:
+        std::string labelStorage;
     public:
         void SetLabel(const char* value);
         void AddRef();
@@ -1798,6 +1891,8 @@ class WGPUAdapter : public WGPUObjectBase<WGPUAdapter, ::WGPUAdapter> {
 };
 
 class WGPUSurface : public WGPUObjectBase<WGPUSurface, ::WGPUSurface> {
+    private:
+        std::string labelStorage;
     public:
         void SetLabel(const char* value);
         void AddRef();
@@ -1810,6 +1905,8 @@ class WGPUSurface : public WGPUObjectBase<WGPUSurface, ::WGPUSurface> {
 };
 
 class WGPUQueue : public WGPUObjectBase<WGPUQueue, ::WGPUQueue> {
+    private:
+        std::string labelStorage;
     public:
         void AddRef();
         void Release();

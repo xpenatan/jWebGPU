@@ -18,7 +18,7 @@ final public class n2190906379 {
 
     public static native void n1940129384(long this_addr);
 
-    public static native long n1597494104(long this_addr, int groupIndex);
+    public static native void n546345274(long this_addr, int groupIndex, long layoutOut_addr);
 
     public static native boolean n1736395869(long this_addr);
 }
