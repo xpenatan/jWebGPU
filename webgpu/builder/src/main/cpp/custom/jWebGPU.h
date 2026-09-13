@@ -468,52 +468,54 @@ class WGPUAndroidWindow {
 
 namespace JGPU {
 
+// Native values only; nested pointers and resource handles remain borrowed.
+// Keep their owners and vector storage valid through the native call.
 class WGPUVectorCommandBuffer {
     private:
-        std::vector<JGPU::WGPUCommandBuffer> vector;
+        std::vector<::WGPUCommandBuffer> vector;
     public:
         static WGPUVectorCommandBuffer* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUCommandBuffer& entry);
-        const JGPU::WGPUCommandBuffer* data();
+        const ::WGPUCommandBuffer* data();
 };
 
 class WGPUVectorFutureWaitInfo {
     private:
-        std::vector<JGPU::WGPUFutureWaitInfo> vector;
+        std::vector<::WGPUFutureWaitInfo> vector;
     public:
         static WGPUVectorFutureWaitInfo* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUFutureWaitInfo& entry);
-        const JGPU::WGPUFutureWaitInfo* data();
+        ::WGPUFutureWaitInfo* data();
 };
 
 class WGPUVectorBindGroupEntry {
     private:
-        std::vector<JGPU::WGPUBindGroupEntry> vector;
+        std::vector<::WGPUBindGroupEntry> vector;
     public:
         static WGPUVectorBindGroupEntry* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUBindGroupEntry& entry);
-        const JGPU::WGPUBindGroupEntry* data();
+        const ::WGPUBindGroupEntry* data();
 };
 
 class WGPUVectorColorTargetState {
     private:
-        std::vector<JGPU::WGPUColorTargetState> vector;
+        std::vector<::WGPUColorTargetState> vector;
     public:
         static WGPUVectorColorTargetState* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUColorTargetState& attachment);
-        const JGPU::WGPUColorTargetState* data();
+        const ::WGPUColorTargetState* data();
 };
 
 class WGPUVectorFeatureName {
@@ -530,14 +532,14 @@ class WGPUVectorFeatureName {
 
 class WGPUVectorConstantEntry {
     private:
-        std::vector<JGPU::WGPUConstantEntry> vector;
+        std::vector<::WGPUConstantEntry> vector;
     public:
         static WGPUVectorConstantEntry* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUConstantEntry& attachment);
-        const JGPU::WGPUConstantEntry* data();
+        const ::WGPUConstantEntry* data();
 };
 
 class WGPUVectorInstanceFeatureName {
@@ -554,26 +556,26 @@ class WGPUVectorInstanceFeatureName {
 
 class WGPUVectorInstanceLimits {
     private:
-        std::vector<JGPU::WGPUInstanceLimits> vector;
+        std::vector<::WGPUInstanceLimits> vector;
     public:
         static WGPUVectorInstanceLimits* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUInstanceLimits& attachment);
-        const JGPU::WGPUInstanceLimits* data();
+        const ::WGPUInstanceLimits* data();
 };
 
 class WGPUVectorVertexBufferLayout {
     private:
-        std::vector<JGPU::WGPUVertexBufferLayout> vector;
+        std::vector<::WGPUVertexBufferLayout> vector;
     public:
         static WGPUVectorVertexBufferLayout* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUVertexBufferLayout& attachment);
-        const JGPU::WGPUVertexBufferLayout* data();
+        const ::WGPUVertexBufferLayout* data();
 };
 
 class WGPUVectorTextureFormat {
@@ -595,62 +597,62 @@ class WGPUVectorTextureFormat {
 
 class WGPUVectorRenderBundle {
     private:
-        std::vector<JGPU::WGPURenderBundle> vector;
+        std::vector<::WGPURenderBundle> vector;
     public:
         static WGPUVectorRenderBundle* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPURenderBundle& attachment);
-        const JGPU::WGPURenderBundle* data();
+        const ::WGPURenderBundle* data();
 };
 
 class WGPUVectorRenderPassColorAttachment {
     private:
-        std::vector<JGPU::WGPURenderPassColorAttachment> vector;
+        std::vector<::WGPURenderPassColorAttachment> vector;
     public:
         static WGPUVectorRenderPassColorAttachment* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPURenderPassColorAttachment& attachment);
-        const JGPU::WGPURenderPassColorAttachment* data();
+        const ::WGPURenderPassColorAttachment* data();
 };
 
 class WGPUVectorVertexAttribute {
     private:
-        std::vector<JGPU::WGPUVertexAttribute> vector;
+        std::vector<::WGPUVertexAttribute> vector;
     public:
         static WGPUVectorVertexAttribute* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUVertexAttribute& attribute);
-        const JGPU::WGPUVertexAttribute* data();
+        const ::WGPUVertexAttribute* data();
 };
 
 class WGPUVectorBindGroupLayout {
     private:
-        std::vector<JGPU::WGPUBindGroupLayout> vector;
+        std::vector<::WGPUBindGroupLayout> vector;
     public:
         static WGPUVectorBindGroupLayout* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUBindGroupLayout& groupLayout);
-        const JGPU::WGPUBindGroupLayout* data();
+        const ::WGPUBindGroupLayout* data();
 };
 
 class WGPUVectorBindGroupLayoutEntry {
     private:
-        std::vector<JGPU::WGPUBindGroupLayoutEntry> vector;
+        std::vector<::WGPUBindGroupLayoutEntry> vector;
     public:
         static WGPUVectorBindGroupLayoutEntry* Obtain();
     public:
         int size();
         void clear();
         void push_back(const JGPU::WGPUBindGroupLayoutEntry& entry);
-        const JGPU::WGPUBindGroupLayoutEntry* data();
+        const ::WGPUBindGroupLayoutEntry* data();
 };
 
 class WGPUVectorInt {
@@ -686,6 +688,10 @@ class WGPUObjectBase {
     using ReturnType = CType&;
 
     ReturnType Get() {
+        return mHandle;
+    }
+
+    const CType& Get() const {
         return mHandle;
     }
 

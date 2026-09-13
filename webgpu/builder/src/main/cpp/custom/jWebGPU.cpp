@@ -58,9 +58,9 @@ int JGPU::WGPUVectorCommandBuffer::size() { return vector.size(); }
 
 void JGPU::WGPUVectorCommandBuffer::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorCommandBuffer::push_back(const JGPU::WGPUCommandBuffer& entry) { vector.push_back(entry); }
+void JGPU::WGPUVectorCommandBuffer::push_back(const JGPU::WGPUCommandBuffer& entry) { vector.push_back(entry.Get()); }
 
-const JGPU::WGPUCommandBuffer* JGPU::WGPUVectorCommandBuffer::data() { return vector.data(); }
+const ::WGPUCommandBuffer* JGPU::WGPUVectorCommandBuffer::data() { return vector.data(); }
 
 // WGPUVectorFutureWaitInfo
 JGPU::WGPUVectorFutureWaitInfo* JGPU::WGPUVectorFutureWaitInfo::Obtain() {
@@ -73,9 +73,9 @@ int JGPU::WGPUVectorFutureWaitInfo::size() { return vector.size(); }
 
 void JGPU::WGPUVectorFutureWaitInfo::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorFutureWaitInfo::push_back(const JGPU::WGPUFutureWaitInfo& entry) { vector.push_back(entry); }
+void JGPU::WGPUVectorFutureWaitInfo::push_back(const JGPU::WGPUFutureWaitInfo& entry) { vector.push_back(entry.Get()); }
 
-const JGPU::WGPUFutureWaitInfo* JGPU::WGPUVectorFutureWaitInfo::data() { return vector.data(); }
+::WGPUFutureWaitInfo* JGPU::WGPUVectorFutureWaitInfo::data() { return vector.data(); }
 
 
 // WGPUVectorBindGroupEntry
@@ -89,9 +89,9 @@ int JGPU::WGPUVectorBindGroupEntry::size() { return vector.size(); }
 
 void JGPU::WGPUVectorBindGroupEntry::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorBindGroupEntry::push_back(const JGPU::WGPUBindGroupEntry& entry) { vector.push_back(entry); }
+void JGPU::WGPUVectorBindGroupEntry::push_back(const JGPU::WGPUBindGroupEntry& entry) { vector.push_back(entry.Get()); }
 
-const JGPU::WGPUBindGroupEntry* JGPU::WGPUVectorBindGroupEntry::data() { return vector.data(); }
+const ::WGPUBindGroupEntry* JGPU::WGPUVectorBindGroupEntry::data() { return vector.data(); }
 
 // WGPUVectorColorTargetState
 JGPU::WGPUVectorColorTargetState* JGPU::WGPUVectorColorTargetState::Obtain() {
@@ -104,9 +104,9 @@ int JGPU::WGPUVectorColorTargetState::size() { return vector.size(); }
 
 void JGPU::WGPUVectorColorTargetState::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorColorTargetState::push_back(const JGPU::WGPUColorTargetState& attachment) { vector.push_back(attachment); }
+void JGPU::WGPUVectorColorTargetState::push_back(const JGPU::WGPUColorTargetState& attachment) { vector.push_back(attachment.Get()); }
 
-const JGPU::WGPUColorTargetState* JGPU::WGPUVectorColorTargetState::data() { return vector.data(); }
+const ::WGPUColorTargetState* JGPU::WGPUVectorColorTargetState::data() { return vector.data(); }
 
 // WGPUVectorFeatureName
 JGPU::WGPUVectorFeatureName* JGPU::WGPUVectorFeatureName::Obtain() {
@@ -134,9 +134,9 @@ int JGPU::WGPUVectorConstantEntry::size() { return vector.size(); }
 
 void JGPU::WGPUVectorConstantEntry::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorConstantEntry::push_back(const JGPU::WGPUConstantEntry& attachment) { vector.push_back(attachment); }
+void JGPU::WGPUVectorConstantEntry::push_back(const JGPU::WGPUConstantEntry& attachment) { vector.push_back(attachment.Get()); }
 
-const JGPU::WGPUConstantEntry* JGPU::WGPUVectorConstantEntry::data() { return vector.data(); }
+const ::WGPUConstantEntry* JGPU::WGPUVectorConstantEntry::data() { return vector.data(); }
 
 // WGPUVectorInstanceFeatureName
 JGPU::WGPUVectorInstanceFeatureName* JGPU::WGPUVectorInstanceFeatureName::Obtain() {
@@ -164,9 +164,9 @@ int JGPU::WGPUVectorInstanceLimits::size() { return vector.size(); }
 
 void JGPU::WGPUVectorInstanceLimits::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorInstanceLimits::push_back(const JGPU::WGPUInstanceLimits& attachment) { vector.push_back(attachment); }
+void JGPU::WGPUVectorInstanceLimits::push_back(const JGPU::WGPUInstanceLimits& attachment) { vector.push_back(attachment.Get()); }
 
-const JGPU::WGPUInstanceLimits* JGPU::WGPUVectorInstanceLimits::data() { return vector.data(); }
+const ::WGPUInstanceLimits* JGPU::WGPUVectorInstanceLimits::data() { return vector.data(); }
 
 // WGPUVectorVertexBufferLayout
 JGPU::WGPUVectorVertexBufferLayout* JGPU::WGPUVectorVertexBufferLayout::Obtain() {
@@ -179,9 +179,9 @@ int JGPU::WGPUVectorVertexBufferLayout::size() { return vector.size(); }
 
 void JGPU::WGPUVectorVertexBufferLayout::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorVertexBufferLayout::push_back(const JGPU::WGPUVertexBufferLayout& attachment) { vector.push_back(attachment); }
+void JGPU::WGPUVectorVertexBufferLayout::push_back(const JGPU::WGPUVertexBufferLayout& attachment) { vector.push_back(attachment.Get()); }
 
-const JGPU::WGPUVertexBufferLayout* JGPU::WGPUVectorVertexBufferLayout::data() { return vector.data(); }
+const ::WGPUVertexBufferLayout* JGPU::WGPUVectorVertexBufferLayout::data() { return vector.data(); }
 
 // WGPUVectorTextureFormat
 JGPU::WGPUVectorTextureFormat* JGPU::WGPUVectorTextureFormat::Obtain() {
@@ -211,9 +211,9 @@ int JGPU::WGPUVectorRenderBundle::size() { return vector.size(); }
 
 void JGPU::WGPUVectorRenderBundle::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorRenderBundle::push_back(const JGPU::WGPURenderBundle& attachment) { vector.push_back(attachment); }
+void JGPU::WGPUVectorRenderBundle::push_back(const JGPU::WGPURenderBundle& attachment) { vector.push_back(attachment.Get()); }
 
-const JGPU::WGPURenderBundle* JGPU::WGPUVectorRenderBundle::data() { return vector.data(); }
+const ::WGPURenderBundle* JGPU::WGPUVectorRenderBundle::data() { return vector.data(); }
 
 // WGPUVectorRenderPassColorAttachment
 JGPU::WGPUVectorRenderPassColorAttachment* JGPU::WGPUVectorRenderPassColorAttachment::Obtain() {
@@ -226,9 +226,9 @@ int JGPU::WGPUVectorRenderPassColorAttachment::size() { return vector.size(); }
 
 void JGPU::WGPUVectorRenderPassColorAttachment::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorRenderPassColorAttachment::push_back(const JGPU::WGPURenderPassColorAttachment& attachment) { vector.push_back(attachment); }
+void JGPU::WGPUVectorRenderPassColorAttachment::push_back(const JGPU::WGPURenderPassColorAttachment& attachment) { vector.push_back(attachment.Get()); }
 
-const JGPU::WGPURenderPassColorAttachment* JGPU::WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
+const ::WGPURenderPassColorAttachment* JGPU::WGPUVectorRenderPassColorAttachment::data() { return vector.data(); }
 
 // WGPUVectorVertexAttribute
 JGPU::WGPUVectorVertexAttribute* JGPU::WGPUVectorVertexAttribute::Obtain() {
@@ -241,9 +241,9 @@ int JGPU::WGPUVectorVertexAttribute::size() { return vector.size(); }
 
 void JGPU::WGPUVectorVertexAttribute::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorVertexAttribute::push_back(const JGPU::WGPUVertexAttribute& attribute) { vector.push_back(attribute); }
+void JGPU::WGPUVectorVertexAttribute::push_back(const JGPU::WGPUVertexAttribute& attribute) { vector.push_back(attribute.Get()); }
 
-const JGPU::WGPUVertexAttribute* JGPU::WGPUVectorVertexAttribute::data() { return vector.data(); }
+const ::WGPUVertexAttribute* JGPU::WGPUVectorVertexAttribute::data() { return vector.data(); }
 
 // WGPUVectorBindGroupLayout
 JGPU::WGPUVectorBindGroupLayout* JGPU::WGPUVectorBindGroupLayout::Obtain() {
@@ -256,9 +256,9 @@ int JGPU::WGPUVectorBindGroupLayout::size() { return vector.size(); }
 
 void JGPU::WGPUVectorBindGroupLayout::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorBindGroupLayout::push_back(const JGPU::WGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout); }
+void JGPU::WGPUVectorBindGroupLayout::push_back(const JGPU::WGPUBindGroupLayout& groupLayout) { vector.push_back(groupLayout.Get()); }
 
-const JGPU::WGPUBindGroupLayout* JGPU::WGPUVectorBindGroupLayout::data() { return vector.data(); }
+const ::WGPUBindGroupLayout* JGPU::WGPUVectorBindGroupLayout::data() { return vector.data(); }
 
 // WGPUVectorBindGroupLayoutEntry
 JGPU::WGPUVectorBindGroupLayoutEntry* JGPU::WGPUVectorBindGroupLayoutEntry::Obtain() {
@@ -271,10 +271,10 @@ int JGPU::WGPUVectorBindGroupLayoutEntry::size() { return vector.size(); }
 
 void JGPU::WGPUVectorBindGroupLayoutEntry::clear() { return vector.clear(); }
 
-void JGPU::WGPUVectorBindGroupLayoutEntry::push_back(const JGPU::WGPUBindGroupLayoutEntry& entry) { vector.push_back(entry); }
+void JGPU::WGPUVectorBindGroupLayoutEntry::push_back(const JGPU::WGPUBindGroupLayoutEntry& entry) { vector.push_back(entry.Get()); }
 
 
-const JGPU::WGPUBindGroupLayoutEntry* JGPU::WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
+const ::WGPUBindGroupLayoutEntry* JGPU::WGPUVectorBindGroupLayoutEntry::data() { return vector.data(); }
 
 // WGPUVectorInt
 JGPU::WGPUVectorInt* JGPU::WGPUVectorInt::Obtain() {
@@ -1467,7 +1467,7 @@ JGPU::WGPUVertexBufferLayout* JGPU::WGPUVertexBufferLayout::Obtain() {
 void JGPU::WGPUVertexBufferLayout::SetAttributes(JGPU::WGPUVectorVertexAttribute* values) {
     if(values != NULL) {
         Get().attributeCount = values->size();
-        Get().attributes = reinterpret_cast<const ::WGPUVertexAttribute*>(values->data());
+        Get().attributes = values->data();
     }
     else {
         Get().attributeCount = 0;
@@ -1500,7 +1500,7 @@ void JGPU::WGPUVertexState::SetEntryPoint(const char* value) {
 void JGPU::WGPUVertexState::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get()->constantCount = values->size();
-        Get()->constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
+        Get()->constants = values->data();
     }
     else {
         Get()->constantCount = 0;
@@ -1511,7 +1511,7 @@ void JGPU::WGPUVertexState::SetConstants(JGPU::WGPUVectorConstantEntry* values) 
 void JGPU::WGPUVertexState::SetBuffers(JGPU::WGPUVectorVertexBufferLayout* values) {
     if(values != NULL) {
         Get()->bufferCount = values->size();
-        Get()->buffers = reinterpret_cast<const ::WGPUVertexBufferLayout*>(values->data());
+        Get()->buffers = values->data();
     }
     else {
         Get()->bufferCount = 0;
@@ -1624,7 +1624,7 @@ void JGPU::WGPUFragmentState::SetEntryPoint(const char* value) {
 void JGPU::WGPUFragmentState::SetTargets(JGPU::WGPUVectorColorTargetState* values) {
     if(values != NULL) {
         Get().targetCount = values->size();
-        Get().targets = reinterpret_cast<const ::WGPUColorTargetState*>(values->data());
+        Get().targets = values->data();
     }
     else {
         Get().targetCount = 0;
@@ -1673,7 +1673,7 @@ void JGPU::WGPUFragmentState::SetModule(JGPU::WGPUShaderModule* shaderModule) {
 void JGPU::WGPUFragmentState::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get().constantCount = values->size();
-        Get().constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
+        Get().constants = values->data();
     }
     else {
         Get().constantCount = 0;
@@ -2057,7 +2057,7 @@ void JGPU::WGPUSurfaceConfiguration::SetViewFormatCount(long value) {
 void JGPU::WGPUSurfaceConfiguration::SetViewFormats(JGPU::WGPUVectorTextureFormat* values) {
     if(values != NULL) {
         Get().viewFormatCount = values->size();
-        Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(values->data());
+        Get().viewFormats = values->data();
     }
     else {
         Get().viewFormatCount = 0;
@@ -2390,7 +2390,7 @@ void JGPU::WGPUInstanceDescriptor::SetRequiredFeatures(JGPU::WGPUVectorInstanceF
 
 void JGPU::WGPUInstanceDescriptor::SetRequiredLimits(JGPU::WGPUVectorInstanceLimits* requiredLimits) {
     if(requiredLimits != NULL) {
-        Get().requiredLimits = (::WGPUInstanceLimits*)requiredLimits->data();
+        Get().requiredLimits = requiredLimits->data();
     }
     else {
         Get().requiredLimits = NULL;
@@ -2432,7 +2432,7 @@ void JGPU::WGPURenderBundleEncoderDescriptor::SetLabel(const char* value) {
 void JGPU::WGPURenderBundleEncoderDescriptor::SetColorFormats(JGPU::WGPUVectorTextureFormat* colorFormats) {
     if(colorFormats != NULL) {
         Get().colorFormatCount = colorFormats->size();
-        Get().colorFormats = reinterpret_cast<const WGPUTextureFormat*>(colorFormats->data());
+        Get().colorFormats = colorFormats->data();
     }
     else {
         Get().colorFormatCount = 0;
@@ -2648,7 +2648,7 @@ void JGPU::WGPUTextureDescriptor::SetSampleCount(int sampleCount) {
 void JGPU::WGPUTextureDescriptor::SetViewFormats(JGPU::WGPUVectorTextureFormat* viewFormats) {
     if(viewFormats != NULL) {
         Get().viewFormatCount = viewFormats->size();
-        Get().viewFormats = reinterpret_cast<const WGPUTextureFormat*>(viewFormats->data());
+        Get().viewFormats = viewFormats->data();
     }
     else {
         Get().viewFormatCount = 0;
@@ -2685,7 +2685,7 @@ void JGPU::WGPURenderPassDescriptor::SetLabel(const char* value) {
 void JGPU::WGPURenderPassDescriptor::SetColorAttachments(JGPU::WGPUVectorRenderPassColorAttachment* values) {
     if(values != NULL) {
         Get().colorAttachmentCount = values->size();
-        Get().colorAttachments = reinterpret_cast<const ::WGPURenderPassColorAttachment*>(values->data());
+        Get().colorAttachments = values->data();
     }
     else {
         Get().colorAttachmentCount = 0;
@@ -2851,7 +2851,7 @@ void JGPU::WGPUBindGroupLayoutDescriptor::SetLabel(const char* value) {
 void JGPU::WGPUBindGroupLayoutDescriptor::SetEntries(JGPU::WGPUVectorBindGroupLayoutEntry* entries) {
     if(entries != NULL) {
         Get().entryCount = entries->size();
-        Get().entries = reinterpret_cast<const ::WGPUBindGroupLayoutEntry*>(entries->data());
+        Get().entries = entries->data();
     }
     else {
         Get().entryCount = 0;
@@ -2882,7 +2882,7 @@ void JGPU::WGPUComputeState::SetEntryPoint(const char* value) {
 void JGPU::WGPUComputeState::SetConstants(JGPU::WGPUVectorConstantEntry* values) {
     if(values != NULL) {
         Get()->constantCount = values->size();
-        Get()->constants = reinterpret_cast<const ::WGPUConstantEntry*>(values->data());
+        Get()->constants = values->data();
     }
     else {
         Get()->constantCount = 0;
@@ -2982,7 +2982,7 @@ void JGPU::WGPUBindGroupDescriptor::SetLayout(JGPU::WGPUBindGroupLayout* layout)
 void JGPU::WGPUBindGroupDescriptor::SetEntries(JGPU::WGPUVectorBindGroupEntry* entries) {
     if(entries != NULL) {
         Get().entryCount = entries->size();
-        Get().entries = reinterpret_cast<const ::WGPUBindGroupEntry*>(entries->data());
+        Get().entries = entries->data();
     }
     else {
         Get().entryCount = 0;
@@ -3009,7 +3009,7 @@ void JGPU::WGPUPipelineLayoutDescriptor::SetLabel(const char* value) {
 void JGPU::WGPUPipelineLayoutDescriptor::SetBindGroupLayouts(JGPU::WGPUVectorBindGroupLayout* bindGroupLayouts) {
     if(bindGroupLayouts != NULL) {
         Get().bindGroupLayoutCount = bindGroupLayouts->size();
-        Get().bindGroupLayouts = reinterpret_cast<const ::WGPUBindGroupLayout*>(bindGroupLayouts->data());
+        Get().bindGroupLayouts = bindGroupLayouts->data();
     }
     else {
         Get().bindGroupLayoutCount = 0;
@@ -3110,10 +3110,10 @@ void JGPU::WGPURenderBundleEncoder::DrawIndexedIndirect(JGPU::WGPUBuffer* indire
 
 void JGPU::WGPURenderBundleEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGroup* group, JGPU::WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
-    uint32_t* dynamicOffsets = NULL;
+    const uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
         dynamicOffsetCount = offsets->size();
-        dynamicOffsets = (uint32_t*)offsets->data();
+        dynamicOffsets = offsets->data();
     }
     wgpuRenderBundleEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
@@ -3337,7 +3337,7 @@ void JGPU::WGPURenderPassEncoder::EndOcclusionQuery() {
 void JGPU::WGPURenderPassEncoder::ExecuteBundles(JGPU::WGPUVectorRenderBundle* values) {
     if(values != NULL) {
         int size = values->size();
-        wgpuRenderPassEncoderExecuteBundles(Get(), size, reinterpret_cast<::WGPURenderBundle const * >(values->data()));
+        wgpuRenderPassEncoderExecuteBundles(Get(), size, values->data());
     }
     else {
         wgpuRenderPassEncoderExecuteBundles(Get(), 0, NULL);
@@ -3360,10 +3360,10 @@ void JGPU::WGPURenderPassEncoder::PushDebugGroup(const char* label) {
 
 void JGPU::WGPURenderPassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGroup* group, JGPU::WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
-    uint32_t* dynamicOffsets = NULL;
+    const uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
         dynamicOffsetCount = offsets->size();
-        dynamicOffsets = (uint32_t*)offsets->data();
+        dynamicOffsets = offsets->data();
     }
     wgpuRenderPassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
@@ -3595,7 +3595,7 @@ WGPUWaitStatus JGPU::WGPUInstance::WaitAny(JGPU::WGPUVectorFutureWaitInfo* futur
     ::WGPUFutureWaitInfo* futures = NULL;
     if(futureVector != NULL) {
         futureCount = futureVector->size();
-        futures = (::WGPUFutureWaitInfo*)futureVector->data();
+        futures = futureVector->data();
     }
     return wgpuInstanceWaitAny(Get(), futureCount, futures, timeoutNS);
 }
@@ -3727,10 +3727,10 @@ void JGPU::WGPUComputePassEncoder::PushDebugGroup(const char* groupLabel) {
 
 void JGPU::WGPUComputePassEncoder::SetBindGroup(int groupIndex, JGPU::WGPUBindGroup* group, JGPU::WGPUVectorInt* offsets) {
     int dynamicOffsetCount = 0;
-    uint32_t* dynamicOffsets = NULL;
+    const uint32_t* dynamicOffsets = NULL;
     if(offsets != NULL) {
         dynamicOffsetCount = offsets->size();
-        dynamicOffsets = (uint32_t*)offsets->data();
+        dynamicOffsets = offsets->data();
     }
     wgpuComputePassEncoderSetBindGroup(Get(), groupIndex, group->Get(), dynamicOffsetCount, dynamicOffsets);
 }
@@ -4098,10 +4098,10 @@ void JGPU::WGPUQueue::SetLabel(const char* value) {
 
 void JGPU::WGPUQueue::Submit(JGPU::WGPUVectorCommandBuffer* commandVector) {
     int commandCount = 0;
-    ::WGPUCommandBuffer* cmdBuffers = NULL;
+    const ::WGPUCommandBuffer* cmdBuffers = NULL;
     if(commandVector != NULL) {
         commandCount = commandVector->size();
-        cmdBuffers = (::WGPUCommandBuffer*)commandVector->data();
+        cmdBuffers = commandVector->data();
     }
     wgpuQueueSubmit(Get(), commandCount, cmdBuffers);
 }
