@@ -1,5 +1,9 @@
 #include "jWebGPU.h"
 
+#if !defined(JWEBGPU_DAWN) && !defined(__EMSCRIPTEN__)
+#include "webgpu/wgpu.h"
+#endif
+
 #define STB_IMAGE_STATIC
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -2193,6 +2197,26 @@ bool WGPU::IsDawnBackend() {
 
 JGPU::WGPUInstance* WGPU::SetupInstance(JGPU::WGPUInstanceDescriptor* descriptor) {
     JGPU::WGPUInstance* instance = new JGPU::WGPUInstance();
+    if (descriptor != nullptr && descriptor->GetBackendType() != WGPUBackendType_Undefined) {
+        instance->Set(nullptr);
+        #if !defined(JWEBGPU_DAWN) && !defined(__EMSCRIPTEN__)
+            ::WGPUInstanceExtras extras{};
+            switch (descriptor->GetBackendType()) {
+                case WGPUBackendType_Vulkan: extras.backends = WGPUInstanceBackend_Vulkan; break;
+                case WGPUBackendType_OpenGL:
+                case WGPUBackendType_OpenGLES: extras.backends = WGPUInstanceBackend_GL; break;
+                case WGPUBackendType_Metal: extras.backends = WGPUInstanceBackend_Metal; break;
+                case WGPUBackendType_D3D12: extras.backends = WGPUInstanceBackend_DX12; break;
+                default: return instance;
+            }
+            ::WGPUInstanceDescriptor nativeDescriptor = descriptor->Get();
+            extras.chain.sType = static_cast<WGPUSType>(WGPUSType_InstanceExtras);
+            extras.chain.next = nativeDescriptor.nextInChain;
+            nativeDescriptor.nextInChain = &extras.chain;
+            instance->Set(wgpuCreateInstance(&nativeDescriptor));
+        #endif
+        return instance;
+    }
     instance->Set(wgpuCreateInstance(descriptor != NULL ? &descriptor->Get() : NULL));
     return instance;
 }
@@ -2367,6 +2391,14 @@ JGPU::WGPUCompilationMessage JGPU::WGPUCompilationInfo::GetMessage(int index) {
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 // JGPU::WGPUInstanceDescriptor
+void JGPU::WGPUInstanceDescriptor::SetBackendType(WGPUBackendType backendType) {
+    this->backendType = backendType;
+}
+
+WGPUBackendType JGPU::WGPUInstanceDescriptor::GetBackendType() {
+    return backendType;
+}
+
 JGPU::WGPUInstanceDescriptor* JGPU::WGPUInstanceDescriptor::Obtain() {
     static JGPU::WGPUInstanceDescriptor obj;
     obj = JGPU::WGPUInstanceDescriptor();

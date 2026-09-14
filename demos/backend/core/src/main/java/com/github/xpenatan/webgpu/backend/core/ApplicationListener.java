@@ -6,5 +6,6 @@ public interface ApplicationListener {
 
     void render(WGPUApp wgpu);
 
+    /** Releases example-owned resources, including after a partial create. WGPUApp owns the device and surface. */
     void dispose();
 }

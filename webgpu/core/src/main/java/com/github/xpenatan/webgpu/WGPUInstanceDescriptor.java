@@ -29,6 +29,13 @@ public final class WGPUInstanceDescriptor extends NativeObject {
         return new WGPUInstanceDescriptor((byte) 0, (char) 0);
     }
 
+    public void setBackendType(WGPUBackendType backendType) {
+    }
+
+    public WGPUBackendType getBackendType() {
+        return null;
+    }
+
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
     }
 

@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.WGPUAndroidWindow;
+import com.github.xpenatan.webgpu.WGPUBackendType;
 import com.github.xpenatan.webgpu.JWebGPULoader;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
@@ -26,15 +27,18 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     private WGPUAndroidWindow androidWindow;
     private boolean errorDialogShown = false;
     private boolean frameCallbackPosted = false;
+    private boolean listenerStarted;
+    private boolean startupComplete;
+    private JWebGPUBackend backend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupFullScreen();
 
-        wgpu = new WGPUApp();
+        wgpu = createWGPUApp();
 
-        JWebGPUBackend backend = JWebGPUBackend.valueOf(BuildConfig.JWEBGPU_BACKEND);
+        backend = JWebGPUBackend.valueOf(BuildConfig.JWEBGPU_BACKEND);
         JWebGPULoader.init(backend, (isSuccess, e) -> {
             System.out.println("WebGPU Init Success: " + isSuccess);
             if(isSuccess) {
@@ -60,23 +64,43 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
                 }
 
                 if(wGPUInit == 3) {
-                    applicationListener.render(wgpu);
+                    try {
+                        applicationListener.render(wgpu);
+                        wgpu.checkStartupErrors();
+                        if(!startupComplete) {
+                            wgpu.startupComplete();
+                            startupComplete = true;
+                            System.out.println("WGPU first frame: " + wgpu.backendType());
+                        }
+                    } catch(RuntimeException error) {
+                        if(startupComplete) throw error;
+                        retryStartup(error);
+                    }
                 }
                 else if(wGPUInit > 0) {
                     if(wGPUInit == 1) {
                         wGPUInit = 2;
                         androidWindow = new WGPUAndroidWindow();
                         androidWindow.initLogcat();
+                        androidWindow.createAndroidSurface(surface);
                         WindowManager windowManager = (WindowManager)getApplicationContext().getSystemService(WINDOW_SERVICE);
                         Display display = windowManager.getDefaultDisplay();
                         wgpu.width = display.getWidth();
                         wgpu.height = display.getHeight();
-                        wgpu.init();
+                        if(backend == JWebGPUBackend.WGPU) wgpu.init(startupBackends());
+                        else wgpu.init();
                     }
                     else if(wGPUInit == 2 && wgpu.isReady()) {
-                        createSurface(surface);
-                        applicationListener.create(wgpu);
-                        wGPUInit = 3;
+                        try {
+                            wgpu.beginSurfaceStartup();
+                            createSurface(surface);
+                            listenerStarted = true;
+                            applicationListener.create(wgpu);
+                            wgpu.checkStartupErrors();
+                            wGPUInit = 3;
+                        } catch(RuntimeException error) {
+                            retryStartup(error);
+                        }
                     }
                 }
                 wgpu.update();
@@ -86,16 +110,43 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
             }
 
         } catch(Throwable e) {
+            if(!startupComplete && listenerStarted && e instanceof RuntimeException) {
+                retryStartup((RuntimeException)e);
+                postFrameCallbackIfNeeded();
+                return;
+            }
             e.printStackTrace();
             showErrorDialog(e);
             removeFrameCallbackIfNeeded();
         }
     }
 
+    protected WGPUApp createWGPUApp() { return new WGPUApp(); }
+
+    /** Reported initialization errors retry with a fresh instance; native process crashes cannot retry here. */
+    protected WGPUBackendType[] startupBackends() {
+        return new WGPUBackendType[]{WGPUBackendType.Vulkan, WGPUBackendType.OpenGLES};
+    }
+
+    private void retryStartup(RuntimeException error) {
+        if(listenerStarted) {
+            listenerStarted = false;
+            applicationListener.dispose();
+        }
+        wgpu.failStartup(error.getMessage());
+        wGPUInit = 2;
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
         removeFrameCallbackIfNeeded();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(shouldRunFrames()) postFrameCallbackIfNeeded();
     }
 
     @Override
@@ -117,7 +168,6 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     }
 
     private void createSurface(Surface surface) {
-        androidWindow.createAndroidSurface(surface);
         wgpu.surface = wgpu.instance.createAndroidSurface(androidWindow);
     }
 
@@ -186,21 +236,14 @@ public class AndroidApplication extends Activity implements Choreographer.FrameC
     }
 
     private void disposeCurrentSession() {
-        if(wGPUInit == 3 && applicationListener != null) {
+        if(listenerStarted && applicationListener != null) {
+            listenerStarted = false;
             applicationListener.dispose();
         }
-        if(wgpu != null && wgpu.surface != null) {
-            try {
-                wgpu.surface.unconfigure();
-            }
-            catch(Throwable ignored) {
-            }
-            wgpu.surface.release();
-            wgpu.surface = null;
-        }
-        if(wgpu != null && wgpu.isReady()) {
-            wGPUInit = 2;
-        }
+        if(wgpu != null) wgpu.dispose();
+        if(androidWindow != null) { androidWindow.dispose(); androidWindow = null; }
+        startupComplete = false;
+        if(wGPUInit > 0) wGPUInit = 1;
     }
 
     private void showErrorDialog(Throwable e) {

@@ -868,6 +868,10 @@ interface WGPUInstanceLimits {
 [Prefix="JGPU::"]
 interface WGPUInstanceDescriptor {
     void WGPUInstanceDescriptor();
+    // wgpu-native only: restricts enabled backends for this instance. Undefined keeps the default.
+    // Unsupported backends/loaders produce an invalid instance from SetupInstance.
+    void SetBackendType(WGPUBackendType backendType);
+    WGPUBackendType GetBackendType();
     void SetNextInChain(WGPUChainedStruct chainedStruct);
     void SetRequiredFeatures(WGPUVectorInstanceFeatureName requiredFeatures);
     void SetRequiredLimits(WGPUVectorInstanceLimits requiredLimits);

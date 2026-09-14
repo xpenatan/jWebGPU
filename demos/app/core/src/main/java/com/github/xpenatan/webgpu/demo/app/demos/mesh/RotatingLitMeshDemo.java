@@ -110,9 +110,6 @@ public class RotatingLitMeshDemo implements ApplicationListener {
         setupBuffers(wgpu);
         setupPipeline(wgpu, surfaceFormat);
 
-        wgpu.adapter.release();
-        wgpu.adapter.dispose();
-        wgpu.adapter = null;
     }
 
     @Override
@@ -177,22 +174,27 @@ public class RotatingLitMeshDemo implements ApplicationListener {
     public void dispose() {
         if(pipeline != null) {
             pipeline.release();
+            pipeline.dispose();
             pipeline = null;
         }
         if(bindGroup != null) {
             bindGroup.release();
+            bindGroup.dispose();
             bindGroup = null;
         }
         if(uniformBuffer != null) {
             uniformBuffer.release();
+            uniformBuffer.dispose();
             uniformBuffer = null;
         }
         if(indexBuffer != null) {
             indexBuffer.release();
+            indexBuffer.dispose();
             indexBuffer = null;
         }
         if(vertexBuffer != null) {
             vertexBuffer.release();
+            vertexBuffer.dispose();
             vertexBuffer = null;
         }
         depthTextureTarget.dispose();

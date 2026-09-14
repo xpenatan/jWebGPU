@@ -82,11 +82,6 @@ public class HelloTriangle implements ApplicationListener {
             surfaceFormat = formats.get(0);
             System.out.println("surfaceFormat: " + surfaceFormat);
             initSwapChain(wgpu);
-
-            // Release the adapter only after it has been fully utilized
-            wgpu.adapter.release();
-            wgpu.adapter.dispose();
-            wgpu.adapter = null;
             initPipeline(wgpu);
         }
         else {
@@ -144,7 +139,14 @@ public class HelloTriangle implements ApplicationListener {
 
     @Override
     public void dispose() {
-
+        if(pipeline != null) {
+            if(pipeline.isValid()) pipeline.release();
+            pipeline.dispose();
+            pipeline = null;
+        }
+        if(encoder != null) { encoder.dispose(); encoder = null; }
+        if(renderPass != null) { renderPass.dispose(); renderPass = null; }
+        if(command != null) { command.dispose(); command = null; }
     }
 
     public void setColor(float r, float g, float b) {
@@ -286,4 +288,3 @@ public class HelloTriangle implements ApplicationListener {
         return triangleShader;
     }
 }
-

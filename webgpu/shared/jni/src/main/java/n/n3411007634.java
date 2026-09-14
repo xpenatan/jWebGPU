@@ -14,6 +14,10 @@ final public class n3411007634 {
 
     public static native void n2020665542(long this_addr);
 
+    public static native void n2096296095(long this_addr, int backendType);
+
+    public static native int n3660796240(long this_addr);
+
     public static native void n110576711(long this_addr, long chainedStruct_addr);
 
     public static native void n2315937470(long this_addr, long requiredFeatures_addr);

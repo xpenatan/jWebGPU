@@ -173,6 +173,32 @@ Native compiler policy is configured through jParser's generic target hooks. The
 .\gradlew.bat :demos:app:android:installDawnDebug
 ```
 
+## Native startup fallback
+
+With the WGPU loader, restrict each startup attempt using the existing instance descriptor:
+
+```java
+WGPUInstanceDescriptor descriptor = new WGPUInstanceDescriptor();
+descriptor.setBackendType(WGPUBackendType.Vulkan);
+WGPUInstance instance = WGPU.setupInstance(descriptor);
+descriptor.dispose();
+```
+
+Check `instance.isValid()` before using it. Set the adapter request's backend type to the same value.
+The instance setting controls which native backends may initialize surfaces; the adapter option selects
+an adapter within that instance. `Undefined` keeps the loader defaults. Explicit instance backend selection
+is supported by wgpu-native; Dawn and browser callers should keep `Undefined`.
+
+The shared demo `WGPUApp.init(backends...)` tries the supplied backends in order. Android demos use Vulkan,
+then OpenGLES; desktop WGPU demos use Vulkan, then D3D12 on Windows or OpenGL on Linux (Metal on macOS). A reported startup error releases
+the failed attempt before creating a fresh instance. The platform disposes partially created demo resources
+before retrying; `WGPUApp` owns the instance, adapter, device, queue and surface. Demo listeners must tolerate
+partial initialization in `dispose()` and support another `create()` call.
+
+Retries cover startup through the first rendered frame. Later errors stop the demo. A fatal native crash
+terminates the process, so these examples cannot retry it immediately and do not persist crash recovery.
+Browser demos use the browser-selected backend and do not choose Vulkan/GLES themselves.
+
 ## Development Notes
 
 - Edit binding templates in `webgpu/base/src/main/java/**`.

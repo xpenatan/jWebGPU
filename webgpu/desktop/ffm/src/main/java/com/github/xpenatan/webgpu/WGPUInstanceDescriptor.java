@@ -60,6 +60,37 @@ public final class WGPUInstanceDescriptor extends NativeObject {
         }
     }
 
+    public void setBackendType(WGPUBackendType backendType) {
+        internal_native_SetBackendType(native_address, backendType.getValue());
+    }
+
+    public static void internal_native_SetBackendType(long this_addr, int backendType) {
+        try {
+            FFMHandles.internal_native_SetBackendType__JI.invokeExact(this_addr, backendType);
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    public WGPUBackendType getBackendType() {
+        int value = internal_native_GetBackendType(native_address);
+        WGPUBackendType[] values = WGPUBackendType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBackendType enumVal = values[i];
+            if (enumVal != WGPUBackendType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBackendType.CUSTOM.setValue(value);
+    }
+
+    public static int internal_native_GetBackendType(long this_addr) {
+        try {
+            return (int) FFMHandles.internal_native_GetBackendType__J.invokeExact(this_addr);
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
@@ -119,6 +150,10 @@ public final class WGPUInstanceDescriptor extends NativeObject {
         static final java.lang.invoke.MethodHandle internal_native_create_addr__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n1122417528", FunctionDescriptor.of(ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_deleteNative__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2020665542", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_SetBackendType__JI = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2096296095", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle internal_native_GetBackendType__J = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n3660796240", FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_SetNextInChain__JJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n110576711", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 

@@ -3,6 +3,7 @@ package com.github.xpenatan.webgpu.backend.desktop;
 import com.github.xpenatan.jParser.api.NativeObject;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.github.xpenatan.webgpu.JWebGPULoader;
+import com.github.xpenatan.webgpu.WGPUBackendType;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
 import com.github.xpenatan.webgpu.backend.core.WGPUApp;
 import java.util.Locale;
@@ -47,30 +48,61 @@ public class GLFWApp {
 
         wgpu = new WGPUApp();
 
-        while(!glfwWindowShouldClose(window)) {
-            if(wGPUInit == 3) {
-                applicationInterface.render(wgpu);
-            }
-            else if(wGPUInit > 0) {
-                if(wGPUInit == 1) {
+        boolean listenerStarted = false;
+        boolean startupComplete = false;
+        boolean surfaceStarting = false;
+        try {
+            while(!glfwWindowShouldClose(window)) {
+                try {
+                    if(wGPUInit == 3) {
+                        applicationInterface.render(wgpu);
+                        wgpu.checkStartupErrors();
+                        wgpu.startupComplete();
+                        startupComplete = true;
+                    }
+                    else if(wGPUInit > 0) {
+                        if(wGPUInit == 1) {
+                            wGPUInit = 2;
+                            wgpu.width = windowWidth;
+                            wgpu.height = windowHeight;
+                            if(backend == JWebGPUBackend.WGPU) {
+                                String os = System.getProperty("os.name", "").toLowerCase(Locale.ROOT);
+                                if(os.contains("mac")) wgpu.init(WGPUBackendType.Metal);
+                                else if(os.contains("win")) wgpu.init(WGPUBackendType.Vulkan, WGPUBackendType.D3D12);
+                                else wgpu.init(WGPUBackendType.Vulkan, WGPUBackendType.OpenGL);
+                            } else wgpu.init();
+                        }
+                        else if(wGPUInit == 2 && wgpu.isReady()) {
+                            surfaceStarting = true;
+                            wgpu.beginSurfaceStartup();
+                            createSurface();
+                            listenerStarted = true;
+                            applicationInterface.create(wgpu);
+                            wgpu.checkStartupErrors();
+                            wGPUInit = 3;
+                        }
+                    }
+                    wgpu.update();
+                } catch(RuntimeException error) {
+                    if(startupComplete || !surfaceStarting) throw error;
+                    if(listenerStarted) {
+                        listenerStarted = false;
+                        applicationInterface.dispose();
+                    }
+                    wgpu.failStartup(error.getMessage());
+                    surfaceStarting = false;
                     wGPUInit = 2;
-                    wgpu.width = windowWidth;
-                    wgpu.height = windowHeight;
-                    wgpu.init();
                 }
-                else if(wGPUInit == 2 && wgpu.isReady()) {
-                    wGPUInit = 3;
-                    createSurface();
-                    applicationInterface.create(wgpu);
-                }
+                glfwPollEvents();
             }
-            wgpu.update();
-            glfwPollEvents();
+        } finally {
+            try {
+                if(listenerStarted) applicationInterface.dispose();
+            } finally {
+                wgpu.dispose();
+                closeWindow();
+            }
         }
-        if(wGPUInit >= 3) {
-            applicationInterface.dispose();
-        }
-        closeWindow();
     }
 
     public void openWindow() {

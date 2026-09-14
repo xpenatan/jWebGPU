@@ -11,6 +11,7 @@ import com.github.xpenatan.webgpu.WGPUDeviceDescriptor;
 import com.github.xpenatan.webgpu.WGPUErrorType;
 import com.github.xpenatan.webgpu.WGPUFeatureName;
 import com.github.xpenatan.webgpu.WGPUInstance;
+import com.github.xpenatan.webgpu.WGPUInstanceDescriptor;
 import com.github.xpenatan.webgpu.WGPULimits;
 import com.github.xpenatan.webgpu.WGPUPowerPreference;
 import com.github.xpenatan.webgpu.WGPUQueue;
@@ -34,38 +35,83 @@ public class WGPUApp {
     public WGPUQueue queue;
 
     private InitState initState = InitState.NOT_INITIALIZED;
+    private WGPUBackendType[] backends;
+    private int attempt;
+    private String failure;
+    private final StringBuilder failures = new StringBuilder();
+    private WGPURequestAdapterCallback adapterCallback;
+    private WGPURequestDeviceCallback deviceCallback;
+    private WGPUUncapturedErrorCallback errorCallback;
+    private boolean adapterPending;
+    private boolean devicePending;
+    private boolean disposed;
+    private boolean startupComplete;
+    private boolean surfaceStartup;
 
     public void init() {
-        WGPUInstance instance = WGPU.setupInstance();
+        init(WGPUBackendType.Undefined);
+    }
+
+    /** Each attempt owns an isolated instance. Undefined uses the loader/browser default. */
+    public void init(WGPUBackendType... backends) {
+        if(instance != null) throw new IllegalStateException("Dispose the previous WGPU session first");
+        if(backends == null || backends.length == 0) throw new IllegalArgumentException("No backends supplied");
+        this.backends = backends.clone();
+        for(WGPUBackendType backend : this.backends) {
+            if(backend == null) throw new IllegalArgumentException("Null backend");
+        }
+        attempt = 0;
+        disposed = false;
+        startupComplete = false;
+        surfaceStartup = false;
+        failure = null;
+        failures.setLength(0);
+        startAttempt();
+    }
+
+    public WGPUBackendType backendType() { return backends[attempt]; }
+
+    private void startAttempt() {
+        System.out.println("WGPU startup attempt: " + backendType());
+        WGPUInstanceDescriptor descriptor = new WGPUInstanceDescriptor();
+        try {
+            descriptor.setBackendType(backendType());
+            instance = WGPU.setupInstance(descriptor);
+        } finally {
+            descriptor.dispose();
+        }
         if(instance.isValid()) {
             initState = InitState.INSTANCE_VALID;
-            this.instance = instance;
             requestAdapter();
         }
         else {
             initState = InitState.INSTANCE_NOT_VALID;
-            instance.dispose();
+            failure = "Instance is unavailable";
         }
     }
 
     private void requestAdapter() {
         WGPURequestAdapterOptions op = WGPURequestAdapterOptions.obtain();
         op.setPowerPreference(WGPUPowerPreference.HighPerformance);
-        WGPURequestAdapterCallback callback = new WGPURequestAdapterCallback() {
+        op.setBackendType(backendType());
+        adapterPending = true;
+        adapterCallback = new WGPURequestAdapterCallback() {
             @Override
             protected void onCallback(WGPURequestAdapterStatus status, WGPUAdapter adapter, String message) {
                 System.out.println("Adapter Status: " + status);
+                adapterPending = false;
                 if(status == WGPURequestAdapterStatus.Success) {
                     initState = InitState.ADAPTER_VALID;
                     WGPUApp.this.adapter = adapter;
-                    requestDevice();
                 }
                 else {
                     initState = InitState.ADAPTER_NOT_VALID;
+                    adapter.dispose(); // The callback owns a wrapper even when its native handle is null.
+                    failure = "Adapter " + status + ": " + message;
                 }
             }
         };
-        instance.requestAdapter(op, WGPUCallbackMode.AllowProcessEvents, callback);
+        instance.requestAdapter(op, WGPUCallbackMode.AllowProcessEvents, adapterCallback);
     }
 
     private void requestDevice() {
@@ -100,11 +146,14 @@ public class WGPUApp {
         deviceDescriptor.setRequiredFeatures(features);
 
         deviceDescriptor.getDefaultQueue().setLabel("The default queue");
+        configureDeviceDescriptor(deviceDescriptor);
 
-        adapter.requestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, new WGPURequestDeviceCallback() {
+        devicePending = true;
+        deviceCallback = new WGPURequestDeviceCallback() {
             @Override
             protected void onCallback(WGPURequestDeviceStatus status, WGPUDevice device, String message) {
                 System.out.println("Device Status: " + status + " message: " + message);
+                devicePending = false;
                 if(status == WGPURequestDeviceStatus.Success) {
                     initState = InitState.DEVICE_VALID;
                     WGPUApp.this.device = device;
@@ -129,30 +178,112 @@ public class WGPUApp {
                 }
                 else {
                     initState = InitState.DEVICE_NOT_VALID;
-                    throw new RuntimeException("Failed to create device: " + message);
+                    device.dispose();
+                    failure = "Device " + status + ": " + message;
                 }
             }
-        }, new WGPUUncapturedErrorCallback() {
+        };
+        errorCallback = new WGPUUncapturedErrorCallback() {
             @Override
             protected void onCallback(WGPUErrorType errorType, String message) {
                 System.err.println("ErrorType: " + errorType);
                 System.err.println("Error Message: " + message);
                 initState = InitState.ERROR;
+                failure = errorType + ": " + message;
             }
-        });
+        };
+        adapter.requestDevice(deviceDescriptor, WGPUCallbackMode.AllowProcessEvents, deviceCallback, errorCallback);
+    }
+
+    /** Optional example-specific device requirements, applied to every attempt. */
+    protected void configureDeviceDescriptor(WGPUDeviceDescriptor descriptor) { }
+
+    /** Call after the first successfully rendered/presented frame. Later errors are not startup retries. */
+    public void startupComplete() { startupComplete = true; }
+
+    public void beginSurfaceStartup() { surfaceStartup = true; }
+
+    public void checkStartupErrors() {
+        if(failure != null) throw new IllegalStateException(failure);
+    }
+
+    /** Call after disposing any partially created example resources, outside a native callback. */
+    public void failStartup(String message) {
+        if(startupComplete) throw new IllegalStateException(message);
+        failure = message != null ? message : "Startup failed";
+        surfaceStartup = false;
+        initState = InitState.ERROR;
     }
 
     public void update() {
-        if(instance != null) {
+        if(backends == null) return;
+        if(instance != null && instance.isValid()) {
             instance.processEvents();
         }
-        if(initState == InitState.ERROR) {
-            throw new RuntimeException("WGPU Error");
+        if(adapterCallback != null && !adapterPending) {
+            adapterCallback.dispose();
+            adapterCallback = null;
+        }
+        if(deviceCallback != null && !devicePending) {
+            deviceCallback.dispose();
+            deviceCallback = null;
+        }
+        if(disposed) {
+            if(!adapterPending && !devicePending) releaseAttempt();
+            return;
+        }
+        if(failure != null && !adapterPending && !devicePending) {
+            if(surfaceStartup) checkStartupErrors(); // The platform must dispose example resources before retrying.
+            if(failures.length() > 0) failures.append("; ");
+            failures.append(backendType()).append(": ").append(failure);
+            System.err.println("WGPU startup failed: " + backendType() + ": " + failure);
+            if(startupComplete) throw new IllegalStateException(failures.toString());
+            releaseAttempt();
+            failure = null;
+            if(attempt + 1 == backends.length) {
+                initState = InitState.INSTANCE_NOT_VALID;
+                throw new IllegalStateException("All WGPU startup attempts failed: " + failures);
+            }
+            attempt++;
+            startAttempt();
+        } else if(initState == InitState.ADAPTER_VALID && !devicePending) {
+            requestDevice();
         }
     }
 
+    /** Rendering resources must be disposed first. Pending request callbacks retain this session until update drains them. */
+    public void dispose() {
+        disposed = true;
+        update();
+    }
+
+    private void releaseAttempt() {
+        if(surface != null) {
+            surface.unconfigure();
+            surface.release();
+            surface.dispose();
+            surface = null;
+        }
+        if(queue != null) { queue.release(); queue = null; } // Wrapper is borrowed from the device.
+        if(device != null) {
+            device.destroy();
+            device.release();
+            device.dispose();
+            device = null;
+        }
+        if(errorCallback != null) { errorCallback.dispose(); errorCallback = null; }
+        if(adapter != null) { adapter.release(); adapter.dispose(); adapter = null; }
+        if(instance != null) {
+            if(instance.isValid()) instance.release();
+            instance.dispose();
+            instance = null;
+        }
+        initState = InitState.NOT_INITIALIZED;
+        System.out.println("WGPU startup attempt released: " + backendType());
+    }
+
     public boolean isReady() {
-        return initState == InitState.DEVICE_VALID;
+        return !disposed && initState == InitState.DEVICE_VALID;
     }
 
     public boolean isNotSupport() {

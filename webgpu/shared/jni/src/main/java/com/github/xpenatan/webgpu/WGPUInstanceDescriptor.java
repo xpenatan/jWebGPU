@@ -45,6 +45,29 @@ public final class WGPUInstanceDescriptor extends NativeObject {
         n.n3411007634.n2020665542(this_addr);
     }
 
+    public void setBackendType(WGPUBackendType backendType) {
+        internal_native_SetBackendType(native_address, backendType.getValue());
+    }
+
+    public static void internal_native_SetBackendType(long this_addr, int backendType) {
+        n.n3411007634.n2096296095(this_addr, backendType);
+    }
+
+    public WGPUBackendType getBackendType() {
+        int value = internal_native_GetBackendType(native_address);
+        WGPUBackendType[] values = WGPUBackendType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBackendType enumVal = values[i];
+            if (enumVal != WGPUBackendType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBackendType.CUSTOM.setValue(value);
+    }
+
+    public static int internal_native_GetBackendType(long this_addr) {
+        return n.n3411007634.n3660796240(this_addr);
+    }
+
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }

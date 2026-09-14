@@ -164,9 +164,6 @@ public class StudioSceneDemo implements ApplicationListener {
 
         addSceneItems(wgpu, surfaceFormat);
 
-        wgpu.adapter.release();
-        wgpu.adapter.dispose();
-        wgpu.adapter = null;
     }
 
     @Override
@@ -269,46 +266,54 @@ public class StudioSceneDemo implements ApplicationListener {
     @Override
     public void dispose() {
         for(RenderItem item : items) {
-            if(item.pipeline != null) item.pipeline.release();
-            if(item.bindGroup != null) item.bindGroup.release();
-            if(item.shadowBindGroup != null) item.shadowBindGroup.release();
-            if(item.uniformBuffer != null) item.uniformBuffer.release();
-            if(item.indexBuffer != null) item.indexBuffer.release();
-            if(item.vertexBuffer != null) item.vertexBuffer.release();
+            if(item.pipeline != null) { item.pipeline.release(); item.pipeline.dispose(); }
+            if(item.bindGroup != null) { item.bindGroup.release(); item.bindGroup.dispose(); }
+            if(item.shadowBindGroup != null) { item.shadowBindGroup.release(); item.shadowBindGroup.dispose(); }
+            if(item.uniformBuffer != null) { item.uniformBuffer.release(); item.uniformBuffer.dispose(); }
+            if(item.indexBuffer != null) { item.indexBuffer.release(); item.indexBuffer.dispose(); }
+            if(item.vertexBuffer != null) { item.vertexBuffer.release(); item.vertexBuffer.dispose(); }
         }
         items.clear();
 
         if(pipelineLayout != null) {
             pipelineLayout.release();
+            pipelineLayout.dispose();
             pipelineLayout = null;
         }
         if(shadowPipelineLayout != null) {
             shadowPipelineLayout.release();
+            shadowPipelineLayout.dispose();
             shadowPipelineLayout = null;
         }
         if(shadowPipeline != null) {
             shadowPipeline.release();
+            shadowPipeline.dispose();
             shadowPipeline = null;
         }
         if(bindGroupLayout != null) {
             bindGroupLayout.release();
+            bindGroupLayout.dispose();
             bindGroupLayout = null;
         }
         if(shadowBindGroupLayout != null) {
             shadowBindGroupLayout.release();
+            shadowBindGroupLayout.dispose();
             shadowBindGroupLayout = null;
         }
         if(shadowSampler != null) {
             shadowSampler.release();
+            shadowSampler.dispose();
             shadowSampler = null;
         }
         if(shadowTextureView != null) {
             shadowTextureView.release();
+            shadowTextureView.dispose();
             shadowTextureView = null;
         }
         if(shadowTexture != null) {
             shadowTexture.destroy();
             shadowTexture.release();
+            shadowTexture.dispose();
             shadowTexture = null;
         }
 

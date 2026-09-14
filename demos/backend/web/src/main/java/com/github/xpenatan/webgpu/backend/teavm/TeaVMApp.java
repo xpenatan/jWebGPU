@@ -25,6 +25,7 @@ public class TeaVMApp {
     private ApplicationListener applicationInterface;
 
     private boolean loop = true;
+    private boolean listenerStarted;
 
     public TeaVMApp(ApplicationListener applicationInterface) {
         this.applicationInterface = applicationInterface;
@@ -66,6 +67,14 @@ public class TeaVMApp {
                 catch(Throwable t) {
                     t.printStackTrace();
                     loop = false;
+                    try {
+                        if(listenerStarted) {
+                            listenerStarted = false;
+                            applicationInterface.dispose();
+                        }
+                    } finally {
+                        wgpu.dispose();
+                    }
                 }
                 if(loop) {
                     Window.requestAnimationFrame(this);
@@ -101,6 +110,8 @@ public class TeaVMApp {
     private void tick() {
         if(wGPUInit == 3) {
             applicationInterface.render(wgpu);
+            wgpu.checkStartupErrors();
+            wgpu.startupComplete();
         }
         else if(wGPUInit > 0) {
             if(wGPUInit == 1) {
@@ -111,8 +122,11 @@ public class TeaVMApp {
             }
             else if(wGPUInit == 2 && wgpu.isReady()) {
                 wGPUInit = 3;
+                wgpu.beginSurfaceStartup();
                 createSurface();
+                listenerStarted = true;
                 applicationInterface.create(wgpu);
+                wgpu.checkStartupErrors();
             }
         }
         wgpu.update();

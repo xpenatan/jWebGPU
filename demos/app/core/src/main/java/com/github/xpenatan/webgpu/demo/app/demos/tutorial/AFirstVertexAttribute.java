@@ -96,11 +96,6 @@ public class AFirstVertexAttribute implements ApplicationListener {
             System.out.println("surfaceFormat: " + surfaceFormat);
             initSwapChain(wgpu);
 
-            // Release the adapter only after it has been fully utilized
-            wgpu.adapter.release();
-            wgpu.adapter.dispose();
-            wgpu.adapter = null;
-
             textureOut = new WGPUTexture();
 
             initializePipeline(wgpu);
@@ -181,7 +176,17 @@ public class AFirstVertexAttribute implements ApplicationListener {
 
     @Override
     public void dispose() {
-        textureOut.dispose();
+        if(pipeline != null) {
+            if(pipeline.isValid()) pipeline.release();
+            pipeline.dispose();
+            pipeline = null;
+        }
+        if(vertexBuffer != null) { vertexBuffer.release(); vertexBuffer.dispose(); vertexBuffer = null; }
+        if(textureOut != null) { textureOut.dispose(); textureOut = null; }
+        if(renderPass != null) { renderPass.dispose(); renderPass = null; }
+        if(renderPassDesc != null) { renderPassDesc.dispose(); renderPassDesc = null; }
+        if(attachments != null) { attachments.dispose(); attachments = null; }
+        if(renderPassColorAttachment != null) { renderPassColorAttachment.dispose(); renderPassColorAttachment = null; }
     }
 
     private void initSwapChain(WGPUApp wgpu) {
@@ -395,4 +400,3 @@ public class AFirstVertexAttribute implements ApplicationListener {
             "    return vec4f(0.0, 0.4, 1.0, 1.0);\n" +
             "}";
 }
-

@@ -83,11 +83,6 @@ public class PlayingWithBuffers implements ApplicationListener {
             System.out.println("surfaceFormat: " + surfaceFormat);
             initSwapChain(wgpu);
 
-            // Release the adapter only after it has been fully utilized
-            wgpu.adapter.release();
-            wgpu.adapter.dispose();
-            wgpu.adapter = null;
-
             initializePipeline(wgpu);
             playingWithBuffers(wgpu);
 
@@ -190,7 +185,11 @@ public class PlayingWithBuffers implements ApplicationListener {
 
     @Override
     public void dispose() {
-
+        if(pipeline != null) {
+            if(pipeline.isValid()) pipeline.release();
+            pipeline.dispose();
+            pipeline = null;
+        }
     }
 
     private void initSwapChain(WGPUApp wgpu) {
@@ -419,4 +418,3 @@ public class PlayingWithBuffers implements ApplicationListener {
             "    return vec4f(0.0, 0.4, 1.0, 1.0);\n" +
             "}";
 }
-

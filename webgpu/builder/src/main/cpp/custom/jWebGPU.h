@@ -1335,9 +1335,13 @@ class WGPUInstanceLimits : public WGPUObjectBase<WGPUInstanceLimits, ::WGPUInsta
 // ################################### DESCRIPTOR STRUCTS ###################################
 
 class WGPUInstanceDescriptor : public WGPUObjectBase<WGPUInstanceDescriptor, ::WGPUInstanceDescriptor> {
+    private:
+        WGPUBackendType backendType = WGPUBackendType_Undefined;
     public:
         static WGPUInstanceDescriptor* Obtain();
     public:
+        void SetBackendType(WGPUBackendType backendType);
+        WGPUBackendType GetBackendType();
         void SetNextInChain(WGPUChainedStruct* chainedStruct);
         void SetRequiredFeatures(WGPUVectorInstanceFeatureName* requiredFeatures);
         void SetRequiredLimits(WGPUVectorInstanceLimits* requiredLimits);

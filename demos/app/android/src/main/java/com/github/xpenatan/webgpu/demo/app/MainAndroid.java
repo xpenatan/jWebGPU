@@ -6,6 +6,10 @@ import android.view.LayoutInflater;
 import android.view.SurfaceView;
 import com.github.xpenatan.webgpu.backend.android.AndroidApplication;
 import com.github.xpenatan.webgpu.backend.core.ApplicationListener;
+import com.github.xpenatan.webgpu.backend.core.WGPUApp;
+import com.github.xpenatan.webgpu.WGPUBackendType;
+import com.github.xpenatan.webgpu.WGPUDeviceDescriptor;
+import com.github.xpenatan.webgpu.WGPULimits;
 import com.github.xpenatan.webgpu.demo.R;
 import com.github.xpenatan.webgpu.demo.app.registry.DemoFactory;
 import com.github.xpenatan.webgpu.demo.app.registry.DemoId;
@@ -28,6 +32,32 @@ public class MainAndroid extends AndroidApplication {
 
     private ApplicationListener webgpuApp;
     private DemoId currentDemoId;
+
+    @Override
+    protected WGPUBackendType[] startupBackends() {
+        if("gles".equals(getIntent().getStringExtra("wgpuBackend"))) {
+            return new WGPUBackendType[]{WGPUBackendType.OpenGLES};
+        }
+        return super.startupBackends();
+    }
+
+    @Override
+    protected WGPUApp createWGPUApp() {
+        return new WGPUApp() {
+            @Override
+            protected void configureDeviceDescriptor(WGPUDeviceDescriptor descriptor) {
+                // Explicit diagnostic: exercise a real native device-request rejection, not a simulated callback.
+                if(getIntent().getBooleanExtra("wgpuFailAllDevices", false)
+                        || backendType() == WGPUBackendType.Vulkan
+                        && getIntent().getBooleanExtra("wgpuFailVulkanDevice", false)) {
+                    WGPULimits limits = WGPULimits.obtain();
+                    setDefaultLimits(limits);
+                    limits.setMaxBindGroups(Integer.MAX_VALUE);
+                    descriptor.setRequiredLimits(limits);
+                }
+            }
+        };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

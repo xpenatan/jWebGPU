@@ -43,6 +43,27 @@ public final class WGPUInstanceDescriptor extends NativeObject {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jWebGPU.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
+    public void setBackendType(WGPUBackendType backendType) {
+        internal_native_SetBackendType(native_address, backendType.getValue());
+    }
+
+    @org.teavm.jso.JSBody(params = {"this_addr", "backendType"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);jsObj.SetBackendType(backendType);")
+    public static native void internal_native_SetBackendType(int this_addr, int backendType);
+
+    public WGPUBackendType getBackendType() {
+        int value = internal_native_GetBackendType(native_address);
+        WGPUBackendType[] values = WGPUBackendType.values();
+        for (int i = 0; i < values.length; i++) {
+            WGPUBackendType enumVal = values[i];
+            if (enumVal != WGPUBackendType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return WGPUBackendType.CUSTOM.setValue(value);
+    }
+
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUInstanceDescriptor);var returnedJSObj = jsObj.GetBackendType();return returnedJSObj;")
+    public static native int internal_native_GetBackendType(int this_addr);
+
     public void setNextInChain(WGPUChainedStruct chainedStruct) {
         internal_native_SetNextInChain(native_address, chainedStruct.native_address);
     }
