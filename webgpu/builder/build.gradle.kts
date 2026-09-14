@@ -170,6 +170,7 @@ val androidDawnArchives = mapOf(
 fun JParserNativeTargetVariantHooks.configureAndroidWGPU() {
     includeDefaultSources.set(false)
     includeCustomSources.set(false)
+    compileFlag("-fPIC")
     androidWGPUArchives.forEach { (abi, archiveDirName) ->
         val archiveDir = File(downloadBuildDir, archiveDirName)
         androidTarget(abi) {
@@ -184,6 +185,7 @@ fun JParserNativeTargetVariantHooks.configureAndroidWGPU() {
 fun JParserNativeTargetVariantHooks.configureAndroidDawn() {
     includeDefaultSources.set(false)
     includeCustomSources.set(false)
+    compileFlag("-fPIC")
     compileFlag("-DJWEBGPU_DAWN")
     androidDawnArchives.forEach { (abi, archiveDirName) ->
         val archiveDir = File(downloadBuildDir, archiveDirName)
