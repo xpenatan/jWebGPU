@@ -70,6 +70,19 @@ fun Project.configureDesktopNativeJars(bridge: String, artifactName: String, jPa
     }
 }
 
+/** Publishes the browser payload separately from its Java implementation. */
+fun Project.configureWasmJar(artifactName: String, files: List<File>) {
+    val wasmJar = tasks.register<Jar>("wasmJar") {
+        from(provider { files.filter { it.exists() } })
+        archiveBaseName.set(artifactName)
+        archiveClassifier.set("")
+    }
+    extensions.getByType<PublishingExtension>().publications.create<MavenPublication>("mavenWasm") {
+        artifactId = artifactName
+        artifact(wasmJar)
+    }
+}
+
 /** Exposes the same native artifact to includeBuild consumers, with its own capability. */
 private fun Project.nativeRuntime(name: String, artifactName: String, jar: TaskProvider<Jar>): Configuration {
     val groupId = extensions.getByType<VersionCatalogsExtension>()

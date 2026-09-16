@@ -34,7 +34,6 @@ easyPublishing {
         ":webgpu:desktop:jni",
         ":webgpu:desktop:ffm",
         ":webgpu:web:wasm",
-        ":webgpu:web:runtime",
         ":webgpu:android:jni",
     )
 
