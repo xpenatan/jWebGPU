@@ -55,7 +55,8 @@ Library modules:
 - `:webgpu:desktop:c` - desktop TeaVM C native-resource packaging
 - `:webgpu:desktop:jni` - desktop JNI native packaging
 - `:webgpu:desktop:ffm` - generated FFM Java runtime and desktop native packaging
-- `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging
+- `:webgpu:web:wasm` - generated TeaVM Java bindings (`webgpu-web`)
+- `:webgpu:web:runtime` - browser JavaScript/WASM payload (`webgpu-web_wasm`)
 - `:webgpu:android:jni` - WGPU/Dawn Android JNI runtime packaging
 
 Demos are maintained in the standalone sibling jWebGPU-Examples project, which consumes this library through published dependencies or an explicit composite build.

@@ -1,5 +1,3 @@
-import buildlogic.configureWasmJar
-
 plugins {
     id("java-library")
 }
@@ -38,9 +36,3 @@ publishing {
         }
     }
 }
-
-val nativeRoot = rootProject.file("webgpu/builder/build/c++/libs/emscripten")
-configureWasmJar(
-    artifactName = "${moduleName}_wasm",
-    files = listOf(nativeRoot.resolve("jWebGPU.js"), nativeRoot.resolve("jWebGPU.wasm"))
-)
