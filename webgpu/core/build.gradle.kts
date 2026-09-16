@@ -8,7 +8,7 @@ val moduleName = "webgpu-core"
 dependencies {
     api(libs.jParserLoaderCore)
     api(libs.jParserApiCore)
-    compileOnly(libs.jParserRuntimeCore)
+    compileOnlyApi(libs.jParserRuntimeCore)
 
     testImplementation(libs.junit)
 }

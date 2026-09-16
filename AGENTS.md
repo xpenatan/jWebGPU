@@ -58,12 +58,7 @@ Library modules:
 - `:webgpu:web:wasm` - TeaVM/WebAssembly runtime packaging
 - `:webgpu:android:jni` - WGPU/Dawn Android JNI runtime packaging
 
-Demo app modules:
-
-- `:demos:app:desktop-jni`
-- `:demos:app:desktop-ffm`
-- `:demos:app:web`
-- `:demos:app:android`
+Demos are maintained in the standalone sibling jWebGPU-Examples project, which consumes this library through published dependencies or an explicit composite build.
 
 ## 5) Native Block + IDL Conventions
 
@@ -123,13 +118,6 @@ Use task names from Gradle files. Download tasks are manual prerequisites for na
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni_wgpu
 .\gradlew.bat :webgpu:builder:jParser_build_android_jni_dawn
 
-.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_desktop_jni_wgpu_run
-.\gradlew.bat :demos:app:desktop-jni:webgpu_demo_app_desktop_jni_dawn_run
-.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_desktop_ffm_wgpu_run
-.\gradlew.bat :demos:app:desktop-ffm:webgpu_demo_app_desktop_ffm_dawn_run
-.\gradlew.bat :demos:app:web:webgpu_demo_app_web_run
-.\gradlew.bat :demos:app:android:installWgpuDebug
-.\gradlew.bat :demos:app:android:installDawnDebug
 ```
 
 ## 7) Validation Minimum

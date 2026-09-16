@@ -22,15 +22,3 @@ include(":webgpu:desktop:jni")
 include(":webgpu:desktop:ffm")
 include(":webgpu:web:wasm")
 include(":webgpu:android:jni")
-
-// Backend implementations used by the demo applications
-include(":demos:backend:core")
-include(":demos:backend:desktop")
-include(":demos:backend:web")
-include(":demos:backend:android")
-
-include(":demos:app:core")
-include(":demos:app:desktop-jni")
-include(":demos:app:desktop-ffm")
-include(":demos:app:web")
-include(":demos:app:android")

@@ -9,13 +9,10 @@ javaWeb = "17"
 javaFFM = "25"
 
 jParser = "-SNAPSHOT"
-jMultiplatform = "0.1.3"
 junit = "4.12"
-lwjgl = "3.3.4"
 easyPublishing = "0.1.2"
 
 androidGradlePlugin = "9.1.1"
-gretty = "4.1.10"
 wgpuNative = "29.0.1.1"
 dawnNatives = "7458"
 glfw = "3.4"
@@ -35,27 +32,9 @@ jParserRuntimeC = { module = "com.github.xpenatan.jParser:runtime-c", version.re
 jParserRuntimeDesktopFFM = { module = "com.github.xpenatan.jParser:runtime-desktop-ffm", version.ref = "jParser" }
 jParserRuntimeWeb = { module = "com.github.xpenatan.jParser:runtime-web", version.ref = "jParser" }
 jParserRuntimeWebWasm = { module = "com.github.xpenatan.jParser:runtime-web_wasm", version.ref = "jParser" }
-jMultiplatform = { module = "com.github.xpenatan:jMultiplatform", version.ref = "jMultiplatform" }
 junit = { module = "junit:junit", version.ref = "junit" }
-lwjglBom = { module = "org.lwjgl:lwjgl-bom", version.ref = "lwjgl" }
-lwjglCore = { module = "org.lwjgl:lwjgl", version.ref = "lwjgl" }
-lwjglGlfw = { module = "org.lwjgl:lwjgl-glfw", version.ref = "lwjgl" }
-lwjglOpengl = { module = "org.lwjgl:lwjgl-opengl", version.ref = "lwjgl" }
-
-# Examples
-
-jWebGPUCore = { module = "com.github.xpenatan.jWebGPU:webgpu-core", version.ref = "jWebGPUSnapshot" }
-jWebGPUJni = { module = "com.github.xpenatan.jWebGPU:webgpu-jni", version.ref = "jWebGPUSnapshot" }
-jWebGPUDesktopJni = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-jni", version.ref = "jWebGPUSnapshot" }
-jWebGPUDesktopFFM = { module = "com.github.xpenatan.jWebGPU:webgpu-desktop-ffm", version.ref = "jWebGPUSnapshot" }
-jWebGPUWeb = { module = "com.github.xpenatan.jWebGPU:webgpu-web", version.ref = "jWebGPUSnapshot" }
-jWebGPUWebWasm = { module = "com.github.xpenatan.jWebGPU:webgpu-web_wasm", version.ref = "jWebGPUSnapshot" }
-jWebGPUAndroidWgpu = { module = "com.github.xpenatan.jWebGPU:webgpu-android-wgpu", version.ref = "jWebGPUSnapshot" }
-jWebGPUAndroidDawn = { module = "com.github.xpenatan.jWebGPU:webgpu-android-dawn", version.ref = "jWebGPUSnapshot" }
 
 [plugins]
 easyPublishing = { id = "com.github.xpenatan.easy-publishing", version.ref = "easyPublishing" }
 jParser = { id = "com.github.xpenatan.jParser", version.ref = "jParser" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-gretty = { id = "org.gretty", version.ref = "gretty" }
