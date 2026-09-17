@@ -309,6 +309,26 @@ interface WGPURequestDeviceCallbackImpl {
 };
 
 [Prefix="JGPU::"]
+interface WGPUCreateComputePipelineAsyncCallback {
+};
+
+[JSImplementation="WGPUCreateComputePipelineAsyncCallback"]
+interface WGPUCreateComputePipelineAsyncCallbackImpl {
+    void WGPUCreateComputePipelineAsyncCallbackImpl();
+    void OnCallback(WGPUCreatePipelineAsyncStatus status, WGPUComputePipeline pipeline, [Const] DOMString message); //[-NEW_PARAM=pipeline]
+};
+
+[Prefix="JGPU::"]
+interface WGPUCreateRenderPipelineAsyncCallback {
+};
+
+[JSImplementation="WGPUCreateRenderPipelineAsyncCallback"]
+interface WGPUCreateRenderPipelineAsyncCallbackImpl {
+    void WGPUCreateRenderPipelineAsyncCallbackImpl();
+    void OnCallback(WGPUCreatePipelineAsyncStatus status, WGPURenderPipeline pipeline, [Const] DOMString message); //[-NEW_PARAM=pipeline]
+};
+
+[Prefix="JGPU::"]
 interface WGPUUncapturedErrorCallback {
 };
 
@@ -1375,10 +1395,16 @@ interface WGPUDevice {
     [BindTo="CreateBuffer"] void CreateBuffer__1(WGPUBufferDescriptor descriptor, WGPUBuffer valueOut);
     void CreateCommandEncoder(WGPUCommandEncoderDescriptor descriptor, WGPUCommandEncoder valueOut);
     void CreateComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut);
+    // Native async pipeline creation is Dawn-only; browser WebGPU is supported through Emscripten.
+    // wgpu-native has not implemented this API; the wrapper invokes the callback with InternalError.
+    void CreateComputePipelineAsync(WGPUComputePipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback callback);
     void CreatePipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut);
     void CreateQuerySet(WGPUQuerySetDescriptor descriptor, WGPUQuerySet valueOut);
     void CreateRenderBundleEncoder(WGPURenderBundleEncoderDescriptor descriptor, WGPURenderBundleEncoder valueOut);
     void CreateRenderPipeline(WGPURenderPipelineDescriptor descriptor, WGPURenderPipeline valueOut);
+    // Native async pipeline creation is Dawn-only; browser WebGPU is supported through Emscripten.
+    // wgpu-native has not implemented this API; the wrapper invokes the callback with InternalError.
+    void CreateRenderPipelineAsync(WGPURenderPipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback callback);
     void CreateSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut);
     void CreateShaderModule(WGPUShaderModuleDescriptor descriptor, WGPUShaderModule shaderModule);
     void CreateTexture(WGPUTextureDescriptor descriptor, WGPUTexture valueOut);
@@ -1560,7 +1586,7 @@ enum WGPUCompositeAlphaMode {
 
 enum WGPUCreatePipelineAsyncStatus {
     "WGPUCreatePipelineAsyncStatus_Success",            //[-RENAME=Success]
-    // "WGPUCreatePipelineAsyncStatus_CallbackCancelled", // TODO missing in wgpu-native header
+    "WGPUCreatePipelineAsyncStatus_CallbackCancelled", //[-RENAME=CallbackCancelled]
     "WGPUCreatePipelineAsyncStatus_ValidationError",    //[-RENAME=ValidationError]
     "WGPUCreatePipelineAsyncStatus_InternalError",      //[-RENAME=InternalError]
     "WGPUCreatePipelineAsyncStatus_Force32"             //[-RENAME=Force32]

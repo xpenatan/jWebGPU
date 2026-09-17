@@ -89,6 +89,13 @@ public final class WGPUDevice extends NativeObject {
     @org.teavm.interop.Import(name = "n976022201")
     public static native void internal_native_CreateComputePipeline(long this_addr, long descriptor_addr, long valueOut_addr);
 
+    public void createComputePipelineAsync(WGPUComputePipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback callback) {
+        internal_native_CreateComputePipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    @org.teavm.interop.Import(name = "n2539241496")
+    public static native void internal_native_CreateComputePipelineAsync(long this_addr, long descriptor_addr, int mode, long callback_addr);
+
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
         internal_native_CreatePipelineLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
@@ -116,6 +123,13 @@ public final class WGPUDevice extends NativeObject {
 
     @org.teavm.interop.Import(name = "n1082446726")
     public static native void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr);
+
+    public void createRenderPipelineAsync(WGPURenderPipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback callback) {
+        internal_native_CreateRenderPipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    @org.teavm.interop.Import(name = "n4030098923")
+    public static native void internal_native_CreateRenderPipelineAsync(long this_addr, long descriptor_addr, int mode, long callback_addr);
 
     public void createSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut) {
         internal_native_CreateSampler(native_address, descriptor.native_address, valueOut.native_address);

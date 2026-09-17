@@ -10,7 +10,12 @@ import com.github.xpenatan.jParser.api.NativeEnum;
 
 public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipelineAsyncStatus> {
 
-    CUSTOM(0), Success(WGPUCreatePipelineAsyncStatus_Success_NATIVE()), ValidationError(WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE()), InternalError(WGPUCreatePipelineAsyncStatus_InternalError_NATIVE()), Force32(WGPUCreatePipelineAsyncStatus_Force32_NATIVE());
+    CUSTOM(0),
+    Success(WGPUCreatePipelineAsyncStatus_Success_NATIVE()),
+    CallbackCancelled(WGPUCreatePipelineAsyncStatus_CallbackCancelled_NATIVE()),
+    ValidationError(WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE()),
+    InternalError(WGPUCreatePipelineAsyncStatus_InternalError_NATIVE()),
+    Force32(WGPUCreatePipelineAsyncStatus_Force32_NATIVE());
 
     private int value;
 
@@ -36,6 +41,10 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
 
     private static int WGPUCreatePipelineAsyncStatus_Success_NATIVE() {
         return n.n341129346.n3363542091();
+    }
+
+    private static int WGPUCreatePipelineAsyncStatus_CallbackCancelled_NATIVE() {
+        return n.n341129346.n3735959380();
     }
 
     private static int WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE() {

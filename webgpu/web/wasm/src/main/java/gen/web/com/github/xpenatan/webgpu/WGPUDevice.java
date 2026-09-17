@@ -89,6 +89,13 @@ public final class WGPUDevice extends NativeObject {
     @org.teavm.jso.JSBody(params = {"this_addr", "descriptor_addr", "valueOut_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDevice);jsObj.CreateComputePipeline(descriptor_addr, valueOut_addr);")
     public static native void internal_native_CreateComputePipeline(int this_addr, int descriptor_addr, int valueOut_addr);
 
+    public void createComputePipelineAsync(WGPUComputePipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback callback) {
+        internal_native_CreateComputePipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    @org.teavm.jso.JSBody(params = {"this_addr", "descriptor_addr", "mode", "callback_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDevice);jsObj.CreateComputePipelineAsync(descriptor_addr, mode, callback_addr);")
+    public static native void internal_native_CreateComputePipelineAsync(int this_addr, int descriptor_addr, int mode, int callback_addr);
+
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
         internal_native_CreatePipelineLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
@@ -116,6 +123,13 @@ public final class WGPUDevice extends NativeObject {
 
     @org.teavm.jso.JSBody(params = {"this_addr", "descriptor_addr", "valueOut_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDevice);jsObj.CreateRenderPipeline(descriptor_addr, valueOut_addr);")
     public static native void internal_native_CreateRenderPipeline(int this_addr, int descriptor_addr, int valueOut_addr);
+
+    public void createRenderPipelineAsync(WGPURenderPipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback callback) {
+        internal_native_CreateRenderPipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    @org.teavm.jso.JSBody(params = {"this_addr", "descriptor_addr", "mode", "callback_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUDevice);jsObj.CreateRenderPipelineAsync(descriptor_addr, mode, callback_addr);")
+    public static native void internal_native_CreateRenderPipelineAsync(int this_addr, int descriptor_addr, int mode, int callback_addr);
 
     public void createSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut) {
         internal_native_CreateSampler(native_address, descriptor.native_address, valueOut.native_address);

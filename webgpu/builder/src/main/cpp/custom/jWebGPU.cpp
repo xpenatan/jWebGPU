@@ -3683,6 +3683,50 @@ void JGPU::WGPUDevice::CreateRenderPipeline(JGPU::WGPURenderPipelineDescriptor* 
     valueOut->Set(wgpuDeviceCreateRenderPipeline(Get(), &descriptor->Get()));
 }
 
+void JGPU::WGPUDevice::CreateComputePipelineAsync(JGPU::WGPUComputePipelineDescriptor* descriptor,
+        WGPUCallbackMode mode, JGPU::WGPUCreateComputePipelineAsyncCallback* callback) {
+    // Native async pipeline creation is Dawn-only; Emscripten forwards to browser WebGPU.
+#if defined(JWEBGPU_DAWN) || defined(__EMSCRIPTEN__)
+    ::WGPUCreateComputePipelineAsyncCallbackInfo info = {};
+    info.mode = mode;
+    info.callback = [](WGPUCreatePipelineAsyncStatus status, ::WGPUComputePipeline value,
+            ::WGPUStringView message, void* userdata, void*) {
+        auto* pipeline = new JGPU::WGPUComputePipeline();
+        pipeline->Set(value);
+        auto* target = static_cast<JGPU::WGPUCreateComputePipelineAsyncCallback*>(userdata);
+        target->OnCallback(status, pipeline, JGPU::WGPUStringView(message).GetString().c_str());
+    };
+    info.userdata1 = callback;
+    wgpuDeviceCreateComputePipelineAsync(Get(), &descriptor->Get(), info);
+#else
+    // wgpu-native has not implemented this API: its stub aborts. Report InternalError instead.
+    callback->OnCallback(WGPUCreatePipelineAsyncStatus_InternalError, new JGPU::WGPUComputePipeline(),
+            "Async pipeline creation is unavailable in wgpu-native; use synchronous creation on a worker.");
+#endif
+}
+
+void JGPU::WGPUDevice::CreateRenderPipelineAsync(JGPU::WGPURenderPipelineDescriptor* descriptor,
+        WGPUCallbackMode mode, JGPU::WGPUCreateRenderPipelineAsyncCallback* callback) {
+    // Native async pipeline creation is Dawn-only; Emscripten forwards to browser WebGPU.
+#if defined(JWEBGPU_DAWN) || defined(__EMSCRIPTEN__)
+    ::WGPUCreateRenderPipelineAsyncCallbackInfo info = {};
+    info.mode = mode;
+    info.callback = [](WGPUCreatePipelineAsyncStatus status, ::WGPURenderPipeline value,
+            ::WGPUStringView message, void* userdata, void*) {
+        auto* pipeline = new JGPU::WGPURenderPipeline();
+        pipeline->Set(value);
+        auto* target = static_cast<JGPU::WGPUCreateRenderPipelineAsyncCallback*>(userdata);
+        target->OnCallback(status, pipeline, JGPU::WGPUStringView(message).GetString().c_str());
+    };
+    info.userdata1 = callback;
+    wgpuDeviceCreateRenderPipelineAsync(Get(), &descriptor->Get(), info);
+#else
+    // wgpu-native has not implemented this API: its stub aborts. Report InternalError instead.
+    callback->OnCallback(WGPUCreatePipelineAsyncStatus_InternalError, new JGPU::WGPURenderPipeline(),
+            "Async pipeline creation is unavailable in wgpu-native; use synchronous creation on a worker.");
+#endif
+}
+
 void JGPU::WGPUDevice::CreateSampler(JGPU::WGPUSamplerDescriptor* descriptor, JGPU::WGPUSampler* valueOut) {
     valueOut->Set(wgpuDeviceCreateSampler(Get(), &descriptor->Get()));
 }

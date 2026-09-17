@@ -17,7 +17,12 @@ import java.lang.invoke.MethodHandle;
 
 public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipelineAsyncStatus> {
 
-    CUSTOM(0), Success(WGPUCreatePipelineAsyncStatus_Success_NATIVE()), ValidationError(WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE()), InternalError(WGPUCreatePipelineAsyncStatus_InternalError_NATIVE()), Force32(WGPUCreatePipelineAsyncStatus_Force32_NATIVE());
+    CUSTOM(0),
+    Success(WGPUCreatePipelineAsyncStatus_Success_NATIVE()),
+    CallbackCancelled(WGPUCreatePipelineAsyncStatus_CallbackCancelled_NATIVE()),
+    ValidationError(WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE()),
+    InternalError(WGPUCreatePipelineAsyncStatus_InternalError_NATIVE()),
+    Force32(WGPUCreatePipelineAsyncStatus_Force32_NATIVE());
 
     private int value;
 
@@ -44,6 +49,14 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
     private static int WGPUCreatePipelineAsyncStatus_Success_NATIVE() {
         try {
             return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_Success_NATIVE__.invokeExact();
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    private static int WGPUCreatePipelineAsyncStatus_CallbackCancelled_NATIVE() {
+        try {
+            return (int) FFMHandles.WGPUCreatePipelineAsyncStatus_CallbackCancelled_NATIVE__.invokeExact();
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
@@ -76,6 +89,8 @@ public enum WGPUCreatePipelineAsyncStatus implements NativeEnum<WGPUCreatePipeli
     private static final class FFMHandles {
 
         static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_Success_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3363542091", FunctionDescriptor.of(ValueLayout.JAVA_INT));
+
+        static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_CallbackCancelled_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n3735959380", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 
         static final java.lang.invoke.MethodHandle WGPUCreatePipelineAsyncStatus_ValidationError_NATIVE__ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallCritical("n356787031", FunctionDescriptor.of(ValueLayout.JAVA_INT));
 

@@ -12,6 +12,8 @@ final public class n341129346 {
 
     static native public int n3363542091();
 
+    static native public int n3735959380();
+
     static native public int n356787031();
 
     static native public int n2455559187();

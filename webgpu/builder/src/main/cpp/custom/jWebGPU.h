@@ -735,6 +735,28 @@ class WGPURequestDeviceCallback {
         virtual void onCallback(WGPURequestDeviceStatus status, JGPU::WGPUDevice* device, const char* message) {}
 };
 
+// Keep the callback alive until completion. The recipient owns the returned wrapper;
+// release its native pipeline (when valid), then dispose the wrapper.
+class WGPUCreateComputePipelineAsyncCallback {
+    public:
+        virtual ~WGPUCreateComputePipelineAsyncCallback() = default;
+        virtual void OnCallback(WGPUCreatePipelineAsyncStatus status, JGPU::WGPUComputePipeline* pipeline, const char* message) {
+            onCallback(status, pipeline, message);
+        }
+        virtual void onCallback(WGPUCreatePipelineAsyncStatus status, JGPU::WGPUComputePipeline* pipeline, const char* message) {}
+};
+
+// Keep the callback alive until completion. The recipient owns the returned wrapper;
+// release its native pipeline (when valid), then dispose the wrapper.
+class WGPUCreateRenderPipelineAsyncCallback {
+    public:
+        virtual ~WGPUCreateRenderPipelineAsyncCallback() = default;
+        virtual void OnCallback(WGPUCreatePipelineAsyncStatus status, JGPU::WGPURenderPipeline* pipeline, const char* message) {
+            onCallback(status, pipeline, message);
+        }
+        virtual void onCallback(WGPUCreatePipelineAsyncStatus status, JGPU::WGPURenderPipeline* pipeline, const char* message) {}
+};
+
 class WGPUUncapturedErrorCallback {
     public:
         virtual ~WGPUUncapturedErrorCallback() = default;
@@ -1942,10 +1964,16 @@ class WGPUDevice : public WGPUObjectBase<WGPUDevice, ::WGPUDevice> {
         void CreateBuffer(WGPUBufferDescriptor* descriptor, WGPUBuffer* valueOut);
         void CreateCommandEncoder(WGPUCommandEncoderDescriptor* descriptor, WGPUCommandEncoder* valueOut);
         void CreateComputePipeline(WGPUComputePipelineDescriptor* descriptor, WGPUComputePipeline* valueOut);
+        // Native async pipeline creation is Dawn-only; browser WebGPU is supported through Emscripten.
+        // wgpu-native has not implemented this API; the wrapper invokes the callback with InternalError.
+        void CreateComputePipelineAsync(WGPUComputePipelineDescriptor* descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback* callback);
         void CreatePipelineLayout(WGPUPipelineLayoutDescriptor* descriptor, WGPUPipelineLayout* valueOut);
         void CreateQuerySet(WGPUQuerySetDescriptor* descriptor, WGPUQuerySet* valueOut);
         void CreateRenderBundleEncoder(WGPURenderBundleEncoderDescriptor* descriptor, WGPURenderBundleEncoder* valueOut);
         void CreateRenderPipeline(WGPURenderPipelineDescriptor* pipelineDescriptor, WGPURenderPipeline* valueOut);
+        // Native async pipeline creation is Dawn-only; browser WebGPU is supported through Emscripten.
+        // wgpu-native has not implemented this API; the wrapper invokes the callback with InternalError.
+        void CreateRenderPipelineAsync(WGPURenderPipelineDescriptor* descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback* callback);
         void CreateSampler(WGPUSamplerDescriptor* descriptor, WGPUSampler* valueOut);
         void CreateShaderModule(WGPUShaderModuleDescriptor* shaderModuleDescriptor, WGPUShaderModule* valueOut);
         void CreateTexture(WGPUTextureDescriptor* descriptor, WGPUTexture* valueOut);

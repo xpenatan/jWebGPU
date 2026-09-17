@@ -26,6 +26,8 @@ final public class n266518020 {
 
     public static native void n976022201(long this_addr, long descriptor_addr, long valueOut_addr);
 
+    public static native void n2539241496(long this_addr, long descriptor_addr, int mode, long callback_addr);
+
     public static native void n2480616178(long this_addr, long descriptor_addr, long valueOut_addr);
 
     public static native void n623129508(long this_addr, long descriptor_addr, long valueOut_addr);
@@ -33,6 +35,8 @@ final public class n266518020 {
     public static native void n1766028814(long this_addr, long descriptor_addr, long valueOut_addr);
 
     public static native void n1082446726(long this_addr, long descriptor_addr, long valueOut_addr);
+
+    public static native void n4030098923(long this_addr, long descriptor_addr, int mode, long callback_addr);
 
     public static native void n2420806858(long this_addr, long descriptor_addr, long valueOut_addr);
 

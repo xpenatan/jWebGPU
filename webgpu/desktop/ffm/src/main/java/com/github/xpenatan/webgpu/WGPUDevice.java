@@ -136,6 +136,18 @@ public final class WGPUDevice extends NativeObject {
         }
     }
 
+    public void createComputePipelineAsync(WGPUComputePipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback callback) {
+        internal_native_CreateComputePipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    public static void internal_native_CreateComputePipelineAsync(long this_addr, long descriptor_addr, int mode, long callback_addr) {
+        try {
+            FFMHandles.internal_native_CreateComputePipelineAsync__JJIJ.invokeExact(this_addr, descriptor_addr, mode, callback_addr);
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
         internal_native_CreatePipelineLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
@@ -179,6 +191,18 @@ public final class WGPUDevice extends NativeObject {
     public static void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
         try {
             FFMHandles.internal_native_CreateRenderPipeline__JJJ.invokeExact(this_addr, descriptor_addr, valueOut_addr);
+        } catch (Throwable e) {
+            throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
+        }
+    }
+
+    public void createRenderPipelineAsync(WGPURenderPipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback callback) {
+        internal_native_CreateRenderPipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    public static void internal_native_CreateRenderPipelineAsync(long this_addr, long descriptor_addr, int mode, long callback_addr) {
+        try {
+            FFMHandles.internal_native_CreateRenderPipelineAsync__JJIJ.invokeExact(this_addr, descriptor_addr, mode, callback_addr);
         } catch (Throwable e) {
             throw com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.rethrow(e);
         }
@@ -304,6 +328,8 @@ public final class WGPUDevice extends NativeObject {
 
         static final java.lang.invoke.MethodHandle internal_native_CreateComputePipeline__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n976022201", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
+        static final java.lang.invoke.MethodHandle internal_native_CreateComputePipelineAsync__JJIJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2539241496", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
+
         static final java.lang.invoke.MethodHandle internal_native_CreatePipelineLayout__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2480616178", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_CreateQuerySet__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n623129508", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
@@ -311,6 +337,8 @@ public final class WGPUDevice extends NativeObject {
         static final java.lang.invoke.MethodHandle internal_native_CreateRenderBundleEncoder__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1766028814", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_CreateRenderPipeline__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n1082446726", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
+
+        static final java.lang.invoke.MethodHandle internal_native_CreateRenderPipelineAsync__JJIJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n4030098923", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_INT, ValueLayout.JAVA_LONG));
 
         static final java.lang.invoke.MethodHandle internal_native_CreateSampler__JJJ = com.github.xpenatan.jparser.runtime.helper.FFMDowncallHelper.downcallDefault("n2420806858", FunctionDescriptor.ofVoid(ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG, ValueLayout.JAVA_LONG));
 

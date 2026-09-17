@@ -48,6 +48,9 @@ public final class WGPUDevice extends NativeObject {
     public void createComputePipeline(WGPUComputePipelineDescriptor descriptor, WGPUComputePipeline valueOut) {
     }
 
+    public void createComputePipelineAsync(WGPUComputePipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback callback) {
+    }
+
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
     }
 
@@ -58,6 +61,9 @@ public final class WGPUDevice extends NativeObject {
     }
 
     public void createRenderPipeline(WGPURenderPipelineDescriptor descriptor, WGPURenderPipeline valueOut) {
+    }
+
+    public void createRenderPipelineAsync(WGPURenderPipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback callback) {
     }
 
     public void createSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut) {

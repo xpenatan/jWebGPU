@@ -97,6 +97,14 @@ public final class WGPUDevice extends NativeObject {
         n.n266518020.n976022201(this_addr, descriptor_addr, valueOut_addr);
     }
 
+    public void createComputePipelineAsync(WGPUComputePipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateComputePipelineAsyncCallback callback) {
+        internal_native_CreateComputePipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    public static void internal_native_CreateComputePipelineAsync(long this_addr, long descriptor_addr, int mode, long callback_addr) {
+        n.n266518020.n2539241496(this_addr, descriptor_addr, mode, callback_addr);
+    }
+
     public void createPipelineLayout(WGPUPipelineLayoutDescriptor descriptor, WGPUPipelineLayout valueOut) {
         internal_native_CreatePipelineLayout(native_address, descriptor.native_address, valueOut.native_address);
     }
@@ -127,6 +135,14 @@ public final class WGPUDevice extends NativeObject {
 
     public static void internal_native_CreateRenderPipeline(long this_addr, long descriptor_addr, long valueOut_addr) {
         n.n266518020.n1082446726(this_addr, descriptor_addr, valueOut_addr);
+    }
+
+    public void createRenderPipelineAsync(WGPURenderPipelineDescriptor descriptor, WGPUCallbackMode mode, WGPUCreateRenderPipelineAsyncCallback callback) {
+        internal_native_CreateRenderPipelineAsync(native_address, descriptor.native_address, mode.getValue(), callback.native_address);
+    }
+
+    public static void internal_native_CreateRenderPipelineAsync(long this_addr, long descriptor_addr, int mode, long callback_addr) {
+        n.n266518020.n4030098923(this_addr, descriptor_addr, mode, callback_addr);
     }
 
     public void createSampler(WGPUSamplerDescriptor descriptor, WGPUSampler valueOut) {
